@@ -192,11 +192,13 @@
       "templater-obsidian:Templater": false,
       "obsidian-textgenerator-plugin:Generate Text!": false,
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
-      "copilot:Open Copilot Chat": false
+      "copilot:Open Copilot Chat": false,
+      "periodic-notes:Open today": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "2026-06-09.md",
     "99_Command_Center/Home.md",
     "11_Operations/Weekly_Operations.md",
     "mvqueen_cleanup (conflict 2026-06-07-00-49-26).py",
@@ -228,7 +230,6 @@
     "00_Doctrine/EMPTY_FILES_LOG.md",
     "00_Doctrine/MASTER_INDEX_V2.md",
     "crawler_v2.sh",
-    "03_Customer_Psychology/buyer_psychology.md",
     "09_AI_Systems/AI_Agents",
     "Untitled",
     "textgenerator/configs/llm",
