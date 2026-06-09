@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVQUEEN — TikTok SEO</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FAF6F0;
+    --blush: #F2D4CC;
+    --dusty-rose: #C9968A;
+    --taupe: #C4B5A5;
+    --beige: #E8DDD0;
+    --espresso: #3B2314;
+    --gold: #D4AF78;
+    --charcoal: #4A4240;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ivory);
+    color: var(--espresso);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 60px 48px 48px;
+    border-bottom: 1px solid var(--taupe);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.18em;
+    color: var(--espresso);
+  }
+
+  .brand-name span { color: var(--gold); }
+
+  .doc-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  main { padding: 0 48px 80px; }
+
+  .section-header {
+    padding: 56px 0 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--espresso);
+    letter-spacing: 0.04em;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    gap: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .card {
+    padding: 24px 26px 26px;
+    border: 1px solid var(--beige);
+    background: var(--ivory);
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .card-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 12px;
+  }
+
+  .card-body {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+  }
+
+  .list {
+    margin-top: 10px;
+  }
+
+  .list-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    font-size: 0.76rem;
+    line-height: 1.6;
+  }
+
+  .list-bullet {
+    font-size: 0.7rem;
+    margin-top: 2px;
+    color: var(--espresso);
+    flex-shrink: 0;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .pill {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--beige);
+    color: var(--espresso);
+  }
+
+  .pill-soft { background: var(--blush); }
+  .pill-strong { background: var(--dusty-rose); color: var(--ivory); }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .mini-card {
+    padding: 20px 22px 22px;
+    border: 1px solid var(--beige);
+    background: var(--ivory);
+  }
+
+  .mini-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 6px;
+  }
+
+  .mini-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .mini-body {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+  }
+
+  .hook-example {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--espresso);
+  }
+
+  .hashtag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hashtag-card {
+    padding: 18px 20px 20px;
+    border: 1px solid var(--beige);
+    background: var(--ivory);
+  }
+
+  .hashtag-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 8px;
+  }
+
+  .hashtag-list {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--espresso);
+  }
+
+  .hashtag {
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .metric-pill {
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--beige);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    background: var(--ivory);
+  }
+
+  .checklist {
+    margin-top: 20px;
+    font-size: 0.76rem;
+    line-height: 1.7;
+    color: var(--espresso);
+  }
+
+  .check-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+
+  .check-box {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid var(--taupe);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 24px;
+  }
+
+  .rules-col {
+    padding: 28px 32px 32px;
+  }
+
+  .rules-col.do { background: var(--beige); }
+  .rules-col.dont { background: var(--blush); }
+
+  .rules-col-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .rules-col.do .rules-col-label { color: var(--espresso); }
+  .rules-col.dont .rules-col-label { color: var(--dusty-rose); }
+
+  .rule-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+
+  .rule-icon {
+    font-size: 0.65rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+    color: var(--espresso);
+  }
+
+  .rule-text {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: var(--espresso);
+  }
+
+  footer {
+    margin-top: 80px;
+    padding: 32px 48px;
+    border-top: 1px solid var(--taupe);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--charcoal);
+  }
+
+  .footer-right {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 800px) {
+    header, main, footer { padding-left: 24px; padding-right: 24px; }
+    .two-col { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-name">MV<span>QUEEN</span></div>
+  <div class="doc-label">
+    TikTok SEO<br>
+    03_Content_Strategy / tiktok_seo<br>
+    June 2026
+  </div>
+</header>
+
+<main>
+
+  <!-- PURPOSE -->
+  <div class="section-header">
+    <div class="section-label">Purpose</div>
+    <div class="section-title">Make every video discoverable, desirable, and inevitable.</div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-sub">What this document does</div>
+      <div class="card-title">TikTok as a search engine</div>
+      <div class="card-body">
+        MVQUEEN’s TikTok presence is not random content — it is a searchable, emotional library.
+        TikTok SEO ensures:
+        <div class="list">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Every video is aligned with a clear search intent (how to, why, storytime, healing, glow up)</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Keywords, sounds, captions, and comments all work together as one discovery system</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>MVQUEEN appears where the right woman is already looking for transformation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-sub">Emotional frame</div>
+      <div class="card-title">Search intent is emotional intent</div>
+      <div class="card-body">
+        Behind every search is a feeling:
+        <div class="pill-row">
+          <div class="pill pill-soft">“I’m tired of feeling invisible.”</div>
+          <div class="pill pill-soft">“I want my soft life to be real.”</div>
+          <div class="pill pill-soft">“I don’t know how to be chosen without chasing.”</div>
+        </div>
+        <div style="margin-top:12px;">
+          TikTok SEO translates these feelings into language, then into structure — so the algorithm can deliver MVQUEEN at the exact moment she is ready.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORE PRINCIPLES -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Core System</div>
+    <div class="section-title">Four levers: intent, keywords, sound, structure.</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="mini-card">
+      <div class="mini-label">Principle</div>
+      <div class="mini-title">Search intent alignment</div>
+      <div class="mini-body">
+        Every video must answer a question she is already asking.
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Define the intent: how to, why, storytime, confession, healing, glow up</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Write the hook as if it were the title of a search result</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Use language she would actually type, not brand jargon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Principle</div>
+      <div class="mini-title">Keyword strategy</div>
+      <div class="mini-body">
+        Keywords are spoken, seen, and read.
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Primary keyword appears in the first 3 seconds (spoken + on-screen + caption line 1)</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Secondary keywords live in the caption body and MVQUEEN’s own comments</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Use semantic clusters: soft life, feminine energy, becoming her, healing era</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Principle</div>
+      <div class="mini-title">Sound selection</div>
+      <div class="mini-body">
+        Sound is both trend and emotion.
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Prefer trending sounds with 5k–50k uses — rising, not saturated</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Use evergreen feminine soundscapes for series and storytelling</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Match sound mood to the emotional arc: healing, empowerment, sensuality, transformation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT STRUCTURE -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Structure</div>
+    <div class="section-title">Hooks, captions, comments — one narrative.</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="mini-card">
+      <div class="mini-label">Element</div>
+      <div class="mini-title">Hook</div>
+      <div class="mini-body">
+        The first second decides everything.
+        <div class="hook-example">
+          “If you’re tired of feeling invisible…”<br>
+          “This is why your glow up isn’t working…”<br>
+          “The truth about becoming <em>her</em>…”
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Element</div>
+      <div class="mini-title">Caption</div>
+      <div class="mini-body">
+        Caption = keyword + emotional depth.
+        <div style="margin-top:8px;">
+          Example:
+          <div style="margin-top:6px; font-size:0.74rem; line-height:1.6; color:var(--espresso);">
+            You don’t have to chase to be chosen. This is how feminine energy changes everything.<br>
+            #mvqueen #feminineenergy #becomingher
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Element</div>
+      <div class="mini-title">Comments</div>
+      <div class="mini-body">
+        MVQUEEN’s own comments are part of SEO.
+        <div style="margin-top:8px; font-size:0.74rem; line-height:1.6; color:var(--espresso);">
+          This is for the woman who’s ready to become her highest self, without burning out.
+        </div>
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Add secondary keywords in comments</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Ask questions that invite saves and replies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HASHTAGS -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Discovery</div>
+    <div class="section-title">Hashtags as indexing, not decoration.</div>
+  </div>
+
+  <div class="hashtag-grid">
+    <div class="hashtag-card">
+      <div class="hashtag-title">Primary — brand & niche</div>
+      <div class="hashtag-list">
+        <span class="hashtag">#mvqueen</span>
+        <span class="hashtag">#mvqueenmethod</span>
+        <span class="hashtag">#feminineenergy</span>
+        <span class="hashtag">#softlife</span>
+        <span class="hashtag">#glowupjourney</span>
+      </div>
+    </div>
+
+    <div class="hashtag-card">
+      <div class="hashtag-title">Secondary — emotional discovery</div>
+      <div class="hashtag-list">
+        <span class="hashtag">#healingera</span>
+        <span class="hashtag">#becomingher</span>
+        <span class="hashtag">#selfworthjourney</span>
+        <span class="hashtag">#divinefeminine</span>
+      </div>
+    </div>
+
+    <div class="hashtag-card">
+      <div class="hashtag-title">Search-based — algorithmic indexing</div>
+      <div class="hashtag-list">
+        <span class="hashtag">#howto</span>
+        <span class="hashtag">#tipsandtricks</span>
+        <span class="hashtag">#learnontiktok</span>
+        <span class="hashtag">#storytime</span>
+      </div>
+      <div style="margin-top:10px; font-size:0.72rem; color:var(--charcoal);">
+        Use per video:<br>
+        2–3 primary · 2–3 secondary · 1–2 search-based.
+      </div>
+    </div>
+  </div>
+
+  <!-- EMOTIONAL CLUSTERS -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Language System</div>
+    <div class="section-title">Emotional keyword clusters.</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="mini-card">
+      <div class="mini-label">Cluster</div>
+      <div class="mini-title">Healing</div>
+      <div class="mini-body">
+        healing · self-worth · inner peace · emotional reset<br>
+        <div style="margin-top:8px; font-size:0.74rem;">
+          Use for: nervous system content, self-trust, leaving chaos, choosing softness.
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Cluster</div>
+      <div class="mini-title">Becoming Her</div>
+      <div class="mini-body">
+        glow up · soft life · feminine energy · becoming her<br>
+        <div style="margin-top:8px; font-size:0.74rem;">
+          Use for: identity, transformation, “that girl” narratives, lifestyle shifts.
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Cluster</div>
+      <div class="mini-title">Luxury Feminine</div>
+      <div class="mini-body">
+        elegance · softness · divine feminine · high-value woman<br>
+        <div style="margin-top:8px; font-size:0.74rem;">
+          Use for: brand storytelling, premium offers, aesthetic-led content.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METRICS & CHECKLIST -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Performance</div>
+    <div class="section-title">What we measure. What we check.</div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="metrics-grid">
+        <div class="metric-pill">Search impressions</div>
+        <div class="metric-pill">Watch time</div>
+        <div class="metric-pill">Retention curve</div>
+        <div class="metric-pill">Saves</div>
+        <div class="metric-pill">Shares</div>
+        <div class="metric-pill">Comment keyword density</div>
+        <div class="metric-pill">Save-to-view ratio</div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-top:0;">
+        <div class="card-sub">Per video</div>
+        <div class="card-title">TikTok SEO checklist</div>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Primary keyword is spoken in the first 3 seconds</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Primary keyword appears in on-screen text</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Primary keyword is in the first line of the caption</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Secondary keywords appear in caption or MVQUEEN comments</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Hashtags follow primary + secondary + search-based mix</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Sound is intentionally chosen (trending or evergreen, emotionally matched)</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Hook is clear within the first second</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Visuals match MVQUEEN aesthetic: soft, feminine, intentional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DO / DON'T -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Usage Law</div>
+    <div class="section-title">Do this. Not that.</div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rules-col do">
+      <div class="rules-col-label">✦ Always</div>
+      <div class="rule-item">
+        <div class="rule-icon">—</div>
+        <div class="rule-text">Speak the primary keyword out loud — TikTok listens to audio for search.</div>
+      </div>
+      <div class="rule-item">
+        <div class=<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVQUEEN — TikTok SEO</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FAF6F0;
+    --blush: #F2D4CC;
+    --dusty-rose: #C9968A;
+    --taupe: #C4B5A5;
+    --beige: #E8DDD0;
+    --espresso: #3B2314;
+    --gold: #D4AF78;
+    --charcoal: #4A4240;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ivory);
+    color: var(--espresso);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 60px 48px 48px;
+    border-bottom: 1px solid var(--taupe);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.18em;
+    color: var(--espresso);
+  }
+
+  .brand-name span { color: var(--gold); }
+
+  .doc-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  main { padding: 0 48px 80px; }
+
+  .section-header {
+    padding: 56px 0 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--espresso);
+    letter-spacing: 0.04em;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    gap: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .card {
+    padding: 24px 26px 26px;
+    border: 1px solid var(--beige);
+    background: var(--ivory);
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .card-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 12px;
+  }
+
+  .card-body {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+  }
+
+  .list {
+    margin-top: 10px;
+  }
+
+  .list-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    font-size: 0.76rem;
+    line-height: 1.6;
+  }
+
+  .list-bullet {
+    font-size: 0.7rem;
+    margin-top: 2px;
+    color: var(--espresso);
+    flex-shrink: 0;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .pill {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--beige);
+    color: var(--espresso);
+  }
+
+  .pill-soft { background: var(--blush); }
+  .pill-strong { background: var(--dusty-rose); color: var(--ivory); }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .mini-card {
+    padding: 20px 22px 22px;
+    border: 1px solid var(--beige);
+    background: var(--ivory);
+  }
+
+  .mini-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 6px;
+  }
+
+  .mini-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .mini-body {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+  }
+
+  .hook-example {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--espresso);
+  }
+
+  .hashtag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hashtag-card {
+    padding: 18px 20px 20px;
+    border: 1px solid var(--beige);
+    background: var(--ivory);
+  }
+
+  .hashtag-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 8px;
+  }
+
+  .hashtag-list {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--espresso);
+  }
+
+  .hashtag {
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .metric-pill {
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--beige);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    background: var(--ivory);
+  }
+
+  .checklist {
+    margin-top: 20px;
+    font-size: 0.76rem;
+    line-height: 1.7;
+    color: var(--espresso);
+  }
+
+  .check-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+
+  .check-box {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid var(--taupe);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 24px;
+  }
+
+  .rules-col {
+    padding: 28px 32px 32px;
+  }
+
+  .rules-col.do { background: var(--beige); }
+  .rules-col.dont { background: var(--blush); }
+
+  .rules-col-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .rules-col.do .rules-col-label { color: var(--espresso); }
+  .rules-col.dont .rules-col-label { color: var(--dusty-rose); }
+
+  .rule-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+
+  .rule-icon {
+    font-size: 0.65rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+    color: var(--espresso);
+  }
+
+  .rule-text {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: var(--espresso);
+  }
+
+  footer {
+    margin-top: 80px;
+    padding: 32px 48px;
+    border-top: 1px solid var(--taupe);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--charcoal);
+  }
+
+  .footer-right {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 800px) {
+    header, main, footer { padding-left: 24px; padding-right: 24px; }
+    .two-col { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-name">MV<span>QUEEN</span></div>
+  <div class="doc-label">
+    TikTok SEO<br>
+    03_Content_Strategy / tiktok_seo<br>
+    June 2026
+  </div>
+</header>
+
+<main>
+
+  <!-- PURPOSE -->
+  <div class="section-header">
+    <div class="section-label">Purpose</div>
+    <div class="section-title">Make every video discoverable, desirable, and inevitable.</div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-sub">What this document does</div>
+      <div class="card-title">TikTok as a search engine</div>
+      <div class="card-body">
+        MVQUEEN’s TikTok presence is not random content — it is a searchable, emotional library.
+        TikTok SEO ensures:
+        <div class="list">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Every video is aligned with a clear search intent (how to, why, storytime, healing, glow up)</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Keywords, sounds, captions, and comments all work together as one discovery system</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>MVQUEEN appears where the right woman is already looking for transformation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-sub">Emotional frame</div>
+      <div class="card-title">Search intent is emotional intent</div>
+      <div class="card-body">
+        Behind every search is a feeling:
+        <div class="pill-row">
+          <div class="pill pill-soft">“I’m tired of feeling invisible.”</div>
+          <div class="pill pill-soft">“I want my soft life to be real.”</div>
+          <div class="pill pill-soft">“I don’t know how to be chosen without chasing.”</div>
+        </div>
+        <div style="margin-top:12px;">
+          TikTok SEO translates these feelings into language, then into structure — so the algorithm can deliver MVQUEEN at the exact moment she is ready.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORE PRINCIPLES -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Core System</div>
+    <div class="section-title">Four levers: intent, keywords, sound, structure.</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="mini-card">
+      <div class="mini-label">Principle</div>
+      <div class="mini-title">Search intent alignment</div>
+      <div class="mini-body">
+        Every video must answer a question she is already asking.
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Define the intent: how to, why, storytime, confession, healing, glow up</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Write the hook as if it were the title of a search result</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Use language she would actually type, not brand jargon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Principle</div>
+      <div class="mini-title">Keyword strategy</div>
+      <div class="mini-body">
+        Keywords are spoken, seen, and read.
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Primary keyword appears in the first 3 seconds (spoken + on-screen + caption line 1)</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Secondary keywords live in the caption body and MVQUEEN’s own comments</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Use semantic clusters: soft life, feminine energy, becoming her, healing era</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Principle</div>
+      <div class="mini-title">Sound selection</div>
+      <div class="mini-body">
+        Sound is both trend and emotion.
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Prefer trending sounds with 5k–50k uses — rising, not saturated</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Use evergreen feminine soundscapes for series and storytelling</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Match sound mood to the emotional arc: healing, empowerment, sensuality, transformation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT STRUCTURE -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Structure</div>
+    <div class="section-title">Hooks, captions, comments — one narrative.</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="mini-card">
+      <div class="mini-label">Element</div>
+      <div class="mini-title">Hook</div>
+      <div class="mini-body">
+        The first second decides everything.
+        <div class="hook-example">
+          “If you’re tired of feeling invisible…”<br>
+          “This is why your glow up isn’t working…”<br>
+          “The truth about becoming <em>her</em>…”
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Element</div>
+      <div class="mini-title">Caption</div>
+      <div class="mini-body">
+        Caption = keyword + emotional depth.
+        <div style="margin-top:8px;">
+          Example:
+          <div style="margin-top:6px; font-size:0.74rem; line-height:1.6; color:var(--espresso);">
+            You don’t have to chase to be chosen. This is how feminine energy changes everything.<br>
+            #mvqueen #feminineenergy #becomingher
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Element</div>
+      <div class="mini-title">Comments</div>
+      <div class="mini-body">
+        MVQUEEN’s own comments are part of SEO.
+        <div style="margin-top:8px; font-size:0.74rem; line-height:1.6; color:var(--espresso);">
+          This is for the woman who’s ready to become her highest self, without burning out.
+        </div>
+        <div class="list" style="margin-top:8px;">
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Add secondary keywords in comments</div>
+          </div>
+          <div class="list-item">
+            <div class="list-bullet">•</div>
+            <div>Ask questions that invite saves and replies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HASHTAGS -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Discovery</div>
+    <div class="section-title">Hashtags as indexing, not decoration.</div>
+  </div>
+
+  <div class="hashtag-grid">
+    <div class="hashtag-card">
+      <div class="hashtag-title">Primary — brand & niche</div>
+      <div class="hashtag-list">
+        <span class="hashtag">#mvqueen</span>
+        <span class="hashtag">#mvqueenmethod</span>
+        <span class="hashtag">#feminineenergy</span>
+        <span class="hashtag">#softlife</span>
+        <span class="hashtag">#glowupjourney</span>
+      </div>
+    </div>
+
+    <div class="hashtag-card">
+      <div class="hashtag-title">Secondary — emotional discovery</div>
+      <div class="hashtag-list">
+        <span class="hashtag">#healingera</span>
+        <span class="hashtag">#becomingher</span>
+        <span class="hashtag">#selfworthjourney</span>
+        <span class="hashtag">#divinefeminine</span>
+      </div>
+    </div>
+
+    <div class="hashtag-card">
+      <div class="hashtag-title">Search-based — algorithmic indexing</div>
+      <div class="hashtag-list">
+        <span class="hashtag">#howto</span>
+        <span class="hashtag">#tipsandtricks</span>
+        <span class="hashtag">#learnontiktok</span>
+        <span class="hashtag">#storytime</span>
+      </div>
+      <div style="margin-top:10px; font-size:0.72rem; color:var(--charcoal);">
+        Use per video:<br>
+        2–3 primary · 2–3 secondary · 1–2 search-based.
+      </div>
+    </div>
+  </div>
+
+  <!-- EMOTIONAL CLUSTERS -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Language System</div>
+    <div class="section-title">Emotional keyword clusters.</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="mini-card">
+      <div class="mini-label">Cluster</div>
+      <div class="mini-title">Healing</div>
+      <div class="mini-body">
+        healing · self-worth · inner peace · emotional reset<br>
+        <div style="margin-top:8px; font-size:0.74rem;">
+          Use for: nervous system content, self-trust, leaving chaos, choosing softness.
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Cluster</div>
+      <div class="mini-title">Becoming Her</div>
+      <div class="mini-body">
+        glow up · soft life · feminine energy · becoming her<br>
+        <div style="margin-top:8px; font-size:0.74rem;">
+          Use for: identity, transformation, “that girl” narratives, lifestyle shifts.
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-label">Cluster</div>
+      <div class="mini-title">Luxury Feminine</div>
+      <div class="mini-body">
+        elegance · softness · divine feminine · high-value woman<br>
+        <div style="margin-top:8px; font-size:0.74rem;">
+          Use for: brand storytelling, premium offers, aesthetic-led content.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METRICS & CHECKLIST -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Performance</div>
+    <div class="section-title">What we measure. What we check.</div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="metrics-grid">
+        <div class="metric-pill">Search impressions</div>
+        <div class="metric-pill">Watch time</div>
+        <div class="metric-pill">Retention curve</div>
+        <div class="metric-pill">Saves</div>
+        <div class="metric-pill">Shares</div>
+        <div class="metric-pill">Comment keyword density</div>
+        <div class="metric-pill">Save-to-view ratio</div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-top:0;">
+        <div class="card-sub">Per video</div>
+        <div class="card-title">TikTok SEO checklist</div>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Primary keyword is spoken in the first 3 seconds</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Primary keyword appears in on-screen text</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Primary keyword is in the first line of the caption</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Secondary keywords appear in caption or MVQUEEN comments</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Hashtags follow primary + secondary + search-based mix</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Sound is intentionally chosen (trending or evergreen, emotionally matched)</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Hook is clear within the first second</div>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <div>Visuals match MVQUEEN aesthetic: soft, feminine, intentional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DO / DON'T -->
+  <div class="section-header" style="padding-top:64px;">
+    <div class="section-label">Usage Law</div>
+    <div class="section-title">Do this. Not that.</div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rules-col do">
+      <div class="rules-col-label">✦ Always</div>
+      <div class="rule-item">
+        <div class="rule-icon">—</div>
+        <div class="rule-text">Speak the primary keyword out loud — TikTok listens to audio for search.</div>
+      </div>
+      <div class="rule-item">
+        <div class=

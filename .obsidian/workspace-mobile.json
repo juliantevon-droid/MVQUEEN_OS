@@ -1,0 +1,237 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99_Command_Center/Home.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Home"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d29d5a9f29aeef8b",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "706832974c55bf21",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "c71e3bc170ab2cf0",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "Home",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "5d0ee8be742f3cbe",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "9082a325da2b32d8",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
+        }
+      },
+      {
+        "id": "c24c0261aab5217a",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "1e2cb1555a9b3ca2",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "730c2a0978cde36b",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "9778a18448e2befd",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "2106da5467eabd84",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      },
+      {
+        "id": "aa4902139a6fb73e",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {},
+          "icon": "calendar-with-checkmark",
+          "title": "Calendar"
+        }
+      },
+      {
+        "id": "ae9aee66292a5e6b",
+        "type": "leaf",
+        "state": {
+          "type": "copilot-chat-view",
+          "state": {},
+          "icon": "message-square",
+          "title": "Copilot"
+        }
+      }
+    ],
+    "currentTab": 4
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "homepage:Open homepage": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-kanban:Create new board": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "zk-prefixer:Create new unique note": false,
+      "workspaces:Manage workspace layouts": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "copilot:Open Copilot Chat": false
+    }
+  },
+  "active": "e7a7b303c61786dc",
+  "lastOpenFiles": [
+    "99_Command_Center/Home.md",
+    "11_Operations/Weekly_Operations.md",
+    "mvqueen_cleanup (conflict 2026-06-07-00-49-26).py",
+    "mvqueen_batch3 (conflict 2026-06-07-00-49-26).py",
+    "mvqueen_batch2 (conflict 2026-06-07-00-49-26).py",
+    "mvqueen_batch1 (conflict 2026-06-07-00-49-26).py",
+    "05_SEO_And_Content/Long_Tail_Keywords.md",
+    "05_SEO_And_Content/TikTok_SEO.md",
+    "05_SEO_And_Content/YouTube SEO.md",
+    "13_Research_And_Inspiration/README.md",
+    "Tiktok_seo.html.md",
+    "06_Tone_And_Voice/Forbidden_Words.md",
+    "30_AI_Datasets/README.md",
+    "37_Databases/README.md",
+    "06_Tone_And_Voice/Platform_Voice_Guides.md",
+    "06_Tone_And_Voice/Hook Systems.md",
+    "06_Tone_And_Voice/Voice_Suite.md",
+    "26_RnD_Lab/README.md",
+    "35_System_Blueprints/README.md",
+    "34_Master_Systems/README.md",
+    "01_Brand_Strategy/Brand_Story.md",
+    "01_Brand_Strategy/brand_manifesto.md",
+    "02_Brand_Identity/README.md",
+    "01_Brand_Strategy/README.md",
+    "01_Brand_Strategy/Brand_Values.md",
+    "01_Brand_Strategy/Mission_And_Vision.md",
+    "03_Customer_Psychology/Identity_Aspirations.md",
+    "extract_bible.py",
+    "00_Doctrine/EMPTY_FILES_LOG.md",
+    "00_Doctrine/MASTER_INDEX_V2.md",
+    "crawler_v2.sh",
+    "03_Customer_Psychology/buyer_psychology.md",
+    "09_AI_Systems/AI_Agents",
+    "Untitled",
+    "textgenerator/configs/llm",
+    "textgenerator/configs"
+  ]
+}
