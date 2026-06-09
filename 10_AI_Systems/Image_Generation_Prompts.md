@@ -1,147 +1,149 @@
-# 🎨 MVQUEEN — Image Generation Prompts
+# 👑 MVQUEEN — Image Generation Prompts
+### The Visual AI System
+
+Every prompt is pre-loaded with MVQUEEN's visual identity. All AI-generated images are reviewed against brand visual standards before use.
 
 ---
 
-## Purpose
-
-A library of structured prompts for generating AI images that align with MVQUEEN's visual identity — cinematic, feminine, atmospheric, and brand-consistent.
-
-All AI-generated images are reviewed against brand visual standards before use.
-
----
-
-## MVQUEEN Visual Identity (Load as context for every image prompt)
+## THE BRAND VISUAL CONTEXT BLOCK
+Paste this at the start of every MVQUEEN image prompt:
 
 ```
-BRAND VISUAL IDENTITY CONTEXT:
-
-Color palette: Soft neutral tones — ivory, champagne, warm whites, blush rose, sage, muted gold.
-Never: Harsh neons, stark black-and-white contrast, aggressive color blocking.
-
-Lighting: Soft, diffused, golden hour or window light. Never harsh shadows or studio flash.
-
-Mood: Unhurried, intimate, atmospheric. Like a beautifully shot editorial — not a product catalogue.
-
-Textures: Silk, linen, marble, glass, soft cotton, cashmere, petals, natural wood.
-
-Setting: Minimal but warm. Clean space with intentional objects. Never cluttered or chaotic.
-
-Human presence: When featuring a person — soft expression, relaxed body language, natural.
-Never aggressive pose, forced smile, or fashion-forward theatrics.
-
-Style reference: Editorial beauty, quiet luxury, slow lifestyle photography.
-NOT: Instagram influencer flat lay, harsh studio product shot, stock photo aesthetic.
+MVQUEEN BRAND VISUAL CONTEXT:
+Color palette: warm ivory, soft blush, dusty rose, warm taupe, champagne gold accents, espresso depth. No pure white. No pure black. No cool tones.
+Lighting: warm, diffused, directional — golden hour or soft window light. No harsh flash. Shadows are soft, not dramatic.
+Mood: unhurried, intimate, atmospheric, cinematic. Editorial moment — not product catalog.
+Textures: silk, linen, glass, warm-veined marble, cashmere, soft cotton, petals, wood.
+Setting: minimal but warm. Intentional objects. Never cluttered.
+Style reference: quiet luxury editorial, slow living photography, Kinfolk warmed up.
+NOT: harsh studio, stock photo, influencer flat lay, high contrast fashion.
 ```
 
 ---
 
-## Product Photography Prompts
+## PRODUCT PHOTOGRAPHY PROMPTS
 
-### Prompt IMG-01 — Hero Product Shot
+### Prompt 01 — Hero Product Shot
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
-
-Create a luxury product photography image:
-
-Product: [product name and type]
-Background: [marble surface / linen fabric / wooden surface / glass shelf]
-Lighting: Soft window light from the left, warm golden tone
-Props: [optional — dried flowers / glass / soft fabric]
-Mood: Quiet luxury — the product as the hero, nothing competing
-
-Style: Editorial beauty photography, minimal, intentional
-Aspect ratio: [1:1 for Instagram / 4:5 for feed / 9:16 for stories]
-
-Additional direction: [any specific details]
+[BRAND VISUAL CONTEXT BLOCK]
+Subject: [PRODUCT NAME] — [describe: e.g., "50ml glass fragrance bottle with gold hardware"]
+Placement: centered on [surface — e.g., "warm linen fabric, slightly wrinkled"]
+Props: [1 optional — e.g., "a single dried rose stem, out of focus, left side"]
+Lighting: [e.g., "soft side light from right, warm golden tone"]
+Camera: close-up, slight above angle, shallow depth of field, product in sharp focus
+Grading: warm ivory tones, champagne highlights, soft shadows
+Style: editorial product photography, quiet luxury
 ```
 
----
-
-### Prompt IMG-02 — Lifestyle/Atmospheric Shot
+### Prompt 02 — Lifestyle / Product in Use
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
-
-Create a lifestyle image for MVQUEEN:
-
-Scene: [describe the scene — morning vanity / bathroom shelf / dressing table / bedside]
-Products featured: [products or "suggest placement naturally"]
-Woman (if featured): [yes/no — if yes: soft, natural, relaxed, warm skin, no heavy makeup]
-Time of day feel: [morning light / golden hour / soft evening]
-Mood: [ritual / softness / calm / becoming / luxury]
-
-This image should make a woman want to be in this moment.
-Style: Slow living editorial, feminine, atmospheric
+[BRAND VISUAL CONTEXT BLOCK]
+Scene: a woman's [hands/wrist/collarbone] interacting with [PRODUCT NAME]
+Action: [e.g., "applying serum to fingertips" / "holding fragrance bottle"]
+Model: relaxed, natural, unhurried. No forced smile. No aggressive pose.
+Skin tone: [specify for content calendar diversity]
+Background: [e.g., warm ivory wall, soft natural light, minimal]
+Lighting: soft morning light, diffused, no harsh shadows
+Mood: intimate, personal, like a private moment made beautiful
 ```
 
----
-
-### Prompt IMG-03 — Campaign/Editorial Image
+### Prompt 03 — Collection Flat Lay
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+[BRAND VISUAL CONTEXT BLOCK]
+Products: [list 3–5 collection products]
+Surface: [e.g., "warm ivory ceramic" / "soft blush linen" / "light warm wood"]
+Props: minimal — [e.g., "dried petals, small water glass, one hair clip"]
+Arrangement: intentional asymmetry — not a grid
+Lighting: overhead soft natural light, slight warmth
+Color: all tones within MVQUEEN palette only
+Aspect ratio: 1:1 Instagram / 4:5 portrait
+```
 
-Create a campaign editorial image for MVQUEEN:
-
-Campaign theme: [theme]
-Central subject: [product / woman / both]
-Color story: [warm neutrals / blush and ivory / sage and cream]
-Composition: [centered / rule of thirds / close crop / wide atmospheric]
-Emotion: [the feeling the image should create in 3 words]
-
-Inspiration direction: [quiet luxury / old money aesthetic / feminine editorial / Italian countryside]
-Format: [square / portrait / landscape]
+### Prompt 04 — Campaign / Mood (No Product)
+```
+[BRAND VISUAL CONTEXT BLOCK]
+Scene: [e.g., "woman in silk slip dress at window, morning light, not facing camera"]
+Emotion: [e.g., "quiet confidence" / "unhurried softness" / "calm of arriving"]
+Setting: [e.g., "minimal bedroom, warm ivory walls, soft linen, morning light"]
+Color: warm ivory and blush dominant. One dusty rose or champagne accent.
+Composition: breathing room — she is not filling the whole frame
+Style: slow editorial. A moment someone almost missed capturing.
 ```
 
 ---
 
-### Prompt IMG-04 — Social Media Graphic
+## SOCIAL MEDIA VISUAL PROMPTS
+
+### Prompt 05 — Instagram Quote / Brand Post
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+[BRAND VISUAL CONTEXT BLOCK]
+Format: 4:5 portrait (1080x1350px)
+Background: [e.g., "warm ivory with soft blush gradient at bottom third"]
+Text: "[QUOTE]" — elegant serif style, espresso color, generous white space
+Logo: small MVQUEEN wordmark bottom center
+No other graphic elements
+Mood: refined, quiet, worth screenshotting
+```
 
-Create a social media graphic for MVQUEEN:
+### Prompt 06 — Reel Cover / TikTok Thumbnail
+```
+[BRAND VISUAL CONTEXT BLOCK]
+Format: 9:16 vertical (1080x1920px)
+Scene: [first frame — e.g., "close-up hands applying serum, warm morning light"]
+Text: "[HOOK]" — Jost-style sans-serif, ivory or white, center or lower third
+Color grading: warm, cinematic
+Hook: first frame makes her want to watch
+```
 
-Purpose: [quote / announcement / educational / product feature]
-Text to include: [exact text — keep short]
-Background: [product image / lifestyle / abstract texture / solid brand color]
-Text placement: [center / bottom / overlay]
-Font style direction: [elegant serif / clean modern / handwritten feeling]
-Brand elements: [logo placement — bottom right]
-
-Platform: [Instagram square / story / Pinterest]
+### Prompt 07 — Pinterest Pin
+```
+[BRAND VISUAL CONTEXT BLOCK]
+Format: 2:3 vertical (1000x1500px)
+Top 60%: [main image — product/lifestyle/campaign]
+Bottom 40%: warm ivory background + title in Cormorant Garamond serif
+MVQUEEN wordmark: small, bottom center
+Style: Pinterest editorial — more structured, more text-forward than Instagram
 ```
 
 ---
 
-### Prompt IMG-05 — Brand Mood/Aesthetic Image
+## MISS.PRINCESS VISUAL ADJUSTMENT
+Add to any prompt for Miss.Princess content:
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
-
-Create a mood/aesthetic image that represents MVQUEEN's world — no product required.
-
-Concept: [a morning ritual / a quiet afternoon / a woman becoming herself / a luxurious moment alone]
-Visual elements: [textures, light, colors, objects that represent the brand world]
-Human presence: [yes — soft, natural / no — objects and atmosphere only]
-Feeling: [what should someone feel when they see this image]
-
-This is a brand world image — it sells a feeling, not a product.
-Style: Slow, intentional, cinematic feminine photography
+MISS.PRINCESS ADJUSTMENT:
+Swap backgrounds: Warm Ivory → Petal Pink (#F7E0DA) or Soft Lilac (#E8DCF0)
+Swap accents: Dusty Rose → Rose Quartz (#E8B4B8)
+Swap metallics: Champagne Gold → Pearl/silver
+Add: bows, flowers, subtle glitter, playful props
+Energy: dreamy, romantic, youthful — not cinematic
+Style: Pinterest soft girl aesthetic, dreamy beauty editorial
 ```
 
 ---
 
-## Image Quality Review Checklist
-
-Before using any AI-generated image:
+## NEGATIVE PROMPTS
+Always include in tools that support negative prompts:
 ```
-□ Color palette consistent with brand system?
-□ Lighting feels soft and intentional — not harsh?
-□ Overall mood matches brand atmosphere?
-□ No stock-photo or generic AI aesthetic?
-□ Would this image make a woman want to enter this world?
-□ Appropriate for the platform it's being used on?
-□ No copyright issues with any elements?
+harsh lighting, studio flash, pure white background, pure black background,
+cool tones, grey tones, blue shadows, green undertones, cluttered,
+stock photo, influencer flat lay, overexposed, harsh shadows, dark vignette,
+over-saturated, neon colors, aggressive pose, forced smile,
+blurry, low resolution, distorted faces, extra limbs, watermarks
 ```
-
-If any box is unchecked — regenerate or adjust before using.
 
 ---
-*MVQUEEN Image Generation Prompts — Operational Document*
+
+## LIGHTROOM GRADING (Post-Processing)
+Temperature: +15–25 | Tint: +5–10 magenta | Highlights: -20 | Shadows: +15
+Vibrance: -10 | Blues HSL: -40 sat | Greens HSL: -30 sat | Grain: 15–20
+Target: Kodak Portra 400 warmth — natural, slightly soft, rich without saturation.
+
+---
+
+## RULES
+- Never publish AI images without human review
+- Every image checked against color_system.md
+- Miss.Princess images never on MVQUEEN channels
+- Every image passes the Five-Second Test: feels like MVQUEEN in 5 seconds
+
+*Pairs with AI_Prompt_Library.md, color_system.md, typography_system.md, photography_direction.md.*

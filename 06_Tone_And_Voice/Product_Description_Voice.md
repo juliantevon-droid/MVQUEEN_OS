@@ -1,242 +1,136 @@
-# Product_Description_Voice.md
-**Location:** `06_Tone_And_Voice/Product_Description_Voice.md`
-**Doctrine Anchor:** `00_Doctrine/README.md` — Quiet Confidence, Warm Luxury, Feminine Precision
-**Authority:** Writing standard for all MvQueen and miss.queen product descriptions
+# 👑 MVQUEEN — Product Description Voice
+### Formulas, Frameworks & Real Examples
 
 ---
 
-## 01 — Philosophy
+## What This File Is
 
-A product description is not a spec sheet. It is the moment the customer decides whether she trusts us.
+Product descriptions are the most-read copy on the entire site. They are the moment a woman decides — and the brand voice either closes that moment or loses it.
 
-She's already looking at the image. She already likes what she sees. The description's job is to close the gap between *wanting it* and *buying it* — not by pushing, but by confirming what she already feels.
-
-MvQueen descriptions are written for a woman who is decisive. She does not need six paragraphs. She needs precise detail, delivered with confidence.
-
-**The test for every description:**
-> *Does this make her feel certain — about the product and about herself for choosing it?*
+The rule that governs every description: desire before details. Feeling before function. Identity before ingredients.
 
 ---
 
-## 02 — Description Architecture
+## THE MVQUEEN PRODUCT DESCRIPTION FORMULA
 
-Every product description follows this structure. Not every section needs multiple sentences — some need one. Precision over padding.
+Every product description follows this three-part structure:
 
-```
-[Opening Hook]       — 1–2 lines. Feeling first. Not features first.
-[What It Is]         — What the product actually is and does.
-[How It Wears]       — Fit, feel, movement. What the body experiences.
-[Styling Direction]  — 1–2 ways to wear it. Not exhaustive — curated.
-[Product Details]    — Bullet list: material, fit type, sizing notes, care.
-```
+PART 1 — DESIRE LINE: One sentence. Creates the feeling before naming the product.
+PART 2 — PRODUCT DESCRIPTION: What it is. What it does. Key ingredients or features. Sensory, specific.
+PART 3 — IDENTITY CLOSE: Connects the product to who she is.
+
+Length: Short-form = 1 sentence per part. Mid-form = 2–3 sentences per part. Long-form = Full paragraphs.
 
 ---
 
-## 03 — Section-by-Section Guide
+## SKINCARE DESCRIPTIONS
 
-### Opening Hook
-Lead with the feeling or the outcome — not the product name or a feature.
+Short-Form Template:
+[Desire] The kind of [result] that doesn't announce itself — it just happens.
+[Product] [Name] is a [what it is] formulated with [key ingredient].
+[Identity] For the woman who treats her skin like it deserves to be treated.
 
-| ❌ Off-Brand | ✅ On-Brand |
-|---|---|
-| "This beautiful dress features..." | "The kind of dress that earns compliments without asking for them." |
-| "Introducing our new bodysuit!" | "Does the work so she doesn't have to." |
-| "A must-have for every wardrobe!" | "Not a trend. A decision." |
-| "This stunning co-ord set is perfect..." | "Together or apart. Both answers are right." |
+Hydrating Face Serum:
+The kind of skin that makes you look in the mirror a little longer. [Serum Name] is a lightweight hydration serum built around [key ingredient] — absorbs in seconds, works all day. For women who treat their morning routine like the ritual it is.
 
-The hook is 1–2 lines maximum. It sets the tone. Then get to the product.
+Glow Facial Oil:
+Not the glow you create. The glow you remember you already had. [Oil Name] is a softening facial oil — pressed into skin, leaving it luminous without shine. This is what caring for yourself looks like from the outside.
 
----
+Lip Treatment:
+Soft lips aren't vanity. They're self-respect. [Lip Treatment] heals while it hydrates. One application in the morning. The rest takes care of itself.
 
-### What It Is
-State the product clearly. No fluff. Include the key design feature that makes it worth buying.
+Eye Cream:
+The area that always gives it away. [Eye Cream Name] is a cooling, peptide-rich treatment that reduces fine lines and fatigue — gently, over time, without aggression.
 
-```
-The [Product Name] is a [silhouette/category] cut from [fabric] with [defining feature].
-```
-
-Examples:
-```
-The Ava Midi is a fitted-waist dress cut from stretch crepe with a subtle flare from the knee.
-The Reign Bodysuit is a scoop-neck seamless bodysuit designed to lay flat under anything.
-The Court Set is a tailored co-ord in woven linen — structured top, wide-leg trouser.
-```
+Toner:
+The step everyone skips. The step that changes everything. [Toner Name] balances skin and preps it to absorb everything that follows. Swipe on. Notice the difference.
 
 ---
 
-### How It Wears
-Describe the physical experience. Fit, movement, structure, comfort. This is where she imagines herself in it.
+## FRAGRANCE DESCRIPTIONS
 
-Focus on:
-- How it fits (body-skimming, relaxed, structured, etc.)
-- What the fabric does (holds shape, drapes, stretches, breathes)
-- What makes it practical to actually wear
+Short-Form Template:
+[Desire] [Sensory scene — what this scent feels like as an experience]
+[Product] [Name] opens with [top note] and [top note], settling into [heart note] and [base note].
+[Identity] [What kind of woman this is for]
 
-```
-Fitted through the waist and hip, relaxed from mid-thigh. 
-The fabric holds without pulling — no lining required.
-```
-```
-The waistband sits high and stays there. No rolling, no adjusting.
-```
-```
-Lightweight enough for all-day wear. Structured enough to carry itself.
-```
+Floral Oriental:
+The scent you reach for when you want to feel like the most intentional version of yourself. [Name] opens with bergamot and soft peony, deepens into jasmine and amber, and closes with warm sandalwood that stays close to skin all day. For the woman whose entrance is quiet — but remembered.
+
+Fresh Musk:
+Clean isn't cold when it's done this way. White tea and cashmere on the surface, warm skin underneath. It smells like the version of you that has everything handled.
+
+Gourmand / Warm:
+The scent of evenings that feel like yours. Vanilla, tonka bean, a thread of caramel — stays on skin the way a memory does. For women who romanticize their own life.
 
 ---
 
-### Styling Direction
-Give her 1–2 specific directions. Not "style with anything!" — curated suggestions that reflect the brand's eye.
+## FASHION DESCRIPTIONS
 
-```
-Wear with strappy heels and a clutch for evening.
-Pair with white trainers and a blazer for the daytime version.
-```
-```
-Style the set together for the full look.
-Or wear the top with denim — both answers are right.
-```
+Short-Form Template:
+[Desire] Getting dressed [should feel like] [emotional purpose].
+[Product] [Name] is a [what it is] — [key detail], [key detail], [key detail].
+[Identity] For the woman who [who she is / how she moves].
 
----
+Slip Dress:
+Getting dressed for yourself is different from getting dressed for the world. [Dress Name] is a minimal slip silhouette — bias-cut, adjustable straps. The kind of dress that does the work while you do everything else.
 
-### Product Details (Bullet Format)
-This section is functional. Keep it scannable.
+Blazer:
+The piece that says more than you do. [Blazer Name] is a tailored blazer — structured shoulders, clean lapel, unlined for weight you barely feel. Wears alone. Wears over everything equally well.
 
-```
-- Fabric: 95% Polyester, 5% Elastane
-- Fit: True to size — size up if between sizes
-- Length: Midi (hits below knee on 5'6")
-- Closure: Concealed back zip
-- Care: Hand wash cold, lay flat to dry
-- Model: Wearing size M, height 5'7"
-```
+Midi Skirt:
+Feminine is not the same as fragile. [Skirt Name] is a bias-cut midi — it moves with you. That's the point.
 
-Include only what's genuinely useful. Do not add bullets to pad length.
+Coat:
+The coat that changed what leaving the house felt like. The kind of outerwear that makes you reach for it every time.
 
 ---
 
-## 04 — Tone Calibration by Product Type
+## HAIRCARE DESCRIPTIONS
 
-| Product Type | Tone | Key Focus |
-|---|---|---|
-| Bodysuits | Functional confidence | Fit precision, no-fuss wear |
-| Dresses | Elevated, desire-building | Silhouette, occasion, feeling |
-| Co-ord sets | Effortless, editorial | Versatility, the full look |
-| Trousers / bottoms | Practical authority | Fit, movement, pairing |
-| Tops | Direct, versatile | What it goes with, what it does |
-| Accessories | Considered, finishing | The detail that completes |
-| Occasionwear | Elevated, certain | The moment she's dressing for |
+Short-Form Template:
+[Desire] Hair that [emotional result].
+[Product] [Name] is a [type] with [key ingredient] — [what it does].
+[Identity] Because [why her hair deserves this].
 
----
+Hair Mask:
+The reset that takes 20 minutes and lasts all week. [Mask Name] restores moisture from the inside, leaves softness you can feel on the outside. Because hair this healthy doesn't need to work that hard.
 
-## 05 — Length Guide
-
-| Product Category | Target Length | Notes |
-|---|---|---|
-| Core basics (bodysuit, simple top) | 60–80 words + bullets | Short. Confident. Done. |
-| Dresses | 80–120 words + bullets | More styling context |
-| Co-ords / sets | 80–120 words + bullets | Address both pieces |
-| Occasionwear | 100–140 words + bullets | More atmosphere, more detail |
-| Accessories | 40–60 words + bullets | Brief — product sells itself visually |
-
-**Hard rule:** No description exceeds 150 words of prose. Details go in the bullet list.
+Leave-In Conditioner:
+The step between wash and style that changes the whole outcome. Detangles, protects against heat, adds softness without buildup. Spray on. Notice what changed.
 
 ---
 
-## 06 — Words That Earn Their Place
+## LIFESTYLE / HOME
 
-Use these. They carry weight without overreaching.
+Candle:
+The fastest way to change the feeling of a room. [Name] is hand-poured with [scent notes] — [burn time]. Not just a candle. An atmosphere you light on purpose.
 
-| Word/Phrase | Why It Works |
-|---|---|
-| Intentional | Signals that the design was considered |
-| Earns its place | Value language — not trend, not impulse |
-| Works hard | Practical luxury |
-| Precise | Feminine confidence |
-| Holds | Physical reliability |
-| Quietly | Understated excellence |
-| Either way | Gives her control |
-| Stays there | Practical trust |
+Silk Pillowcase:
+Eight hours of skin contact with something that actually cares back. Reduces friction, maintains moisture, stays cool through the night. What you sleep on is part of how you wake up.
 
 ---
 
-## 07 — Words to Avoid
+## MISS.PRINCESS DESCRIPTIONS
 
-| Word / Phrase | Problem |
-|---|---|
-| Amazing / stunning / gorgeous | Generic — every brand says this |
-| Perfect for any occasion | Lazy — be specific |
-| Must-have | Pressure language — not brand voice |
-| Luxurious | Overused — show it, don't say it |
-| Flattering | Vague — describe the actual fit |
-| Beautiful | Empty without specifics |
-| Obsessed | Too casual for MvQueen (acceptable for miss.queen only) |
-| Super soft / super comfortable | "Super" is filler |
-| You'll love | Presumptuous |
-| Don't miss | Urgency without basis |
+Same three-part structure. Lighter, more playful, trend-aware energy.
+
+Lip Gloss:
+The gloss that makes the whole look. Non-sticky, plumping, wears all day without sliding. For the girl who treats every Tuesday like a photo opportunity.
+
+Hair Clip Set:
+The kind of detail that takes a whole look from fine to actually cute. Lightweight, strong hold, won't crease. Stack them. Make the aesthetic.
 
 ---
 
-## 08 — miss.queen Description Adjustments
+## MISTAKES TO AVOID
 
-miss.queen descriptions carry the same structure but with lighter energy. The hook can be more direct and fun. The language can be slightly more casual.
-
-| Element | MvQueen | miss.queen |
-|---|---|---|
-| Hook tone | Composed, certain | Direct, energetic |
-| Styling direction | Curated, editorial | Fun, immediate |
-| Adjective range | Intentional, precise, composed | Clean, fresh, easy, fun |
-| Length | Same | Same — precision still applies |
-
-**miss.queen example:**
-```
-Your new favorite going-out top just arrived.
-
-The [Product Name] fits close through the body with a slight stretch — 
-enough to move, not enough to shift. Wear it tucked into a mini 
-or let it sit at the hip with wide-leg trousers.
-
-Either way, it works.
-
-- Fabric: 92% Nylon, 8% Spandex
-- Fit: Fitted — true to size
-- Care: Machine wash cold
-- Model: Wearing size S, height 5'5"
-```
+❌ Generic opening: "Introducing our new hydrating serum..." → Lead with the feeling, not the announcement
+❌ Ingredient lists without context: "Contains hyaluronic acid." → "[Ingredient] for deep hydration — does what a week of rest would."
+❌ Describing appearance instead of experience: "Beautiful pink packaging." → "The kind of packaging that makes throwing it away feel like a decision."
+❌ Closing on the product: "...perfect addition to your skincare routine." → "For women who treat self-care as a standard, not a reward."
+❌ Overusing "emotional" and "luxury" together → Show the luxury through specific sensory detail.
 
 ---
 
-## 09 — Full Description Example (MvQueen)
-
-**Product:** The Reign Midi Dress — Black
-
-```
-Not trying to be a statement. Just quietly is one.
-
-The Reign Midi is a fitted-waist dress cut from stretch crepe — 
-structured enough to hold its shape, soft enough to wear all day. 
-It skims the body through the waist and hip before falling straight 
-from the knee. Clean lines. No excess.
-
-Wear it with pointed mules and a structured bag for evening. 
-Or dress it back with white trainers — the silhouette carries both.
-
-- Fabric: 96% Polyester, 4% Elastane
-- Fit: Fitted — true to size, size up for more ease
-- Length: Midi (below knee on 5'6")
-- Closure: Concealed back zip
-- Care: Hand wash cold, hang to dry
-- Model: Wearing size M, height 5'7"
-```
-
----
-
-## 10 — Version Control
-
-| Version | Date | Change |
-|---|---|---|
-| 1.0 | Phase 2 Build | Purpose-built — not extracted from Brand Bible |
-
----
-
-*This file is used by all copywriters, VAs, and AI agents producing product descriptions. No exceptions.*
+*Pairs with CTA_Library.md, Writing_Rules.md, and Forbidden_Words.md.*

@@ -1,36 +1,10 @@
-# 👑 MVQUEEN_OS — SESSION CONTEXT FILE
-# Upload this file at the start of every Claude session.
-
+# MVQUEEN_OS SESSION CONTEXT
+Brand: MVQUEEN | Sister: Miss.Princess | Phase 1-2 COMPLETE | Phase 3 IN PROGRESS
 ---
-
-## WHO I AM
-- Brand: MVQUEEN ("Most Valuable Queen")
-- Sister Brand: Miss.Princess
-- Positioning: Accessible luxury — emotional elevation, not status performance
-- Stage: Building OS, pre-launch, Shopify-based e-commerce
-- Tools: Obsidian (vault), Termux (Android), Pydroid3, Claude AI
-
-## PHASE STATUS
-- Phase 1: COMPLETE | Phase 2: COMPLETE | Phase 3: COMPLETE
-- Phase 4: COMPLETE — AI Systems built
-- Phase 5: IN PROGRESS — Shopify and Operations
-- Production Plan: MVQUEEN_PRODUCTION_PLAN.md
-
-## SOURCE OF TRUTH
-- Brand Bible: 01_Brand_Strategy/Brand_Bible.md
-- Master Doctrine: 00_Doctrine/master_doctrine.md
-- Brand Constitution: 00_Doctrine/brand_constitution.md
-
----
-
----
-
-## FILE CONTENTS
-
 
 ---
 ### FILE: 00_Doctrine/master_doctrine.md
-**STATUS: REBUILT — 9599 bytes, 217 lines**
+**STATUS: REBUILT — 9599 bytes**
 # 👑 MVQUEEN OS — Master Doctrine
 ### The Law of the Operating System
 
@@ -252,7 +226,7 @@ Minor additions are made directly. Major structural changes require Brand Bible 
 
 ---
 ### FILE: 00_Doctrine/brand_constitution.md
-**STATUS: REBUILT — 11476 bytes, 211 lines**
+**STATUS: REBUILT — 11476 bytes**
 # 👑 MVQUEEN — Brand Constitution
 ### The Non-Negotiables
 
@@ -468,7 +442,7 @@ It is reviewed at each major brand evolution milestone and updated only when the
 
 ---
 ### FILE: 00_Doctrine/luxury_philosophy.md
-**STATUS: REBUILT — 1832 bytes, 42 lines**
+**STATUS: REBUILT — 1832 bytes**
 # 🌸 MVQUEEN — Luxury Philosophy
 
 ---
@@ -514,155 +488,8 @@ If no — it goes back.
 ---
 
 ---
-### FILE: 00_Doctrine/feminine_identity_framework.md
-**STATUS: REBUILT — 2867 bytes, 84 lines**
-# 🌸 MVQUEEN — Feminine Identity Framework
-
----
-
-## Purpose
-
-Define how MVQUEEN understands, honors, and serves feminine identity — ensuring the brand never reduces femininity to aesthetics, stereotypes, or performance.
-
-This framework governs how femininity shows up in products, copy, marketing, and community.
-
----
-
-## What Femininity Is at MVQUEEN
-
-Femininity at MVQUEEN is not:
-- A look to perform
-- A set of behaviors to adopt
-- A trend to follow
-- A weakness to apologize for
-- A limitation on what a woman can be
-
-Femininity at MVQUEEN is:
-- A quality of presence — the ability to bring warmth, beauty, and intention to any space
-- A form of intelligence — reading the room, reading relationships, reading yourself
-- A source of strength — the discipline to remain soft when hardness would be easier
-- A personal expression — unique to each woman, not prescriptive
-
-**The MVQUEEN definition:** Femininity is the quality of a woman who is fully herself — present, intentional, warm, and unapologetic about the softness she carries.
-
----
-
-## How Feminine Identity Shows Up in the Brand
-
-### In Products
-Every product is designed to serve real women — not an idealized version.
-Products address real needs, real skin types, real hair textures, real life.
-Never: products that imply a woman needs to change to be worthy of luxury.
-Always: products that honor the woman she already is.
-
-### In Copy
-Language never implies inadequacy.
-Language never suggests she is incomplete without the product.
-Language invites — it does not shame.
-
-**Wrong:** *"Finally fix your [problem]"*
-**Right:** *"For the skin that deserves to feel this way"*
-
-### In Marketing
-Campaigns never use comparison to drive desire.
-Campaigns never leverage insecurity.
-Campaigns invite women into an identity they already have or are growing into.
-
-### In Community
-The MVQUEEN community is not built around aspiring to a particular look.
-It is built around sharing a philosophy — choosing softness, choosing intention, choosing beauty as restoration.
-
----
-
-## Feminine Identity Across Personas
-
-| Persona | How She Expresses Femininity |
-|---------|------------------------------|
-| Soft Dreamer | Aesthetics, softness, self-expression through beauty |
-| Becoming Woman | Growth, intentionality, investing in herself |
-| Elevated Minimalist | Restraint, quality, editing to what matters |
-| Feminine Escapist | Restoration, sanctuary, beauty as refuge |
-
-MVQUEEN content speaks to all four expressions — never prescribing one as more valid.
-
----
-
-## The Feminine Identity Standard
-
-Before publishing any content, ask:
-
-*Does this honor the full range of what feminine identity can be?*
-*Does this invite — rather than prescribe?*
-*Does this make a woman feel more herself — or less?*
-
----
-*MVQUEEN Feminine Identity Framework — Operational Document*
-
----
----
----
-
----
-### FILE: 00_Doctrine/emotional_intelligence_framework.md
-**STATUS: REBUILT — 1790 bytes, 53 lines**
-# 🏛️ MVQUEEN — Emotional Intelligence Framework
-
----
-
-## Purpose
-
-Define how emotional intelligence operates as a structural principle across every MVQUEEN system — from product development to AI outputs to customer interactions.
-
-This is not philosophy. This is architecture.
-Emotional intelligence is how MVQUEEN is built — not just how it speaks.
-
----
-
-## What Emotional Intelligence Means at MVQUEEN
-
-It means building systems that:
-- Recognize the whole woman — not just the consumer
-- Respond to what she actually needs — not what is easiest to deliver
-- Preserve her dignity in every interaction
-- Create safety rather than pressure
-- Serve emotional wellbeing rather than extract attention
-
----
-
-## EI Applied Across Systems
-
-| System | How EI Shows Up |
-|--------|----------------|
-| Product development | Products built for real benefit, not trend-chasing |
-| Copywriting | Language that honors — never manipulates |
-| Customer service | Resolution over policy defense |
-| Marketing | Resonance over pressure tactics |
-| AI systems | Human warmth preserved in automated outputs |
-| Community | Belonging over consumption metrics |
-| Pricing | Value framing over discount desperation |
-| Returns | Customer relationship over short-term revenue |
-
----
-
-## Emotional Intelligence Standards
-
-**In copy:** Lead with resonance. Never exploit insecurity.
-**In marketing:** Create desire through truth. Never manufacture anxiety.
-**In service:** Resolve generously. Never hide behind policy.
-**In AI:** Preserve warmth at scale. Never let automation feel cold.
-**In community:** Build belonging. Never reduce to audience metrics.
-**In product:** Deliver real value. Never over-promise.
-
----
-*MVQUEEN Emotional Intelligence Framework — Operational Document*
-
----
----
----
-
----
 ### FILE: 00_Doctrine/ai_governance.md
-**STATUS: REBUILT — 7208 bytes, 410 lines**
+**STATUS: REBUILT — 7208 bytes**
 # MVQUEEN — AI Governance Framework
 
 ---
@@ -1076,436 +903,8 @@ AI Governance Active
 # End of Document
 
 ---
-### FILE: 00_Doctrine/master_workflow_system.md
-**STATUS: REBUILT — 7678 bytes, 423 lines**
-# MVQUEEN — Master Workflow System
-
----
-
-# Document Metadata
-
-## System Information
-- Document Name: Master Workflow System
-- System Layer: Workflow Execution Infrastructure
-- Authority Level: Supreme
-- Status: Active
-- AI Compatible: Yes
-- Automation Compatible: Yes
-- Shopify Compatible: Yes
-- Multi-Agent Compatible: Yes
-
----
-
-# Workflow Purpose
-
-The MVQUEEN Master Workflow System exists to:
-- operationalize doctrine
-- coordinate ecosystem execution
-- standardize workflows
-- improve orchestration quality
-- support scalable execution
-- improve automation readiness
-- maintain ecosystem consistency
-- centralize operational logic
-
-This framework defines:
-- operational workflows
-- execution pipelines
-- publishing systems
-- AI workflow coordination
-- Shopify operational systems
-- SEO execution systems
-- automation sequencing
-- orchestration architecture
-
----
-
-# Core Workflow Philosophy
-
-MVQUEEN workflows should remain:
-- modular
-- scalable
-- doctrine-governed
-- semantically organized
-- emotionally intelligent
-- automation-compatible
-- observable
-
-The ecosystem rejects:
-- chaotic execution
-- disconnected systems
-- random workflows
-- operational inconsistency
-- fragmented publishing
-
----
-
-# Enterprise Workflow Hierarchy
-
-## Workflow Layers
-
-The ecosystem operates through:
-
-1. Doctrine Layer
-2. Retrieval Layer
-3. AI Orchestration Layer
-4. Workflow Execution Layer
-5. Content Production Layer
-6. Shopify Publishing Layer
-7. Analytics & Optimization Layer
-
-Each workflow must inherit:
-- doctrine
-- emotional intelligence
-- semantic identity
-- luxury philosophy
-
----
-
-# Daily Operational Workflow
-
-## Daily Workflow Sequence
-
-### Phase 1 — System Initialization
-Purpose:
-- initialize orchestration systems
-- load doctrine
-- load semantic identity
-- load retrieval memory
-
-Systems:
-- Ollama
-- vector database
-- orchestration layer
-- memory systems
-
----
-
-### Phase 2 — Workflow Coordination
-Purpose:
-- assign tasks
-- route AI systems
-- validate dependencies
-- initialize pipelines
-
-Tasks:
-- content queue generation
-- SEO queue generation
-- Shopify publishing queue
-- analytics review
-
----
-
-### Phase 3 — Content Production
-Purpose:
-- generate ecosystem content
-- maintain semantic consistency
-- produce SEO assets
-
-Content Types:
-- product descriptions
-- collections
-- landing pages
-- blogs
-- FAQs
-- metadata
-- social captions
-
-All content must inherit:
-- content_governance_framework.md
-- seo_semantic_framework.md
-- semantic_identity_system.md
-
----
-
-### Phase 4 — Validation Layer
-Purpose:
-- validate AI outputs
-- validate doctrine alignment
-- validate SEO quality
-- validate emotional consistency
-
-Validation Rules:
-- emotional intelligence check
-- luxury tone check
-- feminine identity check
-- semantic consistency check
-- EEAT optimization check
-
----
-
-### Phase 5 — Shopify Deployment
-Purpose:
-- publish approved content
-- synchronize storefront systems
-- update SEO metadata
-
-Systems:
-- products
-- collections
-- blogs
-- metadata
-- navigation systems
-
----
-
-### Phase 6 — Analytics Collection
-Purpose:
-- monitor performance
-- collect behavioral data
-- improve orchestration
-
-Metrics:
-- conversion performance
-- SEO rankings
-- engagement metrics
-- retention metrics
-- workflow efficiency
-
----
-
-### Phase 7 — Optimization Layer
-Purpose:
-- improve workflows
-- optimize retrieval
-- improve orchestration quality
-
-Optimization Areas:
-- prompts
-- embeddings
-- SEO systems
-- workflow efficiency
-- content quality
-
----
-
-# AI Workflow Architecture
-
-## AI Workflow Standards
-
-AI systems should:
-- retrieve doctrine first
-- retrieve semantic identity second
-- retrieve task context third
-- generate outputs fourth
-- validate outputs fifth
-
-This prevents:
-- drift
-- inconsistency
-- emotional fragmentation
-- semantic instability
-
----
-
-## Multi-Agent Workflow Coordination
-
-Agents operate through:
-- orchestration_philosophy.md
-- memory_architecture.md
-- agent_behavior_framework.md
-
-Agent Responsibilities:
-- SEO Agent
-- Content Agent
-- Shopify Agent
-- Analytics Agent
-- Workflow Agent
-- Retrieval Agent
-
-All agents remain:
-- modular
-- doctrine-aligned
-- semantically synchronized
-
----
-
-# Content Pipeline System
-
-## Product Content Workflow
-
-Workflow:
-1. Retrieve product doctrine
-2. Retrieve semantic keywords
-3. Retrieve SEO requirements
-4. Generate emotional positioning
-5. Generate optimized content
-6. Validate EEAT standards
-7. Publish to Shopify
-
----
-
-## Blog Workflow
-
-Workflow:
-1. Topic clustering
-2. Search intent analysis
-3. Semantic keyword mapping
-4. Doctrine retrieval
-5. Content generation
-6. SEO validation
-7. Publishing orchestration
-
----
-
-## Collection Workflow
-
-Workflow:
-1. Collection positioning
-2. Semantic identity retrieval
-3. Emotional positioning
-4. SEO optimization
-5. Internal linking generation
-6. Shopify publishing
-
----
-
-# SEO Workflow System
-
-## SEO Operational Pipeline
-
-The SEO workflow should:
-- map topical clusters
-- optimize semantic relevance
-- improve internal linking
-- strengthen EEAT
-- improve search intent matching
-
-SEO Systems:
-- semantic keyword engine
-- topical authority engine
-- metadata engine
-- schema generation
-- internal linking engine
-
----
-
-# Shopify Workflow System
-
-## Shopify Operations Workflow
-
-Shopify workflows should manage:
-- product synchronization
-- collection updates
-- SEO deployment
-- content publishing
-- storefront optimization
-
-All Shopify systems should remain:
-- doctrine-governed
-- semantically organized
-- automation-compatible
-
----
-
-# Retrieval Workflow System
-
-## Retrieval Sequence
-
-Retrieval systems should prioritize:
-1. Doctrine
-2. Semantic Identity
-3. Emotional Intelligence
-4. Workflow Context
-5. Dynamic Inputs
-
-This improves:
-- consistency
-- orchestration quality
-- AI intelligence
-- semantic continuity
-
----
-
-# Automation Workflow System
-
-## Automation Standards
-
-Automation workflows should:
-- remain observable
-- remain modular
-- remain doctrine-aligned
-- remain scalable
-
-Automation should:
-- reduce repetitive labor
-- improve orchestration
-- improve operational intelligence
-
----
-
-## Automation Safety
-
-Automation should NEVER:
-- bypass doctrine
-- override emotional systems
-- publish unchecked outputs
-- create semantic drift
-
----
-
-# Enterprise Scaling Workflow
-
-## Scaling Standards
-
-As MVQUEEN scales:
-- workflows must remain modular
-- orchestration must remain centralized
-- doctrine inheritance must remain enforced
-- retrieval systems must remain stable
-
-Scaling should improve:
-- efficiency
-- orchestration
-- personalization
-- automation intelligence
-
----
-
-# Future Workflow Compatibility
-
-## Future Infrastructure Compatibility
-
-This workflow system is designed for:
-- autonomous AI systems
-- local AI infrastructure
-- enterprise orchestration
-- distributed workflows
-- semantic commerce systems
-- AI-native ecommerce operations
-
-The ecosystem is compatible with:
-- Ollama
-- vector databases
-- RAG systems
-- autonomous content systems
-- advanced orchestration layers
-
----
-
-# Strategic Principle
-
-The MVQUEEN Master Workflow System exists to operationalize doctrine-governed emotionally intelligent feminine luxury infrastructure through scalable workflow orchestration architecture designed to coordinate AI systems, content production, Shopify operations, semantic retrieval, SEO execution, automation systems, and enterprise-scale ecosystem intelligence.
-
----
-
-# Workflow Compression
-
-The MVQUEEN workflow system governs scalable AI-native ecosystem execution through doctrine-aligned workflow orchestration architecture designed to coordinate content systems, SEO pipelines, Shopify publishing, AI agents, semantic retrieval, automation systems, and enterprise operational intelligence.
-
----
-
-# Status
-
-Master Workflow System Active
-
----
-
-# End of Document
-
----
 ### FILE: 01_Brand_Strategy/Brand_Bible.md
-**STATUS: REBUILT — 289457 bytes, 11713 lines**
+**STATUS: REBUILT — 289457 bytes**
 # 👑 MVQUEEN BRAND BIBLE
 
 ---
@@ -13223,7 +12622,7 @@ This is MVQUEEN.
 
 ---
 ### FILE: 01_Brand_Strategy/USP.md
-**STATUS: REBUILT — 6207 bytes, 117 lines**
+**STATUS: REBUILT — 6207 bytes**
 # 👑 MVQUEEN — Unique Selling Proposition
 
 ---
@@ -13345,7 +12744,7 @@ Together, they cover every woman — at every stage, in every mood.
 
 ---
 ### FILE: 01_Brand_Strategy/Elevator_Pitch.md
-**STATUS: REBUILT — 4970 bytes, 81 lines**
+**STATUS: REBUILT — 4970 bytes**
 # 👑 MVQUEEN — Elevator Pitch Suite
 
 ---
@@ -13431,7 +12830,7 @@ In a 10-second pitch, MVQUEEN speaks alone. In a 30-second or 60-second pitch ab
 
 ---
 ### FILE: 01_Brand_Strategy/Slogans.md
-**STATUS: REBUILT — 3978 bytes, 174 lines**
+**STATUS: REBUILT — 3978 bytes**
 # 👑 MVQUEEN — Slogan Suite
 
 ---
@@ -13610,7 +13009,7 @@ Most emotionally complete. Most brand-accurate. Versatile across fashion, beauty
 
 ---
 ### FILE: 01_Brand_Strategy/Taglines.md
-**STATUS: REBUILT — 4179 bytes, 129 lines**
+**STATUS: REBUILT — 4179 bytes**
 # 👑 MVQUEEN — Tagline Suite
 
 ---
@@ -13744,7 +13143,7 @@ The primary tagline — *"Where femininity meets elevation"* — passes all four
 
 ---
 ### FILE: 01_Brand_Strategy/Brand_Essence.md
-**STATUS: REBUILT — 5692 bytes, 100 lines**
+**STATUS: REBUILT — 5692 bytes**
 # 👑 MVQUEEN — Brand Essence
 ### Five Framings of the Core Truth
 
@@ -13848,8 +13247,197 @@ If no — it needs to be reworked until it is.
 
 
 ---
+### FILE: 01_Brand_Strategy/Brand_Positioning.md
+**STATUS: REBUILT — 5244 bytes**
+# 📍 MVQUEEN — Brand Positioning
+
+---
+
+## Purpose
+
+The operational positioning document for MVQUEEN — the market position, competitive landscape, positioning statements for different contexts, and the rules that protect the position as the brand scales.
+
+---
+
+## The Positioning Statement
+
+**For women who choose softness intentionally, MVQUEEN is the luxury feminine brand that delivers beauty, fashion, and lifestyle products built to restore — at a price that feels earned, not exclusionary.**
+
+---
+
+## Market Position Map
+
+```
+MASS MARKET                    ACCESSIBLE LUXURY                    ULTRA LUXURY
+(Under $25/product)            ($25–$150/product)                  ($150+/product)
+
+[Target, Amazon]               [MVQUEEN ← HERE]                   [Chanel, La Mer]
+Generic, volume-focused        Premium quality, warm luxury        Cold prestige, heritage
+No emotional philosophy        Conviction-driven, AI-native        Traditional brand equity
+Trend-dependent                Identity-driven                     Legacy-dependent
+```
+
+MVQUEEN occupies a specific, defensible position:
+- **Above** mass market on quality, philosophy, and experience
+- **Below** traditional luxury on price — intentionally accessible
+- **Distinct from** both on emotional intelligence and AI-native infrastructure
+
+---
+
+## The Three Positioning Pillars
+
+### Pillar 01 — Warm Luxury
+Traditional luxury is cold — aspirationally distant, designed to make you feel the gap between yourself and the brand. MVQUEEN luxury is warm — designed to make her feel like it was made for her life.
+
+**Proof points:** Accessible pricing, human brand voice, generous customer service, community over audience
+
+### Pillar 02 — Conviction-Driven
+Most brands are trend-driven. MVQUEEN is conviction-driven — built around a single, consistent belief that softness is strength. This gives the brand immunity to trend cycles and builds compounding brand equity.
+
+**Proof points:** Brand manifesto, consistent voice across years, doctrine-first decision making
+
+### Pillar 03 — AI-Native From the Ground Up
+Not a brand that added AI to its stack. A brand built with AI as infrastructure — enabling the quality consistency, content volume, and operational precision of a much larger team from day one.
+
+**Proof points:** MVQUEEN OS, AI prompt library, agent systems, automated workflows all governed by brand doctrine
+
+---
+
+## Competitive Differentiation
+
+| Attribute | Mass DTC Brands | Traditional Luxury | MVQUEEN |
+|-----------|----------------|------------------|---------|
+| Price | Low | High | Accessible luxury |
+| Philosophy | None/trend | Heritage | Conviction-driven |
+| Customer view | Consumer data | Aspiration target | Whole woman |
+| AI use | Marketing tool | Minimal | Core infrastructure |
+| Voice | Generic | Cold prestige | Warm confidence |
+| Community | Audience | Aspiration | Identity tribe |
+| Emotional intelligence | Marketing language | Performance | Architecture |
+
+---
+
+## Positioning Statements by Context
+
+### For Customers
+*"Luxury made for your life — not someone else's. MVQUEEN is beauty, fashion, and lifestyle built around the conviction that softness is strength and you deserve products that actually restore."*
+
+### For Press
+*"MVQUEEN is an AI-native accessible luxury brand in the feminine beauty and lifestyle space, serving women who reject the false choice between affordable and aspirational."*
+
+### For Partners / Wholesale
+*"MVQUEEN is a conviction-driven accessible luxury brand with a loyal community of women who purchase intentionally. Our customers over-index on repeat purchase rate and have high average order values."*
+
+### For Investors
+*"MVQUEEN occupies the underserved gap between mass-market DTC beauty and traditional luxury houses — AI-native infrastructure from day one, doctrine-governed brand that compounds rather than trends."*
+
+### For Influencer / Creator Briefs
+*"MVQUEEN is a luxury feminine brand built for women who choose softness on purpose. Our community values intentional living, quality over quantity, and beauty as a ritual — not a routine."*
+
+---
+
+## Positioning Protection Rules
+
+The position is only valuable if it is maintained consistently.
+
+```
+Rule 1: Never discount aggressively — luxury positioning is destroyed by flash sales.
+Rule 2: Never chase trend cycles that pull away from the core conviction.
+Rule 3: Never market through comparison or insecurity — it contradicts the whole woman value.
+Rule 4: Never over-distribute — ubiquity destroys luxury positioning.
+Rule 5: Every major decision is tested against the positioning before proceeding.
+```
+
+---
+
+## Positioning Health Check (Quarterly)
+
+```
+□ Is the brand still occupying the warm luxury space — or drifting toward mass market?
+□ Is the conviction still visible in recent content — or has it been diluted?
+□ Is the price architecture still accessible luxury — or has discounting eroded it?
+□ Is the community still identity-based — or has it become purely transactional?
+□ Do new products fit the positioning — or are we filling catalog for volume?
+```
+
+---
+*MVQUEEN Brand Positioning — Operational Document*
+*Positioning is an asset. Protect it like one.*
+
+---
+### FILE: 01_Brand_Strategy/Brand_Story.md
+**STATUS: REBUILT — 5961 bytes**
+# 📖 MVQUEEN — Brand Story
+
+---
+
+## Purpose
+
+The MVQUEEN brand story in four formats — each complete, each immediately deployable in its intended context.
+
+---
+
+## Format 01 — The One Paragraph (150 words)
+*For: Instagram bio link pages, press kits, partnership intros, AI context*
+
+MVQUEEN was built on one conviction: softness is strength. In a world that rewards hardness, competition, and constant performance — MVQUEEN exists for the women who choose something different. Women who want beauty to restore them, not exhaust them. Women who want luxury to feel warm and accessible, not cold and exclusionary. Women who are building intentional lives and want a brand that understands that. Every product is sourced for quality that honors real women's real lives. Every word is written with emotional intelligence. Every system — including the AI infrastructure that powers the brand — is governed by the same conviction: that femininity is presence, that softness is power, and that women deserve beauty that actually gives something back. MVQUEEN. Soft. Intentional. Elevated. Alive.
+
+---
+
+## Format 02 — The Three Paragraphs (300 words)
+*For: About page, email welcome sequence, brand decks*
+
+There's a version of beauty culture that tells women they are always in the process of being fixed. Always one product away from perfect skin. Always one trend away from the right look. Always performing, optimizing, comparing — beauty as labor, luxury as a status game, self-care as another item on the to-do list.
+
+MVQUEEN was built against that version.
+
+It was built on a simple conviction: softness is strength. That femininity is not a performance to maintain — it is a presence to inhabit. That beauty should restore a woman, not exhaust her. That luxury should feel warm and accessible, not cold and exclusionary. The women MVQUEEN was built for are not trying to become someone else. They are becoming more themselves — building lives that feel as beautiful as they look, choosing softness not because it is easy, but because they understand it is one of the most sophisticated things a woman can carry. Every product is sourced for how it restores. Every word is written to honor, not flatter. Every system is built to serve her fully — not just convert her once. MVQUEEN is the brand for that woman.
+
+---
+
+## Format 03 — The Extended Version (600 words)
+*For: Full About page, press features, long-form brand content*
+
+There's something quietly radical about choosing softness.
+
+Not softness as passivity — but softness as a deliberate orientation toward life. The choice to move with intention rather than urgency. To treat beauty as a ritual rather than an obligation. To want luxury that feels warm and human rather than cold and aspirational. To decide that how you care for yourself actually matters — and to stop apologizing for that conviction.
+
+Modern life has made beauty exhausting. Not in theory — in practice. The twelve-step routine that takes forty minutes and still leaves skin feeling like it's fighting something. The trend cycle that demands you start over every season. The marketing that speaks to every insecurity you have and calls it self-care. The luxury brands that make you feel like you need to earn your way past a velvet rope before you deserve to feel elevated.
+
+MVQUEEN was built in direct opposition to all of that.
+
+It started with a question: what would luxury feminine beauty look like if it were built for real women's real mornings — not a photoshoot? What if the products actually worked the way they were described? What if the copy didn't make you feel like a problem that needed solving? What if the brand saw you as a whole person — not just a conversion opportunity?
+
+The answer became MVQUEEN.
+
+Every product in the catalog was sourced with one test: does this restore? Not just moisturize or cleanse or style — but restore. Does it give something back? Does it make the ritual feel worth having? Does it feel as luxurious as it costs?
+
+Every word is written with the same intention. The voice is warm because coldness is a luxury affectation we reject. It is specific because vagueness is a way of avoiding accountability. It is honest because the women MVQUEEN serves are intelligent — and they can tell when they are being flattered instead of respected.
+
+The brand was built AI-native from day one — not because AI is a trend, but because it allows a brand this focused on quality to operate with the consistency of a much larger team. The AI systems within MVQUEEN are governed by the same doctrine as everything else: they amplify emotional intelligence, they don't replace it. Every output passes a human review. Every prompt is locked to the brand voice. The warmth is not automated. It is protected.
+
+MVQUEEN is for the woman who is becoming. Not finished. Not trying to be someone else. Building — carefully, intentionally, with beautiful things around her that reflect who she is and who she is growing into.
+
+She is the reason this brand exists. It was built for her — all of it.
+
+---
+
+## Format 04 — The Press Version (100 words)
+*For: Press releases, journalist queries, media kits*
+
+MVQUEEN is an AI-native luxury feminine ecommerce brand offering beauty, fashion, haircare, accessories, and fragrance for women who choose softness intentionally. Founded on the conviction that softness is strength and beauty should restore rather than exhaust, MVQUEEN occupies the accessible luxury space between mass-market DTC brands and traditional luxury houses. The brand combines premium product quality, emotionally intelligent brand communication, and AI-native operational infrastructure. Sister brand miss.queen targets an adjacent positioning with shared infrastructure. MVQUEEN is available exclusively through mvqueen.com.
+
+---
+*MVQUEEN Brand Story — Four Formats*
+*Deploy the appropriate format. All four express the same truth.*
+
+---
+---
+---
+
+---
 ### FILE: 01_Brand_Strategy/Brand_Values.md
-**STATUS: REBUILT — 11473 bytes, 199 lines**
+**STATUS: REBUILT — 11473 bytes**
 # 👑 MVQUEEN — Brand Values
 ### The 11 Principles That Govern Everything
 
@@ -14052,197 +13640,8 @@ This is not the Brand Bible. This is not the Constitution. This file is the work
 
 
 ---
-### FILE: 01_Brand_Strategy/Brand_Positioning.md
-**STATUS: REBUILT — 5244 bytes, 113 lines**
-# 📍 MVQUEEN — Brand Positioning
-
----
-
-## Purpose
-
-The operational positioning document for MVQUEEN — the market position, competitive landscape, positioning statements for different contexts, and the rules that protect the position as the brand scales.
-
----
-
-## The Positioning Statement
-
-**For women who choose softness intentionally, MVQUEEN is the luxury feminine brand that delivers beauty, fashion, and lifestyle products built to restore — at a price that feels earned, not exclusionary.**
-
----
-
-## Market Position Map
-
-```
-MASS MARKET                    ACCESSIBLE LUXURY                    ULTRA LUXURY
-(Under $25/product)            ($25–$150/product)                  ($150+/product)
-
-[Target, Amazon]               [MVQUEEN ← HERE]                   [Chanel, La Mer]
-Generic, volume-focused        Premium quality, warm luxury        Cold prestige, heritage
-No emotional philosophy        Conviction-driven, AI-native        Traditional brand equity
-Trend-dependent                Identity-driven                     Legacy-dependent
-```
-
-MVQUEEN occupies a specific, defensible position:
-- **Above** mass market on quality, philosophy, and experience
-- **Below** traditional luxury on price — intentionally accessible
-- **Distinct from** both on emotional intelligence and AI-native infrastructure
-
----
-
-## The Three Positioning Pillars
-
-### Pillar 01 — Warm Luxury
-Traditional luxury is cold — aspirationally distant, designed to make you feel the gap between yourself and the brand. MVQUEEN luxury is warm — designed to make her feel like it was made for her life.
-
-**Proof points:** Accessible pricing, human brand voice, generous customer service, community over audience
-
-### Pillar 02 — Conviction-Driven
-Most brands are trend-driven. MVQUEEN is conviction-driven — built around a single, consistent belief that softness is strength. This gives the brand immunity to trend cycles and builds compounding brand equity.
-
-**Proof points:** Brand manifesto, consistent voice across years, doctrine-first decision making
-
-### Pillar 03 — AI-Native From the Ground Up
-Not a brand that added AI to its stack. A brand built with AI as infrastructure — enabling the quality consistency, content volume, and operational precision of a much larger team from day one.
-
-**Proof points:** MVQUEEN OS, AI prompt library, agent systems, automated workflows all governed by brand doctrine
-
----
-
-## Competitive Differentiation
-
-| Attribute | Mass DTC Brands | Traditional Luxury | MVQUEEN |
-|-----------|----------------|------------------|---------|
-| Price | Low | High | Accessible luxury |
-| Philosophy | None/trend | Heritage | Conviction-driven |
-| Customer view | Consumer data | Aspiration target | Whole woman |
-| AI use | Marketing tool | Minimal | Core infrastructure |
-| Voice | Generic | Cold prestige | Warm confidence |
-| Community | Audience | Aspiration | Identity tribe |
-| Emotional intelligence | Marketing language | Performance | Architecture |
-
----
-
-## Positioning Statements by Context
-
-### For Customers
-*"Luxury made for your life — not someone else's. MVQUEEN is beauty, fashion, and lifestyle built around the conviction that softness is strength and you deserve products that actually restore."*
-
-### For Press
-*"MVQUEEN is an AI-native accessible luxury brand in the feminine beauty and lifestyle space, serving women who reject the false choice between affordable and aspirational."*
-
-### For Partners / Wholesale
-*"MVQUEEN is a conviction-driven accessible luxury brand with a loyal community of women who purchase intentionally. Our customers over-index on repeat purchase rate and have high average order values."*
-
-### For Investors
-*"MVQUEEN occupies the underserved gap between mass-market DTC beauty and traditional luxury houses — AI-native infrastructure from day one, doctrine-governed brand that compounds rather than trends."*
-
-### For Influencer / Creator Briefs
-*"MVQUEEN is a luxury feminine brand built for women who choose softness on purpose. Our community values intentional living, quality over quantity, and beauty as a ritual — not a routine."*
-
----
-
-## Positioning Protection Rules
-
-The position is only valuable if it is maintained consistently.
-
-```
-Rule 1: Never discount aggressively — luxury positioning is destroyed by flash sales.
-Rule 2: Never chase trend cycles that pull away from the core conviction.
-Rule 3: Never market through comparison or insecurity — it contradicts the whole woman value.
-Rule 4: Never over-distribute — ubiquity destroys luxury positioning.
-Rule 5: Every major decision is tested against the positioning before proceeding.
-```
-
----
-
-## Positioning Health Check (Quarterly)
-
-```
-□ Is the brand still occupying the warm luxury space — or drifting toward mass market?
-□ Is the conviction still visible in recent content — or has it been diluted?
-□ Is the price architecture still accessible luxury — or has discounting eroded it?
-□ Is the community still identity-based — or has it become purely transactional?
-□ Do new products fit the positioning — or are we filling catalog for volume?
-```
-
----
-*MVQUEEN Brand Positioning — Operational Document*
-*Positioning is an asset. Protect it like one.*
-
----
-### FILE: 01_Brand_Strategy/Brand_Story.md
-**STATUS: REBUILT — 5961 bytes, 66 lines**
-# 📖 MVQUEEN — Brand Story
-
----
-
-## Purpose
-
-The MVQUEEN brand story in four formats — each complete, each immediately deployable in its intended context.
-
----
-
-## Format 01 — The One Paragraph (150 words)
-*For: Instagram bio link pages, press kits, partnership intros, AI context*
-
-MVQUEEN was built on one conviction: softness is strength. In a world that rewards hardness, competition, and constant performance — MVQUEEN exists for the women who choose something different. Women who want beauty to restore them, not exhaust them. Women who want luxury to feel warm and accessible, not cold and exclusionary. Women who are building intentional lives and want a brand that understands that. Every product is sourced for quality that honors real women's real lives. Every word is written with emotional intelligence. Every system — including the AI infrastructure that powers the brand — is governed by the same conviction: that femininity is presence, that softness is power, and that women deserve beauty that actually gives something back. MVQUEEN. Soft. Intentional. Elevated. Alive.
-
----
-
-## Format 02 — The Three Paragraphs (300 words)
-*For: About page, email welcome sequence, brand decks*
-
-There's a version of beauty culture that tells women they are always in the process of being fixed. Always one product away from perfect skin. Always one trend away from the right look. Always performing, optimizing, comparing — beauty as labor, luxury as a status game, self-care as another item on the to-do list.
-
-MVQUEEN was built against that version.
-
-It was built on a simple conviction: softness is strength. That femininity is not a performance to maintain — it is a presence to inhabit. That beauty should restore a woman, not exhaust her. That luxury should feel warm and accessible, not cold and exclusionary. The women MVQUEEN was built for are not trying to become someone else. They are becoming more themselves — building lives that feel as beautiful as they look, choosing softness not because it is easy, but because they understand it is one of the most sophisticated things a woman can carry. Every product is sourced for how it restores. Every word is written to honor, not flatter. Every system is built to serve her fully — not just convert her once. MVQUEEN is the brand for that woman.
-
----
-
-## Format 03 — The Extended Version (600 words)
-*For: Full About page, press features, long-form brand content*
-
-There's something quietly radical about choosing softness.
-
-Not softness as passivity — but softness as a deliberate orientation toward life. The choice to move with intention rather than urgency. To treat beauty as a ritual rather than an obligation. To want luxury that feels warm and human rather than cold and aspirational. To decide that how you care for yourself actually matters — and to stop apologizing for that conviction.
-
-Modern life has made beauty exhausting. Not in theory — in practice. The twelve-step routine that takes forty minutes and still leaves skin feeling like it's fighting something. The trend cycle that demands you start over every season. The marketing that speaks to every insecurity you have and calls it self-care. The luxury brands that make you feel like you need to earn your way past a velvet rope before you deserve to feel elevated.
-
-MVQUEEN was built in direct opposition to all of that.
-
-It started with a question: what would luxury feminine beauty look like if it were built for real women's real mornings — not a photoshoot? What if the products actually worked the way they were described? What if the copy didn't make you feel like a problem that needed solving? What if the brand saw you as a whole person — not just a conversion opportunity?
-
-The answer became MVQUEEN.
-
-Every product in the catalog was sourced with one test: does this restore? Not just moisturize or cleanse or style — but restore. Does it give something back? Does it make the ritual feel worth having? Does it feel as luxurious as it costs?
-
-Every word is written with the same intention. The voice is warm because coldness is a luxury affectation we reject. It is specific because vagueness is a way of avoiding accountability. It is honest because the women MVQUEEN serves are intelligent — and they can tell when they are being flattered instead of respected.
-
-The brand was built AI-native from day one — not because AI is a trend, but because it allows a brand this focused on quality to operate with the consistency of a much larger team. The AI systems within MVQUEEN are governed by the same doctrine as everything else: they amplify emotional intelligence, they don't replace it. Every output passes a human review. Every prompt is locked to the brand voice. The warmth is not automated. It is protected.
-
-MVQUEEN is for the woman who is becoming. Not finished. Not trying to be someone else. Building — carefully, intentionally, with beautiful things around her that reflect who she is and who she is growing into.
-
-She is the reason this brand exists. It was built for her — all of it.
-
----
-
-## Format 04 — The Press Version (100 words)
-*For: Press releases, journalist queries, media kits*
-
-MVQUEEN is an AI-native luxury feminine ecommerce brand offering beauty, fashion, haircare, accessories, and fragrance for women who choose softness intentionally. Founded on the conviction that softness is strength and beauty should restore rather than exhaust, MVQUEEN occupies the accessible luxury space between mass-market DTC brands and traditional luxury houses. The brand combines premium product quality, emotionally intelligent brand communication, and AI-native operational infrastructure. Sister brand miss.queen targets an adjacent positioning with shared infrastructure. MVQUEEN is available exclusively through mvqueen.com.
-
----
-*MVQUEEN Brand Story — Four Formats*
-*Deploy the appropriate format. All four express the same truth.*
-
----
----
----
-
----
 ### FILE: 01_Brand_Strategy/Mission_And_Vision.md
-**STATUS: REBUILT — 2181 bytes, 77 lines**
+**STATUS: REBUILT — 2181 bytes**
 # 🎯 MVQUEEN — Mission & Vision
 
 ---
@@ -14323,60 +13722,8 @@ If no — it does not.
 *MVQUEEN Mission & Vision — Living Document*
 
 ---
-### FILE: 01_Brand_Strategy/Emotional_Transformation.md
-**STATUS: POPULATED — 1310 bytes, 47 lines**
-<!-- Extracted from Brand Bible -->
-
-# 10. Emotional Transformation
-
-## Core Transformation
-
-MVQUEEN is built around emotional transformation through beauty, femininity, confidence, self-expression, and elevated living.
-
-The brand understands that many women are not simply searching for products.
-
-They are searching for feelings.
-
-Feelings they may have lost, neglected, buried, questioned, or struggled to reconnect with over time.
-
-MVQUEEN exists to help women emotionally reconnect with:
-- confidence
-- softness
-- beauty
-- self-expression
-- femininity
-- aspiration
-- emotional presence
-- identity
-- self-worth
-
-The transformation offered by the brand is not about becoming someone fake or unreachable.
-
-It is about becoming more emotionally aligned with yourself.
-
----
-
----
-
-# Emotional Transformation Statement
-
-MVQUEEN transforms beauty from something women simply wear into something they emotionally experience.
-
-The brand transforms:
-- routines into rituals
-- aesthetics into atmosphere
-- products into emotional experiences
-- femininity into empowerment
-- aspiration into emotional possibility
-- beauty into self-connection
-
-At its core, MVQUEEN is about helping women feel more emotionally aligned, expressive, feminine, confident, and connected to the life they want to create for themselves.
-
----
-
----
 ### FILE: 01_Brand_Strategy/brand_manifesto.md
-**STATUS: REBUILT — 3568 bytes, 144 lines**
+**STATUS: REBUILT — 3568 bytes**
 # 👑 THE MVQUEEN DECLARATION
 
 ---
@@ -14524,64 +13871,8 @@ Not in performance — but in presence.
 
 
 ---
-### FILE: 01_Brand_Strategy/brand_philosophy.md
-**STATUS: REBUILT — 2122 bytes, 51 lines**
-# 📌 MVQUEEN — Brand Philosophy
-
----
-
-## The Core Conviction
-
-MVQUEEN was built on a single conviction:
-
-**Softness is strength. Femininity is presence. Beauty is restoration.**
-
-These are not marketing lines.
-They are the architectural principles from which every system, product, and decision is built.
-
----
-
-## The Three Philosophies
-
-### Philosophy 1 — Softness As Strength
-Modern culture treats softness as vulnerability.
-MVQUEEN believes softness is one of the most sophisticated things a woman can embody — requiring discipline, security, and genuine self-knowledge to maintain in a world that rewards hardness.
-
-*A woman who remains soft in difficult environments is not weak. She is rare.*
-
-### Philosophy 2 — Femininity As Presence
-Femininity has been reduced to aesthetics — a look to perform rather than a quality to inhabit.
-MVQUEEN believes femininity is presence: the ability to create warmth, beauty, and atmosphere simply by the quality of attention you bring to your own life.
-
-*It is not how you look. It is how you inhabit the space you occupy.*
-
-### Philosophy 3 — Beauty As Restoration
-The beauty industry was built on insecurity.
-MVQUEEN was built on the opposite premise: beauty products and rituals should give something back — energy, confidence, calm, identity. A product that makes you feel worse about yourself is not a beauty product. It is a liability.
-
-*Beauty should leave you more yourself — not more edited.*
-
----
-
-## How Philosophy Governs Decisions
-
-Every major decision in MVQUEEN passes through these three lenses:
-
-| Decision | Question |
-|----------|---------|
-| Product development | Does this restore? Does it honor real women's needs? |
-| Marketing | Does this invite or pressure? Does it resonate or exploit? |
-| Pricing | Does this reflect genuine value without excluding unnecessarily? |
-| Content | Does this honor the philosophy or just reference it? |
-| AI systems | Does this preserve emotional humanity or automate it away? |
-| Partnerships | Does this partner reflect the same conviction? |
-
----
-*MVQUEEN Brand Philosophy — Living Doctrine Document*
-
----
 ### FILE: 02_Brand_Identity/color_system.md
-**STATUS: POPULATED — 7678 bytes, 211 lines**
+**STATUS: POPULATED — 7678 bytes**
 # color_system.md
 **Location:** `02_Brand_Identity/color_system.md`
 **Doctrine Anchor:** `00_Doctrine/README.md` — Quiet Confidence, Warm Luxury, Feminine Precision
@@ -14797,7 +14088,7 @@ The following uses violate brand standards and must be corrected on sight:
 
 ---
 ### FILE: 02_Brand_Identity/typography_system.md
-**STATUS: POPULATED — 8158 bytes, 262 lines**
+**STATUS: POPULATED — 8158 bytes**
 # typography_system.md
 **Location:** `02_Brand_Identity/typography_system.md`
 **Doctrine Anchor:** `00_Doctrine/README.md` — Quiet Confidence, Warm Luxury, Feminine Precision
@@ -15064,7 +14355,7 @@ Email clients do not reliably load custom fonts. Use this fallback stack:
 
 ---
 ### FILE: 02_Brand_Identity/brand_rules.md
-**STATUS: POPULATED — 8718 bytes, 213 lines**
+**STATUS: POPULATED — 8718 bytes**
 # brand_rules.md
 **Location:** `02_Brand_Identity/brand_rules.md`
 **Doctrine Anchor:** `00_Doctrine/README.md`
@@ -15281,663 +14572,8 @@ When AI tools (Claude, ChatGPT, Jasper, etc.) produce content for MvQueen:
 
 
 ---
-### FILE: 02_Brand_Identity/brand_vocabulary.md
-**STATUS: REBUILT — 12728 bytes, 650 lines**
-# 💬 MVQUEEN BRAND VOCABULARY  
-*The complete linguistic, emotional, semantic, and identity‑shaping vocabulary system of the MVQUEEN brand*
-
----
-
-# 1. Purpose of the Brand Vocabulary System
-
-Brand Vocabulary defines the **words, phrases, emotional tone, and linguistic identity** that MVQUEEN uses across:
-
-- marketing  
-- product descriptions  
-- packaging  
-- campaigns  
-- social media  
-- customer experience  
-- AI‑generated content  
-- internal communication  
-
-This system ensures that every word spoken by MVQUEEN:
-
-- reinforces feminine luxury  
-- builds emotional connection  
-- expresses brand identity  
-- maintains consistency  
-- elevates perception  
-- shapes customer psychology  
-
-Brand Vocabulary is not copywriting.  
-Brand Vocabulary is **linguistic identity architecture**.
-
----
-
-# 2. MVQUEEN’s Linguistic Philosophy
-
-MVQUEEN’s vocabulary is built on four pillars:
-
-### **1. Soft Feminine Luxury**
-Warm, elegant, emotionally elevated language.
-
-### **2. Romantic Minimalism**
-Simple, refined, intentional word choices.
-
-### **3. Emotional Empowerment**
-Language that uplifts, affirms, and celebrates feminine identity.
-
-### **4. Aspirational Beauty**
-Words that evoke transformation, confidence, and inner royalty.
-
----
-
-# 3. Core Vocabulary Themes
-
-MVQUEEN’s vocabulary must always evoke:
-
-- softness  
-- warmth  
-- elegance  
-- femininity  
-- aspiration  
-- emotional intimacy  
-- luxury  
-- beauty  
-- transformation  
-
-Words must feel like **a soft, warm, feminine embrace**.
-
----
-
-# 4. Signature MVQUEEN Words
-
-These words form the **core identity** of the brand’s language:
-
-- soft  
-- warm  
-- feminine  
-- elegant  
-- luxurious  
-- gentle  
-- romantic  
-- intimate  
-- refined  
-- graceful  
-- delicate  
-- elevated  
-- aspirational  
-- glowing  
-- radiant  
-- beautiful  
-- empowered  
-- confident  
-- cherished  
-- adored  
-- timeless  
-- iconic  
-- soft‑glam  
-- blush  
-- champagne  
-- satin  
-- silk  
-- glow  
-- bloom  
-
-These words should appear frequently across brand communication.
-
----
-
-# 5. Emotional Vocabulary
-
-Words that evoke emotional transformation:
-
-- becoming  
-- blossoming  
-- awakening  
-- elevating  
-- softening  
-- embracing  
-- unfolding  
-- rising  
-- glowing  
-- transforming  
-- flourishing  
-- blooming  
-- stepping into your power  
-- returning to yourself  
-
-These words reinforce MVQUEEN’s emotional identity.
-
----
-
-# 6. Sensory Vocabulary
-
-Words that evoke touch, sight, sound, and atmosphere:
-
-### **Touch**
-- satin  
-- silk  
-- soft  
-- velvet  
-- smooth  
-- warm  
-- delicate  
-
-### **Sight**
-- glowing  
-- radiant  
-- blush‑toned  
-- golden  
-- luminous  
-- dreamy  
-
-### **Sound**
-- gentle  
-- soft  
-- whisper  
-- subtle  
-
-### **Atmosphere**
-- warm  
-- intimate  
-- romantic  
-- serene  
-- calming  
-
-Sensory vocabulary deepens emotional immersion.
-
----
-
-# 7. Luxury Vocabulary
-
-Words that evoke premium, refined, elevated luxury:
-
-- refined  
-- elevated  
-- premium  
-- exquisite  
-- timeless  
-- iconic  
-- signature  
-- couture  
-- crafted  
-- curated  
-- bespoke  
-- artisanal  
-- limited edition  
-- gold‑accented  
-- satin‑finished  
-
-Luxury vocabulary must feel **warm, not cold**.
-
----
-
-# 8. Feminine Identity Vocabulary
-
-Words that celebrate feminine identity:
-
-- queen  
-- goddess  
-- muse  
-- beauty  
-- softness  
-- grace  
-- radiance  
-- confidence  
-- self‑worth  
-- inner royalty  
-- feminine power  
-- divine feminine  
-
-These words reinforce MVQUEEN’s core identity.
-
----
-
-# 9. Transformation Vocabulary
-
-Words that express personal evolution:
-
-- elevate  
-- transform  
-- bloom  
-- rise  
-- glow  
-- flourish  
-- evolve  
-- become  
-- awaken  
-
-Transformation is central to MVQUEEN’s emotional promise.
-
----
-
-# 10. Forbidden Vocabulary (Strictly Prohibited)
-
-These words break MVQUEEN’s emotional and luxury identity:
-
-### **Harsh Words**
-- aggressive  
-- bold (in a harsh sense)  
-- intense  
-- extreme  
-- loud  
-
-### **Cold Words**
-- sterile  
-- clinical  
-- industrial  
-- corporate  
-- harsh  
-
-### **Cheap Words**
-- bargain  
-- discount  
-- cheap  
-- low‑cost  
-- budget  
-
-### **Masculine‑coded Words**
-- rugged  
-- tough  
-- hardcore  
-- gritty  
-
-### **Overly Technical Words**
-- specs  
-- metrics  
-- data‑heavy language  
-
-These words must never appear in MVQUEEN communication.
-
----
-
-# 11. MVQUEEN Phrasing Principles
-
-### **1. Speak softly, confidently**
-Language must feel warm, feminine, and assured.
-
-### **2. Use emotional verbs**
-Focus on feelings, transformation, and identity.
-
-### **3. Keep sentences elegant and minimal**
-Luxury = simplicity.
-
-### **4. Use warm metaphors**
-Blooming, glowing, softening, rising.
-
-### **5. Avoid clutter**
-No long, complex sentences.
-
-### **6. Prioritize emotional resonance**
-Every phrase must feel intimate and elevated.
-
----
-
-# 12. Signature MVQUEEN Phrases
-
-These phrases should appear across brand communication:
-
-- “soft feminine luxury”  
-- “elevate your beauty”  
-- “step into your radiance”  
-- “your inner queen”  
-- “soft glam, elevated”  
-- “crafted for your feminine identity”  
-- “luxury that feels like softness”  
-- “beauty that blooms from within”  
-- “a moment of feminine elegance”  
-- “your glow, elevated”  
-- “soft, warm, and beautifully you”  
-
-These become **brand anchors**.
-
----
-
-# 13. Category‑Specific Vocabulary
-
-## **Beauty & Skincare**
-- glow  
-- radiance  
-- softness  
-- hydration  
-- luminous  
-- silky  
-
-## **Fragrance**
-- warm  
-- floral  
-- sensual  
-- soft  
-- romantic  
-
-## **Fashion**
-- elegant  
-- refined  
-- feminine  
-- graceful  
-
-## **Jewelry**
-- delicate  
-- radiant  
-- gold‑kissed  
-- timeless  
-
-Vocabulary must adapt while staying in one emotional universe.
-
----
-
-# 14. Brand Vocabulary in Use (Examples)
-
-### **Before (Incorrect)**
-“This product is high‑quality and durable.”
-
-### **After (MVQUEEN)**
-“A soft, elegant piece crafted to elevate your feminine beauty.”
-
----
-
-### **Before (Incorrect)**
-“Fast shipping and affordable prices.”
-
-### **After (MVQUEEN)**
-“A beautifully delivered experience, created with care and intention.”
-
----
-
-### **Before (Incorrect)**
-“Bold, intense, dramatic look.”
-
-### **After (MVQUEEN)**
-“A soft, radiant glow that enhances your natural beauty.”
-
----
-
-# 15. Purpose of the Brand Vocabulary System
-
-This system ensures that every writer, designer, marketer, AI agent, and creative team member can:
-
-- maintain perfect linguistic consistency  
-- protect MVQUEEN’s emotional identity  
-- create luxury‑grade communication  
-- scale the brand across categories  
-- build long‑term brand equity  
-- support global expansion  
-- maintain feminine luxury atmosphere  
-
-Brand Vocabulary is not just language.  
-Brand Vocabulary is:
-- emotion  
-- identity  
-- storytelling  
-- luxury  
-- feminine power  
-
-# ✨ EXPANDED BRAND VOCABULARY SYSTEM
-
----
-
-## 16. Deep Semantic Vocabulary Clusters
-
-MVQUEEN’s vocabulary is built from semantic clusters that reinforce emotional identity. Each cluster contains core words, supporting words, and contextual usage.
-
----
-
-### A. Softness Cluster  
-*Purpose: express feminine gentleness, warmth, and emotional intimacy.*
-
-**Core Words:**  
-soft, gentle, warm, tender, delicate, airy, plush, velvety, silky  
-
-**Supporting Words:**  
-subtle, whisper‑soft, featherlight, smooth, caressing  
-
-**Contextual Usage:**  
-- “a soft, feminine glow”  
-- “a gentle touch of elegance”  
-- “delicate, warm radiance”  
-
----
-
-### B. Luxury Cluster  
-*Purpose: express premium quality without coldness or elitism.*
-
-**Core Words:**  
-luxurious, refined, elevated, exquisite, premium, couture, iconic  
-
-**Supporting Words:**  
-crafted, curated, signature, artisanal, gold‑kissed, satin‑finished  
-
-**Contextual Usage:**  
-- “refined feminine luxury”  
-- “crafted with exquisite softness”  
-- “your signature moment of elegance”  
-
----
-
-### C. Romance Cluster  
-*Purpose: evoke emotional warmth, beauty, and softness.*
-
-**Core Words:**  
-romantic, dreamy, intimate, glowing, radiant, blooming  
-
-**Supporting Words:**  
-soft‑glam, blush‑toned, warm‑lit, luminous, poetic  
-
-**Contextual Usage:**  
-- “a dreamy, blush‑toned moment”  
-- “romantic feminine radiance”  
-- “a glowing expression of beauty”  
-
----
-
-### D. Empowerment Cluster  
-*Purpose: express feminine strength through softness, not aggression.*
-
-**Core Words:**  
-confident, empowered, radiant, worthy, elevated, becoming  
-
-**Supporting Words:**  
-stepping into your power, rising, blooming, unfolding  
-
-**Contextual Usage:**  
-- “step into your radiance”  
-- “your beauty, elevated”  
-- “softness as your strength”  
-
----
-
-### E. Identity Cluster  
-*Purpose: reinforce MVQUEEN’s core promise — feminine identity.*
-
-**Core Words:**  
-queen, muse, goddess, inner royalty, feminine identity  
-
-**Supporting Words:**  
-divine feminine, your glow, your beauty, your softness  
-
-**Contextual Usage:**  
-- “your inner queen”  
-- “crafted for your feminine identity”  
-- “a moment of divine feminine elegance”  
-
----
-
-## 17. MVQUEEN Sentence Architecture
-
-How MVQUEEN builds sentences is part of the brand identity.
-
----
-
-### A. The “Soft Start” Rule  
-Sentences begin with warm, gentle, feminine language.
-
-Examples:  
-- “Soft, radiant, and beautifully feminine…”  
-- “Warm, elegant, and effortlessly elevated…”  
-
----
-
-### B. The “Emotional Center” Rule  
-Every sentence must contain an emotional anchor.
-
-Examples:  
-- “A soft glow that elevates your confidence.”  
-- “Crafted to awaken your feminine radiance.”  
-
----
-
-### C. The “Luxury Minimalism” Rule  
-Sentences stay short, elegant, and intentional.
-
-Examples:  
-- “Soft glam, elevated.”  
-- “Your beauty, refined.”  
-
----
-
-### D. The “Warm Ending” Rule  
-Sentences end with softness, warmth, or intimacy.
-
-Examples:  
-- “…wrapped in feminine elegance.”  
-- “…with a touch of warm luxury.”  
-
----
-
-## 18. MVQUEEN Tone Modifiers
-
-Micro‑words that shape emotional tone.
-
-### Warm Modifiers  
-softly, gently, warmly, delicately, subtly, gracefully  
-
-### Luxury Modifiers  
-elegantly, exquisitely, beautifully, artfully, intentionally  
-
-### Romantic Modifiers  
-dreamily, luminously, poetically, tenderly  
-
-### Empowerment Modifiers  
-confidently, radiantly, fully, beautifully  
-
-**Usage Example:**  
-“Softly crafted to elevate your feminine radiance.”  
-
----
-
-## 19. MVQUEEN Signature Word Pairings
-
-These pairings become recognizable linguistic signatures.
-
-- soft luxury  
-- feminine radiance  
-- warm elegance  
-- blush beauty  
-- satin glow  
-- champagne warmth  
-- iconic softness  
-- radiant femininity  
-- elevated beauty  
-- intimate luxury  
-- soft glam  
-- warm minimalism  
-
----
-
-## 20. MVQUEEN Vocabulary for Product Naming
-
-### A. Texture‑Based Names  
-Satin Glow  
-Velvet Bloom  
-Silk Radiance  
-Soft Glam  
-
-### B. Emotion‑Based Names  
-Radiant Confidence  
-Blush Awakening  
-Soft Becoming  
-Warm Elegance  
-
-### C. Identity‑Based Names  
-Inner Queen  
-Divine Feminine  
-Muse Collection  
-Goddess Glow  
-
----
-
-## 21. MVQUEEN Vocabulary for Campaigns
-
-### Campaign Themes  
-Softness as Strength  
-Your Glow, Elevated  
-The Feminine Awakening  
-Radiance in Bloom  
-Becoming Her  
-
-### Campaign Phrases  
-“A moment of warm feminine luxury.”  
-“Where softness meets elegance.”  
-“Your beauty, beautifully elevated.”  
-
----
-
-## 22. MVQUEEN Vocabulary for Social Media
-
-Short, warm, feminine, intimate.
-
-Examples:  
-- “Soft glam, always.”  
-- “Your glow is your power.”  
-- “Elegance in every moment.”  
-- “Warm, feminine, iconic.”  
-- “Bloom in your own beauty.”  
-
----
-
-## 23. MVQUEEN Vocabulary for Packaging
-
-Examples:  
-- “Crafted for your feminine radiance.”  
-- “Soft luxury, beautifully delivered.”  
-- “A moment of warm elegance.”  
-- “Your beauty, elevated.”  
-
----
-
-## 24. MVQUEEN Vocabulary for AI Agents
-
-Ensures agents speak in brand voice.
-
-Examples:  
-- “Here is a soft, elegant solution.”  
-- “Let’s elevate this beautifully.”  
-- “A warm, refined approach for you.”  
-- “Crafted with feminine precision.”  
-
----
-
-## 25. MVQUEEN Vocabulary for Customer Experience
-
-Used in emails, support, onboarding.
-
-Examples:  
-- “We’re here with warm support.”  
-- “Your experience matters to us.”  
-- “Thank you for being part of our feminine universe.”  
-- “We’re honored to elevate your beauty journey.”  
-
----
-
-# END OF EXPANDED VOCABULARY BLOCK
-
-This system ensures MVQUEEN speaks with a **timeless, feminine, luxurious, emotionally resonant voice** across every platform and product category.
-
----
 ### FILE: 02_Brand_Identity/visual_direction.md
-**STATUS: REBUILT — 5982 bytes, 311 lines**
+**STATUS: REBUILT — 5982 bytes**
 # 🌸 MVQUEEN VISUAL DIRECTION  
 *The complete emotional, cinematic, atmospheric, and aesthetic blueprint of MVQUEEN’s luxury feminine universe*
 
@@ -16253,7 +14889,7 @@ This system ensures MVQUEEN remains timeless, feminine, luxurious, and emotional
 
 ---
 ### FILE: 02_Brand_Identity/packaging_identity.md
-**STATUS: REBUILT — 7304 bytes, 374 lines**
+**STATUS: REBUILT — 7304 bytes**
 # 🎁 MVQUEEN PACKAGING IDENTITY  
 *The complete emotional, structural, sensory, and luxury‑grade blueprint for MVQUEEN’s physical brand expression*
 
@@ -16632,7 +15268,7 @@ This system ensures MVQUEEN remains timeless, feminine, luxurious, and emotional
 
 ---
 ### FILE: 02_Brand_Identity/photography_direction.md
-**STATUS: REBUILT — 7650 bytes, 384 lines**
+**STATUS: REBUILT — 7650 bytes**
 # 📸 MVQUEEN PHOTOGRAPHY DIRECTION  
 *The complete emotional, cinematic, atmospheric, and technical blueprint for MVQUEEN’s luxury feminine photography*
 
@@ -17020,225 +15656,8 @@ Photography is:
 This system ensures MVQUEEN remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.
 
 ---
-### FILE: 02_Brand_Identity/brand_identity.md
-**STATUS: REBUILT — 5402 bytes, 212 lines**
-# 👑 MVQUEEN — BRAND IDENTITY SYSTEM
-*A visual, emotional, and aesthetic translation of the MVQUEEN Brand Bible*
-
----
-
-# 1. Identity Overview
-MVQUEEN’s brand identity is the **visual expression** of its emotional philosophy: modern feminine luxury, emotional elevation, softness, confidence, and accessible aspiration.
-
-Where the Brand Bible defines the *soul*,  
-the Brand Identity defines the *face*.
-
-This system ensures that every visual, product, campaign, and experience feels:
-- elegant  
-- feminine  
-- emotionally elevated  
-- modern  
-- soft  
-- aspirational  
-- confident  
-- refined  
-- immersive  
-
-MVQUEEN’s identity is built around the belief that **luxury is an emotion**, not a price point.  
-The visuals must always reflect:
-- softness without weakness  
-- elegance without coldness  
-- luxury without intimidation  
-- aspiration without disconnection  
-- femininity without restriction  
-
----
-
-# 2. Core Aesthetic Themes
-
-### Soft Luxury  
-A blend of softness, elegance, and modern femininity.  
-Textures: satin, silk, soft matte, diffused light.
-
-### Modern Feminine Elegance  
-Clean lines, refined minimalism, gentle curves, balanced whitespace.
-
-### Emotional Atmosphere  
-Warmth, softness, intimacy, and emotional storytelling through visuals.
-
-### Accessible Aspiration  
-Luxury‑inspired, but never cold, elitist, or intimidating.
-
-### Dual‑Identity Harmony  
-MVQUEEN = mature, elegant, elevated  
-Miss.Princess = youthful, dreamy, playful  
-
-Both identities share the same emotional DNA but express it differently.
-
----
-
-# 3. Visual Personality
-
-### Soft Confidence  
-A balance of gentle femininity and quiet strength.
-
-### Romantic Minimalism  
-Clean layouts with emotional depth and softness.
-
-### Warm Elegance  
-Warm neutrals, soft pinks, champagne tones, gold accents.
-
-### Feminine Identity  
-Visuals that celebrate softness, beauty, confidence, and emotional expression.
-
-### Emotional Storytelling  
-Every image, color, and layout should evoke a feeling — not just a look.
-
----
-
-# 4. Identity Pillars
-
-### 1. Softness as Strength  
-Curves, soft shadows, diffused lighting, gentle gradients.
-
-### 2. Elevated Femininity  
-Aesthetic refinement without losing warmth or emotional connection.
-
-### 3. Emotional Luxury  
-Luxury expressed through atmosphere, not price.
-
-### 4. Modern Simplicity  
-Minimal, clean, uncluttered, intentional.
-
-### 5. Aspirational Realism  
-Beautiful, elevated, but still relatable and emotionally accessible.
-
----
-
-# 5. Visual Structure
-
-## Color Language  
-Warm neutrals, soft blush tones, champagne gold, muted rose, soft brown, ivory, and pearl white.
-
-Colors must always feel:
-- feminine  
-- warm  
-- soft  
-- elegant  
-- emotionally comforting  
-
-(Full palette defined in **Color_System.md**)
-
----
-
-## Typography Language  
-Typography expresses MVQUEEN’s emotional duality:
-- **Serif** → elegance, maturity, luxury  
-- **Sans‑serif** → modernity, clarity, softness  
-
-(Full system defined in **Typography_System.md**)
-
----
-
-## Logo Language  
-The MVQUEEN logo must feel:
-- regal but modern  
-- feminine but strong  
-- luxurious but accessible  
-
-(Concepts + rules defined in **Logo_Concepts.md** and **Logo_Guidelines.md**)
-
----
-
-## Photography Language  
-Photography must always feel:
-- soft  
-- warm  
-- elegant  
-- feminine  
-- emotionally intimate  
-
-Lighting: diffused, warm, natural, glowy  
-Textures: satin, skin, soft fabrics, glass, florals  
-
-(Full direction in **Photography_Direction.md**)
-
----
-
-## Packaging Language  
-Packaging should reflect:
-- soft luxury  
-- minimal elegance  
-- warm feminine tones  
-- refined simplicity  
-
-(Full system in **Packaging_Identity.md**)
-
----
-
-# 6. Emotional Identity
-MVQUEEN’s visuals must always evoke:
-- confidence  
-- softness  
-- beauty  
-- aspiration  
-- emotional elevation  
-- feminine identity  
-- self‑worth  
-- transformation  
-
-The brand identity is not just visual — it is emotional.
-
-Every design choice must support the feeling of becoming the **Most Valuable Queen**.
-
----
-
-# 7. Dual‑Brand Expression
-
-## MVQUEEN (Primary Identity)
-- Mature feminine luxury  
-- Elegant, refined, elevated  
-- Soft gold, champagne, blush, ivory  
-- Serif + modern sans‑serif  
-- Emotional luxury  
-
-## Miss.Princess (Sister Identity)
-- Youthful, dreamy, playful  
-- Soft pinks, pastels, sparkles  
-- Rounded typography  
-- Soft glam aesthetics  
-
-Both identities must feel related — like two sisters — but not identical.
-
----
-
-# 8. Brand Identity Rules
-
-1. Never use harsh colors or cold tones  
-2. Never use overly bold or aggressive typography  
-3. Never use cluttered layouts  
-4. Never use visuals that feel cheap, chaotic, or masculine  
-5. Always prioritize softness, elegance, and emotional atmosphere  
-6. Always maintain warm undertones  
-7. Always design with intention and minimalism  
-8. Always reflect the emotional themes of the Brand Bible  
-
----
-
-# 9. Identity Purpose
-The purpose of the MVQUEEN Brand Identity is to:
-- visually express the emotional philosophy of the brand  
-- create a recognizable feminine luxury aesthetic  
-- unify all products, visuals, and experiences  
-- support long‑term brand consistency  
-- guide AI agents, designers, and creators  
-- build a scalable visual ecosystem  
-
-This identity system ensures MVQUEEN remains emotionally powerful, visually consistent, and instantly recognizable across every platform.
-
----
 ### FILE: 03_Customer_Psychology/Customer_Personas.md
-**STATUS: REBUILT — 6546 bytes, 293 lines**
+**STATUS: REBUILT — 6546 bytes**
 # 👑 MVQUEEN CUSTOMER PERSONAS  
 *The complete identity‑based, emotional, aesthetic, and behavioral personas that represent MVQUEEN’s core customer archetypes*
 
@@ -17536,7 +15955,7 @@ This system ensures MVQUEEN speaks directly to the **heart, identity, and emotio
 
 ---
 ### FILE: 03_Customer_Psychology/customer_objections.md
-**STATUS: REBUILT — 10876 bytes, 218 lines**
+**STATUS: REBUILT — 10876 bytes**
 # 👑 MVQUEEN — Customer Objections & Rebuttals
 ### The Conversion Reference
 
@@ -17759,7 +16178,7 @@ When handling objections in live customer service (chat, email, DM), the voice r
 
 ---
 ### FILE: 03_Customer_Psychology/trust_building.md
-**STATUS: REBUILT — 13473 bytes, 266 lines**
+**STATUS: REBUILT — 13473 bytes**
 # 👑 MVQUEEN — Trust Building
 ### The Mechanics of Earned Belief
 
@@ -18030,7 +16449,7 @@ Use this checklist quarterly to audit MVQUEEN's trust infrastructure:
 
 ---
 ### FILE: 03_Customer_Psychology/emotional_drivers.md
-**STATUS: REBUILT — 5499 bytes, 261 lines**
+**STATUS: REBUILT — 5499 bytes**
 # 💗 MVQUEEN EMOTIONAL DRIVERS  
 *The complete emotional, psychological, and identity‑based forces that shape MVQUEEN customer desire, loyalty, and purchasing behavior*
 
@@ -18296,7 +16715,7 @@ This system ensures MVQUEEN speaks directly to the **heart, identity, and emotio
 
 ---
 ### FILE: 03_Customer_Psychology/Buying_Psychology.md
-**STATUS: REBUILT — 5253 bytes, 246 lines**
+**STATUS: REBUILT — 5253 bytes**
 # 🛍️ MVQUEEN BUYING PSYCHOLOGY  
 *The complete emotional, identity‑based, aesthetic, and behavioral psychology behind how MVQUEEN customers make purchasing decisions*
 
@@ -18547,7 +16966,7 @@ This system ensures MVQUEEN speaks directly to **how she thinks, feels, desires,
 
 ---
 ### FILE: 04_Products/Product_Naming_System.md
-**STATUS: REBUILT — 9885 bytes, 247 lines**
+**STATUS: REBUILT — 9885 bytes**
 # 👑 MVQUEEN — Product Naming System
 ### Naming Conventions, Formulas & Examples
 
@@ -18799,7 +17218,7 @@ Before finalizing any product name, run it through this checklist:
 
 ---
 ### FILE: 04_Products/Pricing_Strategy.md
-**STATUS: REBUILT — 10175 bytes, 201 lines**
+**STATUS: REBUILT — 10175 bytes**
 # 👑 MVQUEEN — Pricing Strategy
 ### The Price Architecture
 
@@ -19005,7 +17424,7 @@ MVQUEEN wins in the gap between prestige and luxury — the space where quality 
 
 ---
 ### FILE: 04_Products/Collection_Structure.md
-**STATUS: REBUILT — 10252 bytes, 206 lines**
+**STATUS: REBUILT — 10252 bytes**
 # 👑 MVQUEEN — Collection Structure
 ### The Architecture of the Catalog
 
@@ -19216,7 +17635,7 @@ MVQUEEN Store
 
 ---
 ### FILE: 04_Products/Product_Framework.md
-**STATUS: REBUILT — 10504 bytes, 242 lines**
+**STATUS: REBUILT — 10504 bytes**
 # 👑 MVQUEEN — Product Framework
 ### How Products Are Built
 
@@ -19463,7 +17882,7 @@ Status: [Concept / Definition / Naming / Packaging / Copy / Launch]
 
 ---
 ### FILE: 04_Products/Product_Catalog.md
-**STATUS: POPULATED — 5558 bytes, 274 lines**
+**STATUS: POPULATED — 5558 bytes**
 <!-- Extracted from Brand Bible -->
 
 # 19. Product Ecosystem
@@ -19742,7 +18161,7 @@ The goal is building an emotionally recognizable luxury universe women emotional
 
 ---
 ### FILE: 04_Products/Beauty_Products.md
-**STATUS: REBUILT — 10047 bytes, 231 lines**
+**STATUS: REBUILT — 10047 bytes**
 # 👑 MVQUEEN — Beauty Products
 ### The Beauty Category Reference
 
@@ -19978,7 +18397,7 @@ All beauty copy follows the Product_Description_Voice.md formula. Category-speci
 
 ---
 ### FILE: 04_Products/Fashion_Products.md
-**STATUS: REBUILT — 3565 bytes, 117 lines**
+**STATUS: REBUILT — 3565 bytes**
 # 👗 MVQUEEN — Fashion Products
 
 ---
@@ -20100,7 +18519,7 @@ See: `06_Tone_And_Voice/Product_Description_Voice.md` for full product copy stan
 
 ---
 ### FILE: 04_Products/Hair_Products.md
-**STATUS: REBUILT — 3300 bytes, 95 lines**
+**STATUS: REBUILT — 3300 bytes**
 # 💆 MVQUEEN — Hair Products
 
 ---
@@ -20200,7 +18619,7 @@ See: `06_Tone_And_Voice/Product_Description_Voice.md` for full standards.
 
 ---
 ### FILE: 04_Products/SKU_Systems.md
-**STATUS: REBUILT — 10101 bytes, 273 lines**
+**STATUS: REBUILT — 10101 bytes**
 # 👑 MVQUEEN — SKU Systems
 ### The Inventory & Product Code Reference
 
@@ -20478,7 +18897,7 @@ When a bundle sells, Shopify deducts inventory from each component SKU. This req
 
 ---
 ### FILE: 05_SEO_And_Content/SEO_Strategy.md
-**STATUS: REBUILT — 12097 bytes, 301 lines**
+**STATUS: REBUILT — 12097 bytes**
 # 👑 MVQUEEN — SEO Strategy
 ### The Search Architecture
 
@@ -20784,7 +19203,7 @@ Google's EEAT framework (Experience, Expertise, Authoritativeness, Trustworthine
 
 ---
 ### FILE: 05_SEO_And_Content/Blog_Strategy.md
-**STATUS: REBUILT — 10781 bytes, 255 lines**
+**STATUS: REBUILT — 10781 bytes**
 # 👑 MVQUEEN — Blog Strategy
 ### The Editorial Content Framework
 
@@ -21044,7 +19463,7 @@ This framework ensures every piece of content earns its production investment ac
 
 ---
 ### FILE: 05_SEO_And_Content/Content_Calendar.md
-**STATUS: REBUILT — 3662 bytes, 130 lines**
+**STATUS: REBUILT — 3662 bytes**
 # 📅 MVQUEEN — Content Calendar
 
 ---
@@ -21179,7 +19598,7 @@ When a campaign is active — all content serves the campaign:
 
 ---
 ### FILE: 05_SEO_And_Content/Keyword_Research.md
-**STATUS: REBUILT — 10093 bytes, 352 lines**
+**STATUS: REBUILT — 10093 bytes**
 # 👑 MVQUEEN — Keyword Research
 ### The Search Intelligence Reference
 
@@ -21536,7 +19955,7 @@ Track these metrics monthly per keyword cluster:
 
 ---
 ### FILE: 06_Tone_And_Voice/Forbidden_Words.md
-**STATUS: REBUILT — 5909 bytes, 146 lines**
+**STATUS: REBUILT — 5909 bytes**
 # 🚫 MVQUEEN — Forbidden Words & Phrases
 
 ---
@@ -21687,7 +20106,7 @@ Before any AI-generated content is published, scan for:
 
 ---
 ### FILE: 06_Tone_And_Voice/Voice_Consistency_Rules.md
-**STATUS: REBUILT — 5596 bytes, 121 lines**
+**STATUS: REBUILT — 5596 bytes**
 # 👑 MVQUEEN — Voice Consistency Rules
 ### The Quick-Reference Card
 
@@ -21813,7 +20232,7 @@ If all three answers are yes — publish.
 
 ---
 ### FILE: 06_Tone_And_Voice/Writing_Rules.md
-**STATUS: REBUILT — 9786 bytes, 222 lines**
+**STATUS: REBUILT — 9786 bytes**
 # 👑 MVQUEEN — Writing Rules
 ### The Craft Manual
 
@@ -22040,7 +20459,7 @@ If you can answer yes, yes, no, yes — it ships.
 
 ---
 ### FILE: 06_Tone_And_Voice/CTA_Library.md
-**STATUS: REBUILT — 4698 bytes, 190 lines**
+**STATUS: REBUILT — 4698 bytes**
 # 👑 MVQUEEN — CTA Library
 
 ---
@@ -22235,7 +20654,7 @@ Make her want to know more.
 
 ---
 ### FILE: 06_Tone_And_Voice/Example_Copy.md
-**STATUS: POPULATED — 7160 bytes, 309 lines**
+**STATUS: POPULATED — 7160 bytes**
 # Example_Copy.md
 **Location:** `06_Tone_And_Voice/Example_Copy.md`
 **Doctrine Anchor:** `00_Doctrine/README.md` — Quiet Confidence, Warm Luxury, Feminine Precision
@@ -22549,7 +20968,7 @@ Use this to self-check copy before publishing.
 
 ---
 ### FILE: 06_Tone_And_Voice/Product_Description_Voice.md
-**STATUS: POPULATED — 8061 bytes, 242 lines**
+**STATUS: POPULATED — 8061 bytes**
 # Product_Description_Voice.md
 **Location:** `06_Tone_And_Voice/Product_Description_Voice.md`
 **Doctrine Anchor:** `00_Doctrine/README.md` — Quiet Confidence, Warm Luxury, Feminine Precision
@@ -22796,7 +21215,7 @@ Or dress it back with white trainers — the silhouette carries both.
 
 ---
 ### FILE: 06_Tone_And_Voice/Hook_Systems.md
-**STATUS: REBUILT — 6546 bytes, 213 lines**
+**STATUS: REBUILT — 6546 bytes**
 # 🪝 MVQUEEN — Hook Systems
 
 ---
@@ -23013,8 +21432,177 @@ Build a swipe file of top performers in `13_Research_And_Inspiration/Swipe_Files
 
 
 ---
+### FILE: 06_Tone_And_Voice/Tone_Guide.md
+**STATUS: REBUILT — 5005 bytes**
+# 👑 MVQUEEN — Tone & Voice System
+
+---
+
+## The Voice of MVQUEEN
+
+MVQUEEN speaks like a woman who has arrived.
+
+Not loudly. Not desperately. Not with urgency or pressure.
+
+She speaks with quiet confidence — the kind that doesn't need to announce itself.
+Warm enough to feel human. Elevated enough to feel luxury.
+Feminine without being fragile. Aspirational without being distant.
+
+If MVQUEEN were a woman in a room, she would be the one
+whose presence you felt before she spoke.
+
+---
+
+## Voice Identity
+
+| Dimension | MVQUEEN Is | MVQUEEN Is Never |
+|-----------|-----------|-----------------|
+| Tone | Warm, calm, confident | Cold, corporate, aggressive |
+| Energy | Soft power, quiet luxury | Loud flex, desperate urgency |
+| Intimacy | Personal, emotionally aware | Robotic, transactional |
+| Aspiration | Inviting, inclusive | Intimidating, exclusionary |
+| Intelligence | Thoughtful, intentional | Performative, shallow |
+| Femininity | Grounded, present | Stereotyped, overdone |
+
+---
+
+## The Four Voice Pillars
+
+### 01 — Emotional Warmth
+Every piece of communication should make a woman feel seen —
+not sold to.
+Write as though you know her interior life,
+not just her shopping behavior.
+
+### 02 — Quiet Confidence
+MVQUEEN does not beg for attention.
+It does not chase trends with desperate relevance.
+The brand speaks with the certainty of something that knows its worth.
+Short sentences. Deliberate words. Confident pauses.
+
+### 03 — Sensory Intelligence
+MVQUEEN language should activate the senses —
+the way a texture feels, the way light falls soft,
+the way a scent lingers in memory.
+Write in ways that create atmosphere, not just information.
+
+### 04 — Feminine Precision
+Every word is chosen. Nothing is filler.
+Luxury is restraint. Apply this to language.
+A single precise line carries more weight than three vague ones.
+
+---
+
+## Sentence Architecture
+
+**Short sentences create power.**
+Use them for declarations, product names, CTAs, and emotional moments.
+
+*She deserves this.*
+*Softness is a standard.*
+*Built for women who feel everything.*
+
+**Flowing sentences create atmosphere.**
+Use them for brand stories, product descriptions, and emotional narratives.
+
+*MVQUEEN was designed for the woman who moves through life with intention —
+who chooses beauty not to perform it, but to live inside it.*
+
+**Lists create clarity.**
+Use them sparingly — only when structure serves the reader.
+Never use them as a substitute for real writing.
+
+---
+
+## Platform Voice Adaptation
+
+### Product Descriptions
+Sensory, aspirational, precise.
+Lead with feeling — close with function.
+Never list features. Translate them into experiences.
+
+❌ *Moisturizing formula with vitamin E and hyaluronic acid.*
+✅ *Skin that drinks it in. The kind of softness you notice by evening.*
+
+### Captions & Social
+Intimate. Conversational. Never try-hard.
+Write like you're speaking to one woman — not broadcasting to thousands.
+End with presence, not pressure.
+
+❌ *Shop now before it sells out!! Link in bio 🛍️*
+✅ *For the version of you that already knows she deserves this.*
+
+### Email
+Personal. Warm. Paced like a letter — not a flyer.
+Open with atmosphere. Close with invitation.
+Subject lines should feel like whispers, not headlines.
+
+❌ *SALE ENDS TONIGHT — 40% OFF EVERYTHING*
+✅ *Something we made for you.*
+
+### SMS
+Brief. Intimate. Never intrusive.
+One thought. One feeling. One invitation.
+
+✅ *Your order is on its way. We wrapped it with intention.*
+
+### Ad Copy
+Emotionally precise. Identity-driven. Never benefit-feature.
+Speak to who she is becoming — not what she is buying.
+
+❌ *High-quality luxury skincare for all skin types.*
+✅ *For the woman who treats softness like a discipline.*
+
+---
+
+## Words We Use
+
+*soft, presence, intention, atmosphere, restored, elevated, feminine,
+warmth, ritual, grounded, living, breathe, quiet, grace, unhurried,
+crafted, human, intelligent, chosen, sacred, slow, becoming*
+
+## Words We Avoid
+
+*amazing, incredible, game-changer, hustle, boss, empowered (overused),
+luxury (overused without context), exclusive (without meaning),
+emotionally (as a prefix for everything), synergy, optimize (in brand copy)*
+
+---
+
+## The Test
+
+Before publishing any communication, ask:
+
+1. Does this sound like MVQUEEN — or like any other brand?
+2. Does this make a woman feel elevated — or pressured?
+3. Is every word earning its place?
+4. Would this feel at home in a luxury editorial — or a flash sale?
+
+If it fails any of these — rewrite it.
+
+---
+
+## Voice Governance
+
+The Tone & Voice System governs:
+- all product copy
+- all email and SMS communication
+- all social media content
+- all ad creative
+- all AI-generated content before publication
+- all customer service communication
+- all campaign messaging
+
+No output leaves MVQUEEN without passing through this system.
+
+---
+*MVQUEEN Tone & Voice System — Operational Document*
+*All content creators, AI systems, and collaborators must operate within this framework.*
+
+
+---
 ### FILE: 06_Tone_And_Voice/Brand_Messaging.md
-**STATUS: REBUILT — 10331 bytes, 212 lines**
+**STATUS: REBUILT — 10331 bytes**
 # 👑 MVQUEEN — Brand Messaging
 ### The Messaging Framework
 
@@ -23230,177 +21818,8 @@ All three yes — it publishes.
 
 
 ---
-### FILE: 06_Tone_And_Voice/Tone_Guide.md
-**STATUS: REBUILT — 5005 bytes, 164 lines**
-# 👑 MVQUEEN — Tone & Voice System
-
----
-
-## The Voice of MVQUEEN
-
-MVQUEEN speaks like a woman who has arrived.
-
-Not loudly. Not desperately. Not with urgency or pressure.
-
-She speaks with quiet confidence — the kind that doesn't need to announce itself.
-Warm enough to feel human. Elevated enough to feel luxury.
-Feminine without being fragile. Aspirational without being distant.
-
-If MVQUEEN were a woman in a room, she would be the one
-whose presence you felt before she spoke.
-
----
-
-## Voice Identity
-
-| Dimension | MVQUEEN Is | MVQUEEN Is Never |
-|-----------|-----------|-----------------|
-| Tone | Warm, calm, confident | Cold, corporate, aggressive |
-| Energy | Soft power, quiet luxury | Loud flex, desperate urgency |
-| Intimacy | Personal, emotionally aware | Robotic, transactional |
-| Aspiration | Inviting, inclusive | Intimidating, exclusionary |
-| Intelligence | Thoughtful, intentional | Performative, shallow |
-| Femininity | Grounded, present | Stereotyped, overdone |
-
----
-
-## The Four Voice Pillars
-
-### 01 — Emotional Warmth
-Every piece of communication should make a woman feel seen —
-not sold to.
-Write as though you know her interior life,
-not just her shopping behavior.
-
-### 02 — Quiet Confidence
-MVQUEEN does not beg for attention.
-It does not chase trends with desperate relevance.
-The brand speaks with the certainty of something that knows its worth.
-Short sentences. Deliberate words. Confident pauses.
-
-### 03 — Sensory Intelligence
-MVQUEEN language should activate the senses —
-the way a texture feels, the way light falls soft,
-the way a scent lingers in memory.
-Write in ways that create atmosphere, not just information.
-
-### 04 — Feminine Precision
-Every word is chosen. Nothing is filler.
-Luxury is restraint. Apply this to language.
-A single precise line carries more weight than three vague ones.
-
----
-
-## Sentence Architecture
-
-**Short sentences create power.**
-Use them for declarations, product names, CTAs, and emotional moments.
-
-*She deserves this.*
-*Softness is a standard.*
-*Built for women who feel everything.*
-
-**Flowing sentences create atmosphere.**
-Use them for brand stories, product descriptions, and emotional narratives.
-
-*MVQUEEN was designed for the woman who moves through life with intention —
-who chooses beauty not to perform it, but to live inside it.*
-
-**Lists create clarity.**
-Use them sparingly — only when structure serves the reader.
-Never use them as a substitute for real writing.
-
----
-
-## Platform Voice Adaptation
-
-### Product Descriptions
-Sensory, aspirational, precise.
-Lead with feeling — close with function.
-Never list features. Translate them into experiences.
-
-❌ *Moisturizing formula with vitamin E and hyaluronic acid.*
-✅ *Skin that drinks it in. The kind of softness you notice by evening.*
-
-### Captions & Social
-Intimate. Conversational. Never try-hard.
-Write like you're speaking to one woman — not broadcasting to thousands.
-End with presence, not pressure.
-
-❌ *Shop now before it sells out!! Link in bio 🛍️*
-✅ *For the version of you that already knows she deserves this.*
-
-### Email
-Personal. Warm. Paced like a letter — not a flyer.
-Open with atmosphere. Close with invitation.
-Subject lines should feel like whispers, not headlines.
-
-❌ *SALE ENDS TONIGHT — 40% OFF EVERYTHING*
-✅ *Something we made for you.*
-
-### SMS
-Brief. Intimate. Never intrusive.
-One thought. One feeling. One invitation.
-
-✅ *Your order is on its way. We wrapped it with intention.*
-
-### Ad Copy
-Emotionally precise. Identity-driven. Never benefit-feature.
-Speak to who she is becoming — not what she is buying.
-
-❌ *High-quality luxury skincare for all skin types.*
-✅ *For the woman who treats softness like a discipline.*
-
----
-
-## Words We Use
-
-*soft, presence, intention, atmosphere, restored, elevated, feminine,
-warmth, ritual, grounded, living, breathe, quiet, grace, unhurried,
-crafted, human, intelligent, chosen, sacred, slow, becoming*
-
-## Words We Avoid
-
-*amazing, incredible, game-changer, hustle, boss, empowered (overused),
-luxury (overused without context), exclusive (without meaning),
-emotionally (as a prefix for everything), synergy, optimize (in brand copy)*
-
----
-
-## The Test
-
-Before publishing any communication, ask:
-
-1. Does this sound like MVQUEEN — or like any other brand?
-2. Does this make a woman feel elevated — or pressured?
-3. Is every word earning its place?
-4. Would this feel at home in a luxury editorial — or a flash sale?
-
-If it fails any of these — rewrite it.
-
----
-
-## Voice Governance
-
-The Tone & Voice System governs:
-- all product copy
-- all email and SMS communication
-- all social media content
-- all ad creative
-- all AI-generated content before publication
-- all customer service communication
-- all campaign messaging
-
-No output leaves MVQUEEN without passing through this system.
-
----
-*MVQUEEN Tone & Voice System — Operational Document*
-*All content creators, AI systems, and collaborators must operate within this framework.*
-
-
----
 ### FILE: 06_Tone_And_Voice/Ad_Copy_Voice.md
-**STATUS: REBUILT — 4503 bytes, 170 lines**
+**STATUS: REBUILT — 4503 bytes**
 # 📣 MVQUEEN — Ad Copy Voice Guide
 
 ---
@@ -23575,7 +21994,7 @@ She's had her moment. The collection is waiting. 👑
 
 ---
 ### FILE: 06_Tone_And_Voice/Email_Voice.md
-**STATUS: REBUILT — 5333 bytes, 167 lines**
+**STATUS: REBUILT — 5333 bytes**
 # 📧 MVQUEEN — Email Voice Guide
 
 ---
@@ -23747,7 +22166,7 @@ MVQUEEN 👑
 
 ---
 ### FILE: 06_Tone_And_Voice/Social_Voice.md
-**STATUS: REBUILT — 4105 bytes, 129 lines**
+**STATUS: REBUILT — 4105 bytes**
 # 🗣️ MVQUEEN — Social Voice Guide
 
 ---
@@ -23881,7 +22300,7 @@ If any box is unchecked — rewrite before posting.
 
 ---
 ### FILE: 06_Tone_And_Voice/SMS_Voice.md
-**STATUS: REBUILT — 2814 bytes, 114 lines**
+**STATUS: REBUILT — 2814 bytes**
 # 📱 MVQUEEN — SMS Voice Guide
 
 ---
@@ -24000,7 +22419,7 @@ MVQUEEN: Something new just arrived — we thought of her.
 
 ---
 ### FILE: 08_Social_Media/Content_Pillars.md
-**STATUS: REBUILT — 13581 bytes, 324 lines**
+**STATUS: REBUILT — 13581 bytes**
 # 👑 MVQUEEN — Content Pillars
 ### The Seven Pillars of the Brand World
 
@@ -24329,7 +22748,7 @@ Regardless of pillar, MVQUEEN content never includes:
 
 ---
 ### FILE: 08_Social_Media/Caption_Templates.md
-**STATUS: REBUILT — 11430 bytes, 366 lines**
+**STATUS: REBUILT — 11430 bytes**
 # 👑 MVQUEEN — Caption Templates
 ### Ready-to-Use Frameworks for Every Platform
 
@@ -24700,7 +23119,7 @@ Pinterest captions are descriptions built for search AND desire. They work as st
 
 ---
 ### FILE: 08_Social_Media/Instagram_Strategy.md
-**STATUS: REBUILT — 11004 bytes, 272 lines**
+**STATUS: REBUILT — 11004 bytes**
 # 👑 MVQUEEN — Instagram Strategy
 ### The Visual World on Instagram
 
@@ -24977,7 +23396,7 @@ Every MVQUEEN collection launch runs an Instagram campaign sequence:
 
 ---
 ### FILE: 08_Social_Media/TikTok_Strategy.md
-**STATUS: REBUILT — 11314 bytes, 264 lines**
+**STATUS: REBUILT — 11314 bytes**
 # 👑 MVQUEEN — TikTok Strategy
 ### The Discovery Engine
 
@@ -25246,7 +23665,7 @@ Regardless of trend or algorithm pressure, MVQUEEN TikTok never posts:
 
 ---
 ### FILE: 08_Social_Media/Pinterest_Strategy.md
-**STATUS: REBUILT — 12355 bytes, 277 lines**
+**STATUS: REBUILT — 12355 bytes**
 # 👑 MVQUEEN — Pinterest Strategy
 ### The Long-Game Discovery Platform
 
@@ -25528,7 +23947,7 @@ Miss.Princess Pinterest follows the same technical principles but with:
 
 ---
 ### FILE: 10_AI_Systems/AI_Prompt_Library.md
-**STATUS: REBUILT — 13316 bytes, 341 lines**
+**STATUS: REBUILT — 13316 bytes**
 # 👑 MVQUEEN — AI Prompt Library
 ### The Master Prompt Reference
 
@@ -25874,7 +24293,7 @@ If it passes all four — it's ready. If not — feed the output back into the p
 
 ---
 ### FILE: 10_AI_Systems/Product_Description_Prompts.md
-**STATUS: REBUILT — 3595 bytes, 113 lines**
+**STATUS: REBUILT — 3595 bytes**
 # 📝 MVQUEEN — Product Description Prompts
 
 ---
@@ -25992,7 +24411,7 @@ Write:
 
 ---
 ### FILE: 10_AI_Systems/Ad_Copy_Prompts.md
-**STATUS: REBUILT — 12377 bytes, 307 lines**
+**STATUS: REBUILT — 12377 bytes**
 # 👑 MVQUEEN — Ad Copy Prompts
 ### Paid Advertising Copy System
 
@@ -26304,7 +24723,7 @@ Test A vs. B vs. C for 7 days minimum at equal budget. Winner runs at full budge
 
 ---
 ### FILE: 10_AI_Systems/Image_Generation_Prompts.md
-**STATUS: REBUILT — 4902 bytes, 146 lines**
+**STATUS: REBUILT — 4902 bytes**
 # 🎨 MVQUEEN — Image Generation Prompts
 
 ---
@@ -26455,7 +24874,7 @@ If any box is unchecked — regenerate or adjust before using.
 
 ---
 ### FILE: 10_AI_Systems/Social_Media_Prompts.md
-**STATUS: REBUILT — 5800 bytes, 209 lines**
+**STATUS: REBUILT — 5800 bytes**
 # 📱 MVQUEEN — Social Media Prompts
 
 ---
@@ -26667,10 +25086,9 @@ Mark your top recommendation with *.
 ---
 ---
 
----
 ## PULL SUMMARY
-- Rebuilt: 62
-- Populated (needs review): 7
+- Rebuilt: 56
+- Populated: 6
 - Empty: 0
 - Missing: 0
-- Pull timestamp: Mon Jun  8 20:11:55 EDT 2026
+- Timestamp: Sat Jun  6 09:45:14 EDT 2026

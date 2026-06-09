@@ -1,309 +1,217 @@
-# Example_Copy.md
-**Location:** `06_Tone_And_Voice/Example_Copy.md`
-**Doctrine Anchor:** `00_Doctrine/README.md` — Quiet Confidence, Warm Luxury, Feminine Precision
-**Authority:** Reference library of approved brand copy across all formats and channels
+# 👑 MVQUEEN — Example Copy Library
+### Real Copy Across Every Format
 
 ---
 
-## 01 — Purpose
+## What This File Is
 
-This file is a living reference. Every example here passed the brand voice test and can be used as a template, a benchmark, or a prompt seed for new copy.
+This is the proof of voice. Not a guide to writing it — the actual writing itself.
 
-Writers, designers, and AI agents use this file to calibrate tone before producing new content. When in doubt about whether something sounds right — come here first.
+Every copy sample here is ready to use, adapt, or feed directly into an AI prompt as a style reference. This is the file that bridges the theory of MVQUEEN voice into the reality of what it looks like in practice — across every format, every platform, every product category.
 
----
-
-## 02 — Homepage Copy
-
-### Hero Headlines
-```
-She already knows what she wants.
-We just made it easier to find.
-```
-```
-Dressed for the life she's building.
-```
-```
-Not trend-chasing. Intentional dressing.
-```
-```
-The edit for women who know their worth.
-```
-```
-Quality that speaks before she does.
-```
-
-### Hero Subheadlines
-```
-MvQueen is a curated fashion destination built for women
-who dress with intention. No noise. Just the pieces that work.
-```
-```
-Every piece selected for fit, finish, and staying power.
-Because your wardrobe should work as hard as you do.
-```
-
-### Section Intros
-```
-The Collection
-New pieces. Intentional picks. Nothing filler.
-```
-```
-Built for her.
-Not for the trend cycle. Not for the algorithm.
-For the woman who already knows who she is.
-```
+When in doubt about whether something sounds like MVQUEEN — compare it to this file.
 
 ---
 
-## 03 — Product Description Examples
+## SECTION 1 — HOMEPAGE COPY
 
-### Bodysuit
-```
-The kind of piece that does the work for you.
-Clean lines, secure fit, no adjusting required.
-Wear it under high-waist trousers or let it lead.
-Either way — effortless is the only outcome.
-```
+### Hero Section
 
-### Midi Dress
-```
-Not trying to be a statement. Just quietly is one.
-The [Product Name] in [color] — fitted through the waist,
-relaxed from the hip. The fabric holds its shape.
-So does she.
-```
+**Option A — Confidence-Led**
+Headline: Luxury was always yours.
+Sub: Fashion. Beauty. Fragrance. Lifestyle. Built for the woman who already knows her worth.
+CTA: Shop the collection.
 
-### Co-ord Set
-```
-Because matching shouldn't take effort.
-The [Set Name] was designed as a complete look —
-but the pieces go just as well apart.
-Style it together or split it. Both answers are right.
-```
+**Option B — Identity-Led**
+Headline: Dressed in your worth.
+Sub: MVQUEEN is a world built around one belief — every woman deserves to feel this elevated.
+CTA: Enter the world.
 
-### Accessories
-```
-The finishing detail.
-Not the loudest thing in the room — the most considered.
-[Product Name] in [material]. Made to last the full day
-and look better for it.
-```
+**Option C — Aspirational**
+Headline: For the woman you're becoming.
+Sub: And for the woman you already are.
+CTA: Discover MVQUEEN.
 
 ---
 
-## 04 — Email Copy Examples
+### About the Brand (Short)
+MVQUEEN was built at the intersection of accessible luxury and emotional intention. We create fashion, beauty, fragrance, and lifestyle products for women who treat getting dressed, caring for their skin, and choosing their scent as meaningful rituals — not obligations.
 
-### Welcome Email — Subject Line Options
-```
-Welcome to MvQueen. You're in the right place.
-Your edit starts here.
-The pieces you've been looking for. They're here.
-```
-
-### Welcome Email — Body
-```
-Hi [First Name],
-
-You made it here for a reason.
-
-MvQueen is built for women who dress with intention —
-not to keep up, but to stand out in the quietest,
-most confident way possible.
-
-Everything in this store was chosen with you in mind.
-Not the trend-chaser. The woman who already knows
-what works for her and just needs a brand that does too.
-
-Start with the new arrivals. Or take your time.
-Either way, we're glad you're here.
-
-— The MvQueen Edit
-```
-
-### Abandoned Cart Email — Subject Lines
-```
-Still thinking about it?
-Your bag is waiting.
-It's still yours — for now.
-```
-
-### Abandoned Cart — Body
-```
-Hi [First Name],
-
-You left something behind.
-
-[Product Name] is still in your bag —
-and still available. But these go fast.
-
-If you have questions about fit, sizing, or styling,
-reply to this email. We're here.
-
-Otherwise — it's one click away.
-
-[CTA: Complete Your Order]
-```
-
-### New Arrival Email — Subject Lines
-```
-New in: the pieces worth knowing about.
-The edit just got better.
-Fresh drop. No filler.
-```
-
-### Sale Email — Subject Lines
-```
-Selected pieces. Reduced prices. Still the same standard.
-The sale edit is live.
-Worth every penny — now more so.
-```
+Most brands sell products. We build worlds. This one was built for you.
 
 ---
 
-## 05 — Social Media Caption Examples
+## SECTION 2 — ABOUT PAGE COPY
 
-### Product Feature (Instagram)
-```
-The [Product Name].
-Clean. Precise. Built to be worn, not saved for later.
+### Brand Story
+MVQUEEN was born from a feeling most women know intimately: the desire for beautiful, elevated things — and the quiet sense that those things weren't meant for you.
 
-Available now — link in bio.
-```
+That feeling is a lie. And MVQUEEN was built to correct it.
 
-### Lifestyle / Brand Moment
-```
-She's not getting dressed for anyone else.
-That's the whole point.
-```
+We create fashion, beauty, skincare, fragrance, hair, and lifestyle products that make every woman feel like the most valuable version of herself — not through exclusivity, not through aspiration that requires wealth to access, but through genuine quality, emotional intention, and a deep understanding of what it means to want your life to feel elevated.
 
-### New Arrival
-```
-Just landed: [Product Name] in [color/style].
-The kind of piece that earns its space in the wardrobe.
+The brand is named Most Valuable Queen. Not as a title to earn. As a truth to remember.
 
-Link in bio.
-```
+MVQUEEN also operates alongside its sister brand, Miss.Princess — a softer, more playful world for the woman in every moment of femininity, joy, and becoming.
 
-### Customer Feature / UGC Repost
-```
-When she styles it better than the lookbook.
-[@handle] in the [Product Name].
+Together, they cover everything. One world. Two registers. Infinite women.
 
-Shop the look — link in bio.
-```
-
-### Behind the Brand
-```
-Every piece goes through the same filter:
-Would we wear it? Would we keep it?
-If the answer isn't immediate — it doesn't make the edit.
-```
-
-### Engagement Post
-```
-Tell us: which colorway goes in the wardrobe first?
-[Option A] or [Option B].
-```
+### Mission Statement
+We make beautiful things for women who deserve them. We've always believed the gap between luxury and real life shouldn't exist — so we built a brand that closes it.
 
 ---
 
-## 06 — miss.queen Caption Examples
+## SECTION 3 — PRODUCT PAGE COPY
 
-miss.queen captions carry more energy and speak to a slightly younger audience. Same precision, lighter touch.
+### Skincare — Brightening Serum
+**Before it does anything for your skin, it does something for how you feel about your morning.**
 
-```
-Okay but this set though. 🖤
-[Product Name] just dropped and it's giving everything.
-Link in bio.
-```
-```
-New drop just landed and we are NOT calm.
-[Product Name] — available now.
-```
-```
-Your next favorite outfit is officially in the building.
-Shop the [Collection Name] — link in bio.
-```
+[Serum Name] is a daily brightening serum formulated with stabilized Vitamin C, niacinamide, and hyaluronic acid — working together to even skin tone, reduce the appearance of dark spots, and restore natural luminosity over time.
+
+Lightweight enough to layer under moisturizer. Potent enough to earn a dedicated shelf position. Fragrance-free. Dermatologist-tested.
+
+*For the woman who treats her skin like it deserves to look as good as she feels.*
 
 ---
 
-## 07 — SMS Copy Examples
+### Fragrance — Warm Floral EDP
+**The scent that makes you stand in the doorway a moment longer than you need to.**
 
-| Occasion | Copy |
-|---|---|
-| New arrival | New drop just landed. [Product Name] — shop now: [link] |
-| Flash sale | 24-hour sale is live. Selected pieces only: [link] |
-| Back in stock | It's back. [Product Name] in [color] — get it before it goes again: [link] |
-| Order shipped | Your MvQueen order is on its way. Track it here: [link] |
-| Abandoned cart | Still thinking? Your bag is saved: [link] |
+[Fragrance Name] opens with a soft citrus clarity — bergamot and white peony — before settling into a warm heart of jasmine and amber that softens against skin. The base: sandalwood, vanilla musk, and something that simply smells like confidence.
 
----
+50ml. Eau de Parfum. 8–10 hour wear. Refillable bottle with brushed gold hardware.
 
-## 08 — Ad Copy Examples
-
-### Meta / Instagram Ad — Short Form
-```
-Primary text:
-She doesn't follow trends. She sets her own standard.
-MvQueen — fashion for women who dress with intention.
-
-Headline: Shop the Edit
-CTA: Shop Now
-```
-
-### Meta / Instagram Ad — Long Form
-```
-Primary text:
-If you've been looking for a brand that gets it —
-this is it.
-
-MvQueen is built around one idea:
-you already know who you are. You just need
-pieces that match that energy.
-
-No fast fashion. No trend chasing.
-Just a carefully curated edit that works
-as hard as you do.
-
-New arrivals are in. Take a look.
-
-Headline: The MvQueen Edit — Shop Now
-```
-
-### Retargeting Ad
-```
-You looked. We noticed.
-[Product Name] is still available — but not forever.
-
-Headline: Still Interested?
-CTA: Get Yours
-```
+*Wear it alone. Layer it over your body oil. Make it your signature.*
 
 ---
 
-## 09 — Brand Voice Comparison Table
+### Fashion — Satin Midi Slip Skirt
+**Getting dressed for yourself is a different thing entirely.**
 
-Use this to self-check copy before publishing.
+The [Skirt Name] is a fluid satin midi in our signature Dusty Rose — bias-cut for natural drape, elasticated high waist, falls just below the knee.
 
-| Off-Brand | On-Brand |
-|---|---|
-| "Amazing styles you'll love!" | "Pieces worth keeping." |
-| "Shop our huge collection NOW!!!" | "Shop the Edit." |
-| "Don't miss out on this deal!" | "The sale is live. Selected pieces only." |
-| "We're so excited to share this!" | "New in. Worth a look." |
-| "Our customers absolutely love this product!" | "This one earns its place in the wardrobe." |
-| "Hurry — selling out fast!" | "These go quickly. Yours while it lasts." |
-| "This gorgeous dress is perfect for any occasion!" | "Dressed down or up. Either way, it works." |
+*For the woman who dresses like she's already decided how the day goes.*
 
 ---
 
-## 10 — Version Control
+### Haircare — Deep Hydration Mask
+**Some products do a job. This one restores something.**
 
-| Version | Date | Change |
-|---|---|---|
-| 1.0 | Phase 2 Build | Full rebuild — replaces Brand Bible extraction |
+[Mask Name] is a 20-minute deep conditioning treatment built around argan oil, hydrolyzed keratin, and shea butter. No sulfates, no parabens, no mineral oil.
+
+*Because hair this healthy shouldn't require this much effort.*
 
 ---
 
-*This file grows with every campaign. Add approved copy examples after each major launch.*
+## SECTION 4 — EMAIL COPY
+
+### Welcome Email
+Subject: Welcome to the world of MVQUEEN.
+
+You found us. Or maybe we found you. Either way — welcome.
+
+MVQUEEN is a world built around one belief: every woman deserves to feel elevated. Not as a reward. Not at a price point she has to reach for. As the baseline.
+
+This is where that world starts. You're in it now.
+
+[CTA: Shop the collection]
+— MVQUEEN
+
+---
+
+### Product Launch Email
+Subject: The collection we've been building toward is here.
+
+Some things take time because they're worth it.
+
+[Collection Name] is finally here. We won't pretend this won't sell through. But we wanted you to see it first.
+
+[CTA: Shop the collection →]
+— MVQUEEN
+
+---
+
+### Abandoned Cart Email
+Subject: Still thinking about it?
+
+You left something behind. We saved it for you.
+
+Your cart is still here — with everything you chose, exactly as you left it. Sometimes it needs to sit for a moment. And sometimes that moment is now.
+
+[CTA: Return to your cart]
+P.S. — If something's stopping you, we're here. Reply to this email.
+
+---
+
+## SECTION 5 — SOCIAL MEDIA COPY
+
+### Instagram Caption — Brand Post
+Getting dressed for yourself is one of the quietest forms of self-respect. No audience. No occasion. Just the decision to show up beautifully — for you.
+
+That's what we build. That's what MVQUEEN is for.
+
+The [Collection Name] collection is open. Link in bio.
+
+---
+
+### Instagram Caption — Product Feature
+The ritual started before you knew what to call it.
+
+Every morning, that pause. The products arranged like they matter. The routine you built because it makes you feel better about the rest of the day.
+
+[Product Name] was made for that pause. [One sentence description].
+
+Make it yours. Link in bio.
+
+---
+
+### TikTok Script — Brand Story (30 seconds)
+[0–3s]: "The brand that was built because luxury shouldn't feel out of reach."
+[3–15s]: "MVQUEEN was built for the woman who looks at beautiful things and feels like they weren't made for her. That feeling is a lie. And this brand exists to correct it."
+[15–25s]: "Fashion, beauty, fragrance, skincare, lifestyle — all of it built with one question: does this make her feel like the most valuable version of herself?"
+[25–30s]: "The collection is in the link. Come find your version."
+
+---
+
+## SECTION 6 — MISS.PRINCESS COPY
+
+### Homepage Hero
+Headline: Pretty is a whole personality.
+Sub: Miss.Princess — the soft life collection.
+CTA: Shop now.
+
+### Lip Gloss Caption
+The gloss that makes the whole look. [Gloss Name] is non-sticky, plumping, and wears all day. For the girl who treats every Tuesday like a photo opportunity. Link in bio.
+
+### Email Subject
+Your princess era starts now. The new collection just dropped. 👑
+
+---
+
+## SECTION 7 — BEFORE & AFTER
+
+**BEFORE (generic):**
+"Our new hydrating serum is perfect for all skin types. Try it today and see the difference!"
+
+**AFTER (MVQUEEN standard):**
+"The kind of skin that makes your morning feel like it's going somewhere. [Serum Name] is a lightweight hydration and brightening serum — absorbs in seconds, works all day. For the woman whose routine is a ritual, not a checklist."
+
+---
+
+**BEFORE (generic):**
+"Elevate your style with our new blazer. High quality, versatile, and perfect for any occasion!"
+
+**AFTER (MVQUEEN standard):**
+"The piece that says more than you do. Structured, clean-lapel, lightweight enough to forget you're wearing it, polished enough that nobody else does."
+
+---
+
+**BEFORE (generic):**
+"Our fragrance will make you feel confident and beautiful all day."
+
+**AFTER (MVQUEEN standard):**
+"Some scents introduce you. This one lets you arrive first. Opens with bergamot and soft peony, deepens into warm jasmine and amber, closes with sandalwood that stays close to skin all day."
+
+---
+
+*Pull, adapt, reference freely. Every sample is MVQUEEN voice standard. Pairs with Writing_Rules.md, Product_Description_Voice.md, Hook_Systems.md, and CTA_Library.md.*
