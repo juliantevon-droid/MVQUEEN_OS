@@ -1,0 +1,279 @@
+# ==============================================================================
+# MVQUEEN_OS GITIGNORE
+# ==============================================================================
+# This file prevents accidental commits of sensitive files, secrets, and
+# development artifacts. Be thorough — a single leaked API key compromises
+# the entire system.
+# ==============================================================================
+
+# ==============================================================================
+# 1. ENVIRONMENT & SECRETS
+# ==============================================================================
+# Environment variables with actual credentials
+.env
+.env.local
+.env.*.local
+.env.production.local
+
+# Secrets and keys
+*.pem
+*.key
+*.pub
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# API keys and tokens (if accidentally committed to files)
+*_secret
+*_token
+*_key
+*_password
+
+# ==============================================================================
+# 2. PYTHON & DEPENDENCIES
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+env.bak/
+venv.bak/
+
+# Poetry
+poetry.lock
+
+# PEP 582
+__pypackages__/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# ==============================================================================
+# 3. IDE & EDITOR
+# ==============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+.vim/
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ==============================================================================
+# 4. OPERATING SYSTEM
+# ==============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Windows
+Thumbs.db
+*.lnk
+
+# Linux
+.directory
+
+# ==============================================================================
+# 5. DATABASE & LOCAL FILES
+# ==============================================================================
+# SQLite development database
+*.db
+*.sqlite
+*.sqlite3
+
+# Database backups
+*.sql
+*.sql.gz
+
+# Local exports
+MVQExports/
+exports/
+*.csv
+
+# ==============================================================================
+# 6. LOGS & TEMPORARY
+# ==============================================================================
+# Log files
+*.log
+*.log.*
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# OS temporary files
+$RECYCLE.BIN/
+.Trash-*
+
+# ==============================================================================
+# 7. NODE (if using frontend tools)
+# ==============================================================================
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm
+.node_repl_history
+
+# ==============================================================================
+# 8. DOCKER & CONTAINERS
+# ==============================================================================
+# Docker build artifacts
+docker-compose.override.yml
+.dockerignore
+
+# ==============================================================================
+# 9. CREDENTIALS & SENSITIVE DATA
+# ==============================================================================
+# AWS credentials
+~/.aws/credentials
+~/.aws/config
+
+# Git credentials
+.git-credentials
+.gitcredentials
+
+# SSH keys
+.ssh/
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# ==============================================================================
+# 10. PROJECT-SPECIFIC
+# ==============================================================================
+# Shopify theme files (local development)
+shopify.app.toml.local
+
+# Local configuration overrides
+config.local.py
+settings.local.py
+
+# Obsidian vault files (for local editing)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# ==============================================================================
+# 11. MACOS SPECIFIC
+# ==============================================================================
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ==============================================================================
+# 12. BACKUPS & ARCHIVES
+# ==============================================================================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.backup
+*.bak
+
+# ==============================================================================
+# EXCEPTIONS (files to track despite .gitignore rules)
+# ==============================================================================
+# Track .env.example even though .env is ignored
+!.env.example
+
+# Track GitHub workflows
+!.github/workflows/
+
+# Track Docker files
+!Dockerfile
+!docker-compose.yml
+
+# ==============================================================================
+# FINAL REMINDER
+# ==============================================================================
+# If you accidentally committed secrets:
+# 1. IMMEDIATELY rotate all keys in that file
+# 2. Run: git rm --cached .env
+# 3. Run: git commit --amend --no-edit
+# 4. Run: git push --force-with-lease
+# 5. Add to .gitignore to prevent future commits
+#
+# DO NOT rely on GitHub's ability to delete history — assume the secret
+# is compromised and rotate all affected credentials immediately.
+# ==============================================================================
