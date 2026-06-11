@@ -8,21 +8,21 @@
     "systemPromptActionId": null
   },
   "defaults": {
-    "creativity": "low",
+    "creativity": "high",
     "contextLimit": "local"
   },
   "actions": [
-    {
-      "name": "🪄 General help",
-      "prompt": "",
-      "system": "You are an assistant helping a user write more content in a document based on a prompt. Output in markdown format. Do not use links. Do not include literal content from the original document.",
-      "id": "4007c07c-34e6-492a-babd-968ed7859acd"
-    },
     {
       "name": "✍️ Continue writing",
       "prompt": "Act as a professional editor with many years of experience as a writer. Carefully finalize the following text, add details, use facts and make sure that the meaning and original style are preserved. Purposely write in detail, with examples, so that your reader is comfortable, even if they don't understand the specifics. Don't use clericalisms, evaluations without proof with facts, passive voice. Use Markdown markup language for formatting. Answer only content and nothing else, no introductory words, only substance.",
       "system": "You are an AI assistant that follows instruction extremely well. Help as much as you can.",
       "id": "c21d0959-6a4e-43ec-8fe6-cb37a393c6f2"
+    },
+    {
+      "name": "🪄 General help",
+      "prompt": "",
+      "system": "You are an assistant helping a user write more content in a document based on a prompt. Output in markdown format. Do not use links. Do not include literal content from the original document.",
+      "id": "4007c07c-34e6-492a-babd-968ed7859acd"
     },
     {
       "name": "🍭 Summarize",
