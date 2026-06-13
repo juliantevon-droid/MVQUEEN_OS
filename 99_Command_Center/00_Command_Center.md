@@ -2,11 +2,11 @@
 
 ## 🧠 SYSTEM STATUS
 - Brand Health: [[01_Brand_Strategy/README]]
-- Product Engine: [[04_Product_Ecosystem/README]]
-- Marketing Engine: [[06_Marketing/README]]
-- Content Engine: [[05_Content_And_SEO/README]]
-- Store Engine: [[08_Shopify_Systems/README]]
-- AI Engine: [[09_AI_Systems/README]]
+- Product Engine: [[04_Products/README]]
+- Marketing Engine: [[07_Marketing/README]]
+- Content Engine: [[05_SEO_And_Content/README]]
+- Store Engine: [[09_Shopify_Systems/README]]
+- AI Engine: [[10_AI_Systems/README]]
 
 ---
 
@@ -26,26 +26,26 @@
 ---
 
 ## 💰 REVENUE ENGINE
-- Funnels → [[06_Marketing/Funnel_Strategy]]
-- Offers → [[06_Marketing/Offer_Strategy]]
-- Conversions → [[08_Shopify_Systems/Conversion_Optimization]]
-- Products → [[04_Product_Ecosystem/Product_Catalog]]
+- Funnels → [[07_Marketing/Funnel_Strategy]]
+- Offers → [[07_Marketing/Offer_Strategy]]
+- Conversions → [[09_Shopify_Systems/Conversion_Optimization]]
+- Products → [[04_Products/Product_Catalog]]
 
 ---
 
 ## 📈 GROWTH ENGINE
-- SEO → [[05_Content_And_SEO/SEO_Strategy]]
+- SEO → [[05_SEO_And_Content/SEO_Strategy]]
 - Social → [[07_Social_Media/Viral_Content_Systems]]
-- Ads → [[06_Marketing/Paid_Ads]]
-- Influencers → [[06_Marketing/Influencer_Strategy]]
+- Ads → [[07_Marketing/Paid_Ads]]
+- Influencers → [[07_Marketing/Influencer_Strategy]]
 
 ---
 
 ## 🤖 AI CONTROL PANEL
-- Master Prompt → [[09_AI_Systems/AI_Master_Prompt]]
-- Agents → [[09_AI_Systems/AI_Agents]]
-- Workflows → [[09_AI_Systems/AI_Workflows]]
-- Automation → [[14_Automation/Workflow_Automations]]
+- Master Prompt → [[10_AI_Systems/AI_Master_Prompt]]
+- Agents → [[10_AI_Systems/AI_Agents]]
+- Workflows → [[10_AI_Systems/AI_Workflows]]
+- Automation → [[16_Automation/Workflow_Automations]]
 
 ---
 
@@ -58,7 +58,7 @@
 ---
 
 ## 🧭 STRATEGY LAYER
-- Scaling Plan → [[18_Growth_And_Scaling/Scaling_Strategy]]
+- Scaling Plan → [[22_Growth_And_Scaling/Scaling_Strategy]]
 - Brand Direction → [[Organize this for me Brand_Bible]]
 - Market Position → [[01_Brand_Strategy/Brand_Positioning]]
 
