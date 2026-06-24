@@ -1,0 +1,31 @@
+# MVQUEEN_OS .gitignore
+
+# System logs
+30_System_Infrastructure/system/logs/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+
+# Obsidian
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache
+
+# Dead root folders
+MVQUEEN/
+MVQUEEN_FINAL/
+
+# Secrets
+*.env
+secrets.json
+github_token.txt
