@@ -6,7 +6,7 @@ from __future__ import annotations
 import random
 from typing import Dict, Any, List, Optional
 
-from engine.engine_core import (
+from mvqueen_engine.engine_core import (
     get_engine,
     select_persona,
     select_primary_keyword,

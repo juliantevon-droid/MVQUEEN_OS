@@ -7,15 +7,22 @@
 import pandas as pd
 import requests
 import time
+import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # ============================================================
-# CONFIG - EDIT THESE ONLY
+# CONFIG - LOAD FROM ENVIRONMENT
 # ============================================================
 
-SHOP_DOMAIN = "mvqueen-2.myshopify.com"
-API_VERSION = "2024-10"
-ADMIN_API_TOKEN = "PASTE_YOUR_ADMIN_API_TOKEN_HERE"
+# Load environment variables
+env_path = Path(__file__).parent.parent / '.env'
+if env_path.exists():
+    load_dotenv(dotenv_path=env_path)
+
+SHOP_DOMAIN = os.getenv("SHOPIFY_STORE_DOMAIN", "mvqueen.myshopify.com")
+API_VERSION = os.getenv("SHOPIFY_API_VERSION", "2024-10")
+ADMIN_API_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN", "REPLACE_WITH_ENV_VAR")
 
 DRY_RUN = True   # <- SET TO False ONLY WHEN READY
 SLEEP_SECONDS = 0.5

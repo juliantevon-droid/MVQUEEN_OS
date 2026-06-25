@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 from typing import Dict, Any, List
 
-from engine.engine_core import (
+from mvqueen_engine.engine_core import (
     get_engine,
     ensure_list,
 )

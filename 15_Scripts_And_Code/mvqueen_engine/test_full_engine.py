@@ -17,7 +17,7 @@ It validates:
 - Unified product package structure
 """
 
-from engine import process_product, upload_to_shopify
+from mvqueen_engine import process_product, upload_to_shopify
 from control_panel import get_engine_state
 from control_panel.config import load_config
 

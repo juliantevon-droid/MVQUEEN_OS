@@ -3,20 +3,32 @@
 PHASE 0 — CONFIG
 
 Global configuration for MVQueen Engine:
-- Shopify API settings
+- Shopify API settings (via environment variables)
 - General engine settings
 - Safety toggles
 """
 
 import os
+from pathlib import Path
+
+# Try to load environment variables from .env if python-dotenv is installed
+try:
+    from dotenv import load_dotenv
+    # Look for .env in the parent directory of this file (15_Scripts_And_Code)
+    env_path = Path(__file__).parent.parent / '.env'
+    if env_path.exists():
+        load_dotenv(dotenv_path=env_path)
+except ImportError:
+    pass
 
 # -----------------------------
 # SHOPIFY CONFIG
 # -----------------------------
 
-SHOPIFY_STORE_DOMAIN = "mvqueen.myshopify.com"
-SHOPIFY_API_VERSION = "2024-01"
-SHOPIFY_ACCESS_TOKEN = "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"
+# Use environment variables with fallbacks to placeholders for safety
+SHOPIFY_STORE_DOMAIN = os.getenv("SHOPIFY_STORE_DOMAIN", "mvqueen.myshopify.com")
+SHOPIFY_API_VERSION = os.getenv("SHOPIFY_API_VERSION", "2024-01")
+SHOPIFY_ACCESS_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN", "REPLACE_WITH_ENV_VAR")
 
 SHOPIFY_BASE_URL = f"https://{SHOPIFY_STORE_DOMAIN}/admin/api/{SHOPIFY_API_VERSION}"
 
@@ -30,7 +42,7 @@ BRAND_NAME = "MVQueen"
 CSV_CHUNK_SIZE = 15000
 
 # Whether to log debug info to console
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
 # -----------------------------
 # SAFETY / PROTECTION

@@ -5,16 +5,16 @@
 from __future__ import annotations
 from typing import Dict, Any
 
-from engine.engine_core import (
+from mvqueen_engine.engine_core import (
     build_title,
 )
-from engine.handle_engine import generate_handle
-from engine.editorial_engine import generate_editorial
-from engine.seo_engine import generate_seo
-from engine.metafield_engine import generate_metafields
-from engine.price_engine import generate_price
-from engine.image_engine import generate_image_data
-from engine.validation_engine import validate_product
+from mvqueen_engine.handle_engine import generate_handle
+from mvqueen_engine.editorial_engine import generate_editorial
+from mvqueen_engine.seo_engine import generate_seo
+from mvqueen_engine.metafield_engine import generate_metafields
+from mvqueen_engine.price_engine import generate_price
+from mvqueen_engine.image_engine import generate_image_data
+from mvqueen_engine.validation_engine import validate_product
 
 
 # ------------------------------------------------------------

@@ -5,7 +5,7 @@
 from __future__ import annotations
 from typing import Dict, Any, Optional
 
-from engine.engine_core import (
+from mvqueen_engine.engine_core import (
     get_engine,
     sanitize_text,
 )

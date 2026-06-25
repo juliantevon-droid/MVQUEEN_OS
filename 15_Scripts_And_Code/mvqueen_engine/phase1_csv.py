@@ -4,7 +4,7 @@
 
 import csv
 import json
-from engine.runtime import run_mvqueen
+from mvqueen_engine.runtime import run_mvqueen
 
 
 # ------------------------------------------------------------
