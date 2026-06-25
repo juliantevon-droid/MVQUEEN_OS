@@ -1,0 +1,2096 @@
+================================================================================
+👑 MVQUEEN_OS — SYSTEM SCAN (v2)
+================================================================================
+
+📁 MVQUEEN_OS/
+    📄 .trashed-1781466831-2026-05-15.md  [🟥 EMPTY]
+    📄 .ttxfolder  [🟨 VERY SMALL]
+    📄 README.md  [🟨 VERY SMALL]
+    📄 Run folder agent.md  [🟥 EMPTY]
+    📄 Weekly_Focus.md  [🟥 EMPTY]
+    📄 folder_agent.md  [🟦 PARTIAL]
+    📄 mvqueen_os_scan.txt  [🟩 DEVELOPED]
+    📄 vault_context.md  [🟩 DEVELOPED]
+
+    📁 .obsidian/
+        📄 app.json  [🟨 VERY SMALL]
+        📄 appearance.json  [🟨 VERY SMALL]
+        📄 command-palette.json  [🟨 VERY SMALL]
+        📄 community-plugins.json  [🟦 PARTIAL]
+        📄 core-plugins.json  [🟦 PARTIAL]
+        📄 templates.json  [🟨 VERY SMALL]
+        📄 text-generator.json  [🟩 DEVELOPED]
+        📄 types.json  [🟦 PARTIAL]
+        📄 workspace-mobile.json  [🟩 DEVELOPED]
+
+        📁 icons/
+
+        📁 plugins/
+
+            📁 ai-providers/
+                📄 data.json  [🟨 VERY SMALL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 buttons/
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟨 VERY SMALL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 calendar/
+                📄 data.json  [🟨 VERY SMALL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟨 VERY SMALL]
+
+            📁 cmdr/
+                📄 data.json  [🟦 PARTIAL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 copilot/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 dataview/
+                📄 data.json  [🟦 PARTIAL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 editing-toolbar/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 folder-notes/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 homepage/
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 local-gpt/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟨 VERY SMALL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 metadata-menu/
+                📄 data.json  [🟦 PARTIAL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 metaedit/
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟨 VERY SMALL]
+                📄 styles.css  [🟨 VERY SMALL]
+
+            📁 obsidian-excalidraw-plugin/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 obsidian-icon-folder/
+                📄 data.json  [🟦 PARTIAL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 obsidian-kanban/
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 obsidian-minimal-settings/
+                📄 data.json  [🟦 PARTIAL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟨 VERY SMALL]
+
+            📁 obsidian-style-settings/
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 obsidian-tasks-plugin/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 obsidian-textgenerator-plugin/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 omnisearch/
+                📄 data.json  [🟦 PARTIAL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 periodic-notes/
+                📄 data.json  [🟦 PARTIAL]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟨 VERY SMALL]
+                📄 styles.css  [🟦 PARTIAL]
+
+            📁 quickadd/
+                📄 data.json  [🟩 DEVELOPED]
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+            📁 templater-obsidian/
+                📄 main.js  [🟩 DEVELOPED]
+                📄 manifest.json  [🟦 PARTIAL]
+                📄 styles.css  [🟩 DEVELOPED]
+
+    📁 .trash/
+        📄 ''hello world''.md  [🟦 PARTIAL]
+        📄 2026-05-16.md  [🟨 VERY SMALL]
+        📄 Are you there.md  [🟦 PARTIAL]
+        📄 Create a luxury skincare homepage concept for MVQUEEN..md  [🟥 EMPTY]
+        📄 Hey are you there.md  [🟥 EMPTY]
+        📄 Hey.md  [🟥 EMPTY]
+        📄 MVQUEEN_OS is a luxury feminine brand operating system built in Obsidian.Analyze the structure and suggest improvements..md  [🟥 EMPTY]
+        📄 Take a look at MVQUYEN_OS.md  [🟦 PARTIAL]
+        📄 Untitled 1.md  [🟥 EMPTY]
+        📄 Untitled 2.md  [🟥 EMPTY]
+        📄 Untitled.md  [🟨 VERY SMALL]
+        📄 Write a luxury feminine skincare description for MVQUEEN..md  [🟥 EMPTY]
+
+    📁 00_Command_Center/
+        📄 00_Command_Center.md  [🟦 PARTIAL]
+        📄 Brain_Dump.md  [🟥 EMPTY]
+        📄 Home.md  [🟦 PARTIAL]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Tasks.md  [🟥 EMPTY]
+        📄 current_campaigns.md  [🟥 EMPTY]
+        📄 current_launches.md  [🟥 EMPTY]
+        📄 executive_overview.md  [🟥 EMPTY]
+        📄 priority_tasks.md  [🟥 EMPTY]
+        📄 quarterly_goals.md  [🟥 EMPTY]
+
+        📁 Dashboards/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Metrics/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Widgets/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 01_Brand_Strategy/
+        📄 Brand_Bible.md  [🟩 DEVELOPED]
+        📄 Brand_Essence.md  [🟨 VERY SMALL]
+        📄 Brand_Personality.md  [🟨 VERY SMALL]
+        📄 Brand_Positioning.md  [🟨 VERY SMALL]
+        📄 Brand_Story.md  [🟨 VERY SMALL]
+        📄 Brand_Values.md  [🟨 VERY SMALL]
+        📄 Elevator_Pitch.md  [🟥 EMPTY]
+        📄 Emotional_Transformation.md  [🟨 VERY SMALL]
+        📄 Mission_And_Vision.md  [🟨 VERY SMALL]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Slogans.md  [🟥 EMPTY]
+        📄 Taglines.md  [🟥 EMPTY]
+        📄 USP.md  [🟥 EMPTY]
+        📄 brand_manifesto.md  [🟥 EMPTY]
+        📄 brand_philosophy.md  [🟥 EMPTY]
+        📄 templates.py  [🟩 DEVELOPED]
+
+        📁 References/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 02_Brand_Identity/
+        📄 Brand_Identity.md  [🟥 EMPTY]
+        📄 Brand_Vocabulary.md  [🟥 EMPTY]
+        📄 Color_Psychology.md  [🟥 EMPTY]
+        📄 Logo_Concepts.md  [🟥 EMPTY]
+        📄 Packaging_Vision.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Visual_Direction.md  [🟥 EMPTY]
+        📄 brand_rules.md  [🟥 EMPTY]
+        📄 color_system.md  [🟥 EMPTY]
+        📄 logo_guidelines.md  [🟥 EMPTY]
+        📄 packaging_identity.md  [🟥 EMPTY]
+        📄 typography_system.md  [🟥 EMPTY]
+        📄 visual_identity.md  [🟥 EMPTY]
+
+        📁 Brand_Guidelines/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Brand_Vocabulary/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Color_Palette/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Logo_System/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Moodboards/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Packaging/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Photography_Direction/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Tone_And_Voice/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Typography/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Visual_Assets/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 03_Customer_Psychology/
+        📄 Audience_Segments.md  [🟥 EMPTY]
+        📄 Buying_Psychology.md  [🟥 EMPTY]
+        📄 Customer_Personas.md  [🟥 EMPTY]
+        📄 Customer_Transformation.md  [🟥 EMPTY]
+        📄 Identity_Aspirations.md  [🟥 EMPTY]
+        📄 Luxury_Buyer_Behavior.md  [🟥 EMPTY]
+        📄 Market_Research.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Shopping_Habits.md  [🟥 EMPTY]
+        📄 Social_Behavior.md  [🟥 EMPTY]
+        📄 Trend_Analysis.md  [🟥 EMPTY]
+        📄 behavioral_segmentation.md  [🟥 EMPTY]
+        📄 buyer_psychology.md  [🟥 EMPTY]
+        📄 buying_triggers.md  [🟥 EMPTY]
+        📄 customer_avatars.md  [🟥 EMPTY]
+        📄 customer_objections.md  [🟥 EMPTY]
+        📄 identity_drivers.md  [🟥 EMPTY]
+        📄 lifestyle_aspirations.md  [🟥 EMPTY]
+        📄 luxury_consumer_behavior.md  [🟥 EMPTY]
+        📄 social_validation.md  [🟥 EMPTY]
+        📄 trust_building.md  [🟥 EMPTY]
+
+        📁 Analytics/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Aspirational_Identity/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Buying_Behavior/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Emotional_Triggers/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Feminine_Identity/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Luxury_Psychology/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Research/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Retention_Psychology/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Surveys/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 04_Products/
+        📄 Accessories.md  [🟥 EMPTY]
+        📄 Beauty_Products.md  [🟥 EMPTY]
+        📄 Collection_Structure.md  [🟥 EMPTY]
+        📄 Competitor_Products.md  [🟥 EMPTY]
+        📄 Cross-Sell Systems.md  [🟥 EMPTY]
+        📄 Fashion_Products.md  [🟥 EMPTY]
+        📄 Hair_Products.md  [🟥 EMPTY]
+        📄 Packaging_Ideas.md  [🟥 EMPTY]
+        📄 Pricing_Strategy.md  [🟥 EMPTY]
+        📄 Product Photography Standards.md  [🟥 EMPTY]
+        📄 Product SEO.md  [🟥 EMPTY]
+        📄 Product_Catalog.md  [🟥 EMPTY]
+        📄 Product_Framework.md  [🟥 EMPTY]
+        📄 Product_Naming_System.md  [🟥 EMPTY]
+        📄 Product_Templates.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 SKU_Systems.md  [🟥 EMPTY]
+        📄 Suppliers & Research.md  [🟥 EMPTY]
+        📄 Trend_Products.md  [🟥 EMPTY]
+        📄 Upsell Systems.md  [🟥 EMPTY]
+        📄 inventory_systems.md  [🟥 EMPTY]
+        📄 product_categories.md  [🟥 EMPTY]
+        📄 product_faqs.md  [🟥 EMPTY]
+
+        📁 Beauty/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Collections/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Drafts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Fashion/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Fragrance/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Haircare/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Jewelry/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Packaging/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Pricing/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Assets/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Research/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Shoes/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Skincare/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Suppliers/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Uploads/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 05_SEO_And_Content/
+        📄 Article_Structures.md  [🟥 EMPTY]
+        📄 Blog_Strategy.md  [🟥 EMPTY]
+        📄 Blog_Templates.md  [🟥 EMPTY]
+        📄 Competitor SEO.md  [🟥 EMPTY]
+        📄 Content_Calendar.md  [🟥 EMPTY]
+        📄 EEAT_Optimization.md  [🟥 EMPTY]
+        📄 Evergreen Content.md  [🟥 EMPTY]
+        📄 FAQ_Library.md  [🟥 EMPTY]
+        📄 Instagram_SEO.md  [🟥 EMPTY]
+        📄 Internal_Linking.md  [🟥 EMPTY]
+        📄 Keyword_Research.md  [🟥 EMPTY]
+        📄 Long_Tail_Keywords.md  [🟥 EMPTY]
+        📄 Metadata_Templates.md  [🟥 EMPTY]
+        📄 Pinterest_SEO.md  [🟥 EMPTY]
+        📄 Programmatic_SEO.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 SEO_Clusters.md  [🟥 EMPTY]
+        📄 SEO_Strategy.md  [🟥 EMPTY]
+        📄 Search_Intent_Mapping.md  [🟥 EMPTY]
+        📄 Semantic SEO.md  [🟥 EMPTY]
+        📄 Short_Tail_Keywords.md  [🟥 EMPTY]
+        📄 TikTok_SEO.md  [🟥 EMPTY]
+        📄 Trend_SEO.md  [🟥 EMPTY]
+        📄 Trend_Tracking.md  [🟥 EMPTY]
+        📄 Viral_Topics.md  [🟥 EMPTY]
+        📄 YouTube SEO.md  [🟥 EMPTY]
+
+        📁 Blog_SEO/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Blogs/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Campaign_Content/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Caption_Library/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Content_Drafts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Hooks/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Instagram_Content/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Keywords/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Metadata/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Pinterest_Content/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SEO_Keywords/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 TikTok_Content/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 UGC_Strategy/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 06_Tone_And_Voice/
+        📄 Ad_Copy_Voice.md  [🟥 EMPTY]
+        📄 Brand_Messaging.md  [🟥 EMPTY]
+        📄 CTA_Library.md  [🟥 EMPTY]
+        📄 Email_Voice.md  [🟥 EMPTY]
+        📄 Emotional_Language.md  [🟥 EMPTY]
+        📄 Example_Copy.md  [🟥 EMPTY]
+        📄 Feminine_Language.md  [🟥 EMPTY]
+        📄 Forbidden_Words.md  [🟥 EMPTY]
+        📄 Headline Frameworks.md  [🟥 EMPTY]
+        📄 Hook Systems.md  [🟥 EMPTY]
+        📄 Luxury_Language.md  [🟥 EMPTY]
+        📄 Messaging_Pillars.md  [🟥 EMPTY]
+        📄 Persuasion Frameworks.md  [🟥 EMPTY]
+        📄 Product_Description_Voice.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 SEO Voice.md  [🟥 EMPTY]
+        📄 SMS_Voice.md  [🟥 EMPTY]
+        📄 Social_Voice.md  [🟥 EMPTY]
+        📄 Storytelling Frameworks.md  [🟥 EMPTY]
+        📄 Tone_Guide.md  [🟥 EMPTY]
+        📄 Voice_Consistency_Rules.md  [🟥 EMPTY]
+        📄 Writing_Rules.md  [🟥 EMPTY]
+        📄 blog_voice.md  [🟥 EMPTY]
+        📄 copywriting_formulas.md  [🟥 EMPTY]
+        📄 copywriting_frameworks.md  [🟥 EMPTY]
+
+        📁 Brand_Vocabulary/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Caption_Examples/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Empowerment_Voice/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Luxury_Editorial_Voice/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Princess_Playful_Voice/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Soft_Feminine_Voice/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Swipe_Files/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Trendy_Social_Voice/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 07_Marketing/
+        📄 Affiliate_Program.md  [🟥 EMPTY]
+        📄 Analytics.md  [🟥 EMPTY]
+        📄 Campaign_Strategy.md  [🟥 EMPTY]
+        📄 Conversion_Psychology.md  [🟥 EMPTY]
+        📄 Email_Marketing.md  [🟥 EMPTY]
+        📄 Funnel_Strategy.md  [🟥 EMPTY]
+        📄 Giveaway_Systems.md  [🟥 EMPTY]
+        📄 Influencer_Strategy.md  [🟥 EMPTY]
+        📄 Offer_Strategy.md  [🟥 EMPTY]
+        📄 Paid_Ads.md  [🟥 EMPTY]
+        📄 Product_Launch_Campaigns.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Retargeting.md  [🟥 EMPTY]
+        📄 SMS_Marketing.md  [🟥 EMPTY]
+        📄 Seasonal_Campaigns.md  [🟥 EMPTY]
+        📄 UGC_Strategy.md  [🟥 EMPTY]
+        📄 Viral_Hooks.md  [🟥 EMPTY]
+
+        📁 Ad_Creatives/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Campaigns/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Email_Marketing/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Influencer_Marketing/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Launch_Campaigns/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Organic_Growth/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 PR_And_Branding/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Paid_Ads/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Reports/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Retargeting/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SMS_Marketing/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 08_Social_Media/
+        📄 Caption_Templates.md  [🟥 EMPTY]
+        📄 Carousel_Ideas.md  [🟥 EMPTY]
+        📄 Community_Building.md  [🟥 EMPTY]
+        📄 Content_Pillars.md  [🟥 EMPTY]
+        📄 Engagement_Strategy.md  [🟥 EMPTY]
+        📄 Facebook_Strategy.md  [🟥 EMPTY]
+        📄 Hashtag_Systems.md  [🟥 EMPTY]
+        📄 Posting_Schedule.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Reel_Hooks.md  [🟥 EMPTY]
+        📄 Story_Ideas.md  [🟥 EMPTY]
+        📄 Trend_Tracker.md  [🟥 EMPTY]
+        📄 Viral_Content_Systems.md  [🟥 EMPTY]
+        📄 YouTube_Strategy.md  [🟥 EMPTY]
+
+        📁 Assets/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Community_Engagement/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Instagram_Strategy/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Pinterest_Strategy/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Posts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Reels/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Schedules/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 TikTok_Strategy/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Viral_Trend_Tracking/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 YouTube_Strategy/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 09_Shopify_Systems/
+        📄 Analytics_Tracking.md  [🟥 EMPTY]
+        📄 Automation_Systems.md  [🟥 EMPTY]
+        📄 Checkout_Optimization.md  [🟥 EMPTY]
+        📄 Collection_Systems.md  [🟥 EMPTY]
+        📄 Conversion_Optimization.md  [🟥 EMPTY]
+        📄 Customer_Support_SOP.md  [🟥 EMPTY]
+        📄 Homepage_Layout.md  [🟥 EMPTY]
+        📄 Navigation_Mapping.md  [🟥 EMPTY]
+        📄 Product_SEO_SOP.md  [🟥 EMPTY]
+        📄 Product_Upload_SOP.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Refund_SOP.md  [🟥 EMPTY]
+        📄 Shipping_SOP.md  [🟥 EMPTY]
+        📄 Shopify_Apps.md  [🟥 EMPTY]
+        📄 Store_Scaling.md  [🟥 EMPTY]
+        📄 Store_Structure.md  [🟥 EMPTY]
+        📄 Upsell_Systems.md  [🟥 EMPTY]
+
+        📁 Apps_And_Integrations/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 CSV/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Checkout_Experience/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Collections/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Conversion_Optimization/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Exports/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Homepage/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Launch_Checklist/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Mobile_Optimization/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Navigation/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Policies/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SEO_Optimization/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Themes/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Uploads/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 10_AI_Systems/
+        📄 AGENT_BRAIN_SYSTEM.md  [🟦 PARTIAL]
+        📄 AI_Agents.md  [🟨 VERY SMALL]
+        📄 AI_Prompt_Library.md  [🟥 EMPTY]
+        📄 AI_Testing.md  [🟥 EMPTY]
+        📄 AI_Workflows.md  [🟥 EMPTY]
+        📄 API_Notes.md  [🟥 EMPTY]
+        📄 Ad_Copy_Prompts.md  [🟥 EMPTY]
+        📄 Automation_Pipelines.md  [🟥 EMPTY]
+        📄 Blog_Prompts.md  [🟥 EMPTY]
+        📄 Image_Generation_Prompts.md  [🟥 EMPTY]
+        📄 OpenAI_Systems.md  [🟥 EMPTY]
+        📄 Product_Description_Prompts.md  [🟥 EMPTY]
+        📄 Prompt_Templates.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 SEO_Prompts.md  [🟥 EMPTY]
+        📄 Social_Media_Prompts.md  [🟥 EMPTY]
+        📄 Workflow_Automations.md  [🟥 EMPTY]
+
+        📁 AI_Agents/
+            📄 Brand_Strategist_AI.md  [🟦 PARTIAL]
+
+        📁 AI_Brand_Voice/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 APIs/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Ad_Copy_Generator/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Automation_Workflows/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Caption_Generator/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Email_Generator/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Hook_Generator/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Models/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Pipelines/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Description_Generator/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Prompt_Library/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Prompts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SEO_Generator/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 11_Operations/
+        📄 Crisis_Management.md  [🟥 EMPTY]
+        📄 Daily_Operations.md  [🟥 EMPTY]
+        📄 Financial_Planning.md  [🟥 EMPTY]
+        📄 Fulfillment_Systems.md  [🟥 EMPTY]
+        📄 Hiring_Systems.md  [🟥 EMPTY]
+        📄 Inventory_Management.md  [🟥 EMPTY]
+        📄 KPI_Tracking.md  [🟥 EMPTY]
+        📄 Monthly_Operations.md  [🟥 EMPTY]
+        📄 Productivity_Systems.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 SOPs.md  [🟥 EMPTY]
+        📄 Scaling_Roadmap.md  [🟥 EMPTY]
+        📄 Team_Structure.md  [🟥 EMPTY]
+        📄 Weekly_Operations.md  [🟥 EMPTY]
+        📄 Workflow_Systems.md  [🟥 EMPTY]
+
+        📁 Fulfillment/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Inventory/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 KPI_Tracking/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Reports/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SOP_Library/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SOPs/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Strategic_Planning/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Team_Management/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Workflow_Systems/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Workflows/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 12_Content_Assets/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Ad_Creatives/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Archived_Media/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Brand_Assets/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Campaign_Assets/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Canva_Designs/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Canva_Exports/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Content_Archive/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Edited_Content/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Graphics/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Logos/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Mockups/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Photos/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Media/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Photos/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Videos/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Raw_Content/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 UGC_Content/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Videos/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 13_Research_And_Inspiration/
+        📄 Boutique_Inspiration.md  [🟥 EMPTY]
+        📄 Color_Palettes.md  [🟥 EMPTY]
+        📄 Consumer_Trends.md  [🟥 EMPTY]
+        📄 Fashion_Inspiration.md  [🟥 EMPTY]
+        📄 Packaging_Inspiration.md  [🟥 EMPTY]
+        📄 README.md  [🟨 VERY SMALL]
+        📄 Swipe_Files.md  [🟥 EMPTY]
+        📄 Trend_Forecasting.md  [🟥 EMPTY]
+        📄 Typography.md  [🟥 EMPTY]
+        📄 Viral_Brands.md  [🟥 EMPTY]
+        📄 Website_Inspiration.md  [🟥 EMPTY]
+
+        📁 Beauty_Research/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Competitor_Research/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Fashion_Research/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Luxury_Brands/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Moodboards/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 References/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Screenshots/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Trend_Research/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Visual_Inspiration/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 13_Scripts_And_Code/
+        📄 .env  [🟥 EMPTY]
+
+    📁 14_Data_And_Analytics/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Conversion_Data/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Customer_Data/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Growth_Reports/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Marketing_Analytics/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Revenue_Analytics/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SEO_Analytics/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 15_Scripts_And_Code/
+        📄 README.md  [🟨 VERY SMALL]
+        📄 config.py  [🟥 EMPTY]
+        📄 requirements.txt  [🟥 EMPTY]
+
+        📁 Automation_Scripts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 CSV_Systems/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Content_Pipelines/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 OpenAI_API/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Python_Scripts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SEO_Tools/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Shopify_API/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Testing_Environment/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Upload_Scripts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Web_Scrapers/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 logs/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 16_Automation/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 AI_Automations/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 API_Systems/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Email_Automations/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Python Scripts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Shopify_Automations/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Workflow_Automations/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 17_Templates/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Blog_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Campaign_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Dashboard_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Prompt_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SEO_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SOP_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Workflow_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 18_Development/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 CSS/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Custom Scripts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Custom_Sections/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Experimental_Features/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 JavaScript/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Liquid/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Shopify_Code/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Theme_Backups/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Website Code/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 19_Legal_And_Admin/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Compliance/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Contracts/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Documentation/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 LLC/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Policies/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Trademarks/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 21_Finance/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Budgeting/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Expenses/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Financial_Goals/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Profit_Margins/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Revenue/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Taxes/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 22_Growth_And_Scaling/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Hiring/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 International_Expansion/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Long_Term_Vision/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Partnerships/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Retail_Expansion/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Scaling_Strategy/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 23_Team_And_Delegation/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 25_Retention_And_Community/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Ambassador_Programs/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Community_Building/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Customer_Experience/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Loyalty_Programs/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Retention_Strategy/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 VIP_Systems/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 26_RnD_Lab/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 27_Templates/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Campaign_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Caption_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Email_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Product_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 SOP_Templates/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 28_Archives/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 29_Mobile_Development/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 30_AI_Datasets/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 31_AI_Knowledge_Base/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 32_Backups/
+        📄 MVQUEEN_OS_v1.zip  [🟩 DEVELOPED]
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 33_Content_Pipelines/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 34_Master_Systems/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 35_System_Blueprints/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 36_Agent_Systems/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 37_Databases/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 38_Prompt_Chains/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 39_SOP_Library/
+        📄 README.md  [🟨 VERY SMALL]
+
+    📁 99_Archive/
+        📄 README.md  [🟨 VERY SMALL]
+
+        📁 Brain_Dumps/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Deprecated_Systems/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Experimental_Systems/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Failed_Ideas/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Old_Campaigns/
+            📄 README.md  [🟨 VERY SMALL]
+
+        📁 Old_Notes/
+            📄 README.md  [🟨 VERY SMALL]
+
+    📁 AI/
+
+    📁 Content/
+
+    📁 Logos/
+
+    📁 Shopify/
+
+    📁 copilot/
+
+        📁 copilot-conversations/
+            📄 Based_on_my_notes_on_topic,_what_is_the_question@20260516_131933.md  [🟦 PARTIAL]
+            📄 Hell@20260514_230509.md  [🟦 PARTIAL]
+            📄 Hry@20260514_053300.md  [🟦 PARTIAL]
+            📄 MvQueen@20260516_131817.md  [🟦 PARTIAL]
+
+        📁 copilot-custom-prompts/
+            📄 Clip Web Page.md  [🟦 PARTIAL]
+            📄 Clip YouTube Transcript.md  [🟦 PARTIAL]
+            📄 Emojify.md  [🟦 PARTIAL]
+            📄 Explain like I am 5.md  [🟦 PARTIAL]
+            📄 Fix grammar and spelling.md  [🟦 PARTIAL]
+            📄 Generate glossary.md  [🟦 PARTIAL]
+            📄 Generate table of contents.md  [🟦 PARTIAL]
+            📄 Make longer.md  [🟦 PARTIAL]
+            📄 Make shorter.md  [🟦 PARTIAL]
+            📄 Remove URLs.md  [🟦 PARTIAL]
+            📄 Rewrite as tweet thread.md  [🟦 PARTIAL]
+            📄 Rewrite as tweet.md  [🟦 PARTIAL]
+            📄 Simplify.md  [🟦 PARTIAL]
+            📄 Summarize.md  [🟦 PARTIAL]
+            📄 Translate to Chinese.md  [🟦 PARTIAL]
+
+    📁 scripts/
+        📄 vault_crawler.py  [🟦 PARTIAL]
+
+    📁 textgenerator/
+
+        📁 configs/
+
+            📁 llm/
+                📄 config_5-14225019.json.md  [🟨 VERY SMALL]
+                📄 config_5-14231807.json.md  [🟦 PARTIAL]
+                📄 config_5-15104154.json.md  [🟨 VERY SMALL]
+
+================================================================================
+📊 SYSTEM SUMMARY
+================================================================================
+
+📁 Total Folders: 301
+📄 Total Files: 614
+
+🟥 Empty Files: 212
+🟨 Very Small Files: 287
+
+================================================================================
+⚠️ DUPLICATE FILENAMES DETECTED
+================================================================================
+
+🔁 README.md
+   - /storage/emulated/0/MVQUEEN_OS/README.md
+   - /storage/emulated/0/MVQUEEN_OS/00_Command_Center/README.md
+   - /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Dashboards/README.md
+   - /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Metrics/README.md
+   - /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Widgets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/References/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Brand_Guidelines/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Brand_Vocabulary/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Color_Palette/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Logo_System/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Moodboards/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Packaging/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Photography_Direction/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Tone_And_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Typography/README.md
+   - /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Visual_Assets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Analytics/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Aspirational_Identity/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Buying_Behavior/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Emotional_Triggers/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Feminine_Identity/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Luxury_Psychology/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Research/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Retention_Psychology/README.md
+   - /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Surveys/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Beauty/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Collections/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Drafts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Fashion/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Fragrance/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Haircare/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Jewelry/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Packaging/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Pricing/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Assets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Research/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Shoes/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Skincare/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Suppliers/README.md
+   - /storage/emulated/0/MVQUEEN_OS/04_Products/Uploads/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blog_SEO/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blogs/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Campaign_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Caption_Library/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Content_Drafts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Hooks/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Instagram_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Keywords/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Metadata/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Pinterest_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/SEO_Keywords/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/TikTok_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/UGC_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Brand_Vocabulary/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Caption_Examples/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Empowerment_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Luxury_Editorial_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Princess_Playful_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Soft_Feminine_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Swipe_Files/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Trendy_Social_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Ad_Creatives/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Campaigns/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Email_Marketing/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Influencer_Marketing/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Launch_Campaigns/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Organic_Growth/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/PR_And_Branding/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Paid_Ads/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Reports/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/Retargeting/README.md
+   - /storage/emulated/0/MVQUEEN_OS/07_Marketing/SMS_Marketing/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Assets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Community_Engagement/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Instagram_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Pinterest_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Posts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Reels/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Schedules/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/TikTok_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Viral_Trend_Tracking/README.md
+   - /storage/emulated/0/MVQUEEN_OS/08_Social_Media/YouTube_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Apps_And_Integrations/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/CSV/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Checkout_Experience/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Collections/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Conversion_Optimization/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Exports/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Homepage/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Launch_Checklist/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Mobile_Optimization/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Navigation/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Policies/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Product_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/SEO_Optimization/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Themes/README.md
+   - /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Uploads/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Brand_Voice/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/APIs/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Ad_Copy_Generator/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Automation_Workflows/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Caption_Generator/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Email_Generator/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Hook_Generator/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Models/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Pipelines/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Product_Description_Generator/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Prompt_Library/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Prompts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/SEO_Generator/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/Fulfillment/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/Inventory/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/KPI_Tracking/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/Reports/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/SOP_Library/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/SOPs/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/Strategic_Planning/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/Team_Management/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/Workflow_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/11_Operations/Workflows/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Ad_Creatives/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Archived_Media/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Brand_Assets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Campaign_Assets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Canva_Designs/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Canva_Exports/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Content_Archive/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Edited_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Graphics/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Logos/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Mockups/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Photos/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Media/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Photos/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Videos/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Raw_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/UGC_Content/README.md
+   - /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Videos/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Beauty_Research/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Competitor_Research/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Fashion_Research/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Luxury_Brands/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Moodboards/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/References/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Screenshots/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Trend_Research/README.md
+   - /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Visual_Inspiration/README.md
+   - /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/README.md
+   - /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Conversion_Data/README.md
+   - /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Customer_Data/README.md
+   - /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Growth_Reports/README.md
+   - /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Marketing_Analytics/README.md
+   - /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Revenue_Analytics/README.md
+   - /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/SEO_Analytics/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Automation_Scripts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/CSV_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Content_Pipelines/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/OpenAI_API/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Python_Scripts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/SEO_Tools/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Shopify_API/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Testing_Environment/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Upload_Scripts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Web_Scrapers/README.md
+   - /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/logs/README.md
+   - /storage/emulated/0/MVQUEEN_OS/16_Automation/README.md
+   - /storage/emulated/0/MVQUEEN_OS/16_Automation/AI_Automations/README.md
+   - /storage/emulated/0/MVQUEEN_OS/16_Automation/API_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/16_Automation/Email_Automations/README.md
+   - /storage/emulated/0/MVQUEEN_OS/16_Automation/Python Scripts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/16_Automation/Shopify_Automations/README.md
+   - /storage/emulated/0/MVQUEEN_OS/16_Automation/Workflow_Automations/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/Blog_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/Campaign_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/Dashboard_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/Product_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/Prompt_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/SEO_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/SOP_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/17_Templates/Workflow_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/CSS/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/Custom Scripts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/Custom_Sections/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/Experimental_Features/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/JavaScript/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/Liquid/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/Shopify_Code/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/Theme_Backups/README.md
+   - /storage/emulated/0/MVQUEEN_OS/18_Development/Website Code/README.md
+   - /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/README.md
+   - /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Compliance/README.md
+   - /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Contracts/README.md
+   - /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Documentation/README.md
+   - /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/LLC/README.md
+   - /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Policies/README.md
+   - /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Trademarks/README.md
+   - /storage/emulated/0/MVQUEEN_OS/21_Finance/README.md
+   - /storage/emulated/0/MVQUEEN_OS/21_Finance/Budgeting/README.md
+   - /storage/emulated/0/MVQUEEN_OS/21_Finance/Expenses/README.md
+   - /storage/emulated/0/MVQUEEN_OS/21_Finance/Financial_Goals/README.md
+   - /storage/emulated/0/MVQUEEN_OS/21_Finance/Profit_Margins/README.md
+   - /storage/emulated/0/MVQUEEN_OS/21_Finance/Revenue/README.md
+   - /storage/emulated/0/MVQUEEN_OS/21_Finance/Taxes/README.md
+   - /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/README.md
+   - /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Hiring/README.md
+   - /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/International_Expansion/README.md
+   - /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Long_Term_Vision/README.md
+   - /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Partnerships/README.md
+   - /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Retail_Expansion/README.md
+   - /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Scaling_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/23_Team_And_Delegation/README.md
+   - /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/README.md
+   - /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Ambassador_Programs/README.md
+   - /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Community_Building/README.md
+   - /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Customer_Experience/README.md
+   - /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Loyalty_Programs/README.md
+   - /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Retention_Strategy/README.md
+   - /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/VIP_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/26_RnD_Lab/README.md
+   - /storage/emulated/0/MVQUEEN_OS/27_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/27_Templates/Campaign_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/27_Templates/Caption_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/27_Templates/Email_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/27_Templates/Product_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/27_Templates/SOP_Templates/README.md
+   - /storage/emulated/0/MVQUEEN_OS/28_Archives/README.md
+   - /storage/emulated/0/MVQUEEN_OS/29_Mobile_Development/README.md
+   - /storage/emulated/0/MVQUEEN_OS/30_AI_Datasets/README.md
+   - /storage/emulated/0/MVQUEEN_OS/31_AI_Knowledge_Base/README.md
+   - /storage/emulated/0/MVQUEEN_OS/32_Backups/README.md
+   - /storage/emulated/0/MVQUEEN_OS/33_Content_Pipelines/README.md
+   - /storage/emulated/0/MVQUEEN_OS/34_Master_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/35_System_Blueprints/README.md
+   - /storage/emulated/0/MVQUEEN_OS/36_Agent_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/37_Databases/README.md
+   - /storage/emulated/0/MVQUEEN_OS/38_Prompt_Chains/README.md
+   - /storage/emulated/0/MVQUEEN_OS/39_SOP_Library/README.md
+   - /storage/emulated/0/MVQUEEN_OS/99_Archive/README.md
+   - /storage/emulated/0/MVQUEEN_OS/99_Archive/Brain_Dumps/README.md
+   - /storage/emulated/0/MVQUEEN_OS/99_Archive/Deprecated_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/99_Archive/Experimental_Systems/README.md
+   - /storage/emulated/0/MVQUEEN_OS/99_Archive/Failed_Ideas/README.md
+   - /storage/emulated/0/MVQUEEN_OS/99_Archive/Old_Campaigns/README.md
+   - /storage/emulated/0/MVQUEEN_OS/99_Archive/Old_Notes/README.md
+
+🔁 data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/ai-providers/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/calendar/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/cmdr/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/copilot/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/dataview/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/editing-toolbar/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/folder-notes/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/local-gpt/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metadata-menu/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-excalidraw-plugin/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-icon-folder/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-minimal-settings/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-tasks-plugin/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-textgenerator-plugin/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/omnisearch/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/periodic-notes/data.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/quickadd/data.json
+
+🔁 main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/ai-providers/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/buttons/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/calendar/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/cmdr/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/copilot/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/dataview/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/editing-toolbar/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/folder-notes/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/homepage/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/local-gpt/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metadata-menu/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metaedit/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-excalidraw-plugin/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-icon-folder/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-kanban/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-minimal-settings/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-style-settings/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-tasks-plugin/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-textgenerator-plugin/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/omnisearch/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/periodic-notes/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/quickadd/main.js
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/templater-obsidian/main.js
+
+🔁 manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/ai-providers/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/buttons/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/calendar/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/cmdr/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/copilot/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/dataview/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/editing-toolbar/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/folder-notes/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/homepage/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/local-gpt/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metadata-menu/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metaedit/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-icon-folder/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-kanban/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-minimal-settings/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-style-settings/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-tasks-plugin/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-textgenerator-plugin/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/omnisearch/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/periodic-notes/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/quickadd/manifest.json
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/templater-obsidian/manifest.json
+
+🔁 styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/ai-providers/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/buttons/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/cmdr/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/copilot/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/dataview/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/editing-toolbar/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/folder-notes/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/homepage/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/local-gpt/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metadata-menu/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metaedit/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-excalidraw-plugin/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-icon-folder/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-kanban/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-minimal-settings/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-style-settings/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-tasks-plugin/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-textgenerator-plugin/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/omnisearch/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/periodic-notes/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/quickadd/styles.css
+   - /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/templater-obsidian/styles.css
+
+================================================================================
+🟥 EMPTY FILES
+================================================================================
+- /storage/emulated/0/MVQUEEN_OS/.trashed-1781466831-2026-05-15.md
+- /storage/emulated/0/MVQUEEN_OS/Run folder agent.md
+- /storage/emulated/0/MVQUEEN_OS/Weekly_Focus.md
+- /storage/emulated/0/MVQUEEN_OS/.trash/Create a luxury skincare homepage concept for MVQUEEN..md
+- /storage/emulated/0/MVQUEEN_OS/.trash/Hey are you there.md
+- /storage/emulated/0/MVQUEEN_OS/.trash/Hey.md
+- /storage/emulated/0/MVQUEEN_OS/.trash/MVQUEEN_OS is a luxury feminine brand operating system built in Obsidian.Analyze the structure and suggest improvements..md
+- /storage/emulated/0/MVQUEEN_OS/.trash/Untitled 1.md
+- /storage/emulated/0/MVQUEEN_OS/.trash/Untitled 2.md
+- /storage/emulated/0/MVQUEEN_OS/.trash/Write a luxury feminine skincare description for MVQUEEN..md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Brain_Dump.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Tasks.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/current_campaigns.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/current_launches.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/executive_overview.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/priority_tasks.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/quarterly_goals.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Elevator_Pitch.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Slogans.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Taglines.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/USP.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/brand_manifesto.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/brand_philosophy.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Brand_Identity.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Brand_Vocabulary.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Color_Psychology.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Logo_Concepts.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Packaging_Vision.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Visual_Direction.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/brand_rules.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/color_system.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/logo_guidelines.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/packaging_identity.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/typography_system.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/visual_identity.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Audience_Segments.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Buying_Psychology.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Customer_Personas.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Customer_Transformation.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Identity_Aspirations.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Luxury_Buyer_Behavior.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Market_Research.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Shopping_Habits.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Social_Behavior.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Trend_Analysis.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/behavioral_segmentation.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/buyer_psychology.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/buying_triggers.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/customer_avatars.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/customer_objections.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/identity_drivers.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/lifestyle_aspirations.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/luxury_consumer_behavior.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/social_validation.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/trust_building.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Accessories.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Beauty_Products.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Collection_Structure.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Competitor_Products.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Cross-Sell Systems.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Fashion_Products.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Hair_Products.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Packaging_Ideas.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Pricing_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product Photography Standards.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product SEO.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Catalog.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Framework.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Naming_System.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Templates.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/SKU_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Suppliers & Research.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Trend_Products.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Upsell Systems.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/inventory_systems.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/product_categories.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/product_faqs.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Article_Structures.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blog_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blog_Templates.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Competitor SEO.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Content_Calendar.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/EEAT_Optimization.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Evergreen Content.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/FAQ_Library.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Instagram_SEO.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Internal_Linking.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Keyword_Research.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Long_Tail_Keywords.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Metadata_Templates.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Pinterest_SEO.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Programmatic_SEO.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/SEO_Clusters.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/SEO_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Search_Intent_Mapping.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Semantic SEO.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Short_Tail_Keywords.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/TikTok_SEO.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Trend_SEO.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Trend_Tracking.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Viral_Topics.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/YouTube SEO.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Ad_Copy_Voice.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Brand_Messaging.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/CTA_Library.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Email_Voice.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Emotional_Language.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Example_Copy.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Feminine_Language.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Forbidden_Words.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Headline Frameworks.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Hook Systems.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Luxury_Language.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Messaging_Pillars.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Persuasion Frameworks.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Product_Description_Voice.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/SEO Voice.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/SMS_Voice.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Social_Voice.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Storytelling Frameworks.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Tone_Guide.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Voice_Consistency_Rules.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Writing_Rules.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/blog_voice.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/copywriting_formulas.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/copywriting_frameworks.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Affiliate_Program.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Analytics.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Campaign_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Conversion_Psychology.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Email_Marketing.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Funnel_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Giveaway_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Influencer_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Offer_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Paid_Ads.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Product_Launch_Campaigns.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Retargeting.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/SMS_Marketing.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Seasonal_Campaigns.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/UGC_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Viral_Hooks.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Caption_Templates.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Carousel_Ideas.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Community_Building.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Content_Pillars.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Engagement_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Facebook_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Hashtag_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Posting_Schedule.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Reel_Hooks.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Story_Ideas.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Trend_Tracker.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Viral_Content_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/YouTube_Strategy.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Analytics_Tracking.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Automation_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Checkout_Optimization.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Collection_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Conversion_Optimization.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Customer_Support_SOP.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Homepage_Layout.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Navigation_Mapping.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Product_SEO_SOP.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Product_Upload_SOP.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Refund_SOP.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Shipping_SOP.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Shopify_Apps.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Store_Scaling.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Store_Structure.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Upsell_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Prompt_Library.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Testing.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Workflows.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/API_Notes.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Ad_Copy_Prompts.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Automation_Pipelines.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Blog_Prompts.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Image_Generation_Prompts.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/OpenAI_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Product_Description_Prompts.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Prompt_Templates.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/SEO_Prompts.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Social_Media_Prompts.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Workflow_Automations.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Crisis_Management.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Daily_Operations.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Financial_Planning.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Fulfillment_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Hiring_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Inventory_Management.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/KPI_Tracking.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Monthly_Operations.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Productivity_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/SOPs.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Scaling_Roadmap.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Team_Structure.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Weekly_Operations.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Workflow_Systems.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Boutique_Inspiration.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Color_Palettes.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Consumer_Trends.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Fashion_Inspiration.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Packaging_Inspiration.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Swipe_Files.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Trend_Forecasting.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Typography.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Viral_Brands.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Website_Inspiration.md
+- /storage/emulated/0/MVQUEEN_OS/13_Scripts_And_Code/.env
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/config.py
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/requirements.txt
+
+================================================================================
+🟨 VERY SMALL FILES
+================================================================================
+- /storage/emulated/0/MVQUEEN_OS/.ttxfolder
+- /storage/emulated/0/MVQUEEN_OS/README.md
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/app.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/appearance.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/command-palette.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/templates.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/ai-providers/data.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/buttons/manifest.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/calendar/data.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/calendar/manifest.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/local-gpt/manifest.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metaedit/manifest.json
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/metaedit/styles.css
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/obsidian-minimal-settings/styles.css
+- /storage/emulated/0/MVQUEEN_OS/.obsidian/plugins/periodic-notes/manifest.json
+- /storage/emulated/0/MVQUEEN_OS/.trash/2026-05-16.md
+- /storage/emulated/0/MVQUEEN_OS/.trash/Untitled.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/README.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Dashboards/README.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Metrics/README.md
+- /storage/emulated/0/MVQUEEN_OS/00_Command_Center/Widgets/README.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Brand_Essence.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Brand_Personality.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Brand_Positioning.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Brand_Story.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Brand_Values.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Emotional_Transformation.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/Mission_And_Vision.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy/References/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Brand_Guidelines/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Brand_Vocabulary/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Color_Palette/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Logo_System/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Moodboards/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Packaging/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Photography_Direction/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Tone_And_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Typography/README.md
+- /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Visual_Assets/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Analytics/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Aspirational_Identity/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Buying_Behavior/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Emotional_Triggers/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Feminine_Identity/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Luxury_Psychology/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Research/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Retention_Psychology/README.md
+- /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Surveys/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Beauty/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Collections/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Drafts/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Fashion/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Fragrance/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Haircare/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Jewelry/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Packaging/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Pricing/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Assets/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Product_Research/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Shoes/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Skincare/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Suppliers/README.md
+- /storage/emulated/0/MVQUEEN_OS/04_Products/Uploads/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blog_SEO/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blogs/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Campaign_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Caption_Library/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Content_Drafts/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Hooks/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Instagram_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Keywords/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Metadata/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Pinterest_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/SEO_Keywords/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/TikTok_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/UGC_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Brand_Vocabulary/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Caption_Examples/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Empowerment_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Luxury_Editorial_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Princess_Playful_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Soft_Feminine_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Swipe_Files/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Trendy_Social_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Ad_Creatives/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Campaigns/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Email_Marketing/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Influencer_Marketing/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Launch_Campaigns/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Organic_Growth/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/PR_And_Branding/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Paid_Ads/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Reports/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/Retargeting/README.md
+- /storage/emulated/0/MVQUEEN_OS/07_Marketing/SMS_Marketing/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Assets/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Community_Engagement/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Instagram_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Pinterest_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Posts/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Reels/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Schedules/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/TikTok_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/Viral_Trend_Tracking/README.md
+- /storage/emulated/0/MVQUEEN_OS/08_Social_Media/YouTube_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Apps_And_Integrations/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/CSV/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Checkout_Experience/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Collections/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Conversion_Optimization/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Exports/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Homepage/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Launch_Checklist/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Mobile_Optimization/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Navigation/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Policies/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Product_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/SEO_Optimization/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Themes/README.md
+- /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Uploads/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Agents.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Brand_Voice/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/APIs/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Ad_Copy_Generator/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Automation_Workflows/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Caption_Generator/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Email_Generator/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Hook_Generator/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Models/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Pipelines/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Product_Description_Generator/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Prompt_Library/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Prompts/README.md
+- /storage/emulated/0/MVQUEEN_OS/10_AI_Systems/SEO_Generator/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Fulfillment/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Inventory/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/KPI_Tracking/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Reports/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/SOP_Library/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/SOPs/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Strategic_Planning/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Team_Management/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Workflow_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/11_Operations/Workflows/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Ad_Creatives/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Archived_Media/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Brand_Assets/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Campaign_Assets/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Canva_Designs/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Canva_Exports/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Content_Archive/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Edited_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Graphics/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Logos/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Mockups/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Photos/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Media/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Photos/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Videos/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Raw_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/UGC_Content/README.md
+- /storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Videos/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Beauty_Research/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Competitor_Research/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Fashion_Research/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Luxury_Brands/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Moodboards/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/References/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Screenshots/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Trend_Research/README.md
+- /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Visual_Inspiration/README.md
+- /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/README.md
+- /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Conversion_Data/README.md
+- /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Customer_Data/README.md
+- /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Growth_Reports/README.md
+- /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Marketing_Analytics/README.md
+- /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Revenue_Analytics/README.md
+- /storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/SEO_Analytics/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Automation_Scripts/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/CSV_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Content_Pipelines/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/OpenAI_API/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Python_Scripts/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/SEO_Tools/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Shopify_API/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Testing_Environment/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Upload_Scripts/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Web_Scrapers/README.md
+- /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/logs/README.md
+- /storage/emulated/0/MVQUEEN_OS/16_Automation/README.md
+- /storage/emulated/0/MVQUEEN_OS/16_Automation/AI_Automations/README.md
+- /storage/emulated/0/MVQUEEN_OS/16_Automation/API_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/16_Automation/Email_Automations/README.md
+- /storage/emulated/0/MVQUEEN_OS/16_Automation/Python Scripts/README.md
+- /storage/emulated/0/MVQUEEN_OS/16_Automation/Shopify_Automations/README.md
+- /storage/emulated/0/MVQUEEN_OS/16_Automation/Workflow_Automations/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/Blog_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/Campaign_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/Dashboard_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/Product_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/Prompt_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/SEO_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/SOP_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/17_Templates/Workflow_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/CSS/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/Custom Scripts/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/Custom_Sections/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/Experimental_Features/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/JavaScript/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/Liquid/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/Shopify_Code/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/Theme_Backups/README.md
+- /storage/emulated/0/MVQUEEN_OS/18_Development/Website Code/README.md
+- /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/README.md
+- /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Compliance/README.md
+- /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Contracts/README.md
+- /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Documentation/README.md
+- /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/LLC/README.md
+- /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Policies/README.md
+- /storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Trademarks/README.md
+- /storage/emulated/0/MVQUEEN_OS/21_Finance/README.md
+- /storage/emulated/0/MVQUEEN_OS/21_Finance/Budgeting/README.md
+- /storage/emulated/0/MVQUEEN_OS/21_Finance/Expenses/README.md
+- /storage/emulated/0/MVQUEEN_OS/21_Finance/Financial_Goals/README.md
+- /storage/emulated/0/MVQUEEN_OS/21_Finance/Profit_Margins/README.md
+- /storage/emulated/0/MVQUEEN_OS/21_Finance/Revenue/README.md
+- /storage/emulated/0/MVQUEEN_OS/21_Finance/Taxes/README.md
+- /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/README.md
+- /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Hiring/README.md
+- /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/International_Expansion/README.md
+- /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Long_Term_Vision/README.md
+- /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Partnerships/README.md
+- /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Retail_Expansion/README.md
+- /storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Scaling_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/23_Team_And_Delegation/README.md
+- /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/README.md
+- /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Ambassador_Programs/README.md
+- /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Community_Building/README.md
+- /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Customer_Experience/README.md
+- /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Loyalty_Programs/README.md
+- /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Retention_Strategy/README.md
+- /storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/VIP_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/26_RnD_Lab/README.md
+- /storage/emulated/0/MVQUEEN_OS/27_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/27_Templates/Campaign_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/27_Templates/Caption_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/27_Templates/Email_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/27_Templates/Product_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/27_Templates/SOP_Templates/README.md
+- /storage/emulated/0/MVQUEEN_OS/28_Archives/README.md
+- /storage/emulated/0/MVQUEEN_OS/29_Mobile_Development/README.md
+- /storage/emulated/0/MVQUEEN_OS/30_AI_Datasets/README.md
+- /storage/emulated/0/MVQUEEN_OS/31_AI_Knowledge_Base/README.md
+- /storage/emulated/0/MVQUEEN_OS/32_Backups/README.md
+- /storage/emulated/0/MVQUEEN_OS/33_Content_Pipelines/README.md
+- /storage/emulated/0/MVQUEEN_OS/34_Master_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/35_System_Blueprints/README.md
+- /storage/emulated/0/MVQUEEN_OS/36_Agent_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/37_Databases/README.md
+- /storage/emulated/0/MVQUEEN_OS/38_Prompt_Chains/README.md
+- /storage/emulated/0/MVQUEEN_OS/39_SOP_Library/README.md
+- /storage/emulated/0/MVQUEEN_OS/99_Archive/README.md
+- /storage/emulated/0/MVQUEEN_OS/99_Archive/Brain_Dumps/README.md
+- /storage/emulated/0/MVQUEEN_OS/99_Archive/Deprecated_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/99_Archive/Experimental_Systems/README.md
+- /storage/emulated/0/MVQUEEN_OS/99_Archive/Failed_Ideas/README.md
+- /storage/emulated/0/MVQUEEN_OS/99_Archive/Old_Campaigns/README.md
+- /storage/emulated/0/MVQUEEN_OS/99_Archive/Old_Notes/README.md
+- /storage/emulated/0/MVQUEEN_OS/textgenerator/configs/llm/config_5-14225019.json.md
+- /storage/emulated/0/MVQUEEN_OS/textgenerator/configs/llm/config_5-15104154.json.md

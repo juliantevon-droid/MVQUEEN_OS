@@ -1,0 +1,93 @@
+\# MVQueen Omniluxe Engine — Master README  
+Built: February 2026 | Organized: June 2026  
+Status: Architecturally complete. Ready for production deployment.  
+Location in OS: 15\_Scripts\_And\_Code/MVQueen\_Engine/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+WHAT THIS ENGINE DOES  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+Automates Shopify product content at catalog scale:  
+→ Generates product descriptions using 10 editorial personas  
+→ Creates SEO titles, meta descriptions, and focus keywords  
+→ Assigns 13 custom metafields per product  
+→ Builds tag sets (category \+ type \+ benefits \+ vibes \+ SEO)  
+→ Maps products to Shopify collections  
+→ Exports CSV ready for Shopify bulk import  
+→ Deterministic output — same input \= same output every time
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+FILE MAP (READ IN ORDER)  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+01\_engine\_skeleton     → Master architecture blueprint — start here  
+02\_codes1              → config.py, price\_logic.py, deterministic.py, brand\_banks.py (core layer)  
+03\_codes2              → PERSONA\_CONFIG (10 personas), Shopify API, metafield\_engine.py  
+04\_codes3              → csv\_loader.py, processor.py, main.py, fashion vocab, tag/category detection  
+05\_codes4              → Collections-as-Metafields architecture, editorial frames v1 (160 templates)  
+06\_codes5              → Full vocab population: LUXURY\_ADJECTIVES, SENSORY\_VERBS, BUSINESS\_TIERS  
+07\_codes6              → SENSORY\_VERBS compound expansion (micro-glows, feather-glows, veil-glows...)  
+08\_codes7              → EDITORIAL\_FRAMES v2 expansion (300+ total copy templates)  
+09\_codes8              → Detection layer: category/type detection, Tag Engine, deterministic imports  
+10\_Meta\_update         → Shopify metafield flattening, PlatformConfig, control panel settings  
+11\_codes9              → Official engine documentation / user manual (hand to any developer)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+THE 10 EDITORIAL PERSONAS  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+1\.  MVQueen Core          — Confident, aspirational, inclusive luxury  
+2\.  MISS.QUEEN            — Youthful, playful, soft-glam (sister brand)  
+3\.  Victoria Soft Power   — Quiet authority, old money tone  
+4\.  Sephora Precision     — Clinical, ingredient-forward  
+5\.  Runway Modern         — Editorial, high-fashion voice  
+6\.  Clinical Chic         — Skincare expert authority  
+7\.  Soft Luxury           — Sensory, tactile, deeply feminine  
+8\.  Glow Maestro          — Radiance-focused, beauty editorial  
+9\.  Elegant Authority     — Prestige positioning, aspirational  
+10\. Street Luxe Femme     — Urban, confident, culturally aware
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+SHOPIFY METAFIELDS GENERATED  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+Namespace: custom  
+Fields: emotional\_axes, seo\_keywords, care\_instructions, shipping\_note,  
+        size\_guide, trust\_badges, short\_description, focus\_keyword,  
+        faq, ingredients, how\_to\_use, highlights, badge
+
+Full schema: see 09\_Shopify\_Systems/Metafields\_Schema
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+VOCABULARY BANKS BUILT  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+LUXURY\_ADJECTIVES        — 80+ premium descriptors  
+SENSORY\_VERBS            — 200+ including compound forms (micro-glows, feather-glows)  
+CONFIDENCE\_PHRASES       — 60+ empowerment phrases  
+BUSINESS\_TIERS           — 80+ product tier labels  
+FASHION\_SILHOUETTES      — 50 silhouette types  
+FASHION\_DETAILS          — 48 design detail descriptors  
+FASHION\_MATERIALS        — 42 material descriptors  
+FASHION\_VIBES            — 32 aesthetic vibes (quiet luxury, old money, etc.)  
+EDITORIAL\_FRAMES         — 300+ copy template strings  
+SEO\_PRIMARY              — 20 primary keyword categories  
+SEO\_SECONDARY            — 20 secondary keyword modifiers
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+PRICING TIERS  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+Standard: 28% margin  
+Premium:  35% margin  
+Luxury:   42% margin
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+TO RUN THE ENGINE  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+See 11\_codes9 (official user manual) for full execution instructions.  
+Original build environment: Android (Pydroid3 / Termux)  
+Recommended production environment: Python 3.9+ on Mac/PC or cloud runner
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+CROSS-REFERENCES IN OS  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+Personas extracted to:    10\_AI\_Systems/MVQUEEN\_Persona\_Config.md  
+Editorial frames ref:     06\_Tone\_And\_Voice/Editorial\_Frames\_Library.md  
+Sensory vocab ref:        06\_Tone\_And\_Voice/Brand\_Vocabulary\_Banks.md  
+Metafield schema:         09\_Shopify\_Systems/Metafields\_Schema.md  
+Architecture blueprint:   35\_System\_Blueprints/MVQueen\_Engine\_Blueprint.md  

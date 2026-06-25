@@ -1,0 +1,130 @@
+# **MVQUEEN OS \- Core Health & Separation Suite Diagnostics Script**
+
+This document contains the complete Google Apps Script code and deployment guide for the MVQUEEN OS Structural Health & Content Purity Engine.
+
+## **1\. The Apps Script Code**
+
+Copy the entire code block below and paste it into your Google Apps Script editor.
+
+/\*\*  
+ \* MVQUEEN OS \- Structural Health & Content Purity Engine  
+ \* Tracks folder counts, spots empty modules, and filters legacy cross-contamination.  
+ \*/  
+function runMVQUEENOSDiagnostics() {  
+  // 1\. paste your actual MVQUEEN\_OS folder ID between the quotes  
+  const ROOT\_FOLDER\_ID \= ‘1t\_p6xyURJGYpYT\_vXxbSVWJmLFJxsxOf';   
+    
+  const rootFolder \= DriveApp.getFolderById(ROOT\_FOLDER\_ID);  
+  const subFolders \= rootFolder.getFolders();  
+    
+  // Locate or initialize the tracking sheet  
+  let reportSheet \= getOrCreateReportSheet(rootFolder);  
+    
+  // Clear previous scan logs (keeps header row)  
+  if (reportSheet.getLastRow() \> 1\) {  
+    reportSheet.deleteRows(2, reportSheet.getLastRow() \- 1);  
+  }  
+    
+  Logger.log("Initializing MVQUEEN OS pipeline audit...");  
+    
+  while (subFolders.hasNext()) {  
+    let folder \= subFolders.next();  
+    let folderName \= folder.getName();  
+    let fileCount \= 0;  
+    let isContaminated \= false;  
+    let flaggedAssets \= \[\];  
+      
+    let files \= folder.getFiles();  
+    while (files.hasNext()) {  
+      fileCount++;  
+      let file \= files.next();  
+      let fileName \= file.getName();  
+      let mime \= file.getMimeType();  
+        
+      // Target string checks for separation  
+      const queryPattern \= /miss\[\\.\\s\]?princess/i;  
+        
+      // Check file name syntax  
+      if (queryPattern.test(fileName)) {  
+        isContaminated \= true;  
+        flaggedAssets.push(\`${fileName} (Filename)\`);  
+      }  
+        
+      // Deep scan text/markdown bodies for mixed assets  
+      if (mime \=== MimeType.PLAIN\_TEXT || fileName.endsWith('.md')) {  
+        let content \= file.getAs('text/plain').getDataAsString();  
+        if (queryPattern.test(content)) {  
+          isContaminated \= true;  
+          if (\!flaggedAssets.some(item \=\> item.startsWith(fileName))) {  
+            flaggedAssets.push(\`${fileName} (In-file Content)\`);  
+          }  
+        }  
+      }  
+    }  
+      
+    // Determine operational health state  
+    let status \= "🟢 HEALTHY";  
+    let actionItem \= "None. Pipeline clear.";  
+      
+    if (fileCount \=== 0\) {  
+      status \= "🟡 EMPTY MODULE";  
+      actionItem \= "Needs structural layout / template stubs.";  
+    } else if (isContaminated) {  
+      status \= "🔴 CONTAMINATED";  
+      actionItem \= \`Isolate / Purge: ${flaggedAssets.join(' | ')}\`;  
+    }  
+      
+    // Append findings directly to tracking layout  
+    reportSheet.appendRow(\[  
+      folderName,   
+      fileCount,   
+      status,   
+      actionItem,   
+      new Date().toLocaleDateString()  
+    \]);  
+  }  
+    
+  Logger.log("Audit complete. Report sheet updated inside root directory.");  
+}
+
+/\*\*  
+ \* Ensures a centralized log sheet exists in the root directory without creating duplicates.  
+ \*/  
+function getOrCreateReportSheet(rootFolder) {  
+  let files \= rootFolder.getFilesByName("MVQUEEN\_OS\_Health\_Report");  
+  if (files.hasNext()) {  
+    let file \= files.next();  
+    return SpreadsheetApp.openById(file.getId()).getActiveSheet();  
+  } else {  
+    let ss \= SpreadsheetApp.create("MVQUEEN\_OS\_Health\_Report");  
+    let sheet \= ss.getActiveSheet();  
+      
+    // Format headers  
+    sheet.appendRow(\["Module / Folder Name", "Total Assets", "System Status", "Details / Action Items", "Last Inspected"\]);  
+    sheet.getRange("A1:E1").setFontWeight("bold");  
+      
+    // Link file to root folder, remove from default root location  
+    let driveFile \= DriveApp.getFileById(ss.getId());  
+    rootFolder.addFile(driveFile);  
+    DriveApp.getRootFolder().removeFile(driveFile);  
+      
+    return sheet;  
+  }  
+}
+
+## **2\. Deployment & Setup Instructions**
+
+1. Open your **MVQUEEN\_OS** root folder in Google Drive.  
+2. Copy the folder ID from the URL bar (the text string after /folders/).  
+3. Replace 'YOUR\_GOOGLE\_DRIVE\_FOLDER\_ID\_HERE' inside the code above with your copied folder ID.  
+4. Go to [script.google.com](https://script.google.com), start a new project, delete any default code, and paste this entire setup.  
+5. Save the project, select runMVQUEENOSDiagnostics from the dropdown menu, and click **Run**.
+
+## **3\. Automating with Triggers**
+
+To ensure this runs fully automatically without manual intervention:
+
+* Click the **Triggers** icon (represented by a clock) on the left sidebar of the Apps Script dashboard.  
+* Click **\+ Add Trigger** in the bottom right corner.  
+* Set the event source to **Time-driven**.  
+* Configure your preferred interval (e.g., Daily or Weekly) to auto-verify folder structure and brand voice separation.

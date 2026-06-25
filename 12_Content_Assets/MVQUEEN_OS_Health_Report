@@ -1,0 +1,53 @@
+Module / Folder Name,Total Assets,System Status,Details / Action Items,Last Inspected
+98_Archive,57,🔴 CONTAMINATED,Isolate / Purge: Example_Copy.md (In-file Content) | CTA_Library.md (In-file Content) | brand_rules.md (In-file Content) | typography_system.md (In-file Content) | color_system.md (In-file Content) | color_system_OLD.md (In-file Content) | typography_system_OLD.md (In-file Content) | brand_rules_OLD.md (In-file Content) | AI_Prompt_Library_OLD.md (In-file Content),6/13/2026
+.obsidian,9,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+.git,5,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+meta,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+memory,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+logs,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+agents,10,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+24_Email_And_SMS,1,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+_BACKUPS,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+MVQUEEN_batch,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+99_Command_Center,17,🔴 CONTAMINATED,Isolate / Purge: MVQUEEN_CONTEXT.md (In-file Content),6/13/2026
+00_Doctrine,29,🔴 CONTAMINATED,Isolate / Purge: brand_constitution.md (In-file Content) | master_doctrine.md (In-file Content),6/13/2026
+39_SOP_Library,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+38_Prompt_Chains,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+37_Databases,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+36_Agent_Systems,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+35_System_Blueprints,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+34_Master_Systems,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+33_Content_Pipelines,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+32_Backups,4,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+31_AI_Knowledge_Base,4,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+30_AI_Datasets,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+29_Mobile_Development,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+28_Archives,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+27_Templates,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+26_RnD_Lab,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+25_Retention_And_Community,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+23_Team_And_Delegation,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+22_Growth_And_Scaling,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+21_Finance,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+19_Legal_And_Admin,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+18_Development,2,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+17_Templates,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+16_Automation,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+15_Scripts_And_Code,31,🔴 CONTAMINATED,Isolate / Purge: pull_phase1.sh (In-file Content),6/13/2026
+14_Data_And_Analytics,3,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+13_Research_And_Inspiration,11,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+11_Operations,15,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+10_AI_Systems,17,🔴 CONTAMINATED,Isolate / Purge: AI_Prompt_Library.md (In-file Content) | Image_Generation_Prompts.md (In-file Content),6/13/2026
+09_Shopify_Systems,17,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+08_Social_Media,18,🔴 CONTAMINATED,Isolate / Purge: Social_Media_Prompts.md (In-file Content) | Pinterest_Strategy.md (In-file Content) | TikTok_Strategy.md (In-file Content) | Instagram_Strategy.md (In-file Content) | Caption_Templates.md (In-file Content) | Content_Pillars.md (In-file Content) | Story_Ideas.md (In-file Content),6/13/2026
+07_Marketing,18,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+06_Tone_And_Voice,29,🔴 CONTAMINATED,Isolate / Purge: Example_Copy.md (In-file Content) | Product_Description_Prompts.md (In-file Content) | Brand_Messaging.md (In-file Content) | Product_Description_Voice.md (In-file Content) | Writing_Rules.md (In-file Content) | Voice_Consistency_Rules.md (In-file Content),6/13/2026
+scripts,4,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+textgenerator,1,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+copilot,1,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+12_Content_Assets,4,🟢 HEALTHY,None. Pipeline clear.,6/13/2026
+05_SEO_And_Content,27,🔴 CONTAMINATED,Isolate / Purge: Keyword_Research.md (In-file Content) | Blog_Strategy.md (In-file Content) | SEO_Strategy.md (In-file Content) | Short_Tail_Keywords.md (In-file Content),6/13/2026
+04_Products,23,🔴 CONTAMINATED,Isolate / Purge: SKU_Systems.md (In-file Content) | Beauty_Products.md (In-file Content) | Product_Framework.md (In-file Content) | Collection_Structure.md (In-file Content) | Pricing_Strategy.md (In-file Content) | Product_Naming_System.md (In-file Content),6/13/2026
+03_Customer_Psychology,22,🔴 CONTAMINATED,Isolate / Purge: trust_building.md (In-file Content) | customer_avatars.md (In-file Content),6/13/2026
+02_Brand_Identity,15,🔴 CONTAMINATED,Isolate / Purge: brand_rules.md (In-file Content) | typography_system.md (In-file Content) | color_system.md (In-file Content) | videography_direction.md (In-file Content) | photography_direction.md (In-file Content) | visual_direction.md (In-file Content) | logo_guidelines.md (In-file Content) | logo_concepts.md (In-file Content) | color_psychology.md (In-file Content) | brand_identity.md (In-file Content),6/13/2026
+01_Brand_Strategy,18,🔴 CONTAMINATED,Isolate / Purge: Elevator_Pitch.md (In-file Content) | Brand_Essence.md (In-file Content) | Brand_Values.md (In-file Content) | Taglines.md (In-file Content) | Slogans.md (In-file Content) | USP.md (In-file Content) | Brand_Bible.md (In-file Content),6/13/2026

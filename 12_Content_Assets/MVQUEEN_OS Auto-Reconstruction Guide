@@ -1,0 +1,88 @@
+
+
+# MVQUEEN\_OS Auto-Reconstruction Guide
+
+This document provides a comprehensive step-by-step guide to setting up and running the MVQUEEN\_OS Auto-Reconstruction process. Please follow these instructions carefully.
+
+## 1\. Pre-flight Checklist
+
+Before beginning the deployment, ensure you have the following prerequisites:
+
+1. Data Backup: Always ensure a backup copy of your existing data exists before running automation scripts.  
+2. [Script Environment: You will need access to script.google.com.](https://script.google.com)  
+3. Permissions: Confirm that you have “Editor” access to the Google Sheet or Drive folder involved in the reconstruction process.  
+4. Google Account: Ensure you are logged into the Google account that owns or has access to the target Google Drive folder/files.
+
+## 2\. Google Apps Script Code
+
+Copy the following code into your Google Apps Script editor. This is the core logic for the MVQUEEN\_OS reconstruction.  
+`/**`  
+ `* MVQUEEN_OS Auto-Reconstruction Script`  
+ `* Version: 1.0.0`  
+ `*/`
+
+`function runAutoReconstruction() {`  
+  `Logger.log("Starting Auto-Reconstruction Process...");`  
+    
+  `// Configuration`  
+  `const targetFolderId = 'YOUR_FOLDER_ID_HERE';`   
+    
+  `try {`  
+    `const folder = DriveApp.getFolderById(targetFolderId);`  
+      
+    `// Core Logic Placeholder`  
+    `Logger.log("Reconstruction initiated for folder: " + folder.getName());`  
+      
+    `// Add custom logic here`  
+      
+    `Logger.log("Reconstruction completed successfully.");`  
+      
+  `} catch (e) {`  
+    `Logger.log("Error occurred: " + e.toString());`  
+  `}`  
+`}`
+
+## 3\. Deployment Steps
+
+Follow these steps to deploy the script:
+
+1. Save the project by clicking the disk icon.  
+2. Replace 'YOUR\_FOLDER\_ID\_HERE' with the actual ID of your target folder (found in the URL when you open the folder in Google Drive).  
+3. Delete any existing code in the editor and paste the code provided above.  
+4. Navigate to Extensions \> Apps Script.  
+5. Open your Google Sheet or create a new one.
+
+## 4\. How to Run
+
+To execute the script:
+
+1. Click Allow.  
+2. The first time you run this, you will be prompted to Review Permissions. Click Review Permissions, select your account, click Advanced, and then click Go to (Script Name) (unsafe).  
+3. Click the Run button.  
+4. In the Apps Script editor, ensure the function runAutoReconstruction is selected in the toolbar.
+
+## 5\. How to Monitor Progress
+
+1. Logger: The script uses Logger.log(). You can view these outputs in the execution details to track specific steps.  
+2. Live Updates: You can filter by the date/time to see the status (Completed, Failed, or Running).  
+3. Execution Logs: Click on the Executions tab in the left-hand sidebar of the Apps Script interface.
+
+## 6\. What to Expect After Execution
+
+1. Notifications: If email triggers are set up, you will receive a summary notification.  
+2. File Changes: Depending on the script logic, you should see new files generated in your target directory.  
+3. Confirmation: If successful, you will see a “Reconstruction completed successfully” entry in the logs.
+
+## 7\. Troubleshooting
+
+1. Timeout: If the script runs for more than 6 minutes, Apps Script might time out. You may need to optimize the script to process items in smaller batches.  
+2. Invalid ID: Double-check that your Folder ID is correct and is not a link or sharing URL.  
+3. Permission Denied: Ensure your Google account has Editor access to the specific folder.
+
+## 8\. Post-Execution Validation
+
+Once the script has finished:
+
+1. Logs Review: Verify there are no red “Failed” status indicators in the Executions tab.  
+2. Sample Verification: Open 2-3 random files to ensure the data was populated/reconstructed correctly.  
+3. Check File Counts: Verify that the number of files generated matches your expectations.

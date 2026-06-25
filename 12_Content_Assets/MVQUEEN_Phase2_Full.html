@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVQUEEN OS — Phase 2 Brand System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --queen-noir: #1A1A1A;
+    --champagne-ivory: #F7F0E6;
+    --blush-reign: #E8B4B8;
+    --champagne-gold: #C9A96E;
+    --velvet-rose: #B5637A;
+    --warm-nude: #D4B8A0;
+    --soft-mauve: #C4A0B0;
+    --deep-plum: #4A2040;
+    --rose-smoke: #F0DDD8;
+    --bronze-light: #A0784A;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--champagne-ivory); color: var(--queen-noir); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+  .cover { min-height: 100vh; background: var(--queen-noir); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 60px 40px; }
+  .cover-crown { font-size: 48px; margin-bottom: 24px; }
+  .cover-label { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--champagne-gold); margin-bottom: 20px; }
+  .cover-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 8vw, 96px); font-weight: 300; color: var(--champagne-ivory); letter-spacing: 0.04em; text-align: center; line-height: 1.05; margin-bottom: 16px; }
+  .cover-title span { color: var(--champagne-gold); font-style: italic; }
+  .cover-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 3vw, 26px); font-weight: 300; font-style: italic; color: var(--blush-reign); text-align: center; margin-bottom: 40px; }
+  .cover-toc { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; width: 100%; max-width: 820px; margin-bottom: 60px; }
+  .cover-toc-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; text-decoration: none; }
+  .toc-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--champagne-gold); opacity: 0.6; line-height: 1; min-width: 32px; }
+  .toc-text { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--champagne-ivory); opacity: 0.8; }
+  .section { max-width: 900px; margin: 0 auto; padding: 80px 40px; border-bottom: 1px solid rgba(26,26,26,0.08); }
+  .section-header { display: flex; align-items: flex-end; gap: 24px; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid rgba(201,169,110,0.2); }
+  .section-num { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: var(--champagne-gold); opacity: 0.25; line-height: 1; flex-shrink: 0; }
+  .section-title-wrap { flex: 1; }
+  .section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--champagne-gold); margin-bottom: 6px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 400; letter-spacing: 0.02em; line-height: 1.1; color: var(--queen-noir); }
+  h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--queen-noir); margin: 40px 0 12px; }
+  h4 { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--velvet-rose); margin: 28px 0 10px; }
+  p { font-size: 16px; line-height: 1.8; color: #3a3a3a; margin-bottom: 16px; }
+  blockquote { border-left: 2px solid var(--champagne-gold); margin: 24px 0; padding: 12px 24px; background: var(--rose-smoke); }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--queen-noir); margin: 0; }
+  ul, ol { padding-left: 20px; margin-bottom: 16px; }
+  li { font-size: 15px; line-height: 1.8; color: #3a3a3a; margin-bottom: 4px; }
+  .purpose-box { background: var(--queen-noir); color: var(--champagne-ivory); padding: 36px 40px; margin-bottom: 40px; }
+  .purpose-box p { color: rgba(247,240,230,0.85); font-size: 17px; margin: 0; }
+  .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; margin: 24px 0 40px; }
+  .swatch { border-radius: 4px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .swatch-color { height: 80px; }
+  .swatch-info { padding: 10px 12px; background: white; }
+  .swatch-name { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--queen-noir); display: block; margin-bottom: 3px; }
+  .swatch-hex { font-size: 11px; color: #888; }
+  .rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+  .rule-card { padding: 24px; border: 1px solid rgba(26,26,26,0.08); border-radius: 4px; background: white; position: relative; overflow: hidden; }
+  .rule-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--champagne-gold); }
+  .rule-id { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; color: var(--champagne-gold); margin-bottom: 8px; display: block; }
+  .rule-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--queen-noir); margin-bottom: 10px; }
+  .rule-body { font-size: 13px; color: #666; line-height: 1.65; margin: 0; }
+  .cta-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+  .cta-pill { padding: 9px 20px; border: 1px solid var(--blush-reign); border-radius: 100px; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--queen-noir); background: white; }
+  .cta-pill.gold { border-color: var(--champagne-gold); }
+  .cta-pill.dark { border-color: var(--queen-noir); }
+  .copy-block { background: var(--queen-noir); border-radius: 4px; padding: 28px 32px; margin: 20px 0; }
+  .copy-block p { color: var(--champagne-ivory); font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 300; line-height: 1.65; margin: 0; }
+  .copy-tag { display: inline-block; margin-top: 14px; font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 500; font-style: normal; letter-spacing: 0.18em; text-transform: uppercase; color: var(--champagne-gold); }
+  .hook-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin: 20px 0; }
+  .hook-card { padding: 22px 24px; border-radius: 4px; background: white; border: 1px solid rgba(26,26,26,0.07); }
+  .hook-type { font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--velvet-rose); margin-bottom: 10px; display: block; }
+  .hook-text { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; line-height: 1.45; color: var(--queen-noir); margin: 0; }
+  .objection-card { border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
+  .objection-header { background: var(--deep-plum); padding: 18px 24px; display: flex; align-items: center; gap: 14px; }
+  .objection-q { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--champagne-ivory); }
+  .objection-body { background: white; padding: 20px 24px; border: 1px solid rgba(26,26,26,0.07); border-top: none; }
+  .objection-response { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: #444; line-height: 1.65; margin-bottom: 8px; }
+  .trust-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 24px 0; }
+  .trust-card { padding: 28px; border-radius: 4px; }
+  .trust-card:nth-child(1) { background: var(--queen-noir); }
+  .trust-card:nth-child(2) { background: var(--deep-plum); }
+  .trust-card:nth-child(3) { background: var(--velvet-rose); }
+  .trust-card:nth-child(4) { background: var(--bronze-light); }
+  .trust-card:nth-child(5) { background: var(--soft-mauve); }
+  .trust-card-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: rgba(255,255,255,0.12); line-height: 1; margin-bottom: 12px; }
+  .trust-card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--champagne-ivory); margin-bottom: 10px; }
+  .trust-card-desc { font-size: 13px; color: rgba(247,240,230,0.7); line-height: 1.65; margin: 0; }
+  .mvq-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+  .mvq-table th { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--champagne-gold); padding: 12px 16px; background: var(--queen-noir); text-align: left; }
+  .mvq-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,26,26,0.06); color: #444; }
+  .mvq-table tr:nth-child(even) td { background: rgba(247,240,230,0.5); }
+  .commandments { counter-reset: cmd; list-style: none; padding: 0; }
+  .commandments li { counter-increment: cmd; display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(201,169,110,0.12); font-size: 15px; }
+  .commandments li::before { content: counter(cmd, decimal-leading-zero); font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--champagne-gold); opacity: 0.5; line-height: 1; flex-shrink: 0; min-width: 36px; }
+  .type-specimen { border: 1px solid rgba(201,169,110,0.2); border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
+  .type-specimen-preview { padding: 32px; background: var(--rose-smoke); }
+  .type-specimen-meta { padding: 16px 24px; background: white; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(0,0,0,0.05); }
+  .specimen-label { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--champagne-gold); }
+  .specimen-desc { font-size: 12px; color: #888; }
+  .doc-footer { background: var(--queen-noir); padding: 60px 40px; text-align: center; }
+  .doc-footer .crown { font-size: 32px; margin-bottom: 16px; }
+  .doc-footer p { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: rgba(247,240,230,0.5); margin: 0; }
+  .phase-badge { display: inline-block; margin-top: 20px; padding: 8px 24px; border: 1px solid rgba(201,169,110,0.3); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--champagne-gold); border-radius: 100px; font-family: 'Jost', sans-serif; }
+  code { font-family: monospace; font-size: 13px; background: rgba(26,26,26,0.06); padding: 2px 7px; border-radius: 3px; color: var(--velvet-rose); }
+  @media (max-width: 600px) { .section { padding: 60px 24px; } .cover { padding: 60px 24px; } .color-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="cover" id="cover">
+  <div class="cover-crown">👑</div>
+  <div class="cover-label">Most Valuable Queen · Brand Operating System</div>
+  <h1 class="cover-title">MV<span>QUEEN</span></h1>
+  <p class="cover-subtitle">Phase 2 · Brand System Files</p>
+  <div class="cover-toc">
+    <a class="cover-toc-item" href="#s1"><span class="toc-num">01</span><span class="toc-text">Color System</span></a>
+    <a class="cover-toc-item" href="#s2"><span class="toc-num">02</span><span class="toc-text">Typography</span></a>
+    <a class="cover-toc-item" href="#s3"><span class="toc-num">03</span><span class="toc-text">Brand Rules</span></a>
+    <a class="cover-toc-item" href="#s4"><span class="toc-num">04</span><span class="toc-text">CTA Library</span></a>
+    <a class="cover-toc-item" href="#s5"><span class="toc-num">05</span><span class="toc-text">Example Copy</span></a>
+    <a class="cover-toc-item" href="#s6"><span class="toc-num">06</span><span class="toc-text">Product Descriptions</span></a>
+    <a class="cover-toc-item" href="#s7"><span class="toc-num">07</span><span class="toc-text">Hook Systems</span></a>
+    <a class="cover-toc-item" href="#s8"><span class="toc-num">08</span><span class="toc-text">Customer Objections</span></a>
+    <a class="cover-toc-item" href="#s9"><span class="toc-num">09</span><span class="toc-text">Trust Building</span></a>
+  </div>
+  <div style="font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(247,240,230,0.3);">Phase 2 · 9 Files · Complete</div>
+</div>
+
+<section class="section" id="s1">
+  <div class="section-header"><div class="section-num">01</div><div class="section-title-wrap"><div class="section-label">Brand Identity</div><h2 class="section-title">Color System</h2></div></div>
+  <div class="purpose-box"><p>Color is not decoration. For MVQUEEN, color is emotional communication. Every shade was chosen to activate a specific feeling — softness, warmth, confidence, elegance, radiance. Color is how the brand speaks before a single word is read.</p></div>
+  <h4>Primary Palette</h4>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#1A1A1A"></div><div class="swatch-info"><span class="swatch-name">Queen Noir</span><span class="swatch-hex">#1A1A1A</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F7F0E6;border:1px solid #eee"></div><div class="swatch-info"><span class="swatch-name">Champagne Ivory</span><span class="swatch-hex">#F7F0E6</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#E8B4B8"></div><div class="swatch-info"><span class="swatch-name">Blush Reign</span><span class="swatch-hex">#E8B4B8</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C9A96E"></div><div class="swatch-info"><span class="swatch-name">Champagne Gold</span><span class="swatch-hex">#C9A96E</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#B5637A"></div><div class="swatch-info"><span class="swatch-name">Velvet Rose</span><span class="swatch-hex">#B5637A</span></div></div>
+  </div>
+  <h4>Secondary Palette</h4>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#D4B8A0"></div><div class="swatch-info"><span class="swatch-name">Warm Nude</span><span class="swatch-hex">#D4B8A0</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C4A0B0"></div><div class="swatch-info"><span class="swatch-name">Soft Mauve</span><span class="swatch-hex">#C4A0B0</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#4A2040"></div><div class="swatch-info"><span class="swatch-name">Deep Plum</span><span class="swatch-hex">#4A2040</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F0DDD8"></div><div class="swatch-info"><span class="swatch-name">Rose Smoke</span><span class="swatch-hex">#F0DDD8</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#A0784A"></div><div class="swatch-info"><span class="swatch-name">Bronze Light</span><span class="swatch-hex">#A0784A</span></div></div>
+  </div>
+  <h4>Miss.Princess Palette</h4>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#F4C2C2"></div><div class="swatch-info"><span class="swatch-name">Princess Pink</span><span class="swatch-hex">#F4C2C2</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D4B8E0"></div><div class="swatch-info"><span class="swatch-name">Lilac Dream</span><span class="swatch-hex">#D4B8E0</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F7C5A0"></div><div class="swatch-info"><span class="swatch-name">Peach Glow</span><span class="swatch-hex">#F7C5A0</span></div></div>
+  </div>
+  <h4>Color Psychology</h4>
+  <table class="mvq-table">
+    <tr><th>Color</th><th>What She Feels</th></tr>
+    <tr><td><strong>Champagne Ivory</strong></td><td>Safe, elevated, calm</td></tr>
+    <tr><td><strong>Blush Reign</strong></td><td>Feminine, desired, soft</td></tr>
+    <tr><td><strong>Champagne Gold</strong></td><td>Worthy, luxurious, special</td></tr>
+    <tr><td><strong>Velvet Rose</strong></td><td>Confident, passionate, strong</td></tr>
+    <tr><td><strong>Queen Noir</strong></td><td>Grounded, elegant, certain</td></tr>
+    <tr><td><strong>Deep Plum</strong></td><td>Exclusive, mysterious, premium</td></tr>
+  </table>
+</section>
+
+<section class="section" id="s2">
+  <div class="section-header"><div class="section-num">02</div><div class="section-title-wrap"><div class="section-label">Brand Identity</div><h2 class="section-title">Typography System</h2></div></div>
+  <div class="purpose-box"><p>Typography is tone made visible. Before she reads a word, she feels the font. The weight, the spacing, the curve of every letter communicates whether a brand feels luxurious or cheap, warm or cold.</p></div>
+  <h4>Tier 1 — Display / Editorial</h4>
+  <div class="type-specimen"><div class="type-specimen-preview"><p style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;font-style:italic;line-height:1.1;letter-spacing:0.04em;color:#1A1A1A;margin:0;">She was never just a woman.<br>She was always a queen.</p></div><div class="type-specimen-meta"><span class="specimen-label">Cormorant Garamond Light Italic — Primary Display</span><span class="specimen-desc">Headlines · Hero Text · Campaign</span></div></div>
+  <h4>Tier 2 — Body / Voice</h4>
+  <div class="type-specimen"><div class="type-specimen-preview"><p style="font-family:'Jost',sans-serif;font-size:17px;font-weight:300;line-height:1.8;color:#3a3a3a;margin:0;">A fragrance for the woman who enters a room quietly and leaves an impression that stays. It opens with fresh bergamot and soft peony — light enough to feel effortless.</p></div><div class="type-specimen-meta"><span class="specimen-label">Jost Light / Regular — Primary Body</span><span class="specimen-desc">Product Copy · Email · Website Body</span></div></div>
+  <h4>Tier 3 — Utility / Labels</h4>
+  <div class="type-specimen"><div class="type-specimen-preview" style="background:#F0DDD8;"><p style="font-family:'Jost',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#1A1A1A;margin:0;">SHOP NOW &nbsp;·&nbsp; NEW ARRIVALS &nbsp;·&nbsp; BEAUTY &nbsp;·&nbsp; FRAGRANCE</p></div><div class="type-specimen-meta"><span class="specimen-label">Jost Medium — All Caps Wide Tracking</span><span class="specimen-desc">Navigation · Labels · CTA Buttons</span></div></div>
+  <h4>Type Hierarchy</h4>
+  <table class="mvq-table">
+    <tr><th>Element</th><th>Font</th><th>Weight</th><th>Size</th></tr>
+    <tr><td>Hero Headline</td><td>Cormorant Garamond Italic</td><td>Light</td><td>64–80px</td></tr>
+    <tr><td>Section Header</td><td>Cormorant Garamond</td><td>Regular</td><td>40–52px</td></tr>
+    <tr><td>Product Title</td><td>Cormorant Garamond</td><td>Regular</td><td>24–32px</td></tr>
+    <tr><td>Body Text</td><td>Jost</td><td>Light</td><td>16–18px</td></tr>
+    <tr><td>CTA Button</td><td>Jost</td><td>Medium Caps</td><td>13–15px</td></tr>
+    <tr><td>Navigation</td><td>Jost</td><td>Medium Caps</td><td>13–14px</td></tr>
+  </table>
+</section>
+
+<section class="section" id="s3">
+  <div class="section-header"><div class="section-num">03</div><div class="section-title-wrap"><div class="section-label">Brand Identity</div><h2 class="section-title">Brand Rules</h2></div></div>
+  <div class="purpose-box"><p>These are not guidelines. They are laws. When a rule is followed, the brand feels cohesive, elevated, and trustworthy. When a rule is broken, the brand feels inconsistent — and she notices, even if she can't name why.</p></div>
+  <h3>Identity Rules</h3>
+  <div class="rule-grid">
+    <div class="rule-card"><span class="rule-id">R-01</span><div class="rule-title">The Name Is MVQUEEN — Always</div><p class="rule-body">All caps, no space, no period. MVQUEEN. Never MV Queen, mvqueen, or MV QUEEN.</p></div>
+    <div class="rule-card"><span class="rule-id">R-02</span><div class="rule-title">Sister Brand Is Miss.Princess — Always</div><p class="rule-body">Capital M, capital P, period between. Miss.Princess. Never Miss Princess or MISS PRINCESS.</p></div>
+    <div class="rule-card"><span class="rule-id">R-05</span><div class="rule-title">The Two Brands Are Always Distinct</div><p class="rule-body">MVQUEEN = mature, confident, elegant. Miss.Princess = youthful, playful, dreamy. Never merged.</p></div>
+    <div class="rule-card"><span class="rule-id">R-11</span><div class="rule-title">She Is Always "She"</div><p class="rule-body">Never "the customer," "users," "buyers," or "consumers." She is a woman. She is the queen.</p></div>
+    <div class="rule-card"><span class="rule-id">R-14</span><div class="rule-title">"Emotional" Is A Precise Tool</div><p class="rule-body">Used deliberately and sparingly. Never as a filler word. Choose specific language.</p></div>
+    <div class="rule-card"><span class="rule-id">R-15</span><div class="rule-title">Never Apologize For Prices</div><p class="rule-body">Never "affordable!" or "budget luxury." MVQUEEN is proud of its accessible luxury positioning.</p></div>
+  </div>
+  <h3>The 10 Brand Commandments</h3>
+  <ol class="commandments">
+    <li>The name is <strong>MVQUEEN</strong>. Always.</li>
+    <li>The sister brand is <strong>Miss.Princess</strong>. Always.</li>
+    <li>The color palette is warm, feminine, and luxury. Always.</li>
+    <li>The typography is editorial serif + clean sans-serif. Always.</li>
+    <li>The voice is warm, confident, and emotionally intelligent. Always.</li>
+    <li>She is always "she." The brand always speaks to her, not about her.</li>
+    <li>"Emotional" is used with precision, not as a filler word.</li>
+    <li>Every piece of content inspires, educates, or converts.</li>
+    <li>The brand never competes on price — only on feeling.</li>
+    <li>AI is a tool. The brand is the filter. Human review is always final.</li>
+  </ol>
+</section>
+
+<section class="section" id="s4">
+  <div class="section-header"><div class="section-num">04</div><div class="section-title-wrap"><div class="section-label">Tone &amp; Voice</div><h2 class="section-title">CTA Library</h2></div></div>
+  <div class="purpose-box"><p>A CTA is not just a button. For MVQUEEN, every call to action is an invitation — a moment where the brand reaches out its hand and says: come with me.</p></div>
+  <h4>Shop / Purchase</h4>
+  <div class="cta-grid"><span class="cta-pill">Shop the Collection</span><span class="cta-pill">Discover the Edit</span><span class="cta-pill">Claim Yours</span><span class="cta-pill">Make It Yours</span><span class="cta-pill">Step Into the Collection</span><span class="cta-pill">Shop the Drop</span><span class="cta-pill">Find Your Piece</span><span class="cta-pill">Shop Her World</span></div>
+  <h4>Email / List Building</h4>
+  <div class="cta-grid"><span class="cta-pill dark">Join the Reign</span><span class="cta-pill dark">Enter the MVQUEEN World</span><span class="cta-pill dark">Get First Access</span><span class="cta-pill dark">Join Her Circle</span><span class="cta-pill dark">Claim Your Spot</span><span class="cta-pill dark">Step Inside</span></div>
+  <h4>VIP / Loyalty</h4>
+  <div class="cta-grid"><span class="cta-pill gold">Join the VIP Circle</span><span class="cta-pill gold">Access the Inner Reign</span><span class="cta-pill gold">Unlock Your Queen Status</span><span class="cta-pill gold">You've Earned This</span><span class="cta-pill gold">Invite a Queen</span></div>
+  <h4>Abandoned Cart</h4>
+  <div class="cta-grid"><span class="cta-pill">Your Bag Is Still Waiting</span><span class="cta-pill">You Were So Close, Queen</span><span class="cta-pill">One Click Away from Yours</span><span class="cta-pill">It's Still Here. So Are We.</span></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="section-header"><div class="section-num">05</div><div class="section-title-wrap"><div class="section-label">Tone &amp; Voice</div><h2 class="section-title">Example Copy Library</h2></div></div>
+  <div class="purpose-box"><p>This is the brand's voice made concrete. Where the rules explain how to write as MVQUEEN, this file shows what it actually sounds like — across every format, every platform, every moment.</p></div>
+  <h4>Brand Hero Statements</h4>
+  <div class="copy-block"><p>She was never just a woman. She was always a queen.</p><span class="copy-tag">Homepage Hero</span></div>
+  <div class="copy-block"><p>Luxury was never meant to feel distant. We made it feel like coming home.</p><span class="copy-tag">Brand Statement</span></div>
+  <div class="copy-block"><p>You don't earn elegance. You remember it.</p><span class="copy-tag">Campaign Tagline</span></div>
+  <div class="copy-block"><p>Femininity is not fragile. It is the most powerful thing she owns.</p><span class="copy-tag">Brand Manifesto</span></div>
+  <h4>Email Lines</h4>
+  <blockquote><p>Welcome to the reign, queen. We're glad you're here.</p></blockquote>
+  <blockquote><p>New month. New drop. New reason to feel like the most elevated version of you.</p></blockquote>
+  <blockquote><p>We noticed you left something behind. Her cart has been holding on, and everything inside is still here.</p></blockquote>
+  <h4>Instagram — Lifestyle</h4>
+  <div class="copy-block"><p>She doesn't wait to feel worthy. She starts there. 👑</p><span class="copy-tag">Instagram Caption</span></div>
+  <div class="copy-block"><p>Luxury isn't a price tag. It's a feeling she gives herself every single day.</p><span class="copy-tag">Instagram Caption</span></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="section-header"><div class="section-num">06</div><div class="section-title-wrap"><div class="section-label">Tone &amp; Voice</div><h2 class="section-title">Product Description Voice</h2></div></div>
+  <div class="purpose-box"><p>MVQUEEN product descriptions lead with feeling. By the time she's finished reading, she doesn't just know what the product is — she knows how it will make her feel. And that is why she buys.</p></div>
+  <h4>The 5-Part Formula</h4>
+  <div class="rule-grid">
+    <div class="rule-card"><span class="rule-id">Part 1</span><div class="rule-title">The Emotional Hook</div><p class="rule-body">One sentence. One feeling. Opens by speaking to her desire or identity — not the product.</p></div>
+    <div class="rule-card"><span class="rule-id">Part 2</span><div class="rule-title">The Sensory Story</div><p class="rule-body">2–4 sentences. How it looks, feels, smells, moves. She imagines herself with it.</p></div>
+    <div class="rule-card"><span class="rule-id">Part 3</span><div class="rule-title">The Functional Truth</div><p class="rule-body">2–3 bullets. Real features: ingredients, materials, dimensions, sizes. Precise, never clinical.</p></div>
+    <div class="rule-card"><span class="rule-id">Part 4</span><div class="rule-title">The Identity Stamp</div><p class="rule-body">One sentence. She sees herself in this product.</p></div>
+    <div class="rule-card"><span class="rule-id">Part 5</span><div class="rule-title">The Invitation</div><p class="rule-body">One line. Soft CTA energy — an invitation, not a command.</p></div>
+  </div>
+  <h4>Fragrance Example</h4>
+  <div class="copy-block"><p>Some scents announce you. This one becomes you.<br><br><span style="font-size:15px;font-style:normal;font-family:'Jost',sans-serif;color:rgba(247,240,230,0.8);">For the woman who wants to be remembered — without saying a word.</span></p><span class="copy-tag">Fragrance · Product Page</span></div>
+  <h4>Jewelry Example</h4>
+  <div class="copy-block"><p>She used to wait for someone to give her gold. Then she bought it for herself.<br><br><span style="font-size:15px;font-style:normal;font-family:'Jost',sans-serif;color:rgba(247,240,230,0.8);">For the woman who is her own most thoughtful gift-giver.</span></p><span class="copy-tag">Jewelry · Product Page</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="section-header"><div class="section-num">07</div><div class="section-title-wrap"><div class="section-label">Tone &amp; Voice</div><h2 class="section-title">Hook Systems</h2></div></div>
+  <div class="purpose-box"><p>A hook has one job: make her stop. Not pause — <em>stop.</em> When a MVQUEEN hook lands correctly, her internal response is: <em>"she's talking about me."</em></p></div>
+  <h4>Identity Recognition</h4>
+  <div class="hook-grid">
+    <div class="hook-card"><span class="hook-type">Identity</span><p class="hook-text">She was never just a woman. She was always a queen.</p></div>
+    <div class="hook-card"><span class="hook-type">Identity</span><p class="hook-text">She romanticizes her mornings on purpose.</p></div>
+    <div class="hook-card"><span class="hook-type">Identity</span><p class="hook-text">She buys herself gold now.</p></div>
+    <div class="hook-card"><span class="hook-type">Identity</span><p class="hook-text">Some women wait to be chosen. She stopped waiting.</p></div>
+  </div>
+  <h4>Pattern Interrupt</h4>
+  <div class="hook-grid">
+    <div class="hook-card"><span class="hook-type">Pattern Interrupt</span><p class="hook-text">She used to wait for someone to give her gold. Then she bought it for herself.</p></div>
+    <div class="hook-card"><span class="hook-type">Pattern Interrupt</span><p class="hook-text">Luxury isn't something you earn. It's something you remember belongs to you.</p></div>
+    <div class="hook-card"><span class="hook-type">Pattern Interrupt</span><p class="hook-text">The most powerful thing in the room was never the room. It was her.</p></div>
+    <div class="hook-card"><span class="hook-type">Pattern Interrupt</span><p class="hook-text">She stopped apologizing for wanting beautiful things.</p></div>
+  </div>
+  <h4>Aspiration</h4>
+  <div class="hook-grid">
+    <div class="hook-card"><span class="hook-type">Aspiration</span><p class="hook-text">The woman she's becoming has a signature fragrance.</p></div>
+    <div class="hook-card"><span class="hook-type">Aspiration</span><p class="hook-text">She used to save luxury for special occasions. Now every day is one.</p></div>
+    <div class="hook-card"><span class="hook-type">Aspiration</span><p class="hook-text">The queen era starts with the rituals she builds for herself.</p></div>
+    <div class="hook-card"><span class="hook-type">Aspiration</span><p class="hook-text">The woman who knows her worth shops accordingly.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="section-header"><div class="section-num">08</div><div class="section-title-wrap"><div class="section-label">Customer Psychology</div><h2 class="section-title">Customer Objections</h2></div></div>
+  <div class="purpose-box"><p>An objection is not a rejection. It is a question she's too polite to ask out loud. When the objections are answered before she asks, conversion happens naturally. She doesn't feel sold to. She feels understood.</p></div>
+  <h4>Price Objections</h4>
+  <div class="objection-card"><div class="objection-header"><div class="objection-q">"This feels expensive for what it is."</div></div><div class="objection-body"><p class="objection-response">Expensive is what you spend on things that don't last and don't make you feel anything. The quality is real. The feeling is lasting. And the version of yourself you feel like when you use it? That's worth more than the price tag.</p></div></div>
+  <div class="objection-card"><div class="objection-header"><div class="objection-q">"I can get something similar for less."</div></div><div class="objection-body"><p class="objection-response">You can. But MVQUEEN isn't competing on price. It's competing on feeling. On what you experience the moment it arrives. That difference is real — and she always notices it.</p></div></div>
+  <h4>Identity Objections</h4>
+  <div class="objection-card"><div class="objection-header" style="background:var(--velvet-rose);"><div class="objection-q">"This feels too fancy / too much for me."</div></div><div class="objection-body"><p class="objection-response">That feeling — that luxury is for someone else? It was a lie she was told a long time ago. MVQUEEN was built specifically to tell a different truth. Not fancy. Not too much. Just finally the level she's always deserved.</p></div></div>
+  <div class="objection-card"><div class="objection-header" style="background:var(--velvet-rose);"><div class="objection-q">"I feel guilty spending money on myself."</div></div><div class="objection-body"><p class="objection-response">She pours into everyone around her. MVQUEEN is for the moments she pours into herself. That's not selfish. That's how she stays the queen — not by running empty, but by choosing herself intentionally.</p></div></div>
+  <h4>Quick Reference</h4>
+  <table class="mvq-table">
+    <tr><th>Objection</th><th>Core Response Theme</th></tr>
+    <tr><td><strong>Price</strong></td><td>Value is emotional. She's investing in how she feels.</td></tr>
+    <tr><td><strong>Trust</strong></td><td>Transparency, proof, and a brand that stands behind its products.</td></tr>
+    <tr><td><strong>Fit</strong></td><td>This was made for her — here's the proof it works for her.</td></tr>
+    <tr><td><strong>Timing</strong></td><td>The cart waits. The collection doesn't always.</td></tr>
+    <tr><td><strong>Identity</strong></td><td>She deserved this all along. MVQUEEN was built to show her that.</td></tr>
+  </table>
+</section>
+
+<section class="section" id="s9">
+  <div class="section-header"><div class="section-num">09</div><div class="section-title-wrap"><div class="section-label">Customer Psychology</div><h2 class="section-title">Trust Building System</h2></div></div>
+  <div class="purpose-box"><p>For a luxury brand at any price point, trust is not a nice-to-have. It is the product.</p></div>
+  <h4>The 5 Trust Dimensions</h4>
+  <div class="trust-grid">
+    <div class="trust-card"><div class="trust-card-num">01</div><div class="trust-card-title">Aesthetic Trust</div><p class="trust-card-desc">"This brand looks like it means it." — First impressions decided in under 3 seconds.</p></div>
+    <div class="trust-card"><div class="trust-card-num">02</div><div class="trust-card-title">Quality Trust</div><p class="trust-card-desc">"This product actually delivers." — She can't touch it before buying. She needs proof.</p></div>
+    <div class="trust-card"><div class="trust-card-num">03</div><div class="trust-card-title">Emotional Trust</div><p class="trust-card-desc">"This brand gets me." — The emotional connection is the product's most important differentiator.</p></div>
+    <div class="trust-card"><div class="trust-card-num">04</div><div class="trust-card-title">Relational Trust</div><p class="trust-card-desc">"This brand treats me well." — Built over time. Lost in single moments.</p></div>
+    <div class="trust-card"><div class="trust-card-num">05</div><div class="trust-card-title">Identity Trust</div><p class="trust-card-desc">"This brand is for women like me." — The foundation of MVQUEEN's mission.</p></div>
+  </div>
+  <h4>Trust by Journey Stage</h4>
+  <table class="mvq-table">
+    <tr><th>Stage</th><th>Trust Goal</th><th>Primary Dimension</th></tr>
+    <tr><td>Discovery</td><td>She believes this brand is real and premium</td><td>Aesthetic Trust</td></tr>
+    <tr><td>Consideration</td><td>She believes the product will work for her</td><td>Quality + Identity</td></tr>
+    <tr><td>Purchase</td><td>She feels confident enough to commit</td><td>Relational + Quality</td></tr>
+    <tr><td>Post-Purchase</td><td>She feels she made the right decision</td><td>Relational + Emotional</td></tr>
+    <tr><td>Loyalty</td><td>She considers MVQUEEN her brand</td><td>All Five</td></tr>
+  </table>
+  <div class="copy-block" style="margin-top:40px;"><p>Trust is not earned in grand gestures. It is earned in consistent small ones — every caption that sounds like the brand, every order that arrives beautifully, every email that makes her feel like someone wrote it specifically for her.</p><span class="copy-tag">Core Brand Belief</span></div>
+</section>
+
+<footer class="doc-footer">
+  <div class="crown">👑</div>
+  <p>MVQUEEN Brand Operating System · Phase 2 Complete</p>
+  <p style="margin-top:8px;font-size:14px;">9 Files · Color · Typography · Rules · CTAs · Copy · Product Voice · Hooks · Objections · Trust</p>
+  <div class="phase-badge">Phase 3 Coming Next</div>
+</footer>
+
+</body>
+</html>

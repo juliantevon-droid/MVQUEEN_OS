@@ -1,0 +1,189 @@
+/**
+ * MVQUEEN OS — Drive Stabilization Script
+ * =========================================
+ * Paste into script.google.com → Run → Authorize → Done
+ * 
+ * What this does:
+ *  1. Moves all loose root files to their correct module folders
+ *  2. Archives duplicate/older files to 98_Archive
+ *  3. Moves ghost folders (unlabeled duplicates) into 98_Archive
+ *  4. Logs every action to a "MVQUEEN_Cleanup_Log" Google Sheet
+ *
+ * SAFE: Nothing is permanently deleted. Everything is moved to archive first.
+ */
+
+// ─── FOLDER IDs (do not change) ───────────────────────────────────────────────
+const ROOT_ID          = '1t_p6xyURJGYpYT_vXxbSVWJmLFJxsxOf';
+const ARCHIVE_ID       = '1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv'; // 98_Archive
+const COMMAND_ID       = '1Ed2REeJheXEZGoczop5_6zjUUv40iEHG'; // 99_Command_Center
+const SCRIPTS_ID       = '1eWJrAbgpT1x34bpAYpzmzaMKkX-yy3pj'; // 15_Scripts_And_Code
+const TONE_VOICE_ID    = '1Z5Cx_7aL0u51M3BFPmvmNXNt_o3driGm'; // 06_Tone_And_Voice
+const BRAND_ID_ID      = '1wtz3tmX1myP_KSA4PpVriUeIwkvjBFqI'; // 02_Brand_Identity
+
+// ─── FILE IDs ─────────────────────────────────────────────────────────────────
+
+// Loose files → 99_Command_Center
+const TO_COMMAND = [
+  { id: '1E05yg_wM7c6f1StgmK4n6Ttd9dwTqiAg', name: 'MVQUEEN_CONTEXT.md' },
+  { id: '1_QWc_tGQrfWd1NU8kP6kyYIf2hsycKIa', name: '_ecosystem_index.json' },
+];
+
+// Loose files → 15_Scripts_And_Code
+const TO_SCRIPTS = [
+  { id: '1Y76nS8Qj9-7xmA2O2aYcX61wIgpHn2th', name: 'pull_phase1.sh' },
+];
+
+// Loose files → 98_Archive (Phase2 docs, diagnostic txts, mystery files)
+const TO_ARCHIVE_FILES = [
+  { id: '16hJB_VaHSRCvrTFfkukZEQ-usizSK-Tp', name: 'MVQUEEN_Phase2.html' },
+  { id: '14FJlMCQyTm3aPyuT9AFxIc8IRzbey5Ln', name: 'MVQUEEN_Phase2_Full.html' },
+  { id: '1O3QkHMswodN4TTnKAHRT-uwNCNsJPYVr', name: 'changed_files.txt' },
+  { id: '1Od_AsIrWIDI6kXncOhGZGISLZqTmJ_c-', name: 'current_files.txt' },
+  { id: '10ys14cwPmz-1AnZfH-hiXWDPvfNRHAAu', name: 'archive_files.txt' },
+  { id: '1o0dmvDce_Yyzae0cmD3h8E9pwGLF_NEE', name: 'duplicate_report.txt' },
+  { id: '1rvN9PB5RbmkgK3EZ2INwUqDqMbICBm-b', name: 'markdown_sizes.txt' },
+  { id: '1e6ezM-V6qsoLYYGfh0mtqh6Rnv7JbPs-', name: 'nested_comparison.txt' },
+  { id: '1QPYpyzBgD-xTp2WelASlJsaO7mLmxQW0', name: 's (unknown file)' },
+  { id: '1PjLHeAvYwm1bUU-rurmu-3oO8Lc1Csn7', name: '.ttxfolder' },
+  { id: '1y0hsUbHHT-1jow0mWipWr5u75my7V-HVvbsCPkfYndM', name: 'MVQUEEN_Phase2 (Google Doc)' },
+];
+
+// Duplicate loose .md files at root (worse versions — better copies already inside modules)
+// Jun 9 versions of files already superseded in 02_Brand_Identity & 06_Tone_And_Voice
+const TO_ARCHIVE_OLD_MDS = [
+  // color_system duplicates (keep the one in 02_Brand_Identity — 10KB)
+  { id: '1zCgQtrwVhQEuNclrvGCztkBAwEmKo-XU', name: 'color_system_root_jun9.md' },   // Jun9 2969b
+  { id: '1aKsZ6UUv9bNMfObeWukghsyhLe4vRFxU', name: 'color_system_root_jun9b.md' },  // Jun9 2969b
+
+  // typography_system duplicates (keep 02_Brand_Identity version)
+  { id: '13IZtzkv02LYMNWjDhQ7VL3ovhNG1bNCL', name: 'typography_system_root_jun9.md' },
+  { id: '16VA1NCE2RCh-EFx2e_KjNoATfauNIZjE', name: 'typography_system_root_jun11.md' },
+
+  // brand_rules duplicates (keep 02_Brand_Identity — 9.8KB)
+  { id: '1KssLkR87q6hdJmKcPZcUkpdz9PkiR9Wq', name: 'brand_rules_root_jun9.md' },
+  { id: '16QB7iCJV_H5F7AeaSmxuSzREDMBFa1Ao', name: 'brand_rules_root_jun11.md' },
+
+  // CTA_Library duplicates (keep 06_Tone_And_Voice version)
+  { id: '1ashwyBUTreEqoV_1IwshV0cJBP5zn0dN', name: 'CTA_Library_root_jun9.md' },
+  { id: '1NvOiPnMvVLC6D5wyMFMrBSXMc5C2gCxK', name: 'CTA_Library_root_jun11.md' },
+
+  // Example_Copy duplicates (keep 06_Tone_And_Voice version — Jun12 is newest/largest)
+  { id: '1oD5kwAUEXVV9ie-km_zx7yGdQxkqGeMu', name: 'Example_Copy_root_jun9.md' },
+  { id: '19hRlHI8B7Hfi75ERS7vcr22RZ7AvFgws', name: 'Example_Copy_root_jun11.md' },
+
+  // Product_Description_Voice duplicates (keep 06_Tone_And_Voice version)
+  { id: '1KELyu-Pj4qmx_Vq_yEhsuHqiL85cP0T1', name: 'Product_Description_Voice_root_jun9.md' },
+  { id: '1gCsUNvmKoa9c9YI5l8R__t25LOJGHlg7', name: 'Product_Description_Voice_root_jun11.md' },
+
+  // Hook_Systems duplicates — Jun9 root is richest but 06_Tone_And_Voice already has one
+  // Archive both root versions, 06_Tone_And_Voice is canonical
+  { id: '1rRLQY3wCeaWykawmAMgc7aYVJ39A3aEF', name: 'Hook_Systems_root_jun9.md' },
+  { id: '1Y9KcGOB0Qgl2SyKHw9XZMxI_6TV-27pN', name: 'Hook_Systems_root_jun11.md' },
+
+  // customer_objections — Jun9 root is richest but archive both root copies
+  { id: '1oFK5mP-suY4YQqEwjwAd444DQJuRbrqn', name: 'customer_objections_root_jun9.md' },
+  { id: '1yVf1otFq0LKd_Kc_b-VFpm1vHmUCWEEW', name: 'customer_objections_root_jun11.md' },
+
+  // trust_building — Jun11 (checkbox) is canonical; archive Jun9 root
+  { id: '1Uj8pn6Cz3X668gPQiJoixVu8AHQR3VXz', name: 'trust_building_root_jun9.md' },
+  { id: '1yH57oGmNV5-d4JAQUIqlfCnMQ2DbIyDm', name: 'trust_building_root_jun11.md' },
+];
+
+// Ghost/duplicate folders to move into 98_Archive
+// These are unlabeled duplicates of existing numbered folders
+const GHOST_FOLDERS = [
+  { id: '1UqCiX0tOWiSQlxbHbX0ovWLc7s-uL9h9', name: 'Brand_Identity (ghost)' },
+  { id: '1G3XJbu67A4eTXlAVzsixYbQ7Y2lPrjwa', name: 'Command_Center (ghost)' },
+  { id: '1DEe3ga-lZBXO28vEB5ZR7TqBFI5nklsF', name: 'Templates (ghost)' },
+  { id: '1v1fzq1DERKNOtmNB4CGmdJYnU-CBo0gS', name: 'merge_review (ghost)' },
+  { id: '1COa7z6bYlD-HPrO6pTjy_GlBhePi_IDB', name: '20_Scripts_And_Code (dupe of 15)' },
+];
+
+// ─── MAIN ─────────────────────────────────────────────────────────────────────
+
+function runMVQUEENCleanup() {
+  const log = [];
+  const root = DriveApp.getFolderById(ROOT_ID);
+
+  log.push(['Action', 'File / Folder', 'From', 'To', 'Status', 'Timestamp']);
+
+  function moveFile(fileId, targetFolderId, displayName, reason) {
+    try {
+      const file = DriveApp.getFileById(fileId);
+      const parents = file.getParents();
+      DriveApp.getFolderById(targetFolderId).addFile(file);
+      while (parents.hasNext()) {
+        parents.next().removeFile(file);
+      }
+      const entry = ['MOVE', displayName, 'ROOT', targetFolderId, '✅ Success', new Date().toISOString()];
+      log.push(entry);
+      Logger.log(`✅ MOVED: ${displayName} → ${targetFolderId}`);
+    } catch (e) {
+      const entry = ['MOVE', displayName, 'ROOT', targetFolderId, `❌ ${e.message}`, new Date().toISOString()];
+      log.push(entry);
+      Logger.log(`❌ FAILED: ${displayName} — ${e.message}`);
+    }
+  }
+
+  function moveFolder(folderId, targetFolderId, displayName) {
+    try {
+      const folder = DriveApp.getFolderById(folderId);
+      const parents = folder.getParents();
+      DriveApp.getFolderById(targetFolderId).addFolder(folder);
+      while (parents.hasNext()) {
+        parents.next().removeFolder(folder);
+      }
+      const entry = ['MOVE FOLDER', displayName, 'ROOT', targetFolderId, '✅ Success', new Date().toISOString()];
+      log.push(entry);
+      Logger.log(`✅ MOVED FOLDER: ${displayName} → ${targetFolderId}`);
+    } catch (e) {
+      const entry = ['MOVE FOLDER', displayName, 'ROOT', targetFolderId, `❌ ${e.message}`, new Date().toISOString()];
+      log.push(entry);
+      Logger.log(`❌ FAILED FOLDER: ${displayName} — ${e.message}`);
+    }
+  }
+
+  // 1. Move key files to correct modules
+  Logger.log('=== PHASE 1: Moving files to correct modules ===');
+  TO_COMMAND.forEach(f => moveFile(f.id, COMMAND_ID, f.name, 'command center'));
+  TO_SCRIPTS.forEach(f => moveFile(f.id, SCRIPTS_ID, f.name, 'scripts'));
+
+  // 2. Archive loose diagnostic/phase2 files
+  Logger.log('=== PHASE 2: Archiving loose files ===');
+  TO_ARCHIVE_FILES.forEach(f => moveFile(f.id, ARCHIVE_ID, f.name, 'archive'));
+
+  // 3. Archive duplicate .md files
+  Logger.log('=== PHASE 3: Archiving duplicate .md files ===');
+  TO_ARCHIVE_OLD_MDS.forEach(f => moveFile(f.id, ARCHIVE_ID, f.name, 'duplicate'));
+
+  // 4. Move ghost folders to archive
+  Logger.log('=== PHASE 4: Moving ghost folders to archive ===');
+  GHOST_FOLDERS.forEach(f => moveFolder(f.id, ARCHIVE_ID, f.name));
+
+  // 5. Write log to Google Sheet
+  Logger.log('=== PHASE 5: Writing log ===');
+  writeLog(log);
+
+  Logger.log('=== MVQUEEN CLEANUP COMPLETE ===');
+  Logger.log(`Total actions: ${log.length - 1}`);
+}
+
+function writeLog(log) {
+  try {
+    const ss = SpreadsheetApp.create('MVQUEEN_Cleanup_Log_' + new Date().toISOString().slice(0,10));
+    const sheet = ss.getActiveSheet();
+    sheet.setName('Cleanup Log');
+    sheet.getRange(1, 1, log.length, log[0].length).setValues(log);
+    sheet.getRange(1, 1, 1, log[0].length).setFontWeight('bold');
+    sheet.autoResizeColumns(1, log[0].length);
+
+    // Move log to 99_Command_Center
+    const logFile = DriveApp.getFileById(ss.getId());
+    DriveApp.getFolderById('1Ed2REeJheXEZGoczop5_6zjUUv40iEHG').addFile(logFile);
+    DriveApp.getRootFolder().removeFile(logFile);
+
+    Logger.log('✅ Log written: ' + ss.getUrl());
+  } catch(e) {
+    Logger.log('⚠️ Could not write log sheet: ' + e.message);
+  }
+}

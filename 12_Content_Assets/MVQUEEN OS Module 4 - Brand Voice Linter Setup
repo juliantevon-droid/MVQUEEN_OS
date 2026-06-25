@@ -1,0 +1,107 @@
+# **MVQUEEN OS \- Module 4: Brand Voice Linter Script**
+
+This document contains the complete Google Apps Script code for the MVQUEEN OS Brand Voice Linter. It scans all Markdown (.md) and plain text files for banned, off-brand vocabulary and aggressive formatting, logging inconsistencies to a dedicated sheet tab.
+
+## **1\. The Apps Script Code**
+
+/\*\*  
+ \* MVQUEEN OS \- Brand Voice Linter  
+ \* Parses all markdown/text files for off-brand messaging, slang, or non-luxury formatting.  
+ \*/  
+function lintMVQUEENBrandVoice() {  
+  // Centralized root identity connection  
+  const ROOT\_FOLDER\_ID \= 'YOUR\_GOOGLE\_DRIVE\_FOLDER\_ID\_HERE';   
+  const rootFolder \= DriveApp.getFolderById(ROOT\_FOLDER\_ID);  
+  const subFolders \= rootFolder.getFolders();  
+    
+  // Array of banned expressions/patterns to keep copywriting luxury-grade  
+  const BANNED\_PATTERNS \= \[  
+    { regex: /girlboss/i, label: "Low-tier hustle slang ('girlboss')" },  
+    { regex: /cheap/i, label: "Budget framing ('cheap')" },  
+    { regex: /\!\!\!/g, label: "Aggressive exclamation grouping ('\!\!\!')" },  
+    { regex: /gonna|wanna/i, label: "Unrefined/Casual contraction" }  
+  \];  
+    
+  let violations \= \[\];  
+  Logger.log("Starting MVQUEEN OS luxury brand voice alignment check...");  
+    
+  while (subFolders.hasNext()) {  
+    let folder \= subFolders.next();  
+    let folderName \= folder.getName();  
+    let files \= folder.getFiles();  
+      
+    while (files.hasNext()) {  
+      let file \= files.next();  
+      let fileName \= file.getName();  
+      let mime \= file.getMimeType();  
+        
+      // Target markdown and text files  
+      if (mime \=== MimeType.PLAIN\_TEXT || fileName.endsWith('.md')) {  
+        let content \= file.getAs('text/plain').getDataAsString();  
+        let issuesFound \= \[\];  
+          
+        // Scan text for each rule  
+        BANNED\_PATTERNS.forEach(rule \=\> {  
+          if (rule.regex.test(content)) {  
+            issuesFound.push(rule.label);  
+          }  
+        });  
+          
+        if (issuesFound.length \> 0\) {  
+          violations.push(\[  
+            fileName,  
+            folderName,  
+            issuesFound.join(' | '),  
+            new Date().toLocaleDateString()  
+          \]);  
+        }  
+      }  
+    }  
+  }  
+    
+  // Output violations to the main Health Report spreadsheet  
+  let reportFiles \= rootFolder.getFilesByName("MVQUEEN\_OS\_Health\_Report");  
+  if (reportFiles.hasNext()) {  
+    let ss \= SpreadsheetApp.openById(reportFiles.next().getId());  
+    let lintSheet \= ss.getSheetByName("Brand Voice Audit");  
+      
+    // Initialize or clear tab  
+    if (\!lintSheet) {  
+      lintSheet \= ss.insertSheet("Brand Voice Audit");  
+      lintSheet.appendRow(\["Flagged File", "Folder Location", "Voice Violations", "Last Inspected"\]);  
+      lintSheet.getRange("A1:D1").setFontWeight("bold");  
+    } else {  
+      if (lintSheet.getLastRow() \> 1\) {  
+        lintSheet.deleteRows(2, lintSheet.getLastRow() \- 1);  
+      }  
+    }  
+      
+    if (violations.length \> 0\) {  
+      lintSheet.getRange(2, 1, violations.length, 4).setValues(violations);  
+      Logger.log("Brand alignment complete. Violations logged to 'Brand Voice Audit' tab.");  
+    } else {  
+      lintSheet.appendRow(\["All assets perfectly aligned with brand voice criteria.", "All clear", "None", new Date().toLocaleDateString()\]);  
+      Logger.log("Brand alignment complete. Zero violations detected.");  
+    }  
+  } else {  
+    Logger.log("Warning: Run Module 1 first to initialize the core health report spreadsheet.");  
+  }  
+}
+
+## **2\. Complete System Integration Matrix**
+
+Update your master orchestration function at the top of your Apps Script file to include the brand voice compliance sweep:
+
+function runMasterMVQUEENOSMaintenance() {  
+  // Module 1: Core Metrics & Separation Diagnostics  
+  runMVQUEENOSDiagnostics();   
+    
+  // Module 2: Structural Void Blueprint Injection  
+  deployMVQUEModuleStubs();  
+    
+  // Module 3: Cross-Folder Redundancy Auditing  
+  detectMVQUEENDuplicates();  
+    
+  // Module 4: High-End Brand Voice Linting Sweep  
+  lintMVQUEENBrandVoice();  
+}  

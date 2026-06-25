@@ -1,0 +1,55 @@
+# **MVQUEEN\_OS — Script Vault & System Documentation**
+
+This document serves as the cloud backup for the automation scripts running within the MVQUEEN\_OS local environment.
+
+## **1\. Local Vault Crawler Engine (vault\_crawler.py)**
+
+**Path Destination:** /storage/emulated/0/MVQUEEN\_OS/scripts/vault\_crawler.py  
+This script recursively tracks all system directories (00-16, 30, 31), counts file metadata, and auto-compiles the master system index files for local AI parsing.
+
+`#!/usr/bin/env python3`  
+`import os`  
+`import time`  
+`from pathlib import Path`
+
+`VAULT_PATH = Path("/storage/emulated/0/MVQUEEN_OS")`  
+`if not VAULT_PATH.exists():`  
+    `VAULT_PATH = Path.cwd()`
+
+`def count_words(file_path):`  
+    `try:`  
+        `with open(file_path, "r", encoding="utf-8", errors="ignore") as f:`  
+            `content = f.read()`  
+            `clean_preview = content[:150].replace("\n", " ").replace("#", "").strip()`  
+            `return len(content.split()), clean_preview`  
+    `except Exception:`  
+        `return 0, "Non-text or locked data block"`
+
+`def generate_crawler_engine():`  
+    `markdown_lines = [`  
+        `"# MVQUEEN_OS — Master System Index V2 (Auto-Generated)",`  
+        `f"_System Sync Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S')}_",`  
+        `"---\n"`  
+    `]`  
+    `categories = sorted([d for d in os.listdir(VAULT_PATH) if os.path.isdir(VAULT_PATH / d) and not d.startswith(".")])`  
+    `for category in categories:`  
+        `cat_path = VAULT_PATH / category`  
+        `markdown_lines.append(f"## 📁 {category}\n")`  
+        `try:`  
+            `files = sorted([f for f in os.listdir(cat_path) if os.path.isfile(cat_path / f)])`  
+            `for file in files:`  
+                `file_path = cat_path / file`  
+                `if file.endswith((".md", ".txt", ".html", ".json", ".csv")):`  
+                    `words, preview = count_words(file_path)`  
+                    ``markdown_lines.append(f"### 📄 {category}/{file}\n- **Words:** {words} | **Preview:** `{preview}...` \n")``  
+        `except Exception:`  
+            `continue`  
+    `with open(VAULT_PATH / "MASTER_INDEX_V2.md", "w", encoding="utf-8") as f:`  
+        `f.write("\n".join(markdown_lines))`
+
+`if __name__ == "__main__":`  
+    `generate_crawler_engine()`
+
+## **2\. Next Steps & Build Strategy**
+
+Ensure the automated sync layers (rclone execution workflows) are established next to link local changes seamlessly with Google Drive.
