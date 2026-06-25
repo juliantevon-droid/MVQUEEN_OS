@@ -2,6 +2,6 @@
 # MVQueen Config Package Initializer
 # ============================================================
 
-from .config import MASTER_CONFIG
+from .config import SHOPIFY_STORE_DOMAIN, BRAND_NAME
 
-__all__ = ["MASTER_CONFIG"]
+__all__ = ["SHOPIFY_STORE_DOMAIN", "BRAND_NAME"]
