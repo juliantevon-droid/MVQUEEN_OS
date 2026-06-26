@@ -57,4 +57,4 @@ def process_csv(input_path: str, output_path: str, workers: int = 4):
         writer.writeheader()
         writer.writerows(results)
 
-    return output_pathh
+    return output_path
