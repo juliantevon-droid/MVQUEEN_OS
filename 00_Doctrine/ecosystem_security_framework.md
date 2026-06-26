@@ -49,6 +49,26 @@ It is:
 - doctrinal security
 - identity security
 - orchestration security
+- **technical security (credential management)**
+
+---
+
+# Technical Security Layer
+
+## Credential Management & Zero-Commit Policy
+To protect the enterprise infrastructure, the following rules are mandatory:
+- **Zero-Commit Policy:** No live API tokens, passwords, or private keys shall ever be committed to the repository.
+- **Environment Variables:** All sensitive configurations must be managed via `.env` files which are explicitly ignored by Git.
+- **Secret Rotation:** All API tokens (Shopify, OpenAI, Klaviyo) must be rotated every 90 days or immediately upon suspected exposure.
+- **Access Control:** Access to production credentials is restricted to the Lead Architect and designated DevOps systems.
+
+## Implementation Status (as of June 25, 2026)
+- **[COMPLETED]** `.env` removed from version control.
+- **[COMPLETED]** `.gitignore` updated to prevent `.env` leakage.
+- **[COMPLETED]** `.env.example` created for secure onboarding.
+- **[PENDING]** Implementation of a centralized Secret Manager (e.g., GitHub Secrets).
+
+---
 
 The ecosystem must protect:
 - emotional identity
