@@ -66,5 +66,12 @@ Step 5: Format for platform specs
 
 ---
 
+## Implementation Reference
+All chains should be executed by the appropriate AI agent:
+*   **Content Chains (01, 02, 03, 05):** Use [Content_Agent_Prompt.md](../10_AI_Systems/Content_Agent_Prompt.md).
+*   **SEO Chains (04):** Use [SEO_Agent_Prompt.md](../10_AI_Systems/SEO_Agent_Prompt.md).
+
+---
+
 ## Status
-Active
+**Active** — Linked to operational agents.

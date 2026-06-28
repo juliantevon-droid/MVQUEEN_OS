@@ -24,8 +24,8 @@ MVQUEEN agents must:
 
 | Agent | Function | Status |
 |---|---|---|
-| Content Agent | Generates captions, emails, product copy | Planned |
-| SEO Agent | Generates meta titles, descriptions, blog outlines | Planned |
+| Content Agent | Generates captions, emails, product copy | **Active** |
+| SEO Agent | Generates meta titles, descriptions, blog outlines | **Active** |
 | Customer Service Agent | First-response to common inquiries | Planned |
 | Analytics Agent | Pulls and summarizes weekly metrics | Planned |
 | Inventory Agent | Monitors stock levels, alerts on low inventory | Planned |
@@ -51,4 +51,4 @@ Every agent session must load:
 ---
 
 ## Status
-Active — architecture defined, agents in planning
+**Active** — Core agents deployed and operational.
