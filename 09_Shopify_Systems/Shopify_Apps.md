@@ -23,6 +23,27 @@ The experience itself becomes part of the luxury product.
 
 ---
 
+## 23.1 Technical App Stack
+Every app integrated into the MVQueen Shopify ecosystem must be evaluated for speed impact and doctrine alignment.
+
+### Marketing & Retention
+*   **Klaviyo:** Email & SMS marketing automation. (Primary revenue driver).
+*   **Pinterest:** Official integration for automated pin generation.
+
+### Operations & Curation
+*   **Omniluxe Engine (Custom):** Internal Python engine for product curation and bulk updates.
+*   **Matrixify:** For complex bulk data imports and exports.
+
+### Customer Experience
+*   **Gorgias (Planned):** For unified customer support across email and social.
+*   **Rebuy (Planned):** For intelligent, doctrine-aligned cross-sells and upsells.
+
+### Evaluation Criteria
+Before installing a new app, the Lead Architect must confirm:
+1.  **Speed:** Does it add more than 200ms to the LCP (Largest Contentful Paint)?
+2.  **Voice:** Does it allow for custom, doctrine-aligned CSS and Copy?
+3.  **Necessity:** Can this be handled by a custom script in `15_Scripts_And_Code`?
+
 ---
 
 # Shopify Experience Summary

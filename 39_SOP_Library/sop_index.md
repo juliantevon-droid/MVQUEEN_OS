@@ -48,34 +48,20 @@ Master index of all Standard Operating Procedures for MVQUEEN. SOPs ensure consi
 
 ---
 
-## Core SOPs (Priority Build)
+## Active Production SOPs
 
-### SOP: New Product Upload (Shopify)
-1. Photograph product (reference visual brief template)
-2. Write title: `[Product Name] — [Category] | MVQUEEN`
-3. Write description (use product description chain)
-4. Add meta title + description (SEO-optimized)
-5. Set price per pricing system
-6. Add to correct collection
-7. Tag correctly
-8. Preview on mobile before publishing
-9. Publish
-10. Create 3 Pinterest pins within 24 hours
+| SOP Name | File Link | Description |
+| :--- | :--- | :--- |
+| **Product Upload & Curation** | [product_upload_sop.md](./product_upload_sop.md) | End-to-end process for Shopify product additions. |
+| **Order Fulfillment** | [order_fulfillment_sop.md](./order_fulfillment_sop.md) | Luxury unboxing and shipping protocols. |
+| **Customer Support** | [customer_support_sop.md](./customer_support_sop.md) | Emotional connection and response frameworks. |
 
-### SOP: Weekly Content Batch
-1. Sunday: plan 7 days of content in calendar
-2. Batch film all videos in one session
-3. Write all captions using voice rules
-4. Edit and format all graphics
-5. Schedule all posts
-6. Confirm Monday posts are live
+---
 
-### SOP: AI Session Initialization
-1. Load `00_Doctrine/master_doctrine.md`
-2. Load `31_AI_Knowledge_Base/brand_summary.md`
-3. Load `31_AI_Knowledge_Base/voice_rules.md`
-4. State task clearly
-5. Review all output before use
+## Planned SOPs (Next Priority)
+*   **Weekly Content Batching:** Strategy for multi-platform content creation.
+*   **AI Agent Orchestration:** Protocols for managing autonomous agents.
+*   **Monthly Performance Audit:** Data-driven review of brand and business health.
 
 ---
 

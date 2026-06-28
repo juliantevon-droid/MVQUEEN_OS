@@ -38,6 +38,24 @@ Women should emotionally associate the brand with emotional comfort, emotional s
 
 ---
 
+## 25.1 Daily Operational Rituals (Internal)
+To maintain the emotional integrity of the brand, the following operational rituals are performed daily:
+
+### Morning Ritual (9:00 AM - 10:30 AM)
+*   **Order Review:** Process all orders from the last 12 hours.
+*   **Customer Pulse:** Respond to all urgent emails and DMs using the `Customer_Support_SOP.md`.
+*   **Inventory Check:** Verify that top-selling items are in stock.
+
+### Afternoon Execution (1:00 PM - 4:00 PM)
+*   **Content Deployment:** Confirm the daily TikTok and Instagram posts are live and engaging.
+*   **Curation:** Process at least 5 new products through the Omniluxe Engine.
+*   **Community Engagement:** Spend 30 minutes responding to comments with emotional warmth.
+
+### Evening Wrap-up (5:00 PM - 6:00 PM)
+*   **Task Review:** Update the `99_Command_Center/Tasks.md` with progress.
+*   **Sync:** Run `./sync_obsidian.sh` to ensure all operational notes are backed up to GitHub.
+*   **Focus Setting:** Define the "Top 3" priorities for the following day in `Weekly_Focus.md`.
+
 ---
 
 # Brand Ritual Summary
