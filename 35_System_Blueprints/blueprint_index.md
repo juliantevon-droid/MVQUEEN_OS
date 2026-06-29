@@ -16,7 +16,7 @@ Detailed technical blueprints for building and deploying each major MVQUEEN syst
 | Email System Blueprint | Build | High |
 | Paid Ads System Blueprint | Build | High |
 | SEO Content System Blueprint | Build | High |
-| Shopify Optimization Blueprint | Build | High |
+| Shopify Admin API Blueprint | **Active** | High |
 | AI Agent Blueprint | Planned | Medium |
 | Creator Program Blueprint | Planned | Low |
 
