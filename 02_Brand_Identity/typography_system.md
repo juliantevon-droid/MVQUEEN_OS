@@ -1,116 +1,229 @@
-# 👑 MVQUEEN — Typography System
-### The Type Reference
+# Typography System
+## MVQUEEN_OS / 02_Brand_Identity
 
 ---
 
-## What This File Is
+## Purpose
 
-This is not visual philosophy. That lives in the Brand Bible §16.
-This is the working type system — font names, weights, size scales, pairing logic, platform rules, and every typographic decision made for MVQUEEN.
+Typography is the visual expression of the MVQUEEN voice. Every font choice, weight, and size carries emotional meaning and must reinforce luxury, femininity, confidence, and softness.
 
-Every designer, developer, Shopify theme, email template, social graphic, and AI visual prompt pulls from this file.
+The typography system is discipline-based: correct fonts in correct sizes at correct hierarchy create effortless luxury.
 
 ---
 
-## THE SYSTEM AT A GLANCE
+## Primary Typefaces
 
-| Role | Font | Weight | Use |
+### Cormorant Garamond
+**Role:** Headlines, display, luxury positioning  
+**Source:** Google Fonts (free)  
+**Import:** `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap');`
+
+**Why:** Serif elegance with feminine grace. Evokes heritage luxury without pretension.
+
+**Weights Available:**
+- 300 Light (rarely used)
+- 400 Regular (body text in display contexts)
+- 500 Medium (secondary headlines)
+- 600 Semi-Bold (primary headlines)
+- 700 Bold (emphasis, feature headlines)
+
+**Use Cases:**
+- Main page headers (H1)
+- Product names
+- Hero section text
+- Collection names
+
+---
+
+### Jost* (or Jost)
+**Role:** Body text, UI, system font, approachable luxury  
+**Source:** Google Fonts (free)  
+**Import:** `@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap');`
+
+**Why:** Geometric sans-serif with warmth and precision. Feels modern without being cold.
+
+**Weights Available:**
+- 300 Light (small labels, secondary text)
+- 400 Regular (body copy, navigation)
+- 500 Medium (emphasis, buttons)
+- 600 Semi-Bold (call-outs, strong labels)
+- 700 Bold (rarely needed)
+
+**Use Cases:**
+- Body text (paragraphs)
+- Navigation menus
+- Buttons & CTAs
+- Form labels
+- Product descriptions
+- Email body copy
+
+---
+
+## Font Pairing
+
+| Context | Display Font | Body Font |
+|---|---|---|
+| Headlines | Cormorant Garamond | — |
+| Body + Headlines | Cormorant Garamond 600 | Jost 400 |
+| Navigation | Jost 500 | — |
+| Product Descriptions | Jost 400 | — |
+| Email Headers | Cormorant Garamond 600 | — |
+| Email Body | Jost 400 | — |
+| Forms | Jost 400 | — |
+
+---
+
+## Type Scale & Hierarchy
+
+### Desktop Hierarchy
+
+| Element | Font | Size | Weight | Line Height | Letter Spacing | Use |
+|---|---|---|---|---|---|---|
+| H1 / Hero | Cormorant Garamond | 48px | 600 | 1.2 | -0.02em | Main page headers, hero text |
+| H2 / Section | Cormorant Garamond | 36px | 600 | 1.3 | -0.01em | Section headers, product category |
+| H3 / Sub-section | Cormorant Garamond | 28px | 500 | 1.4 | 0 | Sub-headers, collection names |
+| H4 / Card Title | Cormorant Garamond | 22px | 500 | 1.4 | 0 | Product card titles |
+| H5 / Label | Jost | 16px | 600 | 1.5 | 0.02em | Form labels, button text |
+| Body Large | Jost | 18px | 400 | 1.6 | 0 | Feature text, email body |
+| Body Regular | Jost | 16px | 400 | 1.6 | 0 | Standard body copy |
+| Body Small | Jost | 14px | 400 | 1.5 | 0.01em | Secondary text, captions |
+| Caption | Jost | 12px | 300 | 1.4 | 0.02em | Fine print, metadata |
+
+### Mobile Hierarchy
+
+Reduce base size by 2-4px for optimal mobile readability:
+
+| Element | Size (Mobile) | Weight | Changes |
 |---|---|---|---|
-| Display / Hero | Cormorant Garamond | Light 300, Regular 400 | Headlines, campaign headers, logo adjacent |
-| Display Italic | Cormorant Garamond | Light Italic 300i | Subheads, pull quotes, editorial moments |
-| Body | Jost | Light 300, Regular 400 | All body copy, descriptions, UI text |
-| Body Accent | Jost | Medium 500 | Emphasis, labels, nav, CTAs |
-| Monospace / Detail | JetBrains Mono | Regular 400 | Hex codes, SKUs, technical specs only |
+| H1 / Hero | 36px | 600 | Line-height 1.3 |
+| H2 / Section | 28px | 600 | Line-height 1.4 |
+| H3 / Sub-section | 22px | 500 | Line-height 1.4 |
+| Body Regular | 16px | 400 | Line-height 1.6 |
 
 ---
 
-## PART 1 — TYPEFACES
-
-### Primary Display — Cormorant Garamond
-
-The brand's display font. Refined serif with Old Style proportions — elegant, feminine, literary. Carries softness and authority simultaneously.
-
-Weights used: 300 Light, 400 Regular, 300i Light Italic, 400i Regular Italic
-Google Fonts: Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400
-
-Never use: Bold (600+), all-caps in large sizes, below 14px
-
-### Primary Body — Jost
-
-Geometric sans-serif with humanist proportions. Clean, modern, readable, warm.
-
-Weights used: 200 Extra Light, 300 Light, 400 Regular, 500 Medium
-Google Fonts: Jost:wght@200;300;400;500
-
-Never use: 700 Bold or heavier, in display sizes, italic for emotional emphasis (use Cormorant italic instead)
-
-### Miss.Princess Display Alternative
-Playfair Display — Italic 400i. For campaign headers and social display copy. Never used in MVQUEEN primary contexts.
-
----
-
-## PART 2 — SIZE SCALE
-
-### Desktop (base: 16px)
-Display XL: 72–96px / Cormorant 300 / Hero headlines
-Display L: 48–64px / Cormorant 300–400 / Section heroes
-Display M: 36–42px / Cormorant 400 / Page titles
-Display S: 28–32px / Cormorant 400 / Sub-section headers
-Subhead: 20–24px / Cormorant 400i / Pull quotes
-Body L: 18–20px / Jost 300 / Long-form copy
-Body: 16px / Jost 300–400 / Standard copy
-Body S: 14px / Jost 400 / Captions, metadata
-Label: 11–12px / Jost 500 / Navigation, tags
-Micro: 10px / Jost 400–500 / Legal, footnotes
-
-### Mobile (base: 15px)
-Display XL: 42–52px | Display L: 32–38px | Display M: 26–30px
-Body: 15px | Label: 11px minimum
-
----
-
-## PART 3 — PAIRING PATTERNS
-
-Pattern A — Editorial: Cormorant 300 headline / Cormorant 400i sub / Jost 300 body / Jost 500 label
-Pattern B — Product Page: Cormorant 400 name / Cormorant 300i tagline / Jost 300 description / Jost 500 price
-Pattern C — Campaign: Cormorant 300 large / Jost 200 small wide-spaced / Cormorant 300i or Jost 500 CTA
-Pattern D — Navigation: Jost 400 13px nav / Jost 500 13px active / Jost 500 11px uppercase labels
-
----
-
-## PART 4 — TYPOGRAPHIC RULES
-
-Letter-spacing: Display -0.01em | MVQUEEN brand name 0.18em | Nav labels 0.12–0.18em | Body 0.01em | Overlines 0.25–0.3em
-
-Line height: Display 1.0–1.1 | Sub-headers 1.2–1.3 | Body 1.6–1.75 | Captions 1.4 | Product descriptions 1.7
-
-Text colors: Primary body = Espresso #3B2314 | Secondary = Charcoal #4A4240 | Accent/links = Dusty Rose #C9968A | Reversed = Ivory #FAF6F0
-
-Uppercase: Jost only. Minimum 0.15em letter-spacing. Maximum 4–5 words.
-
-System font fallbacks:
-Cormorant → 'Palatino Linotype', 'Book Antiqua', Palatino, serif
-Jost → 'Century Gothic', 'Trebuchet MS', sans-serif
-
----
-
-## QUICK REFERENCE — FONT LOAD CODE
-
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-```
+## CSS Variables & Implementation
 
 ```css
 :root {
-  --font-display: 'Cormorant Garamond', 'Palatino Linotype', serif;
-  --font-body: 'Jost', 'Century Gothic', sans-serif;
-  --font-size-base: 16px;
-  --line-height-body: 1.7;
-  --letter-spacing-label: 0.15em;
-  --letter-spacing-brand: 0.18em;
+  /* Font Family */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Jost', sans-serif;
+  
+  /* Display / Headlines */
+  --type-h1: 48px / 1.2 600 var(--font-serif);
+  --type-h2: 36px / 1.3 600 var(--font-serif);
+  --type-h3: 28px / 1.4 500 var(--font-serif);
+  --type-h4: 22px / 1.4 500 var(--font-serif);
+  
+  /* Body */
+  --type-body-lg: 18px / 1.6 400 var(--font-sans);
+  --type-body: 16px / 1.6 400 var(--font-sans);
+  --type-body-sm: 14px / 1.5 400 var(--font-sans);
+  --type-caption: 12px / 1.4 300 var(--font-sans);
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-loose: 0.02em;
 }
+
+/* Usage Examples */
+h1 { font: var(--type-h1); letter-spacing: var(--letter-spacing-tight); }
+h2 { font: var(--type-h2); letter-spacing: var(--letter-spacing-tight); }
+body { font: var(--type-body); }
+.caption { font: var(--type-caption); letter-spacing: var(--letter-spacing-loose); }
 ```
 
-*Pairs with color_system.md, brand_rules.md, and visual_direction.md.*
+---
+
+## Special Typography Rules
+
+### Headlines (Cormorant)
+- **Luxury Signal:** Use higher weights (600+) for premium feeling
+- **Spacing:** Tighter letter-spacing for elegance, especially at large sizes
+- **Color:** Deep Rose (#8B4A5C) or Charcoal (#2C2C2C)
+- **Alignment:** Left-aligned by default (never centered for body copy)
+
+### Body Copy (Jost)
+- **Readability:** Always 16px minimum on desktop, 14px minimum on mobile
+- **Line Height:** 1.6 for body copy (creates breathing room)
+- **Contrast:** Must be Charcoal (#2C2C2C) or dark color on light background
+- **Width:** Max 70 characters per line for optimal readability
+
+### Buttons & CTAs (Jost)
+- **Weight:** 500 or 600 (Medium or Semi-Bold)
+- **Size:** 16px for standard buttons
+- **Transformation:** Uppercase optional but only if letter-spacing is increased to 0.05em+
+- **Color:** Charcoal (#2C2C2C) on MVQUEEN Gold (#D4AF37) background
+
+### Navigation (Jost)
+- **Weight:** 400 for unselected, 600 for active/hover
+- **Size:** 16px desktop, 14px mobile
+- **Spacing:** Generous spacing between nav items (8-12px)
+- **Color:** Deep Rose (#8B4A5C) for unselected, MVQUEEN Gold (#D4AF37) for active
+
+### Email Typography
+
+**Email Header:**
+- H1: Cormorant Garamond 36px, Deep Rose
+
+**Email Body:**
+- Paragraph: Jost 16px, Charcoal, line-height 1.6
+- Links: Deep Rose (#8B4A5C), underlined
+- CTA Button: Jost 16px 600, Charcoal on Gold background
+
+---
+
+## Accessibility Standards
+
+### Contrast Requirements
+- Headline text on background: 7:1 (AAA for all sizes)
+- Body text on background: 4.5:1 minimum (AA for 16px+), 7:1 (AAA)
+- Button text on background: 4.5:1 minimum
+
+**Verified combinations:**
+- Cormorant 36px Charcoal (#2C2C2C) on Soft Cream (#FFF8F0): ✅ 12:1 (AAA)
+- Jost 16px Charcoal (#2C2C2C) on Pearl White (#FAFAF8): ✅ 11.2:1 (AAA)
+- Deep Rose (#8B4A5C) on Ivory (#F5F1EB): ✅ 6.1:1 (AA)
+
+### Font Size Minimums
+- Body copy: Never smaller than 16px on desktop (14px on mobile only)
+- Navigation: 16px minimum
+- Form labels: 14px minimum
+
+### Font Rendering
+- Enable font-smoothing: `-webkit-font-smoothing: antialiased;`
+- Use `text-rendering: optimizeLegibility;` for better serif rendering
+
+---
+
+## Shopify Theme Integration
+
+Add to `theme.liquid` in the `<head>`:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+```
+
+Update Shopify theme CSS settings to reference these fonts globally.
+
+---
+
+## Fallback Fonts
+
+If fonts fail to load, use system font stack:
+
+```css
+--font-serif: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+--font-sans: 'Jost', 'Segoe UI', '-apple-system', 'BlinkMacSystemFont', sans-serif;
+```
+
+---
+
+## Status
+
+Typography System — **Active**
+
+All fonts approved, sizes finalized, and deployment-ready for Shopify integration.

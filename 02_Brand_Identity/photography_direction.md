@@ -1,385 +1,215 @@
-# 📸 MVQUEEN PHOTOGRAPHY DIRECTION  
-*The complete emotional, cinematic, atmospheric, and technical blueprint for MVQUEEN’s luxury feminine photography*
+# Photography Direction
+## MVQUEEN_OS / 02_Brand_Identity
 
 ---
 
-# 1. Purpose of the Photography Direction System
+## Purpose
 
-Photography is one of MVQUEEN’s most powerful emotional tools.  
-It defines how the brand:
-
-- feels  
-- breathes  
-- communicates  
-- expresses femininity  
-- expresses luxury  
-- creates emotional connection  
-- builds visual identity  
-- maintains consistency across all touchpoints  
-
-This system ensures every image — whether shot by a photographer, designer, or AI agent — reflects MVQUEEN’s:
-
-- soft luxury  
-- feminine identity  
-- emotional warmth  
-- modern elegance  
-- aspirational storytelling  
-- cinematic intimacy  
-
-Photography is not documentation.  
-Photography is **emotional architecture**.
+Standardized creative direction for all product, lifestyle, and campaign photography. Photography is not documentation—it is emotional storytelling that reinforces the MVQUEEN brand identity.
 
 ---
 
-# 2. MVQUEEN’s Photography Philosophy
+## Photography Doctrine
 
-MVQUEEN’s photography is built on four pillars:
+**MVQUEEN photography is:**
+- Cinematic and luxurious without being cold
+- Soft and diffused, never harsh or overly dramatic
+- Emotionally immersive—connects to feeling, not just product
+- Intentional and curated, never cluttered or accidental
+- Inclusive, diverse, and representative without performative wokeness
+- Composed with negative space (breathing room is luxury)
 
-### **1. Soft Luxury**
-Warm, diffused, feminine lighting that creates a sense of intimacy and elevated softness.
-
-### **2. Emotional Intimacy**
-Images must feel close, warm, and emotionally connected — never distant or sterile.
-
-### **3. Romantic Minimalism**
-Clean compositions with emotional depth, softness, and refined simplicity.
-
-### **4. Feminine Identity**
-Every image must celebrate softness, beauty, confidence, and emotional transformation.
-
----
-
-# 3. Core Photographic Atmosphere
-
-MVQUEEN’s photographic atmosphere is defined by:
-
-### **Soft, Warm Lighting**
-- diffused  
-- glowy  
-- golden‑hour warmth  
-- soft shadows  
-- gentle highlights  
-- no harsh contrast  
-
-### **Warm, Feminine Color Tones**
-- blush  
-- champagne  
-- ivory  
-- warm neutrals  
-- soft cocoa  
-
-### **Emotional Depth**
-Images must feel:
-- intimate  
-- warm  
-- inviting  
-- emotionally immersive  
-
-### **Luxury Minimalism**
-- clean compositions  
-- intentional spacing  
-- refined simplicity  
+**MVQUEEN photography is NOT:**
+- Flat, lifeless, or over-processed
+- Harsh, high-contrast, or overly saturated
+- Cluttered or busy with competing elements
+- Stock photography aesthetic or generic
+- Cold corporate or sterile minimalism
+- Overly diverse in an "checking boxes" way
 
 ---
 
-# 4. Lighting Direction
+## Lighting Standards
 
-Lighting is the emotional backbone of MVQUEEN photography.
+### Primary: Soft Natural Light
+- **Time:** Golden hour (1-2 hours before sunset) for warm, flattering light
+- **Diffusion:** Always diffuse. Use white silk, sheer curtains, or overcast skies
+- **Direction:** 45° side-lighting creates dimension without harshness
+- **Shadows:** Soft shadows that suggest form without drama
+- **Color Temperature:** 3500K–5000K (warm without being orange)
 
-## **A. Primary Lighting Style — Soft Glow**
-- diffused light  
-- warm temperature  
-- soft falloff  
-- gentle highlights  
-- minimal shadow hardness  
+### Secondary: Studio Soft Box
+- **Setup:** Single soft box with diffuser (no hard light)
+- **Distance:** 3–6 feet from subject for soft falloff
+- **Height:** Slightly above eye level (for flattering angles)
+- **Fill:** White reflector or fill light at 1–2 stops below key light
+- **Background:** Soft cream, off-white, or natural textures
 
-## **B. Golden Hour Warmth**
-- warm, romantic tones  
-- soft gradients  
-- natural glow  
-
-## **C. Studio Softbox Warmth**
-- large softboxes  
-- warm gels  
-- diffused bounce  
-
-## **D. Avoid**
-- cold lighting  
-- harsh shadows  
-- direct flash  
-- blue undertones  
-- high‑contrast setups  
-
-Lighting must always feel **soft, feminine, and emotionally warm**.
+### Never Use
+- Harsh direct sunlight on product/talent
+- Direct flash (always use diffusers)
+- Competing light sources of different color temperatures
+- Dark shadows that obscure product details
 
 ---
 
-# 5. Color Grading Direction
+## Color Grading
 
-Color grading must reinforce MVQUEEN’s emotional identity.
+### Approved Adjustments
+- **Warmth:** Shift slightly warm (3200K–3500K) for luxury feel
+- **Saturation:** Reduce saturation by 5–10% for editorial feel
+- **Highlights:** Lift highlights slightly (but don't blow out)
+- **Shadows:** Lift shadows to maintain luxury appearance (no crushed blacks)
+- **Contrast:** Moderate contrast (not flat, not overly punchy)
+- **Vibrance:** Add vibrance more than saturation for selective color pop
 
-### **Warm Highlights**
-- champagne  
-- ivory  
-- soft gold  
-
-### **Blush Undertones**
-- subtle pink warmth  
-- romantic glow  
-
-### **Soft Shadows**
-- warm cocoa  
-- muted brown  
-- no blue shadows  
-
-### **Avoid**
-- cool tones  
-- sterile whites  
-- high saturation  
-- neon colors  
-
-Color grading must always feel **romantic, warm, and feminine**.
+### Forbidden Adjustments
+- Oversaturation or neon colors
+- Crushed blacks or blown highlights
+- Heavy vignetting or aggressive edge burn
+- Excessive clarity or grain
+- Artificial cinematic looks or teal/orange grading
 
 ---
 
-# 6. Composition Direction
+## Product Photography
 
-Composition must reflect luxury minimalism and emotional intimacy.
+### Setup Standards
+1. **Angle:** 45° from product (3/4 view shows dimension)
+2. **Background:** Soft cream, blush, or natural texture (never white or black)
+3. **Props:** Minimal, intentional styling (1–2 complementary items max)
+4. **Lifestyle Element:** Include a human hand or subtle lifestyle context
+5. **Multiple Angles:** Capture front, side, close-up (detail), and lifestyle shots
 
-### **1. Centered Subjects**
-Luxury = intentional placement.
+### What to Capture
+- Full product shot (with scale reference like hand)
+- Close-up of texture, fabric, or key details
+- Product in use (lifestyle context)
+- Product detail against brand color (shows versatility)
+- Packaging shot (if applicable)
 
-### **2. Balanced Negative Space**
-Whitespace is part of the brand’s luxury identity.
-
-### **3. Soft Curves**
-Use rounded shapes, soft silhouettes, gentle arcs.
-
-### **4. Close‑Up Intimacy**
-Faces, hands, textures, details.
-
-### **5. Clean Backgrounds**
-Warm neutrals, blush tones, soft ivory.
-
-### **6. Avoid**
-- clutter  
-- busy backgrounds  
-- harsh geometry  
-- corporate composition styles  
-
-Composition must always feel **soft, intentional, and elevated**.
+### What NOT to Capture
+- Generic white background (boring)
+- Product floating in void without context
+- Busy, cluttered backgrounds
+- Harsh shadows or unflattering angles
+- Price tags or barcodes visible
+- Irrelevant lifestyle props
 
 ---
 
-# 7. Subject Direction
+## Lifestyle Photography
 
-Subjects must embody MVQUEEN’s emotional identity.
+### Mood
+- **Emotion:** Confident, calm, intentional (never frantic or chaotic)
+- **Authenticity:** Candid-feeling moments, not overly posed
+- **Inclusivity:** Diverse models in authentic situations (not stereotypes)
+- **Transformation:** Show how product elevates the moment, not just presence
 
-### **Facial Expressions**
-- soft  
-- confident  
-- warm  
-- feminine  
-- emotionally present  
+### Composition
+- **Negative Space:** At least 40% of frame is empty (luxury is space)
+- **Depth of Field:** Shallow depth (f/2.8–f/4) to isolate subject
+- **Leading Lines:** Use natural composition (architecture, fabric fold, gaze)
+- **Horizon:** Place subject off-center using rule of thirds
+- **Framing:** Include contextual elements (window light, hand, fabric)
 
-### **Body Language**
-- relaxed  
-- graceful  
-- elegant  
-- fluid  
-- never stiff or aggressive  
-
-### **Hands**
-- soft gestures  
-- gentle touch  
-- feminine positioning  
-
-### **Avoid**
-- harsh expressions  
-- aggressive poses  
-- cold or distant energy  
-
-Subjects must always feel **emotionally connected and feminine**.
+### Settings
+- **Preferred:** Natural light, home interiors, outdoor natural beauty
+- **Avoid:** Busy commercial spaces, logos of competitors, artificial settings
+- **Examples:** Bedroom window light, kitchen counter, garden, natural landscape
 
 ---
 
-# 8. Texture Direction
+## Talent Direction
 
-Textures must reinforce MVQUEEN’s soft luxury.
+### Model Selection
+- **Diversity:** Age range 18–60+, multiple ethnicities, body types
+- **Authenticity:** Real people with character over generic perfection
+- **Energy:** Calm, confident, thoughtful expressions (not overly animated)
+- **Styling:** Hair and makeup that feels intentional but natural
 
-### **Approved Textures**
-- satin  
-- silk  
-- soft matte  
-- skin  
-- florals  
-- glass  
-- warm shadows  
-- soft fabrics  
+### Direction on Set
+- **Expression:** Calm confidence, thoughtful stillness, soft gaze
+- **Movement:** Slow, deliberate movements (no rushed energy)
+- **Hands:** Relaxed, natural hand placement (holding product gently)
+- **Posture:** Upright, grounded, comfortable (never contorted)
+- **Eyes:** Looking at product, looking away pensively, or toward camera (soft gaze)
 
-### **Avoid**
-- harsh metals  
-- plastic shine  
-- gritty textures  
-- cold industrial surfaces  
-
-Textures must always feel **soft, warm, and luxurious**.
-
----
-
-# 9. Product Photography Direction
-
-Product photography must express **luxury minimalism**.
-
-### **Lighting**
-- soft  
-- diffused  
-- warm  
-
-### **Backgrounds**
-- warm neutrals  
-- blush tones  
-- ivory  
-- champagne  
-
-### **Angles**
-- clean  
-- minimal  
-- elegant  
-
-### **Accents**
-- soft reflections  
-- warm highlights  
-- subtle gold tones  
-
-### **Avoid**
-- harsh reflections  
-- cold surfaces  
-- cluttered props  
-
-Product photography must always feel **premium, feminine, and elevated**.
+### What to Avoid
+- Overly animated or smiley expressions
+- Forced poses or contorted body positions
+- Overly trendy or dated styling
+- Expressions that read as confused or stressed
+- Extreme angles that unflatten faces
 
 ---
 
-# 10. Campaign Photography Direction
+## Color Palette in Photography
 
-Campaigns must feel like **soft luxury cinema**.
+**Required:**
+- Dominant: Soft Cream (#FFF8F0), Pearl White (#FAFAF8), or Ivory (#F5F1EB)
+- Accent: One brand color (Deep Rose, MVQUEEN Gold, or Blush)
+- Neutral: Charcoal or natural tones
 
-### **Cinematic Tone**
-- warm  
-- romantic  
-- feminine  
-- emotionally immersive  
+**Optional:**
+- Natural materials (wood, linen, stone) that complement brand palette
+- Warm neutrals (beige, caramel, warm gray)
 
-### **Camera Movement (for video campaigns)**
-- slow  
-- fluid  
-- intimate  
-- gentle pans  
-- soft focus transitions  
-
-### **Narrative Style**
-- emotional transformation  
-- feminine identity  
-- softness as strength  
-
-Campaigns must always feel **cinematic, emotional, and iconic**.
+**Forbidden:**
+- Bright neon or colors outside brand palette
+- Competing brand colors or logos
+- Overly saturated or artificial-looking colors
 
 ---
 
-# 11. Social Media Photography Direction
+## Asset Requirements
 
-Social media must feel like **soft glam meets luxury minimalism**.
+### File Specifications
+- **Format:** RAW for archival, JPEG/PNG for web
+- **Resolution:** Minimum 4000px width (for cropping flexibility)
+- **Color Space:** Adobe RGB for post-production, sRGB for web
+- **Metadata:** Title, date, location, subject description
 
-### **Aesthetic**
-- warm  
-- feminine  
-- intimate  
-- soft glam  
-- blush‑toned  
-
-### **Content Types**
-- close‑ups  
-- soft textures  
-- feminine details  
-- warm lighting  
-- minimal compositions  
-
-### **Avoid**
-- harsh edits  
-- cold filters  
-- cluttered layouts  
-- corporate visuals  
-
-Social media must always feel **warm, feminine, and emotionally intimate**.
+### Deliverables
+For each shoot, provide:
+1. 10–15 hero shots (polished, color-graded)
+2. 20–30 lifestyle variations
+3. 5–10 close-up detail shots
+4. Ungraded RAW files for archive
+5. Color palette reference for consistency
 
 ---
 
-# 12. Dual‑Brand Photography Expression
+## Post-Production Workflow
 
-## **MVQUEEN (Primary Identity)**
-- mature feminine luxury  
-- warm neutrals  
-- champagne gold  
-- blush tones  
-- soft matte textures  
-- elegant minimalism  
-
-## **Miss.Princess (Sister Identity)**
-- youthful soft glam  
-- pastel pinks  
-- pearlescent highlights  
-- dreamy lighting  
-- playful sparkle accents  
-
-Both must feel related — like two sisters — but never identical.
+1. **Culling:** Select top 50% of shots (start high, narrow down)
+2. **Color Correction:** Match all images to approved color palette
+3. **Retouching:** Skin smoothing, blemish removal (minimal, skin texture preserved)
+4. **Cropping:** Frame according to composition standards
+5. **Final Grade:** Apply consistent luxury look
+6. **Quality Check:** Compare against approved reference images
+7. **Export:** Create web-optimized versions (2000px width max)
 
 ---
 
-# 13. Photography Misuse (Strictly Prohibited)
+## Seasonal Photography Adjustments
 
-The following break MVQUEEN’s luxury identity:
+### Spring/Summer
+- Lighter, airier compositions
+- Natural outdoor settings
+- Pastels and soft colors dominant
+- More movement and candid moments
 
-- harsh lighting  
-- cold color grading  
-- neon or saturated tones  
-- cluttered compositions  
-- aggressive shadows  
-- pure white backgrounds  
-- pure black backgrounds  
-- overly sharp edges  
-- chaotic layouts  
-- corporate‑style visuals  
-- masculine color palettes  
-- sterile minimalism  
-- high‑contrast photography  
-- blue‑toned shadows  
-- HDR effects  
-- over‑sharpening  
-
-Any misuse damages brand equity and breaks emotional consistency.
+### Fall/Winter
+- Richer, more moody lighting
+- Cozy interior settings
+- Deeper tones and textures
+- Slower, more contemplative moments
 
 ---
 
-# 14. Purpose of the Photography Direction System
+## Status
 
-This system ensures that every photographer, designer, videographer, AI agent, and creative team member can:
+Photography Direction — **Active**
 
-- maintain perfect photographic consistency  
-- protect MVQUEEN’s emotional identity  
-- create luxury‑grade visuals  
-- scale the brand across categories  
-- build long‑term brand equity  
-- support global expansion  
-- maintain feminine luxury atmosphere  
-
-Photography is not just imagery.  
-Photography is:
-- emotion  
-- identity  
-- atmosphere  
-- storytelling  
-- luxury  
-- feminine power  
-
-This system ensures MVQUEEN remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.
+All shoots must adhere to these standards. Photography is brand architecture, not decoration.
