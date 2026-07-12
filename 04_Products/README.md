@@ -1,13 +1,13 @@
 # 04_Products
+## MVQUEEN_OS
 
-## Overview
-This module is part of the MVQUEEN_OS system.
+**Product governance, philosophy, naming, pricing, and catalog.**
 
-## Purpose
-(To be defined)
+Contains:
+- product_philosophy.md — What MVQUEEN products represent
+- product_naming_system.md — How products are named
+- pricing_strategy.md — Margin and positioning
+- collection_structure.md — How products organize
+- SKU catalog and category definitions
 
-## Status
-Placeholder file - structure initialized.
-
-## Notes
-This section will be expanded as the system evolves.
+**All products must align with the Product Philosophy before launch.**

@@ -1,13 +1,15 @@
-# 02_Tone_And_Voice
+# 06_Tone_And_Voice
+## MVQUEEN_OS
 
-## Overview
-This module is part of the MVQUEEN_OS system.
+**Brand voice, messaging standards, and creative governance.**
 
-## Purpose
-(To be defined)
+Contains:
+- Tone_And_Voice.md — Master voice documentation
+- forbidden_words.md — Words never to use
+- voice_consistency_rules.md — Standards across channels
+- CTA_Library.md — Approved calls-to-action
+- Hook_Systems.md — Opening line patterns
+- Brand_Vocabulary_Banks.md — Luxury adjectives, sensory verbs
+- Editorial_Frames_Library.md — 300+ copy templates
 
-## Status
-Placeholder file - structure initialized.
-
-## Notes
-This section will be expanded as the system evolves.
+**All copy must be voice-reviewed before publication.**
