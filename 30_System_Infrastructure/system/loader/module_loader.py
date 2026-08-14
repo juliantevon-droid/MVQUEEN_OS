@@ -9,6 +9,7 @@ REPO_ROOT = SYSTEM_ROOT.parent.parent
 
 REGISTRY = SYSTEM_ROOT / "registry" / "system.json"
 STATE = SYSTEM_ROOT / "state" / "system_state.json"
+MODULE_ROOT = REPO_ROOT / "30_System_Infrastructure" / "modules"
 
 
 def load_registry():
@@ -17,27 +18,55 @@ def load_registry():
 
 
 def load_state():
+    if not STATE.exists():
+        return {
+            "status": "unknown",
+            "modules_loaded": [],
+            "last_boot": None,
+            "module_errors": [],
+        }
+
     with STATE.open(encoding="utf-8") as f:
         return json.load(f)
 
 
 def save_state(state):
+    STATE.parent.mkdir(parents=True, exist_ok=True)
     STATE.write_text(
         json.dumps(state, indent=2) + "\n",
         encoding="utf-8",
     )
 
 
-def load_module(module_definition):
-    name = module_definition["name"]
+def resolve_module_path(module_definition):
+    path_value = module_definition["path"]
+    entrypoint = module_definition["entrypoint"]
 
     module_path = (
         REPO_ROOT
-        / module_definition["path"]
-        / module_definition["entrypoint"]
-    )
+        / path_value
+        / entrypoint
+    ).resolve()
 
-    if not module_path.exists():
+    module_root = MODULE_ROOT.resolve()
+
+    try:
+        module_path.relative_to(module_root)
+    except ValueError:
+        raise ValueError(
+            f"Module path escapes permitted module directory: "
+            f"{module_path}"
+        )
+
+    return module_path
+
+
+def load_module(module_definition):
+    name = module_definition["name"]
+
+    module_path = resolve_module_path(module_definition)
+
+    if not module_path.is_file():
         raise FileNotFoundError(
             f"Module entrypoint not found: {module_path}"
         )
@@ -62,7 +91,7 @@ def boot():
     system = load_registry()
     state = load_state()
 
-    print("MVQUEEN_OS BOOT:", system["system"])
+    print("MVQUEEN_OS BOOT:", system.get("system", "UNKNOWN"))
 
     loaded = []
     failed = []
@@ -72,16 +101,28 @@ def boot():
     state["last_boot"] = datetime.now(timezone.utc).isoformat()
     state["module_errors"] = []
 
-    for definition in system.get("modules", []):
-        name = definition["name"]
-
-        if not definition.get("enabled", False):
-            print("Skipping disabled module:", name)
-            continue
-
-        print("Loading:", name)
+    for index, definition in enumerate(system.get("modules", [])):
+        name = definition.get("name", f"<module-{index}>")
 
         try:
+            if not isinstance(definition, dict):
+                raise TypeError(
+                    "Module definition must be an object"
+                )
+
+            name = definition.get("name")
+
+            if not isinstance(name, str) or not name:
+                raise ValueError(
+                    "Module definition must contain a valid name"
+                )
+
+            if not definition.get("enabled", False):
+                print("Skipping disabled module:", name)
+                continue
+
+            print("Loading:", name)
+
             module = load_module(definition)
 
             if not hasattr(module, "boot"):

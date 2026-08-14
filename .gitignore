@@ -29,3 +29,9 @@ MVQUEEN_FINAL/
 *.env
 secrets.json
 github_token.txt
+
+# Generated MVQUEEN_OS runtime state
+30_System_Infrastructure/system/state/system_state.json
+
+# Generated MVQUEEN_OS runtime state
+30_System_Infrastructure/system/state/system_state.json

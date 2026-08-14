@@ -13,13 +13,10 @@ from mvqueen_audit.models import Finding
 
 REPO_ROOT = AUDIT_ROOT.parent.parent
 
-REGISTRY = (
-    REPO_ROOT
-    / "30_System_Infrastructure"
-    / "system"
-    / "registry"
-    / "system.json"
-)
+SYSTEM_ROOT = REPO_ROOT / "30_System_Infrastructure" / "system"
+MODULE_ROOT = REPO_ROOT / "30_System_Infrastructure" / "modules"
+
+REGISTRY = SYSTEM_ROOT / "registry" / "system.json"
 
 ALLOWED_LAYERS = {
     "engine",
@@ -168,21 +165,26 @@ def check():
                 )
             )
         else:
-            module_path = REPO_ROOT / path_value / entrypoint
+            module_path = (
+                REPO_ROOT / path_value / entrypoint
+            ).resolve()
+
+            module_root = MODULE_ROOT.resolve()
 
             try:
-                module_path.relative_to(REPO_ROOT)
+                module_path.relative_to(module_root)
             except ValueError:
                 findings.append(
                     Finding(
                         "ERROR",
                         f"{prefix}_PATH_ESCAPE",
-                        f"Module path escapes repository: {module_path}",
+                        f"Module path escapes permitted module directory: "
+                        f"{module_path}",
                     )
                 )
                 continue
 
-            if not module_path.exists():
+            if not module_path.is_file():
                 findings.append(
                     Finding(
                         "ERROR",

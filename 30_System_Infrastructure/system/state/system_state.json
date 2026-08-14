@@ -1,8 +1,0 @@
-{
-  "status": "running",
-  "modules_loaded": [
-    "health_check"
-  ],
-  "last_boot": "2026-08-14T19:20:55.804303+00:00",
-  "module_errors": []
-}
