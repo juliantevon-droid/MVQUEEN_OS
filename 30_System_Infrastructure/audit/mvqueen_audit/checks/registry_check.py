@@ -21,6 +21,12 @@ REGISTRY = (
     / "system.json"
 )
 
+ALLOWED_LAYERS = {
+    "engine",
+    "operations",
+    "memory",
+}
+
 
 def check():
     findings = []
@@ -35,7 +41,7 @@ def check():
         ]
 
     try:
-        data = json.loads(REGISTRY.read_text())
+        data = json.loads(REGISTRY.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         return [
             Finding(
@@ -72,7 +78,9 @@ def check():
             )
         )
 
-    if not isinstance(data.get("modules"), list):
+    modules = data.get("modules")
+
+    if not isinstance(modules, list):
         findings.append(
             Finding(
                 "ERROR",
@@ -80,6 +88,108 @@ def check():
                 "modules must be a list",
             )
         )
+        return findings
+
+    names = set()
+
+    for index, module in enumerate(modules):
+        prefix = f"MODULE_{index}"
+
+        if not isinstance(module, dict):
+            findings.append(
+                Finding(
+                    "ERROR",
+                    f"{prefix}_INVALID",
+                    "Module definition must be an object",
+                )
+            )
+            continue
+
+        name = module.get("name")
+
+        if not isinstance(name, str) or not name.strip():
+            findings.append(
+                Finding(
+                    "ERROR",
+                    f"{prefix}_NAME_MISSING",
+                    "Module must have a non-empty name",
+                )
+            )
+        elif name in names:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    f"{prefix}_DUPLICATE",
+                    f"Duplicate module name: {name}",
+                )
+            )
+        else:
+            names.add(name)
+
+        version = module.get("version")
+
+        if not isinstance(version, str) or not version.strip():
+            findings.append(
+                Finding(
+                    "ERROR",
+                    f"{prefix}_VERSION_INVALID",
+                    "Module must have a version",
+                )
+            )
+
+        layer = module.get("layer")
+
+        if layer not in ALLOWED_LAYERS:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    f"{prefix}_LAYER_INVALID",
+                    f"Invalid module layer: {layer!r}",
+                )
+            )
+
+        path_value = module.get("path")
+        entrypoint = module.get("entrypoint")
+
+        if not isinstance(path_value, str) or not path_value:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    f"{prefix}_PATH_MISSING",
+                    "Module must define a path",
+                )
+            )
+        elif not isinstance(entrypoint, str) or not entrypoint:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    f"{prefix}_ENTRYPOINT_MISSING",
+                    "Module must define an entrypoint",
+                )
+            )
+        else:
+            module_path = REPO_ROOT / path_value / entrypoint
+
+            try:
+                module_path.relative_to(REPO_ROOT)
+            except ValueError:
+                findings.append(
+                    Finding(
+                        "ERROR",
+                        f"{prefix}_PATH_ESCAPE",
+                        f"Module path escapes repository: {module_path}",
+                    )
+                )
+                continue
+
+            if not module_path.exists():
+                findings.append(
+                    Finding(
+                        "ERROR",
+                        f"{prefix}_ENTRYPOINT_NOT_FOUND",
+                        str(module_path.relative_to(REPO_ROOT)),
+                    )
+                )
 
     if not findings:
         findings.append(
@@ -87,7 +197,7 @@ def check():
                 "PASS",
                 "REGISTRY_VALID",
                 f"Valid MVQUEEN_OS registry; "
-                f"{len(data.get('modules', []))} modules registered",
+                f"{len(modules)} modules registered",
             )
         )
 

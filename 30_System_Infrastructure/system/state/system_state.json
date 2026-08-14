@@ -1,5 +1,8 @@
 {
-  "status": "initialized",
-  "modules_loaded": [],
-  "last_boot": null
+  "status": "running",
+  "modules_loaded": [
+    "health_check"
+  ],
+  "last_boot": "2026-08-14T18:59:32.051910+00:00",
+  "module_errors": []
 }
