@@ -53,6 +53,7 @@ def run():
 
             if not hasattr(module, "check"):
                 print("  [ERROR] CHECK_FUNCTION_MISSING")
+                total += 1
                 continue
 
             findings = module.check()
@@ -83,6 +84,12 @@ def run():
     print(f"Audit findings reported: {total}")
     print("=" * 60)
 
+    # A finding must fail the process so CI/Overseer can detect it.
+    if total > 0:
+        return 1
+
+    return 0
+
 
 if __name__ == "__main__":
-    run()
+    raise SystemExit(run())
