@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "agent": "overseer_intelligence_agent",
+  "learned_patterns": [],
+  "known_problems": [],
+  "successful_fixes": [],
+  "optimization_opportunities": [],
+  "last_updated": null
+}
