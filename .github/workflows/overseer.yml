@@ -63,6 +63,10 @@ jobs:
           print('Python syntax validation passed')
           PY
 
+      - name: Run MVQUEEN stabilization audit
+        run: |
+          python 30_System_Infrastructure/audit/mvqueen_audit/runner.py | tee overseer-audit.txt
+
       - name: Validate protected brand sources
         run: |
           required=(
@@ -94,7 +98,6 @@ jobs:
           echo 'Overseer operating model present'
 
       - name: Produce audit summary
-        id: summary
         run: |
           mkdir -p overseer-reports
           {
@@ -105,11 +108,14 @@ jobs:
             echo "- Trigger: $GITHUB_EVENT_NAME"
             echo "- Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             echo
-            echo '## Checks'
+            echo '## Validation'
             echo '- JSON validation: PASS'
             echo '- Python syntax validation: PASS'
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
+            echo
+            echo '## Existing stabilization audit'
+            cat overseer-audit.txt
             echo
             echo '## Governance'
             echo 'Evidence → Analysis → Recommendation → Approval'
@@ -130,5 +136,4 @@ jobs:
         run: |
           gh issue create \
             --title "[OVERSEER] Automated audit failure — $GITHUB_REF_NAME" \
-            --body "Automated Overseer audit failed.\n\nCommit: $GITHUB_SHA\nRef: $GITHUB_REF_NAME\nRun: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\n\nReview the failed check before making core-system changes." \
-            --label "overseer" || true
+            --body "Automated Overseer audit failed.\n\nCommit: $GITHUB_SHA\nRef: $GITHUB_REF_NAME\nRun: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\n\nReview the failed check before making core-system changes." || true
