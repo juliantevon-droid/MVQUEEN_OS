@@ -1,0 +1,134 @@
+name: MVQUEEN_OS Overseer
+
+on:
+  push:
+    branches: [main, stabilization]
+  pull_request:
+    branches: [main, stabilization]
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  overseer-audit:
+    name: Overseer System Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate JSON configuration and memory
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          failures = []
+          for p in Path('.').rglob('*.json'):
+              if any(part in {'.git', '.obsidian', '.trash', '_BACKUPS', '98_Archive'} for part in p.parts):
+                  continue
+              try:
+                  json.loads(p.read_text(encoding='utf-8'))
+              except Exception as e:
+                  failures.append(f'{p}: {e}')
+          if failures:
+              print('\n'.join(failures))
+              raise SystemExit(1)
+          print('JSON validation passed')
+          PY
+
+      - name: Validate Python syntax
+        run: |
+          python - <<'PY'
+          import py_compile
+          from pathlib import Path
+          failures = []
+          for p in Path('.').rglob('*.py'):
+              if any(part in {'.git', '.obsidian', '.trash', '_BACKUPS', '98_Archive'} for part in p.parts):
+                  continue
+              try:
+                  py_compile.compile(str(p), doraise=True)
+              except Exception as e:
+                  failures.append(f'{p}: {e}')
+          if failures:
+              print('\n'.join(failures))
+              raise SystemExit(1)
+          print('Python syntax validation passed')
+          PY
+
+      - name: Validate protected brand sources
+        run: |
+          required=(
+            '00_Doctrine/brand_constitution.md'
+            '01_Brand_Strategy/Brand_Story.md'
+            '01_Brand_Strategy/Brand_Values.md'
+            '01_Brand_Strategy/Brand_Essence.md'
+            '02_Brand_Identity/brand_rules.md'
+            '02_Brand_Identity/brand_identity.md'
+            '02_Brand_Identity/brand_vocabulary.md'
+            '06_Tone_And_Voice/Brand_Messaging.md'
+            '10_AI_Systems/AGENT_BRAIN_SYSTEM.md'
+            'memory/system_intelligence.json'
+          )
+          missing=0
+          for f in "${required[@]}"; do
+            if [ ! -f "$f" ]; then
+              echo "MISSING: $f"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+          echo 'Protected source validation passed'
+
+      - name: Check Overseer operating model
+        run: |
+          test -f 30_System_Infrastructure/overseer/OVERSEER_OPERATING_MODEL.md
+          test -f agents/overseer_intelligence_agent.md
+          echo 'Overseer operating model present'
+
+      - name: Produce audit summary
+        id: summary
+        run: |
+          mkdir -p overseer-reports
+          {
+            echo '# MVQUEEN_OS Overseer Audit'
+            echo
+            echo "- Commit: $GITHUB_SHA"
+            echo "- Ref: $GITHUB_REF_NAME"
+            echo "- Trigger: $GITHUB_EVENT_NAME"
+            echo "- Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo
+            echo '## Checks'
+            echo '- JSON validation: PASS'
+            echo '- Python syntax validation: PASS'
+            echo '- Protected brand sources: PASS'
+            echo '- Overseer operating model: PASS'
+            echo
+            echo '## Governance'
+            echo 'Evidence → Analysis → Recommendation → Approval'
+            echo
+            echo 'No core-system mutation is performed by this audit.'
+          } | tee overseer-reports/audit.md
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: overseer-audit-${{ github.run_id }}
+          path: overseer-reports/audit.md
+
+      - name: Create issue on audit failure
+        if: failure() && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "[OVERSEER] Automated audit failure — $GITHUB_REF_NAME" \
+            --body "Automated Overseer audit failed.\n\nCommit: $GITHUB_SHA\nRef: $GITHUB_REF_NAME\nRun: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\n\nReview the failed check before making core-system changes." \
+            --label "overseer" || true
