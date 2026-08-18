@@ -64,6 +64,8 @@ jobs:
           PY
 
       - name: Run MVQUEEN stabilization audit
+        id: audit
+        continue-on-error: true
         run: |
           python 30_System_Infrastructure/audit/mvqueen_audit/runner.py | tee overseer-audit.txt
 
@@ -124,10 +126,17 @@ jobs:
           } | tee overseer-reports/audit.md
 
       - name: Upload audit report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: overseer-audit-${{ github.run_id }}
           path: overseer-reports/audit.md
+
+      - name: Fail workflow when stabilization audit reports findings
+        if: steps.audit.outcome == 'failure'
+        run: |
+          echo 'OVERSEER RESULT: stabilization audit reported an execution failure.'
+          exit 1
 
       - name: Create issue on audit failure
         if: failure() && github.event_name != 'pull_request'
