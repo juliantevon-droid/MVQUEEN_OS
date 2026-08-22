@@ -63,6 +63,10 @@ jobs:
           print('Python syntax validation passed')
           PY
 
+      - name: Run brand-bank contract tests
+        run: |
+          python -m unittest 30_System_Infrastructure/tests/test_brand_banks.py -v
+
       - name: Run MVQUEEN stabilization audit
         id: audit
         continue-on-error: true
@@ -113,6 +117,7 @@ jobs:
             echo '## Validation'
             echo '- JSON validation: PASS'
             echo '- Python syntax validation: PASS'
+            echo '- Brand-bank contract tests: PASS'
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
             echo
