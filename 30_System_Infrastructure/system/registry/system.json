@@ -5,6 +5,15 @@
     "type": "hybrid_operating_system",
     "layers": ["vault", "engine", "operations", "memory"]
   },
-  "modules": [],
+  "modules": [
+    {
+      "name": "health_check",
+      "version": "1.0.0",
+      "layer": "engine",
+      "path": "30_System_Infrastructure/modules",
+      "entrypoint": "health_check.py",
+      "enabled": true
+    }
+  ],
   "status": "stabilization"
 }
