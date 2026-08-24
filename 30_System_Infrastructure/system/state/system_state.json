@@ -1,5 +1,6 @@
 {
   "status": "initialized",
   "modules_loaded": [],
-  "last_boot": null
+  "last_boot": null,
+  "module_errors": []
 }
