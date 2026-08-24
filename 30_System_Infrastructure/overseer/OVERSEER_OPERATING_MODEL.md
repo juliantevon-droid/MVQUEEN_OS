@@ -22,98 +22,49 @@ When sources conflict, the higher layer wins until the conflict is explicitly re
 DISCOVER → SNAPSHOT → VALIDATE → ANALYZE → CLASSIFY → REPORT → RECOMMEND → APPROVE → CHANGE → VERIFY → LOG
 ```
 
-### Discover
-Inventory branches, files, agents, workflows, tests, governance files, and runtime components.
+## Production Gate
 
-### Snapshot
-Record the commit/ref being audited and the evidence used.
+The Overseer does not declare production readiness because code exists or because a workflow is configured. A production candidate requires evidence from the current repository state and a current validation run.
 
-### Validate
-Check architecture, paths, registries, governance, tests, security controls, and required documentation.
+Required controls:
+- architecture and governance validation
+- protected brand-source validation
+- agent and memory/system-intelligence validation
+- runtime/module registry validation
+- brand-bank contract tests
+- Python and JSON validation
+- security and sensitive-file protection
+- backup/recovery readiness
+- automation and scheduled execution
+- deployment configuration
+- current Google Drive report handoff
 
-### Analyze
-Identify conflicts, duplicates, drift, missing dependencies, technical debt, and production risks.
+No unresolved Critical finding may remain. High findings must be fixed or explicitly approved before release.
 
-### Classify
-Assign severity: Critical, High, Medium, Low.
+## Branch Governance
 
-### Report
-Create an auditable finding or GitHub issue with evidence and affected scope.
+`stabilization` is the engineering/audit workspace until a production candidate is explicitly approved. `main` is not promoted merely to reduce branch divergence.
 
-### Recommend
-Provide cause, impact, proposed fix, owner/agent, and verification method.
+Before merging any branch or pull request:
+1. Compare it with current stabilization.
+2. Classify changes as KEEP / REPLACE / MERGE / ARCHIVE.
+3. Validate protected sources and architecture.
+4. Run current tests/audits.
+5. Record the decision.
+6. Apply only the approved change.
+7. Re-run verification.
 
-### Approve
-Protected/core changes require explicit approval unless an established automation policy explicitly permits the action.
+## Runtime Safety
 
-### Change
-Apply only the approved change through version-controlled workflows.
+Registered modules must have unique names, explicit versions, allowed layers, valid paths, valid entrypoints, paths confined to the module directory, and a `boot()` entrypoint returning a dictionary with a ready/running/healthy status.
 
-### Verify
-Run the applicable tests/checks and compare expected versus actual results.
+Module failures must be recorded in runtime state and result in a degraded system state rather than being silently ignored.
 
-### Log
-Record what changed, why, who/what performed it, evidence, result, and next action.
+## Drive Reporting
 
-## Automatic Monitoring Design
+The current report is maintained at `30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md`.
 
-The Overseer is designed to become event-driven and scheduled rather than dependent on manual invocation.
-
-Required triggers:
-
-- Push/commit to protected or stabilization branches
-- Pull request opened, synchronized, or reopened
-- Scheduled repository health audit
-- Test/CI failure
-- Security/dependency alert
-- Agent/system report indicating an error
-
-Required automatic behavior:
-
-1. Capture the triggering event.
-2. Identify affected files/systems.
-3. Run non-destructive validation checks.
-4. Compare against doctrine, brand, architecture, and governance rules.
-5. Create/update an issue when a verified finding exists.
-6. Escalate Critical/High findings.
-7. Never silently modify protected core systems.
-8. Record the audit result.
-
-## Brand Protection
-
-The Overseer must treat the following as protected truth:
-
-- `00_Doctrine/brand_constitution.md`
-- `01_Brand_Strategy/Brand_Story.md`
-- `01_Brand_Strategy/Brand_Values.md`
-- `01_Brand_Strategy/Brand_Essence.md`
-- `01_Brand_Strategy/brand_manifesto.md`
-- `02_Brand_Identity/brand_rules.md`
-- `02_Brand_Identity/brand_identity.md`
-- `02_Brand_Identity/brand_vocabulary.md`
-- `06_Tone_And_Voice/Brand_Messaging.md`
-- `31_AI_Knowledge_Base/brand_summary.md`
-
-These are evidence sources for detecting brand drift. They must not be rewritten automatically merely to resolve a conflict.
-
-## Agent Coordination
-
-The Overseer monitors agents rather than replacing them. Specialized agents own domain execution; the Overseer owns cross-system awareness, conflict detection, risk assessment, and coordination.
-
-## Stabilization Gate
-
-Do not declare production-ready until:
-
-- canonical branch strategy is documented
-- architecture validation passes
-- agent registry is coherent
-- critical tests pass
-- security controls are verified
-- backups/recovery are documented
-- memory/system-intelligence is operational
-- automation triggers are verified
-- brand governance checks are operational
-- unresolved Critical/High findings are dispositioned
+GitHub remains the historical evidence trail. Google Drive receives one current report for operational access.
 
 ## Required Audit Record
 
