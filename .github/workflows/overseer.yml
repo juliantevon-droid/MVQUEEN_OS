@@ -18,7 +18,7 @@ jobs:
   overseer-audit:
     name: Overseer System Audit
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -67,10 +67,15 @@ jobs:
         run: |
           python -m unittest 30_System_Infrastructure/tests/test_brand_banks.py -v
 
+      - name: Run module-loader tests
+        run: |
+          python -m unittest 30_System_Infrastructure/tests/test_module_loader.py -v
+
       - name: Run MVQUEEN stabilization audit
         id: audit
         continue-on-error: true
         run: |
+          mkdir -p 30_System_Infrastructure/overseer/reports
           python 30_System_Infrastructure/audit/mvqueen_audit/runner.py | tee overseer-audit.txt
 
       - name: Validate protected brand sources
@@ -103,9 +108,9 @@ jobs:
           test -f agents/overseer_intelligence_agent.md
           echo 'Overseer operating model present'
 
-      - name: Produce audit summary
+      - name: Produce canonical current audit report
         run: |
-          mkdir -p overseer-reports
+          mkdir -p 30_System_Infrastructure/overseer/reports
           {
             echo '# MVQUEEN_OS Overseer Audit'
             echo
@@ -118,6 +123,7 @@ jobs:
             echo '- JSON validation: PASS'
             echo '- Python syntax validation: PASS'
             echo '- Brand-bank contract tests: PASS'
+            echo '- Module-loader tests: PASS'
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
             echo
@@ -125,22 +131,51 @@ jobs:
             cat overseer-audit.txt
             echo
             echo '## Governance'
-            echo 'Evidence → Analysis → Recommendation → Approval'
+            echo 'Evidence → Analysis → Recommendation → Approval → Change → Verify → Log'
             echo
             echo 'No core-system mutation is performed by this audit.'
-          } | tee overseer-reports/audit.md
+          } > 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md
+          cp 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md overseer-reports-audit.md
+          cat 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md
+
+      - name: Sync current audit report to Google Drive
+        if: always()
+        env:
+          RCLONE_CONFIG_B64: ${{ secrets.RCLONE_CONFIG_B64 }}
+          DRIVE_REMOTE_PATH: ${{ vars.MVQUEEN_DRIVE_AUDIT_PATH }}
+        run: |
+          if [ -z "$RCLONE_CONFIG_B64" ]; then
+            echo 'DRIVE SYNC: NOT CONFIGURED (RCLONE_CONFIG_B64 secret is absent).'
+            exit 0
+          fi
+          if [ -z "$DRIVE_REMOTE_PATH" ]; then
+            echo 'DRIVE SYNC ERROR: MVQUEEN_DRIVE_AUDIT_PATH repository variable is required.'
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/rclone"
+          printf '%s' "$RCLONE_CONFIG_B64" | base64 --decode > "$RUNNER_TEMP/rclone/rclone.conf"
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+          RCLONE_CONFIG="$RUNNER_TEMP/rclone/rclone.conf" \
+            rclone copyto \
+            30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md \
+            "$DRIVE_REMOTE_PATH/MVQUEEN_OS_CURRENT_AUDIT.md" \
+            --config "$RUNNER_TEMP/rclone/rclone.conf" \
+            --checksum
+          echo 'DRIVE SYNC: current report uploaded successfully.'
 
       - name: Upload audit report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: overseer-audit-${{ github.run_id }}
-          path: overseer-reports/audit.md
+          path: |
+            30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md
+            overseer-audit.txt
 
       - name: Fail workflow when stabilization audit reports findings
         if: steps.audit.outcome == 'failure'
         run: |
-          echo 'OVERSEER RESULT: stabilization audit reported an execution failure.'
+          echo 'OVERSEER RESULT: stabilization audit reported findings or an execution failure.'
           exit 1
 
       - name: Create issue on audit failure
