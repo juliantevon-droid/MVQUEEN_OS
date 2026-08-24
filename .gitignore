@@ -4,6 +4,9 @@
 30_System_Infrastructure/system/logs/
 logs/
 
+# Runtime-generated state
+30_System_Infrastructure/system/state/system_state.json
+
 # Python
 __pycache__/
 *.pyc
