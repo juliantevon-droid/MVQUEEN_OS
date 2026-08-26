@@ -64,12 +64,10 @@ jobs:
           PY
 
       - name: Run brand-bank contract tests
-        run: |
-          python -m unittest 30_System_Infrastructure/tests/test_brand_banks.py -v
+        run: python -m unittest 30_System_Infrastructure/tests/test_brand_banks.py -v
 
       - name: Run module-loader tests
-        run: |
-          python -m unittest 30_System_Infrastructure/tests/test_module_loader.py -v
+        run: python -m unittest 30_System_Infrastructure/tests/test_module_loader.py -v
 
       - name: Run MVQUEEN runtime boot smoke test
         run: |
@@ -108,10 +106,7 @@ jobs:
           )
           missing=0
           for f in "${required[@]}"; do
-            if [ ! -f "$f" ]; then
-              echo "MISSING: $f"
-              missing=1
-            fi
+            if [ ! -f "$f" ]; then echo "MISSING: $f"; missing=1; fi
           done
           if [ "$missing" -ne 0 ]; then exit 1; fi
           echo 'Protected source validation passed'
@@ -170,12 +165,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/rclone"
           printf '%s' "$RCLONE_CONFIG_B64" | base64 --decode > "$RUNNER_TEMP/rclone/rclone.conf"
           curl -fsSL https://rclone.org/install.sh | sudo bash
-          RCLONE_CONFIG="$RUNNER_TEMP/rclone/rclone.conf" \
-            rclone copyto \
-            30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md \
-            "$DRIVE_REMOTE_PATH/MVQUEEN_OS_CURRENT_AUDIT.md" \
-            --config "$RUNNER_TEMP/rclone/rclone.conf" \
-            --checksum
+          RCLONE_CONFIG="$RUNNER_TEMP/rclone/rclone.conf" rclone copyto 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md "$DRIVE_REMOTE_PATH/MVQUEEN_OS_CURRENT_AUDIT.md" --config "$RUNNER_TEMP/rclone/rclone.conf" --checksum
           echo 'DRIVE SYNC: current report uploaded successfully.'
 
       - name: Upload audit report
@@ -198,6 +188,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue create \
-            --title "[OVERSEER] Automated audit failure — $GITHUB_REF_NAME" \
-            --body "Automated Overseer audit failed.\n\nCommit: $GITHUB_SHA\nRef: $GITHUB_REF_NAME\nRun: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\n\nReview the failed check before making core-system changes." || true
+          gh issue create --title "[OVERSEER] Automated audit failure — $GITHUB_REF_NAME" --body "Automated Overseer audit failed.\n\nCommit: $GITHUB_SHA\nRef: $GITHUB_REF_NAME\nRun: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\n\nReview the failed check before making core-system changes." || true
