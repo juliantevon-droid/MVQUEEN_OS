@@ -2,9 +2,9 @@ name: MVQUEEN_OS Overseer
 
 on:
   push:
-    branches: [main, stabilization]
+    branches: [main, stabilization, production-candidate]
   pull_request:
-    branches: [main, stabilization]
+    branches: [main, stabilization, production-candidate]
   schedule:
     - cron: '17 5 * * *'
   workflow_dispatch:
@@ -71,6 +71,20 @@ jobs:
         run: |
           python -m unittest 30_System_Infrastructure/tests/test_module_loader.py -v
 
+      - name: Run MVQUEEN runtime boot smoke test
+        run: |
+          python 30_System_Infrastructure/system/loader/module_loader.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state_path = Path('30_System_Infrastructure/system/state/system_state.json')
+          state = json.loads(state_path.read_text(encoding='utf-8'))
+          assert state.get('status') == 'running', state
+          assert 'health_check' in state.get('modules_loaded', []), state
+          assert state.get('module_errors') == [], state
+          print('Runtime boot smoke test passed')
+          PY
+
       - name: Run MVQUEEN stabilization audit
         id: audit
         continue-on-error: true
@@ -124,6 +138,7 @@ jobs:
             echo '- Python syntax validation: PASS'
             echo '- Brand-bank contract tests: PASS'
             echo '- Module-loader tests: PASS'
+            echo '- Runtime boot smoke test: PASS'
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
             echo
