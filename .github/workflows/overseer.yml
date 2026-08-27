@@ -1,0 +1,191 @@
+name: MVQUEEN_OS Overseer
+
+on:
+  push:
+    branches: [main, stabilization, production-candidate, production-reconciliation]
+  pull_request:
+    branches: [main, stabilization, production-candidate, production-reconciliation]
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  overseer-audit:
+    name: Overseer System Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate JSON configuration and memory
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          failures = []
+          for p in Path('.').rglob('*.json'):
+              if any(part in {'.git', '.obsidian', '.trash', '_BACKUPS', '98_Archive'} for part in p.parts):
+                  continue
+              try:
+                  json.loads(p.read_text(encoding='utf-8'))
+              except Exception as e:
+                  failures.append(f'{p}: {e}')
+          if failures:
+              print('\n'.join(failures))
+              raise SystemExit(1)
+          print('JSON validation passed')
+          PY
+
+      - name: Validate Python syntax
+        run: |
+          python - <<'PY'
+          import py_compile
+          from pathlib import Path
+          failures = []
+          for p in Path('.').rglob('*.py'):
+              if any(part in {'.git', '.obsidian', '.trash', '_BACKUPS', '98_Archive'} for part in p.parts):
+                  continue
+              try:
+                  py_compile.compile(str(p), doraise=True)
+              except Exception as e:
+                  failures.append(f'{p}: {e}')
+          if failures:
+              print('\n'.join(failures))
+              raise SystemExit(1)
+          print('Python syntax validation passed')
+          PY
+
+      - name: Run brand-bank contract tests
+        run: python -m unittest 30_System_Infrastructure/tests/test_brand_banks.py -v
+
+      - name: Run module-loader tests
+        run: python -m unittest 30_System_Infrastructure/tests/test_module_loader.py -v
+
+      - name: Run MVQUEEN runtime boot smoke test
+        run: |
+          python 30_System_Infrastructure/system/loader/module_loader.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state_path = Path('30_System_Infrastructure/system/state/system_state.json')
+          state = json.loads(state_path.read_text(encoding='utf-8'))
+          assert state.get('status') == 'running', state
+          assert 'health_check' in state.get('modules_loaded', []), state
+          assert state.get('module_errors') == [], state
+          print('Runtime boot smoke test passed')
+          PY
+
+      - name: Run MVQUEEN stabilization audit
+        id: audit
+        continue-on-error: true
+        run: |
+          mkdir -p 30_System_Infrastructure/overseer/reports
+          python 30_System_Infrastructure/audit/mvqueen_audit/runner.py | tee overseer-audit.txt
+
+      - name: Validate protected brand sources
+        run: |
+          required=(
+            '00_Doctrine/brand_constitution.md'
+            '01_Brand_Strategy/Brand_Story.md'
+            '01_Brand_Strategy/Brand_Values.md'
+            '01_Brand_Strategy/Brand_Essence.md'
+            '02_Brand_Identity/brand_rules.md'
+            '02_Brand_Identity/brand_identity.md'
+            '02_Brand_Identity/brand_vocabulary.md'
+            '06_Tone_And_Voice/Brand_Messaging.md'
+            '10_AI_Systems/AGENT_BRAIN_SYSTEM.md'
+            'memory/system_intelligence.json'
+          )
+          missing=0
+          for f in "${required[@]}"; do
+            if [ ! -f "$f" ]; then echo "MISSING: $f"; missing=1; fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+          echo 'Protected source validation passed'
+
+      - name: Check Overseer operating model
+        run: |
+          test -f 30_System_Infrastructure/overseer/OVERSEER_OPERATING_MODEL.md
+          test -f agents/overseer_intelligence_agent.md
+          echo 'Overseer operating model present'
+
+      - name: Produce canonical current audit report
+        run: |
+          mkdir -p 30_System_Infrastructure/overseer/reports
+          {
+            echo '# MVQUEEN_OS Overseer Audit'
+            echo
+            echo "- Commit: $GITHUB_SHA"
+            echo "- Ref: $GITHUB_REF_NAME"
+            echo "- Trigger: $GITHUB_EVENT_NAME"
+            echo "- Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo
+            echo '## Validation'
+            echo '- JSON validation: PASS'
+            echo '- Python syntax validation: PASS'
+            echo '- Brand-bank contract tests: PASS'
+            echo '- Module-loader tests: PASS'
+            echo '- Runtime boot smoke test: PASS'
+            echo '- Protected brand sources: PASS'
+            echo '- Overseer operating model: PASS'
+            echo
+            echo '## Existing stabilization audit'
+            cat overseer-audit.txt
+            echo
+            echo '## Governance'
+            echo 'Evidence → Analysis → Recommendation → Approval → Change → Verify → Log'
+            echo
+            echo 'No core-system mutation is performed by this audit.'
+          } > 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md
+          cp 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md overseer-reports-audit.md
+          cat 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md
+
+      - name: Sync current audit report to Google Drive
+        if: always()
+        env:
+          RCLONE_CONFIG_B64: ${{ secrets.RCLONE_CONFIG_B64 }}
+          DRIVE_REMOTE_PATH: ${{ vars.MVQUEEN_DRIVE_AUDIT_PATH }}
+        run: |
+          if [ -z "$RCLONE_CONFIG_B64" ]; then
+            echo 'DRIVE SYNC: NOT CONFIGURED (RCLONE_CONFIG_B64 secret is absent).'
+            exit 0
+          fi
+          if [ -z "$DRIVE_REMOTE_PATH" ]; then
+            echo 'DRIVE SYNC ERROR: MVQUEEN_DRIVE_AUDIT_PATH repository variable is required.'
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/rclone"
+          printf '%s' "$RCLONE_CONFIG_B64" | base64 --decode > "$RUNNER_TEMP/rclone/rclone.conf"
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+          RCLONE_CONFIG="$RUNNER_TEMP/rclone/rclone.conf" rclone copyto 30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md "$DRIVE_REMOTE_PATH/MVQUEEN_OS_CURRENT_AUDIT.md" --config "$RUNNER_TEMP/rclone/rclone.conf" --checksum
+          echo 'DRIVE SYNC: current report uploaded successfully.'
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: overseer-audit-${{ github.run_id }}
+          path: |
+            30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md
+            overseer-audit.txt
+
+      - name: Fail workflow when stabilization audit reports findings
+        if: steps.audit.outcome == 'failure'
+        run: |
+          echo 'OVERSEER RESULT: stabilization audit reported findings or an execution failure.'
+          exit 1
+
+      - name: Create issue on audit failure
+        if: failure() && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --title "[OVERSEER] Automated audit failure — $GITHUB_REF_NAME" --body "Automated Overseer audit failed.\n\nCommit: $GITHUB_SHA\nRef: $GITHUB_REF_NAME\nRun: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\n\nReview the failed check before making core-system changes." || true
