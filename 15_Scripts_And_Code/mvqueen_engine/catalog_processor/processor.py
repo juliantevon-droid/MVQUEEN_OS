@@ -1,16 +1,12 @@
-"""MVQueen catalog orchestration layer.
-
-The processor is the integration point between CSV input, brand intelligence,
-editorial generation, metafields, tags, collections, bundles, and Shopify.
-Live Shopify writes remain an explicit downstream concern.
-"""
+"""MVQueen catalog orchestration layer."""
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 import pandas as pd
 
 from .csv_loader import load_shopify_csv
+from .schema import ProductRecord, validate_batch
 from mvqueen_engine.brand_brain.editorial.titles import generate_title
 from mvqueen_engine.brand_brain.editorial.descriptions import generate_description
 from mvqueen_engine.brand_brain.editorial.seo import generate_seo
@@ -44,48 +40,86 @@ def build_context(row: pd.Series) -> dict[str, Any]:
     }
 
 
+def process_record(record: ProductRecord) -> ProductRecord:
+    """Enrich one normalized ProductRecord while preserving source data."""
+    context = {
+        "persona": record.persona,
+        "voice": record.voice,
+        "tone": "",
+        "benefits": record.key_benefits or ", ".join(record.benefits),
+        "ingredients": record.ingredients,
+        "target_audience": record.target_audience,
+        "who_its_for": record.who_its_for,
+        "mood": record.mood,
+        "occasion": record.occasion,
+        "frame": "",
+        "seo_keywords": "",
+    }
+    context["frame"] = select_frame(context)
+    record.generated_title = generate_title(record.title, record.handle, context)
+    record.long_description = generate_description(record.title, record.handle, record.body_html, context)
+    record.short_description = record.long_description[:155]
+    seo = generate_seo(record.generated_title, context)
+    record.seo_title = seo["seo_title"]
+    record.seo_description = seo["seo_description"]
+    record.alt_text = record.alt_text or record.image_alt_text or record.generated_title
+    record.metafields.update({
+        "custom.editorial_frame": context["frame"],
+        "custom.persona_voice": str(build_voice_context(context)),
+        "custom.benefit_copy": generate_benefit_copy(context),
+        "custom.ingredient_copy": generate_ingredient_copy(context),
+    })
+    return record
+
+
 def process_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    """Process an already-loaded Shopify DataFrame without touching Shopify."""
+    """Process a Shopify DataFrame without touching Shopify."""
     if "Handle" not in df.columns or "Title" not in df.columns:
         raise ValueError("Catalog must contain Handle and Title columns")
-
     result = df.copy()
     for column in ("Body (HTML)", "SEO Title", "SEO Description", "Tags", "Image Alt Text"):
         if column not in result.columns:
             result[column] = ""
-
-    for index, row in result.iterrows():
-        handle = str(row["Handle"]).strip()
-        base_title = str(row["Title"]).strip()
-        context = build_context(row)
-        context["frame"] = select_frame(context)
-
-        title = generate_title(base_title, handle, context)
-        body = generate_description(base_title, handle, str(row.get("Body (HTML)", "")), context)
-        seo = generate_seo(title, context)
-
-        result.at[index, "Title"] = title
-        result.at[index, "Body (HTML)"] = body
-        result.at[index, "SEO Title"] = seo["seo_title"]
-        result.at[index, "SEO Description"] = seo["seo_description"]
-
-        existing_tags = str(row.get("Tags", "") or "").strip()
-        result.at[index, "Tags"] = existing_tags
-
-        # Keep generated editorial intelligence available to downstream processors.
-        result.at[index, "metafield.custom.editorial_frame"] = context["frame"]
-        result.at[index, "metafield.custom.persona_voice"] = str(build_voice_context(context))
-        result.at[index, "metafield.custom.benefit_copy"] = generate_benefit_copy(context)
-        result.at[index, "metafield.custom.ingredient_copy"] = generate_ingredient_copy(context)
-
+    _, records = load_shopify_csv_from_dataframe(result)
+    processed = [process_record(record) for record in records]
+    for index, record in enumerate(processed):
+        result.at[index, "Title"] = record.generated_title or record.title
+        result.at[index, "Body (HTML)"] = record.long_description
+        result.at[index, "SEO Title"] = record.seo_title
+        result.at[index, "SEO Description"] = record.seo_description
+        result.at[index, "Image Alt Text"] = record.alt_text
+        for key, value in record.metafields.items():
+            result.at[index, f"metafield.{key}"] = value
     return result
 
 
+def load_shopify_csv_from_dataframe(df: pd.DataFrame):
+    """Normalize an existing dataframe using the same contract as CSV loading."""
+    from .csv_loader import records_from_dataframe
+    return df, records_from_dataframe(df)
+
+
 def process_csv(input_path: str | Path, output_path: str | Path) -> Path:
-    """Load, curate, and export a Shopify-compatible CSV."""
-    df = load_shopify_csv(input_path)
-    result = process_dataframe(df)
+    """Load, enrich, and export a Shopify-compatible CSV."""
+    df, records = load_shopify_csv(input_path)
+    processed = [process_record(record) for record in records]
+    result = df.copy()
+    for index, record in enumerate(processed):
+        result.at[index, "Title"] = record.generated_title or record.title
+        result.at[index, "Body (HTML)"] = record.long_description
+        result.at[index, "SEO Title"] = record.seo_title
+        result.at[index, "SEO Description"] = record.seo_description
+        result.at[index, "Image Alt Text"] = record.alt_text
+        for key, value in record.metafields.items():
+            result.at[index, f"metafield.{key}"] = value
     destination = Path(output_path)
     destination.parent.mkdir(parents=True, exist_ok=True)
     result.to_csv(destination, index=False)
     return destination
+
+
+def process_product(text: str | dict[str, Any]) -> dict[str, Any]:
+    """Legacy compatibility adapter retained for existing exporters."""
+    if isinstance(text, dict):
+        return dict(text)
+    return {"title": str(text), "description": str(text), "category": "default", "product_type": "default"}
