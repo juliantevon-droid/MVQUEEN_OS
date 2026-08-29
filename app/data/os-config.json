@@ -1,0 +1,7 @@
+{
+  "brand": "MVQueen",
+  "catalog": {"products": 946, "maxProductsPerCsv": 850, "primaryFocus": "Cosmetics & Skincare"},
+  "protectedFields": ["Handle", "SKU", "Variant SKU", "Inventory", "Image Src", "Variant Inventory Qty"],
+  "optimization": {"removeSupplierFiller": true, "removeThirdPartyBranding": true, "benefitsBeforeFeatures": true, "nativeFirst": true},
+  "modules": ["products", "collections", "seo", "images", "csv", "shopify", "automation", "brand", "settings"]
+}
