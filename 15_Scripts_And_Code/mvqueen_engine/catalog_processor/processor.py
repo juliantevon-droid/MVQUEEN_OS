@@ -6,7 +6,8 @@ from typing import Any
 import pandas as pd
 
 from .csv_loader import load_shopify_csv
-from .schema import ProductRecord, validate_batch
+from .schema import ProductRecord
+from mvqueen_engine.brand_brain.detection import detect_all
 from mvqueen_engine.brand_brain.editorial.titles import generate_title
 from mvqueen_engine.brand_brain.editorial.descriptions import generate_description
 from mvqueen_engine.brand_brain.editorial.seo import generate_seo
@@ -42,6 +43,24 @@ def build_context(row: pd.Series) -> dict[str, Any]:
 
 def process_record(record: ProductRecord) -> ProductRecord:
     """Enrich one normalized ProductRecord while preserving source data."""
+    source_text = " ".join(filter(None, [record.title, record.body_html, record.product_type, record.category, record.material, " ".join(record.details), " ".join(record.benefits), " ".join(record.ingredients), " ".join(record.textures), " ".join(record.finishes)]))
+    detected = detect_all(source_text, seed=record.handle)
+
+    # Detection fills only missing attributes; explicit/source values win.
+    record.category = record.category or detected.get("category", "default")
+    record.product_type_detailed = record.product_type_detailed or detected.get("product_type", "")
+    record.persona = record.persona or detected.get("persona", "")
+    record.vibe = record.vibe or detected.get("vibe", "")
+    record.trend = record.trend or detected.get("trend", "")
+    record.season = record.season or detected.get("season", "")
+    record.material = record.material or detected.get("material", "")
+    record.silhouette = record.silhouette or detected.get("silhouette", "")
+    record.details = record.details or detected.get("details", [])
+    record.benefits = record.benefits or detected.get("benefits", [])
+    record.ingredients = record.ingredients or detected.get("ingredients", [])
+    record.textures = record.textures or detected.get("textures", [])
+    record.finishes = record.finishes or detected.get("finishes", [])
+
     context = {
         "persona": record.persona,
         "voice": record.voice,
@@ -64,6 +83,19 @@ def process_record(record: ProductRecord) -> ProductRecord:
     record.seo_description = seo["seo_description"]
     record.alt_text = record.alt_text or record.image_alt_text or record.generated_title
     record.metafields.update({
+        "custom.category": record.category,
+        "custom.product_type_detailed": record.product_type_detailed,
+        "custom.persona": record.persona,
+        "custom.vibe": record.vibe,
+        "custom.trend": record.trend,
+        "custom.seasonality": record.season,
+        "custom.material": record.material,
+        "custom.silhouette": record.silhouette,
+        "custom.details": record.details,
+        "custom.benefits": record.benefits,
+        "custom.ingredients": record.ingredients,
+        "custom.texture": record.textures,
+        "custom.finish": record.finishes,
         "custom.editorial_frame": context["frame"],
         "custom.persona_voice": str(build_voice_context(context)),
         "custom.benefit_copy": generate_benefit_copy(context),
@@ -94,13 +126,11 @@ def process_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def load_shopify_csv_from_dataframe(df: pd.DataFrame):
-    """Normalize an existing dataframe using the same contract as CSV loading."""
     from .csv_loader import records_from_dataframe
     return df, records_from_dataframe(df)
 
 
 def process_csv(input_path: str | Path, output_path: str | Path) -> Path:
-    """Load, enrich, and export a Shopify-compatible CSV."""
     df, records = load_shopify_csv(input_path)
     processed = [process_record(record) for record in records]
     result = df.copy()
