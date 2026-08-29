@@ -8,6 +8,7 @@ import pandas as pd
 from .csv_loader import load_shopify_csv
 from .schema import ProductRecord
 from mvqueen_engine.brand_brain.detection import detect_all
+from mvqueen_engine.brand_brain.persona.router import route_profile
 from mvqueen_engine.brand_brain.editorial.titles import generate_title
 from mvqueen_engine.brand_brain.editorial.descriptions import generate_description
 from mvqueen_engine.brand_brain.editorial.seo import generate_seo
@@ -26,7 +27,7 @@ def _value(row: pd.Series, *names: str) -> str:
 
 
 def build_context(row: pd.Series) -> dict[str, Any]:
-    return {
+    context = {
         "persona": _value(row, "metafield.custom.persona", "Persona"),
         "voice": _value(row, "metafield.custom.voice"),
         "tone": _value(row, "metafield.custom.tone"),
@@ -39,6 +40,12 @@ def build_context(row: pd.Series) -> dict[str, Any]:
         "frame": _value(row, "metafield.custom.editorial_frame"),
         "seo_keywords": _value(row, "metafield.custom.seo_keywords"),
     }
+    if not context["persona"]:
+        profile = route_profile(context)
+        context["persona"] = profile["persona"]
+        context["voice"] = context["voice"] or profile["voice"]
+        context["tone"] = context["tone"] or profile["tone"]
+    return context
 
 
 def process_record(record: ProductRecord) -> ProductRecord:
@@ -46,7 +53,6 @@ def process_record(record: ProductRecord) -> ProductRecord:
     source_text = " ".join(filter(None, [record.title, record.body_html, record.product_type, record.category, record.material, " ".join(record.details), " ".join(record.benefits), " ".join(record.ingredients), " ".join(record.textures), " ".join(record.finishes)]))
     detected = detect_all(source_text, seed=record.handle)
 
-    # Detection fills only missing attributes; explicit/source values win.
     record.category = record.category or detected.get("category", "default")
     record.product_type_detailed = record.product_type_detailed or detected.get("product_type", "")
     record.persona = record.persona or detected.get("persona", "")
@@ -61,7 +67,7 @@ def process_record(record: ProductRecord) -> ProductRecord:
     record.textures = record.textures or detected.get("textures", [])
     record.finishes = record.finishes or detected.get("finishes", [])
 
-    context = {
+    raw_context = {
         "persona": record.persona,
         "voice": record.voice,
         "tone": "",
@@ -73,12 +79,24 @@ def process_record(record: ProductRecord) -> ProductRecord:
         "occasion": record.occasion,
         "frame": "",
         "seo_keywords": "",
+        "title": record.title,
+        "description": record.body_html,
+        "category": record.category,
+        "product_type": record.product_type_detailed,
+        "vibe": record.vibe,
+        "trend": record.trend,
     }
-    context["frame"] = select_frame(context)
-    record.generated_title = generate_title(record.title, record.handle, context)
-    record.long_description = generate_description(record.title, record.handle, record.body_html, context)
+    profile = route_profile(raw_context)
+    record.persona = record.persona or profile["persona"]
+    raw_context["persona"] = record.persona
+    raw_context["voice"] = record.voice or profile["voice"]
+    raw_context["tone"] = profile["tone"]
+    raw_context["frame"] = select_frame(raw_context)
+
+    record.generated_title = generate_title(record.title, record.handle, raw_context)
+    record.long_description = generate_description(record.title, record.handle, record.body_html, raw_context)
     record.short_description = record.long_description[:155]
-    seo = generate_seo(record.generated_title, context)
+    seo = generate_seo(record.generated_title, raw_context)
     record.seo_title = seo["seo_title"]
     record.seo_description = seo["seo_description"]
     record.alt_text = record.alt_text or record.image_alt_text or record.generated_title
@@ -96,10 +114,10 @@ def process_record(record: ProductRecord) -> ProductRecord:
         "custom.ingredients": record.ingredients,
         "custom.texture": record.textures,
         "custom.finish": record.finishes,
-        "custom.editorial_frame": context["frame"],
-        "custom.persona_voice": str(build_voice_context(context)),
-        "custom.benefit_copy": generate_benefit_copy(context),
-        "custom.ingredient_copy": generate_ingredient_copy(context),
+        "custom.editorial_frame": raw_context["frame"],
+        "custom.persona_voice": str(build_voice_context(raw_context)),
+        "custom.benefit_copy": generate_benefit_copy(raw_context),
+        "custom.ingredient_copy": generate_ingredient_copy(raw_context),
     })
     return record
 
