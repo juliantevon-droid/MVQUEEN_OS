@@ -16,8 +16,9 @@ BANKS = {
 
 def get_bank(name: str):
     """Return a registered bank module by canonical name."""
+    key = str(name or "").strip().lower()
     try:
-        return BANKS[name]
+        return BANKS[key]
     except KeyError as exc:
         raise KeyError(f"Unknown MVQueen brand bank: {name}") from exc
 
@@ -31,4 +32,25 @@ def get_vocab(name: str, attribute: str):
         raise AttributeError(f"Bank '{name}' has no vocabulary '{attribute}'") from exc
 
 
-__all__ = ["BANKS", "get_bank", "get_vocab"]
+def list_banks() -> tuple[str, ...]:
+    """Return registered bank names in stable order."""
+    return tuple(BANKS)
+
+
+def list_vocab(name: str) -> dict[str, object]:
+    """Return public uppercase vocabulary objects from one bank."""
+    bank = get_bank(name)
+    return {
+        key: value
+        for key, value in vars(bank).items()
+        if key.isupper() and not key.startswith("_")
+    }
+
+
+def contains_term(name: str, attribute: str, value: str) -> bool:
+    """Case-insensitive membership check for a controlled vocabulary."""
+    target = str(value or "").strip().casefold()
+    return any(str(item).casefold() == target for item in get_vocab(name, attribute))
+
+
+__all__ = ["BANKS", "get_bank", "get_vocab", "list_banks", "list_vocab", "contains_term"]
