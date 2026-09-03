@@ -1,0 +1,41 @@
+name: MVQUEEN Production Readiness
+
+on:
+  push:
+    branches: [production/editorial-intelligence-v1, production/launch-build]
+    paths:
+      - 'PRODUCTION_READINESS/**'
+      - '.github/workflows/production-readiness.yml'
+  pull_request:
+    branches: [main, production/launch-build]
+    paths:
+      - 'PRODUCTION_READINESS/**'
+      - '.github/workflows/production-readiness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production-readiness:
+    name: Canonical Product Pipeline Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate JSON schema syntax
+        run: python -m json.tool PRODUCTION_READINESS/PRODUCT_SCHEMA_V1.json >/dev/null
+
+      - name: Compile production readiness Python
+        run: python -m compileall -q PRODUCTION_READINESS
+
+      - name: Run canonical product pipeline tests
+        working-directory: PRODUCTION_READINESS
+        run: python -m unittest test_product_pipeline_v1.py -v
