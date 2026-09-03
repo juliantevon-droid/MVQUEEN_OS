@@ -28,7 +28,7 @@ PROTECTED_FIELDS = {
 CLAIM_TERMS = re.compile(
     r"\b(cures?|treats?|prevents?|guaranteed?|clinically proven|medical[- ]grade|"
     r"hypoallergenic|non[- ]toxic|chemical[- ]free|organic|certified|best|#1|"
-    r"100%|instant|permanent|never|always)\b", re.I
+    r"100%|instant|permanent)\b", re.I
 )
 ROBOTIC_PHRASES = re.compile(
     r"\b(versatile and stylish|perfect for any occasion|elevate your everyday look|"
