@@ -36,6 +36,10 @@ jobs:
       - name: Compile production readiness Python
         run: python -m compileall -q PRODUCTION_READINESS
 
-      - name: Run canonical product pipeline tests
+      - name: Run canonical and enterprise gate tests
         working-directory: PRODUCTION_READINESS
-        run: python -m unittest test_product_pipeline_v1.py -v
+        run: python -m unittest test_product_pipeline_v1.py test_enterprise_release_gate_v1.py -v
+
+      - name: Check for obvious credential material
+        run: |
+          ! grep -RniE '(api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*["'"'][^"'"']{12,}["'"']' PRODUCTION_READINESS --exclude='*.pyc' --exclude-dir='__pycache__'
