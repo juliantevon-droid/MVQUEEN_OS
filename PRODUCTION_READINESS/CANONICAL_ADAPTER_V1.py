@@ -39,16 +39,11 @@ def _assert_unchanged(before: Dict[str, Any], after: Dict[str, Any]) -> None:
 
 
 def produce(raw_product: Dict[str, Any]) -> Dict[str, Any]:
-    """Normalize and produce a canonical record; never publish or mutate the input."""
+    """Produce a canonical record; never publish, call Shopify, or mutate input."""
     source = deepcopy(raw_product)
     protected_snapshot = _snapshot(source)
     result = run(source)
     _assert_unchanged(protected_snapshot, result)
-    result["publication"] = {
-        "allowed": result.get("status") == "PRODUCTION_READY",
-        "mode": "canonical-record-only",
-        "shopify_write": False,
-    }
     return result
 
 
