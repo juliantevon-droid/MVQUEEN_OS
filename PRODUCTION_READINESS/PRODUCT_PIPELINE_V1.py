@@ -1,8 +1,8 @@
 """MVQUEEN canonical product production pipeline V1.
 
-Pure standard-library implementation. The pipeline is deliberately conservative:
-source facts are preserved, generated copy may interpret them, but cannot invent
-unsupported factual attributes.
+Pure standard-library implementation. Source facts are preserved, generated copy
+may interpret them, but cannot invent unsupported factual attributes. Brand voice
+is a production requirement rather than an optional prompt preference.
 """
 from __future__ import annotations
 
@@ -24,6 +24,15 @@ CLAIM_TERMS = re.compile(
     r"\b(cures?|treats?|prevents?|guaranteed?|clinically proven|medical[- ]grade|"
     r"hypoallergenic|non[- ]toxic|chemical[- ]free|organic|certified|best|#1|"
     r"100%|instant|permanent|never|always)\b", re.I
+)
+ROBOTIC_PHRASES = re.compile(
+    r"\b(versatile and stylish|perfect for any occasion|elevate your everyday look|"
+    r"elevate your wardrobe|must[- ]have|game[- ]changer|level up|designed to elevate|"
+    r"whether you'?re dressing up or down|this versatile)\b", re.I
+)
+MVQUEEN_SIGNALS = (
+    "confidence", "confident", "feminine", "elevated", "modern", "polished",
+    "intentional", "effortless", "luxury", "mvqueen",
 )
 
 
@@ -79,11 +88,13 @@ def build_copy(record: Dict[str, Any]) -> None:
     product_type = _text(record.get("category", {}).get("product_type")) or "Essential"
     material = _text(facts.get("material"))
     color = _text(facts.get("color"))
+    use = _text(facts.get("use_context")) or "everyday use"
     title_parts = [x for x in ["MVQueen", color, product_type] if x]
     title = " — ".join(title_parts)
-    short = f"A refined {product_type.lower()} designed for confident, effortless styling."
+    opening = f"Meet the {product_type.lower()} made for {use}."
     if material:
-        short = f"A refined {material.lower()} {product_type.lower()} designed for confident, effortless styling."
+        opening = f"Meet the {material.lower()} {product_type.lower()} made for {use}."
+    short = f"{opening} A polished, confidence-driven piece with the modern ease MVQueen is known for."
     details = [f"Product type: {product_type}."]
     if material:
         details.append(f"Material: {material}.")
@@ -92,7 +103,7 @@ def build_copy(record: Dict[str, Any]) -> None:
     record["copy"] = {
         "title": title,
         "short_description": short,
-        "description": " ".join(details),
+        "description": " ".join(details) + " Designed for intentional styling, with a refined finish that keeps the focus on her.",
         "benefits": record.get("intelligence", {}).get("supported_benefits", []),
         "features": details,
         "cta": "Shop MVQueen",
@@ -184,12 +195,20 @@ def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
         if not _text(image.get("alt")):
             errors.append("Every published image requires ALT text")
     generated_text = " ".join([
+        _text(record.get("copy", {}).get("title")),
+        _text(record.get("copy", {}).get("short_description")),
         _text(record.get("copy", {}).get("description")),
         _text(record.get("commercial", {}).get("angle")),
     ])
     suspicious = CLAIM_TERMS.findall(generated_text)
     if suspicious:
         errors.append("Unsupported/high-risk claim language detected: " + ", ".join(sorted(set(suspicious), key=str.lower)))
+    robotic = ROBOTIC_PHRASES.findall(generated_text)
+    if robotic:
+        errors.append("Generic/robotic marketing language detected: " + ", ".join(sorted(set(robotic), key=str.lower)))
+    signal_count = sum(1 for signal in MVQUEEN_SIGNALS if re.search(r"\b" + re.escape(signal) + r"\b", generated_text, re.I))
+    if signal_count < 2:
+        errors.append("MVQueen brand-voice signal threshold not met")
     if len(meta) < 150:
         warnings.append("Meta description is below the preferred 150–160 character range")
     return errors, warnings
