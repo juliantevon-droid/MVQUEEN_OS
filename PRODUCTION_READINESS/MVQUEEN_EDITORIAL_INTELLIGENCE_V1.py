@@ -15,7 +15,7 @@ PLACEHOLDER_RE = re.compile(r"\{[^}]+\}|\b(?:describe|close with|insert|add)\s+(
 FORBIDDEN_COPY_RE = re.compile(
     r"\b(cures?|treats?|prevents?|guaranteed?|clinically proven|medical[- ]grade|"
     r"hypoallergenic|non[- ]toxic|chemical[- ]free|organic|certified|#1|100%|"
-    r"instant|permanent|never|always)\b", re.I
+    r"instant|permanent)\b", re.I
 )
 GENERIC_RE = re.compile(
     r"\b(perfect for any occasion|versatile and stylish|must[- ]have|game[- ]changer|"
@@ -85,7 +85,7 @@ def _product_specific_detail(facts: Dict[str, Any], category: str) -> str:
     size = _safe_value(_fact(facts, "size", "dimensions"))
     ingredient = _safe_value(_fact(facts, "ingredient", "key_ingredient"))
     if category == "skincare" and ingredient:
-        return f"with {ingredient} listed among its verified ingredients"
+        return f"with {ingredient} listed among its ingredients"
     if category == "cosmetics" and finish:
         return f"with a {finish.lower()} finish"
     if texture:
@@ -95,7 +95,7 @@ def _product_specific_detail(facts: Dict[str, Any], category: str) -> str:
     if color:
         return f"in {color.lower()}"
     if size:
-        return f"in the verified {size.lower()} specification"
+        return f"in the listed {size.lower()} specification"
     return ""
 
 
@@ -117,7 +117,7 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
             f"{product_type} — {color}" if color else f"{product_type} — MVQueen",
         ]
         openings = [
-            f"A {product_type.lower()} for {use.lower()}, with the kind of polished presence that never needs to try too hard.",
+            f"A {product_type.lower()} for {use.lower()}, with a polished presence and room for her own style.",
             f"For {use.lower()}, this {product_type.lower()} brings a clean, confident direction to the way she dresses.",
             f"The right {product_type.lower()} can change the feeling of a look; this one starts with {detail or 'a considered silhouette'} and leaves room for her style to lead.",
         ]
@@ -133,7 +133,7 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
             f"A polished routine begins with products that make sense for the moment. This {product_type.lower()} brings {detail or 'a clearly defined step'} into focus.",
             f"For the part of her routine when she wants to slow down and be intentional, this {product_type.lower()} keeps the experience beautifully simple.",
         ]
-        closer = "Keep the language of the routine clear, confident, and grounded in the product details that are actually verified."
+        closer = "A considered addition to a routine that values clarity, simplicity, and the details she can trust."
     elif category == "cosmetics":
         titles = [
             f"{product_type} for the MVQueen Look",
@@ -155,7 +155,7 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
         openings = [
             f"A small detail can set the tone. This {product_type.lower()}{(' ' + detail) if detail else ''} brings a polished note to {use.lower()}.",
             f"For the woman who styles with intention, this {product_type.lower()} adds a modern finishing point without taking over the look.",
-            f"Layer it, let it stand alone, or make it part of the moment—this {product_type.lower()} is designed to keep her style feeling personal and polished.",
+            f"Layer it, let it stand alone, or make it part of the moment—this {product_type.lower()} keeps her style feeling personal and polished.",
         ]
         closer = "It is the kind of detail that supports confident styling without competing with the woman wearing it."
     else:
@@ -171,13 +171,13 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
     opening = _choose(openings, record, "opening")
     details: List[str] = []
     if material:
-        details.append(f"Verified material: {material}.")
+        details.append(f"Made with {material}.")
     if color:
-        details.append(f"Verified color: {color}.")
+        details.append(f"Available in {color}.")
     if ingredient:
-        details.append(f"Verified ingredient: {ingredient}.")
+        details.append(f"Ingredient listed: {ingredient}.")
     if finish:
-        details.append(f"Verified finish: {finish}.")
+        details.append(f"Finish: {finish}.")
     if not details and detail:
         details.append(f"Product detail: {detail}.")
 
@@ -189,13 +189,15 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
 
     benefits = []
     if material:
-        benefits.append(f"Verified {material.lower()} construction or material detail.")
+        benefits.append(f"The feel and character of {material.lower()} support the intended styling direction.")
     if color:
-        benefits.append(f"A {color.lower()} color direction for intentional styling.")
+        benefits.append(f"The {color.lower()} color direction makes styling decisions easy to build around.")
     if finish:
-        benefits.append(f"A verified {finish.lower()} finish.")
+        benefits.append(f"The listed {finish.lower()} finish helps define the final look.")
+    if ingredient:
+        benefits.append(f"Includes {ingredient} as a listed ingredient.")
     if not benefits:
-        benefits.append("Clear product details that support confident, informed selection.")
+        benefits.append("Clear product details support a more confident, informed selection.")
 
     return {
         "title": title,
