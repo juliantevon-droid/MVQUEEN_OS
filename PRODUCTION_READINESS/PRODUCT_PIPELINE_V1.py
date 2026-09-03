@@ -10,6 +10,11 @@ import re
 from copy import deepcopy
 from typing import Any, Dict, List, Tuple
 
+try:
+    from .MVQUEEN_EDITORIAL_INTELLIGENCE_V1 import generate, validate_editorial
+except ImportError:
+    from MVQUEEN_EDITORIAL_INTELLIGENCE_V1 import generate, validate_editorial
+
 STAGES = [
     "RAW", "NORMALIZED", "INTELLIGENCE_READY", "COPY_READY", "SEO_READY",
     "MERCH_READY", "COMMERCIAL_READY", "CREATIVE_READY", "QA_PASSED",
@@ -48,12 +53,7 @@ def _fact_map(record: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def _verified(record: Dict[str, Any], name: str) -> Any:
-    return _fact_map(record).get(name)
-
-
 def normalize(raw: Dict[str, Any]) -> Dict[str, Any]:
-    """Normalize presentation without changing protected source values."""
     out = deepcopy(raw)
     out.setdefault("schema_version", "1.0")
     out.setdefault("source_truth", {}).setdefault("facts", [])
@@ -84,30 +84,9 @@ def build_intelligence(record: Dict[str, Any]) -> None:
 
 
 def build_copy(record: Dict[str, Any]) -> None:
-    facts = _fact_map(record)
-    product_type = _text(record.get("category", {}).get("product_type")) or "Essential"
-    material = _text(facts.get("material"))
-    color = _text(facts.get("color"))
-    use = _text(facts.get("use_context")) or "everyday use"
-    title_parts = [x for x in ["MVQueen", color, product_type] if x]
-    title = " — ".join(title_parts)
-    opening = f"Meet the {product_type.lower()} made for {use}."
-    if material:
-        opening = f"Meet the {material.lower()} {product_type.lower()} made for {use}."
-    short = f"{opening} A polished, confidence-driven piece with the modern ease MVQueen is known for."
-    details = [f"Product type: {product_type}."]
-    if material:
-        details.append(f"Material: {material}.")
-    if color:
-        details.append(f"Color: {color}.")
-    record["copy"] = {
-        "title": title,
-        "short_description": short,
-        "description": " ".join(details) + " Designed for intentional styling, with a refined finish that keeps the focus on her.",
-        "benefits": record.get("intelligence", {}).get("supported_benefits", []),
-        "features": details,
-        "cta": "Shop MVQueen",
-    }
+    editorial = generate(record)
+    editorial.pop("_editorial_category", None)
+    record["copy"] = editorial
     record["status"] = "COPY_READY"
 
 
@@ -209,6 +188,9 @@ def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
     signal_count = sum(1 for signal in MVQUEEN_SIGNALS if re.search(r"\b" + re.escape(signal) + r"\b", generated_text, re.I))
     if signal_count < 2:
         errors.append("MVQueen brand-voice signal threshold not met")
+    editorial_errors, editorial_warnings = validate_editorial(record)
+    errors.extend(editorial_errors)
+    warnings.extend(editorial_warnings)
     if len(meta) < 150:
         warnings.append("Meta description is below the preferred 150–160 character range")
     return errors, warnings
