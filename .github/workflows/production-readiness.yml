@@ -2,12 +2,18 @@ name: MVQUEEN Production Readiness
 
 on:
   push:
-    branches: [production/editorial-intelligence-v1, production/launch-build]
+    branches:
+      - production/enterprise-hardening-v1
+      - production/editorial-intelligence-v1
+      - production/launch-build
     paths:
       - 'PRODUCTION_READINESS/**'
       - '.github/workflows/production-readiness.yml'
   pull_request:
-    branches: [main, production/launch-build]
+    branches:
+      - main
+      - production/launch-build
+      - production/enterprise-hardening-v1
     paths:
       - 'PRODUCTION_READINESS/**'
       - '.github/workflows/production-readiness.yml'
@@ -36,9 +42,9 @@ jobs:
       - name: Compile production readiness Python
         run: python -m compileall -q PRODUCTION_READINESS
 
-      - name: Run canonical and enterprise gate tests
+      - name: Run canonical pipeline and release gate tests
         working-directory: PRODUCTION_READINESS
-        run: python -m unittest test_product_pipeline_v1.py test_enterprise_release_gate_v1.py -v
+        run: python -m unittest test_product_pipeline_v1.py test_release_gate_v1.py -v
 
       - name: Check for obvious credential material
         run: |
