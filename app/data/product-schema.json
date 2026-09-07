@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "required": ["Title"],
+  "protected": ["Handle", "SKU", "Inventory", "Option1 Value", "Option2 Value", "Option3 Value", "Image Src"],
+  "optimizable": ["Title", "Body HTML", "Product Type", "Tags", "Image Alt Text", "SEO Title", "SEO Description"],
+  "beauty_fields": ["ingredients", "usage", "benefits", "skin_type", "finish", "texture"],
+  "fashion_fields": ["fabric", "fit", "silhouette", "occasion", "care"],
+  "brand": "MVQueen",
+  "tone": ["Elegant", "Confident", "Premium", "Simple", "Empowering"],
+  "catalog_limit": 850
+}
