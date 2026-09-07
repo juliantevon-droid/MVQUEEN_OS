@@ -29,6 +29,21 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertTrue(result["images"]["items"][0]["alt"])
         self.assertIn("confidence", result["copy"]["short_description"].lower())
 
+    def test_canonical_commercial_engine_is_enforced(self):
+        result = run(self.base())
+        commercial = result["commercial"]
+        self.assertEqual(commercial["funnel_stage"], "consideration")
+        self.assertIn("PRODUCT → COMPLEMENT → BUNDLE → THRESHOLD", commercial["aov_strategy"]["path"])
+        self.assertIn("verified_specifications", commercial["landing_page_requirements"])
+
+    def test_canonical_creative_engine_is_enforced(self):
+        result = run(self.base())
+        assets = result["creative"]["assets"]
+        channels = {asset["channel"] for asset in assets}
+        self.assertTrue({"Meta", "TikTok", "UGC", "Email", "SMS"}.issubset(channels))
+        self.assertTrue(all(asset["hook"] and asset["cta"] for asset in assets))
+        self.assertTrue(all(asset["testing_variable"] for asset in assets))
+
     def test_unapproved_price_blocks_publication(self):
         product = self.base()
         product["pricing"]["approved_publish_price"] = None
@@ -55,6 +70,7 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertEqual(first["copy"], second["copy"])
         self.assertEqual(first["seo"], second["seo"])
         self.assertEqual(first["commercial"], second["commercial"])
+        self.assertEqual(first["creative"], second["creative"])
 
     def test_adapter_preserves_protected_values_and_does_not_publish(self):
         product = self.base()
