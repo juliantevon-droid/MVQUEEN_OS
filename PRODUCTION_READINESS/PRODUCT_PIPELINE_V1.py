@@ -12,8 +12,12 @@ from typing import Any, Dict, List, Tuple
 
 try:
     from .MVQUEEN_EDITORIAL_INTELLIGENCE_V1 import generate, validate_editorial
+    from .COMMERCIAL_INTELLIGENCE_V1 import build_commercial, validate_commercial
+    from .CREATIVE_INTELLIGENCE_V1 import build_creative, validate_creative
 except ImportError:
     from MVQUEEN_EDITORIAL_INTELLIGENCE_V1 import generate, validate_editorial
+    from COMMERCIAL_INTELLIGENCE_V1 import build_commercial, validate_commercial
+    from CREATIVE_INTELLIGENCE_V1 import build_creative, validate_creative
 
 STAGES = [
     "RAW", "NORMALIZED", "INTELLIGENCE_READY", "COPY_READY", "SEO_READY",
@@ -124,27 +128,13 @@ def build_merchandising(record: Dict[str, Any]) -> None:
     record["status"] = "MERCH_READY"
 
 
-def build_commercial(record: Dict[str, Any]) -> None:
-    supported = record.get("intelligence", {}).get("supported_benefits", [])
-    record["commercial"] = {
-        "angle": "Confidence through intentional, elevated styling.",
-        "proof_available": supported,
-        "offer_eligibility": [],
-        "price_guardrail": "Publish only an explicitly approved price.",
-        "trust_inputs": [],
-        "objections_responses": [],
-        "funnel_stage": "product",
-    }
+def build_commercial_stage(record: Dict[str, Any]) -> None:
+    record["commercial"] = build_commercial(record)
     record["status"] = "COMMERCIAL_READY"
 
 
-def build_creative(record: Dict[str, Any]) -> None:
-    title = _text(record.get("copy", {}).get("title")) or "product"
-    record["creative"] = {"assets": [
-        {"channel": "meta", "asset_type": "paid_static", "brief": f"Create an identity-led visual for {title}.", "claim_constraints": []},
-        {"channel": "tiktok", "asset_type": "short_video", "brief": f"Show {title} in a concise styling/use context.", "claim_constraints": []},
-        {"channel": "email", "asset_type": "product_feature", "brief": f"Introduce {title} with verified product details only.", "claim_constraints": []},
-    ]}
+def build_creative_stage(record: Dict[str, Any]) -> None:
+    record["creative"] = build_creative(record)
     record["status"] = "CREATIVE_READY"
 
 
@@ -191,6 +181,8 @@ def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
     editorial_errors, editorial_warnings = validate_editorial(record)
     errors.extend(editorial_errors)
     warnings.extend(editorial_warnings)
+    errors.extend(validate_commercial(record.get("commercial", {})))
+    errors.extend(validate_creative(record.get("creative", {})))
     if len(meta) < 150:
         warnings.append("Meta description is below the preferred 150–160 character range")
     return errors, warnings
@@ -202,8 +194,8 @@ def run(raw: Dict[str, Any]) -> Dict[str, Any]:
     build_copy(record)
     build_seo(record)
     build_merchandising(record)
-    build_commercial(record)
-    build_creative(record)
+    build_commercial_stage(record)
+    build_creative_stage(record)
     errors, warnings = validate(record)
     record["qa"] = {"errors": errors, "warnings": warnings, "passed": not errors}
     record["measurement"] = {
