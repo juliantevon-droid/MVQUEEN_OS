@@ -367,7 +367,7 @@ _Generated: Sun May 31 10:31:28 EDT 2026_
 - **Size:** 216 bytes
 - **Preview:** # References  ## Overview This module is part of the MVQUEEN_OS system.  
 
-### 01_Brand_Strategy/templates.py
+### 01_Brand_Strategy/templates.md
 - **Size:** 5781 bytes
 - **Preview:** # MVQUEEN — Enterprise AI-Native Brand Document Template  ---  # Document Metadata 
 

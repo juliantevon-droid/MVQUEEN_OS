@@ -1,0 +1,13 @@
+{
+  "rules": [
+    {
+      "layer": "vault",
+      "allowed": [".md", ".json"],
+      "blocked": [".py", ".js"]
+    },
+    {
+      "layer": "memory",
+      "readonly": true
+    }
+  ]
+}

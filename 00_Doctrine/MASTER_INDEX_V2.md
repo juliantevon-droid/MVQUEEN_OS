@@ -140,7 +140,7 @@ _Content files only — system/config files excluded_
 - **Words:** 35 | **Size:** 216b
 - **Preview:** # References  ## Overview This module is part of the MVQUEEN_OS system.  
 
-### 01_Brand_Strategy/templates.py
+### 01_Brand_Strategy/templates.md
 - **Words:** 771 | **Size:** 5781b
 - **Preview:** # MVQUEEN — Enterprise AI-Native Brand Document Template  ---  # Document Metadata 
 
