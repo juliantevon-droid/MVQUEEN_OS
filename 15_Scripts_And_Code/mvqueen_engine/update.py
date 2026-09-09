@@ -1,48 +1,19 @@
-# shopify/update.py
+"""Legacy Shopify update entry point disabled on the enterprise branch.
+
+Production writes must pass through the canonical product pipeline, release gate,
+publishing boundary, and dedicated Shopify publisher.
 """
-MVQueen Shopify Update Pipeline
--------------------------------
+from __future__ import annotations
 
-Updates an existing Shopify product using the safe ShopifyAPI wrapper.
-
-Supports updating:
-- Title
-- Description
-- Tags
-- Metafields
-"""
-
-from typing import Dict, Any
-from shopify.api import ShopifyAPI
+from typing import Any, Dict
 
 
 def update_product(product_id: str, package: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Updates a Shopify product with new MVQueen data.
-
-    Args:
-        product_id: Shopify product ID
-        package: MVQueen product package
-
-    Returns:
-        Dict with Shopify API response.
-    """
-
-    api = ShopifyAPI()
-
-    payload = {
-        "title": package["raw"].get("title", ""),
-        "body_html": package["editorial"].get("description", ""),
-        "tags": ", ".join(package.get("tags", [])),
-        "metafields": package.get("metafields", {}),
-    }
-
-    response = api.update_product(product_id, payload)
-
-    return {
-        "update_response": response,
-        "payload": payload,
-    }
+    """Fail closed to prevent legacy package-shaped writes from bypassing QA."""
+    raise RuntimeError(
+        "Legacy Shopify update.py is disabled on the enterprise production branch. "
+        "Use the canonical release path and SHOPIFY_PUBLISHER_V1.py."
+    )
 
 
 __all__ = ["update_product"]
