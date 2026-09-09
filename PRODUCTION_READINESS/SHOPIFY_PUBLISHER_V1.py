@@ -9,17 +9,26 @@ fields. It does not mutate inventory, SKU, variant identity, or variant prices.
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path
 from typing import Any, Dict
-
-try:
-    from ..15_Scripts_And_Code.mvqueen_engine.shopify_api import shopify_client  # type: ignore
-except ImportError:
-    # Runtime/import compatibility is handled by the callable transport below.
-    shopify_client = None
 
 
 class ShopifyPublisherError(RuntimeError):
     """Raised when the Shopify transport rejects a publish operation."""
+
+
+def _default_client() -> Any:
+    """Load the repository Shopify transport without coupling package paths."""
+    repo_root = Path(__file__).resolve().parents[1]
+    engine_root = repo_root / "15_Scripts_And_Code"
+    if str(engine_root) not in sys.path:
+        sys.path.insert(0, str(engine_root))
+    try:
+        from mvqueen_engine.shopify_api import shopify_client
+    except ImportError as exc:
+        raise ShopifyPublisherError("Shopify transport is unavailable") from exc
+    return shopify_client
 
 
 def build_product_payload(record: Dict[str, Any]) -> Dict[str, Any]:
@@ -48,16 +57,13 @@ def build_product_payload(record: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def publish_to_shopify(record: Dict[str, Any], client: Any = None) -> Dict[str, Any]:
-    """Publish one already-authorized canonical record through the legacy transport.
+    """Publish one already-authorized canonical record through the transport.
 
     ``client`` is injectable for tests. No variant, inventory, SKU, handle, or
     price update is performed here. A false transport result is treated as a
     failed publication rather than a successful hand-off.
     """
-    transport = client or shopify_client
-    if transport is None:
-        raise ShopifyPublisherError("Shopify transport is unavailable")
-
+    transport = client or _default_client()
     payload = build_product_payload(record)
     product_id = payload["id"]
     ok = transport.update_product(product_id, payload)
