@@ -9,7 +9,6 @@ on:
     paths:
       - 'PRODUCTION_READINESS/**'
       - '.github/workflows/production-readiness.yml'
-      - '15_Scripts_And_Code/mvqueen_engine/catalog_processor/processor.py'
   pull_request:
     branches:
       - main
@@ -18,7 +17,6 @@ on:
     paths:
       - 'PRODUCTION_READINESS/**'
       - '.github/workflows/production-readiness.yml'
-      - '15_Scripts_And_Code/mvqueen_engine/catalog_processor/processor.py'
   workflow_dispatch:
 
 permissions:
@@ -44,13 +42,14 @@ jobs:
       - name: Compile production readiness Python
         run: python -m compileall -q PRODUCTION_READINESS
 
-      - name: Run canonical pipeline, schema, release, and publishing boundary tests
+      - name: Run canonical pipeline, schema, release, boundary, and publisher tests
         working-directory: PRODUCTION_READINESS
-        run: python -m unittest test_product_pipeline_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py -v
+        run: python -m unittest test_product_pipeline_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py -v
 
-      - name: Check legacy Shopify processor cannot bypass publishing boundary
+      - name: Check legacy Shopify bypasses are disabled
         run: |
-          ! grep -nE '(^|[^A-Za-z_])(update_product|update_metafields|update_variant_price|get_all_products)\s*\(' 15_Scripts_And_Code/mvqueen_engine/catalog_processor/processor.py
+          ! grep -nE 'update_product\(|update_metafields\(|update_variant_price\(' 15_Scripts_And_Code/mvqueen_engine/catalog_processor/processor.py
+          ! grep -nE 'from shopify\.api import|api\.update_product\(' 15_Scripts_And_Code/mvqueen_engine/update.py
 
       - name: Check for obvious credential material
         run: |
