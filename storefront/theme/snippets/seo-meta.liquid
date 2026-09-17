@@ -1,11 +1,19 @@
 {%- liquid
-  assign meta_title = page_title
-  assign meta_description = page_description | default: shop.description
+  assign meta_title = page_title | default: shop.name
+  assign meta_description = page_description | default: shop.description | default: 'Discover the MVQueen edit of fashion, beauty, jewelry, and everyday luxury.'
   assign meta_image = page_image | default: settings.share_image
 -%}
 <title>{{ meta_title | escape }}{% unless meta_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title>
-<meta name="description" content="{{ meta_description | strip_html | escape }}">
+<meta name="description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
 <link rel="canonical" href="{{ canonical_url }}">
 {% if request.page_type == 'search' or request.page_type == 'cart' %}<meta name="robots" content="noindex,follow">{% endif %}
-<meta property="og:site_name" content="{{ shop.name | escape }}"><meta property="og:title" content="{{ meta_title | escape }}"><meta property="og:description" content="{{ meta_description | strip_html | escape }}"><meta property="og:url" content="{{ canonical_url }}"><meta property="og:type" content="{% if request.page_type == 'product' %}product{% else %}website{% endif %}">
-{% if meta_image %}<meta property="og:image" content="{{ meta_image | image_url: width: 1600 | prepend: 'https:' }}">{% endif %}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{{ meta_title | escape }}"><meta name="twitter:description" content="{{ meta_description | strip_html | escape }}">{% if meta_image %}<meta name="twitter:image" content="{{ meta_image | image_url: width: 1600 | prepend: 'https:' }}">{% endif %}
+<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:title" content="{{ meta_title | escape }}">
+<meta property="og:description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:type" content="{% if request.page_type == 'product' %}product{% else %}website{% endif %}">
+{% if meta_image %}<meta property="og:image" content="{{ meta_image | image_url: width: 1600 | prepend: 'https:' }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta_title | escape }}">
+<meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
+{% if meta_image %}<meta name="twitter:image" content="{{ meta_image | image_url: width: 1600 | prepend: 'https:' }}">{% endif %}
