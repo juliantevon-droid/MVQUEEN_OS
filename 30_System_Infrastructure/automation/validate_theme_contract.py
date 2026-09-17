@@ -17,6 +17,8 @@ THEME = ROOT / "storefront" / "theme"
 REQUIRED = {
     "layout/theme.liquid",
     "assets/mvqueen.css",
+    "assets/mvqueen-design-system.css",
+    "assets/mvqueen-product.css",
     "assets/mvqueen.js",
     "assets/mvqueen-ux.js",
     "sections/header.liquid",
@@ -79,6 +81,8 @@ def main() -> int:
     layout = read("layout/theme.liquid")
     for token in [
         "{{ 'mvqueen.css' | asset_url | stylesheet_tag }}",
+        "{{ 'mvqueen-design-system.css' | asset_url | stylesheet_tag }}",
+        "{{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}",
         "{{ content_for_header }}",
         "{{ content_for_layout }}",
         "'mvqueen.js' | asset_url",
