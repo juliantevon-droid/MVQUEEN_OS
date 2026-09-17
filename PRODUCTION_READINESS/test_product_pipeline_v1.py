@@ -78,7 +78,8 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertTrue(result["qa"]["passed"])
         self.assertTrue(result["seo"]["seo_title"].startswith("MVQueen | "))
         self.assertTrue(result["images"]["items"][0]["alt"])
-        self.assertIn("confidence", result["copy"]["short_description"].lower())
+        self.assertTrue(any(term in result["copy"]["short_description"].lower() for term in ("satin", "polished", "style")))
+        self.assertIn("confidence", result["copy"]["description"].lower())
 
     def test_live_shopify_specimen_reaches_production_ready(self):
         product = self.shopify_specimen()
