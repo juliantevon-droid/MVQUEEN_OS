@@ -47,9 +47,9 @@ jobs:
       - name: Compile MVQueen engine Python
         run: python -m compileall -q 15_Scripts_And_Code/mvqueen_engine
 
-      - name: Run canonical pipeline, schema, release, boundary, publisher, and transport tests
+      - name: Run canonical pipeline, schema, release, boundary, publisher, transport, and audit tests
         working-directory: PRODUCTION_READINESS
-        run: python -m unittest test_product_pipeline_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py test_shopify_transport_boundary_v1.py -v
+        run: python -m unittest test_product_pipeline_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py test_shopify_transport_boundary_v1.py test_release_audit_ledger_v1.py -v
 
       - name: Check legacy Shopify bypasses are disabled
         run: |
