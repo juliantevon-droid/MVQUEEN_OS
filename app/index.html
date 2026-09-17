@@ -44,10 +44,10 @@
     </section>
 
     <section class="stats" aria-label="System overview">
-      <article><span>PRODUCT SYSTEM</span><strong>946</strong><small>catalog records</small></article>
-      <article><span>SEO SYSTEM</span><strong>READY</strong><small>optimization layer</small></article>
-      <article><span>SHOPIFY</span><strong>ACTIVE</strong><small>system architecture</small></article>
-      <article><span>AUTOMATION</span><strong>ONLINE</strong><small>workflow layer</small></article>
+      <article><span>PRODUCT SYSTEM</span><strong>946</strong><small>current working records</small></article>
+      <article><span>CATALOG CAPACITY</span><strong>∞</strong><small>no catalog limit</small></article>
+      <article><span>SHOPIFY</span><strong>ACTIVE</strong><small>GraphQL-first architecture</small></article>
+      <article><span>WRITE MODE</span><strong>DRY RUN</strong><small>approval required for production writes</small></article>
     </section>
 
     <section class="section-grid">
@@ -62,8 +62,25 @@
       <aside class="panel intelligence"><span class="eyebrow">BRAND INTELLIGENCE</span><h3>MVQueen Doctrine</h3><p>Elegant. Confident. Premium, but simple. Every system should reinforce the same brand standard.</p><div class="divider"></div><p class="muted">Source architecture is being built around the existing MVQUEEN_OS knowledge base rather than duplicated.</p></aside>
     </section>
 
-    <footer>MVQUEEN_OS <span>•</span> FOUNDATION BUILD <span>•</span> v0.1</footer>
+    <section class="panel" aria-labelledby="production-heading">
+      <div class="panel-head"><div><span class="eyebrow">PRODUCTION CONTROL TOWER</span><h3 id="production-heading">Gate sequence</h3></div><span class="muted">Dry-run by default</span></div>
+      <div id="productionGates" class="module-grid" aria-live="polite"><p class="muted">Loading production controls…</p></div>
+    </section>
+
+    <footer>MVQUEEN_OS <span>•</span> FOUNDATION BUILD <span>•</span> v0.2</footer>
   </main>
   <script src="assets/js/mvqueen-os.js" defer></script>
+  <script src="assets/js/mvqueen-control-tower.js" defer></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const status = await window.MVQUEENControlTower.getStatus();
+        window.MVQUEENControlTower.renderGateSummary(document.getElementById("productionGates"), status.gates);
+      } catch (error) {
+        const target = document.getElementById("productionGates");
+        if (target) target.textContent = "Production control manifest unavailable.";
+      }
+    });
+  </script>
 </body>
 </html>
