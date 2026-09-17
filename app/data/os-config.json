@@ -1,7 +1,55 @@
 {
   "brand": "MVQueen",
-  "catalog": {"products": 946, "maxProductsPerCsv": 850, "primaryFocus": "Cosmetics & Skincare"},
-  "protectedFields": ["Handle", "SKU", "Variant SKU", "Inventory", "Image Src", "Variant Inventory Qty"],
-  "optimization": {"removeSupplierFiller": true, "removeThirdPartyBranding": true, "benefitsBeforeFeatures": true, "nativeFirst": true},
-  "modules": ["products", "collections", "seo", "images", "csv", "shopify", "automation", "brand", "settings"]
+  "catalog": {
+    "currentWorkingRecords": 946,
+    "maxProductsPerCsv": 850,
+    "catalogLimit": null,
+    "primaryFocus": "Cosmetics & Skincare"
+  },
+  "protectedFields": [
+    "Handle",
+    "Product ID",
+    "Variant ID",
+    "SKU",
+    "Variant SKU",
+    "Inventory",
+    "Variant Inventory Qty",
+    "Option1 Value",
+    "Option2 Value",
+    "Option3 Value",
+    "Image Src",
+    "Image Position",
+    "Variant Image"
+  ],
+  "optimization": {
+    "removeSupplierFiller": true,
+    "removeThirdPartyBranding": true,
+    "benefitsBeforeFeatures": true,
+    "nativeFirst": true,
+    "dryRunDefault": true
+  },
+  "storefront": {
+    "foundation": "fully-custom-mvqueen",
+    "themeEditorDeferred": true,
+    "horizon": false,
+    "mobileFirst": true
+  },
+  "production": {
+    "controlTower": true,
+    "graphqlFirst": true,
+    "liveThemePublishing": false,
+    "humanApprovalRequiredForWrites": true,
+    "redirects": "dry-run-until-approved"
+  },
+  "modules": [
+    "products",
+    "collections",
+    "seo",
+    "images",
+    "csv",
+    "shopify",
+    "automation",
+    "brand",
+    "settings"
+  ]
 }
