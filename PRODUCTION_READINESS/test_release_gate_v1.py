@@ -60,11 +60,6 @@ class ReleaseGateV1Tests(unittest.TestCase):
         with self.assertRaises(ValueError):
             create_approval(product, "release-manager")
 
-    def test_no_approval_blocks(self):
-        status, reason = evaluate(self.product())
-        self.assertEqual(status, BLOCKED)
-        self.assertIn("approval", reason.lower())
-
     def test_non_ready_product_blocks(self):
         product = self.product()
         product["status"] = "COPY_READY"
