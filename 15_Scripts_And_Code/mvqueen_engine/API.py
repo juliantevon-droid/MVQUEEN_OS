@@ -1,73 +1,47 @@
-# shopify/api.py
+"""Retired Shopify API compatibility surface.
+
+Production Shopify writes MUST use the canonical path:
+PRODUCT_PIPELINE_V1 -> QA -> RELEASE_GATE_V1 -> PUBLISHING_BOUNDARY_V1
+-> SHOPIFY_PUBLISHER_V1.
+
+The former ShopifyAPI exposed create, update, metafield, and collection
+mutation methods outside the release gate. It is intentionally disabled so
+legacy callers fail closed rather than reporting simulated success.
 """
-MVQueen Shopify API Wrapper — Enterprise Edition
-------------------------------------------------
+from __future__ import annotations
 
-Provides a safe, config-aware wrapper around Shopify API calls.
-Actual network calls only occur if:
-    config["shopify_sync_enabled"] == True
+from typing import Any, Dict
 
-This prevents accidental live store updates.
-"""
 
-import json
-from typing import Dict, Any
-from control_panel.config import load_config
+class LegacyShopifyAPIDisabled(RuntimeError):
+    """Raised when a retired Shopify API mutation surface is invoked."""
 
 
 class ShopifyAPI:
-    """
-    Safe Shopify API wrapper.
-    """
+    """Compatibility shim for the retired pre-release-gate API wrapper."""
 
-    def __init__(self):
-        self.cfg = load_config()
-        self.enabled = self.cfg.get("shopify_sync_enabled", False)
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self._disabled = True
 
-        # Placeholder credentials (admin will fill these in config.json)
-        self.api_key = self.cfg.get("shopify_api_key", "")
-        self.password = self.cfg.get("shopify_password", "")
-        self.store_url = self.cfg.get("shopify_store_url", "")
+    @staticmethod
+    def _blocked(operation: str) -> None:
+        raise LegacyShopifyAPIDisabled(
+            f"Legacy ShopifyAPI operation '{operation}' is disabled. "
+            "Use the canonical release gate, publishing boundary, and "
+            "SHOPIFY_PUBLISHER_V1.py."
+        )
 
-    # ------------------------------------------------------------
-    # INTERNAL SAFE CALL
-    # ------------------------------------------------------------
-    def _safe_call(self, endpoint: str, payload: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Simulates or performs a Shopify API call depending on config.
-        """
+    def create_product(self, data: Dict[str, Any]) -> None:
+        return self._blocked("create_product")
 
-        if not self.enabled:
-            return {
-                "status": "disabled",
-                "endpoint": endpoint,
-                "payload": payload,
-                "message": "Shopify sync disabled in config.",
-            }
+    def update_product(self, product_id: str, data: Dict[str, Any]) -> None:
+        return self._blocked("update_product")
 
-        # In a real environment, you'd use requests.post() here.
-        # We simulate a successful response for safety.
-        return {
-            "status": "success",
-            "endpoint": endpoint,
-            "payload": payload,
-            "message": "Simulated Shopify API call.",
-        }
+    def update_metafields(self, product_id: str, metafields: Dict[str, Any]) -> None:
+        return self._blocked("update_metafields")
 
-    # ------------------------------------------------------------
-    # PUBLIC METHODS
-    # ------------------------------------------------------------
-    def create_product(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        return self._safe_call("products/create", data)
-
-    def update_product(self, product_id: str, data: Dict[str, Any]) -> Dict[str, Any]:
-        return self._safe_call(f"products/{product_id}/update", data)
-
-    def update_metafields(self, product_id: str, metafields: Dict[str, Any]) -> Dict[str, Any]:
-        return self._safe_call(f"products/{product_id}/metafields", metafields)
-
-    def assign_to_collection(self, product_id: str, collection_id: str) -> Dict[str, Any]:
-        return self._safe_call(f"collections/{collection_id}/add", {"product_id": product_id})
+    def assign_to_collection(self, product_id: str, collection_id: str) -> None:
+        return self._blocked("assign_to_collection")
 
 
-__all__ = ["ShopifyAPI"]
+__all__ = ["ShopifyAPI", "LegacyShopifyAPIDisabled"]
