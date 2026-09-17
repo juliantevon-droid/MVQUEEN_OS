@@ -1,0 +1,24 @@
+# Template only.
+# Do not use fake credentials in production.
+# Run `shopify app init` / `shopify app config link` to create the real
+# shopify.app.toml and connect it to the dedicated MVQUEEN developer app.
+
+name = "MVQueen OS Backend"
+handle = "mvqueen-os-backend"
+client_id = "REPLACE_WITH_SHOPIFY_APP_CLIENT_ID"
+application_url = "https://REPLACE_WITH_APP_HOST"
+embedded = false
+
+[access_scopes]
+# Start with the smallest read-only set required for Phase 1.
+# Add write scopes only when the corresponding workflow is ready and tested.
+scopes = "read_products"
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-07"
+
+# Redirect URLs are generated/managed by the real CLI-linked configuration.
+# Do not copy this placeholder into a production app unchanged.
