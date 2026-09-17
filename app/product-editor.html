@@ -1,1 +1,69 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product Editor — MVQUEEN_OS</title><link rel="stylesheet" href="assets/css/mvqueen-os.css"></head><body><aside class="sidebar"><a class="brand" href="index.html">MVQUEEN<span>OPERATING SYSTEM</span></a><nav><p class="nav-label">COMMAND</p><a class="nav-item" href="index.html">Dashboard</a><a class="nav-item active" href="products.html">Products</a><a class="nav-item" href="collections.html">Collections</a><a class="nav-item" href="seo.html">SEO & Content</a><a class="nav-item" href="images.html">Images</a><a class="nav-item" href="csv-tools.html">CSV Operations</a><p class="nav-label">SYSTEMS</p><a class="nav-item" href="shopify.html">Shopify Systems</a><a class="nav-item" href="automation.html">Automation</a><a class="nav-item" href="brand.html">Brand Intelligence</a><a class="nav-item" href="settings.html">Settings</a></nav></aside><main class="main"><header class="topbar"><div><p class="eyebrow">PRODUCT ENGINE</p><h1>Product Editor</h1><p class="muted">Edit a product, generate its SEO layer, then save the working record locally.</p></div><a class="btn btn-ghost" href="products.html">Back to Products</a></header><form id="productForm" class="panel"><div class="editor-grid"><article><h2>Core Data</h2><label>Product title<input name="Title" required></label><label>Short description<textarea name="Short Description" rows="3"></textarea></label><label>Detailed description<textarea name="Body HTML" rows="7"></textarea></label><label>Product type<input name="Product Type"></label><label>Tags<input name="Tags"></label></article><article><h2>Product Intelligence</h2><label>Benefits<textarea name="Benefits" rows="4"></textarea></label><label>Usage<textarea name="Usage" rows="3"></textarea></label><label>Ingredients<textarea name="Ingredients" rows="3"></textarea></label><label>Fabric / Fit / Specifications<textarea name="Specifications" rows="3"></textarea></label></article></div><section class="panel nested"><h2>SEO Layer</h2><div class="editor-grid"><label>SEO title<input name="SEO Title"></label><label>Meta description<textarea name="SEO Description" rows="3"></textarea></label><label>URL handle<input name="URL Handle"></label><label>Image alt text<input name="Image Alt Text"></label></div></section><div class="actions"><button class="btn btn-primary" type="submit">Save Draft</button><button id="optimize" class="btn btn-gold" type="button">Generate SEO</button></div></form></main><script src="assets/js/mvqueen-os.js"></script><script src="assets/js/mvqueen-seo-engine.js"></script><script>(function(){const f=document.getElementById('productForm');const get=()=>Object.fromEntries(new FormData(f).entries());const set=p=>Object.entries(p).forEach(([k,v])=>{const el=f.elements[k];if(el)el.value=v??''});document.getElementById('optimize').onclick=()=>{set(MVQUEENSEO.optimize(get()));document.querySelector('.toast')?.remove();const t=document.createElement('div');t.className='toast';t.textContent='SEO layer generated';document.body.appendChild(t);setTimeout(()=>t.remove(),2200)};f.onsubmit=e=>{e.preventDefault();localStorage.setItem('mvqueen-product-draft',JSON.stringify(get()));const t=document.createElement('div');t.className='toast';t.textContent='Product draft saved locally';document.body.appendChild(t);setTimeout(()=>t.remove(),2200)};const saved=localStorage.getItem('mvqueen-product-draft');if(saved)try{set(JSON.parse(saved))}catch(e){}})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Editor — MVQUEEN_OS</title>
+<link rel="stylesheet" href="assets/css/mvqueen-os.css">
+</head>
+<body>
+<aside class="sidebar">
+<a class="brand" href="index.html">MVQUEEN<span>OPERATING SYSTEM</span></a>
+<nav>
+<p class="nav-label">COMMAND</p>
+<a class="nav-item" href="index.html">Dashboard</a><a class="nav-item active" href="products.html">Products</a><a class="nav-item" href="collections.html">Collections</a><a class="nav-item" href="seo.html">SEO & Content</a><a class="nav-item" href="images.html">Images</a><a class="nav-item" href="csv-tools.html">CSV Operations</a>
+<p class="nav-label">SYSTEMS</p>
+<a class="nav-item" href="shopify.html">Shopify Systems</a><a class="nav-item" href="automation.html">Automation</a><a class="nav-item" href="brand.html">Brand Intelligence</a><a class="nav-item" href="settings.html">Settings</a>
+</nav>
+</aside>
+<main class="main">
+<header class="topbar">
+<div><p class="eyebrow">PRODUCT ENGINE</p><h1>Product Editor</h1><p class="muted">One product, the same intelligence rules as the bulk catalog pipeline.</p></div>
+<a class="btn btn-ghost" href="products.html">Back to Products</a>
+</header>
+<form id="productForm" class="panel">
+<div class="editor-grid">
+<article><h2>Core Data</h2>
+<label>Product title<input name="Title" required></label>
+<label>Short description<textarea name="Short Description" rows="3"></textarea></label>
+<label>Detailed description<textarea name="Body HTML" rows="7"></textarea></label>
+<label>Product type<input name="Product Type"></label>
+<label>Tags<input name="Tags"></label>
+</article>
+<article><h2>Product Intelligence</h2>
+<label>Benefits<textarea name="Benefits" rows="4"></textarea></label>
+<label>Usage<textarea name="Usage" rows="3"></textarea></label>
+<label>Ingredients<textarea name="Ingredients" rows="3"></textarea></label>
+<label>Fabric / Fit / Specifications<textarea name="Specifications" rows="3"></textarea></label>
+</article>
+</div>
+<section class="panel nested"><h2>SEO Layer</h2><div class="editor-grid">
+<label>SEO title<input name="SEO Title"></label><label>Meta description<textarea name="SEO Description" rows="3"></textarea></label><label>URL handle<input name="URL Handle"></label><label>Image alt text<input name="Image Alt Text"></label>
+</div></section>
+<section class="panel nested" id="intelligencePanel"><h2>Intelligence & QA</h2><p id="intelligenceStatus" class="muted">Run intelligence to classify the product and generate consistent catalog content.</p><div id="intelligenceDetails"></div></section>
+<div class="actions"><button class="btn btn-primary" type="submit">Save Draft</button><button id="intelligence" class="btn btn-gold" type="button">Run Product Intelligence</button><button id="optimize" class="btn btn-ghost" type="button">Generate SEO</button><button id="qa" class="btn btn-ghost" type="button">Run QA</button></div>
+</form>
+</main>
+<script src="assets/js/mvqueen-os.js"></script>
+<script src="assets/js/mvqueen-seo-engine.js"></script>
+<script src="assets/js/mvqueen-intelligence-engine.js"></script>
+<script src="assets/js/mvqueen-qa-engine.js"></script>
+<script>
+(function(){
+'use strict';
+const f=document.getElementById('productForm');
+const status=document.getElementById('intelligenceStatus');
+const details=document.getElementById('intelligenceDetails');
+const get=()=>Object.fromEntries(new FormData(f).entries());
+const set=p=>Object.entries(p||{}).forEach(([k,v])=>{const el=f.elements[k];if(el)el.value=v??''});
+const toast=message=>{document.querySelector('.toast')?.remove();const t=document.createElement('div');t.className='toast';t.textContent=message;document.body.appendChild(t);setTimeout(()=>t.remove(),2200)};
+const renderIntelligence=r=>{const a=r.intelligence||{};status.textContent=`Category: ${a.category||'Review required'}${a.selling_angle?' — '+a.selling_angle:''}`;details.innerHTML=`<p><strong>Benefits:</strong> ${a.benefits||'Not detected'}</p><p><strong>Usage:</strong> ${a.usage||'Not detected'}</p><p><strong>Ingredients:</strong> ${a.ingredients||'Not detected'}</p><p><strong>Keywords:</strong> ${(a.keywords||[]).join(', ')||'None detected'}</p>`};
+document.getElementById('intelligence').onclick=()=>{const result=MVQUEENIntelligence.optimizeProduct(get());set(result.product);renderIntelligence(result);toast('Product intelligence applied');};
+document.getElementById('optimize').onclick=()=>{set(MVQUEENSEO.optimize(get()));toast('SEO layer generated');};
+document.getElementById('qa').onclick=()=>{const result=MVQUEENQA.rowQA(get());status.textContent=result.ok?'QA PASS — product is ready for review/export.':'QA REVIEW — '+result.issues.join(' • ');details.innerHTML=`<p><strong>Warnings:</strong> ${result.warnings.length?result.warnings.join(' • '):'None'}</p><p><strong>Info:</strong> ${result.info.length?result.info.join(' • '):'None'}</p>`;toast(result.ok?'QA passed':'QA requires review');};
+f.onsubmit=e=>{e.preventDefault();localStorage.setItem('mvqueen-product-draft',JSON.stringify(get()));toast('Product draft saved locally');};
+const saved=localStorage.getItem('mvqueen-product-draft');if(saved)try{set(JSON.parse(saved))}catch(e){}
+})();
+</script>
+</body>
+</html>
