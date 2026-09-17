@@ -1,59 +1,24 @@
-# shopify/upload.py
+"""Retired Shopify upload entry point.
+
+Legacy package-shaped uploads are intentionally disabled. A product may only
+reach Shopify through the canonical production record, QA gate, explicit
+publish approval, publishing boundary, and dedicated Shopify publisher.
 """
-MVQueen Shopify Upload Pipeline
--------------------------------
+from __future__ import annotations
 
-Takes a fully processed MVQueen product package and uploads it
-to Shopify using the safe ShopifyAPI wrapper.
-
-This includes:
-- Title
-- Description
-- Tags
-- Collections
-- Metafields
-"""
-
-from typing import Dict, Any
-from shopify.api import ShopifyAPI
+from typing import Any, Dict
 
 
-def upload_product(package: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Uploads a processed product package to Shopify.
-
-    Args:
-        package: The full MVQueen product package:
-            {
-                "raw": {...},
-                "profile": {...},
-                "editorial": {...},
-                "metafields": {...},
-                "tags": [...],
-                "collections": [...]
-            }
-
-    Returns:
-        Dict with Shopify API response.
-    """
-
-    api = ShopifyAPI()
-
-    # Build Shopify product payload
-    payload = {
-        "title": package["raw"].get("title", ""),
-        "body_html": package["editorial"].get("description", ""),
-        "tags": ", ".join(package.get("tags", [])),
-        "metafields": package.get("metafields", {}),
-    }
-
-    # Create product
-    response = api.create_product(payload)
-
-    return {
-        "upload_response": response,
-        "payload": payload,
-    }
+class LegacyShopifyUploadDisabled(RuntimeError):
+    """Raised when the retired package upload path is invoked."""
 
 
-__all__ = ["upload_product"]
+def upload_product(package: Dict[str, Any]) -> None:
+    """Fail closed so package-shaped data cannot bypass production controls."""
+    raise LegacyShopifyUploadDisabled(
+        "Legacy upload.py is disabled on the enterprise production branch. "
+        "Use the canonical release path and SHOPIFY_PUBLISHER_V1.py."
+    )
+
+
+__all__ = ["upload_product", "LegacyShopifyUploadDisabled"]
