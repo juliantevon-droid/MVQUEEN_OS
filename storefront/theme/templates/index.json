@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "hero": {"type":"hero","settings":{}},
+    "trust": {"type":"trust-strip","settings":{}},
+    "featured": {"type":"featured-products","settings":{}},
+    "pillars": {"type":"brand-pillars","settings":{}},
+    "newsletter": {"type":"newsletter","settings":{}}
+  },
+  "order":["hero","trust","featured","pillars","newsletter"]
+}
