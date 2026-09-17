@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#1A1612">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {{ 'mvqueen.css' | asset_url | stylesheet_tag }}
+    {% render 'seo-meta' %}
+    {{ content_for_header }}
+    {% if request.page_type == 'product' %}{% render 'product-schema' %}{% endif %}
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":{{ shop.name | json }},"url":{{ shop.url | json }}}</script>
+  </head>
+  <body class="mvq-page mvq-page--{{ request.page_type }}">
+    <a class="mvq-skip-link" href="#MainContent">Skip to content</a>
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+    <main id="MainContent" role="main" tabindex="-1">{{ content_for_layout }}</main>
+    {% section 'footer' %}
+    <script src="{{ 'mvqueen.js' | asset_url }}" defer></script>
+    <script src="{{ 'mvqueen-ux.js' | asset_url }}" defer></script>
+  </body>
+</html>
