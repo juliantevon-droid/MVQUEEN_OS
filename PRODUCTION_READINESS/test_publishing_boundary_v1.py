@@ -2,13 +2,17 @@
 from __future__ import annotations
 
 import copy
+import tempfile
 import unittest
+from pathlib import Path
 
 try:
     from .PUBLISHING_BOUNDARY_V1 import ALREADY_PUBLISHED, BLOCKED, PUBLISHED, idempotency_key, publish
+    from .RELEASE_AUDIT_LEDGER_V1 import read_entries
     from .RELEASE_GATE_V1 import create_approval
 except ImportError:
     from PUBLISHING_BOUNDARY_V1 import ALREADY_PUBLISHED, BLOCKED, PUBLISHED, idempotency_key, publish
+    from RELEASE_AUDIT_LEDGER_V1 import read_entries
     from RELEASE_GATE_V1 import create_approval
 
 
@@ -105,6 +109,45 @@ class PublishingBoundaryTests(unittest.TestCase):
         original_key = idempotency_key(record)
         record["copy"] = {"title": "Different approved content"}
         self.assertNotEqual(original_key, idempotency_key(record))
+
+    def test_successful_publish_is_written_to_audit_ledger(self):
+        record = ready_record()
+        approval = create_approval(record, "release-manager")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "release_audit.jsonl"
+            result, audit = publish(
+                record,
+                approval,
+                lambda value: {"external_id": "shopify-100"},
+                ledger_path=path,
+            )
+            self.assertEqual(result, PUBLISHED)
+            entries = list(read_entries(path))
+            self.assertEqual(len(entries), 1)
+            self.assertEqual(entries[0]["product_id"], "p-100")
+            self.assertEqual(entries[0]["content_fingerprint"], audit["content_fingerprint"])
+            self.assertEqual(entries[0]["actor"], "release-manager")
+            self.assertEqual(entries[0]["operation"], "PUBLISH")
+            self.assertEqual(entries[0]["result"], PUBLISHED)
+
+    def test_blocked_release_is_written_to_audit_ledger_without_publisher_call(self):
+        record = ready_record()
+        calls = []
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "release_audit.jsonl"
+            result, _ = publish(
+                record,
+                None,
+                lambda value: calls.append(value),
+                ledger_path=path,
+            )
+            self.assertEqual(result, BLOCKED)
+            self.assertEqual(calls, [])
+            entries = list(read_entries(path))
+            self.assertEqual(len(entries), 1)
+            self.assertEqual(entries[0]["operation"], "RELEASE_GATE")
+            self.assertEqual(entries[0]["result"], BLOCKED)
+            self.assertEqual(entries[0]["actor"], "SYSTEM")
 
 
 if __name__ == "__main__":
