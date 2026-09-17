@@ -12,6 +12,7 @@ from typing import Any, Dict, Tuple
 
 APPROVED = "APPROVED_FOR_PUBLISH"
 BLOCKED = "BLOCKED"
+VALID_DECISIONS = {APPROVED, BLOCKED}
 
 
 def canonical_fingerprint(record: Dict[str, Any]) -> str:
@@ -32,8 +33,15 @@ def evaluate(record: Dict[str, Any], approval: Dict[str, Any] | None = None) -> 
         return BLOCKED, "No approved_publish_price"
     if not approval:
         return BLOCKED, "Explicit publish approval is required"
+    if approval.get("release_schema_version") != "1.0":
+        return BLOCKED, "Unsupported release artifact version"
     if approval.get("decision") != APPROVED:
         return BLOCKED, "Publish approval decision is not approved"
+    product_id = record.get("identity", {}).get("product_id", "")
+    if not product_id or approval.get("product_id") != product_id:
+        return BLOCKED, "Approval product_id does not match current product"
+    if approval.get("schema_version") != record.get("schema_version"):
+        return BLOCKED, "Approval schema_version does not match current product"
     expected = canonical_fingerprint(record)
     if approval.get("content_fingerprint") != expected:
         return BLOCKED, "Approval fingerprint does not match current product record"
@@ -48,9 +56,14 @@ def create_approval(record: Dict[str, Any], actor: str, decision: str = APPROVED
     """Create an auditable approval artifact without changing the product record."""
     if not actor.strip():
         raise ValueError("actor is required")
+    if decision not in VALID_DECISIONS:
+        raise ValueError(f"unsupported release decision: {decision}")
+    product_id = record.get("identity", {}).get("product_id", "")
+    if not product_id:
+        raise ValueError("product_id is required")
     return {
         "release_schema_version": "1.0",
-        "product_id": record.get("identity", {}).get("product_id", ""),
+        "product_id": product_id,
         "schema_version": record.get("schema_version", ""),
         "content_fingerprint": canonical_fingerprint(record),
         "decision": decision,
