@@ -5,10 +5,10 @@ import copy
 import unittest
 
 try:
-    from .PUBLISHING_BOUNDARY_V1 import BLOCKED, PUBLISHED, publish
+    from .PUBLISHING_BOUNDARY_V1 import ALREADY_PUBLISHED, BLOCKED, PUBLISHED, idempotency_key, publish
     from .RELEASE_GATE_V1 import create_approval
 except ImportError:
-    from PUBLISHING_BOUNDARY_V1 import BLOCKED, PUBLISHED, publish
+    from PUBLISHING_BOUNDARY_V1 import ALREADY_PUBLISHED, BLOCKED, PUBLISHED, idempotency_key, publish
     from RELEASE_GATE_V1 import create_approval
 
 
@@ -80,6 +80,31 @@ class PublishingBoundaryTests(unittest.TestCase):
         result, _ = publish(record, approval, lambda value: calls.append(value))
         self.assertEqual(result, BLOCKED)
         self.assertEqual(calls, [])
+
+    def test_same_approved_fingerprint_is_idempotent(self):
+        record = ready_record()
+        approval = create_approval(record, "release-manager")
+        store = {}
+        calls = []
+
+        def fake_publisher(value):
+            calls.append(value)
+            return {"external_id": "shopify-100"}
+
+        first, first_audit = publish(record, approval, fake_publisher, store)
+        second, second_audit = publish(record, approval, fake_publisher, store)
+
+        self.assertEqual(first, PUBLISHED)
+        self.assertEqual(second, ALREADY_PUBLISHED)
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(first_audit["idempotency_key"], idempotency_key(record))
+        self.assertEqual(second_audit["publisher_result"], {"external_id": "shopify-100"})
+
+    def test_changed_content_creates_new_idempotency_key(self):
+        record = ready_record()
+        original_key = idempotency_key(record)
+        record["copy"] = {"title": "Different approved content"}
+        self.assertNotEqual(original_key, idempotency_key(record))
 
 
 if __name__ == "__main__":
