@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "mode": "production-control",
+  "defaultWriteMode": "dry-run",
+  "humanApprovalRequired": true,
+  "gates": [
+    {"id":"G01","name":"Foundation","status":"active","scope":"theme architecture, responsive base, brand system"},
+    {"id":"G02","name":"Commerce UX","status":"pending","scope":"navigation, discovery, product, collection, search, cart"},
+    {"id":"G03","name":"Content Engine","status":"active","scope":"product copy, SEO, metafields, alt text, collections"},
+    {"id":"G04","name":"Catalog Safety","status":"active","scope":"protected fields, contamination, duplicates, dry-run write plan"},
+    {"id":"G05","name":"URL & Redirects","status":"active","scope":"detect actual URL changes, validate redirect graph, approval before write"},
+    {"id":"G06","name":"Quality","status":"pending","scope":"mobile, desktop, accessibility, performance, broken links, purchase path"},
+    {"id":"G07","name":"Launch","status":"locked","scope":"final approval, publish, post-launch verification"}
+  ],
+  "executionOrder": ["G01","G02","G03","G04","G05","G06","G07"],
+  "writePipeline": [
+    "source-audit",
+    "catalog-intelligence",
+    "protected-field-guard",
+    "editorial-seo-validation",
+    "production-qa",
+    "redirect-detection",
+    "redirect-validation",
+    "dry-run-report",
+    "human-approval",
+    "approved-write-plan",
+    "shopify-graphql",
+    "post-write-verification"
+  ],
+  "rules": {
+    "preserveHandles": true,
+    "preserveSkus": true,
+    "preserveInventory": true,
+    "preserveVariants": true,
+    "preserveMedia": true,
+    "redirectsOnlyWhenUrlChanges": true,
+    "noRedirectChains": true,
+    "noRedirectLoops": true,
+    "noLiveThemeAutoPublish": true,
+    "customerFacingBrand": "MVQUEEN"
+  }
+}
