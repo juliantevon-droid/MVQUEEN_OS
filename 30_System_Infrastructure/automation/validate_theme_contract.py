@@ -18,6 +18,7 @@ REQUIRED = {
     "layout/theme.liquid",
     "assets/mvqueen.css",
     "assets/mvqueen-design-system.css",
+    "assets/mvqueen-header.css",
     "assets/mvqueen-product.css",
     "assets/mvqueen.js",
     "assets/mvqueen-ux.js",
@@ -57,7 +58,6 @@ def read(path: str) -> str:
 
 
 def json_without_header(text: str) -> dict:
-    # Shopify JSON templates may begin with an auto-generated comment block.
     text = re.sub(r"^/\*.*?\*/\s*", "", text, flags=re.S)
     return json.loads(text)
 
@@ -82,6 +82,7 @@ def main() -> int:
     for token in [
         "{{ 'mvqueen.css' | asset_url | stylesheet_tag }}",
         "{{ 'mvqueen-design-system.css' | asset_url | stylesheet_tag }}",
+        "{{ 'mvqueen-header.css' | asset_url | stylesheet_tag }}",
         "{{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}",
         "{{ content_for_header }}",
         "{{ content_for_layout }}",
@@ -92,13 +93,23 @@ def main() -> int:
         if token not in layout:
             failures.append(f"theme.liquid missing required integration: {token}")
 
+    header = read("sections/header.liquid")
+    for token in [
+        "data-mvq-menu",
+        "data-mvq-panel",
+        'aria-controls="MVQMobilePanel"',
+        'id="MVQMobilePanel"',
+        'aria-expanded="false"',
+    ]:
+        if token not in header:
+            failures.append(f"header.liquid missing accessibility/navigation integration: {token}")
+
     schema = read("snippets/product-schema.liquid")
     if '"@type":"Product"' not in schema or '"@type":"Brand","name":"MVQUEEN"' not in schema:
         failures.append("Product schema must emit Product + MVQUEEN brand")
     if "aggregateRating" in schema or '"review"' in schema:
         failures.append("Review/rating schema must not be emitted without verified review data")
 
-    # Validate every template JSON and every referenced section exists locally.
     for path in (THEME / "templates").glob("*.json"):
         try:
             obj = json_without_header(path.read_text(encoding="utf-8"))
@@ -119,7 +130,6 @@ def main() -> int:
         if brand in all_text:
             failures.append(f"Forbidden supplier/legacy brand string found: {brand}")
 
-    # Catch accidental live-theme deployment controls in the source workflow.
     for workflow in (ROOT / ".github" / "workflows").glob("*.yml"):
         text = workflow.read_text(encoding="utf-8", errors="ignore")
         if "--allow-live" in text or "theme publish" in text:
