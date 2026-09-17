@@ -1,0 +1,147 @@
+name: MVQUEEN Theme CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'storefront/theme/**'
+      - '30_System_Infrastructure/automation/**'
+      - '.github/workflows/mvqueen-theme-cicd.yml'
+  pull_request:
+    paths:
+      - 'storefront/theme/**'
+      - '30_System_Infrastructure/automation/**'
+      - '.github/workflows/mvqueen-theme-cicd.yml'
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: mvqueen-theme-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SHOPIFY_STORE: ${{ vars.MVQUEEN_SHOPIFY_STORE || 'tsucu0-1i.myshopify.com' }}
+  SHOPIFY_THEME_ID: ${{ vars.MVQUEEN_SHOPIFY_THEME_ID || '154611515590' }}
+
+jobs:
+  validate:
+    name: Validate storefront contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Shopify CLI
+        run: npm install -g @shopify/cli
+      - name: Run MVQUEEN contract validator
+        run: python 30_System_Infrastructure/automation/validate_theme_contract.py
+      - name: Run Shopify Theme Check
+        run: shopify theme check --path storefront/theme --fail-level error --output text
+      - name: Save validation logs
+        if: always()
+        run: |
+          mkdir -p .mvqueen-ci
+          shopify version > .mvqueen-ci/shopify-version.txt 2>&1 || true
+          git rev-parse HEAD > .mvqueen-ci/commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mvqueen-theme-validation-${{ github.run_id }}
+          path: .mvqueen-ci
+          retention-days: 14
+
+  deploy-unpublished:
+    name: Deploy to MVQUEEN unpublished theme
+    needs: validate
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Shopify CLI
+        run: npm install -g @shopify/cli
+      - name: Verify target theme is not live
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        run: |
+          if [ -z "$SHOPIFY_CLI_THEME_TOKEN" ]; then
+            echo 'SHOPIFY_CLI_THEME_TOKEN is not configured; deployment is intentionally blocked.'
+            exit 1
+          fi
+          shopify theme list --json --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" > theme-list.json
+          python - <<'PY'
+          import json, os, sys
+          data=json.load(open('theme-list.json', encoding='utf-8'))
+          target=str(os.environ['SHOPIFY_THEME_ID'])
+          themes=data.get('themes') or data.get('data',{}).get('themes',{}).get('nodes',[])
+          found=None
+          for t in themes:
+              tid=str(t.get('id','')).split('/')[-1]
+              if tid == target:
+                  found=t; break
+          if not found:
+              print('Target unpublished theme was not found:', target)
+              sys.exit(1)
+          print('Target theme:', found.get('name'), found.get('role'), found.get('id'))
+          if str(found.get('role','')).upper() == 'MAIN':
+              print('REFUSING TO DEPLOY: target theme is live.')
+              sys.exit(1)
+          PY
+      - name: Push validated source without deleting remote base files
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        run: |
+          files=(
+            layout/theme.liquid
+            assets/mvqueen.css
+            assets/mvqueen.js
+            assets/mvqueen-ux.js
+            sections/announcement-bar.liquid
+            sections/header.liquid
+            sections/hero.liquid
+            sections/footer.liquid
+            sections/trust-strip.liquid
+            sections/featured-products.liquid
+            sections/brand-pillars.liquid
+            sections/newsletter.liquid
+            sections/main-product.liquid
+            sections/main-collection.liquid
+            sections/main-search.liquid
+            sections/main-cart.liquid
+            sections/product-recommendations.liquid
+            snippets/product-card.liquid
+            snippets/breadcrumbs.liquid
+            snippets/product-schema.liquid
+            snippets/seo-meta.liquid
+            templates/index.json
+            templates/product.json
+            templates/collection.json
+            templates/search.json
+            templates/cart.json
+          )
+          args=()
+          for f in "${files[@]}"; do args+=(--only "$f"); done
+          shopify theme push --json --strict --nodelete --theme "$SHOPIFY_THEME_ID" --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" "${args[@]}"
+      - name: Record deployment evidence
+        if: always()
+        run: |
+          mkdir -p .mvqueen-ci
+          printf 'store=%s\ntheme=%s\ncommit=%s\nrun=%s\n' "$SHOPIFY_STORE" "$SHOPIFY_THEME_ID" "$GITHUB_SHA" "$GITHUB_RUN_ID" > .mvqueen-ci/deployment.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mvqueen-theme-deployment-${{ github.run_id }}
+          path: .mvqueen-ci/deployment.txt
+          retention-days: 30
