@@ -119,7 +119,7 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
         openings = [
             f"A {product_type.lower()} for {use.lower()}, with a polished presence and room for her own style.",
             f"For {use.lower()}, this {product_type.lower()} brings a clean, confident direction to the way she dresses.",
-            f"The right {product_type.lower()} can change the feeling of a look; this one starts with {detail or 'a considered silhouette'} and leaves room for her style to lead.",
+            f"The right {product_type.lower()} can change the feeling of a look; this one starts with {detail.removeprefix('in ') or 'a considered silhouette'} and leaves room for her style to lead.",
         ]
         closer = "It is an easy foundation for modern, feminine styling with an intentional finish."
     elif category == "skincare":
