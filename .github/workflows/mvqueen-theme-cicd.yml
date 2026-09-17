@@ -98,22 +98,7 @@ jobs:
             exit 1
           fi
           shopify theme list --json --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" > theme-list.json
-          python - <<'PY'
-          import json, os, sys
-          data=json.load(open('theme-list.json', encoding='utf-8'))
-          target=str(os.environ['SHOPIFY_THEME_ID'])
-          themes=data.get('themes') or data.get('data',{}).get('themes',{}).get('nodes',[])
-          found=None
-          for t in themes:
-              tid=str(t.get('id','')).split('/')[-1]
-              if tid == target:
-                  found=t; break
-          if not found:
-              print('Target unpublished theme was not found:', target); sys.exit(1)
-          print('Target theme:', found.get('name'), found.get('role'), found.get('id'))
-          if str(found.get('role','')).upper() == 'MAIN':
-              print('REFUSING TO DEPLOY: target theme is live.'); sys.exit(1)
-          PY
+          python 30_System_Infrastructure/automation/verify_unpublished_theme.py theme-list.json
       - name: Push validated source without deleting remote base files
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
@@ -122,14 +107,21 @@ jobs:
           args=()
           for f in "${files[@]}"; do args+=(--only "$f"); done
           shopify theme push --json --strict --nodelete --theme "$SHOPIFY_THEME_ID" --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" "${args[@]}"
+      - name: Re-verify target remains unpublished after deployment
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        run: |
+          shopify theme list --json --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" > theme-list-after-push.json
+          python 30_System_Infrastructure/automation/verify_unpublished_theme.py theme-list-after-push.json
       - name: Record deployment evidence
         if: always()
         run: |
           mkdir -p .mvqueen-ci
           printf 'store=%s\ntheme=%s\ncommit=%s\nrun=%s\n' "$SHOPIFY_STORE" "$SHOPIFY_THEME_ID" "$GITHUB_SHA" "$GITHUB_RUN_ID" > .mvqueen-ci/deployment.txt
+          cp theme-list-after-push.json .mvqueen-ci/theme-list-after-push.json 2>/dev/null || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: mvqueen-theme-deployment-${{ github.run_id }}
-          path: .mvqueen-ci/deployment.txt
+          path: .mvqueen-ci
           retention-days: 30
