@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="theme-color" content="#1A1612">
+    <meta name="theme-color" content="#2C2C2C">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {{ 'mvqueen.css' | asset_url | stylesheet_tag }}
+    {{ 'mvqueen-design-system.css' | asset_url | stylesheet_tag }}
+    {{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}
     {% render 'seo-meta' %}
     {{ content_for_header }}
     {% if request.page_type == 'product' %}{% render 'product-schema' %}{% endif %}
