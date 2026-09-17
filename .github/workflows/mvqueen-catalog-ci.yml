@@ -1,0 +1,36 @@
+name: MVQUEEN Catalog Governance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '12_Content_Assets/drive_inbox/**'
+      - '30_System_Infrastructure/catalog/**'
+      - '.github/workflows/mvqueen-catalog-ci.yml'
+  pull_request:
+    paths:
+      - '12_Content_Assets/drive_inbox/**'
+      - '30_System_Infrastructure/catalog/**'
+      - '.github/workflows/mvqueen-catalog-ci.yml'
+  schedule:
+    - cron: '41 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mvqueen-catalog-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate catalog candidates
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run governed catalog worker in dry-run mode
+        env:
+          MVQ_WRITE_ENABLED: 'false'
+        run: python 30_System_Infrastructure/catalog/mvqueen_catalog_worker.py
