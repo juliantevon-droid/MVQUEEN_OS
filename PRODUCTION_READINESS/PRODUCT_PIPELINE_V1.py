@@ -135,6 +135,13 @@ def build_commercial_stage(record: Dict[str, Any]) -> None:
 
 def build_creative_stage(record: Dict[str, Any]) -> None:
     record["creative"] = build_creative(record)
+    record["measurement"] = {
+        "events": ["ViewContent", "AddToCart", "BeginCheckout", "Purchase"],
+        "primary_kpi": "Purchase",
+        "secondary_kpis": ["ATC rate", "conversion rate", "AOV", "CAC", "ROAS"],
+        "product_identifier": _text(record.get("identity", {}).get("product_id")),
+        "tracking_key": f"product:{_text(record.get("identity", {}).get("product_id"))}",
+    }
     record["status"] = "CREATIVE_READY"
 
 
@@ -163,6 +170,13 @@ def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
     for image in record.get("images", {}).get("items", []):
         if not _text(image.get("alt")):
             errors.append("Every published image requires ALT text")
+    measurement = record.get("measurement", {})
+    if not _text(measurement.get("product_identifier")):
+        errors.append("Missing measurement.product_identifier")
+    if not _text(measurement.get("tracking_key")):
+        errors.append("Missing measurement.tracking_key")
+    if measurement.get("events") != ["ViewContent", "AddToCart", "BeginCheckout", "Purchase"]:
+        errors.append("measurement.events must contain the canonical funnel events in order")
     generated_text = " ".join([
         _text(record.get("copy", {}).get("title")),
         _text(record.get("copy", {}).get("short_description")),
@@ -198,11 +212,6 @@ def run(raw: Dict[str, Any]) -> Dict[str, Any]:
     build_creative_stage(record)
     errors, warnings = validate(record)
     record["qa"] = {"errors": errors, "warnings": warnings, "passed": not errors}
-    record["measurement"] = {
-        "events": ["ViewContent", "AddToCart", "BeginCheckout", "Purchase"],
-        "primary_kpi": "Purchase",
-        "secondary_kpis": ["ATC rate", "conversion rate", "AOV", "CAC", "ROAS"],
-    }
     record["status"] = "QA_PASSED" if not errors else "CREATIVE_READY"
     if not errors:
         record["status"] = "PRODUCTION_READY"
