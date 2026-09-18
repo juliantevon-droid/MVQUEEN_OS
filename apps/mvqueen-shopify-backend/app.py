@@ -18,13 +18,15 @@ for path in (ENGINE, BACKEND):
 from catalog_service import preview_products
 from shopify_auth import auth_status, get_authenticated_client
 from webhook_security import DeliveryDeduplicator, verify_shopify_hmac
+from audit import audit_log
 
-app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.4.0")
+app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.5.0")
 webhook_deduplicator = DeliveryDeduplicator()
 
 
 @app.get("/health")
 def health() -> dict:
+    audit_log.record("health_check", dry_run=True)
     return {
         "status": "ok",
         "service": "mvqueen-shopify-backend",
@@ -61,6 +63,7 @@ def shopify_status() -> dict:
 def shopify_auth_status() -> dict:
     """Expose configuration state without exposing credentials or tokens."""
     status = auth_status()
+    audit_log.record("auth_status_check", dry_run=True)
     return {
         "configured": status["configured"],
         "authenticated": status["authenticated"],
@@ -79,12 +82,17 @@ async def products_update_webhook(request: Request) -> JSONResponse:
     if webhook_deduplicator.seen(delivery_id):
         return JSONResponse({"status": "duplicate_ignored"})
 
+    audit_log.record("webhook_received", shop_domain=request.headers.get("X-Shopify-Shop-Domain"), dry_run=True, details={"topic": request.headers.get("X-Shopify-Topic"), "delivery_id": delivery_id})
     return JSONResponse({
-        "status": "accepted",
         "topic": request.headers.get("X-Shopify-Topic"),
         "shop": request.headers.get("X-Shopify-Shop-Domain"),
         "delivery_id": delivery_id,
     })
+
+
+@app.get("/api/audit/recent")
+def recent_audit(limit: int = Query(default=50, ge=1, le=200)) -> dict:
+    return {"events": audit_log.recent(limit)}
 
 
 @app.get("/api/shopify/products/preview")
