@@ -25,8 +25,7 @@ def preview_products(
     first: int = 25,
 ) -> dict[str, Any]:
     first = max(1, min(first, 50))
-    body = client.execute(
-        f"""
+    query = f"""
         query MVQueenCatalogPreview($first: Int!, $after: String) {{
           products(first: $first, after: $after) {{
             nodes {{
@@ -38,21 +37,50 @@ def preview_products(
             }}
           }}
         }}
-        """,
-        {"first": first, "after": None},
+        """
+    nodes = client.query_all(
+        query,
+        ("products",),
+        first=first,
     )
-
-    connection = (body.get("data") or {}).get("products")
-    if connection is None:
-        raise RuntimeError("Shopify returned no product connection")
-
-    nodes = [normalize_product(node) for node in connection.get("nodes", [])]
+    # Preview remains bounded even though the underlying reader supports
+    # complete pagination.
+    nodes = nodes[:50]
     return {
         "count_returned": len(nodes),
-        "products": nodes,
-        "page_info": connection.get("pageInfo", {}),
+        "products": [normalize_product(node) for node in nodes],
         "read_only": True,
     }
+
+
+def read_all_products(
+    client: ShopifyGraphQLClient,
+    *,
+    page_size: int = 100,
+) -> list[dict[str, Any]]:
+    """Read the full Shopify product catalog without changing Shopify."""
+    page_size = max(1, min(page_size, 250))
+    query = f"""
+        query MVQueenCatalogSnapshot($first: Int!, $after: String) {{
+          products(first: $first, after: $after) {{
+            nodes {{
+              {PRODUCT_FIELDS}
+            }}
+            pageInfo {{
+              hasNextPage
+              endCursor
+            }}
+          }}
+        }}
+        """
+    return [
+        normalize_product(node)
+        for node in client.query_all(
+            query,
+            ("products",),
+            first=page_size,
+        )
+    ]
 
 
 def normalize_product(product: dict[str, Any]) -> dict[str, Any]:
