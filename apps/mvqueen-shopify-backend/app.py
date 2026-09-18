@@ -70,7 +70,7 @@ def products_preview(
     first: int = Query(default=25, ge=1, le=50),
 ) -> dict:
     try:
-        client = get_client(dry_run=True)
+        client = get_authenticated_client(dry_run=True)
         result = preview_products(client, first=first)
         return {
             "status": "connected",
