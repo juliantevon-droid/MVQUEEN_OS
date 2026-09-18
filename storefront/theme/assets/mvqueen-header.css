@@ -10,6 +10,7 @@
 .mvq-mobile-panel{display:none;border-top:1px solid var(--mvq-line);padding-block:10px 22px}
 .mvq-mobile-panel a{display:block;padding:14px 0;border-bottom:1px solid var(--mvq-line);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}
 .mvq-bag-count{display:inline-flex;min-width:1.25rem;min-height:1.25rem;align-items:center;justify-content:center;margin-left:.25rem;padding:.1rem .3rem;border-radius:999px;background:var(--mvq-gold);font-size:.65rem;line-height:1}
+html.mvq-lock{overflow:hidden}
 @media(max-width:749px){
   .mvq-nav{min-height:64px;grid-template-columns:auto 1fr auto;gap:12px}
   .mvq-menu{display:inline-flex;align-items:center;justify-content:center}
