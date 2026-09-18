@@ -79,7 +79,7 @@ def main() -> int:
             failures.append(f"header.liquid missing accessibility/navigation integration: {token}")
 
     schema = read("snippets/product-schema.liquid")
-    schema_compact = re.sub(r"\\s+", "", schema)
+    schema_compact = re.sub(r"\s+", "", schema)
     if '"@type":"Product"' not in schema_compact or "assign product_brand = 'MVQueen'" not in schema:
         failures.append("Product schema must emit Product + MVQUEEN brand")
     if "aggregateRating" in schema or '"review"' in schema:
