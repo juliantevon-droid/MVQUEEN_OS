@@ -14,6 +14,19 @@
   --mvq-radius: 2px;
   --mvq-line: rgba(44, 44, 44, .14);
   --mvq-shadow: 0 12px 40px rgba(44, 44, 44, .08);
+  /* Legacy component aliases: keep the original MVQUEEN visual language stable. */
+  --ink: var(--mvq-charcoal);
+  --dust: #3A3430;
+  --mink: #746A64;
+  --blush: #C9A89A;
+  --petal: var(--mvq-blush);
+  --ivory: var(--mvq-ivory);
+  --white: var(--mvq-pearl);
+  --gold: var(--mvq-gold);
+  --gold-lt: #E2C978;
+  --display: var(--mvq-display);
+  --title: "Cinzel", Georgia, serif;
+  --body: var(--mvq-body);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -35,7 +48,8 @@ a { color: inherit; }
 button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid var(--mvq-gold); outline-offset: 4px; }
 
-.mvq-container { width: var(--mvq-container); margin-inline: auto; }\n.mvq-lock { overflow: hidden; }
+.mvq-container { width: var(--mvq-container); margin-inline: auto; }
+.mvq-lock { overflow: hidden; }
 .mvq-display {
   font-family: var(--mvq-display);
   font-weight: 400;
@@ -337,3 +351,15 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+
+/* MVQUEEN homepage form and editorial finishing layer */
+.mvq-section form[action*="/contact"] { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:1.5rem auto 0; max-width:620px; }
+.mvq-section form[action*="/contact"] input[type="email"] { flex:1 1 280px; min-height:48px; padding:.75rem .9rem; border:1px solid var(--mvq-line); border-radius:var(--mvq-radius); background:var(--mvq-pearl); color:var(--mvq-charcoal); }
+.mvq-section form[action*="/contact"] .mvq-btn { min-height:48px; }
+.mvq-editorial__intro h2, .mvq-section h2 { font-weight:400; }
+@media (max-width:749px){
+  .mvq-section form[action*="/contact"] { align-items:stretch; }
+  .mvq-section form[action*="/contact"] .mvq-btn { width:100%; }
+}
+@media (prefers-reduced-motion:reduce){ .mvq-button, .mvq-btn { transition:none; } }
