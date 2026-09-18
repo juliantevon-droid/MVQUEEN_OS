@@ -42,6 +42,7 @@ jobs:
           node-version: 24
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli
+      # Contract validation is fail-closed before any Shopify theme write. 
       - name: Run MVQUEEN contract validator
         run: python 30_System_Infrastructure/automation/validate_theme_contract.py
       - name: Run Shopify Theme Check
