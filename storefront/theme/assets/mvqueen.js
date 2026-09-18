@@ -1,33 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const button = document.querySelector('[data-mvq-menu]');
-  const panel = document.querySelector('[data-mvq-panel]');
-  if (!button || !panel) return;
+  const menuButton = document.querySelector('[data-mvq-menu]');
+  const menuPanel = document.querySelector('[data-mvq-panel]');
 
-  const setMenu = (open) => {
-    if (open) panel.removeAttribute('hidden');
-    else panel.setAttribute('hidden', '');
-    button.setAttribute('aria-expanded', String(open));
-    button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    document.documentElement.classList.toggle('mvq-menu-open', open);
-    document.documentElement.classList.toggle('mvq-lock', open);
-    if (open) panel.querySelector('a')?.focus();
-    else button.focus();
-  };
+  if (menuButton && menuPanel) {
+    const setMenu = (open) => {
+      if (open) menuPanel.removeAttribute('hidden');
+      else menuPanel.setAttribute('hidden', '');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.documentElement.classList.toggle('mvq-menu-open', open);
+      document.documentElement.classList.toggle('mvq-lock', open);
+      if (open) menuPanel.querySelector('a')?.focus();
+      else menuButton.focus();
+    };
 
-  button.addEventListener('click', () => setMenu(panel.hasAttribute('hidden')));
-  panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+    menuButton.addEventListener('click', () => setMenu(menuPanel.hasAttribute('hidden')));
+    menuPanel.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
 
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !panel.hasAttribute('hidden')) setMenu(false);
-  });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !menuPanel.hasAttribute('hidden')) setMenu(false);
+    });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 750 && !panel.hasAttribute('hidden')) {
-      panel.setAttribute('hidden', '');
-      button.setAttribute('aria-expanded', 'false');
-      document.documentElement.classList.remove('mvq-menu-open', 'mvq-lock');
-    }
-  }, { passive: true });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 750 && !menuPanel.hasAttribute('hidden')) {
+        menuPanel.setAttribute('hidden', '');
+        menuButton.setAttribute('aria-expanded', 'false');
+        document.documentElement.classList.remove('mvq-menu-open', 'mvq-lock');
+      }
+    }, { passive: true });
+  }
+
+  const filterOpenButtons = document.querySelectorAll('[data-filter-open]');
+  const filterCloseButtons = document.querySelectorAll('[data-filter-close]');
+  const filterDrawer = document.querySelector('[data-filter-drawer]');
+  const filterBackdrop = document.querySelector('[data-filter-backdrop]');
+
+  if (filterDrawer && filterOpenButtons.length) {
+    const setFilters = (open) => {
+      filterDrawer.classList.toggle('is-open', open);
+      filterBackdrop?.classList.toggle('is-open', open);
+      filterOpenButtons.forEach((button) => button.setAttribute('aria-expanded', String(open)));
+      document.documentElement.classList.toggle('mvq-lock', open);
+      if (open) filterDrawer.querySelector('button, input, summary')?.focus();
+    };
+
+    filterOpenButtons.forEach((button) => button.addEventListener('click', () => setFilters(true)));
+    filterCloseButtons.forEach((button) => button.addEventListener('click', () => setFilters(false)));
+    filterBackdrop?.addEventListener('click', () => setFilters(false));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && filterDrawer.classList.contains('is-open')) setFilters(false);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900 && filterDrawer.classList.contains('is-open')) setFilters(false);
+    }, { passive: true });
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
