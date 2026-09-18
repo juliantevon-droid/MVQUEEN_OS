@@ -15,7 +15,7 @@ for path in (ENGINE, BACKEND):
         sys.path.insert(0, str(path))
 
 from catalog_service import preview_products
-from shopify_graphql_client import get_client
+from shopify_auth import auth_status, get_authenticated_client
 
 app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.3.0")
 
@@ -33,7 +33,7 @@ def health() -> dict:
 @app.get("/api/shopify/status")
 def shopify_status() -> dict:
     try:
-        client = get_client(dry_run=True)
+        client = get_authenticated_client(dry_run=True)
         body = client.execute(
             "query MVQueenShopStatus { shop { id name myshopifyDomain currencyCode } }"
         )
@@ -52,6 +52,17 @@ def shopify_status() -> dict:
             status_code=503,
             detail={"status": "disconnected", "error": str(exc)},
         ) from exc
+
+
+@app.get("/api/shopify/auth-status")
+def shopify_auth_status() -> dict:
+    """Expose configuration state without exposing credentials or tokens."""
+    status = auth_status()
+    return {
+        "configured": status["configured"],
+        "authenticated": status["authenticated"],
+        "token_cached": status["authenticated"],
+    }
 
 
 @app.get("/api/shopify/products/preview")
