@@ -107,13 +107,232 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
   border: 0 !important;
 }
 
+.mvq-collection {
+  padding-block: clamp(48px, 7vw, 96px);
+}
+.mvq-collection-head {
+  max-width: 760px;
+  padding-block: 24px 40px;
+}
+.mvq-collection-head h1 {
+  margin: .55rem 0 1rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+.mvq-collection-desc {
+  margin: 0;
+}
+.mvq-collection-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 18px;
+  border-top: 1px solid var(--mvq-line);
+  border-bottom: 1px solid var(--mvq-line);
+}
+.mvq-collection-toolbar form { margin: 0; }
+.mvq-collection-count {
+  margin-right: auto;
+  color: rgba(44, 44, 44, .68);
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.mvq-sort {
+  min-height: 48px;
+  padding: .7rem 2.25rem .7rem .9rem;
+  border: 1px solid var(--mvq-line);
+  border-radius: var(--mvq-radius);
+  background: var(--mvq-pearl);
+  color: var(--mvq-charcoal);
+}
+.mvq-collection-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  padding-top: 32px;
+}
+.mvq-filters {
+  position: relative;
+}
+.mvq-filter-toggle { display: none; }
+.mvq-filter-group {
+  border-top: 1px solid var(--mvq-line);
+  padding: 18px 0;
+}
+.mvq-filter-group:last-child { border-bottom: 1px solid var(--mvq-line); }
+.mvq-filter-group summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.mvq-filter-group summary::-webkit-details-marker { display: none; }
+.mvq-filter-group summary::after {
+  content: "+";
+  float: right;
+  color: var(--mvq-rose);
+}
+.mvq-filter-group[open] summary::after { content: "−"; }
+.mvq-filter-options {
+  display: grid;
+  gap: 10px;
+  padding-top: 16px;
+}
+.mvq-filter-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: rgba(44, 44, 44, .78);
+  font-size: .92rem;
+}
+.mvq-filter-option input { margin-top: .35rem; accent-color: var(--mvq-rose); }
+.mvq-price-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-top: 16px;
+}
+.mvq-price-row input {
+  width: 100%;
+  min-height: 44px;
+  padding: .5rem .65rem;
+  border: 1px solid var(--mvq-line);
+  background: var(--mvq-pearl);
+}
+.mvq-filter-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+.mvq-filter-actions .mvq-button { width: 100%; }
+.mvq-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.mvq-active-filter {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: .45rem .7rem;
+  border: 1px solid var(--mvq-line);
+  background: var(--mvq-cream);
+  font-size: .78rem;
+  text-decoration: none;
+}
+.mvq-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 28px);
+}
+.mvq-product-grid .mvq-card {
+  min-width: 0;
+  text-decoration: none;
+}
+.mvq-product-grid .mvq-card-media {
+  aspect-ratio: 3 / 4;
+}
+.mvq-card-info {
+  padding: 14px 12px 18px;
+}
+.mvq-card-type {
+  margin: 0 0 4px;
+  color: var(--mvq-rose);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.mvq-card-title {
+  margin: 0;
+  font-family: var(--mvq-display);
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+.mvq-card-price {
+  margin-top: 8px;
+  font-size: .9rem;
+}
+.mvq-price-current { color: var(--mvq-rose); font-weight: 600; }
+.mvq-card-price s { color: rgba(44, 44, 44, .52); margin-left: 4px; }
+.mvq-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  padding: .35rem .5rem;
+  background: var(--mvq-charcoal);
+  color: var(--mvq-pearl);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.mvq-card-media { position: relative; }
+
+.mvq-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid var(--mvq-line);
+}
+.mvq-pagination .mvq-button { width: auto; min-width: 120px; }
+
+.mvq-filter-backdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mvq-collection-layout { grid-template-columns: 1fr; }
+  .mvq-filter-toggle { display: inline-flex; width: auto; }
+  .mvq-filters {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 60;
+    width: min(88vw, 380px);
+    padding: 24px;
+    overflow-y: auto;
+    background: var(--mvq-pearl);
+    box-shadow: var(--mvq-shadow);
+    transform: translateX(-105%);
+    transition: transform .25s ease;
+  }
+  .mvq-filters.is-open { transform: translateX(0); }
+  .mvq-filter-backdrop.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgba(44, 44, 44, .42);
+  }
+  .mvq-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 749px) {
   :root { --mvq-container: min(100% - 24px, 640px); }
   .mvq-button { width: 100%; }
   .mvq-editorial__grid { grid-template-columns: 1fr; gap: 42px; }
   .mvq-editorial__intro h2 { max-width: 12ch; font-size: clamp(2.5rem, 14vw, 4rem); }
+  .mvq-collection { padding-block: 40px 64px; }
+  .mvq-collection-toolbar { align-items: stretch; flex-wrap: wrap; }
+  .mvq-collection-toolbar > form,
+  .mvq-collection-toolbar .mvq-sort { width: 100%; }
+  .mvq-collection-toolbar .mvq-filter-toggle { width: auto; }
+  .mvq-product-grid { gap: 12px; }
+  .mvq-card-info { padding: 11px 9px 15px; }
+  .mvq-card-title { font-size: 1.1rem; }
+  .mvq-pagination { flex-wrap: wrap; }
 }
-
+@media (max-width: 420px) {
+  .mvq-product-grid { grid-template-columns: 1fr; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
