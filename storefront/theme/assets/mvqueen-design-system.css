@@ -35,7 +35,7 @@ a { color: inherit; }
 button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid var(--mvq-gold); outline-offset: 4px; }
 
-.mvq-container { width: var(--mvq-container); margin-inline: auto; }
+.mvq-container { width: var(--mvq-container); margin-inline: auto; }\n.mvq-lock { overflow: hidden; }
 .mvq-display {
   font-family: var(--mvq-display);
   font-weight: 400;
