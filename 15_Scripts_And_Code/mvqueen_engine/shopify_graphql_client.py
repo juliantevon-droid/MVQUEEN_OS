@@ -197,5 +197,6 @@ def _find_user_errors(data: Dict[str, Any]) -> list[Dict[str, Any]]:
     return found
 
 
-def get_client(*, dry_run: Optional[bool] = None) -> ShopifyGraphQLClient:
-    return ShopifyGraphQLClient(dry_run=dry_run)
+def get_client(*, dry_run: Optional[bool] = None, access_token: Optional[str] = None) -> ShopifyGraphQLClient:
+    """Build a client, optionally using a token obtained by the app auth layer."""
+    return ShopifyGraphQLClient(dry_run=dry_run, access_token=access_token)
