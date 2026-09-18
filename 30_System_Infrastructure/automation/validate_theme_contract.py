@@ -79,7 +79,8 @@ def main() -> int:
             failures.append(f"header.liquid missing accessibility/navigation integration: {token}")
 
     schema = read("snippets/product-schema.liquid")
-    if '"@type":"Product"' not in schema or '"@type":"Brand","name":"MVQUEEN"' not in schema:
+    schema_compact = re.sub(r"\\s+", "", schema)
+    if '"@type":"Product"' not in schema_compact or '"@type":"Brand","name":"MVQueen"' not in schema_compact:
         failures.append("Product schema must emit Product + MVQUEEN brand")
     if "aggregateRating" in schema or '"review"' in schema:
         failures.append("Review/rating schema must not be emitted without verified review data")
@@ -95,6 +96,7 @@ def main() -> int:
             if section_type and not (THEME / "sections" / f"{section_type}.liquid").exists():
                 failures.append(f"Template {path.name} references missing section: {section_type}")
 
+    # Normalize case for forbidden-brand detection; canonical MVQueen is intentionally allowed.
     all_text = "\n".join(
         p.read_text(encoding="utf-8", errors="ignore")
         for p in THEME.rglob("*")
