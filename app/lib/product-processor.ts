@@ -45,8 +45,14 @@ export async function processProductJob(jobId: string) {
       {namespace:"classification",key:"family",type:"single_line_text_field",value:pkg.c.family},
       {namespace:"classification",key:"subcollection",type:"single_line_text_field",value:pkg.c.subcollection},
       {namespace:"classification",key:"style",type:"single_line_text_field",value:"MVQueen Edit"},
+      {namespace:"attributes",key:"material",type:"single_line_text_field",value:pkg.attributes.material ?? ""},
+      {namespace:"attributes",key:"color",type:"single_line_text_field",value:pkg.attributes.color ?? ""},
+      {namespace:"attributes",key:"fit",type:"single_line_text_field",value:pkg.attributes.fit ?? ""},
+      {namespace:"attributes",key:"occasion",type:"single_line_text_field",value:pkg.attributes.occasion ?? ""},
       {namespace:"catalog",key:"short_description",type:"single_line_text_field",value:pkg.shortDescription},
-      {namespace:"catalog",key:"seo_keywords",type:"list.single_line_text_field",value:JSON.stringify(pkg.keywords)}
+      {namespace:"catalog",key:"seo_keywords",type:"list.single_line_text_field",value:JSON.stringify(pkg.keywords)},
+      {namespace:"catalog",key:"classification_confidence",type:"single_line_text_field",value:pkg.c.confidence},
+      {namespace:"catalog",key:"review_status",type:"single_line_text_field",value:pkg.c.confidence === "review" ? "needs_review" : "ready"}
     ];
 
     const update = await admin.graphql(PRODUCT_UPDATE, { variables:{ product:{
