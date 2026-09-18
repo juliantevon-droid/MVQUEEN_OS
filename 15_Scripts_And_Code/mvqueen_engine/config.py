@@ -27,8 +27,8 @@ except ImportError:
 
 # Use environment variables with fallbacks to placeholders for safety
 SHOPIFY_STORE_DOMAIN = os.getenv("SHOPIFY_STORE_DOMAIN", "mvqueen.myshopify.com")
-SHOPIFY_API_VERSION = os.getenv("SHOPIFY_API_VERSION", "2024-01")
-SHOPIFY_ACCESS_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN", "REPLACE_WITH_ENV_VAR")
+SHOPIFY_API_VERSION = os.getenv("SHOPIFY_API_VERSION", "2026-07")
+SHOPIFY_ACCESS_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN", "")
 
 SHOPIFY_BASE_URL = f"https://{SHOPIFY_STORE_DOMAIN}/admin/api/{SHOPIFY_API_VERSION}"
 
@@ -39,7 +39,7 @@ SHOPIFY_BASE_URL = f"https://{SHOPIFY_STORE_DOMAIN}/admin/api/{SHOPIFY_API_VERSI
 BRAND_NAME = "MVQueen"
 
 # Max rows per CSV chunk when exporting
-CSV_CHUNK_SIZE = 15000
+CSV_CHUNK_SIZE = 15000\n\n# Shopify import safety: catalog is unlimited; 850 is only the per-file batch limit.\nMAX_PRODUCTS_PER_IMPORT_FILE = 850\nPRESERVE_SOURCE_COLUMN_ORDER = True\nONLY_EDIT_IMAGE_FIELD = "Image Alt Text"\nSHOPIFY_EDITORIAL_COLUMNS = ["Title", "Body HTML", "Product Type", "Tags", "Image Alt Text", "SEO Title", "SEO Description"]
 
 # Whether to log debug info to console
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
