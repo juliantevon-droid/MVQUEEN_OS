@@ -63,6 +63,14 @@ export async function processProductJob(jobId: string) {
       variables:{files:media.map(m=>({id:m.id,alt:\`\${pkg.title} | MVQueen\`}))}
     });
 
+    const updatedAt = updateBody.data?.productUpdate?.product?.updatedAt;
+    if (!updatedAt) throw new Error("Shopify product update did not return updatedAt");
+    await prisma.productAutomationState.upsert({
+      where: { shop_productGid: { shop: job.shop, productGid: product.id } },
+      update: { lastAutomationUpdatedAt: new Date(updatedAt), automationVersion: "1" },
+      create: { shop: job.shop, productGid: product.id, lastAutomationUpdatedAt: new Date(updatedAt), automationVersion: "1" },
+    });
+
     await prisma.productJob.update({where:{id:jobId},data:{status:"completed",completedAt:new Date()}});
   } catch (error) {
     await prisma.productJob.update({where:{id:jobId},data:{
