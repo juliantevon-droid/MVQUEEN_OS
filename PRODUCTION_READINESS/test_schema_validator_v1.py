@@ -39,7 +39,9 @@ class SchemaValidatorV1Tests(unittest.TestCase):
                 "testing_variable": "hook",
                 "claim_constraints": ["Use verified product facts only"],
             }]},
-            "measurement": {"events": ["ViewContent", "AddToCart", "BeginCheckout", "Purchase"], "primary_kpi": "Purchase", "secondary_kpis": ["ATC rate"]},
+            "measurement": {"events": ["ViewContent", "AddToCart", "BeginCheckout", "Purchase"], "primary_kpi": "Purchase", "secondary_kpis": ["ATC rate"],
+                "product_identifier": "p-001",
+                "tracking_key": "product:p-001"},
             "qa": {"errors": [], "warnings": [], "passed": True},
             "status": "PRODUCTION_READY",
         }
