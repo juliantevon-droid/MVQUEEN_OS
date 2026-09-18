@@ -15,7 +15,11 @@ The system must prove one product end-to-end before bulk catalog processing. Exi
 
 ## Current canonical flow
 
-`RAW → NORMALIZED → INTELLIGENCE_READY → COPY_READY → SEO_READY → MERCH_READY → COMMERCIAL_READY → CREATIVE_READY → QA_PASSED → PRODUCTION_READY`
+`RAW → NORMALIZED → INTELLIGENCE_READY → COPY_READY → SEO_READY → MERCH_READY → COMMERCIAL_READY → CREATIVE_READY → QA_PASSED → PRODUCTION_READY → APPROVED_FOR_PUBLISH → PUBLISHING_BOUNDARY → SHOPIFY`
+
+## Real-product validation
+
+The current specimen test uses a real Shopify product record without writing it back to Shopify. The specimen must pass the same canonical pipeline used for future products before any live publication is considered.
 
 ## Safety principle
 
