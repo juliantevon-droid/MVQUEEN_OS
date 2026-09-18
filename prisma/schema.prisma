@@ -27,6 +27,16 @@ model Session {
   refreshTokenExpires  DateTime?
 }
 
+model ProductAutomationState {
+  id                    String   @id @default(cuid())
+  shop                  String
+  productGid            String
+  lastAutomationUpdatedAt DateTime?
+  automationVersion     String   @default("1")
+  updatedAt             DateTime @updatedAt
+  @@unique([shop, productGid])
+}
+
 model ProductJob {
   id              String   @id @default(cuid())
   shop            String
