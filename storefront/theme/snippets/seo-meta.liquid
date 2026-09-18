@@ -17,3 +17,5 @@
 <meta name="twitter:title" content="{{ meta_title | escape }}">
 <meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
 {% if meta_image %}<meta name="twitter:image" content="{{ meta_image | image_url: width: 1600 | prepend: 'https:' }}">{% endif %}
+{% unless request.page_type == 'search' or request.page_type == 'cart' %}<meta name="robots" content="index,follow">{% endunless %}
+{% if request.page_type == 'index' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":{{ shop.name | json }},"url":{{ shop.url | json }},"potentialAction":{"@type":"SearchAction","target":{{ shop.url | append: routes.search_url | append: '?q={search_term_string}' | json }},"query-input":"required name=search_term_string"}}</script>{% endif %}
