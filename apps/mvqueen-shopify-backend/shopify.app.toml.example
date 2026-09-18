@@ -1,0 +1,18 @@
+# Example configuration for the dedicated MVQUEEN Shopify backend app.
+# Keep real client IDs, URLs, and secrets out of this file.
+
+name = "MVQUEEN OS Backend"
+handle = "mvqueen-os-backend"
+application_url = "https://YOUR-BACKEND-DOMAIN.example"
+embedded = false
+
+[access_scopes]
+scopes = "read_products"
+
+[auth]
+redirect_urls = [
+  "https://YOUR-BACKEND-DOMAIN.example/auth/callback"
+]
+
+[build]
+automatically_update_urls_on_dev = false
