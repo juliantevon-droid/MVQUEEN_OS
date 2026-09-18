@@ -100,6 +100,15 @@ def main() -> int:
         for p in THEME.rglob("*")
         if p.is_file() and p.suffix.lower() in {".liquid", ".css", ".js", ".json"}
     ).upper()
+    # Catch escaped-newline artifacts that can silently corrupt CSS/JS formatting.
+    if "\\n" in read("assets/mvqueen-design-system.css"):
+        failures.append("Design-system CSS contains a literal escaped newline artifact")
+
+    design = read("assets/mvqueen-design-system.css")
+    for token in ["--ink: var(--mvq-charcoal)", "--display: var(--mvq-display)"]:
+        if token not in design:
+            failures.append(f"Design-system compatibility alias missing: {token}")
+
     for brand in FORBIDDEN_BRANDS:
         if brand in all_text:
             failures.append(f"Forbidden supplier/legacy brand string found: {brand}")
