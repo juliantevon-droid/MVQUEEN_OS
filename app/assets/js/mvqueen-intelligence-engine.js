@@ -61,7 +61,9 @@
     const intro=`<p><strong>${n}</strong> is selected for the MVQueen woman who values modern elegance, confidence, and effortless everyday luxury.</p>`;
     const factBlock=facts.length?`<ul>${facts.join('')}</ul>`:'';
     const originalText=text(existing);
-    const original=originalText && originalText.toLowerCase()!==n.toLowerCase() ? `<div class="mvqueen-source-content">${existing}</div>` : '';
+    const supplierLike=/\\b(ouhoe|miss\\.?\\s*queen|hoegoa|fanzhen|eelhope|color\\s*fit|west\\s*&\\s*month|supplier|wholesale|generic)\\b/i.test(originalText);
+    const original = originalText && originalText.toLowerCase()!==n.toLowerCase() && !supplierLike
+      ? `<div class="mvqueen-source-content">${existing}</div>` : '';
     return `${intro}<p>${a.selling_angle}</p>${factBlock}${original}`.replace(/<p>\s*<\/p>/g,'');
   }
   function buildTags(p,a){
