@@ -4,7 +4,8 @@ import os
 import sys
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.responses import JSONResponse
 
 ROOT = Path(__file__).resolve().parents[2]
 ENGINE = ROOT / "15_Scripts_And_Code" / "mvqueen_engine"
@@ -16,8 +17,10 @@ for path in (ENGINE, BACKEND):
 
 from catalog_service import preview_products
 from shopify_auth import auth_status, get_authenticated_client
+from webhook_security import DeliveryDeduplicator, verify_shopify_hmac
 
-app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.3.0")
+app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.4.0")
+webhook_deduplicator = DeliveryDeduplicator()
 
 
 @app.get("/health")
@@ -63,6 +66,25 @@ def shopify_auth_status() -> dict:
         "authenticated": status["authenticated"],
         "token_cached": status["authenticated"],
     }
+
+
+@app.post("/webhooks/products-update")
+async def products_update_webhook(request: Request) -> JSONResponse:
+    raw_body = await request.body()
+    provided_hmac = request.headers.get("X-Shopify-Hmac-Sha256")
+    if not verify_shopify_hmac(raw_body, provided_hmac):
+        raise HTTPException(status_code=401, detail="Invalid webhook signature")
+
+    delivery_id = request.headers.get("X-Shopify-Webhook-Id")
+    if webhook_deduplicator.seen(delivery_id):
+        return JSONResponse({"status": "duplicate_ignored"})
+
+    return JSONResponse({
+        "status": "accepted",
+        "topic": request.headers.get("X-Shopify-Topic"),
+        "shop": request.headers.get("X-Shopify-Shop-Domain"),
+        "delivery_id": delivery_id,
+    })
 
 
 @app.get("/api/shopify/products/preview")
