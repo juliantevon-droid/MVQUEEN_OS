@@ -41,5 +41,4 @@ jobs:
         run: python -m unittest test_product_pipeline_v1.py test_enterprise_release_gate_v1.py -v
 
       - name: Check for obvious credential material
-        run: |
-          ! grep -RniE '(api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*["'"'][^"'"']{12,}["'"']' PRODUCTION_READINESS --exclude='*.pyc' --exclude-dir='__pycache__'
+        run: python PRODUCTION_READINESS/scan_credentials.py
