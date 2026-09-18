@@ -13,7 +13,7 @@
     {% render 'seo-meta' %}
     {{ content_for_header }}
     {% if request.page_type == 'product' %}{% render 'product-schema' %}{% endif %}
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":{{ shop.name | json }},"url":{{ shop.url | json }}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MVQUEEN","url":{{ shop.url | json }}}</script>
   </head>
   <body class="mvq-page mvq-page--{{ request.page_type }}">
     <a class="mvq-skip-link" href="#MainContent">Skip to content</a>
