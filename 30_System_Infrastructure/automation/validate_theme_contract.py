@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
-"""MVQUEEN storefront contract validator.
-
-Runs without third-party dependencies so it can execute on GitHub Actions,
-ChromeOS/Linux, or a phone-driven workflow runner.
-"""
+"""MVQUEEN storefront contract validator."""
 from __future__ import annotations
-
 import json
 import re
 import sys
@@ -24,6 +19,7 @@ REQUIRED = {
     "assets/mvqueen-ux.js",
     "sections/header.liquid",
     "sections/hero.liquid",
+    "sections/editorial-curation.liquid",
     "sections/announcement-bar.liquid",
     "sections/footer.liquid",
     "sections/main-product.liquid",
@@ -42,31 +38,17 @@ REQUIRED = {
 }
 
 FORBIDDEN_BRANDS = [
-    "MISS.QUEEN",
-    "MISS. QUEEN",
-    "OUHOE",
-    "HOEGOA",
-    "FANZHEN",
-    "EELHOPE",
-    "COLOR FIT",
-    "WEST & MONTH",
+    "MISS.QUEEN", "MISS. QUEEN", "OUHOE", "HOEGOA",
+    "FANZHEN", "EELHOPE", "COLOR FIT", "WEST & MONTH",
 ]
-
 
 def read(path: str) -> str:
     return (THEME / path).read_text(encoding="utf-8")
 
-
-def json_without_header(text: str) -> dict:
-    text = re.sub(r"^/\*.*?\*/\s*", "", text, flags=re.S)
-    return json.loads(text)
-
-
 def main() -> int:
     failures: list[str] = []
     if not THEME.exists():
-        failures.append(f"Theme source directory missing: {THEME}")
-        print("\n".join(failures))
+        print(f"THEME CONTRACT: FAIL\n- Theme source directory missing: {THEME}")
         return 1
 
     for rel in sorted(REQUIRED):
@@ -75,7 +57,7 @@ def main() -> int:
 
     if failures:
         print("THEME CONTRACT: FAIL")
-        print("\n".join(failures))
+        print("\n".join(f"- {x}" for x in failures))
         return 1
 
     layout = read("layout/theme.liquid")
@@ -84,23 +66,15 @@ def main() -> int:
         "{{ 'mvqueen-design-system.css' | asset_url | stylesheet_tag }}",
         "{{ 'mvqueen-header.css' | asset_url | stylesheet_tag }}",
         "{{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}",
-        "{{ content_for_header }}",
-        "{{ content_for_layout }}",
-        "'mvqueen.js' | asset_url",
-        "'mvqueen-ux.js' | asset_url",
+        "{{ content_for_header }}", "{{ content_for_layout }}",
+        "'mvqueen.js' | asset_url", "'mvqueen-ux.js' | asset_url",
         "{% render 'seo-meta' %}",
     ]:
         if token not in layout:
             failures.append(f"theme.liquid missing required integration: {token}")
 
     header = read("sections/header.liquid")
-    for token in [
-        "data-mvq-menu",
-        "data-mvq-panel",
-        'aria-controls="MVQMobilePanel"',
-        'id="MVQMobilePanel"',
-        'aria-expanded="false"',
-    ]:
+    for token in ["data-mvq-menu", "data-mvq-panel", 'aria-controls="MVQMobilePanel"', 'id="MVQMobilePanel"', 'aria-expanded="false"']:
         if token not in header:
             failures.append(f"header.liquid missing accessibility/navigation integration: {token}")
 
@@ -112,11 +86,11 @@ def main() -> int:
 
     for path in (THEME / "templates").glob("*.json"):
         try:
-            obj = json_without_header(path.read_text(encoding="utf-8"))
+            obj = json.loads(path.read_text(encoding="utf-8"))
         except Exception as exc:
             failures.append(f"Invalid JSON: {path}: {exc}")
             continue
-        for key, section in obj.get("sections", {}).items():
+        for section in obj.get("sections", {}).values():
             section_type = section.get("type")
             if section_type and not (THEME / "sections" / f"{section_type}.liquid").exists():
                 failures.append(f"Template {path.name} references missing section: {section_type}")
@@ -131,8 +105,8 @@ def main() -> int:
             failures.append(f"Forbidden supplier/legacy brand string found: {brand}")
 
     for workflow in (ROOT / ".github" / "workflows").glob("*.yml"):
-        text = workflow.read_text(encoding="utf-8", errors="ignore")
-        if "--allow-live" in text or "theme publish" in text:
+        workflow_text = workflow.read_text(encoding="utf-8", errors="ignore")
+        if "--allow-live" in workflow_text or "theme publish" in workflow_text:
             failures.append(f"Live-theme publishing control detected in workflow: {workflow}")
 
     if failures:
@@ -144,7 +118,6 @@ def main() -> int:
     print(f"Validated {len(REQUIRED)} required theme source files.")
     print("Live-theme publishing is contractually blocked by this repository validator.")
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())
