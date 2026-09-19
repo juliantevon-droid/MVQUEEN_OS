@@ -25,8 +25,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  SHOPIFY_STORE: ${{ vars.MVQUEEN_SHOPIFY_STORE || 'tsucu0-1i.myshopify.com' }}
-  SHOPIFY_THEME_ID: ${{ vars.MVQUEEN_SHOPIFY_THEME_ID || '154611515590' }}
+  # Deployment identity must come from GitHub configuration; no hard-coded fallback.
+  SHOPIFY_STORE: ${{ vars.MVQUEEN_SHOPIFY_STORE }}
+  SHOPIFY_THEME_ID: ${{ vars.MVQUEEN_SHOPIFY_THEME_ID }}
 
 jobs:
   validate:
@@ -42,7 +43,6 @@ jobs:
           node-version: 24
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli
-      # Contract validation is fail-closed before any Shopify theme write. 
       - name: Run MVQUEEN contract validator
         run: python 30_System_Infrastructure/automation/validate_theme_contract.py
       - name: Run Shopify Theme Check
@@ -66,12 +66,17 @@ jobs:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
-      - name: Report deployment state
+      - name: Verify deployment identity configuration
         env:
           DEPLOY_ENABLED: ${{ vars.MVQUEEN_DEPLOY_ENABLED }}
         run: |
           if [ "$DEPLOY_ENABLED" = "true" ]; then
-            echo 'MVQUEEN_DEPLOY_ENABLED=true — unpublished deployment is enabled.'
+            if [ -z "$SHOPIFY_STORE" ] || [ -z "$SHOPIFY_THEME_ID" ]; then
+              echo 'Deployment is enabled but Shopify store/theme identity is missing.'
+              echo 'Set MVQUEEN_SHOPIFY_STORE and MVQUEEN_SHOPIFY_THEME_ID before enabling deployment.'
+              exit 1
+            fi
+            echo 'Deployment enabled with explicit Shopify store/theme identity.'
           else
             echo 'MVQUEEN_DEPLOY_ENABLED is not true — deployment remains safely disabled.'
             echo 'Validation still runs automatically; no Shopify write is attempted.'
