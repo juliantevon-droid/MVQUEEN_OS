@@ -30,33 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  const filterOpenButtons = document.querySelectorAll('[data-filter-open]');
-  const filterCloseButtons = document.querySelectorAll('[data-filter-close]');
-  const filterDrawer = document.querySelector('[data-filter-drawer]');
-  const filterBackdrop = document.querySelector('[data-filter-backdrop]');
-
-  if (filterDrawer && filterOpenButtons.length) {
-    const setFilters = (open) => {
-      filterDrawer.classList.toggle('is-open', open);
-      filterBackdrop?.classList.toggle('is-open', open);
-      filterOpenButtons.forEach((button) => button.setAttribute('aria-expanded', String(open)));
-      document.documentElement.classList.toggle('mvq-lock', open);
-      if (open) filterDrawer.querySelector('button, input, summary')?.focus();
-    };
-
-    filterOpenButtons.forEach((button) => button.addEventListener('click', () => setFilters(true)));
-    filterCloseButtons.forEach((button) => button.addEventListener('click', () => setFilters(false)));
-    filterBackdrop?.addEventListener('click', () => setFilters(false));
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && filterDrawer.classList.contains('is-open')) setFilters(false);
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900 && filterDrawer.classList.contains('is-open')) setFilters(false);
-    }, { passive: true });
-  }
-
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const target = document.querySelector(link.getAttribute('href'));
