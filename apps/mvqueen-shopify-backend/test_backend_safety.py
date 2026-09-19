@@ -50,10 +50,6 @@ class AuditLogTests(unittest.TestCase):
             self.assertEqual(events[0]["dry_run"], 1)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class CatalogPreviewTests(unittest.TestCase):
     def test_preview_reads_one_bounded_page(self) -> None:
         class FakeClient:
@@ -102,3 +98,7 @@ class InternalAuthTests(unittest.TestCase):
                 os.environ.pop("MVQUEEN_INTERNAL_API_KEY", None)
             else:
                 os.environ["MVQUEEN_INTERNAL_API_KEY"] = old_env
+
+
+if __name__ == "__main__":
+    unittest.main()
