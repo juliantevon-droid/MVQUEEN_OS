@@ -9,6 +9,8 @@ import unittest
 from pathlib import Path
 
 from audit import AuditLog
+from catalog_service import preview_products
+from internal_auth import require_internal_api_key
 from webhook_security import DeliveryDeduplicator, verify_shopify_hmac
 
 
@@ -50,3 +52,53 @@ class AuditLogTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CatalogPreviewTests(unittest.TestCase):
+    def test_preview_reads_one_bounded_page(self) -> None:
+        class FakeClient:
+            def __init__(self):
+                self.calls = 0
+                self.variables = {}
+
+            def execute(self, query, variables=None, **kwargs):
+                self.calls += 1
+                self.variables = variables or {}
+                return {"data": {"products": {"nodes": [{"id": "1", "title": "Test"}], "pageInfo": {"hasNextPage": True}}}}
+
+        client = FakeClient()
+        result = preview_products(client, first=50)
+        self.assertEqual(client.calls, 1)
+        self.assertEqual(client.variables["first"], 50)
+        self.assertEqual(result["count_returned"], 1)
+
+
+class InternalAuthTests(unittest.TestCase):
+    def test_development_allows_missing_key(self) -> None:
+        old_env = os.environ.pop("MVQUEEN_INTERNAL_API_KEY", None)
+        old_mode = os.environ.get("MVQUEEN_ENV")
+        os.environ["MVQUEEN_ENV"] = "development"
+        try:
+            require_internal_api_key(None)
+        finally:
+            if old_env is not None:
+                os.environ["MVQUEEN_INTERNAL_API_KEY"] = old_env
+            else:
+                os.environ.pop("MVQUEEN_INTERNAL_API_KEY", None)
+            if old_mode is not None:
+                os.environ["MVQUEEN_ENV"] = old_mode
+            else:
+                os.environ.pop("MVQUEEN_ENV", None)
+
+    def test_configured_key_rejects_wrong_key(self) -> None:
+        from fastapi import HTTPException
+        old_env = os.environ.get("MVQUEEN_INTERNAL_API_KEY")
+        os.environ["MVQUEEN_INTERNAL_API_KEY"] = "expected"
+        try:
+            with self.assertRaises(HTTPException):
+                require_internal_api_key("wrong")
+        finally:
+            if old_env is None:
+                os.environ.pop("MVQUEEN_INTERNAL_API_KEY", None)
+            else:
+                os.environ["MVQUEEN_INTERNAL_API_KEY"] = old_env
