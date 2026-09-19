@@ -45,10 +45,10 @@ export async function processProductJob(jobId: string) {
       {namespace:"classification",key:"family",type:"single_line_text_field",value:pkg.c.family},
       {namespace:"classification",key:"subcollection",type:"single_line_text_field",value:pkg.c.subcollection},
       {namespace:"classification",key:"style",type:"single_line_text_field",value:"MVQueen Edit"},
-      {namespace:"attributes",key:"material",type:"single_line_text_field",value:pkg.attributes.material ?? ""},
-      {namespace:"attributes",key:"color",type:"single_line_text_field",value:pkg.attributes.color ?? ""},
-      {namespace:"attributes",key:"fit",type:"single_line_text_field",value:pkg.attributes.fit ?? ""},
-      {namespace:"attributes",key:"occasion",type:"single_line_text_field",value:pkg.attributes.occasion ?? ""},
+      ...(pkg.attributes.material ? [{namespace:"attributes",key:"material",type:"single_line_text_field",value:pkg.attributes.material}] : []),
+      ...(pkg.attributes.color ? [{namespace:"attributes",key:"color",type:"single_line_text_field",value:pkg.attributes.color}] : []),
+      ...(pkg.attributes.fit ? [{namespace:"attributes",key:"fit",type:"single_line_text_field",value:pkg.attributes.fit}] : []),
+      ...(pkg.attributes.occasion ? [{namespace:"attributes",key:"occasion",type:"single_line_text_field",value:pkg.attributes.occasion}] : []),
       {namespace:"catalog",key:"short_description",type:"single_line_text_field",value:pkg.shortDescription},
       {namespace:"catalog",key:"seo_keywords",type:"list.single_line_text_field",value:JSON.stringify(pkg.keywords)},
       {namespace:"catalog",key:"classification_confidence",type:"single_line_text_field",value:pkg.c.confidence},
@@ -56,8 +56,11 @@ export async function processProductJob(jobId: string) {
     ];
 
     const update = await admin.graphql(PRODUCT_UPDATE, { variables:{ product:{
-      id:product.id, title:pkg.title, descriptionHtml:pkg.descriptionHtml,
-      productType:pkg.c.productType, tags:pkg.tags,
+      id:product.id,
+      title: pkg.title !== product.title ? pkg.title : product.title,
+      descriptionHtml: pkg.descriptionHtml,
+      productType: product.productType?.trim() ? product.productType : pkg.c.productType,
+      tags:pkg.tags,
       seo:{title:pkg.seoTitle,description:pkg.seoDescription}, metafields
     }}});
     const updateBody = await update.json();
