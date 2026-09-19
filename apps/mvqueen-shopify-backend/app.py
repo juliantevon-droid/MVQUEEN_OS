@@ -19,6 +19,7 @@ from catalog_service import preview_products
 from shopify_auth import auth_status, get_authenticated_client
 from webhook_security import DeliveryDeduplicator, verify_shopify_hmac
 from audit import audit_log
+from internal_auth import require_internal_api_key
 
 app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.5.1")
 webhook_deduplicator = DeliveryDeduplicator()
@@ -36,7 +37,8 @@ def health() -> dict:
 
 
 @app.get("/api/shopify/status")
-def shopify_status() -> dict:
+def shopify_status(x_mvqueen_internal_key: str | None = Header(default=None)) -> dict:
+    require_internal_api_key(x_mvqueen_internal_key)
     try:
         client = get_authenticated_client(dry_run=True)
         body = client.execute(
@@ -60,7 +62,8 @@ def shopify_status() -> dict:
 
 
 @app.get("/api/shopify/auth-status")
-def shopify_auth_status() -> dict:
+def shopify_auth_status(x_mvqueen_internal_key: str | None = Header(default=None)) -> dict:
+    require_internal_api_key(x_mvqueen_internal_key)
     """Expose configuration state without exposing credentials or tokens."""
     status = auth_status()
     audit_log.record("auth_status_check", dry_run=True)
@@ -91,7 +94,8 @@ async def products_update_webhook(request: Request) -> JSONResponse:
 
 
 @app.get("/api/audit/recent")
-def recent_audit(limit: int = Query(default=50, ge=1, le=200)) -> dict:
+def recent_audit(limit: int = Query(default=50, ge=1, le=200), x_mvqueen_internal_key: str | None = Header(default=None)) -> dict:
+    require_internal_api_key(x_mvqueen_internal_key)
     return {"events": audit_log.recent(limit)}
 
 
