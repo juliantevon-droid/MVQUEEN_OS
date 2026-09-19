@@ -1,4 +1,16 @@
+# Secrets
+.env
+.env.*
+!.env.example
 
-# Security: Environment Variables
+# Runtime/build
+node_modules/
+build/
+.react-router/
+coverage/
+*.sqlite
+*.sqlite-journal
+.DS_Store
+
+# Existing MVQUEEN secret paths
 15_Scripts_And_Code/.env
-**/ .env
