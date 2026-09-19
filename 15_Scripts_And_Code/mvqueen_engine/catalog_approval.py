@@ -28,9 +28,6 @@ def build_product_update_input(
     if not approved:
         raise PermissionError("Explicit catalog approval is required before building a write payload.")
 
-    if dry_run_result.get("mode") != "dry-run" and "status" not in dry_run_result:
-        raise ValueError("Expected a dry-run product result.")
-
     if dry_run_result.get("status") not in {"PASS", "REVIEW"}:
         raise ValueError("Only PASS or explicitly reviewed REVIEW results may be approved.")
 
@@ -52,10 +49,16 @@ def build_product_update_input(
             payload.setdefault("seo", {})["title"] = value
         elif target_path == "seo.description":
             payload.setdefault("seo", {})["description"] = value
+        elif target_path == "tags":
+            if isinstance(value, str):
+                payload["tags"] = [x.strip() for x in value.split(",") if x.strip()]
+            elif isinstance(value, list):
+                payload["tags"] = [str(x).strip() for x in value if str(x).strip()]
+            else:
+                raise ValueError("Tags must be a string or list.")
         else:
             payload[target_path] = value
 
-    # Defense in depth: operational fields can never enter this payload.
     for protected in SHOPIFY_PROTECTED_COLUMNS:
         if protected in payload:
             raise ValueError(f"Protected field leaked into mutation payload: {protected}")
@@ -64,6 +67,11 @@ def build_product_update_input(
     unexpected = set(payload) - allowed
     if unexpected:
         raise ValueError(f"Unexpected mutation fields: {sorted(unexpected)}")
+
+    if "seo" in payload:
+        seo_keys = set(payload["seo"])
+        if not seo_keys <= {"title", "description"}:
+            raise ValueError(f"Unexpected SEO fields: {sorted(seo_keys - {"title", "description"})}")
 
     return deepcopy(payload)
 
