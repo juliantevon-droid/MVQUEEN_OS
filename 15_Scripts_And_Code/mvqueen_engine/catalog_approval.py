@@ -70,8 +70,9 @@ def build_product_update_input(
 
     if "seo" in payload:
         seo_keys = set(payload["seo"])
-        if not seo_keys <= {"title", "description"}:
-            raise ValueError(f"Unexpected SEO fields: {sorted(seo_keys - {"title", "description"})}")
+        allowed_seo = {"title", "description"}
+        if not seo_keys <= allowed_seo:
+            raise ValueError(f"Unexpected SEO fields: {sorted(seo_keys - allowed_seo)}")
 
     return deepcopy(payload)
 
