@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
+  // Collection filter behavior lives here; header/menu behavior remains in mvqueen.js.
   const open=document.querySelector('[data-filter-open]');
   const close=document.querySelector('[data-filter-close]');
   const drawer=document.querySelector('[data-filter-drawer]');
