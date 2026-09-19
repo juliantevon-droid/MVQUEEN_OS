@@ -363,3 +363,13 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
   .mvq-section form[action*="/contact"] .mvq-btn { width:100%; }
 }
 @media (prefers-reduced-motion:reduce){ .mvq-button, .mvq-btn { transition:none; } }
+
+
+/* Editorial product-card media transition */
+.mvq-card-link{display:block;color:inherit;text-decoration:none}
+.mvq-card-media-alt{position:absolute;inset:0;opacity:0;transition:opacity .35s ease}
+.mvq-card-media-alt img{width:100%;height:100%;object-fit:cover}
+.mvq-card:hover .mvq-card-media-alt,.mvq-card:focus-within .mvq-card-media-alt{opacity:1}
+.mvq-card:hover .mvq-card-media>img,.mvq-card:focus-within .mvq-card-media>img{transform:scale(1.015)}
+.mvq-card-link:focus-visible{outline:2px solid var(--mvq-gold);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.mvq-card-media-alt{transition:none}.mvq-card:hover .mvq-card-media>img,.mvq-card:focus-within .mvq-card-media>img{transform:none}}
