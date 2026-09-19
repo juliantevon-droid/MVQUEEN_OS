@@ -38,14 +38,11 @@ def preview_products(
           }}
         }}
         """
-    nodes = client.query_all(
-        query,
-        ("products",),
-        first=first,
-    )
-    # Preview remains bounded even though the underlying reader supports
-    # complete pagination.
-    nodes = nodes[:50]
+    body = client.execute(query, {"first": first, "after": None})
+    connection = ((body.get("data") or {}).get("products") or {})
+    nodes = connection.get("nodes", [])
+    # Preview intentionally reads one bounded page only; full catalog reads
+    # remain available through read_all_products().
     return {
         "count_returned": len(nodes),
         "products": [normalize_product(node) for node in nodes],
