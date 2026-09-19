@@ -4,7 +4,7 @@
   assign first_variant = product.selected_or_first_available_variant
   assign product_label = product.title | escape
   assign has_sale = false
-  if product.available and product.compare_at_price_max > product.price
+  if first_variant.available and first_variant.compare_at_price > first_variant.price
     assign has_sale = true
   endif
 %}
