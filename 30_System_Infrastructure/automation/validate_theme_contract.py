@@ -10,31 +10,15 @@ ROOT = Path(__file__).resolve().parents[2]
 THEME = ROOT / "storefront" / "theme"
 
 REQUIRED = {
-    "layout/theme.liquid",
-    "assets/mvqueen.css",
-    "assets/mvqueen-design-system.css",
-    "assets/mvqueen-header.css",
-    "assets/mvqueen-product.css",
-    "assets/mvqueen.js",
-    "assets/mvqueen-ux.js",
-    "sections/header.liquid",
-    "sections/hero.liquid",
-    "sections/editorial-curation.liquid",
-    "sections/announcement-bar.liquid",
-    "sections/footer.liquid",
-    "sections/main-product.liquid",
-    "sections/main-collection.liquid",
-    "sections/main-search.liquid",
-    "sections/main-cart.liquid",
-    "sections/product-recommendations.liquid",
-    "snippets/breadcrumbs.liquid",
-    "snippets/product-schema.liquid",
-    "snippets/seo-meta.liquid",
-    "templates/index.json",
-    "templates/product.json",
-    "templates/collection.json",
-    "templates/search.json",
-    "templates/cart.json",
+    "layout/theme.liquid", "assets/mvqueen.css", "assets/mvqueen-design-system.css",
+    "assets/mvqueen-header.css", "assets/mvqueen-product.css", "assets/mvqueen.js",
+    "assets/mvqueen-ux.js", "sections/header.liquid", "sections/hero.liquid",
+    "sections/editorial-curation.liquid", "sections/announcement-bar.liquid",
+    "sections/footer.liquid", "sections/main-product.liquid", "sections/main-collection.liquid",
+    "sections/main-search.liquid", "sections/main-cart.liquid", "sections/product-recommendations.liquid",
+    "snippets/breadcrumbs.liquid", "snippets/product-schema.liquid", "snippets/seo-meta.liquid",
+    "templates/index.json", "templates/product.json", "templates/collection.json",
+    "templates/search.json", "templates/cart.json",
 }
 
 FORBIDDEN_BRANDS = [
@@ -50,11 +34,9 @@ def main() -> int:
     if not THEME.exists():
         print(f"THEME CONTRACT: FAIL\n- Theme source directory missing: {THEME}")
         return 1
-
     for rel in sorted(REQUIRED):
         if not (THEME / rel).is_file():
             failures.append(f"Missing required theme source: {rel}")
-
     if failures:
         print("THEME CONTRACT: FAIL")
         print("\n".join(f"- {x}" for x in failures))
@@ -80,7 +62,7 @@ def main() -> int:
 
     schema = read("snippets/product-schema.liquid")
     schema_compact = re.sub(r"\s+", "", schema)
-    if '"@type":"Product"' not in schema_compact or "assign product_brand = 'MVQueen'" not in schema:
+    if '"@type":"Product"' not in schema_compact or "assign product_brand = 'MVQUEEN'" not in schema:
         failures.append("Product schema must emit Product + MVQUEEN brand")
     if "aggregateRating" in schema or '"review"' in schema:
         failures.append("Review/rating schema must not be emitted without verified review data")
@@ -96,13 +78,11 @@ def main() -> int:
             if section_type and not (THEME / "sections" / f"{section_type}.liquid").exists():
                 failures.append(f"Template {path.name} references missing section: {section_type}")
 
-    # Normalize case for forbidden-brand detection; canonical MVQueen is intentionally allowed.
     all_text = "\n".join(
         p.read_text(encoding="utf-8", errors="ignore")
         for p in THEME.rglob("*")
         if p.is_file() and p.suffix.lower() in {".liquid", ".css", ".js", ".json"}
     ).upper()
-    # Catch escaped-newline artifacts that can silently corrupt CSS/JS formatting.
     if "\\n" in read("assets/mvqueen-design-system.css"):
         failures.append("Design-system CSS contains a literal escaped newline artifact")
 
@@ -124,7 +104,6 @@ def main() -> int:
         print("THEME CONTRACT: FAIL")
         print("\n".join(f"- {x}" for x in failures))
         return 1
-
     print("THEME CONTRACT: PASS")
     print(f"Validated {len(REQUIRED)} required theme source files.")
     print("Live-theme publishing is contractually blocked by this repository validator.")
