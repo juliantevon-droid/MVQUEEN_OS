@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import FastAPI, Header, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -20,7 +20,7 @@ from shopify_auth import auth_status, get_authenticated_client
 from webhook_security import DeliveryDeduplicator, verify_shopify_hmac
 from audit import audit_log
 
-app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.5.0")
+app = FastAPI(title="MVQUEEN OS Shopify Backend", version="0.5.1")
 webhook_deduplicator = DeliveryDeduplicator()
 
 
