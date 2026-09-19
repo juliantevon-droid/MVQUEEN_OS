@@ -91,6 +91,13 @@ def main() -> int:
         if token not in design:
             failures.append(f"Design-system compatibility alias missing: {token}")
 
+    ux = read("assets/mvqueen-ux.js")
+    js = read("assets/mvqueen.js")
+    if "data-filter-open" not in ux or "data-filter-close" not in ux:
+        failures.append("Collection filter behavior must remain in mvqueen-ux.js")
+    if "filterOpenButtons" in js or "filterDrawer" in js:
+        failures.append("Duplicate collection filter controller detected in mvqueen.js")
+
     for brand in FORBIDDEN_BRANDS:
         if brand in all_text:
             failures.append(f"Forbidden supplier/legacy brand string found: {brand}")
