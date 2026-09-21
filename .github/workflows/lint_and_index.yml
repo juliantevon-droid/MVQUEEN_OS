@@ -1,0 +1,48 @@
+name: MVQUEEN OS — Lint and Index
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mvqueen-lint-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Index vault and lint product copy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Syntax check
+        run: python -m compileall -q core
+
+      - name: Build vault index
+        run: python core/vault_crawler.py --root . --output build/vault_index.json
+
+      - name: Lint MVQueen product content
+        run: python core/brand_linter.py --input 04_Products --output build/brand_lint_report.json --provider none --fail-on hold
+
+      - name: Upload governance reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mvqueen-governance-${{ github.sha }}
+          path: build/
+          if-no-files-found: warn
+          retention-days: 14
