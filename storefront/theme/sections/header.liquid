@@ -1,20 +1,56 @@
 <header class="mvq-header">
   <div class="mvq-container mvq-nav">
-    <button class="mvq-menu" type="button" data-mvq-menu aria-label="Open menu" aria-controls="MVQMobilePanel" aria-expanded="false">☰</button>
+    <button class="mvq-menu" type="button" data-mvq-menu aria-label="Open menu" aria-controls="MVQMobilePanel" aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
     <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="MVQUEEN home">MVQUEEN</a>
     <nav class="mvq-navlinks" aria-label="Primary navigation">
       {% for link in section.settings.menu.links %}
-        <a href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.links != blank %}
+          <details class="mvq-nav-item">
+            <summary>{{ link.title }}</summary>
+            <div class="mvq-nav-dropdown">
+              {% for child_link in link.links %}
+                <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                {% if child_link.links != blank %}
+                  <div class="mvq-nav-subgroup">
+                    {% for grandchild_link in child_link.links %}
+                      <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </details>
+        {% else %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
       {% endfor %}
     </nav>
     <div class="mvq-actions" aria-label="Store actions">
-      <a href="{{ routes.search_url }}" aria-label="Search MVQUEEN">Search</a>
-      <a href="{{ routes.cart_url }}" aria-label="Shopping bag, {{ cart.item_count }} items">Bag <span class="mvq-bag-count">{{ cart.item_count }}</span></a>
+      <a href="{{ routes.search_url }}" aria-label="Search MVQUEEN"><span class="mvq-action-label">Search</span><span class="mvq-action-icon" aria-hidden="true">⌕</span></a>
+      <a href="{{ routes.cart_url }}" aria-label="Shopping bag, {{ cart.item_count }} items"><span class="mvq-action-label">Bag</span><span class="mvq-bag-count">{{ cart.item_count }}</span></a>
     </div>
   </div>
   <nav id="MVQMobilePanel" class="mvq-mobile-panel mvq-container" data-mvq-panel hidden aria-label="Mobile navigation">
     {% for link in section.settings.menu.links %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
+      {% if link.links != blank %}
+        <details class="mvq-mobile-group">
+          <summary>{{ link.title }}</summary>
+          <div class="mvq-mobile-submenu">
+            {% for child_link in link.links %}
+              <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+              {% if child_link.links != blank %}
+                {% for grandchild_link in child_link.links %}
+                  <a class="mvq-mobile-grandchild" href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </details>
+      {% else %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endif %}
     {% endfor %}
   </nav>
 </header>
