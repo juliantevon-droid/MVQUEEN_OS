@@ -25,9 +25,12 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # Deployment identity must come from GitHub configuration; no hard-coded fallback.
+  # Deployment identity must come from GitHub configuration; no hard-coded deployment fallback.
   SHOPIFY_STORE: ${{ vars.MVQUEEN_SHOPIFY_STORE }}
   SHOPIFY_THEME_ID: ${{ vars.MVQUEEN_SHOPIFY_THEME_ID }}
+  # Canonical identity verified against the connected Shopify store on 2026-09-21.
+  EXPECTED_SHOPIFY_STORE: tsucu0-1i.myshopify.com
+  EXPECTED_SHOPIFY_THEME_ID: '154611515590'
 
 jobs:
   validate:
@@ -76,7 +79,15 @@ jobs:
               echo 'Set MVQUEEN_SHOPIFY_STORE and MVQUEEN_SHOPIFY_THEME_ID before enabling deployment.'
               exit 1
             fi
-            echo 'Deployment enabled with explicit Shopify store/theme identity.'
+            if [ "$SHOPIFY_STORE" != "$EXPECTED_SHOPIFY_STORE" ]; then
+              echo "Configured Shopify store does not match the canonical MVQUEEN store: $EXPECTED_SHOPIFY_STORE"
+              exit 1
+            fi
+            if [ "$SHOPIFY_THEME_ID" != "$EXPECTED_SHOPIFY_THEME_ID" ]; then
+              echo "Configured Shopify theme ID does not match the verified unpublished MVQUEEN theme: $EXPECTED_SHOPIFY_THEME_ID"
+              exit 1
+            fi
+            echo 'Deployment enabled with verified canonical Shopify store/theme identity.'
           else
             echo 'MVQUEEN_DEPLOY_ENABLED is not true — deployment remains safely disabled.'
             echo 'Validation still runs automatically; no Shopify write is attempted.'
