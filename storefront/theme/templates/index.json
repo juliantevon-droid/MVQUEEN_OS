@@ -1,15 +1,74 @@
 {
   "sections": {
-    "hero": {"type":"hero","settings":{}},
-    "curation": {"type":"editorial-curation","settings":{},"blocks":{
-      "note-1":{"type":"note","settings":{"title":"The statement piece","text":"One intentional detail can change the entire look."}},
-      "note-2":{"type":"note","settings":{"title":"The everyday edit","text":"Refined pieces chosen to move easily through real life."}},
-      "note-3":{"type":"note","settings":{"title":"The finishing touch","text":"Beauty and accessories selected to complete your point of view."}}
-    }},
-    "featured": {"type":"featured-products","settings":{}},
-    "trust": {"type":"trust-strip","settings":{}},
-    "pillars": {"type":"brand-pillars","settings":{}},
-    "newsletter": {"type":"newsletter","settings":{}}
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "curation": {
+      "type": "editorial-curation",
+      "settings": {},
+      "blocks": {
+        "note-1": {
+          "type": "note",
+          "settings": {
+            "title": "The statement piece",
+            "text": "One intentional detail can change the entire look."
+          }
+        },
+        "note-2": {
+          "type": "note",
+          "settings": {
+            "title": "The everyday edit",
+            "text": "Refined pieces chosen to move easily through real life."
+          }
+        },
+        "note-3": {
+          "type": "note",
+          "settings": {
+            "title": "The finishing touch",
+            "text": "Beauty and accessories selected to complete your point of view."
+          }
+        }
+      }
+    },
+    "featured": {
+      "type": "featured-products",
+      "settings": {}
+    },
+    "trust": {
+      "type": "trust-strip",
+      "settings": {}
+    },
+    "pillars": {
+      "type": "brand-pillars",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    },
+    "story": {
+      "type": "brand-story",
+      "settings": {}
+    },
+    "social": {
+      "type": "social-proof",
+      "settings": {}
+    },
+    "badges": {
+      "type": "trust-badges",
+      "settings": {}
+    }
   },
-  "order":["hero","curation","featured","trust","pillars","newsletter"]
+  "order": [
+    "hero",
+    "curation",
+    "featured",
+    "story",
+    "trust",
+    "social",
+    "pillars",
+    "badges",
+    "newsletter"
+  ]
 }
