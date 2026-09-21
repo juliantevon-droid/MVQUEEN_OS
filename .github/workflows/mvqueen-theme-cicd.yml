@@ -142,3 +142,5 @@ jobs:
           name: mvqueen-theme-deployment-${{ github.run_id }}
           path: .mvqueen-ci
           retention-days: 30
+
+# Canonical deployment identity remains pinned to the verified unpublished MVQUEEN theme.
