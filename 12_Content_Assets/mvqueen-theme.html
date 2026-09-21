@@ -181,6 +181,42 @@
       transition: transform 0.3s var(--ease-soft), opacity 0.3s;
     }
 
+
+    /* ─── MENU DROPDOWN / MEGA MENU ─────────────────────────── */
+    .nav__menu-trigger { position: relative; }
+    .nav__menu-button {
+      display: inline-flex; align-items: center; gap: 7px; padding: 8px 0;
+      font-family: var(--font-title); font-size: 10px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--dust);
+    }
+    .nav__menu-chevron { width: 10px; height: 10px; transition: transform .3s var(--ease-soft); }
+    .nav__menu-trigger.open .nav__menu-chevron { transform: rotate(180deg); }
+    .mega-menu {
+      position: absolute; top: calc(100% + 1px); left: 0; right: 0; z-index: 99;
+      background: var(--white); border-top: 1px solid rgba(124,108,99,.12);
+      border-bottom: 1px solid rgba(124,108,99,.14); box-shadow: 0 18px 40px rgba(26,22,18,.10);
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: opacity .25s var(--ease-soft), transform .25s var(--ease-soft), visibility .25s;
+    }
+    .mega-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+    .mega-menu__inner { max-width: 1200px; margin: 0 auto; padding: 34px 40px 38px; display: grid; grid-template-columns: repeat(5,1fr); gap: 34px; }
+    .mega-menu__title { font-family: var(--font-title); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 15px; color: var(--ink); }
+    .mega-menu__list { display: grid; gap: 9px; }
+    .mega-menu__list a { font-size: 12px; color: var(--mink); transition: color .2s, transform .2s; }
+    .mega-menu__list a:hover { color: var(--gold); transform: translateX(2px); }
+    .mega-menu__featured { border-left: 1px solid rgba(184,146,74,.25); padding-left: 24px; }
+    .mega-menu__featured p { font-family: var(--font-display); font-size: 22px; line-height: 1.25; color: var(--dust); margin-bottom: 14px; }
+    .mega-menu__featured a { font-family: var(--font-title); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+    .mobile-nav__section { border-bottom: 1px solid rgba(124,108,99,.1); }
+    .mobile-nav__toggle { width: 100%; display:flex; justify-content:space-between; align-items:center; padding:16px 0; font-family:var(--font-title); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); }
+    .mobile-nav__toggle svg { width:12px; height:12px; transition:transform .25s; }
+    .mobile-nav__section.open .mobile-nav__toggle svg { transform:rotate(180deg); }
+    .mobile-nav__submenu { display:grid; gap:10px; max-height:0; overflow:hidden; transition:max-height .3s var(--ease-soft); }
+    .mobile-nav__section.open .mobile-nav__submenu { max-height:420px; padding:0 0 16px; }
+    .mobile-nav__submenu a { font-size:13px; color:var(--mink); }
+    @media (max-width: 768px) { .mega-menu { display:none; } }
+    @media (min-width: 769px) { .nav__mobile-toggle { display:none !important; } }
+
     /* ─── HERO ────────────────────────────────────────────────── */
     .hero {
       display: grid;
@@ -1070,10 +1106,11 @@
       <span>Accessible Luxury</span>
     </a>
     <ul class="nav__links">
-      <li><a href="/collections/fashion">Fashion</a></li>
-      <li><a href="/collections/beauty">Beauty</a></li>
-      <li><a href="/collections/fragrance">Fragrance</a></li>
-      <li><a href="/collections/jewelry">Jewelry</a></li>
+      <li class="nav__menu-trigger" id="desktopMenuTrigger">
+        <button class="nav__menu-button" id="desktopMenuButton" aria-expanded="false" aria-controls="megaMenu">Menu
+          <svg class="nav__menu-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="m2 4 4 4 4-4"/></svg>
+        </button>
+      </li>
       <li><a href="/collections/new-arrivals">New Arrivals</a></li>
     </ul>
     <div class="nav__actions">
@@ -1090,15 +1127,27 @@
     </div>
   </nav>
 
+
+  <div class="mega-menu" id="megaMenu" aria-hidden="true">
+    <div class="mega-menu__inner">
+      <div><div class="mega-menu__title">Fashion</div><div class="mega-menu__list"><a href="/collections/fashion">All Fashion</a><a href="/collections/dresses">Dresses</a><a href="/collections/tops">Tops</a><a href="/collections/bottoms">Bottoms</a><a href="/collections/outerwear">Outerwear</a><a href="/collections/jeans-denim">Denim</a><a href="/collections/matching-sets">Matching Sets</a><a href="/collections/activewear">Activewear</a><a href="/collections/swimwear">Swim</a></div></div>
+      <div><div class="mega-menu__title">Jewelry</div><div class="mega-menu__list"><a href="/collections/jewelry">All Jewelry</a><a href="/collections/necklaces">Necklaces</a><a href="/collections/earrings">Earrings</a><a href="/collections/bracelets">Bracelets</a><a href="/collections/rings">Rings</a></div></div>
+      <div><div class="mega-menu__title">Beauty</div><div class="mega-menu__list"><a href="/collections/beauty">All Beauty</a><a href="/collections/makeup">Makeup</a><a href="/collections/skincare">Skincare</a><a href="/collections/hair-care">Hair Care</a><a href="/collections/wigs-extensions">Wigs & Extensions</a><a href="/collections/beauty-tools">Beauty Tools</a></div></div>
+      <div><div class="mega-menu__title">Accessories</div><div class="mega-menu__list"><a href="/collections/handbags-purses">Handbags</a><a href="/collections/shoes">Shoes</a><a href="/collections/sunglasses">Sunglasses</a><a href="/collections/belts">Belts</a><a href="/collections/hats-headwear">Hats & Headwear</a><a href="/collections/fragrance">Fragrance</a></div></div>
+      <div class="mega-menu__featured"><p>Curated for bold femininity, modern elegance, and everyday luxury.</p><a href="/collections/mvqueen-edit">Shop the MVQueen Edit →</a></div>
+    </div>
+  </div>
   <!-- MOBILE NAV -->
   <div class="cart-overlay" id="mobileOverlay"></div>
   <div class="mobile-nav" id="mobileNav">
     <div class="nav__logo">MVQUEEN<span>Accessible Luxury</span></div>
-    <a href="/collections/fashion">Fashion</a>
-    <a href="/collections/beauty">Beauty</a>
-    <a href="/collections/fragrance">Fragrance</a>
-    <a href="/collections/jewelry">Jewelry</a>
     <a href="/collections/new-arrivals">New Arrivals</a>
+    <div class="mobile-nav__section"><button class="mobile-nav__toggle">Fashion <svg viewBox="0 0 12 12" fill="none" stroke="currentColor"><path d="m2 4 4 4 4-4"/></svg></button><div class="mobile-nav__submenu"><a href="/collections/fashion">All Fashion</a><a href="/collections/dresses">Dresses</a><a href="/collections/tops">Tops</a><a href="/collections/bottoms">Bottoms</a><a href="/collections/outerwear">Outerwear</a><a href="/collections/jeans-denim">Denim</a><a href="/collections/matching-sets">Matching Sets</a><a href="/collections/activewear">Activewear</a><a href="/collections/swimwear">Swim</a></div></div>
+    <div class="mobile-nav__section"><button class="mobile-nav__toggle">Jewelry <svg viewBox="0 0 12 12" fill="none" stroke="currentColor"><path d="m2 4 4 4 4-4"/></svg></button><div class="mobile-nav__submenu"><a href="/collections/jewelry">All Jewelry</a><a href="/collections/necklaces">Necklaces</a><a href="/collections/earrings">Earrings</a><a href="/collections/bracelets">Bracelets</a><a href="/collections/rings">Rings</a></div></div>
+    <div class="mobile-nav__section"><button class="mobile-nav__toggle">Beauty <svg viewBox="0 0 12 12" fill="none" stroke="currentColor"><path d="m2 4 4 4 4-4"/></svg></button><div class="mobile-nav__submenu"><a href="/collections/beauty">All Beauty</a><a href="/collections/makeup">Makeup</a><a href="/collections/skincare">Skincare</a><a href="/collections/hair-care">Hair Care</a><a href="/collections/wigs-extensions">Wigs & Extensions</a><a href="/collections/beauty-tools">Beauty Tools</a></div></div>
+    <div class="mobile-nav__section"><button class="mobile-nav__toggle">Accessories <svg viewBox="0 0 12 12" fill="none" stroke="currentColor"><path d="m2 4 4 4 4-4"/></svg></button><div class="mobile-nav__submenu"><a href="/collections/handbags-purses">Handbags</a><a href="/collections/shoes">Shoes</a><a href="/collections/sunglasses">Sunglasses</a><a href="/collections/belts">Belts</a><a href="/collections/hats-headwear">Hats & Headwear</a></div></div>
+    <a href="/collections/fragrance">Fragrance</a>
+    <a href="/collections/mvqueen-edit">MVQueen Edit</a>
   </div>
 
   <!-- HERO -->
@@ -1584,6 +1633,30 @@
     document.getElementById('cartClose').addEventListener('click', closeCart);
     document.getElementById('cartCloseAlt').addEventListener('click', closeCart);
     document.getElementById('cartOverlay').addEventListener('click', closeCart);
+
+
+    // ─── DESKTOP MENU DROPDOWN ─────────────────────────────────
+    const desktopMenuTrigger = document.getElementById('desktopMenuTrigger');
+    const desktopMenuButton = document.getElementById('desktopMenuButton');
+    const megaMenu = document.getElementById('megaMenu');
+    function closeMegaMenu() {
+      desktopMenuTrigger?.classList.remove('open'); megaMenu?.classList.remove('open');
+      desktopMenuButton?.setAttribute('aria-expanded', 'false'); megaMenu?.setAttribute('aria-hidden', 'true');
+    }
+    desktopMenuButton?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const open = !megaMenu.classList.contains('open');
+      desktopMenuTrigger.classList.toggle('open', open); megaMenu.classList.toggle('open', open);
+      desktopMenuButton.setAttribute('aria-expanded', String(open)); megaMenu.setAttribute('aria-hidden', String(!open));
+    });
+    document.addEventListener('click', (event) => {
+      if (megaMenu?.classList.contains('open') && !megaMenu.contains(event.target) && !desktopMenuTrigger.contains(event.target)) closeMegaMenu();
+    });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMegaMenu(); });
+
+    document.querySelectorAll('.mobile-nav__toggle').forEach((button) => {
+      button.addEventListener('click', () => button.parentElement.classList.toggle('open'));
+    });
 
     // ─── MOBILE NAV ───────────────────────────────────────────
     const mobileToggle = document.getElementById('mobileToggle');
