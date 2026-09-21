@@ -36,3 +36,4 @@
 @media(prefers-reduced-motion:reduce){
   .mvq-product-media-item img{transition:none}
 }
+.mvq-pdp-trust{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:20px}.mvq-pdp-trust span{padding:10px;border:1px solid var(--mvq-line);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase}@media(max-width:480px){.mvq-pdp-trust{grid-template-columns:1fr}}
