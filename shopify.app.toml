@@ -40,3 +40,8 @@ uri = "/webhooks/compliance/customers-redact"
 [[webhooks.subscriptions]]
 compliance_topics = ["shop/redact"]
 uri = "/webhooks/compliance/shop-redact"
+
+# Production deployment guard:
+# Set the real client_id and HTTPS application_url during app configuration.
+# These placeholders intentionally remain in source control until the real
+# Shopify app credentials and production host are connected.
