@@ -12,28 +12,29 @@ model Session {
   shop                String
   state               String
   isOnline             Boolean   @default(false)
-  scope                String?
-  expires              DateTime?
-  accessToken          String
-  userId               BigInt?
-  firstName            String?
-  lastName             String?
-  email                String?
-  accountOwner         Boolean   @default(false)
-  locale               String?
+  scope               String?
+  expires             DateTime?
+  accessToken         String
+  userId              BigInt?
+  firstName           String?
+  lastName            String?
+  email               String?
+  accountOwner        Boolean   @default(false)
+  locale              String?
   collaborator         Boolean?  @default(false)
   emailVerified        Boolean?  @default(false)
-  refreshToken         String?
+  refreshToken        String?
   refreshTokenExpires  DateTime?
 }
 
 model ProductAutomationState {
-  id                    String   @id @default(cuid())
-  shop                  String
-  productGid            String
+  id                      String   @id @default(cuid())
+  shop                    String
+  productGid              String
+  sourceFingerprint       String?
   lastAutomationUpdatedAt DateTime?
-  automationVersion     String   @default("1")
-  updatedAt             DateTime @updatedAt
+  automationVersion       String   @default("mvq-catalog-v1")
+  updatedAt               DateTime @updatedAt
   @@unique([shop, productGid])
 }
 
