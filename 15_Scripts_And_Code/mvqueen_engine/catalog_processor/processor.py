@@ -137,52 +137,112 @@ def process_csv(input_path: str, output_path: str):
 
 
 # ---------------------------------------------
-# MODE B — SHOPIFY LIVE PROCESSING
+# MODE B — SHOPIFY PROCESSING (GRAPHQL + SAFE GATE)
 # ---------------------------------------------
 
-def process_shopify_catalog():
-    """
-    Fetches all products from Shopify and applies full MVQueen curation.
-    """
+from mvqueen_engine.shopify_graphql_client import get_client
 
-    products = get_all_products()
-    if not products:
-        print("No products found.")
-        return
 
+PRODUCTS_QUERY = """
+query Products($first: Int!, $after: String) {
+  products(first: $first, after: $after) {
+    nodes {
+      id
+      handle
+      title
+      descriptionHtml
+      vendor
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+"""
+
+
+PRODUCT_UPDATE_MUTATION = """
+mutation ProductUpdate($product: ProductUpdateInput!) {
+  productUpdate(product: $product) {
+    product {
+      id
+      title
+      vendor
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+"""
+
+
+def _assert_editorial_payload(payload):
+    """Fail closed if a catalog workflow attempts to touch protected fields."""
+    forbidden = set(payload) & set(SHOPIFY_PROTECTED_COLUMNS)
+    if forbidden:
+        raise ValueError(
+            "Protected Shopify fields cannot be changed by catalog curation: "
+            + ", ".join(sorted(forbidden))
+        )
+
+
+def process_shopify_catalog(*, dry_run=True, first=100):
+    """
+    Process Shopify catalog through the canonical GraphQL client.
+
+    Safety rules:
+    - dry_run=True by default.
+    - No SKU, handle, inventory, variant configuration, pricing, or source-image
+      fields are changed.
+    - Only approved editorial product fields are candidates for mutation.
+    - Shopify userErrors are surfaced by the GraphQL client.
+    """
+    client = get_client(dry_run=dry_run)
+
+    products = client.query_all(
+        PRODUCTS_QUERY,
+        ("products",),
+        first=first,
+    )
+
+    results = []
     for product in products:
-        product_id = product["id"]
-        handle = product["handle"]
-        base_title = product["title"]
-        supplier_body = product.get("body_html", "")
+        base_title = str(product.get("title", "")).strip()
+        handle = str(product.get("handle", "")).strip()
+        supplier_body = str(product.get("descriptionHtml", "")).strip()
 
         supplier_body_clean = clean_text(supplier_body)
-
-        # Generate curated content
         curated_title = generate_title(base_title, handle)
-        curated_desc = generate_description(base_title, handle, supplier_body_clean)
+        curated_desc = generate_description(
+            base_title, handle, supplier_body_clean
+        )
         curated_meta = generate_metafields(base_title, handle)
 
-        # SEO
-        seo_title = curated_title[:60]
-        seo_desc = strip_html(curated_desc)[:155]
-
-        # Update product
-        update_product(product_id, {
+        # ProductUpdateInput is intentionally limited to editorial fields.
+        product_input = {
+            "id": product["id"],
             "title": curated_title,
-            "body_html": curated_desc,
-            "seo_title": seo_title,
-            "seo_description": seo_desc,
+            "descriptionHtml": curated_desc,
             "vendor": BRAND_NAME,
+        }
+        _assert_editorial_payload(product_input)
+
+        mutation_result = client.mutate(
+            PRODUCT_UPDATE_MUTATION,
+            {"product": product_input},
+        )
+
+        results.append({
+            "id": product["id"],
+            "handle": handle,
+            "title": curated_title,
+            "seo_title": curated_title[:60],
+            "seo_description": strip_html(curated_desc)[:155],
+            "metafields": curated_meta,
+            "dry_run": bool(mutation_result.get("dry_run")),
         })
 
-        # Update metafields
-        update_metafields(product_id, curated_meta)
-
-        # Update variant prices
-        for variant in product.get("variants", []):
-            price = variant.get("price")
-            compare_at = calculate_compare_price(price)
-            update_variant_price(variant["id"], price, compare_at)
-
-    print("Shopify catalog updated successfully.")
+    return results
