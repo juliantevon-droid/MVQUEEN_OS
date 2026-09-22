@@ -51,3 +51,19 @@ html.mvq-lock{overflow:hidden}
 }
 @media(min-width:750px){.mvq-mobile-panel{display:none!important}}
 @media(prefers-reduced-motion:reduce){.mvq-nav-item>summary::after,.mvq-navlinks>a::after,.mvq-nav-item>summary::before{transition:none}}
+.mvq-brand-switcher{border-bottom:1px solid var(--mvq-line);background:var(--mvq-pearl)}
+.mvq-brand-switcher-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;min-height:58px}
+.mvq-brand-choice{display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 16px;text-decoration:none;color:inherit;position:relative}
+.mvq-brand-choice::after{content:"";position:absolute;left:16%;right:16%;bottom:0;height:2px;background:var(--mvq-gold);transform:scaleX(0);transform-origin:center;transition:transform .2s ease}
+.mvq-brand-choice:hover::after,.mvq-brand-choice:focus-visible::after,.mvq-brand-choice.is-active::after{transform:scaleX(1)}
+.mvq-brand-choice-name{font-family:var(--mvq-display);font-size:1.05rem;letter-spacing:.08em}
+.mvq-brand-choice-note{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mink)}
+.mvq-brand-divider{width:1px;margin:12px 0;background:var(--mvq-line)}
+@media(max-width:749px){
+  .mvq-brand-switcher-inner{min-height:50px}
+  .mvq-brand-choice{display:flex;flex-direction:column;gap:2px;padding:8px 6px}
+  .mvq-brand-choice-name{font-size:.95rem}
+  .mvq-brand-choice-note{font-size:.48rem}
+  .mvq-brand-choice::after{left:12%;right:12%}
+}
+@media(prefers-reduced-motion:reduce){.mvq-brand-choice::after{transition:none}}
