@@ -5,7 +5,11 @@
     </button>
     <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="MVQUEEN home">MVQUEEN</a>
     <nav class="mvq-navlinks" aria-label="Primary navigation">
+      {% assign has_miss_princess = false %}
       {% for link in section.settings.menu.links %}
+        {% if link.title == 'Miss.Princess' %}
+          {% assign has_miss_princess = true %}
+        {% endif %}
         {% if link.links != blank %}
           <details class="mvq-nav-item">
             <summary>{{ link.title }}</summary>
@@ -26,6 +30,9 @@
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endif %}
       {% endfor %}
+      {% unless has_miss_princess %}
+        <a href="/pages/miss-princess">Miss.Princess</a>
+      {% endunless %}
     </nav>
     <div class="mvq-actions" aria-label="Store actions">
       <a href="{{ routes.search_url }}" aria-label="Search MVQUEEN"><span class="mvq-action-label">Search</span><span class="mvq-action-icon" aria-hidden="true">⌕</span></a>
@@ -52,6 +59,9 @@
         <a href="{{ link.url }}">{{ link.title }}</a>
       {% endif %}
     {% endfor %}
+    {% unless has_miss_princess %}
+      <a href="/pages/miss-princess">Miss.Princess</a>
+    {% endunless %}
   </nav>
 </header>
 {% schema %}
