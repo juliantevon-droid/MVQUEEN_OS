@@ -1,0 +1,7 @@
+name = "MVQUEEN OS"
+roles = ["frontend", "backend"]
+webhooks_path = "/webhooks"
+
+[commands]
+dev = "react-router dev"
+build = "react-router build"
