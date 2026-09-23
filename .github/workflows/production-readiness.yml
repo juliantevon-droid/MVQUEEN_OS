@@ -1,0 +1,56 @@
+name: MVQUEEN Production Readiness
+
+on:
+  push:
+    branches:
+      - production/enterprise-hardening-v1
+      - production/editorial-intelligence-v1
+      - production/launch-build
+    paths:
+      - 'PRODUCTION_READINESS/**'
+      - '15_Scripts_And_Code/mvqueen_engine/**'
+      - '.github/workflows/production-readiness.yml'
+  pull_request:
+    branches:
+      - main
+      - production/launch-build
+      - production/enterprise-hardening-v1
+    paths:
+      - 'PRODUCTION_READINESS/**'
+      - '15_Scripts_And_Code/mvqueen_engine/**'
+      - '.github/workflows/production-readiness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production-readiness:
+    name: Canonical Product Pipeline Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate JSON schema syntax
+        run: python -m json.tool PRODUCTION_READINESS/PRODUCT_SCHEMA_V1.json >/dev/null
+      - name: Compile production readiness Python
+        run: python -m compileall -q PRODUCTION_READINESS
+      - name: Compile MVQueen engine Python
+        run: python -m compileall -q 15_Scripts_And_Code/mvqueen_engine
+      - name: Run canonical pipeline, schema, release, boundary, publisher, preview, transport, and audit tests
+        working-directory: PRODUCTION_READINESS
+        run: python -m unittest test_product_pipeline_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py test_shopify_publish_preview_v1.py test_shopify_transport_boundary_v1.py test_release_audit_ledger_v1.py -v
+      - name: Check legacy Shopify bypasses are disabled
+        run: |
+          ! grep -nE 'update_product\(|update_metafields\(|update_variant_price\(' 15_Scripts_And_Code/mvqueen_engine/catalog_processor/processor.py
+          ! grep -nE 'from shopify\.api import|api\.update_product\(' 15_Scripts_And_Code/mvqueen_engine/update.py
+          ! grep -nE 'requests\.(post|put|patch|delete|request)\(' 15_Scripts_And_Code/mvqueen_engine/sync.py 15_Scripts_And_Code/mvqueen_engine/sync_engine.py 15_Scripts_And_Code/mvqueen_engine/API.py 15_Scripts_And_Code/mvqueen_engine/upload.py 15_Scripts_And_Code/mvqueen_engine/metafields_api.py 15_Scripts_And_Code/mvqueen_engine/collections_api.py
+      - name: Check for obvious credential material
+        run: python PRODUCTION_READINESS/scan_credentials.py

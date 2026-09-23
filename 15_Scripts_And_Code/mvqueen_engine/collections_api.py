@@ -1,38 +1,22 @@
-# shopify/collections_api.py
-"""
-MVQueen Shopify Collection Sync
--------------------------------
+"""Retired Shopify collection mutation entry point.
 
-Assigns products to Shopify collections using the safe ShopifyAPI wrapper.
-
-Collections come from:
-- catalog_processor/collection.py
+Collection assignment is derived by the canonical merchandising stage and may
+only be applied through the approved production publisher architecture.
 """
+from __future__ import annotations
 
 from typing import List
-from shopify.api import ShopifyAPI
 
 
-def sync_collections(product_id: str, collections: List[str]) -> List[dict]:
-    """
-    Assigns a product to multiple Shopify collections.
-
-    Args:
-        product_id: Shopify product ID
-        collections: List of collection handles or IDs
-
-    Returns:
-        List of Shopify API responses.
-    """
-
-    api = ShopifyAPI()
-    responses = []
-
-    for collection in collections:
-        resp = api.assign_to_collection(product_id, collection)
-        responses.append(resp)
-
-    return responses
+class LegacyCollectionSyncDisabled(RuntimeError):
+    """Raised when the retired collection mutation path is invoked."""
 
 
-__all__ = ["sync_collections"]
+def sync_collections(product_id: str, collections: List[str]) -> None:
+    raise LegacyCollectionSyncDisabled(
+        "Legacy collection sync is disabled on the enterprise production branch. "
+        "Use the canonical release path and approved Shopify publisher."
+    )
+
+
+__all__ = ["sync_collections", "LegacyCollectionSyncDisabled"]
