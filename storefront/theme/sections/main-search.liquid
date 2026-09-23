@@ -1,27 +1,46 @@
-<section class="mvq-container mvq-search">
-  <div class="mvq-eyebrow">SEARCH MVQUEEN</div>
-  <h1>Find your next favorite.</h1>
-  <form action="{{ routes.search_url }}" method="get" role="search">
-    <label class="mvq-visually-hidden" for="SearchInput">Search MVQueen</label>
-    <input id="SearchInput" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search fashion, beauty, jewelry..." autocomplete="off">
-    <input type="hidden" name="type" value="product">
-    <button class="mvq-btn" type="submit">Search</button>
-  </form>
-  {% if search.performed %}
-    <p>{{ search.results_count }} {% if search.results_count == 1 %}result{% else %}results{% endif %}</p>
-    {% if search.results_count > 0 %}
-      <div class="mvq-grid" style="text-align:left;margin-top:45px">
-        {% for item in search.results %}
-          {% if item.object_type == 'product' %}
-            {% render 'product-card', product: item %}
-          {% endif %}
-        {% endfor %}
+<section class="mvq-search">
+  <div class="mvq-container">
+    <header class="mvq-search-head">
+      <p class="mvq-eyebrow">THE MVQUEEN EDIT</p>
+      <h1 class="mvq-display">Find what feels like you.</h1>
+      <p class="mvq-copy">Search the collection by piece, beauty ritual, jewelry, or style.</p>
+      <form class="mvq-search-form" action="{{ routes.search_url }}" method="get" role="search">
+        <label class="mvq-visually-hidden" for="SearchInput">Search MVQUEEN</label>
+        <input id="SearchInput" class="mvq-search-input" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Try “dress”, “glow”, or “gold”" autocomplete="off" enterkeyhint="search">
+        <input type="hidden" name="type" value="product">
+        <button class="mvq-button mvq-button--gold" type="submit">Search</button>
+      </form>
+    </header>
+    {% if search.performed %}
+      <div class="mvq-search-meta">
+        <span>{{ search.results_count }} {% if search.results_count == 1 %}piece{% else %}pieces{% endif %}</span>
+        {% if search.terms != blank %}<span>for “{{ search.terms | escape }}”</span>{% endif %}
       </div>
-    {% else %}
-      <p>No products matched that search. Try a broader term.</p>
+      {% paginate search.results by 24 %}
+        {% if search.results_count > 0 %}
+          <div class="mvq-product-grid">
+            {% for item in search.results %}
+              {% if item.object_type == 'product' %}{% render 'product-card', product: item %}{% endif %}
+            {% endfor %}
+          </div>
+          {% if paginate.pages > 1 %}
+            <nav class="mvq-pagination" aria-label="Search pagination">
+              {% if paginate.previous %}<a class="mvq-button mvq-button--quiet" href="{{ paginate.previous.url }}">Previous</a>{% endif %}
+              <span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+              {% if paginate.next %}<a class="mvq-button mvq-button--quiet" href="{{ paginate.next.url }}">Next</a>{% endif %}
+            </nav>
+          {% endif %}
+        {% else %}
+          <div class="mvq-search-empty">
+            <h2 class="mvq-display">Nothing matched this edit.</h2>
+            <p>Try a broader word or explore the collection directly.</p>
+            <a class="mvq-button" href="{{ routes.all_products_collection_url }}">Explore all pieces</a>
+          </div>
+        {% endif %}
+      {% endpaginate %}
     {% endif %}
-  {% endif %}
+  </div>
 </section>
 {% schema %}
-{"name":"Main search","settings":[]}
+{"name":"MVQUEEN Search","settings":[],"presets":[{"name":"MVQUEEN Search"}]}
 {% endschema %}
