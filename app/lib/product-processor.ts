@@ -5,6 +5,11 @@ import { generateCatalogPackage, type ProductSnapshot } from "./mvqueen-intellig
 
 const AUTOMATION_VERSION = "mvq-catalog-v1";
 
+// Fail closed: live Shopify writes and replacement of existing editorial/SEO
+// content both require explicit environment gates.
+const WRITE_ENABLED = process.env.MVQ_WRITE_ENABLED === "true";
+const CONTENT_REWRITE_ENABLED = process.env.MVQ_CONTENT_REWRITE_ENABLED === "true";
+
 const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
@@ -75,6 +80,12 @@ export async function processProductJob(jobId: string) {
     }
 
     const pkg = generateCatalogPackage(product);
+    const mergedTags = Array.from(new Set([...(product.tags ?? []), ...pkg.tags]));
+    const descriptionHtml = CONTENT_REWRITE_ENABLED || !product.descriptionHtml?.trim()
+      ? pkg.descriptionHtml
+      : product.descriptionHtml;
+    const seoTitle = CONTENT_REWRITE_ENABLED ? pkg.seoTitle : undefined;
+    const seoDescription = CONTENT_REWRITE_ENABLED ? pkg.seoDescription : undefined;
     const metafields = [
       { namespace: "classification", key: "department", type: "single_line_text_field", value: pkg.c.department },
       { namespace: "classification", key: "family", type: "single_line_text_field", value: pkg.c.family },
@@ -89,6 +100,24 @@ export async function processProductJob(jobId: string) {
       { namespace: "catalog", key: "classification_confidence", type: "single_line_text_field", value: pkg.c.confidence },
       { namespace: "catalog", key: "review_status", type: "single_line_text_field", value: pkg.c.confidence === "review" ? "needs_review" : "ready" },
     ];
+
+    if (!WRITE_ENABLED) {
+      await prisma.productJob.update({
+        where: { id: jobId },
+        data: { status: "completed", completedAt: new Date(), error: "DRY_RUN — Shopify writes disabled" },
+      });
+      return;
+    }
+
+    const productInput: Record<string, unknown> = {
+      id: product.id,
+      title: CONTENT_REWRITE_ENABLED && pkg.title !== product.title ? pkg.title : product.title,
+      descriptionHtml,
+      productType: product.productType?.trim() ? product.productType : pkg.c.productType,
+      tags: mergedTags,
+      metafields,
+    };
+    if (seoTitle || seoDescription) productInput.seo = { title: seoTitle, description: seoDescription };
 
     const update = await admin.graphql(PRODUCT_UPDATE, {
       variables: {
