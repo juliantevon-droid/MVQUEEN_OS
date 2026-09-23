@@ -15,7 +15,6 @@ import pandas as pd
 
 from mvqueen_engine.config import CSV_CHUNK_SIZE, SHOPIFY_PROTECTED_COLUMNS, BRAND_NAME
 from mvqueen_engine.utils.text_utils import strip_html, normalize_whitespace, enforce_brand
-from mvqueen_engine.utils.price_logic import calculate_compare_price
 from mvqueen_engine.brand_brain.editorial import generate_title, generate_description
 from mvqueen_engine.brand_brain.alt_text import generate_alt_text
 from mvqueen_engine.metafields.metafield_engine import generate_metafields
@@ -29,19 +28,29 @@ def clean_text(text):
 
 
 def process_csv(input_path: str, output_path: str):
-    """Load supplier CSV, apply legacy offline curation, and export CSV."""
+    """Load supplier CSV, apply editorial curation, and export CSV.
+
+    Protected commerce, variant, inventory, and source-image fields are not
+    generated or modified here. The legacy compare-at-price behavior is removed.
+    """
     df = pd.read_csv(input_path)
 
     if "Handle" not in df.columns:
         raise ValueError("CSV must contain a 'Handle' column.")
 
-    df["Title"] = ""
-    df["Body (HTML)"] = ""
-    df["Tags"] = ""
-    df["SEO Title"] = ""
-    df["SEO Description"] = ""
-    df["Alt Text"] = ""
-    df["Metafields"] = ""
+    # Editorial columns only. Existing columns are preserved in their source
+    # order; new editorial columns are appended when absent.
+    for column in (
+        "Title",
+        "Body (HTML)",
+        "Tags",
+        "SEO Title",
+        "SEO Description",
+        "Image Alt Text",
+        "Metafields",
+    ):
+        if column not in df.columns:
+            df[column] = ""
 
     for idx, row in df.iterrows():
         handle = str(row["Handle"]).strip()
@@ -50,7 +59,9 @@ def process_csv(input_path: str, output_path: str):
         supplier_body_clean = clean_text(supplier_body)
 
         curated_title = generate_title(base_title, handle)
-        curated_desc = generate_description(base_title, handle, supplier_body_clean)
+        curated_desc = generate_description(
+            base_title, handle, supplier_body_clean
+        )
         curated_alt = generate_alt_text(base_title, handle)
         curated_meta = generate_metafields(base_title, handle)
 
@@ -61,14 +72,9 @@ def process_csv(input_path: str, output_path: str):
         df.at[idx, "Body (HTML)"] = curated_desc
         df.at[idx, "SEO Title"] = seo_title
         df.at[idx, "SEO Description"] = seo_desc
-        df.at[idx, "Alt Text"] = curated_alt
+        df.at[idx, "Image Alt Text"] = curated_alt
         df.at[idx, "Metafields"] = str(curated_meta)
         df.at[idx, "Tags"] = f"mvqueen, curated, persona-{handle}"
-
-        price = row.get("Variant Price", None)
-        compare_at = calculate_compare_price(price) if price else None
-        if compare_at:
-            df.at[idx, "Variant Compare At Price"] = compare_at
 
     df.to_csv(output_path, index=False)
     return output_path
