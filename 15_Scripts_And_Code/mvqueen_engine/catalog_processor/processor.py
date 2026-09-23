@@ -12,7 +12,7 @@ MODE A — CSV MODE (offline)
 MODE B — SHOPIFY LIVE MODE
     - Fetch products from Shopify
     - Apply all MVQueen curation
-    - Update Shopify products + metafields + prices
+    - Propose narrowly scoped editorial Shopify updates
 
 This file uses:
 - Phase 0 utilities
@@ -22,7 +22,6 @@ This file uses:
 """
 
 import pandas as pd
-import os
 
 from mvqueen_engine.config import (
     CSV_CHUNK_SIZE,
@@ -36,8 +35,6 @@ from mvqueen_engine.utils.text_utils import (
     enforce_brand,
 )
 
-from mvqueen_engine.utils.price_logic import calculate_compare_price
-
 from mvqueen_engine.brand_brain.editorial import (
     generate_title,
     generate_description,
@@ -48,10 +45,6 @@ from mvqueen_engine.brand_brain.alt_text import generate_alt_text
 from mvqueen_engine.metafields.metafield_engine import generate_metafields
 
 from mvqueen_engine.shopify_api.shopify_client import (
-    get_all_products,
-    update_product,
-    update_metafields,
-    update_variant_price,
 )
 
 
@@ -83,16 +76,21 @@ def process_csv(input_path: str, output_path: str):
     if "Handle" not in df.columns:
         raise ValueError("CSV must contain a 'Handle' column.")
 
-    # Create new columns for curated output
-    df["Title"] = ""
-    df["Body (HTML)"] = ""
-    df["Tags"] = ""
-    df["SEO Title"] = ""
-    df["SEO Description"] = ""
-    df["Alt Text"] = ""
-
-    # Metafields will be exported as JSON string
-    df["Metafields"] = ""
+    # Additive editorial columns only. Existing protected/source columns are
+    # preserved; no inventory, SKU, variant, handle, pricing, or image-source
+    # identity fields are overwritten.
+    output_columns = {
+        "Title": "",
+        "Body (HTML)": "",
+        "Tags": "",
+        "SEO Title": "",
+        "SEO Description": "",
+        "Image Alt Text": "",
+        "Metafields": "",
+    }
+    for column, default in output_columns.items():
+        if column not in df.columns:
+            df[column] = default
 
     for idx, row in df.iterrows():
         handle = str(row["Handle"]).strip()
@@ -112,24 +110,16 @@ def process_csv(input_path: str, output_path: str):
         seo_title = curated_title[:60]
         seo_desc = strip_html(curated_desc)[:155]
 
-        # Price logic
-        price = row.get("Variant Price", None)
-        compare_at = calculate_compare_price(price) if price else None
-
         # Write back to DataFrame
         df.at[idx, "Title"] = curated_title
         df.at[idx, "Body (HTML)"] = curated_desc
         df.at[idx, "SEO Title"] = seo_title
         df.at[idx, "SEO Description"] = seo_desc
-        df.at[idx, "Alt Text"] = curated_alt
+        df.at[idx, "Image Alt Text"] = curated_alt
         df.at[idx, "Metafields"] = str(curated_meta)
 
         # Tags (persona + keywords)
         df.at[idx, "Tags"] = f"mvqueen, curated, persona-{handle}"
-
-        # Compare-at price
-        if compare_at:
-            df.at[idx, "Variant Compare At Price"] = compare_at
 
     # Export curated CSV
     df.to_csv(output_path, index=False)
@@ -179,9 +169,37 @@ mutation ProductUpdate($product: ProductUpdateInput!) {
 """
 
 
+SHOPIFY_ALLOWED_PRODUCT_INPUT_FIELDS = {
+    "id",
+    "title",
+    "descriptionHtml",
+    "vendor",
+}
+
+SHOPIFY_PROTECTED_GRAPHQL_FIELDS = {
+    "handle",
+    "variants",
+    "price",
+    "compareAtPrice",
+    "inventoryQuantity",
+    "inventoryItem",
+    "metafields",
+    "featuredImage",
+    "media",
+}
+
+
 def _assert_editorial_payload(payload):
-    """Fail closed if a catalog workflow attempts to touch protected fields."""
-    forbidden = set(payload) & set(SHOPIFY_PROTECTED_COLUMNS)
+    """Fail closed unless every GraphQL field is explicitly allow-listed."""
+    fields = set(payload)
+    unknown = fields - SHOPIFY_ALLOWED_PRODUCT_INPUT_FIELDS
+    if unknown:
+        raise ValueError(
+            "Shopify payload contains non-approved fields: "
+            + ", ".join(sorted(unknown))
+        )
+
+    forbidden = fields & SHOPIFY_PROTECTED_GRAPHQL_FIELDS
     if forbidden:
         raise ValueError(
             "Protected Shopify fields cannot be changed by catalog curation: "
