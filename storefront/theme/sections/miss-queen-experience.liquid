@@ -4,6 +4,33 @@
       <p class="mvq-eyebrow">A SISTER BRAND</p>
       <h1 id="miss-princess-title">Miss.Princess</h1>
       <p class="mvq-sister-lede">A distinct sister brand with a softer, more playful point of view — intentionally separate from the MVQueen edit while sharing the same creative foundation.</p>
+      {% if section.settings.menu != blank %}
+        <nav class="mvq-sister-nav" aria-label="Miss.Princess navigation">
+          {% for link in section.settings.menu.links %}
+            <div class="mvq-sister-nav-group">
+              {% if link.links != blank %}
+                <details>
+                  <summary>{{ link.title }}</summary>
+                  <div class="mvq-sister-nav-links">
+                    {% for child_link in link.links %}
+                      <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                      {% if child_link.links != blank %}
+                        <div class="mvq-sister-nav-grandchildren">
+                          {% for grandchild_link in child_link.links %}
+                            <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </details>
+              {% else %}
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </nav>
+      {% endif %}
       <div class="mvq-sister-grid">
         <a class="mvq-sister-card" href="/collections/all"><span>Explore the world</span><strong>Miss.Princess edit</strong></a>
         <a class="mvq-sister-card" href="/pages/about"><span>Our relationship</span><strong>Two sister brands</strong></a>
@@ -13,5 +40,5 @@
   </div>
 </section>
 {% schema %}
-{"name":"Miss.Princess Sister Experience","settings":[],"presets":[{"name":"Miss.Princess Sister Experience"}]}
+{"name":"Miss.Princess Sister Experience","settings":[{"type":"link_list","id":"menu","label":"Miss.Princess menu","default":"miss-princess-menu"}],"presets":[{"name":"Miss.Princess Sister Experience"}]}
 {% endschema %}
