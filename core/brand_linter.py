@@ -21,6 +21,7 @@ PRIMARY_KEYWORDS = {
 MAX_TITLE = 70
 MAX_META_TITLE = 65
 MAX_META_DESCRIPTION = 160
+CANONICAL_BRAND = "MVQueen"
 
 def normalize(value):
     if value is None:
@@ -125,6 +126,10 @@ def deterministic(record):
     if title and title.upper().count(title.upper().split()[0]) > 2:
         warnings.append("Title may contain repetitive wording")
 
+    brand = fields.get("brand")
+    if brand and brand.casefold() != CANONICAL_BRAND.casefold():
+        issues.append(f"Non-canonical product brand: {brand}")
+
     keyword_count = sum(combined.lower().count(k) for k in PRIMARY_KEYWORDS)
     if keyword_count > 8:
         issues.append("Potential keyword stuffing")
@@ -188,7 +193,11 @@ def main():
         })
 
     report = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
+        "release_gate": {
+            "eligible": counts["HOLD"] == 0 and not (args.fail_on == "warn" and counts["WARN"] > 0),
+            "policy": "Deterministic HOLD findings block release; WARN findings block release when --fail-on warn is selected.",
+        },
         "brand": "MVQUEEN",
         "input": args.input,
         "files_seen": files_seen,
