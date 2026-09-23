@@ -1,1 +1,47 @@
-<section class="mvq-container mvq-cart"><div class="mvq-eyebrow">YOUR BAG</div><h1>Selected for you.</h1>{% if cart.item_count == 0 %}<p>Your bag is waiting.</p><a class="mvq-btn" href="{{ routes.all_products_collection_url }}">Explore the collection</a>{% else %}{% form 'cart', cart %}{% for item in cart.items %}<div class="mvq-cart-row">{{ item.image | image_url: width: 180 | image_tag: loading: 'lazy', alt: item.image.alt | default: item.product.title | escape }}<div><a href="{{ item.url }}">{{ item.product.title }}</a><div>{{ item.final_line_price | money }}</div><input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity for {{ item.product.title }}"></div><a href="{{ item.url_to_remove }}">Remove</a></div>{% endfor %}<div class="mvq-total"><p>Subtotal: <strong>{{ cart.total_price | money }}</strong></p><button class="mvq-btn" type="submit" name="update">Update bag</button><button class="mvq-btn" type="submit" name="checkout">Secure checkout</button></div>{% endform %}{% endif %}</section>{% schema %}{"name":"Main cart","settings":[]} {% endschema %}
+<section class="mvq-cart">
+  <div class="mvq-container">
+    <header class="mvq-cart-head">
+      <p class="mvq-eyebrow">YOUR BAG</p>
+      <h1 class="mvq-display">Selected for you.</h1>
+    </header>
+    {% if cart.item_count == 0 %}
+      <div class="mvq-cart-empty">
+        <p>Your bag is waiting for something that feels like you.</p>
+        <a class="mvq-button mvq-button--gold" href="{{ routes.all_products_collection_url }}">Explore the collection</a>
+      </div>
+    {% else %}
+      {% form 'cart', cart %}
+        <div class="mvq-cart-layout">
+          <div class="mvq-cart-items">
+            {% for item in cart.items %}
+              <article class="mvq-cart-row">
+                <a class="mvq-cart-image" href="{{ item.url }}" aria-label="View {{ item.product.title | escape }}">
+                  {% if item.image %}{{ item.image | image_url: width: 420 | image_tag: loading: 'lazy', widths: '180,300,420', sizes: '(max-width: 749px) 34vw, 180px', alt: item.image.alt | default: item.product.title | escape }}{% endif %}
+                </a>
+                <div class="mvq-cart-details">
+                  {% if item.product.type != blank %}<p class="mvq-card-type">{{ item.product.type }}</p>{% endif %}
+                  <h2><a href="{{ item.url }}">{{ item.product.title }}</a></h2>
+                  {% unless item.product.has_only_default_variant %}<p class="mvq-cart-variant">{{ item.variant.title }}</p>{% endunless %}
+                  <p class="mvq-cart-price">{{ item.final_line_price | money }}</p>
+                  <label class="mvq-cart-qty">Quantity
+                    <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" inputmode="numeric" aria-label="Quantity for {{ item.product.title | escape }}">
+                  </label>
+                  <a class="mvq-cart-remove" href="{{ item.url_to_remove }}">Remove</a>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+          <aside class="mvq-cart-summary">
+            <div class="mvq-cart-summary-line"><span>Subtotal</span><strong>{{ cart.total_price | money }}</strong></div>
+            <p class="mvq-cart-note">Taxes and shipping are calculated at checkout.</p>
+            <button class="mvq-button mvq-button--quiet" type="submit" name="update">Update bag</button>
+            <button class="mvq-button mvq-button--gold" type="submit" name="checkout">Secure checkout</button>
+          </aside>
+        </div>
+      {% endform %}
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{"name":"MVQUEEN Cart","settings":[],"presets":[{"name":"MVQUEEN Cart"}]}
+{% endschema %}
