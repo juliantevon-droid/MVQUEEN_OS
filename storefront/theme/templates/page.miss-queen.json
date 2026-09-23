@@ -2,7 +2,9 @@
   "sections": {
     "main": {
       "type": "miss-queen-experience",
-      "settings": {}
+      "settings": {
+        "menu": "miss-princess-menu"
+      }
     }
   },
   "order": ["main"]
