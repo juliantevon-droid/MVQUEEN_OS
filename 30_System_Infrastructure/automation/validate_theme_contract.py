@@ -62,8 +62,8 @@ def main() -> int:
 
     schema = read("snippets/product-schema.liquid")
     schema_compact = re.sub(r"\s+", "", schema)
-    if '"@type":"Product"' not in schema_compact or "assign product_brand = 'MVQUEEN'" not in schema:
-        failures.append("Product schema must emit Product + MVQUEEN brand")
+    if '"@type":"Product"' not in schema_compact or "assign product_brand = 'MVQueen'" not in schema:
+        failures.append("Product schema must emit Product + MVQueen brand")
     if "aggregateRating" in schema or '"review"' in schema:
         failures.append("Review/rating schema must not be emitted without verified review data")
 
