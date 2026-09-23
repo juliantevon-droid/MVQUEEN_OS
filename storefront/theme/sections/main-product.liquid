@@ -6,7 +6,11 @@
         {% for media in product.media %}
           {% if media.preview_image %}
             <div class="mvq-product-media-item">
-              {{ media.preview_image | image_url: width: 1400 | image_tag: loading: forloop.first | default: false, fetchpriority: forloop.first | default: 'auto', widths: '600,900,1200,1400', sizes: '(max-width: 800px) 100vw, 58vw', alt: media.alt | default: product.title | escape }}
+              {% if forloop.first %}
+                {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '600,900,1200,1400', sizes: '(max-width: 800px) 100vw, 58vw', alt: media.alt | default: product.title | escape }}
+              {% else %}
+                {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600,900,1200,1400', sizes: '(max-width: 800px) 100vw, 58vw', alt: media.alt | default: product.title | escape }}
+              {% endif %}
             </div>
           {% endif %}
         {% endfor %}
