@@ -120,17 +120,7 @@ export async function processProductJob(jobId: string) {
     if (seoTitle || seoDescription) productInput.seo = { title: seoTitle, description: seoDescription };
 
     const update = await admin.graphql(PRODUCT_UPDATE, {
-      variables: {
-        product: {
-          id: product.id,
-          title: pkg.title !== product.title ? pkg.title : product.title,
-          descriptionHtml: pkg.descriptionHtml,
-          productType: product.productType?.trim() ? product.productType : pkg.c.productType,
-          tags: pkg.tags,
-          seo: { title: pkg.seoTitle, description: pkg.seoDescription },
-          metafields,
-        },
-      },
+      variables: { product: productInput },
     });
     const updateBody = await update.json();
     const errors = updateBody.data?.productUpdate?.userErrors ?? [];
