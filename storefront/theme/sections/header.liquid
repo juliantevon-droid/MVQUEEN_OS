@@ -64,19 +64,19 @@
     {% endunless %}
   </nav>
 </header>
-  <div class="mvq-brand-switcher" aria-label="Choose a brand experience">
-    <div class="mvq-container mvq-brand-switcher-inner">
-      <a class="mvq-brand-choice{% unless request.path contains '/pages/miss-princess' %} is-active{% endunless %}" href="{{ routes.root_url }}" aria-current="{% unless request.path contains '/pages/miss-princess' %}page{% endunless %}">
-        <span class="mvq-brand-choice-name">MVQueen</span>
-        <span class="mvq-brand-choice-note">The main edit</span>
-      </a>
-      <span class="mvq-brand-divider" aria-hidden="true"></span>
-      <a class="mvq-brand-choice{% if request.path contains '/pages/miss-princess' %} is-active{% endif %}" href="/pages/miss-princess" aria-current="{% if request.path contains '/pages/miss-princess' %}page{% endif %}">
-        <span class="mvq-brand-choice-name">Miss.Princess</span>
-        <span class="mvq-brand-choice-note">The sister brand</span>
-      </a>
-    </div>
+<div class="mvq-brand-switcher" aria-label="Choose a brand experience">
+  <div class="mvq-container mvq-brand-switcher-inner">
+    <a class="mvq-brand-choice{% unless request.path contains '/pages/miss-princess' %} is-active{% endunless %}" href="{{ routes.root_url }}"{% unless request.path contains '/pages/miss-princess' %} aria-current="page"{% endunless %}>
+      <span class="mvq-brand-choice-name">MVQueen</span>
+      <span class="mvq-brand-choice-note">The main edit</span>
+    </a>
+    <span class="mvq-brand-divider" aria-hidden="true"></span>
+    <a class="mvq-brand-choice{% if request.path contains '/pages/miss-princess' %} is-active{% endif %}" href="/pages/miss-princess"{% if request.path contains '/pages/miss-princess' %} aria-current="page"{% endif %}>
+      <span class="mvq-brand-choice-name">Miss.Princess</span>
+      <span class="mvq-brand-choice-note">The sister brand</span>
+    </a>
   </div>
+</div>
 
 {% schema %}
 {
