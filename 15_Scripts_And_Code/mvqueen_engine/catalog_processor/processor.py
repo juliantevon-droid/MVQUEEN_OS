@@ -1,92 +1,25 @@
-# mvqueen_engine/catalog_processor/processor.py
+"""Governed offline catalog processor.
+
+This module intentionally exposes only row-safe CSV normalization. Direct
+Shopify transport and the historical all-in-one product generator are retired.
 """
-LEGACY CATALOG PROCESSOR
+from __future__ import annotations
 
-CSV MODE remains available for offline transformation. The former Shopify live
-mode is intentionally disabled on the enterprise production branch because it
-could bypass the canonical production pipeline, QA gate, release fingerprint,
-and explicit approval gate.
-
-Production publishing must use:
-Canonical Product → QA → Release Gate → Publishing Boundary → Publisher
-"""
-
-import pandas as pd
-
-from mvqueen_engine.config import CSV_CHUNK_SIZE, SHOPIFY_PROTECTED_COLUMNS, BRAND_NAME
-from mvqueen_engine.utils.text_utils import strip_html, normalize_whitespace, enforce_brand
-from mvqueen_engine.brand_brain.editorial import generate_title, generate_description
-from mvqueen_engine.brand_brain.alt_text import generate_alt_text
-from mvqueen_engine.metafields.metafield_engine import generate_metafields
+from mvqueen_engine.catalog_recovery_transform import transform_csv
 
 
-def clean_text(text):
-    """Strip HTML, normalize whitespace, and enforce the MVQueen brand."""
-    text = strip_html(text)
-    text = normalize_whitespace(text)
-    return enforce_brand(text)
-
-
-def process_csv(input_path: str, output_path: str):
-    """Load supplier CSV, apply editorial curation, and export CSV.
-
-    Protected commerce, variant, inventory, and source-image fields are not
-    generated or modified here. The legacy compare-at-price behavior is removed.
-    """
-    df = pd.read_csv(input_path)
-
-    if "Handle" not in df.columns:
-        raise ValueError("CSV must contain a 'Handle' column.")
-
-    # Editorial columns only. Existing columns are preserved in their source
-    # order; new editorial columns are appended when absent.
-    for column in (
-        "Title",
-        "Body (HTML)",
-        "Tags",
-        "SEO Title",
-        "SEO Description",
-        "Image Alt Text",
-        "Metafields",
-    ):
-        if column not in df.columns:
-            df[column] = ""
-
-    for idx, row in df.iterrows():
-        handle = str(row["Handle"]).strip()
-        base_title = str(row.get("Title", "")).strip()
-        supplier_body = str(row.get("Body (HTML)", "")).strip()
-        supplier_body_clean = clean_text(supplier_body)
-
-        curated_title = generate_title(base_title, handle)
-        curated_desc = generate_description(
-            base_title, handle, supplier_body_clean
-        )
-        curated_alt = generate_alt_text(base_title, handle)
-        curated_meta = generate_metafields(base_title, handle)
-
-        seo_title = curated_title[:60]
-        seo_desc = strip_html(curated_desc)[:155]
-
-        df.at[idx, "Title"] = curated_title
-        df.at[idx, "Body (HTML)"] = curated_desc
-        df.at[idx, "SEO Title"] = seo_title
-        df.at[idx, "SEO Description"] = seo_desc
-        df.at[idx, "Image Alt Text"] = curated_alt
-        df.at[idx, "Metafields"] = str(curated_meta)
-        df.at[idx, "Tags"] = f"mvqueen, curated, persona-{handle}"
-
-    df.to_csv(output_path, index=False)
+def process_csv(input_path: str, output_path: str) -> str:
+    """Normalize a Shopify CSV offline while preserving protected fields."""
+    transform_csv(input_path, output_path)
     return output_path
 
 
 def process_shopify_catalog(*args, **kwargs):
-    """Fail closed: legacy direct Shopify publishing is prohibited."""
+    """Fail closed: Python is not a production Shopify writer."""
     raise RuntimeError(
-        "Direct Shopify catalog processing is disabled on the enterprise branch. "
-        "Use the canonical production pipeline, release gate, publishing boundary, "
-        "and dedicated publisher adapter."
+        "Direct Shopify catalog processing is disabled. Use the authenticated "
+        "application plus the canonical QA/release/approval boundary."
     )
 
 
-__all__ = ["clean_text", "process_csv", "process_shopify_catalog"]
+__all__ = ["process_csv", "process_shopify_catalog"]
