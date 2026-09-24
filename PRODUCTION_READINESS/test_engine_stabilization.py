@@ -69,5 +69,24 @@ class EngineStabilizationTests(unittest.TestCase):
         )
 
 
+    def test_legacy_runtime_and_processor_fail_closed(self):
+        runtime = importlib.import_module("mvqueen_engine.runtime")
+        with self.assertRaisesRegex(RuntimeError, "legacy runtime is retired"):
+            runtime.run_mvqueen({"title": "sample"})
+
+        processors = importlib.import_module("mvqueen_engine.processors")
+        with self.assertRaisesRegex(RuntimeError, "legacy Omniluxe processor is retired"):
+            processors.process_product("sample")
+
+    def test_legacy_metafield_generators_fail_closed(self):
+        direct = importlib.import_module("mvqueen_engine.metafield_engine")
+        with self.assertRaisesRegex(RuntimeError, "legacy metafield generator is retired"):
+            direct.generate_metafields("sample")
+
+        nested = importlib.import_module("mvqueen_engine.metafields.metafield_engine")
+        with self.assertRaisesRegex(RuntimeError, "legacy metafield generator is retired"):
+            nested.generate_metafields("sample")
+
+
 if __name__ == "__main__":
     unittest.main()
