@@ -1,10 +1,11 @@
-import sys
-sys.path.insert(0, "/storage/emulated/0")
+"""Deprecated Android path wrapper retained for compatibility.
 
-from mvqueen_engine.catalog_processor.processor import process_csv
+No hard-coded device path or import-time execution remains.
+"""
+from __future__ import annotations
 
-process_csv(
-    input_path="/storage/emulated/0/mvqueen_engine/products.csv",
-    output_path="/storage/emulated/0/mvqueen_engine/output/products_final.csv",
-    overwrite_mode="balanced"
-)
+from mvqueen_engine.main import cli
+
+
+if __name__ == "__main__":
+    raise SystemExit(cli())
