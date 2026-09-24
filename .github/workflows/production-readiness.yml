@@ -59,3 +59,5 @@ jobs:
           ! grep -nE 'requests\.(post|put|patch|delete|request)\(' 15_Scripts_And_Code/mvqueen_engine/sync.py 15_Scripts_And_Code/mvqueen_engine/sync_engine.py 15_Scripts_And_Code/mvqueen_engine/API.py 15_Scripts_And_Code/mvqueen_engine/upload.py 15_Scripts_And_Code/mvqueen_engine/metafields_api.py 15_Scripts_And_Code/mvqueen_engine/collections_api.py
       - name: Check for obvious credential material
         run: python PRODUCTION_READINESS/scan_credentials.py
+
+# Consolidation validation revision: 2
