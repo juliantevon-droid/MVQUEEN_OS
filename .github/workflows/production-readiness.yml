@@ -10,6 +10,7 @@ on:
     paths:
       - 'PRODUCTION_READINESS/**'
       - '15_Scripts_And_Code/mvqueen_engine/**'
+      - '30_System_Infrastructure/catalog/**'
       - '.github/workflows/production-readiness.yml'
   pull_request:
     branches:
@@ -19,6 +20,7 @@ on:
     paths:
       - 'PRODUCTION_READINESS/**'
       - '15_Scripts_And_Code/mvqueen_engine/**'
+      - '30_System_Infrastructure/catalog/**'
       - '.github/workflows/production-readiness.yml'
   workflow_dispatch:
 
