@@ -64,6 +64,18 @@ def validate(source_path: str | Path) -> dict:
         if transform["release_importable"]:
             raise AssertionError("Recovery normalization must never be directly importable.")
 
+        classification = transform.get("classification", {})
+        category_counts = classification.get("category_counts", {})
+        type_counts = classification.get("product_type_counts", {})
+        if category_counts.get("unclassified", 0):
+            raise AssertionError(
+                f"Unclassified MVQUEEN categories remain: {category_counts.get('unclassified')}"
+            )
+        if type_counts.get("unclassified", 0):
+            raise AssertionError(
+                f"Unclassified MVQUEEN product types remain: {type_counts.get('unclassified')}"
+            )
+
         for index, (before, after) in enumerate(zip(source_rows, normalized_rows)):
             for field in SHOPIFY_PROTECTED_COLUMNS:
                 if field in source_headers and before.get(field) != after.get(field):
@@ -96,6 +108,9 @@ def validate(source_path: str | Path) -> dict:
             "audit_hold_reasons": audit["hold_reasons"],
             "normalized_hold_products": transform["hold_products"],
             "normalized_review_products": transform["review_products"],
+            "classification_confidence_counts": transform.get("classification", {}).get("confidence_counts", {}),
+            "classification_category_counts": transform.get("classification", {}).get("category_counts", {}),
+            "classification_product_type_counts": transform.get("classification", {}).get("product_type_counts", {}),
             "normalized_hold_sample": [
                 {
                     "handle": item["handle"],
