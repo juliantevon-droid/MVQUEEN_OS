@@ -69,6 +69,36 @@ class CatalogRecoveryAuditTests(unittest.TestCase):
         self.assertIn("missing_mvqueen_category", report["hold_reasons"])
         self.assertIn("missing_product_type", report["hold_reasons"])
 
+    def test_tier1_forbidden_brand_language_is_held(self):
+        path = self.write_csv([{
+            "Handle": "sample",
+            "Title": "Amazing Rose Lip Tint",
+            "Body (HTML)": "<p>Verified rose lip tint.</p>",
+            "Vendor": "MVQUEEN",
+            "Status": "draft",
+            "SEO Title": "Rose Lip Tint | MVQUEEN",
+            "SEO Description": "Verified rose lip tint.",
+            "Tags": "beauty,lip",
+            "Image Src": "https://example.com/product.jpg",
+            "Image Alt Text": "MVQUEEN rose lip tint",
+            "Variant SKU": "SKU-1",
+            "MVQ Category": "beauty",
+            "MVQ Product Type": "lip tint",
+        }])
+        try:
+            report = self.audit.audit_csv(path)
+        finally:
+            path.unlink(missing_ok=True)
+
+        self.assertEqual(report["decision"], "HOLD")
+        self.assertIn("tier1_forbidden_brand_language", report["hold_reasons"])
+        self.assertIn("Amazing", report["brand_voice"]["tier1_violations"])
+        self.assertGreater(report["brand_voice"]["tier1_terms_loaded"], 0)
+        self.assertIn(
+            "06_Tone_And_Voice/Forbidden_Words.md",
+            report["brand_voice"]["governance_sources"],
+        )
+
     def test_clean_catalog_can_reach_review_gate(self):
         path = self.write_csv([{
             "Handle": "sample",
