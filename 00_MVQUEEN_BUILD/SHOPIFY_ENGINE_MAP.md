@@ -1,56 +1,32 @@
 # MVQUEEN Shopify Engine Map
 
-## Theme Layer
-- Header/navigation
-- Hero
-- Category grid
-- Featured products
-- Trust strip
-- Editorial feature
-- Brand pillars
-- Newsletter
-- Product template
-- Collection template
-- Cart/drawer
-- Search
-- Footer
+## Canonical runtime
+- app/ — authenticated React Router Shopify application.
+- app/lib/product-processor.ts — only live Shopify mutation path.
+- Shopify Admin API — GraphQL, current configured API version.
+- Writes require MVQ_WRITE_ENABLED=true and explicit product GID approval.
 
-## Brand Layer
-- Color system: `02_Brand_Identity/color_system.md`
-- Typography: `02_Brand_Identity/typography_system.md`
-- Brand rules and positioning
-- Tone and voice
+## Intelligence layer
+- 15_Scripts_And_Code/mvqueen_engine/
+- Product classification and deterministic brand intelligence.
+- Catalog dry-runs and protected-field validation.
+- SEO/content proposal generation.
+- No default live Shopify transport.
 
-## Automation Layer
-- Shopify API client
-- Product processor
-- Editorial engine
-- Brand language banks
-- Metafield engine
-- SEO keyword engine
-- Alt-text engine
-- Collection optimizer
-- Bundle generator
-- Master uploader
+## Release governance
+- PRODUCTION_READINESS/
+- Schema validation, QA, release fingerprint, explicit approval, publish preview and audit ledger.
+- Transport-neutral payload contract.
 
-## Production Gates
-### Gate 1 — Foundation
-Theme architecture, typography, colors, responsive base.
+## Theme
+- storefront/theme/
+- One custom MVQUEEN / Miss.Princess storefront source.
+- CI validates theme structure and blocks live-theme publication from repository automation.
 
-### Gate 2 — Commerce UX
-Navigation, collections, product pages, search, cart.
+## Data authority
+- GitHub main: code.
+- Shopify: live commerce data.
+- Google Drive: archive/assets/backups.
 
-### Gate 3 — Content Engine
-Product copy, SEO, metafields, alt text, collections.
-
-### Gate 4 — Catalog
-Safe processing and API synchronization for the product catalog.
-
-### Gate 5 — Growth
-Email, social, editorial, analytics-ready content systems.
-
-### Gate 6 — QA
-Mobile, desktop, accessibility, performance, broken links, product/cart/search flows.
-
-### Gate 7 — Launch
-Final preview, approval, publish.
+## Production sequence
+Evidence → Proposal → Guard → QA → Fingerprint → Approval → Authenticated app mutation → Verify → Audit.

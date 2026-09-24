@@ -1,38 +1,23 @@
-"""MVQUEEN controlled Shopify publisher V1.
+"""MVQUEEN controlled publisher contract.
 
-This is the only Shopify-facing publisher allowed to consume a canonical
-production record. Authorization is enforced by PUBLISHING_BOUNDARY_V1;
-this module is transport/mapping only and never generates product content.
+Python owns canonical record validation, QA, release fingerprints, approval
+verification, preview generation, and transport-neutral payload construction.
 
-The publisher intentionally updates only approved editorial/merchandising
-fields. It does not mutate inventory, SKU, variant identity, or variant prices.
+Python does NOT discover or create a live Shopify transport. The only live
+Shopify writer in MVQUEEN_OS is the authenticated React Router Shopify app.
+A transport may be injected here only for deterministic tests or an explicitly
+controlled caller.
 """
 from __future__ import annotations
 
-import sys
-from pathlib import Path
 from typing import Any, Dict
 
 
 class ShopifyPublisherError(RuntimeError):
-    """Raised when the Shopify transport rejects a publish operation."""
-
-
-def _default_client() -> Any:
-    """Load the repository Shopify transport without coupling package paths."""
-    repo_root = Path(__file__).resolve().parents[1]
-    engine_root = repo_root / "15_Scripts_And_Code"
-    if str(engine_root) not in sys.path:
-        sys.path.insert(0, str(engine_root))
-    try:
-        from mvqueen_engine.shopify_api import shopify_client
-    except ImportError as exc:
-        raise ShopifyPublisherError("Shopify transport is unavailable") from exc
-    return shopify_client
+    """Raised when a controlled publish hand-off is invalid."""
 
 
 def build_product_payload(record: Dict[str, Any]) -> Dict[str, Any]:
-    """Map canonical fields to the narrowly scoped Shopify product payload."""
     identity = record.get("identity", {})
     category = record.get("category", {})
     copy = record.get("copy", {})
@@ -57,16 +42,21 @@ def build_product_payload(record: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def publish_to_shopify(record: Dict[str, Any], client: Any = None) -> Dict[str, Any]:
-    """Publish one already-authorized canonical record through the transport.
+    """Hand an authorized record to an explicitly injected client.
 
-    ``client`` is injectable for tests. No variant, inventory, SKU, handle, or
-    price update is performed here. A false transport result is treated as a
-    failed publication rather than a successful hand-off.
+    There is deliberately no repository-default network client. A caller that
+    omits client is blocked. Production network writes are owned by
+    app/lib/product-processor.ts.
     """
-    transport = client or _default_client()
+    if client is None:
+        raise ShopifyPublisherError(
+            "No Python Shopify transport is configured. "
+            "Production writes belong to the authenticated React Router app."
+        )
+
     payload = build_product_payload(record)
     product_id = payload["id"]
-    ok = transport.update_product(product_id, payload)
+    ok = client.update_product(product_id, payload)
     if ok is not True:
         raise ShopifyPublisherError(f"Shopify product update failed for {product_id}")
 

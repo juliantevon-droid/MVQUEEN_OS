@@ -1,6 +1,6 @@
 PERSONAS = [
     "MVQueen Core",
-    "MISS.QUEEN",
+    "Miss.Princess",
     "Victoria Soft Power",
     "Sephora Precision",
     "Runway Modern",
@@ -17,7 +17,7 @@ PERSONA_CONFIG = {
         "editorial_weight": "balanced",
         "default_editorial_length": "medium",
     },
-    "MISS.QUEEN": {
+    "Miss.Princess": {
         "tone": "playful-glam-feminine",
         "editorial_weight": "high-variation",
         "default_editorial_length": "medium",
@@ -59,7 +59,7 @@ PERSONA_ADVANCED = {
         "metafield_overrides": {},
     },
 
-    "MISS.QUEEN": {
+    "Miss.Princess": {
         "vocab_preferences": {
             "adjectives": [],
             "sensory_verbs": [],

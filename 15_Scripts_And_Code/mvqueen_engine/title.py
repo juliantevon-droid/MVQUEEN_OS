@@ -49,7 +49,7 @@ TITLE_ENGINE = {
         "MVQueen Core": {
             "prefer": ["benefit", "primary_keyword", "finish"],
         },
-        "MISS.QUEEN": {
+        "Miss.Princess": {
             "prefer": ["mood", "occasion", "finish"],
         },
         "Runway Modern": {

@@ -1,58 +1,49 @@
-"""Tests for the narrow Shopify transport mutation boundary."""
+"""Tests for the unified Shopify write boundary."""
 from __future__ import annotations
 
 import unittest
-from unittest.mock import Mock, patch
-
 from pathlib import Path
-import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "15_Scripts_And_Code"))
-
-from mvqueen_engine.shopify_api import shopify_client
+from SHOPIFY_PUBLISHER_V1 import ShopifyPublisherError, publish_to_shopify
 
 
-class ShopifyTransportBoundaryTests(unittest.TestCase):
-    @patch("mvqueen_engine.shopify_api.shopify_client.requests.put")
-    def test_editorial_allowlist_updates_only_approved_fields(self, put):
-        response = Mock(status_code=200)
-        response.json.return_value = {"product": {"id": "123"}}
-        put.return_value = response
+ROOT = Path(__file__).resolve().parents[1]
 
-        result = shopify_client.update_product(
-            "123",
-            {
-                "id": "123",
-                "title": "Midnight Satin",
-                "body_html": "A polished silhouette.",
-                "vendor": "MVQueen",
-                "product_type": "dress",
-                "tags": "MVQueen, Evening",
-            },
-        )
 
-        self.assertEqual(result["product"]["id"], "123")
-        payload = put.call_args.kwargs["json"]["product"]
-        self.assertNotIn("handle", payload)
-        self.assertNotIn("variants", payload)
-        self.assertNotIn("inventory", payload)
-        self.assertNotIn("price", payload)
+def record():
+    return {
+        "identity": {"product_id": "123"},
+        "category": {"product_type": "dress"},
+        "copy": {"title": "Midnight Satin", "description": "A polished evening silhouette."},
+        "merchandising": {"tags": ["MVQueen", "Evening"]},
+    }
 
-    def test_protected_fields_are_rejected(self):
-        with self.assertRaises(ValueError):
-            shopify_client.update_product("123", {"price": "19.99"})
 
-    def test_unknown_fields_are_rejected(self):
-        with self.assertRaises(ValueError):
-            shopify_client.update_product("123", {"images": []})
+class UnifiedTransportBoundaryTests(unittest.TestCase):
+    def test_python_has_no_default_live_transport(self):
+        with self.assertRaises(ShopifyPublisherError):
+            publish_to_shopify(record())
 
-    def test_variant_price_mutation_is_disabled(self):
-        with self.assertRaises(RuntimeError):
-            shopify_client.update_variant_price("456", "19.99")
+    def test_legacy_transport_modules_are_absent(self):
+        retired = [
+            "15_Scripts_And_Code/mvqueen_engine/Access_token.py",
+            "15_Scripts_And_Code/mvqueen_engine/shopify_client.py",
+            "15_Scripts_And_Code/mvqueen_engine/shopify_api/shopify_client.py",
+            "15_Scripts_And_Code/session_manager.py",
+        ]
+        for rel in retired:
+            self.assertFalse((ROOT / rel).exists(), rel)
 
-    def test_metafield_mutation_is_disabled(self):
-        with self.assertRaises(RuntimeError):
-            shopify_client.update_metafields("123", {"mvqueen.material": "satin"})
+    def test_catalog_worker_has_no_network_write_transport(self):
+        text = (ROOT / "30_System_Infrastructure/catalog/mvqueen_catalog_worker.py").read_text(encoding="utf-8")
+        self.assertNotIn("urllib.request", text)
+        self.assertNotIn("requests.post", text)
+        self.assertNotIn("productUpdate(", text)
+
+    def test_react_app_is_declared_live_writer(self):
+        text = (ROOT / "app/lib/product-processor.ts").read_text(encoding="utf-8")
+        self.assertIn("MVQ_APPROVED_PRODUCT_GIDS", text)
+        self.assertIn("admin.graphql(PRODUCT_UPDATE", text)
 
 
 if __name__ == "__main__":

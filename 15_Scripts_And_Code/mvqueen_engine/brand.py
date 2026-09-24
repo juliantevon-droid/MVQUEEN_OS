@@ -1,6 +1,6 @@
 BRAND = {
     "NAME": "MVQueen",
-    "SISTER_BRAND": "MISS.QUEEN",
+    "SISTER_BRAND": "Miss.Princess",
     "POSITIONING": "Affordable Luxury",
     "TONE": "polished-luxury-soft-sensual-confident-feminine",
 }

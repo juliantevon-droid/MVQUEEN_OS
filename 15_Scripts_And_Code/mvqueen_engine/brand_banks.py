@@ -25,7 +25,7 @@ PERSONAS = [
     "Clinical Chic",
     "Modern Confident",
     "MVQueen Signature",
-    "MISS.QUEEN Style",
+    "Miss.Princess Style",
     "Editorial Couture",
     "Minimalist Luxe",
     "Sensory Beauty",
@@ -112,7 +112,7 @@ PERSONA_PROFILES = {
         "seo_focus": ["MVQueen outfit", "elevated basics", "luxury everyday style"],
         "metafield_flavor": "Elevated, polished, intentional, signature MVQueen energy."
     },
-    "miss_queen_style": {
+    "miss_princess_style": {
         "adjectives": [
             "playful", "flirty", "sweet", "youthful", "chic", "lighthearted"
         ],
@@ -121,15 +121,15 @@ PERSONA_PROFILES = {
             "Flirty silhouette with just the right amount of ease.",
             "Designed for weekends, dates, and everything in between.",
             "Pairs with sneakers or heels for instant mood lift.",
-            "A sweet, chic piece for MISS.QUEEN moments."
+            "A sweet, chic piece for Miss.Princess moments."
         ],
         "cta": [
-            "Make it a MISS.QUEEN moment.",
+            "Make it a Miss.Princess moment.",
             "Play with your style.",
             "Keep it cute, keep it chic."
         ],
         "seo_focus": ["cute outfit", "flirty dress", "youthful chic style"],
-        "metafield_flavor": "Playful, flirty, youthful, MISS.QUEEN energy."
+        "metafield_flavor": "Playful, flirty, youthful, Miss.Princess energy."
     },
     "editorial_couture": {
         "adjectives": [

@@ -27,7 +27,7 @@ SEO_ENGINE = {
         },
         "persona_keywords": {
             "MVQueen Core": [],
-            "MISS.QUEEN": [],
+            "Miss.Princess": [],
             "Victoria Soft Power": [],
             "Sephora Precision": [],
             "Runway Modern": [],
@@ -46,7 +46,7 @@ SEO_ENGINE = {
         "MVQueen Core": {
             "prefer": ["luxury", "soft", "sensual", "confident"],
         },
-        "MISS.QUEEN": {
+        "Miss.Princess": {
             "prefer": ["glam", "playful", "cute", "beauty"],
         },
         "Victoria Soft Power": {

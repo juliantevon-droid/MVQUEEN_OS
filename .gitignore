@@ -33,3 +33,12 @@ _BACKUPS/
 # Generated catalog/report outputs
 12_Content_Assets/drive_inbox/
 backups/shopify_catalog/
+
+MVQExports/
+*.bak
+* (conflict *
+*_CONFLICT_*
+12_Content_Assets/Documents/
+12_Content_Assets/PDFs/
+12_Content_Assets/*.csv
+12_Content_Assets/*.zip

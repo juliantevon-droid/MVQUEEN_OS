@@ -9,6 +9,12 @@ const AUTOMATION_VERSION = "mvq-catalog-v1";
 // content both require explicit environment gates.
 const WRITE_ENABLED = process.env.MVQ_WRITE_ENABLED === "true";
 const CONTENT_REWRITE_ENABLED = process.env.MVQ_CONTENT_REWRITE_ENABLED === "true";
+const APPROVED_PRODUCT_GIDS = new Set(
+  (process.env.MVQ_APPROVED_PRODUCT_GIDS ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean),
+);
 
 const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
@@ -101,10 +107,13 @@ export async function processProductJob(jobId: string) {
       { namespace: "catalog", key: "review_status", type: "single_line_text_field", value: pkg.c.confidence === "review" ? "needs_review" : "ready" },
     ];
 
-    if (!WRITE_ENABLED) {
+    if (!WRITE_ENABLED || !APPROVED_PRODUCT_GIDS.has(product.id)) {
+      const reason = !WRITE_ENABLED
+        ? "DRY_RUN — Shopify writes disabled"
+        : "DRY_RUN — product GID not explicitly approved";
       await prisma.productJob.update({
         where: { id: jobId },
-        data: { status: "completed", completedAt: new Date(), error: "DRY_RUN — Shopify writes disabled" },
+        data: { status: "completed", completedAt: new Date(), error: reason },
       });
       return;
     }
