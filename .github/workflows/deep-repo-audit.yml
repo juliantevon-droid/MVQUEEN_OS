@@ -36,7 +36,7 @@ jobs:
       - name: Upload deep audit
         uses: actions/upload-artifact@v4
         with:
-          name: mvqueen-deep-repo-audit-\${{ github.sha }}
+          name: mvqueen-deep-repo-audit-${{ github.sha }}
           path: build/deep_repo_audit/
           if-no-files-found: error
           retention-days: 30
