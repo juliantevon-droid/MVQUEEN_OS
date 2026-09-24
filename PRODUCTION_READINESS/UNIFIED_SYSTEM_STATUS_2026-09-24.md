@@ -44,12 +44,14 @@ No open pull request is an approved production merge source.
 
 ## Production gates
 
-Verified during consolidation:
-- MVQUEEN Production Readiness — passing.
-- MVQUEEN OS Lint and Index — passing.
-- MVQUEEN_OS Overseer — passing.
-- MVQUEEN Theme CI/CD — passing after theme config normalization.
-- MVQUEEN Shopify App CI — TypeScript typecheck and production build passing.
+Verified against the current canonical system on 2026-09-24:
+- MVQUEEN OS Lint and Index — passing on current `main` head `ae394c191997982c4cc7313d0e6d444ef93e25da`.
+- MVQUEEN_OS Overseer — passing on current `main` head `ae394c191997982c4cc7313d0e6d444ef93e25da`.
+- MVQUEEN Production Readiness — passing on `acbb740257cc03f04d6beca9613674aa2fb02cde`; the only later pre-status change archived the old Shopify main menu and did not touch Production Readiness governed inputs.
+- MVQUEEN Catalog Governance — passing on `acbb740257cc03f04d6beca9613674aa2fb02cde`.
+- MVQUEEN Theme CI/CD — passing; no theme/automation files changed after the last successful theme run.
+- MVQUEEN Shopify App CI — TypeScript typecheck and production build passing; no app/config watched files changed after the last successful app run.
+- MVQUEEN Deep Repository Audit — passing; its watched audit sources have not changed since that successful run.
 - Unified-system invariant tests — passing.
 
 ## Security
@@ -94,8 +96,11 @@ Further work should extend this canonical system, not create parallel runtimes, 
 - The pink thulite pendant retained its existing factual product copy and received canonical vendor/SEO brand normalization.
 - Handles, variant IDs, SKUs, prices, inventory quantities and image relationships were verified unchanged after the cleanup.
 - All five images across the two live products now have ALT text.
-- 63 collections are published; 58 are currently empty.
+- 63 collections are published; 58 are currently empty, but the live main-navigation Shop path uses only current non-empty collections.
+- Main-navigation collection coverage is verified: MVQueen Edit (2 products), Jewelry (2), Necklaces (2), Pendant Necklaces (1).
 - Shopify currently reports 0 URL redirects.
+- Storefront password protection is currently enabled.
+- Shopify store identity is still named `My Store 4` in Admin even though product/vendor branding is MVQUEEN.
 
 ### Catalog source of truth
 
@@ -105,15 +110,31 @@ Further work should extend this canonical system, not create parallel runtimes, 
 - Production product work applies only to products currently imported into Shopify.
 - Historical product counts, historical media gaps, historical SKU collisions and recovery-dedupe results do **not** affect launch readiness.
 
-### Remaining launch blockers
+### Completed launch-gate work — 2026-09-24
 
-The system is production-capable but the customer-facing store is **not yet release-cleared** because:
+- The historical 948-product/media-recovery set is archive-only and is not a production gate.
+- Current production catalog scope is only the 2 products imported into Shopify.
+- All 5 live product images are present and have ALT text.
+- Main-menu Shop navigation is aligned to current non-empty collections.
+- Published Terms of Service, Refund & Returns, and Shipping pages were repaired from canonical MVQUEEN SOPs.
+- All literal policy placeholders were removed from those three published pages.
+- Policy contact email is `miss.mvqueen@gmail.com`.
+- Refund/returns now use the documented 30-day eligible-return standard and prepaid-return-label process.
+- Shipping now uses the documented 1–3 business-day processing standard and 5–8 business-day standard-transit estimate.
+- Protected handles, SKUs, variant IDs, prices, inventory quantities and image relationships remain unchanged.
+- GitHub main currently has no open pull requests and no repository rulesets.
 
-1. `main` is not branch-protected. The connected GitHub App lacks repository administration permission to enable protection from this environment.
-2. The historical live-looking Shopify credential still requires confirmed rotation/revocation.
-3. The canonical MVQUEEN theme is intentionally still unpublished; live `Helio` has not been replaced.
-4. Shopify legal/policy content still contains unresolved placeholders such as `[DATE]` and `[PROCESSING TIME]`; business-specific legal/operational values must not be invented.
-5. Current Shopify merchandising/navigation still needs to be aligned to the products actually imported into Shopify; empty historical collection structure must not be treated as current assortment.
+### Remaining owner/admin launch gates
+
+The system is production-capable. Full public release still requires the following owner/admin actions that cannot be completed by the connected integrations:
+
+1. **Protect `main` in GitHub.** No repository ruleset exists, and the connected GitHub App receives 403 on the branch-protection administration endpoint.
+2. **Revoke/rotate the historically exposed Shopify credential.** Active `main` does not contain a live token, but the historical credential must still be treated as exposed because the repository is public.
+3. **Publish the canonical theme.** `MVQUEEN — Custom Production Build` (`154611515590`) is synchronized, validated and remains UNPUBLISHED; `Helio` (`154610663622`) is still MAIN. Automated theme publishing is intentionally blocked.
+4. **Finish Shopify store identity/legal-policy branding.** Admin shop name remains `My Store 4`, and the built-in Privacy Policy still contains that name. A validated brand-only Privacy Policy update was rejected because the connected app lacks `write_legal_policies`.
+5. **Remove storefront password protection when public launch is intended.** Shopify currently reports password protection enabled.
+
+These are owner/account-control gates, not unresolved catalog, theme-code, app-code or navigation defects.
 
 ### Current release position
 
@@ -121,6 +142,8 @@ The system is production-capable but the customer-facing store is **not yet rele
 **Theme candidate synchronization: COMPLETE.**  
 **Current Shopify two-product cleanup: COMPLETE.**  
 **Historical catalog recovery: ARCHIVE ONLY / OUT OF PRODUCTION SCOPE.**  
+**Automated/code/data launch gates: COMPLETE.**  
+**Owner/admin launch gates: 5 REMAIN.**  
 **Full storefront launch clearance: NOT YET.**
 
 Further production work must continue from the **current Shopify catalog only**, through the existing `main` architecture and governed release gates.
@@ -144,4 +167,4 @@ Current verified Shopify state at the time of this correction:
 - 0 ARCHIVED.
 - Both active products use `MVQUEEN` as vendor/customer-facing brand.
 
-The next stabilization work is current-store merchandising, navigation, collection hygiene, policy completion, security/account controls, and final unpublished-theme QA.
+Current-store merchandising/navigation and the customer-facing policy pages have been verified or repaired. Remaining stabilization work is limited to owner/admin security, identity, password-protection and theme-publication controls listed above.
