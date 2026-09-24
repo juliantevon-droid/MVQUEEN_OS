@@ -18,6 +18,8 @@ from dataclasses import dataclass, field
 from typing import Any, Iterable, Mapping
 import re
 
+from mvqueen_engine.brand_governance import SUPPLIER_AND_REFERENCE_BRANDS
+
 
 PROTECTED_FIELDS = {
     "Handle",
@@ -47,16 +49,7 @@ PROTECTED_FIELDS = {
     "Gift Card",
 }
 
-DEFAULT_CONTAMINATION_TERMS = {
-    "OUHOE",
-    "MISS.QUEEN",
-    "MISS. QUEEN",
-    "HOEGOA",
-    "FANZHEN",
-    "EELHOPE",
-    "COLOR FIT",
-    "WEST & MONTH",
-}
+DEFAULT_CONTAMINATION_TERMS = set(SUPPLIER_AND_REFERENCE_BRANDS)
 
 REQUIRED_CONTENT_FIELDS = {
     "Title",
