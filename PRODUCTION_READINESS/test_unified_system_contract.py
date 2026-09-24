@@ -68,6 +68,9 @@ class UnifiedSystemContractTests(unittest.TestCase):
         self.assertIn('MVQ_WRITE_ENABLED', text)
         self.assertIn('MVQ_APPROVED_PRODUCT_GIDS', text)
         self.assertIn('admin.graphql(PRODUCT_UPDATE', text)
+        self.assertNotIn('generateCatalogPackage', text)
+        self.assertNotIn('MVQ_CONTENT_REWRITE_ENABLED', text)
+        self.assertNotIn('namespace: "attributes"', text)
 
     def test_drive_intake_never_pushes_to_git(self):
         text = (ROOT / ".github/workflows/mvqueen-drive-bridge.yml").read_text(encoding="utf-8")
