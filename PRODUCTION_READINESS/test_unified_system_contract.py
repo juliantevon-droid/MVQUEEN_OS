@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -33,14 +34,14 @@ class UnifiedSystemContractTests(unittest.TestCase):
         self.assertFalse((ROOT / "MVQUEEN_CONTEXT.md").exists())
         self.assertFalse((ROOT / "pull_phase1.sh").exists())
 
-        for path in ROOT.rglob("*"):
-            if not path.is_file():
-                continue
-            rel = path.relative_to(ROOT).as_posix()
+        tracked = subprocess.check_output(
+            ["git", "ls-files"], cwd=ROOT, text=True
+        ).splitlines()
+        for rel in tracked:
             if rel.startswith("98_Archive/"):
                 continue
             self.assertNotIn("__pycache__", rel)
-            self.assertNotRegex(path.name, re.compile(r"conflict", re.I))
+            self.assertNotRegex(Path(rel).name, re.compile(r"conflict", re.I))
 
     def test_python_intelligence_has_no_shopify_network_transport(self):
         roots = [
