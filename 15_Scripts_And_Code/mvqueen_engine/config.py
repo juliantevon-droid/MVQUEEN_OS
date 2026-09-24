@@ -57,7 +57,7 @@ ONLY_EDIT_IMAGE_FIELD = "Image Alt Text"
 
 # These are inspiration/reference names only; they are never canonical product brands.
 INSPIRATION_BRANDS = (
-    "Sephora", "Victoria's Secret", "Fenty Beauty", "Dior", "Miss. Queen",
+    "Sephora", "Victoria's Secret", "Fenty Beauty", "Dior", "Miss.Princess",
 )
 
 MASTER_CONFIG = {

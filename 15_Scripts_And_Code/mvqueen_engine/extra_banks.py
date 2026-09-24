@@ -9,7 +9,7 @@ PERSONA_CONFIG = {
         "cta_style": "soft imperative",
     },
 
-    "MISS.QUEEN": {
+    "Miss.Princess": {
         "tone": "playful-glam-feminine",
         "emotional_axes": ["fun", "glow", "self-expression"],
         "seo_bias": ["soft glam", "night-out looks"],
@@ -76,7 +76,7 @@ PERSONA_CONFIG = {
 PERSONA_BANKS = [
     "runway", "minimalist", "romantic", "bold", "classic",
     "editorial", "street luxe", "quiet luxury", "soft glam",  
-    "Soft Luxury", "Runway Modern", "Clinical Chic", "Street Luxe Femme", "MISS.QUEEN", 
+    "Soft Luxury", "Runway Modern", "Clinical Chic", "Street Luxe Femme", "Miss.Princess", 
     "Glow Maestro", "Elegant Authority", "Content Creator Core", 
     "Old Money Modern", "MVQueen Core",
 ]
@@ -118,7 +118,7 @@ OCCASIONS = [
     # --- Persona-Based Occasions ---
     "Soft Luxury Occasion", "Runway Modern Occasion",
     "Clinical Chic Occasion", "Street Luxe Occasion",
-    "MISS.QUEEN Occasion", "Glow Maestro Occasion",
+    "Miss.Princess Occasion", "Glow Maestro Occasion",
     "Elegant Authority Occasion", "Content Creator Occasion",
     "Old Money Modern Occasion", "MVQueen Core Occasion",
 
@@ -188,7 +188,7 @@ MOODS = [
 
     # --- New: Persona-Based Moods ---
     "Soft Luxury Mood", "Runway Modern Mood", "Clinical Chic Mood",
-    "Street Luxe Mood", "MISS.QUEEN Mood", "Glow Maestro Mood",
+    "Street Luxe Mood", "Miss.Princess Mood", "Glow Maestro Mood",
     "Elegant Authority Mood", "Content Creator Mood",
     "Old Money Modern Mood", "MVQueen Core Mood",
 
@@ -616,7 +616,7 @@ MOOD_BANK = [
 
     # --- Persona-Based Moods ---
     "Soft Luxury Mood", "Runway Modern Mood", "Clinical Chic Mood",
-    "Street Luxe Mood", "MISS.QUEEN Mood", "Glow Maestro Mood",
+    "Street Luxe Mood", "Miss.Princess Mood", "Glow Maestro Mood",
     "Elegant Authority Mood", "Content Creator Mood",
     "Old Money Modern Mood", "MVQueen Core Mood",
 
@@ -783,7 +783,7 @@ BUSINESS_TIERS = [
     "Runway Modern Tier",
     "Clinical Chic Tier",
     "Street Luxe Tier",
-    "MISS.QUEEN Tier",
+    "Miss.Princess Tier",
     "Glow Maestro Tier",
     "Elegant Authority Tier",
     "Content Creator Tier",

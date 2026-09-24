@@ -1,40 +1,24 @@
 # Script Index
-## MVQUEEN_OS / 13_Scripts_And_Code
 
----
+## Canonical location
 
-## Purpose
+Active MVQUEEN Python logic lives under:
 
-Central registry of all utility scripts built for MVQUEEN_OS operations. Every script listed here is documented, versioned, and purpose-defined.
+- `15_Scripts_And_Code/mvqueen_engine/` — deterministic brand/catalog intelligence and dry-run tooling.
+- `PRODUCTION_READINESS/` — schema, QA, release, approval and audit contracts.
+- `app/` — the only authenticated live Shopify mutation runtime.
 
----
+## Retired bootstrap/runtime scripts
 
-## Script Registry
+Legacy Termux/Drive pullers, direct Shopify REST uploaders, conflict copies, generated installers and local sync scripts are intentionally not active on `main`.
 
-| Script | Purpose | Status |
-|---|---|---|
-| `crawler.sh` | Maps full OS file tree | Active |
-| `crawler_v2.sh` | Enhanced crawl with metadata | Active |
-| `extract_bible.py` | Extracts files from Brand_Bible.md | Active |
-| `extract_bible_v2.py` | V2 extraction with folder routing | Active |
-| `generate_readmes.py` | Auto-generates README stubs | Active |
-| `split_rebuilds.py` | Splits combined rebuild files | Active |
-| `split_phase2.py` | Phase 2 split installer | Active |
-| `run_all.py` | Batch runner for install scripts | Active |
-| `install_critical.py` | Critical file installer | Active |
-| `pull_phase1.sh` | Phase 1 Drive pull script | Active |
+Google Drive is archive/assets/reference only. It does not overwrite GitHub source.
 
----
+## Safety
 
-## Script Standards
+- No committed credentials.
+- No direct Python Shopify transport.
+- Shopify writes require the React app write gate and an explicitly approved product GID.
+- SKU, inventory, variants, handles, pricing and image relationships remain protected.
 
-All scripts must:
-- include a header comment explaining purpose
-- use heredoc syntax for file creation in Termux
-- be tested before marking Active
-- be archived in `32_Backups` before major changes
-
----
-
-## Status
-Active
+Status: **ACTIVE — unified architecture**

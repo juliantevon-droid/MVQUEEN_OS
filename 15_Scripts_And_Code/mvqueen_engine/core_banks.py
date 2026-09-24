@@ -11,7 +11,7 @@ PERSONA_CONFIG = {
         "cta_style": "soft imperative",
     },
 
-    "MISS.QUEEN": {
+    "Miss.Princess": {
         "tone": "playful-glam-feminine",
         "emotional_axes": ["fun", "glow", "self-expression"],
         "seo_bias": ["soft glam", "night-out looks"],
@@ -295,7 +295,7 @@ ADJECTIVES = [
 ]
 
 PERSONAS = [
-    "Soft Luxury", "Runway Modern", "Clinical Chic", "Street Luxe Femme", "MISS.QUEEN", "Glow Maestro",
+    "Soft Luxury", "Runway Modern", "Clinical Chic", "Street Luxe Femme", "Miss.Princess", "Glow Maestro",
     "Elegant Authority", "Content Creator Core", "Old Money Modern", "MVQueen Core"
 ]
 
