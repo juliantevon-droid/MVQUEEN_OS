@@ -1,14 +1,13 @@
 import { createHash } from "node:crypto";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
-import { generateCatalogPackage, type ProductSnapshot } from "./mvqueen-intelligence";
+import { classifyProduct, type Classification, type ProductSnapshot } from "./mvqueen-intelligence";
 
-const AUTOMATION_VERSION = "mvq-catalog-v1";
+const AUTOMATION_VERSION = "mvq-classification-transport-v2";
 
-// Fail closed: live Shopify writes and replacement of existing editorial/SEO
-// content both require explicit environment gates.
+// The React app is a transport/classification worker, not a copy generator.
+// Live writes remain fail-closed and require explicit product approval.
 const WRITE_ENABLED = process.env.MVQ_WRITE_ENABLED === "true";
-const CONTENT_REWRITE_ENABLED = process.env.MVQ_CONTENT_REWRITE_ENABLED === "true";
 const APPROVED_PRODUCT_GIDS = new Set(
   (process.env.MVQ_APPROVED_PRODUCT_GIDS ?? "")
     .split(",")
@@ -55,6 +54,24 @@ function sourceFingerprint(product: ProductSnapshot): string {
   return createHash("sha256").update(source).digest("hex");
 }
 
+function slug(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function routingTags(c: Classification): string[] {
+  return [
+    "mvq:catalog",
+    `mvq:department:${slug(c.department)}`,
+    `mvq:family:${slug(c.family)}`,
+    `mvq:collection:${slug(c.route)}`,
+    ...(c.confidence === "review" ? ["mvq:needs-review"] : []),
+  ];
+}
+
 export async function processProductJob(jobId: string) {
   const job = await prisma.productJob.findUnique({ where: { id: jobId } });
   if (!job) throw new Error("Product job not found");
@@ -85,26 +102,15 @@ export async function processProductJob(jobId: string) {
       return;
     }
 
-    const pkg = generateCatalogPackage(product);
-    const mergedTags = Array.from(new Set([...(product.tags ?? []), ...pkg.tags]));
-    const descriptionHtml = CONTENT_REWRITE_ENABLED || !product.descriptionHtml?.trim()
-      ? pkg.descriptionHtml
-      : product.descriptionHtml;
-    const seoTitle = CONTENT_REWRITE_ENABLED ? pkg.seoTitle : undefined;
-    const seoDescription = CONTENT_REWRITE_ENABLED ? pkg.seoDescription : undefined;
+    const c = classifyProduct(product.title ?? "", product.descriptionHtml ?? "", product.productType ?? "");
+    const mergedTags = Array.from(new Set([...(product.tags ?? []), ...routingTags(c)]));
     const metafields = [
-      { namespace: "classification", key: "department", type: "single_line_text_field", value: pkg.c.department },
-      { namespace: "classification", key: "family", type: "single_line_text_field", value: pkg.c.family },
-      { namespace: "classification", key: "subcollection", type: "single_line_text_field", value: pkg.c.subcollection },
+      { namespace: "classification", key: "department", type: "single_line_text_field", value: c.department },
+      { namespace: "classification", key: "family", type: "single_line_text_field", value: c.family },
+      { namespace: "classification", key: "subcollection", type: "single_line_text_field", value: c.subcollection },
       { namespace: "classification", key: "style", type: "single_line_text_field", value: "MVQueen Edit" },
-      ...(pkg.attributes.material ? [{ namespace: "attributes", key: "material", type: "single_line_text_field", value: pkg.attributes.material }] : []),
-      ...(pkg.attributes.color ? [{ namespace: "attributes", key: "color", type: "single_line_text_field", value: pkg.attributes.color }] : []),
-      ...(pkg.attributes.fit ? [{ namespace: "attributes", key: "fit", type: "single_line_text_field", value: pkg.attributes.fit }] : []),
-      ...(pkg.attributes.occasion ? [{ namespace: "attributes", key: "occasion", type: "single_line_text_field", value: pkg.attributes.occasion }] : []),
-      { namespace: "catalog", key: "short_description", type: "single_line_text_field", value: pkg.shortDescription },
-      { namespace: "catalog", key: "seo_keywords", type: "list.single_line_text_field", value: JSON.stringify(pkg.keywords) },
-      { namespace: "catalog", key: "classification_confidence", type: "single_line_text_field", value: pkg.c.confidence },
-      { namespace: "catalog", key: "review_status", type: "single_line_text_field", value: pkg.c.confidence === "review" ? "needs_review" : "ready" },
+      { namespace: "catalog", key: "classification_confidence", type: "single_line_text_field", value: c.confidence },
+      { namespace: "catalog", key: "review_status", type: "single_line_text_field", value: c.confidence === "review" ? "needs_review" : "classified" },
     ];
 
     if (!WRITE_ENABLED || !APPROVED_PRODUCT_GIDS.has(product.id)) {
@@ -120,13 +126,10 @@ export async function processProductJob(jobId: string) {
 
     const productInput: Record<string, unknown> = {
       id: product.id,
-      title: CONTENT_REWRITE_ENABLED && pkg.title !== product.title ? pkg.title : product.title,
-      descriptionHtml,
-      productType: product.productType?.trim() ? product.productType : pkg.c.productType,
+      productType: product.productType?.trim() ? product.productType : c.productType,
       tags: mergedTags,
       metafields,
     };
-    if (seoTitle || seoDescription) productInput.seo = { title: seoTitle, description: seoDescription };
 
     const update = await admin.graphql(PRODUCT_UPDATE, {
       variables: { product: productInput },
@@ -135,10 +138,13 @@ export async function processProductJob(jobId: string) {
     const errors = updateBody.data?.productUpdate?.userErrors ?? [];
     if (errors.length) throw new Error(errors.map((e: { message: string }) => e.message).join("; "));
 
+    // Missing ALT text may be filled from the product's existing title only.
+    // Canonical editorial/SEO content is produced upstream and is never regenerated here.
     const media = (product.media ?? []).filter((m) => m.id && !m.alt);
     if (media.length) {
+      const alt = product.title?.trim() || c.productType;
       const fileUpdate = await admin.graphql(FILE_UPDATE, {
-        variables: { files: media.map((m) => ({ id: m.id, alt: `${pkg.title} | MVQueen` })) },
+        variables: { files: media.map((m) => ({ id: m.id, alt: `${alt} | MVQueen` })) },
       });
       const fileBody = await fileUpdate.json();
       const fileErrors = fileBody.data?.fileUpdate?.userErrors ?? [];
