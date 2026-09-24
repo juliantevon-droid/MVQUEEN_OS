@@ -15,13 +15,14 @@ The canonical product production record is defined by `PRODUCT_SCHEMA_V1.json`. 
 | Merchandising | collections, tags, related products, bundles | inventory mutation |
 | Commercial | angles, offers, objections, proof mapping | fabricated proof |
 | Creative | asset briefs and channel manifests | fabricated product claims |
+| Content Intelligence | product-page blocks, verified metafields, FAQs, collection drafts, blog drafts | product truth, protected fields, auto-publication |
 | Pricing | recommendations and approved publish price | silent publication of recommendations |
 | Shopify | transport/export of approved record | rewriting upstream truth |
 | QA/Overseer | validation and release gate | bypassing failed checks |
 
 ## Integration rule
 
-Existing engines may remain in place during consolidation, but only the canonical pipeline may produce the final production record. Legacy or duplicate generators become adapters, references, or archive candidates after parity testing.
+Only the canonical product pipeline may produce the final production record. Downstream content generation may consume only `PRODUCTION_READY` records. Legacy runtimes, free-text all-in-one processors, and metafield generators that can invent facts are retired and must fail closed rather than compete with the canonical pipeline.
 
 ## Protected data
 
