@@ -171,3 +171,54 @@ Current verified Shopify state at the time of this correction:
 - Both active products use `MVQUEEN` as vendor/customer-facing brand.
 
 Current-store merchandising/navigation and the customer-facing policy pages have been verified or repaired. Remaining stabilization work is limited to owner/admin security, identity, password-protection and theme-publication controls listed above.
+
+## Launch finalization update — 2026-09-24
+
+This section supersedes earlier launch-blocker lists in this document.
+
+### Verified complete
+
+- Production catalog scope is Shopify-only: 2 current products, both ACTIVE.
+- Both live products use `MVQUEEN` as vendor/customer-facing brand.
+- Product titles, descriptions, SEO title/meta description and all 5 current product image ALT texts are complete.
+- Product handles, SKUs, prices, inventory, variants and media relationships remain protected.
+- Current product fulfillment profiles are configured for United States delivery.
+- Main menu is aligned to the current assortment and no longer exposes empty fashion/beauty category trees.
+- Miss.Princess menu is reduced to valid current destinations: Miss.Princess Home, Shop Jewelry, MVQueen Home and Contact.
+- The former `Miss.Queen` page is unpublished and redirects to `/pages/miss-princess`.
+- Footer Privacy Policy now points to Shopify's canonical `/policies/privacy-policy`.
+- The former custom `/pages/privacy-policy` page is archived/unpublished and redirects to the canonical policy.
+- Terms of Service, Refund & Returns Policy and Shipping Policy contain no placeholders and use the verified support email `miss.mvqueen@gmail.com`.
+- Two URL redirects are active for the retired Privacy and Miss.Queen page paths.
+- Empty Shopify collections remain preserved in admin and out of customer navigation. The canonical custom theme now emits `noindex,follow` on collections with zero products.
+- Canonical custom theme `MVQUEEN — Custom Production Build` is synchronized to GitHub `main` for all 33 controlled files: 33/33 file sizes match, with no missing files or theme processing failures.
+- Theme CI/CD, MVQUEEN_OS Overseer and Lint/Index pass on the current storefront code commit.
+- The canonical theme contains no detected `Miss.Queen`, policy-placeholder, TODO/FIXME, lorem, example.com, Helio or Horizon references.
+- The primary Shopify domain is SSL-enabled and has an English web presence.
+- Storefront password protection is currently enabled as the pre-launch safety gate.
+- Current `main` contains no discovered live `shpat_` credential; secret-like strings found by search are scanner/test patterns only.
+
+### Account-level launch actions still required
+
+These controls cannot be completed by the connected tools and must remain explicit launch gates:
+
+1. **Publish the custom theme.** The connected Shopify mutation surface blocks theme publishing by safety policy. Publish `MVQUEEN — Custom Production Build` (`154611515590`) in Shopify admin only after the final visual preview.
+2. **Disable storefront password protection immediately after the custom theme is published.** Password protection is currently ON; this also explains why external storefront browsing and product `onlineStoreUrl` checks are unavailable/null.
+3. **Verify the payment provider in Shopify Admin → Settings → Payments.** The connected app lacks `read_shopify_payments` / `read_shopify_payments_accounts`, so payment-provider activation cannot be verified here. No digital wallets are reported through the accessible payment-settings field; that is not proof card checkout is unavailable.
+4. **Enable GitHub protection/rules for `main`.** The connected GitHub App has no repository-administration permission, so branch protection cannot be set from this environment.
+5. **Confirm rotation/revocation of the historical exposed-looking Shopify credential.** Active `main` is clean, but historical exposure must remain treated as compromised until Shopify-side revocation/rotation is confirmed.
+
+### Release position
+
+**Code / architecture:** READY  
+**Current Shopify product catalog:** READY  
+**Navigation / redirects:** READY  
+**Policies / customer-facing legal pages:** READY for business use based on currently verified settings  
+**Custom theme candidate:** READY TO PUBLISH  
+**SEO / empty-collection handling:** READY in custom theme  
+**Storefront access:** PASSWORD-PROTECTED UNTIL LAUNCH  
+**Payments:** MANUAL ADMIN VERIFICATION REQUIRED  
+**GitHub branch protection:** MANUAL ADMIN ACTION REQUIRED  
+**Historical credential rotation:** MANUAL SECURITY CONFIRMATION REQUIRED  
+**Full public launch:** FINAL ACCOUNT CONTROLS ONLY
+
