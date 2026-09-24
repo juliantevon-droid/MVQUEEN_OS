@@ -14,22 +14,20 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
-FORBIDDEN_CUSTOMER_BRANDS = (
-    "MISS.QUEEN",
-    "MISS. QUEEN",
-    "OUHOE",
-    "HOEGOA",
-    "FANZHEN",
-    "EELHOPE",
-    "COLOR FIT",
-    "WEST & MONTH",
-    "EPROLO",
-    "DROPSURE",
-    "JAYSUING",
-    "ROXELIS",
-    "DESIRE GEM",
-    "MIA JEWELRY",
-)
+def _load_worker_forbidden() -> tuple[str, ...]:
+    """Reuse the canonical denylist without duplicating legacy brand literals."""
+    import importlib.util
+
+    worker_path = Path(__file__).with_name("mvqueen_catalog_worker.py")
+    spec = importlib.util.spec_from_file_location("mvqueen_catalog_worker_policy", worker_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("Unable to load canonical catalog worker policy")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return tuple(module.FORBIDDEN)
+
+
+FORBIDDEN_CUSTOMER_BRANDS = _load_worker_forbidden()
 
 REQUIRED_HEADERS = (
     "Handle",
