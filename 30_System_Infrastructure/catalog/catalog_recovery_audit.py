@@ -1,101 +1,25 @@
 #!/usr/bin/env python3
-"""Read-only audit for historical Shopify catalog recovery files.
-
-This utility never transforms, imports, publishes, or mutates Shopify data.
-It summarizes a Shopify CSV and returns a deterministic HOLD/READY_FOR_REVIEW
-decision so historical recovery blobs cannot bypass the governed catalog path.
-"""
+"""Read-only audit for historical Shopify catalog recovery files."""
 from __future__ import annotations
 
 import argparse
 import csv
 import json
-import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
-def _load_worker_forbidden() -> tuple[str, ...]:
-    """Reuse the canonical denylist without duplicating legacy brand literals."""
-    import importlib.util
-
-    worker_path = Path(__file__).with_name("mvqueen_catalog_worker.py")
-    spec = importlib.util.spec_from_file_location("mvqueen_catalog_worker_policy", worker_path)
-    if spec is None or spec.loader is None:
-        raise RuntimeError("Unable to load canonical catalog worker policy")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return tuple(module.FORBIDDEN)
-
-
-FORBIDDEN_CUSTOMER_BRANDS = _load_worker_forbidden()
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-BRAND_GOVERNANCE_SOURCES = (
-    "01_Brand_Strategy/Brand_Bible.md",
-    "02_Brand_Identity/brand_vocabulary.md",
-    "06_Tone_And_Voice/Brand_Vocabulary_Banks.md",
-    "06_Tone_And_Voice/Forbidden_Words.md",
-    "06_Tone_And_Voice/Product_Description_Voice.md",
-    "06_Tone_And_Voice/Tone_Guide.md",
-    "06_Tone_And_Voice/Voice_Consistency_Rules.md",
-    "06_Tone_And_Voice/Writing_Rules.md",
+from mvqueen_engine.brand_governance import (
+    BRAND_GOVERNANCE_SOURCES,
+    SUPPLIER_AND_REFERENCE_BRANDS,
+    load_tier1_forbidden_terms,
 )
 
+FORBIDDEN_CUSTOMER_BRANDS = SUPPLIER_AND_REFERENCE_BRANDS
+TIER1_FORBIDDEN_TERMS = load_tier1_forbidden_terms()
 
-def _require_brand_governance_sources() -> None:
-    missing = [rel for rel in BRAND_GOVERNANCE_SOURCES if not (REPO_ROOT / rel).exists()]
-    if missing:
-        raise RuntimeError(f"Missing canonical brand governance sources: {missing}")
-
-
-def _load_tier1_forbidden_terms() -> tuple[str, ...]:
-    """Read the hard-prohibition vocabulary from the canonical voice document."""
-    _require_brand_governance_sources()
-    text = (REPO_ROOT / "06_Tone_And_Voice/Forbidden_Words.md").read_text(
-        encoding="utf-8"
-    )
-    try:
-        section = text.split("## Tier 1", 1)[1].split("## Tier 2", 1)[0]
-    except IndexError as exc:
-        raise RuntimeError("Unable to locate Tier 1 forbidden-language section") from exc
-
-    terms: list[str] = []
-    for line in section.splitlines():
-        if not line.lstrip().startswith("|"):
-            continue
-        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-        if not cells:
-            continue
-        phrase = cells[0]
-        if not phrase or phrase.lower() == "word / phrase" or set(phrase) <= {"-", ":"}:
-            continue
-        phrase = re.sub(r"\s*\([^)]*\)\s*$", "", phrase).strip()
-        for part in re.split(r"\s+/\s+", phrase):
-            part = part.strip()
-            if part:
-                terms.append(part)
-    return tuple(dict.fromkeys(terms))
-
-
-TIER1_FORBIDDEN_TERMS = _load_tier1_forbidden_terms()
-
-REQUIRED_HEADERS = (
-    "Handle",
-    "Title",
-    "Body (HTML)",
-    "Vendor",
-    "Status",
-)
-
-CUSTOMER_FACING_FIELDS = (
-    "Title",
-    "Body (HTML)",
-    "SEO Title",
-    "SEO Description",
-    "Tags",
-)
-
+REQUIRED_HEADERS = ("Handle", "Title", "Body (HTML)", "Vendor", "Status")
+CUSTOMER_FACING_FIELDS = ("Title", "Body (HTML)", "SEO Title", "SEO Description", "Tags")
 MVQ_CATEGORY_FIELDS = ("MVQ Category", "Category")
 MVQ_PRODUCT_TYPE_FIELDS = ("MVQ Product Type", "Product Type", "Type")
 
@@ -130,22 +54,19 @@ def audit_csv(path: str | Path) -> Dict[str, Any]:
     products = _product_rows(rows)
     vendors = Counter((_value(row, "Vendor") or "(blank)") for row in products)
     statuses = Counter((_value(row, "Status") or "(blank)") for row in products)
-    categories = Counter(
-        (_value(row, *MVQ_CATEGORY_FIELDS) or "(blank)") for row in products
-    )
+    categories = Counter((_value(row, *MVQ_CATEGORY_FIELDS) or "(blank)") for row in products)
 
     leakage: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
     voice_violations: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
     for row in products:
         for field in CUSTOMER_FACING_FIELDS:
             raw = row.get(field) or ""
-            blob = raw.upper()
-            lowered = raw.lower()
+            folded = raw.casefold()
             for brand in FORBIDDEN_CUSTOMER_BRANDS:
-                if brand in blob:
+                if brand.casefold() in folded:
                     leakage[brand][field] += 1
             for term in TIER1_FORBIDDEN_TERMS:
-                if term.lower() in lowered:
+                if term.casefold() in folded:
                     voice_violations[term][field] += 1
 
     image_rows = [row for row in rows if _value(row, "Image Src")]
@@ -221,15 +142,10 @@ def audit_csv(path: str | Path) -> Dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("source", help="Historical Shopify CSV to audit")
-    parser.add_argument("--output", help="Optional JSON report path")
-    parser.add_argument(
-        "--fail-on-hold",
-        action="store_true",
-        help="Exit 2 when the recovery decision is HOLD",
-    )
+    parser.add_argument("source")
+    parser.add_argument("--output")
+    parser.add_argument("--fail-on-hold", action="store_true")
     args = parser.parse_args()
-
     report = audit_csv(args.source)
     rendered = json.dumps(report, indent=2, sort_keys=True)
     if args.output:
