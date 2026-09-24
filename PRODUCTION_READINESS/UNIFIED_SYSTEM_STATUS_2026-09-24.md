@@ -97,22 +97,13 @@ Further work should extend this canonical system, not create parallel runtimes, 
 - 63 collections are published; 58 are currently empty.
 - Shopify currently reports 0 URL redirects.
 
-### Historical catalog recovery
+### Catalog source of truth
 
-A complete historical Shopify-format recovery source was located in Git history:
-
-- **948 unique products**
-- **3,575 Shopify CSV rows**
-- recovery source: historical `products_final.csv` and related blobs
-
-The recovery source is **not approved for direct import**. It contains supplier/legacy branding, incomplete category/product-type coverage, missing custom editorial fields, incomplete media representation, zero ALT coverage on represented image rows, and repeated SKU relationships requiring review.
-
-The canonical catalog worker now blocks the recovered supplier identities (including EPROLO, DROPSURE, JAYSUING, ROXELIS, DESIRE GEM and MIA JEWELRY) from customer-facing optimized content.
-
-A read-only recovery audit now exists at:
-`30_System_Infrastructure/catalog/catalog_recovery_audit.py`
-
-It performs deterministic HOLD/READY_FOR_REVIEW checks and has no Shopify network transport or mutation capability. Recovery-control regression tests are included in Production Readiness CI.
+- **Production catalog source:** Shopify only.
+- Historical CSV/product recovery artifacts are **archive/reference only** and are not approved production inputs.
+- Current connected Shopify catalog: **2 products total, 2 ACTIVE, 0 DRAFT, 0 ARCHIVED**.
+- Production product work applies only to products currently imported into Shopify.
+- Historical product counts, historical media gaps, historical SKU collisions and recovery-dedupe results do **not** affect launch readiness.
 
 ### Remaining launch blockers
 
@@ -122,46 +113,35 @@ The system is production-capable but the customer-facing store is **not yet rele
 2. The historical live-looking Shopify credential still requires confirmed rotation/revocation.
 3. The canonical MVQUEEN theme is intentionally still unpublished; live `Helio` has not been replaced.
 4. Shopify legal/policy content still contains unresolved placeholders such as `[DATE]` and `[PROCESSING TIME]`; business-specific legal/operational values must not be invented.
-5. The historical 948-product catalog must pass normalization, supplier/claim cleanup, classification, media reconciliation and explicit approval before controlled draft creation.
-6. The current authenticated Shopify writer is update-only; no uncontrolled bulk `productCreate` path exists.
+5. Current Shopify merchandising/navigation still needs to be aligned to the products actually imported into Shopify; empty historical collection structure must not be treated as current assortment.
 
 ### Current release position
 
 **Architecture consolidation: COMPLETE.**  
 **Theme candidate synchronization: COMPLETE.**  
-**Live two-product cleanup: COMPLETE.**  
-**Catalog recovery discovery: COMPLETE.**  
-**Catalog recovery release: HOLD.**  
+**Current Shopify two-product cleanup: COMPLETE.**  
+**Historical catalog recovery: ARCHIVE ONLY / OUT OF PRODUCTION SCOPE.**  
 **Full storefront launch clearance: NOT YET.**
 
-Further production work must continue through the existing `main` architecture and governed release gates.
+Further production work must continue from the **current Shopify catalog only**, through the existing `main` architecture and governed release gates.
 
-## Catalog stabilization update — 2026-09-24
+## Catalog scope correction — 2026-09-24
 
-The historical recovery pipeline is now validated end-to-end against the real 3,575-row / 948-product Git blob.
+The previously analyzed 948-product historical CSV set belongs to an old catalog and is **not part of the current MVQUEEN production assortment**.
 
-- 948 / 948 products normalize to REVIEW state.
-- 0 normalized products remain on HOLD.
-- 0 protected-field changes occur during normalization.
-- 0 supplier/reference-brand leaks remain in normalized customer-facing copy.
-- Canonical MVQUEEN category and product-type classification is complete for the normalized recovery set.
-- 36 duplicate SKU collision components are deterministically resolved as duplicate listings.
-- 39 redundant product handles are excluded from the release plan without rewriting handles or SKUs.
-- **909 canonical release-candidate products remain.**
-- 0 SKU collision components remain unresolved after release planning.
-- Historical CSV media is incomplete: only 11 canonical candidates have recovered media references; **898 canonical candidates do not**.
-- The connected Shopify Files library contains only the five images used by the two current live products.
-- MIME-filtered Google Drive searches found no indexed product-image archive.
-- The recovered normalization output remains deliberately non-importable. A future creation path must use governed DRAFT creation after media reconciliation and explicit approval.
+Effective immediately:
 
-Current catalog release blockers:
-1. Recover/replace verified media for the 898 candidates without historical product image references.
-2. Keep draft creation behind an explicit approval boundary; do not reuse historical active/published state.
-3. Do not rewrite protected handles, SKUs, prices, variants, inventory or source-image relationships to solve recovery issues.
+- Shopify is the sole source of truth for production products.
+- Only products currently imported into Shopify are eligible for optimization, collection assignment, storefront display, SEO work, QA or publication decisions.
+- Historical recovery/dedupe/media findings are retained only as archival engineering evidence.
+- Historical recovery tooling is removed from active Catalog Governance and Production Readiness gates.
+- No old product will be recreated, imported, deduplicated, assigned media, or counted toward readiness unless explicitly reintroduced by the merchant in the future.
 
-System-level blockers that remain outside automated repair:
-- GitHub `main` branch protection requires repository administration permission not available to the connected app.
-- Historical live-looking Shopify credential rotation/revocation still requires confirmation.
-- Shopify policy text contains business-specific placeholders. Repository guidance is inconsistent on processing timelines, so no legal/operational value was invented.
-- The canonical MVQUEEN theme remains unpublished while these release gates remain open.
+Current verified Shopify state at the time of this correction:
+- 2 total products.
+- 2 ACTIVE.
+- 0 DRAFT.
+- 0 ARCHIVED.
+- Both active products use `MVQUEEN` as vendor/customer-facing brand.
 
+The next stabilization work is current-store merchandising, navigation, collection hygiene, policy completion, security/account controls, and final unpublished-theme QA.
