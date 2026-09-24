@@ -18,7 +18,7 @@ if str(ENGINE_ROOT) not in sys.path:
     sys.path.insert(0, str(ENGINE_ROOT))
 
 from catalog_recovery_audit import audit_csv
-from mvqueen_engine.brand_governance import SUPPLIER_AND_REFERENCE_BRANDS
+from mvqueen_engine.brand_governance import SUPPLIER_AND_REFERENCE_BRANDS, contains_term
 from mvqueen_engine.catalog_recovery_transform import transform_csv
 from mvqueen_engine.config import SHOPIFY_PROTECTED_COLUMNS
 
@@ -77,7 +77,7 @@ def validate(source_path: str | Path) -> dict:
             blob = " ".join(str(row.get(field) or "") for field in customer_fields).casefold()
             found = [
                 term for term in SUPPLIER_AND_REFERENCE_BRANDS
-                if term.casefold() in blob
+                if contains_term(blob, term)
             ]
             if found:
                 leakage[index] = found[:5]
