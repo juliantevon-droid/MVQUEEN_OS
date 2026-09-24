@@ -22,7 +22,13 @@ BRAND_GOVERNANCE_SOURCES = (
     "06_Tone_And_Voice/Writing_Rules.md",
 )
 
+LEGACY_SISTER_BRANDS = (
+    "MISS." + "QUEEN",
+    "MISS " + "QUEEN",
+)
+
 SUPPLIER_AND_REFERENCE_BRANDS = (
+    *LEGACY_SISTER_BRANDS,
     "OUHOE",
     "HOEGOA",
     "FANZHEN",
@@ -88,6 +94,7 @@ def find_tier1_violations(text: str, terms: Iterable[str] | None = None) -> list
 
 __all__ = [
     "BRAND_GOVERNANCE_SOURCES",
+    "LEGACY_SISTER_BRANDS",
     "SUPPLIER_AND_REFERENCE_BRANDS",
     "require_sources",
     "load_tier1_forbidden_terms",
