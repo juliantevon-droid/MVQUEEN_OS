@@ -20,6 +20,7 @@ if str(ENGINE_ROOT) not in sys.path:
 from catalog_recovery_audit import audit_csv
 from mvqueen_engine.brand_governance import SUPPLIER_AND_REFERENCE_BRANDS, contains_term
 from mvqueen_engine.catalog_recovery_transform import transform_csv
+from mvqueen_engine.catalog_release_planner import plan_csv
 from mvqueen_engine.config import SHOPIFY_PROTECTED_COLUMNS
 
 EXPECTED_ROWS = 3575
@@ -43,6 +44,7 @@ def validate(source_path: str | Path) -> dict:
 
         source_headers, source_rows = _read(source)
         normalized_headers, normalized_rows = _read(normalized)
+        release_plan = plan_csv(normalized)
 
         if source_headers != normalized_headers:
             raise AssertionError("Recovery transform changed Shopify column order.")
@@ -101,6 +103,12 @@ def validate(source_path: str | Path) -> dict:
                 + json.dumps(leakage, sort_keys=True)
             )
 
+        if release_plan["unresolved_collision_components"]:
+            raise AssertionError(
+                "Unresolved SKU collision components remain: "
+                + json.dumps(release_plan["unresolved_components"][:10], sort_keys=True)
+            )
+
         summary = {
             "source_rows": len(source_rows),
             "unique_products": transform["unique_products"],
@@ -108,6 +116,13 @@ def validate(source_path: str | Path) -> dict:
             "audit_hold_reasons": audit["hold_reasons"],
             "normalized_hold_products": transform["hold_products"],
             "normalized_review_products": transform["review_products"],
+            "release_candidate_products": release_plan["release_candidate_products"],
+            "excluded_duplicate_handles": release_plan["excluded_duplicate_handles"],
+            "resolved_duplicate_components": release_plan["resolved_duplicate_components"],
+            "unresolved_collision_components": release_plan["unresolved_collision_components"],
+            "handles_with_recovered_media": release_plan["handles_with_recovered_media"],
+            "handles_without_recovered_media": release_plan["handles_without_recovered_media"],
+            "release_blockers": release_plan["release_blockers"],
             "classification_confidence_counts": transform.get("classification", {}).get("confidence_counts", {}),
             "classification_category_counts": transform.get("classification", {}).get("category_counts", {}),
             "classification_product_type_counts": transform.get("classification", {}).get("product_type_counts", {}),
