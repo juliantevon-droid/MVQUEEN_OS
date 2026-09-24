@@ -12,6 +12,7 @@ on:
     paths:
       - '12_Content_Assets/drive_inbox/**'
       - '30_System_Infrastructure/catalog/**'
+      - '15_Scripts_And_Code/mvqueen_engine/**'
       - '.github/workflows/mvqueen-catalog-ci.yml'
   schedule:
     - cron: '41 * * * *'
