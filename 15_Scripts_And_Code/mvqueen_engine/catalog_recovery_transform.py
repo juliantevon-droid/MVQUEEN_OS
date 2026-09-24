@@ -20,6 +20,7 @@ from mvqueen_engine.brand_governance import (
     BRAND_GOVERNANCE_SOURCES,
     SUPPLIER_AND_REFERENCE_BRANDS,
     find_tier1_violations,
+    remove_tier1_terms,
 )
 from mvqueen_engine.config import (
     CANONICAL_BRAND,
@@ -55,6 +56,7 @@ def _strip_html(value: str) -> str:
 def _clean_brand_terms(value: str) -> str:
     cleaned = BRAND_RE.sub("", str(value or ""))
     cleaned = SUPPLIER_BOILERPLATE_RE.sub("", cleaned)
+    cleaned = remove_tier1_terms(cleaned)
     cleaned = re.sub(r"\s+([,.;:])", r"\1", cleaned)
     cleaned = re.sub(r"([|/,:;-])\s*\1+", r"\1", cleaned)
     return SPACE_RE.sub(" ", cleaned).strip(" -|,;:")
