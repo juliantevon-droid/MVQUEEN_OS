@@ -1,0 +1,1915 @@
+{
+  "captured_at": "2026-09-24",
+  "purpose": "Pre-stabilization backup of Shopify Main menu before aligning customer navigation to the current Shopify catalog.",
+  "menu": {
+    "id": "gid://shopify/Menu/246799597766",
+    "title": "Main menu",
+    "handle": "main-menu",
+    "items": [
+      {
+        "id": "gid://shopify/MenuItem/594985451718",
+        "title": "New In",
+        "type": "HTTP",
+        "url": "/collections/mvqueen-edit",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594985484486",
+            "title": "Latest Arrivals",
+            "type": "HTTP",
+            "url": "/collections/mvqueen-edit",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/594985517254",
+            "title": "New Fashion",
+            "type": "HTTP",
+            "url": "/search?q=new+fashion",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/594985550022",
+            "title": "New Beauty",
+            "type": "HTTP",
+            "url": "/search?q=new+beauty",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/594985582790",
+            "title": "New Accessories",
+            "type": "HTTP",
+            "url": "/search?q=new+accessories",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594985615558",
+        "title": "Fashion",
+        "type": "HTTP",
+        "url": "/collections/fashion",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594985648326",
+            "title": "Clothing",
+            "type": "HTTP",
+            "url": "/collections/clothing",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594985681094",
+                "title": "Dresses",
+                "type": "HTTP",
+                "url": "/collections/dresses",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594985713862",
+                "title": "Tops",
+                "type": "HTTP",
+                "url": "/collections/tops",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594985746630",
+                "title": "Blouses",
+                "type": "HTTP",
+                "url": "/collections/blouses",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594985779398",
+                "title": "T-Shirts",
+                "type": "HTTP",
+                "url": "/collections/t-shirts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594985812166",
+                "title": "Bodysuits",
+                "type": "HTTP",
+                "url": "/collections/bodysuits",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594985844934",
+                "title": "Sweaters & Knitwear",
+                "type": "HTTP",
+                "url": "/search?q=sweaters+knitwear",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594985877702",
+                "title": "Cardigans",
+                "type": "HTTP",
+                "url": "/search?q=cardigans",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594985910470",
+                "title": "Shirts & Tunics",
+                "type": "HTTP",
+                "url": "/search?q=shirts+tunics",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594985943238",
+            "title": "Bottoms",
+            "type": "HTTP",
+            "url": "/collections/bottoms",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594985976006",
+                "title": "Pants",
+                "type": "HTTP",
+                "url": "/collections/pants",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986008774",
+                "title": "Jeans & Denim",
+                "type": "HTTP",
+                "url": "/collections/jeans-denim",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986041542",
+                "title": "Skirts",
+                "type": "HTTP",
+                "url": "/collections/skirts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986074310",
+                "title": "Shorts",
+                "type": "HTTP",
+                "url": "/collections/shorts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986107078",
+                "title": "Leggings",
+                "type": "HTTP",
+                "url": "/search?q=leggings",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986139846",
+                "title": "Cargo",
+                "type": "HTTP",
+                "url": "/search?q=cargo+pants",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594986172614",
+            "title": "One-Pieces & Sets",
+            "type": "HTTP",
+            "url": "/collections/jumpsuits-rompers",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594986205382",
+                "title": "Jumpsuits & Rompers",
+                "type": "HTTP",
+                "url": "/collections/jumpsuits-rompers",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986238150",
+                "title": "Matching Sets",
+                "type": "HTTP",
+                "url": "/collections/matching-sets",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986270918",
+                "title": "Co-Ord Sets",
+                "type": "HTTP",
+                "url": "/search?q=co-ord+sets",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594986303686",
+            "title": "Lingerie & Intimates",
+            "type": "HTTP",
+            "url": "/collections/lingerie-intimates",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594986336454",
+                "title": "Bras & Bralettes",
+                "type": "HTTP",
+                "url": "/search?q=bras+bralettes",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986369222",
+                "title": "Panties",
+                "type": "HTTP",
+                "url": "/search?q=panties",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986401990",
+                "title": "Lingerie Sets",
+                "type": "HTTP",
+                "url": "/search?q=lingerie+sets",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986434758",
+                "title": "Sleepwear & Pajamas",
+                "type": "HTTP",
+                "url": "/search?q=sleepwear+pajamas",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986467526",
+                "title": "Robes",
+                "type": "HTTP",
+                "url": "/search?q=robes",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986500294",
+                "title": "Shapewear",
+                "type": "HTTP",
+                "url": "/search?q=shapewear",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594986533062",
+            "title": "Active & Swim",
+            "type": "HTTP",
+            "url": "/collections/activewear",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594986565830",
+                "title": "Activewear",
+                "type": "HTTP",
+                "url": "/collections/activewear",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986598598",
+                "title": "Sports Bras",
+                "type": "HTTP",
+                "url": "/search?q=sports+bras",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986631366",
+                "title": "Leggings & Sets",
+                "type": "HTTP",
+                "url": "/search?q=activewear+leggings+sets",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986664134",
+                "title": "Swimwear",
+                "type": "HTTP",
+                "url": "/collections/swimwear",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986696902",
+                "title": "Bikinis",
+                "type": "HTTP",
+                "url": "/search?q=bikinis",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986729670",
+                "title": "Cover-Ups & Beachwear",
+                "type": "HTTP",
+                "url": "/search?q=cover-ups+beachwear",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594986762438",
+            "title": "Outerwear & Occasion",
+            "type": "HTTP",
+            "url": "/collections/outerwear",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594986795206",
+                "title": "Jackets & Coats",
+                "type": "HTTP",
+                "url": "/search?q=jackets+coats",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986827974",
+                "title": "Blazers",
+                "type": "HTTP",
+                "url": "/search?q=blazers",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986860742",
+                "title": "Trench Coats",
+                "type": "HTTP",
+                "url": "/search?q=trench+coats",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986893510",
+                "title": "Evening",
+                "type": "HTTP",
+                "url": "/search?q=evening+wear",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986926278",
+                "title": "Date Night",
+                "type": "HTTP",
+                "url": "/search?q=date+night",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594986959046",
+                "title": "Vacation & Resort",
+                "type": "HTTP",
+                "url": "/search?q=vacation+resort",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594986991814",
+        "title": "Beauty",
+        "type": "HTTP",
+        "url": "/collections/beauty",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594987024582",
+            "title": "Face",
+            "type": "HTTP",
+            "url": "/collections/face-makeup",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594987057350",
+                "title": "Foundation & Concealer",
+                "type": "HTTP",
+                "url": "/search?q=foundation+concealer",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987090118",
+                "title": "Blush",
+                "type": "HTTP",
+                "url": "/search?q=blush",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987122886",
+                "title": "Bronzer & Contour",
+                "type": "HTTP",
+                "url": "/search?q=bronzer+contour",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987155654",
+                "title": "Highlighter",
+                "type": "HTTP",
+                "url": "/search?q=highlighter",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594987188422",
+            "title": "Eyes",
+            "type": "HTTP",
+            "url": "/collections/eye-makeup",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594987221190",
+                "title": "Mascara",
+                "type": "HTTP",
+                "url": "/search?q=mascara",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987253958",
+                "title": "Eyeliner",
+                "type": "HTTP",
+                "url": "/search?q=eyeliner",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987286726",
+                "title": "Eyeshadow",
+                "type": "HTTP",
+                "url": "/search?q=eyeshadow",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987319494",
+                "title": "Brows & Lashes",
+                "type": "HTTP",
+                "url": "/search?q=brows+lashes",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594987352262",
+            "title": "Lips",
+            "type": "HTTP",
+            "url": "/collections/lip-makeup",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594987385030",
+                "title": "Lipstick",
+                "type": "HTTP",
+                "url": "/search?q=lipstick",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987417798",
+                "title": "Lip Gloss",
+                "type": "HTTP",
+                "url": "/search?q=lip+gloss",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987450566",
+                "title": "Lip Liner",
+                "type": "HTTP",
+                "url": "/search?q=lip+liner",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987483334",
+                "title": "Lip Care",
+                "type": "HTTP",
+                "url": "/search?q=lip+care",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594987516102",
+            "title": "Nails",
+            "type": "HTTP",
+            "url": "/collections/nails",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594987548870",
+                "title": "Nail Polish",
+                "type": "HTTP",
+                "url": "/search?q=nail+polish",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987581638",
+                "title": "Nail Art",
+                "type": "HTTP",
+                "url": "/search?q=nail+art",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987614406",
+                "title": "Nail Care",
+                "type": "HTTP",
+                "url": "/search?q=nail+care",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594987647174",
+            "title": "Makeup Tools",
+            "type": "HTTP",
+            "url": "/collections/makeup-brushes-tools",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594987679942",
+                "title": "Brushes",
+                "type": "HTTP",
+                "url": "/search?q=makeup+brushes",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987712710",
+                "title": "Sponges & Applicators",
+                "type": "HTTP",
+                "url": "/search?q=makeup+sponges",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987745478",
+                "title": "Beauty Tools",
+                "type": "HTTP",
+                "url": "/search?q=beauty+tools",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/595000885446",
+                "title": "Makeup Mirrors",
+                "type": "HTTP",
+                "url": "/search?q=makeup+mirrors",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/595000918214",
+                "title": "Vanity Beauty Accessories",
+                "type": "HTTP",
+                "url": "/search?q=vanity+beauty+accessories",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594987778246",
+        "title": "Hair & Wigs",
+        "type": "HTTP",
+        "url": "/search?q=hair",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594987811014",
+            "title": "Wigs & Extensions",
+            "type": "HTTP",
+            "url": "/search?q=wigs+hair+extensions",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594987843782",
+                "title": "Human Hair Wigs",
+                "type": "HTTP",
+                "url": "/search?q=human+hair+wigs",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987876550",
+                "title": "Lace Front Wigs",
+                "type": "HTTP",
+                "url": "/search?q=lace+front+wigs",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987909318",
+                "title": "Bundles & Extensions",
+                "type": "HTTP",
+                "url": "/search?q=hair+bundles+extensions",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594987942086",
+                "title": "Ponytails",
+                "type": "HTTP",
+                "url": "/search?q=ponytails",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594987974854",
+            "title": "Hair Care",
+            "type": "HTTP",
+            "url": "/search?q=hair+care",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988007622",
+                "title": "Shampoo",
+                "type": "HTTP",
+                "url": "/search?q=shampoo",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988040390",
+                "title": "Conditioner",
+                "type": "HTTP",
+                "url": "/search?q=conditioner",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988073158",
+                "title": "Hair Masks",
+                "type": "HTTP",
+                "url": "/search?q=hair+masks",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988105926",
+                "title": "Hair Oils & Treatments",
+                "type": "HTTP",
+                "url": "/search?q=hair+oils+treatments",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594988138694",
+            "title": "Styling",
+            "type": "HTTP",
+            "url": "/search?q=hair+styling",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988171462",
+                "title": "Curling Tools",
+                "type": "HTTP",
+                "url": "/search?q=curling+tools",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988204230",
+                "title": "Straighteners",
+                "type": "HTTP",
+                "url": "/search?q=hair+straighteners",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988236998",
+                "title": "Dryers",
+                "type": "HTTP",
+                "url": "/search?q=hair+dryers",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988269766",
+                "title": "Styling Products",
+                "type": "HTTP",
+                "url": "/search?q=hair+styling+products",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594988302534",
+            "title": "Hair Accessories",
+            "type": "HTTP",
+            "url": "/search?q=hair+accessories",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988335302",
+                "title": "Clips & Pins",
+                "type": "HTTP",
+                "url": "/search?q=hair+clips",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988368070",
+                "title": "Scrunchies",
+                "type": "HTTP",
+                "url": "/search?q=scrunchies",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988400838",
+                "title": "Headbands",
+                "type": "HTTP",
+                "url": "/search?q=headbands",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988433606",
+                "title": "Brushes & Combs",
+                "type": "HTTP",
+                "url": "/search?q=hair+brushes+combs",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594988466374",
+        "title": "Jewelry",
+        "type": "HTTP",
+        "url": "/collections/jewelry",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594988499142",
+            "title": "Necklaces",
+            "type": "HTTP",
+            "url": "/collections/necklaces",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988531910",
+                "title": "Pendant Necklaces",
+                "type": "HTTP",
+                "url": "/collections/pendant-necklaces",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988564678",
+                "title": "Layering Necklaces",
+                "type": "HTTP",
+                "url": "/search?q=layering+necklaces",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988597446",
+                "title": "Chains",
+                "type": "HTTP",
+                "url": "/search?q=chains",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594988630214",
+            "title": "Earrings",
+            "type": "HTTP",
+            "url": "/collections/earrings",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988662982",
+                "title": "Studs",
+                "type": "HTTP",
+                "url": "/search?q=stud+earrings",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988695750",
+                "title": "Hoops",
+                "type": "HTTP",
+                "url": "/search?q=hoop+earrings",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988728518",
+                "title": "Drop & Statement",
+                "type": "HTTP",
+                "url": "/search?q=statement+earrings",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594988761286",
+            "title": "Rings",
+            "type": "HTTP",
+            "url": "/collections/rings",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988794054",
+                "title": "Everyday Rings",
+                "type": "HTTP",
+                "url": "/search?q=everyday+rings",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988826822",
+                "title": "Statement Rings",
+                "type": "HTTP",
+                "url": "/search?q=statement+rings",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594988859590",
+            "title": "Bracelets",
+            "type": "HTTP",
+            "url": "/collections/bracelets",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988892358",
+                "title": "Chain Bracelets",
+                "type": "HTTP",
+                "url": "/search?q=chain+bracelets",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594988925126",
+                "title": "Beaded Bracelets",
+                "type": "HTTP",
+                "url": "/search?q=beaded+bracelets",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594988957894",
+            "title": "Materials & Style",
+            "type": "HTTP",
+            "url": "/search?q=jewelry",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594988990662",
+                "title": "Sterling Silver",
+                "type": "HTTP",
+                "url": "/search?q=sterling+silver",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989023430",
+                "title": "Gold Filled",
+                "type": "HTTP",
+                "url": "/search?q=gold+filled",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989056198",
+                "title": "Gemstones",
+                "type": "HTTP",
+                "url": "/search?q=gemstone+jewelry",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989088966",
+                "title": "Statement Jewelry",
+                "type": "HTTP",
+                "url": "/search?q=statement+jewelry",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594989121734",
+        "title": "Accessories",
+        "type": "HTTP",
+        "url": "/collections/fashion-accessories",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594989154502",
+            "title": "Bags",
+            "type": "HTTP",
+            "url": "/collections/handbags-purses",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594989187270",
+                "title": "Handbags",
+                "type": "HTTP",
+                "url": "/search?q=handbags",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989220038",
+                "title": "Shoulder Bags",
+                "type": "HTTP",
+                "url": "/search?q=shoulder+bags",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989252806",
+                "title": "Crossbody Bags",
+                "type": "HTTP",
+                "url": "/search?q=crossbody+bags",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989285574",
+                "title": "Clutches",
+                "type": "HTTP",
+                "url": "/search?q=clutches",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989318342",
+                "title": "Totes",
+                "type": "HTTP",
+                "url": "/search?q=totes",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594989351110",
+            "title": "Shoes",
+            "type": "HTTP",
+            "url": "/collections/shoes",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594989383878",
+                "title": "Heels",
+                "type": "HTTP",
+                "url": "/search?q=heels",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989416646",
+                "title": "Flats",
+                "type": "HTTP",
+                "url": "/search?q=flats",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989449414",
+                "title": "Sandals",
+                "type": "HTTP",
+                "url": "/search?q=sandals",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989482182",
+                "title": "Sneakers",
+                "type": "HTTP",
+                "url": "/search?q=sneakers",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989514950",
+                "title": "Boots",
+                "type": "HTTP",
+                "url": "/search?q=boots",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594989547718",
+            "title": "Phone & Tech Accessories",
+            "type": "HTTP",
+            "url": "/search?q=phone+accessories",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594989580486",
+                "title": "Phone Cases",
+                "type": "HTTP",
+                "url": "/search?q=phone+cases",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989613254",
+                "title": "Phone Charms",
+                "type": "HTTP",
+                "url": "/search?q=phone+charms",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989646022",
+                "title": "Tech Cases & Pouches",
+                "type": "HTTP",
+                "url": "/search?q=tech+cases",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594989678790",
+            "title": "Sunglasses & Headwear",
+            "type": "HTTP",
+            "url": "/search?q=sunglasses+headwear",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594989711558",
+                "title": "Sunglasses",
+                "type": "HTTP",
+                "url": "/collections/sunglasses",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989744326",
+                "title": "Hats & Headwear",
+                "type": "HTTP",
+                "url": "/collections/hats-headwear",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989777094",
+                "title": "Scarves",
+                "type": "HTTP",
+                "url": "/search?q=scarves",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594989809862",
+            "title": "Everyday Accessories",
+            "type": "HTTP",
+            "url": "/search?q=women+accessories",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594989842630",
+                "title": "Belts",
+                "type": "HTTP",
+                "url": "/collections/belts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989875398",
+                "title": "Wallets",
+                "type": "HTTP",
+                "url": "/search?q=wallets",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989908166",
+                "title": "Hair Accessories",
+                "type": "HTTP",
+                "url": "/search?q=hair+accessories",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594989940934",
+                "title": "Travel Accessories",
+                "type": "HTTP",
+                "url": "/search?q=travel+accessories",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594989973702",
+        "title": "Skincare",
+        "type": "HTTP",
+        "url": "/collections/skincare",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594990006470",
+            "title": "Face Care",
+            "type": "HTTP",
+            "url": "/collections/cleansers",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594990039238",
+                "title": "Cleansers",
+                "type": "HTTP",
+                "url": "/collections/cleansers",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990072006",
+                "title": "Toners",
+                "type": "HTTP",
+                "url": "/search?q=toners",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990104774",
+                "title": "Moisturizers",
+                "type": "HTTP",
+                "url": "/collections/moisturizers",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990137542",
+                "title": "Serums & Treatments",
+                "type": "HTTP",
+                "url": "/collections/serums-treatments",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594990170310",
+            "title": "Masks & Exfoliation",
+            "type": "HTTP",
+            "url": "/collections/masks-exfoliators",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594990203078",
+                "title": "Face Masks",
+                "type": "HTTP",
+                "url": "/search?q=face+masks",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990235846",
+                "title": "Exfoliators",
+                "type": "HTTP",
+                "url": "/search?q=exfoliators",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990268614",
+                "title": "Scrubs & Peels",
+                "type": "HTTP",
+                "url": "/search?q=scrubs+peels",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594990301382",
+            "title": "Sun Care",
+            "type": "HTTP",
+            "url": "/collections/sunscreen",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594990334150",
+                "title": "Sunscreen",
+                "type": "HTTP",
+                "url": "/collections/sunscreen",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990366918",
+                "title": "SPF",
+                "type": "HTTP",
+                "url": "/search?q=spf",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990399686",
+                "title": "After-Sun Care",
+                "type": "HTTP",
+                "url": "/search?q=after+sun",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594990432454",
+            "title": "Body Care",
+            "type": "HTTP",
+            "url": "/collections/body-care",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594990465222",
+                "title": "Body Wash",
+                "type": "HTTP",
+                "url": "/search?q=body+wash",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990497990",
+                "title": "Body Lotion",
+                "type": "HTTP",
+                "url": "/search?q=body+lotion",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990530758",
+                "title": "Body Oils",
+                "type": "HTTP",
+                "url": "/search?q=body+oils",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990563526",
+                "title": "Hand & Foot Care",
+                "type": "HTTP",
+                "url": "/search?q=hand+foot+care",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594990596294",
+        "title": "Fragrance & Body",
+        "type": "HTTP",
+        "url": "/collections/fragrance",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594990629062",
+            "title": "Fragrance",
+            "type": "HTTP",
+            "url": "/collections/fragrance",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594990661830",
+                "title": "Perfume",
+                "type": "HTTP",
+                "url": "/search?q=perfume",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990694598",
+                "title": "Eau de Parfum",
+                "type": "HTTP",
+                "url": "/search?q=eau+de+parfum",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990727366",
+                "title": "Body Mist",
+                "type": "HTTP",
+                "url": "/search?q=body+mist",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990760134",
+                "title": "Fragrance Oils",
+                "type": "HTTP",
+                "url": "/search?q=fragrance+oils",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594990792902",
+            "title": "Bath & Body",
+            "type": "HTTP",
+            "url": "/collections/bath-body",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594990825670",
+                "title": "Bath",
+                "type": "HTTP",
+                "url": "/search?q=bath",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990858438",
+                "title": "Body Scrubs",
+                "type": "HTTP",
+                "url": "/search?q=body+scrubs",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990891206",
+                "title": "Body Butter",
+                "type": "HTTP",
+                "url": "/search?q=body+butter",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594990923974",
+            "title": "Self Care",
+            "type": "HTTP",
+            "url": "/search?q=self+care",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594990956742",
+                "title": "Wellness",
+                "type": "HTTP",
+                "url": "/search?q=wellness",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594990989510",
+                "title": "Relaxation",
+                "type": "HTTP",
+                "url": "/search?q=relaxation",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594991022278",
+                "title": "Travel Self Care",
+                "type": "HTTP",
+                "url": "/search?q=travel+self+care",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594991612102",
+        "title": "Gifts",
+        "type": "HTTP",
+        "url": "/search?q=gifts",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594991644870",
+            "title": "For Her",
+            "type": "HTTP",
+            "url": "/search?q=gifts+for+her",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594991677638",
+                "title": "Jewelry Gifts",
+                "type": "HTTP",
+                "url": "/search?q=jewelry+gifts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594991710406",
+                "title": "Beauty Gifts",
+                "type": "HTTP",
+                "url": "/search?q=beauty+gifts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594991743174",
+                "title": "Fashion Gifts",
+                "type": "HTTP",
+                "url": "/search?q=fashion+gifts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594991775942",
+                "title": "Self Care Gifts",
+                "type": "HTTP",
+                "url": "/search?q=self+care+gifts",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594991808710",
+            "title": "By Occasion",
+            "type": "HTTP",
+            "url": "/search?q=gift+occasion",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594991841478",
+                "title": "Birthday",
+                "type": "HTTP",
+                "url": "/search?q=birthday+gifts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594991874246",
+                "title": "Anniversary",
+                "type": "HTTP",
+                "url": "/search?q=anniversary+gifts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594991907014",
+                "title": "Valentine's",
+                "type": "HTTP",
+                "url": "/search?q=valentines+gifts",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594991939782",
+                "title": "Bridesmaid",
+                "type": "HTTP",
+                "url": "/search?q=bridesmaid+gifts",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594991972550",
+            "title": "By Price",
+            "type": "HTTP",
+            "url": "/search?q=gifts",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594992005318",
+                "title": "Under $25",
+                "type": "HTTP",
+                "url": "/search?q=gifts+under+25",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992038086",
+                "title": "Under $50",
+                "type": "HTTP",
+                "url": "/search?q=gifts+under+50",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992070854",
+                "title": "Under $100",
+                "type": "HTTP",
+                "url": "/search?q=gifts+under+100",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/594992103622",
+        "title": "The MVQueen Edit",
+        "type": "HTTP",
+        "url": "/collections/mvqueen-edit",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/594992136390",
+            "title": "Curated",
+            "type": "HTTP",
+            "url": "/collections/mvqueen-edit",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594992169158",
+                "title": "Best Sellers",
+                "type": "HTTP",
+                "url": "/search?q=best+sellers",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992201926",
+                "title": "Everyday Essentials",
+                "type": "HTTP",
+                "url": "/search?q=everyday+essentials",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992234694",
+                "title": "Elevated Basics",
+                "type": "HTTP",
+                "url": "/search?q=elevated+basics",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992267462",
+                "title": "Statement Pieces",
+                "type": "HTTP",
+                "url": "/search?q=statement+pieces",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594992300230",
+            "title": "By Mood",
+            "type": "HTTP",
+            "url": "/search?q=women+style",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594992332998",
+                "title": "Soft & Feminine",
+                "type": "HTTP",
+                "url": "/search?q=soft+feminine",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992365766",
+                "title": "Bold",
+                "type": "HTTP",
+                "url": "/search?q=bold+style",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992398534",
+                "title": "Minimal",
+                "type": "HTTP",
+                "url": "/search?q=minimal+style",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992431302",
+                "title": "Romantic",
+                "type": "HTTP",
+                "url": "/search?q=romantic+style",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992464070",
+                "title": "Polished",
+                "type": "HTTP",
+                "url": "/search?q=polished+style",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/594992496838",
+            "title": "Complete the Look",
+            "type": "HTTP",
+            "url": "/search?q=complete+the+look",
+            "resourceId": null,
+            "tags": [],
+            "items": [
+              {
+                "id": "gid://shopify/MenuItem/594992529606",
+                "title": "Fashion + Jewelry",
+                "type": "HTTP",
+                "url": "/search?q=fashion+jewelry",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992562374",
+                "title": "Fashion + Beauty",
+                "type": "HTTP",
+                "url": "/search?q=fashion+beauty",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992595142",
+                "title": "Jewelry + Beauty",
+                "type": "HTTP",
+                "url": "/search?q=jewelry+beauty",
+                "resourceId": null,
+                "tags": []
+              },
+              {
+                "id": "gid://shopify/MenuItem/594992627910",
+                "title": "Full Look",
+                "type": "HTTP",
+                "url": "/search?q=full+look",
+                "resourceId": null,
+                "tags": []
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/MenuItem/595006324934",
+            "title": "About MVQueen",
+            "type": "PAGE",
+            "url": "/pages/about",
+            "resourceId": "gid://shopify/Page/123413004486",
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595006423238",
+            "title": "Journal",
+            "type": "PAGE",
+            "url": "/pages/journal",
+            "resourceId": "gid://shopify/Page/123413659846",
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595006456006",
+            "title": "Lookbook",
+            "type": "PAGE",
+            "url": "/pages/lookbook",
+            "resourceId": "gid://shopify/Page/123413692614",
+            "tags": [],
+            "items": []
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/595000426694",
+        "title": "Contact",
+        "type": "HTTP",
+        "url": "/pages/contact",
+        "resourceId": null,
+        "tags": [],
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/595000459462",
+        "title": "Customers",
+        "type": "HTTP",
+        "url": "/account",
+        "resourceId": null,
+        "tags": [],
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/595000492230",
+        "title": "Customer Support",
+        "type": "HTTP",
+        "url": "/pages/customer-support",
+        "resourceId": null,
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/595000524998",
+            "title": "Help Center",
+            "type": "HTTP",
+            "url": "/pages/customer-support",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595000557766",
+            "title": "Contact Us",
+            "type": "HTTP",
+            "url": "/pages/contact",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595000590534",
+            "title": "Order Help",
+            "type": "HTTP",
+            "url": "/pages/customer-support",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595000623302",
+            "title": "Shipping & Delivery",
+            "type": "HTTP",
+            "url": "/pages/customer-support",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595000656070",
+            "title": "Returns & Exchanges",
+            "type": "HTTP",
+            "url": "/pages/customer-support",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595006357702",
+            "title": "FAQ",
+            "type": "PAGE",
+            "url": "/pages/faq",
+            "resourceId": "gid://shopify/Page/123413037254",
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595006390470",
+            "title": "Size Guide",
+            "type": "PAGE",
+            "url": "/pages/size-guide",
+            "resourceId": "gid://shopify/Page/123413070022",
+            "tags": [],
+            "items": []
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/MenuItem/595006062790",
+        "title": "Miss.Princess",
+        "type": "PAGE",
+        "url": "/pages/miss-princess",
+        "resourceId": "gid://shopify/Page/123422408902",
+        "tags": [],
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/595078250694",
+            "title": "Miss.Princess Home",
+            "type": "PAGE",
+            "url": "/pages/miss-princess",
+            "resourceId": "gid://shopify/Page/123422408902",
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595078283462",
+            "title": "Fashion",
+            "type": "HTTP",
+            "url": "/search?q=miss+princess+fashion",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595078316230",
+            "title": "Beauty",
+            "type": "HTTP",
+            "url": "/search?q=miss+princess+beauty",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          },
+          {
+            "id": "gid://shopify/MenuItem/595078348998",
+            "title": "Accessories",
+            "type": "HTTP",
+            "url": "/search?q=miss+princess+accessories",
+            "resourceId": null,
+            "tags": [],
+            "items": []
+          }
+        ]
+      }
+    ]
+  }
+}
