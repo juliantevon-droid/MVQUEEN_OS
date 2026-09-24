@@ -37,7 +37,7 @@ FILE MAP (READ IN ORDER)
 THE 10 EDITORIAL PERSONAS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1.  MVQueen Core          — Confident, aspirational, inclusive luxury
-2.  MISS.QUEEN            — Youthful, playful, soft-glam (sister brand)
+2.  Miss.Princess            — Youthful, playful, soft-glam (sister brand)
 3.  Victoria Soft Power   — Quiet authority, old money tone
 4.  Sephora Precision     — Clinical, ingredient-forward
 5.  Runway Modern         — Editorial, high-fashion voice

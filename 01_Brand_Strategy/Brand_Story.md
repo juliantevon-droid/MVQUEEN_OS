@@ -56,7 +56,7 @@ She is the reason this brand exists. It was built for her — all of it.
 ## Format 04 — The Press Version (100 words)
 *For: Press releases, journalist queries, media kits*
 
-MVQUEEN is an AI-native luxury feminine ecommerce brand offering beauty, fashion, haircare, accessories, and fragrance for women who choose softness intentionally. Founded on the conviction that softness is strength and beauty should restore rather than exhaust, MVQUEEN occupies the accessible luxury space between mass-market DTC brands and traditional luxury houses. The brand combines premium product quality, emotionally intelligent brand communication, and AI-native operational infrastructure. Sister brand miss.queen targets an adjacent positioning with shared infrastructure. MVQUEEN is available exclusively through mvqueen.com.
+MVQUEEN is an AI-native luxury feminine ecommerce brand offering beauty, fashion, haircare, accessories, and fragrance for women who choose softness intentionally. Founded on the conviction that softness is strength and beauty should restore rather than exhaust, MVQUEEN occupies the accessible luxury space between mass-market DTC brands and traditional luxury houses. The brand combines premium product quality, emotionally intelligent brand communication, and AI-native operational infrastructure. Sister brand Miss.Princess targets an adjacent positioning with shared infrastructure. MVQUEEN is available exclusively through mvqueen.com.
 
 ---
 *MVQUEEN Brand Story — Four Formats*

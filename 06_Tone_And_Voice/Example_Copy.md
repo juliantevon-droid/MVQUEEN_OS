@@ -208,9 +208,9 @@ Tell us: which colorway goes in the wardrobe first?
 
 ---
 
-## 06 — miss.queen Caption Examples
+## 06 — Miss.Princess Caption Examples
 
-miss.queen captions carry more energy and speak to a slightly younger audience. Same precision, lighter touch.
+Miss.Princess captions carry more energy and speak to a slightly younger audience. Same precision, lighter touch.
 
 ```
 Okay but this set though. 🖤

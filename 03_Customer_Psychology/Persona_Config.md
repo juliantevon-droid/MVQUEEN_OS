@@ -28,7 +28,7 @@ Best for: Hero products, brand-defining SKUs, anything flagship
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PERSONA 02 — MISS.QUEEN
+PERSONA 02 — Miss.Princess
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 tone: Youthful, playful, soft-glam energy
 emotional_axes: fun, self-expression, girlhood elevated
