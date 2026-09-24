@@ -65,3 +65,47 @@ The next catalog phase is:
 `historical recovery blob → read-only normalization → supplier/claim cleanup → classification/media reconciliation → draft release artifacts → approval → controlled Shopify creation`
 
 No new parallel runtime or production branch should be created for this work.
+
+## Stabilization results — 2026-09-24
+
+The real historical recovery source now passes the governed normalization and dedupe validation pipeline.
+
+### Normalization
+
+- Source: 3,575 Shopify rows / 948 product handles.
+- Normalized REVIEW: 948.
+- Normalized HOLD: 0.
+- Supplier/reference-brand leakage after normalization: 0.
+- Protected commerce-field changes: 0.
+- Canonical taxonomy: complete; no unclassified category or product type remains in the normalized recovery set.
+
+### Duplicate resolution
+
+A read-only release planner resolves SKU collisions by selecting the richest canonical member of a proven duplicate family and excluding only records whose SKU set is fully represented by the canonical member.
+
+- Collision components resolved: 36.
+- Redundant handles excluded: 39.
+- Unresolved collision components: 0.
+- Canonical release candidates: **909**.
+- Handles/SKUs are never rewritten during dedupe planning.
+
+### Media recovery
+
+Historical product-media coverage is the remaining data blocker:
+
+- Canonical release candidates with recovered CSV media: 11.
+- Canonical release candidates without recovered CSV media: **898**.
+- Shopify Files currently contains five images, all belonging to the two live products.
+- Google Drive MIME-filtered searches found no indexed MVQUEEN/product/catalog image archive.
+
+The catalog therefore remains non-importable until verified product media is recovered or replaced. No placeholder or AI-invented product imagery should be treated as factual product media.
+
+### Release boundary
+
+No raw or normalized historical `active` / `published` value authorizes publication.
+
+A future recovery release must be:
+`normalized canonical record → media reconciliation → QA → approved DRAFT create artifact → explicit approval → authenticated Shopify writer`
+
+The Python recovery stack remains network-free and cannot publish to Shopify.
+
