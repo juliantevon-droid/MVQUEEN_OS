@@ -1,4 +1,4 @@
-name: MVQUEEN Phone → Drive → GitHub Bridge
+name: MVQUEEN Drive Intake Validation
 
 on:
   schedule:
@@ -6,22 +6,22 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: mvqueen-drive-bridge
+  group: mvqueen-drive-intake
   cancel-in-progress: true
 
 jobs:
-  sync:
-    name: Pull approved Drive workspace into GitHub
+  validate:
+    name: Validate configured Drive intake
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          persist-credentials: true
+          fetch-depth: 1
+          persist-credentials: false
 
       - name: Check Drive bridge configuration
         id: config
@@ -31,60 +31,62 @@ jobs:
         run: |
           if [ -z "$RCLONE_CONFIG_B64" ] || [ -z "$DRIVE_SOURCE" ]; then
             echo 'configured=false' >> "$GITHUB_OUTPUT"
-            echo 'Drive bridge is not configured yet; safe no-op.'
+            echo 'Drive intake is not configured; safe no-op.'
           else
             echo 'configured=true' >> "$GITHUB_OUTPUT"
-            echo 'Drive bridge configuration detected.'
+            echo 'Drive intake configuration detected.'
           fi
 
       - name: Install rclone
         if: steps.config.outputs.configured == 'true'
         run: curl -fsSL https://rclone.org/install.sh | sudo bash
 
-      - name: Pull Drive changes into a controlled inbox
+      - name: Pull Drive intake into temporary build workspace
         if: steps.config.outputs.configured == 'true'
         env:
           RCLONE_CONFIG_B64: ${{ secrets.RCLONE_CONFIG_B64 }}
           DRIVE_SOURCE: ${{ vars.MVQUEEN_DRIVE_SOURCE }}
         run: |
-          mkdir -p "$RUNNER_TEMP/rclone" 12_Content_Assets/drive_inbox
+          mkdir -p "$RUNNER_TEMP/rclone" build/drive_inbox
           printf '%s' "$RCLONE_CONFIG_B64" | base64 --decode > "$RUNNER_TEMP/rclone/rclone.conf"
-          RCLONE_CONFIG="$RUNNER_TEMP/rclone/rclone.conf" rclone copy "$DRIVE_SOURCE" 12_Content_Assets/drive_inbox \
-            --config "$RUNNER_TEMP/rclone/rclone.conf" \
-            --exclude '.git/**' --exclude '**/.git/**' --exclude '**/.env*' \
-            --exclude '**/*secret*' --exclude '**/*token*' --exclude '**/*password*' \
-            --exclude '**/*.pem' --exclude '**/*.key' --exclude '**/credentials*.json' \
-            --exclude '**/service-account*.json' --exclude '**/*.apk' --exclude '**/*.exe' \
-            --exclude '**/*.zip' --exclude '**/*.tar*' --exclude '**/*.iso' \
-            --checksum --fast-list
+          RCLONE_CONFIG="$RUNNER_TEMP/rclone/rclone.conf" rclone copy "$DRIVE_SOURCE" build/drive_inbox             --config "$RUNNER_TEMP/rclone/rclone.conf"             --exclude '.git/**' --exclude '**/.git/**' --exclude '**/.env*'             --exclude '**/*secret*' --exclude '**/*token*' --exclude '**/*password*'             --exclude '**/*.pem' --exclude '**/*.key' --exclude '**/credentials*.json'             --exclude '**/service-account*.json' --exclude '**/*.apk' --exclude '**/*.exe'             --exclude '**/*.zip' --exclude '**/*.tar*' --exclude '**/*.iso'             --checksum --fast-list
 
-      - name: Validate inbox before commit
+      - name: Validate intake
         if: steps.config.outputs.configured == 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
           import json
-          root=Path('12_Content_Assets/drive_inbox')
+          root=Path('build/drive_inbox')
           bad=[]
           allowed={'.md','.txt','.json','.csv','.liquid','.css','.js','.html'}
           for p in root.rglob('*'):
               if p.is_file():
-                  if p.suffix.lower() not in allowed: bad.append(str(p))
-                  if p.stat().st_size > 5_000_000: bad.append(f'{p} (over 5MB)')
+                  if p.suffix.lower() not in allowed:
+                      bad.append(str(p))
+                  if p.stat().st_size > 5_000_000:
+                      bad.append(f'{p} (over 5MB)')
                   if p.suffix.lower()=='.json':
-                      try: json.loads(p.read_text(encoding='utf-8'))
-                      except Exception as e: bad.append(f'{p} invalid JSON: {e}')
+                      try:
+                          json.loads(p.read_text(encoding='utf-8'))
+                      except Exception as e:
+                          bad.append(f'{p} invalid JSON: {e}')
           if bad:
-              print('\n'.join(bad)); raise SystemExit(1)
-          print('Drive inbox contract passed.')
+              print('\n'.join(bad))
+              raise SystemExit(1)
+          print('Drive intake contract passed.')
           PY
 
-      - name: Commit Drive changes
+      - name: Upload validated intake for manual review
         if: steps.config.outputs.configured == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mvqueen-drive-intake-${{ github.run_id }}
+          path: build/drive_inbox/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Confirm source-of-truth boundary
         run: |
-          git config user.name 'mvqueen-automation[bot]'
-          git config user.email 'mvqueen-automation@users.noreply.github.com'
-          git add 12_Content_Assets/drive_inbox
-          if git diff --cached --quiet; then echo 'No Drive changes to commit.'; exit 0; fi
-          git commit -m 'automation: sync approved Drive workspace'
-          git push origin HEAD:main
+          echo 'GitHub main remains canonical.'
+          echo 'This workflow never commits or pushes Drive content.'

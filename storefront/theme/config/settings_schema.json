@@ -3,6 +3,8 @@
     "name": "theme_info",
     "theme_name": "MVQUEEN Custom",
     "theme_version": "1.0.0",
-    "theme_author": "MVQueen"
+    "theme_author": "MVQueen",
+    "theme_support_email": "miss.mvqueen@gmail.com",
+    "theme_documentation_url": "https://github.com/juliantevon-droid/MVQUEEN_OS"
   }
 ]
