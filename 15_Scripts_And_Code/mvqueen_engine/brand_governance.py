@@ -29,23 +29,22 @@ LEGACY_SISTER_BRANDS = (
 
 SUPPLIER_AND_REFERENCE_BRANDS = (
     *LEGACY_SISTER_BRANDS,
-    "OUHOE",
-    "HOEGOA",
-    "FANZHEN",
-    "EELHOPE",
-    "COLOR FIT",
-    "WEST & MONTH",
-    "EPROLO",
-    "DROPSURE",
-    "JAYSUING",
-    "ROXELIS",
-    "DESIRE GEM",
-    "MIA JEWELRY",
-    "SEPHORA",
-    "VICTORIA'S SECRET",
-    "VICTORIAS SECRET",
-    "FENTY BEAUTY",
-    "DIOR",
+    # Suppliers / historical vendor identities
+    "OUHOE", "HOEGOA", "FANZHEN", "EELHOPE", "COLOR FIT",
+    "WEST & MONTH", "WEST&MONTH", "EPROLO", "DROPSURE", "JAYSUING",
+    "ROXELIS", "DESIRE GEM", "MIA JEWELRY",
+    # Reference brands: inspiration only, never product identity
+    "SEPHORA", "VICTORIA'S SECRET", "VICTORIAS SECRET",
+    "FENTY BEAUTY", "DIOR",
+    # Manufacturer/brand prefixes confirmed in the recovered catalog
+    "QIBEST", "IBEST", "EELHOE", "HANDAIYAN", "O.TWO.O", "PUDAIER",
+    "IMAGIC", "HOYGI", "ZEPHOCO", "NICEFACE", "OCEAURA", "CMAADU",
+    "MENOW", "M.N MENOW", "UCANBE", "CAKAILA", "KA CAYLA", "UBUB",
+    "FOCALLURE", "MISSROSE", "MISS ROSE", "ZEESEA", "BREYLEE", "KOEC",
+    "MYS", "BEAUTY GLAZED", "HOLD LIVE", "MARSKE", "LAVDIK", "FANA",
+    "POPFEEL", "LANBENA", "DEROL", "HENGFEI", "LULAA", "MUSIC FLOWER",
+    "SKIN EVER", "D.S.M", "TINT MY", "WOODSLEEP", "HOUKEA",
+    "ROMANTIC BEAUTY",
 )
 
 
@@ -84,7 +83,11 @@ def load_tier1_forbidden_terms() -> tuple[str, ...]:
 
 
 def contains_term(text: str, term: str) -> bool:
-    return term.casefold() in str(text or "").casefold()
+    """Match a governed term as a phrase/token, not as a substring of a word."""
+    if not term:
+        return False
+    pattern = re.compile(r"(?<!\\w)" + re.escape(term) + r"(?!\\w)", re.I)
+    return bool(pattern.search(str(text or "")))
 
 
 def find_tier1_violations(text: str, terms: Iterable[str] | None = None) -> list[str]:
