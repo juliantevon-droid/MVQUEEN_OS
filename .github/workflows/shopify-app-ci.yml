@@ -46,7 +46,6 @@ jobs:
       SHOPIFY_APP_URL: https://example.invalid
       SCOPES: read_products,write_products,write_metaobjects
       MVQ_WRITE_ENABLED: 'false'
-      MVQ_CONTENT_REWRITE_ENABLED: 'false'
       MVQ_APPROVED_PRODUCT_GIDS: ''
     steps:
       - name: Checkout
