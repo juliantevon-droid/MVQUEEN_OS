@@ -19,6 +19,7 @@ from typing import Any
 from mvqueen_engine.brand_governance import (
     BRAND_GOVERNANCE_SOURCES,
     SUPPLIER_AND_REFERENCE_BRANDS,
+    contains_term,
     find_tier1_violations,
     remove_tier1_terms,
 )
@@ -199,7 +200,7 @@ def transform_rows(rows: list[dict[str, str]], headers: list[str]) -> tuple[list
         tier1 = find_tier1_violations(customer_blob)
         supplier_left = [
             term for term in SUPPLIER_AND_REFERENCE_BRANDS
-            if term.casefold() in customer_blob.casefold()
+            if contains_term(customer_blob, term)
         ]
 
         product_reports.append(
