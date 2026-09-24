@@ -31,6 +31,10 @@ class CatalogRecoveryControlsTests(unittest.TestCase):
             "DESIRE GEM",
             "MIA JEWELRY",
             "OUHOE",
+            "SEPHORA",
+            "VICTORIA'S SECRET",
+            "FENTY BEAUTY",
+            "DIOR",
         }
         self.assertTrue(required.issubset(set(self.worker.FORBIDDEN)))
 
