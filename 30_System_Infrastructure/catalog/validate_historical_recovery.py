@@ -96,6 +96,19 @@ def validate(source_path: str | Path) -> dict:
             "audit_hold_reasons": audit["hold_reasons"],
             "normalized_hold_products": transform["hold_products"],
             "normalized_review_products": transform["review_products"],
+            "normalized_hold_sample": [
+                {
+                    "handle": item["handle"],
+                    "title": item["title"],
+                    "tier1_voice_violations": item["tier1_voice_violations"],
+                    "supplier_or_reference_brand_leakage": item["supplier_or_reference_brand_leakage"],
+                }
+                for item in transform["products"]
+                if item["status"] == "HOLD"
+            ][:25],
+            "audit_missing_category_sample": audit["missing_category_handle_sample"],
+            "audit_missing_product_type_sample": audit["missing_product_type_handle_sample"],
+            "audit_repeated_sku_sample": audit["repeated_sku_sample"],
             "protected_field_changes": 0,
             "supplier_reference_leakage_after_normalization": 0,
             "release_importable": False,
