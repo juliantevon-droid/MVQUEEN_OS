@@ -10,12 +10,17 @@ import re
 from copy import deepcopy
 from typing import Any, Dict, Iterable
 
+from .brand_governance import SUPPLIER_AND_REFERENCE_BRANDS
 from .catalog_guard import validate_catalog, validate_change_set
 from .config import MAX_PRODUCTS_PER_IMPORT_FILE, SHOPIFY_EDITORIAL_COLUMNS
 
 SUPPLIER_RE = re.compile(
-    r"\b(OUHOE|MISS\.?\s*QUEEN|HOEGOA|FANZHEN|EELHOPE|COLOR\s*FIT|"
-    r"WEST\s*&\s*MONTH|SUPPLIER|WHOLESALE|GENERIC)\b",
+    r"\b(?:"
+    + "|".join(
+        re.escape(term)
+        for term in sorted(SUPPLIER_AND_REFERENCE_BRANDS, key=len, reverse=True)
+    )
+    + r"|SUPPLIER|WHOLESALE|GENERIC)\b",
     re.I,
 )
 UNSAFE_HTML_RE = re.compile(r"<\s*(script|style)\b|\son\w+\s*=|javascript\s*:", re.I)
