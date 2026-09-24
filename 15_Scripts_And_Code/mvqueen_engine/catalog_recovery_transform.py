@@ -27,6 +27,7 @@ from mvqueen_engine.config import (
     CANONICAL_BRAND,
     SHOPIFY_PROTECTED_COLUMNS,
 )
+from mvqueen_engine.catalog_classification import classify_product
 from mvqueen_engine.catalog_safety import assert_protected_unchanged
 
 UNSAFE_HTML_RE = re.compile(r"<\s*(script|style)\b|\son\w+\s*=|javascript\s*:", re.I)
@@ -148,6 +149,12 @@ def transform_rows(rows: list[dict[str, str]], headers: list[str]) -> tuple[list
         source_body = _first_nonblank(group_rows, "Body (HTML)")
         body = _clean_body(source_body, title)
         tags = _clean_tags(_first_nonblank(group_rows, "Tags"))
+        classification = classify_product(
+            title=title,
+            handle="" if handle.startswith("__row_") else handle,
+            tags=tags,
+            description=_strip_html(body),
+        )
 
         if "Title" in headers:
             lead_after["Title"] = title
@@ -161,6 +168,10 @@ def transform_rows(rows: list[dict[str, str]], headers: list[str]) -> tuple[list
             lead_after["SEO Title"] = _seo_title(title)
         if "SEO Description" in headers:
             lead_after["SEO Description"] = _seo_description(title, body)
+        if "MVQ Category" in headers:
+            lead_after["MVQ Category"] = classification.category
+        if "MVQ Product Type" in headers:
+            lead_after["MVQ Product Type"] = classification.product_type
 
         alt_updates = 0
         for idx in indexes:
@@ -185,6 +196,10 @@ def transform_rows(rows: list[dict[str, str]], headers: list[str]) -> tuple[list
                     after["SEO Description"] = _clean_brand_terms(
                         _text(before.get("SEO Description"))
                     )[:155]
+                if "MVQ Category" in headers and _text(before.get("MVQ Category")):
+                    after["MVQ Category"] = classification.category
+                if "MVQ Product Type" in headers and _text(before.get("MVQ Product Type")):
+                    after["MVQ Product Type"] = classification.product_type
 
             if _text(before.get("Image Src")) and "Image Alt Text" in headers:
                 after["Image Alt Text"] = _image_alt(title, _text(before.get("Image Alt Text")))
@@ -209,15 +224,38 @@ def transform_rows(rows: list[dict[str, str]], headers: list[str]) -> tuple[list
                 "row_count": len(indexes),
                 "title": title,
                 "image_alt_rows_updated": alt_updates,
+                "classification": {
+                    "category": classification.category,
+                    "product_type": classification.product_type,
+                    "confidence": classification.confidence,
+                    "rule": classification.rule,
+                },
                 "tier1_voice_violations": tier1,
                 "supplier_or_reference_brand_leakage": supplier_left,
-                "status": "HOLD" if tier1 or supplier_left or not title else "REVIEW",
+                "status": (
+                    "HOLD"
+                    if tier1
+                    or supplier_left
+                    or not title
+                    or classification.category == "unclassified"
+                    or classification.product_type == "unclassified"
+                    else "REVIEW"
+                ),
             }
         )
 
     holds = [p for p in product_reports if p["status"] == "HOLD"]
+    confidence_counts: dict[str, int] = {}
+    category_counts: dict[str, int] = {}
+    type_counts: dict[str, int] = {}
+    for item in product_reports:
+        cls = item["classification"]
+        confidence_counts[cls["confidence"]] = confidence_counts.get(cls["confidence"], 0) + 1
+        category_counts[cls["category"]] = category_counts.get(cls["category"], 0) + 1
+        type_counts[cls["product_type"]] = type_counts.get(cls["product_type"], 0) + 1
+
     report = {
-        "schema_version": "mvqueen.catalog_recovery_transform.v1",
+        "schema_version": "mvqueen.catalog_recovery_transform.v2",
         "mode": "offline-normalization",
         "write_performed": False,
         "shopify_network_io": False,
@@ -226,6 +264,11 @@ def transform_rows(rows: list[dict[str, str]], headers: list[str]) -> tuple[list
         "hold_products": len(holds),
         "review_products": len(product_reports) - len(holds),
         "brand_governance_sources": list(BRAND_GOVERNANCE_SOURCES),
+        "classification": {
+            "confidence_counts": dict(sorted(confidence_counts.items())),
+            "category_counts": dict(sorted(category_counts.items())),
+            "product_type_counts": dict(sorted(type_counts.items())),
+        },
         "release_importable": False,
         "release_block_reason": (
             "Normalization output preserves historical publication/status fields and "
