@@ -28,6 +28,7 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         retired = [
             "15_Scripts_And_Code/mvqueen_engine/Access_token.py",
             "15_Scripts_And_Code/mvqueen_engine/shopify_client.py",
+            "15_Scripts_And_Code/mvqueen_engine/shopify_graphql_client.py",
             "15_Scripts_And_Code/mvqueen_engine/shopify_api/shopify_client.py",
             "15_Scripts_And_Code/session_manager.py",
         ]
