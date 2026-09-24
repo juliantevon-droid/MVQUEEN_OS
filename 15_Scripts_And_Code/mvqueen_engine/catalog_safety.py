@@ -10,6 +10,7 @@ import csv
 from pathlib import Path
 from typing import Iterable, List, Sequence, Tuple
 
+from mvqueen_engine.brand_governance import SUPPLIER_AND_REFERENCE_BRANDS
 from mvqueen_engine.config import (
     CANONICAL_BRAND,
     MAX_PRODUCTS_PER_IMPORT_FILE,
@@ -60,12 +61,8 @@ def assert_protected_unchanged(before: dict, after: dict) -> None:
 def validate_brand(text: str) -> None:
     """Reject explicit use of known inspiration brands as the product brand."""
     lowered = (text or "").lower()
-    forbidden_brand_mentions = (
-        "sephora", "victoria's secret", "victorias secret",
-        "fenty beauty", "dior", "miss. queen", "miss queen",
-    )
-    for brand in forbidden_brand_mentions:
-        if brand in lowered and CANONICAL_BRAND.lower() not in lowered:
+    for brand in SUPPLIER_AND_REFERENCE_BRANDS:
+        if brand.lower() in lowered and CANONICAL_BRAND.lower() not in lowered:
             raise ValueError(f"Non-canonical brand reference detected: {brand}")
 
 
