@@ -3,30 +3,42 @@
 This package is the **offline intelligence and catalog-safety layer** for the
 canonical MVQUEEN_OS architecture.
 
+## Production source of truth
+
+**Shopify is the sole source of truth for the current production catalog.**
+
+Only products currently imported into Shopify are in production scope.
+Historical CSV/catalog recovery artifacts are archive/reference material and do
+not define the live assortment, launch readiness, media requirements, product
+counts, or collection membership.
+
 ## Production role
 
-- Shopify live commerce writes are owned by the authenticated React application under `app/`.
-- This Python package performs offline CSV curation, detection, validation,
-  dry-runs, safety checks, recovery audits, and release preparation.
-- It must not contain a second Shopify transport or an alternate production writer.
+- Shopify live commerce state is authoritative.
+- Live commerce writes are owned by the authenticated React application under `app/`.
+- This Python package performs offline curation, detection, validation, dry-runs,
+  QA and safety checks when working with an explicitly supplied **current
+  Shopify export or approved current-product artifact**.
+- It must not contain a second Shopify transport or alternate production writer.
 - Handles, IDs, SKUs, options, variants, pricing, inventory, publication state,
   and source-image relationships are protected from editorial automation.
 
-## Canonical offline path
+## Canonical production path
 
 ```text
-historical/source CSV
-  → catalog recovery audit
-  → offline editorial proposal
-  → Catalog Guard
-  → approval/release artifact
+current Shopify product
+  → verified facts/current export
+  → offline editorial proposal (optional)
+  → Catalog Guard / QA
+  → explicit approval
   → authenticated application write boundary
+  → Shopify
 ```
 
-For basic offline curation:
+For offline curation of a current Shopify export:
 
 ```bash
-python -m mvqueen_engine.main input.csv output.csv
+python -m mvqueen_engine.main current-shopify-export.csv output.csv
 ```
 
 The legacy `engine.run()` all-in-one generator is intentionally fail-closed.
@@ -55,16 +67,15 @@ other unverified product facts.
 - Direct Python Shopify publishing: disabled.
 - Historical hard-coded phone/Android paths: retired.
 - Import-time CSV execution: retired.
-- Automatic compare-at price generation in recovery flows: retired.
+- Automatic compare-at price generation: retired from governed editorial flows.
 - Bulk product creation: not provided here.
-- Maximum Shopify release file: 850 unique products.
-- Every release file must include the original header row and keep all rows for
-  a product together.
+- Editorial automation may not overwrite protected commerce fields.
 
-## Recovery tooling
+## Historical recovery tooling
 
-The governed recovery audit lives at:
+Historical recovery/audit utilities remain available only for archival,
+forensic, or migration reference. They are **not part of the active production
+catalog pipeline and are not production readiness gates**.
 
-`30_System_Infrastructure/catalog/catalog_recovery_audit.py`
-
-It is read-only and returns `HOLD` or `READY_FOR_REVIEW`.
+No historical product is eligible for production work unless it is explicitly
+reintroduced into the current Shopify catalog by the merchant.
