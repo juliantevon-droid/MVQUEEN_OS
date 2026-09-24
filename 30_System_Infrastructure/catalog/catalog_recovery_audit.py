@@ -20,6 +20,7 @@ from typing import Any, Dict, Iterable, List
 from mvqueen_engine.brand_governance import (
     BRAND_GOVERNANCE_SOURCES,
     SUPPLIER_AND_REFERENCE_BRANDS,
+    contains_term,
     load_tier1_forbidden_terms,
 )
 
@@ -69,12 +70,11 @@ def audit_csv(path: str | Path) -> Dict[str, Any]:
     for row in products:
         for field in CUSTOMER_FACING_FIELDS:
             raw = row.get(field) or ""
-            folded = raw.casefold()
             for brand in FORBIDDEN_CUSTOMER_BRANDS:
-                if brand.casefold() in folded:
+                if contains_term(raw, brand):
                     leakage[brand][field] += 1
             for term in TIER1_FORBIDDEN_TERMS:
-                if term.casefold() in folded:
+                if contains_term(raw, term):
                     voice_violations[term][field] += 1
 
     image_rows = [row for row in rows if _value(row, "Image Src")]
