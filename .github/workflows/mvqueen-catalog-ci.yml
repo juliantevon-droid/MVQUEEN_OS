@@ -6,6 +6,7 @@ on:
     paths:
       - '12_Content_Assets/drive_inbox/**'
       - '30_System_Infrastructure/catalog/**'
+      - '15_Scripts_And_Code/mvqueen_engine/**'
       - '.github/workflows/mvqueen-catalog-ci.yml'
   pull_request:
     paths:
@@ -30,7 +31,16 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Run governed catalog worker in dry-run mode
         env:
           MVQ_WRITE_ENABLED: 'false'
         run: python 30_System_Infrastructure/catalog/mvqueen_catalog_worker.py
+      - name: Validate historical 948-product recovery source
+        env:
+          PYTHONPATH: 15_Scripts_And_Code
+        run: |
+          git cat-file -e f00b71139268803d1e3c0f5cd79e326d540087d1^{blob}
+          git cat-file blob f00b71139268803d1e3c0f5cd79e326d540087d1 > /tmp/mvqueen-products-final.csv
+          python 30_System_Infrastructure/catalog/validate_historical_recovery.py /tmp/mvqueen-products-final.csv
