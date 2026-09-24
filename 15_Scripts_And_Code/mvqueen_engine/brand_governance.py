@@ -106,7 +106,7 @@ def remove_tier1_terms(text: str, terms: Iterable[str] | None = None) -> str:
     for term in pool:
         if not term:
             continue
-    pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)", re.I)
+        pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)", re.I)
         value = pattern.sub(" ", value)
     value = re.sub(r"\s+([,.;:!?])", r"\1", value)
     value = re.sub(r"\s{2,}", " ", value)
