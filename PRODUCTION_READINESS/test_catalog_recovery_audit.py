@@ -99,6 +99,89 @@ class CatalogRecoveryAuditTests(unittest.TestCase):
             report["brand_voice"]["governance_sources"],
         )
 
+    def test_same_sku_repeated_within_one_handle_is_not_collision(self):
+        path = self.write_csv([
+            {
+                "Handle": "sample",
+                "Title": "MVQUEEN Rose Lip Tint",
+                "Body (HTML)": "<p>Verified rose lip tint.</p>",
+                "Vendor": "MVQUEEN",
+                "Status": "draft",
+                "SEO Title": "Rose Lip Tint | MVQUEEN",
+                "SEO Description": "A verified rose lip tint.",
+                "Tags": "beauty,lip",
+                "Image Src": "https://example.com/one.jpg",
+                "Image Alt Text": "Rose lip tint",
+                "Variant SKU": "SKU-1",
+                "MVQ Category": "beauty",
+                "MVQ Product Type": "lip tint",
+            },
+            {
+                "Handle": "sample",
+                "Title": "",
+                "Body (HTML)": "",
+                "Vendor": "",
+                "Status": "",
+                "SEO Title": "",
+                "SEO Description": "",
+                "Tags": "",
+                "Image Src": "https://example.com/two.jpg",
+                "Image Alt Text": "Rose lip tint alternate view",
+                "Variant SKU": "SKU-1",
+                "MVQ Category": "",
+                "MVQ Product Type": "",
+            },
+        ])
+        try:
+            report = self.audit.audit_csv(path)
+        finally:
+            path.unlink(missing_ok=True)
+
+        self.assertEqual(report["counts"]["repeated_sku_values"], 1)
+        self.assertEqual(report["counts"]["cross_product_sku_collisions"], 0)
+        self.assertNotIn("cross_product_sku_collision", report["hold_reasons"])
+
+    def test_same_sku_across_different_handles_is_collision(self):
+        path = self.write_csv([
+            {
+                "Handle": "sample-a",
+                "Title": "MVQUEEN Rose Lip Tint",
+                "Body (HTML)": "<p>Verified rose lip tint.</p>",
+                "Vendor": "MVQUEEN",
+                "Status": "draft",
+                "SEO Title": "Rose Lip Tint | MVQUEEN",
+                "SEO Description": "A verified rose lip tint.",
+                "Tags": "beauty,lip",
+                "Image Src": "",
+                "Image Alt Text": "",
+                "Variant SKU": "SKU-1",
+                "MVQ Category": "beauty",
+                "MVQ Product Type": "lip tint",
+            },
+            {
+                "Handle": "sample-b",
+                "Title": "MVQUEEN Berry Lip Tint",
+                "Body (HTML)": "<p>Verified berry lip tint.</p>",
+                "Vendor": "MVQUEEN",
+                "Status": "draft",
+                "SEO Title": "Berry Lip Tint | MVQUEEN",
+                "SEO Description": "A verified berry lip tint.",
+                "Tags": "beauty,lip",
+                "Image Src": "",
+                "Image Alt Text": "",
+                "Variant SKU": "SKU-1",
+                "MVQ Category": "beauty",
+                "MVQ Product Type": "lip tint",
+            },
+        ])
+        try:
+            report = self.audit.audit_csv(path)
+        finally:
+            path.unlink(missing_ok=True)
+
+        self.assertEqual(report["counts"]["cross_product_sku_collisions"], 1)
+        self.assertIn("cross_product_sku_collision", report["hold_reasons"])
+
     def test_clean_catalog_can_reach_review_gate(self):
         path = self.write_csv([{
             "Handle": "sample",
