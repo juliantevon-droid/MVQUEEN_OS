@@ -1,28 +1,18 @@
-# ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — PUBLIC ENTRY POINT (BLOCK J)
-# ---------------------------------------------------------
+"""Legacy text-engine facade.
 
-from mvqueen_engine.catalog_processor.processor import process_product
-from mvqueen_engine.catalog_processor.csv_loader import convert_to_csv_row
+The former all-in-one product generator could synthesize variants, inventory,
+pricing, and unverified product attributes. It is intentionally unavailable in
+production. Use the governed CSV recovery/dry-run pipeline for catalog work.
+"""
+from __future__ import annotations
 
-# ---------------------------------------------------------
-# PUBLIC ENGINE WRAPPER
-# ---------------------------------------------------------
 
-def run(text: str) -> dict:
-    """
-    Public entry point for the MVQueen Omniluxe Engine.
-    Returns:
-        {
-            "product": <full product dictionary>,
-            "csv_row": <flattened Shopify-ready row>
-        }
-    """
+def run(*args, **kwargs):
+    raise RuntimeError(
+        "The legacy generative engine is retired. Use "
+        "mvqueen_engine.catalog_processor.processor.process_csv() for offline "
+        "curation or the canonical product QA/release pipeline."
+    )
 
-    product = process_product(text)
-    csv_row = convert_to_csv_row(product)
 
-    return {
-        "product": product,
-        "csv_row": csv_row
-    }
+__all__ = ["run"]
