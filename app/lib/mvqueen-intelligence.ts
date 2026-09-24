@@ -62,3 +62,116 @@ export function classifyProduct(title: string, description = "", productType = "
   const first = matches[0][1];
   return {...first, confidence:"high"};
 }
+
+
+export type CatalogPackage = {
+  title: string;
+  descriptionHtml: string;
+  shortDescription: string;
+  seoTitle: string;
+  seoDescription: string;
+  keywords: string[];
+  tags: string[];
+  c: Classification;
+  attributes: {
+    material: string | null;
+    color: string | null;
+    fit: string | null;
+    occasion: string | null;
+  };
+};
+
+const SUPPLIER_TERMS = /\b(OUHOE|MISS\.?\s*QUEEN|HOEGOA|FANZHEN|EELHOPE|COLOR\s*FIT|WEST\s*&\s*MONTH)\b/gi;
+
+function plainText(value = ""): string {
+  return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function safeTitle(value: string): string {
+  const cleaned = value.replace(SUPPLIER_TERMS, "").replace(/\s+/g, " ").replace(/^[-–—|,:\s]+|[-–—|,:\s]+$/g, "").trim();
+  return cleaned || value.trim() || "MVQueen Edit";
+}
+
+function clip(value: string, limit: number): string {
+  const clean = value.replace(/\s+/g, " ").trim();
+  if (clean.length <= limit) return clean;
+  return clean.slice(0, Math.max(0, limit - 1)).trimEnd() + "…";
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function findAttribute(text: string, values: string[]): string | null {
+  const lower = text.toLowerCase();
+  return values.find((value) => lower.includes(value.toLowerCase())) ?? null;
+}
+
+function slug(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function generateCatalogPackage(product: ProductSnapshot): CatalogPackage {
+  const title = safeTitle(product.title ?? "");
+  const existingDescriptionHtml = product.descriptionHtml?.trim() ?? "";
+  const sourceText = plainText(`${title} ${existingDescriptionHtml} ${product.productType ?? ""}`);
+  const c = classifyProduct(title, existingDescriptionHtml, product.productType ?? "");
+
+  const material = findAttribute(sourceText, [
+    "sterling silver", "gold filled", "gold plated", "stainless steel", "gold", "silver",
+    "satin", "silk", "cotton", "denim", "leather", "lace", "mesh", "knit",
+  ]);
+  const color = findAttribute(sourceText, [
+    "black", "white", "ivory", "cream", "pink", "red", "burgundy", "purple", "lilac",
+    "blue", "navy", "green", "brown", "beige", "gold", "silver",
+  ]);
+  const fit = findAttribute(sourceText, [
+    "bodycon", "oversized", "relaxed", "tailored", "slim fit", "wide leg", "straight leg",
+  ]);
+  const occasion = findAttribute(sourceText, [
+    "evening", "date night", "work", "office", "wedding", "party", "vacation", "everyday",
+  ]);
+
+  const fallbackSentence = `${title} from the MVQueen edit.`;
+  const sourceDescription = plainText(existingDescriptionHtml);
+  const shortDescription = clip(sourceDescription || fallbackSentence, 155);
+  const descriptionHtml = existingDescriptionHtml || `<p>${escapeHtml(fallbackSentence)}</p>`;
+
+  const seoTitle = clip(`${title} | MVQueen`, 60);
+  const seoDescription = clip(sourceDescription || fallbackSentence, 155);
+
+  const tags = [
+    "mvq:catalog",
+    `mvq:department:${slug(c.department)}`,
+    `mvq:family:${slug(c.family)}`,
+    `mvq:collection:${slug(c.route)}`,
+    ...(c.confidence === "review" ? ["mvq:needs-review"] : []),
+  ];
+
+  const keywords = Array.from(new Set([
+    title.toLowerCase(),
+    c.productType.toLowerCase(),
+    c.family.toLowerCase(),
+    c.department.toLowerCase(),
+  ].filter((value) => value && value !== "unclassified" && value !== "needs review")));
+
+  return {
+    title,
+    descriptionHtml,
+    shortDescription,
+    seoTitle,
+    seoDescription,
+    keywords,
+    tags,
+    c,
+    attributes: { material, color, fit, occasion },
+  };
+}
