@@ -95,6 +95,24 @@ def find_tier1_violations(text: str, terms: Iterable[str] | None = None) -> list
     return [term for term in pool if contains_term(text, term)]
 
 
+def remove_tier1_terms(text: str, terms: Iterable[str] | None = None) -> str:
+    """Remove hard-prohibited marketing filler without inventing replacement claims."""
+    value = str(text or "")
+    pool = sorted(
+        tuple(terms or load_tier1_forbidden_terms()),
+        key=len,
+        reverse=True,
+    )
+    for term in pool:
+        if not term:
+            continue
+        pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)", re.I)
+        value = pattern.sub(" ", value)
+    value = re.sub(r"\s+([,.;:!?])", r"\1", value)
+    value = re.sub(r"\s{2,}", " ", value)
+    return value.strip(" -|,;:")
+
+
 __all__ = [
     "BRAND_GOVERNANCE_SOURCES",
     "LEGACY_SISTER_BRANDS",
@@ -102,5 +120,6 @@ __all__ = [
     "require_sources",
     "load_tier1_forbidden_terms",
     "contains_term",
+    "remove_tier1_terms",
     "find_tier1_violations",
 ]
