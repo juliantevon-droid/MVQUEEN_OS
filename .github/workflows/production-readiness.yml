@@ -51,7 +51,7 @@ jobs:
         run: python -m compileall -q 15_Scripts_And_Code/mvqueen_engine
       - name: Run canonical pipeline, schema, release, boundary, publisher, preview, unified transport, audit, and branch-consolidation tests
         working-directory: PRODUCTION_READINESS
-        run: python -m unittest test_product_pipeline_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py test_shopify_publish_preview_v1.py test_shopify_transport_boundary_v1.py test_release_audit_ledger_v1.py test_branch_consolidation.py test_unified_system_contract.py test_catalog_recovery_controls.py -v
+        run: python -m unittest test_product_pipeline_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py test_shopify_publish_preview_v1.py test_shopify_transport_boundary_v1.py test_release_audit_ledger_v1.py test_branch_consolidation.py test_unified_system_contract.py test_catalog_recovery_controls.py test_catalog_recovery_audit.py -v
       - name: Check legacy Shopify bypasses are disabled
         run: |
           ! grep -nE 'update_product\(|update_metafields\(|update_variant_price\(' 15_Scripts_And_Code/mvqueen_engine/catalog_processor/processor.py
