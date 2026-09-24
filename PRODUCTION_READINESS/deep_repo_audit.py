@@ -306,20 +306,19 @@ for line in rev_objects:
     if len(parts) == 2:
         object_paths.setdefault(parts[0], parts[1])
 
-check = subprocess.Popen(
+check = subprocess.run(
     ["git", "cat-file", "--batch-check=%(objectname) %(objecttype) %(objectsize)"],
-    cwd=ROOT, stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True,
+    cwd=ROOT,
+    input="\n".join(object_paths) + "\n",
+    text=True,
+    capture_output=True,
+    check=True,
 )
-assert check.stdin and check.stdout
-for oid in object_paths:
-    check.stdin.write(oid + "\n")
-check.stdin.close()
 historical_blob_meta = []
-for line in check.stdout:
+for line in check.stdout.splitlines():
     oid, typ, size_s = line.strip().split()
     if typ == "blob":
         historical_blob_meta.append((oid, int(size_s), object_paths.get(oid, "")))
-check.wait()
 summary["reachable_historical_blob_count"] = len(historical_blob_meta)
 summary["reachable_historical_blob_bytes"] = sum(x[1] for x in historical_blob_meta)
 findings["historical_large_blobs"] = [
