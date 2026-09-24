@@ -19,6 +19,7 @@ class CatalogRecoveryTransformTests(unittest.TestCase):
         "Handle", "Title", "Body (HTML)", "Vendor", "Status",
         "Variant SKU", "Variant Price", "Image Src", "Image Alt Text",
         "Tags", "SEO Title", "SEO Description",
+        "MVQ Category", "MVQ Product Type",
     ]
 
     def write_csv(self, rows):
@@ -51,6 +52,8 @@ class CatalogRecoveryTransformTests(unittest.TestCase):
                 "Tags": "OUHOE, jewelry",
                 "SEO Title": "",
                 "SEO Description": "",
+                "MVQ Category": "home",
+                "MVQ Product Type": "accessory",
             },
             {
                 "Handle": "brown-aventurine",
@@ -106,6 +109,8 @@ class CatalogRecoveryTransformTests(unittest.TestCase):
         self.assertEqual(report["review_products"], 1)
         self.assertEqual(report["products"][0]["tier1_voice_violations"], [])
         self.assertNotIn("Amazing", rows[0]["Title"])
+        self.assertEqual(rows[0]["MVQ Category"], "jewelry")
+        self.assertEqual(rows[0]["MVQ Product Type"], "necklace")
 
     def test_clean_normalization_reaches_review_not_release(self):
         source = self.write_csv([{
