@@ -14,11 +14,11 @@ from .catalog_guard import validate_catalog, validate_change_set
 from .config import MAX_PRODUCTS_PER_IMPORT_FILE, SHOPIFY_EDITORIAL_COLUMNS
 
 SUPPLIER_RE = re.compile(
-    r"\\b(OUHOE|MISS\\.?\\s*QUEEN|HOEGOA|FANZHEN|EELHOPE|COLOR\\s*FIT|"
-    r"WEST\\s*&\\s*MONTH|SUPPLIER|WHOLESALE|GENERIC)\\b",
+    r"\b(OUHOE|MISS\.?\s*QUEEN|HOEGOA|FANZHEN|EELHOPE|COLOR\s*FIT|"
+    r"WEST\s*&\s*MONTH|SUPPLIER|WHOLESALE|GENERIC)\b",
     re.I,
 )
-UNSAFE_HTML_RE = re.compile(r"<\\s*(script|style)\\b|\\son\\w+\\s*=|javascript\\s*:", re.I)
+UNSAFE_HTML_RE = re.compile(r"<\s*(script|style)\b|\son\w+\s*=|javascript\s*:", re.I)
 TAG_SPLIT_RE = re.compile(r"[,|]+")
 
 
@@ -27,11 +27,11 @@ def _text(value: Any) -> str:
 
 
 def _strip_html(value: str) -> str:
-    return re.sub(r"\\s+", " ", re.sub(r"<[^>]+>", " ", value)).strip()
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", value)).strip()
 
 
 def _clean_supplier_text(value: str) -> str:
-    return re.sub(r"\\s{2,}", " ", SUPPLIER_RE.sub("", value)).strip(" -|,:")
+    return re.sub(r"\s{2,}", " ", SUPPLIER_RE.sub("", value)).strip(" -|,:")
 
 
 def _clean_tags(value: Any) -> list[str]:
@@ -86,7 +86,7 @@ def _seo_title(title: str) -> str:
 def _seo_description(title: str, body: str) -> str:
     factual = _strip_html(body)
     text = _clean_supplier_text(f"{title}. {factual}")
-    return re.sub(r"\\s{2,}", " ", text).strip(" .")[:155]
+    return re.sub(r"\s{2,}", " ", text).strip(" .")[:155]
 
 
 def propose_product(source: Dict[str, Any]) -> Dict[str, Any]:
