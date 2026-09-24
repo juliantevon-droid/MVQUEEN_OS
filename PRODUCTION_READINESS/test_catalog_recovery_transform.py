@@ -102,11 +102,10 @@ class CatalogRecoveryTransformTests(unittest.TestCase):
         self.assertTrue(rows[1]["Image Alt Text"])
         self.assertFalse(report["release_importable"])
         self.assertEqual(report["unique_products"], 1)
-        self.assertEqual(report["hold_products"], 1)
-        self.assertIn(
-            "Amazing",
-            report["products"][0]["tier1_voice_violations"],
-        )
+        self.assertEqual(report["hold_products"], 0)
+        self.assertEqual(report["review_products"], 1)
+        self.assertEqual(report["products"][0]["tier1_voice_violations"], [])
+        self.assertNotIn("Amazing", rows[0]["Title"])
 
     def test_clean_normalization_reaches_review_not_release(self):
         source = self.write_csv([{
