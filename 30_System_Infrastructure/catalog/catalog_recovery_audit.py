@@ -83,6 +83,14 @@ def audit_csv(path: str | Path) -> Dict[str, Any]:
     sku_rows = [row for row in rows if _value(row, "Variant SKU")]
     sku_counts = Counter(_value(row, "Variant SKU") for row in sku_rows)
     repeated_skus = {sku: count for sku, count in sku_counts.items() if count > 1}
+    sku_handles: Dict[str, set[str]] = defaultdict(set)
+    for row in sku_rows:
+        sku_handles[_value(row, "Variant SKU")].add(_value(row, "Handle") or "(blank)")
+    cross_product_skus = {
+        sku: sorted(handles)
+        for sku, handles in sku_handles.items()
+        if len(handles) > 1
+    }
 
     missing_categories = [
         _value(row, "Handle") for row in products if not _value(row, *MVQ_CATEGORY_FIELDS)
@@ -102,8 +110,8 @@ def audit_csv(path: str | Path) -> Dict[str, Any]:
         holds.append("missing_mvqueen_category")
     if missing_product_types:
         holds.append("missing_product_type")
-    if repeated_skus:
-        holds.append("repeated_sku_relationships_require_review")
+    if cross_product_skus:
+        holds.append("cross_product_sku_collision")
 
     return {
         "schema_version": "mvqueen.catalog_recovery_audit.v1",
@@ -118,6 +126,7 @@ def audit_csv(path: str | Path) -> Dict[str, Any]:
             "sku_rows": len(sku_rows),
             "unique_skus": len(sku_counts),
             "repeated_sku_values": len(repeated_skus),
+            "cross_product_sku_collisions": len(cross_product_skus),
             "products_missing_category": len(missing_categories),
             "products_missing_product_type": len(missing_product_types),
         },
@@ -137,6 +146,7 @@ def audit_csv(path: str | Path) -> Dict[str, Any]:
             },
         },
         "repeated_sku_sample": dict(list(sorted(repeated_skus.items()))[:25]),
+        "cross_product_sku_sample": dict(list(sorted(cross_product_skus.items()))[:25]),
         "missing_category_handle_sample": missing_categories[:25],
         "missing_product_type_handle_sample": missing_product_types[:25],
         "safety": {
