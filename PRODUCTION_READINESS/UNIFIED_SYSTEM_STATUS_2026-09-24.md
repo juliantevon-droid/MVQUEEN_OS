@@ -136,3 +136,32 @@ The system is production-capable but the customer-facing store is **not yet rele
 
 Further production work must continue through the existing `main` architecture and governed release gates.
 
+## Catalog stabilization update — 2026-09-24
+
+The historical recovery pipeline is now validated end-to-end against the real 3,575-row / 948-product Git blob.
+
+- 948 / 948 products normalize to REVIEW state.
+- 0 normalized products remain on HOLD.
+- 0 protected-field changes occur during normalization.
+- 0 supplier/reference-brand leaks remain in normalized customer-facing copy.
+- Canonical MVQUEEN category and product-type classification is complete for the normalized recovery set.
+- 36 duplicate SKU collision components are deterministically resolved as duplicate listings.
+- 39 redundant product handles are excluded from the release plan without rewriting handles or SKUs.
+- **909 canonical release-candidate products remain.**
+- 0 SKU collision components remain unresolved after release planning.
+- Historical CSV media is incomplete: only 11 canonical candidates have recovered media references; **898 canonical candidates do not**.
+- The connected Shopify Files library contains only the five images used by the two current live products.
+- MIME-filtered Google Drive searches found no indexed product-image archive.
+- The recovered normalization output remains deliberately non-importable. A future creation path must use governed DRAFT creation after media reconciliation and explicit approval.
+
+Current catalog release blockers:
+1. Recover/replace verified media for the 898 candidates without historical product image references.
+2. Keep draft creation behind an explicit approval boundary; do not reuse historical active/published state.
+3. Do not rewrite protected handles, SKUs, prices, variants, inventory or source-image relationships to solve recovery issues.
+
+System-level blockers that remain outside automated repair:
+- GitHub `main` branch protection requires repository administration permission not available to the connected app.
+- Historical live-looking Shopify credential rotation/revocation still requires confirmation.
+- Shopify policy text contains business-specific placeholders. Repository guidance is inconsistent on processing timelines, so no legal/operational value was invented.
+- The canonical MVQUEEN theme remains unpublished while these release gates remain open.
+
