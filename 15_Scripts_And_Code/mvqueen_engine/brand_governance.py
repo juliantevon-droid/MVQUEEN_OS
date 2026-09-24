@@ -86,7 +86,7 @@ def contains_term(text: str, term: str) -> bool:
     """Match a governed term as a phrase/token, not as a substring of a word."""
     if not term:
         return False
-    pattern = re.compile(r"(?<!\\w)" + re.escape(term) + r"(?!\\w)", re.I)
+    pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)", re.I)
     return bool(pattern.search(str(text or "")))
 
 
@@ -106,7 +106,7 @@ def remove_tier1_terms(text: str, terms: Iterable[str] | None = None) -> str:
     for term in pool:
         if not term:
             continue
-        pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)", re.I)
+    pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)", re.I)
         value = pattern.sub(" ", value)
     value = re.sub(r"\s+([,.;:!?])", r"\1", value)
     value = re.sub(r"\s{2,}", " ", value)
