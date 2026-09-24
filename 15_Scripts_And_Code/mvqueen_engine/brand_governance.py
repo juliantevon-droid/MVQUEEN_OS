@@ -101,5 +101,6 @@ __all__ = [
     "SUPPLIER_AND_REFERENCE_BRANDS",
     "require_sources",
     "load_tier1_forbidden_terms",
+    "contains_term",
     "find_tier1_violations",
 ]
