@@ -52,6 +52,13 @@ class EngineStabilizationTests(unittest.TestCase):
         self.assertNotIn("Run Shopify Mode", text)
         self.assertNotIn("Full Pipeline (CSV", text)
 
+    def test_brand_term_matching_uses_real_word_boundaries(self):
+        governance = importlib.import_module("mvqueen_engine.brand_governance")
+        self.assertTrue(governance.contains_term("MYS Brand Lipstick", "MYS"))
+        self.assertFalse(governance.contains_term("a mysterious fragrance", "MYS"))
+        self.assertFalse(governance.contains_term("nail grinder", "grind"))
+        self.assertTrue(governance.contains_term("grind culture", "grind"))
+
     def test_deterministic_compatibility_is_stable(self):
         d = importlib.import_module("mvqueen_engine.deterministic")
         seed = d.deterministic_seed("MVQUEEN")
