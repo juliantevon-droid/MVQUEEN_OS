@@ -62,9 +62,10 @@ class CatalogRecoveryTransformTests(unittest.TestCase):
                 "Variant Price": "14.09",
                 "Image Src": "https://example.com/two.jpg",
                 "Image Alt Text": "",
-                "Tags": "",
-                "SEO Title": "",
-                "SEO Description": "",
+                "Tags": "OUHOE, alternate image",
+                "SEO Title": "OUHOE alternate view",
+                "SEO Description": "EPROLO alternate image",
+
             },
         ])
         output = source.with_name(source.stem + "-out.csv")
@@ -93,6 +94,9 @@ class CatalogRecoveryTransformTests(unittest.TestCase):
         self.assertEqual(rows[1]["Vendor"], "")
         self.assertEqual(rows[1]["Title"], "")
         self.assertEqual(rows[1]["Body (HTML)"], "")
+        self.assertNotIn("OUHOE", rows[1]["Tags"].upper())
+        self.assertNotIn("OUHOE", rows[1]["SEO Title"].upper())
+        self.assertNotIn("EPROLO", rows[1]["SEO Description"].upper())
 
         self.assertTrue(rows[0]["Image Alt Text"])
         self.assertTrue(rows[1]["Image Alt Text"])
