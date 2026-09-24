@@ -11,7 +11,11 @@ import json
 import sys
 from pathlib import Path
 
-FORBIDDEN = ["MISS.QUEEN", "MISS. QUEEN", "OUHOE", "HOEGOA", "FANZHEN", "EELHOPE", "COLOR FIT", "WEST & MONTH"]
+FORBIDDEN = [
+    "MISS.QUEEN", "MISS. QUEEN", "OUHOE", "HOEGOA", "FANZHEN", "EELHOPE",
+    "COLOR FIT", "WEST & MONTH", "EPROLO", "DROPSURE", "JAYSUING",
+    "ROXELIS", "DESIRE GEM", "MIA JEWELRY",
+]
 PROTECTED = {"handle", "sku", "inventory", "variants", "variant", "images", "image"}
 REQUIRED_FACTS = {"title", "description_html", "seo_title", "seo_description"}
 
