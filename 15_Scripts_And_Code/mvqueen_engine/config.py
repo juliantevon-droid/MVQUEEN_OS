@@ -33,22 +33,27 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 # Fields that the editorial/catalog layer must never modify.
 SHOPIFY_PROTECTED_COLUMNS = [
     "Handle", "Product ID", "ID", "Product GID",
-    "Variant ID", "Variant SKU", "Variant Barcode",
+    "Variant ID", "SKU", "Variant SKU", "Variant Barcode",
     "Option1 Name", "Option1 Value", "Option2 Name", "Option2 Value",
     "Option3 Name", "Option3 Value",
     "Variant Price", "Variant Compare At Price",
     "Cost per item", "Variant Cost", "Variant Grams",
+    "Inventory quantity", "Inventory policy", "Inventory tracker",
     "Variant Inventory Tracker", "Variant Inventory Qty",
     "Variant Inventory Policy", "Variant Fulfillment Service",
     "Variant Requires Shipping", "Variant Taxable", "Variant Weight Unit",
     "Image Src", "Image Position", "Image Width", "Image Height",
-    "Image Variant ID", "Gift Card", "Published", "Status", "Published At",
+    "Image Variant ID", "Variant Image", "Gift Card", "Published", "Status", "Published At",
 ]
 
 EDITORIAL_COLUMNS = [
     "Title", "Body (HTML)", "Vendor", "Product Type", "Tags",
     "SEO Title", "SEO Description", "Image Alt Text",
 ]
+
+# Canonical compatibility aliases used by hardened catalog modules.
+SHOPIFY_EDITORIAL_COLUMNS = EDITORIAL_COLUMNS
+ONLY_EDIT_IMAGE_FIELD = "Image Alt Text"
 
 # These are inspiration/reference names only; they are never canonical product brands.
 INSPIRATION_BRANDS = (
