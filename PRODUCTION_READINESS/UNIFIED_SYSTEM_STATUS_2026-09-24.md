@@ -44,15 +44,13 @@ No open pull request is an approved production merge source.
 
 ## Production gates
 
-Verified against the current canonical system on 2026-09-24:
-- MVQUEEN OS Lint and Index — passing on current `main` head `ae394c191997982c4cc7313d0e6d444ef93e25da`.
-- MVQUEEN_OS Overseer — passing on current `main` head `ae394c191997982c4cc7313d0e6d444ef93e25da`.
-- MVQUEEN Production Readiness — passing on `acbb740257cc03f04d6beca9613674aa2fb02cde`; the only later pre-status change archived the old Shopify main menu and did not touch Production Readiness governed inputs.
-- MVQUEEN Catalog Governance — passing on `acbb740257cc03f04d6beca9613674aa2fb02cde`.
-- MVQUEEN Theme CI/CD — passing; no theme/automation files changed after the last successful theme run.
-- MVQUEEN Shopify App CI — TypeScript typecheck and production build passing; no app/config watched files changed after the last successful app run.
-- MVQUEEN Deep Repository Audit — passing; its watched audit sources have not changed since that successful run.
-- Unified-system invariant tests — passing.
+Verified against the canonical system on 2026-09-24:
+- The latest production-status change is validated by MVQUEEN Production Readiness, MVQUEEN OS Lint and Index, and MVQUEEN_OS Overseer.
+- MVQUEEN Catalog Governance is passing on the current catalog-governance inputs.
+- MVQUEEN Theme CI/CD is passing; no theme/automation watched files changed after the last successful theme run.
+- MVQUEEN Shopify App CI TypeScript typecheck and production build are passing; no app/config watched files changed after the last successful app run.
+- MVQUEEN Deep Repository Audit is passing; its watched audit sources have not changed since that successful run.
+- Unified-system invariant tests are passing.
 
 ## Security
 
@@ -99,6 +97,10 @@ Further work should extend this canonical system, not create parallel runtimes, 
 - 63 collections are published; 58 are currently empty, but the live main-navigation Shop path uses only current non-empty collections.
 - Main-navigation collection coverage is verified: MVQueen Edit (2 products), Jewelry (2), Necklaces (2), Pendant Necklaces (1).
 - Shopify currently reports 0 URL redirects.
+- All 11 currently published Online Store pages are free of literal bracket placeholders and draft-placeholder warnings.
+- The duplicate regular Privacy Policy page and incomplete apparel Size Guide are unpublished; the footer continues to use Shopify's official Privacy Policy route.
+- FAQ support contact is `miss.mvqueen@gmail.com`; its premature apparel-size-guide prompt is removed while the production catalog is jewelry-only.
+- Contact uses the dedicated `contact` page template; its empty body is intentional.
 - Storefront password protection is currently enabled.
 - Shopify store identity is still named `My Store 4` in Admin even though product/vendor branding is MVQUEEN.
 
@@ -117,8 +119,9 @@ Further work should extend this canonical system, not create parallel runtimes, 
 - All 5 live product images are present and have ALT text.
 - Main-menu Shop navigation is aligned to current non-empty collections.
 - Published Terms of Service, Refund & Returns, and Shipping pages were repaired from canonical MVQUEEN SOPs.
-- All literal policy placeholders were removed from those three published pages.
-- Policy contact email is `miss.mvqueen@gmail.com`.
+- All literal policy placeholders were removed from the published Terms of Service, Refund & Returns, and Shipping pages.
+- A full published-page sweep found no remaining bracket placeholders or draft-placeholder warnings.
+- Policy and FAQ contact email is `miss.mvqueen@gmail.com`.
 - Refund/returns now use the documented 30-day eligible-return standard and prepaid-return-label process.
 - Shipping now uses the documented 1–3 business-day processing standard and 5–8 business-day standard-transit estimate.
 - Protected handles, SKUs, variant IDs, prices, inventory quantities and image relationships remain unchanged.
