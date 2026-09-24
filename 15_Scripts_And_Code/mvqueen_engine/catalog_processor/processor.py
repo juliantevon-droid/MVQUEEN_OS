@@ -5,12 +5,12 @@ Shopify transport and the historical all-in-one product generator are retired.
 """
 from __future__ import annotations
 
-from mvqueen_engine.catalog_recovery_transform import transform_csv
+from mvqueen_engine.catalog_normalization import normalize_shopify_csv
 
 
 def process_csv(input_path: str, output_path: str) -> str:
     """Normalize a Shopify CSV offline while preserving protected fields."""
-    transform_csv(input_path, output_path)
+    normalize_shopify_csv(input_path, output_path)
     return output_path
 
 
