@@ -15,6 +15,7 @@ FORBIDDEN = [
     "MISS.QUEEN", "MISS. QUEEN", "OUHOE", "HOEGOA", "FANZHEN", "EELHOPE",
     "COLOR FIT", "WEST & MONTH", "EPROLO", "DROPSURE", "JAYSUING",
     "ROXELIS", "DESIRE GEM", "MIA JEWELRY",
+    "SEPHORA", "VICTORIA'S SECRET", "VICTORIAS SECRET", "FENTY BEAUTY", "DIOR",
 ]
 PROTECTED = {"handle", "sku", "inventory", "variants", "variant", "images", "image"}
 REQUIRED_FACTS = {"title", "description_html", "seo_title", "seo_description"}
