@@ -14,7 +14,7 @@ Documents the legal and administrative framework governing MVQUEEN operations. N
 | Item | Detail |
 |---|---|
 | Brand Name | MVQUEEN |
-| Sister Brand | Miss.Queen |
+| Sister Brand | Miss.Princess |
 | Business Type | [LLC / Sole Prop — confirm] |
 | Registration State | [Confirm] |
 | EIN | [On file] |
@@ -25,7 +25,7 @@ Documents the legal and administrative framework governing MVQUEEN operations. N
 
 ### Trademark
 - MVQUEEN name and logo — status: [confirm filing]
-- Miss.Queen — status: [confirm filing]
+- Miss.Princess — status: [confirm filing]
 
 ### Privacy Policy
 - Required for Shopify store

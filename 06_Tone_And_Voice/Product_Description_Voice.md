@@ -1,7 +1,7 @@
 # Product_Description_Voice.md
 **Location:** `06_Tone_And_Voice/Product_Description_Voice.md`
 **Doctrine Anchor:** `00_Doctrine/README.md` — Quiet Confidence, Warm Luxury, Feminine Precision
-**Authority:** Writing standard for all MvQueen and miss.queen product descriptions
+**Authority:** Writing standard for all MvQueen and Miss.Princess product descriptions
 
 ---
 
@@ -170,25 +170,25 @@ Use these. They carry weight without overreaching.
 | Luxurious | Overused — show it, don't say it |
 | Flattering | Vague — describe the actual fit |
 | Beautiful | Empty without specifics |
-| Obsessed | Too casual for MvQueen (acceptable for miss.queen only) |
+| Obsessed | Too casual for MvQueen (acceptable for Miss.Princess only) |
 | Super soft / super comfortable | "Super" is filler |
 | You'll love | Presumptuous |
 | Don't miss | Urgency without basis |
 
 ---
 
-## 08 — miss.queen Description Adjustments
+## 08 — Miss.Princess Description Adjustments
 
-miss.queen descriptions carry the same structure but with lighter energy. The hook can be more direct and fun. The language can be slightly more casual.
+Miss.Princess descriptions carry the same structure but with lighter energy. The hook can be more direct and fun. The language can be slightly more casual.
 
-| Element | MvQueen | miss.queen |
+| Element | MvQueen | Miss.Princess |
 |---|---|---|
 | Hook tone | Composed, certain | Direct, energetic |
 | Styling direction | Curated, editorial | Fun, immediate |
 | Adjective range | Intentional, precise, composed | Clean, fresh, easy, fun |
 | Length | Same | Same — precision still applies |
 
-**miss.queen example:**
+**Miss.Princess example:**
 ```
 Your new favorite going-out top just arrived.
 

@@ -12,7 +12,7 @@ Load this at the start of any AI session requiring brand knowledge. It is a comp
 ## Brand Identity
 
 **Name:** MVQUEEN (Most Valuable Queen)
-**Sister Brand:** Miss.Queen
+**Sister Brand:** Miss.Princess
 **Category:** Accessible luxury feminine lifestyle
 **Positioning:** Luxury aesthetics at real-world prices
 **Audience:** Women who want to feel elegant, confident, and worthy without overspending

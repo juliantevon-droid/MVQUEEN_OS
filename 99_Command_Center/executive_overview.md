@@ -6,7 +6,7 @@
 
 MVQUEEN is a luxury feminine ecommerce ecosystem built on the conviction that softness is strength — that beauty should restore women, that luxury should feel accessible and warm, and that emotional intelligence must govern every system, including AI.
 
-**Sister brand:** miss.queen (distinct positioning, shared infrastructure)
+**Sister brand:** Miss.Princess (distinct positioning, shared infrastructure)
 **Category:** Beauty, fashion, hair, accessories, fragrance
 **Positioning:** Accessible luxury for women who choose intentionally
 **Infrastructure:** AI-native, doctrine-governed, built to scale

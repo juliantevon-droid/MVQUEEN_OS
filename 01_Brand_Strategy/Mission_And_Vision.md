@@ -46,7 +46,7 @@ In ten years, MVQUEEN is:
 - Repeat purchase rate: 25%+
 
 ### Year 3 — Scaling
-- miss.queen sister brand launched
+- Miss.Princess sister brand launched
 - Influencer ecosystem active
 - Monthly revenue: $50,000+
 - Brand recognized in luxury feminine space

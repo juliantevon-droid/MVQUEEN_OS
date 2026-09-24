@@ -15,7 +15,7 @@ Primary pillars:
 - Fragrance & Body
 - Gifts
 - The MVQueen Edit
-- Miss.Queen — same-site sister experience with its own editorial direction
+- Miss.Princess — same-site sister experience with its own editorial direction
 
 Each pillar should connect to supporting clusters, collections, editorial content, and products.
 

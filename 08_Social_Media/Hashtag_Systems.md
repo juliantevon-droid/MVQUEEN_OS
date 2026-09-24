@@ -46,9 +46,9 @@ Mix hashtag sizes for maximum reach:
 `#ElevatedFemininity`
 `#MvQueenBeauty`
 
-**miss.queen (sister brand):**
-`#MissQueen`
-`#MissQueenLife`
+**Miss.Princess (sister brand):**
+`#Miss.Princess`
+`#Miss.PrincessLife`
 
 ---
 

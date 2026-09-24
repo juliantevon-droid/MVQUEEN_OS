@@ -37,7 +37,7 @@ Defines the growth architecture for MVQUEEN — how the brand expands without lo
 - Paid ads profitable (ROAS 3x+)
 - Email generating 30%+ of revenue
 - Product catalog expanded
-- Miss.Queen identity activated
+- Miss.Princess identity activated
 
 ### Phase 4 — Ecosystem
 - Multi-channel distribution

@@ -4,7 +4,7 @@
 ---
 
 ## 1. Purpose
-Defines the framework for launching "Sister Brands" (e.g., Miss.Queen) by leveraging the existing MVQUEEN_OS infrastructure.
+Defines the framework for launching "Sister Brands" (e.g., Miss.Princess) by leveraging the existing MVQUEEN_OS infrastructure.
 
 ---
 
@@ -17,7 +17,7 @@ Defines the framework for launching "Sister Brands" (e.g., Miss.Queen) by levera
 ---
 
 ## 3. Brand Differentiation
-| Feature | MVQueen | Miss.Queen |
+| Feature | MVQueen | Miss.Princess |
 | :--- | :--- | :--- |
 | **Audience** | Mature, Established | Young, Aspiring |
 | **Tone** | Restorative, Quiet | Energetic, Playful |
@@ -28,7 +28,7 @@ Defines the framework for launching "Sister Brands" (e.g., Miss.Queen) by levera
 
 ## 4. Scaling Milestones
 *   **Milestone 1:** MVQueen reaches $1M ARR.
-*   **Milestone 2:** Miss.Queen MVP launch (30 products).
+*   **Milestone 2:** Miss.Princess MVP launch (30 products).
 *   **Milestone 3:** Shared logistics hub established for both brands.
 
 ---
