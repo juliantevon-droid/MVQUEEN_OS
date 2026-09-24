@@ -163,6 +163,26 @@ def transform_rows(rows: list[dict[str, str]], headers: list[str]) -> tuple[list
         for idx in indexes:
             before = rows[idx]
             after = output[idx]
+
+            # Shopify exports can repeat customer-facing product fields on
+            # continuation/variant/image rows. Clean those values in place
+            # without creating new product-level content on blank cells.
+            if idx != lead_index:
+                if "Title" in headers and _text(before.get("Title")):
+                    after["Title"] = _clean_title(_text(before.get("Title")))
+                if "Body (HTML)" in headers and _text(before.get("Body (HTML)")):
+                    after["Body (HTML)"] = _clean_body(_text(before.get("Body (HTML)")), title)
+                if "Vendor" in headers and _text(before.get("Vendor")):
+                    after["Vendor"] = CANONICAL_BRAND
+                if "Tags" in headers and _text(before.get("Tags")):
+                    after["Tags"] = _clean_tags(_text(before.get("Tags")))
+                if "SEO Title" in headers and _text(before.get("SEO Title")):
+                    after["SEO Title"] = _clean_brand_terms(_text(before.get("SEO Title")))[:60]
+                if "SEO Description" in headers and _text(before.get("SEO Description")):
+                    after["SEO Description"] = _clean_brand_terms(
+                        _text(before.get("SEO Description"))
+                    )[:155]
+
             if _text(before.get("Image Src")) and "Image Alt Text" in headers:
                 after["Image Alt Text"] = _image_alt(title, _text(before.get("Image Alt Text")))
                 alt_updates += 1
