@@ -1,0 +1,42 @@
+name: MVQUEEN Deep Repository Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'PRODUCTION_READINESS/deep_repo_audit.py'
+      - '.github/workflows/deep-repo-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Scan every branch-head file
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch every branch
+        run: git fetch --prune origin '+refs/heads/*:refs/remotes/origin/*'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run deep repository audit
+        run: python PRODUCTION_READINESS/deep_repo_audit.py
+
+      - name: Upload deep audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: mvqueen-deep-repo-audit-\${{ github.sha }}
+          path: build/deep_repo_audit/
+          if-no-files-found: error
+          retention-days: 30
