@@ -8,6 +8,8 @@ This directory contains the controlled production contracts for MVQUEEN_OS.
 - `PRODUCT_PIPELINE_V1.py` — deterministic standard-library pipeline.
 - `QA_CONTRACT_V1.md` — hard publication gate.
 - `ENGINE_CONTRACTS_V1.md` — ownership and integration boundaries.
+- `CONTENT_INTELLIGENCE_V1.py` — governed product-page, metafield, FAQ, collection, and blog draft generation.
+- `CONTENT_AUTOMATION_CONTRACT_V1.md` — content truth and publishing rules.
 
 ## Release principle
 
@@ -24,3 +26,9 @@ The current specimen test uses a real Shopify product record without writing it 
 ## Safety principle
 
 Generated language may interpret verified facts, but it must never manufacture product facts, efficacy, certifications, reviews, scarcity, performance guarantees, or other unsupported claims.
+
+## Governed content flow
+
+`PRODUCTION_READY product → CONTENT_INTELLIGENCE_V1 → CONTENT_READY_FOR_REVIEW → human/QA approval → publishing boundary`
+
+Content drafts never auto-publish. Product facts used in pages, metafields, FAQs, collection copy, or blogs must come from verified `source_truth` facts. Legacy generators that could synthesize protected or unsupported facts are retired and fail closed.
