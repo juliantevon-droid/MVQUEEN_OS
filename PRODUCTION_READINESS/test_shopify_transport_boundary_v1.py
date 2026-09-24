@@ -45,6 +45,8 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         text = (ROOT / "app/lib/product-processor.ts").read_text(encoding="utf-8")
         self.assertIn("MVQ_APPROVED_PRODUCT_GIDS", text)
         self.assertIn("admin.graphql(PRODUCT_UPDATE", text)
+        self.assertNotIn("generateCatalogPackage", text)
+        self.assertNotIn("MVQ_CONTENT_REWRITE_ENABLED", text)
 
 
 if __name__ == "__main__":
