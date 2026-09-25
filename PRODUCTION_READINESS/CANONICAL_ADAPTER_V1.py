@@ -7,11 +7,15 @@ not allowed to publish around the canonical QA gate.
 from __future__ import annotations
 
 from copy import deepcopy
+import json
+from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping
 
 from INTERNAL_LINKING_INTELLIGENCE_V1 import resolve_internal_links
 from MERCHANDISING_INTELLIGENCE_V1 import resolve_catalog
 from PRODUCT_PIPELINE_V1 import PROTECTED_FIELDS, run
+
+SHOPIFY_COLLECTION_TARGETS_PATH = Path(__file__).with_name("SHOPIFY_COLLECTION_TARGETS_V1.json")
 
 
 def _text(value: Any) -> str:
@@ -57,6 +61,7 @@ def produce_catalog(
     raw_products: Iterable[Dict[str, Any]],
     *,
     collection_handles: Mapping[str, str] | None = None,
+    product_collection_targets: Mapping[str, Iterable[Mapping[str, str]]] | None = None,
 ) -> List[Dict[str, Any]]:
     """Produce a reviewable catalog with relationships and verified internal links."""
     sources = [deepcopy(item) for item in raw_products]
@@ -75,6 +80,35 @@ def produce_catalog(
     return resolve_internal_links(
         merchandised,
         collection_handles=collection_handles,
+        product_collection_targets=product_collection_targets,
+    )
+
+
+
+def load_shopify_collection_targets(
+    path: Path = SHOPIFY_COLLECTION_TARGETS_PATH,
+) -> Dict[str, Any]:
+    """Load the dated Shopify-derived collection routing snapshot."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("source") != "Shopify Admin GraphQL":
+        raise ValueError("Collection target snapshot must be Shopify-derived")
+    governance = data.get("governance", {})
+    if governance.get("do_not_guess_missing_handles") is not True:
+        raise ValueError("Collection target snapshot must fail closed on missing handles")
+    return data
+
+
+def produce_shopify_catalog(
+    raw_products: Iterable[Dict[str, Any]],
+    *,
+    snapshot_path: Path = SHOPIFY_COLLECTION_TARGETS_PATH,
+) -> List[Dict[str, Any]]:
+    """Produce a Shopify-grounded catalog using an explicit verified routing snapshot."""
+    snapshot = load_shopify_collection_targets(snapshot_path)
+    return produce_catalog(
+        raw_products,
+        collection_handles=snapshot.get("title_to_handle", {}),
+        product_collection_targets=snapshot.get("product_memberships", {}),
     )
 
 
