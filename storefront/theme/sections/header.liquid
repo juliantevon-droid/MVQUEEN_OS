@@ -48,7 +48,7 @@
       if is_princess_experience
         assign brand_home_url = '/pages/miss-princess'
       elsif is_mvqueen_experience
-        assign brand_home_url = '/pages/mvqueen'
+        assign brand_home_url = routes.root_url
       endif
     %}
     <a class="mvq-logo" href="{{ brand_home_url }}" aria-label="{% if is_princess_experience %}Miss.Princess home{% elsif is_mvqueen_experience %}MVQueen home{% else %}MVQueen brand gateway{% endif %}" style="--mvq-logo-width: {{ settings.brand_logo_width | default: 148 }}px">
