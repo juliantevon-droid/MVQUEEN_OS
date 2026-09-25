@@ -1,4 +1,4 @@
-# MVQUEEN Voice Contract V1
+# MVQueen Voice Contract V1
 
 ## Purpose
 
