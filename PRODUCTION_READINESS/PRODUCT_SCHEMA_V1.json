@@ -381,7 +381,8 @@
                 "type": "string",
                 "enum": [
                   "catalog_relationship",
-                  "explicit_collection_handle"
+                  "explicit_collection_handle",
+                  "verified_shopify_membership"
                 ]
               }
             }
