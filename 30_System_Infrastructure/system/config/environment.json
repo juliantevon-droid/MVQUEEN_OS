@@ -1,4 +1,8 @@
 {
   "environment": "development",
-  "branch": "stabilization"
+  "branch": "main",
+  "runtime": "react-router-shopify-app",
+  "commerce_authority": "Shopify",
+  "code_authority": "GitHub main",
+  "production_database_requirement": "managed durable database"
 }
