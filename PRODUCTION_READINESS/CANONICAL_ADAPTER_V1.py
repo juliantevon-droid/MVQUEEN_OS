@@ -7,9 +7,14 @@ not allowed to publish around the canonical QA gate.
 from __future__ import annotations
 
 from copy import deepcopy
-from typing import Any, Dict
+from typing import Any, Dict, Iterable, List
 
+from MERCHANDISING_INTELLIGENCE_V1 import resolve_catalog
 from PRODUCT_PIPELINE_V1 import PROTECTED_FIELDS, run
+
+
+def _text(value: Any) -> str:
+    return str(value).strip() if value is not None else ""
 
 
 def _snapshot(record: Dict[str, Any]) -> Dict[str, Any]:
@@ -47,8 +52,26 @@ def produce(raw_product: Dict[str, Any]) -> Dict[str, Any]:
     return result
 
 
+def produce_catalog(raw_products: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Produce and resolve a reviewable catalog without any external writes."""
+    sources = [deepcopy(item) for item in raw_products]
+    canonical = [produce(item) for item in sources]
+    blocked = [
+        _text(record.get("identity", {}).get("product_id")) or "<unknown>"
+        for record in canonical
+        if record.get("status") != "PRODUCTION_READY"
+    ]
+    if blocked:
+        raise ValueError(
+            "Catalog merchandising requires every product to be PRODUCTION_READY: "
+            + ", ".join(blocked)
+        )
+    return resolve_catalog(canonical)
+
+
 if __name__ == "__main__":
     import json
     import sys
     payload = json.load(sys.stdin)
-    print(json.dumps(produce(payload), indent=2, ensure_ascii=False))
+    output = produce_catalog(payload) if isinstance(payload, list) else produce(payload)
+    print(json.dumps(output, indent=2, ensure_ascii=False))
