@@ -320,9 +320,16 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
     background: var(--mvq-pearl);
     box-shadow: var(--mvq-shadow);
     transform: translateX(-105%);
-    transition: transform .25s ease;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .25s ease, visibility .25s step-end;
   }
-  .mvq-filters.is-open { transform: translateX(0); }
+  .mvq-filters.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .25s ease, visibility 0s step-start;
+  }
   .mvq-filter-backdrop.is-open {
     display: block;
     position: fixed;
