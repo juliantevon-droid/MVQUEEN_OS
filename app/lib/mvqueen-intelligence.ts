@@ -61,3 +61,115 @@ export function classifyProduct(title: string, description = "", productType = "
 
   return {...matches[0][1], confidence:"high"};
 }
+
+
+export type BrandWorld = "mvqueen" | "miss-princess";
+
+export type BrandRouting = {
+  brand: BrandWorld | null;
+  confidence: "high" | "medium" | "review";
+  tone: "neutral-mature" | "soft-playful" | "review";
+  reason: string;
+};
+
+const MISS_PRINCESS_COLORS = new Set([
+  "pink", "blush", "rose", "baby-pink", "hot-pink", "coral", "peach",
+  "lavender", "lilac", "mint", "aqua", "turquoise", "sky-blue",
+  "yellow", "lemon", "orange", "lime", "rainbow", "multicolor", "pastel",
+]);
+
+const MVQUEEN_COLORS = new Set([
+  "black", "white", "ivory", "cream", "beige", "nude", "tan", "camel",
+  "brown", "taupe", "khaki", "gray", "grey", "charcoal", "navy",
+  "burgundy", "wine", "olive", "gold", "silver", "bronze", "champagne",
+]);
+
+const PRINCESS_STYLE_HINTS = [
+  "playful", "soft", "sweet", "romantic", "cute", "pastel", "bright",
+  "colorful", "youthful", "fun", "floral", "sparkle",
+];
+
+const MVQUEEN_STYLE_HINTS = [
+  "luxury", "elegant", "refined", "bold", "mature", "sleek", "tailored",
+  "minimal", "structured", "classic", "polished", "statement",
+];
+
+function normalizedColorSignals(tags: string[] = [], title = ""): string[] {
+  const fromTags = tags
+    .filter((tag) => tag.toLowerCase().startsWith("mvq:color:"))
+    .map((tag) => tag.toLowerCase().replace("mvq:color:", "").trim())
+    .filter(Boolean);
+
+  const titleTokens = title
+    .toLowerCase()
+    .replace(/[^a-z0-9 -]+/g, " ")
+    .split(/\s+/)
+    .filter(Boolean);
+
+  return Array.from(new Set([...fromTags, ...titleTokens]));
+}
+
+export function classifyBrandWorld(product: Pick<ProductSnapshot, "title" | "tags" | "descriptionHtml">): BrandRouting {
+  const signals = normalizedColorSignals(product.tags ?? [], product.title ?? "");
+  const text = [
+    product.title ?? "",
+    product.descriptionHtml?.replace(/<[^>]+>/g, " ") ?? "",
+    ...(product.tags ?? []),
+  ].join(" ").toLowerCase();
+
+  const princessColors = signals.filter((signal) => MISS_PRINCESS_COLORS.has(signal));
+  if (princessColors.length) {
+    return {
+      brand: "miss-princess",
+      confidence: "high",
+      tone: "soft-playful",
+      reason: \`color:\${princessColors[0]}\`,
+    };
+  }
+
+  const mvqueenColors = signals.filter((signal) => MVQUEEN_COLORS.has(signal));
+  if (mvqueenColors.length) {
+    return {
+      brand: "mvqueen",
+      confidence: "high",
+      tone: "neutral-mature",
+      reason: \`color:\${mvqueenColors[0]}\`,
+    };
+  }
+
+  const princessStyle = PRINCESS_STYLE_HINTS.find((hint) => text.includes(hint));
+  const mvqueenStyle = MVQUEEN_STYLE_HINTS.find((hint) => text.includes(hint));
+
+  if (princessStyle && !mvqueenStyle) {
+    return {
+      brand: "miss-princess",
+      confidence: "medium",
+      tone: "soft-playful",
+      reason: \`style:\${princessStyle}\`,
+    };
+  }
+
+  if (mvqueenStyle && !princessStyle) {
+    return {
+      brand: "mvqueen",
+      confidence: "medium",
+      tone: "neutral-mature",
+      reason: \`style:\${mvqueenStyle}\`,
+    };
+  }
+
+  return {
+    brand: null,
+    confidence: "review",
+    tone: "review",
+    reason: "ambiguous-color-or-style",
+  };
+}
+
+export function brandRoutingTags(route: BrandRouting): string[] {
+  if (!route.brand) return ["mvq:brand:needs-review"];
+  return [
+    \`mvq:brand:\${route.brand}\`,
+    \`mvq:tone:\${route.tone}\`,
+  ];
+}
