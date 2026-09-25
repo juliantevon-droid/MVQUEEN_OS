@@ -1,5 +1,6 @@
 import type { BrandRouting, Classification } from "../mvqueen-intelligence";
 import type { PricingDecision } from "./pricing-engine";
+import { getEnterpriseIntegrationStatus, type IntegrationState } from "./integration-status";
 
 export type MarketingPlan = {
   state: "ready_for_briefing" | "needs_brand_review" | "needs_commercial_inputs";
@@ -14,7 +15,7 @@ export type MarketingPlan = {
   };
   creativeAngles: string[];
   measurementEvents: string[];
-  paidExecution: "not_connected";
+  paidExecution: IntegrationState;
   paidExecutionReason: string;
 };
 
@@ -23,6 +24,7 @@ export function buildMarketingPlan(
   brandRoute: BrandRouting,
   pricing: PricingDecision,
 ): MarketingPlan {
+  const paidMedia = getEnterpriseIntegrationStatus().paidMedia;
   if (!brandRoute.brand) {
     return {
       state: "needs_brand_review",
@@ -32,7 +34,7 @@ export function buildMarketingPlan(
       funnel: { discovery: "", consideration: "", conversion: "", retention: "" },
       creativeAngles: [],
       measurementEvents: ["view_item", "add_to_cart", "begin_checkout", "purchase"],
-      paidExecution: "not_connected",
+      paidExecution: paidMedia.state,
       paidExecutionReason: "No ad-platform execution adapter is connected.",
     };
   }
@@ -61,7 +63,7 @@ export function buildMarketingPlan(
       ? ["color story", "playful styling", "soft glamour", "social discovery"]
       : ["modern polish", "quiet statement", "refined confidence", "editorial styling"],
     measurementEvents: ["view_item", "add_to_cart", "begin_checkout", "purchase"],
-    paidExecution: "not_connected",
+    paidExecution: paidMedia.state,
     paidExecutionReason:
       "Campaign planning is connected; external ad-account execution remains disabled until an approved adapter/account is connected.",
   };
