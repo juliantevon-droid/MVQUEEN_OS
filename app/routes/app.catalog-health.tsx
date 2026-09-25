@@ -6,6 +6,31 @@ import {
   type AuditProduct,
 } from "../lib/enterprise/catalog-audit";
 
+type CatalogAuditNode = {
+  id: string;
+  title: string;
+  status: string;
+  tags: string[];
+  seoTitle?: { value?: string | null } | null;
+  shortDescription?: { value?: string | null } | null;
+  unitCost?: { value?: string | null } | null;
+  variants?: {
+    nodes?: Array<{ id: string; price?: string | null }>;
+    pageInfo?: { hasNextPage?: boolean };
+  } | null;
+  collections?: {
+    nodes?: Array<{ handle: string }>;
+  } | null;
+};
+
+type CatalogAuditConnection = {
+  nodes?: CatalogAuditNode[];
+  pageInfo?: {
+    hasNextPage?: boolean;
+    endCursor?: string | null;
+  };
+};
+
 const CATALOG_AUDIT_QUERY = `#graphql
 query MVQueenCatalogAudit($first: Int!, $after: String) {
   products(first: $first, after: $after, sortKey: ID) {
@@ -40,11 +65,13 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   let pages = 0;
 
   while (pages < 25) {
-    const response = await admin.graphql(CATALOG_AUDIT_QUERY, {
+    const response = (await admin.graphql(CATALOG_AUDIT_QUERY, {
       variables: { first: 100, after },
-    });
-    const body = await response.json();
-    const connection = body.data?.products;
+    })) as Response;
+    const body = (await response.json()) as {
+      data?: { products?: CatalogAuditConnection | null };
+    };
+    const connection: CatalogAuditConnection | null | undefined = body.data?.products;
 
     if (!connection) {
       throw new Error("Shopify catalog audit query returned no product connection.");
