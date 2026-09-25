@@ -18,10 +18,14 @@ REQUIRED = {
     "sections/editorial-curation.liquid", "sections/announcement-bar.liquid",
     "sections/footer.liquid", "sections/main-product.liquid", "sections/main-collection.liquid",
     "sections/main-search.liquid", "sections/main-cart.liquid", "sections/product-recommendations.liquid",
+    "sections/main-page.liquid", "sections/contact-page.liquid", "sections/editorial-hub.liquid",
+    "sections/lookbook.liquid",
     "snippets/breadcrumbs.liquid", "snippets/product-schema.liquid", "snippets/seo-meta.liquid",
     "templates/index.json", "templates/product.json", "templates/collection.json",
     "templates/search.json", "templates/cart.json",
     "templates/page.mvqueen.json", "templates/page.miss-princess.json",
+    "templates/page.contact.json", "templates/page.about.json", "templates/page.faq.json",
+    "templates/page.journal.json", "templates/page.lookbook.json",
 }
 
 FORBIDDEN_BRANDS = [
@@ -82,6 +86,11 @@ def main() -> int:
     ]:
         if token not in product:
             failures.append(f"main-product.liquid missing required custom PDP integration: {token}")
+
+    contact = read("sections/contact-page.liquid")
+    for token in ["{% form 'contact'", 'name="contact[email]"', 'name="contact[body]"', 'required aria-required="true"']:
+        if token not in contact:
+            failures.append(f"contact-page.liquid missing required customer-care integration: {token}")
 
     gateway = read("sections/brand-gateway.liquid")
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
