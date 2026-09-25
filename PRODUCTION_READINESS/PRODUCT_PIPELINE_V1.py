@@ -154,9 +154,11 @@ def build_seo(record: Dict[str, Any]) -> None:
         if value and value.casefold() != primary.casefold()
     ][:5]
 
-    seo_title = f"{title} | MVQueen" if title else f"{product_type} | MVQueen"
-    if len(seo_title) > 60:
-        seo_title = seo_title[:60].rstrip(" ,—-|")
+    seo_suffix = " | MVQueen"
+    seo_base = title or product_type
+    if len(seo_base) + len(seo_suffix) > 60:
+        seo_base = seo_base[: 60 - len(seo_suffix)].rstrip(" ,—-|")
+    seo_title = f"{seo_base}{seo_suffix}"
 
     factual_bits = unique([stone, material, color, size])
     if factual_bits:
