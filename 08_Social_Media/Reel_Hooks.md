@@ -4,7 +4,7 @@
 
 ## Core Transformation
 
-MVQUEEN is built around emotional transformation through beauty, femininity, confidence, self-expression, and elevated living.
+MVQueen is built around emotional transformation through beauty, femininity, confidence, self-expression, and elevated living.
 
 The brand understands that many women are not simply searching for products.
 
@@ -12,7 +12,7 @@ They are searching for feelings.
 
 Feelings they may have lost, neglected, buried, questioned, or struggled to reconnect with over time.
 
-MVQUEEN exists to help women emotionally reconnect with:
+MVQueen exists to help women emotionally reconnect with:
 - confidence
 - softness
 - beauty
@@ -33,7 +33,7 @@ It is about becoming more emotionally aligned with yourself.
 
 # Emotional Transformation Statement
 
-MVQUEEN transforms beauty from something women simply wear into something they emotionally experience.
+MVQueen transforms beauty from something women simply wear into something they emotionally experience.
 
 The brand transforms:
 - routines into rituals
@@ -43,7 +43,7 @@ The brand transforms:
 - aspiration into emotional possibility
 - beauty into self-connection
 
-At its core, MVQUEEN is about helping women feel more emotionally aligned, expressive, feminine, confident, and connected to the life they want to create for themselves.
+At its core, MVQueen is about helping women feel more emotionally aligned, expressive, feminine, confident, and connected to the life they want to create for themselves.
 
 ---
 
@@ -51,9 +51,9 @@ At its core, MVQUEEN is about helping women feel more emotionally aligned, expre
 
 # Cinematic Femininity Doctrine
 
-MVQUEEN creative direction should emotionally embody cinematic femininity.
+MVQueen creative direction should emotionally embody cinematic femininity.
 
-Cinematic femininity within MVQUEEN emotionally emphasizes:
+Cinematic femininity within MVQueen emotionally emphasizes:
 - emotional softness
 - emotional warmth
 - emotional intimacy

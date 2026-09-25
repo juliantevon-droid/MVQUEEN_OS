@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines the operational flow for all MVQUEEN work. Every task, from brand decision to product launch, flows through this system.
+Defines the operational flow for all MVQueen work. Every task, from brand decision to product launch, flows through this system.
 
 ---
 
@@ -123,4 +123,4 @@ If you need to break a rule:
 
 Master Workflow System — **Active**
 
-All MVQUEEN work follows this 5-layer flow. No exceptions.
+All MVQueen work follows this 5-layer flow. No exceptions.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MVQUEEN storefront contract validator."""
+"""MVQueen storefront contract validator."""
 from __future__ import annotations
 import json
 import re

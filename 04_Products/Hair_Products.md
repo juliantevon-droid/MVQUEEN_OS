@@ -1,22 +1,22 @@
-# 💆 MVQUEEN — Hair Products
+# 💆 MVQueen — Hair Products
 
 ---
 
 ## Purpose
 
-Define the hair product strategy, formulation philosophy, category positioning, and presentation standards for MVQUEEN's haircare line.
+Define the hair product strategy, formulation philosophy, category positioning, and presentation standards for MVQueen's haircare line.
 
 ---
 
 ## Hair Category Philosophy
 
-MVQUEEN haircare is built on one conviction:
+MVQueen haircare is built on one conviction:
 **Healthy hair is the foundation. Everything else follows.**
 
-The woman who shops MVQUEEN hair products is not chasing a trend.
+The woman who shops MVQueen hair products is not chasing a trend.
 She is building a practice — learning what her hair actually needs and giving it that.
 
-MVQUEEN haircare serves:
+MVQueen haircare serves:
 - The woman rebuilding hair health after damage or neglect
 - The woman simplifying her routine to fewer, better products
 - The woman who wants her haircare to feel like a ritual — not a chore
@@ -40,7 +40,7 @@ MVQUEEN haircare serves:
 
 ## Formulation Philosophy
 
-MVQUEEN hair products prioritize:
+MVQueen hair products prioritize:
 
 **Scalp health first** — a healthy scalp grows healthy hair. Products that address the root (literally) before the length.
 
@@ -81,7 +81,7 @@ Hair product photography requires:
 
 ## Hair Copy Standards
 
-Hair product copy at MVQUEEN:
+Hair product copy at MVQueen:
 - Leads with how hair feels after — not ingredient lists
 - Addresses the specific hair type or concern directly
 - Names the ritual context — when and how in her routine
@@ -93,4 +93,4 @@ Hair product copy at MVQUEEN:
 See: `06_Tone_And_Voice/Product_Description_Voice.md` for full standards.
 
 ---
-*MVQUEEN Hair Products — Operational Document*
+*MVQueen Hair Products — Operational Document*

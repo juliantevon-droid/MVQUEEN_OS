@@ -1,16 +1,16 @@
-# 👗 MVQUEEN — Fashion Inspiration
+# 👗 MVQueen — Fashion Inspiration
 
 ---
 
 ## Purpose
 
-A curated intelligence file tracking fashion inspiration, aesthetic references, and style intelligence that informs MVQUEEN's fashion category direction.
+A curated intelligence file tracking fashion inspiration, aesthetic references, and style intelligence that informs MVQueen's fashion category direction.
 
 ---
 
 ## Fashion Aesthetic Pillars
 
-MVQUEEN fashion draws from these aesthetic territories:
+MVQueen fashion draws from these aesthetic territories:
 
 ### Quiet Luxury
 Clean lines. Premium fabrics. No logos needed. The woman who wears it knows.
@@ -37,13 +37,13 @@ Fewer, better pieces. Everything earns its place.
 *(Populate as research is conducted)*
 
 **Designer references to study:**
-Brands and designers whose aesthetic overlaps with MVQUEEN's positioning — study how they photograph, present, and narrate their collections.
+Brands and designers whose aesthetic overlaps with MVQueen's positioning — study how they photograph, present, and narrate their collections.
 
 **Street style references:**
 Real women wearing elevated, intentional outfits — how do they style pieces together? What makes a look feel considered vs. random?
 
 **Editorial references:**
-Fashion editorial photography — lighting, composition, styling. What creates the atmosphere MVQUEEN wants?
+Fashion editorial photography — lighting, composition, styling. What creates the atmosphere MVQueen wants?
 
 ---
 
@@ -51,15 +51,15 @@ Fashion editorial photography — lighting, composition, styling. What creates t
 
 Before adopting any fashion trend:
 
-**Step 1:** Does this align with MVQUEEN's aesthetic pillars?
+**Step 1:** Does this align with MVQueen's aesthetic pillars?
 **Step 2:** Will this still feel relevant in 2-3 years?
 **Step 3:** Can it be worn multiple ways — does it serve the intentional wardrobe builder?
-**Step 4:** Is it accessible enough for MVQUEEN's price point?
+**Step 4:** Is it accessible enough for MVQueen's price point?
 
-If any answer is no — skip. MVQUEEN does not chase fashion trends. It builds a wardrobe philosophy.
+If any answer is no — skip. MVQueen does not chase fashion trends. It builds a wardrobe philosophy.
 
 ---
-*MVQUEEN Fashion Inspiration — Living Document*
+*MVQueen Fashion Inspiration — Living Document*
 
 ---
 ---

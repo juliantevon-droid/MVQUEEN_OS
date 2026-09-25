@@ -1,11 +1,11 @@
-# 💎 MVQUEEN LUXURY BUYER BEHAVIOR  
+# 💎 MVQueen LUXURY BUYER BEHAVIOR  
 *The complete psychological, emotional, aesthetic, and identity‑based behavior patterns of luxury feminine consumers*
 
 ---
 
 # 1. Purpose of the Luxury Buyer Behavior System
 
-Luxury Buyer Behavior explains **how MVQUEEN customers behave when interacting with luxury**, including:
+Luxury Buyer Behavior explains **how MVQueen customers behave when interacting with luxury**, including:
 
 - how they evaluate premium products  
 - how they perceive luxury value  
@@ -19,7 +19,7 @@ It is **emotional, psychological, and identity‑driven**.
 
 ---
 
-# 2. MVQUEEN’s Luxury Behavior Philosophy
+# 2. MVQueen’s Luxury Behavior Philosophy
 
 Luxury behavior is shaped by four core forces:
 
@@ -206,7 +206,7 @@ Luxury barriers are **emotional, not financial**.
 
 ---
 
-# 9. The MVQUEEN Luxury Behavior Framework (LBF)
+# 9. The MVQueen Luxury Behavior Framework (LBF)
 
 Every luxury experience must activate:
 
@@ -251,4 +251,4 @@ It is:
 - sensory experience  
 - feminine aspiration  
 
-This system ensures MVQUEEN delivers **luxury that feels warm, soft, feminine, and emotionally transformative**.
+This system ensures MVQueen delivers **luxury that feels warm, soft, feminine, and emotionally transformative**.

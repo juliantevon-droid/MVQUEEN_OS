@@ -1,4 +1,4 @@
-# MVQUEEN — Memory Architecture
+# MVQueen — Memory Architecture
 
 ---
 
@@ -19,7 +19,7 @@
 
 # Architecture Purpose
 
-The MVQUEEN Memory Architecture exists to:
+The MVQueen Memory Architecture exists to:
 - govern AI memory systems
 - stabilize long-term intelligence
 - improve retrieval quality
@@ -42,7 +42,7 @@ This framework defines:
 
 # Core Memory Identity
 
-MVQUEEN memory systems exist to preserve:
+MVQueen memory systems exist to preserve:
 - feminine luxury identity
 - emotional intelligence
 - semantic consistency
@@ -62,7 +62,7 @@ Memory systems should support:
 
 # Memory Philosophy
 
-MVQUEEN memory architecture prioritizes:
+MVQueen memory architecture prioritizes:
 - meaning over raw data
 - semantic understanding over keyword matching
 - doctrine inheritance over temporary context
@@ -344,7 +344,7 @@ Temporary context should never override:
 
 ## Scalability Standards
 
-As MVQUEEN scales:
+As MVQueen scales:
 - memory architecture must remain modular
 - retrieval systems must remain organized
 - embeddings must remain semantically aligned
@@ -388,13 +388,13 @@ The ecosystem is future-compatible with:
 
 # Strategic Principle
 
-MVQUEEN memory systems exist to preserve emotionally intelligent feminine luxury identity through doctrine-governed retrieval architecture designed for semantic continuity, contextual intelligence, scalable orchestration, and long-term AI-native ecosystem memory.
+MVQueen memory systems exist to preserve emotionally intelligent feminine luxury identity through doctrine-governed retrieval architecture designed for semantic continuity, contextual intelligence, scalable orchestration, and long-term AI-native ecosystem memory.
 
 ---
 
 # Memory Compression
 
-MVQUEEN memory architecture governs doctrine-first semantic retrieval systems designed to preserve emotional intelligence, feminine luxury continuity, contextual understanding, retrieval precision, and scalable AI-native ecosystem memory infrastructure.
+MVQueen memory architecture governs doctrine-first semantic retrieval systems designed to preserve emotional intelligence, feminine luxury continuity, contextual understanding, retrieval precision, and scalable AI-native ecosystem memory infrastructure.
 
 ---
 

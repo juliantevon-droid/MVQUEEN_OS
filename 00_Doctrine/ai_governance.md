@@ -1,4 +1,4 @@
-# MVQUEEN — AI Governance Framework
+# MVQueen — AI Governance Framework
 
 ---
 
@@ -17,7 +17,7 @@
 
 # Governance Purpose
 
-The MVQUEEN AI Governance Framework exists to:
+The MVQueen AI Governance Framework exists to:
 - govern AI behavior
 - preserve emotional intelligence
 - maintain luxury positioning
@@ -45,7 +45,7 @@ This framework applies to:
 
 # AI Strategic Role
 
-AI within MVQUEEN exists to:
+AI within MVQueen exists to:
 - amplify creativity
 - improve scalability
 - increase consistency
@@ -357,7 +357,7 @@ Lower priority:
 
 # Operational Philosophy
 
-MVQUEEN AI systems are designed to become:
+MVQueen AI systems are designed to become:
 - emotionally intelligent
 - semantically aware
 - retrieval optimized
@@ -398,7 +398,7 @@ before deployment.
 
 # Strategic Principle
 
-AI within MVQUEEN exists to amplify emotionally intelligent luxury feminine experiences while preserving emotional humanity, emotional warmth, semantic consistency, luxury positioning, and ecosystem integrity at scale.
+AI within MVQueen exists to amplify emotionally intelligent luxury feminine experiences while preserving emotional humanity, emotional warmth, semantic consistency, luxury positioning, and ecosystem integrity at scale.
 
 ---
 

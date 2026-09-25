@@ -1,15 +1,15 @@
-# MVQUEEN App Ecosystem Contract
+# MVQueen App Ecosystem Contract
 
 **Status:** ACTIVE  
 **Consolidated:** 2026-09-23
 
 ## Core principle
 
-Apps extend MVQUEEN. They do not become the source of truth for MVQUEEN.
+Apps extend MVQueen. They do not become the source of truth for MVQueen.
 
 Source-of-truth hierarchy:
 
-1. MVQUEEN doctrine and brand contracts
+1. MVQueen doctrine and brand contracts
 2. MVQUEEN_OS production systems
 3. Shopify native commerce primitives
 4. Approved external apps

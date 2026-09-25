@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Documented library of all active and planned workflows across the MVQUEEN ecosystem.
+Documented library of all active and planned workflows across the MVQueen ecosystem.
 
 ---
 

@@ -5,20 +5,20 @@
 
 ## Purpose
 
-Governs how MVQUEEN builds and nurtures community across all platforms. Community is not an afterthought — it is a growth channel.
+Governs how MVQueen builds and nurtures community across all platforms. Community is not an afterthought — it is a growth channel.
 
 ---
 
 ## Community Identity
 
-MVQUEEN customers are not just customers. They are:
+MVQueen customers are not just customers. They are:
 - women who chose to invest in themselves
 - part of a world that sees their worth
 - reflected in every piece of content we make
 
 Language to use:
 - "our queens"
-- "the MVQUEEN woman"
+- "the MVQueen woman"
 - "you already know"
 - "built for her"
 
@@ -43,7 +43,7 @@ Language to avoid:
 ## UGC Strategy
 
 - Repost customer content with credit
-- Create branded hashtag: #MVQUEEN
+- Create branded hashtag: #MVQueen
 - Feature real customers in stories weekly
 - DM customers who tag the brand personally
 

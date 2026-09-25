@@ -2,7 +2,7 @@
 
 # Emotional Visual Identity
 
-MVQUEEN’s visual language should feel:
+MVQueen’s visual language should feel:
 - cinematic
 - emotionally layered
 - feminine
@@ -32,7 +32,7 @@ The brand should visually communicate emotional feeling rather than visual perfe
 
 # Emotional Visual Identity Philosophy
 
-The MVQUEEN visual world should emotionally communicate:
+The MVQueen visual world should emotionally communicate:
 - softness
 - warmth
 - femininity
@@ -75,7 +75,7 @@ Women should emotionally feel something before consciously analyzing what they a
 
 # Luxury Atmosphere Consistency
 
-Every part of MVQUEEN should emotionally preserve:
+Every part of MVQueen should emotionally preserve:
 - emotional atmosphere
 - emotional softness
 - emotional calmness
@@ -107,6 +107,6 @@ Atmosphere consistency strengthens:
 
 The atmosphere itself becomes part of luxury identity.
 
-Women should emotionally recognize MVQUEEN through emotional feeling before conscious brand identification.
+Women should emotionally recognize MVQueen through emotional feeling before conscious brand identification.
 
 ---

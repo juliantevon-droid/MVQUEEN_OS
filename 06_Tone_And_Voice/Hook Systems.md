@@ -1,4 +1,4 @@
-# 🪝 MVQUEEN — Hook Systems
+# 🪝 MVQueen — Hook Systems
 
 ---
 
@@ -9,7 +9,7 @@ A hook is the first thing she encounters — and it decides everything.
 If the hook lands: she reads the caption, watches the video, opens the email.
 If it doesn't: she moves on in under two seconds.
 
-MVQUEEN hooks are not clickbait.
+MVQueen hooks are not clickbait.
 They earn attention honestly — through emotional precision, unexpected truth, or immediate recognition.
 
 ---
@@ -21,7 +21,7 @@ They earn attention honestly — through emotional precision, unexpected truth, 
 **3. Desire** — She thinks: *I want whatever that is.*
 **4. Disruption** — She thinks: *wait, that's different.*
 
-Every strong MVQUEEN hook triggers at least one of these.
+Every strong MVQueen hook triggers at least one of these.
 The best ones trigger two.
 
 ---

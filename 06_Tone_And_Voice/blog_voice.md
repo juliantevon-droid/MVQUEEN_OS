@@ -1,16 +1,16 @@
-# 🎙️ MVQUEEN — Blog Voice
+# 🎙️ MVQueen — Blog Voice
 
 ---
 
 ## Purpose
 
-Define exactly how MVQUEEN writes blog content — with real examples, structural standards, and a voice checklist that ensures every article feels like editorial, not content marketing.
+Define exactly how MVQueen writes blog content — with real examples, structural standards, and a voice checklist that ensures every article feels like editorial, not content marketing.
 
 ---
 
 ## The Blog Voice Standard
 
-MVQUEEN blog content is:
+MVQueen blog content is:
 - Written for a woman — not for a search algorithm
 - Expert without being clinical
 - Warm without being casual
@@ -80,13 +80,13 @@ Articles always end with:
 □ Every paragraph has one idea?
 □ Specific examples used throughout — not vague generalities?
 □ Closing is an invitation — not a summary?
-□ Sounds like MVQUEEN — not a generic beauty blog?
+□ Sounds like MVQueen — not a generic beauty blog?
 □ Primary keyword used naturally — not forced?
 □ Would she share this with a friend?
 ```
 
 ---
-*MVQUEEN Blog Voice — Operational Document*
+*MVQueen Blog Voice — Operational Document*
 
 ---
 ---

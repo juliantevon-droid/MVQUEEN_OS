@@ -1,4 +1,4 @@
-# 📋 MVQUEEN — Blog Templates
+# 📋 MVQueen — Blog Templates
 
 ---
 

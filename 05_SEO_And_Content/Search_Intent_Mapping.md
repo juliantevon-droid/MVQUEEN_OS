@@ -4,13 +4,13 @@
 
 ## Audience Overview
 
-MVQUEEN is created for emotionally aware, aesthetically driven women who use beauty, femininity, fashion, fragrance, self-care, and visual atmosphere as forms of confidence, identity, emotional comfort, and self-expression.
+MVQueen is created for emotionally aware, aesthetically driven women who use beauty, femininity, fashion, fragrance, self-care, and visual atmosphere as forms of confidence, identity, emotional comfort, and self-expression.
 
 The brand speaks to women who desire more than products.
 
 They desire experiences that make life feel softer, more beautiful, more intentional, and more emotionally aligned.
 
-MVQUEEN’s audience is deeply connected to how things feel emotionally:
+MVQueen’s audience is deeply connected to how things feel emotionally:
 - how environments feel
 - how beauty routines feel
 - how clothing changes confidence
@@ -30,7 +30,7 @@ It is built around emotional resonance.
 
 ## Customer Experience Philosophy
 
-MVQUEEN is not designed to create transactional customers.
+MVQueen is not designed to create transactional customers.
 
 It is designed to create emotional attachment through immersive feminine luxury experiences that emotionally stay with women long after the purchase itself.
 
@@ -64,7 +64,7 @@ She should feel emotionally considered, emotionally understood, and emotionally 
 
 # AI Customer Psychology Alignment
 
-As MVQUEEN expands into:
+As MVQueen expands into:
 - AI personalization
 - recommendation systems
 - automated luxury experiences
@@ -90,7 +90,7 @@ The customer psychology system becomes part of the emotional intelligence infras
 
 # Customer Psychology & Experience Summary
 
-MVQUEEN’s customer experience architecture is designed to create emotional attachment through immersive feminine luxury experiences.
+MVQueen’s customer experience architecture is designed to create emotional attachment through immersive feminine luxury experiences.
 
 Every interaction should reinforce:
 - femininity

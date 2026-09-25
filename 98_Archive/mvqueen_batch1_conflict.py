@@ -15,7 +15,7 @@ files = {
 
 ## Purpose
 
-This system catalogs, governs, and organizes every reusable content asset across the MVQUEEN ecosystem. Assets here are doctrine-aligned, voice-approved, and deployment-ready.
+This system catalogs, governs, and organizes every reusable content asset across the MVQueen ecosystem. Assets here are doctrine-aligned, voice-approved, and deployment-ready.
 
 ---
 
@@ -38,7 +38,7 @@ This system catalogs, governs, and organizes every reusable content asset across
 
 All assets must:
 - align with `00_Doctrine` constitutional layer
-- reflect the MVQUEEN voice: quiet confidence, warm luxury, feminine precision
+- reflect the MVQueen voice: quiet confidence, warm luxury, feminine precision
 - be deployment-ready with no placeholder text
 - carry a status tag: ACTIVE / DRAFT / ARCHIVED
 
@@ -115,7 +115,7 @@ Active
 
 ## Purpose
 
-Standardized creative briefs for photo and video content across all MVQUEEN channels.
+Standardized creative briefs for photo and video content across all MVQueen channels.
 
 ---
 
@@ -215,7 +215,7 @@ Registry and documentation for all utility scripts powering MVQUEEN_OS operation
 
 ## Purpose
 
-Defines the measurement architecture for MVQUEEN. Every metric tracked must connect to a brand or business decision — no vanity metrics.
+Defines the measurement architecture for MVQueen. Every metric tracked must connect to a brand or business decision — no vanity metrics.
 
 ---
 
@@ -302,7 +302,7 @@ Active — targets to be populated after first 60 days of live data
 "14_Data_And_Analytics/README.md": """# 14_Data_And_Analytics
 ## MVQUEEN_OS
 
-Measurement architecture, KPI framework, and reporting rhythms for the MVQUEEN ecosystem. Every metric connects to a decision.
+Measurement architecture, KPI framework, and reporting rhythms for the MVQueen ecosystem. Every metric connects to a decision.
 """,
 
 # ── 15_Scripts_And_Code ────────────────────────────────────────────────────
@@ -361,7 +361,7 @@ Production automation scripts for content, Shopify, SEO, and system operations. 
 
 ## Purpose
 
-Defines the automation architecture for MVQUEEN. Every automation must preserve brand voice and emotional atmosphere — speed cannot compromise quality.
+Defines the automation architecture for MVQueen. Every automation must preserve brand voice and emotional atmosphere — speed cannot compromise quality.
 
 ---
 
@@ -412,7 +412,7 @@ Active
 
 ## Purpose
 
-Documented library of all active and planned workflows across the MVQUEEN ecosystem.
+Documented library of all active and planned workflows across the MVQueen ecosystem.
 
 ---
 
@@ -462,7 +462,7 @@ Automation architecture, workflow library, and deployment standards. Every autom
 
 ## Purpose
 
-Master library of operational templates across all MVQUEEN functions. Templates are doctrine-aligned, voice-approved, and ready to deploy.
+Master library of operational templates across all MVQueen functions. Templates are doctrine-aligned, voice-approved, and ready to deploy.
 
 ---
 
@@ -540,7 +540,7 @@ Master template library for content, product, ads, and operations. All templates
 
 ## Purpose
 
-Tracks all technical development initiatives across the MVQUEEN ecosystem — Shopify customizations, app integrations, OS infrastructure, and AI system builds.
+Tracks all technical development initiatives across the MVQueen ecosystem — Shopify customizations, app integrations, OS infrastructure, and AI system builds.
 
 ---
 
@@ -597,7 +597,7 @@ Active
 "18_Development/README.md": """# 18_Development
 ## MVQUEEN_OS
 
-Technical development roadmap, stack documentation, and build tracking for all MVQUEEN infrastructure initiatives.
+Technical development roadmap, stack documentation, and build tracking for all MVQueen infrastructure initiatives.
 """,
 
 # ── 19_Legal_And_Admin ─────────────────────────────────────────────────────
@@ -608,7 +608,7 @@ Technical development roadmap, stack documentation, and build tracking for all M
 
 ## Purpose
 
-Documents the legal and administrative framework governing MVQUEEN operations. Not legal advice — operational reference only. Consult a licensed attorney for binding decisions.
+Documents the legal and administrative framework governing MVQueen operations. Not legal advice — operational reference only. Consult a licensed attorney for binding decisions.
 
 ---
 
@@ -616,7 +616,7 @@ Documents the legal and administrative framework governing MVQUEEN operations. N
 
 | Item | Detail |
 |---|---|
-| Brand Name | MVQUEEN |
+| Brand Name | MVQueen |
 | Sister Brand | Miss.Queen |
 | Business Type | [LLC / Sole Prop — confirm] |
 | Registration State | [Confirm] |
@@ -627,7 +627,7 @@ Documents the legal and administrative framework governing MVQUEEN operations. N
 ## Key Legal Areas
 
 ### Trademark
-- MVQUEEN name and logo — status: [confirm filing]
+- MVQueen name and logo — status: [confirm filing]
 - Miss.Queen — status: [confirm filing]
 
 ### Privacy Policy
@@ -669,7 +669,7 @@ Active — populate with confirmed details
 "19_Legal_And_Admin/README.md": """# 19_Legal_And_Admin
 ## MVQUEEN_OS
 
-Legal framework, business structure documentation, and administrative checklists for MVQUEEN operations.
+Legal framework, business structure documentation, and administrative checklists for MVQueen operations.
 """,
 
 }

@@ -2,7 +2,7 @@
 
 # Governance & AI Systems
 
-As AI systems become integrated into MVQUEEN, governance systems must ensure all AI outputs remain emotionally aligned with:
+As AI systems become integrated into MVQueen, governance systems must ensure all AI outputs remain emotionally aligned with:
 - emotional humanity
 - emotional softness
 - emotional warmth
@@ -32,7 +32,7 @@ Technology should emotionally amplify humanity rather than emotionally weaken it
 
 # AI & Luxury Experience Standards
 
-As AI systems become integrated into MVQUEEN, AI experiences should emotionally preserve:
+As AI systems become integrated into MVQueen, AI experiences should emotionally preserve:
 - emotional softness
 - emotional warmth
 - emotional calmness

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MVQUEEN product-content governance linter.
+"""MVQueen product-content governance linter.
 
 Deterministic rules are authoritative. Optional AI review is advisory only.
 The linter never edits source product files.
@@ -198,7 +198,7 @@ def main():
             "eligible": counts["HOLD"] == 0 and not (args.fail_on == "warn" and counts["WARN"] > 0),
             "policy": "Deterministic HOLD findings block release; WARN findings block release when --fail-on warn is selected.",
         },
-        "brand": "MVQUEEN",
+        "brand": "MVQueen",
         "input": args.input,
         "files_seen": files_seen,
         "counts": counts,

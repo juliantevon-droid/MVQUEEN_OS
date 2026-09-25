@@ -1,4 +1,4 @@
-"""MVQUEEN canonical product production pipeline V1.
+"""MVQueen canonical product production pipeline V1.
 
 Pure standard-library implementation. Source facts are preserved, generated copy
 may interpret them, but cannot invent unsupported factual attributes. Brand voice

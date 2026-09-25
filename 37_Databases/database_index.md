@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Documents all structured data stores within the MVQUEEN ecosystem — product databases, customer segments, keyword databases, and content libraries.
+Documents all structured data stores within the MVQueen ecosystem — product databases, customer segments, keyword databases, and content libraries.
 
 ---
 

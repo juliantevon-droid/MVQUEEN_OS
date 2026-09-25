@@ -1,4 +1,4 @@
-"""Deterministic MVQUEEN recovery taxonomy.
+"""Deterministic MVQueen recovery taxonomy.
 
 Classification is derived from existing product identity text only. It does not
 invent ingredients, materials, efficacy, pricing, inventory, or other product

@@ -1,10 +1,10 @@
-# ❓ MVQUEEN — FAQ Library
+# ❓ MVQueen — FAQ Library
 
 ---
 
 ## Purpose
 
-A master library of frequently asked questions — organized by category, written in MVQUEEN voice, ready to deploy on the website, in emails, and in customer service responses.
+A master library of frequently asked questions — organized by category, written in MVQueen voice, ready to deploy on the website, in emails, and in customer service responses.
 
 FAQs reduce friction. Answered questions become confident purchases.
 
@@ -12,7 +12,7 @@ FAQs reduce friction. Answered questions become confident purchases.
 
 ## Skincare FAQs
 
-**Q: What skin types are MVQUEEN products suitable for?**
+**Q: What skin types are MVQueen products suitable for?**
 A: Our products are formulated with real women's skin in mind — not a single idealized skin type. Each product page specifies which skin types it's best suited for. If you're unsure, start with our [Starter Ritual] and see how your skin responds.
 
 **Q: Are your products fragrance-free?**
@@ -21,7 +21,7 @@ A: Our skincare products use light, clean fragrances where fragrance is included
 **Q: How long until I see results?**
 A: Honest answer: it depends on the product and your skin. Hydration and texture you'll feel within days. Tone, brightness, and long-term changes typically take 4-6 weeks of consistent use. We never overpromise — but we're confident you'll feel a difference.
 
-**Q: Can I use multiple MVQUEEN products together?**
+**Q: Can I use multiple MVQueen products together?**
 A: Yes — our products are formulated to work together as a complete ritual. Start with the basics and build. If you have specific layering questions, our customer care team is happy to help.
 
 ---
@@ -80,7 +80,7 @@ A: [Specify per product — be accurate]
 A: Full ingredient lists are available on each product page. If you have a specific allergy concern, reach out before purchasing and we'll help you assess.
 
 ---
-*MVQUEEN FAQ Library — Living Document*
+*MVQueen FAQ Library — Living Document*
 *Add new questions as they arise from customer inquiries.*
 
 ---

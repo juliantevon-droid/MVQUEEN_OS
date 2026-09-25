@@ -4,7 +4,7 @@
 
 ## Visual Identity Philosophy
 
-MVQUEEN’s visual identity is designed to create emotional atmosphere before a single word is read.
+MVQueen’s visual identity is designed to create emotional atmosphere before a single word is read.
 
 The visuals should immediately evoke:
 - softness
@@ -24,7 +24,7 @@ It is emotional experience through visual language.
 
 Every visual element should contribute to how the brand emotionally feels.
 
-The audience should not simply see MVQUEEN.
+The audience should not simply see MVQueen.
 
 They should emotionally enter it.
 
@@ -38,13 +38,13 @@ The visual world should feel immersive enough that women emotionally recognize t
 
 ## Sensory Philosophy
 
-MVQUEEN is not designed to function as only a visual brand.
+MVQueen is not designed to function as only a visual brand.
 
 It is designed to function as an emotionally immersive feminine luxury ecosystem that emotionally surrounds women through atmosphere, softness, emotional warmth, visual calmness, texture, pacing, beauty, sensory memory, and emotionally restorative experiences.
 
 The brand should emotionally feel experienced rather than simply viewed.
 
-Every interaction with MVQUEEN should emotionally create:
+Every interaction with MVQueen should emotionally create:
 - emotional softness
 - emotional calmness
 - emotional restoration
@@ -54,7 +54,7 @@ Every interaction with MVQUEEN should emotionally create:
 - emotional familiarity
 - emotionally elevated living
 
-The emotional sensory experience itself becomes part of the identity of MVQUEEN.
+The emotional sensory experience itself becomes part of the identity of MVQueen.
 
 Women should emotionally remember how the brand feels long after interaction with it.
 
@@ -78,7 +78,7 @@ True emotional luxury is created through:
 - emotionally restorative experiences
 - emotionally intentional environments
 
-MVQUEEN should emotionally engage multiple senses simultaneously in order to deepen:
+MVQueen should emotionally engage multiple senses simultaneously in order to deepen:
 - emotional attachment
 - emotional recognition
 - emotional familiarity
@@ -96,7 +96,7 @@ The goal is emotionally memorable feminine experiences that emotionally stay wit
 
 # Sensory Branding & AI Alignment
 
-As AI systems become integrated into MVQUEEN experiences, sensory branding should remain:
+As AI systems become integrated into MVQueen experiences, sensory branding should remain:
 - emotionally human
 - emotionally warm
 - emotionally immersive
@@ -115,7 +115,7 @@ AI-generated experiences should preserve:
 - emotional realism
 - feminine atmosphere
 
-The emotional sensory identity of MVQUEEN must remain recognizable regardless of technological evolution.
+The emotional sensory identity of MVQueen must remain recognizable regardless of technological evolution.
 
 ---
 
@@ -123,7 +123,7 @@ The emotional sensory identity of MVQUEEN must remain recognizable regardless of
 
 # Sensory Branding Summary
 
-MVQUEEN’s sensory branding architecture is designed to create emotionally immersive feminine luxury experiences through:
+MVQueen’s sensory branding architecture is designed to create emotionally immersive feminine luxury experiences through:
 - atmosphere
 - emotional pacing
 - softness

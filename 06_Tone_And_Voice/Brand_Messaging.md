@@ -1,22 +1,22 @@
-# 👑 MVQUEEN — Brand Messaging
+# 👑 MVQueen — Brand Messaging
 ### The Messaging Framework
 
 ---
 
 ## What This File Is
 
-Brand messaging is not brand voice. Voice is how we sound. Messaging is what we say — the specific, repeatable statements that communicate MVQUEEN's value, position, and identity to different audiences in different contexts.
+Brand messaging is not brand voice. Voice is how we sound. Messaging is what we say — the specific, repeatable statements that communicate MVQueen's value, position, and identity to different audiences in different contexts.
 
-This file defines the message hierarchy, the core message, supporting messages, audience-specific messaging, and the platform-specific message adaptations that keep MVQUEEN's communication consistent without being repetitive.
+This file defines the message hierarchy, the core message, supporting messages, audience-specific messaging, and the platform-specific message adaptations that keep MVQueen's communication consistent without being repetitive.
 
-Every copywriter, AI agent, and campaign brief pulls from this file when they need to know: *what is the essential thing MVQUEEN says in this context?*
+Every copywriter, AI agent, and campaign brief pulls from this file when they need to know: *what is the essential thing MVQueen says in this context?*
 
 ---
 
 ## PART 1 — THE MESSAGE HIERARCHY
 
 ### Level 01 — The Master Message
-*The single most important thing MVQUEEN communicates. Everything else serves this.*
+*The single most important thing MVQueen communicates. Everything else serves this.*
 
 > **Luxury was always yours.**
 
@@ -27,7 +27,7 @@ This is not a slogan. It is a belief that sits underneath everything the brand s
 ### Level 02 — The Core Brand Message
 *The brand in one paragraph. Used in About pages, press kits, investor materials, partnership introductions.*
 
-> MVQUEEN is a modern feminine luxury lifestyle brand built for the woman who has been told — through price, through exclusivity, through the aesthetics of traditional luxury — that elevated, beautiful things weren't meant for her. We were built on the rejection of that idea. Every product, every word, every experience in the MVQUEEN world was designed to make one thing true: that luxury, confidence, and elevation are not something to earn. They were always hers.
+> MVQueen is a modern feminine luxury lifestyle brand built for the woman who has been told — through price, through exclusivity, through the aesthetics of traditional luxury — that elevated, beautiful things weren't meant for her. We were built on the rejection of that idea. Every product, every word, every experience in the MVQueen world was designed to make one thing true: that luxury, confidence, and elevation are not something to earn. They were always hers.
 
 ---
 
@@ -35,19 +35,19 @@ This is not a slogan. It is a belief that sits underneath everything the brand s
 *3–5 sentences that reinforce the master message from different angles. Used in campaigns, email, social, and any context where the brand introduces itself.*
 
 **Supporting Message A — The Positioning Message**
-> MVQUEEN sits at the intersection of accessible luxury and emotional intention. Not mass-market. Not out of reach. The space between — where the experience is real and the price is attainable.
+> MVQueen sits at the intersection of accessible luxury and emotional intention. Not mass-market. Not out of reach. The space between — where the experience is real and the price is attainable.
 
 **Supporting Message B — The Product Message**
 > We make fashion, beauty, skincare, fragrance, haircare, and lifestyle products that don't just perform — they feel like something. Because the product is only part of what she's buying. The ritual, the atmosphere, the way it makes her carry herself — that's the rest.
 
 **Supporting Message C — The Identity Message**
-> MVQUEEN is for the woman who gets dressed for herself. Who treats her skincare like a ritual. Who chooses her fragrance the way she chooses her words — with intention. She doesn't need to be told she deserves this. She already knows. We just made the world to match.
+> MVQueen is for the woman who gets dressed for herself. Who treats her skincare like a ritual. Who chooses her fragrance the way she chooses her words — with intention. She doesn't need to be told she deserves this. She already knows. We just made the world to match.
 
 **Supporting Message D — The Sister Brand Message**
-> MVQUEEN and Miss.Princess are sister brands — two distinct worlds built on the same belief. MVQUEEN is the elegance of having arrived. Miss.Princess is the joy of becoming. Together, they cover every woman, every mood, every stage.
+> MVQueen and Miss.Princess are sister brands — two distinct worlds built on the same belief. MVQueen is the elegance of having arrived. Miss.Princess is the joy of becoming. Together, they cover every woman, every mood, every stage.
 
 **Supporting Message E — The Legacy Message**
-> MVQUEEN is not a trend. It is not built for a season or a demographic moment. It is built for the long arc — the brand that becomes part of how a woman thinks about herself, not just what she buys.
+> MVQueen is not a trend. It is not built for a season or a demographic moment. It is built for the long arc — the brand that becomes part of how a woman thinks about herself, not just what she buys.
 
 ---
 
@@ -56,7 +56,7 @@ This is not a slogan. It is a belief that sits underneath everything the brand s
 Different audiences need to hear different things first. The truth doesn't change — the entry point does.
 
 ### Audience 01 — New Customer (Discovery Stage)
-*She has just found MVQUEEN. She doesn't know the brand yet. She needs to feel welcome.*
+*She has just found MVQueen. She doesn't know the brand yet. She needs to feel welcome.*
 
 **Primary message:** *This world was built for you.*
 
@@ -82,13 +82,13 @@ Different audiences need to hear different things first. The truth doesn't chang
 **What she needs to hear:**
 - The brand remembers her and values her return
 - New things have been built with her in mind
-- Her relationship with MVQUEEN deepens over time
+- Her relationship with MVQueen deepens over time
 - She is community, not just a customer
 
 **Key phrases:**
 > "You came back. We built this for when you did."
 > "The next chapter of the world you already live in."
-> "For the woman who already knows what MVQUEEN feels like."
+> "For the woman who already knows what MVQueen feels like."
 > "Welcome back to your world."
 
 ---
@@ -96,7 +96,7 @@ Different audiences need to hear different things first. The truth doesn't chang
 ### Audience 03 — Press / Media
 *She is writing about the brand. She needs a clear, compelling, quotable story.*
 
-**Primary message:** *MVQUEEN exists to close the gap between luxury and real women.*
+**Primary message:** *MVQueen exists to close the gap between luxury and real women.*
 
 **What she needs to hear:**
 - The brand has a clear, distinct positioning in the market
@@ -105,16 +105,16 @@ Different audiences need to hear different things first. The truth doesn't chang
 - Miss.Princess is a sister brand — two distinct identities, one vision
 
 **Key phrases:**
-> "MVQUEEN was built in the space traditional luxury ignores — the woman who wants the experience without being made to feel excluded by the price."
+> "MVQueen was built in the space traditional luxury ignores — the woman who wants the experience without being made to feel excluded by the price."
 > "We don't compete with heritage luxury. We serve the market they leave behind."
 > "Two brands, one belief: every woman deserves to feel like the most valuable version of herself."
 
 ---
 
 ### Audience 04 — Brand Partners / Collaborators
-*She or he is evaluating MVQUEEN as a partner. They need to understand the brand's position and audience clearly.*
+*She or he is evaluating MVQueen as a partner. They need to understand the brand's position and audience clearly.*
 
-**Primary message:** *MVQUEEN is building a loyal community of emotionally intelligent feminine consumers.*
+**Primary message:** *MVQueen is building a loyal community of emotionally intelligent feminine consumers.*
 
 **What they need to hear:**
 - Clear audience demographics and psychographics
@@ -124,7 +124,7 @@ Different audiences need to hear different things first. The truth doesn't chang
 
 **Key phrases:**
 > "Our audience is the modern feminine woman — emotionally aware, aesthetically driven, and deeply loyal to brands that actually see her."
-> "MVQUEEN doesn't dilute in collaboration. We bring a clear identity and a specific audience."
+> "MVQueen doesn't dilute in collaboration. We bring a clear identity and a specific audience."
 > "We build long-term. Our collaborations are chosen with the same intention as our products."
 
 ---
@@ -132,7 +132,7 @@ Different audiences need to hear different things first. The truth doesn't chang
 ### Audience 05 — Investors / Business Stakeholders
 *They are evaluating the commercial opportunity. They need the brand story through a business lens.*
 
-**Primary message:** *MVQUEEN owns a gap in the market that no major brand currently serves with intention.*
+**Primary message:** *MVQueen owns a gap in the market that no major brand currently serves with intention.*
 
 **What they need to hear:**
 - Clear market positioning
@@ -141,9 +141,9 @@ Different audiences need to hear different things first. The truth doesn't chang
 - Long-term brand vision beyond product catalog
 
 **Key phrases:**
-> "Traditional luxury serves the top of the market. Mass beauty serves the bottom. MVQUEEN owns the emotionally intelligent middle — accessible luxury with genuine brand depth."
+> "Traditional luxury serves the top of the market. Mass beauty serves the bottom. MVQueen owns the emotionally intelligent middle — accessible luxury with genuine brand depth."
 > "We built the brand and the operating system simultaneously — so scale doesn't compromise identity."
-> "Miss.Princess extends the ecosystem into a younger, trend-aware demographic without diluting MVQUEEN's positioning."
+> "Miss.Princess extends the ecosystem into a younger, trend-aware demographic without diluting MVQueen's positioning."
 
 ---
 
@@ -165,7 +165,7 @@ The core message stays consistent. The register adapts.
 
 ---
 
-## PART 4 — WHAT MVQUEEN NEVER SAYS
+## PART 4 — WHAT MVQueen NEVER SAYS
 
 Regardless of context or audience, these messages are never used:
 
@@ -203,10 +203,10 @@ Before any brand communication is published, run it through these three question
 
 1. **Does it serve the master message?** Does "luxury was always yours" feel true after reading it?
 2. **Is it written for the right audience at the right stage?** Discovery, loyalty, press, partner, investor — is the entry point calibrated?
-3. **Does it sound specifically like MVQUEEN?** Could it belong to another brand — or is this unmistakably ours?
+3. **Does it sound specifically like MVQueen?** Could it belong to another brand — or is this unmistakably ours?
 
 All three yes — it publishes.
 
 ---
 
-*This file is the MVQUEEN brand messaging framework. It pairs with Brand_Essence.md (what the brand is), USP.md (what makes it different), Example_Copy.md (what the voice looks like in practice), and Writing_Rules.md (how every message is constructed).*
+*This file is the MVQueen brand messaging framework. It pairs with Brand_Essence.md (what the brand is), USP.md (what makes it different), Example_Copy.md (what the voice looks like in practice), and Writing_Rules.md (how every message is constructed).*

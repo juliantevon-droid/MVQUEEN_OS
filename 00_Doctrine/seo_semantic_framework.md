@@ -1,4 +1,4 @@
-# MVQUEEN — SEO Semantic Framework
+# MVQueen — SEO Semantic Framework
 
 ---
 
@@ -19,7 +19,7 @@
 
 # Framework Purpose
 
-The MVQUEEN SEO Semantic Framework exists to:
+The MVQueen SEO Semantic Framework exists to:
 - govern semantic SEO systems
 - improve topical authority
 - strengthen entity recognition
@@ -42,7 +42,7 @@ This framework defines:
 
 # Core SEO Identity
 
-MVQUEEN semantically represents:
+MVQueen semantically represents:
 - feminine luxury
 - emotionally intelligent beauty
 - elevated feminine living
@@ -67,7 +67,7 @@ These identity anchors should remain semantically reinforced across:
 
 # SEO Philosophy
 
-MVQUEEN SEO exists to:
+MVQueen SEO exists to:
 - educate
 - emotionally connect
 - improve discoverability
@@ -97,7 +97,7 @@ SEO should never:
 
 ## Semantic Search Standards
 
-MVQUEEN SEO should prioritize:
+MVQueen SEO should prioritize:
 - semantic relationships
 - topical relevance
 - contextual understanding
@@ -118,7 +118,7 @@ The ecosystem should optimize for:
 
 ## Primary Brand Entities
 
-Core MVQUEEN entities:
+Core MVQueen entities:
 - feminine luxury
 - beauty ecosystem
 - luxury self-care
@@ -153,7 +153,7 @@ Supporting entities:
 
 ## Core Authority Categories
 
-MVQUEEN should build authority around:
+MVQueen should build authority around:
 - beauty
 - feminine luxury
 - haircare
@@ -369,7 +369,7 @@ This improves:
 
 ## AI Search Compatibility
 
-MVQUEEN SEO should remain compatible with:
+MVQueen SEO should remain compatible with:
 - AI search engines
 - retrieval-based search
 - conversational search
@@ -389,7 +389,7 @@ The ecosystem should optimize for:
 
 ## Scalability Standards
 
-As MVQUEEN scales:
+As MVQueen scales:
 - semantic consistency must remain preserved
 - authority clusters must remain organized
 - emotional identity must remain stable
@@ -411,13 +411,13 @@ Growth must never create:
 
 # Strategic Principle
 
-MVQUEEN SEO systems exist to semantically reinforce emotionally intelligent feminine luxury authority through premium human-centered content architecture designed for topical depth, entity consistency, retrieval intelligence, emotional readability, and long-term AI-native search visibility.
+MVQueen SEO systems exist to semantically reinforce emotionally intelligent feminine luxury authority through premium human-centered content architecture designed for topical depth, entity consistency, retrieval intelligence, emotional readability, and long-term AI-native search visibility.
 
 ---
 
 # SEO Semantic Compression
 
-MVQUEEN SEO systems govern semantically intelligent feminine luxury search architecture designed to preserve emotional immersion, entity consistency, topical authority, retrieval optimization, premium readability, and scalable AI-native search visibility.
+MVQueen SEO systems govern semantically intelligent feminine luxury search architecture designed to preserve emotional immersion, entity consistency, topical authority, retrieval optimization, premium readability, and scalable AI-native search visibility.
 
 ---
 

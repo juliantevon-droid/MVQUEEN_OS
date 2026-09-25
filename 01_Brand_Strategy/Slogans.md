@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Slogan Suite
+# 👑 MVQueen — Slogan Suite
 
 ---
 
@@ -7,13 +7,13 @@
 Slogans are not taglines. They are not mission statements.
 A slogan is the sentence a woman remembers when she thinks of this brand.
 It lives on packaging, campaign headers, bio lines, and the back of hang tags.
-It should sound like MVQUEEN feels — soft, confident, and completely intentional.
+It should sound like MVQueen feels — soft, confident, and completely intentional.
 
 Every slogan here was written to carry weight on its own, without explanation.
 
 ---
 
-## Primary Slogan Candidates — MVQUEEN
+## Primary Slogan Candidates — MVQueen
 
 **01.**
 > *Most Valuable Queen. Most Valuable You.*
@@ -53,7 +53,7 @@ Two beliefs in one line. Redefines both softness and elegance as active choices,
 **06.**
 > *For the woman you're becoming.*
 
-Forward-facing. Aspirational without pressure. Positions MVQUEEN as a companion on the journey.
+Forward-facing. Aspirational without pressure. Positions MVQueen as a companion on the journey.
 
 ---
 
@@ -88,7 +88,7 @@ Origin energy. Speaks directly to the emotional gap the brand was built to close
 **11.**
 > *The feeling is the point.*
 
-Minimal. Absolute. Strips everything back to what MVQUEEN actually sells.
+Minimal. Absolute. Strips everything back to what MVQueen actually sells.
 
 ---
 
@@ -101,7 +101,7 @@ Fashion as transformation. Bridges product and emotion in three words.
 
 ## Seasonal / Campaign Slogan Directions
 
-These are not permanent brand slogans. They are frameworks for campaign-specific lines that stay rooted in MVQUEEN identity.
+These are not permanent brand slogans. They are frameworks for campaign-specific lines that stay rooted in MVQueen identity.
 
 **For Launch Campaigns:**
 > *The world you've been waiting for is open.*
@@ -157,7 +157,7 @@ The sister brand carries softer, more playful energy — youthful, dreamy, trend
 **DON'T:**
 - Follow the slogan with an explanation — if it needs one, the surrounding copy failed
 - Use more than one slogan in the same visual space
-- Force rhyme, alliteration, or trendy slang — MVQUEEN slogans are timeless, not viral
+- Force rhyme, alliteration, or trendy slang — MVQueen slogans are timeless, not viral
 
 ---
 

@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Tracks all technical development initiatives across the MVQUEEN ecosystem — Shopify customizations, app integrations, OS infrastructure, and AI system builds.
+Tracks all technical development initiatives across the MVQueen ecosystem — Shopify customizations, app integrations, OS infrastructure, and AI system builds.
 
 ---
 

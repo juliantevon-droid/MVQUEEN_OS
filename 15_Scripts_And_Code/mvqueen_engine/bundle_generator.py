@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — BUNDLE GENERATOR (BLOCK N)
+# MVQueen OMNILUXE ENGINE — BUNDLE GENERATOR (BLOCK N)
 # ---------------------------------------------------------
 
 from mvqueen_engine.engine import run

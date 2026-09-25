@@ -2,7 +2,7 @@
 
 # Emotional Storytelling & Community
 
-Storytelling within MVQUEEN should emotionally reinforce:
+Storytelling within MVQueen should emotionally reinforce:
 - emotional softness
 - emotional beauty
 - emotional femininity
@@ -24,7 +24,7 @@ The emotional goal of storytelling is helping women emotionally feel:
 
 Stories should emotionally create emotional resonance rather than temporary attention.
 
-Women should emotionally recognize parts of themselves emotionally reflected within the world of MVQUEEN.
+Women should emotionally recognize parts of themselves emotionally reflected within the world of MVQueen.
 
 The emotional storytelling itself becomes part of emotional belonging.
 
@@ -34,9 +34,9 @@ The emotional storytelling itself becomes part of emotional belonging.
 
 # Cinematic Femininity Doctrine
 
-MVQUEEN creative direction should emotionally embody cinematic femininity.
+MVQueen creative direction should emotionally embody cinematic femininity.
 
-Cinematic femininity within MVQUEEN emotionally emphasizes:
+Cinematic femininity within MVQueen emotionally emphasizes:
 - emotional softness
 - emotional warmth
 - emotional intimacy
@@ -69,7 +69,7 @@ Luxury should emotionally feel emotionally lived-in rather than emotionally unto
 
 # Emotional Storytelling Direction
 
-Storytelling within MVQUEEN should emotionally prioritize:
+Storytelling within MVQueen should emotionally prioritize:
 - emotional atmosphere
 - emotional resonance
 - emotional softness

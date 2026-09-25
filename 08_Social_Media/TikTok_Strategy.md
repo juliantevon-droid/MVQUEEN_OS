@@ -1,15 +1,15 @@
-# 👑 MVQUEEN — TikTok Strategy
+# 👑 MVQueen — TikTok Strategy
 ### The Discovery Engine
 
 ---
 
 ## What This File Is
 
-TikTok is MVQUEEN's primary customer acquisition platform. While Instagram maintains the brand world for existing community, TikTok introduces the brand to women who have never heard of MVQUEEN — and converts them through content that feels genuine, not advertorial.
+TikTok is MVQueen's primary customer acquisition platform. While Instagram maintains the brand world for existing community, TikTok introduces the brand to women who have never heard of MVQueen — and converts them through content that feels genuine, not advertorial.
 
 The distinction matters. TikTok rewards realness. A post that looks like an ad performs like an ad. A post that looks like a woman showing something she genuinely loves performs like word-of-mouth.
 
-MVQUEEN's TikTok strategy is built on that principle: every video should feel like a recommendation from someone who actually uses the product and actually lives in this world.
+MVQueen's TikTok strategy is built on that principle: every video should feel like a recommendation from someone who actually uses the product and actually lives in this world.
 
 ---
 
@@ -17,11 +17,11 @@ MVQUEEN's TikTok strategy is built on that principle: every video should feel li
 
 TikTok is not Instagram. The rules are different.
 
-On Instagram, MVQUEEN shows the finished world — the cinematic, polished, atmospheric version of the brand. On TikTok, MVQUEEN shows the brand being lived. The morning routine in real light. The fragrance she actually reaches for. The product she can't stop talking about.
+On Instagram, MVQueen shows the finished world — the cinematic, polished, atmospheric version of the brand. On TikTok, MVQueen shows the brand being lived. The morning routine in real light. The fragrance she actually reaches for. The product she can't stop talking about.
 
-The aesthetic is still MVQUEEN — warm, feminine, considered. But the energy is less composed and more real. Less editorial. More personal.
+The aesthetic is still MVQueen — warm, feminine, considered. But the energy is less composed and more real. Less editorial. More personal.
 
-The test for every TikTok before posting: *Does this feel like something a real MVQUEEN woman would post because she genuinely wanted to, or does it feel like a brand trying to seem real?*
+The test for every TikTok before posting: *Does this feel like something a real MVQueen woman would post because she genuinely wanted to, or does it feel like a brand trying to seem real?*
 
 If it's the latter — reshoot it.
 
@@ -29,7 +29,7 @@ If it's the latter — reshoot it.
 
 ## PART 1 — ACCOUNT STRUCTURE
 
-### MVQUEEN TikTok: `@mvqueen`
+### MVQueen TikTok: `@mvqueen`
 Primary brand account. Discovery-first content — beauty, lifestyle, fashion, emotional femininity.
 
 ### Miss.Princess TikTok: `@miss.princess` (separate)
@@ -44,7 +44,7 @@ Link: Linktree or direct product page
 
 **Current bio:**
 ```
-👑 MVQUEEN — accessible luxury for real women.
+👑 MVQueen — accessible luxury for real women.
 Luxury was always yours.
 🔗 Shop the collection ↓
 ```
@@ -53,7 +53,7 @@ Luxury was always yours.
 
 ## PART 2 — CONTENT STRATEGY
 
-TikTok content for MVQUEEN operates in three modes:
+TikTok content for MVQueen operates in three modes:
 
 **Mode 01 — Educational (Pillar: Beauty Ritual)**
 Teaches something genuinely useful. Earns trust. Drives saves and follows.
@@ -62,7 +62,7 @@ Teaches something genuinely useful. Earns trust. Drives saves and follows.
 > "Why your moisturizer isn't working (and what to do instead)"
 
 **Mode 02 — Aspirational (Pillar: Feminine Atmosphere, Romanticized Living)**
-Shows the world MVQUEEN creates. Slow, cinematic, atmospheric. Makes her want to live like this.
+Shows the world MVQueen creates. Slow, cinematic, atmospheric. Makes her want to live like this.
 > Slow morning routine with soft music
 > Candlelit evening skincare wind-down
 > The Sunday reset ritual
@@ -96,7 +96,7 @@ Introduces products naturally within content. Not ads — recommendations with c
 **Length:** 15–45 seconds
 **Structure:** Hook → Product shown → Key detail (texture, scent, result) → CTA
 
-**What makes MVQUEEN product features different:**
+**What makes MVQueen product features different:**
 - Show the texture, the sound of the packaging, the way it applies
 - Use sensory language in captions and voiceover — not product specs
 - Never feel like an ad. Feel like a recommendation.
@@ -104,15 +104,15 @@ Introduces products naturally within content. Not ads — recommendations with c
 ---
 
 ### Format 03 — The Honest Review / Real Talk
-**What it is:** Genuine, balanced review of a MVQUEEN product or a beauty/lifestyle topic.
-**Why it works:** Trust-building. The MVQUEEN customer respects honesty. A brand that acknowledges what something doesn't do earns more trust than one that oversells.
+**What it is:** Genuine, balanced review of a MVQueen product or a beauty/lifestyle topic.
+**Why it works:** Trust-building. The MVQueen customer respects honesty. A brand that acknowledges what something doesn't do earns more trust than one that oversells.
 **Length:** 30–90 seconds
 **Structure:** "I've been using this for [time]. Here's what I actually think." → honest observations → recommendation
 
 ---
 
 ### Format 04 — The Atmosphere / Slow Edit
-**What it is:** A cinematic, slow-paced video with soft music and minimal or no talking. The feeling of being in the MVQUEEN world.
+**What it is:** A cinematic, slow-paced video with soft music and minimal or no talking. The feeling of being in the MVQueen world.
 **Why it works:** High watch-through rate with the right audience. Builds brand atmosphere. Highly shareable as "inspo."
 **Length:** 15–30 seconds
 **Structure:** No strict structure — purely visual and sensory. Sound drives the mood.
@@ -130,7 +130,7 @@ Introduces products naturally within content. Not ads — recommendations with c
 **Length:** 30–90 seconds
 **Structure:** Hook (first sentence) → The thing she wants to say → Landing point
 
-**Talking head topics for MVQUEEN:**
+**Talking head topics for MVQueen:**
 - "The thing nobody tells you about accessible luxury"
 - "Why I stopped buying cheap versions of things I actually love"
 - "The beauty brand I found that actually cares about how it makes you feel"
@@ -183,16 +183,16 @@ Create an information gap the brain needs to close.
 Sound is as important as visuals on TikTok.
 
 ### Trending Sounds
-Using trending sounds increases distribution. MVQUEEN filters trending sounds through brand alignment:
+Using trending sounds increases distribution. MVQueen filters trending sounds through brand alignment:
 - ✅ Soft, warm, cinematic sounds (ambient, gentle beats, slow emotional music)
 - ✅ Feminine aesthetic sounds currently trending
 - ❌ Aggressive, loud, or chaotic sounds — even if trending
-- ❌ Sounds that feel ironic or meme-adjacent when MVQUEEN needs sincerity
+- ❌ Sounds that feel ironic or meme-adjacent when MVQueen needs sincerity
 
-**Rule:** If a sound doesn't fit the MVQUEEN world, the trend pass is declined. The brand identity is not sacrificed for distribution.
+**Rule:** If a sound doesn't fit the MVQueen world, the trend pass is declined. The brand identity is not sacrificed for distribution.
 
 ### Original Audio
-For talking head and product feature videos, original audio (your voice) builds brand recognition and authority. The MVQUEEN TikTok voice: warm, direct, knowledgeable, slightly personal — like she's talking to a friend who would love this.
+For talking head and product feature videos, original audio (your voice) builds brand recognition and authority. The MVQueen TikTok voice: warm, direct, knowledgeable, slightly personal — like she's talking to a friend who would love this.
 
 ---
 
@@ -237,28 +237,28 @@ TikTok is a search engine. Women search for products, routines, and aesthetics o
 ## PART 8 — ENGAGEMENT STRATEGY
 
 **Comments:**
-Respond to every question in the first 24 hours. TikTok's algorithm rewards comment activity. MVQUEEN responses are warm, knowledgeable, and specific — never "thanks! 😊"
+Respond to every question in the first 24 hours. TikTok's algorithm rewards comment activity. MVQueen responses are warm, knowledgeable, and specific — never "thanks! 😊"
 
 **Stitch and Duet:**
-Strategic use only — when a relevant piece of content creates a genuine opportunity to add MVQUEEN perspective. Never reactive, always intentional.
+Strategic use only — when a relevant piece of content creates a genuine opportunity to add MVQueen perspective. Never reactive, always intentional.
 
 **Creator collaboration:**
-Identify aligned creators in the feminine lifestyle, soft life, and beauty spaces. Build genuine relationships before pitching. The ideal MVQUEEN TikTok creator: a woman who already lives in this world, not someone performing it for a fee.
+Identify aligned creators in the feminine lifestyle, soft life, and beauty spaces. Build genuine relationships before pitching. The ideal MVQueen TikTok creator: a woman who already lives in this world, not someone performing it for a fee.
 
 ---
 
 ## PART 9 — CONTENT STANDARDS (WHAT NEVER GOES UP)
 
-Regardless of trend or algorithm pressure, MVQUEEN TikTok never posts:
+Regardless of trend or algorithm pressure, MVQueen TikTok never posts:
 
 - Content that looks or sounds like a paid ad without genuine enthusiasm
 - Countdown timers or panic urgency
 - Comparison content that puts other brands down
 - Trend participation that requires abandoning brand voice
-- Miss.Princess content on the MVQUEEN account
+- Miss.Princess content on the MVQueen account
 - Content using words from the Forbidden Words list
 - Anything that makes the target customer feel inadequate
 
 ---
 
-*This file is the MVQUEEN TikTok strategy. It pairs with Content_Pillars.md (what to create), Hook_Systems.md (how to open), Caption_Templates.md (how to caption), and Writing_Rules.md (voice in voiceover and text overlays).*
+*This file is the MVQueen TikTok strategy. It pairs with Content_Pillars.md (what to create), Hook_Systems.md (how to open), Caption_Templates.md (how to caption), and Writing_Rules.md (voice in voiceover and text overlays).*

@@ -1,4 +1,4 @@
-# MVQUEEN Publishing Boundary V1
+# MVQueen Publishing Boundary V1
 
 ## Purpose
 

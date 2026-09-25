@@ -1,13 +1,13 @@
-# 👑 MVQUEEN LOGO CONCEPTS  
-*The symbolic, emotional, and structural foundation of MVQUEEN’s luxury feminine mark*
+# 👑 MVQueen LOGO CONCEPTS  
+*The symbolic, emotional, and structural foundation of MVQueen’s luxury feminine mark*
 
 ---
 
 # 1. Purpose of the Logo Concepts File
 
-The MVQUEEN logo is not a decorative symbol — it is the **crown jewel of the brand’s identity system**.
+The MVQueen logo is not a decorative symbol — it is the **crown jewel of the brand’s identity system**.
 
-This document defines the conceptual, emotional, symbolic, and structural logic behind the MVQUEEN logo family, ensuring that every future designer, AI agent, strategist, and creative team member understands:
+This document defines the conceptual, emotional, symbolic, and structural logic behind the MVQueen logo family, ensuring that every future designer, AI agent, strategist, and creative team member understands:
 
 - the meaning behind the mark  
 - the emotional purpose of each logo variation  
@@ -15,7 +15,7 @@ This document defines the conceptual, emotional, symbolic, and structural logic 
 - the feminine luxury philosophy guiding the design  
 - the long‑term scalability of the logo system  
 
-The MVQUEEN logo must feel:
+The MVQueen logo must feel:
 - luxurious  
 - feminine  
 - elegant  
@@ -30,7 +30,7 @@ This file ensures the logo becomes a **legacy symbol**, not a trend.
 
 # 2. Logo Philosophy
 
-MVQUEEN’s logo philosophy is built on four pillars:
+MVQueen’s logo philosophy is built on four pillars:
 
 ### **1. Feminine Royalty (Identity Core)**
 The brand name “Most Valuable Queen” must be reflected visually through:
@@ -70,7 +70,7 @@ The logo must feel **modern today and iconic tomorrow**.
 
 # 3. Logo System Structure
 
-The MVQUEEN logo system includes:
+The MVQueen logo system includes:
 
 1. **Primary Wordmark**  
 2. **Secondary Wordmark**  
@@ -232,7 +232,7 @@ Used for high‑luxury applications.
 # 9. Miss.Princess Sister Mark Concept
 
 ## **Purpose**
-A youthful, playful interpretation of the MVQUEEN identity.
+A youthful, playful interpretation of the MVQueen identity.
 
 ## **Emotional Tone**
 - dreamy  
@@ -334,7 +334,7 @@ This system ensures that every designer, AI agent, and creative team member can:
 - support global expansion  
 - maintain feminine luxury atmosphere  
 
-The MVQUEEN logo is not just a mark.  
+The MVQueen logo is not just a mark.  
 It is:
 - identity  
 - emotion  

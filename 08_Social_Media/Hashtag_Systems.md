@@ -1,4 +1,4 @@
-# #️⃣ MVQUEEN — Hashtag Systems
+# #️⃣ MVQueen — Hashtag Systems
 
 ---
 
@@ -33,10 +33,10 @@ Mix hashtag sizes for maximum reach:
 
 ---
 
-## MVQUEEN Branded Hashtags
+## MVQueen Branded Hashtags
 
 **Primary:**
-`#MVQUEEN`
+`#MVQueen`
 
 **Secondary branded:**
 `#MvQueenLife`

@@ -8,7 +8,7 @@ from mvqueen_engine.phase1_csv import run_products_csv
 
 def cli() -> int:
     parser = argparse.ArgumentParser(
-        description="Run MVQUEEN offline editorial curation. No Shopify writes are performed."
+        description="Run MVQueen offline editorial curation. No Shopify writes are performed."
     )
     parser.add_argument("input_csv")
     parser.add_argument("output_csv")

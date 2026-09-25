@@ -1,8 +1,8 @@
-# 📱 MVQUEEN — Social Media System
+# 📱 MVQueen — Social Media System
 
 ## Purpose
 
-The Social Media System is the community, content, and cultural presence architecture governing how MVQUEEN shows up across all social platforms.
+The Social Media System is the community, content, and cultural presence architecture governing how MVQueen shows up across all social platforms.
 
 It exists to:
 - build an emotionally resonant social presence across all platforms
@@ -22,9 +22,9 @@ The Social Media System acts as the:
 
 ## Core Principle
 
-MVQUEEN social media is not content production.
+MVQueen social media is not content production.
 
-It is emotional world-building. Every post, reel, story, and caption must make the audience feel something — desire, softness, aspiration, belonging. Social media is the emotional gateway into the MVQUEEN universe.
+It is emotional world-building. Every post, reel, story, and caption must make the audience feel something — desire, softness, aspiration, belonging. Social media is the emotional gateway into the MVQueen universe.
 
 ---
 
@@ -50,7 +50,7 @@ It is emotional world-building. Every post, reel, story, and caption must make t
 
 ## Ecosystem Rules
 
-1. Every post must carry the emotional atmosphere of MVQUEEN.
+1. Every post must carry the emotional atmosphere of MVQueen.
 2. Content pillars must govern all content decisions.
 3. Captions must feel human, warm, and emotionally intelligent.
 4. Reels must open with emotional hooks — not product pitches.

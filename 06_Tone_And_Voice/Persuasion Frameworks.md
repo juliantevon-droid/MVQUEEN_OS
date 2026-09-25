@@ -4,7 +4,7 @@
 
 ## Customer Experience Philosophy
 
-MVQUEEN is not designed to create transactional customers.
+MVQueen is not designed to create transactional customers.
 
 It is designed to create emotional attachment through immersive feminine luxury experiences that emotionally stay with women long after the purchase itself.
 
@@ -38,7 +38,7 @@ She should feel emotionally considered, emotionally understood, and emotionally 
 
 # Emotional Buying Psychology
 
-Women emotionally connect with MVQUEEN because the brand reinforces:
+Women emotionally connect with MVQueen because the brand reinforces:
 - who they are
 - who they are becoming
 - how they want femininity to feel
@@ -66,7 +66,7 @@ Products become emotional extensions of identity, atmosphere, and emotional tran
 
 # AI Customer Psychology Alignment
 
-As MVQUEEN expands into:
+As MVQueen expands into:
 - AI personalization
 - recommendation systems
 - automated luxury experiences
@@ -92,7 +92,7 @@ The customer psychology system becomes part of the emotional intelligence infras
 
 # Customer Psychology & Experience Summary
 
-MVQUEEN’s customer experience architecture is designed to create emotional attachment through immersive feminine luxury experiences.
+MVQueen’s customer experience architecture is designed to create emotional attachment through immersive feminine luxury experiences.
 
 Every interaction should reinforce:
 - femininity

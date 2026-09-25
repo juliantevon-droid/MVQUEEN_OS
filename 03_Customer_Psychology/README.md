@@ -1,11 +1,11 @@
-# 🧠 MVQUEEN — Customer Psychology System
+# 🧠 MVQueen — Customer Psychology System
 
 ## Purpose
 
-The Customer Psychology System is the behavioral and emotional intelligence architecture governing how MVQUEEN understands, attracts, converts, and retains its ideal customer.
+The Customer Psychology System is the behavioral and emotional intelligence architecture governing how MVQueen understands, attracts, converts, and retains its ideal customer.
 
 It exists to:
-- define the emotional profile of the MVQUEEN customer
+- define the emotional profile of the MVQueen customer
 - map the psychological journey from awareness to transformation
 - govern messaging, offers, and content through behavioral intelligence
 - identify emotional triggers, desires, objections, and aspirations
@@ -22,7 +22,7 @@ The Customer Psychology System acts as the:
 
 ## Core Principle
 
-The MVQUEEN customer is not buying a product.
+The MVQueen customer is not buying a product.
 
 She is investing in a version of herself — softer, more confident, more elevated, more intentional. Every system must understand this psychological truth before it can serve her effectively.
 
@@ -46,7 +46,7 @@ She is investing in a version of herself — softer, more confident, more elevat
 | Customer_Personas.md | Structured persona profiles for strategic deployment |
 | Buying_Psychology.md | Applied behavioral psychology for conversion systems |
 | Identity_Aspirations.md | Long-term identity transformation mapping |
-| Customer_Transformation.md | The emotional transformation arc of the MVQUEEN customer |
+| Customer_Transformation.md | The emotional transformation arc of the MVQueen customer |
 
 ---
 

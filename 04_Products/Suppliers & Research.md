@@ -1,11 +1,11 @@
-# 🧪 MVQUEEN SUPPLIERS & RESEARCH  
-*The complete sourcing, quality assurance, ethical standards, and product development research system for MVQUEEN’s luxury feminine product ecosystem*
+# 🧪 MVQueen SUPPLIERS & RESEARCH  
+*The complete sourcing, quality assurance, ethical standards, and product development research system for MVQueen’s luxury feminine product ecosystem*
 
 ---
 
 # 1. Purpose of the Suppliers & Research System
 
-This system ensures MVQUEEN products are created with:
+This system ensures MVQueen products are created with:
 
 - premium materials  
 - ethical sourcing  
@@ -21,9 +21,9 @@ They are **partners in feminine luxury creation**.
 
 ---
 
-# 2. MVQUEEN’s Supplier Philosophy
+# 2. MVQueen’s Supplier Philosophy
 
-MVQUEEN selects suppliers based on four pillars:
+MVQueen selects suppliers based on four pillars:
 
 ### **1. Quality Integrity**
 Premium materials, consistent performance, luxury‑grade standards.
@@ -41,13 +41,13 @@ Products must feel:
 - feminine  
 - elevated  
 
-Suppliers must align with **MVQUEEN’s emotional universe**.
+Suppliers must align with **MVQueen’s emotional universe**.
 
 ---
 
 # 3. Supplier Categories
 
-MVQUEEN works with suppliers across six core categories:
+MVQueen works with suppliers across six core categories:
 
 ---
 
@@ -166,7 +166,7 @@ Soft glam, warm neutrals, elegant minimalism.
 Warm, soft, feminine sensory experience.
 
 ### **5. Scalability Standards**
-Ability to grow with MVQUEEN.
+Ability to grow with MVQueen.
 
 Suppliers must pass **all five pillars**.
 
@@ -174,7 +174,7 @@ Suppliers must pass **all five pillars**.
 
 # 5. Research & Development (R&D) Philosophy
 
-MVQUEEN’s R&D focuses on:
+MVQueen’s R&D focuses on:
 
 ### **A. Emotional Innovation**
 How can products make her feel:
@@ -225,7 +225,7 @@ Morning glow routines, evening softness rituals, sensory grounding.
 
 # 7. Supplier Communication Standards
 
-MVQUEEN communicates with suppliers using:
+MVQueen communicates with suppliers using:
 
 ### **A. Aesthetic Guidelines**
 Soft glam, warm neutrals, elegant minimalism.
@@ -288,4 +288,4 @@ It is:
 - sensory excellence  
 - feminine psychology  
 
-This system ensures MVQUEEN products feel **premium, warm, soft, feminine, and emotionally transformative**.
+This system ensures MVQueen products feel **premium, warm, soft, feminine, and emotionally transformative**.

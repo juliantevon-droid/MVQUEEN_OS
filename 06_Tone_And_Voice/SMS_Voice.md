@@ -1,17 +1,17 @@
-# 📱 MVQUEEN — SMS Voice Guide
+# 📱 MVQueen — SMS Voice Guide
 
 ---
 
 ## SMS Is Different
 
-SMS is the most direct channel MVQUEEN has.
+SMS is the most direct channel MVQueen has.
 No algorithm. No competition for attention. It lands on her lock screen.
 
 That means two things:
 1. It must earn its place — never feel spammy or frivolous
 2. It must be immediately valuable, beautiful, or both
 
-MVQUEEN SMS is short, warm, specific, and personal.
+MVQueen SMS is short, warm, specific, and personal.
 It sounds like a message from a brand she loves — not a brand that bought her number.
 
 ---
@@ -40,7 +40,7 @@ Urgency through tone, never through panic.
 
 ### Welcome (first message after opt-in)
 ```
-👑 Welcome to MVQUEEN. You're in her world now.
+👑 Welcome to MVQueen. You're in her world now.
 Explore the collection: [link]
 ```
 
@@ -52,7 +52,7 @@ She's been waiting. [Product Name] is live. ✨
 
 ### Promotional
 ```
-MVQUEEN: The collection — available at [offer] through [date].
+MVQueen: The collection — available at [offer] through [date].
 Made for her: [link]
 ```
 
@@ -82,13 +82,13 @@ Her order is on its way. 👑
 
 ### Re-engagement
 ```
-MVQUEEN: Something new just arrived — we thought of her.
+MVQueen: Something new just arrived — we thought of her.
 [link]
 ```
 
 ---
 
-## What MVQUEEN Never Sends via SMS
+## What MVQueen Never Sends via SMS
 
 - Mass blasts with no personalization signal
 - More than 4 SMS per month (unless VIP tier with explicit preference)
@@ -101,7 +101,7 @@ MVQUEEN: Something new just arrived — we thought of her.
 
 ## Tone Comparison
 
-| Generic Brand SMS | MVQUEEN SMS |
+| Generic Brand SMS | MVQueen SMS |
 |------------------|-------------|
 | SALE! 30% OFF EVERYTHING! Shop now → | The collection — thoughtfully priced this week. Yours: [link] |
 | Last chance! Don't miss out! | She won't want to miss this one. [link] 👑 |

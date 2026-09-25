@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines the automation architecture for MVQUEEN. Every automation must preserve brand voice and emotional atmosphere — speed cannot compromise quality.
+Defines the automation architecture for MVQueen. Every automation must preserve brand voice and emotional atmosphere — speed cannot compromise quality.
 
 ---
 

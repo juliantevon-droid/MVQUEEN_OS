@@ -1,4 +1,4 @@
-"""MVQUEEN controlled publisher contract.
+"""MVQueen controlled publisher contract.
 
 Python owns canonical record validation, QA, release fingerprints, approval
 verification, preview generation, and transport-neutral payload construction.

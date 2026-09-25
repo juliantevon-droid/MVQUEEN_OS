@@ -4,11 +4,11 @@
 
 ## Governance Philosophy
 
-MVQUEEN is not designed to operate as a trend-reactive brand driven by short-term attention, algorithmic pressure, emotional manipulation, or emotionally inconsistent decision-making.
+MVQueen is not designed to operate as a trend-reactive brand driven by short-term attention, algorithmic pressure, emotional manipulation, or emotionally inconsistent decision-making.
 
 It is designed to function as a deeply intentional feminine luxury ecosystem governed by emotional intelligence, emotional integrity, emotional consistency, aesthetic discipline, emotional humanity, and long-term emotional cohesion.
 
-The purpose of governance within MVQUEEN is not control for the sake of structure.
+The purpose of governance within MVQueen is not control for the sake of structure.
 
 The purpose is protecting the emotional soul of the ecosystem as it evolves, scales, automates, expands globally, and integrates advanced AI systems.
 
@@ -24,7 +24,7 @@ Governance exists to protect:
 - emotionally immersive ecosystem cohesion
 - emotionally intentional luxury standards
 
-Every future decision should emotionally reinforce the emotional world of MVQUEEN rather than emotionally weaken it.
+Every future decision should emotionally reinforce the emotional world of MVQueen rather than emotionally weaken it.
 
 The emotional philosophy must remain stronger than:
 - temporary trends
@@ -42,7 +42,7 @@ The ecosystem should evolve intentionally rather than reactively.
 
 ## AI & Luxury Experience Standards
 
-As AI systems become integrated into MVQUEEN, AI experiences should preserve:
+As AI systems become integrated into MVQueen, AI experiences should preserve:
 - softness
 - warmth
 - calmness
@@ -57,7 +57,7 @@ Technology should support luxury rather than weaken the emotional atmosphere.
 
 ---
 
-# MVQUEEN Production Automation Architecture
+# MVQueen Production Automation Architecture
 
 The operating model is now explicitly designed around a **phone → Drive → GitHub → validation → Shopify unpublished theme → verification** pipeline.
 
@@ -66,7 +66,7 @@ The operating model is now explicitly designed around a **phone → Drive → Gi
 - **MVQUEEN_OS GitHub repository:** engineering/source-of-truth layer.
 - **Google Drive:** controlled phone-friendly intake/workspace for approved assets and documents.
 - **Shopify:** commerce/runtime layer.
-- **Unpublished MVQUEEN custom theme:** deployment target until final release approval.
+- **Unpublished MVQueen custom theme:** deployment target until final release approval.
 - **GitHub Actions:** continuous validation, deployment, scheduled health checks, and evidence logging.
 
 ## Front-end automation
@@ -88,14 +88,14 @@ Shopify Theme Check is also run in CI to catch Liquid/JSON syntax errors, missin
 
 ## Shopify deployment rule
 
-Automated deployment is allowed only to the configured **unpublished** MVQUEEN theme.
+Automated deployment is allowed only to the configured **unpublished** MVQueen theme.
 
 The deployment workflow:
 1. validates the source contract
 2. runs Shopify Theme Check
 3. verifies the target theme exists
 4. refuses deployment if the target is `MAIN`
-5. pushes only the controlled MVQUEEN files
+5. pushes only the controlled MVQueen files
 6. uses `--nodelete` so the existing Horizon-derived base is not destroyed
 7. records deployment evidence as a workflow artifact
 

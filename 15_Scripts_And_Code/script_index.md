@@ -2,7 +2,7 @@
 
 ## Canonical location
 
-Active MVQUEEN Python logic lives under:
+Active MVQueen Python logic lives under:
 
 - `15_Scripts_And_Code/mvqueen_engine/` — deterministic brand/catalog intelligence and dry-run tooling.
 - `PRODUCTION_READINESS/` — schema, QA, release, approval and audit contracts.

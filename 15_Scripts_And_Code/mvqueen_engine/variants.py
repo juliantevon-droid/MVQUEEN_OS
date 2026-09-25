@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE — VARIANT ENGINE
+# MVQueen OMNILUXE — VARIANT ENGINE
 # ---------------------------------------------------------
 
 from mvqueen_engine.utils.deterministic import (

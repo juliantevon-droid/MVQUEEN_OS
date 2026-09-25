@@ -1,8 +1,8 @@
-# MVQUEEN Doctrine System
+# MVQueen Doctrine System
 
 ## Purpose
 
-The Doctrine System serves as the permanent constitutional intelligence layer of the MVQUEEN ecosystem.
+The Doctrine System serves as the permanent constitutional intelligence layer of the MVQueen ecosystem.
 
 It exists to:
 - prevent brand drift
@@ -44,9 +44,9 @@ Doctrine becomes the source of truth.
 
 ## Core Principle
 
-MVQUEEN is not simply an ecommerce brand.
+MVQueen is not simply an ecommerce brand.
 
-MVQUEEN is an emotionally intelligent luxury feminine ecosystem designed to emotionally restore softness, confidence, femininity, emotional calmness, and elevated living through AI-native commerce infrastructure.
+MVQueen is an emotionally intelligent luxury feminine ecosystem designed to emotionally restore softness, confidence, femininity, emotional calmness, and elevated living through AI-native commerce infrastructure.
 
 ---
 
@@ -67,7 +67,7 @@ MVQUEEN is an emotionally intelligent luxury feminine ecosystem designed to emot
 
 ## Operational Philosophy
 
-MVQUEEN is built:
+MVQueen is built:
 - layer-by-layer
 - system-by-system
 - doctrine-first

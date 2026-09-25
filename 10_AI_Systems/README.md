@@ -1,15 +1,15 @@
-# 🤖 MVQUEEN — AI Systems
+# 🤖 MVQueen — AI Systems
 
 ## Purpose
 
-The AI Systems architecture is the intelligence infrastructure layer governing how MVQUEEN deploys, governs, and scales artificial intelligence across its entire ecosystem.
+The AI Systems architecture is the intelligence infrastructure layer governing how MVQueen deploys, governs, and scales artificial intelligence across its entire ecosystem.
 
 It exists to:
 - build AI workflows aligned with brand doctrine and emotional intelligence
 - create prompt libraries that generate on-brand content at scale
 - govern AI behavior to preserve luxury atmosphere and emotional integrity
 - design automation pipelines that amplify — not replace — human creativity
-- establish MVQUEEN as a fully AI-native commerce ecosystem
+- establish MVQueen as a fully AI-native commerce ecosystem
 
 The AI Systems layer acts as the:
 - artificial intelligence governance architecture
@@ -24,7 +24,7 @@ The AI Systems layer acts as the:
 
 AI must serve emotional intelligence — not override it.
 
-Every AI system deployed within MVQUEEN must amplify the brand's emotional atmosphere, preserve its luxury positioning, and generate outputs that feel human, intentional, and aligned with doctrine. AI is infrastructure — doctrine is the soul.
+Every AI system deployed within MVQueen must amplify the brand's emotional atmosphere, preserve its luxury positioning, and generate outputs that feel human, intentional, and aligned with doctrine. AI is infrastructure — doctrine is the soul.
 
 ---
 

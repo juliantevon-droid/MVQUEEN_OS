@@ -1,11 +1,11 @@
-# 👑 MVQUEEN CUSTOMER PERSONAS  
-*The complete identity‑based, emotional, aesthetic, and behavioral personas that represent MVQUEEN’s core customer archetypes*
+# 👑 MVQueen CUSTOMER PERSONAS  
+*The complete identity‑based, emotional, aesthetic, and behavioral personas that represent MVQueen’s core customer archetypes*
 
 ---
 
 # 1. Purpose of the Customer Personas System
 
-Customer Personas define **who MVQUEEN serves**, not by demographics, but by:
+Customer Personas define **who MVQueen serves**, not by demographics, but by:
 
 - emotional identity  
 - aesthetic world  
@@ -29,9 +29,9 @@ They are **emotional identities**.
 
 ---
 
-# 2. MVQUEEN’s Persona Philosophy
+# 2. MVQueen’s Persona Philosophy
 
-MVQUEEN personas are built on four pillars:
+MVQueen personas are built on four pillars:
 
 ### **1. Emotional Identity**
 How she feels and wants to feel.
@@ -47,14 +47,14 @@ Who she is becoming.
 
 ---
 
-# 3. The 7 MVQUEEN Customer Personas
+# 3. The 7 MVQueen Customer Personas
 
 These are the **core personas** that represent your audience.
 
 ---
 
 ## 👑 **1. The Soft Glam Queen**  
-*The heart of MVQUEEN’s aesthetic universe*
+*The heart of MVQueen’s aesthetic universe*
 
 ### **Emotional Identity**
 Warm, gentle, romantic, feminine.
@@ -188,7 +188,7 @@ Wants her world to look beautiful and cohesive.
 
 # 4. Persona Overlaps (Identity Blends)
 
-Most MVQUEEN customers are a blend of:
+Most MVQueen customers are a blend of:
 
 - Soft Glam Queen + Radiant Woman  
 - Elegant Minimalist + Ritual Lover  
@@ -274,7 +274,7 @@ Daily feminine moments.
 
 This system ensures that every strategist, designer, marketer, and AI agent can:
 
-- understand MVQUEEN customers deeply  
+- understand MVQueen customers deeply  
 - craft persona‑aligned messaging  
 - design emotionally resonant products  
 - build luxury experiences  
@@ -291,4 +291,4 @@ They are:
 - feminine aspirations  
 - luxury psychology  
 
-This system ensures MVQUEEN speaks directly to the **heart, identity, and emotional world** of every persona.
+This system ensures MVQueen speaks directly to the **heart, identity, and emotional world** of every persona.

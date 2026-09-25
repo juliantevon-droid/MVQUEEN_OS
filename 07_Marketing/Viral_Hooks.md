@@ -1,12 +1,12 @@
-# 🔥 MVQUEEN — Viral Hooks
+# 🔥 MVQueen — Viral Hooks
 
 ---
 
 ## Purpose
 
-A library of proven viral hook formulas, real examples, and testing frameworks for creating content that spreads — while staying unmistakably MVQUEEN.
+A library of proven viral hook formulas, real examples, and testing frameworks for creating content that spreads — while staying unmistakably MVQueen.
 
-Viral content at MVQUEEN is never accidental.
+Viral content at MVQueen is never accidental.
 It is engineered from emotional truth, not shock value.
 
 ---
@@ -20,7 +20,7 @@ Content spreads when it creates one of these reactions:
 4. **Utility** — *"I need to save this."*
 5. **Beauty** — *"I need to share this."*
 
-Every MVQUEEN viral hook triggers at least one of these.
+Every MVQueen viral hook triggers at least one of these.
 
 ---
 
@@ -86,7 +86,7 @@ Examples:
 
 ### Format 2 — The Before/After (Not Physical)
 Show the emotional or lifestyle transformation — not physical appearance.
-*"My beauty routine before MVQUEEN / after MVQUEEN"*
+*"My beauty routine before MVQueen / after MVQueen"*
 Focus: How she feels, how mornings feel, her relationship with beauty
 
 ### Format 3 — The POV
@@ -128,7 +128,7 @@ For every 5 pieces of content — test at least 2 different hooks on the same co
 **Build a swipe file** of top-performing hooks in `13_Research_And_Inspiration/Swipe_Files.md`
 
 ---
-*MVQUEEN Viral Hooks — Operational Document*
+*MVQueen Viral Hooks — Operational Document*
 
 ---
 ---

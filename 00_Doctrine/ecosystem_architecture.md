@@ -1,4 +1,4 @@
-# MVQUEEN — Ecosystem Architecture
+# MVQueen — Ecosystem Architecture
 
 ---
 
@@ -18,7 +18,7 @@
 
 # Architecture Purpose
 
-The MVQUEEN Ecosystem Architecture exists to:
+The MVQueen Ecosystem Architecture exists to:
 - define the ecosystem structure
 - organize operational intelligence
 - govern infrastructure scaling
@@ -41,7 +41,7 @@ This framework defines:
 
 # Core Ecosystem Identity
 
-MVQUEEN is:
+MVQueen is:
 - an emotionally intelligent luxury ecosystem
 - an AI-native commerce infrastructure
 - a feminine lifestyle architecture
@@ -62,7 +62,7 @@ The ecosystem is designed for:
 
 # Ecosystem Philosophy
 
-MVQUEEN operates through:
+MVQueen operates through:
 - doctrine-first architecture
 - modular infrastructure
 - retrieval-driven intelligence
@@ -382,7 +382,7 @@ The command center should coordinate:
 
 ## Scalability Philosophy
 
-MVQUEEN is designed to scale through:
+MVQueen is designed to scale through:
 - modular systems
 - doctrine inheritance
 - semantic consistency
@@ -401,7 +401,7 @@ Scaling should never create:
 
 # AI-Native Infrastructure Philosophy
 
-MVQUEEN infrastructure is intentionally designed for:
+MVQueen infrastructure is intentionally designed for:
 - local AI systems
 - Ollama
 - vector databases
@@ -422,13 +422,13 @@ The ecosystem is future-compatible with:
 
 # Strategic Principle
 
-MVQUEEN operates as a doctrine-governed AI-native feminine luxury ecosystem designed for emotionally intelligent commerce, scalable orchestration, semantic continuity, operational intelligence, and future enterprise infrastructure expansion.
+MVQueen operates as a doctrine-governed AI-native feminine luxury ecosystem designed for emotionally intelligent commerce, scalable orchestration, semantic continuity, operational intelligence, and future enterprise infrastructure expansion.
 
 ---
 
 # Architecture Compression
 
-MVQUEEN is a doctrine-first AI-native feminine luxury ecosystem architected for scalable orchestration, emotionally intelligent commerce, semantic governance, retrieval-driven intelligence, and enterprise operational infrastructure.
+MVQueen is a doctrine-first AI-native feminine luxury ecosystem architected for scalable orchestration, emotionally intelligent commerce, semantic governance, retrieval-driven intelligence, and enterprise operational infrastructure.
 
 ---
 

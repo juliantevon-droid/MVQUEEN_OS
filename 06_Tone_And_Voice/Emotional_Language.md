@@ -1,16 +1,16 @@
-# 💫 MVQUEEN — Emotional Language Guide
+# 💫 MVQueen — Emotional Language Guide
 
 ---
 
 ## Purpose
 
-Define how MVQUEEN uses emotional language with precision and integrity — naming real feelings with specific language rather than generic emotional statements.
+Define how MVQueen uses emotional language with precision and integrity — naming real feelings with specific language rather than generic emotional statements.
 
 The difference between emotional language that resonates and emotional language that feels manipulative is **specificity and honesty**.
 
 ---
 
-## Principles of Emotional Language at MVQUEEN
+## Principles of Emotional Language at MVQueen
 
 ### Principle 1 — Name the Specific, Not the General
 *"You feel beautiful"* = generic, hollow
@@ -19,7 +19,7 @@ The difference between emotional language that resonates and emotional language 
 The specific emotion lands. The generic one washes over.
 
 ### Principle 2 — Never Manufacture Feeling
-MVQUEEN does not tell women how to feel.
+MVQueen does not tell women how to feel.
 It creates conditions for feelings and lets women arrive there themselves.
 
 **Manufactures emotion:** *"You'll feel confident and empowered using this!"*
@@ -34,10 +34,10 @@ Writing that acknowledges complexity lands harder than writing that simplifies.
 *"The version of yourself you've been quietly becoming."*
 
 ### Principle 4 — Never Exploit
-MVQUEEN does not use insecurity, fear, or comparison to drive purchase.
+MVQueen does not use insecurity, fear, or comparison to drive purchase.
 Emotional intelligence means serving emotions — not weaponizing them.
 
-**Exploitative:** *"Tired of feeling less than? MVQUEEN can help."*
+**Exploitative:** *"Tired of feeling less than? MVQueen can help."*
 **Intelligent:** *"For the woman who is done performing and ready to just live."*
 
 ---
@@ -55,7 +55,7 @@ Emotional intelligence means serving emotions — not weaponizing them.
 | Luxury feeling | *worthy, chosen, unhurried, considered, held* |
 
 ---
-*MVQUEEN Emotional Language Guide — Operational Document*
+*MVQueen Emotional Language Guide — Operational Document*
 
 ---
 ---

@@ -1,4 +1,4 @@
-# 🛒 MVQUEEN — Checkout Optimization
+# 🛒 MVQueen — Checkout Optimization
 
 ---
 
@@ -151,7 +151,7 @@ Recovery copy tone: Warm reminder — never guilt or panic.
 
 ## Checkout Performance Benchmarks
 
-| Metric | Industry Average | MVQUEEN Target |
+| Metric | Industry Average | MVQueen Target |
 |--------|----------------|---------------|
 | Cart abandonment rate | 70% | Under 65% |
 | Checkout initiation rate | 45% | 60%+ |
@@ -159,4 +159,4 @@ Recovery copy tone: Warm reminder — never guilt or panic.
 | Overall conversion rate | 2% | 2.5%+ |
 
 ---
-*MVQUEEN Checkout Optimization — Operational Document*
+*MVQueen Checkout Optimization — Operational Document*

@@ -1,5 +1,5 @@
-# 🛍️ MVQUEEN BUYING PSYCHOLOGY  
-*The complete emotional, identity‑based, aesthetic, and behavioral psychology behind how MVQUEEN customers make purchasing decisions*
+# 🛍️ MVQueen BUYING PSYCHOLOGY  
+*The complete emotional, identity‑based, aesthetic, and behavioral psychology behind how MVQueen customers make purchasing decisions*
 
 ---
 
@@ -23,9 +23,9 @@ It is **emotion + identity + aesthetic resonance**.
 
 ---
 
-# 2. MVQUEEN’s Buying Psychology Philosophy
+# 2. MVQueen’s Buying Psychology Philosophy
 
-MVQUEEN customers make decisions through four psychological layers:
+MVQueen customers make decisions through four psychological layers:
 
 ### **1. Emotional Desire**
 “How will this make me feel?”
@@ -175,7 +175,7 @@ Luxury is emotional, not material.
 ### **7. Loyalty**
 “I want to feel this again.”
 
-This is the **MVQUEEN emotional funnel**.
+This is the **MVQueen emotional funnel**.
 
 ---
 
@@ -200,9 +200,9 @@ Barriers are emotional, not logical.
 
 ---
 
-# 10. The MVQUEEN Buying Psychology Framework (BPF)
+# 10. The MVQueen Buying Psychology Framework (BPF)
 
-Every MVQUEEN experience must activate:
+Every MVQueen experience must activate:
 
 ### **1. Emotional Desire**
 Softness, glow, confidence, elegance.
@@ -227,7 +227,7 @@ When all five activate → **conversion**.
 
 This system ensures that every strategist, designer, marketer, and AI agent can:
 
-- understand how MVQUEEN customers think  
+- understand how MVQueen customers think  
 - activate emotional desire  
 - design identity‑aligned experiences  
 - build luxury‑grade persuasion  
@@ -244,4 +244,4 @@ It is:
 - feminine aspiration  
 - luxury psychology  
 
-This system ensures MVQUEEN speaks directly to **how she thinks, feels, desires, and decides**.
+This system ensures MVQueen speaks directly to **how she thinks, feels, desires, and decides**.

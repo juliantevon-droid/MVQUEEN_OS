@@ -1,11 +1,11 @@
-# 💞 MVQUEEN SOCIAL BEHAVIOR  
-*The complete emotional, psychological, aesthetic, and identity‑based social behavior patterns of MVQUEEN’s feminine luxury consumers*
+# 💞 MVQueen SOCIAL BEHAVIOR  
+*The complete emotional, psychological, aesthetic, and identity‑based social behavior patterns of MVQueen’s feminine luxury consumers*
 
 ---
 
 # 1. Purpose of the Social Behavior System
 
-Social Behavior explains **how MVQUEEN customers behave socially**, including:
+Social Behavior explains **how MVQueen customers behave socially**, including:
 
 - how they express femininity online  
 - how they interact with beauty & luxury content  
@@ -19,9 +19,9 @@ It is **identity expression + emotional resonance + aesthetic belonging**.
 
 ---
 
-# 2. MVQUEEN’s Social Behavior Philosophy
+# 2. MVQueen’s Social Behavior Philosophy
 
-MVQUEEN customers behave socially according to four forces:
+MVQueen customers behave socially according to four forces:
 
 ### **1. Emotional Expression**
 She shares what makes her feel soft, radiant, confident, and feminine.
@@ -39,7 +39,7 @@ Social behavior is **emotional, aesthetic, and identity‑driven**.
 
 ---
 
-# 3. The 7 Core MVQUEEN Social Behavior Types
+# 3. The 7 Core MVQueen Social Behavior Types
 
 These are the dominant social patterns across your audience.
 
@@ -254,9 +254,9 @@ Barriers are **emotional, not logical**.
 
 ---
 
-# 9. The MVQUEEN Social Behavior Framework (SBF)
+# 9. The MVQueen Social Behavior Framework (SBF)
 
-Every MVQUEEN social experience must activate:
+Every MVQueen social experience must activate:
 
 ### **1. Emotional Resonance**
 Softness, glow, confidence, elegance.
@@ -281,7 +281,7 @@ When all five activate → **social engagement + loyalty**.
 
 This system ensures that every strategist, designer, marketer, and AI agent can:
 
-- understand how MVQUEEN customers behave socially  
+- understand how MVQueen customers behave socially  
 - design emotionally aligned content  
 - activate identity expression  
 - elevate luxury perception  
@@ -298,4 +298,4 @@ It is:
 - feminine community  
 - luxury psychology  
 
-This system ensures MVQUEEN speaks directly to **how she shares, expresses, and connects**.
+This system ensures MVQueen speaks directly to **how she shares, expresses, and connects**.

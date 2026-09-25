@@ -5,7 +5,7 @@ Goal: Consolidate everything scattered across Drive into one clean, production-r
 ---
 
 ## THE SITUATION
-You have been building MVQUEEN since February 2026.
+You have been building MVQueen since February 2026.
 Everything exists. Nothing is in one place.
 This plan fixes that in 5 execution phases.
 Total: 7 sessions to production.
@@ -158,4 +158,4 @@ This plan is that execution.
 
 NEXT ACTION: Run Phase A cleanup in Termux, then upload MVQUEEN_CONTEXT.md to Claude.
 
-👑 MVQUEEN. Most Valuable Queen. Built for this.
+👑 MVQueen. Most Valuable Queen. Built for this.

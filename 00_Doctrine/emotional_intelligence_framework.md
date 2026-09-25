@@ -5,9 +5,9 @@
 
 ## Purpose
 
-Emotional intelligence is the core capability that separates MVQUEEN from competitors. It drives every decision, every message, every product.
+Emotional intelligence is the core capability that separates MVQueen from competitors. It drives every decision, every message, every product.
 
-This framework documents what emotional intelligence means in MVQUEEN context.
+This framework documents what emotional intelligence means in MVQueen context.
 
 ---
 
@@ -17,7 +17,7 @@ This framework documents what emotional intelligence means in MVQUEEN context.
 
 Knowing your emotional state, values, and impact.
 
-**In MVQUEEN voice:**
+**In MVQueen voice:**
 - "Recognize what you need. Act on it."
 - "Your standards are valid."
 - "Self-awareness is self-care."
@@ -31,7 +31,7 @@ Knowing your emotional state, values, and impact.
 
 Managing emotions without suppressing them.
 
-**In MVQUEEN voice:**
+**In MVQueen voice:**
 - "Softness is a choice, not a default."
 - "You decide your energy."
 - "Calm intention beats reactive speed."
@@ -45,7 +45,7 @@ Managing emotions without suppressing them.
 
 Understanding and honoring others' emotional experience.
 
-**In MVQUEEN voice:**
+**In MVQueen voice:**
 - "We see you."
 - "Your moment matters."
 - "Luxury is inclusive by design."
@@ -59,7 +59,7 @@ Understanding and honoring others' emotional experience.
 
 Navigating relationships with awareness and intention.
 
-**In MVQUEEN voice:**
+**In MVQueen voice:**
 - Community as chosen family
 - Authenticity over performance
 - Vulnerability as strength

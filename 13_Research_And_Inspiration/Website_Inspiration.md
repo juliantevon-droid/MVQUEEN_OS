@@ -2,7 +2,7 @@
 
 # Digital Luxury Positioning
 
-MVQUEEN is intentionally built for modern digital luxury culture.
+MVQueen is intentionally built for modern digital luxury culture.
 
 The brand aligns naturally with:
 - immersive ecommerce
@@ -14,7 +14,7 @@ The brand aligns naturally with:
 - emotionally immersive branding
 - visual atmosphere culture
 
-However, MVQUEEN should never become trend-dependent.
+However, MVQueen should never become trend-dependent.
 
 The emotional identity must remain timeless beneath cultural modernity.
 
@@ -26,7 +26,7 @@ The emotional identity must remain timeless beneath cultural modernity.
 
 ## Experience Philosophy
 
-The MVQUEEN ecommerce experience should never feel like a traditional online store.
+The MVQueen ecommerce experience should never feel like a traditional online store.
 
 It should emotionally feel like entering an immersive feminine luxury environment intentionally designed to emotionally soften, emotionally restore, emotionally inspire, and emotionally elevate women within a world that feels emotionally safe, visually calming, and sensorially immersive.
 
@@ -49,7 +49,7 @@ The experience itself becomes part of the luxury product.
 
 # Digital Luxury Philosophy
 
-MVQUEEN should not emotionally resemble:
+MVQueen should not emotionally resemble:
 - fast ecommerce
 - trend-heavy shopping environments
 - overstimulating marketplaces
@@ -57,7 +57,7 @@ MVQUEEN should not emotionally resemble:
 - aggressive sales funnels
 - chaotic product catalogs
 
-Instead, MVQUEEN should emotionally resemble:
+Instead, MVQueen should emotionally resemble:
 - a luxury editorial world
 - a cinematic feminine environment
 - an immersive sensory experience
@@ -73,7 +73,7 @@ The website itself becomes part of the emotional luxury experience.
 
 # Shopify Experience Summary
 
-MVQUEEN’s Shopify experience architecture is designed to create emotionally immersive feminine luxury ecommerce experiences centered around:
+MVQueen’s Shopify experience architecture is designed to create emotionally immersive feminine luxury ecommerce experiences centered around:
 - softness
 - emotional atmosphere
 - femininity
@@ -99,7 +99,7 @@ The ecommerce experience should feel:
 
 The goal is not simply ecommerce conversion.
 
-The goal is emotionally immersive luxury experiences that emotionally connect women to the atmosphere, identity, emotional transformation, and emotional world of MVQUEEN.
+The goal is emotionally immersive luxury experiences that emotionally connect women to the atmosphere, identity, emotional transformation, and emotional world of MVQueen.
 
 ---
 
@@ -107,7 +107,7 @@ The goal is emotionally immersive luxury experiences that emotionally connect wo
 
 # Digital Luxury Experience Standards
 
-Digital experiences within MVQUEEN should emotionally feel:
+Digital experiences within MVQueen should emotionally feel:
 - calm
 - emotionally breathable
 - emotionally immersive

@@ -1,10 +1,10 @@
-# 🏪 MVQUEEN — Boutique Inspiration
+# 🏪 MVQueen — Boutique Inspiration
 
 ---
 
 ## Purpose
 
-Curate and analyze the boutique and luxury brand experiences that inform MVQUEEN's aesthetic, customer experience design, and brand positioning.
+Curate and analyze the boutique and luxury brand experiences that inform MVQueen's aesthetic, customer experience design, and brand positioning.
 
 What the best boutique brands do — we study, filter, and apply.
 
@@ -34,14 +34,14 @@ When studying any boutique or luxury brand for inspiration:
 ### Brand Category Benchmarks
 
 **Accessible Luxury Benchmark brands:**
-Brands in MVQUEEN's positioning space — study their:
+Brands in MVQueen's positioning space — study their:
 - Pricing architecture
 - Product presentation
 - Email and social voice
 - Community building approach
 
 **Aspirational Luxury Benchmark brands:**
-Brands above MVQUEEN's price point — study their:
+Brands above MVQueen's price point — study their:
 - Visual language and restraint
 - How they create desire
 - Packaging and unboxing experience
@@ -55,7 +55,7 @@ Brands that have built exceptional communities — study their:
 - Brand loyalty mechanics
 
 ---
-*MVQUEEN Boutique Inspiration — Living Document*
+*MVQueen Boutique Inspiration — Living Document*
 *Updated as research is conducted.*
 
 ---

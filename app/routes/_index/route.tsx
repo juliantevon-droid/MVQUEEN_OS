@@ -12,7 +12,7 @@ export default function Index() {
   const { showForm } = useLoaderData<typeof loader>();
   return (
     <main style={{maxWidth: 720, margin: "4rem auto", padding: "1.5rem", fontFamily: "system-ui"}}>
-      <h1>MVQUEEN OS</h1>
+      <h1>MVQueen OS</h1>
       <p>Shopify catalog intelligence and product automation runtime.</p>
       {showForm && (
         <Form method="post" action="/auth/login">

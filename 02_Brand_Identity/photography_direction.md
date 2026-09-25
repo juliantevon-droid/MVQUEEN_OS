@@ -5,13 +5,13 @@
 
 ## Purpose
 
-Standardized creative direction for all product, lifestyle, and campaign photography. Photography is not documentation—it is emotional storytelling that reinforces the MVQUEEN brand identity.
+Standardized creative direction for all product, lifestyle, and campaign photography. Photography is not documentation—it is emotional storytelling that reinforces the MVQueen brand identity.
 
 ---
 
 ## Photography Doctrine
 
-**MVQUEEN photography is:**
+**MVQueen photography is:**
 - Cinematic and luxurious without being cold
 - Soft and diffused, never harsh or overly dramatic
 - Emotionally immersive—connects to feeling, not just product
@@ -19,7 +19,7 @@ Standardized creative direction for all product, lifestyle, and campaign photogr
 - Inclusive, diverse, and representative without performative wokeness
 - Composed with negative space (breathing room is luxury)
 
-**MVQUEEN photography is NOT:**
+**MVQueen photography is NOT:**
 - Flat, lifeless, or over-processed
 - Harsh, high-contrast, or overly saturated
 - Cluttered or busy with competing elements
@@ -148,7 +148,7 @@ Standardized creative direction for all product, lifestyle, and campaign photogr
 
 **Required:**
 - Dominant: Soft Cream (#FFF8F0), Pearl White (#FAFAF8), or Ivory (#F5F1EB)
-- Accent: One brand color (Deep Rose, MVQUEEN Gold, or Blush)
+- Accent: One brand color (Deep Rose, MVQueen Gold, or Blush)
 - Neutral: Charcoal or natural tones
 
 **Optional:**

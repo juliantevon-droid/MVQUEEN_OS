@@ -1,19 +1,19 @@
-# 👑 MVQUEEN — Product Framework
+# 👑 MVQueen — Product Framework
 ### How Products Are Built
 
 ---
 
 ## What This File Is
 
-This is not the product catalog (what exists). This is not the collection structure (how products are organized). This is the product development framework — how MVQUEEN decides what to build, validates it, develops it, and brings it to market.
+This is not the product catalog (what exists). This is not the collection structure (how products are organized). This is the product development framework — how MVQueen decides what to build, validates it, develops it, and brings it to market.
 
-Every product that enters the MVQUEEN ecosystem passes through this framework. Products that don't pass don't get built. Products that do get built with the full intention the brand demands.
+Every product that enters the MVQueen ecosystem passes through this framework. Products that don't pass don't get built. Products that do get built with the full intention the brand demands.
 
 ---
 
 ## THE PRODUCT DEVELOPMENT PHILOSOPHY
 
-MVQUEEN does not build products to fill a catalog. It builds products to fill emotional gaps.
+MVQueen does not build products to fill a catalog. It builds products to fill emotional gaps.
 
 The question that precedes every product decision is not *"what can we sell?"* — it is *"what does she need to feel more elevated, more herself, more at home in this world?"*
 
@@ -28,7 +28,7 @@ Before any product enters development, it must pass all five criteria:
 ### Criterion 01 — Emotional Necessity
 Does this product fill a real emotional gap in the customer's experience?
 
-Not a market gap — an emotional one. There is a difference between "no one makes this" and "this is what she needs to feel how MVQUEEN promises to make her feel."
+Not a market gap — an emotional one. There is a difference between "no one makes this" and "this is what she needs to feel how MVQueen promises to make her feel."
 
 > ✅ A fragrance that wears close to skin and becomes a signature — fills the emotional gap of wanting to be remembered without trying
 > ❌ Another body lotion because the category is large — fills a market gap, not an emotional one
@@ -36,9 +36,9 @@ Not a market gap — an emotional one. There is a difference between "no one mak
 ---
 
 ### Criterion 02 — Brand World Fit
-Does this product belong in the MVQUEEN world — visually, emotionally, and strategically?
+Does this product belong in the MVQueen world — visually, emotionally, and strategically?
 
-A product that requires the brand to communicate differently, design differently, or position differently does not fit. MVQUEEN builds products that extend the world — not ones that require the world to accommodate them.
+A product that requires the brand to communicate differently, design differently, or position differently does not fit. MVQueen builds products that extend the world — not ones that require the world to accommodate them.
 
 > ✅ A silk hair wrap — extends the sensory luxury and feminine lifestyle world naturally
 > ❌ A protein shake — requires a completely different brand register to sell authentically
@@ -46,7 +46,7 @@ A product that requires the brand to communicate differently, design differently
 ---
 
 ### Criterion 03 — Quality Delivery
-Can this product be delivered at a quality standard consistent with the MVQUEEN pricing tier it will occupy?
+Can this product be delivered at a quality standard consistent with the MVQueen pricing tier it will occupy?
 
 Accessible luxury means the experience must match the price point. A product that requires compromise on materials, formulation, or presentation to hit a price point should be repriced — not degraded.
 
@@ -58,7 +58,7 @@ Accessible luxury means the experience must match the price point. A product tha
 ### Criterion 04 — Ritual Potential
 Can this product become part of a ritual — something she reaches for repeatedly, that becomes part of how she cares for herself?
 
-One-time purchases build revenue. Ritual products build loyalty. MVQUEEN prioritizes products with repeat purchase potential — not because of margin, but because ritual products are the ones that genuinely improve how she feels over time.
+One-time purchases build revenue. Ritual products build loyalty. MVQueen prioritizes products with repeat purchase potential — not because of margin, but because ritual products are the ones that genuinely improve how she feels over time.
 
 > ✅ A daily serum — 60-day supply, becomes part of her morning
 > ❌ A single-use sheet mask with no companion products — no ritual anchor
@@ -68,11 +68,11 @@ One-time purchases build revenue. Ritual products build loyalty. MVQUEEN priorit
 ### Criterion 05 — Miss.Princess Clarity
 If this product could belong to either brand — which one does it actually belong to, and why?
 
-Every product belongs to one brand only. If a product's emotional register, aesthetic, or customer profile could fit either MVQUEEN or Miss.Princess, that ambiguity is resolved at the framework stage — not at launch.
+Every product belongs to one brand only. If a product's emotional register, aesthetic, or customer profile could fit either MVQueen or Miss.Princess, that ambiguity is resolved at the framework stage — not at launch.
 
-> ✅ A warm, sophisticated eau de parfum — MVQUEEN
+> ✅ A warm, sophisticated eau de parfum — MVQueen
 > ✅ A sparkly, playful lip gloss in rose gold packaging — Miss.Princess
-> ❌ A "feminine" product that's been assigned to MVQUEEN by default — needs reassessment
+> ❌ A "feminine" product that's been assigned to MVQueen by default — needs reassessment
 
 ---
 
@@ -164,7 +164,7 @@ Every product belongs to one brand only. If a product's emotional register, aest
 
 ## PART 3 — PRODUCT CATEGORIES & DEVELOPMENT PRIORITIES
 
-### MVQUEEN Core Categories
+### MVQueen Core Categories
 Each category has its own development rhythm and customer journey:
 
 | Category | Development Lead Time | Ritual Potential | Margin Profile |
@@ -216,11 +216,11 @@ PRODUCT BRIEF
 
 Product concept: [what it is]
 Emotional purpose: This product exists to make [feeling] accessible in [context].
-Target customer moment: [specific version of the MVQUEEN woman who needs this]
+Target customer moment: [specific version of the MVQueen woman who needs this]
 
 Validation:
 ☐ Emotional necessity — gap confirmed
-☐ Brand world fit — belongs in MVQUEEN or Miss.Princess (specify)
+☐ Brand world fit — belongs in MVQueen or Miss.Princess (specify)
 ☐ Quality delivery — quality standard achievable at target price
 ☐ Ritual potential — repeat purchase path identified
 ☐ Brand clarity — assigned to one brand only
@@ -239,4 +239,4 @@ Status: [Concept / Definition / Naming / Packaging / Copy / Launch]
 
 ---
 
-*This file is the MVQUEEN product development framework. It is distinct from Product_Catalog.md (what exists), Collection_Structure.md (how products are organized for sale), Product_Naming_System.md (naming conventions), Pricing_Strategy.md (price architecture), and SKU_Systems.md (inventory codes). This file governs how products are built.*
+*This file is the MVQueen product development framework. It is distinct from Product_Catalog.md (what exists), Collection_Structure.md (how products are organized for sale), Product_Naming_System.md (naming conventions), Pricing_Strategy.md (price architecture), and SKU_Systems.md (inventory codes). This file governs how products are built.*

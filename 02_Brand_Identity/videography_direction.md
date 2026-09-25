@@ -1,11 +1,11 @@
-# 🎥 MVQUEEN VIDEOGRAPHY DIRECTION  
-*The complete cinematic, emotional, atmospheric, and technical blueprint for MVQUEEN’s luxury feminine motion identity*
+# 🎥 MVQueen VIDEOGRAPHY DIRECTION  
+*The complete cinematic, emotional, atmospheric, and technical blueprint for MVQueen’s luxury feminine motion identity*
 
 ---
 
 # 1. Purpose of the Videography Direction System
 
-Videography is the **moving soul** of MVQUEEN.
+Videography is the **moving soul** of MVQueen.
 
 It defines how the brand:
 - moves  
@@ -17,7 +17,7 @@ It defines how the brand:
 - creates emotional immersion  
 - builds cinematic identity  
 
-This system ensures every MVQUEEN video — whether filmed, animated, or AI‑generated — reflects:
+This system ensures every MVQueen video — whether filmed, animated, or AI‑generated — reflects:
 
 - soft luxury  
 - feminine identity  
@@ -31,9 +31,9 @@ Videography is **emotional cinema**.
 
 ---
 
-# 2. MVQUEEN’s Cinematic Philosophy
+# 2. MVQueen’s Cinematic Philosophy
 
-MVQUEEN’s videography is built on four pillars:
+MVQueen’s videography is built on four pillars:
 
 ### **1. Soft Luxury Motion**
 Movement must feel warm, fluid, feminine, and emotionally elevated.
@@ -51,7 +51,7 @@ Every shot must celebrate softness, beauty, confidence, and transformation.
 
 # 3. Cinematic Atmosphere
 
-MVQUEEN’s cinematic world is defined by:
+MVQueen’s cinematic world is defined by:
 
 ### **Warm, Diffused Lighting**
 - golden hour  
@@ -84,7 +84,7 @@ Movement must feel:
 
 # 4. Camera Movement Direction
 
-Camera movement is the emotional heartbeat of MVQUEEN videography.
+Camera movement is the emotional heartbeat of MVQueen videography.
 
 ### **Primary Movement Style — Soft Fluidity**
 - slow pans  
@@ -137,7 +137,7 @@ Composition must always feel **romantic, soft, and elevated**.
 
 # 6. Motion Color Grading
 
-Color grading must reinforce MVQUEEN’s emotional identity.
+Color grading must reinforce MVQueen’s emotional identity.
 
 ### **Warm Highlights**
 Champagne, ivory, soft gold.
@@ -161,7 +161,7 @@ Color grading must always feel **romantic, warm, and feminine**.
 
 # 7. Cinematic Texture Direction
 
-Textures must reinforce MVQUEEN’s soft luxury.
+Textures must reinforce MVQueen’s soft luxury.
 
 ### **Approved Textures**
 - satin  
@@ -185,7 +185,7 @@ Textures must always feel **soft, warm, and luxurious**.
 
 # 8. Narrative Direction
 
-MVQUEEN’s narrative style is **emotional transformation**.
+MVQueen’s narrative style is **emotional transformation**.
 
 ### **Narrative Themes**
 - becoming  
@@ -235,7 +235,7 @@ Audio must always feel **warm, feminine, and cinematic**.
 
 # 10. Editing Direction
 
-Editing must reinforce MVQUEEN’s soft luxury.
+Editing must reinforce MVQueen’s soft luxury.
 
 ### **Pacing**
 - slow  
@@ -322,7 +322,7 @@ Social media must always feel **warm, feminine, and emotionally intimate**.
 
 # 13. Dual‑Brand Videography Expression
 
-## **MVQUEEN (Primary Identity)**
+## **MVQueen (Primary Identity)**
 - mature feminine luxury  
 - warm neutrals  
 - champagne gold  
@@ -345,7 +345,7 @@ Both must feel related — like two sisters — but never identical.
 
 # 14. Videography Misuse (Strictly Prohibited)
 
-The following break MVQUEEN’s luxury identity:
+The following break MVQueen’s luxury identity:
 
 - harsh lighting  
 - cold color grading  
@@ -374,7 +374,7 @@ Any misuse damages brand equity and breaks emotional consistency.
 This system ensures that every videographer, editor, designer, AI agent, and creative team member can:
 
 - maintain perfect cinematic consistency  
-- protect MVQUEEN’s emotional identity  
+- protect MVQueen’s emotional identity  
 - create luxury‑grade motion visuals  
 - scale the brand across categories  
 - build long‑term brand equity  
@@ -390,4 +390,4 @@ Videography is:
 - luxury  
 - feminine power  
 
-This system ensures MVQUEEN remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.
+This system ensures MVQueen remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.

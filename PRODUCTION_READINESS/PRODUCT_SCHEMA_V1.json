@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "mvqueen://production/product-schema/1.0",
-  "title": "MVQUEEN Canonical Product Production Record",
+  "title": "MVQueen Canonical Product Production Record",
   "type": "object",
   "additionalProperties": false,
   "required": [

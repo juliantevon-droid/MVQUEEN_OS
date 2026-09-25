@@ -1,11 +1,11 @@
-# 💗 MVQUEEN EMOTIONAL DRIVERS  
-*The complete emotional, psychological, and identity‑based forces that shape MVQUEEN customer desire, loyalty, and purchasing behavior*
+# 💗 MVQueen EMOTIONAL DRIVERS  
+*The complete emotional, psychological, and identity‑based forces that shape MVQueen customer desire, loyalty, and purchasing behavior*
 
 ---
 
 # 1. Purpose of the Emotional Drivers System
 
-Emotional Drivers explain **why she feels drawn to MVQUEEN**, why she desires the brand, and why she chooses it over others.
+Emotional Drivers explain **why she feels drawn to MVQueen**, why she desires the brand, and why she chooses it over others.
 
 This system reveals the emotional forces that shape:
 
@@ -23,9 +23,9 @@ They are **deep psychological motivators**.
 
 ---
 
-# 2. MVQUEEN’s Emotional Philosophy
+# 2. MVQueen’s Emotional Philosophy
 
-MVQUEEN customers are driven by four emotional pillars:
+MVQueen customers are driven by four emotional pillars:
 
 ### **1. Softness**
 She wants to feel gentle, warm, feminine, and emotionally safe.
@@ -43,7 +43,7 @@ These four emotions shape every decision she makes.
 
 ---
 
-# 3. The Core Emotional Drivers of MVQUEEN Customers
+# 3. The Core Emotional Drivers of MVQueen Customers
 
 ### **A. The Softness Driver**
 She desires:
@@ -169,7 +169,7 @@ If she doubts she deserves luxury.
 
 ---
 
-# 8. How MVQUEEN Activates Emotional Drivers
+# 8. How MVQueen Activates Emotional Drivers
 
 ### **A. Through Aesthetic**
 Soft glam, warm neutrals, feminine elegance.
@@ -217,9 +217,9 @@ Products that create emotional moments.
 
 ---
 
-# 10. The MVQUEEN Emotional Framework (MEF)
+# 10. The MVQueen Emotional Framework (MEF)
 
-Every MVQUEEN experience must activate:
+Every MVQueen experience must activate:
 
 ### **1. Softness**
 Warm, gentle, feminine.
@@ -259,4 +259,4 @@ They are:
 - emotional safety  
 - feminine power  
 
-This system ensures MVQUEEN speaks directly to the **heart, identity, and emotional world** of every customer.
+This system ensures MVQueen speaks directly to the **heart, identity, and emotional world** of every customer.

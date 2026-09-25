@@ -1,4 +1,4 @@
-# 🪝 MVQUEEN — Hook Systems
+# 🪝 MVQueen — Hook Systems
 
 ---
 
@@ -8,13 +8,13 @@ A hook has one job: stop her mid-scroll and make her feel something in under 3 s
 
 Not inform. Not sell. **Feel.**
 
-The best MVQUEEN hooks create a micro-moment of recognition —
+The best MVQueen hooks create a micro-moment of recognition —
 she sees herself, her desire, or her problem reflected back at her
 before she even realizes she stopped scrolling.
 
 ---
 
-## The 12 MVQUEEN Hook Formulas
+## The 12 MVQueen Hook Formulas
 
 ---
 
@@ -210,4 +210,4 @@ Track which hooks drive the most saves, shares, and link clicks.
 Build a swipe file of top performers in `13_Research_And_Inspiration/Swipe_Files.md`
 
 ---
-*MVQUEEN Hook Systems — Operational Document*
+*MVQueen Hook Systems — Operational Document*

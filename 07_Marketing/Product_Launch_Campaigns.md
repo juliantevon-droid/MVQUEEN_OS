@@ -4,7 +4,7 @@
 
 ## Core Transformation
 
-MVQUEEN is built around emotional transformation through beauty, femininity, confidence, self-expression, and elevated living.
+MVQueen is built around emotional transformation through beauty, femininity, confidence, self-expression, and elevated living.
 
 The brand understands that many women are not simply searching for products.
 
@@ -12,7 +12,7 @@ They are searching for feelings.
 
 Feelings they may have lost, neglected, buried, questioned, or struggled to reconnect with over time.
 
-MVQUEEN exists to help women emotionally reconnect with:
+MVQueen exists to help women emotionally reconnect with:
 - confidence
 - softness
 - beauty
@@ -33,7 +33,7 @@ It is about becoming more emotionally aligned with yourself.
 
 # Emotional Transformation Statement
 
-MVQUEEN transforms beauty from something women simply wear into something they emotionally experience.
+MVQueen transforms beauty from something women simply wear into something they emotionally experience.
 
 The brand transforms:
 - routines into rituals
@@ -43,7 +43,7 @@ The brand transforms:
 - aspiration into emotional possibility
 - beauty into self-connection
 
-At its core, MVQUEEN is about helping women feel more emotionally aligned, expressive, feminine, confident, and connected to the life they want to create for themselves.
+At its core, MVQueen is about helping women feel more emotionally aligned, expressive, feminine, confident, and connected to the life they want to create for themselves.
 
 ---
 
@@ -53,11 +53,11 @@ At its core, MVQUEEN is about helping women feel more emotionally aligned, expre
 
 ## Ritual Philosophy
 
-MVQUEEN is not designed to exist only as a product ecosystem.
+MVQueen is not designed to exist only as a product ecosystem.
 
 It is designed to emotionally integrate into the everyday lives, emotional routines, feminine environments, self-perception, emotional wellbeing, and restorative experiences of women.
 
-The goal of MVQUEEN is not simply consumption.
+The goal of MVQueen is not simply consumption.
 
 The goal is emotional integration through intentional rituals that emotionally reinforce:
 - softness
@@ -81,7 +81,7 @@ The brand should emotionally become part of how women:
 - emotionally romanticize everyday life
 - emotionally soften after overstimulation
 
-The rituals themselves become part of the emotional identity of MVQUEEN.
+The rituals themselves become part of the emotional identity of MVQueen.
 
 Women should emotionally associate the brand with emotional comfort, emotional softness, and emotionally restorative living.
 
@@ -91,7 +91,7 @@ Women should emotionally associate the brand with emotional comfort, emotional s
 
 # Brand Ritual Summary
 
-MVQUEEN’s Brand Ritual System is designed to emotionally integrate the brand into women’s everyday lives through:
+MVQueen’s Brand Ritual System is designed to emotionally integrate the brand into women’s everyday lives through:
 - intentional routines
 - emotional softness
 - feminine emotional wellbeing

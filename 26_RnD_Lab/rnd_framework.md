@@ -5,7 +5,7 @@
 
 ## Purpose
 
-The R&D Lab is where MVQUEEN tests new ideas before committing them to the OS. New content formats, AI experiments, product concepts, and system innovations are prototyped here.
+The R&D Lab is where MVQueen tests new ideas before committing them to the OS. New content formats, AI experiments, product concepts, and system innovations are prototyped here.
 
 ---
 

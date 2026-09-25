@@ -1,11 +1,11 @@
-# 👑 MVQUEEN — Brand Strategy System
+# 👑 MVQueen — Brand Strategy System
 
 ## Purpose
 
-The Brand Strategy System is the foundational intelligence architecture of the MVQUEEN ecosystem.
+The Brand Strategy System is the foundational intelligence architecture of the MVQueen ecosystem.
 
 It exists to:
-- define the emotional and commercial positioning of MVQUEEN
+- define the emotional and commercial positioning of MVQueen
 - preserve brand identity across all channels and systems
 - govern messaging, narrative, and audience alignment
 - anchor all marketing, content, and product decisions
@@ -24,9 +24,9 @@ All systems must align with Brand Strategy before execution.
 
 ## Core Principle
 
-MVQUEEN is not positioned as a standard ecommerce brand.
+MVQueen is not positioned as a standard ecommerce brand.
 
-MVQUEEN is positioned as an emotionally intelligent luxury feminine brand designed to restore softness, confidence, and elevated identity to women who desire transformation through beauty, fashion, and intentional living.
+MVQueen is positioned as an emotionally intelligent luxury feminine brand designed to restore softness, confidence, and elevated identity to women who desire transformation through beauty, fashion, and intentional living.
 
 ---
 
@@ -40,9 +40,9 @@ MVQUEEN is positioned as an emotionally intelligent luxury feminine brand design
 | Brand_Values.md | Core principles governing all brand decisions |
 | Brand_Positioning.md | Market position and competitive differentiation |
 | Brand_Personality.md | Emotional character and communication identity |
-| Brand_Essence.md | The soul and emotional core of MVQUEEN |
-| Emotional_Transformation.md | The transformation MVQUEEN delivers to customers |
-| Brand_Manifesto.md | The declaration of MVQUEEN's purpose and vision |
+| Brand_Essence.md | The soul and emotional core of MVQueen |
+| Emotional_Transformation.md | The transformation MVQueen delivers to customers |
+| Brand_Manifesto.md | The declaration of MVQueen's purpose and vision |
 | USP.md | Unique selling proposition and differentiation architecture |
 | Taglines.md | Brand expression and linguistic identity |
 | Slogans.md | Campaign-level emotional messaging |
@@ -67,7 +67,7 @@ MVQUEEN is positioned as an emotionally intelligent luxury feminine brand design
 
 ## Strategic Position
 
-MVQUEEN occupies the intersection of:
+MVQueen occupies the intersection of:
 - Emotional luxury and accessible femininity
 - AI-native commerce and human emotional intelligence
 - Beauty, fashion, and identity transformation

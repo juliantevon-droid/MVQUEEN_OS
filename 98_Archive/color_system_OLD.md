@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Color System
+# 👑 MVQueen — Color System
 ### The Technical Reference
 
 ---
@@ -30,7 +30,7 @@ Every designer, developer, AI image prompt, Shopify theme, social template, and 
 ## PRIMARY PALETTE — DETAILED
 
 ### 01 — Warm Ivory `#FAF6F0`
-**Role:** The canvas. The breathing room. The emotional baseline of every MVQUEEN composition.
+**Role:** The canvas. The breathing room. The emotional baseline of every MVQueen composition.
 
 **What it communicates:** Openness, refined simplicity, feminine calm. Not clinical white — this ivory carries warmth. It feels like morning light through linen curtains, not a hospital wall.
 
@@ -52,7 +52,7 @@ Every designer, developer, AI image prompt, Shopify theme, social template, and 
 ### 02 — Soft Blush `#F2D4CC`
 **Role:** Warmth layer. The color that makes the brand feel feminine and intimate rather than cold and neutral.
 
-**What it communicates:** Tenderness, beauty, emotional closeness. The blush tones in MVQUEEN are mature — not cotton candy, not millennial pink. Think pressed powder, not bubble gum.
+**What it communicates:** Tenderness, beauty, emotional closeness. The blush tones in MVQueen are mature — not cotton candy, not millennial pink. Think pressed powder, not bubble gum.
 
 **Use for:**
 - Homepage section backgrounds (alternating with Warm Ivory)
@@ -146,7 +146,7 @@ Every designer, developer, AI image prompt, Shopify theme, social template, and 
 - Logo accent element (foil or color variant)
 - Packaging foil detail, embossing, closure hardware
 - Campaign "hero" accent — one element per visual
-- Crown icon in MVQUEEN branding
+- Crown icon in MVQueen branding
 - Premium product callouts
 - Loyalty tier indicators
 
@@ -172,12 +172,12 @@ Every designer, developer, AI image prompt, Shopify theme, social template, and 
 
 ## MISS.PRINCESS PALETTE VARIATION
 
-Miss.Princess shares the MVQUEEN foundation palette but shifts the emotional temperature — lighter, softer, more playful.
+Miss.Princess shares the MVQueen foundation palette but shifts the emotional temperature — lighter, softer, more playful.
 
 | Name | Hex | Miss.Princess Role |
 |---|---|---|
 | Warm Ivory | `#FAF6F0` | Same — primary background |
-| Petal Pink | `#F7E0DA` | Primary accent (lighter than MVQUEEN blush) |
+| Petal Pink | `#F7E0DA` | Primary accent (lighter than MVQueen blush) |
 | Soft Lilac | `#E8DCF0` | Sister accent — youthful, dreamy |
 | Rose Quartz | `#E8B4B8` | Playful highlight |
 | Pearl | `#F0EDE8` | Metallic accent (replaces Champagne Gold) |
@@ -193,13 +193,13 @@ Miss.Princess does not use Dusty Rose as a primary accent — that reads too mat
 Follow the usage percentages in the palette table. Ivory dominates. Blush accents. Everything else supports. Champagne Gold appears last and earns the most attention.
 
 ### Rule 02 — Warm Always Wins
-When choosing between a warm neutral and a cool neutral — always choose warm. Cool grey, cool white, cool beige do not belong in MVQUEEN compositions. If it has a blue or green undertone, it's wrong.
+When choosing between a warm neutral and a cool neutral — always choose warm. Cool grey, cool white, cool beige do not belong in MVQueen compositions. If it has a blue or green undertone, it's wrong.
 
 ### Rule 03 — Metallics Never Fill
 Champagne Gold and Pearl are accent colors only. They exist as lines, details, foils, and single-element highlights. A gold button is fine. A gold section background is not.
 
 ### Rule 04 — No Pure Black. Ever.
-Pure black (`#000000`) does not appear in MVQUEEN branding. It's too cold, too harsh, too disconnected from the warmth of the palette. Espresso `#3B2314` replaces it in every context.
+Pure black (`#000000`) does not appear in MVQueen branding. It's too cold, too harsh, too disconnected from the warmth of the palette. Espresso `#3B2314` replaces it in every context.
 
 ### Rule 05 — No Pure White. Ever.
 Pure white (`#FFFFFF`) is replaced by Warm Ivory `#FAF6F0` in all brand contexts. White feels clinical. Ivory feels considered.
@@ -214,7 +214,7 @@ Any single visual — social post, email section, product card — uses a maximu
 
 ## PHOTOGRAPHY COLOR GRADING BRIEF
 
-When editing MVQUEEN photography:
+When editing MVQueen photography:
 
 **Target feel:** Warm, cinematic, softly luminous. Like golden hour held a moment longer than it should have.
 
@@ -238,7 +238,7 @@ When editing MVQUEEN photography:
 
 ## AI IMAGE PROMPT COLOR LANGUAGE
 
-When generating MVQUEEN visuals with AI tools, use these descriptors:
+When generating MVQueen visuals with AI tools, use these descriptors:
 
 **Palette descriptors:**
 `warm ivory`, `soft blush tones`, `dusty rose`, `champagne accents`, `warm taupe neutrals`, `espresso depth`, `muted feminine palette`, `candlelit warmth`
@@ -250,7 +250,7 @@ When generating MVQUEEN visuals with AI tools, use these descriptors:
 
 ## SHOPIFY THEME COLOR MAPPING
 
-| Shopify Variable | MVQUEEN Value |
+| Shopify Variable | MVQueen Value |
 |---|---|
 | `--color-background` | `#FAF6F0` |
 | `--color-background-2` | `#E8DDD0` |
@@ -267,4 +267,4 @@ When generating MVQUEEN visuals with AI tools, use these descriptors:
 
 ---
 
-*This file is the MVQUEEN color system technical reference. It pairs with Visual_Direction.md (composition), Typography_System.md (type), and Photography_Direction.md (imagery). The philosophy behind these color choices lives in Brand Bible §18.*
+*This file is the MVQueen color system technical reference. It pairs with Visual_Direction.md (composition), Typography_System.md (type), and Photography_Direction.md (imagery). The philosophy behind these color choices lives in Brand Bible §18.*

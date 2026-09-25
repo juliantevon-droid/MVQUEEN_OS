@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — PRICING ENGINE (BLOCK S)
+# MVQueen OMNILUXE ENGINE — PRICING ENGINE (BLOCK S)
 # SIMPLE MULTIPLIER MODEL
 # ---------------------------------------------------------
 

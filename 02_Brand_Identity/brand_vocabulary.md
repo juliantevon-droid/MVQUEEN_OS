@@ -1,11 +1,11 @@
-# 💬 MVQUEEN BRAND VOCABULARY  
-*The complete linguistic, emotional, semantic, and identity‑shaping vocabulary system of the MVQUEEN brand*
+# 💬 MVQueen BRAND VOCABULARY  
+*The complete linguistic, emotional, semantic, and identity‑shaping vocabulary system of the MVQueen brand*
 
 ---
 
 # 1. Purpose of the Brand Vocabulary System
 
-Brand Vocabulary defines the **words, phrases, emotional tone, and linguistic identity** that MVQUEEN uses across:
+Brand Vocabulary defines the **words, phrases, emotional tone, and linguistic identity** that MVQueen uses across:
 
 - marketing  
 - product descriptions  
@@ -16,7 +16,7 @@ Brand Vocabulary defines the **words, phrases, emotional tone, and linguistic id
 - AI‑generated content  
 - internal communication  
 
-This system ensures that every word spoken by MVQUEEN:
+This system ensures that every word spoken by MVQueen:
 
 - reinforces feminine luxury  
 - builds emotional connection  
@@ -30,9 +30,9 @@ Brand Vocabulary is **linguistic identity architecture**.
 
 ---
 
-# 2. MVQUEEN’s Linguistic Philosophy
+# 2. MVQueen’s Linguistic Philosophy
 
-MVQUEEN’s vocabulary is built on four pillars:
+MVQueen’s vocabulary is built on four pillars:
 
 ### **1. Soft Feminine Luxury**
 Warm, elegant, emotionally elevated language.
@@ -50,7 +50,7 @@ Words that evoke transformation, confidence, and inner royalty.
 
 # 3. Core Vocabulary Themes
 
-MVQUEEN’s vocabulary must always evoke:
+MVQueen’s vocabulary must always evoke:
 
 - softness  
 - warmth  
@@ -66,7 +66,7 @@ Words must feel like **a soft, warm, feminine embrace**.
 
 ---
 
-# 4. Signature MVQUEEN Words
+# 4. Signature MVQueen Words
 
 These words form the **core identity** of the brand’s language:
 
@@ -123,7 +123,7 @@ Words that evoke emotional transformation:
 - stepping into your power  
 - returning to yourself  
 
-These words reinforce MVQUEEN’s emotional identity.
+These words reinforce MVQueen’s emotional identity.
 
 ---
 
@@ -206,7 +206,7 @@ Words that celebrate feminine identity:
 - feminine power  
 - divine feminine  
 
-These words reinforce MVQUEEN’s core identity.
+These words reinforce MVQueen’s core identity.
 
 ---
 
@@ -224,13 +224,13 @@ Words that express personal evolution:
 - become  
 - awaken  
 
-Transformation is central to MVQUEEN’s emotional promise.
+Transformation is central to MVQueen’s emotional promise.
 
 ---
 
 # 10. Forbidden Vocabulary (Strictly Prohibited)
 
-These words break MVQUEEN’s emotional and luxury identity:
+These words break MVQueen’s emotional and luxury identity:
 
 ### **Harsh Words**
 - aggressive  
@@ -264,11 +264,11 @@ These words break MVQUEEN’s emotional and luxury identity:
 - metrics  
 - data‑heavy language  
 
-These words must never appear in MVQUEEN communication.
+These words must never appear in MVQueen communication.
 
 ---
 
-# 11. MVQUEEN Phrasing Principles
+# 11. MVQueen Phrasing Principles
 
 ### **1. Speak softly, confidently**
 Language must feel warm, feminine, and assured.
@@ -290,7 +290,7 @@ Every phrase must feel intimate and elevated.
 
 ---
 
-# 12. Signature MVQUEEN Phrases
+# 12. Signature MVQueen Phrases
 
 These phrases should appear across brand communication:
 
@@ -348,7 +348,7 @@ Vocabulary must adapt while staying in one emotional universe.
 ### **Before (Incorrect)**
 “This product is high‑quality and durable.”
 
-### **After (MVQUEEN)**
+### **After (MVQueen)**
 “A soft, elegant piece crafted to elevate your feminine beauty.”
 
 ---
@@ -356,7 +356,7 @@ Vocabulary must adapt while staying in one emotional universe.
 ### **Before (Incorrect)**
 “Fast shipping and affordable prices.”
 
-### **After (MVQUEEN)**
+### **After (MVQueen)**
 “A beautifully delivered experience, created with care and intention.”
 
 ---
@@ -364,7 +364,7 @@ Vocabulary must adapt while staying in one emotional universe.
 ### **Before (Incorrect)**
 “Bold, intense, dramatic look.”
 
-### **After (MVQUEEN)**
+### **After (MVQueen)**
 “A soft, radiant glow that enhances your natural beauty.”
 
 ---
@@ -374,7 +374,7 @@ Vocabulary must adapt while staying in one emotional universe.
 This system ensures that every writer, designer, marketer, AI agent, and creative team member can:
 
 - maintain perfect linguistic consistency  
-- protect MVQUEEN’s emotional identity  
+- protect MVQueen’s emotional identity  
 - create luxury‑grade communication  
 - scale the brand across categories  
 - build long‑term brand equity  
@@ -395,7 +395,7 @@ Brand Vocabulary is:
 
 ## 16. Deep Semantic Vocabulary Clusters
 
-MVQUEEN’s vocabulary is built from semantic clusters that reinforce emotional identity. Each cluster contains core words, supporting words, and contextual usage.
+MVQueen’s vocabulary is built from semantic clusters that reinforce emotional identity. Each cluster contains core words, supporting words, and contextual usage.
 
 ---
 
@@ -464,7 +464,7 @@ stepping into your power, rising, blooming, unfolding
 ---
 
 ### E. Identity Cluster  
-*Purpose: reinforce MVQUEEN’s core promise — feminine identity.*
+*Purpose: reinforce MVQueen’s core promise — feminine identity.*
 
 **Core Words:**  
 queen, muse, goddess, inner royalty, feminine identity  
@@ -479,9 +479,9 @@ divine feminine, your glow, your beauty, your softness
 
 ---
 
-## 17. MVQUEEN Sentence Architecture
+## 17. MVQueen Sentence Architecture
 
-How MVQUEEN builds sentences is part of the brand identity.
+How MVQueen builds sentences is part of the brand identity.
 
 ---
 
@@ -521,7 +521,7 @@ Examples:
 
 ---
 
-## 18. MVQUEEN Tone Modifiers
+## 18. MVQueen Tone Modifiers
 
 Micro‑words that shape emotional tone.
 
@@ -542,7 +542,7 @@ confidently, radiantly, fully, beautifully
 
 ---
 
-## 19. MVQUEEN Signature Word Pairings
+## 19. MVQueen Signature Word Pairings
 
 These pairings become recognizable linguistic signatures.
 
@@ -561,7 +561,7 @@ These pairings become recognizable linguistic signatures.
 
 ---
 
-## 20. MVQUEEN Vocabulary for Product Naming
+## 20. MVQueen Vocabulary for Product Naming
 
 ### A. Texture‑Based Names  
 Satin Glow  
@@ -583,7 +583,7 @@ Goddess Glow
 
 ---
 
-## 21. MVQUEEN Vocabulary for Campaigns
+## 21. MVQueen Vocabulary for Campaigns
 
 ### Campaign Themes  
 Softness as Strength  
@@ -599,7 +599,7 @@ Becoming Her
 
 ---
 
-## 22. MVQUEEN Vocabulary for Social Media
+## 22. MVQueen Vocabulary for Social Media
 
 Short, warm, feminine, intimate.
 
@@ -612,7 +612,7 @@ Examples:
 
 ---
 
-## 23. MVQUEEN Vocabulary for Packaging
+## 23. MVQueen Vocabulary for Packaging
 
 Examples:  
 - “Crafted for your feminine radiance.”  
@@ -622,7 +622,7 @@ Examples:
 
 ---
 
-## 24. MVQUEEN Vocabulary for AI Agents
+## 24. MVQueen Vocabulary for AI Agents
 
 Ensures agents speak in brand voice.
 
@@ -634,7 +634,7 @@ Examples:
 
 ---
 
-## 25. MVQUEEN Vocabulary for Customer Experience
+## 25. MVQueen Vocabulary for Customer Experience
 
 Used in emails, support, onboarding.
 
@@ -648,4 +648,4 @@ Examples:
 
 # END OF EXPANDED VOCABULARY BLOCK
 
-This system ensures MVQUEEN speaks with a **timeless, feminine, luxurious, emotionally resonant voice** across every platform and product category.
+This system ensures MVQueen speaks with a **timeless, feminine, luxurious, emotionally resonant voice** across every platform and product category.

@@ -1,14 +1,14 @@
-# 🗞️ MVQUEEN — Headline Frameworks
+# 🗞️ MVQueen — Headline Frameworks
 
 ---
 
-## What Makes a MVQUEEN Headline
+## What Makes a MVQueen Headline
 
-A MVQUEEN headline stops her without tricking her.
+A MVQueen headline stops her without tricking her.
 It creates immediate desire, recognition, or curiosity —
 and it delivers on whatever it promises.
 
-Headlines in MVQUEEN's world are never:
+Headlines in MVQueen's world are never:
 - Shock-based
 - Shame-based
 - Vague to the point of meaning nothing
@@ -56,7 +56,7 @@ A single observation so precise it creates immediate recognition.
 
 Sets up what this is NOT — then lands what it IS.
 
-**Formula:** Not [the expected thing]. [The MVQUEEN thing.]
+**Formula:** Not [the expected thing]. [The MVQueen thing.]
 
 **Examples:**
 - "Not another serum. A ritual she actually keeps."
@@ -101,9 +101,9 @@ No description. The name lands the statement.
 **Formula:** [Emotional buildup] → [Product Name.]
 
 **Examples:**
-- "The thing that changed her morning. MVQUEEN Glow Serum."
-- "She finally found it. MVQUEEN Velvet Body Butter."
-- "Her skin, elevated. MVQUEEN Luminous Oil."
+- "The thing that changed her morning. MVQueen Glow Serum."
+- "She finally found it. MVQueen Velvet Body Butter."
+- "Her skin, elevated. MVQueen Luminous Oil."
 
 ---
 

@@ -1,4 +1,4 @@
-# MVQUEEN Shopify Export Contract V1
+# MVQueen Shopify Export Contract V1
 
 ## Purpose
 

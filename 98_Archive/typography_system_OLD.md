@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Typography System
+# 👑 MVQueen — Typography System
 ### The Type Reference
 
 ---
@@ -6,7 +6,7 @@
 ## What This File Is
 
 This is not visual philosophy. That lives in the Brand Bible §16.
-This is the working type system — font names, weights, size scales, pairing logic, platform rules, and every typographic decision made for MVQUEEN.
+This is the working type system — font names, weights, size scales, pairing logic, platform rules, and every typographic decision made for MVQueen.
 
 Every designer, developer, Shopify theme, email template, social graphic, and AI visual prompt pulls from this file.
 
@@ -45,7 +45,7 @@ Google Fonts: Jost:wght@200;300;400;500
 Never use: 700 Bold or heavier, in display sizes, italic for emotional emphasis (use Cormorant italic instead)
 
 ### Miss.Princess Display Alternative
-Playfair Display — Italic 400i. For campaign headers and social display copy. Never used in MVQUEEN primary contexts.
+Playfair Display — Italic 400i. For campaign headers and social display copy. Never used in MVQueen primary contexts.
 
 ---
 
@@ -80,7 +80,7 @@ Pattern D — Navigation: Jost 400 13px nav / Jost 500 13px active / Jost 500 11
 
 ## PART 4 — TYPOGRAPHIC RULES
 
-Letter-spacing: Display -0.01em | MVQUEEN brand name 0.18em | Nav labels 0.12–0.18em | Body 0.01em | Overlines 0.25–0.3em
+Letter-spacing: Display -0.01em | MVQueen brand name 0.18em | Nav labels 0.12–0.18em | Body 0.01em | Overlines 0.25–0.3em
 
 Line height: Display 1.0–1.1 | Sub-headers 1.2–1.3 | Body 1.6–1.75 | Captions 1.4 | Product descriptions 1.7
 

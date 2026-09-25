@@ -1,11 +1,11 @@
-# 👑 MVQUEEN — Content Pillars
+# 👑 MVQueen — Content Pillars
 ### The Seven Pillars of the Brand World
 
 ---
 
 ## What This File Is
 
-Content pillars are not categories. They are the emotional territories MVQUEEN owns in her customer's mind.
+Content pillars are not categories. They are the emotional territories MVQueen owns in her customer's mind.
 
 Every piece of content — every caption, every post, every video, every blog, every email — belongs to one of these seven pillars. The pillar it belongs to determines its emotional purpose, its visual direction, its copy register, and how it fits into the larger brand story.
 
@@ -15,7 +15,7 @@ Without pillars, content is just posting. With pillars, content builds a world.
 
 ## THE CONTENT PHILOSOPHY
 
-MVQUEEN content makes women feel something before it sells them anything.
+MVQueen content makes women feel something before it sells them anything.
 
 Every piece of content answers one of three questions in her mind:
 1. *Is this world for me?* — Brand world content
@@ -30,17 +30,17 @@ The seven pillars cover all three. The split should never be more than 40% selli
 **The world she wants to live in.**
 
 ### What It Is
-Visual and editorial content that creates the MVQUEEN atmosphere. No selling. No product features. Pure world-building — the feeling of being inside a cinematic, feminine, elevated life.
+Visual and editorial content that creates the MVQueen atmosphere. No selling. No product features. Pure world-building — the feeling of being inside a cinematic, feminine, elevated life.
 
 ### Emotional Purpose
-She should feel softened, inspired, and immersed. This pillar makes her want to stay in the MVQUEEN world.
+She should feel softened, inspired, and immersed. This pillar makes her want to stay in the MVQueen world.
 
 ### Content Examples
 - Candlelit skincare shelves at golden hour
 - A silk slip on the back of a chair, warm morning light
 - Steam rising from a cup, a product placed beside it
 - Slow-motion fragrance spray
-- A beautifully made bed with one MVQUEEN product visible
+- A beautifully made bed with one MVQueen product visible
 - Feminine interior aesthetic flat lays
 - Hands holding a product — warm-toned, intimate, close
 
@@ -67,7 +67,7 @@ Minimal. Atmospheric. Sometimes no copy at all — just the visual and a one-lin
 Content that shows, teaches, and elevates the experience of caring for yourself — skincare, fragrance, haircare, and beauty as intentional ritual.
 
 ### Emotional Purpose
-She should feel nurtured, calm, and reconnected to herself. This pillar builds product authority and positions MVQUEEN as a knowledgeable guide — not a promoter.
+She should feel nurtured, calm, and reconnected to herself. This pillar builds product authority and positions MVQueen as a knowledgeable guide — not a promoter.
 
 ### Content Examples
 - Step-by-step morning skincare ritual (product-led, ritual framing)
@@ -99,7 +99,7 @@ Warm, knowledgeable, personal. Reads like a friend sharing what works — not a 
 **Femininity as identity — not performance.**
 
 ### What It Is
-The most personal pillar. Content that speaks to who the MVQUEEN woman is, how she thinks about herself, and how she moves through the world. Essays, perspectives, affirmations done with intelligence — not clichés.
+The most personal pillar. Content that speaks to who the MVQueen woman is, how she thinks about herself, and how she moves through the world. Essays, perspectives, affirmations done with intelligence — not clichés.
 
 ### Emotional Purpose
 She should feel understood, seen, and emotionally connected to the brand. This pillar builds loyalty that no sale can create.
@@ -133,7 +133,7 @@ Direct, conviction-led, emotionally intelligent. Not self-help. Not motivational
 **Clothing as emotional communication.**
 
 ### What It Is
-Content that frames fashion as identity expression — not trend following. How she dresses tells a story about how she sees herself. MVQUEEN helps her dress that story intentionally.
+Content that frames fashion as identity expression — not trend following. How she dresses tells a story about how she sees herself. MVQueen helps her dress that story intentionally.
 
 ### Emotional Purpose
 She should feel expressive, elevated, and aligned with her own identity. This pillar supports the fashion category and builds style authority.
@@ -143,7 +143,7 @@ She should feel expressive, elevated, and aligned with her own identity. This pi
 - Outfit breakdown: the pieces + why they work together
 - "The dress that made me walk differently"
 - Capsule wardrobe build for the feminine woman
-- Styling a MVQUEEN piece 3 ways
+- Styling a MVQueen piece 3 ways
 - "Dressing for yourself vs. dressing for the occasion — the difference"
 - Texture focus: why fabric matters more than most people realize
 - "The outfit formula that works every time"
@@ -171,7 +171,7 @@ Editorial, confident, specific. Focused on feeling and identity — never "hot l
 Content that makes the senses come alive through visuals and language. Fragrance reveals, unboxing experiences, texture-forward visuals, slow-motion product content. This is the most experiential pillar.
 
 ### Emotional Purpose
-She should feel immersed and transported. This pillar differentiates MVQUEEN from brands that show products — it shows *experiences.*
+She should feel immersed and transported. This pillar differentiates MVQueen from brands that show products — it shows *experiences.*
 
 ### Content Examples
 - Sensory unboxing: tissue paper, scent, the weight of the packaging
@@ -205,7 +205,7 @@ Sensory, immersive, almost cinematic. Short sentences. Pause lines. Sounds and t
 Content that inspires women to find beauty, intention, and softness in the everyday — the morning routine, the evening wind-down, the quiet Tuesday that becomes a ritual.
 
 ### Emotional Purpose
-She should feel present, calm, and like her ordinary life is worth romanticizing. This pillar builds the lifestyle aspiration that makes women stay in the MVQUEEN world between purchases.
+She should feel present, calm, and like her ordinary life is worth romanticizing. This pillar builds the lifestyle aspiration that makes women stay in the MVQueen world between purchases.
 
 ### Content Examples
 - "The slow morning formula that never fails"
@@ -234,28 +234,28 @@ Intimate, peaceful, poetic. Feels like she wrote it herself — or like it was w
 ---
 
 ## PILLAR 07 — Brand World & Identity
-**MVQUEEN as a universe, not a store.**
+**MVQueen as a universe, not a store.**
 
 ### What It Is
-Content that builds the mythology and emotional identity of MVQUEEN itself — the brand story, the philosophy, the world being built, the community it serves.
+Content that builds the mythology and emotional identity of MVQueen itself — the brand story, the philosophy, the world being built, the community it serves.
 
 ### Emotional Purpose
 She should feel emotionally connected to the brand — not just to the products. This pillar converts customers into community members.
 
 ### Content Examples
-- "Why MVQUEEN exists — the real story"
+- "Why MVQueen exists — the real story"
 - "What 'Most Valuable Queen' actually means"
 - "The brand we're building — and who it's for"
 - Community features and customer stories
 - Behind the scenes of a collection build
 - "The brands that excluded you were wrong"
 - Campaign storytelling and collection launches
-- "MVQUEEN and Miss.Princess — why we needed both"
+- "MVQueen and Miss.Princess — why we needed both"
 
 ### Copy Register
 Direct, honest, conviction-led. Brand voice at its most personal and most intentional.
 
-> *"We built MVQUEEN because accessible luxury wasn't a phrase — it was a belief. And no one was living it fully."*
+> *"We built MVQueen because accessible luxury wasn't a phrase — it was a belief. And no one was living it fully."*
 > *"This isn't a store. It's a world. And it was built for you."*
 
 ### Platform Split
@@ -270,7 +270,7 @@ Direct, honest, conviction-led. Brand voice at its most personal and most intent
 
 ## CONTENT MIX GUIDE
 
-A balanced MVQUEEN content week looks like this:
+A balanced MVQueen content week looks like this:
 
 | Day | Pillar | Platform | Format |
 |---|---|---|---|
@@ -303,22 +303,22 @@ Miss.Princess operates her own content ecosystem with these pillars:
 | Trend & Style | Fashion with trend-awareness |
 | Princess Era | Identity and fun confidence content |
 
-Miss.Princess content is never published on MVQUEEN channels and vice versa. They live in separate social ecosystems.
+Miss.Princess content is never published on MVQueen channels and vice versa. They live in separate social ecosystems.
 
 ---
 
 ## WHAT NEVER GETS POSTED
 
-Regardless of pillar, MVQUEEN content never includes:
+Regardless of pillar, MVQueen content never includes:
 
 - Countdown timers or panic urgency
 - Price-first content ("Only $45!")
 - Generic motivational quotes with no brand voice
 - Content that makes women feel inadequate before offering a solution
-- Trend-chasing content that doesn't pass through MVQUEEN voice
+- Trend-chasing content that doesn't pass through MVQueen voice
 - Anything that could belong to another brand
 - Anything that uses words from the Forbidden Words list
 
 ---
 
-*This file defines the seven content pillars of MVQUEEN. Every piece of content belongs to exactly one pillar. Pairs with Caption_Templates.md (platform copy), Hook_Systems.md (how content opens), Instagram_Strategy.md, TikTok_Strategy.md, and Pinterest_Strategy.md.*
+*This file defines the seven content pillars of MVQueen. Every piece of content belongs to exactly one pillar. Pairs with Caption_Templates.md (platform copy), Hook_Systems.md (how content opens), Instagram_Strategy.md, TikTok_Strategy.md, and Pinterest_Strategy.md.*

@@ -1,10 +1,10 @@
-# 👑 MVQUEEN — Executive Overview
+# 👑 MVQueen — Executive Overview
 
 ---
 
-## What MVQUEEN Is
+## What MVQueen Is
 
-MVQUEEN is a luxury feminine ecommerce ecosystem built on the conviction that softness is strength — that beauty should restore women, that luxury should feel accessible and warm, and that emotional intelligence must govern every system, including AI.
+MVQueen is a luxury feminine ecommerce ecosystem built on the conviction that softness is strength — that beauty should restore women, that luxury should feel accessible and warm, and that emotional intelligence must govern every system, including AI.
 
 **Sister brand:** Miss.Princess (distinct positioning, shared infrastructure)
 **Category:** Beauty, fashion, hair, accessories, fragrance
@@ -64,7 +64,7 @@ MVQUEEN is a luxury feminine ecommerce ecosystem built on the conviction that so
 3.
 
 ---
-*MVQUEEN Executive Overview — Update after every major system change or milestone.*
+*MVQueen Executive Overview — Update after every major system change or milestone.*
 
 ---
 ---

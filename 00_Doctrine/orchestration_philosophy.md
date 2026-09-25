@@ -1,4 +1,4 @@
-# MVQUEEN — Orchestration Philosophy
+# MVQueen — Orchestration Philosophy
 
 ---
 
@@ -18,7 +18,7 @@
 
 # Philosophy Purpose
 
-The MVQUEEN Orchestration Philosophy exists to:
+The MVQueen Orchestration Philosophy exists to:
 - govern ecosystem coordination
 - define operational intelligence
 - align AI systems
@@ -41,7 +41,7 @@ This framework defines:
 
 # Core Orchestration Identity
 
-MVQUEEN operates as:
+MVQueen operates as:
 - an AI-native ecosystem
 - a doctrine-governed infrastructure
 - an emotionally intelligent commerce system
@@ -62,7 +62,7 @@ The ecosystem is designed for:
 
 # Orchestration Philosophy
 
-MVQUEEN orchestration exists to:
+MVQueen orchestration exists to:
 - simplify complexity
 - improve execution
 - coordinate systems
@@ -299,7 +299,7 @@ This preserves:
 
 # Scalability Philosophy
 
-As MVQUEEN scales:
+As MVQueen scales:
 - orchestration must remain stable
 - doctrine inheritance must remain preserved
 - operational intelligence must remain organized
@@ -317,13 +317,13 @@ Scaling must never create:
 
 # Strategic Principle
 
-MVQUEEN orchestration systems exist to coordinate emotionally intelligent feminine luxury operations through doctrine-first operational architecture designed for scalable AI-native commerce infrastructure.
+MVQueen orchestration systems exist to coordinate emotionally intelligent feminine luxury operations through doctrine-first operational architecture designed for scalable AI-native commerce infrastructure.
 
 ---
 
 # Orchestration Compression
 
-MVQUEEN operates through doctrine-governed orchestration systems designed to preserve emotional intelligence, semantic consistency, feminine luxury positioning, operational clarity, and scalable AI-native execution.
+MVQueen operates through doctrine-governed orchestration systems designed to preserve emotional intelligence, semantic consistency, feminine luxury positioning, operational clarity, and scalable AI-native execution.
 
 ---
 

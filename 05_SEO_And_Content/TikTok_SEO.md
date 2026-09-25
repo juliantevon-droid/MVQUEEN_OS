@@ -1,10 +1,10 @@
-# 🎯 MVQUEEN — TikTok SEO
+# 🎯 MVQueen — TikTok SEO
 
 ---
 
 ## Purpose
 
-Optimize MVQUEEN's TikTok content for discovery — ensuring videos reach the right audience through strategic keyword use, sound selection, and content optimization.
+Optimize MVQueen's TikTok content for discovery — ensuring videos reach the right audience through strategic keyword use, sound selection, and content optimization.
 
 TikTok's search function is growing rapidly. Women now search TikTok the way they search Google for beauty and lifestyle content.
 
@@ -87,11 +87,11 @@ Caption = TikTok's description field.
 **Sound strategy:**
 - Use trending sounds when brand-appropriate
 - Original audio builds brand identity over time
-- ASMR/soft sounds perform well for MVQUEEN aesthetic
+- ASMR/soft sounds perform well for MVQueen aesthetic
 - Always check sound is not copyrighted before posting
 
 ---
-*MVQUEEN TikTok SEO — Operational Document*
+*MVQueen TikTok SEO — Operational Document*
 
 ---
 ---

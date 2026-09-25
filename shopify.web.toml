@@ -1,4 +1,4 @@
-name = "MVQUEEN OS"
+name = "MVQueen OS"
 roles = ["frontend", "backend"]
 webhooks_path = "/webhooks"
 

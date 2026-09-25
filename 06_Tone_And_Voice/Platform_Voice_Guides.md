@@ -1,11 +1,11 @@
-# 🎙️ MVQUEEN — Platform Voice Guides
+# 🎙️ MVQueen — Platform Voice Guides
 
 ---
 
 ## How to Use This Document
 
 Each platform has its own native language — its own pace, intimacy level, and format.
-MVQUEEN's voice stays consistent across all platforms,
+MVQueen's voice stays consistent across all platforms,
 but the *expression* of that voice adapts to where it lives.
 
 Same soul. Different register.
@@ -49,7 +49,7 @@ Line 7: Usage — practical but written with warmth
 ## Email Voice
 
 ### The Standard
-Email is the most intimate channel MVQUEEN has.
+Email is the most intimate channel MVQueen has.
 She gave us her inbox — that's not nothing.
 Write every email like a personal letter, not a broadcast.
 
@@ -108,7 +108,7 @@ It must feel like a message from someone who respects her attention.
 ### SMS Templates by Type
 
 **Order confirmation:**
-*Your MVQUEEN order is confirmed. We packed it with intention — she's on her way. 🤍*
+*Your MVQueen order is confirmed. We packed it with intention — she's on her way. 🤍*
 
 **Shipping notification:**
 *She's been shipped. Your [Product Name] is moving toward you. Track her here: [link]*
@@ -117,7 +117,7 @@ It must feel like a message from someone who respects her attention.
 *You left something behind. She's still here if you want her. [link]*
 
 **New arrival:**
-*Something new just arrived at MVQUEEN — and it has your name on it. [link]*
+*Something new just arrived at MVQueen — and it has your name on it. [link]*
 
 **Flash moment (not sale, but launch):**
 *[Product Name] is live. First access, just for you. [link]*
@@ -127,7 +127,7 @@ It must feel like a message from someone who respects her attention.
 ## Social Voice
 
 ### The Standard
-Social media is where MVQUEEN builds its world publicly.
+Social media is where MVQueen builds its world publicly.
 The voice must feel human enough to stop a scroll
 and elevated enough to belong to a luxury brand.
 
@@ -167,7 +167,7 @@ and elevated enough to belong to a luxury brand.
 ## Ad Copy Voice
 
 ### The Standard
-Ad copy is MVQUEEN's first impression for thousands of women
+Ad copy is MVQueen's first impression for thousands of women
 who have never heard of the brand.
 It must be sharp, true, and impossible to forget.
 
@@ -189,7 +189,7 @@ One line. Maximum impact. Reads in under 2 seconds.
 ### Ad Copy Examples
 
 **Awareness ad:**
-*Primary:* For the woman who chooses softness on purpose. MVQUEEN — luxury feminine living.
+*Primary:* For the woman who chooses softness on purpose. MVQueen — luxury feminine living.
 *Headline:* Softness is a standard.
 
 **Conversion ad:**
@@ -205,7 +205,7 @@ One line. Maximum impact. Reads in under 2 seconds.
 ## Blog Voice
 
 ### The Standard
-Blog content is where MVQUEEN demonstrates expertise and builds SEO authority.
+Blog content is where MVQueen demonstrates expertise and builds SEO authority.
 It must rank AND read beautifully — never choose one over the other.
 
 **Voice register:** Thoughtful, editorial, warm expert
@@ -232,7 +232,7 @@ Open with a moment she recognizes.
 ## SEO Voice
 
 ### The Standard
-SEO content at MVQUEEN is brand-first, search-aware.
+SEO content at MVQueen is brand-first, search-aware.
 Keywords are woven — never stuffed.
 Every SEO piece must pass the brand voice test AND the search intent test.
 
@@ -243,24 +243,24 @@ Every SEO piece must pass the brand voice test AND the search intent test.
 ### SEO Metadata Voice
 
 **Meta title formula:**
-`[Primary keyword] — [Brand value or promise] | MVQUEEN`
-Example: *Luxury Skincare for Women — Rituals That Restore | MVQUEEN*
+`[Primary keyword] — [Brand value or promise] | MVQueen`
+Example: *Luxury Skincare for Women — Rituals That Restore | MVQueen*
 
 **Meta description formula:**
 `[Keyword-aware opening] + [Emotional promise] + [Soft CTA]`
-Example: *Discover luxury skincare built for real women. Rituals that restore, products that feel intentional. Shop MVQUEEN.*
+Example: *Discover luxury skincare built for real women. Rituals that restore, products that feel intentional. Shop MVQueen.*
 
 ### SEO Content Quality Check
 ```
 □ Primary keyword in H1?
 □ Keyword appears naturally in first 100 words?
 □ Secondary keywords in H2s where relevant?
-□ Does it read like MVQUEEN — not a generic SEO article?
+□ Does it read like MVQueen — not a generic SEO article?
 □ Does it deliver real value to a real reader?
 □ Meta title under 60 characters?
 □ Meta description under 160 characters?
-□ Internal links to relevant MVQUEEN pages?
+□ Internal links to relevant MVQueen pages?
 ```
 
 ---
-*MVQUEEN Platform Voice Guides — Operational Document*
+*MVQueen Platform Voice Guides — Operational Document*

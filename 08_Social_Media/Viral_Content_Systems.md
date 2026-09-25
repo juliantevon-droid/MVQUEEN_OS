@@ -1,4 +1,4 @@
-# 📱 MVQUEEN — Viral Content Systems
+# 📱 MVQueen — Viral Content Systems
 
 ---
 
@@ -8,13 +8,13 @@ Build repeatable content systems that consistently produce shareable, saveable, 
 
 ---
 
-## The MVQUEEN Virality Formula
+## The MVQueen Virality Formula
 
 ```
 EMOTIONAL TRUTH + PRECISE LANGUAGE + RIGHT FORMAT + TIMING = SHAREABILITY
 ```
 
-Viral content at MVQUEEN hits one of these triggers:
+Viral content at MVQueen hits one of these triggers:
 - She recognizes herself immediately
 - She learns something she wishes she knew sooner
 - She feels something she wants others to feel
@@ -64,7 +64,7 @@ Multi-part content that drives follows and return visits.
 
 **Formats:** TikTok series, Instagram carousels, email series
 **Examples:**
-- "The MVQUEEN Skin Series" — 5 parts
+- "The MVQueen Skin Series" — 5 parts
 - "Building your ritual from scratch" — 7 parts
 - "Understanding your skin type" — 4 parts
 
@@ -76,14 +76,14 @@ Multi-part content that drives follows and return visits.
 Participating in trends that align with brand identity.
 
 **Filter test:** Does this trend align with softness, femininity, intentional living, or luxury?
-If yes → participate with MVQUEEN angle.
+If yes → participate with MVQueen angle.
 If no → skip. Never force brand identity into a misaligned trend.
 
 ---
 
 ## Carousel System
 
-**MVQUEEN carousel formula:**
+**MVQueen carousel formula:**
 
 | Slide | Content |
 |-------|---------|
@@ -104,9 +104,9 @@ If no → skip. Never force brand identity into a misaligned trend.
 
 **Types:**
 - Educational listicle: "5 signs your beauty routine needs to become a ritual"
-- Product showcase: "Your MVQUEEN ritual, built"
+- Product showcase: "Your MVQueen ritual, built"
 - Myth-busting: "Luxury skincare myths — debunked"
-- Before/after (emotional): "Before MVQUEEN / After MVQUEEN (the feeling)"
+- Before/after (emotional): "Before MVQueen / After MVQueen (the feeling)"
 
 ---
 
@@ -125,7 +125,7 @@ Distribute viral content types across the week:
 | Sunday | Softer, personal | Stories + Instagram |
 
 ---
-*MVQUEEN Viral Content Systems — Operational Document*
+*MVQueen Viral Content Systems — Operational Document*
 
 ---
 ---

@@ -1,10 +1,10 @@
-# 📋 MVQUEEN — Swipe File
+# 📋 MVQueen — Swipe File
 
 ---
 
 ## Purpose
 
-A curated collection of exceptional copy, campaigns, hooks, and creative work — from MVQUEEN and from the broader world — that serves as reference and inspiration for content creation.
+A curated collection of exceptional copy, campaigns, hooks, and creative work — from MVQueen and from the broader world — that serves as reference and inspiration for content creation.
 
 A swipe file is not plagiarism.
 It is a reference library of what excellent looks like.
@@ -13,7 +13,7 @@ It is a reference library of what excellent looks like.
 
 ## Swipe File Categories
 
-### MVQUEEN Top Performers
+### MVQueen Top Performers
 *(Populate with real top-performing content after publishing)*
 
 **Top Hooks (by platform):**
@@ -58,7 +58,7 @@ It is a reference library of what excellent looks like.
 | | | |
 
 ---
-*MVQUEEN Swipe File — Living Document*
+*MVQueen Swipe File — Living Document*
 *Add every time a piece of content performs exceptionally or you encounter something worth studying.*
 
 ---

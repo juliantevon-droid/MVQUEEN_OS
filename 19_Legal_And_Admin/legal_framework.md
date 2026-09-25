@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Documents the legal and administrative framework governing MVQUEEN operations. Not legal advice — operational reference only. Consult a licensed attorney for binding decisions.
+Documents the legal and administrative framework governing MVQueen operations. Not legal advice — operational reference only. Consult a licensed attorney for binding decisions.
 
 ---
 
@@ -13,7 +13,7 @@ Documents the legal and administrative framework governing MVQUEEN operations. N
 
 | Item | Detail |
 |---|---|
-| Brand Name | MVQUEEN |
+| Brand Name | MVQueen |
 | Sister Brand | Miss.Princess |
 | Business Type | [LLC / Sole Prop — confirm] |
 | Registration State | [Confirm] |
@@ -24,7 +24,7 @@ Documents the legal and administrative framework governing MVQUEEN operations. N
 ## Key Legal Areas
 
 ### Trademark
-- MVQUEEN name and logo — status: [confirm filing]
+- MVQueen name and logo — status: [confirm filing]
 - Miss.Princess — status: [confirm filing]
 
 ### Privacy Policy

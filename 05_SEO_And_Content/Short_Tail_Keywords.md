@@ -1,14 +1,14 @@
 <!-- Extracted from Brand Bible -->
 
 # 2. Brand Meaning
-The name MVQUEEN stands for:
+The name MVQueen stands for:
 “Most Valuable Queen.”
 
-But beyond the name itself, MVQUEEN represents a mindset, an emotional experience, and a vision for the kind of life women deserve to feel connected to.
+But beyond the name itself, MVQueen represents a mindset, an emotional experience, and a vision for the kind of life women deserve to feel connected to.
 
 The brand was created from ambition, struggle, creativity, femininity, and the desire to build something meaningful that could outlive temporary circumstances.
 
-MVQUEEN was born from a personal journey of wanting more out of life:
+MVQueen was born from a personal journey of wanting more out of life:
 more freedom,
 more beauty,
 more confidence,
@@ -21,7 +21,7 @@ Coming from difficult situations and limited opportunities created a deep unders
 
 That emotional distance became part of the inspiration behind the brand.
 
-MVQUEEN was created to close that gap emotionally.
+MVQueen was created to close that gap emotionally.
 
 Not by pretending to be unattainable luxury,
 but by creating a world where women can still feel elegant, feminine, confident, stylish, emotionally elevated, and worthy within real everyday life and realistic budgets.
@@ -38,7 +38,7 @@ desired,
 emotionally seen,
 and valuable.
 
-The word “Queen” represents the energy MVQUEEN was designed to awaken within women.
+The word “Queen” represents the energy MVQueen was designed to awaken within women.
 
 A queen is:
 - elegant without needing validation
@@ -52,7 +52,7 @@ A queen is:
 - expressive
 - valuable
 
-MVQUEEN was never intended to become just another fashion or beauty store.
+MVQueen was never intended to become just another fashion or beauty store.
 
 The brand was created to build emotional transformation through beauty, aesthetics, femininity, confidence, self-expression, and accessible luxury experiences.
 
@@ -82,7 +82,7 @@ Luxury is also:
 - softness
 - experience
 
-MVQUEEN exists to make those emotions feel attainable instead of distant.
+MVQueen exists to make those emotions feel attainable instead of distant.
 
 The foundation of the brand originally began through a passion for fragrance.
 
@@ -97,7 +97,7 @@ That fascination with scent slowly opened the door to a much deeper appreciation
 - presentation
 - aspirational living
 
-As the vision evolved, MVQUEEN became something much larger than products.
+As the vision evolved, MVQueen became something much larger than products.
 
 It became a symbol of:
 - growth
@@ -111,7 +111,7 @@ It became a symbol of:
 - resilience
 - legacy
 
-MVQUEEN exists for women who want to:
+MVQueen exists for women who want to:
 - feel luxurious without overspending
 - embrace femininity confidently
 - express themselves through fashion and beauty
@@ -122,7 +122,7 @@ MVQUEEN exists for women who want to:
 
 The sister identity, Miss.Princess, was created to embody the softer and more playful side of femininity.
 
-While MVQUEEN represents mature elegance, emotional confidence, and elevated femininity, Miss.Princess represents:
+While MVQueen represents mature elegance, emotional confidence, and elevated femininity, Miss.Princess represents:
 - youthful femininity
 - playful confidence
 - soft glam aesthetics
@@ -132,13 +132,13 @@ While MVQUEEN represents mature elegance, emotional confidence, and elevated fem
 - inner child softness
 - feminine fun
 
-Together, MVQUEEN and Miss.Princess represent the emotional balance many women naturally carry within themselves:
+Together, MVQueen and Miss.Princess represent the emotional balance many women naturally carry within themselves:
 the queen and the princess,
 the ambitious woman and the soft woman,
 the elegant woman and the playful woman,
 the confident woman and the comfort-seeking woman.
 
-At its core, MVQUEEN is about emotional elevation and feminine transformation.
+At its core, MVQueen is about emotional elevation and feminine transformation.
 
 The brand is designed to help women feel:
 - more confident
@@ -150,11 +150,11 @@ The brand is designed to help women feel:
 - more connected to themselves
 - more valuable
 
-MVQUEEN is ultimately rooted in one belief:
+MVQueen is ultimately rooted in one belief:
 
 No matter where a woman comes from, she still deserves beauty, confidence, softness, elegance, femininity, self-expression, emotional peace, and the opportunity to feel like the most valuable version of herself.
 
-The long-term vision of MVQUEEN is not only to build a successful brand, but to build a lasting legacy that inspires confidence, femininity, creativity, ambition, emotional empowerment, and generational elevation for women around the world.
+The long-term vision of MVQueen is not only to build a successful brand, but to build a lasting legacy that inspires confidence, femininity, creativity, ambition, emotional empowerment, and generational elevation for women around the world.
 ---
 
 ---
@@ -163,13 +163,13 @@ The long-term vision of MVQUEEN is not only to build a successful brand, but to 
 
 ## Vocabulary Philosophy
 
-MVQUEEN’s vocabulary system exists to create emotional consistency, emotional recognizability, luxury cohesion, and immersive feminine atmosphere across every part of the brand ecosystem.
+MVQueen’s vocabulary system exists to create emotional consistency, emotional recognizability, luxury cohesion, and immersive feminine atmosphere across every part of the brand ecosystem.
 
 The purpose of the vocabulary is not simply choosing aesthetically pleasing words.
 
 It is creating emotional feeling through language.
 
-Every word used by MVQUEEN should reinforce the emotional world the brand is building:
+Every word used by MVQueen should reinforce the emotional world the brand is building:
 - beauty
 - softness
 - confidence
@@ -197,7 +197,7 @@ The goal is not only consistency.
 
 The goal is emotional recognition.
 
-Women should eventually recognize MVQUEEN emotionally through language alone.
+Women should eventually recognize MVQueen emotionally through language alone.
 
 ---
 
@@ -205,7 +205,7 @@ Women should eventually recognize MVQUEEN emotionally through language alone.
 
 # Brand Vocabulary Summary
 
-MVQUEEN’s vocabulary system is designed to transform communication into emotional atmosphere.
+MVQueen’s vocabulary system is designed to transform communication into emotional atmosphere.
 
 Every word should reinforce:
 - beauty

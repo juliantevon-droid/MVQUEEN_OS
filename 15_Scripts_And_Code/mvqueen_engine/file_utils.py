@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — FILE UTILITIES
+# MVQueen OMNILUXE ENGINE — FILE UTILITIES
 # ---------------------------------------------------------
 
 import csv

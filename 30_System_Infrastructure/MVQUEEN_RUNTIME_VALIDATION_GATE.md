@@ -1,4 +1,4 @@
-# MVQUEEN OS — Runtime Validation Gate
+# MVQueen OS — Runtime Validation Gate
 
 ## Purpose
 Validate the backend before any live product webhook is enabled.

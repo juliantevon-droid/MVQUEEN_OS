@@ -1,15 +1,15 @@
-# 🤖 MVQUEEN — AI Workflow System
+# 🤖 MVQueen — AI Workflow System
 
 ---
 
 ## Overview
 
-The MVQUEEN AI Workflow System defines how artificial intelligence is deployed, governed, and scaled across the ecosystem.
+The MVQueen AI Workflow System defines how artificial intelligence is deployed, governed, and scaled across the ecosystem.
 
 This is not a philosophy document.
 This is an operational architecture.
 
-Every AI workflow within MVQUEEN has a defined input, process, output, and quality standard. Every output is measured against brand doctrine before it reaches a customer touchpoint.
+Every AI workflow within MVQueen has a defined input, process, output, and quality standard. Every output is measured against brand doctrine before it reaches a customer touchpoint.
 
 ---
 
@@ -58,7 +58,7 @@ No AI output is deployed without human brand alignment check.
 6. SEO audit before publication
 
 **Output Standard:**
-- Reads like MVQUEEN editorial — not generic AI content
+- Reads like MVQueen editorial — not generic AI content
 - Contains sensory language and emotional intelligence
 - Optimized for target keyword without sounding keyword-stuffed
 - Passes brand voice test before deployment
@@ -254,7 +254,7 @@ Every AI output is reviewed against these five standards before deployment:
 
 | Standard | Question |
 |----------|---------|
-| Voice | Does this sound like MVQUEEN? |
+| Voice | Does this sound like MVQueen? |
 | Feeling | Does this make her feel elevated — not pressured? |
 | Precision | Is every word earning its place? |
 | Intelligence | Does this reflect emotional intelligence — not just information? |
@@ -275,5 +275,5 @@ If any standard fails — the output is regenerated, not published.
 7. Emotional integrity is non-negotiable at any scale
 
 ---
-*MVQUEEN AI Workflow System — Operational Document*
+*MVQueen AI Workflow System — Operational Document*
 *All AI deployments must operate within this framework.*

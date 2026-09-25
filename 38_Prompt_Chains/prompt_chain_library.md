@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Library of multi-step AI prompt sequences for complex MVQUEEN tasks. Prompt chains produce better output than single prompts for creative, strategic, and analytical work.
+Library of multi-step AI prompt sequences for complex MVQueen tasks. Prompt chains produce better output than single prompts for creative, strategic, and analytical work.
 
 ---
 

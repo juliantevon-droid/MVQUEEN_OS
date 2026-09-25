@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Collection Structure
+# 👑 MVQueen — Collection Structure
 ### The Architecture of the Catalog
 
 ---
@@ -7,17 +7,17 @@
 
 A collection is not a product category. It is a world within the world.
 
-This file defines how MVQUEEN builds, organizes, names, launches, and retires collections — across both MVQUEEN and Miss.Princess. It is the structural blueprint for how the catalog grows with intention rather than accumulation.
+This file defines how MVQueen builds, organizes, names, launches, and retires collections — across both MVQueen and Miss.Princess. It is the structural blueprint for how the catalog grows with intention rather than accumulation.
 
 ---
 
 ## THE COLLECTION PHILOSOPHY
 
-MVQUEEN does not build a store. It builds worlds.
+MVQueen does not build a store. It builds worlds.
 
 Each collection is a distinct emotional experience — a world with its own mood, its own palette expression, its own campaign, its own story. Products live inside collections the way rooms live inside a house. Each room is distinct. The house is coherent.
 
-The customer should be able to step into a collection and feel its specific atmosphere — and then recognize that atmosphere as unmistakably MVQUEEN.
+The customer should be able to step into a collection and feel its specific atmosphere — and then recognize that atmosphere as unmistakably MVQueen.
 
 ---
 
@@ -25,8 +25,8 @@ The customer should be able to step into a collection and feel its specific atmo
 
 ### Type 01 — The Core Collection (Evergreen)
 **What it is:** The permanent backbone of the catalog. Products that never rotate out.
-**Emotional identity:** This is the MVQUEEN world at its most essential — the pieces and products she reaches for every day.
-**Naming:** Simple, iconic, permanent. *The MVQUEEN Essentials / The Foundation Edit / Core.*
+**Emotional identity:** This is the MVQueen world at its most essential — the pieces and products she reaches for every day.
+**Naming:** Simple, iconic, permanent. *The MVQueen Essentials / The Foundation Edit / Core.*
 **Products:** Hero skincare, signature fragrances, everyday fashion staples, core beauty.
 **Marketing:** Always on. Featured in brand introduction, new customer journeys, and every "start here" touchpoint.
 
@@ -34,7 +34,7 @@ The customer should be able to step into a collection and feel its specific atmo
 
 ### Type 02 — The Seasonal Collection
 **What it is:** A thematic collection released in alignment with seasonal emotional shifts — not trend cycles.
-**Emotional identity:** Each season carries a distinct feeling. MVQUEEN captures that feeling in a collection.
+**Emotional identity:** Each season carries a distinct feeling. MVQueen captures that feeling in a collection.
 **Timing:**
 - Spring: *softening, renewal, becoming* — February/March launch
 - Summer: *warmth, confidence, slow living* — May/June launch
@@ -59,7 +59,7 @@ The customer should be able to step into a collection and feel its specific atmo
 
 ### Type 04 — The Ritual Set (Curated Bundle)
 **What it is:** Intentionally curated bundles built around a specific ritual or use-case.
-**Emotional identity:** The easiest way to step into a complete MVQUEEN experience.
+**Emotional identity:** The easiest way to step into a complete MVQueen experience.
 **Examples:**
 - *The Morning Ritual* — cleanser + serum + moisturizer + fragrance mist
 - *The Soft Skin Edit* — exfoliator + mask + face oil
@@ -73,16 +73,16 @@ The customer should be able to step into a collection and feel its specific atmo
 
 ### Type 05 — The Collaboration / Limited Edition
 **What it is:** A special collection built in partnership with a creator, artist, or cultural moment.
-**Emotional identity:** MVQUEEN's world filtered through another distinct creative lens.
+**Emotional identity:** MVQueen's world filtered through another distinct creative lens.
 **Timing:** Maximum 2 per year. Strategic, not reactive.
-**Naming:** Includes both MVQUEEN and collaborator identity: *MVQUEEN × [Name] — [Collection Name]*
+**Naming:** Includes both MVQueen and collaborator identity: *MVQueen × [Name] — [Collection Name]*
 **Products:** Exclusively new. No core products repackaged with a new label.
-**Marketing:** Full campaign. Collaborator audience + MVQUEEN audience. Pre-launch waitlist required.
+**Marketing:** Full campaign. Collaborator audience + MVQueen audience. Pre-launch waitlist required.
 
 ---
 
 ### Type 06 — The Miss.Princess Collection
-**What it is:** Collections under the Miss.Princess brand identity — distinct from MVQUEEN collections.
+**What it is:** Collections under the Miss.Princess brand identity — distinct from MVQueen collections.
 **Emotional identity:** Softer, more playful, more trend-responsive — but same quality standard.
 **Naming:** Carries Miss.Princess energy: *The Pink Edit / Soft Girl Season / Princess Era / Petal Drop.*
 **Products:** Can include cross-category bundles unique to Miss.Princess.
@@ -100,7 +100,7 @@ Every collection — regardless of type — follows this structural framework:
 The single phrase that holds the entire collection. Created before products are selected. The name is the world — products must fit into it, not the other way around.
 
 **02 — The Collection Story**
-A 2–3 sentence editorial statement that defines the emotional world of this collection. Written in MVQUEEN voice. Used across all marketing.
+A 2–3 sentence editorial statement that defines the emotional world of this collection. Written in MVQueen voice. Used across all marketing.
 > Example: *"Soft Reign is for the woman who has stopped waiting for permission to feel elevated. Three weeks of warmth distilled into a collection built around one feeling: arrival."*
 
 **03 — The Hero Product**
@@ -182,7 +182,7 @@ Nothing is deleted without a brand review. A product that underperformed in one 
 On Shopify, collections are organized as:
 
 ```
-MVQUEEN Store
+MVQueen Store
 ├── Core Collection (always visible)
 ├── Active Seasonal Collection
 ├── Active Drop (when live)
@@ -203,4 +203,4 @@ MVQUEEN Store
 
 ---
 
-*This file governs how MVQUEEN collections are built, structured, named, and retired. It pairs with Product_Naming_System.md (naming), Pricing_Strategy.md (price architecture), and Photography_Direction.md (visual direction per collection).*
+*This file governs how MVQueen collections are built, structured, named, and retired. It pairs with Product_Naming_System.md (naming), Pricing_Strategy.md (price architecture), and Photography_Direction.md (visual direction per collection).*

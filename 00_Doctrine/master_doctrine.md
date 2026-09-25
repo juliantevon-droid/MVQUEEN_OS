@@ -1,4 +1,4 @@
-# 👑 MVQUEEN OS — Master Doctrine
+# 👑 MVQueen OS — Master Doctrine
 ### The Law of the Operating System
 
 ---
@@ -9,7 +9,7 @@ This is not a brand description. The Brand Bible holds that.
 This is not a tone guide. Those live in the Tone folder.
 This is not a strategy deck. That lives in Brand Strategy.
 
-This document is the operating law of the MVQUEEN OS.
+This document is the operating law of the MVQueen OS.
 
 It tells every person, every AI agent, every system, every collaborator, and every file within this vault the rules that govern how this OS thinks, behaves, creates, prioritizes, and makes decisions.
 
@@ -23,15 +23,15 @@ Read this once. Then let it run quietly underneath everything.
 
 ## ARTICLE 1 — THE IDENTITY OF THIS OS
 
-This operating system belongs to **MVQUEEN**, a modern feminine luxury lifestyle brand, and **Miss.Princess**, its sister brand.
+This operating system belongs to **MVQueen**, a modern feminine luxury lifestyle brand, and **Miss.Princess**, its sister brand.
 
-**MVQUEEN** is the primary identity: mature, elegant, confident, emotionally intelligent. She is accessible luxury without apology. She is the woman who has already decided she is worthy.
+**MVQueen** is the primary identity: mature, elegant, confident, emotionally intelligent. She is accessible luxury without apology. She is the woman who has already decided she is worthy.
 
-**Miss.Princess** is the sister identity: youthful, soft, playful, trend-aware. She is not a younger version of MVQUEEN — she is a different register. Same standard. Different frequency.
+**Miss.Princess** is the sister identity: youthful, soft, playful, trend-aware. She is not a younger version of MVQueen — she is a different register. Same standard. Different frequency.
 
 They are equal in quality. They are distinct in voice. They never blur into each other.
 
-Everything inside this OS serves one or both of these identities. If a file, a prompt, a system, or a piece of content does not serve MVQUEEN or Miss.Princess — it does not belong in this OS.
+Everything inside this OS serves one or both of these identities. If a file, a prompt, a system, or a piece of content does not serve MVQueen or Miss.Princess — it does not belong in this OS.
 
 ---
 
@@ -58,7 +58,7 @@ Every file in this OS exists for exactly one purpose. That purpose is not shared
 **The Non-Overlap Rule:**
 No two files in this OS may contain the same content, cover the same ground in the same way, or serve as a restatement of another file.
 
-- `USP.md` defines what makes MVQUEEN different. `Brand_Positioning.md` defines where MVQUEEN sits in the market. These are not the same file with different names.
+- `USP.md` defines what makes MVQueen different. `Brand_Positioning.md` defines where MVQueen sits in the market. These are not the same file with different names.
 - `Slogans.md` holds campaign language. `Taglines.md` holds permanent verbal identity. These are not interchangeable.
 - `Tone_Guide.md` holds voice philosophy. `Writing_Rules.md` holds craft mechanics. `Voice_Consistency_Rules.md` is the quick-reference card. Three distinct purposes. Three distinct files.
 
@@ -76,11 +76,11 @@ If no — proceed.
 
 Enterprise-level means:
 
-1. **Specific** — not generic. A reader can tell this file belongs to MVQUEEN and no other brand.
+1. **Specific** — not generic. A reader can tell this file belongs to MVQueen and no other brand.
 2. **Complete** — not partial. A file that contains headers but no content is a failure. A file that contains fragments is a failure. Either build it fully or don't build it yet.
 3. **Actionable** — not philosophical. A file that describes what content *should be* without containing that content is not done. Files in this OS are tools, not intentions.
 4. **Distinct** — not mirroring. A file that reads like a paraphrase of another file has failed the Non-Overlap Rule.
-5. **Voice-locked** — not generic. Content produced by AI that could belong to any brand has failed. Every sentence must be able to pass the test: *does this sound specifically like MVQUEEN?*
+5. **Voice-locked** — not generic. Content produced by AI that could belong to any brand has failed. Every sentence must be able to pass the test: *does this sound specifically like MVQueen?*
 
 Partial files are not acceptable. If a file is under construction, it is marked as such with a clear status header. It is not published to the vault as complete.
 
@@ -97,7 +97,7 @@ A precise, voice-locked file produces MVQUEEN-calibrated output — at scale.
 
 **The AI Content Test:**
 Before any file is considered complete, ask:
-*If an AI model read only this file and used it to generate MVQUEEN content — would that content sound exactly like MVQUEEN, or would it sound like any other brand?*
+*If an AI model read only this file and used it to generate MVQueen content — would that content sound exactly like MVQueen, or would it sound like any other brand?*
 
 If the answer is "any other brand" — the file is not complete.
 
@@ -131,11 +131,11 @@ Current phase status is tracked in: `00_Doctrine/MASTER_INDEX.md`
 
 ## ARTICLE 7 — THE VOICE LAW
 
-**MVQUEEN does not sound like other brands.**
+**MVQueen does not sound like other brands.**
 
 Not like Fenty. Not like Skims. Not like Charlotte Tilbury. Not like Fashion Nova. These are references — not templates.
 
-MVQUEEN has its own voice. That voice is:
+MVQueen has its own voice. That voice is:
 - Feminine without being frivolous
 - Elevated without being cold
 - Confident without being arrogant
@@ -153,19 +153,19 @@ The complete voice system lives in `06_Tone_And_Voice/`. It governs everything.
 
 **Miss.Princess is a peer, not a sub-brand.**
 
-Miss.Princess is not a cheaper version of MVQUEEN. She is not a younger line within MVQUEEN. She is not a product category. She is a fully realized brand identity that happens to share a parent vision with MVQUEEN.
+Miss.Princess is not a cheaper version of MVQueen. She is not a younger line within MVQueen. She is not a product category. She is a fully realized brand identity that happens to share a parent vision with MVQueen.
 
 When referencing both brands in the same piece of content:
-- MVQUEEN is introduced first
+- MVQueen is introduced first
 - Miss.Princess is introduced as "our sister brand, Miss.Princess"
-- They are never described as "MVQUEEN and its Miss.Princess line" — she is not a line
+- They are never described as "MVQueen and its Miss.Princess line" — she is not a line
 
 When building content for Miss.Princess:
 - Her voice is distinct — younger, more playful, more trend-aware
 - Her standard is identical — enterprise-level, specific, voice-locked
-- Her vocabulary overlaps with MVQUEEN but is not identical — see `06_Tone_And_Voice/` for platform-specific distinctions
+- Her vocabulary overlaps with MVQueen but is not identical — see `06_Tone_And_Voice/` for platform-specific distinctions
 
-Miss.Princess never competes with MVQUEEN. She extends the ecosystem.
+Miss.Princess never competes with MVQueen. She extends the ecosystem.
 
 ---
 
@@ -212,6 +212,6 @@ Minor additions are made directly. Major structural changes require Brand Bible 
 
 ---
 
-*The Master Doctrine governs the MVQUEEN OS. All files, all agents, all content, all systems operate within it. When in doubt about any decision inside this OS — return here first.*
+*The Master Doctrine governs the MVQueen OS. All files, all agents, all content, all systems operate within it. When in doubt about any decision inside this OS — return here first.*
 
-**👑 MVQUEEN. Most Valuable Queen.**
+**👑 MVQueen. Most Valuable Queen.**

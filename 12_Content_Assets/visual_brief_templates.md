@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Standardized creative briefs for photo and video content across all MVQUEEN channels.
+Standardized creative briefs for photo and video content across all MVQueen channels.
 
 ---
 

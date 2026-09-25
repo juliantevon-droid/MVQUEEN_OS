@@ -1,10 +1,10 @@
-# 🔄 MVQUEEN — Refund & Return SOP
+# 🔄 MVQueen — Refund & Return SOP
 
 ---
 
 ## Purpose
 
-Handle every return and refund with warmth, efficiency, and brand integrity — turning a potentially negative experience into proof that MVQUEEN stands behind what it sells.
+Handle every return and refund with warmth, efficiency, and brand integrity — turning a potentially negative experience into proof that MVQueen stands behind what it sells.
 
 The goal is never to minimize refunds by making them difficult.
 The goal is to resolve every issue so well that she comes back anyway.
@@ -71,7 +71,7 @@ Issue a refund or replacement WITHOUT requiring return when:
 ## Refund Response Templates
 
 **Eligible return:**
-*"Of course — we want your experience with MVQUEEN to feel right. I'm sending your return label now. Once we receive the item, your refund will be processed within 2 business days. Thank you for giving us the chance to make this right. 🤍"*
+*"Of course — we want your experience with MVQueen to feel right. I'm sending your return label now. Once we receive the item, your refund will be processed within 2 business days. Thank you for giving us the chance to make this right. 🤍"*
 
 **Ineligible return (opened beauty):**
 *"We completely understand the frustration, and we're sorry the product didn't work as you hoped. Because of the nature of beauty products, we're unable to accept returns once opened — but we'd love to help you find the right product for you. Can you tell me a little more about what you were hoping for?"*
@@ -92,7 +92,7 @@ Track monthly:
 High return rates on specific products trigger: product review, supplier audit, or listing accuracy check.
 
 ---
-*MVQUEEN Refund & Return SOP — Operational Document*
+*MVQueen Refund & Return SOP — Operational Document*
 
 ---
 ---

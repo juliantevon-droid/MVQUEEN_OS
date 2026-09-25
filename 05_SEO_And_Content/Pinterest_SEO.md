@@ -1,10 +1,10 @@
-# 📌 MVQUEEN — Pinterest SEO
+# 📌 MVQueen — Pinterest SEO
 
 ---
 
 ## Purpose
 
-Build MVQUEEN's Pinterest presence as a long-term organic traffic engine — driving qualified, high-intent visitors to the store through strategic keyword optimization and consistent pin production.
+Build MVQueen's Pinterest presence as a long-term organic traffic engine — driving qualified, high-intent visitors to the store through strategic keyword optimization and consistent pin production.
 
 Pinterest is the highest-intent discovery platform in beauty and lifestyle.
 A woman searching Pinterest is actively looking for something to buy or do.
@@ -31,7 +31,7 @@ Pinterest is a visual search engine. SEO principles apply directly.
 
 ## Profile Optimization
 
-**Profile name:** `MVQUEEN | Luxury Feminine Beauty & Skincare`
+**Profile name:** `MVQueen | Luxury Feminine Beauty & Skincare`
 
 **Profile bio (160 characters):**
 *Luxury skincare, haircare, fashion & lifestyle for women who choose softness intentionally. Shop rituals, not just products.*
@@ -52,7 +52,7 @@ Every board has a keyword-rich name and description.
 | Feminine Fashion | Elegant, feminine clothing, outfits and style inspiration for women | 3-5x/week |
 | Luxury Self Care | Self-care rituals, products, and ideas for women who prioritize themselves | Daily |
 | Skincare Ingredients Guide | Educational content about skincare ingredients, benefits, and routines | 2-3x/week |
-| MVQUEEN Products | Our full product range — shop the ritual | Daily |
+| MVQueen Products | Our full product range — shop the ritual | Daily |
 
 ---
 
@@ -78,7 +78,7 @@ Examples:
 **Example:**
 *This luxury face serum is designed for women who want more from their skincare ritual.*
 *With a lightweight texture that absorbs instantly, it restores softness without heaviness.*
-*Part of the MVQUEEN morning ritual — products built for real women's real mornings.*
+*Part of the MVQueen morning ritual — products built for real women's real mornings.*
 *Shop the full ritual at the link.*
 `#luxuryskincare #skincarerituals #femininebeauty #softlife #morningroutine`
 
@@ -103,7 +103,7 @@ Target: 5-10 new pins per day using scheduler (Tailwind or native).
 - 30% seasonal (linked to campaign calendar)
 
 ---
-*MVQUEEN Pinterest SEO — Operational Document*
+*MVQueen Pinterest SEO — Operational Document*
 
 ---
 ---

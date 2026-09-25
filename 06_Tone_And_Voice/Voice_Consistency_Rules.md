@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Voice Consistency Rules
+# 👑 MVQueen — Voice Consistency Rules
 ### The Quick-Reference Card
 
 ---
@@ -23,7 +23,7 @@ The customer should feel something in the first sentence. What the product *does
 ---
 
 **LAW 02 — Write in motion, not in lists.**
-MVQUEEN copy moves. It doesn't enumerate. Bullet points belong in internal documents — not in customer-facing language unless functionally necessary (ingredients, sizing, care instructions).
+MVQueen copy moves. It doesn't enumerate. Bullet points belong in internal documents — not in customer-facing language unless functionally necessary (ingredients, sizing, care instructions).
 > ❌ "This serum is: hydrating, brightening, and lightweight."
 > ✅ "Lightweight enough to disappear into skin. Hydrating enough to change what your skin says about you."
 
@@ -43,12 +43,12 @@ Vague luxury words (beautiful, luxurious, exquisite) tell. Specific sensory deta
 
 **LAW 05 — Short sentences are power. Use them.**
 A three-word sentence hits harder than a ten-word one when placed correctly. Don't fear the period.
-> "She already knows her worth. MVQUEEN just makes it visible."
+> "She already knows her worth. MVQueen just makes it visible."
 
 ---
 
 **LAW 06 — She is never talked down to. She is spoken with.**
-The MVQUEEN customer is intelligent, self-aware, and emotionally sharp. Copy that over-explains or over-reassures sounds condescending. Trust her.
+The MVQueen customer is intelligent, self-aware, and emotionally sharp. Copy that over-explains or over-reassures sounds condescending. Trust her.
 > ❌ "We know you're busy, so we made this easy."
 > ✅ "Everything you need. Nothing that wastes your time."
 
@@ -60,19 +60,19 @@ The MVQUEEN customer is intelligent, self-aware, and emotionally sharp. Copy tha
 ---
 
 **LAW 08 — Aspiration does not exclude. It invites.**
-MVQUEEN copy should make a woman feel like she already belongs in this world — not that she's working toward being worthy of it. The door is open. She's already inside.
+MVQueen copy should make a woman feel like she already belongs in this world — not that she's working toward being worthy of it. The door is open. She's already inside.
 > ❌ "Step into luxury."
 > ✅ "This is what you already deserve."
 
 ---
 
 **LAW 09 — Miss.Princess gets a different filter.**
-When writing for Miss.Princess: warmer, softer, more playful, more trend-aware. Shorter sentences. More energy. But the same quality bar. Miss.Princess is not a discounted version of MVQUEEN — she is a different register of the same standard.
+When writing for Miss.Princess: warmer, softer, more playful, more trend-aware. Shorter sentences. More energy. But the same quality bar. Miss.Princess is not a discounted version of MVQueen — she is a different register of the same standard.
 
 ---
 
 **LAW 10 — If you can cut it and the sentence still works, cut it.**
-MVQUEEN copy is not long. It is *weighted.* The difference between a brand that sounds luxurious and one that sounds like it's trying to — is that the first one knows when to stop.
+MVQueen copy is not long. It is *weighted.* The difference between a brand that sounds luxurious and one that sounds like it's trying to — is that the first one knows when to stop.
 
 ---
 
@@ -101,7 +101,7 @@ MVQUEEN copy is not long. It is *weighted.* The difference between a brand that 
 | A discount retailer | Urgency, deal language, price focus | Lead with experience, not price |
 | A corporate press release | Passive voice, formal nouns, no feeling | Rewrite in active voice with sensory detail |
 | A self-help account | Clichés, empty affirmations | Replace with specific, earned statements |
-| A different luxury brand | Borrowed tone, generic adjectives | Go back to MVQUEEN vocabulary — what does *this* brand specifically feel like? |
+| A different luxury brand | Borrowed tone, generic adjectives | Go back to MVQueen vocabulary — what does *this* brand specifically feel like? |
 | A brand from 2019 | Expired slang, boss babe language | Run through Forbidden_Words.md |
 
 ---
@@ -110,7 +110,7 @@ MVQUEEN copy is not long. It is *weighted.* The difference between a brand that 
 
 Before any piece of content goes live, answer these three questions honestly:
 
-1. **Does it sound like MVQUEEN — specifically?** Not like a beautiful brand. Like *this* brand.
+1. **Does it sound like MVQueen — specifically?** Not like a beautiful brand. Like *this* brand.
 2. **Does it make her feel something?** If you can read it and feel nothing, rewrite it.
 3. **Would it survive the Forbidden Words audit?** Run it through the list.
 
@@ -118,4 +118,4 @@ If all three answers are yes — publish.
 
 ---
 
-*This file is the voice quick-reference. It pairs with Tone_Guide.md (full philosophy), Writing_Rules.md (mechanics), and Forbidden_Words.md (vocabulary law). Together these four files govern everything MVQUEEN writes.*
+*This file is the voice quick-reference. It pairs with Tone_Guide.md (full philosophy), Writing_Rules.md (mechanics), and Forbidden_Words.md (vocabulary law). Together these four files govern everything MVQueen writes.*

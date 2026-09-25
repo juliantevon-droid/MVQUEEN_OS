@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portable MVQUEEN asset crawler for local and CI environments."""
+"""Portable MVQueen asset crawler for local and CI environments."""
 from __future__ import annotations
 import argparse, hashlib, json
 from pathlib import Path

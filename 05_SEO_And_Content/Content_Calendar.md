@@ -1,4 +1,4 @@
-# 📅 MVQUEEN — Content Calendar
+# 📅 MVQueen — Content Calendar
 
 ---
 
@@ -124,7 +124,7 @@ When a campaign is active — all content serves the campaign:
 **Last week of quarter:** Plan next quarter's themes and campaigns
 
 ---
-*MVQUEEN Content Calendar — Operational Document*
+*MVQueen Content Calendar — Operational Document*
 
 ---
 ---

@@ -1,10 +1,10 @@
-# 📦 MVQUEEN — Shipping SOP
+# 📦 MVQueen — Shipping SOP
 
 ---
 
 ## Purpose
 
-Define the standard operating procedure for all order fulfillment and shipping — ensuring every package that leaves MVQUEEN delivers a luxury experience from the moment it ships to the moment it arrives.
+Define the standard operating procedure for all order fulfillment and shipping — ensuring every package that leaves MVQueen delivers a luxury experience from the moment it ships to the moment it arrives.
 
 Shipping is not logistics. It is the last brand touchpoint before she holds the product.
 
@@ -60,7 +60,7 @@ Never count weekends or holidays unless explicitly stated.
 
 ## Packaging Standards
 
-Every MVQUEEN package must reflect the brand:
+Every MVQueen package must reflect the brand:
 
 | Element | Standard |
 |---------|----------|
@@ -117,7 +117,7 @@ Template: `17_Templates/T-02 Email Campaign Template`
 Subject line example: *"She's on her way to you."*
 
 ---
-*MVQUEEN Shipping SOP — Operational Document*
+*MVQueen Shipping SOP — Operational Document*
 
 ---
 ---

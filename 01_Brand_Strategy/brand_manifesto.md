@@ -1,4 +1,4 @@
-# 👑 THE MVQUEEN DECLARATION
+# 👑 THE MVQueen DECLARATION
 
 ---
 
@@ -7,7 +7,7 @@
 
 ---
 
-MVQUEEN was not built to sell products.
+MVQueen was not built to sell products.
 
 It was built to restore something modern life keeps taking from women —
 their softness, their presence, their permission to be feminine without apology.
@@ -58,7 +58,7 @@ to emotionally harden themselves
 just to survive environments
 that were never built for softness to breathe.
 
-MVQUEEN was built in direct opposition to that world.
+MVQueen was built in direct opposition to that world.
 
 We are building something slower.
 Something more intentional.
@@ -75,7 +75,7 @@ Every interaction carries an intention.
 
 We build:
 
-**Emotional atmosphere** — the feeling a woman carries after encountering MVQUEEN.
+**Emotional atmosphere** — the feeling a woman carries after encountering MVQueen.
 Not just a purchase. A shift in how she sees herself.
 
 **Timeless identity** — rooted in feminine intelligence, not trend cycles.
@@ -109,7 +109,7 @@ not replace it.
 
 ## The Standard
 
-Every product, system, visual, interaction, and AI output within MVQUEEN
+Every product, system, visual, interaction, and AI output within MVQueen
 must pass a single question before it exists:
 
 **Does this restore, elevate, or honor the woman it serves?**
@@ -120,7 +120,7 @@ If the answer is no — it does not belong here.
 
 ## The Vision
 
-MVQUEEN is not building a brand.
+MVQueen is not building a brand.
 
 It is building a luxury feminine ecosystem —
 one that will eventually operate through intelligent systems,
@@ -135,10 +135,10 @@ Not in performance — but in presence.
 
 ---
 
-## This Is MVQUEEN.
+## This Is MVQueen.
 
 *Soft. Intentional. Elevated. Intelligent. Feminine. Alive.*
 
 ---
-*MVQUEEN Brand Declaration — Living Document*
+*MVQueen Brand Declaration — Living Document*
 *Governs all systems, all outputs, all futures.*

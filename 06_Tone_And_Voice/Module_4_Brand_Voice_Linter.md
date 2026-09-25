@@ -1,8 +1,8 @@
-﻿MVQUEEN OS - Module 4: Brand Voice Linter Script
-This document contains the complete Google Apps Script code for the MVQUEEN OS Brand Voice Linter. It scans your markdown files for non-luxury vocabulary and aggressive punctuation, outputting the results to a new "Brand Voice Log" tab in your master report.
+﻿MVQueen OS - Module 4: Brand Voice Linter Script
+This document contains the complete Google Apps Script code for the MVQueen OS Brand Voice Linter. It scans your markdown files for non-luxury vocabulary and aggressive punctuation, outputting the results to a new "Brand Voice Log" tab in your master report.
 1. The Apps Script Code
 /**
-* MVQUEEN OS - Brand Voice Linter
+* MVQueen OS - Brand Voice Linter
 * Scans .md assets for non-luxury vocabulary and stylistic errors.
 */
 function runMVQUEENBrandVoiceLinter() {
@@ -20,7 +20,7 @@ function runMVQUEENBrandVoiceLinter() {
    { regex: /\bhustle\b/gi, issue: "Non-luxury terminology (hustle)" }
  ];
 
- Logger.log("Initiating MVQUEEN OS Brand Voice Linter...");
+ Logger.log("Initiating MVQueen OS Brand Voice Linter...");
 
  while (subFolders.hasNext()) {
    let folder = subFolders.next();

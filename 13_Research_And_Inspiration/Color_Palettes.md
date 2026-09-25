@@ -4,7 +4,7 @@
 
 ## Visual Identity Philosophy
 
-MVQUEEN’s visual identity is designed to create emotional atmosphere before a single word is read.
+MVQueen’s visual identity is designed to create emotional atmosphere before a single word is read.
 
 The visuals should immediately evoke:
 - softness
@@ -24,7 +24,7 @@ It is emotional experience through visual language.
 
 Every visual element should contribute to how the brand emotionally feels.
 
-The audience should not simply see MVQUEEN.
+The audience should not simply see MVQueen.
 
 They should emotionally enter it.
 
@@ -36,7 +36,7 @@ The visual world should feel immersive enough that women emotionally recognize t
 
 # Emotional Visual Identity
 
-MVQUEEN’s visual language should feel:
+MVQueen’s visual language should feel:
 - cinematic
 - emotionally layered
 - feminine
@@ -68,7 +68,7 @@ The brand should visually communicate emotional feeling rather than visual perfe
 
 ## 1. Emotional Softness
 
-Softness is one of the most important emotional foundations of the MVQUEEN visual world.
+Softness is one of the most important emotional foundations of the MVQueen visual world.
 
 Softness should appear through:
 - lighting
@@ -82,7 +82,7 @@ Softness should appear through:
 
 The visuals should feel emotionally breathable rather than visually harsh.
 
-Softness within MVQUEEN does not mean weakness.
+Softness within MVQueen does not mean weakness.
 
 It means emotional calmness, emotional warmth, and emotionally intentional femininity.
 
@@ -90,7 +90,7 @@ It means emotional calmness, emotional warmth, and emotionally intentional femin
 
 ## 2. Cinematic Femininity
 
-MVQUEEN visuals should feel cinematic rather than commercially staged.
+MVQueen visuals should feel cinematic rather than commercially staged.
 
 The imagery should evoke:
 - mood
@@ -103,13 +103,13 @@ The imagery should evoke:
 
 The audience should emotionally feel the visuals rather than simply consume them.
 
-The world of MVQUEEN should resemble emotional memory more than traditional advertising.
+The world of MVQueen should resemble emotional memory more than traditional advertising.
 
 ---
 
 ## 3. Intentional Luxury
 
-Luxury within MVQUEEN is communicated through restraint, atmosphere, detail, and emotional refinement rather than excess.
+Luxury within MVQueen is communicated through restraint, atmosphere, detail, and emotional refinement rather than excess.
 
 The visual identity should express luxury through:
 - composition
@@ -129,13 +129,13 @@ The visuals should never rely on:
 - forced exclusivity
 - status obsession
 
-MVQUEEN luxury should feel emotionally immersive and emotionally human.
+MVQueen luxury should feel emotionally immersive and emotionally human.
 
 ---
 
 ## 4. Feminine Emotional Expression
 
-Femininity within MVQUEEN should feel:
+Femininity within MVQueen should feel:
 - emotionally intelligent
 - expressive
 - modern
@@ -179,7 +179,7 @@ Consistency of emotional feeling matters more than chasing trends.
 
 # Visual Identity Summary
 
-MVQUEEN’s visual identity is designed to transform aesthetics into emotional atmosphere.
+MVQueen’s visual identity is designed to transform aesthetics into emotional atmosphere.
 
 Every visual element should reinforce:
 - beauty
@@ -216,7 +216,7 @@ It is emotional experience through atmosphere, femininity, and emotionally immer
 
 ## Color Philosophy
 
-Within MVQUEEN, color is not decoration.
+Within MVQueen, color is not decoration.
 
 Color is emotional architecture.
 
@@ -224,7 +224,7 @@ Every tone, shade, contrast, and visual transition should contribute to emotiona
 
 The audience should emotionally feel the brand before consciously interpreting it.
 
-Color within MVQUEEN exists to create:
+Color within MVQueen exists to create:
 - emotional calmness
 - softness
 - sensory warmth
@@ -300,7 +300,7 @@ The metallics should emotionally shimmer rather than visually dominate.
 
 # Color Psychology Summary
 
-MVQUEEN’s palette system transforms color into emotional atmosphere.
+MVQueen’s palette system transforms color into emotional atmosphere.
 
 Every tone should reinforce:
 - femininity
@@ -334,7 +334,7 @@ It is emotional experience through color psychology, emotional atmosphere, and f
 
 # Emotional Visual Identity Philosophy
 
-The MVQUEEN visual world should emotionally communicate:
+The MVQueen visual world should emotionally communicate:
 - softness
 - warmth
 - femininity

@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — TEST HARNESS (BLOCK K)
+# MVQueen OMNILUXE ENGINE — TEST HARNESS (BLOCK K)
 # ---------------------------------------------------------
 
 from mvqueen_engine.engine import run

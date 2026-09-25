@@ -6,7 +6,7 @@
 ## Do's
 
 ✅ Use approved logo files only
-✅ Maintain clear space (equal to the height of the M in MVQUEEN on all sides)
+✅ Maintain clear space (equal to the height of the M in MVQueen on all sides)
 ✅ Use white version on dark or colored backgrounds
 ✅ Use black version on white or light backgrounds
 ✅ Scale proportionally — always lock aspect ratio

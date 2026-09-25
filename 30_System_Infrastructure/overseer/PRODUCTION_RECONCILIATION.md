@@ -7,7 +7,7 @@ Controlled consolidation of historical branch logic into the current canonical `
 ## Classification
 
 ### KEEP
-- canonical MVQUEEN brand doctrine and identity;
+- canonical MVQueen brand doctrine and identity;
 - persona and brand banks;
 - Shopify-safe engine architecture;
 - SEO/content architecture;

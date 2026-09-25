@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines what femininity means within MVQUEEN's ecosystem. Not performative. Strategic. Precise.
+Defines what femininity means within MVQueen's ecosystem. Not performative. Strategic. Precise.
 
 ---
 
@@ -13,7 +13,7 @@ Defines what femininity means within MVQUEEN's ecosystem. Not performative. Stra
 
 **Femininity is strength disguised as softness.**
 
-MVQUEEN celebrates:
+MVQueen celebrates:
 - Quiet authority (not shouting)
 - Emotional intelligence (not manipulation)
 - Softness as a choice (not weakness)
@@ -22,7 +22,7 @@ MVQUEEN celebrates:
 
 ---
 
-## Feminine Archetypes in MVQUEEN
+## Feminine Archetypes in MVQueen
 
 ### The Architect
 - Builds, plans, structures
@@ -62,7 +62,7 @@ Never present femininity as:
 
 ---
 
-## Language of MVQUEEN Femininity
+## Language of MVQueen Femininity
 
 **Soft but not weak:**
 - "Gentle strength"

@@ -1,7 +1,7 @@
-# 👑 MVQUEEN — Brand Rules
+# 👑 MVQueen — Brand Rules
 ### The DO / DON'T Reference
 
-Every brand decision — visual, verbal, experiential — produces either something that builds MVQUEEN or something that quietly erodes it. These are the guardrails that keep the brand coherent at scale.
+Every brand decision — visual, verbal, experiential — produces either something that builds MVQueen or something that quietly erodes it. These are the guardrails that keep the brand coherent at scale.
 
 ---
 
@@ -52,7 +52,7 @@ Every brand decision — visual, verbal, experiential — produces either someth
 ❌ DON'T chase visual trends at the expense of identity.
 ❌ DON'T overcrowd product imagery. One product, beautifully lit, one prop max.
 ❌ DON'T use clip art, stock icons, or generic Canva elements.
-❌ DON'T put Miss.Princess colors (Soft Lilac #E8DCF0, Petal Pink #F7E0DA) in MVQUEEN contexts.
+❌ DON'T put Miss.Princess colors (Soft Lilac #E8DCF0, Petal Pink #F7E0DA) in MVQueen contexts.
 
 ---
 
@@ -74,7 +74,7 @@ Every brand decision — visual, verbal, experiential — produces either someth
 
 ## SECTION 4 — BRAND CONSISTENCY TESTS
 
-**Five-Second Test:** She should feel MVQUEEN within 5 seconds — from warmth, softness, confidence. Not from the logo.
+**Five-Second Test:** She should feel MVQueen within 5 seconds — from warmth, softness, confidence. Not from the logo.
 **Mirror Test:** Does this look or sound like any other brand? If yes — rewrite.
 **Brand Bible Test:** Does this contradict the Brand Bible? If yes — it doesn't happen.
 **Forbidden Words Test:** Run every piece of copy through Forbidden_Words.md. No exceptions.

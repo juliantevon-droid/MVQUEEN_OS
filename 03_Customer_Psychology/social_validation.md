@@ -1,11 +1,11 @@
-# 👥 MVQUEEN SOCIAL VALIDATION  
+# 👥 MVQueen SOCIAL VALIDATION  
 *The complete psychological, emotional, and identity‑based system of how feminine luxury consumers use social proof to make buying decisions*
 
 ---
 
 # 1. Purpose of the Social Validation System
 
-Social Validation explains **how MVQUEEN customers use other women’s experiences** to:
+Social Validation explains **how MVQueen customers use other women’s experiences** to:
 
 - confirm identity alignment  
 - reduce emotional risk  
@@ -20,9 +20,9 @@ It is **identity‑based emotional reassurance**.
 
 ---
 
-# 2. MVQUEEN’s Social Validation Philosophy
+# 2. MVQueen’s Social Validation Philosophy
 
-MVQUEEN customers rely on social validation because:
+MVQueen customers rely on social validation because:
 
 ### **1. Femininity is communal**  
 Women look to other women for emotional and aesthetic cues.
@@ -60,10 +60,10 @@ Social proof reduces hesitation and increases emotional certainty.
 
 ---
 
-# 4. The MVQUEEN Social Validation Cycle
+# 4. The MVQueen Social Validation Cycle
 
 ### **1. Discovery**
-She sees other women using MVQUEEN products.
+She sees other women using MVQueen products.
 
 ### **2. Resonance**
 She feels emotionally aligned with their aesthetic.
@@ -82,7 +82,7 @@ She shares her own experience, reinforcing the cycle.
 
 ---
 
-# 5. Types of Social Validation That Influence MVQUEEN Customers
+# 5. Types of Social Validation That Influence MVQueen Customers
 
 ### **A. Aesthetic Validation**
 Photos and videos that show:
@@ -173,7 +173,7 @@ Each category requires **visual + emotional validation**.
 
 # 8. The Emotional Validation Framework (EVF)
 
-MVQUEEN uses a 3‑step emotional validation method:
+MVQueen uses a 3‑step emotional validation method:
 
 ### **1. Mirror**
 Show women who reflect her identity.  
@@ -234,7 +234,7 @@ Feels salesy instead of emotional.
 
 ---
 
-# 11. How MVQUEEN Builds Social Validation
+# 11. How MVQueen Builds Social Validation
 
 ### **A. Community‑Driven Content**
 Women sharing their soft glam moments.
@@ -277,4 +277,4 @@ It is:
 - feminine community  
 - luxury amplification  
 
-This system ensures MVQUEEN becomes a brand women **love, trust, share, and proudly belong to**.
+This system ensures MVQueen becomes a brand women **love, trust, share, and proudly belong to**.

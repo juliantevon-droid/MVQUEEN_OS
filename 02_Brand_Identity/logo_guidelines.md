@@ -1,11 +1,11 @@
-# 👑 MVQUEEN LOGO GUIDELINES — UPGRADED EDITION  
-*The complete emotional, symbolic, technical, behavioral, and global‑protection system for MVQUEEN’s luxury feminine mark*
+# 👑 MVQueen LOGO GUIDELINES — UPGRADED EDITION  
+*The complete emotional, symbolic, technical, behavioral, and global‑protection system for MVQueen’s luxury feminine mark*
 
 ---
 
 # 1. Purpose of the Logo Guidelines
 
-The MVQUEEN logo is not a graphic.  
+The MVQueen logo is not a graphic.  
 It is a **cultural asset**, a **psychological signal**, and a **legacy symbol** representing:
 
 - feminine royalty  
@@ -30,7 +30,7 @@ This document governs how the logo behaves across all environments — digital, 
 
 # 2. Logo System Overview
 
-The MVQUEEN logo system includes:
+The MVQueen logo system includes:
 
 - **[Primary Wordmark](ca://s?q=Explain_primary_wordmark)**  
 - **[Secondary Wordmark](ca://s?q=Explain_secondary_wordmark)**  
@@ -45,7 +45,7 @@ Each component has a distinct emotional purpose, symbolic meaning, and usage con
 
 # 3. Emotional & Symbolic Foundations of the Logo
 
-The MVQUEEN logo is built on four emotional pillars:
+The MVQueen logo is built on four emotional pillars:
 
 ### **1. Feminine Royalty**
 The logo must visually express the meaning of “Most Valuable Queen” through:
@@ -243,7 +243,7 @@ A combined mark for high‑luxury applications.
 # 9. Miss.Princess Sister Mark Guidelines (UPGRADED)
 
 ## **Purpose**
-A youthful, playful interpretation of the MVQUEEN identity.
+A youthful, playful interpretation of the MVQueen identity.
 
 ## **Emotional Tone**
 - dreamy  
@@ -417,7 +417,7 @@ Any misuse damages brand equity and breaks luxury consistency.
 
 # 16. Dual‑Brand Logo Behavior (UPGRADED)
 
-## **MVQUEEN**
+## **MVQueen**
 - elegant serif wordmark  
 - iconic monogram  
 - champagne gold accents  
@@ -438,13 +438,13 @@ Both must feel related — like two sisters — but never identical.
 This system ensures that every designer, AI agent, and creative team member can:
 
 - maintain perfect logo consistency  
-- protect MVQUEEN’s luxury identity  
+- protect MVQueen’s luxury identity  
 - scale the brand across categories  
 - build long‑term brand equity  
 - support global expansion  
 - maintain feminine luxury atmosphere  
 
-The MVQUEEN logo is not just a mark.  
+The MVQueen logo is not just a mark.  
 It is:
 - identity  
 - emotion  

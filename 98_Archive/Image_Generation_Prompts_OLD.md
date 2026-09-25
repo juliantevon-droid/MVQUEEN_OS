@@ -1,16 +1,16 @@
-# 🎨 MVQUEEN — Image Generation Prompts
+# 🎨 MVQueen — Image Generation Prompts
 
 ---
 
 ## Purpose
 
-A library of structured prompts for generating AI images that align with MVQUEEN's visual identity — cinematic, feminine, atmospheric, and brand-consistent.
+A library of structured prompts for generating AI images that align with MVQueen's visual identity — cinematic, feminine, atmospheric, and brand-consistent.
 
 All AI-generated images are reviewed against brand visual standards before use.
 
 ---
 
-## MVQUEEN Visual Identity (Load as context for every image prompt)
+## MVQueen Visual Identity (Load as context for every image prompt)
 
 ```
 BRAND VISUAL IDENTITY CONTEXT:
@@ -39,7 +39,7 @@ NOT: Instagram influencer flat lay, harsh studio product shot, stock photo aesth
 
 ### Prompt IMG-01 — Hero Product Shot
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+[MVQueen VISUAL IDENTITY CONTEXT — paste above]
 
 Create a luxury product photography image:
 
@@ -59,9 +59,9 @@ Additional direction: [any specific details]
 
 ### Prompt IMG-02 — Lifestyle/Atmospheric Shot
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+[MVQueen VISUAL IDENTITY CONTEXT — paste above]
 
-Create a lifestyle image for MVQUEEN:
+Create a lifestyle image for MVQueen:
 
 Scene: [describe the scene — morning vanity / bathroom shelf / dressing table / bedside]
 Products featured: [products or "suggest placement naturally"]
@@ -77,9 +77,9 @@ Style: Slow living editorial, feminine, atmospheric
 
 ### Prompt IMG-03 — Campaign/Editorial Image
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+[MVQueen VISUAL IDENTITY CONTEXT — paste above]
 
-Create a campaign editorial image for MVQUEEN:
+Create a campaign editorial image for MVQueen:
 
 Campaign theme: [theme]
 Central subject: [product / woman / both]
@@ -95,9 +95,9 @@ Format: [square / portrait / landscape]
 
 ### Prompt IMG-04 — Social Media Graphic
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+[MVQueen VISUAL IDENTITY CONTEXT — paste above]
 
-Create a social media graphic for MVQUEEN:
+Create a social media graphic for MVQueen:
 
 Purpose: [quote / announcement / educational / product feature]
 Text to include: [exact text — keep short]
@@ -113,9 +113,9 @@ Platform: [Instagram square / story / Pinterest]
 
 ### Prompt IMG-05 — Brand Mood/Aesthetic Image
 ```
-[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+[MVQueen VISUAL IDENTITY CONTEXT — paste above]
 
-Create a mood/aesthetic image that represents MVQUEEN's world — no product required.
+Create a mood/aesthetic image that represents MVQueen's world — no product required.
 
 Concept: [a morning ritual / a quiet afternoon / a woman becoming herself / a luxurious moment alone]
 Visual elements: [textures, light, colors, objects that represent the brand world]
@@ -144,4 +144,4 @@ Before using any AI-generated image:
 If any box is unchecked — regenerate or adjust before using.
 
 ---
-*MVQUEEN Image Generation Prompts — Operational Document*
+*MVQueen Image Generation Prompts — Operational Document*

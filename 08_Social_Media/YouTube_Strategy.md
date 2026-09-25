@@ -1,10 +1,10 @@
-# 📺 MVQUEEN — YouTube Strategy
+# 📺 MVQueen — YouTube Strategy
 
 ---
 
 ## Purpose
 
-Build MVQUEEN's YouTube presence as a long-form brand authority channel — creating content that earns deep trust, demonstrates genuine expertise, and drives qualified traffic to the store over time.
+Build MVQueen's YouTube presence as a long-form brand authority channel — creating content that earns deep trust, demonstrates genuine expertise, and drives qualified traffic to the store over time.
 
 YouTube is the long game. Plant seeds now that compound for years.
 
@@ -12,12 +12,12 @@ YouTube is the long game. Plant seeds now that compound for years.
 
 ## YouTube Strategic Position
 
-MVQUEEN on YouTube is:
+MVQueen on YouTube is:
 - The thoughtful expert in feminine beauty and lifestyle
 - The brand that goes deeper than other channels allow
 - The destination for women who want more than a product review
 
-MVQUEEN on YouTube is NOT:
+MVQueen on YouTube is NOT:
 - A product haul channel
 - A trend-chasing content farm
 - A hard-sell environment
@@ -53,10 +53,10 @@ In-depth education on skincare ingredients, hair science, and fashion quality.
 ---
 
 ### Pillar 3 — Brand Philosophy Content
-Long-form explorations of MVQUEEN's values and feminine philosophy.
+Long-form explorations of MVQueen's values and feminine philosophy.
 
 **Examples:**
-- *"Why I Built MVQUEEN: The Brand Philosophy Behind the Products"*
+- *"Why I Built MVQueen: The Brand Philosophy Behind the Products"*
 - *"Softness Is Strength: A Different Way to Think About Femininity"*
 - *"The Problem With Modern Beauty Culture (And What We're Doing About It)"*
 
@@ -66,12 +66,12 @@ Long-form explorations of MVQUEEN's values and feminine philosophy.
 ---
 
 ### Pillar 4 — Product Showcases and Honest Reviews
-In-depth, honest coverage of MVQUEEN products — what they do, who they're for, real results.
+In-depth, honest coverage of MVQueen products — what they do, who they're for, real results.
 
 **Examples:**
 - *"[Product Name] — 30 Day Honest Review"*
 - *"Testing Our Entire Skincare Range on Real Skin"*
-- *"The MVQUEEN Ritual Kit: A Complete Walkthrough"*
+- *"The MVQueen Ritual Kit: A Complete Walkthrough"*
 
 **Length:** 8-15 minutes
 **Search intent:** Commercial — women considering a purchase
@@ -101,7 +101,7 @@ Every video is optimized for search:
 **YouTube Shorts:** 3-5 per week repurposed from TikTok content
 
 ---
-*MVQUEEN YouTube Strategy — Operational Document*
+*MVQueen YouTube Strategy — Operational Document*
 
 ---
 ---

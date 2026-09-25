@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Keyword Research
+# 👑 MVQueen — Keyword Research
 ### The Search Intelligence Reference
 
 ---
@@ -266,16 +266,16 @@ Update this file when new keyword research is conducted. Use it every time conte
 
 These are owned keywords — every brand should rank #1 for its own name.
 
-### MVQUEEN Brand Keywords
-- MVQUEEN
-- MVQUEEN brand
-- MVQUEEN beauty
-- MVQUEEN skincare
-- MVQUEEN fragrance
-- MVQUEEN fashion
-- MVQUEEN accessible luxury
+### MVQueen Brand Keywords
+- MVQueen
+- MVQueen brand
+- MVQueen beauty
+- MVQueen skincare
+- MVQueen fragrance
+- MVQueen fashion
+- MVQueen accessible luxury
 - most valuable queen brand
-- MVQUEEN lifestyle brand
+- MVQueen lifestyle brand
 
 ### Miss.Princess Brand Keywords
 - Miss Princess brand
@@ -338,7 +338,7 @@ Track these metrics monthly per keyword cluster:
 | TikTok search appearances | TikTok Analytics | Monthly |
 
 **Priority keywords to track from day one:**
-1. MVQUEEN (brand)
+1. MVQueen (brand)
 2. accessible luxury skincare
 3. feminine lifestyle brand
 4. soft life aesthetic products
@@ -349,4 +349,4 @@ Track these metrics monthly per keyword cluster:
 
 ---
 
-*This file is the MVQUEEN keyword research reference. It is updated quarterly or when new categories launch. It pairs with SEO_Strategy.md (the strategic framework), Blog_Strategy.md (how keywords are assigned to content), and Content_Calendar.md (publishing schedule). All content creation begins with the appropriate keyword cluster from this file.*
+*This file is the MVQueen keyword research reference. It is updated quarterly or when new categories launch. It pairs with SEO_Strategy.md (the strategic framework), Blog_Strategy.md (how keywords are assigned to content), and Content_Calendar.md (publishing schedule). All content creation begins with the appropriate keyword cluster from this file.*

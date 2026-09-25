@@ -50,7 +50,7 @@ The current system should therefore be treated as:
 ## 3. What Is Already Strong
 
 ### 3.1 Brand foundation
-The Brand Bible provides a substantive strategic foundation covering brand meaning, mission, vision, emotional positioning, accessible luxury, feminine identity, and the MVQUEEN / Miss.Princess relationship.
+The Brand Bible provides a substantive strategic foundation covering brand meaning, mission, vision, emotional positioning, accessible luxury, feminine identity, and the MVQueen / Miss.Princess relationship.
 
 ### 3.2 Automation architecture
 The Omniluxe Engine is explicitly designed as the core automation layer for product curation, Shopify synchronization and data processing, with modular areas for catalog processing, brand intelligence, Shopify API, metafields and utilities.
@@ -134,7 +134,7 @@ No bulk production should bypass the QA gate.
 
 ## 6. Non-Negotiable Production Rules
 
-1. MVQUEEN remains the canonical parent brand identity unless a deliberate brand-system decision says otherwise.
+1. MVQueen remains the canonical parent brand identity unless a deliberate brand-system decision says otherwise.
 2. Generated copy must follow the canonical brand voice and forbidden-word rules.
 3. Product facts must never be invented merely to improve conversion.
 4. Third-party supplier/brand names must not be silently promoted into MVQUEEN-owned claims.

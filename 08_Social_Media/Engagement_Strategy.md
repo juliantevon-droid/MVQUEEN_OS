@@ -1,10 +1,10 @@
-# 💬 MVQUEEN — Engagement Strategy
+# 💬 MVQueen — Engagement Strategy
 
 ---
 
 ## Purpose
 
-Build a genuine, loyal community through intentional engagement — turning passive followers into active advocates who feel connected to the MVQUEEN world.
+Build a genuine, loyal community through intentional engagement — turning passive followers into active advocates who feel connected to the MVQueen world.
 
 Engagement is not a vanity metric. It is relationship infrastructure.
 The algorithm rewards it. More importantly — women remember it.
@@ -13,7 +13,7 @@ The algorithm rewards it. More importantly — women remember it.
 
 ## Engagement Philosophy
 
-MVQUEEN engages like a woman who is present — not a brand managing reputation.
+MVQueen engages like a woman who is present — not a brand managing reputation.
 
 Every comment, DM, and reply is an opportunity to make one woman feel genuinely seen.
 That feeling compounds into loyalty, advocacy, and lifetime value.
@@ -56,7 +56,7 @@ Acknowledge + invite to DM + never be defensive.
 
 ### UGC / tag
 Celebrate + repost to stories + personal reply.
-*"This is exactly the energy we built MVQUEEN for. You look incredible. 🤍"*
+*"This is exactly the energy we built MVQueen for. You look incredible. 🤍"*
 
 ---
 
@@ -67,7 +67,7 @@ Spend 15 minutes daily engaging with:
 - Posts tagged with branded hashtags
 - Posts in niche community hashtags
 - Followers' own content
-- Comments on competitor posts (without mentioning MVQUEEN)
+- Comments on competitor posts (without mentioning MVQueen)
 
 **Comment quality standard:**
 Leave comments that add value — observations, genuine compliments, real questions.
@@ -110,4 +110,4 @@ Use interactive story features to drive engagement:
 A save means she wants to come back. Track saves as a primary quality metric.
 
 ---
-*MVQUEEN Engagement Strategy — Operational Document*
+*MVQueen Engagement Strategy — Operational Document*

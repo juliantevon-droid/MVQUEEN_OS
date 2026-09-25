@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Tagline Suite
+# 👑 MVQueen — Tagline Suite
 
 ---
 
@@ -9,17 +9,17 @@ These are not the same file with different names.
 A **slogan** campaigns. It moves. It lives in moments, launches, and seasonal energy.
 A **tagline** *defines*. It is the permanent one-line identity of the brand — the sentence that lives under the logo, on the website header, in the brand deck, and in every official introduction.
 
-MVQUEEN needs both. This file is the tagline.
+MVQueen needs both. This file is the tagline.
 
 ---
 
-## Primary Tagline — MVQUEEN
+## Primary Tagline — MVQueen
 
 > **"Where femininity meets elevation."**
 
-This is the working tagline of MVQUEEN.
+This is the working tagline of MVQueen.
 
-It is clean, permanent, and functional across every context — logo lockups, bio fields, email footers, packaging, decks. It tells a woman exactly what world she's entering without over-explaining it. Femininity is the identity. Elevation is the promise. The *meeting point* between them is MVQUEEN.
+It is clean, permanent, and functional across every context — logo lockups, bio fields, email footers, packaging, decks. It tells a woman exactly what world she's entering without over-explaining it. Femininity is the identity. Elevation is the promise. The *meeting point* between them is MVQueen.
 
 ---
 
@@ -50,7 +50,7 @@ Two-part structure. Works well in brand deck headers and editorial contexts.
 **05.**
 > *For the woman the world keeps underestimating.*
 
-Charged. Emotionally specific. Speaks to the MVQUEEN origin story directly.
+Charged. Emotionally specific. Speaks to the MVQueen origin story directly.
 
 **06.**
 > *Not a store. A world.*
@@ -95,7 +95,7 @@ Carries the sister brand's personality in six words. Intentional softness — no
 | Logo lockup (horizontal) | Beneath wordmark, smaller type |
 | Logo lockup (stacked) | Centered beneath, 60% logo size |
 | Website header / hero | Standalone, no punctuation needed |
-| Email footer | After brand name, separated by em dash — *MVQUEEN — Where femininity meets elevation* |
+| Email footer | After brand name, separated by em dash — *MVQueen — Where femininity meets elevation* |
 | Brand deck cover | Subtitle position, below brand name |
 | Packaging | Tissue paper, inside box lid, dust bag |
 | Social bio | After handle, as descriptor line |
@@ -118,7 +118,7 @@ Carries the sister brand's personality in six words. Intentional softness — no
 Before finalizing any tagline, apply this test:
 
 1. Does it still make sense in 10 years if trends change?
-2. Could it belong to another brand, or is it unmistakably MVQUEEN?
+2. Could it belong to another brand, or is it unmistakably MVQueen?
 3. Does a woman reading it for the first time feel something, or just understand something?
 4. Can it work without the logo, or does it only make sense attached to it?
 
@@ -126,4 +126,4 @@ The primary tagline — *"Where femininity meets elevation"* — passes all four
 
 ---
 
-*This file is the MVQUEEN tagline reference. It is distinct from Slogans.md (campaign language) and Brand Messaging.md (voice pillars). Taglines defined here are the permanent verbal identity of both brands.*
+*This file is the MVQueen tagline reference. It is distinct from Slogans.md (campaign language) and Brand Messaging.md (voice pillars). Taglines defined here are the permanent verbal identity of both brands.*

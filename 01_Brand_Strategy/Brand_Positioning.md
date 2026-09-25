@@ -1,16 +1,16 @@
-# 📍 MVQUEEN — Brand Positioning
+# 📍 MVQueen — Brand Positioning
 
 ---
 
 ## Purpose
 
-The operational positioning document for MVQUEEN — the market position, competitive landscape, positioning statements for different contexts, and the rules that protect the position as the brand scales.
+The operational positioning document for MVQueen — the market position, competitive landscape, positioning statements for different contexts, and the rules that protect the position as the brand scales.
 
 ---
 
 ## The Positioning Statement
 
-**For women who choose softness intentionally, MVQUEEN is the luxury feminine brand that delivers beauty, fashion, and lifestyle products built to restore — at a price that feels earned, not exclusionary.**
+**For women who choose softness intentionally, MVQueen is the luxury feminine brand that delivers beauty, fashion, and lifestyle products built to restore — at a price that feels earned, not exclusionary.**
 
 ---
 
@@ -20,13 +20,13 @@ The operational positioning document for MVQUEEN — the market position, compet
 MASS MARKET                    ACCESSIBLE LUXURY                    ULTRA LUXURY
 (Under $25/product)            ($25–$150/product)                  ($150+/product)
 
-[Target, Amazon]               [MVQUEEN ← HERE]                   [Chanel, La Mer]
+[Target, Amazon]               [MVQueen ← HERE]                   [Chanel, La Mer]
 Generic, volume-focused        Premium quality, warm luxury        Cold prestige, heritage
 No emotional philosophy        Conviction-driven, AI-native        Traditional brand equity
 Trend-dependent                Identity-driven                     Legacy-dependent
 ```
 
-MVQUEEN occupies a specific, defensible position:
+MVQueen occupies a specific, defensible position:
 - **Above** mass market on quality, philosophy, and experience
 - **Below** traditional luxury on price — intentionally accessible
 - **Distinct from** both on emotional intelligence and AI-native infrastructure
@@ -36,25 +36,25 @@ MVQUEEN occupies a specific, defensible position:
 ## The Three Positioning Pillars
 
 ### Pillar 01 — Warm Luxury
-Traditional luxury is cold — aspirationally distant, designed to make you feel the gap between yourself and the brand. MVQUEEN luxury is warm — designed to make her feel like it was made for her life.
+Traditional luxury is cold — aspirationally distant, designed to make you feel the gap between yourself and the brand. MVQueen luxury is warm — designed to make her feel like it was made for her life.
 
 **Proof points:** Accessible pricing, human brand voice, generous customer service, community over audience
 
 ### Pillar 02 — Conviction-Driven
-Most brands are trend-driven. MVQUEEN is conviction-driven — built around a single, consistent belief that softness is strength. This gives the brand immunity to trend cycles and builds compounding brand equity.
+Most brands are trend-driven. MVQueen is conviction-driven — built around a single, consistent belief that softness is strength. This gives the brand immunity to trend cycles and builds compounding brand equity.
 
 **Proof points:** Brand manifesto, consistent voice across years, doctrine-first decision making
 
 ### Pillar 03 — AI-Native From the Ground Up
 Not a brand that added AI to its stack. A brand built with AI as infrastructure — enabling the quality consistency, content volume, and operational precision of a much larger team from day one.
 
-**Proof points:** MVQUEEN OS, AI prompt library, agent systems, automated workflows all governed by brand doctrine
+**Proof points:** MVQueen OS, AI prompt library, agent systems, automated workflows all governed by brand doctrine
 
 ---
 
 ## Competitive Differentiation
 
-| Attribute | Mass DTC Brands | Traditional Luxury | MVQUEEN |
+| Attribute | Mass DTC Brands | Traditional Luxury | MVQueen |
 |-----------|----------------|------------------|---------|
 | Price | Low | High | Accessible luxury |
 | Philosophy | None/trend | Heritage | Conviction-driven |
@@ -69,19 +69,19 @@ Not a brand that added AI to its stack. A brand built with AI as infrastructure 
 ## Positioning Statements by Context
 
 ### For Customers
-*"Luxury made for your life — not someone else's. MVQUEEN is beauty, fashion, and lifestyle built around the conviction that softness is strength and you deserve products that actually restore."*
+*"Luxury made for your life — not someone else's. MVQueen is beauty, fashion, and lifestyle built around the conviction that softness is strength and you deserve products that actually restore."*
 
 ### For Press
-*"MVQUEEN is an AI-native accessible luxury brand in the feminine beauty and lifestyle space, serving women who reject the false choice between affordable and aspirational."*
+*"MVQueen is an AI-native accessible luxury brand in the feminine beauty and lifestyle space, serving women who reject the false choice between affordable and aspirational."*
 
 ### For Partners / Wholesale
-*"MVQUEEN is a conviction-driven accessible luxury brand with a loyal community of women who purchase intentionally. Our customers over-index on repeat purchase rate and have high average order values."*
+*"MVQueen is a conviction-driven accessible luxury brand with a loyal community of women who purchase intentionally. Our customers over-index on repeat purchase rate and have high average order values."*
 
 ### For Investors
-*"MVQUEEN occupies the underserved gap between mass-market DTC beauty and traditional luxury houses — AI-native infrastructure from day one, doctrine-governed brand that compounds rather than trends."*
+*"MVQueen occupies the underserved gap between mass-market DTC beauty and traditional luxury houses — AI-native infrastructure from day one, doctrine-governed brand that compounds rather than trends."*
 
 ### For Influencer / Creator Briefs
-*"MVQUEEN is a luxury feminine brand built for women who choose softness on purpose. Our community values intentional living, quality over quantity, and beauty as a ritual — not a routine."*
+*"MVQueen is a luxury feminine brand built for women who choose softness on purpose. Our community values intentional living, quality over quantity, and beauty as a ritual — not a routine."*
 
 ---
 
@@ -110,5 +110,5 @@ Rule 5: Every major decision is tested against the positioning before proceeding
 ```
 
 ---
-*MVQUEEN Brand Positioning — Operational Document*
+*MVQueen Brand Positioning — Operational Document*
 *Positioning is an asset. Protect it like one.*

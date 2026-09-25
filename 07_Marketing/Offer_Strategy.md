@@ -2,7 +2,7 @@
 
 # Accessible Luxury Positioning
 
-MVQUEEN approaches luxury through emotional experience rather than exclusivity alone.
+MVQueen approaches luxury through emotional experience rather than exclusivity alone.
 
 The brand believes luxury can exist within:
 - presentation
@@ -14,7 +14,7 @@ The brand believes luxury can exist within:
 - self-expression
 - feminine energy
 
-This philosophy allows MVQUEEN to emotionally resonate with women across different lifestyles, backgrounds, and income levels without sacrificing aspiration or refinement.
+This philosophy allows MVQueen to emotionally resonate with women across different lifestyles, backgrounds, and income levels without sacrificing aspiration or refinement.
 
 The goal is not to imitate traditional luxury.
 
@@ -26,7 +26,7 @@ The goal is to modernize it emotionally.
 
 # Aspiration Without Exclusion
 
-MVQUEEN believes aspiration should inspire women rather than make them feel emotionally excluded from beauty, luxury, confidence, or femininity.
+MVQueen believes aspiration should inspire women rather than make them feel emotionally excluded from beauty, luxury, confidence, or femininity.
 
 The brand intentionally exists between:
 - elevated living
@@ -40,6 +40,6 @@ between:
 - luxury aesthetics
 - and real life
 
-MVQUEEN creates a world that feels beautiful enough to inspire while still feeling emotionally human enough to belong to.
+MVQueen creates a world that feels beautiful enough to inspire while still feeling emotionally human enough to belong to.
 
 ---

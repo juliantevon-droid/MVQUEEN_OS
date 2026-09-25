@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — BATCH PROCESSOR (BLOCK M)
+# MVQueen OMNILUXE ENGINE — BATCH PROCESSOR (BLOCK M)
 # ---------------------------------------------------------
 
 import csv

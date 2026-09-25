@@ -31,7 +31,7 @@ def generate_description(base_title: str, handle: str, supplier_body: str) -> st
     source = re.sub(r"\s+", " ", str(supplier_body or "")).strip()
 
     if source:
-        source = source.replace("MVQUEEN", "MVQueen").replace("mvqueen", "MVQueen")
+        source = source.replace("MVQueen", "MVQueen").replace("mvqueen", "MVQueen")
         body = escape(source)
         return (
             f"<p><strong>{escape(title)}</strong></p>"

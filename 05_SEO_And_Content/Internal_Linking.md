@@ -1,10 +1,10 @@
-# 🔗 MVQUEEN — Internal Linking Strategy
+# 🔗 MVQueen — Internal Linking Strategy
 
 ---
 
 ## Purpose
 
-Build a strategic internal linking architecture across the MVQUEEN website — improving SEO authority distribution, keeping visitors engaged longer, and guiding the customer journey from content to conversion.
+Build a strategic internal linking architecture across the MVQueen website — improving SEO authority distribution, keeping visitors engaged longer, and guiding the customer journey from content to conversion.
 
 ---
 
@@ -22,7 +22,7 @@ Every internal link should feel natural to the reader — not inserted for SEO a
 
 ### Hub and Spoke Model
 
-MVQUEEN's website is organized into topic clusters:
+MVQueen's website is organized into topic clusters:
 
 ```
 HUB PAGE (Pillar content — broad topic)
@@ -84,7 +84,7 @@ Build the most internal links to these pages (they need the most authority):
 **Tool:** Screaming Frog or Ahrefs site audit for comprehensive audit
 
 ---
-*MVQUEEN Internal Linking Strategy — Operational Document*
+*MVQueen Internal Linking Strategy — Operational Document*
 
 ---
 ---

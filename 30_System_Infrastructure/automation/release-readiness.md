@@ -1,4 +1,4 @@
-# MVQUEEN Release Readiness
+# MVQueen Release Readiness
 
 ## Safety state
 - Shopify store: tsucu0-1i.myshopify.com

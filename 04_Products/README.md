@@ -4,7 +4,7 @@
 **Product governance, philosophy, naming, pricing, and catalog.**
 
 Contains:
-- product_philosophy.md — What MVQUEEN products represent
+- product_philosophy.md — What MVQueen products represent
 - product_naming_system.md — How products are named
 - pricing_strategy.md — Margin and positioning
 - collection_structure.md — How products organize

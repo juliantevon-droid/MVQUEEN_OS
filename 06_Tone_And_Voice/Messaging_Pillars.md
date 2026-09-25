@@ -1,10 +1,10 @@
-# 🏛️ MVQUEEN — Messaging Pillars
+# 🏛️ MVQueen — Messaging Pillars
 
 ---
 
 ## Purpose
 
-Define the six core messaging pillars that govern all MVQUEEN communication — ensuring every piece of content, every campaign, and every customer interaction connects to a strategic brand truth.
+Define the six core messaging pillars that govern all MVQueen communication — ensuring every piece of content, every campaign, and every customer interaction connects to a strategic brand truth.
 
 ---
 
@@ -22,7 +22,7 @@ Define the six core messaging pillars that govern all MVQUEEN communication — 
 ---
 
 ### Pillar 02 — Luxury That Belongs to Her
-**The truth:** Luxury was never supposed to exclude. MVQUEEN luxury is warm, accessible, and designed for real women — not an aspirational distance.
+**The truth:** Luxury was never supposed to exclude. MVQueen luxury is warm, accessible, and designed for real women — not an aspirational distance.
 
 **Where to use:** Product positioning, pricing framing, brand differentiation
 **Tone:** Inviting, confident, matter-of-fact
@@ -40,7 +40,7 @@ Define the six core messaging pillars that govern all MVQUEEN communication — 
 ---
 
 ### Pillar 04 — Intentional Feminine Living
-**The truth:** MVQUEEN is a philosophy about how to move through life — choosing beauty, atmosphere, and softness with intention rather than obligation.
+**The truth:** MVQueen is a philosophy about how to move through life — choosing beauty, atmosphere, and softness with intention rather than obligation.
 
 **Where to use:** Lifestyle content, community building, brand narrative
 **Tone:** Aspirational, grounded, wise
@@ -49,7 +49,7 @@ Define the six core messaging pillars that govern all MVQUEEN communication — 
 ---
 
 ### Pillar 05 — The Ritual Over the Routine
-**The truth:** A routine is something you complete. A ritual is something you feel. MVQUEEN creates rituals — daily practices that women actually look forward to.
+**The truth:** A routine is something you complete. A ritual is something you feel. MVQueen creates rituals — daily practices that women actually look forward to.
 
 **Where to use:** Product positioning, content marketing, differentiation
 **Tone:** Specific, sensory, experiential
@@ -58,7 +58,7 @@ Define the six core messaging pillars that govern all MVQUEEN communication — 
 ---
 
 ### Pillar 06 — Becoming — Never Finished
-**The truth:** MVQUEEN is for women in process — evolving, growing, and building into themselves. Not women who have arrived at a destination, but women who are beautifully on the way.
+**The truth:** MVQueen is for women in process — evolving, growing, and building into themselves. Not women who have arrived at a destination, but women who are beautifully on the way.
 
 **Where to use:** Community building, customer psychology content, brand narrative
 **Tone:** Hopeful, affirming, forward-moving
@@ -70,12 +70,12 @@ Define the six core messaging pillars that govern all MVQUEEN communication — 
 
 Every piece of content connects to at least one pillar.
 When planning content, identify which pillar it serves first.
-If a piece of content doesn't connect to any pillar — it doesn't belong in MVQUEEN's feed.
+If a piece of content doesn't connect to any pillar — it doesn't belong in MVQueen's feed.
 
 **Content audit question:** *Which pillar does this serve — and how clearly?*
 
 ---
-*MVQUEEN Messaging Pillars — Operational Document*
+*MVQueen Messaging Pillars — Operational Document*
 
 ---
 ---

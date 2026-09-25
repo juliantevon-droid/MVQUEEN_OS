@@ -60,9 +60,9 @@ Lighting becomes part of the emotional atmosphere system.
 
 # Cinematic Femininity Doctrine
 
-MVQUEEN creative direction should emotionally embody cinematic femininity.
+MVQueen creative direction should emotionally embody cinematic femininity.
 
-Cinematic femininity within MVQUEEN emotionally emphasizes:
+Cinematic femininity within MVQueen emotionally emphasizes:
 - emotional softness
 - emotional warmth
 - emotional intimacy
@@ -95,7 +95,7 @@ Luxury should emotionally feel emotionally lived-in rather than emotionally unto
 
 # Photography Direction Philosophy
 
-Photography within MVQUEEN should emotionally feel:
+Photography within MVQueen should emotionally feel:
 - natural
 - emotionally cinematic
 - emotionally soft
@@ -137,7 +137,7 @@ Humanity emotionally strengthens emotional immersion.
 
 Lighting is foundational to emotional atmosphere.
 
-MVQUEEN lighting should emotionally feel:
+MVQueen lighting should emotionally feel:
 - soft
 - warm
 - cinematic

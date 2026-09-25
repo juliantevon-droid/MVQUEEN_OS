@@ -1,10 +1,10 @@
-# 👑 MVQUEEN — CTA Library
+# 👑 MVQueen — CTA Library
 
 ---
 
 ## CTA Philosophy
 
-MVQUEEN CTAs feel like invitations — not commands.
+MVQueen CTAs feel like invitations — not commands.
 
 The difference between a CTA that converts and one that repels
 is the difference between *"Buy Now"* and *"She deserves this."*
@@ -93,12 +93,12 @@ not being pushed toward a transaction.
 
 **Meta ad CTA buttons (beyond default):**
 - Shop Now → *Start Your Ritual*
-- Learn More → *Discover MVQUEEN*
+- Learn More → *Discover MVQueen*
 - Sign Up → *Join the World*
 - Get Offer → *Claim Yours*
 
 **Ad copy closing lines:**
-- *Your softness deserves this. Shop MVQUEEN.*
+- *Your softness deserves this. Shop MVQueen.*
 - *She's been waiting. So have you.*
 - *Luxury made for women like you. Shop now.*
 - *This is the one. You already know it.*
@@ -123,7 +123,7 @@ not being pushed toward a transaction.
 ### SMS CTAs
 
 Full SMS messages that ARE the CTA:
-- *Your MVQUEEN order is on its way. She was packed with intention. 🤍*
+- *Your MVQueen order is on its way. She was packed with intention. 🤍*
 - *Something new just arrived — and it has your name on it. [LINK]*
 - *You left something behind. She's still here waiting. [LINK]*
 - *Early access — just for you. New arrivals live now. [LINK]*
@@ -133,9 +133,9 @@ Full SMS messages that ARE the CTA:
 
 ### Community / UGC CTAs
 
-- *Show us your MVQUEEN moment. Tag us — we're watching.*
+- *Show us your MVQueen moment. Tag us — we're watching.*
 - *How does she make you feel? Tell us in the comments.*
-- *Share your ritual. #MVQUEEN*
+- *Share your ritual. #MVQueen*
 - *We want to see her in your world. Tag @mvqueen.*
 - *Your review means everything to us — and to women like you.*
 
@@ -186,5 +186,5 @@ Make her want to know more.
 | Add to cart | Functional only, no emotional context |
 
 ---
-*MVQUEEN CTA Library — Operational Document*
+*MVQueen CTA Library — Operational Document*
 *Add new high-performing CTAs as they are tested and proven.*

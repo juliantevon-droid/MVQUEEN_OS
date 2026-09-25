@@ -5,13 +5,13 @@
 
 ## Purpose
 
-Defines the customer retention architecture for MVQUEEN. Acquiring a customer is expensive. Keeping her is the business.
+Defines the customer retention architecture for MVQueen. Acquiring a customer is expensive. Keeping her is the business.
 
 ---
 
 ## Retention Philosophy
 
-MVQUEEN retains customers by making them feel:
+MVQueen retains customers by making them feel:
 - seen as individuals, not transactions
 - connected to a world, not just a product
 - part of something with identity and meaning
@@ -44,7 +44,7 @@ MVQUEEN retains customers by making them feel:
 - User-generated content reposts
 - Story replies and DM engagement
 - Comment responses within 2 hours
-- Community language: "our queens", "the MVQUEEN world"
+- Community language: "our queens", "the MVQueen world"
 
 ---
 

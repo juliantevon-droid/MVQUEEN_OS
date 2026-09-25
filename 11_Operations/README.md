@@ -1,8 +1,8 @@
-# ⚙️ MVQUEEN — Operations System
+# ⚙️ MVQueen — Operations System
 
 ## Purpose
 
-The Operations System is the execution infrastructure layer governing how MVQUEEN runs, scales, and maintains operational excellence across all daily, weekly, and monthly business functions.
+The Operations System is the execution infrastructure layer governing how MVQueen runs, scales, and maintains operational excellence across all daily, weekly, and monthly business functions.
 
 It exists to:
 - establish SOPs for all core operational functions
@@ -24,7 +24,7 @@ The Operations System acts as the:
 
 Operations must be invisible to the customer — and flawless in execution.
 
-The MVQUEEN customer experiences luxury. Behind that experience is a disciplined operational system that ensures every order, every interaction, and every process meets enterprise standards. Operational excellence is a brand decision.
+The MVQueen customer experiences luxury. Behind that experience is a disciplined operational system that ensures every order, every interaction, and every process meets enterprise standards. Operational excellence is a brand decision.
 
 ---
 

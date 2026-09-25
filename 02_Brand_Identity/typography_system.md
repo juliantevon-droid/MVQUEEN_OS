@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Typography is the visual expression of the MVQUEEN voice. Every font choice, weight, and size carries emotional meaning and must reinforce luxury, femininity, confidence, and softness.
+Typography is the visual expression of the MVQueen voice. Every font choice, weight, and size carries emotional meaning and must reinforce luxury, femininity, confidence, and softness.
 
 The typography system is discipline-based: correct fonts in correct sizes at correct hierarchy create effortless luxury.
 
@@ -155,13 +155,13 @@ body { font: var(--type-body); }
 - **Weight:** 500 or 600 (Medium or Semi-Bold)
 - **Size:** 16px for standard buttons
 - **Transformation:** Uppercase optional but only if letter-spacing is increased to 0.05em+
-- **Color:** Charcoal (#2C2C2C) on MVQUEEN Gold (#D4AF37) background
+- **Color:** Charcoal (#2C2C2C) on MVQueen Gold (#D4AF37) background
 
 ### Navigation (Jost)
 - **Weight:** 400 for unselected, 600 for active/hover
 - **Size:** 16px desktop, 14px mobile
 - **Spacing:** Generous spacing between nav items (8-12px)
-- **Color:** Deep Rose (#8B4A5C) for unselected, MVQUEEN Gold (#D4AF37) for active
+- **Color:** Deep Rose (#8B4A5C) for unselected, MVQueen Gold (#D4AF37) for active
 
 ### Email Typography
 

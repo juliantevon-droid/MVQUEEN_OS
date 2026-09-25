@@ -1,13 +1,13 @@
-# MVQUEEN URL & REDIRECT GOVERNANCE
+# MVQueen URL & REDIRECT GOVERNANCE
 
 **Status:** Production control document  
 **Owner:** MVQUEEN_OS  
 **Commerce platform:** Shopify  
-**Customer experience:** Fully custom MVQUEEN storefront  
+**Customer experience:** Fully custom MVQueen storefront  
 
 ## Purpose
 
-Protect search visibility, bookmarks, campaign links, and customer journeys when MVQUEEN URLs change.
+Protect search visibility, bookmarks, campaign links, and customer journeys when MVQueen URLs change.
 
 ## Core Rules
 

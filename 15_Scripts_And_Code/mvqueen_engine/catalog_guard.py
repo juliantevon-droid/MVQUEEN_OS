@@ -1,5 +1,5 @@
 """
-MVQUEEN OS — Catalog Guard
+MVQueen OS — Catalog Guard
 
 Safety layer for catalog-scale product optimization.
 
@@ -137,8 +137,8 @@ def validate_change_set(
         if term.upper() in upper:
             report.add("ERROR", "BRAND_CONTAMINATION", f"Supplier/third-party brand term detected: {term}.", value=term)
 
-    if "MVQUEEN" not in upper:
-        report.add("WARNING", "BRAND_SIGNAL_MISSING", "No MVQUEEN brand signal was found in the optimized content.")
+    if "MVQueen" not in upper:
+        report.add("WARNING", "BRAND_SIGNAL_MISSING", "No MVQueen brand signal was found in the optimized content.")
 
     return report
 
@@ -180,4 +180,4 @@ def validate_catalog(rows: list[Mapping[str, Any]]) -> GuardReport:
 
 
 if __name__ == "__main__":
-    print("MVQUEEN Catalog Guard loaded. Import validate_catalog() or validate_change_set().")
+    print("MVQueen Catalog Guard loaded. Import validate_catalog() or validate_change_set().")

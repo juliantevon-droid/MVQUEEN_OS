@@ -1,4 +1,4 @@
-"""Canonical MVQUEEN brand-language governance helpers.
+"""Canonical MVQueen brand-language governance helpers.
 
 This module reads the source-of-truth markdown files directly. It does not
 generate claims or product facts and performs no network I/O.

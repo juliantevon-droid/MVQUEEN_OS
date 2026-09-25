@@ -1,11 +1,11 @@
-# 👑 MVQUEEN — SKU Systems
+# 👑 MVQueen — SKU Systems
 ### The Inventory & Product Code Reference
 
 ---
 
 ## What This File Is
 
-SKUs (Stock Keeping Units) are the internal language of the MVQUEEN catalog. Every product, every variant, every bundle has a unique SKU that powers inventory management, Shopify operations, fulfillment, reporting, and reordering.
+SKUs (Stock Keeping Units) are the internal language of the MVQueen catalog. Every product, every variant, every bundle has a unique SKU that powers inventory management, Shopify operations, fulfillment, reporting, and reordering.
 
 This file defines the SKU structure, naming conventions, variant codes, and the operational rules that keep the catalog organized at scale. SKUs are internal only — they never appear in customer-facing copy.
 
@@ -13,20 +13,20 @@ This file defines the SKU structure, naming conventions, variant codes, and the 
 
 ## THE SKU PHILOSOPHY
 
-A good SKU system is invisible when working correctly and obvious when something goes wrong. MVQUEEN SKUs are built for clarity at a glance — any team member or system reading a SKU should be able to understand the brand, category, product, and variant without a lookup table.
+A good SKU system is invisible when working correctly and obvious when something goes wrong. MVQueen SKUs are built for clarity at a glance — any team member or system reading a SKU should be able to understand the brand, category, product, and variant without a lookup table.
 
 ---
 
 ## PART 1 — THE SKU STRUCTURE
 
-Every MVQUEEN SKU follows this format:
+Every MVQueen SKU follows this format:
 
 ```
 [BRAND]-[CATEGORY]-[PRODUCT NUMBER]-[VARIANT CODE]
 ```
 
 **Full example:** `MVQ-SKC-001-30ML`
-- `MVQ` = MVQUEEN brand
+- `MVQ` = MVQueen brand
 - `SKC` = Skincare category
 - `001` = Product number 001 in skincare
 - `30ML` = 30ml size variant
@@ -37,16 +37,16 @@ Every MVQUEEN SKU follows this format:
 
 | Code | Brand |
 |---|---|
-| `MVQ` | MVQUEEN |
+| `MVQ` | MVQueen |
 | `MXP` | Miss.Princess |
 
-**Rule:** Every SKU begins with the brand code. MVQUEEN and Miss.Princess products never share SKU ranges — they have entirely separate numbering systems.
+**Rule:** Every SKU begins with the brand code. MVQueen and Miss.Princess products never share SKU ranges — they have entirely separate numbering systems.
 
 ---
 
 ## PART 3 — CATEGORY CODES
 
-### MVQUEEN Category Codes
+### MVQueen Category Codes
 
 | Code | Category | Examples |
 |---|---|---|
@@ -79,12 +79,12 @@ Every MVQUEEN SKU follows this format:
 Products are numbered sequentially within each brand-category combination, starting at `001`.
 
 ```
-MVQ-SKC-001 = First MVQUEEN skincare product added to catalog
-MVQ-SKC-002 = Second MVQUEEN skincare product
-MVQ-SKC-003 = Third MVQUEEN skincare product
+MVQ-SKC-001 = First MVQueen skincare product added to catalog
+MVQ-SKC-002 = Second MVQueen skincare product
+MVQ-SKC-003 = Third MVQueen skincare product
 ...
-MVQ-FRG-001 = First MVQUEEN fragrance product
-MVQ-FRG-002 = Second MVQUEEN fragrance product
+MVQ-FRG-001 = First MVQueen fragrance product
+MVQ-FRG-002 = Second MVQueen fragrance product
 ```
 
 **Rules:**
@@ -168,15 +168,15 @@ Variants distinguish different sizes, colors, or formulas of the same product.
 
 | SKU | Decoded |
 |---|---|
-| `MVQ-SKC-001-30ML` | MVQUEEN Skincare Product 001 (The Glow Serum), 30ml |
-| `MVQ-SKC-001-50ML` | MVQUEEN Skincare Product 001 (The Glow Serum), 50ml |
-| `MVQ-FRG-001-50ML` | MVQUEEN Fragrance Product 001 (Velvet Hour EDP), 50ml |
-| `MVQ-FRG-001-10ML` | MVQUEEN Fragrance Product 001 (Velvet Hour EDP), 10ml travel |
-| `MVQ-FSH-001-SM` | MVQUEEN Fashion Product 001 (The Arrival Dress), Small |
-| `MVQ-FSH-001-IVR-SM` | MVQUEEN Fashion Product 001, Ivory colorway, Small |
-| `MVQ-FSH-001-RSE-MD` | MVQUEEN Fashion Product 001, Rose colorway, Medium |
-| `MVQ-BEA-001-NDE` | MVQUEEN Beauty Product 001 (Foundation), Nude shade |
-| `MVQ-GFT-001-SET` | MVQUEEN Gift Set 001 (The Morning Ritual Set) |
+| `MVQ-SKC-001-30ML` | MVQueen Skincare Product 001 (The Glow Serum), 30ml |
+| `MVQ-SKC-001-50ML` | MVQueen Skincare Product 001 (The Glow Serum), 50ml |
+| `MVQ-FRG-001-50ML` | MVQueen Fragrance Product 001 (Velvet Hour EDP), 50ml |
+| `MVQ-FRG-001-10ML` | MVQueen Fragrance Product 001 (Velvet Hour EDP), 10ml travel |
+| `MVQ-FSH-001-SM` | MVQueen Fashion Product 001 (The Arrival Dress), Small |
+| `MVQ-FSH-001-IVR-SM` | MVQueen Fashion Product 001, Ivory colorway, Small |
+| `MVQ-FSH-001-RSE-MD` | MVQueen Fashion Product 001, Rose colorway, Medium |
+| `MVQ-BEA-001-NDE` | MVQueen Beauty Product 001 (Foundation), Nude shade |
+| `MVQ-GFT-001-SET` | MVQueen Gift Set 001 (The Morning Ritual Set) |
 | `MXP-BEA-001-PPK` | Miss.Princess Beauty Product 001 (Petal Glow Gloss), Petal Pink |
 | `MXP-BEA-001-RSE` | Miss.Princess Beauty Product 001 (Petal Glow Gloss), Rose |
 | `MXP-ACC-001-1SZ` | Miss.Princess Accessory Product 001 (Hair Clip Set), One Size |
@@ -207,7 +207,7 @@ Gift sets and bundles get their own SKU — they are not just a combination of i
 
 **Bundle SKU format:** `[BRAND]-GFT-[NUMBER]-SET`
 
-**Example:** `MVQ-GFT-001-SET` = MVQUEEN Gift Set 001 (The Morning Ritual Set)
+**Example:** `MVQ-GFT-001-SET` = MVQueen Gift Set 001 (The Morning Ritual Set)
 
 **Bundle component tracking:**
 When a bundle sells, Shopify deducts inventory from each component SKU. This requires the bundle to be set up as a bundle in Shopify (using a bundle app or multi-origin inventory management). Each component SKU must exist independently in the catalog.
@@ -221,7 +221,7 @@ When a bundle sells, Shopify deducts inventory from each component SKU. This req
 3. **Update SKU records immediately** when a product is retired, a variant is discontinued, or a formula changes
 4. **Variant additions** get new variant codes — they do not replace existing ones
 5. **SKU master list** is maintained in this file and mirrored in Shopify — the two must match at all times
-6. **Miss.Princess and MVQUEEN SKUs** never share a number sequence — they are fully independent
+6. **Miss.Princess and MVQueen SKUs** never share a number sequence — they are fully independent
 
 ---
 
@@ -229,7 +229,7 @@ When a bundle sells, Shopify deducts inventory from each component SKU. This req
 
 *This section is updated whenever a new product is added to the catalog.*
 
-### MVQUEEN SKU Register
+### MVQueen SKU Register
 
 | SKU Base | Product Name | Category | Status |
 |---|---|---|---|
@@ -270,4 +270,4 @@ When a bundle sells, Shopify deducts inventory from each component SKU. This req
 
 ---
 
-*This file is the MVQUEEN SKU system. Update the master list every time a product is added or retired. Pairs with Product_Catalog.md (full product listing), Product_Framework.md (when SKUs are assigned), and Collection_Structure.md (how products are grouped in Shopify).*
+*This file is the MVQueen SKU system. Update the master list every time a product is added or retired. Pairs with Product_Catalog.md (full product listing), Product_Framework.md (when SKUs are assigned), and Collection_Structure.md (how products are grouped in Shopify).*

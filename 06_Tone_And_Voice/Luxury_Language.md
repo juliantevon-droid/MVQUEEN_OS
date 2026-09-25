@@ -1,4 +1,4 @@
-# 💎 MVQUEEN — Luxury Language Guide
+# 💎 MVQueen — Luxury Language Guide
 
 ---
 
@@ -7,7 +7,7 @@
 The word "luxury" has been used so many times it means nothing.
 Every brand from a $12 drugstore moisturizer to a $500 cream calls itself luxury.
 
-MVQUEEN signals luxury through language — not the word itself.
+MVQueen signals luxury through language — not the word itself.
 
 ---
 
@@ -53,7 +53,7 @@ Luxury that excludes everyone signals arrogance.
 Luxury that says "she knows who she is" signals discernment.
 
 **Arrogant:** *"For the elite few who appreciate true luxury."*
-**MVQUEEN:** *"Not for everyone. For her — the woman who chooses with intention."*
+**MVQueen:** *"Not for everyone. For her — the woman who chooses with intention."*
 
 ---
 
@@ -72,7 +72,7 @@ Luxury that says "she knows who she is" signals discernment.
 *ritual, ceremony, practice, devotion, care, attention*
 
 ---
-*MVQUEEN Luxury Language Guide — Operational Document*
+*MVQueen Luxury Language Guide — Operational Document*
 
 ---
 ---

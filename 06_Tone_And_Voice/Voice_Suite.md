@@ -1,24 +1,24 @@
-# 📖 MVQUEEN — Storytelling Frameworks
+# 📖 MVQueen — Storytelling Frameworks
 
 ---
 
 ## Why Storytelling Is Core Infrastructure
 
-Stories are not decoration at MVQUEEN — they are the architecture.
+Stories are not decoration at MVQueen — they are the architecture.
 
 Every product has a story.
 Every campaign has a narrative arc.
 Every piece of content is a chapter in a larger world.
 
-The woman who buys from MVQUEEN doesn't just buy a product.
+The woman who buys from MVQueen doesn't just buy a product.
 She buys into a story she wants to be part of.
 
 ---
 
-## The 5 MVQUEEN Story Types
+## The 5 MVQueen Story Types
 
 ### Story Type 01 — The Brand Origin Story
-**What it is:** How and why MVQUEEN was built.
+**What it is:** How and why MVQueen was built.
 **Where it lives:** About page, brand intro emails, press, first social posts for new followers.
 **Emotional goal:** Trust, resonance, belief in the mission.
 
@@ -42,7 +42,7 @@ WHY THIS PRODUCT EXISTS → HOW IT WAS MADE → WHAT MAKES IT DIFFERENT → THE 
 ---
 
 ### Story Type 03 — The Customer Story
-**What it is:** A real woman's experience with MVQUEEN.
+**What it is:** A real woman's experience with MVQueen.
 **Where it lives:** Social proof sections, email testimonials, UGC features.
 **Emotional goal:** Recognition, trust, "she's like me."
 
@@ -60,13 +60,13 @@ WHERE SHE WAS BEFORE → WHAT SHE FOUND → WHAT CHANGED → HOW SHE FEELS NOW
 
 **Framework:**
 ```
-OBSERVATION ABOUT THE WORLD → THE TENSION IT CREATES → WHAT MVQUEEN BELIEVES INSTEAD → HOW THAT BELIEF SHOWS UP IN THE BRAND
+OBSERVATION ABOUT THE WORLD → THE TENSION IT CREATES → WHAT MVQueen BELIEVES INSTEAD → HOW THAT BELIEF SHOWS UP IN THE BRAND
 ```
 
 ---
 
 ### Story Type 05 — The Transformation Story
-**What it is:** The emotional journey from before to after MVQUEEN.
+**What it is:** The emotional journey from before to after MVQueen.
 **Where it lives:** Campaign content, ads, launch pages.
 **Emotional goal:** Aspiration, desire, decision to act.
 
@@ -77,14 +77,14 @@ THE BEFORE STATE (specific, relatable) → THE MOMENT OF ENCOUNTER → THE SHIFT
 
 ---
 
-# 🏛️ MVQUEEN — Messaging Pillars
+# 🏛️ MVQueen — Messaging Pillars
 
 ---
 
 ## The 6 Core Messaging Pillars
 
 Every piece of communication connects to at least one of these pillars.
-If it doesn't — it doesn't belong in MVQUEEN content.
+If it doesn't — it doesn't belong in MVQueen content.
 
 ---
 
@@ -96,7 +96,7 @@ If it doesn't — it doesn't belong in MVQUEEN content.
 ---
 
 ### Pillar 02 — Luxury That Belongs to Her
-**Core message:** MVQUEEN luxury is accessible, warm, and designed for real women — not aspirational distance.
+**Core message:** MVQueen luxury is accessible, warm, and designed for real women — not aspirational distance.
 **Used for:** Product positioning, pricing communication, brand differentiation.
 **Example line:** *Luxury that feels like it was made for your life — not someone else's.*
 
@@ -110,27 +110,27 @@ If it doesn't — it doesn't belong in MVQUEEN content.
 ---
 
 ### Pillar 04 — Intentional Feminine Living
-**Core message:** MVQUEEN is a lifestyle philosophy — choosing beauty, atmosphere, and softness with intention.
+**Core message:** MVQueen is a lifestyle philosophy — choosing beauty, atmosphere, and softness with intention.
 **Used for:** Lifestyle content, community building, brand identity.
 **Example line:** *Not just products. A whole way of moving through the world.*
 
 ---
 
 ### Pillar 05 — The Ritual Over the Routine
-**Core message:** A routine is something you do. A ritual is something you feel. MVQUEEN creates rituals.
+**Core message:** A routine is something you do. A ritual is something you feel. MVQueen creates rituals.
 **Used for:** Product positioning, content marketing, brand differentiation.
 **Example line:** *It stopped being a routine the moment it became something she looked forward to.*
 
 ---
 
 ### Pillar 06 — Becoming — Never Finished
-**Core message:** MVQUEEN is for women in process — evolving, becoming, growing into themselves.
+**Core message:** MVQueen is for women in process — evolving, becoming, growing into themselves.
 **Used for:** Customer psychology content, community building, brand narrative.
 **Example line:** *She's not who she was. She's not finished becoming. She's exactly here.*
 
 ---
 
-# 📏 MVQUEEN — Voice Consistency Rules
+# 📏 MVQueen — Voice Consistency Rules
 
 ---
 
@@ -143,7 +143,7 @@ The brand has one voice — warm, confident, feminine, intelligent.
 The register adapts (SMS is shorter, blog is deeper) but the soul never changes.
 
 ### Rule 02 — Lead With Feeling, Not Information
-No piece of MVQUEEN content opens with a fact, a feature, or a statistic.
+No piece of MVQueen content opens with a fact, a feature, or a statistic.
 It opens with a feeling, a moment, or a woman.
 
 ### Rule 03 — Never Apologize, Never Pressure
@@ -153,7 +153,7 @@ Both undermine trust.
 
 ### Rule 04 — Specificity Over Generality
 *"Beautiful skincare"* is nothing.
-*"Skin so soft you notice it before your alarm goes off"* is MVQUEEN.
+*"Skin so soft you notice it before your alarm goes off"* is MVQueen.
 Always choose the specific over the vague.
 
 ### Rule 05 — Every Word Earns Its Place
@@ -174,7 +174,7 @@ If a customer moves between channels and the voice shifts dramatically — we've
 
 ---
 
-# ✒️ MVQUEEN — Writing Rules
+# ✒️ MVQueen — Writing Rules
 
 ---
 
@@ -207,22 +207,22 @@ Before any piece of copy is published:
 □ Any sentence over 30 words? Break it up.
 □ Does the CTA feel like an invitation?
 □ Mobile check — how does it look on a phone screen?
-□ Does it sound like MVQUEEN or like any other brand?
+□ Does it sound like MVQueen or like any other brand?
 ```
 
 ---
 
-# 💬 MVQUEEN — Emotional Language Guide
+# 💬 MVQueen — Emotional Language Guide
 
 ---
 
 ## How to Write With Emotional Intelligence
 
-Emotional language at MVQUEEN does not overstate.
+Emotional language at MVQueen does not overstate.
 It does not manipulate.
 It names real feelings with precision — and gives women language for experiences they've had but never seen reflected back at them.
 
-**The emotional words MVQUEEN uses well:**
+**The emotional words MVQueen uses well:**
 
 | Emotion | How We Name It |
 |---------|---------------|
@@ -236,21 +236,21 @@ It names real feelings with precision — and gives women language for experienc
 
 ---
 
-# 🌸 MVQUEEN — Feminine Language Guide
+# 🌸 MVQueen — Feminine Language Guide
 
 ---
 
 ## Feminine Language Principles
 
-Femininity at MVQUEEN is never stereotyped, never limited, and never performative.
+Femininity at MVQueen is never stereotyped, never limited, and never performative.
 
-MVQUEEN feminine language:
+MVQueen feminine language:
 - Honors softness without implying weakness
 - Celebrates beauty without creating obligation
 - Acknowledges complexity without reducing women to archetypes
 - Speaks to identity without prescribing it
 
-**Words that carry feminine intelligence at MVQUEEN:**
+**Words that carry feminine intelligence at MVQueen:**
 *soft, presence, warmth, ritual, becoming, grace, unhurried, intentional, tender, chosen, sacred, quiet, alive, human, felt*
 
 **Feminine language we avoid:**
@@ -258,14 +258,14 @@ MVQUEEN feminine language:
 
 ---
 
-# 💎 MVQUEEN — Luxury Language Guide
+# 💎 MVQueen — Luxury Language Guide
 
 ---
 
 ## How to Write Luxury Without Writing "Luxury"
 
 The word "luxury" is overused. When everyone claims luxury, no one has it.
-MVQUEEN signals luxury through language — not the word itself.
+MVQueen signals luxury through language — not the word itself.
 
 **Luxury is signaled through:**
 
@@ -281,7 +281,7 @@ MVQUEEN signals luxury through language — not the word itself.
 
 ---
 
-# 📝 MVQUEEN — Example Copy Library
+# 📝 MVQueen — Example Copy Library
 
 ---
 
@@ -319,44 +319,44 @@ MVQUEEN signals luxury through language — not the word itself.
 ---
 
 *You're not behind. You're becoming.*
-*MVQUEEN was built for exactly where you are.*
+*MVQueen was built for exactly where you are.*
 
 ---
 
 ### Ad Copy (Ready to Use)
-*For the woman who treats softness like a discipline. MVQUEEN — luxury feminine living.*
+*For the woman who treats softness like a discipline. MVQueen — luxury feminine living.*
 
-*She's not performing. She's present. [Product Name] by MVQUEEN.*
+*She's not performing. She's present. [Product Name] by MVQueen.*
 
-*Beauty that gives back what the day takes. Shop MVQUEEN.*
+*Beauty that gives back what the day takes. Shop MVQueen.*
 
 ---
 
-# 🔗 MVQUEEN — Copywriting Frameworks
+# 🔗 MVQueen — Copywriting Frameworks
 
 ---
 
 ## The Master Framework Library
 
 ### Framework 01 — PAS (Problem → Agitation → Solution)
-MVQUEEN version: **Tension → Recognition → Resolution**
+MVQueen version: **Tension → Recognition → Resolution**
 
 Don't agitate harshly — deepen the recognition of the problem, then offer relief.
 
 ```
 TENSION: Name where she is right now, precisely.
 RECOGNITION: Help her see why it feels the way it does.
-RESOLUTION: Offer MVQUEEN as the answer — warmly, not desperately.
+RESOLUTION: Offer MVQueen as the answer — warmly, not desperately.
 ```
 
 ---
 
 ### Framework 02 — AIDA (Attention → Interest → Desire → Action)
-MVQUEEN version: **Hook → World → Want → Invite**
+MVQueen version: **Hook → World → Want → Invite**
 
 ```
 HOOK: Stop the scroll (see Hook Systems)
-WORLD: Pull her into the MVQUEEN universe
+WORLD: Pull her into the MVQueen universe
 WANT: Make the product feel like something she's been looking for
 INVITE: CTA that feels like an open door
 ```
@@ -366,7 +366,7 @@ INVITE: CTA that feels like an open door
 ### Framework 03 — The 4 C's
 Clear → Concise → Compelling → Credible
 
-Every piece of MVQUEEN copy should be:
+Every piece of MVQueen copy should be:
 - **Clear:** She knows what she's reading and why
 - **Concise:** Nothing wasted
 - **Compelling:** Something real pulls her forward
@@ -374,13 +374,13 @@ Every piece of MVQUEEN copy should be:
 
 ---
 
-### Framework 04 — The MVQUEEN Signature Arc
-The proprietary MVQUEEN content structure:
+### Framework 04 — The MVQueen Signature Arc
+The proprietary MVQueen content structure:
 
 ```
 01. HER WORLD (open with her — not the brand)
 02. THE FEELING (name what she desires or experiences)
-03. THE BRIDGE (how MVQUEEN meets her there)
+03. THE BRIDGE (how MVQueen meets her there)
 04. THE TRUTH (the specific product/offer/value)
 05. THE INVITATION (CTA — an open door, never a command)
 ```
@@ -388,5 +388,5 @@ The proprietary MVQUEEN content structure:
 This framework works for: product pages, emails, social captions, ads, blog articles.
 
 ---
-*MVQUEEN Tone & Voice Suite — Operational Documents*
-*These files govern all content creation across the MVQUEEN ecosystem.*
+*MVQueen Tone & Voice Suite — Operational Documents*
+*These files govern all content creation across the MVQueen ecosystem.*

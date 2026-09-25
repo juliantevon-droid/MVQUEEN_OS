@@ -5,7 +5,7 @@
 
 ## Purpose
 
-The Master Systems folder is the architectural overview layer — it maps how all MVQUEEN systems connect, depend on each other, and operate as a unified ecosystem.
+The Master Systems folder is the architectural overview layer — it maps how all MVQueen systems connect, depend on each other, and operate as a unified ecosystem.
 
 ---
 

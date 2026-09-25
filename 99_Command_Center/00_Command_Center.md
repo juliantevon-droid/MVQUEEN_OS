@@ -1,4 +1,4 @@
-# 👑 MVQUEEN COMMAND CENTER
+# 👑 MVQueen COMMAND CENTER
 
 ## 🧠 SYSTEM STATUS
 - Brand Health: [[01_Brand_Strategy/README]]

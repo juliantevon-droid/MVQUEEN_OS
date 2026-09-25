@@ -1,4 +1,4 @@
-# MVQUEEN — Retrieval Framework
+# MVQueen — Retrieval Framework
 
 ---
 
@@ -18,7 +18,7 @@
 
 # Framework Purpose
 
-The MVQUEEN Retrieval Framework exists to:
+The MVQueen Retrieval Framework exists to:
 - govern AI memory systems
 - optimize semantic retrieval
 - stabilize context injection
@@ -41,7 +41,7 @@ This framework defines:
 
 # Core Retrieval Philosophy
 
-MVQUEEN retrieval systems exist to:
+MVQueen retrieval systems exist to:
 - preserve ecosystem intelligence
 - preserve emotional consistency
 - preserve luxury positioning
@@ -400,7 +400,7 @@ Archive systems should remain:
 
 # Scalability Philosophy
 
-As MVQUEEN scales:
+As MVQueen scales:
 - retrieval consistency must remain stable
 - doctrine inheritance must remain preserved
 - semantic continuity must remain intact
@@ -416,13 +416,13 @@ Scalability must never create:
 
 # Strategic Principle
 
-MVQUEEN retrieval systems exist to preserve emotionally intelligent feminine luxury identity, semantic consistency, doctrine inheritance, emotional atmosphere, and scalable AI-native orchestration across all future AI systems and commerce infrastructure.
+MVQueen retrieval systems exist to preserve emotionally intelligent feminine luxury identity, semantic consistency, doctrine inheritance, emotional atmosphere, and scalable AI-native orchestration across all future AI systems and commerce infrastructure.
 
 ---
 
 # Retrieval Compression
 
-MVQUEEN retrieval architecture prioritizes doctrine-first semantic memory systems designed to preserve emotional intelligence, feminine luxury identity, semantic consistency, and scalable AI-native orchestration.
+MVQueen retrieval architecture prioritizes doctrine-first semantic memory systems designed to preserve emotional intelligence, feminine luxury identity, semantic consistency, and scalable AI-native orchestration.
 
 ---
 

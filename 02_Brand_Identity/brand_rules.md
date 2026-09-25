@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Non-negotiable brand governance rules. These rules exist to preserve MVQUEEN's identity, emotional atmosphere, and luxury positioning as the ecosystem scales.
+Non-negotiable brand governance rules. These rules exist to preserve MVQueen's identity, emotional atmosphere, and luxury positioning as the ecosystem scales.
 
 Every creative output, product decision, and communication must pass these rules before deployment.
 
@@ -20,7 +20,7 @@ Every creative output, product decision, and communication must pass these rules
 - **Red Flag:** If you're unsure whether something feels "on-brand," run it through the Doctrine System.
 
 ### 2. Luxury Without Exclusion
-- **Rule:** MVQUEEN is accessible luxury, not gatekeeping luxury.
+- **Rule:** MVQueen is accessible luxury, not gatekeeping luxury.
 - **Do:** Make customers feel invited, elevated, and capable of luxury.
 - **Don't:** Create content or messaging that feels exclusionary or judgmental.
 - **Red Flag:** "Only for the elite" energy. Always wrong.
@@ -38,7 +38,7 @@ Every creative output, product decision, and communication must pass these rules
 - **Red Flag:** Copy that feels generic, cold, or salesy.
 
 ### 5. Product Alignment
-- **Rule:** Every product must fit the MVQUEEN aesthetic, quality level, and price tier.
+- **Rule:** Every product must fit the MVQueen aesthetic, quality level, and price tier.
 - **Do:** Use the Product Philosophy from 04_Products.
 - **Don't:** Add random products that don't fit the narrative.
 - **Red Flag:** "It's on-trend" is not a sufficient reason to stock it.
@@ -62,7 +62,7 @@ Every creative output, product decision, and communication must pass these rules
 - **Red Flag:** Price drops that feel desperate or unstrategic.
 
 ### 9. Customer Experience = Brand Experience
-- **Rule:** Every interaction shapes how customers feel about MVQUEEN.
+- **Rule:** Every interaction shapes how customers feel about MVQueen.
 - **Do:** Ship fast, respond thoughtfully, package beautifully.
 - **Don't:** Cut corners on packaging, shipping, or customer service.
 - **Red Flag:** Negative reviews about the unboxing experience.
@@ -88,7 +88,7 @@ Every creative output, product decision, and communication must pass these rules
 ### Color Palette
 - Use only colors from 02_Brand_Identity/color_system.md
 - Never mix brand colors with trendy colors outside the approved palette
-- MVQUEEN Gold (#D4AF37) is the primary accent—use it intentionally
+- MVQueen Gold (#D4AF37) is the primary accent—use it intentionally
 - Never desaturate brand colors
 - **Red Flag:** Bright pink, neon, or colors outside the palette
 
@@ -168,10 +168,10 @@ Every creative output, product decision, and communication must pass these rules
 ### Blog & SEO
 - All blog posts must deliver transformation + SEO value
 - Never sacrifice readability for keywords
-- Include MVQUEEN perspective—what makes this different?
+- Include MVQueen perspective—what makes this different?
 - Use brand examples, not generic how-tos
 - Every post must drive toward a brand value
-- **Red Flag:** Generic listicles, keyword-stuffed copy, no MVQUEEN perspective
+- **Red Flag:** Generic listicles, keyword-stuffed copy, no MVQueen perspective
 
 ### Email
 - All email must feel personal and intentional

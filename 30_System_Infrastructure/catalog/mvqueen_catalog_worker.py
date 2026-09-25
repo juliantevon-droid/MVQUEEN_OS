@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MVQUEEN catalog governance worker.
+"""MVQueen catalog governance worker.
 
 This worker is validation/artifact-only. It never writes to Shopify.
 Live Shopify mutations are owned exclusively by the authenticated React Router

@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines the 5 pillar categories that all MVQUEEN content must fall into. Every piece of content answers one of these questions.
+Defines the 5 pillar categories that all MVQueen content must fall into. Every piece of content answers one of these questions.
 
 ---
 
@@ -95,7 +95,7 @@ Defines the 5 pillar categories that all MVQUEEN content must fall into. Every p
 - Product launches
 - Limited drops
 - Seasonal guides
-- Trending topics (with MVQUEEN angle)
+- Trending topics (with MVQueen angle)
 - Special moments
 
 **Examples:**
@@ -125,7 +125,7 @@ Defines the 5 pillar categories that all MVQUEEN content must fall into. Every p
 Before publishing, verify:
 
 - [ ] Falls into one of the 5 pillars
-- [ ] Aligns with MVQUEEN voice
+- [ ] Aligns with MVQueen voice
 - [ ] Delivers value (not just promotional)
 - [ ] Uses on-brand imagery/design
 - [ ] Has clear CTA (not salesy)

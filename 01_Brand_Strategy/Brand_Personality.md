@@ -6,7 +6,7 @@
 
 # 8. Brand Personality
 
-MVQUEEN’s personality is the emotional atmosphere behind the brand.
+MVQueen’s personality is the emotional atmosphere behind the brand.
 
 It is not built around performance, perfection, or artificial luxury.
 
@@ -14,7 +14,7 @@ It is built around feeling.
 
 The brand feels feminine, emotionally intelligent, visually elevated, soft, confident, expressive, and deeply aware of the emotional relationship women have with beauty, identity, and self-expression.
 
-If MVQUEEN existed as a person, it would not be the loudest presence in the room.
+If MVQueen existed as a person, it would not be the loudest presence in the room.
 
 It would be the presence people remember because of the way it made them feel.
 
@@ -38,7 +38,7 @@ It creates emotional connection.
 
 # Social Personality
 
-Socially, MVQUEEN feels emotionally present rather than corporate.
+Socially, MVQueen feels emotionally present rather than corporate.
 
 The brand behaves more like a feminine lifestyle world than a traditional business.
 
@@ -62,7 +62,7 @@ The brand should never feel:
 - harsh
 - overly polished to the point of feeling artificial
 
-MVQUEEN should always feel human beneath the luxury.
+MVQueen should always feel human beneath the luxury.
 
 ---
 
@@ -70,7 +70,7 @@ MVQUEEN should always feel human beneath the luxury.
 
 # Luxury Personality
 
-MVQUEEN expresses luxury through emotional atmosphere rather than status alone.
+MVQueen expresses luxury through emotional atmosphere rather than status alone.
 
 The brand understands that modern luxury is no longer only about exclusivity.
 
@@ -86,7 +86,7 @@ It is also about:
 - detail
 - emotional comfort
 
-The luxury energy of MVQUEEN should feel emotionally welcoming instead of emotionally intimidating.
+The luxury energy of MVQueen should feel emotionally welcoming instead of emotionally intimidating.
 
 The brand inspires aspiration while still allowing women to feel included within the experience.
 

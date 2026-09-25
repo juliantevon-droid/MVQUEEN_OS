@@ -1,10 +1,10 @@
-# 👥 MVQUEEN — Team Structure
+# 👥 MVQueen — Team Structure
 
 ---
 
 ## Purpose
 
-Define the organizational structure of MVQUEEN at every growth stage — who does what, how decisions are made, and how the team scales without losing brand integrity.
+Define the organizational structure of MVQueen at every growth stage — who does what, how decisions are made, and how the team scales without losing brand integrity.
 
 ---
 
@@ -89,7 +89,7 @@ FOUNDER / CEO
 
 ## Role Hiring Criteria
 
-Every MVQUEEN hire — regardless of role — must:
+Every MVQueen hire — regardless of role — must:
 
 | Criteria | Standard |
 |----------|----------|
@@ -122,7 +122,7 @@ Every MVQUEEN hire — regardless of role — must:
 **Rule:** Brand and product decisions never delegate below Creative Director level.
 
 ---
-*MVQUEEN Team Structure — Operational Document*
+*MVQueen Team Structure — Operational Document*
 
 ---
 ---

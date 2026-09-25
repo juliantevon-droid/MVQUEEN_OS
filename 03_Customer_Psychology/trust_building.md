@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Trust Building
+# 👑 MVQueen — Trust Building
 ### The Mechanics of Earned Belief
 
 ---
@@ -9,11 +9,11 @@ Trust is not a feeling. It is a result.
 
 It is built through consistent behavior — every small signal, every accurate claim, every interaction that matches what the brand promised. In luxury e-commerce, trust is the conversion mechanism. A woman will not spend money on a brand she doesn't believe — regardless of how beautiful the product is or how precise the copy is.
 
-This file defines the specific trust mechanics MVQUEEN uses at every stage of the customer journey — pre-purchase, at purchase, post-purchase, and long-term. These are not general principles. They are specific, operational decisions.
+This file defines the specific trust mechanics MVQueen uses at every stage of the customer journey — pre-purchase, at purchase, post-purchase, and long-term. These are not general principles. They are specific, operational decisions.
 
 ---
 
-## THE MVQUEEN TRUST FORMULA
+## THE MVQueen TRUST FORMULA
 
 > **Consistency + Specificity + Follow-Through = Trust**
 
@@ -30,7 +30,7 @@ When all three are present, the customer stops wondering whether to trust the br
 *Before she buys, she is asking: "Is this real? Is it for me? Will it do what it says?"*
 
 ### Trust Mechanic 01 — Visual Credibility
-The first five seconds on any MVQUEEN page build or destroy trust. A woman assesses visual quality instantly — and maps it to product quality.
+The first five seconds on any MVQueen page build or destroy trust. A woman assesses visual quality instantly — and maps it to product quality.
 
 **What this requires:**
 - Photography that matches the brand standard (warm, cinematic, specific — never generic stock)
@@ -67,7 +67,7 @@ Vague claims destroy trust. Specific claims build it.
 ### Trust Mechanic 03 — Social Proof Architecture
 Reviews, UGC, and community content are not optional — they are trust infrastructure.
 
-**What MVQUEEN requires:**
+**What MVQueen requires:**
 - Authentic review collection — no incentivized or manufactured reviews
 - Reviews displayed with specificity (verified purchase badge, product variant purchased, photo where available)
 - Honest response to negative reviews — addressed in brand voice, not defensive or dismissive
@@ -98,7 +98,7 @@ A woman who can find the return, shipping, and privacy policy without hunting fo
 ---
 
 ### Trust Mechanic 05 — Founder / Brand Story Authenticity
-MVQUEEN's brand story is real. The founder's origin — building this because she understood the feeling of being excluded from the luxury she craved — is a trust asset that most brands don't have.
+MVQueen's brand story is real. The founder's origin — building this because she understood the feeling of being excluded from the luxury she craved — is a trust asset that most brands don't have.
 
 **What this requires:**
 - The brand story on the About page reads like a real person wrote it — not a PR agency
@@ -120,12 +120,12 @@ MVQUEEN's brand story is real. The founder's origin — building this because sh
 - Confirmation page that reflects the brand — not a default Shopify confirmation screen
 
 ### Trust Mechanic 07 — Order Confirmation Email
-This is the most opened email in the entire sequence. The brand voice must be present — it is the first post-purchase MVQUEEN communication and sets the tone for the entire customer relationship.
+This is the most opened email in the entire sequence. The brand voice must be present — it is the first post-purchase MVQueen communication and sets the tone for the entire customer relationship.
 
 **Standard:**
 > ❌ "Order Confirmation #45621 — Thank you for your purchase."
 > ✅ Subject: "Your order is confirmed. And we're already excited for you to receive it."
-> Body: "We wrapped your order with the same care that went into making it. Here's what you ordered, when it's expected to arrive, and how to reach us if anything feels off. Welcome to the world of MVQUEEN."
+> Body: "We wrapped your order with the same care that went into making it. Here's what you ordered, when it's expected to arrive, and how to reach us if anything feels off. Welcome to the world of MVQueen."
 
 ---
 
@@ -136,7 +136,7 @@ This is the most opened email in the entire sequence. The brand voice must be pr
 ### Trust Mechanic 08 — Shipping Communication
 - Shipping confirmation sent same day as dispatch — never delayed
 - Tracking link works before it's sent (not "tracking available within 24 hours" in the email itself)
-- Delay communication is proactive — if an order will be late, MVQUEEN tells her before she has to ask
+- Delay communication is proactive — if an order will be late, MVQueen tells her before she has to ask
 - Delivery confirmation is warm, not functional
 
 **Delivery confirmation standard:**
@@ -151,12 +151,12 @@ The physical package is the first time she holds the brand. It either validates 
 **What this requires:**
 - Packaging matches the brand aesthetic at every level accessible within the margin
 - Inside the package: tissue paper in brand color, something unexpected (a card, a stamp, a small insert that feels personal)
-- The insert copy is written in MVQUEEN voice — not a generic thank-you card
+- The insert copy is written in MVQueen voice — not a generic thank-you card
 - Fragrance / sensory consideration where applicable (tissue with a light branded scent, for example)
 
 **Insert copy standard:**
 > ❌ "Thank you for your purchase. We hope you enjoy your order."
-> ✅ "You chose this. We made it for you. Welcome to the world of MVQUEEN — it opens every time you use this."
+> ✅ "You chose this. We made it for you. Welcome to the world of MVQueen — it opens every time you use this."
 
 ---
 
@@ -191,22 +191,22 @@ The review request is a trust interaction — not just a data collection event.
 
 ## STAGE 4 — LONG-TERM TRUST MECHANICS
 
-*Over time, trust compounds into loyalty. These mechanics build the relationship that keeps her in the MVQUEEN world.*
+*Over time, trust compounds into loyalty. These mechanics build the relationship that keeps her in the MVQueen world.*
 
 ### Trust Mechanic 12 — Consistent Brand Behavior
 The single most powerful trust-builder over time is doing exactly what the brand says it will do, every time.
 
-- If MVQUEEN says it stands for accessible luxury — the pricing decisions reflect that
-- If MVQUEEN says it was built for every woman — the photography, sizing, and product range reflect that
-- If MVQUEEN says its products are quality — the quality must be verifiable every time
-- If MVQUEEN says it cares about the customer — customer service responses demonstrate it
+- If MVQueen says it stands for accessible luxury — the pricing decisions reflect that
+- If MVQueen says it was built for every woman — the photography, sizing, and product range reflect that
+- If MVQueen says its products are quality — the quality must be verifiable every time
+- If MVQueen says it cares about the customer — customer service responses demonstrate it
 
 Trust breaks when behavior contradicts positioning. It compounds when they align.
 
 ---
 
 ### Trust Mechanic 13 — Honest Product Communication
-When products sell out, prices change, or new collections launch — MVQUEEN communicates directly and honestly.
+When products sell out, prices change, or new collections launch — MVQueen communicates directly and honestly.
 
 **What this requires:**
 - Waitlist communication for sold-out items is specific about expected restock timelines
@@ -230,7 +230,7 @@ Customers who have purchased multiple times, referred others, or engaged with th
 ### Trust Mechanic 15 — Handling Failures Correctly
 How a brand behaves when things go wrong is the most powerful trust signal that exists. A perfect brand experience builds trust incrementally. A perfectly handled problem builds it exponentially.
 
-**The MVQUEEN failure protocol:**
+**The MVQueen failure protocol:**
 1. Acknowledge the problem specifically — not with a generic "we're sorry for the inconvenience"
 2. Take responsibility without deflecting to couriers, suppliers, or circumstances
 3. State the resolution clearly and immediately — what will happen, by when
@@ -246,7 +246,7 @@ How a brand behaves when things go wrong is the most powerful trust signal that 
 
 ## TRUST AUDIT CHECKLIST
 
-Use this checklist quarterly to audit MVQUEEN's trust infrastructure:
+Use this checklist quarterly to audit MVQueen's trust infrastructure:
 
 - [ ] All product claims are accurate and specific
 - [ ] Return policy is visible on product pages — not only in footer
@@ -263,4 +263,4 @@ Use this checklist quarterly to audit MVQUEEN's trust infrastructure:
 
 ---
 
-*This file defines the trust mechanics of MVQUEEN across every stage of the customer journey. It pairs with customer_objections.md (objection responses), CTA_Library.md (conversion language), and Writing_Rules.md (voice in all communication). Trust is not a feeling — it is the result of these specific behaviors, executed consistently.*
+*This file defines the trust mechanics of MVQueen across every stage of the customer journey. It pairs with customer_objections.md (objection responses), CTA_Library.md (conversion language), and Writing_Rules.md (voice in all communication). Trust is not a feeling — it is the result of these specific behaviors, executed consistently.*

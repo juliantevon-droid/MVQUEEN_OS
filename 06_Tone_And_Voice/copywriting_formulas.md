@@ -1,14 +1,14 @@
-# ✍️ MVQUEEN — Copywriting Formulas
+# ✍️ MVQueen — Copywriting Formulas
 
 ---
 
 ## How to Use This File
 
-These are proven structural formulas adapted specifically for MVQUEEN's voice.
-Every formula has a template, the MVQUEEN version, and a filled example.
+These are proven structural formulas adapted specifically for MVQueen's voice.
+Every formula has a template, the MVQueen version, and a filled example.
 
 A formula is a skeleton. Your voice and brand intelligence are the flesh.
-Fill it in. Make it feel alive. Then it becomes MVQUEEN.
+Fill it in. Make it feel alive. Then it becomes MVQueen.
 
 ---
 
@@ -28,7 +28,7 @@ Fill it in. Make it feel alive. Then it becomes MVQUEEN.
 ```
 The kind of morning that belongs entirely to you.
 Quiet. Unhurried. Warm light and no obligations.
-MVQUEEN Soft Ritual Body Oil was made for exactly this.
+MVQueen Soft Ritual Body Oil was made for exactly this.
 ```
 
 **Use for:** Product descriptions, email openers, social captions, ad copy
@@ -51,7 +51,7 @@ She doesn't chase trends. She sets the atmosphere.
 ```
 She doesn't chase trends. She sets the atmosphere.
 Her beauty ritual is intentional, not performative.
-MVQUEEN Luminous Lip Set — made for her kind of presence.
+MVQueen Luminous Lip Set — made for her kind of presence.
 ```
 
 **Use for:** Product pages, ads, collection descriptions, social
@@ -99,7 +99,7 @@ She'll know exactly what it is.
 ```
 They'll notice something different about her skin today.
 She'll know exactly what changed.
-MVQUEEN Glow Serum. Two drops. Every morning. That's the whole secret.
+MVQueen Glow Serum. Two drops. Every morning. That's the whole secret.
 ```
 
 **Use for:** Ads, social captions, email subject lines, product teasers
@@ -147,7 +147,7 @@ Not another [generic category product].
 ```
 Not another lip gloss.
 A mood. A finish. A reason she keeps reaching for it.
-MVQUEEN Glass Lip — effortless shine, all day.
+MVQueen Glass Lip — effortless shine, all day.
 ```
 
 **Use for:** Ads, product page intros, social captions, launch copy
@@ -170,7 +170,7 @@ She can want beautiful things for no reason other than they're beautiful.
 ```
 She can want soft, beautiful skin just because it makes her feel good.
 No occasion required. No explanation needed.
-MVQUEEN Honey Glow Mask is that kind of beautiful.
+MVQueen Honey Glow Mask is that kind of beautiful.
 ```
 
 **Use for:** Email campaigns, collection descriptions, brand content
@@ -192,7 +192,7 @@ MVQUEEN Honey Glow Mask is that kind of beautiful.
 **Example:**
 ```
 Your morning sets the tone for everything that follows.
-MVQUEEN Morning Ritual Set — start it beautifully.
+MVQueen Morning Ritual Set — start it beautifully.
 Shop the collection →
 ```
 
@@ -205,7 +205,7 @@ Shop the collection →
 **Structure:**
 > [Where she is before] → [Where she is after] → [What made the difference]
 
-**MVQUEEN rule:** The "before" is never shame-based. It's neutral or relatable.
+**MVQueen rule:** The "before" is never shame-based. It's neutral or relatable.
 The "after" is emotional elevation, not a physical transformation standard.
 
 **Template:**
@@ -219,7 +219,7 @@ The "after" is emotional elevation, not a physical transformation standard.
 ```
 Some mornings she moves through the world a little disconnected.
 Then she takes five minutes. Just for her.
-MVQUEEN Rose Ritual Mist — the five minutes that bring her back.
+MVQueen Rose Ritual Mist — the five minutes that bring her back.
 ```
 
 **Use for:** Email sequences, ads, product storytelling, social

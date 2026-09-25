@@ -1,4 +1,4 @@
-"""MVQUEEN governed content intelligence V1.
+"""MVQueen governed content intelligence V1.
 
 Consumes only a canonical, QA-passed product record and produces deterministic
 customer-facing content drafts. The module never publishes and never fabricates

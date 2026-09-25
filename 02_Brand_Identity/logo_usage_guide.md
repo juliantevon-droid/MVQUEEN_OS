@@ -5,7 +5,7 @@
 
 ## Purpose
 
-The MVQUEEN logo is the visual symbol of brand identity. This guide ensures consistent, professional logo deployment across all touchpoints.
+The MVQueen logo is the visual symbol of brand identity. This guide ensures consistent, professional logo deployment across all touchpoints.
 
 ---
 
@@ -47,7 +47,7 @@ Clear space is the invisible border that protects the logo from competing visual
 │          [20px minimum clear space]        │
 │                                             │
 │              ┌──────────────┐              │
-│              │  MVQUEEN     │              │
+│              │  MVQueen     │              │
 │              │   LOGO       │              │
 │              └──────────────┘              │
 │                                             │
@@ -74,7 +74,7 @@ Clear space is the invisible border that protects the logo from competing visual
 
 ### Single Color (Gold)
 - Use for foil stamping, embossing, premium applications
-- Color: MVQUEEN Gold (#D4AF37)
+- Color: MVQueen Gold (#D4AF37)
 
 ### Single Color (Charcoal)
 - Use for minimalist applications
@@ -140,7 +140,7 @@ Clear space is the invisible border that protects the logo from competing visual
 - **Header:** 150–200px width
 - **Signature:** 100–120px width
 - **Footer:** 80–100px width
-- **Alt Text:** "MVQUEEN" for accessibility
+- **Alt Text:** "MVQueen" for accessibility
 
 ### Packaging
 - **Box:** 2–4" width (full color or foil)

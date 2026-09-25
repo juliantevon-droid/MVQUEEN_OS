@@ -1,4 +1,4 @@
-# 🗓️ MVQUEEN — Seasonal Campaigns
+# 🗓️ MVQueen — Seasonal Campaigns
 
 ---
 
@@ -6,7 +6,7 @@
 
 Plan and execute seasonal campaigns that feel culturally relevant and emotionally resonant — without abandoning brand identity to chase every trend or holiday.
 
-**MVQUEEN seasonal rule:** Every seasonal campaign must connect to a genuine brand truth. Not just "it's Valentine's Day, here's a sale."
+**MVQueen seasonal rule:** Every seasonal campaign must connect to a genuine brand truth. Not just "it's Valentine's Day, here's a sale."
 
 ---
 
@@ -97,7 +97,7 @@ Secondary: [metrics]
 ```
 
 ---
-*MVQUEEN Seasonal Campaigns — Operational Document*
+*MVQueen Seasonal Campaigns — Operational Document*
 
 ---
 ---

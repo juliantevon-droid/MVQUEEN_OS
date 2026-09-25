@@ -1,4 +1,4 @@
-# 📅 MVQUEEN — Posting Schedule
+# 📅 MVQueen — Posting Schedule
 
 ---
 
@@ -118,7 +118,7 @@ Batch content production to protect time:
 - Blog article drafts
 
 ---
-*MVQUEEN Posting Schedule — Operational Document*
+*MVQueen Posting Schedule — Operational Document*
 
 ---
 ---

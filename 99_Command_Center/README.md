@@ -1,14 +1,14 @@
-# 👑 MVQUEEN — Command Center
+# 👑 MVQueen — Command Center
 
 ## Purpose
 
-The Command Center is the master execution and oversight layer of the entire MVQUEEN ecosystem.
+The Command Center is the master execution and oversight layer of the entire MVQueen ecosystem.
 
 It exists to:
 - provide real-time visibility across all active systems
 - govern daily, weekly, and quarterly execution priorities
 - centralize campaign tracking, launch management, and task orchestration
-- serve as the operational headquarters for the MVQUEEN OS
+- serve as the operational headquarters for the MVQueen OS
 - connect all systems into a unified intelligence dashboard
 
 The Command Center acts as the:
@@ -24,7 +24,7 @@ The Command Center acts as the:
 
 The Command Center is where strategy becomes execution.
 
-Every doctrine, system, and framework built across the MVQUEEN OS must be actionable from this layer. The Command Center is not a note — it is the operational brain of the entire ecosystem.
+Every doctrine, system, and framework built across the MVQueen OS must be actionable from this layer. The Command Center is not a note — it is the operational brain of the entire ecosystem.
 
 ---
 

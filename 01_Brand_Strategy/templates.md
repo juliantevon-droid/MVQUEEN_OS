@@ -1,4 +1,4 @@
-# MVQUEEN — Enterprise AI-Native Brand Document Template
+# MVQueen — Enterprise AI-Native Brand Document Template
 
 ---
 
@@ -45,7 +45,7 @@
 # Executive Summary
 
 ## Purpose
-Briefly define the purpose of this document within the MVQUEEN ecosystem.
+Briefly define the purpose of this document within the MVQueen ecosystem.
 
 ## Strategic Importance
 Explain why this document matters operationally, emotionally, strategically, and technologically.

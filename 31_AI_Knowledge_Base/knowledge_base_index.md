@@ -37,7 +37,7 @@ Centralized knowledge repository that AI systems can query to produce doctrine-a
 
 ## Usage Protocol
 
-When initializing an AI session for MVQUEEN work:
+When initializing an AI session for MVQueen work:
 1. Load `00_Doctrine/master_doctrine.md`
 2. Load `31_AI_Knowledge_Base/brand_summary.md`
 3. Load `31_AI_Knowledge_Base/voice_rules.md`

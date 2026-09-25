@@ -2,7 +2,7 @@
 
 # Customer Experience Standards
 
-Every customer interaction within MVQUEEN should emotionally feel:
+Every customer interaction within MVQueen should emotionally feel:
 - emotionally intentional
 - emotionally calming
 - emotionally supportive
@@ -40,7 +40,7 @@ Emotional care itself becomes part of the luxury experience.
 
 # Digital Luxury Experience Standards
 
-Digital experiences within MVQUEEN should emotionally feel:
+Digital experiences within MVQueen should emotionally feel:
 - calm
 - emotionally breathable
 - emotionally immersive

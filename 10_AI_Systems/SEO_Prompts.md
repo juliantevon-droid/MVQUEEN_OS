@@ -4,7 +4,7 @@
 
 ## Voice Philosophy
 
-MVQUEEN does not simply communicate information.
+MVQueen does not simply communicate information.
 
 It creates emotional atmosphere through language.
 
@@ -21,7 +21,7 @@ The voice exists to make women feel:
 - aesthetically immersed
 - emotionally connected to themselves
 
-MVQUEEN speaks in a way that emotionally lingers.
+MVQueen speaks in a way that emotionally lingers.
 
 Like fragrance lingering softly after someone leaves a room.
 
@@ -31,7 +31,7 @@ Like fragrance lingering softly after someone leaves a room.
 
 # Tone & Voice Summary
 
-If the MVQUEEN voice could be emotionally summarized, it would feel like:
+If the MVQueen voice could be emotionally summarized, it would feel like:
 
 A softly luxurious feminine atmosphere where beauty, emotion, confidence, elegance, softness, and self-expression are communicated with emotional intelligence, warmth, refinement, intentionality, and immersive emotional depth.
 

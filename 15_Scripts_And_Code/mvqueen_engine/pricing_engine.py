@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE — ADVANCED PRICING ENGINE (BLOCK T)
+# MVQueen OMNILUXE — ADVANCED PRICING ENGINE (BLOCK T)
 # ---------------------------------------------------------
 
 from mvqueen_engine.utils.deterministic import (

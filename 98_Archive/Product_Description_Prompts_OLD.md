@@ -1,4 +1,4 @@
-# 📝 MVQUEEN — Product Description Prompts
+# 📝 MVQueen — Product Description Prompts
 
 ---
 
@@ -12,7 +12,7 @@ All product copy is human-approved before going live on Shopify.
 
 ### Prompt PD-01 — Full Product Copy Package
 ```
-You are the product copywriter for MVQUEEN — a luxury feminine ecommerce brand.
+You are the product copywriter for MVQueen — a luxury feminine ecommerce brand.
 
 Brand voice: Sensory, aspirational, warm. Lead with feeling before function.
 Never use: feature lists without emotional translation, clinical language, generic adjectives.
@@ -55,7 +55,7 @@ Generate the complete product copy package:
 
 ### Prompt PD-02 — Product Title Generator
 ```
-Generate product titles for MVQUEEN.
+Generate product titles for MVQueen.
 Requirements: 3-7 words, evocative, brand-aligned, memorable.
 Avoid: Generic descriptors, trend-dependent words, anything another brand could claim.
 
@@ -71,7 +71,7 @@ Mark your strongest recommendation.
 
 ### Prompt PD-03 — Collection Description
 ```
-Write a collection description for MVQUEEN.
+Write a collection description for MVQueen.
 Voice: Aspirational, cohesive, connects individual products to a larger ritual or philosophy.
 
 Collection name: [name]
@@ -89,7 +89,7 @@ Write:
 
 ### Prompt PD-04 — Product Bundle Copy
 ```
-Write copy for a MVQUEEN product bundle.
+Write copy for a MVQueen product bundle.
 Frame as a complete ritual — not just "products together."
 
 Bundle name: [name]
@@ -107,7 +107,7 @@ Write:
 ```
 
 ---
-*MVQUEEN Product Description Prompts — Operational Document*
+*MVQueen Product Description Prompts — Operational Document*
 
 ---
 ---

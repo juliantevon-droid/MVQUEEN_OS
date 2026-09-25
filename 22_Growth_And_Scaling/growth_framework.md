@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines the growth architecture for MVQUEEN — how the brand expands without losing identity, luxury positioning, or operational control.
+Defines the growth architecture for MVQueen — how the brand expands without losing identity, luxury positioning, or operational control.
 
 ---
 

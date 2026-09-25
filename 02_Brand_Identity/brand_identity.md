@@ -1,10 +1,10 @@
-# 👑 MVQUEEN — BRAND IDENTITY SYSTEM
-*A visual, emotional, and aesthetic translation of the MVQUEEN Brand Bible*
+# 👑 MVQueen — BRAND IDENTITY SYSTEM
+*A visual, emotional, and aesthetic translation of the MVQueen Brand Bible*
 
 ---
 
 # 1. Identity Overview
-MVQUEEN’s brand identity is the **visual expression** of its emotional philosophy: modern feminine luxury, emotional elevation, softness, confidence, and accessible aspiration.
+MVQueen’s brand identity is the **visual expression** of its emotional philosophy: modern feminine luxury, emotional elevation, softness, confidence, and accessible aspiration.
 
 Where the Brand Bible defines the *soul*,  
 the Brand Identity defines the *face*.
@@ -20,7 +20,7 @@ This system ensures that every visual, product, campaign, and experience feels:
 - refined  
 - immersive  
 
-MVQUEEN’s identity is built around the belief that **luxury is an emotion**, not a price point.  
+MVQueen’s identity is built around the belief that **luxury is an emotion**, not a price point.  
 The visuals must always reflect:
 - softness without weakness  
 - elegance without coldness  
@@ -46,7 +46,7 @@ Warmth, softness, intimacy, and emotional storytelling through visuals.
 Luxury‑inspired, but never cold, elitist, or intimidating.
 
 ### Dual‑Identity Harmony  
-MVQUEEN = mature, elegant, elevated  
+MVQueen = mature, elegant, elevated  
 Miss.Princess = youthful, dreamy, playful  
 
 Both identities share the same emotional DNA but express it differently.
@@ -108,7 +108,7 @@ Colors must always feel:
 ---
 
 ## Typography Language  
-Typography expresses MVQUEEN’s emotional duality:
+Typography expresses MVQueen’s emotional duality:
 - **Serif** → elegance, maturity, luxury  
 - **Sans‑serif** → modernity, clarity, softness  
 
@@ -117,7 +117,7 @@ Typography expresses MVQUEEN’s emotional duality:
 ---
 
 ## Logo Language  
-The MVQUEEN logo must feel:
+The MVQueen logo must feel:
 - regal but modern  
 - feminine but strong  
 - luxurious but accessible  
@@ -153,7 +153,7 @@ Packaging should reflect:
 ---
 
 # 6. Emotional Identity
-MVQUEEN’s visuals must always evoke:
+MVQueen’s visuals must always evoke:
 - confidence  
 - softness  
 - beauty  
@@ -171,7 +171,7 @@ Every design choice must support the feeling of becoming the **Most Valuable Que
 
 # 7. Dual‑Brand Expression
 
-## MVQUEEN (Primary Identity)
+## MVQueen (Primary Identity)
 - Mature feminine luxury  
 - Elegant, refined, elevated  
 - Soft gold, champagne, blush, ivory  
@@ -202,7 +202,7 @@ Both identities must feel related — like two sisters — but not identical.
 ---
 
 # 9. Identity Purpose
-The purpose of the MVQUEEN Brand Identity is to:
+The purpose of the MVQueen Brand Identity is to:
 - visually express the emotional philosophy of the brand  
 - create a recognizable feminine luxury aesthetic  
 - unify all products, visuals, and experiences  
@@ -210,4 +210,4 @@ The purpose of the MVQUEEN Brand Identity is to:
 - guide AI agents, designers, and creators  
 - build a scalable visual ecosystem  
 
-This identity system ensures MVQUEEN remains emotionally powerful, visually consistent, and instantly recognizable across every platform.
+This identity system ensures MVQueen remains emotionally powerful, visually consistent, and instantly recognizable across every platform.

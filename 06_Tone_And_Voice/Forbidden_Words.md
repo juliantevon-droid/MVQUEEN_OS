@@ -1,20 +1,20 @@
-# 🚫 MVQUEEN — Forbidden Words & Phrases
+# 🚫 MVQueen — Forbidden Words & Phrases
 
 ---
 
 ## Why This Document Exists
 
-Words carry energy. The wrong word in MVQUEEN copy — no matter how good the surrounding content is — breaks the atmosphere.
+Words carry energy. The wrong word in MVQueen copy — no matter how good the surrounding content is — breaks the atmosphere.
 
 This document exists to protect the brand's voice from the language patterns that make luxury brands sound cheap, generic, or out of alignment with their values.
 
-Every person and AI system producing MVQUEEN content must review this list before publishing.
+Every person and AI system producing MVQueen content must review this list before publishing.
 
 ---
 
 ## Tier 1 — Never Use (Hard Prohibition)
 
-These words and phrases are incompatible with MVQUEEN brand identity. They signal cheap, aggressive, or generic marketing and must never appear in customer-facing content.
+These words and phrases are incompatible with MVQueen brand identity. They signal cheap, aggressive, or generic marketing and must never appear in customer-facing content.
 
 | Word / Phrase | Why Forbidden |
 |--------------|--------------|
@@ -138,9 +138,9 @@ Before any AI-generated content is published, scan for:
 □ ALL CAPS in body copy? → Remove
 □ Generic CTAs (Shop Now, Buy Now)? → Replace with CTA library options
 □ Overuse of "emotionally" as a prefix? → Rewrite naturally
-□ Any language that sounds like another brand? → Rewrite as MVQUEEN
+□ Any language that sounds like another brand? → Rewrite as MVQueen
 ```
 
 ---
-*MVQUEEN Forbidden Words System — Operational Document*
+*MVQueen Forbidden Words System — Operational Document*
 *Review quarterly — language evolves and new clichés emerge.*

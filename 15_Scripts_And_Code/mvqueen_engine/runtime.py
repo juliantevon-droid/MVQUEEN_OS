@@ -1,4 +1,4 @@
-"""Retired legacy MVQUEEN runtime facade.
+"""Retired legacy MVQueen runtime facade.
 
 This module previously generated titles, handles, prices, image data, and
 metafields outside the canonical QA/release pipeline. It is intentionally

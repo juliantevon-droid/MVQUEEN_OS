@@ -1,4 +1,4 @@
-# MVQUEEN Content Automation Contract V1
+# MVQueen Content Automation Contract V1
 
 ## Purpose
 

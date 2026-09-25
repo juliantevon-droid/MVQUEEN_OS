@@ -1,4 +1,4 @@
-# MVQUEEN Shopify Engine Map
+# MVQueen Shopify Engine Map
 
 ## Canonical runtime
 - app/ — authenticated React Router Shopify application.
@@ -21,7 +21,7 @@
 
 ## Theme
 - storefront/theme/
-- One custom MVQUEEN / Miss.Princess storefront source.
+- One custom MVQueen / Miss.Princess storefront source.
 - CI validates theme structure and blocks live-theme publication from repository automation.
 
 ## Data authority

@@ -1,10 +1,10 @@
-# 💬 MVQUEEN — Customer Support SOP
+# 💬 MVQueen — Customer Support SOP
 
 ---
 
 ## Purpose
 
-Deliver customer support so warm, efficient, and brand-aligned that every interaction — even a complaint — leaves the customer feeling better about MVQUEEN than before she reached out.
+Deliver customer support so warm, efficient, and brand-aligned that every interaction — even a complaint — leaves the customer feeling better about MVQueen than before she reached out.
 
 Customer support is not a cost center. It is a retention tool.
 
@@ -23,7 +23,7 @@ Business hours: [Define hours and timezone]
 
 ---
 
-## The MVQUEEN Support Framework
+## The MVQueen Support Framework
 
 Every customer interaction follows this arc:
 
@@ -104,7 +104,7 @@ Monthly review:
 - Recurring questions indicating content/FAQ gap
 
 ---
-*MVQUEEN Customer Support SOP — Operational Document*
+*MVQueen Customer Support SOP — Operational Document*
 
 ---
 ---

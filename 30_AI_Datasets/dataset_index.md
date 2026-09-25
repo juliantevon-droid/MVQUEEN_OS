@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Stores curated datasets that train, inform, or calibrate AI systems operating within the MVQUEEN ecosystem. Every dataset must be doctrine-aligned and voice-consistent.
+Stores curated datasets that train, inform, or calibrate AI systems operating within the MVQueen ecosystem. Every dataset must be doctrine-aligned and voice-consistent.
 
 ---
 

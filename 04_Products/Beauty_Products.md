@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Beauty Products
+# 👑 MVQueen — Beauty Products
 ### The Beauty Category Reference
 
 ---
@@ -7,26 +7,26 @@
 
 This is the beauty category strategy document — distinct from the Product Catalog (what exists), the Product Framework (how products are built), and the Brand Bible (brand philosophy).
 
-This file defines how MVQUEEN approaches the beauty category: the philosophy behind the products, the formulation standards, the shade philosophy, the specific product types and their roles in the ecosystem, and the category-specific copy and marketing direction.
+This file defines how MVQueen approaches the beauty category: the philosophy behind the products, the formulation standards, the shade philosophy, the specific product types and their roles in the ecosystem, and the category-specific copy and marketing direction.
 
-Beauty is one of MVQUEEN's core categories. It is also one of the most competitive. This file defines exactly how MVQUEEN wins in it.
+Beauty is one of MVQueen's core categories. It is also one of the most competitive. This file defines exactly how MVQueen wins in it.
 
 ---
 
 ## THE BEAUTY PHILOSOPHY
 
-MVQUEEN beauty is not about transformation in the corrective sense. It is about revelation — helping a woman look more like herself at her most confident, not more like someone else entirely.
+MVQueen beauty is not about transformation in the corrective sense. It is about revelation — helping a woman look more like herself at her most confident, not more like someone else entirely.
 
 The products are designed around this belief: **she is already beautiful. These products make that visible.**
 
-This distinction governs every formulation decision, every shade range, every finish, and every piece of copy written about the beauty category. MVQUEEN does not sell coverage as concealment. It sells enhancement as expression.
+This distinction governs every formulation decision, every shade range, every finish, and every piece of copy written about the beauty category. MVQueen does not sell coverage as concealment. It sells enhancement as expression.
 
 ---
 
 ## PART 1 — BEAUTY CATEGORY PILLARS
 
 ### Pillar 01 — Skin-First Beauty
-Every MVQUEEN beauty product is developed with skin health as a co-priority alongside performance. No beauty product should work against the skin it sits on.
+Every MVQueen beauty product is developed with skin health as a co-priority alongside performance. No beauty product should work against the skin it sits on.
 
 **Standards:**
 - Formulas are non-comedogenic unless there is a specific product reason otherwise
@@ -37,7 +37,7 @@ Every MVQUEEN beauty product is developed with skin health as a co-priority alon
 ---
 
 ### Pillar 02 — Warm, Feminine Tone Direction
-MVQUEEN beauty has a distinct color direction — warm, feminine, wearable. The palette reflects the brand's color system: blush, rose, ivory, champagne, espresso.
+MVQueen beauty has a distinct color direction — warm, feminine, wearable. The palette reflects the brand's color system: blush, rose, ivory, champagne, espresso.
 
 **Shade philosophy:**
 - Foundation and concealer: warm undertones across all shades — no ashy, cool, or grey finishes
@@ -45,7 +45,7 @@ MVQUEEN beauty has a distinct color direction — warm, feminine, wearable. The 
 - Lips: nudes to roses, warm berries — no cool-toned mauves or harsh darks as core range
 - Eye: wearable everyday tones — warm browns, champagne, dusty rose, soft gold
 
-**What MVQUEEN beauty never does:**
+**What MVQueen beauty never does:**
 - Launches a core range of cool-toned, grey-leaning neutrals
 - Positions any shade as "universally flattering" without actually testing across diverse skin tones
 - Ignores deeper skin tones in shade range development
@@ -53,7 +53,7 @@ MVQUEEN beauty has a distinct color direction — warm, feminine, wearable. The 
 ---
 
 ### Pillar 03 — Accessible Luxury Formulation
-MVQUEEN beauty products perform at a level above their price point — not below it. Accessible pricing does not mean accessible formulation standards.
+MVQueen beauty products perform at a level above their price point — not below it. Accessible pricing does not mean accessible formulation standards.
 
 **Non-negotiables:**
 - Foundation: minimum 6-hour wear without primer
@@ -65,7 +65,7 @@ MVQUEEN beauty products perform at a level above their price point — not below
 ---
 
 ### Pillar 04 — The Ritual Integration
-Every MVQUEEN beauty product has a place in a ritual — not just a routine. This informs how products are named, described, and marketed.
+Every MVQueen beauty product has a place in a ritual — not just a routine. This informs how products are named, described, and marketed.
 
 - Foundation is not a product she applies — it is **the confident start**
 - Mascara is not lengthening — it is **the finish line of the morning**
@@ -79,7 +79,7 @@ Every MVQUEEN beauty product has a place in a ritual — not just a routine. Thi
 ### Foundation
 **Role in ecosystem:** The anchor beauty product. The one she reaches for most often. If the foundation is right, everything else follows.
 
-**MVQUEEN foundation standards:**
+**MVQueen foundation standards:**
 - Minimum 20 shades at launch — warm undertones across all
 - Buildable coverage: light-to-medium default, full coverage buildable
 - Finish: natural-satin — not matte (too flat), not dewy (too oily)
@@ -106,11 +106,11 @@ Every MVQUEEN beauty product has a place in a ritual — not just a routine. Thi
 ### Blush
 **Role:** The warmth product. Gives the face life, dimension, and the healthy flush of confidence.
 
-**MVQUEEN blush direction:**
+**MVQueen blush direction:**
 - Warm tones: peach, rose, warm pink, golden copper
 - Formula: finely milled, blendable, buildable
 - Finish: natural skin-like — not glittery, not flat matte
-- Shades named in MVQUEEN voice: *Soft Flush / Warm Arrival / The Glow / Rose Hour*
+- Shades named in MVQueen voice: *Soft Flush / Warm Arrival / The Glow / Rose Hour*
 
 **Copy direction:**
 > *The warmth that looks like it came from within. [PRODUCT NAME] — for the flush that tells the room she's already feeling good.*
@@ -129,7 +129,7 @@ Every MVQUEEN beauty product has a place in a ritual — not just a routine. Thi
 ---
 
 ### Eye Products
-**Role:** The frame for the face. MVQUEEN eye products are wearable-first — not avant-garde.
+**Role:** The frame for the face. MVQueen eye products are wearable-first — not avant-garde.
 
 **Core eye products:**
 - Mascara: the daily essential. Lengthening and defining — not volumizing to excess
@@ -151,7 +151,7 @@ Every MVQUEEN beauty product has a place in a ritual — not just a routine. Thi
 - Lip balm treatment: skincare-beauty crossover — hydrates and subtly tints
 
 **Shade naming convention:**
-Lip shades named in MVQUEEN voice with warm, feminine identity:
+Lip shades named in MVQueen voice with warm, feminine identity:
 > *Ivory Morning / Dusty Rose / The Arrival / Warm Plum / Velvet Berry / Champagne / Bare Truth*
 
 Miss.Princess lip naming is more playful:
@@ -160,12 +160,12 @@ Miss.Princess lip naming is more playful:
 ---
 
 ### Primer & Setting Products
-**Role:** The beginning and the end of the beauty ritual. Often skipped — MVQUEEN makes them worth keeping.
+**Role:** The beginning and the end of the beauty ritual. Often skipped — MVQueen makes them worth keeping.
 
 **Primer:**
 - Skin-blurring, pore-minimizing without silicone overload
 - Adds a luminous base — not a flat, grey mattifying finish
-- Works with all MVQUEEN foundation formulas
+- Works with all MVQueen foundation formulas
 
 **Setting spray:**
 - Actually sets makeup — not just a hydration mist
@@ -181,13 +181,13 @@ Miss.Princess beauty is the playful, more trend-responsive version of the beauty
 
 **Miss.Princess beauty character:**
 - More pigmented, more fun, more color
-- Trend-adjacent shades launch faster than MVQUEEN
+- Trend-adjacent shades launch faster than MVQueen
 - Packaging is more expressive — rose gold accents, soft pink, pearl
 - Names are playful and sensory: *Pink Sugar, Petal Dream, Soft Serve, Cotton Candy*
 - Marketing is more TikTok-native — tutorials, trending sounds, beauty challenges
 
 **The distinction:**
-MVQUEEN beauty = *the confidence that doesn't need to announce itself*
+MVQueen beauty = *the confidence that doesn't need to announce itself*
 Miss.Princess beauty = *pretty is a whole personality, and this is what it looks like*
 
 ---
@@ -222,10 +222,10 @@ All beauty copy follows the Product_Description_Voice.md formula. Category-speci
 
 **Influencer direction:**
 - Beauty tutorials with real wear time shown
-- GRWM content that integrates MVQUEEN beauty naturally
+- GRWM content that integrates MVQueen beauty naturally
 - Honest shade match guides for different skin tones
-- Routine integration — MVQUEEN products alongside the customer's existing routine, not replacing everything
+- Routine integration — MVQueen products alongside the customer's existing routine, not replacing everything
 
 ---
 
-*This file is the MVQUEEN beauty category reference. It pairs with Product_Catalog.md (active and planned products), Product_Framework.md (development process), Product_Description_Voice.md (copy formulas), and Pricing_Strategy.md (tier structure). Beauty product decisions that aren't answered here are escalated to the Brand Bible and brand values.*
+*This file is the MVQueen beauty category reference. It pairs with Product_Catalog.md (active and planned products), Product_Framework.md (development process), Product_Description_Voice.md (copy formulas), and Pricing_Strategy.md (tier structure). Beauty product decisions that aren't answered here are escalated to the Brand Bible and brand values.*

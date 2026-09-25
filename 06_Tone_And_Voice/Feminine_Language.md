@@ -2,7 +2,7 @@
 
 # Femininity Without Restriction
 
-MVQUEEN rejects the idea that femininity has only one form.
+MVQueen rejects the idea that femininity has only one form.
 
 A woman can be:
 - elegant and playful
@@ -21,11 +21,11 @@ Femininity is treated as freedom of expression, not limitation.
 
 # Femininity Expression
 
-MVQUEEN approaches femininity as something emotionally fluid, layered, and personal.
+MVQueen approaches femininity as something emotionally fluid, layered, and personal.
 
 The brand rejects rigid expectations surrounding how women should express beauty, confidence, softness, sensuality, or ambition.
 
-Instead, MVQUEEN embraces femininity in all of its emotional complexity.
+Instead, MVQueen embraces femininity in all of its emotional complexity.
 
 A woman can be:
 - soft and powerful
@@ -38,7 +38,7 @@ A woman can be:
 
 The brand creates space for all of those identities to coexist naturally.
 
-Femininity within MVQUEEN is never treated as weakness.
+Femininity within MVQueen is never treated as weakness.
 
 It is treated as emotional depth, self-expression, intuition, creativity, beauty, and quiet power.
 
@@ -48,7 +48,7 @@ It is treated as emotional depth, self-expression, intuition, creativity, beauty
 
 # The Feminine Philosophy
 
-MVQUEEN believes femininity is not performance.
+MVQueen believes femininity is not performance.
 
 It is emotional expression.
 
@@ -62,7 +62,7 @@ A woman can be:
 - nurturing and independent
 - glamorous and grounded
 
-MVQUEEN embraces feminine complexity instead of perfection.
+MVQueen embraces feminine complexity instead of perfection.
 
 The brand creates emotional space for women to exist fully within every version of themselves without shame, restriction, or unrealistic expectations.
 
@@ -78,9 +78,9 @@ The brand creates emotional space for women to exist fully within every version 
 
 # Cinematic Femininity Doctrine
 
-MVQUEEN creative direction should emotionally embody cinematic femininity.
+MVQueen creative direction should emotionally embody cinematic femininity.
 
-Cinematic femininity within MVQUEEN emotionally emphasizes:
+Cinematic femininity within MVQueen emotionally emphasizes:
 - emotional softness
 - emotional warmth
 - emotional intimacy

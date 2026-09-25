@@ -1,10 +1,10 @@
-# 🚨 MVQUEEN — Crisis Management
+# 🚨 MVQueen — Crisis Management
 
 ---
 
 ## Purpose
 
-Define clear protocols for managing brand, operational, and reputational crises — ensuring MVQUEEN responds with speed, intelligence, and brand integrity under pressure.
+Define clear protocols for managing brand, operational, and reputational crises — ensuring MVQueen responds with speed, intelligence, and brand integrity under pressure.
 
 A brand that handles crises well builds more trust than a brand that never faces them.
 
@@ -91,4 +91,4 @@ If a product quality or safety issue is identified:
 ```
 
 ---
-*MVQUEEN Crisis Management — Operational Document*
+*MVQueen Crisis Management — Operational Document*

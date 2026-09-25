@@ -5,13 +5,13 @@
 
 ## Purpose
 
-Defines the AI agent infrastructure for MVQUEEN — autonomous systems that handle repetitive, high-volume, or complex tasks while preserving brand voice and doctrine alignment.
+Defines the AI agent infrastructure for MVQueen — autonomous systems that handle repetitive, high-volume, or complex tasks while preserving brand voice and doctrine alignment.
 
 ---
 
 ## Agent Philosophy
 
-MVQUEEN agents must:
+MVQueen agents must:
 - always operate within doctrine constraints
 - produce brand-voice output — never generic
 - flag for human review when uncertain

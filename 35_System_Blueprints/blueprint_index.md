@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Detailed technical blueprints for building and deploying each major MVQUEEN system. Blueprints live here before systems are built — they are the architectural plans.
+Detailed technical blueprints for building and deploying each major MVQueen system. Blueprints live here before systems are built — they are the architectural plans.
 
 ---
 

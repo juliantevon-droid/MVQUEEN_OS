@@ -1,8 +1,8 @@
-# 📣 MVQUEEN — Marketing System
+# 📣 MVQueen — Marketing System
 
 ## Purpose
 
-The Marketing System is the revenue and growth intelligence architecture governing how MVQUEEN attracts, converts, and scales its customer ecosystem.
+The Marketing System is the revenue and growth intelligence architecture governing how MVQueen attracts, converts, and scales its customer ecosystem.
 
 It exists to:
 - design and execute emotionally intelligent marketing campaigns
@@ -22,7 +22,7 @@ The Marketing System acts as the:
 
 ## Core Principle
 
-MVQUEEN marketing does not chase attention.
+MVQueen marketing does not chase attention.
 
 It creates emotional desire. Every campaign, offer, and message must feel like an invitation into a luxury experience — not a sales pitch. Marketing must make the customer feel seen, elevated, and called forward.
 

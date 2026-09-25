@@ -3,13 +3,13 @@ _Generated: Sun May 31 10:38:31 EDT 2026_
 _These files exist but have no real content yet_
 
 - .trash/2026-05-16.md (0 words)
-- .trash/Create a luxury skincare homepage concept for MVQUEEN..md (0 words)
+- .trash/Create a luxury skincare homepage concept for MVQueen..md (0 words)
 - .trash/Hey are you there.md (0 words)
 - .trash/Hey.md (0 words)
 - .trash/MVQUEEN_OS is a luxury feminine brand operating system built in Obsidian.Analyze the structure and suggest improvements..md (0 words)
 - .trash/Untitled 1.md (0 words)
 - .trash/Untitled 2.md (0 words)
-- .trash/Write a luxury feminine skincare description for MVQUEEN..md (0 words)
+- .trash/Write a luxury feminine skincare description for MVQueen..md (0 words)
 - .trashed-1781466831-2026-05-15.md (0 words)
 - 01_Brand_Strategy/Brand_Essence.md (3 words)
 - 01_Brand_Strategy/Brand_Personality.md (3 words)

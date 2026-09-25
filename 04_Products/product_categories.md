@@ -1,11 +1,11 @@
-# 🛍️ MVQUEEN PRODUCT CATEGORIES  
-*The complete strategic, emotional, aesthetic, and functional categorization system for all MVQUEEN products*
+# 🛍️ MVQueen PRODUCT CATEGORIES  
+*The complete strategic, emotional, aesthetic, and functional categorization system for all MVQueen products*
 
 ---
 
 # 1. Purpose of the Product Categories System
 
-Product Categories define **how MVQUEEN organizes its product ecosystem**, ensuring:
+Product Categories define **how MVQueen organizes its product ecosystem**, ensuring:
 
 - clarity for customers  
 - consistency across collections  
@@ -21,9 +21,9 @@ They are **emotional and identity‑based product universes**.
 
 ---
 
-# 2. MVQUEEN’s Category Philosophy
+# 2. MVQueen’s Category Philosophy
 
-MVQUEEN organizes products using four pillars:
+MVQueen organizes products using four pillars:
 
 ### **1. Emotional Purpose**
 How the product makes her feel.
@@ -41,9 +41,9 @@ Categories must reflect **emotion + identity + aesthetic + function**.
 
 ---
 
-# 3. The 7 Core MVQUEEN Product Categories
+# 3. The 7 Core MVQueen Product Categories
 
-These are the foundational categories that define the MVQUEEN product ecosystem.
+These are the foundational categories that define the MVQueen product ecosystem.
 
 ---
 
@@ -106,7 +106,7 @@ These are the foundational categories that define the MVQUEEN product ecosystem.
 ---
 
 ## 💕 **4. Soft Glam Lifestyle Products**  
-*Products that bring the MVQUEEN aesthetic into her daily life*
+*Products that bring the MVQueen aesthetic into her daily life*
 
 ### Includes:
 - soft glam décor  
@@ -183,7 +183,7 @@ These are the foundational categories that define the MVQUEEN product ecosystem.
 
 # 4. Category Architecture (How Categories Connect)
 
-MVQUEEN’s product ecosystem is structured as:
+MVQueen’s product ecosystem is structured as:
 
 ### **A. Core Categories**
 The permanent, foundational product lines.
@@ -221,11 +221,11 @@ Products tied to feminine evolution.
 ### **E. Aesthetic Expansion**
 Soft glam lifestyle items.
 
-Expansion must align with **MVQUEEN’s emotional universe**.
+Expansion must align with **MVQueen’s emotional universe**.
 
 ---
 
-# 6. Category Differentiation (What Makes MVQUEEN Unique)
+# 6. Category Differentiation (What Makes MVQueen Unique)
 
 ### **A. Emotional Positioning**
 Every category is tied to a feeling.
@@ -242,7 +242,7 @@ Products fit into daily feminine routines.
 ### **E. Luxury Psychology**
 Warm, soft, emotionally rich luxury.
 
-MVQUEEN categories are **emotional ecosystems**, not product lists.
+MVQueen categories are **emotional ecosystems**, not product lists.
 
 ---
 
@@ -267,4 +267,4 @@ They are:
 - luxury experiences  
 - feminine psychology  
 
-This system ensures MVQUEEN products feel **cohesive, intentional, and emotionally transformative**.
+This system ensures MVQueen products feel **cohesive, intentional, and emotionally transformative**.

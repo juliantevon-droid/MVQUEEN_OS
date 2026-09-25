@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Governs the content calendar system — how content is planned, batched, and distributed across the MVQUEEN ecosystem.
+Governs the content calendar system — how content is planned, batched, and distributed across the MVQueen ecosystem.
 
 ---
 

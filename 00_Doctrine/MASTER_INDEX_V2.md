@@ -39,102 +39,102 @@ _Content files only — system/config files excluded_
 
 ### 00_Doctrine/README.md
 - **Words:** 348 | **Size:** 2658b
-- **Preview:** # MVQUEEN Doctrine System  ## Purpose  The Doctrine System serves as the permanent constitutional intelligence layer of the MVQUEEN ecosystem. 
+- **Preview:** # MVQueen Doctrine System  ## Purpose  The Doctrine System serves as the permanent constitutional intelligence layer of the MVQueen ecosystem. 
 
 ### 00_Doctrine/agent_behavior_framework.md
 - **Words:** 1062 | **Size:** 7826b
-- **Preview:** # MVQUEEN — Agent Behavior Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Agent Behavior Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/ai_governance.md
 - **Words:** 1040 | **Size:** 7208b
-- **Preview:** # MVQUEEN — AI Governance Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — AI Governance Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/brand_constitution.md
 - **Words:** 967 | **Size:** 6684b
-- **Preview:** # MVQUEEN — Brand Constitution  ---  # Document Metadata 
+- **Preview:** # MVQueen — Brand Constitution  ---  # Document Metadata 
 
 ### 00_Doctrine/commerce_intelligence_framework.md
 - **Words:** 1039 | **Size:** 7781b
-- **Preview:** # MVQUEEN — Commerce Intelligence Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Commerce Intelligence Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/content_governance_framework.md
 - **Words:** 1125 | **Size:** 8100b
-- **Preview:** # MVQUEEN — Content Governance Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Content Governance Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/control_center_architecture.md
 - **Words:** 1027 | **Size:** 7646b
-- **Preview:** # MVQUEEN — Control Center Architecture  ---  # Document Metadata 
+- **Preview:** # MVQueen — Control Center Architecture  ---  # Document Metadata 
 
 ### 00_Doctrine/customer_experience_philosophy.md
 - **Words:** 866 | **Size:** 6500b
-- **Preview:** # MVQUEEN — Customer Experience Philosophy  ---  # Document Metadata 
+- **Preview:** # MVQueen — Customer Experience Philosophy  ---  # Document Metadata 
 
 ### 00_Doctrine/ecosystem_architecture.md
 - **Words:** 979 | **Size:** 7238b
-- **Preview:** # MVQUEEN — Ecosystem Architecture  ---  # Document Metadata 
+- **Preview:** # MVQueen — Ecosystem Architecture  ---  # Document Metadata 
 
 ### 00_Doctrine/ecosystem_security_framework.md
 - **Words:** 889 | **Size:** 6440b
-- **Preview:** # MVQUEEN — Ecosystem Security Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Ecosystem Security Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/emotional_intelligence_framework.md
 - **Words:** 971 | **Size:** 7270b
-- **Preview:** # MVQUEEN — Emotional Intelligence Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Emotional Intelligence Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/enterprise_operating_philsophy.md
 - **Words:** 936 | **Size:** 7260b
-- **Preview:** # MVQUEEN — Enterprise Operating Philosophy  ---  # Document Metadata 
+- **Preview:** # MVQueen — Enterprise Operating Philosophy  ---  # Document Metadata 
 
 ### 00_Doctrine/feminine_identity_framework.md
 - **Words:** 952 | **Size:** 7131b
-- **Preview:** # MVQUEEN — Feminine Identity Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Feminine Identity Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/luxury_philosophy.md
 - **Words:** 1006 | **Size:** 7322b
-- **Preview:** # MVQUEEN — Luxury Philosophy  ---  # Document Metadata 
+- **Preview:** # MVQueen — Luxury Philosophy  ---  # Document Metadata 
 
 ### 00_Doctrine/master_doctrine.md
 - **Words:** 998 | **Size:** 7279b
-- **Preview:** # MVQUEEN — Master Doctrine  ---  # Document Metadata 
+- **Preview:** # MVQueen — Master Doctrine  ---  # Document Metadata 
 
 ### 00_Doctrine/master_workflow_system.md
 - **Words:** 1055 | **Size:** 7678b
-- **Preview:** # MVQUEEN — Master Workflow System  ---  # Document Metadata 
+- **Preview:** # MVQueen — Master Workflow System  ---  # Document Metadata 
 
 ### 00_Doctrine/memory_architecture.md
 - **Words:** 1034 | **Size:** 7663b
-- **Preview:** # MVQUEEN — Memory Architecture  ---  # Document Metadata 
+- **Preview:** # MVQueen — Memory Architecture  ---  # Document Metadata 
 
 ### 00_Doctrine/orchestration_philosophy.md
 - **Words:** 787 | **Size:** 5800b
-- **Preview:** # MVQUEEN — Orchestration Philosophy  ---  # Document Metadata 
+- **Preview:** # MVQueen — Orchestration Philosophy  ---  # Document Metadata 
 
 ### 00_Doctrine/retrieval_framework.md
 - **Words:** 1005 | **Size:** 7291b
-- **Preview:** # MVQUEEN — Retrieval Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Retrieval Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/scalability_framework.md
 - **Words:** 961 | **Size:** 7037b
-- **Preview:** # MVQUEEN — Scalability Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — Scalability Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/semantic_identity_system.md
 - **Words:** 1001 | **Size:** 7304b
-- **Preview:** # MVQUEEN — Semantic Identity System  ---  # Document Metadata 
+- **Preview:** # MVQueen — Semantic Identity System  ---  # Document Metadata 
 
 ### 00_Doctrine/seo_semantic_framework.md
 - **Words:** 1102 | **Size:** 7719b
-- **Preview:** # MVQUEEN — SEO Semantic Framework  ---  # Document Metadata 
+- **Preview:** # MVQueen — SEO Semantic Framework  ---  # Document Metadata 
 
 ### 00_Doctrine/visual_identity_philosophy.md
 - **Words:** 928 | **Size:** 6740b
-- **Preview:** # MVQUEEN — Visual Identity Philosophy  ---  # Document Metadata 
+- **Preview:** # MVQueen — Visual Identity Philosophy  ---  # Document Metadata 
 
 
 ## 01_Brand_Strategy
 
 ### 01_Brand_Strategy/Brand_Bible.md
 - **Words:** 39342 | **Size:** 289457b
-- **Preview:** # 👑 MVQUEEN BRAND BIBLE  ---  # 1. Brand Overview 
+- **Preview:** # 👑 MVQueen BRAND BIBLE  ---  # 1. Brand Overview 
 
 ### 01_Brand_Strategy/References/README.md
 - **Words:** 35 | **Size:** 216b
@@ -142,7 +142,7 @@ _Content files only — system/config files excluded_
 
 ### 01_Brand_Strategy/templates.md
 - **Words:** 771 | **Size:** 5781b
-- **Preview:** # MVQUEEN — Enterprise AI-Native Brand Document Template  ---  # Document Metadata 
+- **Preview:** # MVQueen — Enterprise AI-Native Brand Document Template  ---  # Document Metadata 
 
 
 ## 02_Brand_Identity
@@ -189,55 +189,55 @@ _Content files only — system/config files excluded_
 
 ### 02_Brand_Identity/brand_identity.md
 - **Words:** 745 | **Size:** 5402b
-- **Preview:** # 👑 MVQUEEN — BRAND IDENTITY SYSTEM *A visual, emotional, and aesthetic translation of the MVQUEEN Brand Bible*  ---  
+- **Preview:** # 👑 MVQueen — BRAND IDENTITY SYSTEM *A visual, emotional, and aesthetic translation of the MVQueen Brand Bible*  ---  
 
 ### 02_Brand_Identity/brand_vocabulary.md
 - **Words:** 1722 | **Size:** 12728b
-- **Preview:** # 💬 MVQUEEN BRAND VOCABULARY   *The complete linguistic, emotional, semantic, and identity‑shaping vocabulary system of the MVQUEEN brand*  ---  
+- **Preview:** # 💬 MVQueen BRAND VOCABULARY   *The complete linguistic, emotional, semantic, and identity‑shaping vocabulary system of the MVQueen brand*  ---  
 
 ### 02_Brand_Identity/color_psychology.md
 - **Words:** 1319 | **Size:** 9503b
-- **Preview:** # 🎨 MVQUEEN COLOR PSYCHOLOGY   *A comprehensive emotional, psychological, cultural, and luxury‑behavior analysis of MVQUEEN’s feminine palette*  ---  
+- **Preview:** # 🎨 MVQueen COLOR PSYCHOLOGY   *A comprehensive emotional, psychological, cultural, and luxury‑behavior analysis of MVQueen’s feminine palette*  ---  
 
 ### 02_Brand_Identity/color_system.md
 - **Words:** 1197 | **Size:** 8007b
-- **Preview:** # 🎨 MVQUEEN COLOR SYSTEM   *The complete technical, structural, and operational architecture of MVQUEEN’s luxury feminine palette*  ---  
+- **Preview:** # 🎨 MVQueen COLOR SYSTEM   *The complete technical, structural, and operational architecture of MVQueen’s luxury feminine palette*  ---  
 
 ### 02_Brand_Identity/logo_concepts.md
 - **Words:** 1021 | **Size:** 6953b
-- **Preview:** # 👑 MVQUEEN LOGO CONCEPTS   *The symbolic, emotional, and structural foundation of MVQUEEN’s luxury feminine mark*  ---  
+- **Preview:** # 👑 MVQueen LOGO CONCEPTS   *The symbolic, emotional, and structural foundation of MVQueen’s luxury feminine mark*  ---  
 
 ### 02_Brand_Identity/logo_guidelines.md
 - **Words:** 1378 | **Size:** 9395b
-- **Preview:** # 👑 MVQUEEN LOGO GUIDELINES — UPGRADED EDITION   *The complete emotional, symbolic, technical, behavioral, and global‑protection system for MVQUEEN’s luxury feminine mark*  ---  
+- **Preview:** # 👑 MVQueen LOGO GUIDELINES — UPGRADED EDITION   *The complete emotional, symbolic, technical, behavioral, and global‑protection system for MVQueen’s luxury feminine mark*  ---  
 
 ### 02_Brand_Identity/packaging_identity.md
 - **Words:** 1058 | **Size:** 7304b
-- **Preview:** # 🎁 MVQUEEN PACKAGING IDENTITY   *The complete emotional, structural, sensory, and luxury‑grade blueprint for MVQUEEN’s physical brand expression*  ---  
+- **Preview:** # 🎁 MVQueen PACKAGING IDENTITY   *The complete emotional, structural, sensory, and luxury‑grade blueprint for MVQueen’s physical brand expression*  ---  
 
 ### 02_Brand_Identity/packaging_vision.md
 - **Words:** 1012 | **Size:** 7154b
-- **Preview:** # 🎀 MVQUEEN PACKAGING VISION   *The long‑term creative, emotional, sensory, and luxury‑architecture vision for MVQUEEN’s global packaging ecosystem*  ---  
+- **Preview:** # 🎀 MVQueen PACKAGING VISION   *The long‑term creative, emotional, sensory, and luxury‑architecture vision for MVQueen’s global packaging ecosystem*  ---  
 
 ### 02_Brand_Identity/photography_direction.md
 - **Words:** 1081 | **Size:** 7650b
-- **Preview:** # 📸 MVQUEEN PHOTOGRAPHY DIRECTION   *The complete emotional, cinematic, atmospheric, and technical blueprint for MVQUEEN’s luxury feminine photography*  ---  
+- **Preview:** # 📸 MVQueen PHOTOGRAPHY DIRECTION   *The complete emotional, cinematic, atmospheric, and technical blueprint for MVQueen’s luxury feminine photography*  ---  
 
 ### 02_Brand_Identity/typography_system.md
 - **Words:** 965 | **Size:** 6744b
-- **Preview:** # ✒️ MVQUEEN TYPOGRAPHY SYSTEM   *The complete typographic architecture of MVQUEEN’s luxury feminine identity*  ---  
+- **Preview:** # ✒️ MVQueen TYPOGRAPHY SYSTEM   *The complete typographic architecture of MVQueen’s luxury feminine identity*  ---  
 
 ### 02_Brand_Identity/videography_direction.md
 - **Words:** 1105 | **Size:** 7741b
-- **Preview:** # 🎥 MVQUEEN VIDEOGRAPHY DIRECTION   *The complete cinematic, emotional, atmospheric, and technical blueprint for MVQUEEN’s luxury feminine motion identity*  ---  
+- **Preview:** # 🎥 MVQueen VIDEOGRAPHY DIRECTION   *The complete cinematic, emotional, atmospheric, and technical blueprint for MVQueen’s luxury feminine motion identity*  ---  
 
 ### 02_Brand_Identity/visual_direction.md
 - **Words:** 857 | **Size:** 5982b
-- **Preview:** # 🌸 MVQUEEN VISUAL DIRECTION   *The complete emotional, cinematic, atmospheric, and aesthetic blueprint of MVQUEEN’s luxury feminine universe*  ---  
+- **Preview:** # 🌸 MVQueen VISUAL DIRECTION   *The complete emotional, cinematic, atmospheric, and aesthetic blueprint of MVQueen’s luxury feminine universe*  ---  
 
 ### 02_Brand_Identity/visual_identity.md
 - **Words:** 357 | **Size:** 2281b
-- **Preview:** # 👑 MVQUEEN Visual Identity System  ---  # Brand Visual Philosophy 
+- **Preview:** # 👑 MVQueen Visual Identity System  ---  # Brand Visual Philosophy 
 
 
 ## 03_Customer_Psychology
@@ -252,7 +252,7 @@ _Content files only — system/config files excluded_
 
 ### 03_Customer_Psychology/Audience_Segments.md
 - **Words:** 887 | **Size:** 6667b
-- **Preview:** # 🎀 MVQUEEN AUDIENCE SEGMENTS   *The complete segmentation system that organizes MVQUEEN’s audience by emotional identity, aesthetic world, behavioral patterns, and luxury psychology*  ---  
+- **Preview:** # 🎀 MVQueen AUDIENCE SEGMENTS   *The complete segmentation system that organizes MVQueen’s audience by emotional identity, aesthetic world, behavioral patterns, and luxury psychology*  ---  
 
 ### 03_Customer_Psychology/Buying_Behavior/README.md
 - **Words:** 35 | **Size:** 221b
@@ -260,15 +260,15 @@ _Content files only — system/config files excluded_
 
 ### 03_Customer_Psychology/Buying_Psychology.md
 - **Words:** 763 | **Size:** 5253b
-- **Preview:** # 🛍️ MVQUEEN BUYING PSYCHOLOGY   *The complete emotional, identity‑based, aesthetic, and behavioral psychology behind how MVQUEEN customers make purchasing decisions*  ---  
+- **Preview:** # 🛍️ MVQueen BUYING PSYCHOLOGY   *The complete emotional, identity‑based, aesthetic, and behavioral psychology behind how MVQueen customers make purchasing decisions*  ---  
 
 ### 03_Customer_Psychology/Customer_Personas.md
 - **Words:** 868 | **Size:** 6546b
-- **Preview:** # 👑 MVQUEEN CUSTOMER PERSONAS   *The complete identity‑based, emotional, aesthetic, and behavioral personas that represent MVQUEEN’s core customer archetypes*  ---  
+- **Preview:** # 👑 MVQueen CUSTOMER PERSONAS   *The complete identity‑based, emotional, aesthetic, and behavioral personas that represent MVQueen’s core customer archetypes*  ---  
 
 ### 03_Customer_Psychology/Customer_Transformation.md
 - **Words:** 816 | **Size:** 5778b
-- **Preview:** # 🌹 MVQUEEN CUSTOMER TRANSFORMATION   *The complete emotional, identity‑based, aesthetic, and lifestyle transformation journey MVQUEEN customers experience*  ---  
+- **Preview:** # 🌹 MVQueen CUSTOMER TRANSFORMATION   *The complete emotional, identity‑based, aesthetic, and lifestyle transformation journey MVQueen customers experience*  ---  
 
 ### 03_Customer_Psychology/Emotional_Triggers/README.md
 - **Words:** 35 | **Size:** 224b
@@ -280,11 +280,11 @@ _Content files only — system/config files excluded_
 
 ### 03_Customer_Psychology/Identity_Aspirations.md
 - **Words:** 890 | **Size:** 6123b
-- **Preview:** # 🌸 MVQUEEN IDENTITY ASPIRATIONS   *The complete emotional, psychological, aesthetic, and lifestyle identity evolution MVQUEEN customers desire and move toward*  ---  
+- **Preview:** # 🌸 MVQueen IDENTITY ASPIRATIONS   *The complete emotional, psychological, aesthetic, and lifestyle identity evolution MVQueen customers desire and move toward*  ---  
 
 ### 03_Customer_Psychology/Luxury_Buyer_Behavior.md
 - **Words:** 795 | **Size:** 5423b
-- **Preview:** # 💎 MVQUEEN LUXURY BUYER BEHAVIOR   *The complete psychological, emotional, aesthetic, and identity‑based behavior patterns of luxury feminine consumers*  ---  
+- **Preview:** # 💎 MVQueen LUXURY BUYER BEHAVIOR   *The complete psychological, emotional, aesthetic, and identity‑based behavior patterns of luxury feminine consumers*  ---  
 
 ### 03_Customer_Psychology/Luxury_Psychology/README.md
 - **Words:** 35 | **Size:** 223b
@@ -292,7 +292,7 @@ _Content files only — system/config files excluded_
 
 ### 03_Customer_Psychology/Market_Research.md
 - **Words:** 995 | **Size:** 7190b
-- **Preview:** # 📊 MVQUEEN MARKET RESEARCH   *The complete emotional, psychological, aesthetic, and behavioral research framework for understanding the feminine luxury consumer landscape*  ---  
+- **Preview:** # 📊 MVQueen MARKET RESEARCH   *The complete emotional, psychological, aesthetic, and behavioral research framework for understanding the feminine luxury consumer landscape*  ---  
 
 ### 03_Customer_Psychology/Research/README.md
 - **Words:** 35 | **Size:** 214b
@@ -304,11 +304,11 @@ _Content files only — system/config files excluded_
 
 ### 03_Customer_Psychology/Shopping_Habits.md
 - **Words:** 928 | **Size:** 6398b
-- **Preview:** # 🛒 MVQUEEN SHOPPING HABITS   *The complete emotional, behavioral, aesthetic, and identity‑based shopping patterns of MVQUEEN’s feminine luxury consumers*  ---  
+- **Preview:** # 🛒 MVQueen SHOPPING HABITS   *The complete emotional, behavioral, aesthetic, and identity‑based shopping patterns of MVQueen’s feminine luxury consumers*  ---  
 
 ### 03_Customer_Psychology/Social_Behavior.md
 - **Words:** 912 | **Size:** 6388b
-- **Preview:** # 💞 MVQUEEN SOCIAL BEHAVIOR   *The complete emotional, psychological, aesthetic, and identity‑based social behavior patterns of MVQUEEN’s feminine luxury consumers*  ---  
+- **Preview:** # 💞 MVQueen SOCIAL BEHAVIOR   *The complete emotional, psychological, aesthetic, and identity‑based social behavior patterns of MVQueen’s feminine luxury consumers*  ---  
 
 ### 03_Customer_Psychology/Surveys/README.md
 - **Words:** 35 | **Size:** 213b
@@ -316,51 +316,51 @@ _Content files only — system/config files excluded_
 
 ### 03_Customer_Psychology/Trend_Analysis.md
 - **Words:** 921 | **Size:** 6506b
-- **Preview:** # 📈 MVQUEEN TREND ANALYSIS   *The complete system for identifying, interpreting, and leveraging emotional, aesthetic, cultural, and consumer trends within the feminine luxury market*  ---  
+- **Preview:** # 📈 MVQueen TREND ANALYSIS   *The complete system for identifying, interpreting, and leveraging emotional, aesthetic, cultural, and consumer trends within the feminine luxury market*  ---  
 
 ### 03_Customer_Psychology/behavioral_segmentation.md
 - **Words:** 765 | **Size:** 5416b
-- **Preview:** # 🧩 MVQUEEN BEHAVIORAL SEGMENTATION   *The complete behavioral, emotional, aesthetic, and identity‑based segmentation system for MVQUEEN customers*  ---  
+- **Preview:** # 🧩 MVQueen BEHAVIORAL SEGMENTATION   *The complete behavioral, emotional, aesthetic, and identity‑based segmentation system for MVQueen customers*  ---  
 
 ### 03_Customer_Psychology/buyer_psychology.md
 - **Words:** 809 | **Size:** 5772b
-- **Preview:** # 🧠 MVQUEEN BUYER PSYCHOLOGY   *The complete emotional, cognitive, behavioral, and identity‑based psychology behind MVQUEEN purchasing decisions*  ---  
+- **Preview:** # 🧠 MVQueen BUYER PSYCHOLOGY   *The complete emotional, cognitive, behavioral, and identity‑based psychology behind MVQueen purchasing decisions*  ---  
 
 ### 03_Customer_Psychology/buying_triggers.md
 - **Words:** 825 | **Size:** 5762b
-- **Preview:** # 🔥 MVQUEEN BUYING TRIGGERS   *The complete emotional, psychological, aesthetic, and identity‑based triggers that activate desire and drive MVQUEEN customers to purchase*  ---  
+- **Preview:** # 🔥 MVQueen BUYING TRIGGERS   *The complete emotional, psychological, aesthetic, and identity‑based triggers that activate desire and drive MVQueen customers to purchase*  ---  
 
 ### 03_Customer_Psychology/customer_avatars.md
 - **Words:** 1019 | **Size:** 7178b
-- **Preview:** # 👩‍💖 MVQUEEN CUSTOMER AVATARS   *The complete psychological, emotional, behavioral, and identity‑based profiles of MVQUEEN’s core customers*  ---  
+- **Preview:** # 👩‍💖 MVQueen CUSTOMER AVATARS   *The complete psychological, emotional, behavioral, and identity‑based profiles of MVQueen’s core customers*  ---  
 
 ### 03_Customer_Psychology/customer_objections.md
 - **Words:** 897 | **Size:** 6330b
-- **Preview:** # 🚫 MVQUEEN CUSTOMER OBJECTIONS   *The complete emotional, psychological, and behavioral map of what stops MVQUEEN customers from buying — and how to resolve each barrier with feminine luxury precision*  ---  
+- **Preview:** # 🚫 MVQueen CUSTOMER OBJECTIONS   *The complete emotional, psychological, and behavioral map of what stops MVQueen customers from buying — and how to resolve each barrier with feminine luxury precision*  ---  
 
 ### 03_Customer_Psychology/emotional_drivers.md
 - **Words:** 797 | **Size:** 5499b
-- **Preview:** # 💗 MVQUEEN EMOTIONAL DRIVERS   *The complete emotional, psychological, and identity‑based forces that shape MVQUEEN customer desire, loyalty, and purchasing behavior*  ---  
+- **Preview:** # 💗 MVQueen EMOTIONAL DRIVERS   *The complete emotional, psychological, and identity‑based forces that shape MVQueen customer desire, loyalty, and purchasing behavior*  ---  
 
 ### 03_Customer_Psychology/identity_drivers.md
 - **Words:** 839 | **Size:** 5773b
-- **Preview:** # 🌸 MVQUEEN IDENTITY DRIVERS   *The complete psychological, emotional, and aspirational forces that shape feminine identity and drive MVQUEEN customer behavior*  ---  
+- **Preview:** # 🌸 MVQueen IDENTITY DRIVERS   *The complete psychological, emotional, and aspirational forces that shape feminine identity and drive MVQueen customer behavior*  ---  
 
 ### 03_Customer_Psychology/lifestyle_aspirations.md
 - **Words:** 798 | **Size:** 5531b
-- **Preview:** # 🌷 MVQUEEN LIFESTYLE ASPIRATIONS   *The complete emotional, aesthetic, and identity‑based lifestyle blueprint that MVQUEEN customers dream of, move toward, and build their lives around*  ---  
+- **Preview:** # 🌷 MVQueen LIFESTYLE ASPIRATIONS   *The complete emotional, aesthetic, and identity‑based lifestyle blueprint that MVQueen customers dream of, move toward, and build their lives around*  ---  
 
 ### 03_Customer_Psychology/luxury_consumer_behavior.md
 - **Words:** 946 | **Size:** 6541b
-- **Preview:** # 👑 MVQUEEN LUXURY CONSUMER BEHAVIOR   *The complete psychological, emotional, identity‑based, and behavioral blueprint of how feminine luxury consumers think, feel, and buy*  ---  
+- **Preview:** # 👑 MVQueen LUXURY CONSUMER BEHAVIOR   *The complete psychological, emotional, identity‑based, and behavioral blueprint of how feminine luxury consumers think, feel, and buy*  ---  
 
 ### 03_Customer_Psychology/social_validation.md
 - **Words:** 860 | **Size:** 6173b
-- **Preview:** # 👥 MVQUEEN SOCIAL VALIDATION   *The complete psychological, emotional, and identity‑based system of how feminine luxury consumers use social proof to make buying decisions*  ---  
+- **Preview:** # 👥 MVQueen SOCIAL VALIDATION   *The complete psychological, emotional, and identity‑based system of how feminine luxury consumers use social proof to make buying decisions*  ---  
 
 ### 03_Customer_Psychology/trust_building.md
 - **Words:** 827 | **Size:** 5910b
-- **Preview:** # 🤝 MVQUEEN TRUST BUILDING   *The complete emotional, psychological, and experiential system for building deep, lasting trust with feminine luxury consumers*  ---  
+- **Preview:** # 🤝 MVQueen TRUST BUILDING   *The complete emotional, psychological, and experiential system for building deep, lasting trust with feminine luxury consumers*  ---  
 
 
 ## 04_Products
@@ -423,7 +423,7 @@ _Content files only — system/config files excluded_
 
 ### 04_Products/Suppliers & Research.md
 - **Words:** 865 | **Size:** 6566b
-- **Preview:** # 🧪 MVQUEEN SUPPLIERS & RESEARCH   *The complete sourcing, quality assurance, ethical standards, and product development research system for MVQUEEN’s luxury feminine product ecosystem*  ---  
+- **Preview:** # 🧪 MVQueen SUPPLIERS & RESEARCH   *The complete sourcing, quality assurance, ethical standards, and product development research system for MVQueen’s luxury feminine product ecosystem*  ---  
 
 ### 04_Products/Suppliers/README.md
 - **Words:** 35 | **Size:** 215b
@@ -435,11 +435,11 @@ _Content files only — system/config files excluded_
 
 ### 04_Products/product_categories.md
 - **Words:** 804 | **Size:** 5866b
-- **Preview:** # 🛍️ MVQUEEN PRODUCT CATEGORIES   *The complete strategic, emotional, aesthetic, and functional categorization system for all MVQUEEN products*  ---  
+- **Preview:** # 🛍️ MVQueen PRODUCT CATEGORIES   *The complete strategic, emotional, aesthetic, and functional categorization system for all MVQueen products*  ---  
 
 ### 04_Products/product_faqs.md
 - **Words:** 850 | **Size:** 5783b
-- **Preview:** # ❓ MVQUEEN PRODUCT FAQS   *The complete luxury‑grade, emotionally intelligent, customer‑centered FAQ system for all MVQUEEN products*  ---  
+- **Preview:** # ❓ MVQueen PRODUCT FAQS   *The complete luxury‑grade, emotionally intelligent, customer‑centered FAQ system for all MVQueen products*  ---  
 
 
 ## 05_SEO_And_Content
@@ -701,7 +701,7 @@ _Content files only — system/config files excluded_
 
 ### 10_AI_Systems/AGENT_BRAIN_SYSTEM.md
 - **Words:** 312 | **Size:** 1903b
-- **Preview:** # 🤖 MVQUEEN AI AGENT BRAIN SYSTEM  ## 🧠 CORE PRINCIPLE Every AI action in MVQUEEN_OS follows:  
+- **Preview:** # 🤖 MVQueen AI AGENT BRAIN SYSTEM  ## 🧠 CORE PRINCIPLE Every AI action in MVQUEEN_OS follows:  
 
 ### 10_AI_Systems/AI_Agents.md
 - **Words:** 33 | **Size:** 196b
@@ -709,7 +709,7 @@ _Content files only — system/config files excluded_
 
 ### 10_AI_Systems/AI_Agents/Brand_Strategist_AI.md
 - **Words:** 55 | **Size:** 364b
-- **Preview:** # MVQUEEN Brand Strategist AI  ## Purpose Handles: - luxury branding 
+- **Preview:** # MVQueen Brand Strategist AI  ## Purpose Handles: - luxury branding 
 
 ### 10_AI_Systems/AI_Brand_Voice/README.md
 - **Words:** 35 | **Size:** 220b
@@ -1008,7 +1008,7 @@ _Content files only — system/config files excluded_
 
 ### 15_Scripts_And_Code/context_loader.py
 - **Words:** 23 | **Size:** 309b
-- **Preview:** from pathlib import Path  context_file = Path("/sdcard/MVQUEEN_OS/vault_context.md")  print("\n=== MVQUEEN CONTEXT ===\n") 
+- **Preview:** from pathlib import Path  context_file = Path("/sdcard/MVQUEEN_OS/vault_context.md")  print("\n=== MVQueen CONTEXT ===\n") 
 
 ### 15_Scripts_And_Code/logs/README.md
 - **Words:** 35 | **Size:** 210b
@@ -1016,7 +1016,7 @@ _Content files only — system/config files excluded_
 
 ### 15_Scripts_And_Code/vault_reader.py
 - **Words:** 19 | **Size:** 195b
-- **Preview:** from pathlib import Path  vault = Path("/sdcard/MVQUEEN_OS")  print("\n=== MVQUEEN OS ===\n") 
+- **Preview:** from pathlib import Path  vault = Path("/sdcard/MVQUEEN_OS")  print("\n=== MVQueen OS ===\n") 
 
 
 ## 16_Automation
@@ -1385,7 +1385,7 @@ _Content files only — system/config files excluded_
 
 ### 99_Command_Center/00_Command_Center.md
 - **Words:** 196 | **Size:** 1667b
-- **Preview:** # 👑 MVQUEEN COMMAND CENTER  ## 🧠 SYSTEM STATUS - Brand Health: [[01_Brand_Strategy/README]] - Product Engine: [[04_Product_Ecosystem/README]] 
+- **Preview:** # 👑 MVQueen COMMAND CENTER  ## 🧠 SYSTEM STATUS - Brand Health: [[01_Brand_Strategy/README]] - Product Engine: [[04_Product_Ecosystem/README]] 
 
 ### 99_Command_Center/Dashboards/README.md
 - **Words:** 35 | **Size:** 216b
@@ -1393,7 +1393,7 @@ _Content files only — system/config files excluded_
 
 ### 99_Command_Center/Home.md
 - **Words:** 321 | **Size:** 2681b
-- **Preview:** # 👑 MVQUEEN COMMAND CENTER  # 👑 BRAND ESSENCE  ## Emotional Direction 
+- **Preview:** # 👑 MVQueen COMMAND CENTER  # 👑 BRAND ESSENCE  ## Emotional Direction 
 
 ### 99_Command_Center/Metrics/README.md
 - **Words:** 35 | **Size:** 213b

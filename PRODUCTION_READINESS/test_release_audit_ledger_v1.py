@@ -1,4 +1,4 @@
-"""Tests for the MVQUEEN release audit ledger V1."""
+"""Tests for the MVQueen release audit ledger V1."""
 from __future__ import annotations
 
 import tempfile

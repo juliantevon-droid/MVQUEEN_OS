@@ -1,4 +1,4 @@
-﻿# MVQUEEN — 10 Editorial Personas (Canonical Reference)
+﻿# MVQueen — 10 Editorial Personas (Canonical Reference)
 Source: MVQueen Omniluxe Engine / codes2.docx
 Location: 10_AI_Systems/MVQUEEN_Persona_Config
 Last Updated: June 2026

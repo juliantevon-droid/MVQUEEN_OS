@@ -22,7 +22,7 @@ export default function Auth() {
     <AppProvider embedded={false}>
       <s-page>
         <Form method="post">
-          <s-section heading="Connect MVQUEEN OS">
+          <s-section heading="Connect MVQueen OS">
             <s-text-field name="shop" label="Shop domain" details="example.myshopify.com"
               value={shop} onChange={(e) => setShop(e.currentTarget.value)}
               autocomplete="on" error={errors.shop}></s-text-field>

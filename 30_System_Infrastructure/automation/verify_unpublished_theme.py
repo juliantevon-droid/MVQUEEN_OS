@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the MVQUEEN deployment target remains an unpublished Shopify theme.
+"""Verify the MVQueen deployment target remains an unpublished Shopify theme.
 
 Input: Shopify CLI `theme list --json` output file.
 This intentionally fails if the target theme is missing or becomes MAIN/live.

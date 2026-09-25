@@ -5,7 +5,7 @@
 
 ## Purpose
 
-This system catalogs, governs, and organizes every reusable content asset across the MVQUEEN ecosystem. Assets here are doctrine-aligned, voice-approved, and deployment-ready.
+This system catalogs, governs, and organizes every reusable content asset across the MVQueen ecosystem. Assets here are doctrine-aligned, voice-approved, and deployment-ready.
 
 ---
 
@@ -28,7 +28,7 @@ This system catalogs, governs, and organizes every reusable content asset across
 
 All assets must:
 - align with `00_Doctrine` constitutional layer
-- reflect the MVQUEEN voice: quiet confidence, warm luxury, feminine precision
+- reflect the MVQueen voice: quiet confidence, warm luxury, feminine precision
 - be deployment-ready with no placeholder text
 - carry a status tag: ACTIVE / DRAFT / ARCHIVED
 

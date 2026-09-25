@@ -1,11 +1,11 @@
-# 📱 MVQUEEN — Social Media Prompts
+# 📱 MVQueen — Social Media Prompts
 
 ---
 
 ## How to Use This Document
 
 Load the relevant prompt, fill in the variables in [brackets], and run.
-Every prompt is pre-loaded with MVQUEEN brand context.
+Every prompt is pre-loaded with MVQueen brand context.
 All outputs require human review before publishing.
 
 ---
@@ -14,7 +14,7 @@ All outputs require human review before publishing.
 
 ### Prompt SM-01 — Product Feature Caption
 ```
-You are writing Instagram captions for MVQUEEN — a luxury feminine brand.
+You are writing Instagram captions for MVQueen — a luxury feminine brand.
 Voice: Warm, confident, sensory, aspirational. Never aggressive or salesy.
 Lead with feeling, not features. End with invitation, not command.
 
@@ -41,7 +41,7 @@ Each caption:
 
 ### Prompt SM-02 — Lifestyle/Aesthetic Caption
 ```
-You are writing Instagram captions for MVQUEEN — a luxury feminine brand.
+You are writing Instagram captions for MVQueen — a luxury feminine brand.
 Voice: Intimate, atmospheric, like one woman speaking to another.
 This is lifestyle content — no product push, just brand world-building.
 
@@ -59,7 +59,7 @@ Write 2 caption variations:
 
 ### Prompt SM-03 — Educational Caption (Carousel)
 ```
-You are writing carousel content for MVQUEEN — a luxury feminine brand.
+You are writing carousel content for MVQueen — a luxury feminine brand.
 Voice: Warm expert — knowledgeable but never clinical or condescending.
 
 Topic: [topic]
@@ -83,16 +83,16 @@ Rules:
 
 ### Prompt SM-04 — Community/UGC Feature Caption
 ```
-You are writing an Instagram caption for MVQUEEN to accompany a repost of customer content.
+You are writing an Instagram caption for MVQueen to accompany a repost of customer content.
 
 Customer handle: [@handle]
 What they posted: [describe their content]
-Brand connection: [how it connects to MVQUEEN's world]
+Brand connection: [how it connects to MVQueen's world]
 
 Write a caption that:
 - Opens by celebrating this specific woman (not generic)
 - Connects her moment to the brand philosophy (1 sentence)
-- Invites others to share their MVQUEEN moments
+- Invites others to share their MVQueen moments
 - 50-80 words total
 - Warm, genuine, not performative
 ```
@@ -103,7 +103,7 @@ Write a caption that:
 
 ### Prompt TT-01 — Educational Video Script
 ```
-You are writing a TikTok script for MVQUEEN — a luxury feminine brand.
+You are writing a TikTok script for MVQueen — a luxury feminine brand.
 Tone: Real, conversational, knowledgeable — like a knowledgeable friend, not a brand.
 
 Topic: [topic]
@@ -132,7 +132,7 @@ CTA:
 
 ### Prompt TT-02 — Aesthetic/Brand Video Direction
 ```
-You are writing a TikTok video concept and script for MVQUEEN.
+You are writing a TikTok video concept and script for MVQueen.
 Style: Aesthetic, slow, cinematic — no talking head, just visuals + text.
 
 Concept: [what the video shows]
@@ -160,7 +160,7 @@ CAPTION (for the TikTok post):
 
 ### Prompt P-01 — Product Pin Description
 ```
-Write a Pinterest pin description for MVQUEEN.
+Write a Pinterest pin description for MVQueen.
 Pinterest is a search engine — weave keywords naturally.
 Voice: Descriptive, atmospheric, aspirational.
 
@@ -183,7 +183,7 @@ Write:
 
 ### Prompt E-01 — Campaign Subject Line Generator
 ```
-Generate email subject lines for MVQUEEN — a luxury feminine brand.
+Generate email subject lines for MVQueen — a luxury feminine brand.
 Voice: Curiosity, identity, or atmosphere-driven. Never aggressive urgency.
 Avoid: ALL CAPS, multiple exclamation marks, discount-first language.
 
@@ -202,7 +202,7 @@ Mark your top recommendation with *.
 ```
 
 ---
-*MVQUEEN Social Media Prompts — Operational Document*
+*MVQueen Social Media Prompts — Operational Document*
 *All outputs require human review before publishing.*
 
 ---

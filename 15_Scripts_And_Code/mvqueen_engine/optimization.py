@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — ANDROID OPTIMIZATION LAYER (BLOCK N)
+# MVQueen OMNILUXE ENGINE — ANDROID OPTIMIZATION LAYER (BLOCK N)
 # ---------------------------------------------------------
 
 import hashlib

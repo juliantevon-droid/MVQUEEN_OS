@@ -1,11 +1,11 @@
-# 🎀 MVQUEEN AUDIENCE SEGMENTS  
-*The complete segmentation system that organizes MVQUEEN’s audience by emotional identity, aesthetic world, behavioral patterns, and luxury psychology*
+# 🎀 MVQueen AUDIENCE SEGMENTS  
+*The complete segmentation system that organizes MVQueen’s audience by emotional identity, aesthetic world, behavioral patterns, and luxury psychology*
 
 ---
 
 # 1. Purpose of the Audience Segmentation System
 
-Audience Segmentation defines **how MVQUEEN groups its customers** based on:
+Audience Segmentation defines **how MVQueen groups its customers** based on:
 
 - emotional drivers  
 - identity expression  
@@ -15,7 +15,7 @@ Audience Segmentation defines **how MVQUEEN groups its customers** based on:
 - luxury perception  
 - social influence patterns  
 
-This system ensures MVQUEEN can:
+This system ensures MVQueen can:
 
 - target with precision  
 - personalize messaging  
@@ -29,9 +29,9 @@ They are **emotional and identity‑based clusters**.
 
 ---
 
-# 2. MVQUEEN’s Segmentation Philosophy
+# 2. MVQueen’s Segmentation Philosophy
 
-MVQUEEN segments customers using four pillars:
+MVQueen segments customers using four pillars:
 
 ### **1. Emotional Identity**
 How she feels and wants to feel.
@@ -49,14 +49,14 @@ These pillars create **emotionally intelligent segmentation**.
 
 ---
 
-# 3. The 6 Core MVQUEEN Audience Segments
+# 3. The 6 Core MVQueen Audience Segments
 
 These segments represent the **macro‑clusters** of your audience.
 
 ---
 
 ## 🎀 **1. The Soft Glam Collective**  
-*The core MVQUEEN audience — warm, feminine, aesthetic‑driven*
+*The core MVQueen audience — warm, feminine, aesthetic‑driven*
 
 ### **Emotional Identity**
 Soft, gentle, romantic.
@@ -193,7 +193,7 @@ Buy to become their ideal feminine self.
 
 # 5. Segment Overlaps (Identity Blends)
 
-Most MVQUEEN customers are blends of:
+Most MVQueen customers are blends of:
 
 - Soft Glam Collective + Glow Seekers  
 - Elegant Minimalists + Ritual Lovers  
@@ -273,7 +273,7 @@ Daily feminine moments.
 
 This system ensures that every strategist, designer, marketer, and AI agent can:
 
-- understand MVQUEEN’s audience deeply  
+- understand MVQueen’s audience deeply  
 - craft segment‑aligned messaging  
 - design emotionally resonant products  
 - build luxury experiences  
@@ -290,4 +290,4 @@ They are:
 - feminine aspirations  
 - luxury psychology  
 
-This system ensures MVQUEEN speaks directly to the **heart, identity, and emotional world** of every segment.
+This system ensures MVQueen speaks directly to the **heart, identity, and emotional world** of every segment.

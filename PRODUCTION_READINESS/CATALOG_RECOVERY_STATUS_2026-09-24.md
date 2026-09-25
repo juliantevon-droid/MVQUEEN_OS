@@ -1,10 +1,10 @@
-# MVQUEEN Historical Catalog Archive Notice — 2026-09-24
+# MVQueen Historical Catalog Archive Notice — 2026-09-24
 
 ## Production decision
 
 **THE HISTORICAL 948-PRODUCT RECOVERY SET IS NOT A PRODUCTION CATALOG.**
 
-The merchant clarified that these files belong to an old product set. MVQUEEN production product work uses **only products currently imported into Shopify**.
+The merchant clarified that these files belong to an old product set. MVQueen production product work uses **only products currently imported into Shopify**.
 
 ## Source-of-truth rule
 

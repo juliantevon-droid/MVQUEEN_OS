@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — HYBRID DETECTION SYSTEM
+# MVQueen OMNILUXE ENGINE — HYBRID DETECTION SYSTEM
 # ---------------------------------------------------------
 
 from mvqueen_engine.utils.deterministic import deterministic_seed, deterministic_choice

@@ -1,4 +1,4 @@
-# 📐 MVQUEEN — Article Structures
+# 📐 MVQueen — Article Structures
 
 ---
 
@@ -89,7 +89,7 @@ Close: Invitation into the brand world (100 words)
 ```
 
 ---
-*MVQUEEN Article Structures — Operational Document*
+*MVQueen Article Structures — Operational Document*
 
 ---
 ---

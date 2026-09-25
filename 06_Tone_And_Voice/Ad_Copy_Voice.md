@@ -1,16 +1,16 @@
-# 📣 MVQUEEN — Ad Copy Voice Guide
+# 📣 MVQueen — Ad Copy Voice Guide
 
 ---
 
 ## Ads Are a First Impression
 
-Most women who see a MVQUEEN ad have never heard of the brand.
+Most women who see a MVQueen ad have never heard of the brand.
 In 2-3 seconds, the ad must:
 - Stop the scroll
 - Create desire or recognition
 - Make her want to know more
 
-MVQUEEN ads don't shout. They magnetize.
+MVQueen ads don't shout. They magnetize.
 The goal is never to interrupt — it is to belong in her feed so naturally
 that she stops because she wants to, not because she had to.
 
@@ -66,7 +66,7 @@ The ad that tries to say everything says nothing.
 **Example:**
 ```
 She doesn't follow trends. She sets her own ritual.
-MVQUEEN Luminous Face Oil — 3 drops, every morning, no exceptions.
+MVQueen Luminous Face Oil — 3 drops, every morning, no exceptions.
 Make it yours →
 ```
 
@@ -108,7 +108,7 @@ Each slide carries a single idea. Together they tell one story.
 
 ### Retargeting Ad
 
-She's seen MVQUEEN before. This ad reminds her why she stopped.
+She's seen MVQueen before. This ad reminds her why she stopped.
 
 **Tone:** Softer. More personal. Assumes familiarity.
 
@@ -167,4 +167,4 @@ She's had her moment. The collection is waiting. 👑
 ---
 
 *06_Tone_And_Voice / Ad_Copy_Voice.md*
-*The best MVQUEEN ad doesn't feel like an ad. It feels like something she found.*
+*The best MVQueen ad doesn't feel like an ad. It feels like something she found.*

@@ -11,7 +11,7 @@ Load this at the start of any AI session requiring brand knowledge. It is a comp
 
 ## Brand Identity
 
-**Name:** MVQUEEN (Most Valuable Queen)
+**Name:** MVQueen (Most Valuable Queen)
 **Sister Brand:** Miss.Princess
 **Category:** Accessible luxury feminine lifestyle
 **Positioning:** Luxury aesthetics at real-world prices
@@ -32,7 +32,7 @@ Quiet confidence. Warm luxury. Feminine precision. Never loud, never generic, ne
 
 ---
 
-## What MVQUEEN Is Not
+## What MVQueen Is Not
 - Not a budget brand
 - Not loud or aggressive
 - Not generic or trend-chasing

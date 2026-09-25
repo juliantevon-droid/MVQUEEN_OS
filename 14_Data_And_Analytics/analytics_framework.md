@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines the measurement architecture for MVQUEEN. Every metric tracked must connect to a brand or business decision — no vanity metrics.
+Defines the measurement architecture for MVQueen. Every metric tracked must connect to a brand or business decision — no vanity metrics.
 
 ---
 

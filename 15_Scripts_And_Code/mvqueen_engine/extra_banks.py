@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — EXTRA BANKS (BLOCK T)
+# MVQueen OMNILUXE ENGINE — EXTRA BANKS (BLOCK T)
 # ---------------------------------------------------------
 PERSONA_CONFIG = {
     "MVQueen Core": {

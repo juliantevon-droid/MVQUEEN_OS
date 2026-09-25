@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE ENGINE — TEXT CLEANING UTILITIES
+# MVQueen OMNILUXE ENGINE — TEXT CLEANING UTILITIES
 # ---------------------------------------------------------
 
 import re

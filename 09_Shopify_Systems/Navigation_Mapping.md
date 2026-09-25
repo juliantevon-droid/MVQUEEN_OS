@@ -4,7 +4,7 @@
 
 ## Experience Philosophy
 
-The MVQUEEN ecommerce experience should never feel like a traditional online store.
+The MVQueen ecommerce experience should never feel like a traditional online store.
 
 It should emotionally feel like entering an immersive feminine luxury environment intentionally designed to emotionally soften, emotionally restore, emotionally inspire, and emotionally elevate women within a world that feels emotionally safe, visually calming, and sensorially immersive.
 

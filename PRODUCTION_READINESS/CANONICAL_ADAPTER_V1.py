@@ -1,4 +1,4 @@
-"""Canonical adapter for turning source product records into MVQUEEN production records.
+"""Canonical adapter for turning source product records into MVQueen production records.
 
 The adapter is intentionally side-effect free: it never writes to Shopify and never
 changes protected source fields. Legacy engines may feed this adapter, but they are

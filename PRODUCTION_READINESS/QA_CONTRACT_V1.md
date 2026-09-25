@@ -1,4 +1,4 @@
-# MVQUEEN Production QA Contract V1
+# MVQueen Production QA Contract V1
 
 ## Purpose
 

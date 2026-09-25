@@ -1,4 +1,4 @@
-# MVQUEEN Commercial Intelligence V1
+# MVQueen Commercial Intelligence V1
 
 ## Purpose
 

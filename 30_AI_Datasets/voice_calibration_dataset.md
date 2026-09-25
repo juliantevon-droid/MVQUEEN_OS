@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Curated set of approved MVQUEEN copy examples used to calibrate AI output. When prompting AI systems, reference this file to establish the correct voice before generating content.
+Curated set of approved MVQueen copy examples used to calibrate AI output. When prompting AI systems, reference this file to establish the correct voice before generating content.
 
 ---
 

@@ -5,7 +5,7 @@ type: folder_agent
 name: MVQUEEN_OS_AGENT
 
 description: >
-  AI operating assistant for the MVQUEEN brand ecosystem.
+  AI operating assistant for the MVQueen brand ecosystem.
 
 folder: MVQUEEN_OS
 

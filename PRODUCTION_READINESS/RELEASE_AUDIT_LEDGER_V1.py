@@ -1,4 +1,4 @@
-"""MVQUEEN release audit ledger V1.
+"""MVQueen release audit ledger V1.
 
 The ledger records authorization and publishing outcomes without storing
 secrets or mutable Shopify inventory/variant state. It is intentionally small

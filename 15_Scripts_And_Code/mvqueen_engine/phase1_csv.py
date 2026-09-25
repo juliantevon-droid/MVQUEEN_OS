@@ -1,4 +1,4 @@
-"""Compatibility CSV entrypoint for the consolidated MVQUEEN catalog pipeline.
+"""Compatibility CSV entrypoint for the consolidated MVQueen catalog pipeline.
 
 Historical versions routed through the broad runtime engine and could regenerate
 pricing-related fields. That behavior is retired. This module delegates only to

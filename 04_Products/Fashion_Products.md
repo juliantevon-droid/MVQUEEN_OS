@@ -1,22 +1,22 @@
-# 👗 MVQUEEN — Fashion Products
+# 👗 MVQueen — Fashion Products
 
 ---
 
 ## Purpose
 
-Define the fashion product strategy, aesthetic standards, sourcing philosophy, and presentation framework for MVQUEEN's clothing and fashion category.
+Define the fashion product strategy, aesthetic standards, sourcing philosophy, and presentation framework for MVQueen's clothing and fashion category.
 
 ---
 
 ## Fashion Category Philosophy
 
-MVQUEEN fashion is not trend-driven.
+MVQueen fashion is not trend-driven.
 It is identity-driven.
 
-The woman who shops MVQUEEN fashion is not asking *"What's in season?"*
+The woman who shops MVQueen fashion is not asking *"What's in season?"*
 She is asking *"What feels like me — the version of me I'm becoming?"*
 
-MVQUEEN fashion serves:
+MVQueen fashion serves:
 - The intentional wardrobe builder
 - The woman who buys fewer, better things
 - The woman who wants to feel elevated in her everyday life — not just for occasions
@@ -65,7 +65,7 @@ MVQUEEN fashion serves:
 
 ## Fashion Sourcing Standards
 
-Every fashion piece sourced for MVQUEEN must meet:
+Every fashion piece sourced for MVQueen must meet:
 
 ```
 □ Fabric quality test — feel it, wear it, wash it before ordering
@@ -86,7 +86,7 @@ Every fashion piece sourced for MVQUEEN must meet:
 Fashion requires lifestyle photography — not just product shots.
 
 **Styling direction:**
-- Styled with complementary MVQUEEN accessories where possible
+- Styled with complementary MVQueen accessories where possible
 - Natural, atmospheric settings — not white-wall studio only
 - Model styling: natural hair and makeup, relaxed expression
 - Movement shots alongside static — show how it moves
@@ -102,7 +102,7 @@ Fashion requires lifestyle photography — not just product shots.
 
 ## Fashion Copy Standards
 
-Fashion copy at MVQUEEN focuses on:
+Fashion copy at MVQueen focuses on:
 - How it feels to wear (before how it looks)
 - The occasions and moments it belongs in
 - The identity it reflects
@@ -111,7 +111,7 @@ Fashion copy at MVQUEEN focuses on:
 See: `06_Tone_And_Voice/Product_Description_Voice.md` for full product copy standards.
 
 ---
-*MVQUEEN Fashion Products — Operational Document*
+*MVQueen Fashion Products — Operational Document*
 
 ---
 ---

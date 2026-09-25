@@ -16,7 +16,7 @@ export default function Dashboard() {
   const data = useLoaderData<typeof loader>();
   const shop = data.data?.shop;
   return (
-    <s-page heading="MVQUEEN OS">
+    <s-page heading="MVQueen OS">
       <s-section heading="Runtime foundation">
         <s-paragraph>
           Connected to {shop?.name ?? "Shopify"} ({shop?.myshopifyDomain ?? "unknown"}).

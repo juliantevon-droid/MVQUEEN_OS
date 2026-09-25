@@ -1,10 +1,10 @@
-# 🗺️ MVQUEEN — System Blueprints
+# 🗺️ MVQueen — System Blueprints
 
 ---
 
 ## Purpose
 
-The System Blueprints folder is the architectural intelligence layer of MVQUEEN OS — the precise technical and operational design documents that define how every major system is built, how it behaves, and how it connects to everything else.
+The System Blueprints folder is the architectural intelligence layer of MVQueen OS — the precise technical and operational design documents that define how every major system is built, how it behaves, and how it connects to everything else.
 
 A blueprint is not a README.
 A README describes what a system does.
@@ -45,7 +45,7 @@ Every blueprint in this folder follows this exact structure:
 [If/then rules that govern system behavior]
 
 ## Integration Points
-[Which other MVQUEEN systems this connects to]
+[Which other MVQueen systems this connects to]
 
 ## Failure Modes
 [What breaks, what the symptom looks like, how to fix it]
@@ -310,7 +310,7 @@ VOICE EVOLUTION
 
 ## Blueprint Creation Protocol
 
-When a new major system is built in MVQUEEN OS:
+When a new major system is built in MVQueen OS:
 
 ```
 1. Identify the system — what does it do?
@@ -322,5 +322,5 @@ When a new major system is built in MVQUEEN OS:
 ```
 
 ---
-*MVQUEEN System Blueprints — Living Document*
+*MVQueen System Blueprints — Living Document*
 *Updated every time a major system is built, changed, or retired.*

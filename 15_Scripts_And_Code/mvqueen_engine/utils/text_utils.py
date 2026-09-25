@@ -16,5 +16,5 @@ def normalize_whitespace(text: str) -> str:
 def enforce_brand(text: str) -> str:
     """Enforce brand-specific linguistic rules."""
     # Example: Ensure brand name capitalization
-    text = text.replace("mvqueen", "MVQueen").replace("MVQUEEN", "MVQueen")
+    text = text.replace("mvqueen", "MVQueen").replace("MVQueen", "MVQueen")
     return text

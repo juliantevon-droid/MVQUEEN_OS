@@ -1,4 +1,4 @@
-# MVQUEEN Shopify GraphQL Runtime
+# MVQueen Shopify GraphQL Runtime
 
 ## Production standard
 

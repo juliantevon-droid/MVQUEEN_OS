@@ -1,10 +1,10 @@
-# 👑 MVQUEEN — Tone & Voice System
+# 👑 MVQueen — Tone & Voice System
 
 ---
 
-## The Voice of MVQUEEN
+## The Voice of MVQueen
 
-MVQUEEN speaks like a woman who has arrived.
+MVQueen speaks like a woman who has arrived.
 
 Not loudly. Not desperately. Not with urgency or pressure.
 
@@ -12,14 +12,14 @@ She speaks with quiet confidence — the kind that doesn't need to announce itse
 Warm enough to feel human. Elevated enough to feel luxury.
 Feminine without being fragile. Aspirational without being distant.
 
-If MVQUEEN were a woman in a room, she would be the one
+If MVQueen were a woman in a room, she would be the one
 whose presence you felt before she spoke.
 
 ---
 
 ## Voice Identity
 
-| Dimension | MVQUEEN Is | MVQUEEN Is Never |
+| Dimension | MVQueen Is | MVQueen Is Never |
 |-----------|-----------|-----------------|
 | Tone | Warm, calm, confident | Cold, corporate, aggressive |
 | Energy | Soft power, quiet luxury | Loud flex, desperate urgency |
@@ -39,13 +39,13 @@ Write as though you know her interior life,
 not just her shopping behavior.
 
 ### 02 — Quiet Confidence
-MVQUEEN does not beg for attention.
+MVQueen does not beg for attention.
 It does not chase trends with desperate relevance.
 The brand speaks with the certainty of something that knows its worth.
 Short sentences. Deliberate words. Confident pauses.
 
 ### 03 — Sensory Intelligence
-MVQUEEN language should activate the senses —
+MVQueen language should activate the senses —
 the way a texture feels, the way light falls soft,
 the way a scent lingers in memory.
 Write in ways that create atmosphere, not just information.
@@ -69,7 +69,7 @@ Use them for declarations, product names, CTAs, and emotional moments.
 **Flowing sentences create atmosphere.**
 Use them for brand stories, product descriptions, and emotional narratives.
 
-*MVQUEEN was designed for the woman who moves through life with intention —
+*MVQueen was designed for the woman who moves through life with intention —
 who chooses beauty not to perform it, but to live inside it.*
 
 **Lists create clarity.**
@@ -137,7 +137,7 @@ emotionally (as a prefix for everything), synergy, optimize (in brand copy)*
 
 Before publishing any communication, ask:
 
-1. Does this sound like MVQUEEN — or like any other brand?
+1. Does this sound like MVQueen — or like any other brand?
 2. Does this make a woman feel elevated — or pressured?
 3. Is every word earning its place?
 4. Would this feel at home in a luxury editorial — or a flash sale?
@@ -157,8 +157,8 @@ The Tone & Voice System governs:
 - all customer service communication
 - all campaign messaging
 
-No output leaves MVQUEEN without passing through this system.
+No output leaves MVQueen without passing through this system.
 
 ---
-*MVQUEEN Tone & Voice System — Operational Document*
+*MVQueen Tone & Voice System — Operational Document*
 *All content creators, AI systems, and collaborators must operate within this framework.*

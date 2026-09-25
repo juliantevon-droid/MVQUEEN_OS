@@ -1,4 +1,4 @@
-# MVQUEEN Enterprise Hardening V1
+# MVQueen Enterprise Hardening V1
 
 ## Purpose
 

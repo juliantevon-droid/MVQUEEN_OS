@@ -1,4 +1,4 @@
-# MVQUEEN Custom Storefront Roadmap
+# MVQueen Custom Storefront Roadmap
 
 ## Phase 1 — Experience foundation
 

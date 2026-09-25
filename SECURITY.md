@@ -1,8 +1,8 @@
-# Security Policy — MVQUEEN OS
+# Security Policy — MVQueen OS
 
 ## Proprietary System Security
 
-MVQUEEN OS is a proprietary system containing custom code, architecture, brand frameworks, content systems, SEO methodology, automation logic, Shopify integration logic, and business processes developed for MVQueen.
+MVQueen OS is a proprietary system containing custom code, architecture, brand frameworks, content systems, SEO methodology, automation logic, Shopify integration logic, and business processes developed for MVQueen.
 
 ### Repository Visibility — Critical
 
@@ -32,7 +32,7 @@ The source repository must be treated as **private, owner-controlled intellectua
 
 ### Intellectual Property
 
-The MVQUEEN OS structure, custom implementation, proprietary workflows, brand systems, editorial frameworks, SEO architecture, automation methodology, and other original work are proprietary. No license to copy, redistribute, sublicense, publish, or create derivative systems is granted by access to the source code.
+The MVQueen OS structure, custom implementation, proprietary workflows, brand systems, editorial frameworks, SEO architecture, automation methodology, and other original work are proprietary. No license to copy, redistribute, sublicense, publish, or create derivative systems is granted by access to the source code.
 
 ### Security Incidents
 
@@ -47,4 +47,4 @@ If proprietary information or credentials are exposed:
 
 ### Reporting
 
-Report suspected credential exposure, unauthorized access, or unauthorized use of proprietary MVQUEEN OS material privately to the owner. Do not publish sensitive details in public issues or discussions.
+Report suspected credential exposure, unauthorized access, or unauthorized use of proprietary MVQueen OS material privately to the owner. Do not publish sensitive details in public issues or discussions.

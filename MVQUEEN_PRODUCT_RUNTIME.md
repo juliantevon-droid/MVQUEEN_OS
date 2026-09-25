@@ -1,4 +1,4 @@
-# MVQUEEN OS — Shopify Product Runtime
+# MVQueen OS — Shopify Product Runtime
 
 Shopify product event -> authenticated webhook -> idempotent ProductJob -> classification/transport worker -> guarded Admin GraphQL write.
 

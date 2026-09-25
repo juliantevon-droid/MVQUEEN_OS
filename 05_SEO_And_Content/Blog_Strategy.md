@@ -1,26 +1,26 @@
-# 👑 MVQUEEN — Blog Strategy
+# 👑 MVQueen — Blog Strategy
 ### The Editorial Content Framework
 
 ---
 
 ## What This File Is
 
-The MVQUEEN blog is not a content marketing tactic. It is an extension of the brand world — a place where the brand's voice, values, and perspective live in long form.
+The MVQueen blog is not a content marketing tactic. It is an extension of the brand world — a place where the brand's voice, values, and perspective live in long form.
 
-Women who find MVQUEEN through content should feel the same thing they feel when they land on the product pages: *this brand understands me, and I want to stay in this world.*
+Women who find MVQueen through content should feel the same thing they feel when they land on the product pages: *this brand understands me, and I want to stay in this world.*
 
-This file defines the editorial direction, content categories, post formats, writing standards, publication cadence, and the specific principles that separate MVQUEEN blog content from the generic beauty and lifestyle content that saturates the internet.
+This file defines the editorial direction, content categories, post formats, writing standards, publication cadence, and the specific principles that separate MVQueen blog content from the generic beauty and lifestyle content that saturates the internet.
 
 ---
 
 ## THE BLOG PHILOSOPHY
 
 Most brand blogs exist to rank for keywords.
-MVQUEEN's blog exists to build a world — and ranks because of that.
+MVQueen's blog exists to build a world — and ranks because of that.
 
 The distinction matters. Content written purely for keywords produces articles that are accurate, complete, and forgettable. Content written for a real woman who wants to feel elevated, seen, and inspired — and *also* optimized for search — produces content that earns shares, links, and loyal readers.
 
-Every article in the MVQUEEN blog must pass this test:
+Every article in the MVQueen blog must pass this test:
 > *Would a woman save this to her Pinterest board, screenshot it, or send it to a friend — or is it just information she'll close and forget?*
 
 If the answer is "just information" — it needs to be rewritten.
@@ -29,19 +29,19 @@ If the answer is "just information" — it needs to be rewritten.
 
 ## PART 1 — CONTENT CATEGORIES
 
-The MVQUEEN blog operates across five content categories. Every article belongs to exactly one category.
+The MVQueen blog operates across five content categories. Every article belongs to exactly one category.
 
 ### Category 01 — The Ritual
 *Beauty, skincare, and self-care as intentional practice — not maintenance.*
 
-This is MVQUEEN's core content territory. Articles in this category make getting dressed, caring for your skin, choosing a fragrance, and curating your environment feel like meaningful acts rather than obligations.
+This is MVQueen's core content territory. Articles in this category make getting dressed, caring for your skin, choosing a fragrance, and curating your environment feel like meaningful acts rather than obligations.
 
 **Topics:**
 - Skincare routine guides (morning, evening, seasonal)
 - Fragrance layering and signature scent guides
 - The psychology of beauty rituals
 - How to build a self-care routine that actually sticks
-- Ingredient education (what it does, why MVQUEEN uses it)
+- Ingredient education (what it does, why MVQueen uses it)
 - The ritual of getting dressed
 - Haircare guides and treatment tutorials
 
@@ -52,7 +52,7 @@ This is MVQUEEN's core content territory. Articles in this category make getting
 ### Category 02 — The Elevated Life
 *Intentional living, feminine lifestyle, and the soft life philosophy.*
 
-This category builds the aspirational world of MVQUEEN beyond products. It speaks to how women want their lives to feel — and gives them specific, actionable ways to move toward that feeling.
+This category builds the aspirational world of MVQueen beyond products. It speaks to how women want their lives to feel — and gives them specific, actionable ways to move toward that feeling.
 
 **Topics:**
 - The soft life explained (and what it actually means vs. the trend version)
@@ -71,12 +71,12 @@ This category builds the aspirational world of MVQUEEN beyond products. It speak
 ### Category 03 — The Fashion Edit
 *Style as self-expression, not performance.*
 
-MVQUEEN fashion content is not trend coverage. It is about the relationship between a woman and what she wears — how clothing creates identity, signals self-respect, and changes how she moves through the world.
+MVQueen fashion content is not trend coverage. It is about the relationship between a woman and what she wears — how clothing creates identity, signals self-respect, and changes how she moves through the world.
 
 **Topics:**
 - How to build a wardrobe that feels like you
 - The case for dressing for yourself
-- Styling guides for MVQUEEN pieces
+- Styling guides for MVQueen pieces
 - Capsule wardrobe frameworks for the feminine woman
 - How to invest in your wardrobe intentionally
 - The emotional psychology of getting dressed
@@ -87,10 +87,10 @@ MVQUEEN fashion content is not trend coverage. It is about the relationship betw
 
 ---
 
-### Category 04 — The MVQUEEN Perspective
+### Category 04 — The MVQueen Perspective
 *Brand point of view on culture, beauty, femininity, and what it means to live elevated.*
 
-This is the brand's editorial voice at its most direct — essays, perspectives, and cultural commentary that tell the world what MVQUEEN believes.
+This is the brand's editorial voice at its most direct — essays, perspectives, and cultural commentary that tell the world what MVQueen believes.
 
 **Topics:**
 - What accessible luxury actually means (and why it matters)
@@ -120,7 +120,7 @@ A dedicated content section for the sister brand's audience — younger, more tr
 - Hair inspo for the soft girl
 - Miss.Princess product features and tutorials
 
-**Voice:** Playful, enthusiastic, trend-aware. Warmer and lighter than MVQUEEN tone but never cheap or generic.
+**Voice:** Playful, enthusiastic, trend-aware. Warmer and lighter than MVQueen tone but never cheap or generic.
 
 ---
 
@@ -167,13 +167,13 @@ A dedicated content section for the sister brand's audience — younger, more tr
 **Structure:** Editorial intro → Curated list with brand-voice descriptions → Conclusion CTA
 **Purpose:** High shareability. Pinterest traffic. Gift guide SEO.
 **Frequency:** Seasonal — 4–6 per year
-**Example:** *The MVQUEEN Gift Guide: For the Woman Who Has Taste*
+**Example:** *The MVQueen Gift Guide: For the Woman Who Has Taste*
 
 ---
 
 ## PART 3 — WRITING STANDARDS
 
-Every blog post produced for MVQUEEN is held to the same voice standard as product copy. The Writing_Rules.md and Voice_Consistency_Rules.md govern blog content as much as any other format.
+Every blog post produced for MVQueen is held to the same voice standard as product copy. The Writing_Rules.md and Voice_Consistency_Rules.md govern blog content as much as any other format.
 
 **Blog-specific standards:**
 
@@ -184,16 +184,16 @@ The first paragraph of every article should make the reader feel seen or intrigu
 > ✅ "There's a version of your morning routine that makes the rest of the day feel different. Not because it takes longer — because it's intentional."
 
 **02 — Write to one woman.**
-Not "women" as a demographic. One specific woman who fits the MVQUEEN customer. Every "you" in the article speaks to her.
+Not "women" as a demographic. One specific woman who fits the MVQueen customer. Every "you" in the article speaks to her.
 
 **03 — Product mentions are organic, not forced.**
-When MVQUEEN products are mentioned in blog content, they appear because they genuinely belong — not because they need to be promoted. Forced product mentions break the editorial credibility that makes the content trustworthy.
+When MVQueen products are mentioned in blog content, they appear because they genuinely belong — not because they need to be promoted. Forced product mentions break the editorial credibility that makes the content trustworthy.
 
 **04 — End every article with a direction, not just a conclusion.**
 The closing paragraph either deepens the idea, issues an invitation, or connects to a next step. Articles that end with "we hope this was helpful" have failed the last line.
 
 **05 — Every article is formatted for mobile.**
-Short paragraphs (3–4 sentences maximum). Frequent H2s. No walls of text. MVQUEEN readers are predominantly on phones.
+Short paragraphs (3–4 sentences maximum). Frequent H2s. No walls of text. MVQueen readers are predominantly on phones.
 
 ---
 
@@ -252,4 +252,4 @@ This framework ensures every piece of content earns its production investment ac
 
 ---
 
-*This file governs MVQUEEN editorial content strategy. It pairs with SEO_Strategy.md (keyword architecture), Content_Calendar.md (publishing schedule), Hook_Systems.md (how blog content is introduced on social), and Writing_Rules.md (voice standards for all written content).*
+*This file governs MVQueen editorial content strategy. It pairs with SEO_Strategy.md (keyword architecture), Content_Calendar.md (publishing schedule), Hook_Systems.md (how blog content is introduced on social), and Writing_Rules.md (voice standards for all written content).*

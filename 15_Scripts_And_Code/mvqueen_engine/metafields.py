@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE — FULL ENTERPRISE SHOPIFY METAFIELDS ENGINE
+# MVQueen OMNILUXE — FULL ENTERPRISE SHOPIFY METAFIELDS ENGINE
 # ---------------------------------------------------------
 
 from typing import Dict, List
@@ -77,7 +77,7 @@ def generate_all_metafields(text: str) -> Dict:
     alt_long = generate_alt_text_long(text)
 
     # -----------------------------------------------------
-    # MVQUEEN METAFIELDS (custom.mvq.*)
+    # MVQueen METAFIELDS (custom.mvq.*)
     # -----------------------------------------------------
     metafields.update(mf("custom.mvq", "category", category, "single_line_text_field"))
     metafields.update(mf("custom.mvq", "product_type", product_type, "single_line_text_field"))

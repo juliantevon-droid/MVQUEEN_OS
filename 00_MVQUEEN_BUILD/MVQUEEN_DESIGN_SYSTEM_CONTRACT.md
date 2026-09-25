@@ -1,12 +1,12 @@
-# MVQUEEN DESIGN SYSTEM CONTRACT
+# MVQueen DESIGN SYSTEM CONTRACT
 
 **Status:** Production foundation
 **Owner:** MVQUEEN_OS
-**Customer experience:** Custom MVQUEEN storefront
+**Customer experience:** Custom MVQueen storefront
 
 ## Purpose
 
-This contract establishes one visual and interaction language for the MVQUEEN storefront. New sections should use these primitives instead of creating isolated styling systems.
+This contract establishes one visual and interaction language for the MVQueen storefront. New sections should use these primitives instead of creating isolated styling systems.
 
 ## Brand Tokens
 
@@ -67,7 +67,7 @@ Approved reusable primitives:
 
 ## Commerce Presentation
 
-Shopify remains the commerce engine. MVQUEEN controls presentation.
+Shopify remains the commerce engine. MVQueen controls presentation.
 
 Shopify-owned primitives include products, variants, inventory, cart, checkout, payments, orders, and account infrastructure.
 
@@ -75,7 +75,7 @@ MVQUEEN-owned presentation includes navigation, editorial hierarchy, product sto
 
 ## Content Rules
 
-- Customer-facing product content uses MVQUEEN language.
+- Customer-facing product content uses MVQueen language.
 - Supplier/legacy brand names must not appear in customer-facing copy.
 - Product copy should be useful before it is promotional.
 - Recommendations should feel curated and relevant.
@@ -104,11 +104,11 @@ Before adding a new component:
 
 1. Check whether an existing primitive can express the experience.
 2. Add the smallest reusable primitive if necessary.
-3. Keep styling centralized in the MVQUEEN design system.
+3. Keep styling centralized in the MVQueen design system.
 4. Test mobile, keyboard navigation, reduced motion, and visual hierarchy.
 5. Run storefront contract validation and Shopify Theme Check.
 6. Never deploy directly to the live MAIN theme through automation.
 
 ## Definition of Done
 
-The design system is considered implemented when the storefront no longer depends on conflicting legacy style conventions and all major customer journeys share the same MVQUEEN visual, responsive, accessibility, and interaction language.
+The design system is considered implemented when the storefront no longer depends on conflicting legacy style conventions and all major customer journeys share the same MVQueen visual, responsive, accessibility, and interaction language.

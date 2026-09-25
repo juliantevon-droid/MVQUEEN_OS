@@ -61,8 +61,8 @@ class EngineStabilizationTests(unittest.TestCase):
 
     def test_deterministic_compatibility_is_stable(self):
         d = importlib.import_module("mvqueen_engine.deterministic")
-        seed = d.deterministic_seed("MVQUEEN")
-        self.assertEqual(seed, d.deterministic_seed("MVQUEEN"))
+        seed = d.deterministic_seed("MVQueen")
+        self.assertEqual(seed, d.deterministic_seed("MVQueen"))
         self.assertEqual(
             d.deterministic_choice(seed, ["a", "b", "c"], salt="x"),
             d.deterministic_choice(seed, ["a", "b", "c"], salt="x"),

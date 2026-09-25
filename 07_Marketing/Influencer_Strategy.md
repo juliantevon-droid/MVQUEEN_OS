@@ -2,7 +2,7 @@
 
 # Partnership & Collaboration Standards
 
-MVQUEEN should only collaborate with creators, technologies, partners, brands, and personalities that emotionally align with:
+MVQueen should only collaborate with creators, technologies, partners, brands, and personalities that emotionally align with:
 - emotional integrity
 - emotional warmth
 - emotional intentionality

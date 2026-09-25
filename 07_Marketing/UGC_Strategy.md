@@ -2,7 +2,7 @@
 
 # Community Over Consumers
 
-MVQUEEN does not view women as transactions or numbers.
+MVQueen does not view women as transactions or numbers.
 
 The brand aims to create a genuine feminine community centered around:
 - confidence

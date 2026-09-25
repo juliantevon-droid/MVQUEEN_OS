@@ -4,11 +4,11 @@
 
 ## Governance Philosophy
 
-MVQUEEN is not designed to operate as a trend-reactive brand driven by short-term attention, algorithmic pressure, emotional manipulation, or emotionally inconsistent decision-making.
+MVQueen is not designed to operate as a trend-reactive brand driven by short-term attention, algorithmic pressure, emotional manipulation, or emotionally inconsistent decision-making.
 
 It is designed to function as a deeply intentional feminine luxury ecosystem governed by emotional intelligence, emotional integrity, emotional consistency, aesthetic discipline, emotional humanity, and long-term emotional cohesion.
 
-The purpose of governance within MVQUEEN is not control for the sake of structure.
+The purpose of governance within MVQueen is not control for the sake of structure.
 
 The purpose is protecting the emotional soul of the ecosystem as it evolves, scales, automates, expands globally, and integrates advanced AI systems.
 
@@ -24,7 +24,7 @@ Governance exists to protect:
 - emotionally immersive ecosystem cohesion
 - emotionally intentional luxury standards
 
-Every future decision should emotionally reinforce the emotional world of MVQUEEN rather than emotionally weaken it.
+Every future decision should emotionally reinforce the emotional world of MVQueen rather than emotionally weaken it.
 
 The emotional philosophy must remain stronger than:
 - temporary trends
@@ -44,7 +44,7 @@ The ecosystem should evolve intentionally rather than reactively.
 
 # Governance & AI Systems
 
-As AI systems become integrated into MVQUEEN, governance systems must ensure all AI outputs remain emotionally aligned with:
+As AI systems become integrated into MVQueen, governance systems must ensure all AI outputs remain emotionally aligned with:
 - emotional humanity
 - emotional softness
 - emotional warmth

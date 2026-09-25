@@ -1,4 +1,4 @@
-# MVQUEEN — Enterprise Operating Philosophy
+# MVQueen — Enterprise Operating Philosophy
 
 ---
 
@@ -18,7 +18,7 @@
 
 # Philosophy Purpose
 
-The MVQUEEN Enterprise Operating Philosophy exists to:
+The MVQueen Enterprise Operating Philosophy exists to:
 - govern ecosystem execution standards
 - preserve operational clarity
 - support scalable enterprise growth
@@ -40,7 +40,7 @@ This framework defines:
 
 # Core Operating Identity
 
-MVQUEEN operates as:
+MVQueen operates as:
 - an AI-native luxury ecosystem
 - a doctrine-governed enterprise
 - a semantically organized infrastructure
@@ -60,7 +60,7 @@ The ecosystem prioritizes:
 
 # Operational Philosophy
 
-MVQUEEN operates through:
+MVQueen operates through:
 - systems over chaos
 - doctrine over trends
 - consistency over emotional reaction
@@ -122,7 +122,7 @@ The ecosystem protects:
 
 ## Long-Term Thinking Standards
 
-MVQUEEN is built for:
+MVQueen is built for:
 - long-term infrastructure
 - scalable intelligence
 - ecosystem maturity
@@ -377,13 +377,13 @@ The ecosystem is designed for:
 
 # Strategic Principle
 
-MVQUEEN operates as a doctrine-governed AI-native feminine luxury ecosystem designed for scalable operational intelligence, semantic continuity, emotionally intelligent commerce, enterprise orchestration, and long-term infrastructure maturity.
+MVQueen operates as a doctrine-governed AI-native feminine luxury ecosystem designed for scalable operational intelligence, semantic continuity, emotionally intelligent commerce, enterprise orchestration, and long-term infrastructure maturity.
 
 ---
 
 # Enterprise Operating Compression
 
-MVQUEEN enterprise operations govern scalable AI-native feminine luxury infrastructure through doctrine-first operational architecture designed to preserve consistency, orchestration quality, semantic organization, emotional intelligence, and long-term ecosystem scalability.
+MVQueen enterprise operations govern scalable AI-native feminine luxury infrastructure through doctrine-first operational architecture designed to preserve consistency, orchestration quality, semantic organization, emotional intelligence, and long-term ecosystem scalability.
 
 ---
 

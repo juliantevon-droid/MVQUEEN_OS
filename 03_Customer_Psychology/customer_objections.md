@@ -1,14 +1,14 @@
-# 👑 MVQUEEN — Customer Objections & Rebuttals
+# 👑 MVQueen — Customer Objections & Rebuttals
 ### The Conversion Reference
 
 ---
 
 ## What This File Is
 
-Every woman who visits MVQUEEN and doesn't buy has a reason.
-This file names those reasons — and gives every copywriter, AI system, customer service agent, and email flow the language to address them in MVQUEEN voice.
+Every woman who visits MVQueen and doesn't buy has a reason.
+This file names those reasons — and gives every copywriter, AI system, customer service agent, and email flow the language to address them in MVQueen voice.
 
-These are not generic sales objections. They are the specific hesitations of the MVQUEEN customer — a woman who is emotionally aware, aesthetically driven, and values both beauty and intention. She doesn't need to be pushed. She needs to be understood.
+These are not generic sales objections. They are the specific hesitations of the MVQueen customer — a woman who is emotionally aware, aesthetically driven, and values both beauty and intention. She doesn't need to be pushed. She needs to be understood.
 
 The rebuttals here are not manipulative. They are honest brand responses to real concerns — written in the voice that makes her feel respected, not pressured.
 
@@ -16,7 +16,7 @@ The rebuttals here are not manipulative. They are honest brand responses to real
 
 ## OBJECTION FRAMEWORK
 
-Every objection MVQUEEN receives falls into one of five categories:
+Every objection MVQueen receives falls into one of five categories:
 
 1. **Price** — "Is this worth the cost?"
 2. **Trust** — "Is this brand real? Will it deliver?"
@@ -34,10 +34,10 @@ Each category has distinct rebuttal language. The goal is never to dismiss the c
 
 **What's really being said:** *"I'm not sure the value matches the cost for someone in my situation."*
 
-**The truth:** The MVQUEEN customer often has a real budget constraint — and feels a quiet guilt about wanting beautiful things. She doesn't need a discount. She needs permission to invest in herself at a price point she can justify.
+**The truth:** The MVQueen customer often has a real budget constraint — and feels a quiet guilt about wanting beautiful things. She doesn't need a discount. She needs permission to invest in herself at a price point she can justify.
 
 **Copy rebuttal (product page / email):**
-> "MVQUEEN is built on a simple belief: every woman deserves to feel elevated, regardless of her budget. We price our products to be genuinely attainable — not as an afterthought, but as a founding philosophy. This is accessible luxury, designed to live in your real life."
+> "MVQueen is built on a simple belief: every woman deserves to feel elevated, regardless of her budget. We price our products to be genuinely attainable — not as an afterthought, but as a founding philosophy. This is accessible luxury, designed to live in your real life."
 
 **Short-form rebuttal (for ads / social):**
 > "Luxury doesn't have to be out of reach. That was always the point."
@@ -51,7 +51,7 @@ Each category has distinct rebuttal language. The goal is never to dismiss the c
 
 **What's really being said:** *"Convince me the difference is worth the price gap."*
 
-**The truth:** She's done the comparison in her head. Generic rebuttals won't work. The answer has to be specific to what MVQUEEN actually offers differently.
+**The truth:** She's done the comparison in her head. Generic rebuttals won't work. The answer has to be specific to what MVQueen actually offers differently.
 
 **Copy rebuttal:**
 > "You can. And we mean that. There are less expensive versions of almost everything we make. The difference isn't the product category — it's the intention. The formulation. The packaging experience. The fact that every detail was chosen for a reason. For some women, that distinction is the whole point. For others, it isn't. We're made for the former."
@@ -82,7 +82,7 @@ Each category has distinct rebuttal language. The goal is never to dismiss the c
 **The truth:** This is the biggest barrier for new customers. Trust is built through specificity, social proof, and the brand behaving consistently with its own positioning.
 
 **Copy rebuttal (About page / brand intro):**
-> "MVQUEEN was built from the inside out — from a real emotional understanding of what it feels like to want beautiful, elevated things and feel like they weren't meant for you. Every detail of this brand was designed with intention: the products, the language, the packaging, the experience. We don't need you to take our word for it. We need you to try one thing and let the experience speak."
+> "MVQueen was built from the inside out — from a real emotional understanding of what it feels like to want beautiful, elevated things and feel like they weren't meant for you. Every detail of this brand was designed with intention: the products, the language, the packaging, the experience. We don't need you to take our word for it. We need you to try one thing and let the experience speak."
 
 **Short-form:**
 > "New to you. Built with intention. Start with one piece."
@@ -119,10 +119,10 @@ Each category has distinct rebuttal language. The goal is never to dismiss the c
 
 **What's really being said:** *"I love the aesthetic but I'm not sure I fit the image."*
 
-**The truth:** This is the most important objection MVQUEEN faces — because the brand was specifically built to eliminate this feeling. The rebuttal must be direct, warm, and unambiguous.
+**The truth:** This is the most important objection MVQueen faces — because the brand was specifically built to eliminate this feeling. The rebuttal must be direct, warm, and unambiguous.
 
 **Copy rebuttal:**
-> "MVQUEEN was built for this exact question. Not for a specific body, income, background, or beauty standard. For the woman who wants to feel elevated — wherever she's starting from. That's the whole point. That's always been the whole point."
+> "MVQueen was built for this exact question. Not for a specific body, income, background, or beauty standard. For the woman who wants to feel elevated — wherever she's starting from. That's the whole point. That's always been the whole point."
 
 **Short-form:**
 > "If you've been wondering if this is for you — it is. That question is exactly why we built it."
@@ -134,7 +134,7 @@ Each category has distinct rebuttal language. The goal is never to dismiss the c
 **What's really being said:** *"I'm attracted to the brand but don't know if the specific product works for my aesthetic."*
 
 **Copy rebuttal:**
-> "MVQUEEN doesn't prescribe a style. It provides the ingredients. How you wear them, layer them, style them — that's yours. The only constant is the quality and the feeling. Both translate to any aesthetic."
+> "MVQueen doesn't prescribe a style. It provides the ingredients. How you wear them, layer them, style them — that's yours. The only constant is the quality and the feeling. Both translate to any aesthetic."
 
 ---
 
@@ -181,7 +181,7 @@ Each category has distinct rebuttal language. The goal is never to dismiss the c
 **What's really being said:** *"How does this compare to the brands I already know and trust?"*
 
 **Copy rebuttal:**
-> "MVQUEEN isn't competing with them. Their luxury is built around exclusivity — an atmosphere you earn access to through price. Our luxury is built around feeling — an atmosphere you deserve to inhabit regardless of what you spent. We're not the same product. We're a different belief about who luxury is for."
+> "MVQueen isn't competing with them. Their luxury is built around exclusivity — an atmosphere you earn access to through price. Our luxury is built around feeling — an atmosphere you deserve to inhabit regardless of what you spent. We're not the same product. We're a different belief about who luxury is for."
 
 ---
 
@@ -190,7 +190,7 @@ Each category has distinct rebuttal language. The goal is never to dismiss the c
 **What's really being said:** *"Is the premium over drugstore actually justified?"*
 
 **Copy rebuttal:**
-> "The difference isn't always the formula — though often it is. The difference is the intention behind every choice: the ingredient sourcing, the packaging experience, the copy that describes it, the community it belongs to. Cheaper alternatives do the functional job. MVQUEEN does something beyond that. You'll feel the difference in how it makes you move through the day."
+> "The difference isn't always the formula — though often it is. The difference is the intention behind every choice: the ingredient sourcing, the packaging experience, the copy that describes it, the community it belongs to. Cheaper alternatives do the functional job. MVQueen does something beyond that. You'll feel the difference in how it makes you move through the day."
 
 ---
 
@@ -215,4 +215,4 @@ When handling objections in live customer service (chat, email, DM), the voice r
 
 ---
 
-*This file contains objection-specific rebuttals for every major hesitation the MVQUEEN customer experiences. It pairs with trust_building.md (proactive trust mechanics), CTA_Library.md (conversion language), and Writing_Rules.md (voice mechanics). Customer service teams and AI agents read this file before handling any customer-facing conversion or complaint interaction.*
+*This file contains objection-specific rebuttals for every major hesitation the MVQueen customer experiences. It pairs with trust_building.md (proactive trust mechanics), CTA_Library.md (conversion language), and Writing_Rules.md (voice mechanics). Customer service teams and AI agents read this file before handling any customer-facing conversion or complaint interaction.*

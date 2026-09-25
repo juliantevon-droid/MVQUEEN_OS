@@ -1,4 +1,4 @@
-# 🚀 MVQUEEN — Current Launches
+# 🚀 MVQueen — Current Launches
 
 ---
 
@@ -45,7 +45,7 @@ Track all active and upcoming product launches — from pre-launch through post-
 - Top traffic source: —
 
 ---
-*MVQUEEN Current Launches — Update daily during active launches.*
+*MVQueen Current Launches — Update daily during active launches.*
 
 ---
 ---

@@ -1,4 +1,4 @@
-# MVQUEEN Engine Contracts V1
+# MVQueen Engine Contracts V1
 
 ## Single source of truth
 

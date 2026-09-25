@@ -1,17 +1,17 @@
-# 👑 MVQUEEN — Pinterest Strategy
+# 👑 MVQueen — Pinterest Strategy
 ### The Long-Game Discovery Platform
 
 ---
 
 ## What This File Is
 
-Pinterest is MVQUEEN's most underestimated platform — and potentially its highest-converting one.
+Pinterest is MVQueen's most underestimated platform — and potentially its highest-converting one.
 
 While TikTok drives discovery through impulse and Instagram maintains community, Pinterest captures the woman in a planning and aspiration mindset. She's building her vision board, her aesthetic, her wishlist, her routine. She is not scrolling to be entertained. She is searching for something she already wants.
 
-That is exactly where MVQUEEN belongs.
+That is exactly where MVQueen belongs.
 
-This file defines how MVQUEEN operates on Pinterest — account structure, board architecture, pin strategy, SEO, design standards, and the cadence that builds long-term organic traffic.
+This file defines how MVQueen operates on Pinterest — account structure, board architecture, pin strategy, SEO, design standards, and the cadence that builds long-term organic traffic.
 
 ---
 
@@ -19,10 +19,10 @@ This file defines how MVQUEEN operates on Pinterest — account structure, board
 
 Pinterest is a search engine dressed as a mood board.
 
-Every pin is an entry point — a door into the MVQUEEN world that she pushes open herself, because she was looking for what's behind it. Unlike TikTok (where the algorithm delivers content) or Instagram (where she follows a brand), Pinterest is entirely pull-based. She found this. She chose this. That makes the conversion intent significantly higher.
+Every pin is an entry point — a door into the MVQueen world that she pushes open herself, because she was looking for what's behind it. Unlike TikTok (where the algorithm delivers content) or Instagram (where she follows a brand), Pinterest is entirely pull-based. She found this. She chose this. That makes the conversion intent significantly higher.
 
-The MVQUEEN Pinterest strategy is built on three pillars:
-1. **SEO** — being found when she searches for what MVQUEEN offers
+The MVQueen Pinterest strategy is built on three pillars:
+1. **SEO** — being found when she searches for what MVQueen offers
 2. **Aspiration** — making every pin feel worth saving
 3. **Consistency** — pinning enough volume that Pinterest continues to distribute
 
@@ -30,7 +30,7 @@ The MVQUEEN Pinterest strategy is built on three pillars:
 
 ## PART 1 — ACCOUNT STRUCTURE
 
-### MVQUEEN Pinterest: `@mvqueen`
+### MVQueen Pinterest: `@mvqueen`
 Brand account. Full brand world. All boards below.
 
 ### Miss.Princess Pinterest: `@miss.princess` (separate)
@@ -38,7 +38,7 @@ Softer, pinkier, more playful. Distinct boards, distinct aesthetic.
 
 ### Profile Bio
 ```
-MVQUEEN — modern feminine luxury for real women.
+MVQueen — modern feminine luxury for real women.
 Fashion, beauty, fragrance, skincare & the elevated life.
 Luxury was always yours.
 [Website link]
@@ -52,12 +52,12 @@ Luxury was always yours.
 
 ## PART 2 — BOARD ARCHITECTURE
 
-Boards are the shelves of the MVQUEEN Pinterest world. Each board has its own SEO-optimized name and description, its own aesthetic focus, and its own pinning cadence.
+Boards are the shelves of the MVQueen Pinterest world. Each board has its own SEO-optimized name and description, its own aesthetic focus, and its own pinning cadence.
 
-### MVQUEEN Boards
+### MVQueen Boards
 
-**Board 01: MVQUEEN — Feminine Luxury Lifestyle**
-*Description:* The world of MVQUEEN. Feminine living, elevated rituals, and the aesthetics of intentional beauty. Accessible luxury for women who already know their worth.
+**Board 01: MVQueen — Feminine Luxury Lifestyle**
+*Description:* The world of MVQueen. Feminine living, elevated rituals, and the aesthetics of intentional beauty. Accessible luxury for women who already know their worth.
 *Content:* Brand world content, lifestyle imagery, atmospheric visuals, campaign content.
 *SEO terms:* feminine luxury lifestyle, elevated living aesthetic, accessible luxury
 
@@ -79,7 +79,7 @@ Boards are the shelves of the MVQUEEN Pinterest world. Each board has its own SE
 
 **Board 04: Feminine Fashion & Style**
 *Description:* Getting dressed like a decision. Capsule wardrobes, feminine silhouettes, elevated basics, and styling guides for the modern woman.
-*Content:* Outfit inspiration, fashion guides, MVQUEEN fashion product pins, wardrobe building.
+*Content:* Outfit inspiration, fashion guides, MVQueen fashion product pins, wardrobe building.
 *SEO terms:* feminine fashion style, elevated wardrobe, feminine outfit ideas, soft feminine aesthetic
 
 ---
@@ -106,16 +106,16 @@ Boards are the shelves of the MVQUEEN Pinterest world. Each board has its own SE
 ---
 
 **Board 08: Gift Guides — For Her**
-*Description:* The curated gift edits for the woman with taste. MVQUEEN gift sets and beautifully considered products for every occasion.
+*Description:* The curated gift edits for the woman with taste. MVQueen gift sets and beautifully considered products for every occasion.
 *Content:* Gift guides (seasonal and evergreen), bundle features, gift set pins.
 *SEO terms:* gift ideas for her, luxury gifts for women, feminine gift guide, beauty gift sets
 
 ---
 
-**Board 09: MVQUEEN New Arrivals**
-*Description:* The latest from MVQUEEN — new collections, new products, and what just arrived.
+**Board 09: MVQueen New Arrivals**
+*Description:* The latest from MVQueen — new collections, new products, and what just arrived.
 *Content:* Product launches, collection drops, new arrival pins.
-*SEO terms:* new feminine beauty products, luxury collection launch, MVQUEEN new arrivals
+*SEO terms:* new feminine beauty products, luxury collection launch, MVQueen new arrivals
 
 ---
 
@@ -135,15 +135,15 @@ Boards are the shelves of the MVQUEEN Pinterest world. Each board has its own SE
 ### Type 01 — Product Pins (Rich Pins)
 **What they are:** Product-specific pins with the product name, price, and availability pulled automatically from the Shopify store.
 **Best for:** Transactional intent — she's looking to buy.
-**Design:** Product on MVQUEEN palette background, product name in Cormorant Garamond, minimal copy.
+**Design:** Product on MVQueen palette background, product name in Cormorant Garamond, minimal copy.
 **Volume:** 2–3 per product, varied background approaches.
 
 ---
 
 ### Type 02 — Lifestyle / Inspiration Pins
-**What they are:** Atmospheric imagery that represents the MVQUEEN world — without necessarily featuring a specific product.
+**What they are:** Atmospheric imagery that represents the MVQueen world — without necessarily featuring a specific product.
 **Best for:** Building brand atmosphere and earning follows from aligned women.
-**Design:** Full-bleed warm photography, MVQUEEN watermark, optional short caption overlay.
+**Design:** Full-bleed warm photography, MVQueen watermark, optional short caption overlay.
 **Volume:** 40% of total pin output.
 
 ---
@@ -157,9 +157,9 @@ Boards are the shelves of the MVQUEEN Pinterest world. Each board has its own SE
 ---
 
 ### Type 04 — Quote / Brand Voice Pins
-**What they are:** MVQUEEN brand perspective in visual form. A powerful sentence on a beautiful background.
+**What they are:** MVQueen brand perspective in visual form. A powerful sentence on a beautiful background.
 **Best for:** Brand recognition, saves, emotional connection.
-**Design:** Cormorant Garamond large text on Warm Ivory or Soft Blush background. MVQUEEN wordmark small at bottom.
+**Design:** Cormorant Garamond large text on Warm Ivory or Soft Blush background. MVQueen wordmark small at bottom.
 **Examples:**
 > *"Luxury was always yours."*
 > *"Getting dressed for yourself is one of the quietest forms of self-respect."*
@@ -178,16 +178,16 @@ Boards are the shelves of the MVQUEEN Pinterest world. Each board has its own SE
 
 ## PART 4 — PIN DESIGN STANDARDS
 
-Every MVQUEEN pin is held to these non-negotiable design standards:
+Every MVQueen pin is held to these non-negotiable design standards:
 
 **Dimensions:** 1000 x 1500px (2:3 ratio) — the native Pinterest format. Never square.
-**Colors:** MVQUEEN palette only. Warm Ivory background for most. Soft Blush for beauty content. Espresso for text.
+**Colors:** MVQueen palette only. Warm Ivory background for most. Soft Blush for beauty content. Espresso for text.
 **Typography:** Cormorant Garamond for display text. Jost for body and labels.
-**Logo:** MVQUEEN wordmark visible on every pin — small, bottom center or bottom left.
+**Logo:** MVQueen wordmark visible on every pin — small, bottom center or bottom left.
 **Text overlay:** When used, maximum 1–2 lines. Large enough to read on mobile without zooming.
 **Quality:** Minimum 1000px wide. No blurry, pixelated, or low-resolution pins.
 
-**What MVQUEEN Pinterest pins never use:**
+**What MVQueen Pinterest pins never use:**
 - Clip art or generic stock elements
 - Bright colors outside the palette
 - Comic sans or non-brand fonts
@@ -221,8 +221,8 @@ Pinterest's own search suggestions are the best keyword source — search the co
 **Board descriptions:** 2–3 sentences. First sentence includes the primary keyword phrase naturally.
 
 **Pin titles:** Written as search queries women actually use:
-> ✅ *"Morning Skincare Routine for Glowing Skin — MVQUEEN"*
-> ❌ *"The Glow Collection by MVQUEEN"* (brand-first, not search-first)
+> ✅ *"Morning Skincare Routine for Glowing Skin — MVQueen"*
+> ❌ *"The Glow Collection by MVQueen"* (brand-first, not search-first)
 
 **Pin descriptions:** 150–300 characters. Natural keyword use. Aspirational and specific. Include the brand name and a soft CTA.
 
@@ -234,7 +234,7 @@ Pinterest rewards consistency over volume bursts. A steady, daily pinning cadenc
 
 **Daily minimum:** 5–10 pins per day
 **Weekly total:** 35–70 pins
-**Own content vs. repins:** 70% MVQUEEN original content, 30% curated relevant repins from aligned accounts
+**Own content vs. repins:** 70% MVQueen original content, 30% curated relevant repins from aligned accounts
 
 **Pinning schedule:**
 | Time | Content |
@@ -274,4 +274,4 @@ Miss.Princess Pinterest follows the same technical principles but with:
 
 ---
 
-*This file is the MVQUEEN Pinterest strategy. It pairs with SEO_Strategy.md (keyword architecture), Content_Pillars.md (content direction), Caption_Templates.md (pin description copy), and color_system.md and typography_system.md (visual standards). Pinterest is a long-game platform — the results compound over 6–12 months of consistent, well-optimized pinning.*
+*This file is the MVQueen Pinterest strategy. It pairs with SEO_Strategy.md (keyword architecture), Content_Pillars.md (content direction), Caption_Templates.md (pin description copy), and color_system.md and typography_system.md (visual standards). Pinterest is a long-game platform — the results compound over 6–12 months of consistent, well-optimized pinning.*

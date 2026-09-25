@@ -1,4 +1,4 @@
-# MVQUEEN — Ecosystem Security Framework
+# MVQueen — Ecosystem Security Framework
 
 ---
 
@@ -18,7 +18,7 @@
 
 # Framework Purpose
 
-The MVQUEEN Ecosystem Security Framework exists to:
+The MVQueen Ecosystem Security Framework exists to:
 - protect ecosystem integrity
 - prevent doctrine drift
 - enforce semantic consistency
@@ -41,7 +41,7 @@ This framework defines:
 
 # Core Security Philosophy
 
-MVQUEEN security is NOT traditional cybersecurity alone.
+MVQueen security is NOT traditional cybersecurity alone.
 
 It is:
 - semantic security
@@ -132,7 +132,7 @@ The ecosystem must prevent:
 
 ## Identity Lock System
 
-The MVQUEEN identity must remain:
+The MVQueen identity must remain:
 - stable
 - unified
 - emotionally coherent
@@ -342,13 +342,13 @@ Resilience is achieved through:
 
 # Strategic Principle
 
-MVQUEEN security systems exist to preserve emotionally intelligent feminine luxury identity through doctrine-governed protection architecture designed to maintain semantic integrity, emotional stability, multi-agent alignment, and enterprise-scale ecosystem resilience.
+MVQueen security systems exist to preserve emotionally intelligent feminine luxury identity through doctrine-governed protection architecture designed to maintain semantic integrity, emotional stability, multi-agent alignment, and enterprise-scale ecosystem resilience.
 
 ---
 
 # Security Compression
 
-MVQUEEN security systems enforce doctrine-first ecosystem protection architecture designed to preserve emotional intelligence, semantic consistency, luxury identity stability, AI alignment, and scalable enterprise resilience across all operational layers.
+MVQueen security systems enforce doctrine-first ecosystem protection architecture designed to preserve emotional intelligence, semantic consistency, luxury identity stability, AI alignment, and scalable enterprise resilience across all operational layers.
 
 ---
 

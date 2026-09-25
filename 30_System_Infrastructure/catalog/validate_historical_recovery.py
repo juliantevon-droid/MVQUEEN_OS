@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the real historical MVQUEEN recovery catalog end-to-end.
+"""Validate the real historical MVQueen recovery catalog end-to-end.
 
 This script is CI-only/read-only with respect to Shopify. The input CSV is
 extracted from Git history into a temporary path by the workflow.
@@ -71,11 +71,11 @@ def validate(source_path: str | Path) -> dict:
         type_counts = classification.get("product_type_counts", {})
         if category_counts.get("unclassified", 0):
             raise AssertionError(
-                f"Unclassified MVQUEEN categories remain: {category_counts.get('unclassified')}"
+                f"Unclassified MVQueen categories remain: {category_counts.get('unclassified')}"
             )
         if type_counts.get("unclassified", 0):
             raise AssertionError(
-                f"Unclassified MVQUEEN product types remain: {type_counts.get('unclassified')}"
+                f"Unclassified MVQueen product types remain: {type_counts.get('unclassified')}"
             )
 
         for index, (before, after) in enumerate(zip(source_rows, normalized_rows)):

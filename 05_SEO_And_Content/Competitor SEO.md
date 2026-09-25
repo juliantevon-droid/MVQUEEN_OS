@@ -2,9 +2,9 @@
 
 # Competitive Differentiation
 
-MVQUEEN differentiates itself through emotional depth and feminine identity positioning.
+MVQueen differentiates itself through emotional depth and feminine identity positioning.
 
-While many brands compete through trends, status, or product volume, MVQUEEN competes through emotional resonance, atmosphere, storytelling, aesthetics, and identity connection.
+While many brands compete through trends, status, or product volume, MVQueen competes through emotional resonance, atmosphere, storytelling, aesthetics, and identity connection.
 
 The brand blends:
 - beauty culture
@@ -17,6 +17,6 @@ The brand blends:
 
 into a singular emotional universe.
 
-This positioning allows MVQUEEN to evolve beyond products and become part of women’s routines, identities, memories, aspirations, and emotional lifestyles over time.
+This positioning allows MVQueen to evolve beyond products and become part of women’s routines, identities, memories, aspirations, and emotional lifestyles over time.
 
 ---

@@ -1,13 +1,13 @@
-# MVQUEEN — Production Control Tower
+# MVQueen — Production Control Tower
 
 **Status:** ACTIVE BUILD  
 **Target:** Production-ready, enterprise-strength Shopify storefront + MVQUEEN_OS commerce engine  
 **Storefront rule:** Build and test on the unpublished Shopify theme only until final launch approval.  
-**Brand rule:** Customer-facing product content uses MVQUEEN only.  
+**Brand rule:** Customer-facing product content uses MVQueen only.  
 
 ## Operating Doctrine
 
-MVQUEEN is not being rebuilt from scratch. Existing brand, content, automation, theme, and engineering assets are treated as the source material and upgraded into one production system.
+MVQueen is not being rebuilt from scratch. Existing brand, content, automation, theme, and engineering assets are treated as the source material and upgraded into one production system.
 
 The standard for completion is not "looks good." The system must be coherent, maintainable, measurable, safe to deploy, mobile-first, accessible, SEO-ready, conversion-ready, and capable of scaling beyond the initial catalog.
 
@@ -26,7 +26,7 @@ The standard for completion is not "looks good." The system must be coherent, ma
 
 When systems overlap, use this order:
 
-1. MVQUEEN doctrine / brand identity
+1. MVQueen doctrine / brand identity
 2. Approved product and voice standards
 3. Existing MVQUEEN_OS production systems
 4. Shopify theme architecture
@@ -42,7 +42,7 @@ Legacy systems are preserved until their replacement is verified. Do not delete 
 - GraphQL-first for new production automation.
 - Existing REST client remains available for maintenance and rollback paths.
 - Live Shopify theme is protected from development writes.
-- Theme development happens on `MVQUEEN Production — Horizon Build`.
+- Theme development happens on `MVQueen Production — Horizon Build`.
 - Product handles, SKUs, inventory, variants, and existing images are protected unless an explicit migration requires a change.
 - Product copy follows `06_Tone_And_Voice/Product_Description_Voice.md`.
 - Collection architecture follows `04_Products/Collection_Structure.md`.
@@ -126,7 +126,7 @@ Legacy systems are preserved until their replacement is verified. Do not delete 
 
 ## Definition of Done
 
-MVQUEEN is not considered production-ready until all launch gates pass and the final purchase path works from landing page → discovery → product → cart → checkout without known blocking defects.
+MVQueen is not considered production-ready until all launch gates pass and the final purchase path works from landing page → discovery → product → cart → checkout without known blocking defects.
 
 **No production publish is implied by completing development work. Publishing remains a separate final action requiring explicit approval.**
 

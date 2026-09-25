@@ -1,4 +1,4 @@
-# MVQUEEN — Commerce Intelligence Framework
+# MVQueen — Commerce Intelligence Framework
 
 ---
 
@@ -18,7 +18,7 @@
 
 # Framework Purpose
 
-The MVQUEEN Commerce Intelligence Framework exists to:
+The MVQueen Commerce Intelligence Framework exists to:
 - govern emotional commerce systems
 - improve customer conversion quality
 - strengthen premium perception
@@ -41,7 +41,7 @@ This framework defines:
 
 # Core Commerce Identity
 
-MVQUEEN commerce should emotionally feel:
+MVQueen commerce should emotionally feel:
 - luxurious
 - feminine
 - emotionally warm
@@ -63,9 +63,9 @@ The commerce ecosystem should emotionally resemble:
 
 # Emotional Commerce Philosophy
 
-MVQUEEN does not simply sell products.
+MVQueen does not simply sell products.
 
-MVQUEEN emotionally sells:
+MVQueen emotionally sells:
 - confidence
 - beauty
 - emotional elevation
@@ -107,7 +107,7 @@ Customers should emotionally feel:
 
 ## Anti-Manipulation Standards
 
-MVQUEEN rejects:
+MVQueen rejects:
 - aggressive urgency
 - emotional manipulation
 - fake scarcity
@@ -133,7 +133,7 @@ Pricing should reinforce:
 - intentional quality
 - emotional trust
 
-MVQUEEN operates as:
+MVQueen operates as:
 - luxury but accessible
 - premium but emotionally welcoming
 - elevated but attainable
@@ -171,7 +171,7 @@ Women often purchase through:
 - emotional connection
 - aesthetic lifestyle alignment
 
-MVQUEEN commerce should emotionally support:
+MVQueen commerce should emotionally support:
 - feminine confidence
 - beauty rituals
 - emotional softness
@@ -345,7 +345,7 @@ AI systems should never:
 
 ## Scalability Standards
 
-As MVQUEEN scales:
+As MVQueen scales:
 - emotional intelligence must remain preserved
 - luxury perception must remain stable
 - customer trust must remain protected
@@ -388,13 +388,13 @@ Future systems should preserve:
 
 # Strategic Principle
 
-MVQUEEN commerce systems exist to emotionally immerse women within emotionally intelligent feminine luxury experiences designed to create confidence, emotional beauty, premium self-expression, emotional trust, feminine aspiration, and emotionally elevated commerce experiences.
+MVQueen commerce systems exist to emotionally immerse women within emotionally intelligent feminine luxury experiences designed to create confidence, emotional beauty, premium self-expression, emotional trust, feminine aspiration, and emotionally elevated commerce experiences.
 
 ---
 
 # Commerce Intelligence Compression
 
-MVQUEEN commerce systems govern emotionally intelligent feminine luxury purchasing experiences through premium commerce architecture designed to preserve emotional immersion, customer trust, feminine identity, luxury positioning, conversion intelligence, and scalable AI-native commerce orchestration.
+MVQueen commerce systems govern emotionally intelligent feminine luxury purchasing experiences through premium commerce architecture designed to preserve emotional immersion, customer trust, feminine identity, luxury positioning, conversion intelligence, and scalable AI-native commerce orchestration.
 
 ---
 

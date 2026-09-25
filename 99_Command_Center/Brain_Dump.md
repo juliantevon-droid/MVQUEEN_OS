@@ -1,4 +1,4 @@
-# 🧠 MVQUEEN — Brain Dump
+# 🧠 MVQueen — Brain Dump
 
 ---
 
@@ -49,7 +49,7 @@ For each item:
 *(Use this section for real-time capture)*
 
 ---
-*MVQUEEN Brain Dump — Always current. Always processed.*
+*MVQueen Brain Dump — Always current. Always processed.*
 
 ---
 ---

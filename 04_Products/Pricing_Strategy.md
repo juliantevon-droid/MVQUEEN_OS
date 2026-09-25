@@ -1,4 +1,4 @@
-# 👑 MVQUEEN — Pricing Strategy
+# 👑 MVQueen — Pricing Strategy
 ### The Price Architecture
 
 ---
@@ -7,7 +7,7 @@
 
 Pricing is a positioning decision before it is a financial one.
 
-In MVQUEEN, the price of a product communicates something to the customer before she knows what it does or how it performs. Price too high and the brand breaks its accessible luxury promise. Price too low and it signals that the quality and intention behind the product don't warrant serious consideration.
+In MVQueen, the price of a product communicates something to the customer before she knows what it does or how it performs. Price too high and the brand breaks its accessible luxury promise. Price too low and it signals that the quality and intention behind the product don't warrant serious consideration.
 
 This file defines the pricing tiers, the logic behind them, the rules for presenting price, and how pricing decisions are made across every product category.
 
@@ -15,7 +15,7 @@ This file defines the pricing tiers, the logic behind them, the rules for presen
 
 ## THE PRICING PHILOSOPHY
 
-MVQUEEN is **accessible luxury** — not budget, not mass-market, not aspirational-but-unattainable.
+MVQueen is **accessible luxury** — not budget, not mass-market, not aspirational-but-unattainable.
 
 The pricing sweet spot is the space where a woman feels:
 > *"This is a real investment in myself — and it's actually within reach."*
@@ -33,7 +33,7 @@ Every price point in the catalog must sit in that emotional middle — where the
 ## PART 1 — THE PRICING TIERS
 
 ### Tier 1 — Entry Point ($8–$25)
-**Purpose:** First-purchase products. Low-barrier entry into the MVQUEEN world.
+**Purpose:** First-purchase products. Low-barrier entry into the MVQueen world.
 **Emotional position:** "I can try this without a significant commitment."
 **Product types:** Lip products, travel sizes, single-use treatments, small accessories, hair tools, sticker/lifestyle items, Miss.Princess impulse products.
 **Standard:** These products receive the same brand presentation, copy quality, and packaging care as higher tiers. The price is accessible — the experience is not discounted.
@@ -44,7 +44,7 @@ Every price point in the catalog must sit in that emotional middle — where the
 **Purpose:** The backbone of the catalog. The products most customers purchase most often.
 **Emotional position:** "This is a considered purchase — and it's worth it."
 **Product types:** Core skincare (serums, moisturizers, toners, cleansers), beauty staples (foundations, palettes, setting products), everyday fashion basics, haircare treatments, lifestyle essentials, candles, body care.
-**Standard:** Full brand experience at every touchpoint. These are the products that define MVQUEEN's everyday identity.
+**Standard:** Full brand experience at every touchpoint. These are the products that define MVQueen's everyday identity.
 
 ---
 
@@ -57,7 +57,7 @@ Every price point in the catalog must sit in that emotional middle — where the
 ---
 
 ### Tier 4 — Luxury ($151–$300+)
-**Purpose:** Brand-defining pieces. The products that anchor MVQUEEN's luxury credibility.
+**Purpose:** Brand-defining pieces. The products that anchor MVQueen's luxury credibility.
 **Emotional position:** "This is an investment. It will be with me for a long time."
 **Product types:** Signature fashion pieces (coats, bags, statement dresses), premium fragrance collection pieces, limited edition sets, curated luxury bundles, collectible packaging editions.
 **Standard:** Maximum brand experience. Boutique-level packaging, handwritten-style inserts, premium materials throughout. Limited availability adds emotional weight.
@@ -95,7 +95,7 @@ Miss.Princess operates primarily in Tier 1 and Tier 2 — with select Tier 3 ite
 ## PART 3 — PRICING PRESENTATION RULES
 
 ### Rule 01 — Price Is Never the Hero
-MVQUEEN copy never leads with price. The product's emotional value is established before the price is visible. By the time she sees the number, she already wants it.
+MVQueen copy never leads with price. The product's emotional value is established before the price is visible. By the time she sees the number, she already wants it.
 
 > ❌ "Only $45! Get our bestselling serum now."
 > ✅ The copy builds desire. The price confirms it's attainable.
@@ -108,7 +108,7 @@ These words collapse the luxury positioning. The alternative language:
 - "Accessible"
 
 ### Rule 03 — Round Prices with Intention
-MVQUEEN prices do not end in .99 — that is discount-brand psychology.
+MVQueen prices do not end in .99 — that is discount-brand psychology.
 Prices end in:
 - `.00` for statement and luxury products ($95.00, $145.00)
 - `.50` occasionally for core products ($42.50, $67.50)
@@ -120,7 +120,7 @@ Rather than discounting individual products, bundles are priced to offer value:
 This maintains the individual product's price integrity while rewarding considered purchases.
 
 ### Rule 05 — Sale Language Is Controlled
-MVQUEEN sale events are rare and positioned as exclusive access — not clearance:
+MVQueen sale events are rare and positioned as exclusive access — not clearance:
 - ❌ "SALE — Up to 50% off! Limited time!"
 - ✅ "The Seasonal Edit — Select pieces now available at reduced price. While they last."
 
@@ -161,7 +161,7 @@ Use this in email flows and product copy for premium items — never as the prim
 
 ### Pre-Launch / Founding Customer Pricing
 The first 500 customers receive founding customer pricing — positioned as early access appreciation, not a discount:
-> "As a founding MVQUEEN customer, you have access to this collection at its founding price before it adjusts to reflect growing demand."
+> "As a founding MVQueen customer, you have access to this collection at its founding price before it adjusts to reflect growing demand."
 
 This creates loyalty and urgency without signaling that the brand is struggling to sell.
 
@@ -179,23 +179,23 @@ Limited drops can price at a slight premium due to scarcity positioning — but 
 
 ## PART 6 — COMPETITIVE PRICING CONTEXT
 
-MVQUEEN does not price-match competitors. Price decisions are made based on:
+MVQueen does not price-match competitors. Price decisions are made based on:
 1. The product's actual quality and cost
-2. Where it sits in the MVQUEEN tier structure
+2. Where it sits in the MVQueen tier structure
 3. What the price communicates about the brand
 4. Whether the customer's perceived value exceeds the price
 
 **Reference ranges for positioning context (not benchmarks):**
 
-| Competitor Type | Price Range | MVQUEEN Position |
+| Competitor Type | Price Range | MVQueen Position |
 |---|---|---|
 | Mass-market (e.g. drugstore beauty) | $5–$20 | Above — quality and experience differentiate |
 | Mid-market (e.g. Ulta house brands) | $18–$45 | Overlapping at entry — differentiate through brand experience |
 | Prestige (e.g. Sephora brands) | $35–$95 | Overlapping at core — compete on emotional positioning |
 | Luxury (e.g. La Mer, Chanel Beauty) | $80–$500+ | Below — accessible luxury is the differentiator |
 
-MVQUEEN wins in the gap between prestige and luxury — the space where quality is real but the emotional experience doesn't require wealth to access.
+MVQueen wins in the gap between prestige and luxury — the space where quality is real but the emotional experience doesn't require wealth to access.
 
 ---
 
-*This file governs MVQUEEN pricing architecture across all categories. It pairs with Collection_Structure.md (how products are organized for sale), Product_Naming_System.md (how products are identified), and USP.md (the accessible luxury positioning that pricing must support).*
+*This file governs MVQueen pricing architecture across all categories. It pairs with Collection_Structure.md (how products are organized for sale), Product_Naming_System.md (how products are identified), and USP.md (the accessible luxury positioning that pricing must support).*

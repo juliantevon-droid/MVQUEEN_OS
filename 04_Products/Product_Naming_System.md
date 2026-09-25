@@ -1,21 +1,21 @@
-# 👑 MVQUEEN — Product Naming System
+# 👑 MVQueen — Product Naming System
 ### Naming Conventions, Formulas & Examples
 
 ---
 
 ## What This File Is
 
-Product names in MVQUEEN are not labels. They are the first piece of copy a customer reads — and they either pull her in or they don't.
+Product names in MVQueen are not labels. They are the first piece of copy a customer reads — and they either pull her in or they don't.
 
-This file governs how every product in the MVQUEEN ecosystem is named: the formulas, the rules, the emotional logic, the category-specific conventions, and real examples across every product type.
+This file governs how every product in the MVQueen ecosystem is named: the formulas, the rules, the emotional logic, the category-specific conventions, and real examples across every product type.
 
-Every name must pass one test: *Does it sound like it belongs in the MVQUEEN world — or could it belong to any other brand?*
+Every name must pass one test: *Does it sound like it belongs in the MVQueen world — or could it belong to any other brand?*
 
 ---
 
 ## THE NAMING PHILOSOPHY
 
-MVQUEEN product names operate in one of three registers:
+MVQueen product names operate in one of three registers:
 
 **Register 01 — Evocative**
 The name creates a feeling or image before the product is described.
@@ -93,7 +93,7 @@ Single word or short phrase that becomes iconic with repetition:
 
 ### FASHION NAMING
 
-Fashion names in MVQUEEN operate at the piece level and the collection level. Pieces get names that describe the emotional role they play — not the garment construction.
+Fashion names in MVQueen operate at the piece level and the collection level. Pieces get names that describe the emotional role they play — not the garment construction.
 
 **Formula A — The Role Name**
 `The + [Who She Becomes In It]`
@@ -182,7 +182,7 @@ Every collection name must:
 ## PART 3 — NAMING RULES
 
 ### Rule 01 — Every Name Is Unique
-No two products in the MVQUEEN catalog share a name or a name that sounds like another. Uniqueness is non-negotiable.
+No two products in the MVQueen catalog share a name or a name that sounds like another. Uniqueness is non-negotiable.
 
 ### Rule 02 — "The" Is a Power Tool
 Starting a product name with "The" signals intention and specificity:
@@ -190,18 +190,18 @@ Starting a product name with "The" signals intention and specificity:
 Use it for hero products and statement pieces. Not everything can be "The" — it loses power if overused.
 
 ### Rule 03 — No Generic Luxury Words Alone
-*Luxe, Elite, Premium, Gold, Diamond, Prestige* — these words are banned as standalone product names. They communicate nothing specific about MVQUEEN.
+*Luxe, Elite, Premium, Gold, Diamond, Prestige* — these words are banned as standalone product names. They communicate nothing specific about MVQueen.
 
 ### Rule 04 — Avoid Trend-Dependent Names
-Names that reference current TikTok language, meme culture, or temporary trends will date the product. MVQUEEN names are built for longevity.
+Names that reference current TikTok language, meme culture, or temporary trends will date the product. MVQueen names are built for longevity.
 
 ### Rule 05 — Pronounceability Test
 Every name must be easy to say aloud — in a review, in a recommendation, in a caption. If it requires explanation to pronounce, reconsider.
 > ❌ "Lumière Sérum Intense" (over-engineered, pretentious)
-> ✅ "The Glow Serum" (direct, confident, MVQUEEN)
+> ✅ "The Glow Serum" (direct, confident, MVQueen)
 
 ### Rule 06 — Miss.Princess Names Are Distinct
-Miss.Princess names are softer, more playful, and may use more color-forward or trend-adjacent language. They are never shared with MVQUEEN products.
+Miss.Princess names are softer, more playful, and may use more color-forward or trend-adjacent language. They are never shared with MVQueen products.
 
 ---
 
@@ -212,7 +212,7 @@ For internal inventory and Shopify management, every product uses the following 
 ```
 [BRAND]-[CATEGORY]-[PRODUCT CODE]-[VARIANT]
 
-BRAND:    MVQ = MVQUEEN | MXP = Miss.Princess
+BRAND:    MVQ = MVQueen | MXP = Miss.Princess
 CATEGORY: SKC = Skincare | FRG = Fragrance | FSH = Fashion
           HRC = Haircare | BEA = Beauty | LFS = Lifestyle
 PRODUCT:  3-digit sequential number (001, 002, 003...)
@@ -220,9 +220,9 @@ VARIANT:  Size or colorway code (30ML, 50ML, IVR, RSE, BLK)
 ```
 
 **Examples:**
-- `MVQ-SKC-001-30ML` — MVQUEEN Skincare Product 001, 30ml
-- `MVQ-FRG-003-50ML` — MVQUEEN Fragrance Product 003, 50ml
-- `MVQ-FSH-012-IVR` — MVQUEEN Fashion Product 012, Ivory colorway
+- `MVQ-SKC-001-30ML` — MVQueen Skincare Product 001, 30ml
+- `MVQ-FRG-003-50ML` — MVQueen Fragrance Product 003, 50ml
+- `MVQ-FSH-012-IVR` — MVQueen Fashion Product 012, Ivory colorway
 - `MXP-BEA-004-RSE` — Miss.Princess Beauty Product 004, Rose colorway
 
 SKU codes are internal only. They never appear in customer-facing copy.
@@ -233,7 +233,7 @@ SKU codes are internal only. They never appear in customer-facing copy.
 
 Before finalizing any product name, run it through this checklist:
 
-- [ ] Does it sound like it belongs specifically in MVQUEEN?
+- [ ] Does it sound like it belongs specifically in MVQueen?
 - [ ] Does it create a feeling before describing a function?
 - [ ] Is it unique — not shared with any existing product?
 - [ ] Is it easy to say aloud and recommend?
@@ -244,4 +244,4 @@ Before finalizing any product name, run it through this checklist:
 
 ---
 
-*This file governs product naming across the entire MVQUEEN and Miss.Princess catalog. It pairs with Collection_Structure.md (how products are organized), Product_Framework.md (product development), and Product_Description_Voice.md (how products are written about).*
+*This file governs product naming across the entire MVQueen and Miss.Princess catalog. It pairs with Collection_Structure.md (how products are organized), Product_Framework.md (product development), and Product_Description_Voice.md (how products are written about).*

@@ -2,15 +2,15 @@
 ## Highest-Level Production Standard
 
 **Status:** ACTIVE / GOVERNING
-**Brand:** MVQUEEN
+**Brand:** MVQueen
 **Repository:** `juliantevon-droid/MVQUEEN_OS`
-**Shopify build target:** `MVQUEEN Production — Horizon Build`
+**Shopify build target:** `MVQueen Production — Horizon Build`
 
 ---
 
 ## 1. THE STANDARD
 
-MVQUEEN is not being built to be merely functional, attractive, or launchable.
+MVQueen is not being built to be merely functional, attractive, or launchable.
 
 Every system is to be converted toward the highest practical production standard before launch:
 
@@ -53,9 +53,9 @@ Implementation must conform upward to the governing systems — never the revers
 
 ## 3. CUSTOMER-FACING BRAND RULE
 
-**MVQUEEN is the customer-facing brand.**
+**MVQueen is the customer-facing brand.**
 
-Internal repository references may document legacy, inspiration, testing, or future concepts, but customer-facing product copy, merchandising copy, metadata, navigation, structured data, and storefront presentation must use the approved MVQUEEN identity unless an explicitly approved future brand architecture is activated.
+Internal repository references may document legacy, inspiration, testing, or future concepts, but customer-facing product copy, merchandising copy, metadata, navigation, structured data, and storefront presentation must use the approved MVQueen identity unless an explicitly approved future brand architecture is activated.
 
 Do not allow supplier names, accidental legacy names, generic AI filler, or internal brand references to leak into customer-facing content.
 
@@ -299,7 +299,7 @@ The live theme remains protected until Step 10 is explicitly approved.
 
 ## 15. DEFINITION OF DONE
 
-MVQUEEN is not "done" when the homepage looks finished.
+MVQueen is not "done" when the homepage looks finished.
 
 The build is launch-ready only when all critical gates are green:
 

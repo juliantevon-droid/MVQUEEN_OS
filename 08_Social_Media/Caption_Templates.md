@@ -1,13 +1,13 @@
-# 👑 MVQUEEN — Caption Templates
+# 👑 MVQueen — Caption Templates
 ### Ready-to-Use Frameworks for Every Platform
 
 ---
 
 ## What This File Is
 
-Caption templates are not fill-in-the-blank forms. They are structural frameworks — proven emotional patterns that MVQUEEN copy follows — with clear guidance on how to adapt them to any product, pillar, or platform.
+Caption templates are not fill-in-the-blank forms. They are structural frameworks — proven emotional patterns that MVQueen copy follows — with clear guidance on how to adapt them to any product, pillar, or platform.
 
-Every template here is built on the Hook Systems (Hook_Systems.md) and Writing Rules (Writing_Rules.md). The structure is the vehicle. The MVQUEEN voice is what fills it.
+Every template here is built on the Hook Systems (Hook_Systems.md) and Writing Rules (Writing_Rules.md). The structure is the vehicle. The MVQueen voice is what fills it.
 
 ---
 
@@ -71,7 +71,7 @@ Shop via link in bio.
 >
 > Not for the meeting. Not for the occasion. For the version of you that exists before anyone else arrives.
 >
-> MVQUEEN was built for that version of you.
+> MVQueen was built for that version of you.
 
 ---
 
@@ -109,7 +109,7 @@ CTA + link in bio.
 ```
 [Common belief or cultural assumption — stated plainly.]
 
-[The MVQUEEN counter — what we actually believe.]
+[The MVQueen counter — what we actually believe.]
 
 [One sentence that shows what this looks like in practice.]
 
@@ -119,7 +119,7 @@ CTA + link in bio.
 **Example:**
 > Most luxury brands make you feel like you have to earn the right to walk in.
 >
-> We built MVQUEEN on the opposite belief: that luxury was always yours — it just wasn't always priced that way.
+> We built MVQueen on the opposite belief: that luxury was always yours — it just wasn't always priced that way.
 >
 > Welcome to the collection. You've been here before — you just didn't know the name yet.
 
@@ -135,7 +135,7 @@ The things that made it feel like this:
 → [Item 1 — sensory or emotional]
 → [Item 2]
 → [Item 3]
-→ [Item 4 — optional MVQUEEN product naturally placed]
+→ [Item 4 — optional MVQueen product naturally placed]
 
 [Closing line — identity or atmosphere.]
 
@@ -201,7 +201,7 @@ CTA.
 >
 > There's a version of self-care that waits for permission. For the special day, the accomplishment, the reward that justifies the indulgence. And then there's the other kind — the kind that decides Tuesday counts, that the candle gets lit on a regular evening, that the serum gets used because the morning deserves it, not because something extraordinary happened.
 >
-> MVQUEEN was built for the second kind. For the woman who decided her ordinary life was worth elevating — not someday, but now.
+> MVQueen was built for the second kind. For the woman who decided her ordinary life was worth elevating — not someday, but now.
 >
 > Because luxury was never about the occasion. It was always about the decision.
 >
@@ -242,7 +242,7 @@ Full routine/guide linked in bio ✨
 ### TikTok Template 03 — The Product Feature Caption
 ```
 [What the product does — in one emotional sentence]
-[The specific detail that makes it MVQUEEN]
+[The specific detail that makes it MVQueen]
 Link in bio 👑
 ```
 
@@ -279,7 +279,7 @@ Pinterest captions are descriptions built for search AND desire. They work as st
 ```
 
 **Example:**
-> How to build a morning skincare ritual that actually changes how your day starts. The right order, the right products, the right intention — this guide covers all three. Discover the MVQUEEN skincare collection at the link.
+> How to build a morning skincare ritual that actually changes how your day starts. The right order, the right products, the right intention — this guide covers all three. Discover the MVQueen skincare collection at the link.
 
 ---
 
@@ -291,7 +291,7 @@ Pinterest captions are descriptions built for search AND desire. They work as st
 ```
 
 **Example:**
-> The feminine morning aesthetic that makes waking up feel like a reward. Soft skincare rituals, warm light, and products that make the routine feel like the point — not the preparation. MVQUEEN Beauty Collection.
+> The feminine morning aesthetic that makes waking up feel like a reward. Soft skincare rituals, warm light, and products that make the routine feel like the point — not the preparation. MVQueen Beauty Collection.
 
 ---
 
@@ -304,7 +304,7 @@ Pinterest captions are descriptions built for search AND desire. They work as st
 ```
 
 **Example:**
-> MVQUEEN The Glow Serum — a lightweight brightening serum with Vitamin C and niacinamide. The kind of skin that makes you pause in the mirror before the day starts. Shop the MVQUEEN skincare collection.
+> MVQueen The Glow Serum — a lightweight brightening serum with Vitamin C and niacinamide. The kind of skin that makes you pause in the mirror before the day starts. Shop the MVQueen skincare collection.
 
 ---
 
@@ -329,15 +329,15 @@ Pinterest captions are descriptions built for search AND desire. They work as st
 ```
 [State the brand's core belief as an opening conviction]
 ```
-> *We built MVQUEEN for the woman who stopped waiting to feel like she deserved beautiful things.*
+> *We built MVQueen for the woman who stopped waiting to feel like she deserved beautiful things.*
 
 ---
 
 ## HASHTAG SYSTEM
 
-### MVQUEEN Core Hashtags (always include 3–5)
+### MVQueen Core Hashtags (always include 3–5)
 ```
-#MVQUEEN #MostValuableQueen #AccessibleLuxury
+#MVQueen #MostValuableQueen #AccessibleLuxury
 #FeminineLifestyle #LuxuryForEveryWoman
 ```
 
@@ -363,4 +363,4 @@ Pinterest captions are descriptions built for search AND desire. They work as st
 
 ---
 
-*This file is the MVQUEEN caption template library. Pull directly, customize with brand voice, never publish uncustomized. Pairs with Hook_Systems.md (how to open content), Content_Pillars.md (which pillar each piece belongs to), and Writing_Rules.md (voice mechanics).*
+*This file is the MVQueen caption template library. Pull directly, customize with brand voice, never publish uncustomized. Pairs with Hook_Systems.md (how to open content), Content_Pillars.md (which pillar each piece belongs to), and Writing_Rules.md (voice mechanics).*

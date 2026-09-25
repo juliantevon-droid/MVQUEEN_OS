@@ -1,4 +1,4 @@
-# MVQUEEN Product Automation Runtime Specification
+# MVQueen Product Automation Runtime Specification
 ## MVQUEEN_OS / 30_System_Infrastructure
 
 Status: BUILD SPECIFICATION — not yet deployed
@@ -10,7 +10,7 @@ Automatically process every eligible Shopify product after creation or meaningfu
 1. Shopify emits products/create or products/update.
 2. Webhook endpoint verifies Shopify authenticity.
 3. Event ID is checked for idempotency.
-4. Product ID is placed on the MVQUEEN processing queue.
+4. Product ID is placed on the MVQueen processing queue.
 5. Worker fetches authoritative product data with Admin GraphQL.
 6. Deterministic classifier assigns taxonomy and routing.
 7. Editorial/SEO generator creates content from verified facts.

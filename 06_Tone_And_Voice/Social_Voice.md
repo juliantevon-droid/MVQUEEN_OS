@@ -1,16 +1,16 @@
-# 🗣️ MVQUEEN — Social Voice Guide
+# 🗣️ MVQueen — Social Voice Guide
 
 ---
 
 ## Purpose
 
-Define exactly how MVQUEEN speaks on every social platform — with real examples of right and wrong, platform-specific adaptations, and a voice test to apply before every post.
+Define exactly how MVQueen speaks on every social platform — with real examples of right and wrong, platform-specific adaptations, and a voice test to apply before every post.
 
 ---
 
 ## The Social Voice Identity
 
-MVQUEEN on social sounds like a woman who has arrived — quietly, confidently, without announcement. She doesn't perform for the algorithm. She creates for the woman she's speaking to.
+MVQueen on social sounds like a woman who has arrived — quietly, confidently, without announcement. She doesn't perform for the algorithm. She creates for the woman she's speaking to.
 
 **In one sentence:** Warm enough to feel human. Elevated enough to feel luxury. Real enough to feel true.
 
@@ -63,7 +63,7 @@ TikTok demands realness. Less polish, more truth.
 *Nobody talks about how skincare routines are supposed to restore you — not add to your to-do list. Here's what changed for me...*
 
 **Wrong:**
-*Hi everyone! Today I'm going to be showing you this amazing luxury skincare product from MVQUEEN that has completely transformed my skin!*
+*Hi everyone! Today I'm going to be showing you this amazing luxury skincare product from MVQueen that has completely transformed my skin!*
 
 **Rules:**
 - Speak naturally — no script-reading cadence
@@ -78,7 +78,7 @@ TikTok demands realness. Less polish, more truth.
 Pinterest is search. Write for the woman who is actively looking.
 
 **Right:**
-*Luxury face serum for women who want their morning ritual to feel intentional. Lightweight, absorbs instantly, stays soft all day. Part of the MVQUEEN ritual.*
+*Luxury face serum for women who want their morning ritual to feel intentional. Lightweight, absorbs instantly, stays soft all day. Part of the MVQueen ritual.*
 
 **Wrong:**
 *OMG this serum is everything!! So obsessed with how my skin looks!*
@@ -96,7 +96,7 @@ Pinterest is search. Write for the woman who is actively looking.
 Facebook skews slightly older, more conversational, community-first.
 
 **Right:**
-*For the women in this community — what does your evening ritual look like? We're always curious what the women who find MVQUEEN are already doing before they find us.*
+*For the women in this community — what does your evening ritual look like? We're always curious what the women who find MVQueen are already doing before they find us.*
 
 **Wrong:**
 *SHOP NOW! New arrivals just dropped and they're going fast!!*
@@ -111,7 +111,7 @@ Facebook skews slightly older, more conversational, community-first.
 ## Voice Test (Apply Before Every Post)
 
 ```
-□ Does this sound like MVQUEEN — or like any other brand?
+□ Does this sound like MVQueen — or like any other brand?
 □ Does it speak to one woman — not an audience?
 □ Is the first line strong enough to stand alone?
 □ Is every word earning its place?
@@ -123,7 +123,7 @@ Facebook skews slightly older, more conversational, community-first.
 If any box is unchecked — rewrite before posting.
 
 ---
-*MVQUEEN Social Voice Guide — Operational Document*
+*MVQueen Social Voice Guide — Operational Document*
 
 ---
 ---

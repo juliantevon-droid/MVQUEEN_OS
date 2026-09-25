@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Governs all pricing decisions across the MVQUEEN product catalog. Pricing is a brand signal — it communicates value, quality, and positioning before the customer reads a single word.
+Governs all pricing decisions across the MVQueen product catalog. Pricing is a brand signal — it communicates value, quality, and positioning before the customer reads a single word.
 
 ---
 

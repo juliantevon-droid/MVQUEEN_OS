@@ -1,4 +1,4 @@
-"""MVQUEEN controlled publishing boundary V1.
+"""MVQueen controlled publishing boundary V1.
 
 This module is the only approved hand-off from a canonical product record to an
 external publisher. It performs no Shopify/API work itself; the side effect is

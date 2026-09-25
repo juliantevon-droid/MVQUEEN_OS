@@ -4,11 +4,11 @@
 
 ## Product Ecosystem Philosophy
 
-MVQUEEN products are not designed to exist as isolated items.
+MVQueen products are not designed to exist as isolated items.
 
 They are designed to function as an emotionally connected feminine luxury ecosystem that supports beauty, confidence, emotional atmosphere, intentional living, softness, self-expression, sensory immersion, and emotionally elevated experiences.
 
-The purpose of the MVQUEEN product ecosystem is not simply to sell products.
+The purpose of the MVQueen product ecosystem is not simply to sell products.
 
 It is to build an emotionally immersive world women emotionally attach themselves to.
 
@@ -37,7 +37,7 @@ Women should feel like every product belongs to the same emotional universe.
 ## 1. Fashion
 
 ### Emotional Purpose
-Fashion within MVQUEEN exists to help women feel:
+Fashion within MVQueen exists to help women feel:
 - confident
 - feminine
 - expressive
@@ -92,7 +92,7 @@ Beauty products should emotionally reinforce:
 - emotionally restorative moments
 
 ### Beauty Identity
-Beauty within MVQUEEN should feel:
+Beauty within MVQueen should feel:
 - sensory
 - luxurious
 - calming
@@ -159,7 +159,7 @@ Haircare rituals should emotionally resemble luxury self-care experiences rather
 ## 5. Fragrance
 
 ### Emotional Purpose
-Fragrance is one of the most emotionally powerful categories within MVQUEEN.
+Fragrance is one of the most emotionally powerful categories within MVQueen.
 
 Fragrance should create:
 - emotional memory
@@ -213,7 +213,7 @@ The emotional goal is subtle emotional elevation rather than loud visual perform
 ## 7. Lifestyle & Wellness
 
 ### Emotional Purpose
-Lifestyle products deepen emotional immersion into the MVQUEEN universe.
+Lifestyle products deepen emotional immersion into the MVQueen universe.
 
 They should emotionally support:
 - intentional living
@@ -243,7 +243,7 @@ Lifestyle products should emotionally transform environments into feminine emoti
 
 # Product Ecosystem Summary
 
-MVQUEEN’s product ecosystem is designed to create emotional continuity across every category and customer experience.
+MVQueen’s product ecosystem is designed to create emotional continuity across every category and customer experience.
 
 Every product should reinforce:
 - femininity
@@ -280,7 +280,7 @@ The goal is building an emotionally recognizable luxury universe women emotional
 
 ## Experience Philosophy
 
-The MVQUEEN ecommerce experience should never feel like a traditional online store.
+The MVQueen ecommerce experience should never feel like a traditional online store.
 
 It should emotionally feel like entering an immersive feminine luxury environment intentionally designed to emotionally soften, emotionally restore, emotionally inspire, and emotionally elevate women within a world that feels emotionally safe, visually calming, and sensorially immersive.
 
@@ -303,7 +303,7 @@ The experience itself becomes part of the luxury product.
 
 # Shopify Experience Summary
 
-MVQUEEN’s Shopify experience architecture is designed to create emotionally immersive feminine luxury ecommerce experiences centered around:
+MVQueen’s Shopify experience architecture is designed to create emotionally immersive feminine luxury ecommerce experiences centered around:
 - softness
 - emotional atmosphere
 - femininity
@@ -329,6 +329,6 @@ The ecommerce experience should feel:
 
 The goal is not simply ecommerce conversion.
 
-The goal is emotionally immersive luxury experiences that emotionally connect women to the atmosphere, identity, emotional transformation, and emotional world of MVQUEEN.
+The goal is emotionally immersive luxury experiences that emotionally connect women to the atmosphere, identity, emotional transformation, and emotional world of MVQueen.
 
 ---

@@ -1,4 +1,4 @@
-# 🎯 MVQUEEN — Mission & Vision
+# 🎯 MVQueen — Mission & Vision
 
 ---
 
@@ -6,7 +6,7 @@
 
 To build a luxury feminine ecosystem that restores softness, confidence, and intentional femininity to women who live in a world that rewards hardness.
 
-MVQUEEN exists to prove that beauty can restore rather than exhaust —
+MVQueen exists to prove that beauty can restore rather than exhaust —
 that luxury can feel warm rather than intimidating —
 and that femininity is a presence, not a performance.
 
@@ -20,7 +20,7 @@ accessible luxury, and the conviction that softness is strength.
 
 Not the loudest brand. The most felt.
 
-In ten years, MVQUEEN is:
+In ten years, MVQueen is:
 - A recognized luxury house with multiple brand verticals
 - AI-native infrastructure that serves emotional humanity — not replaces it
 - A community of millions of women who chose softness intentionally
@@ -67,7 +67,7 @@ In ten years, MVQUEEN is:
 
 ## Brand North Star
 
-Every decision, system, and output within MVQUEEN is measured against one question:
+Every decision, system, and output within MVQueen is measured against one question:
 
 **Does this restore, elevate, or honor the woman it serves?**
 
@@ -75,4 +75,4 @@ If yes — it belongs here.
 If no — it does not.
 
 ---
-*MVQUEEN Mission & Vision — Living Document*
+*MVQueen Mission & Vision — Living Document*

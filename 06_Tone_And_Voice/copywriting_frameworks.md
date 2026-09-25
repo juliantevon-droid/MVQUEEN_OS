@@ -1,4 +1,4 @@
-# 🧩 MVQUEEN — Copywriting Frameworks
+# 🧩 MVQueen — Copywriting Frameworks
 
 ---
 
@@ -20,7 +20,7 @@ Use frameworks to build complete pieces.
 ```
 TENSION (she feels something missing or incomplete)
     ↓
-RECOGNITION (MVQUEEN names what she's reaching for)
+RECOGNITION (MVQueen names what she's reaching for)
     ↓
 SOLUTION (the product or ritual that closes the gap)
     ↓
@@ -32,7 +32,7 @@ INVITATION (one gentle action she can take)
 **Example applied to a face oil email:**
 - TENSION: "Some mornings she can't quite put her finger on what's missing."
 - RECOGNITION: "It's not productivity she wants more of. It's presence."
-- SOLUTION: "MVQUEEN Luminous Face Oil — two drops that tell her skin she's being taken care of."
+- SOLUTION: "MVQueen Luminous Face Oil — two drops that tell her skin she's being taken care of."
 - IDENTITY: "The woman who treats herself like she matters. Because she does."
 - INVITATION: "Make it part of her morning →"
 
@@ -56,7 +56,7 @@ THE INVITATION (enter this world)
 **Example applied to a winter collection:**
 - WORLD: "Shorter days. Candlelight before dinner. The kind of cold that makes warmth feel intentional."
 - INHABITANTS: "She moves slower this season — and she means to."
-- COLLECTION: "The MVQUEEN Winter Ritual Collection was built for this. For her."
+- COLLECTION: "The MVQueen Winter Ritual Collection was built for this. For her."
 - INVITATION: "Enter the collection →"
 
 ---
@@ -79,7 +79,7 @@ THE ACTION (one word or one line)
 **Example:**
 - TRUTH: "Her skin looks different when she sleeps in this."
 - EVIDENCE: "A retinol-alternative formula that works while she rests."
-- PRODUCT: "MVQUEEN Overnight Renewal Serum."
+- PRODUCT: "MVQueen Overnight Renewal Serum."
 - ACTION: "Try it →"
 
 ---
@@ -92,9 +92,9 @@ THE ACTION (one word or one line)
 ```
 OBSERVATION ABOUT HER (something she's felt but never heard said this way)
     ↓
-VALIDATION (MVQUEEN sees this and honors it — without hollow affirmation)
+VALIDATION (MVQueen sees this and honors it — without hollow affirmation)
     ↓
-PARALLEL (what MVQUEEN was built from — the same energy)
+PARALLEL (what MVQueen was built from — the same energy)
     ↓
 CONNECTION (the thread between her and the brand)
 ```
@@ -102,7 +102,7 @@ CONNECTION (the thread between her and the brand)
 **Example:**
 - OBSERVATION: "She's not trying to be someone else. She's trying to be more fully herself."
 - VALIDATION: "That distinction matters. A lot of brands miss it."
-- PARALLEL: "MVQUEEN was built by a woman who understood that difference."
+- PARALLEL: "MVQueen was built by a woman who understood that difference."
 - CONNECTION: "This brand is for her. Not who she's supposed to be. Who she already is."
 
 ---
@@ -126,7 +126,7 @@ THE CLOSE (her, after — one line)
 
 **Example — Body Scrub:**
 - MOMENT: "Saturday morning. Before she has to be anywhere."
-- REACH: "She reaches for the MVQUEEN Sugar Polish. It's become the ritual she protects."
+- REACH: "She reaches for the MVQueen Sugar Polish. It's become the ritual she protects."
 - APPLICATION: "The texture is rich — exfoliating without harshness. The scent fills the shower."
 - SHIFT: "She steps out and her skin is different. Softer. More present somehow."
 - CLOSE: "She doesn't rush to get dressed."
@@ -143,7 +143,7 @@ WHAT MOST BRANDS DO (name the category norm — don't name competitors)
     ↓
 WHY THAT FALLS SHORT (emotionally honest, not aggressive)
     ↓
-WHAT MVQUEEN DOES DIFFERENTLY
+WHAT MVQueen DOES DIFFERENTLY
     ↓
 THE PROOF (a product, an experience, or a philosophy that demonstrates it)
 ```
@@ -151,7 +151,7 @@ THE PROOF (a product, an experience, or a philosophy that demonstrates it)
 **Example:**
 - NORM: "Most beauty brands are built around transformation. Become something better."
 - FALLS SHORT: "That language assumes she isn't enough yet."
-- DIFFERENT: "MVQUEEN is built around recognition. She already is the woman. The ritual just helps her feel it."
+- DIFFERENT: "MVQueen is built around recognition. She already is the woman. The ritual just helps her feel it."
 - PROOF: "Every product in this collection was formulated to elevate what's already there — not replace it."
 
 ---

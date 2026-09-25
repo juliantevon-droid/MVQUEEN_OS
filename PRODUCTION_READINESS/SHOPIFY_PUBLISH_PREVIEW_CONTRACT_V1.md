@@ -1,4 +1,4 @@
-# MVQUEEN Shopify Publish Preview V1
+# MVQueen Shopify Publish Preview V1
 
 ## Purpose
 Create a deterministic, non-live review artifact before any approved product is handed to the Shopify publisher.

@@ -1,10 +1,10 @@
-# 🔥 MVQUEEN — Viral Brands Research
+# 🔥 MVQueen — Viral Brands Research
 
 ---
 
 ## Purpose
 
-A living intelligence file tracking brands that have achieved viral or cultural status — what they did, why it worked, and what MVQUEEN can learn and apply filtered through brand identity.
+A living intelligence file tracking brands that have achieved viral or cultural status — what they did, why it worked, and what MVQueen can learn and apply filtered through brand identity.
 
 Study what works. Apply what aligns. Ignore what doesn't fit.
 
@@ -46,10 +46,10 @@ CONTENT STRATEGY:
 VOICE SIGNATURE:
 [What made their communication unmistakably theirs]
 
-WHAT MVQUEEN CAN LEARN:
+WHAT MVQueen CAN LEARN:
 [Specific, filtered takeaway — not copy, but principle]
 
-WHAT MVQUEEN SHOULD NOT DO:
+WHAT MVQueen SHOULD NOT DO:
 [What worked for them but doesn't fit our identity]
 ```
 
@@ -86,7 +86,7 @@ Based on research across multiple viral brands, these patterns consistently emer
 **Pattern 1 — One Clear Conviction**
 Viral brands stand for one thing clearly.
 Not five things. One thing that everyone who encounters the brand understands immediately.
-MVQUEEN's one thing: *Softness is strength.*
+MVQueen's one thing: *Softness is strength.*
 
 **Pattern 2 — Community Before Customers**
 The most durable viral brands built a community identity before they built a customer base.
@@ -106,7 +106,7 @@ Their aesthetic is a signature — not just a style guide.
 
 ---
 
-## Intelligence to Apply at MVQUEEN
+## Intelligence to Apply at MVQueen
 
 | Learning | Application |
 |---------|------------|
@@ -117,7 +117,7 @@ Their aesthetic is a signature — not just a style guide.
 | Visual signature | Consistent color, lighting, texture across all platforms |
 
 ---
-*MVQUEEN Viral Brands Research — Living Document*
+*MVQueen Viral Brands Research — Living Document*
 *Update as brands are studied and patterns emerge.*
 
 ---

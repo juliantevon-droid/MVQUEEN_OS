@@ -1,4 +1,4 @@
-# MVQUEEN — Visual Identity Philosophy
+# MVQueen — Visual Identity Philosophy
 
 ---
 
@@ -18,7 +18,7 @@
 
 # Philosophy Purpose
 
-The MVQUEEN Visual Identity Philosophy exists to:
+The MVQueen Visual Identity Philosophy exists to:
 - govern visual atmosphere
 - preserve aesthetic consistency
 - maintain feminine luxury identity
@@ -41,7 +41,7 @@ This framework defines:
 
 # Core Visual Identity
 
-MVQUEEN visually represents:
+MVQueen visually represents:
 - feminine luxury
 - cinematic beauty
 - emotionally immersive aesthetics
@@ -68,7 +68,7 @@ The visual ecosystem should emotionally feel:
 
 ## Cinematic Emotional Direction
 
-MVQUEEN visuals should emotionally resemble:
+MVQueen visuals should emotionally resemble:
 - luxury beauty editorials
 - cinematic femininity
 - elevated self-care films
@@ -112,7 +112,7 @@ The visual ecosystem should emotionally avoid:
 
 ## Luxury Identity Direction
 
-Luxury within MVQUEEN should visually feel:
+Luxury within MVQueen should visually feel:
 - refined
 - intentional
 - soft
@@ -136,7 +136,7 @@ Luxury should never visually feel:
 
 ## Feminine Identity Direction
 
-MVQUEEN femininity should visually feel:
+MVQueen femininity should visually feel:
 - elegant
 - expressive
 - soft
@@ -334,7 +334,7 @@ Atmosphere itself becomes:
 
 ## Scalability Standards
 
-As MVQUEEN scales:
+As MVQueen scales:
 - visual consistency must remain preserved
 - emotional atmosphere must remain stable
 - luxury aesthetics must remain intentional
@@ -350,13 +350,13 @@ Growth must never create:
 
 # Strategic Principle
 
-MVQUEEN visual systems exist to emotionally immerse women within cinematic feminine luxury environments designed to create emotional beauty, emotional softness, premium atmosphere, aesthetic inspiration, and emotionally intelligent visual experiences.
+MVQueen visual systems exist to emotionally immerse women within cinematic feminine luxury environments designed to create emotional beauty, emotional softness, premium atmosphere, aesthetic inspiration, and emotionally intelligent visual experiences.
 
 ---
 
 # Visual Identity Compression
 
-MVQUEEN visually represents emotionally intelligent feminine luxury through cinematic aesthetics, emotionally immersive atmosphere, intentional beauty culture, premium feminine design, emotional warmth, and elevated visual storytelling.
+MVQueen visually represents emotionally intelligent feminine luxury through cinematic aesthetics, emotionally immersive atmosphere, intentional beauty culture, premium feminine design, emotional warmth, and elevated visual storytelling.
 
 ---
 

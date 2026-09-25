@@ -19,7 +19,7 @@
 - [ ] Klaviyo connected
 
 ### Product Upload Checklist
-- [ ] Title: `[Product Name] — [Category] | MVQUEEN`
+- [ ] Title: `[Product Name] — [Category] | MVQueen`
 - [ ] Description: voice-checked, no placeholder text
 - [ ] Meta title: 50–60 characters
 - [ ] Meta description: 150–160 characters

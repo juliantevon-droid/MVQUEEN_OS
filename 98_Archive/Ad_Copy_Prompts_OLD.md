@@ -1,27 +1,27 @@
-# 👑 MVQUEEN — Ad Copy Prompts
+# 👑 MVQueen — Ad Copy Prompts
 ### Paid Advertising Copy System
 
 ---
 
 ## What This File Is
 
-This file contains the complete ad copy system for MVQUEEN paid advertising — Meta, TikTok, Pinterest, and Google. Every prompt is calibrated to produce MVQUEEN-standard copy that converts without sounding like an ad.
+This file contains the complete ad copy system for MVQueen paid advertising — Meta, TikTok, Pinterest, and Google. Every prompt is calibrated to produce MVQUEEN-standard copy that converts without sounding like an ad.
 
-The fundamental principle of MVQUEEN advertising: **the ad should feel like content first and a conversion vehicle second.** She stops because it resonates. She clicks because she wants what's behind it.
+The fundamental principle of MVQueen advertising: **the ad should feel like content first and a conversion vehicle second.** She stops because it resonates. She clicks because she wants what's behind it.
 
 ---
 
 ## THE AD COPY PHILOSOPHY
 
-Most ads announce. MVQUEEN ads invite.
+Most ads announce. MVQueen ads invite.
 
 The difference in practice:
-> ❌ **Announces:** "Shop MVQUEEN now. 30% off skincare — limited time!"
+> ❌ **Announces:** "Shop MVQueen now. 30% off skincare — limited time!"
 > ✅ **Invites:** "The serum I've worn every morning for 4 months. Finally back in stock."
 
 One sounds like a brand talking at her. The other sounds like a recommendation from someone she trusts.
 
-All MVQUEEN ad copy is written to feel like the second — regardless of the platform or the objective.
+All MVQueen ad copy is written to feel like the second — regardless of the platform or the objective.
 
 ---
 
@@ -30,7 +30,7 @@ All MVQUEEN ad copy is written to feel like the second — regardless of the pla
 ### System Prompt — Meta Ads
 
 ```
-SYSTEM: You are writing Meta ad copy for MVQUEEN, a modern feminine luxury lifestyle brand.
+SYSTEM: You are writing Meta ad copy for MVQueen, a modern feminine luxury lifestyle brand.
 
 BRAND VOICE: Warm, confident, specific. Lead with feeling before product. Never panic urgency. Never discount language unless an actual sale exists.
 
@@ -56,17 +56,17 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 *Variation 01 — Emotional:*
 > Primary: The fragrance she's asked about 6 times in two weeks. Not because it's loud. Because it lingers.
 > Headline: Your new signature scent.
-> Description: MVQUEEN Fragrance Collection.
+> Description: MVQueen Fragrance Collection.
 
 *Variation 02 — Benefit-led:*
 > Primary: 8-hour wear. Warm floral base that deepens on skin. The kind of fragrance that feels like it was made specifically for you.
-> Headline: Find your signature at MVQUEEN.
+> Headline: Find your signature at MVQueen.
 > Description: Shop the fragrance collection.
 
 *Variation 03 — Social proof:*
 > Primary: "I've been asked what I'm wearing three times today." That's what this does.
 > Headline: The most-asked-about fragrance.
-> Description: Shop Velvet Hour by MVQUEEN.
+> Description: Shop Velvet Hour by MVQueen.
 
 ---
 
@@ -75,7 +75,7 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 *Variation 01 — Emotional:*
 > Primary: The morning routine that changes how the rest of the day feels. Starts here.
 > Headline: Skin that speaks for itself.
-> Description: The Glow Serum by MVQUEEN.
+> Description: The Glow Serum by MVQueen.
 
 *Variation 02 — Benefit-led:*
 > Primary: Vitamin C + niacinamide + hyaluronic acid. Absorbs in 60 seconds. Visible difference in 4 days.
@@ -85,7 +85,7 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 *Variation 03 — Social proof:*
 > Primary: The serum our customers repurchase most. Now you know why.
 > Headline: The most repurchased product in our collection.
-> Description: The Glow Serum — MVQUEEN.
+> Description: The Glow Serum — MVQueen.
 
 ---
 
@@ -99,7 +99,7 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 *Variation 02 — Benefit-led:*
 > Primary: Bias-cut satin. Elevated basics. The pieces you reach for when you want to feel like you've already handled everything.
 > Headline: Fashion with intention.
-> Description: New arrivals — MVQUEEN.
+> Description: New arrivals — MVQueen.
 
 *Variation 03 — Retargeting (she visited but didn't buy):*
 > Primary: You looked at this. We noticed. It's still here.
@@ -142,16 +142,16 @@ Tone: [gentle nudge / new information / urgency if real]
 
 ## PART 2 — TIKTOK ADS
 
-TikTok ads perform best when they are indistinguishable from organic content in the first 2–3 seconds. The MVQUEEN TikTok ad looks like a recommendation, not a commercial.
+TikTok ads perform best when they are indistinguishable from organic content in the first 2–3 seconds. The MVQueen TikTok ad looks like a recommendation, not a commercial.
 
 ### System Prompt — TikTok Ads
 
 ```
-SYSTEM: You are writing a TikTok ad script for MVQUEEN.
+SYSTEM: You are writing a TikTok ad script for MVQueen.
 
 RULES:
 - First 2–3 seconds: must look and sound like organic content — not an ad
-- No branded intro in the first 3 seconds (don't open with "MVQUEEN presents...")
+- No branded intro in the first 3 seconds (don't open with "MVQueen presents...")
 - Voice: first-person, real, like a woman showing something she genuinely loves
 - Length: 15–30 second script for conversion ads, up to 60 seconds for story ads
 - CTA: "Link in bio" or "Shop the link" — never countdown or panic language
@@ -182,7 +182,7 @@ FORMAT:
 **Fashion — 30 seconds:**
 ```
 [0–3s]: Getting dressed in morning light. On screen: "The outfit that changed how I walk into rooms."
-[3–22s]: (VO) I don't get dressed for other people anymore. I get dressed for the version of me that walks in knowing she's already handled everything. This is the Ivory Slip from MVQUEEN — bias cut, fluid, wears with everything. I've worn it 12 times since it arrived.
+[3–22s]: (VO) I don't get dressed for other people anymore. I get dressed for the version of me that walks in knowing she's already handled everything. This is the Ivory Slip from MVQueen — bias cut, fluid, wears with everything. I've worn it 12 times since it arrived.
 [22–30s]: Link in bio. Free shipping on orders over $65.
 ```
 
@@ -195,7 +195,7 @@ Pinterest ads are promoted pins — they live in the feed alongside organic cont
 ### System Prompt — Pinterest Ads
 
 ```
-SYSTEM: You are writing a Pinterest promoted pin for MVQUEEN.
+SYSTEM: You are writing a Pinterest promoted pin for MVQueen.
 
 COMPONENTS:
 - Image: described as a brief art direction note
@@ -206,7 +206,7 @@ RULES:
 - Title sounds like a search query she would actually type
 - Description is genuinely useful or aspirational — earns the save before asking for the click
 - Include 2–3 keyword phrases naturally in description
-- End with: "Shop [category] at MVQUEEN." or "Discover [collection] at MVQUEEN."
+- End with: "Shop [category] at MVQueen." or "Discover [collection] at MVQueen."
 - Never: panic urgency, discount language, all-caps
 
 Write 2 variations: one SEO-optimized, one aspiration-optimized.
@@ -217,22 +217,22 @@ Write 2 variations: one SEO-optimized, one aspiration-optimized.
 **Skincare — Serum:**
 *SEO version:*
 > Title: Brightening Serum for Glowing Skin — Vitamin C Skincare Routine
-> Description: Build a skincare ritual that actually works. The Glow Serum combines Vitamin C, niacinamide, and hyaluronic acid for visible brightness in 4 days. Lightweight, fast-absorbing, and made for women who treat their morning routine like it matters. Shop luxury skincare at MVQUEEN.
+> Description: Build a skincare ritual that actually works. The Glow Serum combines Vitamin C, niacinamide, and hyaluronic acid for visible brightness in 4 days. Lightweight, fast-absorbing, and made for women who treat their morning routine like it matters. Shop luxury skincare at MVQueen.
 
 *Aspiration version:*
 > Title: The Morning Skincare Ritual That Changes Everything
-> Description: Some mornings just feel different. The light is right. The routine is unhurried. The skin at the end of it looks like it rested. Build the ritual that earns those mornings. The MVQUEEN Glow Serum — part of a skincare collection built for women who take their self-care seriously. Discover the collection at MVQUEEN.
+> Description: Some mornings just feel different. The light is right. The routine is unhurried. The skin at the end of it looks like it rested. Build the ritual that earns those mornings. The MVQueen Glow Serum — part of a skincare collection built for women who take their self-care seriously. Discover the collection at MVQueen.
 
 ---
 
 ## PART 4 — GOOGLE ADS
 
-Google ads capture intent — she is already searching for what MVQUEEN offers. The copy confirms she found the right brand.
+Google ads capture intent — she is already searching for what MVQueen offers. The copy confirms she found the right brand.
 
 ### System Prompt — Google Ads
 
 ```
-SYSTEM: You are writing Google Search ads for MVQUEEN.
+SYSTEM: You are writing Google Search ads for MVQueen.
 
 FORMAT (Responsive Search Ads):
 - Headlines (30 chars max each): Write 10–15 options
@@ -243,7 +243,7 @@ RULES:
 - Headlines: specific, benefit-led, keyword-adjacent
 - Descriptions: expand the headline, add one more reason to click
 - Never: generic ("Shop Now," "Best Prices," "Click Here")
-- Lead with what makes MVQUEEN different — accessible luxury, the brand's specific positioning
+- Lead with what makes MVQueen different — accessible luxury, the brand's specific positioning
 - Always include at least one headline that speaks to emotional positioning, not just product
 ```
 
@@ -254,7 +254,7 @@ RULES:
 - The Glow Serum — 4-Day Results
 - Accessible Luxury Skincare
 - Vitamin C Serum That Actually Works
-- MVQUEEN — Skincare as Ritual
+- MVQueen — Skincare as Ritual
 - Start Your Skincare Ritual Today
 - Feminine Luxury, Real Price Points
 - Hydrating Serums From $32
@@ -263,11 +263,11 @@ RULES:
 - Find Your Signature Scent
 - Feminine Luxury Fragrances
 - Long-Wearing Women's Perfume
-- Warm Floral Perfume — MVQUEEN
+- Warm Floral Perfume — MVQueen
 - Fragrances That Feel Like You
 
 *Google Ad Descriptions — Examples:*
-- MVQUEEN creates luxury skincare, fragrance, and fashion for women who deserve elevated living at a real price point.
+- MVQueen creates luxury skincare, fragrance, and fashion for women who deserve elevated living at a real price point.
 - Accessible luxury means quality you can feel, experiences you can afford, and a brand that was built specifically for you.
 - Fashion, beauty, and fragrance designed to make women feel elevated every single day. Free shipping over $65.
 
@@ -304,4 +304,4 @@ Test A vs. B vs. C for 7 days minimum at equal budget. Winner runs at full budge
 
 ---
 
-*This file is the MVQUEEN Ad Copy Prompts system. It pairs with AI_Prompt_Library.md (master prompt reference), Example_Copy.md (brand voice examples), and CTA_Library.md (conversion language). All ad copy is held to the same voice standard as organic content — paid distribution does not justify generic copy.*
+*This file is the MVQueen Ad Copy Prompts system. It pairs with AI_Prompt_Library.md (master prompt reference), Example_Copy.md (brand voice examples), and CTA_Library.md (conversion language). All ad copy is held to the same voice standard as organic content — paid distribution does not justify generic copy.*

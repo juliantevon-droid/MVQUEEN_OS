@@ -1,10 +1,10 @@
-# 👑 MVQUEEN Visual Identity System
+# 👑 MVQueen Visual Identity System
 
 ---
 
 # Brand Visual Philosophy
 
-MVQUEEN visuals should feel emotionally immersive, feminine, elegant, calming, refined, and softly luxurious.
+MVQueen visuals should feel emotionally immersive, feminine, elegant, calming, refined, and softly luxurious.
 
 The aesthetic should create emotional atmosphere rather than visual overload.
 
@@ -16,7 +16,7 @@ The goal is emotional elevation through beauty, softness, confidence, and femini
 
 # Core Visual Feeling
 
-The visual world of MVQUEEN should feel:
+The visual world of MVQueen should feel:
 - feminine
 - cinematic
 - soft luxury

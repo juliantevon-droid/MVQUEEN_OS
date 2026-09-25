@@ -1,4 +1,4 @@
-"""MVQUEEN URL redirect validation guard.
+"""MVQueen URL redirect validation guard.
 
 Pure validation module: it does not write to Shopify. Production writes belong
 behind an explicit approval step in the URL/SEO production gate.
@@ -79,7 +79,7 @@ def assert_valid_redirects(redirects: Iterable[Redirect]) -> None:
     """Raise ValueError when a redirect plan fails validation."""
     errors = validate_redirects(redirects)
     if errors:
-        raise ValueError("Invalid MVQUEEN redirect plan:\n- " + "\n- ".join(errors))
+        raise ValueError("Invalid MVQueen redirect plan:\n- " + "\n- ".join(errors))
 
 
 __all__ = [

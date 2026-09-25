@@ -1,10 +1,10 @@
-# 📸 MVQUEEN — Instagram SEO
+# 📸 MVQueen — Instagram SEO
 
 ---
 
 ## Purpose
 
-Optimize MVQUEEN's Instagram presence for discovery — ensuring the right women find the brand through search, hashtags, and the Explore page.
+Optimize MVQueen's Instagram presence for discovery — ensuring the right women find the brand through search, hashtags, and the Explore page.
 
 Instagram is increasingly a search engine. Treat it like one.
 
@@ -32,15 +32,15 @@ Instagram is increasingly a search engine. Treat it like one.
 
 ### Name Field (not username — the bold display name)
 **Format:** Brand Name + Primary Keyword
-**Example:** `MVQUEEN | Luxury Feminine Beauty`
-**Alternative:** `MVQUEEN | Skincare & Rituals`
+**Example:** `MVQueen | Luxury Feminine Beauty`
+**Alternative:** `MVQueen | Skincare & Rituals`
 
 **Rule:** The name field is indexed by Instagram search. Use it as a keyword field.
 
 ### Bio Optimization
 **Formula:**
 ```
-Line 1: What MVQUEEN is (keyword-rich, 1 sentence)
+Line 1: What MVQueen is (keyword-rich, 1 sentence)
 Line 2: Who it's for (persona language)
 Line 3: What she gets (value proposition)
 Line 4: CTA + link
@@ -72,12 +72,12 @@ Write descriptive, keyword-aware alt text for every post.
 **How to add:** Post → Advanced Settings → Accessibility → Write alt text
 
 **Formula:** `[What's in the image] + [product/brand keyword] + [mood/atmosphere]`
-**Example:** `Luxury skincare serum on marble surface, MVQUEEN morning ritual, soft light`
+**Example:** `Luxury skincare serum on marble surface, MVQueen morning ritual, soft light`
 
 ### Keyword Categories to Target
 | Category | Example Keywords |
 |----------|----------------|
-| Brand | luxury feminine beauty, MVQUEEN skincare |
+| Brand | luxury feminine beauty, MVQueen skincare |
 | Product | luxury face serum, feminine skincare routine |
 | Lifestyle | soft life aesthetic, intentional living, morning ritual |
 | Identity | feminine lifestyle, softness aesthetic, elevated living |
@@ -100,7 +100,7 @@ Instagram users search for:
 - "luxury self care"
 
 ---
-*MVQUEEN Instagram SEO — Operational Document*
+*MVQueen Instagram SEO — Operational Document*
 
 ---
 ---

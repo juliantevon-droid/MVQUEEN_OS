@@ -1,11 +1,11 @@
-# 🌸 MVQUEEN VISUAL DIRECTION  
-*The complete emotional, cinematic, atmospheric, and aesthetic blueprint of MVQUEEN’s luxury feminine universe*
+# 🌸 MVQueen VISUAL DIRECTION  
+*The complete emotional, cinematic, atmospheric, and aesthetic blueprint of MVQueen’s luxury feminine universe*
 
 ---
 
 # 1. Purpose of the Visual Direction System
 
-Visual Direction defines **how MVQUEEN looks, feels, breathes, and emotionally communicates** across every medium:
+Visual Direction defines **how MVQueen looks, feels, breathes, and emotionally communicates** across every medium:
 
 - photography  
 - video  
@@ -16,7 +16,7 @@ Visual Direction defines **how MVQUEEN looks, feels, breathes, and emotionally c
 - social media  
 - AI‑generated assets  
 
-This system ensures that every visual expression of MVQUEEN is:
+This system ensures that every visual expression of MVQueen is:
 
 - emotionally elevated  
 - feminine  
@@ -32,9 +32,9 @@ It is about **emotional atmosphere engineering**.
 
 ---
 
-# 2. MVQUEEN’s Visual Philosophy
+# 2. MVQueen’s Visual Philosophy
 
-MVQUEEN’s visual world is built on four pillars:
+MVQueen’s visual world is built on four pillars:
 
 ### **1. Soft Luxury**
 Warm, diffused, feminine, emotionally comforting visuals that feel intimate and elevated.
@@ -52,7 +52,7 @@ Visuals must celebrate softness, beauty, confidence, and emotional transformatio
 
 # 3. Core Visual Atmosphere
 
-MVQUEEN’s atmosphere is defined by:
+MVQueen’s atmosphere is defined by:
 
 ### **Soft, Warm Lighting**
 - diffused  
@@ -85,7 +85,7 @@ Visuals must feel:
 # 4. Visual Themes
 
 ## **A. Soft Feminine Luxury**
-The signature MVQUEEN aesthetic.
+The signature MVQueen aesthetic.
 
 **Characteristics:**
 - warm blush tones  
@@ -165,7 +165,7 @@ A blend of softness, elegance, and emotional storytelling.
 
 # 6. Cinematic Direction (Video)
 
-MVQUEEN video content must feel like **soft luxury cinema**.
+MVQueen video content must feel like **soft luxury cinema**.
 
 ### **Camera Movement**
 - slow  
@@ -249,7 +249,7 @@ Whitespace is part of the luxury identity.
 
 # 9. Dual‑Brand Visual Expression
 
-## **MVQUEEN (Primary Identity)**
+## **MVQueen (Primary Identity)**
 - mature feminine luxury  
 - warm neutrals  
 - champagne gold  
@@ -270,7 +270,7 @@ Both must feel related — like two sisters — but never identical.
 
 # 10. Visual Misuse (Strictly Prohibited)
 
-The following break MVQUEEN’s luxury identity:
+The following break MVQueen’s luxury identity:
 
 - harsh lighting  
 - cold color grading  
@@ -293,7 +293,7 @@ The following break MVQUEEN’s luxury identity:
 This system ensures that every designer, photographer, videographer, AI agent, and creative team member can:
 
 - maintain perfect visual consistency  
-- protect MVQUEEN’s emotional identity  
+- protect MVQueen’s emotional identity  
 - create luxury‑grade visuals  
 - scale the brand across categories  
 - build long‑term brand equity  
@@ -309,4 +309,4 @@ It is:
 - luxury  
 - feminine power  
 
-This system ensures MVQUEEN remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.
+This system ensures MVQueen remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.

@@ -1,4 +1,4 @@
-# MVQUEEN Production Readiness
+# MVQueen Production Readiness
 
 This directory contains the controlled production contracts for MVQUEEN_OS.
 

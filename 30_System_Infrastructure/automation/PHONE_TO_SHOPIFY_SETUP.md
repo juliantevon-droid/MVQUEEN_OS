@@ -1,4 +1,4 @@
-# MVQUEEN Phone → Drive → GitHub → Shopify Setup
+# MVQueen Phone → Drive → GitHub → Shopify Setup
 
 ## What is already automated
 
@@ -27,7 +27,7 @@ Shopify's current CI/CD guidance uses a Theme Access password as `SHOPIFY_CLI_TH
 
 After the bridge is enabled, a push to `main` that changes the controlled storefront source will:
 
-1. run the MVQUEEN contract validator
+1. run the MVQueen contract validator
 2. run Shopify Theme Check
 3. verify the target theme exists
 4. refuse deployment if the target is the live `MAIN` theme
@@ -43,7 +43,7 @@ From a phone, the normal workflow becomes:
 
 **Upload/edit approved work in Drive → wait for the scheduled Drive bridge → GitHub validates → Shopify unpublished theme updates automatically.**
 
-For an immediate run, use GitHub Actions → `MVQUEEN Phone → Drive → GitHub Bridge` → **Run workflow**.
+For an immediate run, use GitHub Actions → `MVQueen Phone → Drive → GitHub Bridge` → **Run workflow**.
 
 ## Safety gates
 

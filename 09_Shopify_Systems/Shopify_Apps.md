@@ -4,7 +4,7 @@
 
 ## Experience Philosophy
 
-The MVQUEEN ecommerce experience should never feel like a traditional online store.
+The MVQueen ecommerce experience should never feel like a traditional online store.
 
 It should emotionally feel like entering an immersive feminine luxury environment intentionally designed to emotionally soften, emotionally restore, emotionally inspire, and emotionally elevate women within a world that feels emotionally safe, visually calming, and sensorially immersive.
 
@@ -48,7 +48,7 @@ Before installing a new app, the Lead Architect must confirm:
 
 # Shopify Experience Summary
 
-MVQUEEN’s Shopify experience architecture is designed to create emotionally immersive feminine luxury ecommerce experiences centered around:
+MVQueen’s Shopify experience architecture is designed to create emotionally immersive feminine luxury ecommerce experiences centered around:
 - softness
 - emotional atmosphere
 - femininity
@@ -74,7 +74,7 @@ The ecommerce experience should feel:
 
 The goal is not simply ecommerce conversion.
 
-The goal is emotionally immersive luxury experiences that emotionally connect women to the atmosphere, identity, emotional transformation, and emotional world of MVQUEEN.
+The goal is emotionally immersive luxury experiences that emotionally connect women to the atmosphere, identity, emotional transformation, and emotional world of MVQueen.
 
 ---
 
@@ -84,11 +84,11 @@ The goal is emotionally immersive luxury experiences that emotionally connect wo
 
 ## Governance Philosophy
 
-MVQUEEN is not designed to operate as a trend-reactive brand driven by short-term attention, algorithmic pressure, emotional manipulation, or emotionally inconsistent decision-making.
+MVQueen is not designed to operate as a trend-reactive brand driven by short-term attention, algorithmic pressure, emotional manipulation, or emotionally inconsistent decision-making.
 
 It is designed to function as a deeply intentional feminine luxury ecosystem governed by emotional intelligence, emotional integrity, emotional consistency, aesthetic discipline, emotional humanity, and long-term emotional cohesion.
 
-The purpose of governance within MVQUEEN is not control for the sake of structure.
+The purpose of governance within MVQueen is not control for the sake of structure.
 
 The purpose is protecting the emotional soul of the ecosystem as it evolves, scales, automates, expands globally, and integrates advanced AI systems.
 
@@ -104,7 +104,7 @@ Governance exists to protect:
 - emotionally immersive ecosystem cohesion
 - emotionally intentional luxury standards
 
-Every future decision should emotionally reinforce the emotional world of MVQUEEN rather than emotionally weaken it.
+Every future decision should emotionally reinforce the emotional world of MVQueen rather than emotionally weaken it.
 
 The emotional philosophy must remain stronger than:
 - temporary trends

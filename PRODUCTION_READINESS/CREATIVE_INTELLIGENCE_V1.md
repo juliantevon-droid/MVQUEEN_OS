@@ -1,4 +1,4 @@
-# MVQUEEN Creative Intelligence V1
+# MVQueen Creative Intelligence V1
 
 ## Purpose
 

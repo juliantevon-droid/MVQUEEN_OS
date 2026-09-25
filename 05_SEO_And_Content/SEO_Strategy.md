@@ -1,33 +1,33 @@
-# 👑 MVQUEEN — SEO Strategy
+# 👑 MVQueen — SEO Strategy
 ### The Search Architecture
 
 ---
 
 ## What This File Is
 
-SEO for MVQUEEN is not a technical checklist. It is a visibility strategy — designed to put the brand in front of women who are already looking for what MVQUEEN offers, before they know MVQUEEN exists.
+SEO for MVQueen is not a technical checklist. It is a visibility strategy — designed to put the brand in front of women who are already looking for what MVQueen offers, before they know MVQueen exists.
 
-This file defines the pillar/cluster content strategy, target keyword categories, on-page optimization rules, platform-specific SEO, and the principles that govern how MVQUEEN builds search authority over time.
+This file defines the pillar/cluster content strategy, target keyword categories, on-page optimization rules, platform-specific SEO, and the principles that govern how MVQueen builds search authority over time.
 
 ---
 
 ## THE SEO PHILOSOPHY
 
-MVQUEEN does not chase keywords. It builds authority.
+MVQueen does not chase keywords. It builds authority.
 
-The difference: chasing keywords produces content that looks like every other brand's content. Building authority produces content that is specifically MVQUEEN — emotionally resonant, brand-accurate, and genuinely useful to the women searching for it.
+The difference: chasing keywords produces content that looks like every other brand's content. Building authority produces content that is specifically MVQueen — emotionally resonant, brand-accurate, and genuinely useful to the women searching for it.
 
 Authority is built through:
 1. **Depth** — covering topics completely, not superficially
 2. **Consistency** — publishing regularly, in brand voice, at a standard that earns links and shares
-3. **Specificity** — MVQUEEN content is not generic "skincare tips" — it is MVQUEEN's perspective on skincare, femininity, and elevated living
+3. **Specificity** — MVQueen content is not generic "skincare tips" — it is MVQueen's perspective on skincare, femininity, and elevated living
 4. **Trust signals** — EEAT (Experience, Expertise, Authoritativeness, Trustworthiness) built through real brand voice, real product knowledge, and honest content
 
 ---
 
 ## PART 1 — THE PILLAR/CLUSTER ARCHITECTURE
 
-MVQUEEN SEO is built on the pillar/cluster model:
+MVQueen SEO is built on the pillar/cluster model:
 
 - **Pillar pages** are comprehensive, authoritative pages on broad topics (2,000–4,000 words)
 - **Cluster pages** are deeper dives into specific subtopics within the pillar (800–1,500 words)
@@ -164,11 +164,11 @@ These drive blog and content traffic. Target on cluster pages and blog posts.
 ---
 
 ### Brand Keywords (Protect and Build)
-- MVQUEEN
-- MVQUEEN skincare / fragrance / fashion
+- MVQueen
+- MVQueen skincare / fragrance / fashion
 - Miss.Princess brand
-- MVQUEEN luxury brand
-- MVQUEEN beauty collection
+- MVQueen luxury brand
+- MVQueen beauty collection
 
 ---
 
@@ -187,7 +187,7 @@ These are more specific, lower volume, and convert at higher rates:
 ## PART 3 — ON-PAGE SEO RULES
 
 ### Product Pages
-- Title tag: `[Product Name] — [Category] | MVQUEEN`
+- Title tag: `[Product Name] — [Category] | MVQueen`
 - Meta description: Written in brand voice, 150–160 characters, includes primary keyword naturally
 - H1: Product name (as written in Product_Naming_System.md)
 - H2s: Key benefit, how to use, ingredients/details
@@ -195,14 +195,14 @@ These are more specific, lower volume, and convert at higher rates:
 - URL: `/products/[product-name]` — lowercase, hyphenated, no special characters
 
 **Example:**
-- Title: `The Glow Serum — Brightening Skincare | MVQUEEN`
+- Title: `The Glow Serum — Brightening Skincare | MVQueen`
 - Meta: `A lightweight brightening serum with Vitamin C and niacinamide. For skin that speaks before you do. Free shipping on orders over $65.`
-- Alt text: `MVQUEEN The Glow Serum — 30ml brightening serum in warm ivory glass bottle`
+- Alt text: `MVQueen The Glow Serum — 30ml brightening serum in warm ivory glass bottle`
 
 ---
 
 ### Collection Pages
-- Title tag: `[Collection Name] — [Category] | MVQUEEN`
+- Title tag: `[Collection Name] — [Category] | MVQueen`
 - Meta description: Collection story in 150–160 characters
 - H1: Collection name
 - Editorial copy: 150–300 words, written in brand voice, includes natural keyword use
@@ -211,7 +211,7 @@ These are more specific, lower volume, and convert at higher rates:
 ---
 
 ### Blog / Content Pages
-- Title tag: [H1 of article] | MVQUEEN
+- Title tag: [H1 of article] | MVQueen
 - Meta description: First sentence of article, rewritten for click optimization
 - H1: Primary keyword-aligned title, written in brand voice
 - H2s: Cluster subtopics and secondary keywords
@@ -225,7 +225,7 @@ These are more specific, lower volume, and convert at higher rates:
 
 ### Shopify Site SEO Priorities
 1. Page speed — Shopify theme optimized for Core Web Vitals
-2. Mobile-first — 70%+ of MVQUEEN traffic will be mobile
+2. Mobile-first — 70%+ of MVQueen traffic will be mobile
 3. Schema markup — Product schema, review schema, breadcrumb schema
 4. Canonical tags — All collection/product variants point to primary URL
 5. Sitemap — Auto-generated by Shopify, submitted to Google Search Console
@@ -253,7 +253,7 @@ These are more specific, lower volume, and convert at higher rates:
 
 ## PART 5 — EEAT AUTHORITY BUILDING
 
-Google's EEAT framework (Experience, Expertise, Authoritativeness, Trustworthiness) is the underlying quality signal for all search rankings. MVQUEEN builds EEAT through:
+Google's EEAT framework (Experience, Expertise, Authoritativeness, Trustworthiness) is the underlying quality signal for all search rankings. MVQueen builds EEAT through:
 
 **Experience:**
 - Founder/brand story on About page — real, specific, personal
@@ -298,4 +298,4 @@ Google's EEAT framework (Experience, Expertise, Authoritativeness, Trustworthine
 
 ---
 
-*This file is the MVQUEEN SEO strategy. It pairs with Blog_Strategy.md (content creation), Content_Calendar.md (publishing schedule), and platform-specific SEO files in 05_SEO_And_Content/. The Brand Voice governs how all SEO content is written — organic search does not justify generic copy.*
+*This file is the MVQueen SEO strategy. It pairs with Blog_Strategy.md (content creation), Content_Calendar.md (publishing schedule), and platform-specific SEO files in 05_SEO_And_Content/. The Brand Voice governs how all SEO content is written — organic search does not justify generic copy.*

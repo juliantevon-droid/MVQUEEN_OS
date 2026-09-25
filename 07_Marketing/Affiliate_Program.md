@@ -1,10 +1,10 @@
-# 🤝 MVQUEEN — Affiliate Program
+# 🤝 MVQueen — Affiliate Program
 
 ---
 
 ## Purpose
 
-Build a performance-based affiliate ecosystem that extends MVQUEEN's reach through aligned creators, customers, and communities — while maintaining brand integrity and generating measurable revenue.
+Build a performance-based affiliate ecosystem that extends MVQueen's reach through aligned creators, customers, and communities — while maintaining brand integrity and generating measurable revenue.
 
 ---
 
@@ -45,7 +45,7 @@ Build a performance-based affiliate ecosystem that extends MVQUEEN's reach throu
 | Audience fit | Primarily women 20-45 |
 | Engagement quality | Real engagement, not inflated |
 | Content quality | Consistent, intentional, brand-adjacent |
-| Values alignment | No content that contradicts MVQUEEN values |
+| Values alignment | No content that contradicts MVQueen values |
 
 ---
 
@@ -69,13 +69,13 @@ Every approved affiliate receives:
 
 **They should:**
 - Share honest experiences with products
-- Use their natural voice — not MVQUEEN's voice
+- Use their natural voice — not MVQueen's voice
 - Disclose the partnership (#ad or #affiliate per FTC rules)
-- Share their real ritual and how MVQUEEN fits it
+- Share their real ritual and how MVQueen fits it
 
 **They should not:**
 - Make medical or therapeutic claims
-- Compare MVQUEEN negatively to competitors
+- Compare MVQueen negatively to competitors
 - Use aggressive discount or urgency language
 - Post content that contradicts brand values
 - Share internal pricing or supplier information
@@ -95,11 +95,11 @@ Every approved affiliate receives:
 **Top affiliate rewards:**
 - Bonus commission on milestone months
 - Exclusive product access before launch
-- Feature on MVQUEEN's main channels
+- Feature on MVQueen's main channels
 - Co-creation invitation for high performers
 
 ---
-*MVQUEEN Affiliate Program — Operational Document*
+*MVQueen Affiliate Program — Operational Document*
 
 ---
 ---

@@ -1,6 +1,6 @@
-# MVQUEEN Canonical Product Production Contract
+# MVQueen Canonical Product Production Contract
 
-**Purpose:** Single production contract for turning one verified product into a sellable, searchable, marketable and measurable MVQUEEN product record.
+**Purpose:** Single production contract for turning one verified product into a sellable, searchable, marketable and measurable MVQueen product record.
 
 ## Non-Negotiable Principle
 
@@ -56,7 +56,7 @@ Required outputs:
 - FAQ inputs where supported
 - approved CTA
 
-Copy must follow MVQUEEN voice: elegant, confident, premium-but-simple and empowering.
+Copy must follow MVQueen voice: elegant, confident, premium-but-simple and empowering.
 
 ## 4. SEO Package
 
@@ -191,4 +191,4 @@ A product may receive `PRODUCTION_READY` only when:
 
 ## Ownership Model
 
-The contract is the bridge between MVQUEEN brand doctrine, product processing, SEO, copy, merchandising, marketing, analytics, QA and Shopify export. Individual engines may implement stages, but no engine may redefine the canonical contract independently.
+The contract is the bridge between MVQueen brand doctrine, product processing, SEO, copy, merchandising, marketing, analytics, QA and Shopify export. Individual engines may implement stages, but no engine may redefine the canonical contract independently.

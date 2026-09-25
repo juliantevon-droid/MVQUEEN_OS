@@ -12,7 +12,7 @@ coverage/
 *.sqlite-journal
 .DS_Store
 
-# Existing MVQUEEN secret paths
+# Existing MVQueen secret paths
 15_Scripts_And_Code/.env
 
 # Python/runtime cache

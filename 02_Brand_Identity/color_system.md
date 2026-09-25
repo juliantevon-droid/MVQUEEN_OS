@@ -5,7 +5,7 @@
 
 ## Purpose
 
-The color system is the visual governance layer for MVQUEEN. Every color carries emotional weight and must be deployed consistently across all touchpoints—from Shopify to social media to packaging.
+The color system is the visual governance layer for MVQueen. Every color carries emotional weight and must be deployed consistently across all touchpoints—from Shopify to social media to packaging.
 
 Colors are never arbitrary. They are chosen to evoke softness, luxury, femininity, confidence, and emotional transformation.
 
@@ -15,7 +15,7 @@ Colors are never arbitrary. They are chosen to evoke softness, luxury, femininit
 
 | Color Name | Hex | RGB | Use Case | Emotional Intent |
 |---|---|---|---|---|
-| MVQUEEN Gold | #D4AF37 | 212, 175, 55 | Accents, premium signals, CTAs | Luxury, refinement, elevation |
+| MVQueen Gold | #D4AF37 | 212, 175, 55 | Accents, premium signals, CTAs | Luxury, refinement, elevation |
 | Soft Cream | #FFF8F0 | 255, 248, 240 | Background, hero sections | Warmth, approachability, softness |
 | Deep Rose | #8B4A5C | 139, 74, 92 | Headlines, navigation, depth | Confidence, femininity, strength |
 | Pearl White | #FAFAF8 | 250, 250, 248 | Text background, clean space | Luxury minimalism, calm |
@@ -81,33 +81,33 @@ Copy and paste into your Shopify theme CSS:
 ### Navigation & Headers
 - Background: Soft Cream (#FFF8F0)
 - Text: Deep Rose (#8B4A5C)
-- Hover/Active: MVQUEEN Gold (#D4AF37)
+- Hover/Active: MVQueen Gold (#D4AF37)
 
 ### Product Cards
 - Background: Ivory (#F5F1EB)
 - Border: Blush (#F5E6E0)
 - Price: Deep Rose (#8B4A5C)
-- CTA Button: MVQUEEN Gold (#D4AF37)
+- CTA Button: MVQueen Gold (#D4AF37)
 
 ### Hero Sections
 - Background: Soft Cream (#FFF8F0) or gradients using Cream + Pearl
 - Headlines: Deep Rose (#8B4A5C) or Charcoal (#2C2C2C)
-- CTAs: MVQUEEN Gold (#D4AF37)
+- CTAs: MVQueen Gold (#D4AF37)
 
 ### Footer
 - Background: Charcoal (#2C2C2C)
 - Text: Soft Cream (#FFF8F0) or Pearl White (#FAFAF8)
-- Links: MVQUEEN Gold (#D4AF37)
+- Links: MVQueen Gold (#D4AF37)
 
 ### Buttons & CTAs
-- Primary: MVQUEEN Gold (#D4AF37) with Charcoal text
+- Primary: MVQueen Gold (#D4AF37) with Charcoal text
 - Secondary: Deep Rose (#8B4A5C) with Pearl White text
 - Hover: Darken primary color by 15%
 - Disabled: Sage (#A8ABA3) at 60% opacity
 
 ### Forms & Inputs
 - Border: Blush (#F5E6E0)
-- Focus: MVQUEEN Gold (#D4AF37)
+- Focus: MVQueen Gold (#D4AF37)
 - Background: Pearl White (#FAFAF8)
 - Text: Charcoal (#2C2C2C)
 
@@ -117,17 +117,17 @@ Copy and paste into your Shopify theme CSS:
 
 | Platform | Primary | Secondary | Accent |
 |---|---|---|---|
-| Instagram | Deep Rose | Soft Cream | MVQUEEN Gold |
-| TikTok | Charcoal | MVQUEEN Gold | Deep Rose |
-| Pinterest | MVQUEEN Gold | Soft Cream | Deep Rose |
-| Facebook | Deep Rose | Ivory | MVQUEEN Gold |
+| Instagram | Deep Rose | Soft Cream | MVQueen Gold |
+| TikTok | Charcoal | MVQueen Gold | Deep Rose |
+| Pinterest | MVQueen Gold | Soft Cream | Deep Rose |
+| Facebook | Deep Rose | Ivory | MVQueen Gold |
 
 ---
 
 ## Email Header & CTA Colors
 
 - Header Background: Soft Cream (#FFF8F0)
-- CTA Button: MVQUEEN Gold (#D4AF37) with Charcoal text
+- CTA Button: MVQueen Gold (#D4AF37) with Charcoal text
 - Text Links: Deep Rose (#8B4A5C)
 - Footer Background: Charcoal (#2C2C2C)
 - Footer Text: Soft Cream (#FFF8F0)
@@ -138,7 +138,7 @@ Copy and paste into your Shopify theme CSS:
 
 - Primary Box: Soft Cream (#FFF8F0)
 - Tissue Paper: Blush (#F5E6E0)
-- Ribbon/Accent: MVQUEEN Gold (#D4AF37) or Deep Rose (#8B4A5C)
+- Ribbon/Accent: MVQueen Gold (#D4AF37) or Deep Rose (#8B4A5C)
 - Sleeve Print: Charcoal (#2C2C2C) on Cream background
 
 ---
@@ -153,7 +153,7 @@ All color combinations must meet WCAG AA contrast requirements:
 **Verified combinations:**
 - Charcoal (#2C2C2C) on Pearl White (#FAFAF8): ✅ 11.2:1
 - Deep Rose (#8B4A5C) on Ivory (#F5F1EB): ✅ 6.1:1
-- MVQUEEN Gold (#D4AF37) on Charcoal (#2C2C2C): ✅ 5.8:1
+- MVQueen Gold (#D4AF37) on Charcoal (#2C2C2C): ✅ 5.8:1
 - Charcoal (#2C2C2C) on Soft Cream (#FFF8F0): ✅ 12.1:1
 
 ---

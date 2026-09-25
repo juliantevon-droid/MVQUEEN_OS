@@ -1,10 +1,10 @@
-# 🏷️ MVQUEEN — Metadata Templates
+# 🏷️ MVQueen — Metadata Templates
 
 ---
 
 ## Purpose
 
-A library of proven metadata formulas and ready-to-customize templates for every page type on the MVQUEEN website.
+A library of proven metadata formulas and ready-to-customize templates for every page type on the MVQueen website.
 
 Good metadata = more clicks from search = more qualified traffic = more revenue.
 
@@ -13,22 +13,22 @@ Good metadata = more clicks from search = more qualified traffic = more revenue.
 ## Meta Title Formulas
 
 ### Product Page
-`[Product Name] — [Benefit/Feeling] | MVQUEEN`
-*Example: Hydrating Face Serum — Skin That Stays Soft All Day | MVQUEEN*
+`[Product Name] — [Benefit/Feeling] | MVQueen`
+*Example: Hydrating Face Serum — Skin That Stays Soft All Day | MVQueen*
 
 ### Collection Page
-`[Collection Name] — [Category] for [Persona] | MVQUEEN`
-*Example: Luxury Skincare — Rituals for Women Who Choose Intentionally | MVQUEEN*
+`[Collection Name] — [Category] for [Persona] | MVQueen`
+*Example: Luxury Skincare — Rituals for Women Who Choose Intentionally | MVQueen*
 
 ### Blog Article
-`[Primary Keyword] — [Emotional Hook or Differentiator] | MVQUEEN`
-*Example: Morning Skincare Routine — The Ritual That Changes Everything | MVQUEEN*
+`[Primary Keyword] — [Emotional Hook or Differentiator] | MVQueen`
+*Example: Morning Skincare Routine — The Ritual That Changes Everything | MVQueen*
 
 ### Homepage
-`MVQUEEN — Luxury Feminine Beauty, Skincare & Lifestyle`
+`MVQueen — Luxury Feminine Beauty, Skincare & Lifestyle`
 
 ### About Page
-`About MVQUEEN — The Philosophy Behind the Brand`
+`About MVQueen — The Philosophy Behind the Brand`
 
 ---
 
@@ -37,12 +37,12 @@ Good metadata = more clicks from search = more qualified traffic = more revenue.
 ### Product Page
 `[Sensory product description — 1 sentence]. [Transformation promise — 1 sentence]. [Brand CTA — shop/discover].`
 
-*Example: A lightweight face serum that melts on contact and keeps skin soft past noon. For women who want their skincare to actually work. Shop the MVQUEEN ritual.*
+*Example: A lightweight face serum that melts on contact and keeps skin soft past noon. For women who want their skincare to actually work. Shop the MVQueen ritual.*
 
 ### Collection Page
 `[Collection emotional context]. [What's in the collection]. [Brand invitation].`
 
-*Example: Luxury skincare built for real women's real mornings. Serums, moisturizers, and ritual essentials that restore instead of exhaust. Discover MVQUEEN.*
+*Example: Luxury skincare built for real women's real mornings. Serums, moisturizers, and ritual essentials that restore instead of exhaust. Discover MVQueen.*
 
 ### Blog Article
 `[Primary keyword in first sentence]. [Value promise]. [Invitation to read].`
@@ -75,7 +75,7 @@ Good metadata = more clicks from search = more qualified traffic = more revenue.
 - Short and readable — no dates in URLs
 
 ---
-*MVQUEEN Metadata Templates — Operational Document*
+*MVQueen Metadata Templates — Operational Document*
 
 ---
 ---

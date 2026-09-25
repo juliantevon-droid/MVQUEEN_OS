@@ -105,7 +105,7 @@ Before launch, test each name against:
 1. **Luxury Test** — Does it sound premium?
 2. **Clarity Test** — Does customer understand what it is?
 3. **Memory Test** — Is it memorable (not generic)?
-4. **Alignment Test** — Does it fit MVQUEEN brand voice?
+4. **Alignment Test** — Does it fit MVQueen brand voice?
 5. **Emotion Test** — Does it evoke feeling or benefit?
 
 **Pass minimum 4/5 to approve.**

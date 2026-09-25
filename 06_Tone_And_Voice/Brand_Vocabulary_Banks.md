@@ -1,4 +1,4 @@
-﻿# MVQUEEN — Brand Vocabulary Banks (Canonical Reference)
+﻿# MVQueen — Brand Vocabulary Banks (Canonical Reference)
 Source: MVQueen Omniluxe Engine / codes5.docx + codes6.docx
 Location: 06_Tone_And_Voice/Brand_Vocabulary_Banks
 Last Updated: June 2026
@@ -6,7 +6,7 @@ Last Updated: June 2026
 
 These vocabulary pools are the brand's lexical DNA.
 The engine draws from these banks to generate all product copy.
-Use these when writing any MVQUEEN content manually.
+Use these when writing any MVQueen content manually.
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -31,7 +31,7 @@ amplifies, distills, refines, perfects, completes
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SENSORY VERBS (Compound — MVQUEEN Signature)
+SENSORY VERBS (Compound — MVQueen Signature)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 These compound forms are MVQUEEN-exclusive language. Use sparingly and deliberately.
 

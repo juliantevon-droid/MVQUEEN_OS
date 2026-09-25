@@ -1,4 +1,4 @@
-"""MVQUEEN offline catalog control panel.
+"""MVQueen offline catalog control panel.
 
 The historical direct-Shopify menu has been retired. Production Shopify writes
 must flow through the authenticated React application and explicit approval
@@ -12,7 +12,7 @@ from mvqueen_engine.config import DEBUG
 
 def show_menu() -> None:
     print("\n==============================")
-    print("     MVQUEEN ENGINE PANEL     ")
+    print("     MVQueen ENGINE PANEL     ")
     print("==============================")
     print("1. Run CSV Mode (Offline Curation)")
     if DEBUG:

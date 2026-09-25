@@ -1,19 +1,19 @@
-# 👑 MVQUEEN — Instagram Strategy
+# 👑 MVQueen — Instagram Strategy
 ### The Visual World on Instagram
 
 ---
 
 ## What This File Is
 
-Instagram is MVQUEEN's primary visual brand home. It is where the brand world is built most visibly — where new women discover the brand, existing customers stay emotionally connected, and the aesthetic identity lives at full resolution.
+Instagram is MVQueen's primary visual brand home. It is where the brand world is built most visibly — where new women discover the brand, existing customers stay emotionally connected, and the aesthetic identity lives at full resolution.
 
-This file defines how MVQUEEN operates on Instagram — the account structure, content strategy, feed aesthetic, posting cadence, Stories approach, Reels strategy, growth tactics, and the non-negotiable standards that keep the account distinctly MVQUEEN.
+This file defines how MVQueen operates on Instagram — the account structure, content strategy, feed aesthetic, posting cadence, Stories approach, Reels strategy, growth tactics, and the non-negotiable standards that keep the account distinctly MVQueen.
 
 ---
 
 ## THE INSTAGRAM PHILOSOPHY
 
-MVQUEEN's Instagram is not a product catalog. It is a world.
+MVQueen's Instagram is not a product catalog. It is a world.
 
 A woman should be able to land on the profile for the first time and feel something within 3 seconds — before she reads a single word. The grid should communicate: *this is a brand that understands femininity, luxury, and how a woman wants to feel.* The bio should confirm it. The first Story she taps should deepen it.
 
@@ -23,22 +23,22 @@ She doesn't need to be sold to immediately. She needs to want to stay. The selli
 
 ## PART 1 — ACCOUNT STRUCTURE
 
-### MVQUEEN Main Account: `@mvqueen`
+### MVQueen Main Account: `@mvqueen`
 Primary brand account. Full brand experience — all seven content pillars, all product categories, all campaigns.
 
 ### Miss.Princess Account: `@miss.princess` (separate)
-Sister brand account. Distinct identity, distinct aesthetic, distinct voice. Never cross-post between accounts. Miss.Princess content does not appear on MVQUEEN's feed.
+Sister brand account. Distinct identity, distinct aesthetic, distinct voice. Never cross-post between accounts. Miss.Princess content does not appear on MVQueen's feed.
 
 ### Bio Formula
 ```
-Line 1: Brand identity statement — what MVQUEEN is
+Line 1: Brand identity statement — what MVQueen is
 Line 2: Brand promise — what she gets
 Line 3: Link or CTA
 ```
 
 **Current bio:**
 ```
-👑 MVQUEEN
+👑 MVQueen
 Modern feminine luxury — built for you.
 Luxury was always yours. ↓
 [link in bio]
@@ -53,12 +53,12 @@ Luxury was always yours. ↓
 
 ## PART 2 — FEED AESTHETIC
 
-The MVQUEEN Instagram feed is a visual world — not a product showcase. Every image is held to the same standard as every other image. One off-brand post breaks the atmosphere.
+The MVQueen Instagram feed is a visual world — not a product showcase. Every image is held to the same standard as every other image. One off-brand post breaks the atmosphere.
 
 ### Feed Visual Rules
 
 **Color:**
-All feed content stays within the MVQUEEN palette — warm ivory, soft blush, dusty rose, espresso, champagne gold. No cool tones. No bright white backgrounds. No stark black and white. (See color_system.md)
+All feed content stays within the MVQueen palette — warm ivory, soft blush, dusty rose, espresso, champagne gold. No cool tones. No bright white backgrounds. No stark black and white. (See color_system.md)
 
 **Lighting:**
 Warm, cinematic, directional light. Soft shadows. Never harsh overhead flash. The lighting should feel like golden hour held slightly longer than it should have.
@@ -73,7 +73,7 @@ Real, intimate, sensory. Products are held, used, lived with — not perfectly s
 Every image on the feed belongs to the same world. The test: if you screenshot 9 random feed images and lay them in a grid, they should look like they were made for each other.
 
 ### Grid Layout Approach
-The MVQUEEN grid is not rigidly patterned (checkerboard, row-alternating) but is visually cohesive through consistent color palette and aesthetic direction. A loose pattern:
+The MVQueen grid is not rigidly patterned (checkerboard, row-alternating) but is visually cohesive through consistent color palette and aesthetic direction. A loose pattern:
 - Never two identical formats back to back (product flat lay followed by product flat lay)
 - Alternate between close-up detail, wider scene, and people/lifestyle shots
 - Text-on-image posts spaced — never consecutive
@@ -95,10 +95,10 @@ The MVQUEEN grid is not rigidly patterned (checkerboard, row-alternating) but is
 **Best for:** Pillars 02, 04, 05, 06 — Beauty Ritual, Fashion, Sensory Luxury, Romanticized Living
 **Length:** 7–30 seconds for highest completion rates
 **Hook:** First 3 seconds must stop the scroll — visual hook + on-screen text if used
-**Audio:** Trending sounds boost discovery; choose sounds that match MVQUEEN's mood (soft, warm, cinematic — not chaotic or aggressive)
+**Audio:** Trending sounds boost discovery; choose sounds that match MVQueen's mood (soft, warm, cinematic — not chaotic or aggressive)
 **Aspect ratio:** 9:16 vertical
 
-**Reel types that perform for MVQUEEN:**
+**Reel types that perform for MVQueen:**
 - Skincare routine (morning or evening)
 - Fragrance reveal / layering
 - Outfit transformation or styling
@@ -143,7 +143,7 @@ Highlights visible on profile:
 **First slide:** Functions as a hook — must be compelling enough to swipe on its own
 **Last slide:** Always includes a CTA
 
-**Carousel types for MVQUEEN:**
+**Carousel types for MVQueen:**
 - "5 skincare steps that changed my morning"
 - "How to build a feminine capsule wardrobe"
 - "The fragrance guide: how to find your signature scent"
@@ -173,7 +173,7 @@ Consistency over volume. Posting 4x per week every week outperforms posting 7x o
 ## PART 5 — INSTAGRAM SEO & DISCOVERABILITY
 
 ### Bio Optimization
-- Primary keyword in name field: `MVQUEEN | Feminine Luxury`
+- Primary keyword in name field: `MVQueen | Feminine Luxury`
 - Bio includes searchable terms: "feminine lifestyle," "luxury beauty," "accessible luxury"
 
 ### Caption SEO
@@ -184,7 +184,7 @@ Consistency over volume. Posting 4x per week every week outperforms posting 7x o
 ### Hashtag Strategy
 Total: 10–15 per post
 ```
-Branded (3):       #MVQUEEN #MostValuableQueen #MVQUEENBeauty
+Branded (3):       #MVQueen #MostValuableQueen #MVQUEENBeauty
 Category (4–5):    Based on content — skincare, fragrance, fashion, lifestyle
 Niche (4–5):       Smaller, higher-engagement communities
 Discovery (2–3):   Broader reach hashtags
@@ -207,7 +207,7 @@ Hashtags below the caption or in first comment — never embedded in caption bod
 - Negative comments addressed calmly and directly — never defensively deleted unless abusive
 
 ### Community Building
-- Follow back accounts that genuinely align with MVQUEEN's world
+- Follow back accounts that genuinely align with MVQueen's world
 - Engage with content from aligned creators before outreach — relationship before ask
 - Feature customer content in Stories regularly (UGC builds trust and community)
 - Monthly engagement with comment questions: "What ritual are you working on this month?" type prompts
@@ -221,7 +221,7 @@ Hashtags below the caption or in first comment — never embedded in caption bod
 
 ## PART 7 — CAMPAIGN INTEGRATION
 
-Every MVQUEEN collection launch runs an Instagram campaign sequence:
+Every MVQueen collection launch runs an Instagram campaign sequence:
 
 **Week before launch (Teaser):**
 - Stories: atmosphere teasers, no product reveal yet
@@ -253,20 +253,20 @@ Every MVQUEEN collection launch runs an Instagram campaign sequence:
 
 ## PART 8 — GROWTH PRINCIPLES
 
-**What grows MVQUEEN on Instagram:**
+**What grows MVQueen on Instagram:**
 1. Consistent, high-quality visual identity — feed recognition
 2. Reels that either teach, inspire, or make women feel seen
 3. Carousels that earn saves — practical, beautiful, shareable
 4. Captions that women screenshot and send to friends
 5. Stories that show the brand is real and cares
 
-**What does not grow MVQUEEN:**
+**What does not grow MVQueen:**
 - Giveaway follows (brings audience with no brand alignment)
 - Follow/unfollow tactics (brand-damaging, algorithm-punished)
 - Buying followers (destroys engagement rate, destroys trust)
 - Posting for the algorithm at the expense of brand standards
-- Copying competitor content formats that don't fit MVQUEEN voice
+- Copying competitor content formats that don't fit MVQueen voice
 
 ---
 
-*This file is the MVQUEEN Instagram strategy. It pairs with Content_Pillars.md (what to post), Caption_Templates.md (how to write it), Hook_Systems.md (how to open it), and color_system.md and typography_system.md (how it looks).*
+*This file is the MVQueen Instagram strategy. It pairs with Content_Pillars.md (what to post), Caption_Templates.md (how to write it), Hook_Systems.md (how to open it), and color_system.md and typography_system.md (how it looks).*

@@ -1,4 +1,4 @@
-# 👑 MVQUEEN COMMAND CENTER
+# 👑 MVQueen COMMAND CENTER
 
 # 👑 BRAND ESSENCE
 
@@ -13,7 +13,7 @@
 "The atmosphere becomes the identity."
 
 ## Brand Reminder
-MVQUEEN is an emotionally immersive feminine luxury ecosystem centered around transformation through beauty, atmosphere, elegance, confidence, softness, and feminine identity.
+MVQueen is an emotionally immersive feminine luxury ecosystem centered around transformation through beauty, atmosphere, elegance, confidence, softness, and feminine identity.
 
 ## Customer Transformation
 We do not simply sell products.

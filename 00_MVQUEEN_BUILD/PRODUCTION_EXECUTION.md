@@ -1,8 +1,8 @@
 # MVQUEEN_OS — Production Execution
 
 ## Master Identity
-- Brand: MVQUEEN
-- Shopify build: MVQUEEN Production — Horizon Build
+- Brand: MVQueen
+- Shopify build: MVQueen Production — Horizon Build
 - Primary working email: miss.mvqueen@gmail.com
 - Master repository: juliantevon-droid/MVQUEEN_OS
 
@@ -41,7 +41,7 @@ Turn the existing MVQUEEN_OS systems into a production-ready Shopify storefront 
 - Prefer native Shopify Liquid, CSS, JavaScript, and Admin APIs.
 - Do not add apps unless a required capability cannot be achieved safely with native functionality.
 - Preserve product handles, SKUs, inventory, variants, and existing product images unless a specific production task requires otherwise.
-- MVQUEEN is the only brand name to appear in customer-facing product content.
+- MVQueen is the only brand name to appear in customer-facing product content.
 
 ## Current Status
-Foundation execution started. Existing MVQUEEN custom theme architecture is being aligned with the repository's brand systems and production plan.
+Foundation execution started. Existing MVQueen custom theme architecture is being aligned with the repository's brand systems and production plan.

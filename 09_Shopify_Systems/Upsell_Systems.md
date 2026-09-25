@@ -1,4 +1,4 @@
-# ⬆️ MVQUEEN — Upsell Systems
+# ⬆️ MVQueen — Upsell Systems
 
 ---
 
@@ -6,7 +6,7 @@
 
 Increase average order value and customer lifetime value by introducing relevant, well-timed product recommendations that feel like personal suggestions — not sales tactics.
 
-The MVQUEEN upsell philosophy:
+The MVQueen upsell philosophy:
 **Recommend like a knowledgeable friend. Never push like a salesperson.**
 
 ---
@@ -125,4 +125,4 @@ Upsell language must feel like a recommendation — not a push.
 | Cross-sell click rate (product page) | 5%+ | Monthly |
 
 ---
-*MVQUEEN Upsell Systems — Operational Document*
+*MVQueen Upsell Systems — Operational Document*

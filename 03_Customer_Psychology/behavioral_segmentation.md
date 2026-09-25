@@ -1,11 +1,11 @@
-# 🧩 MVQUEEN BEHAVIORAL SEGMENTATION  
-*The complete behavioral, emotional, aesthetic, and identity‑based segmentation system for MVQUEEN customers*
+# 🧩 MVQueen BEHAVIORAL SEGMENTATION  
+*The complete behavioral, emotional, aesthetic, and identity‑based segmentation system for MVQueen customers*
 
 ---
 
 # 1. Purpose of the Behavioral Segmentation System
 
-Behavioral Segmentation explains **how MVQUEEN customers behave**, not who they are.
+Behavioral Segmentation explains **how MVQueen customers behave**, not who they are.
 
 This system reveals patterns in:
 
@@ -23,9 +23,9 @@ It is **behavior shaped by emotion, identity, and aspiration**.
 
 ---
 
-# 2. MVQUEEN’s Behavioral Segmentation Philosophy
+# 2. MVQueen’s Behavioral Segmentation Philosophy
 
-MVQUEEN customers behave according to four core forces:
+MVQueen customers behave according to four core forces:
 
 ### **1. Emotional Motivation**
 She buys based on how she wants to feel.
@@ -41,7 +41,7 @@ She buys what fits into her daily beauty rituals.
 
 ---
 
-# 3. The 7 MVQUEEN Behavioral Segments
+# 3. The 7 MVQueen Behavioral Segments
 
 These are the **behavioral archetypes** that appear across your customer base.
 
@@ -192,7 +192,7 @@ Needs reassurance from other women.
 
 ---
 
-# 6. How MVQUEEN Uses Behavioral Segmentation
+# 6. How MVQueen Uses Behavioral Segmentation
 
 ### **A. Tailored Messaging**
 Speak to each behavioral type with emotional precision.
@@ -213,7 +213,7 @@ Use UGC and testimonials to reassure social validators.
 
 # 7. Behavioral Segmentation Framework (BSF)
 
-Every MVQUEEN customer falls into a combination of:
+Every MVQueen customer falls into a combination of:
 
 ### **1. Emotional Behavior**
 How she feels.
@@ -254,4 +254,4 @@ It is:
 - ritual  
 - feminine psychology  
 
-This system ensures MVQUEEN speaks directly to **how she behaves, feels, and evolves**.
+This system ensures MVQueen speaks directly to **how she behaves, feels, and evolves**.

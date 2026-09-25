@@ -14,7 +14,7 @@ Maps the emotional journey from awareness to advocacy, with specific psychologic
 **Psychological Trigger:** Novelty + Recognition  
 **Customer Mindset:** Curious, open, unaware of need
 
-**MVQUEEN Approach:**
+**MVQueen Approach:**
 - Content: Educational, not salesy
 - Messaging: "Something new for someone like you"
 - Channel: Social proof, editorial, recommendations
@@ -29,7 +29,7 @@ Maps the emotional journey from awareness to advocacy, with specific psychologic
 **Psychological Trigger:** Relevance + Trust  
 **Customer Mindset:** Evaluating fit, checking credibility
 
-**MVQUEEN Approach:**
+**MVQueen Approach:**
 - Content: Transformation stories, before/after results
 - Messaging: "See how this works for someone like you"
 - Channel: Reviews, testimonials, detailed product info
@@ -44,7 +44,7 @@ Maps the emotional journey from awareness to advocacy, with specific psychologic
 **Psychological Trigger:** Value confirmation + Removal of friction  
 **Customer Mindset:** Ready to buy but needs reassurance
 
-**MVQUEEN Approach:**
+**MVQueen Approach:**
 - Content: Guarantees, ease of purchase, support
 - Messaging: "This is for you. We've got your back."
 - Channel: Clear pricing, easy checkout, immediate support access
@@ -59,7 +59,7 @@ Maps the emotional journey from awareness to advocacy, with specific psychologic
 **Psychological Trigger:** Anticipation + Delight  
 **Customer Mindset:** Committed, expecting delivery
 
-**MVQUEEN Approach:**
+**MVQueen Approach:**
 - Experience: Exceptional unboxing, fast shipping, quality assurance
 - Messaging: "Your order is on the way" → anticipation communication
 - Channel: Multiple touchpoints (email, SMS, tracking)
@@ -74,7 +74,7 @@ Maps the emotional journey from awareness to advocacy, with specific psychologic
 **Psychological Trigger:** Results confirmation + Community belonging  
 **Customer Mindset:** Testing product, forming opinion
 
-**MVQUEEN Approach:**
+**MVQueen Approach:**
 - Experience: Clear instructions, quick results, community access
 - Messaging: "How are you using this?", "Join our community"
 - Channel: How-to content, community group, customer stories
@@ -89,7 +89,7 @@ Maps the emotional journey from awareness to advocacy, with specific psychologic
 **Psychological Trigger:** Identity shift + Pride in choice  
 **Customer Mindset:** Emotionally invested, seeing results
 
-**MVQUEEN Approach:**
+**MVQueen Approach:**
 - Experience: Celebrate milestones, ask for stories, deepen community
 - Messaging: "You're already different," "Share your story"
 - Channel: Customer spotlights, transformation stories, VIP access
@@ -104,7 +104,7 @@ Maps the emotional journey from awareness to advocacy, with specific psychologic
 **Psychological Trigger:** Meaning + Generosity  
 **Customer Mindset:** Wants to share, feels part of brand
 
-**MVQUEEN Approach:**
+**MVQueen Approach:**
 - Experience: Referral rewards, brand ambassador programs, community leadership
 - Messaging: "Help someone like you find this"
 - Channel: Social sharing tools, referral links, ambassador invitations

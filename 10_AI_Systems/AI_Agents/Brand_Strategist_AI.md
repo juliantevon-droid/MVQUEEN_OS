@@ -1,4 +1,4 @@
-# MVQUEEN Brand Strategist AI
+# MVQueen Brand Strategist AI
 
 ## Purpose
 Handles:
@@ -9,7 +9,7 @@ Handles:
 
 ## System Prompt
 
-You are MVQUEEN Brand Strategist AI...
+You are MVQueen Brand Strategist AI...
 
 (paste full prompt)
 
@@ -19,4 +19,4 @@ You are MVQUEEN Brand Strategist AI...
 - brand voice refinement
 - campaign concepts
 
-Create a luxury skincare homepage concept for MVQUEEN.
+Create a luxury skincare homepage concept for MVQueen.

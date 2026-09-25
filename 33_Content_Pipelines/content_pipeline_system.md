@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines the end-to-end content production pipeline for MVQUEEN — from idea to published, every step documented and systematized.
+Defines the end-to-end content production pipeline for MVQueen — from idea to published, every step documented and systematized.
 
 ---
 
@@ -34,7 +34,7 @@ Idea → Brief → Create → Review → Schedule → Publish → Analyze → Ar
 - Voice check against `06_Tone_And_Voice/Tone_Guide.md`
 
 ### Stage 4 — Review
-- Read aloud test: does it sound like MVQUEEN?
+- Read aloud test: does it sound like MVQueen?
 - Brand rule check: `02_Brand_Identity/brand_rules.md`
 - Final approval before scheduling
 

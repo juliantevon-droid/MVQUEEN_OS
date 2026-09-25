@@ -1,4 +1,4 @@
-# MVQUEEN Shopify Publisher V1
+# MVQueen Shopify Publisher V1
 
 ## Purpose
 

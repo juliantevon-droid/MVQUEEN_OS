@@ -4,13 +4,13 @@
 
 ## Audience Overview
 
-MVQUEEN is created for emotionally aware, aesthetically driven women who use beauty, femininity, fashion, fragrance, self-care, and visual atmosphere as forms of confidence, identity, emotional comfort, and self-expression.
+MVQueen is created for emotionally aware, aesthetically driven women who use beauty, femininity, fashion, fragrance, self-care, and visual atmosphere as forms of confidence, identity, emotional comfort, and self-expression.
 
 The brand speaks to women who desire more than products.
 
 They desire experiences that make life feel softer, more beautiful, more intentional, and more emotionally aligned.
 
-MVQUEEN’s audience is deeply connected to how things feel emotionally:
+MVQueen’s audience is deeply connected to how things feel emotionally:
 - how environments feel
 - how beauty routines feel
 - how clothing changes confidence
@@ -30,11 +30,11 @@ It is built around emotional resonance.
 
 ## Content Philosophy
 
-MVQUEEN content is not created simply to generate engagement.
+MVQueen content is not created simply to generate engagement.
 
-It is created to build emotional atmosphere, feminine identity, luxury immersion, emotional connection, sensory storytelling, and long-term emotional attachment to the MVQUEEN world.
+It is created to build emotional atmosphere, feminine identity, luxury immersion, emotional connection, sensory storytelling, and long-term emotional attachment to the MVQueen world.
 
-The purpose of content within MVQUEEN is to make women emotionally feel something before they are ever sold anything.
+The purpose of content within MVQueen is to make women emotionally feel something before they are ever sold anything.
 
 Every piece of content should reinforce:
 - femininity
@@ -61,7 +61,7 @@ Women should feel like they are emotionally entering a cinematic feminine univer
 ## 1. Feminine Lifestyle & Atmosphere
 
 ### Purpose
-This pillar builds the emotional atmosphere of the MVQUEEN universe.
+This pillar builds the emotional atmosphere of the MVQueen universe.
 
 It creates:
 - softness
@@ -103,7 +103,7 @@ This content should feel:
 - visually soft
 - immersive
 
-This pillar establishes the emotional atmosphere of the MVQUEEN world.
+This pillar establishes the emotional atmosphere of the MVQueen world.
 
 ---
 
@@ -238,7 +238,7 @@ Fashion becomes emotional atmosphere rather than trend performance.
 ## 5. Sensory Luxury & Atmosphere
 
 ### Purpose
-This pillar deepens MVQUEEN’s emotional luxury positioning through sensory immersion.
+This pillar deepens MVQueen’s emotional luxury positioning through sensory immersion.
 
 It reinforces:
 - atmosphere
@@ -279,7 +279,7 @@ This content should feel:
 - luxurious
 - emotionally rich
 
-This pillar emotionally differentiates MVQUEEN from ordinary ecommerce brands.
+This pillar emotionally differentiates MVQueen from ordinary ecommerce brands.
 
 ---
 
@@ -319,16 +319,16 @@ This content should feel:
 - cinematic
 - emotionally restorative
 
-This pillar strengthens emotional attachment to the MVQUEEN lifestyle.
+This pillar strengthens emotional attachment to the MVQueen lifestyle.
 
 ---
 
 ## 7. Brand World & Identity
 
 ### Purpose
-This pillar builds emotional mythology and recognizability around MVQUEEN itself.
+This pillar builds emotional mythology and recognizability around MVQueen itself.
 
-It transforms MVQUEEN from a store into a recognizable emotional universe.
+It transforms MVQueen from a store into a recognizable emotional universe.
 
 ### Emotional Goal
 Women should feel:
@@ -367,7 +367,7 @@ This pillar builds emotional brand recognition and emotional mythology.
 
 # Content Pillars Summary
 
-MVQUEEN’s content ecosystem is designed to transform content into emotional atmosphere and feminine immersion.
+MVQueen’s content ecosystem is designed to transform content into emotional atmosphere and feminine immersion.
 
 Every pillar should reinforce:
 - femininity

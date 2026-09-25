@@ -1,11 +1,11 @@
-# MVQUEEN Custom Storefront Constitution
+# MVQueen Custom Storefront Constitution
 
 Status: ACTIVE
 Date: 2026-09-17
 
 ## Purpose
 
-MVQUEEN is a custom editorial commerce experience built on Shopify's commerce infrastructure without using Horizon as the customer-experience foundation.
+MVQueen is a custom editorial commerce experience built on Shopify's commerce infrastructure without using Horizon as the customer-experience foundation.
 
 The storefront should feel personal, selective, calm, and intentionally curated even when the underlying catalog is large.
 
@@ -20,7 +20,7 @@ The interface should communicate taste through restraint rather than sales press
 - No marketplace-style density.
 - No aggressive promotional hierarchy.
 - No unnecessary countdowns, flashing offers, or repetitive urgency language.
-- No generic theme-looking sections when a purposeful MVQUEEN component can express the idea better.
+- No generic theme-looking sections when a purposeful MVQueen component can express the idea better.
 - Product discovery should feel guided, not forced.
 - Recommendations should feel editorial and relevant, not like an ad network.
 - Copy should be human, concise, confident, and specific.
@@ -32,7 +32,7 @@ The interface should communicate taste through restraint rather than sales press
 
 Shopify remains responsible for commerce primitives: products, variants, inventory, cart, checkout, customer accounts, payments, orders, and APIs.
 
-MVQUEEN owns the presentation and interaction layer:
+MVQueen owns the presentation and interaction layer:
 
 - layout
 - navigation
@@ -65,7 +65,7 @@ A large catalog must remain invisible as complexity. The customer should encount
 
 ## Brand discipline
 
-Customer-facing product content uses MVQUEEN only. Supplier/legacy brand strings must remain excluded by the storefront contract.
+Customer-facing product content uses MVQueen only. Supplier/legacy brand strings must remain excluded by the storefront contract.
 
 ## Technical standard
 
@@ -79,4 +79,4 @@ Customer-facing product content uses MVQUEEN only. Supplier/legacy brand strings
 
 ## Definition of done
 
-A customer should be able to enter MVQUEEN, understand the brand, discover something intentionally, evaluate a product comfortably, add it to cart, and reach checkout without encountering a generic-theme feel or a known blocking UX defect.
+A customer should be able to enter MVQueen, understand the brand, discover something intentionally, evaluate a product comfortably, add it to cart, and reach checkout without encountering a generic-theme feel or a known blocking UX defect.

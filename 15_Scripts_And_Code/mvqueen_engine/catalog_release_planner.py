@@ -1,4 +1,4 @@
-"""Read-only release planner for the recovered MVQUEEN Shopify catalog.
+"""Read-only release planner for the recovered MVQueen Shopify catalog.
 
 The planner resolves proven duplicate product listings without rewriting handles,
 SKUs, prices, inventory, variants, or media relationships. It produces a

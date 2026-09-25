@@ -30,7 +30,7 @@ Active root structure:
 - 40 folders total, including one dated legacy archive.
 - 0 loose root files.
 - 0 duplicate folder names.
-- older MVQUEEN root mirrors moved into `MVQUEEN_ARCHIVE_2026-09-24`.
+- older MVQueen root mirrors moved into `MVQUEEN_ARCHIVE_2026-09-24`.
 - legacy runtime/workspace folders moved into `_ARCHIVE_LEGACY_2026-09-24`.
 
 Drive intake validation is read-only and cannot commit or push to GitHub.
@@ -45,11 +45,11 @@ No open pull request is an approved production merge source.
 ## Production gates
 
 Verified against the canonical system on 2026-09-24:
-- The latest production-status change is validated by MVQUEEN Production Readiness, MVQUEEN OS Lint and Index, and MVQUEEN_OS Overseer.
-- MVQUEEN Catalog Governance is passing on the current catalog-governance inputs.
-- MVQUEEN Theme CI/CD is passing; no theme/automation watched files changed after the last successful theme run.
-- MVQUEEN Shopify App CI TypeScript typecheck and production build are passing; no app/config watched files changed after the last successful app run.
-- MVQUEEN Deep Repository Audit is passing; its watched audit sources have not changed since that successful run.
+- The latest production-status change is validated by MVQueen Production Readiness, MVQueen OS Lint and Index, and MVQUEEN_OS Overseer.
+- MVQueen Catalog Governance is passing on the current catalog-governance inputs.
+- MVQueen Theme CI/CD is passing; no theme/automation watched files changed after the last successful theme run.
+- MVQueen Shopify App CI TypeScript typecheck and production build are passing; no app/config watched files changed after the last successful app run.
+- MVQueen Deep Repository Audit is passing; its watched audit sources have not changed since that successful run.
 - Unified-system invariant tests are passing.
 
 ## Security
@@ -78,10 +78,10 @@ Further work should extend this canonical system, not create parallel runtimes, 
 ### Storefront
 
 - Shopify live theme remains `Helio` (`154610663622`).
-- Canonical theme remains unpublished as `MVQUEEN — Custom Production Build` (`154611515590`).
+- Canonical theme remains unpublished as `MVQueen — Custom Production Build` (`154611515590`).
 - The canonical unpublished theme is synchronized to `main` for all **33 controlled deployment files**.
 - All 33 controlled files are present on both sides and their file sizes match.
-- Theme Check and the MVQUEEN storefront contract validator pass.
+- Theme Check and the MVQueen storefront contract validator pass.
 - Theme deployment remains fail-closed; validation does not publish the live theme.
 - The homepage production defects discovered during synchronization were repaired on `main`: SEO SearchAction Liquid syntax, brand-story section, opt-in social-proof section, and trust-badges section.
 
@@ -89,7 +89,7 @@ Further work should extend this canonical system, not create parallel runtimes, 
 
 - Connected production store: `tsucu0-1i.myshopify.com`.
 - Two active products are currently present in Shopify.
-- Both live products now use `MVQUEEN` as vendor/customer-facing brand.
+- Both live products now use `MVQueen` as vendor/customer-facing brand.
 - The brown aventurine necklace received a cleaned factual title/description, SEO title/meta description, and image ALT text.
 - The pink thulite pendant retained its existing factual product copy and received canonical vendor/SEO brand normalization.
 - Handles, variant IDs, SKUs, prices, inventory quantities and image relationships were verified unchanged after the cleanup.
@@ -102,7 +102,7 @@ Further work should extend this canonical system, not create parallel runtimes, 
 - FAQ support contact is `miss.mvqueen@gmail.com`; its premature apparel-size-guide prompt is removed while the production catalog is jewelry-only.
 - Contact uses the dedicated `contact` page template; its empty body is intentional.
 - Storefront password protection is currently enabled.
-- Shopify store identity is still named `My Store 4` in Admin even though product/vendor branding is MVQUEEN.
+- Shopify store identity is still named `My Store 4` in Admin even though product/vendor branding is MVQueen.
 
 ### Catalog source of truth
 
@@ -118,7 +118,7 @@ Further work should extend this canonical system, not create parallel runtimes, 
 - Current production catalog scope is only the 2 products imported into Shopify.
 - All 5 live product images are present and have ALT text.
 - Main-menu Shop navigation is aligned to current non-empty collections.
-- Published Terms of Service, Refund & Returns, and Shipping pages were repaired from canonical MVQUEEN SOPs.
+- Published Terms of Service, Refund & Returns, and Shipping pages were repaired from canonical MVQueen SOPs.
 - All literal policy placeholders were removed from the published Terms of Service, Refund & Returns, and Shipping pages.
 - A full published-page sweep found no remaining bracket placeholders or draft-placeholder warnings.
 - Policy and FAQ contact email is `miss.mvqueen@gmail.com`.
@@ -133,7 +133,7 @@ The system is production-capable. Full public release still requires the followi
 
 1. **Protect `main` in GitHub.** No repository ruleset exists, and the connected GitHub App receives 403 on the branch-protection administration endpoint.
 2. **Historical Shopify credential — RESOLVED.** Live Shopify app-installation audit shows no merchant-created custom app is currently installed, and the Dev Dashboard contains no merchant app. The historical admin-style token is therefore no longer attached to an active custom-app installation; active `main` also contains no live Shopify token.
-3. **Publish the canonical theme.** `MVQUEEN — Custom Production Build` (`154611515590`) is synchronized, validated and remains UNPUBLISHED; `Helio` (`154610663622`) is still MAIN. Automated theme publishing is intentionally blocked.
+3. **Publish the canonical theme.** `MVQueen — Custom Production Build` (`154611515590`) is synchronized, validated and remains UNPUBLISHED; `Helio` (`154610663622`) is still MAIN. Automated theme publishing is intentionally blocked.
 4. **Finish Shopify store identity/legal-policy branding.** Admin shop name remains `My Store 4`, and the built-in Privacy Policy still contains that name. A validated brand-only Privacy Policy update was rejected because the connected app lacks `write_legal_policies`.
 5. **Remove storefront password protection when public launch is intended.** Shopify currently reports password protection enabled.
 
@@ -153,7 +153,7 @@ Further production work must continue from the **current Shopify catalog only**,
 
 ## Catalog scope correction — 2026-09-24
 
-The previously analyzed 948-product historical CSV set belongs to an old catalog and is **not part of the current MVQUEEN production assortment**.
+The previously analyzed 948-product historical CSV set belongs to an old catalog and is **not part of the current MVQueen production assortment**.
 
 Effective immediately:
 
@@ -168,7 +168,7 @@ Current verified Shopify state at the time of this correction:
 - 2 ACTIVE.
 - 0 DRAFT.
 - 0 ARCHIVED.
-- Both active products use `MVQUEEN` as vendor/customer-facing brand.
+- Both active products use `MVQueen` as vendor/customer-facing brand.
 
 Current-store merchandising/navigation and the customer-facing policy pages have been verified or repaired. Remaining stabilization work is limited to owner/admin security, identity, password-protection and theme-publication controls listed above.
 
@@ -179,7 +179,7 @@ This section supersedes earlier launch-blocker lists in this document.
 ### Verified complete
 
 - Production catalog scope is Shopify-only: 2 current products, both ACTIVE.
-- Both live products use `MVQUEEN` as vendor/customer-facing brand.
+- Both live products use `MVQueen` as vendor/customer-facing brand.
 - Product titles, descriptions, SEO title/meta description and all 5 current product image ALT texts are complete.
 - Product handles, SKUs, prices, inventory, variants and media relationships remain protected.
 - Current product fulfillment profiles are configured for United States delivery.
@@ -191,7 +191,7 @@ This section supersedes earlier launch-blocker lists in this document.
 - Terms of Service, Refund & Returns Policy and Shipping Policy contain no placeholders and use the verified support email `miss.mvqueen@gmail.com`.
 - Two URL redirects are active for the retired Privacy and Miss.Queen page paths.
 - Empty Shopify collections remain preserved in admin and out of customer navigation. The canonical custom theme now emits `noindex,follow` on collections with zero products.
-- Canonical custom theme `MVQUEEN — Custom Production Build` is synchronized to GitHub `main` for all 33 controlled files: 33/33 file sizes match, with no missing files or theme processing failures.
+- Canonical custom theme `MVQueen — Custom Production Build` is synchronized to GitHub `main` for all 33 controlled files: 33/33 file sizes match, with no missing files or theme processing failures.
 - Theme CI/CD, MVQUEEN_OS Overseer and Lint/Index pass on the current storefront code commit.
 - The canonical theme contains no detected `Miss.Queen`, policy-placeholder, TODO/FIXME, lorem, example.com, Helio or Horizon references.
 - The primary Shopify domain is SSL-enabled and has an English web presence.
@@ -202,7 +202,7 @@ This section supersedes earlier launch-blocker lists in this document.
 
 These controls cannot be completed by the connected tools and must remain explicit launch gates:
 
-1. **Publish the custom theme.** The connected Shopify mutation surface blocks theme publishing by safety policy. Publish `MVQUEEN — Custom Production Build` (`154611515590`) in Shopify admin only after the final visual preview.
+1. **Publish the custom theme.** The connected Shopify mutation surface blocks theme publishing by safety policy. Publish `MVQueen — Custom Production Build` (`154611515590`) in Shopify admin only after the final visual preview.
 2. **Disable storefront password protection immediately after the custom theme is published.** Password protection is currently ON; this also explains why external storefront browsing and product `onlineStoreUrl` checks are unavailable/null.
 3. **Verify the payment provider in Shopify Admin → Settings → Payments.** The connected app lacks `read_shopify_payments` / `read_shopify_payments_accounts`, so payment-provider activation cannot be verified here. No digital wallets are reported through the accessible payment-settings field; that is not proof card checkout is unavailable.
 4. **Enable GitHub protection/rules for `main`.** The connected GitHub App has no repository-administration permission, so branch protection cannot be set from this environment.

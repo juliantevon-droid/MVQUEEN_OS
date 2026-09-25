@@ -1,11 +1,11 @@
-# 🎨 MVQUEEN COLOR PSYCHOLOGY  
-*A comprehensive emotional, psychological, cultural, and luxury‑behavior analysis of MVQUEEN’s feminine palette*
+# 🎨 MVQueen COLOR PSYCHOLOGY  
+*A comprehensive emotional, psychological, cultural, and luxury‑behavior analysis of MVQueen’s feminine palette*
 
 ---
 
-# 1. Introduction: The Role of Color in MVQUEEN’s Emotional Universe
+# 1. Introduction: The Role of Color in MVQueen’s Emotional Universe
 
-Color is one of the most powerful emotional technologies in the MVQUEEN ecosystem.
+Color is one of the most powerful emotional technologies in the MVQueen ecosystem.
 
 It shapes:
 - how women **feel**  
@@ -13,9 +13,9 @@ It shapes:
 - how they **interpret the brand**  
 - how they **connect emotionally**  
 - how they **experience femininity**  
-- how they **move through the MVQUEEN universe**  
+- how they **move through the MVQueen universe**  
 
-In MVQUEEN, color is not visual decoration.  
+In MVQueen, color is not visual decoration.  
 Color is:
 - emotional architecture  
 - identity coding  
@@ -38,13 +38,13 @@ Every shade must reinforce the brand’s emotional pillars:
 - self‑worth  
 - emotional safety  
 
-This system ensures MVQUEEN’s palette remains timeless, emotionally resonant, and instantly recognizable across every platform, product, and experience.
+This system ensures MVQueen’s palette remains timeless, emotionally resonant, and instantly recognizable across every platform, product, and experience.
 
 ---
 
-# 2. MVQUEEN’s Color Philosophy: Soft Luxury as Emotional Identity
+# 2. MVQueen’s Color Philosophy: Soft Luxury as Emotional Identity
 
-MVQUEEN’s palette is built around **soft luxury** — a visual language that blends:
+MVQueen’s palette is built around **soft luxury** — a visual language that blends:
 - warmth  
 - femininity  
 - emotional comfort  
@@ -60,7 +60,7 @@ The palette avoids:
 - masculine palettes  
 - overly saturated hues  
 
-Instead, MVQUEEN uses colors that feel:
+Instead, MVQueen uses colors that feel:
 - warm  
 - soft  
 - romantic  
@@ -71,7 +71,7 @@ Instead, MVQUEEN uses colors that feel:
 - feminine without cliché  
 - luxurious without intimidation  
 
-The palette must always feel like **luxury made emotionally accessible** — a core MVQUEEN philosophy.
+The palette must always feel like **luxury made emotionally accessible** — a core MVQueen philosophy.
 
 ---
 
@@ -87,7 +87,7 @@ Color influences:
 - brand loyalty  
 - perceived value  
 
-MVQUEEN’s palette is intentionally designed to:
+MVQueen’s palette is intentionally designed to:
 - reduce emotional tension  
 - increase feelings of softness and self‑worth  
 - create a sense of calm luxury  
@@ -98,13 +98,13 @@ MVQUEEN’s palette is intentionally designed to:
 - enhance perceived product value  
 - increase emotional resonance  
 
-This is why MVQUEEN avoids cold, harsh, or aggressive tones — they break emotional immersion and disrupt feminine identity.
+This is why MVQueen avoids cold, harsh, or aggressive tones — they break emotional immersion and disrupt feminine identity.
 
 ---
 
 # 4. Core Emotional Color Categories
 
-## **1. Soft Neutrals (The MVQUEEN Foundation)**  
+## **1. Soft Neutrals (The MVQueen Foundation)**  
 These tones create the brand’s signature atmosphere.
 
 **Emotional meaning:**  
@@ -129,7 +129,7 @@ Universally associated with elegance, purity, and refined femininity.
 - muted sand  
 - champagne neutral  
 
-These colors form the base of MVQUEEN’s visual identity.
+These colors form the base of MVQueen’s visual identity.
 
 ---
 
@@ -149,7 +149,7 @@ These are the emotional center of the brand.
 Blush tones activate oxytocin‑linked emotional responses — trust, comfort, and connection.
 
 **Cultural meaning:**  
-Pink is globally associated with femininity, softness, and emotional expression — but MVQUEEN uses *mature* pinks to avoid infantilization.
+Pink is globally associated with femininity, softness, and emotional expression — but MVQueen uses *mature* pinks to avoid infantilization.
 
 **Examples:**  
 - blush pink  
@@ -157,7 +157,7 @@ Pink is globally associated with femininity, softness, and emotional expression 
 - soft petal pink  
 - dusty pink  
 
-These tones express MVQUEEN’s emotional identity and feminine philosophy.
+These tones express MVQueen’s emotional identity and feminine philosophy.
 
 ---
 
@@ -183,7 +183,7 @@ Gold symbolizes royalty, wealth, and feminine power across global cultures.
 - soft metallic gold  
 - warm pearl gold  
 
-These accents create the “accessible luxury” atmosphere MVQUEEN is known for.
+These accents create the “accessible luxury” atmosphere MVQueen is known for.
 
 ---
 
@@ -202,7 +202,7 @@ These tones add depth and emotional grounding.
 Warm browns activate feelings of safety, grounding, and emotional stability.
 
 **Cultural meaning:**  
-Brown is associated with earth, warmth, and natural beauty — aligning with MVQUEEN’s emotional honesty.
+Brown is associated with earth, warmth, and natural beauty — aligning with MVQueen’s emotional honesty.
 
 **Examples:**  
 - soft cocoa  
@@ -229,7 +229,7 @@ Used for clarity, elegance, and balance.
 Soft whites increase perceived cleanliness and luxury.
 
 **Cultural meaning:**  
-White symbolizes purity, elegance, and new beginnings — aligning with MVQUEEN’s theme of becoming.
+White symbolizes purity, elegance, and new beginnings — aligning with MVQueen’s theme of becoming.
 
 **Examples:**  
 - pearl white  
@@ -242,7 +242,7 @@ These tones create visual balance and elevate the brand’s minimalism.
 
 # 5. Emotional Intent Behind the Palette
 
-Every color in the MVQUEEN palette must support one or more of the brand’s emotional goals:
+Every color in the MVQueen palette must support one or more of the brand’s emotional goals:
 
 ### **Softness Without Weakness**  
 Gentle tones that still feel confident and mature.
@@ -303,13 +303,13 @@ Cocoa, caramel, rose‑brown.
 ## **Winter**  
 Pearl white, muted sand, soft metallic gold.
 
-Seasonal shifts must remain within the MVQUEEN emotional palette.
+Seasonal shifts must remain within the MVQueen emotional palette.
 
 ---
 
 # 8. Dual‑Brand Color Psychology
 
-## **MVQUEEN (Primary Identity)**  
+## **MVQueen (Primary Identity)**  
 - warm neutrals  
 - blush tones  
 - champagne gold  
@@ -341,7 +341,7 @@ Both palettes must feel related — like two sisters — but never identical.
 3. **Gold is an accent, not a base** — used sparingly for luxury emphasis.  
 4. **Pink must feel mature** — dusty, muted, or blush tones only.  
 5. **Neutrals dominate** — they create the luxury foundation.  
-6. **Consistency is mandatory** — every touchpoint must feel like MVQUEEN.  
+6. **Consistency is mandatory** — every touchpoint must feel like MVQueen.  
 7. **Avoid visual noise** — the palette must remain calm and elegant.  
 8. **Digital colors must remain warm** — avoid pure white (#FFFFFF).  
 9. **Packaging must remain minimal** — no clutter or excessive color mixing.  
@@ -354,7 +354,7 @@ Both palettes must feel related — like two sisters — but never identical.
 
 This system ensures that every designer, AI agent, content creator, and brand strategist understands:
 
-- the emotional meaning behind MVQUEEN’s colors  
+- the emotional meaning behind MVQueen’s colors  
 - how to use them consistently  
 - how to maintain luxury atmosphere  
 - how to avoid breaking the brand’s emotional identity  
@@ -367,6 +367,6 @@ Color is emotional.
 Color is identity.  
 Color is storytelling.  
 Color is atmosphere.  
-Color is the emotional architecture of the MVQUEEN universe.
+Color is the emotional architecture of the MVQueen universe.
 
-This system ensures MVQUEEN’s palette remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.
+This system ensures MVQueen’s palette remains timeless, feminine, luxurious, and emotionally resonant across every platform and product category.

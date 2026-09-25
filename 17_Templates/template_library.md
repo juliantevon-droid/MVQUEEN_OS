@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Master library of operational templates across all MVQUEEN functions. Templates are doctrine-aligned, voice-approved, and ready to deploy.
+Master library of operational templates across all MVQueen functions. Templates are doctrine-aligned, voice-approved, and ready to deploy.
 
 ---
 

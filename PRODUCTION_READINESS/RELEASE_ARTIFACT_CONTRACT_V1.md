@@ -1,4 +1,4 @@
-# MVQUEEN Release Artifact Contract V1
+# MVQueen Release Artifact Contract V1
 
 ## Purpose
 

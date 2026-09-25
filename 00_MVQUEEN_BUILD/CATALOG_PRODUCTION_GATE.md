@@ -1,4 +1,4 @@
-# MVQUEEN — Catalog Production Gate
+# MVQueen — Catalog Production Gate
 
 **Status:** ACTIVE / PRE-WRITE CONTROL
 **System:** MVQUEEN_OS
@@ -29,7 +29,7 @@ Every proposed product record is checked for:
 4. SEO description length warnings.
 5. Duplicate handles and titles.
 6. Third-party/supplier brand contamination.
-7. MVQUEEN brand-signal presence.
+7. MVQueen brand-signal presence.
 8. Protected-field mutations.
 
 ## Execution rule
@@ -50,7 +50,7 @@ The guard validates changes; it does not replace backups. Any production mutatio
 
 ## Brand rule
 
-Customer-facing optimized content uses **MVQUEEN**. Sister-brand references and supplier-brand residue are not allowed to leak into customer-facing product copy.
+Customer-facing optimized content uses **MVQueen**. Sister-brand references and supplier-brand residue are not allowed to leak into customer-facing product copy.
 
 ## Scope
 

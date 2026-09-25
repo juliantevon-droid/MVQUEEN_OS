@@ -1,4 +1,4 @@
-# MVQUEEN SEO — Cluster Pillars & Redirect Architecture
+# MVQueen SEO — Cluster Pillars & Redirect Architecture
 
 ## Purpose
 
@@ -65,4 +65,4 @@ Redirects are a recovery layer, not the primary internal-linking strategy. The s
 
 ## Ownership
 
-This architecture is part of the proprietary MVQUEEN OS system and is intended only for the MVQueen project.
+This architecture is part of the proprietary MVQueen OS system and is intended only for the MVQueen project.

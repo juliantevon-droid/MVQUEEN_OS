@@ -5,7 +5,7 @@
 
 ## Fast Access — AI Session Setup
 
-Load these files at the start of every MVQUEEN AI session:
+Load these files at the start of every MVQueen AI session:
 
 ```
 1. 00_Doctrine/master_doctrine.md

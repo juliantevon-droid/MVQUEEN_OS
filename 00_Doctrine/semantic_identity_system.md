@@ -1,4 +1,4 @@
-# MVQUEEN — Semantic Identity System
+# MVQueen — Semantic Identity System
 
 ---
 
@@ -18,7 +18,7 @@
 
 # System Purpose
 
-The MVQUEEN Semantic Identity System exists to:
+The MVQueen Semantic Identity System exists to:
 - govern ecosystem language
 - preserve semantic consistency
 - stabilize AI outputs
@@ -42,7 +42,7 @@ This framework defines:
 
 # Core Semantic Identity
 
-MVQUEEN semantically represents:
+MVQueen semantically represents:
 - emotionally intelligent luxury
 - feminine elevation
 - emotionally immersive beauty
@@ -196,7 +196,7 @@ Approved emotional terminology:
 
 # Approved Brand Vocabulary
 
-Core MVQUEEN terminology:
+Core MVQueen terminology:
 - feminine luxury
 - beauty ecosystem
 - elevated living
@@ -358,7 +358,7 @@ Collections should emotionally and semantically feel:
 
 # Scalability Philosophy
 
-As MVQUEEN scales:
+As MVQueen scales:
 - semantic consistency must remain stable
 - emotional identity must remain preserved
 - luxury language must remain intentional
@@ -374,13 +374,13 @@ Growth must never create:
 
 # Strategic Principle
 
-MVQUEEN uses emotionally intelligent semantic architecture to preserve feminine luxury identity, emotional immersion, premium positioning, and emotionally restorative beauty experiences across all AI systems, SEO systems, content systems, and commerce infrastructure.
+MVQueen uses emotionally intelligent semantic architecture to preserve feminine luxury identity, emotional immersion, premium positioning, and emotionally restorative beauty experiences across all AI systems, SEO systems, content systems, and commerce infrastructure.
 
 ---
 
 # Semantic Compression
 
-MVQUEEN semantically represents emotionally intelligent feminine luxury designed around emotional immersion, emotional beauty, feminine confidence, emotionally intentional living, and emotionally restorative modern beauty experiences.
+MVQueen semantically represents emotionally intelligent feminine luxury designed around emotional immersion, emotional beauty, feminine confidence, emotionally intentional living, and emotionally restorative modern beauty experiences.
 
 ---
 

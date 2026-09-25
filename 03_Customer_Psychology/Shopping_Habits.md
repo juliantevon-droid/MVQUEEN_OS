@@ -1,11 +1,11 @@
-# 🛒 MVQUEEN SHOPPING HABITS  
-*The complete emotional, behavioral, aesthetic, and identity‑based shopping patterns of MVQUEEN’s feminine luxury consumers*
+# 🛒 MVQueen SHOPPING HABITS  
+*The complete emotional, behavioral, aesthetic, and identity‑based shopping patterns of MVQueen’s feminine luxury consumers*
 
 ---
 
 # 1. Purpose of the Shopping Habits System
 
-Shopping Habits reveal **how MVQUEEN customers shop**, including:
+Shopping Habits reveal **how MVQueen customers shop**, including:
 
 - how they browse  
 - how they evaluate products  
@@ -19,9 +19,9 @@ They are **emotional, aesthetic, and identity‑driven behaviors**.
 
 ---
 
-# 2. MVQUEEN’s Shopping Habit Philosophy
+# 2. MVQueen’s Shopping Habit Philosophy
 
-MVQUEEN customers shop according to four core forces:
+MVQueen customers shop according to four core forces:
 
 ### **1. Emotional Desire**
 She shops to feel soft, radiant, confident, and feminine.
@@ -39,7 +39,7 @@ Shopping is an **emotional ritual**, not a task.
 
 ---
 
-# 3. The 7 Core MVQUEEN Shopping Habits
+# 3. The 7 Core MVQueen Shopping Habits
 
 These are the dominant shopping patterns across your audience.
 
@@ -261,9 +261,9 @@ Barriers are emotional, not logical.
 
 ---
 
-# 9. The MVQUEEN Shopping Habit Framework (SHF)
+# 9. The MVQueen Shopping Habit Framework (SHF)
 
-Every MVQUEEN experience must activate:
+Every MVQueen experience must activate:
 
 ### **1. Emotional Desire**
 Softness, glow, confidence, elegance.
@@ -288,7 +288,7 @@ When all five activate → **purchase**.
 
 This system ensures that every strategist, designer, marketer, and AI agent can:
 
-- understand how MVQUEEN customers shop  
+- understand how MVQueen customers shop  
 - design emotionally aligned experiences  
 - activate desire  
 - increase conversions  
@@ -304,4 +304,4 @@ They are:
 - ritual  
 - feminine psychology  
 
-This system ensures MVQUEEN speaks directly to **how she shops, feels, and decides**.
+This system ensures MVQueen speaks directly to **how she shops, feels, and decides**.

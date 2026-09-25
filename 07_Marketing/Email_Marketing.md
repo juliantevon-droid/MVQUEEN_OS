@@ -1,10 +1,10 @@
-# 📧 MVQUEEN — Email Marketing
+# 📧 MVQueen — Email Marketing
 
 ---
 
 ## Purpose
 
-Build and execute an email marketing system that generates revenue, builds loyalty, and deepens the relationship between MVQUEEN and every woman on the list — through communication that feels personal, warm, and worth opening.
+Build and execute an email marketing system that generates revenue, builds loyalty, and deepens the relationship between MVQueen and every woman on the list — through communication that feels personal, warm, and worth opening.
 
 Email is the highest-ROI channel in ecommerce. Treat it accordingly.
 
@@ -12,12 +12,12 @@ Email is the highest-ROI channel in ecommerce. Treat it accordingly.
 
 ## Email Marketing Philosophy
 
-Every email MVQUEEN sends must pass one test:
+Every email MVQueen sends must pass one test:
 **Would she be glad she opened this?**
 
 If the answer is no — don't send it.
 
-MVQUEEN email is not a broadcast channel.
+MVQueen email is not a broadcast channel.
 It is a private correspondence with women who trusted us with their inbox.
 
 ---
@@ -42,7 +42,7 @@ It is a private correspondence with women who trusted us with their inbox.
 ### Welcome Sequence (5 emails over 14 days)
 | Email | Timing | Focus |
 |-------|--------|-------|
-| 1 | Immediate | Welcome to MVQUEEN's world |
+| 1 | Immediate | Welcome to MVQueen's world |
 | 2 | Day 2 | The philosophy behind the brand |
 | 3 | Day 4 | Meet our products — soft introduction |
 | 4 | Day 7 | Social proof — real women, real results |
@@ -73,7 +73,7 @@ It is a private correspondence with women who trusted us with their inbox.
 
 ## Email Performance Benchmarks
 
-| Metric | Industry Average | MVQUEEN Target |
+| Metric | Industry Average | MVQueen Target |
 |--------|----------------|---------------|
 | Open rate | 20-25% | 35%+ |
 | Click-through rate | 2-3% | 5%+ |
@@ -82,7 +82,7 @@ It is a private correspondence with women who trusted us with their inbox.
 | Unsubscribe rate | Under 0.5% | Under 0.3% |
 
 ---
-*MVQUEEN Email Marketing — Operational Document*
+*MVQueen Email Marketing — Operational Document*
 
 ---
 ---

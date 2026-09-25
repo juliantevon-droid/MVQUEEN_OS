@@ -1,5 +1,5 @@
 # mvqueen_engine/deterministic.py
-"""Deterministic, dependency-free helpers for MVQUEEN catalog tooling."""
+"""Deterministic, dependency-free helpers for MVQueen catalog tooling."""
 from __future__ import annotations
 
 import hashlib

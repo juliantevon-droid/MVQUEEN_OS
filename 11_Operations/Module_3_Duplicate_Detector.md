@@ -1,8 +1,8 @@
-﻿MVQUEEN OS - Module 3: Duplicate Detector Script
-This document contains the complete Google Apps Script code for the MVQUEEN OS Duplicate Detector. It automatically updates the existing MVQUEEN_OS_Health_Report spreadsheet with a dedicated "Duplicate Log" tab.
+﻿MVQueen OS - Module 3: Duplicate Detector Script
+This document contains the complete Google Apps Script code for the MVQueen OS Duplicate Detector. It automatically updates the existing MVQUEEN_OS_Health_Report spreadsheet with a dedicated "Duplicate Log" tab.
 1. The Apps Script Code
 /**
-* MVQUEEN OS - Duplicate Detector
+* MVQueen OS - Duplicate Detector
 * Scans all subfolders to find files with identical names across different locations.
 */
 function detectMVQUEENDuplicates() {
@@ -14,7 +14,7 @@ function detectMVQUEENDuplicates() {
  let fileMap = {};
  let duplicates = [];
 
- Logger.log("Starting MVQUEEN OS cross-folder duplicate scan...");
+ Logger.log("Starting MVQueen OS cross-folder duplicate scan...");
 
  while (subFolders.hasNext()) {
    let folder = subFolders.next();

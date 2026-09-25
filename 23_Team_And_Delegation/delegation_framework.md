@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Defines how tasks, roles, and responsibilities are delegated as MVQUEEN scales. A solo operator cannot do everything — this system ensures the right work goes to the right resource at the right time.
+Defines how tasks, roles, and responsibilities are delegated as MVQueen scales. A solo operator cannot do everything — this system ensures the right work goes to the right resource at the right time.
 
 ---
 

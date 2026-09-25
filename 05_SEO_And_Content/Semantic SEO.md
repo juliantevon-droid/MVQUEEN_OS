@@ -4,13 +4,13 @@
 
 ## Vocabulary Philosophy
 
-MVQUEEN’s vocabulary system exists to create emotional consistency, emotional recognizability, luxury cohesion, and immersive feminine atmosphere across every part of the brand ecosystem.
+MVQueen’s vocabulary system exists to create emotional consistency, emotional recognizability, luxury cohesion, and immersive feminine atmosphere across every part of the brand ecosystem.
 
 The purpose of the vocabulary is not simply choosing aesthetically pleasing words.
 
 It is creating emotional feeling through language.
 
-Every word used by MVQUEEN should reinforce the emotional world the brand is building:
+Every word used by MVQueen should reinforce the emotional world the brand is building:
 - beauty
 - softness
 - confidence
@@ -38,7 +38,7 @@ The goal is not only consistency.
 
 The goal is emotional recognition.
 
-Women should eventually recognize MVQUEEN emotionally through language alone.
+Women should eventually recognize MVQueen emotionally through language alone.
 
 ---
 
@@ -46,7 +46,7 @@ Women should eventually recognize MVQUEEN emotionally through language alone.
 
 # Brand Vocabulary Summary
 
-MVQUEEN’s vocabulary system is designed to transform communication into emotional atmosphere.
+MVQueen’s vocabulary system is designed to transform communication into emotional atmosphere.
 
 Every word should reinforce:
 - beauty

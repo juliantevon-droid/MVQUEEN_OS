@@ -1,10 +1,10 @@
-# 🔬 MVQUEEN — Viral Topics Research
+# 🔬 MVQueen — Viral Topics Research
 
 ---
 
 ## Purpose
 
-Identify and track topics, conversations, and cultural moments that MVQUEEN can participate in — filtered through brand identity to ensure every trend participation feels authentic, not forced.
+Identify and track topics, conversations, and cultural moments that MVQueen can participate in — filtered through brand identity to ensure every trend participation feels authentic, not forced.
 
 ---
 
@@ -35,11 +35,11 @@ Does this topic align with: softness, luxury, femininity, restoration, intention
 If no → skip.
 
 **Step 3 — Differentiation check**
-Can MVQUEEN bring a unique angle to this topic that no other brand is bringing?
+Can MVQueen bring a unique angle to this topic that no other brand is bringing?
 If no → wait for a better angle.
 
 **Step 4 — Audience check**
-Is this topic relevant to at least one MVQUEEN persona?
+Is this topic relevant to at least one MVQueen persona?
 If no → skip.
 
 **Step 5 — Timing check**
@@ -48,7 +48,7 @@ Use TikTok and Google Trends data to confirm timing.
 
 ---
 
-## Viral Topic Categories for MVQUEEN
+## Viral Topic Categories for MVQueen
 
 ### High-Priority Topics (Always relevant)
 - Morning and evening skincare rituals
@@ -73,7 +73,7 @@ Use TikTok and Google Trends data to confirm timing.
 - Mindful consumption and luxury
 
 ---
-*MVQUEEN Viral Topics Research — Operational Document*
+*MVQueen Viral Topics Research — Operational Document*
 
 ---
 ---

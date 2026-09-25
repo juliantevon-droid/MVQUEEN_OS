@@ -1,4 +1,4 @@
-# MVQUEEN Catalog Engine
+# MVQueen Catalog Engine
 
 This package is the **offline intelligence and catalog-safety layer** for the
 canonical MVQUEEN_OS architecture.

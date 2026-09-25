@@ -1,4 +1,4 @@
-# 📣 MVQUEEN — Current Campaigns
+# 📣 MVQueen — Current Campaigns
 
 ---
 
@@ -54,7 +54,7 @@ Track all active and upcoming campaigns in real time — ensuring nothing falls 
 | | | | |
 
 ---
-*MVQUEEN Current Campaigns — Update daily during active campaigns.*
+*MVQueen Current Campaigns — Update daily during active campaigns.*
 
 ---
 ---

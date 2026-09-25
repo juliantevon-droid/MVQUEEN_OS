@@ -1,11 +1,11 @@
-# 🛍️ MVQUEEN — Shopify Systems
+# 🛍️ MVQueen — Shopify Systems
 
 ## Purpose
 
-The Shopify Systems architecture is the commerce infrastructure layer governing how MVQUEEN operates, scales, and delivers luxury experiences through its ecommerce ecosystem.
+The Shopify Systems architecture is the commerce infrastructure layer governing how MVQueen operates, scales, and delivers luxury experiences through its ecommerce ecosystem.
 
 It exists to:
-- design and govern the MVQUEEN store experience as a luxury digital environment
+- design and govern the MVQueen store experience as a luxury digital environment
 - build conversion-optimized systems aligned with emotional consumer psychology
 - create SOPs for all store operations — products, shipping, support, refunds
 - govern automation, analytics, and scaling infrastructure
@@ -22,7 +22,7 @@ The Shopify Systems layer acts as the:
 
 ## Core Principle
 
-The MVQUEEN Shopify store is not a transaction environment.
+The MVQueen Shopify store is not a transaction environment.
 
 It is a luxury digital destination. Every page, product listing, checkout flow, and post-purchase experience must feel as intentional and emotionally elevated as the brand itself. Commerce is an emotional experience — not just a transaction.
 

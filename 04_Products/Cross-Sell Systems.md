@@ -1,16 +1,16 @@
-# 🔗 MVQUEEN — Cross-Sell Systems
+# 🔗 MVQueen — Cross-Sell Systems
 
 ---
 
 ## Purpose
 
-Define the strategic cross-sell architecture for MVQUEEN — ensuring every product recommendation feels like a personal suggestion from someone who knows her, not an automated upsell attempt.
+Define the strategic cross-sell architecture for MVQueen — ensuring every product recommendation feels like a personal suggestion from someone who knows her, not an automated upsell attempt.
 
 ---
 
 ## Cross-Sell Philosophy
 
-The best cross-sell at MVQUEEN answers the question she hasn't asked yet:
+The best cross-sell at MVQueen answers the question she hasn't asked yet:
 *"What else would complete this ritual?"*
 
 Not: *"Other people also bought..."*
@@ -96,7 +96,7 @@ Products that share a scent, texture, or mood.
 | Post-purchase cross-sell open rate | 40%+ | Per send |
 
 ---
-*MVQUEEN Cross-Sell Systems — Operational Document*
+*MVQueen Cross-Sell Systems — Operational Document*
 
 ---
 ---

@@ -5,13 +5,13 @@
 
 ## Purpose
 
-Defines the financial operating system for MVQUEEN — budgeting, pricing philosophy, expense tracking, and revenue targets. Every financial decision must align with the brand's luxury positioning and growth trajectory.
+Defines the financial operating system for MVQueen — budgeting, pricing philosophy, expense tracking, and revenue targets. Every financial decision must align with the brand's luxury positioning and growth trajectory.
 
 ---
 
 ## Pricing Philosophy
 
-MVQUEEN is positioned as accessible luxury — not budget, not unattainable. Pricing must:
+MVQueen is positioned as accessible luxury — not budget, not unattainable. Pricing must:
 - reflect perceived value, not just cost
 - maintain luxury atmosphere at every price point
 - support healthy margins for reinvestment

@@ -24,7 +24,7 @@
 ## Content Creation Checklist
 
 Before publishing any piece of content:
-- [ ] Read aloud — does it sound like MVQUEEN?
+- [ ] Read aloud — does it sound like MVQueen?
 - [ ] Check against voice rules (`31_AI_Knowledge_Base/voice_rules.md`)
 - [ ] CTA is present and soft-directional
 - [ ] No forbidden words used

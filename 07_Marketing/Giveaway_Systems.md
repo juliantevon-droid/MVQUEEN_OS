@@ -1,4 +1,4 @@
-# 🎁 MVQUEEN — Giveaway Systems
+# 🎁 MVQueen — Giveaway Systems
 
 ---
 
@@ -6,7 +6,7 @@
 
 Run giveaways that build genuine community, grow a qualified audience, and reinforce brand positioning — not giveaways that attract freebie-seekers who disappear after winning.
 
-**MVQUEEN giveaway rule:** Every giveaway should attract the exact customer we want — not just anyone who wants free stuff.
+**MVQueen giveaway rule:** Every giveaway should attract the exact customer we want — not just anyone who wants free stuff.
 
 ---
 
@@ -84,7 +84,7 @@ Creates engagement signal to algorithm
 
 ## Prize Strategy
 
-**What makes a good MVQUEEN giveaway prize:**
+**What makes a good MVQueen giveaway prize:**
 - High perceived value (not just high retail value)
 - Reflects brand identity — not just "a bundle of stuff"
 - Something she would have bought anyway
@@ -128,7 +128,7 @@ Example opening: *"For the woman who deserves a ritual that's entirely her own �
 **Health check:** If more than 30% of followers gained unfollow within 7 days — the prize attracted the wrong audience. Adjust for next giveaway.
 
 ---
-*MVQUEEN Giveaway Systems — Operational Document*
+*MVQueen Giveaway Systems — Operational Document*
 
 ---
 ---

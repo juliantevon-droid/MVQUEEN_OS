@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# MVQUEEN OMNILUXE — FULLY DETERMINISTIC TAG ENGINE
+# MVQueen OMNILUXE — FULLY DETERMINISTIC TAG ENGINE
 # ---------------------------------------------------------
 
 from mvqueen_engine.utils.deterministic import (

@@ -1,6 +1,6 @@
-﻿MVQUEEN & MVQUEEN_OS Unified Architecture Blueprint
+﻿MVQueen & MVQUEEN_OS Unified Architecture Blueprint
 1. Overview
-This document serves as the central orchestration blueprint for integrating the MVQUEEN E-commerce Engine and the MVQUEEN_OS Local File Management system. Both systems are designed to operate in sync using a shared logic layer.
+This document serves as the central orchestration blueprint for integrating the MVQueen E-commerce Engine and the MVQUEEN_OS Local File Management system. Both systems are designed to operate in sync using a shared logic layer.
 2. Synchronization Protocol
 Component
 	Sync Method

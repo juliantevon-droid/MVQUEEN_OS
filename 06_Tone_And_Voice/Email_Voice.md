@@ -1,14 +1,14 @@
-# 📧 MVQUEEN — Email Voice Guide
+# 📧 MVQueen — Email Voice Guide
 
 ---
 
-## How MVQUEEN Sounds in Email
+## How MVQueen Sounds in Email
 
-Email is the most intimate channel MVQUEEN has.
+Email is the most intimate channel MVQueen has.
 It lands in her personal space — not her feed, not a search result.
 Her inbox. That's a privilege.
 
-MVQUEEN email voice honors that privilege by sounding like a message from someone who knows her — not a campaign from a company that wants her money.
+MVQueen email voice honors that privilege by sounding like a message from someone who knows her — not a campaign from a company that wants her money.
 
 The goal of every email: make her feel something before she clicks anything.
 
@@ -16,14 +16,14 @@ The goal of every email: make her feel something before she clicks anything.
 
 ## Email Voice Dimensions
 
-| Element | MVQUEEN Email | Never |
+| Element | MVQueen Email | Never |
 |---------|--------------|-------|
 | Opening | Personal, scene-setting, emotionally grounded | "We're excited to share..." |
 | Tone | Warm, intimate, woman-to-woman | Corporate, promotional, pressured |
 | Length | Right-sized for the purpose — never padded | Long for the sake of appearing thorough |
 | Subject line | Intriguing, identity-based, or emotionally specific | "SALE — 30% off everything!!!" |
 | CTA | Soft, inviting, one per email | Multiple competing CTAs |
-| Closing | Warm, signature-feel | "The MVQUEEN Team" (cold) |
+| Closing | Warm, signature-feel | "The MVQueen Team" (cold) |
 
 ---
 
@@ -82,7 +82,7 @@ If the subject is direct, preview text adds texture.
 **Welcome email**
 - She made a decision today — and it suits her.
 - Something is different about this place. She'll feel it.
-- MVQUEEN was built for a woman like her.
+- MVQueen was built for a woman like her.
 
 **Product launch**
 - This one has been in development for a while. She was worth the wait.
@@ -124,7 +124,7 @@ The voice is warm — not excitable. Enthusiasm shows in word choice, not punctu
 Exception: SMS only, and even then, sparingly.
 
 **Rule 5 — She, not you**
-MVQUEEN email often refers to the customer in third person ("she") in narrative passages
+MVQueen email often refers to the customer in third person ("she") in narrative passages
 before shifting to second person ("you") for direct address.
 This creates a mirror effect — she sees a woman she recognizes.
 
@@ -134,23 +134,23 @@ This creates a mirror effect — she sees a woman she recognizes.
 
 **Standard:**
 With warmth,
-MVQUEEN 👑
+MVQueen 👑
 
 **Personal / campaign:**
 Made with her in mind,
-MVQUEEN
+MVQueen
 
 **Seasonal:**
 With love this [season],
-MVQUEEN
+MVQueen
 
 **Launch:**
 She waited long enough.
-MVQUEEN 👑
+MVQueen 👑
 
 ---
 
-## What Never Appears in MVQUEEN Email
+## What Never Appears in MVQueen Email
 
 - "We're excited to announce" — start with the thing
 - Excessive emoji use — one maximum, and only if it fits naturally

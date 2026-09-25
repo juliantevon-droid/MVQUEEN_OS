@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Documents the mobile development environment and tools powering MVQUEEN_OS on Android. The entire MVQUEEN operating system is managed from a mobile device — this is the technical foundation.
+Documents the mobile development environment and tools powering MVQUEEN_OS on Android. The entire MVQueen operating system is managed from a mobile device — this is the technical foundation.
 
 ---
 

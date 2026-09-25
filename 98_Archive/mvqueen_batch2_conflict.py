@@ -15,13 +15,13 @@ files = {
 
 ## Purpose
 
-Defines the financial operating system for MVQUEEN — budgeting, pricing philosophy, expense tracking, and revenue targets. Every financial decision must align with the brand's luxury positioning and growth trajectory.
+Defines the financial operating system for MVQueen — budgeting, pricing philosophy, expense tracking, and revenue targets. Every financial decision must align with the brand's luxury positioning and growth trajectory.
 
 ---
 
 ## Pricing Philosophy
 
-MVQUEEN is positioned as accessible luxury — not budget, not unattainable. Pricing must:
+MVQueen is positioned as accessible luxury — not budget, not unattainable. Pricing must:
 - reflect perceived value, not just cost
 - maintain luxury atmosphere at every price point
 - support healthy margins for reinvestment
@@ -79,7 +79,7 @@ Active — populate targets after first revenue baseline
 
 ## Purpose
 
-Governs all pricing decisions across the MVQUEEN product catalog. Pricing is a brand signal — it communicates value, quality, and positioning before the customer reads a single word.
+Governs all pricing decisions across the MVQueen product catalog. Pricing is a brand signal — it communicates value, quality, and positioning before the customer reads a single word.
 
 ---
 
@@ -123,7 +123,7 @@ Active
 "21_Finance/README.md": """# 21_Finance
 ## MVQUEEN_OS
 
-Financial framework, pricing system, revenue targets, and expense tracking for MVQUEEN operations.
+Financial framework, pricing system, revenue targets, and expense tracking for MVQueen operations.
 """,
 
 # ── 22_Growth_And_Scaling ──────────────────────────────────────────────────
@@ -134,7 +134,7 @@ Financial framework, pricing system, revenue targets, and expense tracking for M
 
 ## Purpose
 
-Defines the growth architecture for MVQUEEN — how the brand expands without losing identity, luxury positioning, or operational control.
+Defines the growth architecture for MVQueen — how the brand expands without losing identity, luxury positioning, or operational control.
 
 ---
 
@@ -242,7 +242,7 @@ Active
 "22_Growth_And_Scaling/README.md": """# 22_Growth_And_Scaling
 ## MVQUEEN_OS
 
-Growth architecture, scaling playbooks, and phase roadmap for expanding MVQUEEN without losing identity or operational control.
+Growth architecture, scaling playbooks, and phase roadmap for expanding MVQueen without losing identity or operational control.
 """,
 
 # ── 23_Team_And_Delegation ─────────────────────────────────────────────────
@@ -253,7 +253,7 @@ Growth architecture, scaling playbooks, and phase roadmap for expanding MVQUEEN 
 
 ## Purpose
 
-Defines how tasks, roles, and responsibilities are delegated as MVQUEEN scales. A solo operator cannot do everything — this system ensures the right work goes to the right resource at the right time.
+Defines how tasks, roles, and responsibilities are delegated as MVQueen scales. A solo operator cannot do everything — this system ensures the right work goes to the right resource at the right time.
 
 ---
 
@@ -312,7 +312,7 @@ Active
 "23_Team_And_Delegation/README.md": """# 23_Team_And_Delegation
 ## MVQUEEN_OS
 
-Delegation framework, role definitions, and team scaling playbook for MVQUEEN growth operations.
+Delegation framework, role definitions, and team scaling playbook for MVQueen growth operations.
 """,
 
 # ── 25_Retention_And_Community ─────────────────────────────────────────────
@@ -323,13 +323,13 @@ Delegation framework, role definitions, and team scaling playbook for MVQUEEN gr
 
 ## Purpose
 
-Defines the customer retention architecture for MVQUEEN. Acquiring a customer is expensive. Keeping her is the business.
+Defines the customer retention architecture for MVQueen. Acquiring a customer is expensive. Keeping her is the business.
 
 ---
 
 ## Retention Philosophy
 
-MVQUEEN retains customers by making them feel:
+MVQueen retains customers by making them feel:
 - seen as individuals, not transactions
 - connected to a world, not just a product
 - part of something with identity and meaning
@@ -362,7 +362,7 @@ MVQUEEN retains customers by making them feel:
 - User-generated content reposts
 - Story replies and DM engagement
 - Comment responses within 2 hours
-- Community language: "our queens", "the MVQUEEN world"
+- Community language: "our queens", "the MVQueen world"
 
 ---
 
@@ -388,20 +388,20 @@ Active
 
 ## Purpose
 
-Governs how MVQUEEN builds and nurtures community across all platforms. Community is not an afterthought — it is a growth channel.
+Governs how MVQueen builds and nurtures community across all platforms. Community is not an afterthought — it is a growth channel.
 
 ---
 
 ## Community Identity
 
-MVQUEEN customers are not just customers. They are:
+MVQueen customers are not just customers. They are:
 - women who chose to invest in themselves
 - part of a world that sees their worth
 - reflected in every piece of content we make
 
 Language to use:
 - "our queens"
-- "the MVQUEEN woman"
+- "the MVQueen woman"
 - "you already know"
 - "built for her"
 
@@ -426,7 +426,7 @@ Language to avoid:
 ## UGC Strategy
 
 - Repost customer content with credit
-- Create branded hashtag: #MVQUEEN
+- Create branded hashtag: #MVQueen
 - Feature real customers in stories weekly
 - DM customers who tag the brand personally
 
@@ -450,7 +450,7 @@ Customer retention system, loyalty architecture, and community playbook. Retenti
 
 ## Purpose
 
-The R&D Lab is where MVQUEEN tests new ideas before committing them to the OS. New content formats, AI experiments, product concepts, and system innovations are prototyped here.
+The R&D Lab is where MVQueen tests new ideas before committing them to the OS. New content formats, AI experiments, product concepts, and system innovations are prototyped here.
 
 ---
 
@@ -630,7 +630,7 @@ Deprecated and retired files preserved for institutional reference. Archive inde
 
 ## Purpose
 
-Documents the mobile development environment and tools powering MVQUEEN_OS on Android. The entire MVQUEEN operating system is managed from a mobile device — this is the technical foundation.
+Documents the mobile development environment and tools powering MVQUEEN_OS on Android. The entire MVQueen operating system is managed from a mobile device — this is the technical foundation.
 
 ---
 

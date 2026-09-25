@@ -1,5 +1,5 @@
 """
-MVQUEEN OMNILUXE SUPREME — UNIVERSAL BRAND BANKS
+MVQueen OMNILUXE SUPREME — UNIVERSAL BRAND BANKS
 ================================================
 Canonical stabilization copy of the additive MVQueen brand-intelligence banks.
 

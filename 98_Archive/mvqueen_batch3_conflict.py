@@ -15,7 +15,7 @@ files = {
 
 ## Purpose
 
-Stores curated datasets that train, inform, or calibrate AI systems operating within the MVQUEEN ecosystem. Every dataset must be doctrine-aligned and voice-consistent.
+Stores curated datasets that train, inform, or calibrate AI systems operating within the MVQueen ecosystem. Every dataset must be doctrine-aligned and voice-consistent.
 
 ---
 
@@ -63,7 +63,7 @@ Active
 
 ## Purpose
 
-Curated set of approved MVQUEEN copy examples used to calibrate AI output. When prompting AI systems, reference this file to establish the correct voice before generating content.
+Curated set of approved MVQueen copy examples used to calibrate AI output. When prompting AI systems, reference this file to establish the correct voice before generating content.
 
 ---
 
@@ -112,7 +112,7 @@ Active
 "30_AI_Datasets/README.md": """# 30_AI_Datasets
 ## MVQUEEN_OS
 
-Curated datasets for training and calibrating AI systems within the MVQUEEN ecosystem. Voice samples, product data, and SEO data stored here.
+Curated datasets for training and calibrating AI systems within the MVQueen ecosystem. Voice samples, product data, and SEO data stored here.
 """,
 
 # ── 31_AI_Knowledge_Base ───────────────────────────────────────────────────
@@ -155,7 +155,7 @@ Centralized knowledge repository that AI systems can query to produce doctrine-a
 
 ## Usage Protocol
 
-When initializing an AI session for MVQUEEN work:
+When initializing an AI session for MVQueen work:
 1. Load `00_Doctrine/master_doctrine.md`
 2. Load `31_AI_Knowledge_Base/brand_summary.md`
 3. Load `31_AI_Knowledge_Base/voice_rules.md`
@@ -180,7 +180,7 @@ Load this at the start of any AI session requiring brand knowledge. It is a comp
 
 ## Brand Identity
 
-**Name:** MVQUEEN (Most Valuable Queen)
+**Name:** MVQueen (Most Valuable Queen)
 **Sister Brand:** Miss.Queen
 **Category:** Accessible luxury feminine lifestyle
 **Positioning:** Luxury aesthetics at real-world prices
@@ -201,7 +201,7 @@ Quiet confidence. Warm luxury. Feminine precision. Never loud, never generic, ne
 
 ---
 
-## What MVQUEEN Is Not
+## What MVQueen Is Not
 - Not a budget brand
 - Not loud or aggressive
 - Not generic or trend-chasing
@@ -350,7 +350,7 @@ Backup protocol, versioning standards, and recovery procedures for MVQUEEN_OS fi
 
 ## Purpose
 
-Defines the end-to-end content production pipeline for MVQUEEN — from idea to published, every step documented and systematized.
+Defines the end-to-end content production pipeline for MVQueen — from idea to published, every step documented and systematized.
 
 ---
 
@@ -379,7 +379,7 @@ Idea → Brief → Create → Review → Schedule → Publish → Analyze → Ar
 - Voice check against `06_Tone_And_Voice/Tone_Guide.md`
 
 ### Stage 4 — Review
-- Read aloud test: does it sound like MVQUEEN?
+- Read aloud test: does it sound like MVQueen?
 - Brand rule check: `02_Brand_Identity/brand_rules.md`
 - Final approval before scheduling
 
@@ -427,7 +427,7 @@ Active
 
 ## Purpose
 
-Governs the content calendar system — how content is planned, batched, and distributed across the MVQUEEN ecosystem.
+Governs the content calendar system — how content is planned, batched, and distributed across the MVQueen ecosystem.
 
 ---
 
@@ -492,7 +492,7 @@ End-to-end content production pipeline and calendar framework. Every piece of co
 
 ## Purpose
 
-The Master Systems folder is the architectural overview layer — it maps how all MVQUEEN systems connect, depend on each other, and operate as a unified ecosystem.
+The Master Systems folder is the architectural overview layer — it maps how all MVQueen systems connect, depend on each other, and operate as a unified ecosystem.
 
 ---
 
@@ -545,7 +545,7 @@ Active
 "34_Master_Systems/README.md": """# 34_Master_Systems
 ## MVQUEEN_OS
 
-Architectural overview of all MVQUEEN systems — how they connect, depend, and operate as a unified ecosystem.
+Architectural overview of all MVQueen systems — how they connect, depend, and operate as a unified ecosystem.
 """,
 
 # ── 35_System_Blueprints ───────────────────────────────────────────────────
@@ -556,7 +556,7 @@ Architectural overview of all MVQUEEN systems — how they connect, depend, and 
 
 ## Purpose
 
-Detailed technical blueprints for building and deploying each major MVQUEEN system. Blueprints live here before systems are built — they are the architectural plans.
+Detailed technical blueprints for building and deploying each major MVQueen system. Blueprints live here before systems are built — they are the architectural plans.
 
 ---
 
@@ -615,7 +615,7 @@ Active
 "35_System_Blueprints/README.md": """# 35_System_Blueprints
 ## MVQUEEN_OS
 
-Technical blueprints for all major MVQUEEN systems. Plans are documented here before systems are built.
+Technical blueprints for all major MVQueen systems. Plans are documented here before systems are built.
 """,
 
 # ── 36_Agent_Systems ───────────────────────────────────────────────────────
@@ -626,13 +626,13 @@ Technical blueprints for all major MVQUEEN systems. Plans are documented here be
 
 ## Purpose
 
-Defines the AI agent infrastructure for MVQUEEN — autonomous systems that handle repetitive, high-volume, or complex tasks while preserving brand voice and doctrine alignment.
+Defines the AI agent infrastructure for MVQueen — autonomous systems that handle repetitive, high-volume, or complex tasks while preserving brand voice and doctrine alignment.
 
 ---
 
 ## Agent Philosophy
 
-MVQUEEN agents must:
+MVQueen agents must:
 - always operate within doctrine constraints
 - produce brand-voice output — never generic
 - flag for human review when uncertain
@@ -678,7 +678,7 @@ Active — architecture defined, agents in planning
 "36_Agent_Systems/README.md": """# 36_Agent_Systems
 ## MVQUEEN_OS
 
-AI agent architecture, workflow protocols, and deployment standards for MVQUEEN autonomous systems.
+AI agent architecture, workflow protocols, and deployment standards for MVQueen autonomous systems.
 """,
 
 # ── 37_Databases ───────────────────────────────────────────────────────────
@@ -689,7 +689,7 @@ AI agent architecture, workflow protocols, and deployment standards for MVQUEEN 
 
 ## Purpose
 
-Documents all structured data stores within the MVQUEEN ecosystem — product databases, customer segments, keyword databases, and content libraries.
+Documents all structured data stores within the MVQueen ecosystem — product databases, customer segments, keyword databases, and content libraries.
 
 ---
 
@@ -723,7 +723,7 @@ Active
 "37_Databases/README.md": """# 37_Databases
 ## MVQUEEN_OS
 
-Registry of all structured data stores across the MVQUEEN ecosystem — product, customer, keyword, and content databases.
+Registry of all structured data stores across the MVQueen ecosystem — product, customer, keyword, and content databases.
 """,
 
 # ── 38_Prompt_Chains ───────────────────────────────────────────────────────
@@ -734,7 +734,7 @@ Registry of all structured data stores across the MVQUEEN ecosystem — product,
 
 ## Purpose
 
-Library of multi-step AI prompt sequences for complex MVQUEEN tasks. Prompt chains produce better output than single prompts for creative, strategic, and analytical work.
+Library of multi-step AI prompt sequences for complex MVQueen tasks. Prompt chains produce better output than single prompts for creative, strategic, and analytical work.
 
 ---
 
@@ -813,7 +813,7 @@ Multi-step AI prompt sequences for complex creative, strategic, and analytical t
 
 ## Purpose
 
-Master index of all Standard Operating Procedures for MVQUEEN. SOPs ensure consistency, quality, and speed across all operations — regardless of who executes them.
+Master index of all Standard Operating Procedures for MVQueen. SOPs ensure consistency, quality, and speed across all operations — regardless of who executes them.
 
 ---
 
@@ -860,7 +860,7 @@ Master index of all Standard Operating Procedures for MVQUEEN. SOPs ensure consi
 
 ### SOP: New Product Upload (Shopify)
 1. Photograph product (reference visual brief template)
-2. Write title: `[Product Name] — [Category] | MVQUEEN`
+2. Write title: `[Product Name] — [Category] | MVQueen`
 3. Write description (use product description chain)
 4. Add meta title + description (SEO-optimized)
 5. Set price per pricing system
@@ -894,7 +894,7 @@ Active
 "39_SOP_Library/README.md": """# 39_SOP_Library
 ## MVQUEEN_OS
 
-Master SOP library for all MVQUEEN operations. Every repeated task has a documented procedure — consistency is the standard.
+Master SOP library for all MVQueen operations. Every repeated task has a documented procedure — consistency is the standard.
 """,
 
 # ── 98_Archive ─────────────────────────────────────────────────────────────

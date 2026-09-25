@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Master index of all Standard Operating Procedures for MVQUEEN. SOPs ensure consistency, quality, and speed across all operations — regardless of who executes them.
+Master index of all Standard Operating Procedures for MVQueen. SOPs ensure consistency, quality, and speed across all operations — regardless of who executes them.
 
 ---
 

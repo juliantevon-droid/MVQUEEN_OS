@@ -28,5 +28,5 @@ def enforce_brand(text: str) -> str:
     """Normalize MVQueen brand name and strip stray whitespace."""
     if not isinstance(text, str):
         return text
-    text = re.sub(r"\b(MVQUEEN|mvqueen|Mvqueen)\b", BRAND_NAME, text)
+    text = re.sub(r"\b(MVQueen|mvqueen|Mvqueen)\b", BRAND_NAME, text)
     return text.strip()

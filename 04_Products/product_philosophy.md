@@ -5,13 +5,13 @@
 
 ## Purpose
 
-Defines what MVQUEEN products are, what they represent, and the standards they must meet.
+Defines what MVQueen products are, what they represent, and the standards they must meet.
 
 ---
 
 ## Product Doctrine
 
-**Every MVQUEEN product is:**
+**Every MVQueen product is:**
 
 1. **Intentional** — Created for a specific need, not random SKU
 2. **Luxurious** — Feels premium in hand, quality is undeniable
@@ -80,7 +80,7 @@ Defines what MVQUEEN products are, what they represent, and the standards they m
 - Evoke emotion or benefit
 - Sound luxurious and intentional
 - Be pronounceable and memorable
-- Reflect MVQUEEN brand voice
+- Reflect MVQueen brand voice
 
 **Examples:**
 - ✅ "Luminous Ritual Cream" (evokes experience)
@@ -112,7 +112,7 @@ Defines what MVQUEEN products are, what they represent, and the standards they m
 
 Before any product launches:
 
-- [ ] Aligns with MVQUEEN doctrine and brand values
+- [ ] Aligns with MVQueen doctrine and brand values
 - [ ] Fills a real customer need (not just trend-chasing)
 - [ ] Quality meets luxury standards (not compromised)
 - [ ] Naming evokes emotion and luxury

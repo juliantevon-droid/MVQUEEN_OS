@@ -1,4 +1,4 @@
-# 📬 MVQUEEN — Fulfillment Systems
+# 📬 MVQueen — Fulfillment Systems
 
 ---
 
@@ -100,7 +100,7 @@ Failure at any step = order held until resolved. Never ship a compromised order.
 | Return rate (fulfillment errors) | Under 1% |
 
 ---
-*MVQUEEN Fulfillment Systems — Operational Document*
+*MVQueen Fulfillment Systems — Operational Document*
 
 ---
 ---
