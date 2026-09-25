@@ -101,9 +101,9 @@
     },
     {
       "id": "paid_advertising",
-      "status": "adapter_required",
+      "status": "adapter_interface_ready_external_connection_required",
       "authority": "external_ad_platforms",
-      "execution": "disabled",
+      "execution": "disabled_until_provider_and_human_approval",
       "writes": "none"
     },
     {
@@ -168,6 +168,27 @@
       "authority": "GitHub_main",
       "execution": "ci_and_explicit_release",
       "writes": "approval_required"
+    },
+    {
+      "id": "finance",
+      "status": "framework_ready_data_connection_required",
+      "authority": "Shopify_payouts_payment_processor_ad_spend_supplier_costs",
+      "execution": "reconciliation_required",
+      "writes": "none"
+    },
+    {
+      "id": "compliance",
+      "status": "framework_ready_human_legal_values_required",
+      "authority": "merchant_approved_policies_and_applicable_law",
+      "execution": "release_gate",
+      "writes": "none"
+    },
+    {
+      "id": "backup_recovery",
+      "status": "multi_layer_ready_restore_test_required",
+      "authority": "GitHub_Shopify_Drive",
+      "execution": "manual_governed",
+      "writes": "restore_only_after_incident_approval"
     }
   ],
   "non_negotiable_gates": {
@@ -182,5 +203,6 @@
       "source_media_relationships"
     ],
     "minors": "Paid audience targeting must follow platform and legal requirements; the operating system does not hard-code minor targeting."
-  }
+  },
+  "workflow_registry": "30_System_Infrastructure/system/registry/enterprise_workflows.json"
 }
