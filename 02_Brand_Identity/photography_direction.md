@@ -147,7 +147,7 @@ Standardized creative direction for all product, lifestyle, and campaign photogr
 ## Color Palette in Photography
 
 **Required:**
-- Dominant: Soft Cream (#FFF8F0), Pearl White (#FAFAF8), or Ivory (#F5F1EB)
+- Dominant: Soft Cream (#FFFCF8), Pearl White (#FFFFFF), or Ivory (#FCF8F4)
 - Accent: One brand color (Deep Rose, MVQueen Gold, or Blush)
 - Neutral: Charcoal or natural tones
 
