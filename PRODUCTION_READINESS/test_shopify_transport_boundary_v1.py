@@ -68,6 +68,11 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn('MVQ_BLOG_CREATE_IF_MISSING !== "true"', text)
         self.assertIn('MVQ_CONTENT_SURFACES_PUBLISH_ENABLED === "true"', route)
         self.assertIn("contentSurfacesPublishEnabled", route)
+        canonical = (ROOT / "app/lib/enterprise/canonical-proposal.ts").read_text(encoding="utf-8")
+        self.assertIn('"seo"', canonical)
+        self.assertIn('"internal_links"', canonical)
+        self.assertIn('target.startsWith("/products/")', canonical)
+        self.assertIn('target.startsWith("/collections/")', canonical)
 
     def test_shopify_app_declares_content_scopes(self):
         toml = (ROOT / "shopify.app.toml").read_text(encoding="utf-8")
