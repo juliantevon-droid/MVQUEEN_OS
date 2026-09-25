@@ -1,16 +1,44 @@
-{% assign footer_tagline = settings.brand_tagline | default: 'Accessible luxury for the modern woman.' %}
-{% assign support_email = settings.support_email | default: 'miss.mvqueen@gmail.com' %}
-<footer class="mvq-footer">
+{% liquid
+  assign is_princess_experience = false
+  if request.path contains '/pages/miss-princess'
+    assign is_princess_experience = true
+  endif
+  if collection and collection.handle contains 'miss-princess'
+    assign is_princess_experience = true
+  endif
+  if product and product.tags contains 'mvq:brand:miss-princess'
+    assign is_princess_experience = true
+  endif
+
+  assign footer_tagline = settings.brand_tagline | default: 'Accessible luxury for the modern woman.'
+  assign support_email = settings.support_email | default: 'miss.mvqueen@gmail.com'
+  assign footer_menu = linklists['main-menu']
+  assign footer_name = 'MVQueen'
+  assign footer_home = '/pages/mvqueen'
+  if is_princess_experience
+    assign footer_menu = linklists['miss-princess-menu']
+    assign footer_name = 'Miss.Princess'
+    assign footer_tagline = 'Soft glamour, playful confidence, and feminine details.'
+    assign footer_home = '/pages/miss-princess'
+  endif
+%}
+<footer class="mvq-footer{% if is_princess_experience %} mvq-footer--princess{% endif %}">
   <div class="mvq-container mvq-footer-grid">
     <div>
-      <a class="mvq-logo mvq-footer-logo" href="{{ routes.root_url }}" aria-label="MVQueen home">
-        <img class="mvq-logo-image" src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639" width="956" height="431" alt="MVQueen — Most Valuable Queen" loading="lazy">
+      <a class="mvq-logo mvq-footer-logo" href="{{ footer_home }}" aria-label="{{ footer_name }} home">
+        {% if is_princess_experience %}
+          <span class="mvq-logo-wordmark mvq-logo-wordmark--princess">Miss.Princess</span>
+        {% elsif settings.brand_logo != blank %}
+          {{ settings.brand_logo | image_url: width: 440 | image_tag: class: 'mvq-logo-image', widths: '220,320,440', sizes: '148px', loading: 'lazy', alt: 'MVQueen — Most Valuable Queen' }}
+        {% else %}
+          <img class="mvq-logo-image" src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639" width="956" height="431" alt="MVQueen — Most Valuable Queen" loading="lazy">
+        {% endif %}
       </a>
       <p>{{ footer_tagline }}</p>
     </div>
     <div>
       <strong>Explore</strong>
-      {% for link in linklists['main-menu'].links %}
+      {% for link in footer_menu.links %}
         <a href="{{ link.url }}">{{ link.title }}</a>
       {% endfor %}
     </div>
