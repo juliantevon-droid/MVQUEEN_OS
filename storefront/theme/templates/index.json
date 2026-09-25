@@ -3,10 +3,10 @@
     "gateway": {
       "type": "brand-gateway",
       "settings": {
-        "mvqueen_eyebrow": "THE MAIN EDIT",
+        "mvqueen_eyebrow": "MODERN LUXURY",
         "mvqueen_copy": "Bold femininity, modern elegance, and everyday luxury.",
         "mvqueen_cta": "Enter MVQueen",
-        "princess_eyebrow": "THE SISTER EDIT",
+        "princess_eyebrow": "PLAYFUL GLAMOUR",
         "princess_copy": "A softer, playful world with its own wardrobe, beauty, jewels, moods, and stories.",
         "princess_cta": "Enter Miss.Princess"
       }
