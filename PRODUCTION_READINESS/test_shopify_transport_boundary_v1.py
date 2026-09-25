@@ -79,6 +79,14 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("read_content", toml)
         self.assertIn("write_content", toml)
 
+    def test_shopify_app_declares_inventory_cost_scope(self):
+        toml = (ROOT / "shopify.app.toml").read_text(encoding="utf-8")
+        worker = (ROOT / "app/lib/product-processor.ts").read_text(encoding="utf-8")
+        self.assertIn("read_inventory", toml)
+        self.assertIn("MVQ_COST_SYNC_ENABLED", worker)
+        self.assertIn("PRODUCT_QUERY_WITH_COST", worker)
+        self.assertIn("read_inventory_scope_required", worker)
+
 
 if __name__ == "__main__":
     unittest.main()
