@@ -30,7 +30,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "content_intelligence","seo_intelligence","merchandising","pricing",
             "profitability","creative","paid_advertising","analytics","retention",
             "customer_support","inventory","orders_fulfillment","theme","qa","deployment",
-            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health"
+            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health","commercial_cost_sync"
         }
         self.assertTrue(required.issubset(ids))
 
@@ -81,6 +81,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertEqual(by_capability["production_database"]["state"], "engineered_profile_deployment_required")
         self.assertEqual(by_capability["approved_price_publish"]["state"], "engineered_not_runtime_verified")
         self.assertIn("MVQ_PRICE_PUBLISH_ENABLED", by_capability["approved_price_publish"]["requirements"])
+        self.assertEqual(by_capability["commercial_cost_sync"]["state"], "app_reauthorization_required")
+        self.assertIn("read_inventory declared in Shopify app", by_capability["commercial_cost_sync"]["requirements"])
 
     def test_runtime_files_exist(self):
         required = [
