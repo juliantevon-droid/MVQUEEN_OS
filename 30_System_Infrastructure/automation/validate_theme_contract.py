@@ -67,6 +67,11 @@ def main() -> int:
     for token in [
         "product.metafields.catalog.short_description.value",
         "product.metafields.catalog.highlights.value",
+        "product.metafields.content.faq.value",
+        "product.metafields.content.how_to_use",
+        "product.metafields.content.care_instructions",
+        "product.metafields.attributes.ingredients",
+        "product.metafields.attributes.main_stone.value",
         'class="mvq-product-bullets"',
         "<details>",
         "<summary>Product details</summary>",
