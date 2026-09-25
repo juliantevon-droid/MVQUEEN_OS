@@ -5,7 +5,10 @@
 - Shopify store: `tsucu0-1i.myshopify.com`
 - Live theme: `MVQueen — Custom Production Build` (`MAIN`) — protected from automated writes
 - Development target: `MVQueen — Next Production Build` (`UNPUBLISHED`)
-- Live theme ID: `154869825734`\n- Target theme ID: `154876674246`
+- Live theme ID: `154869825734`
+- Target theme ID: `154876674246`
+- Rollback theme: `MVQueen — Previous Production Build` (`UNPUBLISHED`), ID `154611515590`
+- Extra preview snapshot: `MVQueen — Staging Preview` (`UNPUBLISHED`), ID `154876772550` — not a deployment target
 
 ## Source-of-truth model
 
@@ -23,13 +26,14 @@ The development target may temporarily contain Shopify-native files that are not
 2. Never deploy to a `MAIN` theme.
 3. Do not use Horizon as the customer-experience foundation.
 4. Deploy only governed MVQUEEN-owned files through an explicit allowlist.
-5. Validate the source tree before any Shopify write.
-6. Keep Shopify credentials out of the repository.
-7. Preserve product handles, SKUs, inventory, variants, and product media unless a separately governed catalog operation explicitly changes them.
-8. Theme work must preserve mobile usability, accessibility, reduced-motion behavior, performance, and graceful failure states.
-9. Customer-facing product content uses MVQueen identity and excludes supplier/legacy brand contamination.
+5. Never overwrite `config/settings_data.json` from automation; preserve Shopify/theme-editor state.
+6. Validate the source tree before any Shopify write.
+7. Keep Shopify credentials out of the repository.
+8. Preserve product handles, SKUs, inventory, variants, and product media unless a separately governed catalog operation explicitly changes them.
+9. Theme work must preserve mobile usability, accessibility, reduced-motion behavior, performance, and graceful failure states.
+10. Customer-facing product content uses MVQueen identity and excludes supplier/legacy brand contamination.
 
-## Verified current state — 2026-09-17
+## Verified current state — 2026-09-25
 
 The unpublished target is the protected development environment for the custom MVQueen storefront.
 
