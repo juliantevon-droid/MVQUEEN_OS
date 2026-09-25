@@ -30,7 +30,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "content_intelligence","seo_intelligence","merchandising","pricing",
             "profitability","creative","paid_advertising","analytics","retention",
             "customer_support","inventory","orders_fulfillment","theme","qa","deployment",
-            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health","commercial_cost_sync"
+            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health","commercial_cost_sync","commercial_settings"
         }
         self.assertTrue(required.issubset(ids))
 
@@ -61,7 +61,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "product_intake","canonical_content_release","pricing_profitability",
             "merchandising","storefront_release","paid_media","analytics_learning",
             "retention_lifecycle","order_fulfillment","customer_care","finance",
-            "compliance","backup_recovery","catalog_health_audit"
+            "compliance","backup_recovery","catalog_health_audit","commercial_configuration"
         }
         self.assertTrue(required.issubset(ids))
         paid = next(item for item in self.workflows["workflows"] if item["id"] == "paid_media")
@@ -98,10 +98,14 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "app/routes/app.pricing.tsx",
             "app/routes/app.catalog-health.tsx",
             "app/lib/enterprise/catalog-audit.ts",
+            "app/lib/enterprise/commercial-settings.server.ts",
+            "app/routes/app.commercial-settings.tsx",
             "storefront/theme/assets/mvqueen-analytics.js",
             "app/lib/enterprise/database-guard.server.ts",
             "prisma/production/schema.prisma",
             "prisma/production/migrations/20260925123000_init/migration.sql",
+            "prisma/migrations/20260925170500_add_commercial_settings/migration.sql",
+            "prisma/production/migrations/20260925170500_add_commercial_settings/migration.sql",
         ]
         for rel in required:
             self.assertTrue((ROOT / rel).is_file(), rel)
