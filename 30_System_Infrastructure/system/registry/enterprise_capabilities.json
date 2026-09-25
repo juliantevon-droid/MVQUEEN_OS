@@ -59,17 +59,17 @@
     },
     {
       "id": "content_intelligence",
-      "status": "proposal_ready",
+      "status": "connected_approved_handoff",
       "authority": "PRODUCTION_READINESS",
-      "execution": "offline_governed",
-      "writes": "none"
+      "execution": "offline_generation_to_authenticated_release",
+      "writes": "approved_editorial_only"
     },
     {
       "id": "seo_intelligence",
-      "status": "proposal_ready",
+      "status": "connected_approved_handoff",
       "authority": "PRODUCTION_READINESS",
-      "execution": "offline_governed",
-      "writes": "none"
+      "execution": "offline_generation_to_authenticated_release",
+      "writes": "approved_seo_only"
     },
     {
       "id": "merchandising",
