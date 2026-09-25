@@ -1,1 +1,19 @@
-<section class="mvq-container mvq-trust"><div>CURATED FOR YOU<small>Fashion, beauty & jewelry</small></div><div>EASY EVERYDAY LUXURY<small>Polished pieces without the excess</small></div><div>SECURE CHECKOUT<small>Shop with confidence</small></div><div>MOBILE-FIRST EXPERIENCE<small>Designed to feel effortless</small></div></section>{% schema %}{"name":"Trust strip","settings":[]} {% endschema %}
+{% liquid
+  assign is_princess_experience = false
+  if request.path contains '/pages/miss-princess'
+    assign is_princess_experience = true
+  endif
+  if collection and collection.handle contains 'miss-princess'
+    assign is_princess_experience = true
+  endif
+  if product and product.tags contains 'mvq:brand:miss-princess'
+    assign is_princess_experience = true
+  endif
+%}
+<section class="mvq-container mvq-trust{% if is_princess_experience %} mvq-trust--princess{% endif %}">
+  <div>{% if is_princess_experience %}CURATED FOR PLAY{% else %}CURATED FOR YOU{% endif %}<small>{% if is_princess_experience %}Color, sparkle & feminine detail{% else %}Fashion, beauty & jewelry{% endif %}</small></div>
+  <div>{% if is_princess_experience %}SOFT GLAMOUR{% else %}EASY EVERYDAY LUXURY{% endif %}<small>{% if is_princess_experience %}Playful polish without the pressure{% else %}Polished pieces without the excess{% endif %}</small></div>
+  <div>SECURE CHECKOUT<small>Shop with confidence</small></div>
+  <div>ONE SHARED STORE<small>One bag, one checkout, two brand worlds</small></div>
+</section>
+{% schema %}{"name":"Trust strip","settings":[]} {% endschema %}
