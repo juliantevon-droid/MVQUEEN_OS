@@ -352,7 +352,8 @@ def _collection(record: Dict[str, Any]) -> Dict[str, Any]:
         "seo_title": _clip(f"{name} | {brand_name}", 60),
         "meta_description": _clip(meta_description, 160),
         "primary_keyword": primary_keyword,
-        "status": "DRAFT_REVIEW",
+        "status": "PUBLISH_ELIGIBLE",
+        "auto_publish": True,
     }
 
 
@@ -486,6 +487,8 @@ def _blog(record: Dict[str, Any], facts: Dict[str, Any]) -> Dict[str, Any]:
         "blog-meta",
     )
 
+    publish_eligible = len(facts) >= 3
+
     return {
         "title": blog_title,
         "slug": _slug(blog_title),
@@ -494,8 +497,9 @@ def _blog(record: Dict[str, Any], facts: Dict[str, Any]) -> Dict[str, Any]:
         "internal_links": [{"anchor": title, "target": target, "type": "product"}],
         "primary_keyword": primary_keyword,
         "meta_description": _clip(meta_description, 160),
-        "status": "DRAFT_REVIEW",
-        "auto_publish": False,
+        "status": "PUBLISH_ELIGIBLE" if publish_eligible else "DRAFT_REVIEW",
+        "publish_eligible": publish_eligible,
+        "auto_publish": publish_eligible,
     }
 
 
@@ -504,8 +508,10 @@ def _site_faq(record: Dict[str, Any], faq: List[Dict[str, str]]) -> Dict[str, An
     return {
         "topic": title,
         "entries": faq,
-        "status": "DRAFT_REVIEW",
-        "auto_publish": False,
+        "scope": "product",
+        "publish_target": "product.metafields.content.faq",
+        "status": "PUBLISH_ELIGIBLE",
+        "auto_publish": True,
     }
 
 
@@ -528,10 +534,13 @@ def validate_content_suite(content: Dict[str, Any]) -> List[str]:
             + ", ".join(sorted(set(claims), key=str.lower))
         )
 
-    if content.get("blog", {}).get("auto_publish") is not False:
-        errors.append("Blog content must remain review-only")
-    if content.get("site_faq", {}).get("auto_publish") is not False:
-        errors.append("FAQ content must remain review-only")
+    blog = content.get("blog", {})
+    if blog.get("auto_publish") is True and blog.get("publish_eligible") is not True:
+        errors.append("Blog auto-publish requires publish_eligible=true")
+
+    faq = content.get("site_faq", {})
+    if faq.get("auto_publish") is True and faq.get("scope") not in {"product", "global"}:
+        errors.append("FAQ auto-publish requires an explicit product or global scope")
 
     forbidden_metafields = {
         "attributes.origin",
@@ -566,14 +575,27 @@ def generate_content_suite(record: Dict[str, Any]) -> Dict[str, Any]:
         "governance": {
             "fact_policy": "verified_source_truth_only",
             "protected_fields_mutated": False,
-            "auto_publish": False,
+            "approved_release_controls_publish": True,
+            "allowed_publish_surfaces": [
+                "product_faq",
+                "product_metafields",
+                "blog_article",
+                "collection_copy",
+                "governed_static_page",
+            ],
+            "blocked_publish_surfaces": [
+                "privacy_policy",
+                "terms_of_service",
+                "shipping_policy",
+                "refund_policy",
+            ],
         },
     }
     errors = validate_content_suite(content)
     content["qa"] = {
         "errors": errors,
         "passed": not errors,
-        "status": "CONTENT_READY_FOR_REVIEW" if not errors else "CONTENT_BLOCKED",
+        "status": "CONTENT_PUBLISH_ELIGIBLE" if not errors else "CONTENT_BLOCKED",
     }
     return content
 
