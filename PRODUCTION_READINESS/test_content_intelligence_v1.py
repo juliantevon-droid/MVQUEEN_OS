@@ -70,6 +70,10 @@ class ContentIntelligenceV1Tests(unittest.TestCase):
             "custom.badge",
         }
         self.assertFalse(forbidden.intersection(fields))
+        self.assertEqual(fields["catalog.focus_keyword"]["value"], "dress")
+        self.assertTrue(fields["catalog.long_tail_keywords"]["value"])
+        self.assertTrue(fields["catalog.seo_keywords"]["value"])
+        self.assertTrue(fields["catalog.highlights"]["value"])
 
     def test_product_link_uses_existing_handle_without_mutating_it(self):
         canonical = self.canonical()
