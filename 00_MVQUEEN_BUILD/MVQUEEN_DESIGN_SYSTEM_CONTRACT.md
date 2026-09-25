@@ -12,17 +12,24 @@ This contract establishes one visual and interaction language for the MVQueen st
 
 ```css
 :root {
-  --mvq-gold: #D4AF37;
-  --mvq-cream: #FFF8F0;
-  --mvq-rose: #8B4A5C;
-  --mvq-pearl: #FAFAF8;
-  --mvq-charcoal: #2C2C2C;
-  --mvq-blush: #F5E6E0;
-  --mvq-ivory: #F5F1EB;
-  --mvq-sage: #A8ABA3;
-  --mvq-mauve: #9D7F95;
+  --mvq-gold: #C7AD86;
+  --mvq-gold-strong: #876F50;
+  --mvq-cream: #FFFCF8;
+  --mvq-rose: #A97886;
+  --mvq-rose-strong: #8B5E6C;
+  --mvq-pearl: #FFFFFF;
+  --mvq-charcoal: #342F2C;
+  --mvq-blush: #F8EEEA;
+  --mvq-ivory: #FCF8F4;
+  --mvq-sage: #B8BAB1;
+  --mvq-mauve: #B7A2AF;
+  --mvq-mink: #786D68;
 }
 ```
+
+### Contrast token rule
+
+Decorative Gold and Soft Rose define the visual atmosphere. Small text, prices, keyboard focus, and utility labels use the stronger companion tokens so the softer brand direction still meets accessibility requirements.
 
 ## Typography
 
