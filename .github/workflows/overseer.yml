@@ -97,6 +97,31 @@ jobs:
           python core/vault_crawler.py --root . --output build/enterprise_crawler/report.json --fail-on critical
           cp build/enterprise_crawler/report.md 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
 
+      - name: Route findings to production specialist agents
+        run: |
+          python 30_System_Infrastructure/overseer/route_findings.py \
+            --input build/enterprise_crawler/report.json \
+            --output build/agents/assignments.json
+
+      - name: Validate agent learning contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          ledger=json.loads(Path('memory/agent_outcome_ledger.json').read_text())
+          assert ledger['policy']['self_promotion_allowed'] is False
+          assert ledger['policy']['authority_growth_from_learning'] is False
+          assert ledger['policy']['required_verification_before_reuse'] is True
+          assert ledger['policy']['required_approval_for_operating_rule'] is True
+          assignments=json.loads(Path('build/agents/assignments.json').read_text())
+          required={'owner','reviewers','state','required_flow','production_blocking'}
+          for item in assignments['assignments']:
+              assert required <= item.keys(), item
+              assert 'qa_verification' in item['required_flow'], item
+              assert 'release_disposition' in item['required_flow'], item
+          print('Agent routing and learning contract passed')
+          PY
+
       - name: Validate protected brand sources
         run: |
           required=(
@@ -110,6 +135,8 @@ jobs:
             '06_Tone_And_Voice/Brand_Messaging.md'
             '10_AI_Systems/AGENT_BRAIN_SYSTEM.md'
             'memory/system_intelligence.json'
+            'memory/agent_outcome_ledger.json'
+            'agents/PRODUCTION_SPECIALIST_AGENT_SYSTEM.md'
           )
           missing=0
           for f in "${required[@]}"; do
@@ -144,6 +171,8 @@ jobs:
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
             echo '- Enterprise reliability/conversion crawler: executed'
+            echo '- Specialist-agent routing: PASS'
+            echo '- Governed outcome-learning contract: PASS'
             echo
             echo '## Existing stabilization audit'
             cat overseer-audit.txt
@@ -189,6 +218,7 @@ jobs:
             overseer-audit.txt
             build/enterprise_crawler/report.json
             build/enterprise_crawler/report.md
+            build/agents/assignments.json
 
       - name: Fail workflow when enterprise crawler reports critical findings
         if: steps.enterprise_crawler.outcome == 'failure'
