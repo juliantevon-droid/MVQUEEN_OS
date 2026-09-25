@@ -63,6 +63,7 @@ def main() -> int:
         if token not in header:
             failures.append(f"header.liquid missing accessibility/navigation integration: {token}")
 
+    # Canonical PDP content namespaces are part of the storefront contract.
     product = read("sections/main-product.liquid")
     for token in [
         "product.metafields.catalog.short_description.value",
