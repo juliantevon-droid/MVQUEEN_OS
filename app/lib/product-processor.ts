@@ -36,13 +36,6 @@ mutation MVQueenProductUpdate($product: ProductUpdateInput!) {
   }
 }`;
 
-const FILE_UPDATE = `#graphql
-mutation MVQueenFileAlt($files: [FileUpdateInput!]!) {
-  fileUpdate(files: $files) {
-    files { id }
-    userErrors { field message }
-  }
-}`;
 
 function sourceFingerprint(product: ProductSnapshot): string {
   const source = JSON.stringify({
@@ -167,6 +160,12 @@ export async function processProductJob(jobId: string) {
       { namespace: "lifecycle", key: "plan_state", type: "single_line_text_field", value: lifecycle.state },
       { namespace: "lifecycle", key: "execution_state", type: "single_line_text_field", value: lifecycle.execution },
       { namespace: "analytics", key: "measurement_key", type: "single_line_text_field", value: decision.measurementKey },
+      {
+        namespace: "catalog",
+        key: "media_alt_status",
+        type: "single_line_text_field",
+        value: (product.media?.nodes ?? []).some((m) => !m.alt) ? "scope_required" : "complete",
+      },
     ];
 
     if (!WRITE_ENABLED || !APPROVED_PRODUCT_GIDS.has(product.id)) {
@@ -194,22 +193,9 @@ export async function processProductJob(jobId: string) {
     const errors = updateBody.data?.productUpdate?.userErrors ?? [];
     if (errors.length) throw new Error(errors.map((e: { message: string }) => e.message).join("; "));
 
-    // Missing ALT text may be filled from the product's existing title only.
-    // Canonical editorial/SEO content is produced upstream and is never regenerated here.
-    const media = (product.media?.nodes ?? []).filter((m) => m.id && !m.alt);
-    if (media.length) {
-      const alt = product.title?.trim() || c.productType;
-      const brandName = marketing.brandWorld === "Miss.Princess" ? "Miss.Princess" : "MVQueen";
-      const fileUpdate = await admin.graphql(FILE_UPDATE, {
-        variables: { files: media.map((m) => ({ id: m.id, alt: `${alt} | ${brandName}` })) },
-      });
-      const fileBody = await fileUpdate.json();
-      const fileErrors = fileBody.data?.fileUpdate?.userErrors ?? [];
-      if (fileErrors.length) {
-        throw new Error(fileErrors.map((e: { message: string }) => e.message).join("; "));
-      }
-    }
-
+    // Media ALT updates use Shopify's Files mutation and require an additional
+    // Files write scope. The catalog worker deliberately does not attempt that
+    // mutation unless a separately governed media capability is authorized.
     const updatedAt = updateBody.data?.productUpdate?.product?.updatedAt;
     if (!updatedAt) throw new Error("Shopify product update did not return updatedAt");
 
