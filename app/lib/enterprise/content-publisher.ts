@@ -166,15 +166,29 @@ async function publishCollection(admin: AdminGraphql, record: CanonicalProductRe
     return { surface: "collection", status: "SKIPPED", message: "Collection publishing requires MVQ_COLLECTION_CONTENT_PUBLISH_ENABLED=true" };
   }
 
-  const slug = String(collection.slug || "").trim();
-  if (!slug) return { surface: "collection", status: "SKIPPED", message: "Collection output has no target slug" };
+  const targetHandles = Array.from(new Set(
+    (Array.isArray(collection.target_handles) ? collection.target_handles : [collection.slug])
+      .map((value: unknown) => String(value || "").trim())
+      .filter(Boolean),
+  ));
+  if (!targetHandles.length) {
+    return { surface: "collection", status: "SKIPPED", message: "Collection output has no target handles" };
+  }
 
-  const found = await body(await admin.graphql(COLLECTION_QUERY, {
-    variables: { query: exactHandleQuery(slug) },
-  }));
-  const target = found.data?.collections?.nodes?.[0];
+  let target: any = null;
+  let matchedHandle = "";
+  for (const handle of targetHandles) {
+    const found = await body(await admin.graphql(COLLECTION_QUERY, {
+      variables: { query: exactHandleQuery(handle) },
+    }));
+    target = found.data?.collections?.nodes?.[0] ?? null;
+    if (target?.id) {
+      matchedHandle = handle;
+      break;
+    }
+  }
   if (!target?.id) {
-    return { surface: "collection", status: "SKIPPED", message: "No existing collection matched " + slug + "; auto-creation is disabled" };
+    return { surface: "collection", status: "SKIPPED", message: "No existing collection matched approved target handles; auto-creation is disabled" };
   }
 
   const updated = await body(await admin.graphql(COLLECTION_UPDATE, {
@@ -191,7 +205,7 @@ async function publishCollection(admin: AdminGraphql, record: CanonicalProductRe
   }));
   const errors = updated.data?.collectionUpdate?.userErrors ?? [];
   if (errors.length) throw new Error(userErrorMessage(errors));
-  return { surface: "collection", status: "UPDATED", resourceId: updated.data?.collectionUpdate?.collection?.id, message: "Updated existing collection " + slug };
+  return { surface: "collection", status: "UPDATED", resourceId: updated.data?.collectionUpdate?.collection?.id, message: "Updated existing collection " + matchedHandle };
 }
 
 async function upsertPage(admin: AdminGraphql, page: any): Promise<PublishResult> {
