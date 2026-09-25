@@ -57,10 +57,31 @@ jobs:
               encoding="utf-8",
           )
 
-      - name: Validate diff
+      - name: Validate normalization
+        shell: python
         run: |
-          git diff --check
-          cat /tmp/mvqueen_brand_case_result.txt
+          import pathlib
+          import re
+          import subprocess
+
+          pattern = re.compile(rb"(?<![A-Za-z0-9_/-])MVQUEEN(?![A-Za-z0-9_/-])")
+          tracked = subprocess.check_output(["git", "ls-files", "-z"]).split(b"\0")
+          leftovers = []
+          for raw in tracked:
+              if not raw:
+                  continue
+              path = pathlib.Path(raw.decode("utf-8"))
+              try:
+                  data = path.read_bytes()
+              except OSError:
+                  continue
+              if pattern.search(data):
+                  leftovers.append(str(path))
+          cat = pathlib.Path("/tmp/mvqueen_brand_case_result.txt").read_text(encoding="utf-8")
+          print(cat, end="")
+          if leftovers:
+              print("Standalone MVQUEEN remains in:", *leftovers, sep="\n")
+              raise SystemExit(1)
 
       - name: Commit normalized brand spelling
         run: |
