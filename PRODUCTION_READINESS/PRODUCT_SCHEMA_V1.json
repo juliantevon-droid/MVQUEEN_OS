@@ -349,6 +349,82 @@
           "items": {
             "type": "string"
           }
+        },
+        "internal_links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "anchor",
+              "target",
+              "type",
+              "reason"
+            ],
+            "properties": {
+              "anchor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "product",
+                  "collection"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "catalog_relationship",
+                  "explicit_collection_handle"
+                ]
+              }
+            }
+          }
+        },
+        "internal_link_audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "resolver",
+            "source_product_id",
+            "brand_world",
+            "product_links",
+            "collection_links",
+            "collection_urls_require_explicit_handle"
+          ],
+          "properties": {
+            "resolver": {
+              "type": "string",
+              "const": "INTERNAL_LINKING_INTELLIGENCE_V1"
+            },
+            "source_product_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "brand_world": {
+              "type": "string",
+              "enum": [
+                "mvqueen",
+                "miss-princess"
+              ]
+            },
+            "product_links": {
+              "type": "number"
+            },
+            "collection_links": {
+              "type": "number"
+            },
+            "collection_urls_require_explicit_handle": {
+              "type": "boolean",
+              "const": true
+            }
+          }
         }
       }
     },
