@@ -50,6 +50,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         by_id = {item["id"]: item for item in self.data["capabilities"]}
         self.assertEqual(by_id["content_intelligence"]["status"], "connected_approved_handoff")
         self.assertEqual(by_id["seo_intelligence"]["status"], "connected_approved_handoff")
+        self.assertEqual(by_id["merchandising"]["status"], "connected_advisory_catalog_resolution")
+        self.assertIn("no_live_relationship_write", by_id["merchandising"]["writes"])
         self.assertEqual(by_id["pricing"]["status"], "connected_approval_required")
         self.assertEqual(by_id["paid_advertising"]["status"], "adapter_interface_ready_external_connection_required")
 
@@ -64,6 +66,13 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertTrue(required.issubset(ids))
         paid = next(item for item in self.workflows["workflows"] if item["id"] == "paid_media")
         self.assertIn("no provider or human approval", paid["guard"].lower())
+        content = next(item for item in self.workflows["workflows"] if item["id"] == "canonical_content_release")
+        self.assertIn("MVQ_CONTENT_SURFACES_PUBLISH_ENABLED=true", content["guard"])
+        self.assertIn("Legal policy pages are never automated", content["guard"])
+        merchandising = next(item for item in self.workflows["workflows"] if item["id"] == "merchandising")
+        self.assertEqual(merchandising["status"], "connected_advisory_catalog_resolution")
+        self.assertIn("No cross-brand recommendations", merchandising["guard"])
+        self.assertIn("no bundle creation without an approved bundle rule", merchandising["guard"].lower())
 
     def test_integration_requirements_make_blockers_explicit(self):
         by_capability = {item["capability"]: item for item in self.integrations["integrations"]}
