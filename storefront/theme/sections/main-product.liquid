@@ -1,4 +1,6 @@
-<section class="mvq-product-page">
+{% assign is_jewelry_product = false %}
+{% if product.tags contains 'mvq:category:jewelry' %}{% assign is_jewelry_product = true %}{% endif %}
+<section class="mvq-product-page{% if is_jewelry_product %} mvq-product-page--jewelry{% endif %}">
   <div class="mvq-container">
     {% render 'breadcrumbs' %}
     <div class="mvq-product-layout">
