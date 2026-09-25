@@ -4,11 +4,12 @@ import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v4";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v5";
 
 // The React app is a transport/classification worker, not a copy generator.
 // Live writes remain fail-closed and require explicit product approval.
 const WRITE_ENABLED = process.env.MVQ_WRITE_ENABLED === "true";
+const COST_SYNC_ENABLED = process.env.MVQ_COST_SYNC_ENABLED === "true";
 const APPROVED_PRODUCT_GIDS = new Set(
   (process.env.MVQ_APPROVED_PRODUCT_GIDS ?? "")
     .split(",")
@@ -16,12 +17,40 @@ const APPROVED_PRODUCT_GIDS = new Set(
     .filter(Boolean),
 );
 
+const ACCESS_SCOPES_QUERY = `#graphql
+query MVQueenAccessScopes {
+  appInstallation {
+    accessScopes { handle }
+  }
+}`;
+
 const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
     id title descriptionHtml productType vendor tags
     media(first: 100) { nodes { id alt } }
     variants(first: 1) { nodes { id price compareAtPrice } }
+    commercialMetafields: metafields(first: 20, namespace: "commercial") {
+      nodes { key value type }
+    }
+  }
+}`;
+
+const PRODUCT_QUERY_WITH_COST = `#graphql
+query MVQueenProductWithCost($id: ID!) {
+  product(id: $id) {
+    id title descriptionHtml productType vendor tags
+    media(first: 100) { nodes { id alt } }
+    variants(first: 1) {
+      nodes {
+        id
+        price
+        compareAtPrice
+        inventoryItem {
+          unitCost { amount currencyCode }
+        }
+      }
+    }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
     }
@@ -48,7 +77,13 @@ function sourceFingerprint(product: ProductSnapshot): string {
       .map((m) => ({ id: m.id, alt: m.alt ?? "" }))
       .sort((a, b) => a.id.localeCompare(b.id)),
     variants: (product.variants?.nodes ?? [])
-      .map((v) => ({ id: v.id, price: v.price ?? "", compareAtPrice: v.compareAtPrice ?? "" }))
+      .map((v) => ({
+        id: v.id,
+        price: v.price ?? "",
+        compareAtPrice: v.compareAtPrice ?? "",
+        unitCost: v.unitCost ?? "",
+        costCurrency: v.costCurrency ?? "",
+      }))
       .sort((a, b) => a.id.localeCompare(b.id)),
     commercialMetafields: (product.commercialMetafields?.nodes ?? [])
       .map((m) => ({ key: m.key, value: m.value ?? "", type: m.type ?? "" }))
@@ -69,9 +104,47 @@ export async function processProductJob(jobId: string) {
 
   try {
     const { admin } = await unauthenticated.admin(job.shop);
-    const response = await admin.graphql(PRODUCT_QUERY, { variables: { id: job.productGid } });
+
+    let hasReadInventory = false;
+    if (COST_SYNC_ENABLED) {
+      const scopeResponse = await admin.graphql(ACCESS_SCOPES_QUERY);
+      const scopeBody = await scopeResponse.json();
+      hasReadInventory = Boolean(
+        scopeBody.data?.appInstallation?.accessScopes?.some(
+          (scope: { handle?: string | null }) => scope.handle === "read_inventory",
+        ),
+      );
+    }
+
+    const response = await admin.graphql(
+      COST_SYNC_ENABLED && hasReadInventory ? PRODUCT_QUERY_WITH_COST : PRODUCT_QUERY,
+      { variables: { id: job.productGid } },
+    );
     const body = await response.json();
-    const product: ProductSnapshot | null = body.data?.product ?? null;
+    const rawProduct = body.data?.product ?? null;
+    const product: ProductSnapshot | null = rawProduct
+      ? {
+          ...rawProduct,
+          variants: {
+            nodes: (rawProduct.variants?.nodes ?? []).map(
+              (variant: {
+                id: string;
+                price?: string | null;
+                compareAtPrice?: string | null;
+                inventoryItem?: {
+                  unitCost?: { amount?: string | null; currencyCode?: string | null } | null;
+                } | null;
+              }) => ({
+                id: variant.id,
+                price: variant.price ?? null,
+                compareAtPrice: variant.compareAtPrice ?? null,
+                unitCost: variant.inventoryItem?.unitCost?.amount ?? null,
+                costCurrency: variant.inventoryItem?.unitCost?.currencyCode ?? null,
+              }),
+            ),
+          },
+        }
+      : null;
     if (!product) throw new Error("Shopify product not found");
 
     const fingerprint = sourceFingerprint(product);
@@ -111,6 +184,9 @@ export async function processProductJob(jobId: string) {
     const pricing = decision.pricing;
     const marketing = decision.marketing;
     const lifecycle = decision.lifecycle;
+    const costVariant = product.variants?.nodes?.[0];
+    const verifiedUnitCost = costVariant?.unitCost?.trim() || "";
+    const costCurrency = costVariant?.costCurrency?.trim() || "";
     const metafields = [
       { namespace: "classification", key: "department", type: "single_line_text_field", value: c.department },
       { namespace: "classification", key: "family", type: "single_line_text_field", value: c.family },
@@ -135,6 +211,25 @@ export async function processProductJob(jobId: string) {
         key: "review_status",
         type: "single_line_text_field",
         value: c.confidence === "review" || !brandRoute.brand ? "needs_review" : "classified",
+      },
+      ...(verifiedUnitCost
+        ? [
+            { namespace: "commercial", key: "unit_cost", type: "number_decimal", value: verifiedUnitCost },
+            { namespace: "commercial", key: "cost_currency", type: "single_line_text_field", value: costCurrency || pricing.currency },
+            { namespace: "commercial", key: "cost_source", type: "single_line_text_field", value: "Shopify inventoryItem.unitCost" },
+          ]
+        : []),
+      {
+        namespace: "commercial",
+        key: "cost_sync_state",
+        type: "single_line_text_field",
+        value: !COST_SYNC_ENABLED
+          ? "disabled"
+          : hasReadInventory
+            ? verifiedUnitCost
+              ? "verified"
+              : "no_cost_value"
+            : "read_inventory_scope_required",
       },
       { namespace: "commercial", key: "pricing_state", type: "single_line_text_field", value: pricing.state },
       { namespace: "commercial", key: "pricing_currency", type: "single_line_text_field", value: pricing.currency },
