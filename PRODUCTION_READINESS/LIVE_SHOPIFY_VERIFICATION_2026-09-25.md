@@ -108,3 +108,29 @@ Data-quality observation:
 
 ### Current release implication
 The safest theme release path remains **GitHub main → validated Staging Preview → visual/purchase-path verification → manual promotion**, never file-by-file patching of MAIN and never automated live-theme publication.
+
+
+## Custom customer-care/editorial surface update — 2026-09-25
+
+The custom storefront deployment contract was expanded from 39 to **48 governed files** so published customer-facing pages no longer depend on ungoverned fallback theme templates.
+
+Added to the governed release surface:
+- custom MVQueen Contact section and `page.contact` template
+- About template
+- FAQ template
+- Journal template + editorial hub section
+- Lookbook template + lookbook section
+- canonical main-page section
+
+The Contact implementation uses Shopify's native Liquid `contact` form with required email/message fields, optional order number, request category, accessible success/error handling, and MVQueen customer-care styling.
+
+Validation:
+- strengthened self-contained dependency contract: PASS
+- Shopify Theme Check: PASS
+- unpublished Staging Preview controlled parity after synchronization: **48/48**
+- missing controlled staging files: **0**
+- controlled path/size mismatches: **0**
+- staging `processing=false`
+- staging `processingFailed=false`
+
+No live MAIN theme file was modified. Staging remains the governed release candidate.
