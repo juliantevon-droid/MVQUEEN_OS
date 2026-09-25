@@ -193,10 +193,37 @@ def _metafields(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[st
             "value": _text(copy.get("short_description")),
             "source": "canonical_copy",
         },
+        "catalog.focus_keyword": {
+            "type": "single_line_text_field",
+            "value": _text(seo.get("primary_keyword")),
+            "source": "canonical_seo",
+        },
+        "catalog.long_tail_keywords": {
+            "type": "list.single_line_text_field",
+            "value": [x for x in seo.get("long_tail_keywords", []) if _text(x)],
+            "source": "canonical_seo",
+        },
         "catalog.seo_keywords": {
             "type": "list.single_line_text_field",
-            "value": [x for x in [seo.get("primary_keyword"), *seo.get("secondary_keywords", [])] if _text(x)],
+            "value": [
+                x
+                for x in [
+                    seo.get("primary_keyword"),
+                    *seo.get("secondary_keywords", []),
+                    *seo.get("long_tail_keywords", []),
+                ]
+                if _text(x)
+            ],
             "source": "canonical_seo",
+        },
+        "catalog.highlights": {
+            "type": "list.single_line_text_field",
+            "value": [
+                _text(x)
+                for x in [*copy.get("features", []), *copy.get("benefits", [])]
+                if _text(x)
+            ][:6],
+            "source": "canonical_copy",
         },
         "catalog.review_status": {
             "type": "single_line_text_field",
