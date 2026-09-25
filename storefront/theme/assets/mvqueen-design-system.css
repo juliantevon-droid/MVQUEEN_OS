@@ -473,3 +473,26 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
 @media(max-width:800px){
   .mvq-hero-image{min-height:330px;padding:24px}
 }
+
+
+/* MVQueen customer-care surface */
+.mvq-contact-page{padding-block:clamp(52px,8vw,108px);background:linear-gradient(180deg,var(--mvq-pearl),var(--mvq-cream))}
+.mvq-contact-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(36px,8vw,110px);align-items:start}
+.mvq-contact-intro{position:sticky;top:112px}
+.mvq-contact-intro h1{margin:.55rem 0 1.2rem;font-size:clamp(2.8rem,6vw,5.4rem)}
+.mvq-contact-email{display:grid;gap:4px;margin:1.75rem 0 0;padding-top:1.25rem;border-top:1px solid var(--mvq-line);font-size:.9rem}
+.mvq-contact-email span{color:var(--mvq-mink);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.mvq-contact-email a{text-underline-offset:4px}
+.mvq-contact-form-shell{padding:clamp(22px,4vw,42px);border:1px solid var(--mvq-line);background:var(--mvq-pearl);box-shadow:var(--mvq-shadow)}
+.mvq-contact-form{display:grid;gap:18px}
+.mvq-contact-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.mvq-contact-field{display:grid;gap:7px}
+.mvq-contact-field label{font-size:.73rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.mvq-contact-optional{color:var(--mvq-mink);font-size:.7rem;font-weight:400;letter-spacing:0;text-transform:none}
+.mvq-contact-field input,.mvq-contact-field select,.mvq-contact-field textarea{width:100%;min-height:50px;padding:.78rem .85rem;border:1px solid var(--mvq-line);border-radius:var(--mvq-radius);background:var(--mvq-cream);color:var(--mvq-charcoal)}
+.mvq-contact-field textarea{min-height:170px;resize:vertical}
+.mvq-contact-field input:focus,.mvq-contact-field select:focus,.mvq-contact-field textarea:focus{border-color:var(--mvq-gold-strong);outline:2px solid transparent;box-shadow:0 0 0 2px rgba(138,100,40,.16)}
+.mvq-contact-status{margin:0;padding:12px 14px;border-left:3px solid var(--mvq-gold);background:var(--mvq-cream)}
+.mvq-contact-errors{padding:12px 14px;border-left:3px solid var(--mvq-rose-strong);background:var(--mvq-blush)}
+.mvq-contact-form>.mvq-button{justify-self:start;min-width:180px}
+@media(max-width:800px){.mvq-contact-grid{grid-template-columns:1fr}.mvq-contact-intro{position:static}.mvq-contact-field-grid{grid-template-columns:1fr}.mvq-contact-form>.mvq-button{width:100%}}
