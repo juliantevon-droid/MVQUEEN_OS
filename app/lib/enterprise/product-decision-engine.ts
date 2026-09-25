@@ -6,6 +6,7 @@ import {
 } from "../mvqueen-intelligence";
 import { buildMarketingPlan } from "./marketing-engine";
 import { buildPricingDecision } from "./pricing-engine";
+import { buildLifecyclePlan } from "./lifecycle-engine";
 
 function numberFrom(value?: string | null): number | null {
   if (!value?.trim()) return null;
@@ -39,6 +40,7 @@ export function buildEnterpriseProductDecision(product: ProductSnapshot) {
     inboundShipping: numberFrom(metafieldValue(product, "inbound_shipping")),
   });
   const marketing = buildMarketingPlan(classification, brandRoute, pricing);
+  const lifecycle = buildLifecyclePlan(classification, brandRoute);
 
   const tags = [
     "mvq:catalog",
@@ -49,6 +51,7 @@ export function buildEnterpriseProductDecision(product: ProductSnapshot) {
     ...(classification.confidence === "review" ? ["mvq:needs-review"] : []),
     ...(pricing.state === "ready_for_approval" ? ["mvq:pricing:ready-for-approval"] : [`mvq:pricing:${pricing.state}`]),
     `mvq:marketing:${marketing.state}`,
+    `mvq:lifecycle:${lifecycle.state}`,
   ];
 
   return {
@@ -56,6 +59,7 @@ export function buildEnterpriseProductDecision(product: ProductSnapshot) {
     brandRoute,
     pricing,
     marketing,
+    lifecycle,
     tags,
     measurementKey: `product:${product.id}`,
   };
