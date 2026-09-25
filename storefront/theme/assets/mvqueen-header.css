@@ -154,3 +154,45 @@ html.mvq-lock{overflow:hidden}
     grid-template-columns:repeat(3,minmax(0,1fr));
   }
 }
+
+
+/* 2026-09-25 uploaded-logo alignment */
+.mvq-header--mvqueen{
+  background:rgba(255,249,242,.97);
+  color:var(--mvq-charcoal);
+}
+.mvq-logo-image{
+  width:min(var(--mvq-logo-width,168px),196px);
+  max-height:64px;
+  object-fit:contain;
+}
+.mvq-logo-wordmark--princess{
+  color:#B52255;
+  font-family:var(--mvq-display);
+  font-size:1.6rem;
+  font-style:italic;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+.mvq-header--princess{
+  background:rgba(255,248,251,.97);
+  color:#7A2647;
+}
+.mvq-header--princess .mvq-navlinks>a::after,
+.mvq-header--princess .mvq-nav-item>summary::before{
+  background:#C42A62;
+}
+.mvq-brand-switcher--princess .mvq-brand-choice.is-active::after{
+  background:#C42A62;
+}
+.mvq-brand-switcher--princess .mvq-brand-choice-name{
+  color:#9E1F4C;
+}
+.mvq-footer-logo .mvq-logo-image{
+  width:min(210px,100%);
+  max-height:none;
+}
+@media(max-width:749px){
+  .mvq-logo-image{width:min(var(--mvq-logo-width,138px),146px);max-height:58px}
+  .mvq-logo-wordmark--princess{font-size:1.35rem}
+}
