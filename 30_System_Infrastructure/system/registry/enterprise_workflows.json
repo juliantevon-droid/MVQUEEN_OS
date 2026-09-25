@@ -25,12 +25,13 @@
       "trigger": "QA-passed canonical record + matching release artifact",
       "authority": "PRODUCTION_READINESS -> authenticated Shopify app",
       "steps": [
-        "generate",
+        "generate_canonical_product_and_content_suite",
         "qa",
-        "fingerprint",
+        "fingerprint_entire_approved_record",
         "human_approval",
         "stale_product_check",
-        "publish_editorial_seo",
+        "publish_editorial_seo_and_whitelisted_product_metafields",
+        "optional_content_surfaces_only_when_master_and_surface_gates_are_true",
         "audit"
       ],
       "protected": [
@@ -41,7 +42,8 @@
         "variants",
         "handle",
         "media_relationships"
-      ]
+      ],
+      "guard": "Product editorial/metafields require canonical approval; blog, collection, FAQ-page and static-page surfaces additionally require MVQ_CONTENT_SURFACES_PUBLISH_ENABLED=true plus their exact per-surface gate. Legal policy pages are never automated."
     },
     {
       "id": "pricing_profitability",
@@ -62,17 +64,20 @@
     },
     {
       "id": "merchandising",
-      "status": "connected_partial_catalog",
-      "trigger": "classification + brand world",
-      "authority": "Shopify tags and smart collections",
+      "status": "connected_advisory_catalog_resolution",
+      "trigger": "QA-passed canonical catalog + approved brand world",
+      "authority": "PRODUCTION_READINESS catalog resolver + Shopify commerce truth",
       "steps": [
-        "department",
-        "family",
-        "brand_world",
-        "collection_membership",
-        "mega_menu_experience"
+        "canonical_product_pipeline",
+        "brand_world_partition",
+        "taxonomy_similarity_scoring",
+        "verified_fact_similarity",
+        "related_product_resolution",
+        "cross_sell_resolution",
+        "relationship_audit",
+        "human_review_before_live_relationship_write"
       ],
-      "guard": "ambiguous brand world -> review"
+      "guard": "No cross-brand recommendations; no invented compatibility; no bundle creation without an approved bundle rule; no live relationship mutation from the offline resolver."
     },
     {
       "id": "storefront_release",
