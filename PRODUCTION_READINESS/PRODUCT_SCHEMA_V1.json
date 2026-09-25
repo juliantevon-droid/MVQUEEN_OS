@@ -19,6 +19,7 @@
     "commercial",
     "creative",
     "measurement",
+    "content_suite",
     "qa",
     "status"
   ],
@@ -604,6 +605,76 @@
         "QA_PASSED",
         "PRODUCTION_READY"
       ]
+    },
+    "content_suite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_version",
+        "product_id",
+        "product_page",
+        "metafields",
+        "collection",
+        "blog",
+        "site_faq",
+        "governance",
+        "qa"
+      ],
+      "properties": {
+        "content_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product_page": {
+          "type": "object"
+        },
+        "metafields": {
+          "type": "object"
+        },
+        "collection": {
+          "type": "object"
+        },
+        "blog": {
+          "type": "object"
+        },
+        "site_faq": {
+          "type": "object"
+        },
+        "governance": {
+          "type": "object"
+        },
+        "qa": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "errors",
+            "passed",
+            "status"
+          ],
+          "properties": {
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "passed": {
+              "type": "boolean"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "CONTENT_READY_FOR_REVIEW",
+                "CONTENT_BLOCKED"
+              ]
+            }
+          }
+        }
+      }
     }
   }
 }
