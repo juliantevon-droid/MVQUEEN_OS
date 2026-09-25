@@ -80,16 +80,16 @@
     },
     {
       "id": "pricing",
-      "status": "connected_advisory",
+      "status": "connected_approval_required",
       "authority": "app",
-      "execution": "automatic_recommendation",
-      "writes": "no_price_mutation"
+      "execution": "automatic_recommendation_plus_human_approved_publish",
+      "writes": "approved_single_variant_price_only"
     },
     {
       "id": "profitability",
-      "status": "connected_advisory",
+      "status": "connected",
       "authority": "app",
-      "execution": "automatic_recommendation",
+      "execution": "automatic_guardrail",
       "writes": "commercial_metafields_only"
     },
     {
@@ -164,7 +164,7 @@
     }
   ],
   "non_negotiable_gates": {
-    "money": "No live price mutation without verified cost inputs, configured fee assumptions, explicit product approval, and a dedicated pricing publish flag.",
+    "money": "No live price mutation without verified cost inputs, configured fee assumptions, contribution-floor validation, MVQ_PRICE_PUBLISH_ENABLED=true, explicit product approval, and an authenticated human submission.",
     "advertising": "No ad spend, campaign creation, pausing, enabling, or budget changes without a connected approved provider and explicit action approval.",
     "product_truth": "No unsupported claims or invented product facts.",
     "protected_fields": [
