@@ -77,6 +77,8 @@ def main() -> int:
         "product.metafields.content.care_instructions",
         "product.metafields.attributes.ingredients",
         "product.metafields.attributes.main_stone.value",
+        "product.metafields.seo.internal_links.value",
+        'class="mvq-product-internal-links"',
         'class="mvq-product-bullets"',
         "<details>",
         "<summary>Product details</summary>",
