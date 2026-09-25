@@ -4,9 +4,9 @@
 
 - Shopify store: `tsucu0-1i.myshopify.com`
 - Live theme: `MVQueen — Custom Production Build` (`MAIN`) — protected from automated writes
-- Development target: `MVQueen — Staging Preview` (`UNPUBLISHED`)
+- Development target: `MVQueen — Next Production Build` (`UNPUBLISHED`)
 - Live theme ID: `154869825734`
-- Target theme ID: `154876772550`
+- Target theme ID: `154876674246`
 - Rollback theme: `MVQueen — Previous Production Build` (`UNPUBLISHED`), ID `154611515590`
 - Extra preview snapshot: `MVQueen — Staging Preview` (`UNPUBLISHED`), ID `154876772550` — not a deployment target
 
