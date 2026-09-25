@@ -9,7 +9,13 @@ export type ProductSnapshot = {
     nodes?: { id: string; alt?: string | null }[];
   };
   variants?: {
-    nodes?: { id: string; price?: string | null; compareAtPrice?: string | null }[];
+    nodes?: {
+      id: string;
+      price?: string | null;
+      compareAtPrice?: string | null;
+      unitCost?: string | null;
+      costCurrency?: string | null;
+    }[];
   };
   commercialMetafields?: {
     nodes?: { key: string; value?: string | null; type?: string | null }[];
