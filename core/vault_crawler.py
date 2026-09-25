@@ -22,6 +22,21 @@ CANONICAL_BRAND = "MVQueen"
 CANONICAL_STORE = "tsucu0-1i.myshopify.com"
 CANONICAL_API = "2026-07"
 LEGACY_BRANDS = ("OUHOE","MISS.QUEEN","Miss. Queen","Hoegoa","Fanzhen","eelhope","Color Fit","West & Month")
+# These files intentionally contain forbidden-brand strings as detection rules,
+# test fixtures, or explicit historical/reference policy. Do not flag the rule
+# itself as contamination.
+BRAND_REFERENCE_ALLOWLIST = {
+    "core/brand_linter.py",
+    "15_Scripts_And_Code/mvqueen_engine/brand_governance.py",
+    "30_System_Infrastructure/catalog/mvqueen_catalog_worker.py",
+    "30_System_Infrastructure/automation/validate_theme_contract.py",
+    "PRODUCTION_READINESS/MVQUEEN_CATALOG_CONTRACT_V1.md",
+    "PRODUCTION_READINESS/UNIFIED_SYSTEM_CONTRACT.md",
+    "PRODUCTION_READINESS/test_branch_consolidation.py",
+    "PRODUCTION_READINESS/test_catalog_recovery_transform.py",
+    "PRODUCTION_READINESS/test_catalog_recovery_controls.py",
+    "PRODUCTION_READINESS/test_catalog_recovery_audit.py",
+}
 PROTECTED_TERMS = ("Variant SKU","Variant Inventory Qty","Variant Price","Variant Compare At Price","Handle")
 API_RE = re.compile(r"\b20\d{2}-(?:01|04|07|10)\b")
 STORE_RE = re.compile(r"\b[a-z0-9][a-z0-9-]*\.myshopify\.com\b", re.I)
@@ -80,9 +95,10 @@ def main():
         for m in API_RE.finditer(text): api_versions[m.group(0)].add(rel)
         for m in STORE_RE.finditer(text): stores[m.group(0).lower()].add(rel)
         for m in TODO_RE.finditer(text): add(findings,"LOW","unfinished_work",rel,f"{m.group(1)} marker remains")
-        for brand in LEGACY_BRANDS:
-            if brand.lower() in text.lower():
-                add(findings,"MEDIUM","brand_drift",rel,f"Legacy/supplier brand reference: {brand}","review")
+        if rel not in BRAND_REFERENCE_ALLOWLIST:
+            for brand in LEGACY_BRANDS:
+                if brand.lower() in text.lower():
+                    add(findings,"MEDIUM","brand_drift",rel,f"Legacy/supplier brand reference: {brand}","review")
         for m in SECRET_RE.finditer(text):
             value=m.group(2).strip()
             if value and not PLACEHOLDER_RE.match(value):
