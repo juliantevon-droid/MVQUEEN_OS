@@ -33,10 +33,17 @@
           assign material = product.metafields.attributes.material.value | default: product.metafields.custom.material.value
           assign color = product.metafields.attributes.color.value | default: product.metafields.custom.stone_color.value
           assign occasion = product.metafields.attributes.occasion.value
-          assign main_stone = product.metafields.custom.main_stone.value
-          assign stone_size = product.metafields.custom.stone_size.value
-          assign pendant_length = product.metafields.custom.pendant_length.value
-          assign total_weight = product.metafields.custom.total_weight.value
+          assign main_stone = product.metafields.attributes.main_stone.value | default: product.metafields.custom.main_stone.value
+          assign stone_size = product.metafields.attributes.main_stone_size.value | default: product.metafields.custom.stone_size.value
+          assign pendant_length = product.metafields.attributes.size_length.value | default: product.metafields.custom.pendant_length.value
+          assign total_weight = product.metafields.attributes.total_weight.value | default: product.metafields.custom.total_weight.value
+
+          assign canonical_ingredients = product.metafields.attributes.ingredients
+          assign canonical_ingredient = product.metafields.attributes.ingredient
+          assign canonical_key_ingredient = product.metafields.attributes.key_ingredient
+          assign canonical_how_to_use = product.metafields.content.how_to_use
+          assign canonical_care = product.metafields.content.care_instructions
+          assign canonical_faq = product.metafields.content.faq.value
 
           assign product_form_id = 'ProductForm-' | append: section.id
         %}
@@ -107,13 +114,25 @@
             </details>
           {% endif %}
 
-          {% if product.metafields.custom.ingredients != blank %}
+          {% if canonical_ingredients != blank %}
+            <details><summary>Ingredients</summary>{{ canonical_ingredients | metafield_tag }}</details>
+          {% elsif canonical_ingredient != blank %}
+            <details><summary>Ingredient</summary>{{ canonical_ingredient | metafield_tag }}</details>
+          {% elsif canonical_key_ingredient != blank %}
+            <details><summary>Key ingredient</summary>{{ canonical_key_ingredient | metafield_tag }}</details>
+          {% elsif product.metafields.custom.ingredients != blank %}
             <details><summary>Ingredients</summary>{{ product.metafields.custom.ingredients | metafield_tag }}</details>
           {% endif %}
-          {% if product.metafields.custom.how_to_use != blank %}
+
+          {% if canonical_how_to_use != blank %}
+            <details><summary>How to use</summary>{{ canonical_how_to_use | metafield_tag }}</details>
+          {% elsif product.metafields.custom.how_to_use != blank %}
             <details><summary>How to use</summary>{{ product.metafields.custom.how_to_use | metafield_tag }}</details>
           {% endif %}
-          {% if product.metafields.custom.care_instructions != blank %}
+
+          {% if canonical_care != blank %}
+            <details><summary>Care</summary>{{ canonical_care | metafield_tag }}</details>
+          {% elsif product.metafields.custom.care_instructions != blank %}
             <details><summary>Care</summary>{{ product.metafields.custom.care_instructions | metafield_tag }}</details>
           {% endif %}
           {% if product.metafields.custom.size_guide != blank %}
@@ -132,7 +151,18 @@
             </p>
           </details>
 
-          {% if product.metafields.custom.faq != blank %}
+          {% if canonical_faq != blank %}
+            <div class="mvq-product-faqs" aria-label="Frequently asked questions">
+              {% for faq_item in canonical_faq %}
+                {% if faq_item.question != blank and faq_item.answer != blank %}
+                  <details class="mvq-product-faq-item">
+                    <summary>{{ faq_item.question }}</summary>
+                    <p>{{ faq_item.answer }}</p>
+                  </details>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% elsif product.metafields.custom.faq != blank %}
             <details><summary>Frequently asked questions</summary>{{ product.metafields.custom.faq | metafield_tag }}</details>
           {% endif %}
         </div>
