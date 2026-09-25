@@ -29,6 +29,6 @@ Generated language may interpret verified facts, but it must never manufacture p
 
 ## Governed content flow
 
-`PRODUCTION_READY product → CONTENT_INTELLIGENCE_V1 → CONTENT_READY_FOR_REVIEW → human/QA approval → publishing boundary`
+`PRODUCTION_READY product → CONTENT_INTELLIGENCE_V1 → CONTENT_PUBLISH_ELIGIBLE → canonical approval/fingerprint → publishing boundary → Shopify content surfaces`
 
-Content drafts never auto-publish. Product facts used in pages, metafields, FAQs, collection copy, or blogs must come from verified `source_truth` facts. Legacy generators that could synthesize protected or unsupported facts are retired and fail closed.
+QA-passed content may publish to approved surfaces: product FAQ/metafields, qualifying blog articles, matched collection copy, and governed static pages. Sparse blog drafts remain held, product FAQ content does not overwrite the global FAQ page, and legal/policy pages remain excluded from automation. Product facts used in any surface must come from verified `source_truth` facts. Legacy generators that could synthesize protected or unsupported facts are retired and fail closed.
