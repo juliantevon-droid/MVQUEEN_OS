@@ -1,6 +1,6 @@
 .mvq-header{position:sticky;top:0;z-index:50;background:rgba(250,250,248,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--mvq-line)}
 .mvq-nav{min-height:76px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
-.mvq-logo{font-family:var(--mvq-display);font-size:1.45rem;font-weight:500;letter-spacing:.16em;line-height:1;text-decoration:none;white-space:nowrap}
+.mvq-logo{font-family:var(--mvq-display);font-size:1.45rem;font-weight:500;letter-spacing:.16em;line-height:1;text-decoration:none;white-space:nowrap}\n.mvq-logo-image{display:block;width:min(var(--mvq-logo-width,148px),220px);height:auto}
 .mvq-navlinks{display:flex;justify-content:center;align-items:center;gap:clamp(12px,2vw,28px)}
 .mvq-navlinks a,.mvq-nav-item>summary,.mvq-actions a{position:relative;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;color:inherit}
 .mvq-nav-item{position:relative}
@@ -41,7 +41,7 @@ html.mvq-lock{overflow:hidden}
 @media(max-width:749px){
   .mvq-nav{min-height:64px;grid-template-columns:auto 1fr auto;gap:12px}
   .mvq-menu{display:inline-flex;align-items:center;justify-content:center}
-  .mvq-logo{justify-self:center;font-size:1.2rem}
+  .mvq-logo{justify-self:center;font-size:1.2rem}\n  .mvq-logo-image{width:min(var(--mvq-logo-width,132px),132px)}
   .mvq-navlinks{display:none}
   .mvq-actions{gap:8px}
   .mvq-action-label{display:none}
