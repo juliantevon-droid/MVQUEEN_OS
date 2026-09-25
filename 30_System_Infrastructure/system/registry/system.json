@@ -24,5 +24,8 @@
     }
   ],
   "status": "enterprise_integration",
-  "capability_registry": "30_System_Infrastructure/system/registry/enterprise_capabilities.json"
+  "capability_registry": "30_System_Infrastructure/system/registry/enterprise_capabilities.json",
+  "workflow_registry": "30_System_Infrastructure/system/registry/enterprise_workflows.json",
+  "integration_requirements": "30_System_Infrastructure/system/registry/integration_requirements.json",
+  "operating_contract": "PRODUCTION_READINESS/ENTERPRISE_OPERATING_SYSTEM_V2.md"
 }
