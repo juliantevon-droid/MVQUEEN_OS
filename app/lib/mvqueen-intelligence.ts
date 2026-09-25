@@ -6,6 +6,8 @@ export type ProductSnapshot = {
   vendor?: string | null;
   tags?: string[];
   media?: { id: string; alt?: string | null }[];
+  variants?: { id: string; price?: string | null; compareAtPrice?: string | null }[];
+  commercialMetafields?: { key: string; value?: string | null; type?: string | null }[];
 };
 
 export type Classification = {
