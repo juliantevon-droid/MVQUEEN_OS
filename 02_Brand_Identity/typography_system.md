@@ -142,26 +142,26 @@ body { font: var(--type-body); }
 ### Headlines (Cormorant)
 - **Luxury Signal:** Use higher weights (600+) for premium feeling
 - **Spacing:** Tighter letter-spacing for elegance, especially at large sizes
-- **Color:** Deep Rose (#8B4A5C) or Charcoal (#2C2C2C)
+- **Color:** Deep Rose (#A97886) or Charcoal (#342F2C)
 - **Alignment:** Left-aligned by default (never centered for body copy)
 
 ### Body Copy (Jost)
 - **Readability:** Always 16px minimum on desktop, 14px minimum on mobile
 - **Line Height:** 1.6 for body copy (creates breathing room)
-- **Contrast:** Must be Charcoal (#2C2C2C) or dark color on light background
+- **Contrast:** Must be Charcoal (#342F2C) or dark color on light background
 - **Width:** Max 70 characters per line for optimal readability
 
 ### Buttons & CTAs (Jost)
 - **Weight:** 500 or 600 (Medium or Semi-Bold)
 - **Size:** 16px for standard buttons
 - **Transformation:** Uppercase optional but only if letter-spacing is increased to 0.05em+
-- **Color:** Charcoal (#2C2C2C) on MVQueen Gold (#D4AF37) background
+- **Color:** Charcoal (#342F2C) on MVQueen Gold (#C7AD86) background
 
 ### Navigation (Jost)
 - **Weight:** 400 for unselected, 600 for active/hover
 - **Size:** 16px desktop, 14px mobile
 - **Spacing:** Generous spacing between nav items (8-12px)
-- **Color:** Deep Rose (#8B4A5C) for unselected, MVQueen Gold (#D4AF37) for active
+- **Color:** Deep Rose (#A97886) for unselected, MVQueen Gold (#C7AD86) for active
 
 ### Email Typography
 
@@ -170,7 +170,7 @@ body { font: var(--type-body); }
 
 **Email Body:**
 - Paragraph: Jost 16px, Charcoal, line-height 1.6
-- Links: Deep Rose (#8B4A5C), underlined
+- Links: Deep Rose (#A97886), underlined
 - CTA Button: Jost 16px 600, Charcoal on Gold background
 
 ---
@@ -183,9 +183,9 @@ body { font: var(--type-body); }
 - Button text on background: 4.5:1 minimum
 
 **Verified combinations:**
-- Cormorant 36px Charcoal (#2C2C2C) on Soft Cream (#FFF8F0): ✅ 12:1 (AAA)
-- Jost 16px Charcoal (#2C2C2C) on Pearl White (#FAFAF8): ✅ 11.2:1 (AAA)
-- Deep Rose (#8B4A5C) on Ivory (#F5F1EB): ✅ 6.1:1 (AA)
+- Cormorant 36px Charcoal (#342F2C) on Soft Cream (#FFFCF8): ✅ 12:1 (AAA)
+- Jost 16px Charcoal (#342F2C) on Pearl White (#FFFFFF): ✅ 11.2:1 (AAA)
+- Deep Rose (#A97886) on Ivory (#FCF8F4): ✅ 6.1:1 (AA)
 
 ### Font Size Minimums
 - Body copy: Never smaller than 16px on desktop (14px on mobile only)
