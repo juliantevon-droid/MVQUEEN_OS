@@ -1,14 +1,14 @@
-# 👑 MVQUEEN — Writing Rules
+# 👑 MVQueen — Writing Rules
 ### The Craft Manual
 
 ---
 
 ## What This File Governs
 
-Voice is *what* MVQUEEN sounds like.
+Voice is *what* MVQueen sounds like.
 Writing Rules are *how* that voice gets built at the sentence level.
 
-This file is for anyone who writes for MVQUEEN — humans and AI systems alike. It covers sentence mechanics, structure, rhythm, formatting, and the specific craft decisions that separate MVQUEEN copy from everything else in the market.
+This file is for anyone who writes for MVQueen — humans and AI systems alike. It covers sentence mechanics, structure, rhythm, formatting, and the specific craft decisions that separate MVQueen copy from everything else in the market.
 
 Follow these rules and the voice will hold.
 Ignore them and it won't matter how good your intentions were.
@@ -18,7 +18,7 @@ Ignore them and it won't matter how good your intentions were.
 ## PART 1 — SENTENCE MECHANICS
 
 ### Rule 01 — Active Voice. Always.
-Passive voice removes the brand from the experience. MVQUEEN does not happen *to* women. It happens *with* them and *for* them.
+Passive voice removes the brand from the experience. MVQueen does not happen *to* women. It happens *with* them and *for* them.
 
 > ❌ "This serum was formulated to restore radiance."
 > ✅ "This serum restores radiance — and reminds skin what it's capable of."
@@ -28,13 +28,13 @@ Passive voice is only permitted in legal disclaimers and ingredient disclosures.
 ---
 
 ### Rule 02 — Vary Sentence Length Deliberately
-Short sentences create impact. Medium sentences carry information. Long sentences create rhythm and immersion. MVQUEEN copy uses all three — never one at the expense of the others.
+Short sentences create impact. Medium sentences carry information. Long sentences create rhythm and immersion. MVQueen copy uses all three — never one at the expense of the others.
 
 The pattern that works most reliably:
 > Long sentence that creates atmosphere. Short sentence that lands the point. Medium sentence that extends it naturally.
 
 Example:
-> "Getting dressed for yourself — not for anyone watching — is one of the most quietly powerful things a woman can do. MVQUEEN was made for that moment. The one that exists before the world gets to see it."
+> "Getting dressed for yourself — not for anyone watching — is one of the most quietly powerful things a woman can do. MVQueen was made for that moment. The one that exists before the world gets to see it."
 
 ---
 
@@ -49,7 +49,7 @@ Use it. Don't overuse it. Maximum two em dashes per paragraph.
 ---
 
 ### Rule 04 — The Line Break Is Not Decoration
-In MVQUEEN copy — especially in social captions, product descriptions, and campaign copy — line breaks are punctuation. They create visual breathing room and control how the reader moves through the copy.
+In MVQueen copy — especially in social captions, product descriptions, and campaign copy — line breaks are punctuation. They create visual breathing room and control how the reader moves through the copy.
 
 > "She doesn't wait for permission.
 > She doesn't perform confidence.
@@ -62,7 +62,7 @@ Do not use line breaks in email body copy or website paragraphs — only in disp
 ---
 
 ### Rule 05 — Periods Inside Thought Fragments Are Intentional
-MVQUEEN copy sometimes uses fragment sentences — incomplete grammatically, complete emotionally. This is intentional style, not an error.
+MVQueen copy sometimes uses fragment sentences — incomplete grammatically, complete emotionally. This is intentional style, not an error.
 
 > "For the woman who already knows. For the one who's still learning. For both."
 
@@ -101,13 +101,13 @@ In this order:
 ---
 
 ### Rule 09 — Email Copy Structure
-Every MVQUEEN email follows this emotional arc regardless of its purpose:
+Every MVQueen email follows this emotional arc regardless of its purpose:
 
 1. **Subject line** — creates intrigue or warmth, never urgency or discounting
 2. **Opening line** — emotional hook; she should feel something before she reads anything
 3. **Body** — product/offer/story told through experience, not announcement
 4. **CTA** — one. Single. Not three buttons competing for attention.
-5. **Sign-off** — warm, personal, on-brand. Never "The MVQUEEN Team." Sign as *MVQUEEN* or from a named brand voice.
+5. **Sign-off** — warm, personal, on-brand. Never "The MVQueen Team." Sign as *MVQueen* or from a named brand voice.
 
 ---
 
@@ -138,7 +138,7 @@ If the image already says something, the copy says something *else* — somethin
 ## PART 3 — FORMATTING RULES
 
 ### Rule 12 — Capitalization
-- Brand name: always **MVQUEEN** — all caps, no space
+- Brand name: always **MVQueen** — all caps, no space
 - Sister brand: always **Miss.Princess** — capital M, capital P, period between
 - Product names: Title Case
 - Collection names: Title Case
@@ -151,7 +151,7 @@ If the image already says something, the copy says something *else* — somethin
 - **Period** — full stop, maximum confidence
 - **Em dash (—)** — layered meaning, rhythmic pause
 - **Ellipsis (...)** — use *only* to create intentional suspension; not as lazy punctuation
-- **Exclamation marks** — avoid in MVQUEEN copy. Miss.Princess may use one per caption maximum.
+- **Exclamation marks** — avoid in MVQueen copy. Miss.Princess may use one per caption maximum.
 - **Question marks** — use sparingly in body copy; effective in subject lines and hooks
 - **Ampersand (&)** — permitted in product names and collection names only; not in body copy
 - **Quotation marks** — for actual quotes only; not for emphasis or irony
@@ -180,25 +180,25 @@ For customer-facing copy (product pages, website):
 ## PART 4 — MVQUEEN-SPECIFIC STYLE DECISIONS
 
 ### Rule 16 — How to Introduce the Brand Name
-In copy, MVQUEEN is referred to as:
-- **MVQUEEN** (primary)
+In copy, MVQueen is referred to as:
+- **MVQueen** (primary)
 - **the brand** (in longer editorial pieces, after first use)
 - Never as "we" in third-person contexts (choose either first or third person and commit)
-- Never as "MVQUEEN brand" — redundant
+- Never as "MVQueen brand" — redundant
 
 ---
 
 ### Rule 17 — How to Reference Miss.Princess
 - Always **Miss.Princess** — never "Miss Princess" (no period = wrong), never "miss.princess" (lowercase = wrong)
 - In MVQUEEN-primary copy, Miss.Princess is introduced as: *"our sister brand, Miss.Princess"*
-- In Miss.Princess-primary copy, she stands alone — no need to reference MVQUEEN unless brand relationship is the editorial focus
+- In Miss.Princess-primary copy, she stands alone — no need to reference MVQueen unless brand relationship is the editorial focus
 - The two brands are **sister brands**, not sub-brands or lines. Miss.Princess is a peer, not a product category.
 
 ---
 
 ### Rule 18 — How to Write About the Customer
 - She is **she** — never "they" in brand copy (singular they is for accessibility/legal contexts)
-- She is never addressed as "girl" in MVQUEEN copy (Miss.Princess may use it sparingly)
+- She is never addressed as "girl" in MVQueen copy (Miss.Princess may use it sparingly)
 - She is never a demographic label (*millennials, Gen Z, women 25–35*) in customer-facing copy
 - She is described by her *emotional state and aspirations*, not her age or income
 
@@ -219,4 +219,4 @@ If you can answer yes, yes, no, yes — it ships.
 
 ---
 
-*This file governs the mechanics of how MVQUEEN writes. Pair with Voice_Consistency_Rules.md for the quick-reference card, Tone_Guide.md for voice philosophy, and Forbidden_Words.md for vocabulary law.*
+*This file governs the mechanics of how MVQueen writes. Pair with Voice_Consistency_Rules.md for the quick-reference card, Tone_Guide.md for voice philosophy, and Forbidden_Words.md for vocabulary law.*
