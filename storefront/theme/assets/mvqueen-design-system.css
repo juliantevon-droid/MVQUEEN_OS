@@ -1,15 +1,15 @@
 :root {
-  --mvq-gold: #C7AD86;
+  --mvq-gold: #C99B4A;
   --mvq-gold-strong: #876F50;
-  --mvq-cream: #FFFCF8;
-  --mvq-rose: #A97886;
+  --mvq-cream: #FFF9F2;
+  --mvq-rose: #B52255;
   --mvq-rose-strong: #8B5E6C;
   --mvq-pearl: #FFFFFF;
-  --mvq-charcoal: #342F2C;
-  --mvq-blush: #F8EEEA;
-  --mvq-ivory: #FCF8F4;
-  --mvq-sage: #B8BAB1;
-  --mvq-mauve: #B7A2AF;
+  --mvq-charcoal: #171310;
+  --mvq-blush: #F3DFE7;
+  --mvq-ivory: #FBF5EE;
+  --mvq-sage: #B8B0AA;
+  --mvq-mauve: #B8758E;
   --mvq-mink: #786D68;
   --mvq-display: "Cormorant Garamond", Georgia, serif;
   --mvq-body: "Jost", system-ui, sans-serif;
@@ -19,14 +19,14 @@
   --mvq-shadow: 0 12px 40px rgba(52, 47, 44, .08);
   /* Legacy component aliases: keep the original MVQueen visual language stable. */
   --ink: var(--mvq-charcoal);
-  --dust: #514946;
+  --dust: #3A302B;
   --mink: var(--mvq-mink);
-  --blush: #D9C4BA;
+  --blush: #E9D1DA;
   --petal: var(--mvq-blush);
   --ivory: var(--mvq-ivory);
   --white: var(--mvq-pearl);
   --gold: var(--mvq-gold);
-  --gold-lt: #E6D5BC;
+  --gold-lt: #F2D39A;
   --display: var(--mvq-display);
   --title: var(--mvq-body);
   --body: var(--mvq-body);
