@@ -41,6 +41,8 @@ jobs:
               if not raw:
                   continue
               path = pathlib.Path(raw.decode("utf-8"))
+              if str(path).startswith(".github/workflows/"):
+                  continue
               if path.name not in special_names and path.suffix.lower() not in allowed_suffixes:
                   continue
               data = path.read_bytes()
@@ -71,6 +73,8 @@ jobs:
               if not raw:
                   continue
               path = pathlib.Path(raw.decode("utf-8"))
+              if str(path).startswith(".github/workflows/"):
+                  continue
               try:
                   data = path.read_bytes()
               except OSError:
