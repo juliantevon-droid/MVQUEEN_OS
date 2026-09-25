@@ -166,10 +166,10 @@ async function publishCollection(admin: AdminGraphql, record: CanonicalProductRe
     return { surface: "collection", status: "SKIPPED", message: "Collection publishing requires MVQ_COLLECTION_CONTENT_PUBLISH_ENABLED=true" };
   }
 
-  const targetHandles = Array.from(new Set(
+  const targetHandles: string[] = Array.from(new Set<string>(
     (Array.isArray(collection.target_handles) ? collection.target_handles : [collection.slug])
       .map((value: unknown) => String(value || "").trim())
-      .filter(Boolean),
+      .filter((value: string) => Boolean(value)),
   ));
   if (!targetHandles.length) {
     return { surface: "collection", status: "SKIPPED", message: "Collection output has no target handles" };
