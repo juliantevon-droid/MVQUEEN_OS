@@ -106,6 +106,7 @@ export async function processProductJob(jobId: string) {
       "mvq:tone:",
       "mvq:pricing:",
       "mvq:marketing:",
+      "mvq:lifecycle:",
     ];
     const retainedTags = (product.tags ?? []).filter(
       (tag) =>
@@ -116,6 +117,7 @@ export async function processProductJob(jobId: string) {
     const mergedTags = Array.from(new Set([...retainedTags, ...decision.tags]));
     const pricing = decision.pricing;
     const marketing = decision.marketing;
+    const lifecycle = decision.lifecycle;
     const metafields = [
       { namespace: "classification", key: "department", type: "single_line_text_field", value: c.department },
       { namespace: "classification", key: "family", type: "single_line_text_field", value: c.family },
@@ -162,6 +164,8 @@ export async function processProductJob(jobId: string) {
       { namespace: "marketing", key: "brand_world", type: "single_line_text_field", value: marketing.brandWorld },
       { namespace: "marketing", key: "positioning", type: "multi_line_text_field", value: marketing.positioning },
       { namespace: "marketing", key: "paid_execution", type: "single_line_text_field", value: marketing.paidExecution },
+      { namespace: "lifecycle", key: "plan_state", type: "single_line_text_field", value: lifecycle.state },
+      { namespace: "lifecycle", key: "execution_state", type: "single_line_text_field", value: lifecycle.execution },
       { namespace: "analytics", key: "measurement_key", type: "single_line_text_field", value: decision.measurementKey },
     ];
 
