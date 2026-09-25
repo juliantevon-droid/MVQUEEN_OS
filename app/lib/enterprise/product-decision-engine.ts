@@ -33,10 +33,12 @@ export function buildEnterpriseProductDecision(product: ProductSnapshot) {
     product.productType ?? "",
   );
   const brandRoute = classifyBrandWorld(product);
-  const currentPrice = numberFrom(product.variants?.nodes?.[0]?.price);
+  const firstVariant = product.variants?.nodes?.[0];
+  const currentPrice = numberFrom(firstVariant?.price);
+  const authoritativeUnitCost = numberFrom(firstVariant?.unitCost);
   const pricing = buildPricingDecision({
     currentPrice,
-    unitCost: numberFrom(metafieldValue(product, "unit_cost")),
+    unitCost: authoritativeUnitCost ?? numberFrom(metafieldValue(product, "unit_cost")),
     inboundShipping: numberFrom(metafieldValue(product, "inbound_shipping")),
   });
   const marketing = buildMarketingPlan(classification, brandRoute, pricing);
@@ -60,6 +62,10 @@ export function buildEnterpriseProductDecision(product: ProductSnapshot) {
     pricing,
     marketing,
     lifecycle,
+    commercialSource: {
+      unitCostSource: authoritativeUnitCost !== null ? "shopify_inventory_item" : "commercial_metafield",
+      unitCostCurrency: firstVariant?.costCurrency ?? metafieldValue(product, "cost_currency"),
+    },
     tags,
     measurementKey: `product:${product.id}`,
   };
