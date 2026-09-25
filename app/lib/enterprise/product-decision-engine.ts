@@ -7,6 +7,7 @@ import {
 import { buildMarketingPlan } from "./marketing-engine";
 import { buildPricingDecision } from "./pricing-engine";
 import { buildLifecyclePlan } from "./lifecycle-engine";
+import type { CommercialConfigResolution } from "./commercial-config";
 
 function numberFrom(value?: string | null): number | null {
   if (!value?.trim()) return null;
@@ -26,7 +27,10 @@ function slug(value: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-export function buildEnterpriseProductDecision(product: ProductSnapshot) {
+export function buildEnterpriseProductDecision(
+  product: ProductSnapshot,
+  commercial?: CommercialConfigResolution,
+) {
   const classification = classifyProduct(
     product.title ?? "",
     product.descriptionHtml ?? "",
@@ -36,11 +40,14 @@ export function buildEnterpriseProductDecision(product: ProductSnapshot) {
   const firstVariant = product.variants?.nodes?.[0];
   const currentPrice = numberFrom(firstVariant?.price);
   const authoritativeUnitCost = numberFrom(firstVariant?.unitCost);
-  const pricing = buildPricingDecision({
-    currentPrice,
-    unitCost: authoritativeUnitCost ?? numberFrom(metafieldValue(product, "unit_cost")),
-    inboundShipping: numberFrom(metafieldValue(product, "inbound_shipping")),
-  });
+  const pricing = buildPricingDecision(
+    {
+      currentPrice,
+      unitCost: authoritativeUnitCost ?? numberFrom(metafieldValue(product, "unit_cost")),
+      inboundShipping: numberFrom(metafieldValue(product, "inbound_shipping")),
+    },
+    commercial,
+  );
   const marketing = buildMarketingPlan(classification, brandRoute, pricing);
   const lifecycle = buildLifecyclePlan(classification, brandRoute);
 
