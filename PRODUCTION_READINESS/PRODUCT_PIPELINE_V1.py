@@ -14,10 +14,12 @@ try:
     from .MVQUEEN_EDITORIAL_INTELLIGENCE_V1 import generate, validate_editorial
     from .COMMERCIAL_INTELLIGENCE_V1 import build_commercial, validate_commercial
     from .CREATIVE_INTELLIGENCE_V1 import build_creative, validate_creative
+    from .BRAND_WORLD_V1 import classify_brand_world
 except ImportError:
     from MVQUEEN_EDITORIAL_INTELLIGENCE_V1 import generate, validate_editorial
     from COMMERCIAL_INTELLIGENCE_V1 import build_commercial, validate_commercial
     from CREATIVE_INTELLIGENCE_V1 import build_creative, validate_creative
+    from BRAND_WORLD_V1 import classify_brand_world
 
 STAGES = [
     "RAW", "NORMALIZED", "INTELLIGENCE_READY", "COPY_READY", "SEO_READY",
@@ -41,7 +43,11 @@ ROBOTIC_PHRASES = re.compile(
 )
 MVQUEEN_SIGNALS = (
     "confidence", "confident", "feminine", "elevated", "modern", "polished",
-    "intentional", "effortless", "luxury", "mvqueen",
+    "intentional", "effortless", "luxury", "mvqueen", "refined",
+)
+MISS_PRINCESS_SIGNALS = (
+    "soft", "playful", "romantic", "bright", "color", "feminine",
+    "expressive", "polished", "princess", "glamour",
 )
 
 
@@ -73,16 +79,29 @@ def build_intelligence(record: Dict[str, Any]) -> None:
     material = _text(facts.get("material"))
     color = _text(facts.get("color"))
     use = _text(facts.get("use_context"))
+    brand = classify_brand_world(record)
+
+    if brand["brand_world"] == "miss-princess":
+        desire = "Feel expressive, feminine, polished, and free to play with color."
+        positioning = "Miss.Princess soft glamour with playful color, romantic detail, and polished femininity."
+    elif brand["brand_world"] == "mvqueen":
+        desire = "Feel polished, confident, and intentionally styled."
+        positioning = "MVQueen confidence-driven style with a refined, modern finish."
+    else:
+        desire = "Find the right brand-world fit from verified product details."
+        positioning = "Brand-world assignment requires review before customer-facing publication."
+
     record["intelligence"] = {
         "customer_need": f"Find a {category} that fits her intended use and personal style.",
-        "desire": "Feel polished, confident, and intentionally styled.",
+        "desire": desire,
         "use_context": use or "Everyday styling and personal use.",
-        "positioning": "MVQueen confidence-driven style with an elevated, modern finish.",
+        "positioning": positioning,
         "supported_benefits": [x for x in [f"{material} construction" if material else "", f"{color} finish" if color else ""] if x],
         "differentiators": [],
         "objections": [],
         "collection_candidates": [category],
         "cross_sell_candidates": [],
+        **brand,
     }
     record["status"] = "INTELLIGENCE_READY"
 
@@ -154,7 +173,8 @@ def build_seo(record: Dict[str, Any]) -> None:
         if value and value.casefold() != primary.casefold()
     ][:5]
 
-    seo_suffix = " | MVQueen"
+    brand_name = _text(record.get("intelligence", {}).get("brand_name"))
+    seo_suffix = f" | {brand_name}" if brand_name in {"MVQueen", "Miss.Princess"} else ""
     seo_base = title or product_type
     if len(seo_base) + len(seo_suffix) > 60:
         seo_base = seo_base[: 60 - len(seo_suffix)].rstrip(" ,—-|")
@@ -263,9 +283,23 @@ def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
     robotic = ROBOTIC_PHRASES.findall(generated_text)
     if robotic:
         errors.append("Generic/robotic marketing language detected: " + ", ".join(sorted(set(robotic), key=str.lower)))
-    signal_count = sum(1 for signal in MVQUEEN_SIGNALS if re.search(r"\b" + re.escape(signal) + r"\b", generated_text, re.I))
-    if signal_count < 2:
-        errors.append("MVQueen brand-voice signal threshold not met")
+    brand_world = _text(record.get("intelligence", {}).get("brand_world"))
+    if brand_world == "needs-review":
+        errors.append("Brand-world routing requires review")
+    elif brand_world == "miss-princess":
+        signal_count = sum(
+            1 for signal in MISS_PRINCESS_SIGNALS
+            if re.search(r"\b" + re.escape(signal) + r"\b", generated_text, re.I)
+        )
+        if signal_count < 2:
+            errors.append("Miss.Princess brand-voice signal threshold not met")
+    else:
+        signal_count = sum(
+            1 for signal in MVQUEEN_SIGNALS
+            if re.search(r"\b" + re.escape(signal) + r"\b", generated_text, re.I)
+        )
+        if signal_count < 2:
+            errors.append("MVQueen brand-voice signal threshold not met")
     editorial_errors, editorial_warnings = validate_editorial(record)
     errors.extend(editorial_errors)
     warnings.extend(editorial_warnings)
