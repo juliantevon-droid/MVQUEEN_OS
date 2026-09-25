@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "miss-princess-experience",
+      "settings": {
+        "menu": "miss-princess-menu"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
