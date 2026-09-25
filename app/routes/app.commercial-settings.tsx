@@ -73,6 +73,18 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     const targetCac = parseOptionalNumber(form, "targetCac", { min: 0, max: 10000 });
     const inboundShippingDefault = parseOptionalNumber(form, "inboundShippingDefault", { min: 0, max: 10000 });
 
+    if (
+      paymentRatePercent !== null &&
+      returnReservePercent !== null &&
+      targetMarginPercent !== null &&
+      paymentRatePercent + returnReservePercent + targetMarginPercent >= 100
+    ) {
+      return {
+        ok: false,
+        message: "Payment fee + return reserve + target contribution margin must total less than 100%.",
+      };
+    }
+
     const currency = String(form.get("currency") ?? "USD").trim().toUpperCase();
     if (!/^[A-Z]{3}$/.test(currency)) {
       return { ok: false, message: "Currency must be a three-letter code such as USD." };
