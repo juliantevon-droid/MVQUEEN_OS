@@ -96,7 +96,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
     pages += 1;
     if (!connection.pageInfo?.hasNextPage) break;
-    after = connection.pageInfo.endCursor;
+    after = connection.pageInfo.endCursor ?? null;
   }
 
   const audit = summarizeCatalogAudit(products);
