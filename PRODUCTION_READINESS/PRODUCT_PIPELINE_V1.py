@@ -213,9 +213,23 @@ def build_seo(record: Dict[str, Any]) -> None:
 
 def build_merchandising(record: Dict[str, Any]) -> None:
     category = _text(record.get("category", {}).get("product_type")) or "Essentials"
+    intelligence = record.get("intelligence", {})
+    brand_world = _text(intelligence.get("brand_world"))
+    brand_name = _text(intelligence.get("brand_name"))
+
+    if brand_world == "miss-princess":
+        world_collection = "Miss.Princess World"
+        brand_tag = "mvq:brand:miss-princess"
+    elif brand_world == "mvqueen":
+        world_collection = "MVQueen World"
+        brand_tag = "mvq:brand:mvqueen"
+    else:
+        world_collection = "Needs Review"
+        brand_tag = "mvq:brand:needs-review"
+
     record["merchandising"] = {
-        "collections": [category],
-        "tags": ["MVQueen", category],
+        "collections": [world_collection, category],
+        "tags": [brand_name or "Needs Review", brand_tag, category],
         "related_products": [],
         "bundles": [],
     }
