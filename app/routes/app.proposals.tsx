@@ -64,6 +64,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   return {
     shop: session.shop,
     editorialPublishEnabled: process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true",
+    contentSurfacesPublishEnabled: process.env.MVQ_CONTENT_SURFACES_PUBLISH_ENABLED === "true",
     productWritesEnabled: process.env.MVQ_WRITE_ENABLED === "true",
     recent,
   };
@@ -197,10 +198,27 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
     await audit("SUCCESS");
 
-    let contentSummary = "";
-    try {
-      const contentResults = await publishApprovedContentSurfaces(admin, record, approval);
-      for (const item of contentResults) {
+    let contentSummary = "governed blog/page/collection publishing disabled";
+    if (process.env.MVQ_CONTENT_SURFACES_PUBLISH_ENABLED === "true") {
+      try {
+        const contentResults = await publishApprovedContentSurfaces(admin, record, approval);
+        for (const item of contentResults) {
+          await prisma.productReleaseAudit.create({
+            data: {
+              shop: session.shop,
+              productGid,
+              contentFingerprint: fingerprint,
+              actor: approval.actor,
+              decision: approval.decision,
+              operation: "CONTENT_" + item.surface.toUpperCase(),
+              result: item.status,
+              error: item.status === "SKIPPED" ? item.message : null,
+            },
+          });
+        }
+        contentSummary = contentResults.map((item) => item.surface + ": " + item.status).join(" · ");
+      } catch (contentError) {
+        const contentMessage = contentError instanceof Error ? contentError.message : String(contentError);
         await prisma.productReleaseAudit.create({
           data: {
             shop: session.shop,
@@ -208,33 +226,18 @@ export const action = async ({ request }: ActionFunctionArgs) => {
             contentFingerprint: fingerprint,
             actor: approval.actor,
             decision: approval.decision,
-            operation: "CONTENT_" + item.surface.toUpperCase(),
-            result: item.status,
-            error: item.status === "SKIPPED" ? item.message : null,
+            operation: "CONTENT_PUBLISH",
+            result: "FAILED",
+            error: contentMessage,
           },
         });
+        contentSummary = "content: FAILED (" + contentMessage + ")";
       }
-      contentSummary = contentResults.map((item) => item.surface + ": " + item.status).join(" · ");
-    } catch (contentError) {
-      const contentMessage = contentError instanceof Error ? contentError.message : String(contentError);
-      await prisma.productReleaseAudit.create({
-        data: {
-          shop: session.shop,
-          productGid,
-          contentFingerprint: fingerprint,
-          actor: approval.actor,
-          decision: approval.decision,
-          operation: "CONTENT_PUBLISH",
-          result: "FAILED",
-          error: contentMessage,
-        },
-      });
-      contentSummary = "content: FAILED (" + contentMessage + ")";
     }
 
     return {
       ok: true,
-      message: `Published approved editorial/SEO release for ${updateBody.data?.productUpdate?.product?.title ?? productGid}. Product FAQ/metafields and other publish-eligible content were processed. ${contentSummary}. Protected price, SKU, inventory, variants, handle and media relationships were not changed.`,
+      message: `Published approved editorial/SEO release for ${updateBody.data?.productUpdate?.product?.title ?? productGid}. Approved product FAQ/metafields were included in the product release. Content surfaces: ${contentSummary}. Protected price, SKU, inventory, variants, handle and media relationships were not changed.`,
     };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
@@ -253,6 +256,7 @@ export default function ProposalPublisher() {
         <s-paragraph>Shop: {loaderData.shop}</s-paragraph>
         <s-paragraph>Global product writes: {loaderData.productWritesEnabled ? "enabled" : "disabled"}</s-paragraph>
         <s-paragraph>Editorial publish gate: {loaderData.editorialPublishEnabled ? "enabled" : "disabled"}</s-paragraph>
+        <s-paragraph>Governed content-surface gate: {loaderData.contentSurfacesPublishEnabled ? "enabled" : "disabled"}</s-paragraph>
         <s-paragraph>
           Only an exact QA-passed canonical record + matching approval fingerprint + explicitly approved product GID can publish.
         </s-paragraph>
