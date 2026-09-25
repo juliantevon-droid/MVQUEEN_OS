@@ -1,0 +1,88 @@
+<section class="mvq-gateway" aria-labelledby="BrandGatewayTitle">
+  <h1 id="BrandGatewayTitle" class="mvq-visually-hidden">Choose your shopping experience</h1>
+
+  <a class="mvq-gateway-panel mvq-gateway-panel--mvqueen" href="/pages/mvqueen" aria-label="Enter the MVQueen experience">
+    {% if section.settings.mvqueen_image != blank %}
+      {{ section.settings.mvqueen_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', alt: 'MVQueen' }}
+    {% endif %}
+    <span class="mvq-gateway-overlay" aria-hidden="true"></span>
+    <span class="mvq-gateway-content">
+      <span class="mvq-gateway-eyebrow">{{ section.settings.mvqueen_eyebrow }}</span>
+      <strong class="mvq-gateway-title">MVQueen</strong>
+      <span class="mvq-gateway-copy">{{ section.settings.mvqueen_copy }}</span>
+      <span class="mvq-gateway-cta">{{ section.settings.mvqueen_cta }} <span aria-hidden="true">→</span></span>
+    </span>
+  </a>
+
+  <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="/pages/miss-princess" aria-label="Enter the Miss.Princess experience">
+    {% if section.settings.princess_image != blank %}
+      {{ section.settings.princess_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', alt: 'Miss.Princess' }}
+    {% endif %}
+    <span class="mvq-gateway-overlay" aria-hidden="true"></span>
+    <span class="mvq-gateway-content">
+      <span class="mvq-gateway-eyebrow">{{ section.settings.princess_eyebrow }}</span>
+      <strong class="mvq-gateway-title">Miss.Princess</strong>
+      <span class="mvq-gateway-copy">{{ section.settings.princess_copy }}</span>
+      <span class="mvq-gateway-cta">{{ section.settings.princess_cta }} <span aria-hidden="true">→</span></span>
+    </span>
+  </a>
+</section>
+
+{% schema %}
+{
+  "name": "Brand Gateway",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "mvqueen_image",
+      "label": "MVQueen image"
+    },
+    {
+      "type": "text",
+      "id": "mvqueen_eyebrow",
+      "label": "MVQueen eyebrow",
+      "default": "THE MAIN EDIT"
+    },
+    {
+      "type": "textarea",
+      "id": "mvqueen_copy",
+      "label": "MVQueen description",
+      "default": "Bold femininity, modern elegance, and everyday luxury."
+    },
+    {
+      "type": "text",
+      "id": "mvqueen_cta",
+      "label": "MVQueen button text",
+      "default": "Enter MVQueen"
+    },
+    {
+      "type": "image_picker",
+      "id": "princess_image",
+      "label": "Miss.Princess image"
+    },
+    {
+      "type": "text",
+      "id": "princess_eyebrow",
+      "label": "Miss.Princess eyebrow",
+      "default": "THE SISTER EDIT"
+    },
+    {
+      "type": "textarea",
+      "id": "princess_copy",
+      "label": "Miss.Princess description",
+      "default": "A softer, playful world with its own wardrobe, beauty, jewels, moods, and stories."
+    },
+    {
+      "type": "text",
+      "id": "princess_cta",
+      "label": "Miss.Princess button text",
+      "default": "Enter Miss.Princess"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Gateway"
+    }
+  ]
+}
+{% endschema %}
