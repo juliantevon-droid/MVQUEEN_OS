@@ -397,3 +397,38 @@
   .mvq-gateway-media--mvqueen,
   .mvq-gateway-media--princess{object-position:center}
 }
+
+.mvp-newsletter-section{
+  background:linear-gradient(180deg,#FFF8FB,#FFFDFE);
+}
+.mvq-newsletter--princess .mvq-eyebrow{
+  color:#A91F50;
+}
+.mvq-newsletter--princess .mvq-newsletter-form input[type="email"]{
+  border-color:rgba(122,38,71,.24);
+  background:#FFFDFE;
+}
+.mvq-newsletter--princess .mvq-button{
+  border-color:#7A2647;
+  background:#7A2647;
+  color:#FFF8FB;
+}
+.mvq-newsletter--princess .mvq-button:hover{
+  border-color:#A91F50;
+  background:#A91F50;
+  color:#fff;
+}
+.mvq-trust--princess{
+  border-color:rgba(122,38,71,.20);
+  background:#FFF8FB;
+}
+.mvq-trust--princess div{
+  border-color:rgba(122,38,71,.20);
+}
+.mvq-trust-badges--princess{
+  border-color:rgba(122,38,71,.18);
+  background:#FFFDFE;
+}
+.mvq-trust-badges--princess .mvq-trust-badge-grid>div{
+  border-color:rgba(122,38,71,.18);
+}
