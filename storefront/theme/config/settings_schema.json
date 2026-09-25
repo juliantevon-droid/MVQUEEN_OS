@@ -2,9 +2,47 @@
   {
     "name": "theme_info",
     "theme_name": "MVQueen Custom",
-    "theme_version": "1.0.0",
+    "theme_version": "1.1.0",
     "theme_author": "MVQueen",
     "theme_support_email": "miss.mvqueen@gmail.com",
     "theme_documentation_url": "https://github.com/juliantevon-droid/MVQUEEN_OS"
+  },
+  {
+    "name": "MVQueen brand controls",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "brand_logo",
+        "label": "Brand logo"
+      },
+      {
+        "type": "range",
+        "id": "brand_logo_width",
+        "min": 110,
+        "max": 220,
+        "step": 2,
+        "unit": "px",
+        "label": "Logo width",
+        "default": 148
+      },
+      {
+        "type": "text",
+        "id": "brand_tagline",
+        "label": "Footer tagline",
+        "default": "Accessible luxury for the modern woman."
+      },
+      {
+        "type": "text",
+        "id": "support_email",
+        "label": "Support email",
+        "default": "miss.mvqueen@gmail.com"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_brand_switcher",
+        "label": "Show MVQueen / Miss.Princess switcher",
+        "default": true
+      }
+    ]
   }
 ]
