@@ -117,7 +117,12 @@ def deterministic(record):
     if not description:
         issues.append("Missing product description")
 
-    if re.search(r"(?i)\b(?:cure|treats?|guaranteed|100% effective|clinically proven)\b", combined):
+    unsupported_claim_re = re.compile(
+        r"(?i)\\b(?:cures?|guaranteed|100%\\s+effective|clinically\\s+proven)\\b"
+        r"|\\b(?:treats?|prevents?)\\s+(?:acne|breakouts?|eczema|psoriasis|wrinkles?|hair\\s+loss|"
+        r"infections?|inflammation|pain|disease|conditions?|symptoms?)\\b"
+    )
+    if unsupported_claim_re.search(combined):
         issues.append("Potential unsupported/high-risk product claim; verify against source facts")
 
     if re.search(r"(?i)(buy now|act now|limited time|only today){2,}", combined):
