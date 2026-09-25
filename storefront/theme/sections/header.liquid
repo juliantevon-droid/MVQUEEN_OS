@@ -1,18 +1,34 @@
 <header class="mvq-header">
+  {% assign is_mvqueen_experience = false %}
+  {% assign is_princess_experience = false %}
+  {% if request.path contains '/pages/mvqueen' %}
+    {% assign is_mvqueen_experience = true %}
+  {% endif %}
+  {% if request.path contains '/pages/miss-princess' %}
+    {% assign is_princess_experience = true %}
+  {% endif %}
+
+  {% assign active_menu = section.settings.menu %}
+  {% if is_princess_experience and linklists['miss-princess-menu'].links != blank %}
+    {% assign active_menu = linklists['miss-princess-menu'] %}
+  {% endif %}
+
   <div class="mvq-container mvq-nav">
     <button class="mvq-menu" type="button" data-mvq-menu aria-label="Open menu" aria-controls="MVQMobilePanel" aria-expanded="false">
       <span aria-hidden="true">☰</span>
     </button>
-    <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="MVQueen home"{% if settings.brand_logo != blank %} style="--mvq-logo-width: {{ settings.brand_logo_width | default: 148 }}px"{% endif %}>
+
+    <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="Choose brand experience"{% if settings.brand_logo != blank %} style="--mvq-logo-width: {{ settings.brand_logo_width | default: 148 }}px"{% endif %}>
       {% if settings.brand_logo != blank %}
         {{ settings.brand_logo | image_url: width: 440 | image_tag: class: 'mvq-logo-image', widths: '110, 148, 220, 296, 440', sizes: '(max-width: 749px) 132px, 148px', alt: 'MVQueen' }}
       {% else %}
         MVQueen
       {% endif %}
     </a>
-    <nav class="mvq-navlinks" aria-label="Primary navigation">
+
+    <nav class="mvq-navlinks" aria-label="{% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %} navigation">
       {% assign has_miss_princess = false %}
-      {% for link in section.settings.menu.links %}
+      {% for link in active_menu.links %}
         {% if link.title == 'Miss.Princess' %}
           {% assign has_miss_princess = true %}
         {% endif %}
@@ -36,17 +52,19 @@
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endif %}
       {% endfor %}
-      {% unless has_miss_princess %}
+      {% unless is_princess_experience or has_miss_princess %}
         <a href="/pages/miss-princess">Miss.Princess</a>
       {% endunless %}
     </nav>
+
     <div class="mvq-actions" aria-label="Store actions">
-      <a href="{{ routes.search_url }}" aria-label="Search MVQueen"><span class="mvq-action-label">Search</span><span class="mvq-action-icon" aria-hidden="true">⌕</span></a>
+      <a href="{{ routes.search_url }}" aria-label="Search store"><span class="mvq-action-label">Search</span><span class="mvq-action-icon" aria-hidden="true">⌕</span></a>
       <a href="{{ routes.cart_url }}" aria-label="Shopping bag, {{ cart.item_count }} items"><span class="mvq-action-label">Bag</span><span class="mvq-bag-count">{{ cart.item_count }}</span></a>
     </div>
   </div>
-  <nav id="MVQMobilePanel" class="mvq-mobile-panel mvq-container" data-mvq-panel hidden aria-label="Mobile navigation">
-    {% for link in section.settings.menu.links %}
+
+  <nav id="MVQMobilePanel" class="mvq-mobile-panel mvq-container" data-mvq-panel hidden aria-label="{% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %} mobile navigation">
+    {% for link in active_menu.links %}
       {% if link.links != blank %}
         <details class="mvq-mobile-group">
           <summary>{{ link.title }}</summary>
@@ -65,20 +83,21 @@
         <a href="{{ link.url }}">{{ link.title }}</a>
       {% endif %}
     {% endfor %}
-    {% unless has_miss_princess %}
+    {% unless is_princess_experience or has_miss_princess %}
       <a href="/pages/miss-princess">Miss.Princess</a>
     {% endunless %}
   </nav>
 </header>
+
 {% if settings.show_brand_switcher != false %}
   <div class="mvq-brand-switcher" aria-label="Choose a brand experience">
     <div class="mvq-container mvq-brand-switcher-inner">
-      <a class="mvq-brand-choice{% unless request.path contains '/pages/miss-princess' %} is-active{% endunless %}" href="{{ routes.root_url }}"{% unless request.path contains '/pages/miss-princess' %} aria-current="page"{% endunless %}>
+      <a class="mvq-brand-choice{% if is_mvqueen_experience %} is-active{% endif %}" href="/pages/mvqueen"{% if is_mvqueen_experience %} aria-current="page"{% endif %}>
         <span class="mvq-brand-choice-name">MVQueen</span>
         <span class="mvq-brand-choice-note">The main edit</span>
       </a>
       <span class="mvq-brand-divider" aria-hidden="true"></span>
-      <a class="mvq-brand-choice{% if request.path contains '/pages/miss-princess' %} is-active{% endif %}" href="/pages/miss-princess"{% if request.path contains '/pages/miss-princess' %} aria-current="page"{% endif %}>
+      <a class="mvq-brand-choice{% if is_princess_experience %} is-active{% endif %}" href="/pages/miss-princess"{% if is_princess_experience %} aria-current="page"{% endif %}>
         <span class="mvq-brand-choice-name">Miss.Princess</span>
         <span class="mvq-brand-choice-note">The sister brand</span>
       </a>
