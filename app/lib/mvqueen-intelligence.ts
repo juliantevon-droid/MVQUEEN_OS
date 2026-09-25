@@ -123,7 +123,7 @@ export function classifyBrandWorld(product: Pick<ProductSnapshot, "title" | "tag
       brand: "miss-princess",
       confidence: "high",
       tone: "soft-playful",
-      reason: \`color:\${princessColors[0]}\`,
+      reason: `color:${princessColors[0]}`,
     };
   }
 
@@ -133,7 +133,7 @@ export function classifyBrandWorld(product: Pick<ProductSnapshot, "title" | "tag
       brand: "mvqueen",
       confidence: "high",
       tone: "neutral-mature",
-      reason: \`color:\${mvqueenColors[0]}\`,
+      reason: `color:${mvqueenColors[0]}`,
     };
   }
 
@@ -145,7 +145,7 @@ export function classifyBrandWorld(product: Pick<ProductSnapshot, "title" | "tag
       brand: "miss-princess",
       confidence: "medium",
       tone: "soft-playful",
-      reason: \`style:\${princessStyle}\`,
+      reason: `style:${princessStyle}`,
     };
   }
 
@@ -154,7 +154,7 @@ export function classifyBrandWorld(product: Pick<ProductSnapshot, "title" | "tag
       brand: "mvqueen",
       confidence: "medium",
       tone: "neutral-mature",
-      reason: \`style:\${mvqueenStyle}\`,
+      reason: `style:${mvqueenStyle}`,
     };
   }
 
@@ -169,7 +169,7 @@ export function classifyBrandWorld(product: Pick<ProductSnapshot, "title" | "tag
 export function brandRoutingTags(route: BrandRouting): string[] {
   if (!route.brand) return ["mvq:brand:needs-review"];
   return [
-    \`mvq:brand:\${route.brand}\`,
-    \`mvq:tone:\${route.tone}\`,
+    `mvq:brand:${route.brand}`,
+    `mvq:tone:${route.tone}`,
   ];
 }
