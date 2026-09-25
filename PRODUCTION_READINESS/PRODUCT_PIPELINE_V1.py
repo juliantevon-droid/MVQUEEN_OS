@@ -15,11 +15,13 @@ try:
     from .COMMERCIAL_INTELLIGENCE_V1 import build_commercial, validate_commercial
     from .CREATIVE_INTELLIGENCE_V1 import build_creative, validate_creative
     from .BRAND_WORLD_V1 import classify_brand_world
+    from .CONTENT_INTELLIGENCE_V1 import generate_content_suite
 except ImportError:
     from MVQUEEN_EDITORIAL_INTELLIGENCE_V1 import generate, validate_editorial
     from COMMERCIAL_INTELLIGENCE_V1 import build_commercial, validate_commercial
     from CREATIVE_INTELLIGENCE_V1 import build_creative, validate_creative
     from BRAND_WORLD_V1 import classify_brand_world
+    from CONTENT_INTELLIGENCE_V1 import generate_content_suite
 
 STAGES = [
     "RAW", "NORMALIZED", "INTELLIGENCE_READY", "COPY_READY", "SEO_READY",
@@ -337,6 +339,15 @@ def run(raw: Dict[str, Any]) -> Dict[str, Any]:
     record["status"] = "QA_PASSED" if not errors else "CREATIVE_READY"
     if not errors:
         record["status"] = "PRODUCTION_READY"
+        content_suite = generate_content_suite(record)
+        record["content_suite"] = content_suite
+        content_errors = list(content_suite.get("qa", {}).get("errors", []))
+        if content_errors:
+            record["qa"]["errors"].extend(
+                f"Content suite: {error}" for error in content_errors
+            )
+            record["qa"]["passed"] = False
+            record["status"] = "QA_PASSED"
     return record
 
 
