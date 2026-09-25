@@ -7,8 +7,9 @@ not allowed to publish around the canonical QA gate.
 from __future__ import annotations
 
 from copy import deepcopy
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, Iterable, List, Mapping
 
+from INTERNAL_LINKING_INTELLIGENCE_V1 import resolve_internal_links
 from MERCHANDISING_INTELLIGENCE_V1 import resolve_catalog
 from PRODUCT_PIPELINE_V1 import PROTECTED_FIELDS, run
 
@@ -52,8 +53,12 @@ def produce(raw_product: Dict[str, Any]) -> Dict[str, Any]:
     return result
 
 
-def produce_catalog(raw_products: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Produce and resolve a reviewable catalog without any external writes."""
+def produce_catalog(
+    raw_products: Iterable[Dict[str, Any]],
+    *,
+    collection_handles: Mapping[str, str] | None = None,
+) -> List[Dict[str, Any]]:
+    """Produce a reviewable catalog with relationships and verified internal links."""
     sources = [deepcopy(item) for item in raw_products]
     canonical = [produce(item) for item in sources]
     blocked = [
@@ -66,7 +71,11 @@ def produce_catalog(raw_products: Iterable[Dict[str, Any]]) -> List[Dict[str, An
             "Catalog merchandising requires every product to be PRODUCTION_READY: "
             + ", ".join(blocked)
         )
-    return resolve_catalog(canonical)
+    merchandised = resolve_catalog(canonical)
+    return resolve_internal_links(
+        merchandised,
+        collection_handles=collection_handles,
+    )
 
 
 if __name__ == "__main__":
