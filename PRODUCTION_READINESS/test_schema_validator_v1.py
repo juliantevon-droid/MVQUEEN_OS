@@ -42,6 +42,17 @@ class SchemaValidatorV1Tests(unittest.TestCase):
             "measurement": {"events": ["ViewContent", "AddToCart", "BeginCheckout", "Purchase"], "primary_kpi": "Purchase", "secondary_kpis": ["ATC rate"],
                 "product_identifier": "p-001",
                 "tracking_key": "product:p-001"},
+            "content_suite": {
+                "content_version": "mvq-content-v1",
+                "product_id": "p-001",
+                "product_page": {"title": "Midnight Satin Dress"},
+                "metafields": {"catalog.short_description": {"type": "single_line_text_field", "value": "A polished evening silhouette."}},
+                "collection": {"name": "MVQueen Dress Edit"},
+                "blog": {"title": "A Closer Look at Midnight Satin Dress"},
+                "site_faq": {"topic": "Midnight Satin Dress"},
+                "governance": {"fact_policy": "verified_source_truth_only"},
+                "qa": {"errors": [], "passed": True, "status": "CONTENT_READY_FOR_REVIEW"},
+            },
             "qa": {"errors": [], "warnings": [], "passed": True},
             "status": "PRODUCTION_READY",
         }
@@ -53,6 +64,11 @@ class SchemaValidatorV1Tests(unittest.TestCase):
         record = self.valid_record()
         del record["seo"]["primary_keyword"]
         self.assertTrue(any("primary_keyword" in error for error in validate_record(record)))
+
+    def test_missing_content_suite_fails(self):
+        record = self.valid_record()
+        del record["content_suite"]
+        self.assertTrue(any("content_suite" in error for error in validate_record(record)))
 
     def test_unexpected_property_fails(self):
         record = self.valid_record()
