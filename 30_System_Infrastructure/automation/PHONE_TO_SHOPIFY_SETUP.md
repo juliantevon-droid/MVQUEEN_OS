@@ -20,7 +20,7 @@ Shopify's current CI/CD guidance uses a Theme Access password as `SHOPIFY_CLI_TH
 6. In the same **Secrets and variables → Actions** area, open **Variables** and create:
    - `MVQUEEN_DEPLOY_ENABLED` = `true`
    - `MVQUEEN_SHOPIFY_STORE` = `tsucu0-1i.myshopify.com`
-   - `MVQUEEN_SHOPIFY_THEME_ID` = `154611515590`
+   - `MVQUEEN_SHOPIFY_THEME_ID` = `154876674246`
 7. Do not add the password to any file, commit, workflow YAML, Google Drive document, or chat message.
 
 ## Result
