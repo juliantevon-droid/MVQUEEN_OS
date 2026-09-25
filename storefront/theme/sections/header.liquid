@@ -48,7 +48,7 @@
       if is_princess_experience
         assign brand_home_url = '/pages/miss-princess'
       elsif is_mvqueen_experience
-        assign brand_home_url = routes.root_url
+        assign brand_home_url = '/pages/mvqueen'
       endif
     %}
     <a class="mvq-logo" href="{{ brand_home_url }}" aria-label="{% if is_princess_experience %}Miss.Princess home{% elsif is_mvqueen_experience %}MVQueen home{% else %}MVQueen brand gateway{% endif %}" style="--mvq-logo-width: {{ settings.brand_logo_width | default: 148 }}px">
@@ -119,7 +119,7 @@
 {% if settings.show_brand_switcher != false %}
   <div class="mvq-brand-switcher{% if is_princess_experience %} mvq-brand-switcher--princess{% endif %}" aria-label="Choose a brand experience">
     <div class="mvq-container mvq-brand-switcher-inner">
-      <a class="mvq-brand-choice{% if is_mvqueen_experience %} is-active{% endif %}" href="{{ routes.root_url }}"{% if is_mvqueen_experience %} aria-current="page"{% endif %}>
+      <a class="mvq-brand-choice{% if is_mvqueen_experience %} is-active{% endif %}" href="/pages/mvqueen"{% if is_mvqueen_experience %} aria-current="page"{% endif %}>
         <span class="mvq-brand-choice-name">MVQueen</span>
         <span class="mvq-brand-choice-note">Neutral · Bold · Refined</span>
       </a>
