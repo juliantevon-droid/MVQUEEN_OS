@@ -3,6 +3,8 @@
 
 ---
 
+> **Uploaded logo alignment — 2026-09-25:** The active palette now follows the approved MVQueen gold/ivory/charcoal identity and the softer rose/blush sister-brand direction. White and light backgrounds remain dominant for a cleaner luxury storefront.
+
 ## Purpose
 
 The color system is the visual governance layer for MVQueen. Every color carries emotional weight and must be deployed consistently across all touchpoints—from Shopify to social media to packaging.
@@ -54,7 +56,7 @@ Soft Rose (#A97886) and MVQueen Gold (#C7AD86) remain decorative/accent colors. 
 |---|---|---|
 | Energy Red | #D64A3B | Urgency, limited drops, CTAs requiring attention |
 | Copper | #B87333 | Premium tier signals, luxury indicators |
-| Champagne | #F7E7CE | Celebration, launch moments, special occasions |
+| Champagne | #F2D39A | Celebration, launch moments, special occasions |
 
 ---
 
@@ -81,7 +83,7 @@ Copy and paste into your Shopify theme CSS:
   
   --color-accent-red: #D64A3B;
   --color-accent-copper: #B87333;
-  --color-accent-champagne: #F7E7CE;
+  --color-accent-champagne: #F2D39A;
   
   --text-primary: var(--color-primary-charcoal);
   --text-secondary: var(--color-secondary-sage);
