@@ -1,1 +1,22 @@
-{% if recommendations.performed and recommendations.products_count > 0 %}<section class="mvq-section"><div class="mvq-container"><div class="mvq-eyebrow">YOU MAY ALSO LOVE</div><h2>Complete the look.</h2><div class="mvq-grid">{% for product in recommendations.products limit:4 %}{% render 'product-card', product: product %}{% endfor %}</div></div></section>{% endif %}{% schema %}{"name":"Product recommendations","settings":[]} {% endschema %}
+<div
+  class="mvq-recommendations-shell"
+  data-mvq-recommendations
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related"
+>
+  {% if recommendations.performed and recommendations.products_count > 0 %}
+    <section class="mvq-section mvq-recommendations" aria-labelledby="RecommendationsHeading-{{ section.id }}">
+      <div class="mvq-container">
+        <div class="mvq-eyebrow">YOU MAY ALSO LOVE</div>
+        <h2 id="RecommendationsHeading-{{ section.id }}">Complete the look.</h2>
+        <div class="mvq-grid">
+          {% for product in recommendations.products limit: 4 %}
+            {% render 'product-card', product: product %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+</div>
+{% schema %}
+{"name":"Product recommendations","settings":[]}
+{% endschema %}
