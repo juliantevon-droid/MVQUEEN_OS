@@ -1,9 +1,17 @@
 {
   "system": "MVQUEEN_OS",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "architecture": {
-    "type": "hybrid_operating_system",
-    "layers": ["vault", "engine", "operations", "memory"]
+    "type": "governed_event_driven_commerce_os",
+    "layers": [
+      "vault",
+      "intelligence",
+      "control_plane",
+      "commerce_runtime",
+      "storefront",
+      "measurement",
+      "memory"
+    ]
   },
   "modules": [
     {
@@ -15,5 +23,6 @@
       "enabled": true
     }
   ],
-  "status": "stabilization"
+  "status": "enterprise_integration",
+  "capability_registry": "30_System_Infrastructure/system/registry/enterprise_capabilities.json"
 }
