@@ -49,7 +49,13 @@ html.mvq-lock{overflow:hidden}
   .mvq-action-label{display:none}
   .mvq-action-icon{display:inline;font-size:1.35rem}
   .mvq-actions a:last-child .mvq-bag-count{font-size:.65rem}
-  .mvq-mobile-panel:not([hidden]){display:block}
+  .mvq-mobile-panel:not([hidden]){
+    display:block;
+    max-height:calc(100dvh - 64px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-gutter:stable;
+  }
 }
 @media(min-width:750px){.mvq-mobile-panel{display:none!important}}
 @media(prefers-reduced-motion:reduce){.mvq-nav-item>summary::after,.mvq-navlinks>a::after,.mvq-nav-item>summary::before{transition:none}}
