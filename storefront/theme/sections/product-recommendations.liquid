@@ -1,16 +1,38 @@
+{% liquid
+  assign recommendation_brand_tag = ''
+  if product.tags contains 'mvq:brand:miss-princess'
+    assign recommendation_brand_tag = 'mvq:brand:miss-princess'
+  elsif product.tags contains 'mvq:brand:mvqueen'
+    assign recommendation_brand_tag = 'mvq:brand:mvqueen'
+  endif
+
+  assign matching_recommendations = 0
+  if recommendations.performed
+    for recommended_product in recommendations.products
+      if recommendation_brand_tag == blank or recommended_product.tags contains recommendation_brand_tag
+        assign matching_recommendations = matching_recommendations | plus: 1
+      endif
+    endfor
+  endif
+%}
 <div
   class="mvq-recommendations-shell"
   data-mvq-recommendations
-  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=8&intent=related"
 >
-  {% if recommendations.performed and recommendations.products_count > 0 %}
+  {% if recommendations.performed and matching_recommendations > 0 %}
     <section class="mvq-section mvq-recommendations" aria-labelledby="RecommendationsHeading-{{ section.id }}">
       <div class="mvq-container">
         <div class="mvq-eyebrow">YOU MAY ALSO LOVE</div>
         <h2 id="RecommendationsHeading-{{ section.id }}">Complete the look.</h2>
         <div class="mvq-grid">
-          {% for product in recommendations.products limit: 4 %}
-            {% render 'product-card', product: product %}
+          {% assign rendered_recommendations = 0 %}
+          {% for recommended_product in recommendations.products %}
+            {% if recommendation_brand_tag == blank or recommended_product.tags contains recommendation_brand_tag %}
+              {% render 'product-card', product: recommended_product %}
+              {% assign rendered_recommendations = rendered_recommendations | plus: 1 %}
+              {% if rendered_recommendations == 4 %}{% break %}{% endif %}
+            {% endif %}
           {% endfor %}
         </div>
       </div>
