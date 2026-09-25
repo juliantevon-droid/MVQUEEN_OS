@@ -62,6 +62,20 @@
       "guard": "Product editorial/metafields require canonical approval; blog, collection, FAQ-page and static-page surfaces additionally require MVQ_CONTENT_SURFACES_PUBLISH_ENABLED=true plus their exact per-surface gate. Legal policy pages are never automated."
     },
     {
+      "id": "commercial_configuration",
+      "status": "connected_audited",
+      "trigger": "authenticated operator saves shop assumptions",
+      "authority": "MVQUEEN_OS CommercialSettings",
+      "steps": [
+        "validate_rates_and_money",
+        "persist_shop_settings",
+        "append_audit_snapshot",
+        "resolve_with_environment_fallback",
+        "feed_pricing_and_product_decisions"
+      ],
+      "guard": "no missing assumption is invented; incomplete configuration keeps pricing blocked"
+    },
+    {
       "id": "pricing_profitability",
       "status": "connected_approval_required",
       "trigger": "verified unit cost + commercial configuration",
