@@ -82,7 +82,7 @@ async function ensureBlog(admin: AdminGraphql, handle: string) {
   const existing = found.data?.blogs?.nodes?.[0];
   if (existing) return existing;
 
-  if (process.env.MVQ_BLOG_CREATE_IF_MISSING === "false") {
+  if (process.env.MVQ_BLOG_CREATE_IF_MISSING !== "true") {
     throw new Error("Blog " + handle + " does not exist and creation is disabled");
   }
 
@@ -107,8 +107,8 @@ async function publishBlog(admin: AdminGraphql, record: CanonicalProductRecord):
   if (!blog || blog.auto_publish !== true) {
     return { surface: "blog", status: "SKIPPED", message: "Blog output is not publish-eligible" };
   }
-  if (process.env.MVQ_BLOG_PUBLISH_ENABLED === "false") {
-    return { surface: "blog", status: "SKIPPED", message: "Blog publishing kill switch is disabled" };
+  if (process.env.MVQ_BLOG_PUBLISH_ENABLED !== "true") {
+    return { surface: "blog", status: "SKIPPED", message: "Blog publishing requires MVQ_BLOG_PUBLISH_ENABLED=true" };
   }
 
   const blogHandle = process.env.MVQ_BLOG_HANDLE || "news";
@@ -162,8 +162,8 @@ async function publishCollection(admin: AdminGraphql, record: CanonicalProductRe
   if (!collection || collection.auto_publish !== true) {
     return { surface: "collection", status: "SKIPPED", message: "Collection copy is not publish-eligible" };
   }
-  if (process.env.MVQ_COLLECTION_CONTENT_PUBLISH_ENABLED === "false") {
-    return { surface: "collection", status: "SKIPPED", message: "Collection publishing kill switch is disabled" };
+  if (process.env.MVQ_COLLECTION_CONTENT_PUBLISH_ENABLED !== "true") {
+    return { surface: "collection", status: "SKIPPED", message: "Collection publishing requires MVQ_COLLECTION_CONTENT_PUBLISH_ENABLED=true" };
   }
 
   const slug = String(collection.slug || "").trim();
@@ -233,8 +233,8 @@ async function publishGlobalFaq(admin: AdminGraphql, record: CanonicalProductRec
   if (!faq || faq.auto_publish !== true || faq.scope !== "global") {
     return { surface: "global_faq", status: "SKIPPED", message: "Product FAQ stays on the product; global FAQ page is preserved" };
   }
-  if (process.env.MVQ_FAQ_PAGE_PUBLISH_ENABLED === "false") {
-    return { surface: "global_faq", status: "SKIPPED", message: "FAQ page publishing kill switch is disabled" };
+  if (process.env.MVQ_FAQ_PAGE_PUBLISH_ENABLED !== "true") {
+    return { surface: "global_faq", status: "SKIPPED", message: "FAQ page publishing requires MVQ_FAQ_PAGE_PUBLISH_ENABLED=true" };
   }
 
   return upsertPage(admin, {
@@ -249,8 +249,8 @@ async function publishStaticPage(admin: AdminGraphql, record: CanonicalProductRe
   if (!page || page.auto_publish !== true) {
     return { surface: "page", status: "SKIPPED", message: "No governed static page is publish-eligible" };
   }
-  if (process.env.MVQ_STATIC_PAGE_PUBLISH_ENABLED === "false") {
-    return { surface: "page", status: "SKIPPED", message: "Static page publishing kill switch is disabled" };
+  if (process.env.MVQ_STATIC_PAGE_PUBLISH_ENABLED !== "true") {
+    return { surface: "page", status: "SKIPPED", message: "Static page publishing requires MVQ_STATIC_PAGE_PUBLISH_ENABLED=true" };
   }
   return upsertPage(admin, page);
 }
