@@ -25,6 +25,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Refresh all repository refs for deep audit
+        run: git fetch --all --tags --prune
+
       - name: Validate JSON configuration and memory
         run: |
           python - <<'PY'
@@ -96,6 +99,11 @@ jobs:
         run: |
           python core/vault_crawler.py --root . --output build/enterprise_crawler/report.json --fail-on critical
           cp build/enterprise_crawler/report.md 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
+
+      - name: Run deep repository and history audit
+        run: |
+          python PRODUCTION_READINESS/deep_repo_audit.py
+          cp build/deep_repo_audit/deep_repo_audit.md 30_System_Infrastructure/overseer/reports/MVQUEEN_DEEP_REPO_AUDIT.md
 
       - name: Route findings to production specialist agents
         run: |
@@ -171,6 +179,7 @@ jobs:
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
             echo '- Enterprise reliability/conversion crawler: executed'
+            echo '- Deep all-branch/history repository audit: executed (evidence only)'
             echo '- Specialist-agent routing: PASS'
             echo '- Governed outcome-learning contract: PASS'
             echo
@@ -179,6 +188,9 @@ jobs:
             echo
             echo '## Enterprise crawler'
             cat 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
+            echo
+            echo '## Deep repository audit'
+            cat 30_System_Infrastructure/overseer/reports/MVQUEEN_DEEP_REPO_AUDIT.md
             echo
             echo '## Governance'
             echo 'Evidence → Analysis → Recommendation → Approval → Change → Verify → Log'
@@ -218,6 +230,8 @@ jobs:
             overseer-audit.txt
             build/enterprise_crawler/report.json
             build/enterprise_crawler/report.md
+            build/deep_repo_audit/deep_repo_audit.json
+            build/deep_repo_audit/deep_repo_audit.md
             build/agents/assignments.json
 
       - name: Fail workflow when enterprise crawler reports critical findings
