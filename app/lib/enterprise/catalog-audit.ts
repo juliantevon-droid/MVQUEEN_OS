@@ -19,6 +19,7 @@ type AuditProduct = {
   variants: Array<{ id: string; price?: string | null }>;
   hasMoreVariants: boolean;
   media: Array<{ id: string; alt?: string | null }>;
+  mediaAuditAvailable?: boolean;
   collections: Array<{ handle: string }>;
 };
 
@@ -115,13 +116,15 @@ export function auditCatalogProduct(product: AuditProduct): CatalogAuditIssue[] 
     }
   }
 
-  const missingAlt = product.media.filter((item) => !item.alt?.trim()).length;
-  if (missingAlt > 0) {
-    add(
-      "warning",
-      "media_alt_missing",
-      `${missingAlt} media item(s) are missing ALT text; publication requires the separate Shopify Files permission.`,
-    );
+  if (product.mediaAuditAvailable) {
+    const missingAlt = product.media.filter((item) => !item.alt?.trim()).length;
+    if (missingAlt > 0) {
+      add(
+        "warning",
+        "media_alt_missing",
+        `${missingAlt} media item(s) are missing ALT text; publication requires the separate Shopify Files permission.`,
+      );
+    }
   }
 
   return issues;
