@@ -72,3 +72,29 @@ model ProductReleaseAudit {
   @@index([shop, productGid, createdAt])
   @@index([result, createdAt])
 }
+
+
+model CommercialSettings {
+  id                           String   @id @default(cuid())
+  shop                         String   @unique
+  paymentRate                  Float?
+  paymentFixed                 Float?
+  returnReserveRate            Float?
+  targetContributionMarginRate Float?
+  targetCac                    Float?
+  inboundShippingDefault       Float?
+  currency                     String   @default("USD")
+  updatedBy                    String?
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+}
+
+model CommercialSettingsAudit {
+  id           String   @id @default(cuid())
+  shop         String
+  actor        String
+  snapshotJson String
+  createdAt    DateTime @default(now())
+
+  @@index([shop, createdAt])
+}
