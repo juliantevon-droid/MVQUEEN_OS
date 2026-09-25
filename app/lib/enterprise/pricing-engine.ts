@@ -1,4 +1,4 @@
-import { getCommercialConfig } from "./commercial-config";
+import { getCommercialConfig, type CommercialConfigResolution } from "./commercial-config";
 
 export type PricingDecisionState =
   | "needs_configuration"
@@ -38,8 +38,11 @@ function recommendationEnding(value: number): number {
   return money(Math.max(0, whole - 0.01));
 }
 
-export function buildPricingDecision(input: PricingInputs): PricingDecision {
-  const { config, missing } = getCommercialConfig();
+export function buildPricingDecision(
+  input: PricingInputs,
+  commercial: CommercialConfigResolution = getCommercialConfig(),
+): PricingDecision {
+  const { config, missing } = commercial;
 
   if (missing.length) {
     return {
