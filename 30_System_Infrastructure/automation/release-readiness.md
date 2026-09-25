@@ -2,9 +2,9 @@
 
 ## Safety state
 - Shopify store: tsucu0-1i.myshopify.com
-- Target theme: 154611515590
+- Target theme: 154876674246
 - Target role: UNPUBLISHED
-- Live theme must never be published by repository automation.
+- Live MAIN theme: 154869825734 (MVQueen — Custom Production Build).\n- Repository automation may update only the unpublished next-production theme; publishing remains a merchant action.
 
 ## Required gates
 1. Repository contract validator passes.
