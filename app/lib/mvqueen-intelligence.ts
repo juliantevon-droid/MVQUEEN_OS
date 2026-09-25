@@ -5,9 +5,15 @@ export type ProductSnapshot = {
   productType?: string | null;
   vendor?: string | null;
   tags?: string[];
-  media?: { id: string; alt?: string | null }[];
-  variants?: { id: string; price?: string | null; compareAtPrice?: string | null }[];
-  commercialMetafields?: { key: string; value?: string | null; type?: string | null }[];
+  media?: {
+    nodes?: { id: string; alt?: string | null }[];
+  };
+  variants?: {
+    nodes?: { id: string; price?: string | null; compareAtPrice?: string | null }[];
+  };
+  commercialMetafields?: {
+    nodes?: { key: string; value?: string | null; type?: string | null }[];
+  };
 };
 
 export type Classification = {
