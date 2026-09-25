@@ -206,6 +206,19 @@
         "post-restore verification"
       ],
       "side_effects": "restore only after incident/release approval"
+    },
+    {
+      "capability": "commercial_cost_sync",
+      "provider": "Shopify inventory",
+      "state": "app_reauthorization_required",
+      "requirements": [
+        "read_inventory declared in Shopify app",
+        "merchant/app reauthorization with read_inventory",
+        "MVQ_COST_SYNC_ENABLED=true",
+        "product inventoryItem.unitCost populated",
+        "product write approval if persisting commercial cost snapshot"
+      ],
+      "side_effects": "reads authoritative Shopify unit cost; persists verified commercial cost snapshot only on approved product writes"
     }
   ]
 }
