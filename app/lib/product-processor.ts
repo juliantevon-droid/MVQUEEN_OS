@@ -51,13 +51,13 @@ function sourceFingerprint(product: ProductSnapshot): string {
     productType: product.productType ?? "",
     vendor: product.vendor ?? "",
     tags: [...(product.tags ?? [])].sort(),
-    media: (product.media ?? [])
+    media: (product.media?.nodes ?? [])
       .map((m) => ({ id: m.id, alt: m.alt ?? "" }))
       .sort((a, b) => a.id.localeCompare(b.id)),
-    variants: (product.variants ?? [])
+    variants: (product.variants?.nodes ?? [])
       .map((v) => ({ id: v.id, price: v.price ?? "", compareAtPrice: v.compareAtPrice ?? "" }))
       .sort((a, b) => a.id.localeCompare(b.id)),
-    commercialMetafields: (product.commercialMetafields ?? [])
+    commercialMetafields: (product.commercialMetafields?.nodes ?? [])
       .map((m) => ({ key: m.key, value: m.value ?? "", type: m.type ?? "" }))
       .sort((a, b) => a.key.localeCompare(b.key)),
   });
@@ -196,7 +196,7 @@ export async function processProductJob(jobId: string) {
 
     // Missing ALT text may be filled from the product's existing title only.
     // Canonical editorial/SEO content is produced upstream and is never regenerated here.
-    const media = (product.media ?? []).filter((m) => m.id && !m.alt);
+    const media = (product.media?.nodes ?? []).filter((m) => m.id && !m.alt);
     if (media.length) {
       const alt = product.title?.trim() || c.productType;
       const brandName = marketing.brandWorld === "Miss.Princess" ? "Miss.Princess" : "MVQueen";
