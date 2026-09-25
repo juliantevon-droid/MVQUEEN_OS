@@ -31,3 +31,7 @@
 Production main does not track Obsidian plugin/runtime state, backup ZIPs, Python bytecode/cache, conflict copies, generated product exports, PDF/DOCX working copies, secrets or local .env files.
 
 Git history and Drive preserve historical material without keeping it active.
+## Governance note — 2026-09-25
+
+Legacy sister-brand strings remain detection-only signals and must not appear as active customer-facing or canonical brand language. Governance scanners may reconstruct those legacy tokens programmatically for linting without reintroducing them into active brand documents.
+
