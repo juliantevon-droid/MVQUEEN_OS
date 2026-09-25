@@ -4,7 +4,7 @@ import { useActionData, useLoaderData } from "react-router";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { buildPricingDecision } from "../lib/enterprise/pricing-engine";
-import { getCommercialConfig } from "../lib/enterprise/commercial-config";
+import { resolveShopCommercialConfig } from "../lib/enterprise/commercial-settings.server";
 
 const PRICING_TARGET_QUERY = `#graphql
 query MVQueenPricingTarget($id: ID!) {
@@ -51,7 +51,7 @@ function pricingFingerprint(input: Record<string, unknown>): string {
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { session } = await authenticate.admin(request);
-  const commercial = getCommercialConfig();
+  const commercial = await resolveShopCommercialConfig(session.shop);
   const recent = await prisma.productReleaseAudit.findMany({
     where: { shop: session.shop, operation: "PRICE_PUBLISH" },
     orderBy: { createdAt: "desc" },
@@ -146,11 +146,15 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     ),
   );
 
-  const decision = buildPricingDecision({
-    currentPrice: numberValue(variants[0].price),
-    unitCost: numberValue(commercial.get("unit_cost")),
-    inboundShipping: numberValue(commercial.get("inbound_shipping")),
-  });
+  const shopCommercial = await resolveShopCommercialConfig(session.shop);
+  const decision = buildPricingDecision(
+    {
+      currentPrice: numberValue(variants[0].price),
+      unitCost: numberValue(commercial.get("unit_cost")),
+      inboundShipping: numberValue(commercial.get("inbound_shipping")),
+    },
+    shopCommercial,
+  );
 
   const fingerprint = pricingFingerprint({
     productGid,
