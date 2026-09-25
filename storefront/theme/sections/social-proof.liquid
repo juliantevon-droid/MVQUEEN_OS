@@ -1,7 +1,7 @@
 {% if section.settings.enabled %}
 <section class="mvq-section mvq-social-proof">
   <div class="mvq-container">
-    <p class="mvq-eyebrow">FROM THE MVQUEEN COMMUNITY</p>
+    <p class="mvq-eyebrow">FROM THE MVQueen COMMUNITY</p>
     <h2>{{ section.settings.heading }}</h2>
     <div class="mvq-proof-grid">
       {% if section.settings.reviews_text != blank %}
@@ -19,7 +19,7 @@
 {% endif %}
 {% schema %}
 {
-  "name": "MVQUEEN Social Proof",
+  "name": "MVQueen Social Proof",
   "settings": [
     {"type":"checkbox","id":"enabled","label":"Show verified social proof","default":false},
     {"type":"text","id":"heading","label":"Heading","default":"Chosen for real life."},
@@ -27,6 +27,6 @@
     {"type":"textarea","id":"community_text","label":"Approved community content summary"},
     {"type":"textarea","id":"press_text","label":"Verified press summary"}
   ],
-  "presets": [{"name":"MVQUEEN Social Proof"}]
+  "presets": [{"name":"MVQueen Social Proof"}]
 }
 {% endschema %}

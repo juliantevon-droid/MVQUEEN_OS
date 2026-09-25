@@ -1,11 +1,11 @@
 <section class="mvq-search">
   <div class="mvq-container">
     <header class="mvq-search-head">
-      <p class="mvq-eyebrow">THE MVQUEEN EDIT</p>
+      <p class="mvq-eyebrow">THE MVQueen EDIT</p>
       <h1 class="mvq-display">Find what feels like you.</h1>
       <p class="mvq-copy">Search the collection by piece, beauty ritual, jewelry, or style.</p>
       <form class="mvq-search-form" action="{{ routes.search_url }}" method="get" role="search">
-        <label class="mvq-visually-hidden" for="SearchInput">Search MVQUEEN</label>
+        <label class="mvq-visually-hidden" for="SearchInput">Search MVQueen</label>
         <input id="SearchInput" class="mvq-search-input" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Try “dress”, “glow”, or “gold”" autocomplete="off" enterkeyhint="search">
         <input type="hidden" name="type" value="product">
         <button class="mvq-button mvq-button--gold" type="submit">Search</button>
@@ -42,5 +42,5 @@
   </div>
 </section>
 {% schema %}
-{"name":"MVQUEEN Search","settings":[],"presets":[{"name":"MVQUEEN Search"}]}
+{"name":"MVQueen Search","settings":[],"presets":[{"name":"MVQueen Search"}]}
 {% endschema %}

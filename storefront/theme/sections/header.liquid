@@ -3,7 +3,7 @@
     <button class="mvq-menu" type="button" data-mvq-menu aria-label="Open menu" aria-controls="MVQMobilePanel" aria-expanded="false">
       <span aria-hidden="true">☰</span>
     </button>
-    <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="MVQUEEN home">MVQUEEN</a>
+    <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="MVQueen home">MVQueen</a>
     <nav class="mvq-navlinks" aria-label="Primary navigation">
       {% assign has_miss_princess = false %}
       {% for link in section.settings.menu.links %}
@@ -35,7 +35,7 @@
       {% endunless %}
     </nav>
     <div class="mvq-actions" aria-label="Store actions">
-      <a href="{{ routes.search_url }}" aria-label="Search MVQUEEN"><span class="mvq-action-label">Search</span><span class="mvq-action-icon" aria-hidden="true">⌕</span></a>
+      <a href="{{ routes.search_url }}" aria-label="Search MVQueen"><span class="mvq-action-label">Search</span><span class="mvq-action-icon" aria-hidden="true">⌕</span></a>
       <a href="{{ routes.cart_url }}" aria-label="Shopping bag, {{ cart.item_count }} items"><span class="mvq-action-label">Bag</span><span class="mvq-bag-count">{{ cart.item_count }}</span></a>
     </div>
   </div>
