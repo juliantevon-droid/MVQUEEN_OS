@@ -94,6 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  document.querySelectorAll('[data-mvq-recommendations]').forEach((shell) => {
+    if (!shell.dataset.url || shell.children.length > 0) return;
+    fetch(shell.dataset.url, { credentials: 'same-origin' })
+      .then((response) => {
+        if (!response.ok) throw new Error('Recommendations request failed');
+        return response.text();
+      })
+      .then((html) => {
+        const documentFragment = new DOMParser().parseFromString(html, 'text/html');
+        const incoming = documentFragment.querySelector('[data-mvq-recommendations]');
+        if (incoming && incoming.innerHTML.trim()) shell.innerHTML = incoming.innerHTML;
+      })
+      .catch(() => {
+        shell.hidden = true;
+      });
+  });
+
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const href = link.getAttribute('href');
