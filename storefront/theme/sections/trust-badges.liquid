@@ -1,1 +1,21 @@
-<section class="mvq-trust-badges" aria-label="Shopping reassurance"><div class="mvq-container mvq-trust-badge-grid"><div><strong>SECURE CHECKOUT</strong><small>Payments processed through Shopify and supported payment providers.</small></div><div><strong>SSL PROTECTED</strong><small>Encrypted connection throughout the storefront.</small></div><div><strong>CLEAR POLICIES</strong><small>Shipping and returns information is easy to find.</small></div><div><strong>MVQueen SUPPORT</strong><small>Customer care when you need assistance.</small></div></div></section>{% schema %}{"name":"MVQueen Trust Badges","settings":[],"presets":[{"name":"MVQueen Trust Badges"}]}{% endschema %}
+{% liquid
+  assign is_princess_experience = false
+  if request.path contains '/pages/miss-princess'
+    assign is_princess_experience = true
+  endif
+  if collection and collection.handle contains 'miss-princess'
+    assign is_princess_experience = true
+  endif
+  if product and product.tags contains 'mvq:brand:miss-princess'
+    assign is_princess_experience = true
+  endif
+%}
+<section class="mvq-trust-badges{% if is_princess_experience %} mvq-trust-badges--princess{% endif %}" aria-label="Shopping reassurance">
+  <div class="mvq-container mvq-trust-badge-grid">
+    <div><strong>SECURE CHECKOUT</strong><small>Payments processed through Shopify and supported payment providers.</small></div>
+    <div><strong>SSL PROTECTED</strong><small>Encrypted connection throughout the storefront.</small></div>
+    <div><strong>CLEAR POLICIES</strong><small>Shipping and returns information is easy to find.</small></div>
+    <div><strong>{% if is_princess_experience %}Miss.Princess SUPPORT{% else %}MVQueen SUPPORT{% endif %}</strong><small>Customer care when you need assistance.</small></div>
+  </div>
+</section>
+{% schema %}{"name":"Trust Badges","settings":[],"presets":[{"name":"Trust Badges"}]}{% endschema %}
