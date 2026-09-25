@@ -95,25 +95,97 @@ def build_copy(record: Dict[str, Any]) -> None:
 
 
 def build_seo(record: Dict[str, Any]) -> None:
+    """Build factual short-tail and long-tail SEO from verified product data."""
     title = _text(record.get("copy", {}).get("title"))
-    product_type = _text(record.get("category", {}).get("product_type")) or "women's style"
-    keyword = product_type.lower()
-    seo_title = f"MVQueen | {title}" if title else f"MVQueen | {product_type}"
-    meta = f"Shop {title or product_type} from MVQueen—confidence-driven style with a polished, modern finish."
+    category = record.get("category", {})
+    product_type = _text(category.get("product_type")) or "women's style"
+    category_name = _text(category.get("category"))
+    subcategory = _text(category.get("subcategory"))
+    facts = _fact_map(record)
+
+    def first_fact(*names: str) -> str:
+        for name in names:
+            value = _text(facts.get(name))
+            if value:
+                return value
+        return ""
+
+    def unique(values: List[str]) -> List[str]:
+        output: List[str] = []
+        seen = set()
+        for value in values:
+            cleaned = re.sub(r"\s+", " ", _text(value)).strip(" ,-|")
+            key = cleaned.casefold()
+            if cleaned and key not in seen:
+                seen.add(key)
+                output.append(cleaned)
+        return output
+
+    material = first_fact("material", "fabric", "composition")
+    color = first_fact("color", "shade")
+    stone = first_fact("main_stone", "stone", "gemstone")
+    size = first_fact("stone_size", "size", "dimensions")
+    occasion = first_fact("occasion", "use_context")
+
+    primary = product_type.lower()
+
+    secondary_candidates = [
+        subcategory.lower() if subcategory else "",
+        category_name.lower() if category_name else "",
+        f"{material} {product_type}".lower() if material else "",
+        f"{color} {product_type}".lower() if color else "",
+        f"{stone} {product_type}".lower() if stone else "",
+    ]
+    secondary = [
+        value for value in unique(secondary_candidates)
+        if value.casefold() != primary.casefold()
+    ][:4]
+
+    long_tail_candidates = [
+        f"{color} {material} {product_type}" if color and material else "",
+        f"{stone} {material} {product_type}" if stone and material else "",
+        f"{size} {stone} {product_type}" if size and stone else "",
+        f"{material} {product_type} for {occasion}" if material and occasion else "",
+        title if len(title.split()) >= 4 else "",
+        f"{title} {product_type}" if title and len(title.split()) < 4 else "",
+    ]
+    long_tail = [
+        value.lower() for value in unique(long_tail_candidates)
+        if value and value.casefold() != primary.casefold()
+    ][:5]
+
+    seo_title = f"{title} | MVQueen" if title else f"{product_type} | MVQueen"
+    if len(seo_title) > 60:
+        seo_title = seo_title[:60].rstrip(" ,—-|")
+
+    factual_bits = unique([stone, material, color, size])
+    if factual_bits:
+        facts_phrase = ", ".join(factual_bits[:3])
+        meta = f"Shop {title or product_type} from MVQueen, featuring {facts_phrase}. Explore verified product details, imagery, shipping and returns."
+    else:
+        meta = f"Shop {title or product_type} from MVQueen. Explore verified product details, imagery, shipping and returns before you choose."
+
     if len(meta) > 160:
         meta = meta[:157].rstrip(" ,—-") + "..."
+
     record["seo"] = {
         "seo_title": seo_title,
         "meta_description": meta,
         "handle_recommendation": re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-") if title else "",
-        "primary_keyword": keyword,
-        "secondary_keywords": [],
+        "primary_keyword": primary,
+        "secondary_keywords": secondary,
+        "long_tail_keywords": long_tail,
         "alt_texts": [],
     }
-    for image in record.get("images", {}).get("items", []):
-        alt = title or product_type
-        image["alt"] = alt
-        record["seo"]["alt_texts"].append(alt)
+
+    for index, image in enumerate(record.get("images", {}).get("items", []), start=1):
+        alt_bits = unique([title or product_type, color, material, stone])
+        alt = " — ".join(alt_bits[:3])
+        if index > 1:
+            alt = f"{alt} — view {index}"
+        image["alt"] = alt[:120]
+        record["seo"]["alt_texts"].append(image["alt"])
+
     record["status"] = "SEO_READY"
 
 
