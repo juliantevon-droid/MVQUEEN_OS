@@ -1,6 +1,10 @@
 {% assign is_mvqueen_experience = false %}
 {% assign is_princess_experience = false %}
 
+{% if request.page_type == 'index' %}
+  {% assign is_mvqueen_experience = true %}
+{% endif %}
+
 {% if request.path contains '/pages/mvqueen' %}
   {% assign is_mvqueen_experience = true %}
 {% endif %}
@@ -115,7 +119,7 @@
 {% if settings.show_brand_switcher != false %}
   <div class="mvq-brand-switcher{% if is_princess_experience %} mvq-brand-switcher--princess{% endif %}" aria-label="Choose a brand experience">
     <div class="mvq-container mvq-brand-switcher-inner">
-      <a class="mvq-brand-choice{% if is_mvqueen_experience %} is-active{% endif %}" href="/pages/mvqueen"{% if is_mvqueen_experience %} aria-current="page"{% endif %}>
+      <a class="mvq-brand-choice{% if is_mvqueen_experience %} is-active{% endif %}" href="{{ routes.root_url }}"{% if is_mvqueen_experience %} aria-current="page"{% endif %}>
         <span class="mvq-brand-choice-name">MVQueen</span>
         <span class="mvq-brand-choice-note">Neutral · Bold · Refined</span>
       </a>
