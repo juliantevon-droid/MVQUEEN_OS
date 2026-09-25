@@ -51,6 +51,7 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
 
     def test_content_publisher_is_governed_and_legal_pages_are_blocked(self):
         text = (ROOT / "app/lib/enterprise/content-publisher.ts").read_text(encoding="utf-8")
+        route = (ROOT / "app/routes/app.proposals.tsx").read_text(encoding="utf-8")
         self.assertIn("articleCreate", text)
         self.assertIn("articleUpdate", text)
         self.assertIn("collectionUpdate", text)
@@ -60,6 +61,13 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("refund-policy", text)
         self.assertIn("record.content_suite", text)
         self.assertIn('approval.decision !== "APPROVED_FOR_PUBLISH"', text)
+        self.assertIn('MVQ_BLOG_PUBLISH_ENABLED !== "true"', text)
+        self.assertIn('MVQ_COLLECTION_CONTENT_PUBLISH_ENABLED !== "true"', text)
+        self.assertIn('MVQ_FAQ_PAGE_PUBLISH_ENABLED !== "true"', text)
+        self.assertIn('MVQ_STATIC_PAGE_PUBLISH_ENABLED !== "true"', text)
+        self.assertIn('MVQ_BLOG_CREATE_IF_MISSING !== "true"', text)
+        self.assertIn('MVQ_CONTENT_SURFACES_PUBLISH_ENABLED === "true"', route)
+        self.assertIn("contentSurfacesPublishEnabled", route)
 
     def test_shopify_app_declares_content_scopes(self):
         toml = (ROOT / "shopify.app.toml").read_text(encoding="utf-8")
