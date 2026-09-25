@@ -15,16 +15,56 @@
           {% endif %}
         {% endfor %}
       </div>
+
       <div class="mvq-product-info">
+        {% liquid
+          assign catalog_short = product.metafields.catalog.short_description.value
+          assign custom_short = product.metafields.custom.short_description.value
+          assign short_description = catalog_short | default: custom_short
+
+          assign catalog_highlights = product.metafields.catalog.highlights.value
+          assign custom_highlights = product.metafields.custom.highlights.value
+          assign highlights = catalog_highlights | default: custom_highlights
+
+          assign material = product.metafields.attributes.material.value | default: product.metafields.custom.material.value
+          assign color = product.metafields.attributes.color.value | default: product.metafields.custom.stone_color.value
+          assign occasion = product.metafields.attributes.occasion.value
+          assign main_stone = product.metafields.custom.main_stone.value
+          assign stone_size = product.metafields.custom.stone_size.value
+          assign pendant_length = product.metafields.custom.pendant_length.value
+          assign total_weight = product.metafields.custom.total_weight.value
+
+          assign product_form_id = 'ProductForm-' | append: section.id
+        %}
+
         {% if product.type != blank %}<p class="mvq-eyebrow">{{ product.type }}</p>{% endif %}
         <h1 class="mvq-display">{{ product.title }}</h1>
         <div class="mvq-product-price">{{ product.selected_or_first_available_variant.price | money }}</div>
-        {% if product.metafields.custom.short_description != blank %}<div class="mvq-product-intro">{{ product.metafields.custom.short_description | metafield_tag }}</div>{% endif %}
-        {% if product.description != blank %}<div class="mvq-product-description">{{ product.description }}</div>{% endif %}
 
-        {% liquid
-          assign product_form_id = 'ProductForm-' | append: section.id
-        %}
+        {% if short_description != blank %}
+          <div class="mvq-product-intro">{{ short_description }}</div>
+        {% endif %}
+
+        {% if highlights != blank %}
+          <div class="mvq-product-highlights" aria-label="Product highlights">
+            <ul class="mvq-product-bullets">
+              {% for highlight in highlights %}
+                <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% elsif material != blank or color != blank or occasion != blank or main_stone != blank or stone_size != blank %}
+          <div class="mvq-product-highlights" aria-label="Key product details">
+            <ul class="mvq-product-bullets">
+              {% if main_stone != blank %}<li><strong>Stone:</strong> {{ main_stone }}</li>{% endif %}
+              {% if material != blank %}<li><strong>Material:</strong> {{ material }}</li>{% endif %}
+              {% if color != blank %}<li><strong>Color:</strong> {{ color }}</li>{% endif %}
+              {% if stone_size != blank %}<li><strong>Size:</strong> {{ stone_size }}</li>{% endif %}
+              {% if occasion != blank %}<li><strong>Occasion:</strong> {{ occasion }}</li>{% endif %}
+            </ul>
+          </div>
+        {% endif %}
+
         {% form 'product', product, id: product_form_id, class: 'mvq-product-form' %}
           {% unless product.has_only_default_variant %}
             <div class="mvq-product-option">
@@ -46,20 +86,60 @@
         {% endform %}
 
         <div class="mvq-product-accordions">
-          {% if product.metafields.custom.highlights != blank %}<details open><summary>Highlights</summary>{{ product.metafields.custom.highlights | metafield_tag }}</details>{% endif %}
-          {% if product.metafields.custom.ingredients != blank %}<details><summary>Ingredients</summary>{{ product.metafields.custom.ingredients | metafield_tag }}</details>{% endif %}
-          {% if product.metafields.custom.how_to_use != blank %}<details><summary>How to use</summary>{{ product.metafields.custom.how_to_use | metafield_tag }}</details>{% endif %}
-          {% if product.metafields.custom.care_instructions != blank %}<details><summary>Care</summary>{{ product.metafields.custom.care_instructions | metafield_tag }}</details>{% endif %}
-          {% if product.metafields.custom.size_guide != blank %}<details><summary>Size guide</summary>{{ product.metafields.custom.size_guide | metafield_tag }}</details>{% endif %}
-          {% if product.metafields.custom.shipping_note != blank %}<details><summary>Shipping</summary>{{ product.metafields.custom.shipping_note | metafield_tag }}</details>{% endif %}
-          {% if product.metafields.custom.faq != blank %}<details><summary>Frequently asked questions</summary>{{ product.metafields.custom.faq | metafield_tag }}</details>{% endif %}
+          {% if product.description != blank %}
+            <details>
+              <summary>Product details</summary>
+              <div class="mvq-product-description">{{ product.description }}</div>
+            </details>
+          {% endif %}
+
+          {% if pendant_length != blank or total_weight != blank %}
+            <details>
+              <summary>Measurements</summary>
+              <ul class="mvq-product-bullets mvq-product-bullets--compact">
+                {% if pendant_length != blank %}<li><strong>Pendant length:</strong> {{ pendant_length }}</li>{% endif %}
+                {% if total_weight != blank %}<li><strong>Total weight:</strong> {{ total_weight }}</li>{% endif %}
+              </ul>
+            </details>
+          {% endif %}
+
+          {% if product.metafields.custom.ingredients != blank %}
+            <details><summary>Ingredients</summary>{{ product.metafields.custom.ingredients | metafield_tag }}</details>
+          {% endif %}
+          {% if product.metafields.custom.how_to_use != blank %}
+            <details><summary>How to use</summary>{{ product.metafields.custom.how_to_use | metafield_tag }}</details>
+          {% endif %}
+          {% if product.metafields.custom.care_instructions != blank %}
+            <details><summary>Care</summary>{{ product.metafields.custom.care_instructions | metafield_tag }}</details>
+          {% endif %}
+          {% if product.metafields.custom.size_guide != blank %}
+            <details><summary>Size guide</summary>{{ product.metafields.custom.size_guide | metafield_tag }}</details>
+          {% endif %}
+
+          <details>
+            <summary>Shipping & returns</summary>
+            {% if product.metafields.custom.shipping_note != blank %}
+              <div class="mvq-product-shipping-note">{{ product.metafields.custom.shipping_note | metafield_tag }}</div>
+            {% endif %}
+            <p class="mvq-product-policy-links">
+              <a href="/pages/shipping-policy">Shipping policy</a>
+              <span aria-hidden="true">·</span>
+              <a href="/pages/refund-policy">Refund & returns</a>
+            </p>
+          </details>
+
+          {% if product.metafields.custom.faq != blank %}
+            <details><summary>Frequently asked questions</summary>{{ product.metafields.custom.faq | metafield_tag }}</details>
+          {% endif %}
         </div>
+
         {% render 'trust-badges' %}
         <p class="mvq-trust-note">Secure checkout · Clear product details · Customer care when you need it</p>
       </div>
     </div>
   </div>
 </section>
+
 {% schema %}
 {"name":"MVQueen Product","settings":[],"presets":[{"name":"MVQueen Product"}]}
 {% endschema %}
