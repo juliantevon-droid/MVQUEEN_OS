@@ -1,9 +1,10 @@
 import { createHash } from "node:crypto";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
-import { brandRoutingTags, classifyBrandWorld, classifyProduct, type Classification, type ProductSnapshot } from "./mvqueen-intelligence";
+import type { ProductSnapshot } from "./mvqueen-intelligence";
+import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
 
-const AUTOMATION_VERSION = "mvq-classification-brand-routing-v3";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v4";
 
 // The React app is a transport/classification worker, not a copy generator.
 // Live writes remain fail-closed and require explicit product approval.
@@ -20,6 +21,10 @@ query MVQueenProduct($id: ID!) {
   product(id: $id) {
     id title descriptionHtml productType vendor tags
     media(first: 100) { nodes { id alt } }
+    variants(first: 1) { nodes { id price compareAtPrice } }
+    commercialMetafields: metafields(first: 20, namespace: "commercial") {
+      nodes { key value type }
+    }
   }
 }`;
 
@@ -49,27 +54,15 @@ function sourceFingerprint(product: ProductSnapshot): string {
     media: (product.media ?? [])
       .map((m) => ({ id: m.id, alt: m.alt ?? "" }))
       .sort((a, b) => a.id.localeCompare(b.id)),
+    variants: (product.variants ?? [])
+      .map((v) => ({ id: v.id, price: v.price ?? "", compareAtPrice: v.compareAtPrice ?? "" }))
+      .sort((a, b) => a.id.localeCompare(b.id)),
+    commercialMetafields: (product.commercialMetafields ?? [])
+      .map((m) => ({ key: m.key, value: m.value ?? "", type: m.type ?? "" }))
+      .sort((a, b) => a.key.localeCompare(b.key)),
   });
 
   return createHash("sha256").update(source).digest("hex");
-}
-
-function slug(value: string): string {
-  return value
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function routingTags(c: Classification): string[] {
-  return [
-    "mvq:catalog",
-    `mvq:department:${slug(c.department)}`,
-    `mvq:family:${slug(c.family)}`,
-    `mvq:collection:${slug(c.route)}`,
-    ...(c.confidence === "review" ? ["mvq:needs-review"] : []),
-  ];
 }
 
 export async function processProductJob(jobId: string) {
@@ -102,14 +95,27 @@ export async function processProductJob(jobId: string) {
       return;
     }
 
-    const c = classifyProduct(product.title ?? "", product.descriptionHtml ?? "", product.productType ?? "");
-    const brandRoute = classifyBrandWorld(product);
+    const decision = buildEnterpriseProductDecision(product);
+    const c = decision.classification;
+    const brandRoute = decision.brandRoute;
+    const systemPrefixes = [
+      "mvq:department:",
+      "mvq:family:",
+      "mvq:collection:",
+      "mvq:brand:",
+      "mvq:tone:",
+      "mvq:pricing:",
+      "mvq:marketing:",
+    ];
     const retainedTags = (product.tags ?? []).filter(
-      (tag) => !tag.startsWith("mvq:brand:") && !tag.startsWith("mvq:tone:"),
+      (tag) =>
+        tag !== "mvq:catalog" &&
+        tag !== "mvq:needs-review" &&
+        !systemPrefixes.some((prefix) => tag.startsWith(prefix)),
     );
-    const mergedTags = Array.from(
-      new Set([...retainedTags, ...routingTags(c), ...brandRoutingTags(brandRoute)]),
-    );
+    const mergedTags = Array.from(new Set([...retainedTags, ...decision.tags]));
+    const pricing = decision.pricing;
+    const marketing = decision.marketing;
     const metafields = [
       { namespace: "classification", key: "department", type: "single_line_text_field", value: c.department },
       { namespace: "classification", key: "family", type: "single_line_text_field", value: c.family },
@@ -125,26 +131,38 @@ export async function processProductJob(jobId: string) {
               ? "MVQueen World"
               : "Needs Review",
       },
-      {
-        namespace: "classification",
-        key: "brand_world",
-        type: "single_line_text_field",
-        value: brandRoute.brand ?? "needs_review",
-      },
-      {
-        namespace: "classification",
-        key: "brand_tone",
-        type: "single_line_text_field",
-        value: brandRoute.tone,
-      },
+      { namespace: "classification", key: "brand_world", type: "single_line_text_field", value: brandRoute.brand ?? "needs_review" },
+      { namespace: "classification", key: "brand_tone", type: "single_line_text_field", value: brandRoute.tone },
+      { namespace: "catalog", key: "brand_routing_reason", type: "single_line_text_field", value: brandRoute.reason },
+      { namespace: "catalog", key: "classification_confidence", type: "single_line_text_field", value: c.confidence },
       {
         namespace: "catalog",
-        key: "brand_routing_reason",
+        key: "review_status",
         type: "single_line_text_field",
-        value: brandRoute.reason,
+        value: c.confidence === "review" || !brandRoute.brand ? "needs_review" : "classified",
       },
-      { namespace: "catalog", key: "classification_confidence", type: "single_line_text_field", value: c.confidence },
-      { namespace: "catalog", key: "review_status", type: "single_line_text_field", value: c.confidence === "review" ? "needs_review" : "classified" },
+      { namespace: "commercial", key: "pricing_state", type: "single_line_text_field", value: pricing.state },
+      { namespace: "commercial", key: "pricing_currency", type: "single_line_text_field", value: pricing.currency },
+      {
+        namespace: "commercial",
+        key: "pricing_publishable",
+        type: "boolean",
+        value: "false",
+      },
+      ...(pricing.minimumPrice !== null
+        ? [{ namespace: "commercial", key: "minimum_viable_price", type: "number_decimal", value: String(pricing.minimumPrice) }]
+        : []),
+      ...(pricing.recommendedPrice !== null
+        ? [{ namespace: "commercial", key: "recommended_price", type: "number_decimal", value: String(pricing.recommendedPrice) }]
+        : []),
+      ...(pricing.estimatedContributionDollars !== null
+        ? [{ namespace: "commercial", key: "estimated_contribution", type: "number_decimal", value: String(pricing.estimatedContributionDollars) }]
+        : []),
+      { namespace: "marketing", key: "campaign_state", type: "single_line_text_field", value: marketing.state },
+      { namespace: "marketing", key: "brand_world", type: "single_line_text_field", value: marketing.brandWorld },
+      { namespace: "marketing", key: "positioning", type: "multi_line_text_field", value: marketing.positioning },
+      { namespace: "marketing", key: "paid_execution", type: "single_line_text_field", value: marketing.paidExecution },
+      { namespace: "analytics", key: "measurement_key", type: "single_line_text_field", value: decision.measurementKey },
     ];
 
     if (!WRITE_ENABLED || !APPROVED_PRODUCT_GIDS.has(product.id)) {
@@ -177,8 +195,9 @@ export async function processProductJob(jobId: string) {
     const media = (product.media ?? []).filter((m) => m.id && !m.alt);
     if (media.length) {
       const alt = product.title?.trim() || c.productType;
+      const brandName = marketing.brandWorld === "Miss.Princess" ? "Miss.Princess" : "MVQueen";
       const fileUpdate = await admin.graphql(FILE_UPDATE, {
-        variables: { files: media.map((m) => ({ id: m.id, alt: `${alt} | MVQueen` })) },
+        variables: { files: media.map((m) => ({ id: m.id, alt: `${alt} | ${brandName}` })) },
       });
       const fileBody = await fileUpdate.json();
       const fileErrors = fileBody.data?.fileUpdate?.userErrors ?? [];
