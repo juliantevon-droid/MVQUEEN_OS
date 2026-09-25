@@ -16,7 +16,7 @@ export default function Index() {
       <p>Shopify catalog intelligence and product automation runtime.</p>
       {showForm && (
         <Form method="post" action="/auth/login">
-          <label>Shop domain<br /><input name="shop" placeholder="example.myshopify.com" /></label>
+          <label>Shop domain<br /><input name="shop" placeholder="tsucu0-1i.myshopify.com" /></label>
           <button type="submit">Connect Shopify</button>
         </Form>
       )}
