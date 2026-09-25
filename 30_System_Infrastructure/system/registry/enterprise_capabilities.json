@@ -210,6 +210,13 @@
       "authority": "Shopify inventoryItem.unitCost",
       "execution": "permission_and_env_gated",
       "writes": "verified commercial cost snapshot only"
+    },
+    {
+      "id": "commercial_settings",
+      "status": "connected_audited",
+      "authority": "MVQUEEN_OS shop settings",
+      "execution": "authenticated_admin_control",
+      "writes": "commercial assumptions only"
     }
   ],
   "non_negotiable_gates": {
