@@ -88,7 +88,7 @@ Every creative output, product decision, and communication must pass these rules
 ### Color Palette
 - Use only colors from 02_Brand_Identity/color_system.md
 - Never mix brand colors with trendy colors outside the approved palette
-- MVQueen Gold (#D4AF37) is the primary accent—use it intentionally
+- MVQueen Gold (#C7AD86) is the primary accent—use it intentionally
 - Never desaturate brand colors
 - **Red Flag:** Bright pink, neon, or colors outside the palette
 
