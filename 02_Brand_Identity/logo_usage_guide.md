@@ -74,11 +74,11 @@ Clear space is the invisible border that protects the logo from competing visual
 
 ### Single Color (Gold)
 - Use for foil stamping, embossing, premium applications
-- Color: MVQueen Gold (#D4AF37)
+- Color: MVQueen Gold (#C7AD86)
 
 ### Single Color (Charcoal)
 - Use for minimalist applications
-- Color: Charcoal (#2C2C2C)
+- Color: Charcoal (#342F2C)
 
 ---
 
@@ -104,12 +104,12 @@ Clear space is the invisible border that protects the logo from competing visual
 ## Background Usage
 
 ### Acceptable Backgrounds
-- Soft Cream (#FFF8F0)
-- Pearl White (#FAFAF8)
-- Ivory (#F5F1EB)
-- Blush (#F5E6E0)
-- Charcoal (#2C2C2C) — use reverse white logo
-- Deep Rose (#8B4A5C) — use reverse white logo
+- Soft Cream (#FFFCF8)
+- Pearl White (#FFFFFF)
+- Ivory (#FCF8F4)
+- Blush (#F8EEEA)
+- Charcoal (#342F2C) — use reverse white logo
+- Deep Rose (#A97886) — use reverse white logo
 - Natural textures (wood, linen, marble)
 - Subtle photography (out of focus, muted)
 
