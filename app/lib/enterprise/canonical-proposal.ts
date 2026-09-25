@@ -58,6 +58,7 @@ export type ReleaseArtifact = {
 export type ApprovedReleaseBundle = {
   record: CanonicalProductRecord;
   approval: ReleaseArtifact;
+  canonical_record_json: string;
 };
 
 function stableValue(value: unknown): unknown {
@@ -78,13 +79,30 @@ export function canonicalFingerprint(record: CanonicalProductRecord): string {
   return createHash("sha256").update(payload, "utf8").digest("hex");
 }
 
+export function canonicalEnvelopeFingerprint(canonicalRecordJson: string): string {
+  return createHash("sha256").update(canonicalRecordJson, "utf8").digest("hex");
+}
+
 export function validateApprovedReleaseBundle(bundle: ApprovedReleaseBundle): string[] {
   const errors: string[] = [];
   const record = bundle?.record;
   const approval = bundle?.approval;
+  const canonicalRecordJson = bundle?.canonical_record_json;
 
   if (!record || typeof record !== "object") return ["Missing canonical record"];
   if (!approval || typeof approval !== "object") return ["Missing release approval"];
+  if (!canonicalRecordJson?.trim()) return ["Missing canonical_record_json envelope"];
+
+  let envelopeRecord: unknown;
+  try {
+    envelopeRecord = JSON.parse(canonicalRecordJson);
+  } catch {
+    return ["canonical_record_json is not valid JSON"];
+  }
+
+  if (JSON.stringify(stableValue(envelopeRecord)) !== JSON.stringify(stableValue(record))) {
+    errors.push("canonical_record_json does not represent the submitted record");
+  }
 
   if (record.status !== "PRODUCTION_READY") errors.push("Canonical record is not PRODUCTION_READY");
   if (record.qa?.passed !== true || (record.qa?.errors?.length ?? 0) > 0) {
@@ -104,8 +122,8 @@ export function validateApprovedReleaseBundle(bundle: ApprovedReleaseBundle): st
   if (!approval.actor?.trim()) errors.push("Approval actor is required");
   if (!approval.timestamp || Number.isNaN(Date.parse(approval.timestamp))) errors.push("Approval timestamp is invalid");
 
-  const expected = canonicalFingerprint(record);
-  if (approval.content_fingerprint !== expected) errors.push("Approval fingerprint does not match canonical record");
+  const expected = canonicalEnvelopeFingerprint(canonicalRecordJson);
+  if (approval.content_fingerprint !== expected) errors.push("Approval fingerprint does not match canonical_record_json");
 
   if (!record.copy?.title?.trim()) errors.push("Missing approved copy.title");
   if (!record.copy?.description?.trim()) errors.push("Missing approved copy.description");
