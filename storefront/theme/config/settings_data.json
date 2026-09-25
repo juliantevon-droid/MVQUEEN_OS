@@ -1,4 +1,9 @@
 {
-  "current": {},
+  "current": {
+    "brand_logo_width": 148,
+    "brand_tagline": "Accessible luxury for the modern woman.",
+    "support_email": "miss.mvqueen@gmail.com",
+    "show_brand_switcher": true
+  },
   "presets": {}
 }
