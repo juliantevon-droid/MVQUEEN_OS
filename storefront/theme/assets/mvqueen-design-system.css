@@ -333,7 +333,7 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
   :root { --mvq-container: min(100% - 24px, 640px); }
   .mvq-button { width: 100%; }
   .mvq-editorial__grid { grid-template-columns: 1fr; gap: 42px; }
-  .mvq-editorial__intro h2 { max-width: 12ch; font-size: clamp(2.5rem, 14vw, 4rem); }
+  .mvq-editorial__intro h2 { max-width: 100%; font-size: clamp(2.25rem, 10vw, 3.4rem); }
   .mvq-collection { padding-block: 40px 64px; }
   .mvq-collection-toolbar { align-items: stretch; flex-wrap: wrap; }
   .mvq-collection-toolbar > form,
