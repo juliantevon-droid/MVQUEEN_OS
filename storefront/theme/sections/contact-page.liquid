@@ -1,0 +1,74 @@
+<section class="mvq-contact-page" aria-labelledby="MVQContactTitle">
+  <div class="mvq-container mvq-contact-grid">
+    <header class="mvq-contact-intro">
+      <p class="mvq-eyebrow">CUSTOMER CARE</p>
+      <h1 id="MVQContactTitle" class="mvq-display">{{ page.title }}</h1>
+      {% if page.content != blank %}
+        <div class="mvq-copy mvq-richtext">{{ page.content }}</div>
+      {% else %}
+        <p class="mvq-copy">Questions about an order, product, shipping, or returns? Send us a message and include your order number when applicable.</p>
+      {% endif %}
+      {% if settings.support_email != blank %}
+        <p class="mvq-contact-email">
+          <span>Prefer email?</span>
+          <a href="mailto:{{ settings.support_email | escape }}">{{ settings.support_email }}</a>
+        </p>
+      {% endif %}
+    </header>
+
+    <div class="mvq-contact-form-shell">
+      {% form 'contact', class: 'mvq-contact-form' %}
+        {% if form.posted_successfully? %}
+          <p class="mvq-contact-status" role="status" tabindex="-1">Thank you. Your message has been sent to MVQueen Customer Care.</p>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="mvq-contact-errors" role="alert">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <div class="mvq-contact-field-grid">
+          <div class="mvq-contact-field">
+            <label for="MVQContactName">Name</label>
+            <input id="MVQContactName" type="text" name="contact[name]" autocomplete="name" value="{% if form.name %}{{ form.name | escape }}{% endif %}">
+          </div>
+
+          <div class="mvq-contact-field">
+            <label for="MVQContactEmail">Email <span aria-hidden="true">*</span></label>
+            <input id="MVQContactEmail" type="email" name="contact[email]" autocomplete="email" autocapitalize="off" spellcheck="false" required aria-required="true" value="{% if form.email %}{{ form.email | escape }}{% endif %}">
+          </div>
+        </div>
+
+        <div class="mvq-contact-field-grid">
+          <div class="mvq-contact-field">
+            <label for="MVQContactOrder">Order number <span class="mvq-contact-optional">(optional)</span></label>
+            <input id="MVQContactOrder" type="text" name="contact[order_number]" autocomplete="off">
+          </div>
+
+          <div class="mvq-contact-field">
+            <label for="MVQContactTopic">What can we help with?</label>
+            <select id="MVQContactTopic" name="contact[request_type]">
+              <option>Order support</option>
+              <option>Shipping</option>
+              <option>Returns & refunds</option>
+              <option>Product question</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mvq-contact-field">
+          <label for="MVQContactMessage">Message <span aria-hidden="true">*</span></label>
+          <textarea id="MVQContactMessage" name="contact[body]" rows="7" required aria-required="true">{% if form.body %}{{ form.body | escape }}{% endif %}</textarea>
+        </div>
+
+        <button class="mvq-button mvq-button--gold" type="submit">Send message</button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{"name":"MVQueen Contact","settings":[],"presets":[{"name":"MVQueen Contact"}]}
+{% endschema %}
