@@ -22,6 +22,24 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":{{ shop.name | json }},"url":{{ shop.url | json }}}</script>
   </head>
   <body class="mvq-page mvq-page--{{ request.page_type }}">
+    {% assign mvq_analytics_brand = 'MVQueen' %}
+    {% if product and product.tags contains 'mvq:brand:miss-princess' %}
+      {% assign mvq_analytics_brand = 'Miss.Princess' %}
+    {% elsif collection and collection.handle == 'miss-princess-world' %}
+      {% assign mvq_analytics_brand = 'Miss.Princess' %}
+    {% endif %}
+    <script id="MVQAnalyticsContext" type="application/json">
+      {
+        "page_type": {{ request.page_type | json }},
+        "path": {{ request.path | json }},
+        "brand_world": {{ mvq_analytics_brand | json }},
+        "product_id": {% if product %}{{ product.id | json }}{% else %}null{% endif %},
+        "product_handle": {% if product %}{{ product.handle | json }}{% else %}null{% endif %},
+        "product_title": {% if product %}{{ product.title | json }}{% else %}null{% endif %},
+        "collection_handle": {% if collection %}{{ collection.handle | json }}{% else %}null{% endif %},
+        "cart_item_count": {{ cart.item_count | json }}
+      }
+    </script>
     <a class="mvq-skip-link" href="#MainContent">Skip to content</a>
     {% section 'announcement-bar' %}
     {% unless request.page_type == 'index' %}{% section 'header' %}{% endunless %}
@@ -29,5 +47,6 @@
     {% unless request.page_type == 'index' %}{% section 'footer' %}{% endunless %}
     <script src="{{ 'mvqueen.js' | asset_url }}" defer></script>
     <script src="{{ 'mvqueen-ux.js' | asset_url }}" defer></script>
+    <script src="{{ 'mvqueen-analytics.js' | asset_url }}" defer></script>
   </body>
 </html>
