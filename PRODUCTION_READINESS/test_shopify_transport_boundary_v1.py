@@ -49,5 +49,23 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertNotIn("MVQ_CONTENT_REWRITE_ENABLED", text)
 
 
+    def test_content_publisher_is_governed_and_legal_pages_are_blocked(self):
+        text = (ROOT / "app/lib/enterprise/content-publisher.ts").read_text(encoding="utf-8")
+        self.assertIn("articleCreate", text)
+        self.assertIn("articleUpdate", text)
+        self.assertIn("collectionUpdate", text)
+        self.assertIn("pageCreate", text)
+        self.assertIn("LEGAL_PAGE_HANDLES", text)
+        self.assertIn("shipping-policy", text)
+        self.assertIn("refund-policy", text)
+        self.assertIn("record.content_suite", text)
+        self.assertIn('approval.decision !== "APPROVED_FOR_PUBLISH"', text)
+
+    def test_shopify_app_declares_content_scopes(self):
+        toml = (ROOT / "shopify.app.toml").read_text(encoding="utf-8")
+        self.assertIn("read_content", toml)
+        self.assertIn("write_content", toml)
+
+
 if __name__ == "__main__":
     unittest.main()
