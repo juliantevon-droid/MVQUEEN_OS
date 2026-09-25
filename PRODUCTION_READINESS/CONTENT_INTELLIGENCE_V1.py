@@ -57,6 +57,13 @@ METAFIELD_FACT_KEYS = {
     "dimensions": ("attributes", "dimensions"),
     "fit": ("attributes", "fit"),
     "occasion": ("attributes", "occasion"),
+    "main_stone": ("attributes", "main_stone"),
+    "main_stone_size": ("attributes", "main_stone_size"),
+    "total_weight": ("attributes", "total_weight"),
+    "creation": ("attributes", "creation"),
+    "design_code": ("attributes", "design_code"),
+    "item_code": ("attributes", "item_code"),
+    "size_length": ("attributes", "size_length"),
     "ingredient": ("attributes", "ingredient"),
     "key_ingredient": ("attributes", "key_ingredient"),
     "ingredients": ("attributes", "ingredients"),
@@ -139,10 +146,11 @@ def _detail_rows(facts: Dict[str, Any]) -> List[Dict[str, str]]:
 def _faq(record: Dict[str, Any], facts: Dict[str, Any]) -> List[Dict[str, str]]:
     title = _text(record.get("copy", {}).get("title"))
     product_type = _text(record.get("category", {}).get("product_type")) or "product"
+    brand_name = _text(record.get("intelligence", {}).get("brand_name")) or "MVQueen"
     faq: List[Dict[str, str]] = [
         {
             "question": f"What is {title}?",
-            "answer": f"{title} is an MVQueen {product_type.lower()} presented with verified product details and MVQueen editorial copy.",
+            "answer": f"{title} is a {brand_name} {product_type.lower()} presented with verified product details and {brand_name} editorial copy.",
         }
     ]
 
@@ -209,6 +217,15 @@ def _metafields(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[st
             "value": _text(seo.get("primary_keyword")),
             "source": "canonical_seo",
         },
+        "catalog.short_tail_keywords": {
+            "type": "list.single_line_text_field",
+            "value": [
+                x
+                for x in [seo.get("primary_keyword"), *seo.get("secondary_keywords", [])]
+                if _text(x)
+            ],
+            "source": "canonical_seo",
+        },
         "catalog.long_tail_keywords": {
             "type": "list.single_line_text_field",
             "value": [x for x in seo.get("long_tail_keywords", []) if _text(x)],
@@ -263,6 +280,7 @@ def _metafields(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[st
 def _product_page(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[str, str]]) -> Dict[str, Any]:
     copy = record.get("copy", {})
     seo = record.get("seo", {})
+    brand_name = _text(record.get("intelligence", {}).get("brand_name")) or "MVQueen"
     return {
         "title": _text(copy.get("title")),
         "short_description": _text(copy.get("short_description")),
@@ -271,7 +289,7 @@ def _product_page(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[
         "features": list(copy.get("features", [])),
         "details": _detail_rows(facts),
         "faq": faq,
-        "cta": _text(copy.get("cta")) or "Discover the MVQueen edit.",
+        "cta": _text(copy.get("cta")) or f"Discover the {brand_name} edit.",
         "seo_title": _text(seo.get("seo_title")),
         "meta_description": _text(seo.get("meta_description")),
         "image_alt_text": list(seo.get("alt_texts", [])),
@@ -281,33 +299,34 @@ def _product_page(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[
 def _collection(record: Dict[str, Any]) -> Dict[str, Any]:
     product_type = _text(record.get("category", {}).get("product_type")) or "Essentials"
     primary_keyword = _text(record.get("seo", {}).get("primary_keyword")) or product_type.lower()
-    name = f"MVQueen {product_type} Edit"
+    brand_name = _text(record.get("intelligence", {}).get("brand_name")) or "MVQueen"
+    name = f"{brand_name} {product_type} Edit"
     key = product_type.lower()
 
     description = _choose(
         [
             (
-                f"Explore the MVQueen {product_type.lower()} edit through a considered lens of modern femininity, "
+                f"Explore the {brand_name} {product_type.lower()} edit through a considered lens of modern femininity, "
                 "polished simplicity, and intentional styling. Every product keeps factual details grounded in "
                 "verified source information while the collection holds a clear, cohesive point of view."
             ),
             (
-                f"The MVQueen {product_type.lower()} edit brings together pieces chosen for quiet confidence, "
+                f"The {brand_name} {product_type.lower()} edit brings together pieces chosen for quiet confidence, "
                 "refined presentation, and personal expression. Product claims stay tied to verified details; "
                 "the editorial layer gives the collection its warm, distinctly MVQueen perspective."
             ),
             (
-                f"Discover MVQueen {product_type.lower()} with a curated balance of modern elegance and everyday ease. "
+                f"Discover {brand_name} {product_type.lower()} with a curated balance of modern elegance and everyday ease. "
                 "The collection is built to feel composed rather than crowded, with verified product information "
                 "supporting every customer-facing detail."
             ),
             (
-                f"MVQueen approaches {product_type.lower()} as part of a complete feminine edit: intentional, polished, "
+                f"{brand_name} approaches {product_type.lower()} as part of a complete feminine edit: intentional, polished, "
                 "and easy to make personal. The collection keeps product facts precise while the presentation brings "
                 "warmth, restraint, and a consistent editorial direction."
             ),
             (
-                f"Shop the MVQueen {product_type.lower()} edit with a focus on considered choices and clear product detail. "
+                f"Shop the {brand_name} {product_type.lower()} edit with a focus on considered choices and clear product detail. "
                 "The assortment pairs verified source information with refined styling language so the experience feels "
                 "curated, useful, and confidently feminine."
             ),
@@ -318,9 +337,9 @@ def _collection(record: Dict[str, Any]) -> Dict[str, Any]:
 
     meta_description = _choose(
         [
-            f"Explore MVQueen {product_type.lower()} with verified product details, polished styling, and a considered feminine point of view.",
-            f"Discover the MVQueen {product_type.lower()} edit: clear product details, modern elegance, and intentional styling.",
-            f"Shop MVQueen {product_type.lower()} through a curated edit grounded in verified details and refined everyday style.",
+            f"Explore {brand_name} {product_type.lower()} with verified product details, polished styling, and a considered feminine point of view.",
+            f"Discover the {brand_name} {product_type.lower()} edit: clear product details, modern elegance, and intentional styling.",
+            f"Shop {brand_name} {product_type.lower()} through a curated edit grounded in verified details and refined everyday style.",
         ],
         key,
         "collection-meta",
@@ -330,7 +349,7 @@ def _collection(record: Dict[str, Any]) -> Dict[str, Any]:
         "name": name,
         "slug": _slug(name),
         "description": description,
-        "seo_title": _clip(f"{name} | MVQueen", 60),
+        "seo_title": _clip(f"{name} | {brand_name}", 60),
         "meta_description": _clip(meta_description, 160),
         "primary_keyword": primary_keyword,
         "status": "DRAFT_REVIEW",
@@ -339,6 +358,7 @@ def _collection(record: Dict[str, Any]) -> Dict[str, Any]:
 
 def _blog(record: Dict[str, Any], facts: Dict[str, Any]) -> Dict[str, Any]:
     product_type = _text(record.get("category", {}).get("product_type")) or "product"
+    brand_name = _text(record.get("intelligence", {}).get("brand_name")) or "MVQueen"
     title = _text(record.get("copy", {}).get("title"))
     primary_keyword = _text(record.get("seo", {}).get("primary_keyword")) or product_type.lower()
     handle = _text(record.get("identity", {}).get("handle"))
@@ -427,7 +447,7 @@ def _blog(record: Dict[str, Any], facts: Dict[str, Any]) -> Dict[str, Any]:
             "heading": first_heading,
             "paragraphs": [
                 first_intro,
-                "MVQueen keeps factual specifications separate from editorial framing so product understanding comes before persuasion.",
+                f"{brand_name} keeps factual specifications separate from editorial framing so product understanding comes before persuasion.",
             ],
         },
         {
@@ -448,9 +468,9 @@ def _blog(record: Dict[str, Any], facts: Dict[str, Any]) -> Dict[str, Any]:
 
     dek = _choose(
         [
-            f"A practical MVQueen guide to evaluating {primary_keyword} through verified details, personal priorities, and intentional style.",
+            f"A practical {brand_name} guide to evaluating {primary_keyword} through verified details, personal priorities, and intentional style.",
             f"A closer look at {primary_keyword}, grounded in verified product information and a more considered way to choose.",
-            f"Use verified details, personal priorities, and MVQueen editorial guidance to evaluate {primary_keyword} with confidence.",
+            f"Use verified details, personal priorities, and {brand_name} editorial guidance to evaluate {primary_keyword} with confidence.",
         ],
         key,
         "blog-dek",
@@ -458,9 +478,9 @@ def _blog(record: Dict[str, Any], facts: Dict[str, Any]) -> Dict[str, Any]:
 
     meta_description = _choose(
         [
-            f"Learn how to evaluate {primary_keyword} using verified product details, personal priorities, and MVQueen's considered editorial approach.",
-            f"Explore what matters when choosing {primary_keyword}: verified details, personal use, and clear MVQueen editorial guidance.",
-            f"A practical MVQueen guide to {primary_keyword}, focused on verified information and intentional product selection.",
+            f"Learn how to evaluate {primary_keyword} using verified product details, personal priorities, and {brand_name}'s considered editorial approach.",
+            f"Explore what matters when choosing {primary_keyword}: verified details, personal use, and clear {brand_name} editorial guidance.",
+            f"A practical {brand_name} guide to {primary_keyword}, focused on verified information and intentional product selection.",
         ],
         key,
         "blog-meta",
