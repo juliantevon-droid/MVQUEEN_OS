@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "system": "MVQUEEN_OS",
+  "policy": {
+    "append_only_history": true,
+    "self_promotion_allowed": false,
+    "authority_growth_from_learning": false,
+    "required_verification_before_reuse": true,
+    "required_approval_for_operating_rule": true
+  },
+  "lessons": []
+}
