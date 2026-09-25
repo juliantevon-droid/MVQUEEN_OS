@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "source": "Shopify Admin GraphQL",
+  "shop": "tsucu0-1i.myshopify.com",
+  "verified_at": "2026-09-25",
+  "scope": "published_non_empty_collections",
+  "collections": [
+    {
+      "id": "gid://shopify/Collection/352630538438",
+      "title": "Home page",
+      "handle": "frontpage",
+      "product_count": 1
+    },
+    {
+      "id": "gid://shopify/Collection/352674054342",
+      "title": "MVQueen Edit",
+      "handle": "mvqueen-edit",
+      "product_count": 2
+    },
+    {
+      "id": "gid://shopify/Collection/352674087110",
+      "title": "Jewelry",
+      "handle": "jewelry",
+      "product_count": 2
+    },
+    {
+      "id": "gid://shopify/Collection/352674119878",
+      "title": "Necklaces",
+      "handle": "necklaces",
+      "product_count": 2
+    },
+    {
+      "id": "gid://shopify/Collection/352674152646",
+      "title": "Pendant Necklaces",
+      "handle": "pendant-necklaces",
+      "product_count": 1
+    },
+    {
+      "id": "gid://shopify/Collection/353158463686",
+      "title": "MVQueen World",
+      "handle": "mvqueen-world",
+      "product_count": 1
+    },
+    {
+      "id": "gid://shopify/Collection/353158496454",
+      "title": "Miss.Princess World",
+      "handle": "miss-princess-world",
+      "product_count": 1
+    }
+  ],
+  "title_to_handle": {
+    "MVQueen Edit": "mvqueen-edit",
+    "Jewelry": "jewelry",
+    "Necklaces": "necklaces",
+    "Pendant Necklaces": "pendant-necklaces",
+    "MVQueen World": "mvqueen-world",
+    "Miss.Princess World": "miss-princess-world"
+  },
+  "product_memberships": {
+    "gid://shopify/Product/9072636395718": [
+      {
+        "title": "MVQueen Edit",
+        "handle": "mvqueen-edit"
+      },
+      {
+        "title": "Jewelry",
+        "handle": "jewelry"
+      },
+      {
+        "title": "Necklaces",
+        "handle": "necklaces"
+      },
+      {
+        "title": "MVQueen World",
+        "handle": "mvqueen-world"
+      }
+    ],
+    "gid://shopify/Product/9072508567750": [
+      {
+        "title": "MVQueen Edit",
+        "handle": "mvqueen-edit"
+      },
+      {
+        "title": "Jewelry",
+        "handle": "jewelry"
+      },
+      {
+        "title": "Necklaces",
+        "handle": "necklaces"
+      },
+      {
+        "title": "Pendant Necklaces",
+        "handle": "pendant-necklaces"
+      },
+      {
+        "title": "Miss.Princess World",
+        "handle": "miss-princess-world"
+      }
+    ]
+  },
+  "governance": {
+    "source_of_truth": "Shopify",
+    "snapshot_is_advisory": true,
+    "do_not_guess_missing_handles": true,
+    "refresh_before_bulk_catalog_release": true
+  }
+}
