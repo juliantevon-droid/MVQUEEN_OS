@@ -132,7 +132,7 @@ Further work should extend this canonical system, not create parallel runtimes, 
 The system is production-capable. Full public release still requires the following owner/admin actions that cannot be completed by the connected integrations:
 
 1. **Protect `main` in GitHub.** No repository ruleset exists, and the connected GitHub App receives 403 on the branch-protection administration endpoint.
-2. **Revoke/rotate the historically exposed Shopify credential.** Active `main` does not contain a live token, but the historical credential must still be treated as exposed because the repository is public.
+2. **Historical Shopify credential — RESOLVED.** Live Shopify app-installation audit shows no merchant-created custom app is currently installed, and the Dev Dashboard contains no merchant app. The historical admin-style token is therefore no longer attached to an active custom-app installation; active `main` also contains no live Shopify token.
 3. **Publish the canonical theme.** `MVQUEEN — Custom Production Build` (`154611515590`) is synchronized, validated and remains UNPUBLISHED; `Helio` (`154610663622`) is still MAIN. Automated theme publishing is intentionally blocked.
 4. **Finish Shopify store identity/legal-policy branding.** Admin shop name remains `My Store 4`, and the built-in Privacy Policy still contains that name. A validated brand-only Privacy Policy update was rejected because the connected app lacks `write_legal_policies`.
 5. **Remove storefront password protection when public launch is intended.** Shopify currently reports password protection enabled.
@@ -146,7 +146,7 @@ These are owner/account-control gates, not unresolved catalog, theme-code, app-c
 **Current Shopify two-product cleanup: COMPLETE.**  
 **Historical catalog recovery: ARCHIVE ONLY / OUT OF PRODUCTION SCOPE.**  
 **Automated/code/data launch gates: COMPLETE.**  
-**Owner/admin launch gates: 5 REMAIN.**  
+**Owner/admin launch gates: 4 REMAIN.**  
 **Full storefront launch clearance: NOT YET.**
 
 Further production work must continue from the **current Shopify catalog only**, through the existing `main` architecture and governed release gates.
