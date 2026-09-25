@@ -196,6 +196,13 @@
       "authority": "managed_postgresql",
       "execution": "production_profile_with_runtime_guard",
       "writes": "runtime_state_sessions_jobs_release_audit"
+    },
+    {
+      "id": "catalog_health",
+      "status": "connected_read_only",
+      "authority": "Shopify",
+      "execution": "authenticated_control_plane_scan",
+      "writes": "none"
     }
   ],
   "non_negotiable_gates": {
