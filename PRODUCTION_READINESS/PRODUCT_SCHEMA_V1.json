@@ -751,6 +751,7 @@
               "type": "string",
               "enum": [
                 "CONTENT_READY_FOR_REVIEW",
+                "CONTENT_PUBLISH_ELIGIBLE",
                 "CONTENT_BLOCKED"
               ]
             }
