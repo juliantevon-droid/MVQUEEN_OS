@@ -30,7 +30,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "content_intelligence","seo_intelligence","merchandising","pricing",
             "profitability","creative","paid_advertising","analytics","retention",
             "customer_support","inventory","orders_fulfillment","theme","qa","deployment",
-            "finance","compliance","backup_recovery","catalog_health_audit","media_alt_publication","production_database","catalog_health"
+            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health"
         }
         self.assertTrue(required.issubset(ids))
 
@@ -61,7 +61,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "product_intake","canonical_content_release","pricing_profitability",
             "merchandising","storefront_release","paid_media","analytics_learning",
             "retention_lifecycle","order_fulfillment","customer_care","finance",
-            "compliance","backup_recovery"
+            "compliance","backup_recovery","catalog_health_audit"
         }
         self.assertTrue(required.issubset(ids))
         paid = next(item for item in self.workflows["workflows"] if item["id"] == "paid_media")
