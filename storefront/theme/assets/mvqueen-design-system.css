@@ -25,7 +25,7 @@
   --gold: var(--mvq-gold);
   --gold-lt: #E2C978;
   --display: var(--mvq-display);
-  --title: "Cinzel", Georgia, serif;
+  --title: var(--mvq-body);
   --body: var(--mvq-body);
 }
 
