@@ -36,13 +36,26 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertEqual(pricing["writes"], "no_price_mutation")
         self.assertEqual(ads["execution"], "disabled")
 
+    def test_connected_capabilities_have_execution_contracts(self):
+        by_id = {item["id"]: item for item in self.data["capabilities"]}
+        self.assertEqual(by_id["content_intelligence"]["status"], "connected_approved_handoff")
+        self.assertEqual(by_id["seo_intelligence"]["status"], "connected_approved_handoff")
+        self.assertEqual(by_id["pricing"]["status"], "connected_approval_required")
+        self.assertEqual(by_id["paid_advertising"]["status"], "adapter_required")
+
     def test_runtime_files_exist(self):
         required = [
             "app/lib/enterprise/commercial-config.ts",
             "app/lib/enterprise/pricing-engine.ts",
             "app/lib/enterprise/marketing-engine.ts",
             "app/lib/enterprise/product-decision-engine.ts",
+            "app/lib/enterprise/integration-status.ts",
+            "app/lib/enterprise/lifecycle-engine.ts",
+            "app/lib/enterprise/canonical-proposal.ts",
             "app/lib/product-processor.ts",
+            "app/routes/app.proposals.tsx",
+            "app/routes/app.pricing.tsx",
+            "storefront/theme/assets/mvqueen-analytics.js",
         ]
         for rel in required:
             self.assertTrue((ROOT / rel).is_file(), rel)
