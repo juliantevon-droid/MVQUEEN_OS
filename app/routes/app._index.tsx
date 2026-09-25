@@ -2,12 +2,12 @@ import type { LoaderFunctionArgs } from "react-router";
 import { useLoaderData } from "react-router";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { getCommercialConfig } from "../lib/enterprise/commercial-config";
+import { resolveShopCommercialConfig } from "../lib/enterprise/commercial-settings.server";
 import { getEnterpriseIntegrationStatus } from "../lib/enterprise/integration-status";
 import { databaseProfile } from "../lib/enterprise/database-guard.server";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const { admin } = await authenticate.admin(request);
+  const { admin, session } = await authenticate.admin(request);
   const response = (await admin.graphql(`#graphql
     query MVQueenRuntimeHealth {
       shop { name myshopifyDomain currencyCode }
@@ -24,7 +24,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   };
 
   const integrations = getEnterpriseIntegrationStatus();
-  const commercial = getCommercialConfig();
+  const commercial = await resolveShopCommercialConfig(session.shop);
   const scopes = new Set(
     body.data?.appInstallation?.accessScopes
       ?.map((scope) => scope.handle)
