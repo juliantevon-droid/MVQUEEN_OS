@@ -36,16 +36,19 @@ class ContentIntelligenceV1Tests(unittest.TestCase):
         self.assertEqual(result["status"], "PRODUCTION_READY")
         return result
 
-    def test_generates_full_reviewable_content_suite(self):
+    def test_generates_publish_eligible_content_suite(self):
         content = generate_content_suite(self.canonical())
         self.assertTrue(content["qa"]["passed"])
-        self.assertEqual(content["qa"]["status"], "CONTENT_READY_FOR_REVIEW")
+        self.assertEqual(content["qa"]["status"], "CONTENT_PUBLISH_ELIGIBLE")
         self.assertTrue(content["product_page"]["title"])
         self.assertTrue(content["product_page"]["faq"])
         self.assertTrue(content["collection"]["description"])
         self.assertTrue(content["blog"]["sections"])
-        self.assertFalse(content["blog"]["auto_publish"])
-        self.assertFalse(content["site_faq"]["auto_publish"])
+        self.assertTrue(content["blog"]["publish_eligible"])
+        self.assertTrue(content["blog"]["auto_publish"])
+        self.assertEqual(content["site_faq"]["scope"], "product")
+        self.assertTrue(content["site_faq"]["auto_publish"])
+        self.assertTrue(content["collection"]["auto_publish"])
 
     def test_only_verified_facts_become_factual_content(self):
         content = generate_content_suite(self.canonical())
@@ -120,11 +123,23 @@ class ContentIntelligenceV1Tests(unittest.TestCase):
         self.assertGreaterEqual(len(titles), 6)
         self.assertGreaterEqual(len(deks), 3)
 
-    def test_validator_blocks_auto_publish(self):
+    def test_validator_blocks_blog_auto_publish_without_eligibility(self):
         content = generate_content_suite(self.canonical())
+        content["blog"]["publish_eligible"] = False
         content["blog"]["auto_publish"] = True
         errors = validate_content_suite(content)
-        self.assertTrue(any("review-only" in error for error in errors))
+        self.assertTrue(any("publish_eligible" in error for error in errors))
+
+    def test_sparse_blog_stays_draft(self):
+        product = self.base()
+        product["source_truth"]["facts"] = [
+            {"name": "color", "value": "Black", "source": "Shopify product record", "verified": True},
+        ]
+        content = generate_content_suite(run(product))
+        self.assertTrue(content["qa"]["passed"])
+        self.assertFalse(content["blog"]["publish_eligible"])
+        self.assertFalse(content["blog"]["auto_publish"])
+        self.assertEqual(content["blog"]["status"], "DRAFT_REVIEW")
 
 
 if __name__ == "__main__":
