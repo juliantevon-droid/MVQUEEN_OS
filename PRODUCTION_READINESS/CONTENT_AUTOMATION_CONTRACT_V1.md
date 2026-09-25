@@ -22,7 +22,16 @@ Product facts may come only from verified source_truth facts. Missing facts stay
 
 ## Publishing rule
 
-This engine generates drafts only. Blog and FAQ outputs are review-only and auto_publish=false. Shopify transport remains downstream of the release and publishing boundaries.
+The content engine may mark approved surfaces as publish-eligible after canonical product QA and content QA pass.
+
+- Product FAQ content may publish with the approved product metafield payload (`content.faq`).
+- Blog articles may auto-publish only when the blog output is `publish_eligible=true`; sparse or weak drafts remain held.
+- Collection copy may update an existing matched collection; the publisher must not auto-create collections from product-level content.
+- Governed static/editorial pages may publish when explicitly present in the approved content suite.
+- Product-level FAQ output must not overwrite the global FAQ page.
+- Privacy, terms, shipping, refund/returns, and other legal/policy pages are protected from automated content publishing.
+
+All external writes still require the canonical release fingerprint/approval and the Shopify publishing boundary. Publication eligibility never permits fabricated product facts.
 
 ## Legacy rule
 
