@@ -20,7 +20,7 @@
   <body class="mvq-page mvq-page--{{ request.page_type }}">
     <a class="mvq-skip-link" href="#MainContent">Skip to content</a>
     {% section 'announcement-bar' %}
-    {% section 'header' %}
+    {% unless request.page_type == 'index' %}{% section 'header' %}{% endunless %}
     <main id="MainContent" role="main" tabindex="-1">{{ content_for_layout }}</main>
     {% section 'footer' %}
     <script src="{{ 'mvqueen.js' | asset_url }}" defer></script>
