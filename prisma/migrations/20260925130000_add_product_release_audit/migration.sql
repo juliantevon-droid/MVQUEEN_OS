@@ -12,8 +12,8 @@ CREATE TABLE "ProductReleaseAudit" (
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE UNIQUE INDEX "ProductReleaseAudit_shop_contentFingerprint_operation_key"
-ON "ProductReleaseAudit"("shop", "contentFingerprint", "operation");
+CREATE INDEX "ProductReleaseAudit_shop_contentFingerprint_operation_result_idx"
+ON "ProductReleaseAudit"("shop", "contentFingerprint", "operation", "result");
 
 CREATE INDEX "ProductReleaseAudit_shop_productGid_createdAt_idx"
 ON "ProductReleaseAudit"("shop", "productGid", "createdAt");
