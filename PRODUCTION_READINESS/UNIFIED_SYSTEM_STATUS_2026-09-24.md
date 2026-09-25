@@ -282,3 +282,84 @@ This section supersedes all earlier launch-gate and storefront-access status in 
 **Payment acceptance:** MANUAL VERIFICATION REQUIRED  
 **Public storefront:** LAUNCHED  
 **Full commerce launch certification:** PENDING PAYMENT-PROVIDER / TEST-CHECKOUT VERIFICATION
+
+## Verified staging promotion state — 2026-09-25
+
+The canonical storefront deployment model is now:
+
+- **Live MAIN:** `MVQueen — Custom Production Build` (`154869825734`)
+- **Validated staging:** `MVQueen — Staging Preview` (`154876772550`)
+- **Backup:** `MVQueen — Backup 2026-09-25`
+- **Legacy themes:** Helio and Previous Production Build remain unpublished.
+
+### Staging parity
+
+The Theme CI controlled deployment set currently contains **39 files**.
+
+- GitHub `main` → Staging Preview: **39 / 39 matched**
+- Missing staging files: **0**
+- Staging mismatches: **0**
+- Staging processing failures: **0**
+- Theme contract validator: **PASS**
+- Shopify Theme Check: **PASS**
+
+### Live delta
+
+The current live MAIN theme matches **25 / 39** controlled files.
+
+Files missing from live but present in staging:
+- `assets/brand-gateway.css`
+- `sections/brand-gateway.liquid`
+- `sections/miss-princess-experience.liquid`
+- `templates/page.mvqueen.json`
+- `templates/page.miss-princess.json`
+
+Live files with older versions than GitHub/staging:
+- `layout/theme.liquid`
+- `config/settings_schema.json`
+- `assets/mvqueen-design-system.css`
+- `assets/mvqueen-header.css`
+- `assets/mvqueen-product.css`
+- `sections/header.liquid`
+- `sections/footer.liquid`
+- `sections/main-product.liquid`
+- `templates/index.json`
+
+### Product-page / SEO architecture
+
+The validated staging product page now includes:
+- short description above the fold
+- factual product-highlight bullets
+- Product details accordion
+- Measurements accordion when verified measurements exist
+- Ingredients / How to use / Care / Size guide accordions when relevant metafields exist
+- Shipping & returns accordion with live policy links
+- secure native Shopify product form/cart behavior
+- Product JSON-LD structured data
+- canonical/meta/Open Graph/Twitter SEO
+- factual primary keyword, secondary phrases, and long-tail keyword architecture in the canonical product pipeline
+
+Current Shopify products now have:
+- `catalog.focus_keyword`
+- `catalog.long_tail_keywords`
+- `catalog.seo_keywords`
+- `catalog.highlights`
+- `catalog.short_description`
+
+The two current product variants were verified unchanged after SEO/content metafield updates:
+- Pink Thulite: SKU `SDP116759`, price `26.39`, inventory `1`
+- Brown Aventurine: SKU `COFL-805`, price `13.09`, inventory `996`
+
+### Engineering gates
+
+- GitHub `main` protection: **ENABLED**
+- Shopify App CI: **PASS** after repairing invalid TypeScript template literals in brand routing
+- Lint & Index: **PASS**
+- MVQUEEN_OS Overseer: **PASS**
+- Production Readiness: **PASS**
+- Theme CI/CD validation: **PASS**
+
+### Promotion decision
+
+Do **not** patch the current MAIN theme file-by-file. The correct release action is to promote the fully validated `MVQueen — Staging Preview` theme as a single theme release after visual preview. This preserves rollback safety and keeps GitHub/staging/live roles clear.
+
