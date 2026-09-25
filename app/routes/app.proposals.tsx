@@ -7,6 +7,7 @@ import {
   validateApprovedReleaseBundle,
   type ApprovedReleaseBundle,
 } from "../lib/enterprise/canonical-proposal";
+import { publishApprovedContentSurfaces } from "../lib/enterprise/content-publisher";
 
 const PRODUCT_FRESHNESS_QUERY = `#graphql
 query MVQueenReleaseFreshness($id: ID!) {
@@ -195,9 +196,45 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     }
 
     await audit("SUCCESS");
+
+    let contentSummary = "";
+    try {
+      const contentResults = await publishApprovedContentSurfaces(admin, record, approval);
+      for (const item of contentResults) {
+        await prisma.productReleaseAudit.create({
+          data: {
+            shop: session.shop,
+            productGid,
+            contentFingerprint: fingerprint,
+            actor: approval.actor,
+            decision: approval.decision,
+            operation: "CONTENT_" + item.surface.toUpperCase(),
+            result: item.status,
+            error: item.status === "SKIPPED" ? item.message : null,
+          },
+        });
+      }
+      contentSummary = contentResults.map((item) => item.surface + ": " + item.status).join(" · ");
+    } catch (contentError) {
+      const contentMessage = contentError instanceof Error ? contentError.message : String(contentError);
+      await prisma.productReleaseAudit.create({
+        data: {
+          shop: session.shop,
+          productGid,
+          contentFingerprint: fingerprint,
+          actor: approval.actor,
+          decision: approval.decision,
+          operation: "CONTENT_PUBLISH",
+          result: "FAILED",
+          error: contentMessage,
+        },
+      });
+      contentSummary = "content: FAILED (" + contentMessage + ")";
+    }
+
     return {
       ok: true,
-      message: `Published approved editorial/SEO release for ${updateBody.data?.productUpdate?.product?.title ?? productGid}. Protected price, SKU, inventory, variants, handle and media relationships were not changed.`,
+      message: `Published approved editorial/SEO release for ${updateBody.data?.productUpdate?.product?.title ?? productGid}. Product FAQ/metafields and other publish-eligible content were processed. ${contentSummary}. Protected price, SKU, inventory, variants, handle and media relationships were not changed.`,
     };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
