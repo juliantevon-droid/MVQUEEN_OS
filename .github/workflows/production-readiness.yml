@@ -11,6 +11,9 @@ on:
       - 'PRODUCTION_READINESS/**'
       - '15_Scripts_And_Code/mvqueen_engine/**'
       - '30_System_Infrastructure/catalog/**'
+      - '30_System_Infrastructure/system/**'
+      - 'app/**'
+      - 'storefront/theme/**'
       - '.github/workflows/production-readiness.yml'
   pull_request:
     branches:
@@ -53,7 +56,7 @@ jobs:
         run: python -m compileall -q 15_Scripts_And_Code/mvqueen_engine
       - name: Run canonical pipeline, schema, release, boundary, publisher, preview, unified transport, audit, and branch-consolidation tests
         working-directory: PRODUCTION_READINESS
-        run: python -m unittest test_product_pipeline_v1.py test_content_intelligence_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py test_shopify_publish_preview_v1.py test_shopify_transport_boundary_v1.py test_release_audit_ledger_v1.py test_branch_consolidation.py test_unified_system_contract.py test_engine_stabilization.py -v
+        run: python -m unittest test_product_pipeline_v1.py test_content_intelligence_v1.py test_schema_validator_v1.py test_release_gate_v1.py test_publishing_boundary_v1.py test_shopify_publisher_v1.py test_shopify_publish_preview_v1.py test_shopify_transport_boundary_v1.py test_release_audit_ledger_v1.py test_branch_consolidation.py test_unified_system_contract.py test_engine_stabilization.py test_enterprise_operating_system_v2.py -v
       - name: Check legacy Shopify bypasses are disabled
         run: |
           ! grep -nE 'update_product\(|update_metafields\(|update_variant_price\(' 15_Scripts_And_Code/mvqueen_engine/catalog_processor/processor.py
