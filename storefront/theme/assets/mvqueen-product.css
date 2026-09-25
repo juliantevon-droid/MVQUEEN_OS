@@ -47,3 +47,12 @@
 .mvq-product-accordions .mvq-product-description{margin:0}
 .mvq-product-accordions ul{margin-top:.2rem}
 
+
+.mvq-product-page--jewelry .mvq-product-media-item{
+  background:linear-gradient(145deg,var(--mvq-pearl),var(--mvq-cream));
+}
+.mvq-product-page--jewelry .mvq-product-media-item img{
+  object-fit:contain;
+  padding:clamp(14px,3vw,34px);
+  background:transparent;
+}
