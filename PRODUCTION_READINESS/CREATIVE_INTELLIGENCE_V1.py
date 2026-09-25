@@ -21,8 +21,14 @@ def build_creative(record: Dict[str, Any]) -> Dict[str, Any]:
     intelligence = record.get("intelligence", {})
     copy = record.get("copy", {})
     commercial = record.get("commercial", {})
-    title = copy.get("title") or record.get("identity", {}).get("product_id", "MVQueen product")
-    desire = intelligence.get("desire") or "feel polished, confident, and intentional"
+    brand_world = intelligence.get("brand_world") or "mvqueen"
+    brand_name = "Miss.Princess" if brand_world == "miss-princess" else "MVQueen"
+    title = copy.get("title") or record.get("identity", {}).get("product_id", f"{brand_name} product")
+    desire = intelligence.get("desire") or (
+        "feel expressive, feminine, polished, and free to play with color"
+        if brand_world == "miss-princess"
+        else "feel polished, confident, and intentional"
+    )
     angle = commercial.get("angle") or "Show how the product fits the customer's intended use."
     proof = list(commercial.get("proof_available", []))
     fact_hint = next(iter(facts.values()), "verified product detail")
@@ -39,7 +45,7 @@ def build_creative(record: Dict[str, Any]) -> Dict[str, Any]:
             "asset_type": "static_or_carousel",
             "brief": f"Lead with {desire}. Feature {title}; visually emphasize {fact_hint}. Angle: {angle}",
             "hook": f"A more intentional way to approach {desire}.",
-            "cta": "Shop MVQueen",
+            "cta": f"Shop {brand_name}",
             "funnel_stage": "consideration",
             "testing_variable": "hook",
             "claim_constraints": claim_constraints,
@@ -48,8 +54,12 @@ def build_creative(record: Dict[str, Any]) -> Dict[str, Any]:
             "channel": "TikTok",
             "asset_type": "short_video",
             "brief": f"Open in customer context, reveal {title}, then demonstrate the relevant verified detail: {fact_hint}.",
-            "hook": "Show the moment the look comes together.",
-            "cta": "Shop MVQueen",
+            "hook": (
+                "Show the moment the color makes the look feel like hers."
+                if brand_world == "miss-princess"
+                else "Show the moment the look comes together."
+            ),
+            "cta": f"Shop {brand_name}",
             "funnel_stage": "discovery",
             "testing_variable": "opening_visual",
             "claim_constraints": claim_constraints,
@@ -58,8 +68,12 @@ def build_creative(record: Dict[str, Any]) -> Dict[str, Any]:
             "channel": "UGC",
             "asset_type": "concept",
             "brief": f"Concept scenario: customer prepares for the intended use and naturally introduces {title}. Focus on experience and verified details, not fabricated results.",
-            "hook": "Get ready with me for the moment that calls for a little more polish.",
-            "cta": "Explore MVQueen",
+            "hook": (
+                "Get ready with me for a softer, brighter styling moment."
+                if brand_world == "miss-princess"
+                else "Get ready with me for the moment that calls for a little more polish."
+            ),
+            "cta": f"Explore {brand_name}",
             "funnel_stage": "consideration",
             "testing_variable": "context",
             "claim_constraints": claim_constraints + ["Clearly label simulated UGC as a concept"],
@@ -69,7 +83,7 @@ def build_creative(record: Dict[str, Any]) -> Dict[str, Any]:
             "asset_type": "product_feature",
             "brief": f"Tell a concise product story around {desire}, then support it with verified evidence: {', '.join(proof[:3]) or 'verified product details'}.",
             "hook": title,
-            "cta": "Shop MVQueen",
+            "cta": f"Shop {brand_name}",
             "funnel_stage": "conversion",
             "testing_variable": "angle",
             "claim_constraints": claim_constraints,
