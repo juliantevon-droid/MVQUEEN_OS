@@ -3,6 +3,7 @@ import unittest
 
 from PRODUCT_PIPELINE_V1 import run, validate
 from CANONICAL_ADAPTER_V1 import produce
+from SCHEMA_VALIDATOR_V1 import validate_record
 
 
 class ProductPipelineV1Tests(unittest.TestCase):
@@ -76,6 +77,7 @@ class ProductPipelineV1Tests(unittest.TestCase):
         result = run(self.base())
         self.assertEqual(result["status"], "PRODUCTION_READY")
         self.assertTrue(result["qa"]["passed"])
+        self.assertEqual(validate_record(result), [])
         self.assertTrue(result["seo"]["seo_title"].endswith("| MVQueen"))
         self.assertTrue(result["seo"]["primary_keyword"])
         self.assertTrue(result["seo"]["secondary_keywords"])
