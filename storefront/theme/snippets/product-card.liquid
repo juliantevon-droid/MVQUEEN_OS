@@ -4,11 +4,15 @@
   assign first_variant = product.selected_or_first_available_variant
   assign product_label = product.title | escape
   assign has_sale = false
+  assign is_jewelry = false
+  if product.tags contains 'mvq:category:jewelry'
+    assign is_jewelry = true
+  endif
   if first_variant.available and first_variant.compare_at_price > first_variant.price
     assign has_sale = true
   endif
 %}
-<article class="mvq-card">
+<article class="mvq-card{% if is_jewelry %} mvq-card--jewelry{% endif %}">
   <a class="mvq-card-link" href="{{ product.url }}" aria-label="View {{ product_label }}">
     <div class="mvq-card-media">
       {% if card_image %}
