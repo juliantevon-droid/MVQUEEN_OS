@@ -15,7 +15,7 @@ function numberFrom(value?: string | null): number | null {
 }
 
 function metafieldValue(product: ProductSnapshot, key: string): string | null {
-  return product.commercialMetafields?.find((item) => item.key === key)?.value ?? null;
+  return product.commercialMetafields?.nodes?.find((item) => item.key === key)?.value ?? null;
 }
 
 function slug(value: string): string {
@@ -33,7 +33,7 @@ export function buildEnterpriseProductDecision(product: ProductSnapshot) {
     product.productType ?? "",
   );
   const brandRoute = classifyBrandWorld(product);
-  const currentPrice = numberFrom(product.variants?.[0]?.price);
+  const currentPrice = numberFrom(product.variants?.nodes?.[0]?.price);
   const pricing = buildPricingDecision({
     currentPrice,
     unitCost: numberFrom(metafieldValue(product, "unit_cost")),
