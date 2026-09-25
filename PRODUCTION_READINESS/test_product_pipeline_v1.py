@@ -97,6 +97,7 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertEqual(len(result["seo"]["alt_texts"]), 3)
         self.assertEqual(len(result["creative"]["assets"]), 5)
         self.assertEqual(result["commercial"]["funnel_stage"], "consideration")
+        self.assertIn("pink thulite", str(result["copy"]).lower())
         self.assertEqual(product["protected_fields"]["values"], protected_before)
 
     def test_canonical_commercial_engine_is_enforced(self):
@@ -141,6 +142,24 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertEqual(first["seo"], second["seo"])
         self.assertEqual(first["commercial"], second["commercial"])
         self.assertEqual(first["creative"], second["creative"])
+
+    def test_editorial_language_varies_across_catalog_records(self):
+        short_descriptions = set()
+        descriptions = set()
+        ctas = set()
+        for index in range(30):
+            product = self.base()
+            product["identity"]["product_id"] = f"VAR-{index:03d}"
+            product["identity"]["sku"] = f"SKU-VAR-{index:03d}"
+            result = run(product)
+            self.assertEqual(result["status"], "PRODUCTION_READY")
+            short_descriptions.add(result["copy"]["short_description"])
+            descriptions.add(result["copy"]["description"])
+            ctas.add(result["copy"]["cta"])
+
+        self.assertGreaterEqual(len(short_descriptions), 15)
+        self.assertGreaterEqual(len(descriptions), 18)
+        self.assertGreaterEqual(len(ctas), 4)
 
     def test_adapter_preserves_protected_values_and_does_not_publish(self):
         product = self.base()
