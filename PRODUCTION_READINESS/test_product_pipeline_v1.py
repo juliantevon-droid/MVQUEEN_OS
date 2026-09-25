@@ -106,6 +106,23 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertIn("pink thulite", str(result["copy"]).lower())
         self.assertEqual(product["protected_fields"]["values"], protected_before)
 
+    def test_black_neutral_product_routes_to_mvqueen_world(self):
+        result = run(self.base())
+        self.assertEqual(result["intelligence"]["brand_world"], "mvqueen")
+        self.assertEqual(result["intelligence"]["brand_name"], "MVQueen")
+        self.assertIn("MVQueen World", result["merchandising"]["collections"])
+        self.assertIn("mvq:brand:mvqueen", result["merchandising"]["tags"])
+        self.assertTrue(result["seo"]["seo_title"].endswith("| MVQueen"))
+
+    def test_pink_product_routes_to_miss_princess_world(self):
+        result = run(self.shopify_specimen())
+        self.assertEqual(result["intelligence"]["brand_world"], "miss-princess")
+        self.assertEqual(result["intelligence"]["brand_name"], "Miss.Princess")
+        self.assertIn("Miss.Princess World", result["merchandising"]["collections"])
+        self.assertIn("mvq:brand:miss-princess", result["merchandising"]["tags"])
+        self.assertTrue(result["seo"]["seo_title"].endswith("| Miss.Princess"))
+        self.assertTrue(all("Miss.Princess" in asset["cta"] or asset["cta"] == "Shop now" for asset in result["creative"]["assets"]))
+
     def test_canonical_commercial_engine_is_enforced(self):
         result = run(self.base())
         commercial = result["commercial"]
