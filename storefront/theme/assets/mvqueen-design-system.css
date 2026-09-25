@@ -14,7 +14,7 @@
   --mvq-radius: 2px;
   --mvq-line: rgba(44, 44, 44, .14);
   --mvq-shadow: 0 12px 40px rgba(44, 44, 44, .08);
-  /* Legacy component aliases: keep the original MVQUEEN visual language stable. */
+  /* Legacy component aliases: keep the original MVQueen visual language stable. */
   --ink: var(--mvq-charcoal);
   --dust: #3A3430;
   --mink: #746A64;
@@ -353,7 +353,7 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
 }
 
 
-/* MVQUEEN homepage form and editorial finishing layer */
+/* MVQueen homepage form and editorial finishing layer */
 .mvq-section form[action*="/contact"] { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:1.5rem auto 0; max-width:620px; }
 .mvq-section form[action*="/contact"] input[type="email"] { flex:1 1 280px; min-height:48px; padding:.75rem .9rem; border:1px solid var(--mvq-line); border-radius:var(--mvq-radius); background:var(--mvq-pearl); color:var(--mvq-charcoal); }
 .mvq-section form[action*="/contact"] .mvq-btn { min-height:48px; }
