@@ -317,6 +317,12 @@
           "items": {
             "type": "string"
           }
+        },
+        "long_tail_keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
