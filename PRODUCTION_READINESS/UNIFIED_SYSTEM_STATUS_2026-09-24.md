@@ -222,3 +222,63 @@ These controls cannot be completed by the connected tools and must remain explic
 **Historical credential rotation:** MANUAL SECURITY CONFIRMATION REQUIRED  
 **Full public launch:** FINAL ACCOUNT CONTROLS ONLY
 
+
+
+## Public launch verification update — 2026-09-25
+
+This section supersedes all earlier launch-gate and storefront-access status in this document.
+
+### Verified public state
+
+- **Store name:** `MVQueen`.
+- **Primary domain:** `https://tsucu0-1i.myshopify.com`.
+- **SSL:** enabled.
+- **Shopify plan:** Basic.
+- **Shop setupRequired:** false.
+- **Storefront password protection:** **DISABLED**.
+- **Live MAIN theme:** `MVQueen — Custom Production Build` (theme ID `154869825734`).
+- Live theme processing: complete; `processingFailed=false`.
+- Rollback theme: `MVQueen — Previous Production Build` (theme ID `154611515590`), unpublished.
+- Helio is unpublished.
+- Live header, footer, hero, brand story, product and collection theme files use canonical customer-facing `MVQueen` casing and contain no standalone legacy `MVQUEEN` brand spelling.
+- Shopify pages, policies, collections, menus, product content and SEO audit contain no remaining customer-facing `MVQUEEN` brand hits.
+- Built-in policy audit found no bracket placeholders.
+- Two URL redirects are active.
+
+### Current production catalog
+
+- Shopify remains the sole source of truth for production products.
+- 2 products total; both are ACTIVE.
+- Both product vendors are `MVQueen`.
+- Both product SEO titles use `MVQueen`.
+- All 5 current product media items are READY and have ALT text.
+- Historical recovery catalogs remain archive-only and outside production scope.
+- Protected handles, SKUs, variant IDs, inventory, pricing and media relationships remain outside editorial automation.
+
+### GitHub / system state
+
+- Canonical repository: `juliantevon-droid/MVQUEEN_OS`, branch `main`.
+- `MVQUEEN Main Protection` ruleset is active.
+- Historical Shopify credential gate is resolved: live app-installation audit shows no merchant-created custom app installed and the Dev Dashboard contains no merchant app; active `main` contains no live Shopify token.
+- Customer-facing/prose brand spelling is standardized to `MVQueen` across the repository while technical identifiers such as `MVQUEEN_OS`, workflow labels, paths and code identifiers remain unchanged where required for system stability.
+- Editable Google Docs and Sheets were normalized in place to the canonical `MVQueen` display spelling; raw archival files remain historical snapshots.
+
+### Remaining manual commerce verification
+
+- **Payment provider activation is not verified by the connected integration.** Shopify exposes `shopifyPaymentsAccount.activated`, but this connection is denied access because it lacks `read_shopify_payments` / `read_shopify_payments_accounts`.
+- Verify the active payment provider manually in **Shopify Admin → Settings → Payments** and perform a test checkout/order before treating payment acceptance as operationally certified.
+
+### Final release position
+
+**Architecture / code:** READY  
+**Current Shopify catalog:** READY  
+**Theme:** LIVE AND HEALTHY  
+**Brand casing:** READY  
+**Navigation / redirects:** READY  
+**Policies / customer-facing pages:** READY based on verified current content  
+**Storefront access:** PUBLIC — PASSWORD PROTECTION OFF  
+**GitHub main protection:** ACTIVE  
+**Historical credential gate:** RESOLVED  
+**Payment acceptance:** MANUAL VERIFICATION REQUIRED  
+**Public storefront:** LAUNCHED  
+**Full commerce launch certification:** PENDING PAYMENT-PROVIDER / TEST-CHECKOUT VERIFICATION
