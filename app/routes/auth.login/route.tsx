@@ -23,7 +23,7 @@ export default function Auth() {
       <s-page>
         <Form method="post">
           <s-section heading="Connect MVQueen OS">
-            <s-text-field name="shop" label="Shop domain" details="example.myshopify.com"
+            <s-text-field name="shop" label="Shop domain" details="tsucu0-1i.myshopify.com"
               value={shop} onChange={(e) => setShop(e.currentTarget.value)}
               autocomplete="on" error={errors.shop}></s-text-field>
             <s-button type="submit">Connect</s-button>
