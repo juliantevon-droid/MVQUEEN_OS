@@ -183,12 +183,13 @@
     {
       "capability": "production_database",
       "provider": "managed durable database",
-      "state": "deployment_required",
+      "state": "engineered_profile_deployment_required",
       "requirements": [
-        "durable managed database",
-        "backups",
-        "migration strategy",
-        "connection security",
+        "managed PostgreSQL instance",
+        "MVQ_DATABASE_PROFILE=production",
+        "PostgreSQL DATABASE_URL",
+        "npm run setup:production",
+        "backup policy",
         "restore test",
         "monitoring"
       ],
