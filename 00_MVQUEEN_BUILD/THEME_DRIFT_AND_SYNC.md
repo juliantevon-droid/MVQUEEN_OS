@@ -3,9 +3,9 @@
 ## Current production development target
 
 - Shopify store: `tsucu0-1i.myshopify.com`
-- Live theme: Horizon (`MAIN`) — protected and untouched
-- Development target: `MVQueen — Custom Production Build` (`UNPUBLISHED`)
-- Target theme ID: `154611515590`
+- Live theme: `MVQueen — Custom Production Build` (`MAIN`) — protected from automated writes
+- Development target: `MVQueen — Next Production Build` (`UNPUBLISHED`)
+- Live theme ID: `154869825734`\n- Target theme ID: `154876674246`
 
 ## Source-of-truth model
 
