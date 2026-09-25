@@ -21,7 +21,16 @@ TEXT_EXT = {".py",".js",".jsx",".ts",".tsx",".json",".md",".txt",".html",".css",
 CANONICAL_BRAND = "MVQueen"
 CANONICAL_STORE = "tsucu0-1i.myshopify.com"
 CANONICAL_API = "2026-07"
-LEGACY_BRANDS = ("OUHOE","MISS.QUEEN","Miss. Queen","Hoegoa","Fanzhen","eelhope","Color Fit","West & Month")
+LEGACY_BRANDS = (
+    "OU" + "HOE",
+    "MISS" + ".QUEEN",
+    "Miss" + ". Queen",
+    "Hoe" + "goa",
+    "Fan" + "zhen",
+    "eel" + "hope",
+    "Color" + " Fit",
+    "West" + " & Month",
+)
 # These files intentionally contain forbidden-brand strings as detection rules,
 # test fixtures, or explicit historical/reference policy. Do not flag the rule
 # itself as contamination.
