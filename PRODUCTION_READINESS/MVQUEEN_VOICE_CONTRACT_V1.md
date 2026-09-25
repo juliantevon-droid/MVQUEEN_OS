@@ -43,6 +43,8 @@ MVQueen speaks with:
 4. Titles, descriptions, ads, social copy, email, SMS, and creative briefs must not all use the same sentence frame.
 5. Repetition across a batch is a QA signal. High-frequency phrase reuse must be reviewed before mass publication.
 6. If the source record lacks enough information for distinctive copy, the correct output is a QA hold—not invented detail.
+7. Deterministic variation should draw from the canonical MVQueen vocabulary and voice pillars with restraint; vocabulary may change framing, never factual meaning.
+8. Batch QA must measure repeated sentence frames, not only repeated exact sentences.
 
 ## Truth boundary
 
