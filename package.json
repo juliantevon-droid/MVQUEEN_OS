@@ -2,14 +2,24 @@
   "name": "mvqueen-os-shopify-app",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=20.19 <22 || >=22.12" },
+  "engines": {
+    "node": ">=20.19 <22 || >=22.12"
+  },
   "scripts": {
     "build": "react-router build",
     "dev": "shopify app dev",
     "deploy": "shopify app deploy",
     "setup": "prisma generate && prisma migrate deploy",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc --noEmit"
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "prisma:validate:dev": "prisma validate --schema prisma/schema.prisma",
+    "prisma:validate:production": "prisma validate --schema prisma/production/schema.prisma",
+    "prisma:generate:dev": "prisma generate --schema prisma/schema.prisma",
+    "prisma:generate:production": "prisma generate --schema prisma/production/schema.prisma",
+    "db:migrate:dev": "prisma migrate deploy --schema prisma/schema.prisma",
+    "db:migrate:production": "prisma migrate deploy --schema prisma/production/schema.prisma",
+    "setup:production": "npm run prisma:generate:production && npm run db:migrate:production",
+    "build:production": "npm run prisma:generate:production && react-router build"
   },
   "dependencies": {
     "@prisma/client": "^6.16.3",
