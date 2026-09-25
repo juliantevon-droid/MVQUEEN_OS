@@ -140,8 +140,10 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     };
   }
 
-  const commercial = new Map(
-    (product.commercialMetafields?.nodes ?? []).map((item: { key: string; value: string }) => [item.key, item.value]),
+  const commercial = new Map<string, string>(
+    (product.commercialMetafields?.nodes ?? []).map(
+      (item: { key: string; value: string }) => [item.key, item.value] as [string, string],
+    ),
   );
 
   const decision = buildPricingDecision({
