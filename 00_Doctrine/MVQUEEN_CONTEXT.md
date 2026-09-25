@@ -1,5 +1,5 @@
 # MVQUEEN_OS — Master Session Context
-## Brand: MVQUEEN (Most Valuable Queen)
+## Brand: MVQueen (Most Valuable Queen)
 
 **Sister Brand:** Miss.Princess  
 **Positioning:** Accessible luxury — emotional elevation, not status performance  
