@@ -239,6 +239,31 @@
           "items": {
             "type": "string"
           }
+        },
+        "brand_world": {
+          "type": "string",
+          "enum": [
+            "mvqueen",
+            "miss-princess",
+            "needs-review"
+          ]
+        },
+        "brand_name": {
+          "type": "string"
+        },
+        "brand_tone": {
+          "type": "string"
+        },
+        "brand_routing_reason": {
+          "type": "string"
+        },
+        "brand_routing_confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "review"
+          ]
         }
       }
     },
