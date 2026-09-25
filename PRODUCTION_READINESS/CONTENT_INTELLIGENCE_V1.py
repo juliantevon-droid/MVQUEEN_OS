@@ -100,6 +100,38 @@ def _clip(value: str, limit: int) -> str:
     return clean[: limit - 1].rstrip(" ,—-") + "…"
 
 
+def _pluralize_collection_slug(value: str) -> str:
+    slug = _slug(value)
+    if not slug:
+        return ""
+    if slug.endswith(("ss", "sh", "ch", "x", "z")):
+        return slug + "es"
+    if slug.endswith("y") and len(slug) > 1 and slug[-2] not in "aeiou":
+        return slug[:-1] + "ies"
+    if slug.endswith("s"):
+        return slug
+    return slug + "s"
+
+
+def _collection_target_handles(record: Dict[str, Any]) -> List[str]:
+    product_type = _text(record.get("category", {}).get("product_type"))
+    category = _text(record.get("category", {}).get("category"))
+    brand_world = _text(record.get("intelligence", {}).get("brand_world"))
+    merchandising = record.get("merchandising", {})
+    candidates: List[str] = []
+
+    for value in [
+        _slug(product_type),
+        _pluralize_collection_slug(product_type),
+        _slug(category),
+        *[_slug(x) for x in merchandising.get("collections", []) if _text(x)],
+        "miss-princess-world" if brand_world == "miss-princess" else "mvqueen-world" if brand_world == "mvqueen" else "",
+    ]:
+        if value and value not in candidates and value != "needs-review":
+            candidates.append(value)
+    return candidates
+
+
 def _verified_facts(record: Dict[str, Any]) -> Dict[str, Any]:
     facts: Dict[str, Any] = {}
     for fact in record.get("source_truth", {}).get("facts", []):
@@ -348,6 +380,7 @@ def _collection(record: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "name": name,
         "slug": _slug(name),
+        "target_handles": _collection_target_handles(record),
         "description": description,
         "seo_title": _clip(f"{name} | {brand_name}", 60),
         "meta_description": _clip(meta_description, 160),
