@@ -27,8 +27,9 @@ def resolve_internal_links(
     records: Iterable[Dict[str, Any]],
     *,
     collection_handles: Mapping[str, str] | None = None,
+    product_collection_targets: Mapping[str, Iterable[Mapping[str, str]]] | None = None,
     product_limit: int = 3,
-    collection_limit: int = 3,
+    collection_limit: int = 6,
 ) -> List[Dict[str, Any]]:
     """Return enriched record copies with verified internal-link targets."""
     items = [deepcopy(record) for record in records]
@@ -38,6 +39,7 @@ def resolve_internal_links(
         if _text(record.get("identity", {}).get("product_id"))
     }
     collection_handles = dict(collection_handles or {})
+    product_collection_targets = dict(product_collection_targets or {})
 
     for record in items:
         if record.get("status") != "PRODUCTION_READY":
@@ -84,6 +86,19 @@ def resolve_internal_links(
             seen_targets.add(target)
             if len([item for item in links if item["type"] == "collection"]) >= collection_limit:
                 break
+
+        for membership in product_collection_targets.get(product_id, []):
+            if len([item for item in links if item["type"] == "collection"]) >= collection_limit:
+                break
+            name = _text(membership.get("title"))
+            handle = _text(membership.get("handle"))
+            if not name or not handle:
+                continue
+            target = f"/collections/{handle}"
+            if target in seen_targets:
+                continue
+            links.append(_link(name, target, "collection", "verified_shopify_membership"))
+            seen_targets.add(target)
 
         record.setdefault("seo", {})["internal_links"] = links
         record["seo"]["internal_link_audit"] = {
