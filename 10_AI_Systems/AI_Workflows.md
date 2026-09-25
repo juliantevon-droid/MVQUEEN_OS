@@ -22,6 +22,8 @@ TRIGGER → PROMPT SYSTEM → AI GENERATION → QUALITY REVIEW → DEPLOYMENT
 No AI output skips the Quality Review stage.
 No AI output is deployed without human brand alignment check.
 
+No AI output may invent product or store facts. Product attributes, claims, reviews, pricing, offers, shipping thresholds, availability, and performance statements must be traceable to canonical evidence. Missing facts are omitted rather than inferred.
+
 ---
 
 ## Core Workflow Categories
@@ -79,9 +81,9 @@ No AI output is deployed without human brand alignment check.
 
 **Process:**
 1. Load voice directive — sensory, aspirational, precise
-2. Translate product attributes into emotional experiences
-3. Generate title, short description, long description, and SEO meta
-4. Review: does it lead with feeling before function?
+2. Translate only verified product attributes into brand-aligned language without adding unverified sensory details or outcomes
+3. Generate title, short description, long description, and SEO meta from canonical product facts
+4. Review: is every factual statement traceable to supplied evidence, and does the copy remain brand-aligned?
 5. Check for forbidden language patterns
 6. Deploy to Shopify via `09_Shopify_Systems/Product_Upload_SOP.md`
 
@@ -222,7 +224,7 @@ No AI output is deployed without human brand alignment check.
 5. Surface patterns for product, marketing, and content decisions
 
 **Output Standard:**
-- Insights are actionable — not just descriptive
+- Insights distinguish observed evidence from hypotheses and recommendations
 - Recommendations align with brand doctrine
 - Emotional intelligence layer applied to all behavioral data
 
