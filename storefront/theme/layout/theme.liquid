@@ -42,7 +42,7 @@
     </script>
     <a class="mvq-skip-link" href="#MainContent">Skip to content</a>
     {% section 'announcement-bar' %}
-    {% unless request.page_type == 'index' %}{% section 'header' %}{% endunless %}
+    {% section 'header' %}
     <main id="MainContent" role="main" tabindex="-1">{{ content_for_layout }}</main>
     {% unless request.page_type == 'index' %}{% section 'footer' %}{% endunless %}
     <script src="{{ 'mvqueen.js' | asset_url }}" defer></script>
