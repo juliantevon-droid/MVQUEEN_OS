@@ -5,9 +5,24 @@
       "settings": {
         "menu": "miss-princess-menu"
       }
+    },
+    "trust": {
+      "type": "trust-strip",
+      "settings": {}
+    },
+    "badges": {
+      "type": "trust-badges",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "trust",
+    "badges",
+    "newsletter"
   ]
 }
