@@ -143,4 +143,4 @@ jobs:
           path: .mvqueen-ci
           retention-days: 30
 
-# Canonical deployment identity remains pinned to MVQueen — Staging Preview; settings_data, backup, and rollback themes are never automated deployment targets.
+# Canonical deployment identity remains pinned to MVQueen — Staging Preview; settings_data and backup/rollback themes are never automated deployment targets.
