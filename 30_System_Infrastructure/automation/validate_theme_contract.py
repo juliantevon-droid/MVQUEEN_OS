@@ -11,14 +11,17 @@ THEME = ROOT / "storefront" / "theme"
 
 REQUIRED = {
     "layout/theme.liquid", "assets/mvqueen.css", "assets/mvqueen-design-system.css",
-    "assets/mvqueen-header.css", "assets/mvqueen-product.css", "assets/mvqueen.js",
-    "assets/mvqueen-ux.js", "sections/header.liquid", "sections/hero.liquid",
+    "assets/mvqueen-header.css", "assets/mvqueen-product.css", "assets/brand-gateway.css",
+    "assets/mvqueen.js", "assets/mvqueen-ux.js", "config/settings_schema.json",
+    "sections/header.liquid", "sections/hero.liquid", "sections/brand-gateway.liquid",
+    "sections/miss-princess-experience.liquid",
     "sections/editorial-curation.liquid", "sections/announcement-bar.liquid",
     "sections/footer.liquid", "sections/main-product.liquid", "sections/main-collection.liquid",
     "sections/main-search.liquid", "sections/main-cart.liquid", "sections/product-recommendations.liquid",
     "snippets/breadcrumbs.liquid", "snippets/product-schema.liquid", "snippets/seo-meta.liquid",
     "templates/index.json", "templates/product.json", "templates/collection.json",
     "templates/search.json", "templates/cart.json",
+    "templates/page.mvqueen.json", "templates/page.miss-princess.json",
 }
 
 FORBIDDEN_BRANDS = [
@@ -59,6 +62,28 @@ def main() -> int:
     for token in ["data-mvq-menu", "data-mvq-panel", 'aria-controls="MVQMobilePanel"', 'id="MVQMobilePanel"', 'aria-expanded="false"']:
         if token not in header:
             failures.append(f"header.liquid missing accessibility/navigation integration: {token}")
+
+    product = read("sections/main-product.liquid")
+    for token in [
+        "product.metafields.catalog.short_description.value",
+        "product.metafields.catalog.highlights.value",
+        'class="mvq-product-bullets"',
+        "<details>",
+        "<summary>Product details</summary>",
+        "<summary>Shipping & returns</summary>",
+        'href="/pages/shipping-policy"',
+        'href="/pages/refund-policy"',
+    ]:
+        if token not in product:
+            failures.append(f"main-product.liquid missing required custom PDP integration: {token}")
+
+    gateway = read("sections/brand-gateway.liquid")
+    if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
+        failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
+
+    for rel in ["templates/page.mvqueen.json", "templates/page.miss-princess.json"]:
+        if not (THEME / rel).is_file():
+            failures.append(f"Missing brand-world page template: {rel}")
 
     schema = read("snippets/product-schema.liquid")
     schema_compact = re.sub(r"\s+", "", schema)
@@ -101,6 +126,10 @@ def main() -> int:
     for brand in FORBIDDEN_BRANDS:
         if brand in all_text:
             failures.append(f"Forbidden supplier/legacy brand string found: {brand}")
+
+    for framework in ["DAWN", "HORIZON", "HELIO"]:
+        if framework in all_text:
+            failures.append(f"Legacy/commercial theme framework reference found in custom theme source: {framework}")
 
     for workflow in (ROOT / ".github" / "workflows").glob("*.yml"):
         workflow_text = workflow.read_text(encoding="utf-8", errors="ignore")
