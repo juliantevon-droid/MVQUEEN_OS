@@ -1,12 +1,24 @@
-<section class="mvq-section">
-  <div class="mvq-container mvq-newsletter">
-    <div class="mvq-eyebrow">STAY IN THE MVQueen WORLD</div>
-    <h2>Come a little closer.</h2>
+{% liquid
+  assign is_princess_experience = false
+  if request.path contains '/pages/miss-princess'
+    assign is_princess_experience = true
+  endif
+  if collection and collection.handle contains 'miss-princess'
+    assign is_princess_experience = true
+  endif
+  if product and product.tags contains 'mvq:brand:miss-princess'
+    assign is_princess_experience = true
+  endif
+%}
+<section class="mvq-section{% if is_princess_experience %} mvp-newsletter-section{% endif %}">
+  <div class="mvq-container mvq-newsletter{% if is_princess_experience %} mvq-newsletter--princess{% endif %}">
+    <div class="mvq-eyebrow">{% if is_princess_experience %}STAY IN THE Miss.Princess WORLD{% else %}STAY IN THE MVQueen WORLD{% endif %}</div>
+    <h2>{% if is_princess_experience %}Keep a little sparkle close.{% else %}Come a little closer.{% endif %}</h2>
     {% form 'customer', class: 'mvq-newsletter-form' %}
-      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input type="hidden" name="contact[tags]" value="{% if is_princess_experience %}newsletter,miss-princess{% else %}newsletter,mvqueen{% endif %}">
       <label class="mvq-visually-hidden" for="NewsletterEmail-{{ section.id }}">Email address</label>
       <input id="NewsletterEmail-{{ section.id }}" type="email" name="contact[email]" value="{{ form.email }}" placeholder="Your email" autocomplete="email" required>
-      <button class="mvq-button" type="submit">Join MVQueen</button>
+      <button class="mvq-button" type="submit">{% if is_princess_experience %}Join Miss.Princess{% else %}Join MVQueen{% endif %}</button>
       {% if form.posted_successfully? %}
         <p class="mvq-newsletter-status" role="status">You’re on the list.</p>
       {% elsif form.errors %}
