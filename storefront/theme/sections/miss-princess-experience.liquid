@@ -1,44 +1,103 @@
-<section class="mvq-sister-experience" aria-labelledby="miss-princess-title">
-  <div class="mvq-container">
-    <div class="mvq-sister-shell">
-      <p class="mvq-eyebrow">A SISTER BRAND</p>
-      <h1 id="miss-princess-title">Miss.Princess</h1>
-      <p class="mvq-sister-lede">A distinct sister brand with a softer, more playful point of view — intentionally separate from the MVQueen edit while sharing the same creative foundation.</p>
-      {% if section.settings.menu != blank %}
-        <nav class="mvq-sister-nav" aria-label="Miss.Princess navigation">
-          {% for link in section.settings.menu.links %}
-            <div class="mvq-sister-nav-group">
-              {% if link.links != blank %}
-                <details>
-                  <summary>{{ link.title }}</summary>
-                  <div class="mvq-sister-nav-links">
-                    {% for child_link in link.links %}
-                      <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      {% if child_link.links != blank %}
-                        <div class="mvq-sister-nav-grandchildren">
-                          {% for grandchild_link in child_link.links %}
-                            <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                          {% endfor %}
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                </details>
-              {% else %}
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              {% endif %}
-            </div>
-          {% endfor %}
-        </nav>
-      {% endif %}
-      <div class="mvq-sister-grid">
-        <a class="mvq-sister-card" href="/pages/miss-princess"><span>Enter the experience</span><strong>Miss.Princess edit</strong></a>
-        <a class="mvq-sister-card" href="/pages/miss-princess"><span>Explore the sister brand</span><strong>Miss.Princess world</strong></a>
-        <a class="mvq-sister-card" href="/pages/contact"><span>Need help?</span><strong>Contact us</strong></a>
+<section class="mvp-experience" aria-labelledby="MissPrincessTitle">
+  <div class="mvp-hero">
+    <div class="mvq-container mvp-hero-grid">
+      <div class="mvp-hero-copy">
+        <p class="mvp-eyebrow">A SISTER WORLD BY MVQueen</p>
+        <h1 id="MissPrincessTitle">Miss.Princess</h1>
+        <p class="mvp-lede">Soft glamour, playful confidence, and feminine details curated as a world of its own.</p>
+        <div class="mvp-hero-actions">
+          {% assign princess_primary_link = routes.all_products_collection_url %}
+          {% if section.settings.menu != blank and section.settings.menu.links.first != blank %}
+            {% assign princess_primary_link = section.settings.menu.links.first.url %}
+          {% endif %}
+          <a class="mvq-button" href="{{ princess_primary_link }}">Explore the Princess Edit</a>
+          <a class="mvq-button mvq-button--quiet mvp-button-light" href="/pages/mvqueen">Enter MVQueen</a>
+        </div>
+      </div>
+      <div class="mvp-hero-art" aria-hidden="true">
+        <span class="mvp-orbit mvp-orbit--one"></span>
+        <span class="mvp-orbit mvp-orbit--two"></span>
+        <span class="mvp-monogram">MP</span>
       </div>
     </div>
   </div>
+
+  <div class="mvq-container mvp-body">
+    {% if section.settings.menu != blank %}
+      <div class="mvp-section-head">
+        <p class="mvp-eyebrow">YOUR PRINCESS WORLD</p>
+        <h2>Choose your chapter.</h2>
+        <p>Miss.Princess has its own navigation, mood, and shopping path while staying connected to the same store and checkout.</p>
+      </div>
+
+      <nav class="mvq-sister-nav" aria-label="Miss.Princess navigation">
+        {% for link in section.settings.menu.links %}
+          <div class="mvq-sister-nav-group">
+            {% if link.links != blank %}
+              <details>
+                <summary>{{ link.title }}</summary>
+                <div class="mvq-sister-nav-links">
+                  {% for child_link in link.links %}
+                    <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                    {% if child_link.links != blank %}
+                      <div class="mvq-sister-nav-grandchildren">
+                        {% for grandchild_link in child_link.links %}
+                          <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </details>
+            {% else %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </nav>
+
+      <div class="mvp-chapter-grid">
+        {% for link in section.settings.menu.links limit: 6 %}
+          <a class="mvp-chapter-card" href="{{ link.url }}">
+            <span class="mvp-chapter-number">0{{ forloop.index }}</span>
+            <span class="mvp-chapter-label">Miss.Princess</span>
+            <strong>{{ link.title }}</strong>
+            <span class="mvp-chapter-arrow" aria-hidden="true">→</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="mvp-manifesto">
+      <div>
+        <p class="mvp-eyebrow">THE POINT OF VIEW</p>
+        <h2>Feminine without feeling expected.</h2>
+      </div>
+      <p>Miss.Princess is designed as a softer counterpoint to MVQueen: romantic, expressive, playful, and polished. The experience can grow into its own wardrobe, beauty room, jewels, moods, stories, and seasonal edits without becoming a separate store.</p>
+    </div>
+
+    <div class="mvp-service-strip" aria-label="Miss.Princess shopping benefits">
+      <span>One shared bag</span>
+      <span>One secure checkout</span>
+      <span>Two distinct brand worlds</span>
+    </div>
+  </div>
 </section>
+
 {% schema %}
-{"name":"Miss.Princess Experience","settings":[{"type":"link_list","id":"menu","label":"Miss.Princess menu"}],"presets":[{"name":"Miss.Princess Experience"}]}
+{
+  "name": "Miss.Princess Experience",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Miss.Princess menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Miss.Princess Experience"
+    }
+  ]
+}
 {% endschema %}
