@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "curation": {
+      "type": "editorial-curation",
+      "settings": {},
+      "blocks": {
+        "note-1": {
+          "type": "note",
+          "settings": {
+            "title": "The statement piece",
+            "text": "One intentional detail can change the entire look."
+          }
+        },
+        "note-2": {
+          "type": "note",
+          "settings": {
+            "title": "The everyday edit",
+            "text": "Refined pieces chosen to move easily through real life."
+          }
+        },
+        "note-3": {
+          "type": "note",
+          "settings": {
+            "title": "The finishing touch",
+            "text": "Beauty and accessories selected to complete your point of view."
+          }
+        }
+      }
+    },
+    "featured": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Made to be noticed.",
+        "collection": "mvqueen-edit",
+        "limit": 2
+      }
+    },
+    "story": {
+      "type": "brand-story",
+      "settings": {}
+    },
+    "trust": {
+      "type": "trust-strip",
+      "settings": {}
+    },
+    "social": {
+      "type": "social-proof",
+      "settings": {
+        "enabled": false
+      }
+    },
+    "pillars": {
+      "type": "brand-pillars",
+      "settings": {}
+    },
+    "badges": {
+      "type": "trust-badges",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "curation",
+    "featured",
+    "story",
+    "trust",
+    "social",
+    "pillars",
+    "badges",
+    "newsletter"
+  ]
+}
