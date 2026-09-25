@@ -30,7 +30,7 @@ env:
   SHOPIFY_THEME_ID: ${{ vars.MVQUEEN_SHOPIFY_THEME_ID }}
   # Canonical identity verified against the connected Shopify store on 2026-09-25.
   EXPECTED_SHOPIFY_STORE: tsucu0-1i.myshopify.com
-  EXPECTED_SHOPIFY_THEME_ID: '154876772550'
+  EXPECTED_SHOPIFY_THEME_ID: '154876674246'
 
 jobs:
   validate:
@@ -84,7 +84,7 @@ jobs:
               exit 1
             fi
             if [ "$SHOPIFY_THEME_ID" != "$EXPECTED_SHOPIFY_THEME_ID" ]; then
-              echo "Configured Shopify theme ID does not match the verified MVQueen staging theme: $EXPECTED_SHOPIFY_THEME_ID"
+              echo "Configured Shopify theme ID does not match the verified MVQueen Next Production Build staging theme: $EXPECTED_SHOPIFY_THEME_ID"
               exit 1
             fi
             echo 'Deployment enabled with verified canonical Shopify store/theme identity.'
@@ -120,7 +120,7 @@ jobs:
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
         run: |
-          files=(layout/theme.liquid config/settings_schema.json config/settings_data.json assets/mvqueen.css assets/mvqueen-design-system.css assets/mvqueen-header.css assets/mvqueen-product.css assets/mvqueen.js assets/mvqueen-ux.js sections/announcement-bar.liquid sections/header.liquid sections/hero.liquid sections/editorial-curation.liquid sections/footer.liquid sections/trust-strip.liquid sections/featured-products.liquid sections/brand-pillars.liquid sections/brand-story.liquid sections/social-proof.liquid sections/trust-badges.liquid sections/newsletter.liquid sections/miss-princess-experience.liquid sections/main-product.liquid sections/main-collection.liquid sections/main-search.liquid sections/main-cart.liquid sections/product-recommendations.liquid snippets/product-card.liquid snippets/breadcrumbs.liquid snippets/product-schema.liquid snippets/seo-meta.liquid templates/index.json templates/product.json templates/collection.json templates/search.json templates/cart.json templates/page.miss-princess.json)
+          files=(layout/theme.liquid config/settings_schema.json assets/mvqueen.css assets/mvqueen-design-system.css assets/mvqueen-header.css assets/mvqueen-product.css assets/mvqueen.js assets/mvqueen-ux.js sections/announcement-bar.liquid sections/header.liquid sections/hero.liquid sections/editorial-curation.liquid sections/footer.liquid sections/trust-strip.liquid sections/featured-products.liquid sections/brand-pillars.liquid sections/brand-story.liquid sections/social-proof.liquid sections/trust-badges.liquid sections/newsletter.liquid sections/miss-princess-experience.liquid sections/main-product.liquid sections/main-collection.liquid sections/main-search.liquid sections/main-cart.liquid sections/product-recommendations.liquid snippets/product-card.liquid snippets/breadcrumbs.liquid snippets/product-schema.liquid snippets/seo-meta.liquid templates/index.json templates/product.json templates/collection.json templates/search.json templates/cart.json templates/page.miss-princess.json)
           args=()
           for f in "${files[@]}"; do args+=(--only "$f"); done
           shopify theme push --path storefront/theme --json --strict --nodelete --theme "$SHOPIFY_THEME_ID" --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" "${args[@]}"
@@ -143,4 +143,4 @@ jobs:
           path: .mvqueen-ci
           retention-days: 30
 
-# Canonical deployment identity remains pinned to the verified MVQueen staging theme; the rollback theme is never a deployment target.
+# Canonical deployment identity remains pinned to MVQueen — Next Production Build; settings_data and rollback themes are never automated deployment targets.
