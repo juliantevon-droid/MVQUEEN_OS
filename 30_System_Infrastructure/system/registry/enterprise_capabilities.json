@@ -203,6 +203,13 @@
       "authority": "Shopify",
       "execution": "authenticated_control_plane_scan",
       "writes": "none"
+    },
+    {
+      "id": "commercial_cost_sync",
+      "status": "engineered_reauthorization_required",
+      "authority": "Shopify inventoryItem.unitCost",
+      "execution": "permission_and_env_gated",
+      "writes": "verified commercial cost snapshot only"
     }
   ],
   "non_negotiable_gates": {
