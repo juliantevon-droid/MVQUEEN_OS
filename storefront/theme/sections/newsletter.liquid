@@ -1,1 +1,18 @@
-<section class="mvq-section"><div class="mvq-container" style="text-align:center"><div class="mvq-eyebrow">STAY IN THE MVQueen WORLD</div><h2>Come a little closer.</h2>{% form 'customer' %}<input type="email" name="contact[email]" placeholder="Your email" required><button class="mvq-btn" type="submit">Join MVQueen</button>{% endform %}</div></section>{% schema %}{"name":"Newsletter","settings":[]} {% endschema %}
+<section class="mvq-section">
+  <div class="mvq-container mvq-newsletter">
+    <div class="mvq-eyebrow">STAY IN THE MVQueen WORLD</div>
+    <h2>Come a little closer.</h2>
+    {% form 'customer', class: 'mvq-newsletter-form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <label class="mvq-visually-hidden" for="NewsletterEmail-{{ section.id }}">Email address</label>
+      <input id="NewsletterEmail-{{ section.id }}" type="email" name="contact[email]" value="{{ form.email }}" placeholder="Your email" autocomplete="email" required>
+      <button class="mvq-button" type="submit">Join MVQueen</button>
+      {% if form.posted_successfully? %}
+        <p class="mvq-newsletter-status" role="status">You’re on the list.</p>
+      {% elsif form.errors %}
+        <div class="mvq-newsletter-status" role="alert">{{ form.errors | default_errors }}</div>
+      {% endif %}
+    {% endform %}
+  </div>
+</section>
+{% schema %}{"name":"Newsletter","settings":[]} {% endschema %}
