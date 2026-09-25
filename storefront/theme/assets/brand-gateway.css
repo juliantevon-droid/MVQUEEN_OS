@@ -356,3 +356,44 @@
 @media(max-width:749px){
   .mvq-gateway-brandmark{width:min(88vw,390px)}
 }
+
+.mvq-gateway-media--mvqueen{
+  object-position:center 42%;
+  filter:saturate(.88) contrast(.98) brightness(1.02);
+}
+.mvq-gateway-media--princess{
+  object-position:center 48%;
+  filter:saturate(1.04) brightness(1.03);
+}
+.mvq-gateway-panel--mvqueen .mvq-gateway-overlay{
+  background:linear-gradient(180deg,rgba(255,252,247,.12) 10%,rgba(255,249,242,.18) 52%,rgba(23,19,16,.20) 100%);
+}
+.mvq-gateway-panel--princess .mvq-gateway-overlay{
+  background:linear-gradient(180deg,rgba(255,250,253,.08) 10%,rgba(255,240,247,.14) 52%,rgba(122,38,71,.18) 100%);
+}
+.mvp-hero-product{
+  position:absolute;
+  inset:4%;
+  width:92%;
+  height:92%;
+  object-fit:contain;
+  object-position:center;
+  border-radius:50% 46% 48% 52% / 48% 54% 46% 52%;
+  background:rgba(255,255,255,.38);
+  box-shadow:0 30px 80px rgba(122,38,71,.10);
+}
+.mvp-hero-product-wash{
+  position:absolute;
+  inset:10%;
+  border-radius:50%;
+  background:radial-gradient(circle at 48% 40%,rgba(255,255,255,.08),rgba(255,255,255,.42) 72%,rgba(255,255,255,.68));
+  pointer-events:none;
+}
+.mvp-hero-art:has(.mvp-hero-product) .mvp-monogram{
+  color:rgba(122,38,71,.22);
+  mix-blend-mode:multiply;
+}
+@media(max-width:749px){
+  .mvq-gateway-media--mvqueen,
+  .mvq-gateway-media--princess{object-position:center}
+}
