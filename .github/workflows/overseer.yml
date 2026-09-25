@@ -90,6 +90,13 @@ jobs:
           mkdir -p 30_System_Infrastructure/overseer/reports
           python 30_System_Infrastructure/audit/mvqueen_audit/runner.py | tee overseer-audit.txt
 
+      - name: Run enterprise reliability and conversion crawler
+        id: enterprise_crawler
+        continue-on-error: true
+        run: |
+          python core/vault_crawler.py --root . --output build/enterprise_crawler/report.json --fail-on critical
+          cp build/enterprise_crawler/report.md 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
+
       - name: Validate protected brand sources
         run: |
           required=(
@@ -136,9 +143,13 @@ jobs:
             echo '- Runtime boot smoke test: PASS'
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
+            echo '- Enterprise reliability/conversion crawler: executed'
             echo
             echo '## Existing stabilization audit'
             cat overseer-audit.txt
+            echo
+            echo '## Enterprise crawler'
+            cat 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
             echo
             echo '## Governance'
             echo 'Evidence → Analysis → Recommendation → Approval → Change → Verify → Log'
@@ -176,6 +187,14 @@ jobs:
           path: |
             30_System_Infrastructure/overseer/reports/MVQUEEN_OS_CURRENT_AUDIT.md
             overseer-audit.txt
+            build/enterprise_crawler/report.json
+            build/enterprise_crawler/report.md
+
+      - name: Fail workflow when enterprise crawler reports critical findings
+        if: steps.enterprise_crawler.outcome == 'failure'
+        run: |
+          echo 'OVERSEER RESULT: enterprise crawler found BLOCKER/CRITICAL findings.'
+          exit 1
 
       - name: Fail workflow when stabilization audit reports findings
         if: steps.audit.outcome == 'failure'
