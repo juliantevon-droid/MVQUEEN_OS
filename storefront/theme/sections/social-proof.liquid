@@ -1,1 +1,32 @@
-<section class="mvq-section mvq-social-proof"><div class="mvq-container"><p class="mvq-eyebrow">FROM THE MVQUEEN COMMUNITY</p><h2>Chosen for real life.</h2><div class="mvq-proof-grid"><div><strong>Customer reviews</strong><p>Product reviews can appear here as your verified review system is connected.</p></div><div><strong>Community style</strong><p>Feature customer-approved photos, videos, and styling moments here.</p></div><div><strong>Press & features</strong><p>Add verified publications or editorial mentions as they are earned.</p></div></div></div></section>{% schema %}{"name":"MVQUEEN Social Proof","settings":[],"presets":[{"name":"MVQUEEN Social Proof"}]}{% endschema %}
+{% if section.settings.enabled %}
+<section class="mvq-section mvq-social-proof">
+  <div class="mvq-container">
+    <p class="mvq-eyebrow">FROM THE MVQUEEN COMMUNITY</p>
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="mvq-proof-grid">
+      {% if section.settings.reviews_text != blank %}
+        <div><strong>Customer reviews</strong><p>{{ section.settings.reviews_text }}</p></div>
+      {% endif %}
+      {% if section.settings.community_text != blank %}
+        <div><strong>Community style</strong><p>{{ section.settings.community_text }}</p></div>
+      {% endif %}
+      {% if section.settings.press_text != blank %}
+        <div><strong>Press & features</strong><p>{{ section.settings.press_text }}</p></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% schema %}
+{
+  "name": "MVQUEEN Social Proof",
+  "settings": [
+    {"type":"checkbox","id":"enabled","label":"Show verified social proof","default":false},
+    {"type":"text","id":"heading","label":"Heading","default":"Chosen for real life."},
+    {"type":"textarea","id":"reviews_text","label":"Verified review summary"},
+    {"type":"textarea","id":"community_text","label":"Approved community content summary"},
+    {"type":"textarea","id":"press_text","label":"Verified press summary"}
+  ],
+  "presets": [{"name":"MVQUEEN Social Proof"}]
+}
+{% endschema %}
