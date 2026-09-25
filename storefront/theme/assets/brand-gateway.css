@@ -3,7 +3,7 @@
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   min-height:calc(100svh - 40px);
-  background:#f8f4ef;
+  background:#fff9f2;
 }
 .mvq-gateway-house{
   position:absolute;
@@ -12,7 +12,7 @@
   z-index:5;
   width:min(92%,760px);
   transform:translateX(-50%);
-  color:#4a403c;
+  color:#171310;
   text-align:center;
   pointer-events:none;
 }
@@ -38,18 +38,18 @@
   align-items:flex-end;
   overflow:hidden;
   padding:clamp(32px,6vw,84px);
-  color:#4b413d;
+  color:#171310;
   text-decoration:none;
 }
 .mvq-gateway-panel--mvqueen{
   background:
-    radial-gradient(circle at 24% 18%,rgba(255,255,255,.92),transparent 28%),
-    linear-gradient(150deg,#fffdfb 0%,#eee5dc 52%,#cfc0b5 100%);
+    radial-gradient(circle at 24% 18%,rgba(255,255,255,.98),transparent 30%),
+    linear-gradient(150deg,#fffdfa 0%,#fbf5ee 50%,#efd7ad 100%);
 }
 .mvq-gateway-panel--princess{
   background:
-    radial-gradient(circle at 72% 18%,rgba(255,255,255,.96),transparent 30%),
-    linear-gradient(150deg,#fffafd 0%,#f6e8ee 52%,#e9cfd9 100%);
+    radial-gradient(circle at 72% 18%,rgba(255,255,255,.98),transparent 30%),
+    linear-gradient(150deg,#fffafd 0%,#f5dfe8 50%,#edc7d7 100%);
 }
 .mvq-gateway-media{
   position:absolute;
@@ -146,15 +146,15 @@
 
 /* Miss.Princess full brand experience */
 .mvp-experience{
-  --mvp-plum:#765866;
-  --mvp-rose:#b88698;
-  --mvp-pink:#f1dde5;
-  --mvp-cream:#fffafd;
+  --mvp-plum:#7A2647;
+  --mvp-rose:#C42A62;
+  --mvp-pink:#F0CFDC;
+  --mvp-cream:#FFF8FB;
   background:var(--mvp-cream);
 }
 .mvp-hero{
   overflow:hidden;
-  background:linear-gradient(145deg,#fffafd 0%,#f1dce5 54%,#d9b9c6 100%);
+  background:linear-gradient(145deg,#fffafd 0%,#f1d5e0 54%,#dfadc2 100%);
   color:#5b4650;
 }
 .mvp-hero-grid{
@@ -330,4 +330,28 @@
 @media(prefers-reduced-motion:reduce){
   .mvp-chapter-card{transition:none}
   .mvp-chapter-card:hover{transform:none}
+}
+
+/* MVQueen logo lockup + palette alignment */
+.mvq-gateway-brandmark{
+  display:block;
+  width:min(100%,470px);
+}
+.mvq-gateway-brandmark img{
+  width:100%;
+  height:auto;
+}
+.mvq-gateway-panel--mvqueen .mvq-gateway-eyebrow,
+.mvq-gateway-panel--mvqueen .mvq-gateway-cta{
+  color:#8A6428;
+}
+.mvq-gateway-panel--princess{
+  color:#7A2647;
+}
+.mvq-gateway-panel--princess .mvq-gateway-eyebrow,
+.mvq-gateway-panel--princess .mvq-gateway-cta{
+  color:#A91F50;
+}
+@media(max-width:749px){
+  .mvq-gateway-brandmark{width:min(88vw,390px)}
 }
