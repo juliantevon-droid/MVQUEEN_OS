@@ -77,9 +77,9 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 > Description: Shop the fragrance collection.
 
 *Variation 03 — Social proof:*
-> Primary: "I've been asked what I'm wearing three times today." That's what this does.
-> Headline: The most-asked-about fragrance.
-> Description: Shop Velvet Hour by MVQueen.
+> Primary: [APPROVED CUSTOMER QUOTE OR VERIFIED SOCIAL-PROOF METRIC ONLY. If unavailable, use a factual product angle.]
+> Headline: [VERIFIED SOCIAL-PROOF OR PRODUCT HEADLINE.]
+> Description: [VERIFIED PRODUCT OR COLLECTION CTA.]
 
 ---
 
