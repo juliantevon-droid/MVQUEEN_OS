@@ -89,6 +89,7 @@ class UnifiedSystemContractTests(unittest.TestCase):
             self.assertTrue((ROOT / rel).exists(), rel)
 
     def test_active_brand_documents_use_miss_princess(self):
+        # Detection fixtures must not embed legacy sister-brand spellings in active source text.
         legacy = re.compile(r"MISS\.?\s*QUEEN|Miss\.?\s+Queen")
         for path in ROOT.rglob("*"):
             if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
