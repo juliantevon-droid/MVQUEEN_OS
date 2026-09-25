@@ -67,7 +67,7 @@ model ProductReleaseAudit {
   error              String?
   createdAt          DateTime @default(now())
 
-  @@unique([shop, contentFingerprint, operation])
+  @@index([shop, contentFingerprint, operation, result])
   @@index([shop, productGid, createdAt])
   @@index([result, createdAt])
 }
