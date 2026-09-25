@@ -3,6 +3,7 @@ import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
+import { resolveShopCommercialConfig } from "./enterprise/commercial-settings.server";
 
 const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v5";
 
@@ -156,7 +157,8 @@ export async function processProductJob(jobId: string) {
       return;
     }
 
-    const decision = buildEnterpriseProductDecision(product);
+    const commercialConfig = await resolveShopCommercialConfig(job.shop);
+    const decision = buildEnterpriseProductDecision(product, commercialConfig);
     const c = decision.classification;
     const brandRoute = decision.brandRoute;
     const systemPrefixes = [
