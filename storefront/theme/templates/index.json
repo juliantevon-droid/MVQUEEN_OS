@@ -33,7 +33,11 @@
     },
     "featured": {
       "type": "featured-products",
-      "settings": {}
+      "settings": {
+        "heading": "Made to be noticed.",
+        "collection": "mvqueen-edit",
+        "limit": 2
+      }
     },
     "trust": {
       "type": "trust-strip",
@@ -53,7 +57,9 @@
     },
     "social": {
       "type": "social-proof",
-      "settings": {}
+      "settings": {
+        "enabled": false
+      }
     },
     "badges": {
       "type": "trust-badges",
