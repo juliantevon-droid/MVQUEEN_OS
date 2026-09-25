@@ -1,9 +1,9 @@
 import { createHash } from "node:crypto";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
-import { classifyProduct, type Classification, type ProductSnapshot } from "./mvqueen-intelligence";
+import { brandRoutingTags, classifyBrandWorld, classifyProduct, type Classification, type ProductSnapshot } from "./mvqueen-intelligence";
 
-const AUTOMATION_VERSION = "mvq-classification-transport-v2";
+const AUTOMATION_VERSION = "mvq-classification-brand-routing-v3";
 
 // The React app is a transport/classification worker, not a copy generator.
 // Live writes remain fail-closed and require explicit product approval.
@@ -103,12 +103,46 @@ export async function processProductJob(jobId: string) {
     }
 
     const c = classifyProduct(product.title ?? "", product.descriptionHtml ?? "", product.productType ?? "");
-    const mergedTags = Array.from(new Set([...(product.tags ?? []), ...routingTags(c)]));
+    const brandRoute = classifyBrandWorld(product);
+    const retainedTags = (product.tags ?? []).filter(
+      (tag) => !tag.startsWith("mvq:brand:") && !tag.startsWith("mvq:tone:"),
+    );
+    const mergedTags = Array.from(
+      new Set([...retainedTags, ...routingTags(c), ...brandRoutingTags(brandRoute)]),
+    );
     const metafields = [
       { namespace: "classification", key: "department", type: "single_line_text_field", value: c.department },
       { namespace: "classification", key: "family", type: "single_line_text_field", value: c.family },
       { namespace: "classification", key: "subcollection", type: "single_line_text_field", value: c.subcollection },
-      { namespace: "classification", key: "style", type: "single_line_text_field", value: "MVQueen Edit" },
+      {
+        namespace: "classification",
+        key: "style",
+        type: "single_line_text_field",
+        value:
+          brandRoute.brand === "miss-princess"
+            ? "Miss.Princess World"
+            : brandRoute.brand === "mvqueen"
+              ? "MVQueen World"
+              : "Needs Review",
+      },
+      {
+        namespace: "classification",
+        key: "brand_world",
+        type: "single_line_text_field",
+        value: brandRoute.brand ?? "needs_review",
+      },
+      {
+        namespace: "classification",
+        key: "brand_tone",
+        type: "single_line_text_field",
+        value: brandRoute.tone,
+      },
+      {
+        namespace: "catalog",
+        key: "brand_routing_reason",
+        type: "single_line_text_field",
+        value: brandRoute.reason,
+      },
       { namespace: "catalog", key: "classification_confidence", type: "single_line_text_field", value: c.confidence },
       { namespace: "catalog", key: "review_status", type: "single_line_text_field", value: c.confidence === "review" ? "needs_review" : "classified" },
     ];
