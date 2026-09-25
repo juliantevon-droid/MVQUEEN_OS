@@ -1,85 +1,16 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
+    "gateway": {
+      "type": "brand-gateway",
       "settings": {
-        "heading": "Luxury that feels like you.",
-        "subheading": "Bold femininity, modern elegance, and everyday luxury — thoughtfully curated for the woman you are becoming.",
-        "button_label": "Explore the collection",
-        "button_link": "/collections/mvqueen-world"
+        "mvqueen_eyebrow": "MODERN LUXURY",
+        "mvqueen_copy": "Bold femininity, modern elegance, and everyday luxury.",
+        "mvqueen_cta": "Enter MVQueen",
+        "princess_eyebrow": "PLAYFUL GLAMOUR",
+        "princess_copy": "A softer, playful world with its own wardrobe, beauty, jewels, moods, and stories.",
+        "princess_cta": "Enter Miss.Princess"
       }
-    },
-    "curation": {
-      "type": "editorial-curation",
-      "settings": {},
-      "blocks": {
-        "note-1": {
-          "type": "note",
-          "settings": {
-            "title": "The statement piece",
-            "text": "One intentional detail can change the entire look."
-          }
-        },
-        "note-2": {
-          "type": "note",
-          "settings": {
-            "title": "The everyday edit",
-            "text": "Refined pieces chosen to move easily through real life."
-          }
-        },
-        "note-3": {
-          "type": "note",
-          "settings": {
-            "title": "The finishing touch",
-            "text": "Beauty and accessories selected to complete your point of view."
-          }
-        }
-      }
-    },
-    "featured": {
-      "type": "featured-products",
-      "settings": {
-        "heading": "Made to be noticed.",
-        "collection": "mvqueen-world",
-        "limit": 2
-      }
-    },
-    "story": {
-      "type": "brand-story",
-      "settings": {}
-    },
-    "trust": {
-      "type": "trust-strip",
-      "settings": {}
-    },
-    "social": {
-      "type": "social-proof",
-      "settings": {
-        "enabled": false
-      }
-    },
-    "pillars": {
-      "type": "brand-pillars",
-      "settings": {}
-    },
-    "badges": {
-      "type": "trust-badges",
-      "settings": {}
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {}
     }
   },
-  "order": [
-    "hero",
-    "curation",
-    "featured",
-    "story",
-    "trust",
-    "social",
-    "pillars",
-    "badges",
-    "newsletter"
-  ]
+  "order": ["gateway"]
 }
