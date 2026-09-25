@@ -180,6 +180,56 @@ CTA_OPTIONS = [
 ]
 
 
+PRINCESS_VOICE_TONES = {
+    "fashion": ["soft glamour", "playful polish", "romantic confidence", "bright femininity", "expressive ease", "color-led charm"],
+    "skincare": ["soft ritual", "playful self-care", "gentle polish", "bright simplicity", "romantic ease", "fresh femininity"],
+    "cosmetics": ["playful glamour", "bright expression", "soft definition", "color-led confidence", "romantic polish", "expressive femininity"],
+    "jewelry": ["playful polish", "soft sparkle", "romantic detail", "bright femininity", "expressive charm", "color-led glamour"],
+    "general": ["playful polish", "soft glamour", "bright femininity", "romantic ease", "expressive charm", "color-led confidence"],
+}
+
+PRINCESS_CLOSERS = {
+    "fashion": [
+        "The finish stays feminine, expressive, and polished enough to make the color feel intentional.",
+        "It brings a playful point of view without losing the composed finish.",
+        "The result feels bright, personal, and easy to make her own.",
+        "A softer statement for a wardrobe that leaves room for color and personality.",
+    ],
+    "skincare": [
+        "The ritual stays soft, clear, and grounded in the product details that are actually verified.",
+        "A gentle, polished step for a routine that makes room for a little more play.",
+        "The experience is bright and intentional without invented promises.",
+        "A soft approach to self-care, built around what is actually known about the product.",
+    ],
+    "cosmetics": [
+        "The final look stays expressive, feminine, and polished.",
+        "It gives color room to play while keeping the finish considered.",
+        "The result feels bright and personal rather than overworked.",
+        "A playful finishing choice that still feels composed.",
+    ],
+    "jewelry": [
+        "The detail brings soft glamour and a playful finishing note to the look.",
+        "It adds color and personality while keeping the styling polished.",
+        "A bright, feminine detail that is easy to make personal.",
+        "The piece brings expressive charm without losing refinement.",
+    ],
+    "general": [
+        "Soft, expressive, and polished.",
+        "A playful choice with a clear point of view.",
+        "The final impression is bright, feminine, and personal.",
+        "A little more color, a little more play, with the details kept clear.",
+    ],
+}
+
+PRINCESS_CTA_OPTIONS = [
+    "Explore the Miss.Princess world",
+    "Discover the playful edit",
+    "Make it part of her Miss.Princess edit",
+    "Shop the Miss.Princess world",
+    "See the full Miss.Princess details",
+]
+
+
 def _text(value: Any) -> str:
     return str(value).strip() if value is not None else ""
 
@@ -255,6 +305,9 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
     facts = verified_facts(record)
     product_type = _safe_value(_text(record.get("category", {}).get("product_type")), "piece")
     category = classify_category(product_type)
+    brand_world = _text(record.get("intelligence", {}).get("brand_world")) or "mvqueen"
+    brand_name = "Miss.Princess" if brand_world == "miss-princess" else "MVQueen"
+    is_princess = brand_world == "miss-princess"
     detail = _product_specific_detail(facts, category)
     use = _safe_value(
         _fact(facts, "use_context", "usage", "occasion"),
@@ -271,39 +324,40 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
         titles = [
             f"{color + ' ' if color else ''}{product_type}",
             f"The {color.lower() + ' ' if color else ''}{product_type.lower()}",
-            f"{product_type} in {color}" if color else f"{product_type} — MVQueen",
-            f"MVQueen {product_type}",
+            f"{product_type} in {color}" if color else f"{product_type} — {brand_name}",
+            f"{brand_name} {product_type}",
         ]
     elif category == "jewelry":
         titles = [
             f"{main_stone + ' ' if main_stone else ''}{product_type}",
             f"The {product_type}",
-            f"{product_type} in {color}" if color else f"{product_type} — MVQueen",
-            f"MVQueen {product_type}",
+            f"{product_type} in {color}" if color else f"{product_type} — {brand_name}",
+            f"{brand_name} {product_type}",
         ]
     elif category == "skincare":
         titles = [
             f"{product_type} for Her Routine",
             f"The {product_type}",
-            f"{product_type} — MVQueen",
-            f"MVQueen {product_type}",
+            f"{product_type} — {brand_name}",
+            f"{brand_name} {product_type}",
         ]
     elif category == "cosmetics":
         titles = [
-            f"{product_type} for the MVQueen Look",
+            f"{product_type} for the {brand_name} Look",
             f"The {product_type}",
-            f"{product_type} in {color}" if color else f"{product_type} — MVQueen",
-            f"MVQueen {product_type}",
+            f"{product_type} in {color}" if color else f"{product_type} — {brand_name}",
+            f"{brand_name} {product_type}",
         ]
     else:
         titles = [
-            f"{product_type} — MVQueen",
+            f"{product_type} — {brand_name}",
             f"The {product_type}",
             f"{product_type} for Her",
-            f"MVQueen {product_type}",
+            f"{brand_name} {product_type}",
         ]
 
-    tone = _choose(VOICE_TONES[category], record, "tone")
+    tone_bank = PRINCESS_VOICE_TONES[category] if is_princess else VOICE_TONES[category]
+    tone = _choose(tone_bank, record, "tone")
     frame = _choose(OPENING_FRAMES[category], record, "opening-frame")
     detail_clause = f" {detail}" if detail else ""
     opening = frame.format(
@@ -312,7 +366,8 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
         detail_clause=detail_clause,
         tone=tone,
     )
-    closer = _choose(CLOSERS[category], record, "closer")
+    closer_bank = PRINCESS_CLOSERS[category] if is_princess else CLOSERS[category]
+    closer = _choose(closer_bank, record, "closer")
 
     title = _choose(titles, record, "title")
     details: List[str] = []
@@ -357,7 +412,7 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
         "description": description,
         "benefits": benefits,
         "features": details or [f"Product type: {product_type}."],
-        "cta": _choose(CTA_OPTIONS, record, f"cta:{category}"),
+        "cta": _choose(PRINCESS_CTA_OPTIONS if is_princess else CTA_OPTIONS, record, f"cta:{category}:{brand_world}"),
         "_editorial_category": category,
     }
 
