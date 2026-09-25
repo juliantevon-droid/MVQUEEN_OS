@@ -1,3 +1,14 @@
+{% liquid
+  assign mvqueen_gateway_image = section.settings.mvqueen_image
+  if mvqueen_gateway_image == blank and collections['mvqueen-world'] != blank and collections['mvqueen-world'].products.first.featured_image != blank
+    assign mvqueen_gateway_image = collections['mvqueen-world'].products.first.featured_image
+  endif
+
+  assign princess_gateway_image = section.settings.princess_image
+  if princess_gateway_image == blank and collections['miss-princess-world'] != blank and collections['miss-princess-world'].products.first.featured_image != blank
+    assign princess_gateway_image = collections['miss-princess-world'].products.first.featured_image
+  endif
+%}
 <section class="mvq-gateway" aria-labelledby="BrandGatewayTitle">
   <div class="mvq-gateway-house">
     <p>ONE HOUSE · TWO DISTINCT WORLDS</p>
@@ -5,8 +16,8 @@
   </div>
 
   <a class="mvq-gateway-panel mvq-gateway-panel--mvqueen" href="/pages/mvqueen" aria-label="Enter the MVQueen experience">
-    {% if section.settings.mvqueen_image != blank %}
-      {{ section.settings.mvqueen_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', alt: 'MVQueen' }}
+    {% if mvqueen_gateway_image != blank %}
+      {{ mvqueen_gateway_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', alt: 'MVQueen' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
@@ -21,8 +32,8 @@
   </a>
 
   <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="/pages/miss-princess" aria-label="Enter the Miss.Princess experience">
-    {% if section.settings.princess_image != blank %}
-      {{ section.settings.princess_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', alt: 'Miss.Princess' }}
+    {% if princess_gateway_image != blank %}
+      {{ princess_gateway_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', alt: 'Miss.Princess' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
