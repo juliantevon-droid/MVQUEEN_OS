@@ -19,12 +19,14 @@
       <div class="mvq-product-info">
         {% liquid
           assign catalog_short = product.metafields.catalog.short_description.value
+          assign automation_short = product.metafields.automation.short_description.value
           assign custom_short = product.metafields.custom.short_description.value
-          assign short_description = catalog_short | default: custom_short
+          assign short_description = catalog_short | default: automation_short | default: custom_short
 
           assign catalog_highlights = product.metafields.catalog.highlights.value
+          assign automation_highlights = product.metafields.automation.highlights.value
           assign custom_highlights = product.metafields.custom.highlights.value
-          assign highlights = catalog_highlights | default: custom_highlights
+          assign highlights = catalog_highlights | default: automation_highlights | default: custom_highlights
 
           assign material = product.metafields.attributes.material.value | default: product.metafields.custom.material.value
           assign color = product.metafields.attributes.color.value | default: product.metafields.custom.stone_color.value
