@@ -214,7 +214,7 @@ def build_creative_stage(record: Dict[str, Any]) -> None:
         "primary_kpi": "Purchase",
         "secondary_kpis": ["ATC rate", "conversion rate", "AOV", "CAC", "ROAS"],
         "product_identifier": _text(record.get("identity", {}).get("product_id")),
-        "tracking_key": f"product:{_text(record.get("identity", {}).get("product_id"))}",
+        "tracking_key": f"product:{_text(record.get('identity', {}).get('product_id'))}",
     }
     record["status"] = "CREATIVE_READY"
 
