@@ -49,6 +49,8 @@ class ContentIntelligenceV1Tests(unittest.TestCase):
         self.assertEqual(content["site_faq"]["scope"], "product")
         self.assertTrue(content["site_faq"]["auto_publish"])
         self.assertTrue(content["collection"]["auto_publish"])
+        self.assertIn("dresses", content["collection"]["target_handles"])
+        self.assertIn("fashion", content["collection"]["target_handles"])
 
     def test_only_verified_facts_become_factual_content(self):
         content = generate_content_suite(self.canonical())
