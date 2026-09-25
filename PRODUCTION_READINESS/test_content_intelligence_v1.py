@@ -71,6 +71,7 @@ class ContentIntelligenceV1Tests(unittest.TestCase):
         }
         self.assertFalse(forbidden.intersection(fields))
         self.assertEqual(fields["catalog.focus_keyword"]["value"], "dress")
+        self.assertTrue(fields["catalog.short_tail_keywords"]["value"])
         self.assertTrue(fields["catalog.long_tail_keywords"]["value"])
         self.assertTrue(fields["catalog.seo_keywords"]["value"])
         self.assertTrue(fields["catalog.highlights"]["value"])
