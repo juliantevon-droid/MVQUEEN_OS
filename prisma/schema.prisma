@@ -53,3 +53,21 @@ model ProductJob {
   @@index([shop, productGid])
   @@index([status, receivedAt])
 }
+
+
+model ProductReleaseAudit {
+  id                 String   @id @default(cuid())
+  shop               String
+  productGid         String
+  contentFingerprint String
+  actor              String
+  decision           String
+  operation          String
+  result             String
+  error              String?
+  createdAt          DateTime @default(now())
+
+  @@unique([shop, contentFingerprint, operation])
+  @@index([shop, productGid, createdAt])
+  @@index([result, createdAt])
+}
