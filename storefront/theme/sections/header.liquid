@@ -39,11 +39,11 @@
       <span aria-hidden="true">☰</span>
     </button>
 
-    <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="Choose brand experience"{% if settings.brand_logo != blank %} style="--mvq-logo-width: {{ settings.brand_logo_width | default: 148 }}px"{% endif %}>
-      {% if settings.brand_logo != blank %}
-        {{ settings.brand_logo | image_url: width: 440 | image_tag: class: 'mvq-logo-image', widths: '110, 148, 220, 296, 440', sizes: '(max-width: 749px) 132px, 148px', alt: 'MVQueen' }}
+    <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="{% if is_princess_experience %}Miss.Princess home{% else %}MVQueen home{% endif %}" style="--mvq-logo-width: {{ settings.brand_logo_width | default: 168 }}px">
+      {% if is_princess_experience %}
+        <span class="mvq-logo-wordmark mvq-logo-wordmark--princess">Miss.Princess</span>
       {% else %}
-        {% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %}
+        <img class="mvq-logo-image" src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639" width="956" height="431" alt="MVQueen — Most Valuable Queen" loading="eager">
       {% endif %}
     </a>
 
