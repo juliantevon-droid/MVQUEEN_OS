@@ -61,22 +61,22 @@
       "id": "content_intelligence",
       "status": "connected_approved_handoff",
       "authority": "PRODUCTION_READINESS",
-      "execution": "offline_generation_to_authenticated_release",
-      "writes": "approved_editorial_only"
+      "execution": "offline_generation_to_fingerprinted_authenticated_release",
+      "writes": "approved_product_editorial_metafields; broader_surfaces_require_master_and_surface_gates"
     },
     {
       "id": "seo_intelligence",
       "status": "connected_approved_handoff",
       "authority": "PRODUCTION_READINESS",
-      "execution": "offline_generation_to_authenticated_release",
+      "execution": "offline_short_tail_long_tail_generation_to_fingerprinted_authenticated_release",
       "writes": "approved_seo_only"
     },
     {
       "id": "merchandising",
-      "status": "partially_connected",
-      "authority": "Shopify_and_app",
-      "execution": "tags_and_smart_collections",
-      "writes": "approved_metadata_only"
+      "status": "connected_advisory_catalog_resolution",
+      "authority": "PRODUCTION_READINESS_and_Shopify",
+      "execution": "offline_catalog_resolution_plus_approved_metadata_handoff",
+      "writes": "no_live_relationship_write_without_approved_operation"
     },
     {
       "id": "pricing",
