@@ -1,18 +1,39 @@
-<header class="mvq-header">
-  {% assign is_mvqueen_experience = false %}
-  {% assign is_princess_experience = false %}
-  {% if request.path contains '/pages/mvqueen' %}
-    {% assign is_mvqueen_experience = true %}
-  {% endif %}
-  {% if request.path contains '/pages/miss-princess' %}
+{% assign is_mvqueen_experience = false %}
+{% assign is_princess_experience = false %}
+
+{% if request.path contains '/pages/mvqueen' %}
+  {% assign is_mvqueen_experience = true %}
+{% endif %}
+{% if request.path contains '/pages/miss-princess' %}
+  {% assign is_princess_experience = true %}
+{% endif %}
+
+{% if collection %}
+  {% if collection.handle == 'miss-princess-world' %}
     {% assign is_princess_experience = true %}
+    {% assign is_mvqueen_experience = false %}
+  {% elsif collection.handle == 'mvqueen-world' %}
+    {% assign is_mvqueen_experience = true %}
+    {% assign is_princess_experience = false %}
   {% endif %}
+{% endif %}
 
-  {% assign active_menu = section.settings.menu %}
-  {% if is_princess_experience and linklists['miss-princess-menu'].links != blank %}
-    {% assign active_menu = linklists['miss-princess-menu'] %}
+{% if product %}
+  {% if product.tags contains 'mvq:brand:miss-princess' %}
+    {% assign is_princess_experience = true %}
+    {% assign is_mvqueen_experience = false %}
+  {% elsif product.tags contains 'mvq:brand:mvqueen' %}
+    {% assign is_mvqueen_experience = true %}
+    {% assign is_princess_experience = false %}
   {% endif %}
+{% endif %}
 
+{% assign active_menu = section.settings.menu %}
+{% if is_princess_experience and linklists['miss-princess-menu'].links != blank %}
+  {% assign active_menu = linklists['miss-princess-menu'] %}
+{% endif %}
+
+<header class="mvq-header{% if is_princess_experience %} mvq-header--princess{% elsif is_mvqueen_experience %} mvq-header--mvqueen{% endif %}">
   <div class="mvq-container mvq-nav">
     <button class="mvq-menu" type="button" data-mvq-menu aria-label="Open menu" aria-controls="MVQMobilePanel" aria-expanded="false">
       <span aria-hidden="true">☰</span>
@@ -22,29 +43,27 @@
       {% if settings.brand_logo != blank %}
         {{ settings.brand_logo | image_url: width: 440 | image_tag: class: 'mvq-logo-image', widths: '110, 148, 220, 296, 440', sizes: '(max-width: 749px) 132px, 148px', alt: 'MVQueen' }}
       {% else %}
-        MVQueen
+        {% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %}
       {% endif %}
     </a>
 
     <nav class="mvq-navlinks" aria-label="{% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %} navigation">
-      {% assign has_miss_princess = false %}
       {% for link in active_menu.links %}
-        {% if link.title == 'Miss.Princess' %}
-          {% assign has_miss_princess = true %}
-        {% endif %}
         {% if link.links != blank %}
           <details class="mvq-nav-item">
             <summary>{{ link.title }}</summary>
-            <div class="mvq-nav-dropdown">
+            <div class="mvq-nav-dropdown" role="group" aria-label="{{ link.title }}">
               {% for child_link in link.links %}
-                <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                {% if child_link.links != blank %}
-                  <div class="mvq-nav-subgroup">
-                    {% for grandchild_link in child_link.links %}
-                      <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                    {% endfor %}
-                  </div>
-                {% endif %}
+                <div class="mvq-mega-column">
+                  <a class="mvq-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
+                  {% if child_link.links != blank %}
+                    <div class="mvq-nav-subgroup">
+                      {% for grandchild_link in child_link.links %}
+                        <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
               {% endfor %}
             </div>
           </details>
@@ -52,9 +71,6 @@
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endif %}
       {% endfor %}
-      {% unless is_princess_experience or has_miss_princess %}
-        <a href="/pages/miss-princess">Miss.Princess</a>
-      {% endunless %}
     </nav>
 
     <div class="mvq-actions" aria-label="Store actions">
@@ -83,23 +99,20 @@
         <a href="{{ link.url }}">{{ link.title }}</a>
       {% endif %}
     {% endfor %}
-    {% unless is_princess_experience or has_miss_princess %}
-      <a href="/pages/miss-princess">Miss.Princess</a>
-    {% endunless %}
   </nav>
 </header>
 
 {% if settings.show_brand_switcher != false %}
-  <div class="mvq-brand-switcher" aria-label="Choose a brand experience">
+  <div class="mvq-brand-switcher{% if is_princess_experience %} mvq-brand-switcher--princess{% endif %}" aria-label="Choose a brand experience">
     <div class="mvq-container mvq-brand-switcher-inner">
       <a class="mvq-brand-choice{% if is_mvqueen_experience %} is-active{% endif %}" href="/pages/mvqueen"{% if is_mvqueen_experience %} aria-current="page"{% endif %}>
         <span class="mvq-brand-choice-name">MVQueen</span>
-        <span class="mvq-brand-choice-note">MVQueen world</span>
+        <span class="mvq-brand-choice-note">Neutral · Bold · Refined</span>
       </a>
       <span class="mvq-brand-divider" aria-hidden="true"></span>
       <a class="mvq-brand-choice{% if is_princess_experience %} is-active{% endif %}" href="/pages/miss-princess"{% if is_princess_experience %} aria-current="page"{% endif %}>
         <span class="mvq-brand-choice-name">Miss.Princess</span>
-        <span class="mvq-brand-choice-note">Miss.Princess world</span>
+        <span class="mvq-brand-choice-note">Soft · Bright · Playful</span>
       </a>
     </div>
   </div>
@@ -112,7 +125,7 @@
     {
       "type": "link_list",
       "id": "menu",
-      "label": "Menu",
+      "label": "MVQueen menu",
       "default": "main-menu"
     }
   ]
