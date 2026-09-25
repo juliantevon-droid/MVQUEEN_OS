@@ -30,7 +30,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "content_intelligence","seo_intelligence","merchandising","pricing",
             "profitability","creative","paid_advertising","analytics","retention",
             "customer_support","inventory","orders_fulfillment","theme","qa","deployment",
-            "finance","compliance","backup_recovery","media_alt_publication","production_database"
+            "finance","compliance","backup_recovery","catalog_health_audit","media_alt_publication","production_database","catalog_health"
         }
         self.assertTrue(required.issubset(ids))
 
@@ -94,6 +94,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "app/lib/product-processor.ts",
             "app/routes/app.proposals.tsx",
             "app/routes/app.pricing.tsx",
+            "app/routes/app.catalog-health.tsx",
+            "app/lib/enterprise/catalog-audit.ts",
             "storefront/theme/assets/mvqueen-analytics.js",
             "app/lib/enterprise/database-guard.server.ts",
             "prisma/production/schema.prisma",
