@@ -33,7 +33,10 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("No ad spend", gates["advertising"])
         pricing = next(x for x in self.data["capabilities"] if x["id"] == "pricing")
         ads = next(x for x in self.data["capabilities"] if x["id"] == "paid_advertising")
-        self.assertEqual(pricing["writes"], "no_price_mutation")
+        self.assertEqual(pricing["writes"], "approved_single_variant_price_only")
+        self.assertEqual(pricing["status"], "connected_approval_required")
+        self.assertIn("MVQ_PRICE_PUBLISH_ENABLED=true", gates["money"])
+        self.assertIn("authenticated human submission", gates["money"])
         self.assertEqual(ads["execution"], "disabled")
 
     def test_connected_capabilities_have_execution_contracts(self):
