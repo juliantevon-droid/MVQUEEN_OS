@@ -30,7 +30,7 @@ env:
   SHOPIFY_THEME_ID: ${{ vars.MVQUEEN_SHOPIFY_THEME_ID }}
   # Canonical identity verified against the connected Shopify store on 2026-09-25.
   EXPECTED_SHOPIFY_STORE: tsucu0-1i.myshopify.com
-  EXPECTED_SHOPIFY_THEME_ID: '154876674246'
+  EXPECTED_SHOPIFY_THEME_ID: '154876772550'
 
 jobs:
   validate:
@@ -84,7 +84,7 @@ jobs:
               exit 1
             fi
             if [ "$SHOPIFY_THEME_ID" != "$EXPECTED_SHOPIFY_THEME_ID" ]; then
-              echo "Configured Shopify theme ID does not match the verified MVQueen Next Production Build staging theme: $EXPECTED_SHOPIFY_THEME_ID"
+              echo "Configured Shopify theme ID does not match the verified MVQueen Staging Preview theme: $EXPECTED_SHOPIFY_THEME_ID"
               exit 1
             fi
             echo 'Deployment enabled with verified canonical Shopify store/theme identity.'
@@ -143,4 +143,4 @@ jobs:
           path: .mvqueen-ci
           retention-days: 30
 
-# Canonical deployment identity remains pinned to MVQueen — Next Production Build; settings_data and rollback themes are never automated deployment targets.
+# Canonical deployment identity remains pinned to MVQueen — Staging Preview; settings_data, backup, and rollback themes are never automated deployment targets.
