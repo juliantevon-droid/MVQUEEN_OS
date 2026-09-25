@@ -1,0 +1,212 @@
+{
+  "version": "2.0.0",
+  "authority": "GitHub main",
+  "workflows": [
+    {
+      "id": "product_intake",
+      "status": "connected",
+      "trigger": "Shopify products/create or products/update webhook",
+      "authority": "Shopify",
+      "steps": [
+        "ingest",
+        "fingerprint",
+        "source_truth",
+        "classify",
+        "brand_route",
+        "commercial_decision",
+        "metadata_proposal"
+      ],
+      "writes": "approved metadata only",
+      "failure_mode": "queue failed + visible control-plane error"
+    },
+    {
+      "id": "canonical_content_release",
+      "status": "connected_approval_required",
+      "trigger": "QA-passed canonical record + matching release artifact",
+      "authority": "PRODUCTION_READINESS -> authenticated Shopify app",
+      "steps": [
+        "generate",
+        "qa",
+        "fingerprint",
+        "human_approval",
+        "stale_product_check",
+        "publish_editorial_seo",
+        "audit"
+      ],
+      "protected": [
+        "price",
+        "compare_at_price",
+        "sku",
+        "inventory",
+        "variants",
+        "handle",
+        "media_relationships"
+      ]
+    },
+    {
+      "id": "pricing_profitability",
+      "status": "connected_approval_required",
+      "trigger": "verified unit cost + commercial configuration",
+      "authority": "Shopify cost facts + app pricing engine",
+      "steps": [
+        "landed_cost",
+        "fees_reserve",
+        "target_cac",
+        "contribution_floor",
+        "recommendation",
+        "human_approval",
+        "single_variant_publish",
+        "audit"
+      ],
+      "guard": "never publish below contribution floor; multi-variant requires variant-level costs"
+    },
+    {
+      "id": "merchandising",
+      "status": "connected_partial_catalog",
+      "trigger": "classification + brand world",
+      "authority": "Shopify tags and smart collections",
+      "steps": [
+        "department",
+        "family",
+        "brand_world",
+        "collection_membership",
+        "mega_menu_experience"
+      ],
+      "guard": "ambiguous brand world -> review"
+    },
+    {
+      "id": "storefront_release",
+      "status": "connected_staging_first",
+      "trigger": "GitHub main theme change",
+      "authority": "GitHub main",
+      "steps": [
+        "theme_source",
+        "staging_sync",
+        "processing_check",
+        "preview_qa",
+        "explicit_live_release"
+      ],
+      "guard": "no automatic MAIN theme writes"
+    },
+    {
+      "id": "paid_media",
+      "status": "external_connection_required",
+      "trigger": "approved campaign brief + commercial readiness",
+      "authority": "external ad provider",
+      "steps": [
+        "brief",
+        "creative",
+        "account_selection",
+        "budget_approval",
+        "campaign_action",
+        "performance_readback",
+        "profitability_feedback"
+      ],
+      "guard": "no provider or human approval -> no spend/action"
+    },
+    {
+      "id": "analytics_learning",
+      "status": "event_bus_connected_export_adapter_required",
+      "trigger": "storefront commerce event",
+      "authority": "first-party MVQueen event contract",
+      "steps": [
+        "emit",
+        "consent_provider_adapter",
+        "aggregate",
+        "campaign_product_join",
+        "profitability_analysis",
+        "learning_proposal"
+      ],
+      "guard": "core event bus sends no third-party network requests"
+    },
+    {
+      "id": "retention_lifecycle",
+      "status": "plan_connected_execution_adapter_required",
+      "trigger": "purchase/customer lifecycle signal",
+      "authority": "approved lifecycle provider",
+      "steps": [
+        "post_purchase",
+        "cross_sell",
+        "replenishment_if_supported",
+        "win_back",
+        "performance_readback"
+      ],
+      "guard": "no fabricated urgency or unsupported replenishment timing"
+    },
+    {
+      "id": "order_fulfillment",
+      "status": "shopify_authority_manual_until_scoped",
+      "trigger": "paid order",
+      "authority": "Shopify",
+      "steps": [
+        "payment_confirmed",
+        "fraud_risk_review",
+        "supplier_fulfillment",
+        "tracking",
+        "delivery_exception",
+        "return_refund_if_needed"
+      ],
+      "guard": "no automated order/customer writes until dedicated scopes and SOP tests are approved"
+    },
+    {
+      "id": "customer_care",
+      "status": "sop_ready_execution_human_governed",
+      "trigger": "customer inquiry or exception",
+      "authority": "support channel + Shopify order truth",
+      "steps": [
+        "identify_request",
+        "verify_order_context",
+        "policy_lookup",
+        "resolution",
+        "escalation",
+        "feedback_loop"
+      ],
+      "guard": "privacy minimum necessary; policy facts only"
+    },
+    {
+      "id": "finance",
+      "status": "framework_ready_data_connection_required",
+      "trigger": "daily/weekly close",
+      "authority": "Shopify payouts + payment processor + ad spend + supplier costs",
+      "steps": [
+        "revenue",
+        "refunds",
+        "cogs",
+        "fulfillment",
+        "payment_fees",
+        "ad_spend",
+        "contribution_profit",
+        "cash_reconciliation"
+      ],
+      "guard": "no profitability claim without complete source inputs"
+    },
+    {
+      "id": "compliance",
+      "status": "framework_ready_human_legal_values_required",
+      "trigger": "policy/content/release change",
+      "authority": "merchant-approved policies and applicable law",
+      "steps": [
+        "policy_source",
+        "claim_review",
+        "privacy_scope",
+        "consent_requirements",
+        "release_check"
+      ],
+      "guard": "no invented legal/business values"
+    },
+    {
+      "id": "backup_recovery",
+      "status": "multi_layer_ready_restore_test_required",
+      "trigger": "release or incident",
+      "authority": "GitHub history + Shopify theme backups + Drive archives",
+      "steps": [
+        "snapshot",
+        "release",
+        "monitor",
+        "rollback_or_restore",
+        "incident_record"
+      ],
+      "guard": "restore procedure must be tested before production sign-off"
+    }
+  ]
+}
