@@ -44,6 +44,7 @@
           assign canonical_how_to_use = product.metafields.content.how_to_use
           assign canonical_care = product.metafields.content.care_instructions
           assign canonical_faq = product.metafields.content.faq.value
+          assign canonical_internal_links = product.metafields.seo.internal_links.value
 
           assign product_form_id = 'ProductForm-' | append: section.id
         %}
@@ -166,6 +167,19 @@
             <details><summary>Frequently asked questions</summary>{{ product.metafields.custom.faq | metafield_tag }}</details>
           {% endif %}
         </div>
+
+        {% if canonical_internal_links != blank %}
+          <nav class="mvq-product-internal-links" aria-label="Explore more">
+            <p class="mvq-eyebrow">Explore more</p>
+            <ul class="mvq-product-internal-links__list">
+              {% for internal_link in canonical_internal_links %}
+                {% if internal_link.anchor != blank and internal_link.target != blank %}
+                  <li><a href="{{ internal_link.target | escape }}">{{ internal_link.anchor }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </nav>
+        {% endif %}
 
         {% render 'trust-badges' %}
         <p class="mvq-trust-note">Secure checkout · Clear product details · Customer care when you need it</p>
