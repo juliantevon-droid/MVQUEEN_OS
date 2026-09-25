@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "agent": "overseer_intelligence_agent",
   "status": "active",
   "system": "MVQUEEN_OS",
-  "phase": "stabilization",
+  "phase": "production_stabilization",
   "learned_patterns": [
     "main and stabilization are currently divergent and require evidence-based reconciliation",
     "brand doctrine and operating doctrine must be treated as protected source-of-truth layers",
@@ -23,11 +23,54 @@
     "scheduled health checks",
     "brand-drift validation",
     "agent conflict detection",
-    "automated evidence-backed issue creation"
+    "automated evidence-backed issue creation",
+    "verified outcome ledger for specialist agents",
+    "cross-agent conflict resolution",
+    "conversion learning tied to measured evidence"
   ],
-  "last_updated": "2026-08-18",
+  "last_updated": "2026-09-25",
   "governance": {
     "adaptation_rule": "Evidence -> Analysis -> Recommendation -> Approval",
     "protected_changes_require_approval": true
-  }
+  },
+  "learning_system": {
+    "model": "verified_outcome_learning",
+    "authority_growth": false,
+    "promotion_levels": [
+      "observation",
+      "candidate_lesson",
+      "verified_lesson",
+      "approved_operating_rule",
+      "retired_lesson"
+    ],
+    "required_evidence": [
+      "source",
+      "hypothesis",
+      "before",
+      "approved_action",
+      "verification",
+      "after",
+      "outcome",
+      "confidence",
+      "scope",
+      "rollback"
+    ],
+    "protected_rule": "Learning can improve recommendations and prioritization but cannot grant permissions or silently modify canonical rules."
+  },
+  "specialist_agents": [
+    "catalog",
+    "editorial",
+    "seo",
+    "merchandising",
+    "conversion",
+    "mobile_ux",
+    "theme",
+    "shopify",
+    "data",
+    "performance",
+    "accessibility",
+    "security",
+    "qa",
+    "release"
+  ]
 }
