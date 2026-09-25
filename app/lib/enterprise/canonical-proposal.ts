@@ -36,6 +36,20 @@ export type CanonicalProductRecord = {
     secondary_keywords?: string[];
     long_tail_keywords?: string[];
   };
+  content_suite: {
+    content_version: string;
+    metafields: Record<string, {
+      type: string;
+      value: unknown;
+      source?: string;
+    }>;
+    qa: {
+      errors: string[];
+      passed: boolean;
+      status: string;
+    };
+    [key: string]: unknown;
+  };
   qa: {
     errors: string[];
     warnings: string[];
@@ -130,14 +144,82 @@ export function validateApprovedReleaseBundle(bundle: ApprovedReleaseBundle): st
   if (!record.copy?.short_description?.trim()) errors.push("Missing approved copy.short_description");
   if (!record.seo?.seo_title?.trim()) errors.push("Missing approved seo.seo_title");
   if (!record.seo?.meta_description?.trim()) errors.push("Missing approved seo.meta_description");
+  if (!record.content_suite || typeof record.content_suite !== "object") {
+    errors.push("Missing approved content_suite");
+  } else {
+    if (record.content_suite.qa?.passed !== true || (record.content_suite.qa?.errors?.length ?? 0) > 0) {
+      errors.push("Approved content_suite QA gate has not passed");
+    }
+    if (!record.content_suite.metafields || typeof record.content_suite.metafields !== "object") {
+      errors.push("Approved content_suite metafields are missing");
+    }
+  }
 
   return errors;
+}
+
+
+const APPROVED_CONTENT_METAFIELDS = new Set([
+  "catalog.short_description",
+  "catalog.focus_keyword",
+  "catalog.short_tail_keywords",
+  "catalog.long_tail_keywords",
+  "catalog.seo_keywords",
+  "catalog.highlights",
+  "catalog.review_status",
+  "content.faq",
+  "content.care_instructions",
+  "content.how_to_use",
+  "attributes.material",
+  "attributes.fabric",
+  "attributes.color",
+  "attributes.shade",
+  "attributes.finish",
+  "attributes.texture",
+  "attributes.size",
+  "attributes.dimensions",
+  "attributes.fit",
+  "attributes.occasion",
+  "attributes.ingredient",
+  "attributes.key_ingredient",
+  "attributes.ingredients",
+  "attributes.main_stone",
+  "attributes.main_stone_size",
+  "attributes.total_weight",
+  "attributes.creation",
+  "attributes.design_code",
+  "attributes.item_code",
+  "attributes.size_length",
+]);
+
+function serializeContentMetafieldValue(type: string, value: unknown): string {
+  if (type === "json" || type.startsWith("list.")) return JSON.stringify(value);
+  return String(value ?? "").trim();
+}
+
+function buildApprovedContentMetafields(record: CanonicalProductRecord) {
+  const source = record.content_suite?.metafields ?? {};
+  return Object.entries(source).flatMap(([qualifiedKey, field]) => {
+    if (!APPROVED_CONTENT_METAFIELDS.has(qualifiedKey)) return [];
+    const [namespace, key] = qualifiedKey.split(".", 2);
+    if (!namespace || !key || !field?.type) return [];
+    const value = serializeContentMetafieldValue(field.type, field.value);
+    if (!value || value === "[]" || value === "{}") return [];
+    return [{
+      namespace,
+      key,
+      type: field.type,
+      value,
+    }];
+  });
 }
 
 export function buildApprovedEditorialProductInput(record: CanonicalProductRecord) {
   const highlights = Array.from(
     new Set([...(record.copy.benefits ?? []), ...(record.copy.features ?? [])].map((item) => item.trim()).filter(Boolean)),
   ).slice(0, 8);
+
+  const contentMetafields = buildApprovedContentMetafields(record);
 
   return {
     id: record.identity.product_id,
@@ -167,6 +249,7 @@ export function buildApprovedEditorialProductInput(record: CanonicalProductRecor
         type: "number_decimal",
         value: String(record.pricing.approved_publish_price),
       },
+      ...contentMetafields,
     ],
   };
 }
