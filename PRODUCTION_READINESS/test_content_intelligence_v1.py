@@ -88,6 +88,33 @@ class ContentIntelligenceV1Tests(unittest.TestCase):
         second = generate_content_suite(canonical)
         self.assertEqual(first, second)
 
+    def test_collection_copy_is_stable_for_same_product_type(self):
+        first_product = self.base()
+        second_product = self.base()
+        second_product["identity"]["product_id"] = "CONTENT-002"
+        second_product["identity"]["sku"] = "SKU-CONTENT-002"
+        first = generate_content_suite(run(first_product))
+        second = generate_content_suite(run(second_product))
+        self.assertEqual(first["collection"]["name"], second["collection"]["name"])
+        self.assertEqual(first["collection"]["description"], second["collection"]["description"])
+
+    def test_blog_drafts_are_product_specific_and_varied(self):
+        titles = set()
+        deks = set()
+        for index in range(12):
+            product = self.base()
+            product["identity"]["product_id"] = f"CONTENT-VAR-{index:03d}"
+            product["identity"]["handle"] = f"black-satin-dress-{index:03d}"
+            product["identity"]["sku"] = f"SKU-CONTENT-VAR-{index:03d}"
+            content = generate_content_suite(run(product))
+            self.assertTrue(content["qa"]["passed"])
+            titles.add(content["blog"]["title"])
+            deks.add(content["blog"]["dek"])
+            self.assertIn(content["product_page"]["title"], content["blog"]["title"])
+
+        self.assertGreaterEqual(len(titles), 6)
+        self.assertGreaterEqual(len(deks), 3)
+
     def test_validator_blocks_auto_publish(self):
         content = generate_content_suite(self.canonical())
         content["blog"]["auto_publish"] = True
