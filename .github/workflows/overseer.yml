@@ -72,6 +72,9 @@ jobs:
       - name: Run module-loader tests
         run: python -m unittest 30_System_Infrastructure/tests/test_module_loader.py -v
 
+      - name: Run AI factual-truth contract tests
+        run: python -m unittest PRODUCTION_READINESS/test_ai_truth_contract.py -v
+
       - name: Run MVQUEEN runtime boot smoke test
         run: |
           python 30_System_Infrastructure/system/loader/module_loader.py
@@ -175,6 +178,7 @@ jobs:
             echo '- Python syntax validation: PASS'
             echo '- Brand-bank contract tests: PASS'
             echo '- Module-loader tests: PASS'
+            echo '- AI factual-truth contract tests: PASS'
             echo '- Runtime boot smoke test: PASS'
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'
