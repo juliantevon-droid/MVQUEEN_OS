@@ -363,3 +363,53 @@ The two current product variants were verified unchanged after SEO/content metaf
 
 Do **not** patch the current MAIN theme file-by-file. The correct release action is to promote the fully validated `MVQueen — Staging Preview` theme as a single theme release after visual preview. This preserves rollback safety and keeps GitHub/staging/live roles clear.
 
+## Custom product UX + SEO architecture update — 2026-09-25
+
+- GitHub `main` is now protected.
+- Shopify storefront password protection is now OFF.
+- `MVQueen — Custom Production Build` is currently the MAIN theme.
+- The live MAIN theme is an older custom revision: 24/33 controlled files currently match GitHub `main`.
+- `MVQueen — Staging Preview` is the release candidate and matches GitHub `main` exactly: **33/33 controlled files**.
+- Staging includes the latest custom header/footer, design system, product-page CSS, UX JavaScript, homepage template and product section.
+- Shopify's connected mutation policy blocks `themePublish`; promoting Staging to MAIN must be done manually in Shopify Admin.
+
+### Product page UX
+
+The canonical custom product section now provides:
+
+- short description above the fold
+- scannable product-highlight bullets
+- Product details accordion
+- Measurements accordion when verified dimensions exist
+- Ingredients / How to use / Care / Size guide accordions when corresponding metafields exist
+- Shipping & returns accordion with live policy links
+- FAQ accordion when a verified FAQ metafield exists
+- native Shopify product form, variants, quantity and secure cart routing
+
+### SEO architecture
+
+The canonical production pipeline now models:
+
+- focus / primary short-tail keyword
+- secondary keyword phrases
+- factual long-tail keyword phrases
+- SEO title
+- meta description
+- product image ALT text
+
+Long-tail phrases are derived only from verified product facts such as product type, material, color, stone, size and occasion. The pipeline does not invent product claims to manufacture SEO phrases.
+
+Shopify Product metafield definitions now include:
+
+- `catalog.focus_keyword`
+- `catalog.long_tail_keywords`
+- `catalog.highlights`
+
+Both current Shopify products have populated short descriptions, focus keywords, long-tail phrases, combined SEO keyword lists and verified product-highlight bullets.
+
+Production Readiness, Theme CI/CD, Lint & Index and Overseer have passed after the canonical SEO/product UX changes.
+
+### Remaining activation step
+
+Publish `MVQueen — Staging Preview` to replace the older live custom revision. Shopify requires this to be done manually in Admin because the connected API safety layer refuses theme publishing.
+
