@@ -18,7 +18,7 @@ Shopify product enters or changes → webhook → MVQUEEN_OS product intelligenc
 - Runtime: Shopify app backend to be implemented in the production app project.
 - Secrets: never committed to GitHub.
 
-Legacy REST examples and former 2024-01 API references are retired from the production design.
+Legacy REST examples and former outdated API references are retired from the production design.
 
 ## 3. Product Automation Contract
 Every newly created or meaningfully updated product is eligible for MVQUEEN_OS processing.
