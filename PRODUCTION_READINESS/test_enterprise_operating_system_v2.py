@@ -30,7 +30,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "content_intelligence","seo_intelligence","merchandising","pricing",
             "profitability","creative","paid_advertising","analytics","retention",
             "customer_support","inventory","orders_fulfillment","theme","qa","deployment",
-            "finance","compliance","backup_recovery","media_alt_publication"
+            "finance","compliance","backup_recovery","media_alt_publication","production_database"
         }
         self.assertTrue(required.issubset(ids))
 
@@ -69,7 +69,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         by_capability = {item["capability"]: item for item in self.integrations["integrations"]}
         self.assertEqual(by_capability["media_alt_publication"]["state"], "permission_required")
         self.assertEqual(by_capability["paid_advertising"]["state"], "external_connection_required")
-        self.assertEqual(by_capability["production_database"]["state"], "deployment_required")
+        self.assertEqual(by_capability["production_database"]["state"], "engineered_profile_deployment_required")
         self.assertEqual(by_capability["approved_price_publish"]["state"], "engineered_not_runtime_verified")
         self.assertIn("MVQ_PRICE_PUBLISH_ENABLED", by_capability["approved_price_publish"]["requirements"])
 
@@ -86,6 +86,9 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "app/routes/app.proposals.tsx",
             "app/routes/app.pricing.tsx",
             "storefront/theme/assets/mvqueen-analytics.js",
+            "app/lib/enterprise/database-guard.server.ts",
+            "prisma/production/schema.prisma",
+            "prisma/production/migrations/20260925123000_init/migration.sql",
         ]
         for rel in required:
             self.assertTrue((ROOT / rel).is_file(), rel)
