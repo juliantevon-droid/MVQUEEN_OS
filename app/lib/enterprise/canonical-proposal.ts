@@ -35,6 +35,12 @@ export type CanonicalProductRecord = {
     alt_texts: string[];
     secondary_keywords?: string[];
     long_tail_keywords?: string[];
+    internal_links?: Array<{
+      anchor: string;
+      target: string;
+      type: "product" | "collection";
+      reason: string;
+    }>;
   };
   content_suite: {
     content_version: string;
@@ -220,6 +226,21 @@ export function buildApprovedEditorialProductInput(record: CanonicalProductRecor
   ).slice(0, 8);
 
   const contentMetafields = buildApprovedContentMetafields(record);
+  const approvedInternalLinks = (record.seo.internal_links ?? []).filter((item) => {
+    const target = item?.target?.trim() ?? "";
+    return Boolean(
+      item?.anchor?.trim()
+      && (target.startsWith("/products/") || target.startsWith("/collections/")),
+    );
+  });
+  const internalLinkMetafields = approvedInternalLinks.length
+    ? [{
+        namespace: "seo",
+        key: "internal_links",
+        type: "json",
+        value: JSON.stringify(approvedInternalLinks),
+      }]
+    : [];
 
   return {
     id: record.identity.product_id,
@@ -250,6 +271,7 @@ export function buildApprovedEditorialProductInput(record: CanonicalProductRecor
         value: String(record.pricing.approved_publish_price),
       },
       ...contentMetafields,
+      ...internalLinkMetafields,
     ],
   };
 }
