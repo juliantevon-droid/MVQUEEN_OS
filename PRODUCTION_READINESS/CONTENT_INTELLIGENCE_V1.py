@@ -6,6 +6,7 @@ product facts. Factual details are drawn only from verified source_truth facts.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from copy import deepcopy
@@ -71,6 +72,16 @@ def _text(value: Any) -> str:
 
 def _slug(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+
+
+def _stable_seed(value: str) -> int:
+    raw = _text(value) or "mvqueen"
+    return int(hashlib.sha256(raw.encode("utf-8")).hexdigest()[:8], 16)
+
+
+def _choose(items: List[str], key: str, salt: str) -> str:
+    digest = hashlib.sha256(f"{_stable_seed(key)}:{salt}".encode("utf-8")).digest()
+    return items[int.from_bytes(digest[:4], "big") % len(items)]
 
 
 def _clip(value: str, limit: int) -> str:
@@ -271,21 +282,56 @@ def _collection(record: Dict[str, Any]) -> Dict[str, Any]:
     product_type = _text(record.get("category", {}).get("product_type")) or "Essentials"
     primary_keyword = _text(record.get("seo", {}).get("primary_keyword")) or product_type.lower()
     name = f"MVQueen {product_type} Edit"
-    description = (
-        f"Explore the MVQueen {product_type.lower()} edit, curated around modern femininity, "
-        "polished styling, and a clear point of view. Product-specific details remain grounded "
-        "in verified source information, while the collection brings those pieces together in "
-        "a consistent MVQueen experience designed for confident, intentional shopping."
+    key = product_type.lower()
+
+    description = _choose(
+        [
+            (
+                f"Explore the MVQueen {product_type.lower()} edit through a considered lens of modern femininity, "
+                "polished simplicity, and intentional styling. Every product keeps factual details grounded in "
+                "verified source information while the collection holds a clear, cohesive point of view."
+            ),
+            (
+                f"The MVQueen {product_type.lower()} edit brings together pieces chosen for quiet confidence, "
+                "refined presentation, and personal expression. Product claims stay tied to verified details; "
+                "the editorial layer gives the collection its warm, distinctly MVQueen perspective."
+            ),
+            (
+                f"Discover MVQueen {product_type.lower()} with a curated balance of modern elegance and everyday ease. "
+                "The collection is built to feel composed rather than crowded, with verified product information "
+                "supporting every customer-facing detail."
+            ),
+            (
+                f"MVQueen approaches {product_type.lower()} as part of a complete feminine edit: intentional, polished, "
+                "and easy to make personal. The collection keeps product facts precise while the presentation brings "
+                "warmth, restraint, and a consistent editorial direction."
+            ),
+            (
+                f"Shop the MVQueen {product_type.lower()} edit with a focus on considered choices and clear product detail. "
+                "The assortment pairs verified source information with refined styling language so the experience feels "
+                "curated, useful, and confidently feminine."
+            ),
+        ],
+        key,
+        "collection-description",
     )
+
+    meta_description = _choose(
+        [
+            f"Explore MVQueen {product_type.lower()} with verified product details, polished styling, and a considered feminine point of view.",
+            f"Discover the MVQueen {product_type.lower()} edit: clear product details, modern elegance, and intentional styling.",
+            f"Shop MVQueen {product_type.lower()} through a curated edit grounded in verified details and refined everyday style.",
+        ],
+        key,
+        "collection-meta",
+    )
+
     return {
         "name": name,
         "slug": _slug(name),
         "description": description,
         "seo_title": _clip(f"{name} | MVQueen", 60),
-        "meta_description": _clip(
-            f"Explore MVQueen {product_type.lower()} with polished editorial presentation, verified product details, and confidence-driven style.",
-            160,
-        ),
+        "meta_description": _clip(meta_description, 160),
         "primary_keyword": primary_keyword,
         "status": "DRAFT_REVIEW",
     }
@@ -296,50 +342,138 @@ def _blog(record: Dict[str, Any], facts: Dict[str, Any]) -> Dict[str, Any]:
     title = _text(record.get("copy", {}).get("title"))
     primary_keyword = _text(record.get("seo", {}).get("primary_keyword")) or product_type.lower()
     handle = _text(record.get("identity", {}).get("handle"))
-    material = _fact(facts, "material", "fabric")
-    color = _fact(facts, "color", "shade")
-    detail_bits = [x for x in [material, color] if x]
+    product_id = _text(record.get("identity", {}).get("product_id"))
+    key = product_id or handle or title or product_type
+
+    labeled_details = [
+        ("material", _fact(facts, "material", "fabric")),
+        ("color", _fact(facts, "color", "shade")),
+        ("finish", _fact(facts, "finish")),
+        ("main stone", _fact(facts, "main_stone")),
+        ("size", _fact(facts, "size", "dimensions", "main_stone_size")),
+        ("ingredient", _fact(facts, "ingredient", "key_ingredient", "ingredients")),
+    ]
+    detail_bits = [f"{label}: {value}" for label, value in labeled_details if value]
     detail_sentence = (
-        f"For {title}, verified product details include {', '.join(detail_bits)}."
+        f"For {title}, verified product details include " + "; ".join(detail_bits[:4]) + "."
         if detail_bits
         else f"For {title}, use the verified product details on the product page as the factual reference."
     )
-    blog_title = f"A Considered Guide to Choosing {product_type.title()}"
-    target = f"/products/{handle}" if handle else f"product:{_text(record.get('identity', {}).get('product_id'))}"
+
+    blog_title = _choose(
+        [
+            f"{title}: A Considered Guide to the Details That Matter",
+            f"A Closer Look at {title}",
+            f"How to Evaluate {title} Before You Choose",
+            f"{title}: What the Verified Details Tell You",
+            f"Choosing {product_type.title()} with Intention: {title}",
+        ],
+        key,
+        "blog-title",
+    )
+
+    target = f"/products/{handle}" if handle else f"product:{product_id}"
+
+    first_heading = _choose(
+        [
+            f"What to look for in a {product_type.lower()}",
+            "Start with the details that matter",
+            f"How to read the details on a {product_type.lower()}",
+        ],
+        key,
+        "blog-heading-1",
+    )
+    second_heading = _choose(
+        [
+            "Use verified details as the foundation",
+            "Separate product facts from editorial framing",
+            "Let verified information lead",
+        ],
+        key,
+        "blog-heading-2",
+    )
+    third_heading = _choose(
+        [
+            "Make the final choice personal",
+            "Bring the details back to your own priorities",
+            "Choose for the way it fits your life",
+        ],
+        key,
+        "blog-heading-3",
+    )
+
+    first_intro = _choose(
+        [
+            f"Start with what matters to the way you plan to use a {product_type.lower()}: verified materials, dimensions, color, fit, finish, or ingredient information where those details are available.",
+            f"A confident choice begins with clear information. For a {product_type.lower()}, focus first on the verified details that affect how it looks, fits, feels, or belongs in your routine.",
+            f"Before the styling language, read the facts. A {product_type.lower()} is easier to evaluate when materials, color, dimensions, fit, finish, or ingredients are clearly identified where available.",
+        ],
+        key,
+        "blog-intro",
+    )
+
+    final_guidance = _choose(
+        [
+            f"Compare the verified details with your own priorities, then use the editorial presentation to decide whether the {product_type.lower()} fits the look, routine, or moment you have in mind.",
+            f"Use the factual details to narrow the decision, then let your own style, routine, and intended use determine whether this {product_type.lower()} earns a place in your edit.",
+            f"The final decision should come back to your own priorities: how the verified details align with the way you plan to wear, use, or style this {product_type.lower()}.",
+        ],
+        key,
+        "blog-final-guidance",
+    )
+
     sections = [
         {
-            "heading": f"What to look for in a {product_type.lower()}",
+            "heading": first_heading,
             "paragraphs": [
-                f"Start with the details that matter to the way you plan to use a {product_type.lower()}: verified materials, dimensions, color, fit, or ingredient information where those details are available.",
-                "MVQueen separates factual specifications from editorial language so you can understand both what the product is and how it fits the brand experience.",
+                first_intro,
+                "MVQueen keeps factual specifications separate from editorial framing so product understanding comes before persuasion.",
             ],
         },
         {
-            "heading": "Use verified details as the foundation",
+            "heading": second_heading,
             "paragraphs": [
                 detail_sentence,
-                "When a specification is not verified, it should not be treated as a fact. That keeps the product story polished without turning marketing language into an unsupported promise.",
+                "When a specification is not verified, it should not be treated as a fact. That keeps the product story polished without turning brand language into an unsupported promise.",
             ],
         },
         {
-            "heading": "Make the final choice personal",
+            "heading": third_heading,
             "paragraphs": [
-                f"Compare the verified details with your own priorities, then use the editorial presentation to decide whether the {product_type.lower()} fits the look, routine, or moment you have in mind.",
-                f"Explore {title} for the complete product page, imagery, and available specifications.",
+                final_guidance,
+                f"Explore {title} for the complete product page, imagery, and currently available specifications.",
             ],
         },
     ]
+
+    dek = _choose(
+        [
+            f"A practical MVQueen guide to evaluating {primary_keyword} through verified details, personal priorities, and intentional style.",
+            f"A closer look at {primary_keyword}, grounded in verified product information and a more considered way to choose.",
+            f"Use verified details, personal priorities, and MVQueen editorial guidance to evaluate {primary_keyword} with confidence.",
+        ],
+        key,
+        "blog-dek",
+    )
+
+    meta_description = _choose(
+        [
+            f"Learn how to evaluate {primary_keyword} using verified product details, personal priorities, and MVQueen's considered editorial approach.",
+            f"Explore what matters when choosing {primary_keyword}: verified details, personal use, and clear MVQueen editorial guidance.",
+            f"A practical MVQueen guide to {primary_keyword}, focused on verified information and intentional product selection.",
+        ],
+        key,
+        "blog-meta",
+    )
+
     return {
         "title": blog_title,
         "slug": _slug(blog_title),
-        "dek": f"A practical MVQueen guide to evaluating {primary_keyword} through verified details, personal use, and intentional style.",
+        "dek": dek,
         "sections": sections,
         "internal_links": [{"anchor": title, "target": target, "type": "product"}],
         "primary_keyword": primary_keyword,
-        "meta_description": _clip(
-            f"Learn how to evaluate {primary_keyword} using verified product details, personal priorities, and MVQueen's polished editorial approach.",
-            160,
-        ),
+        "meta_description": _clip(meta_description, 160),
         "status": "DRAFT_REVIEW",
         "auto_publish": False,
     }
