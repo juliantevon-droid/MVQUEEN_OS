@@ -109,6 +109,44 @@ def main() -> int:
             if section_type and not (THEME / "sections" / f"{section_type}.liquid").exists():
                 failures.append(f"Template {path.name} references missing section: {section_type}")
 
+    # The MVQueen source must be self-contained. A custom source file may not
+    # quietly depend on a snippet, section, or theme asset that exists only in
+    # an inherited Shopify/Horizon/Helio base theme.
+    liquid_files = list(THEME.rglob("*.liquid"))
+    render_re = re.compile(r"{%\\s*render\\s+['\"]([^'\"]+)['\"]")
+    section_re = re.compile(r"{%\\s*section\\s+['\"]([^'\"]+)['\"]")
+    asset_re = re.compile(r"['\"]([^'\"]+)['\"]\\s*\\|\\s*asset_url")
+
+    missing_dependencies: set[str] = set()
+    for liquid_path in liquid_files:
+        source = liquid_path.read_text(encoding="utf-8", errors="ignore")
+        rel_source = liquid_path.relative_to(THEME).as_posix()
+
+        for name in render_re.findall(source):
+            target = THEME / "snippets" / f"{name}.liquid"
+            if not target.is_file():
+                missing_dependencies.add(f"{rel_source} -> snippets/{name}.liquid")
+
+        for name in section_re.findall(source):
+            target = THEME / "sections" / f"{name}.liquid"
+            if not target.is_file():
+                missing_dependencies.add(f"{rel_source} -> sections/{name}.liquid")
+
+        for name in asset_re.findall(source):
+            # Shopify may expose generated/platform assets, but customer-owned
+            # theme source must not rely on undeclared local theme assets.
+            if "/" in name or name.startswith(("http:", "https:")):
+                continue
+            target = THEME / "assets" / name
+            if not target.is_file():
+                missing_dependencies.add(f"{rel_source} -> assets/{name}")
+
+    if missing_dependencies:
+        failures.append(
+            "Custom theme source has inherited/missing dependencies:\\n  - "
+            + "\\n  - ".join(sorted(missing_dependencies))
+        )
+
     all_text = "\n".join(
         p.read_text(encoding="utf-8", errors="ignore")
         for p in THEME.rglob("*")
