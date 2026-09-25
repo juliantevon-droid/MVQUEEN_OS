@@ -11,6 +11,9 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.workflows = json.loads(
             (ROOT / "30_System_Infrastructure/system/registry/enterprise_workflows.json").read_text(encoding="utf-8")
         )
+        self.integrations = json.loads(
+            (ROOT / "30_System_Infrastructure/system/registry/integration_requirements.json").read_text(encoding="utf-8")
+        )
 
     def test_required_stages_exist(self):
         required = {
@@ -61,6 +64,14 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertTrue(required.issubset(ids))
         paid = next(item for item in self.workflows["workflows"] if item["id"] == "paid_media")
         self.assertIn("no provider or human approval", paid["guard"].lower())
+
+    def test_integration_requirements_make_blockers_explicit(self):
+        by_capability = {item["capability"]: item for item in self.integrations["integrations"]}
+        self.assertEqual(by_capability["media_alt_publication"]["state"], "permission_required")
+        self.assertEqual(by_capability["paid_advertising"]["state"], "external_connection_required")
+        self.assertEqual(by_capability["production_database"]["state"], "deployment_required")
+        self.assertEqual(by_capability["approved_price_publish"]["state"], "engineered_not_runtime_verified")
+        self.assertIn("MVQ_PRICE_PUBLISH_ENABLED", by_capability["approved_price_publish"]["requirements"])
 
     def test_runtime_files_exist(self):
         required = [
