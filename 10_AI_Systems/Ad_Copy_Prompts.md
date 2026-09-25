@@ -1,3 +1,16 @@
+# MVQueen Advertising Evidence Gate
+
+Every advertising statement must be traceable to approved evidence.
+
+- Never invent reviews, quotes, ratings, repurchase/bestseller status, press, customer behavior, usage history, popularity, scarcity, stock, price, discount, free-shipping thresholds, ingredients, materials, performance, wear time, or timed results.
+- Use social proof only when an approved source quote or metric is supplied.
+- Use performance, ingredient, material, pricing, shipping, and offer language only when the current canonical product/store record supports it.
+- Never create medical or clinical claims or guarantees.
+- Example structures below are writing patterns, not factual claims. Replace example facts with verified inputs before use.
+- Paid-media budget changes remain human/Release-approved; prompt output cannot authorize spend changes.
+
+---
+
 # 👑 MVQueen — Ad Copy Prompts
 ### Paid Advertising Copy System
 
@@ -54,12 +67,12 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 **Campaign: Fragrance Launch**
 
 *Variation 01 — Emotional:*
-> Primary: The fragrance she's asked about 6 times in two weeks. Not because it's loud. Because it lingers.
+> Primary: [Use an approved customer or behavior insight only if verified.] Lead with the verified experience without fabricating demand.
 > Headline: Your new signature scent.
 > Description: MVQueen Fragrance Collection.
 
 *Variation 02 — Benefit-led:*
-> Primary: 8-hour wear. Warm floral base that deepens on skin. The kind of fragrance that feels like it was made specifically for you.
+> Primary: [VERIFIED WEAR AND NOTE FACTS ONLY.] Turn supplied product facts into concise benefit-led copy without adding performance claims.
 > Headline: Find your signature at MVQueen.
 > Description: Shop the fragrance collection.
 
@@ -78,13 +91,13 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 > Description: The Glow Serum by MVQueen.
 
 *Variation 02 — Benefit-led:*
-> Primary: Vitamin C + niacinamide + hyaluronic acid. Absorbs in 60 seconds. Visible difference in 4 days.
-> Headline: Glow in 4 days. Guaranteed.
+> Primary: [VERIFIED INGREDIENTS AND APPROVED PERFORMANCE EVIDENCE ONLY.] Do not add absorption times or result timelines unless documented.
+> Headline: [APPROVED BENEFIT — no guarantee or timed result unless substantiated.]
 > Description: Shop The Glow Serum →
 
 *Variation 03 — Social proof:*
-> Primary: The serum our customers repurchase most. Now you know why.
-> Headline: The most repurchased product in our collection.
+> Primary: [APPROVED SOCIAL PROOF ONLY.] If no verified repurchase data exists, use a factual product angle instead.
+> Headline: [VERIFIED SOCIAL-PROOF HEADLINE OR FACTUAL BENEFIT.]
 > Description: The Glow Serum — MVQueen.
 
 ---
@@ -104,7 +117,7 @@ CTA BUTTONS TO USE: "Shop Now" / "Learn More" / "Get Offer" — pair with ad cop
 *Variation 03 — Retargeting (she visited but didn't buy):*
 > Primary: You looked at this. We noticed. It's still here.
 > Headline: Still thinking about it?
-> Description: Free shipping on orders over $65.
+> Description: [CURRENT VERIFIED SHIPPING OR OFFER MESSAGE, if applicable.]
 
 ---
 
@@ -182,7 +195,7 @@ FORMAT:
 **Fashion — 30 seconds:**
 ```
 [0–3s]: Getting dressed in morning light. On screen: "The outfit that changed how I walk into rooms."
-[3–22s]: (VO) I don't get dressed for other people anymore. I get dressed for the version of me that walks in knowing she's already handled everything. This is the Ivory Slip from MVQueen — bias cut, fluid, wears with everything. I've worn it 12 times since it arrived.
+[3–22s]: (VO) I don't get dressed for other people anymore. I get dressed for the version of me that walks in knowing she's already handled everything. This is the Ivory Slip from MVQueen — bias cut, fluid, wears with everything. [Use a real approved creator or customer usage statement if supplied; otherwise describe verified garment details.]
 [22–30s]: Link in bio. Free shipping on orders over $65.
 ```
 
