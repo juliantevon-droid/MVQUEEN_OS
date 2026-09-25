@@ -188,7 +188,7 @@ FORMAT:
 **Fragrance — 30 seconds:**
 ```
 [0–3s]: Slow fragrance spray, warm light. No text. Music: soft, warm.
-[3–20s]: (VO) I've been asked what I'm wearing every single week for two months. It's a warm floral that opens soft and settles into something that feels like it was made for your skin specifically. 8-hour wear. Refillable bottle.
+[3–20s]: (VO) [Use verified fragrance notes, wear information, packaging details, and customer evidence only. If those facts are not supplied, omit them and write from the verified product record.]
 [20–30s]: If you've been looking for your signature scent — this is worth trying. Link in bio.
 ```
 
@@ -352,14 +352,14 @@ CTA buttons: "Shop Now" / "Learn More" / "Get Offer" — earn the click before i
 ### Real Examples
 
 **Fragrance Launch:**
-Emotional: The fragrance she's asked about 6 times this week. Not because it's loud. Because it lingers. | Your new signature scent. | MVQueen Fragrance.
-Benefit: 8-hour wear. Warm floral base that deepens on skin. Feels like it was made for you specifically. | Find your signature at MVQueen. | Shop the collection.
-Social proof: "I've been asked what I'm wearing three times today." That's what this does. | The most-asked-about fragrance. | Shop Velvet Hour by MVQueen.
+Emotional: [IDENTITY OR ATMOSPHERE ANGLE — no invented customer behavior.] | [Verified product/brand headline.] | MVQueen Fragrance.
+Benefit: [VERIFIED NOTE, FORMAT, OR PERFORMANCE FACTS ONLY.] | [Evidence-grounded benefit headline.] | Shop the collection.
+Social proof: [APPROVED CUSTOMER QUOTE OR METRIC ONLY; otherwise use a factual product angle.] | [Verified headline.] | [Verified product/collection CTA.]
 
 **Skincare — Hero Serum:**
 Emotional: The morning routine that changes how the rest of the day feels. Starts here. | Skin that speaks for itself. | The Glow Serum by MVQueen.
-Benefit: Vitamin C + niacinamide + hyaluronic acid. Absorbs in 60 seconds. Visible difference in 4 days. | Glow in 4 days. | Shop The Glow Serum →
-Social proof: The serum our customers repurchase most. Now you know why. | The most repurchased. | The Glow Serum — MVQueen.
+Benefit: [VERIFIED INGREDIENTS AND APPROVED PERFORMANCE EVIDENCE ONLY.] | [Evidence-grounded benefit headline.] | [Verified product CTA.]
+Social proof: [APPROVED CUSTOMER/REPURCHASE EVIDENCE ONLY; otherwise use a factual product angle.] | [Verified headline.] | [Verified product name.]
 
 **Fashion — New Collection:**
 Emotional: Getting dressed for yourself is different from getting dressed for the world. This collection was made for the first kind. | Dress like you've already decided. | [Collection Name].
@@ -410,7 +410,7 @@ Format:
 
 **Fragrance — 30s:**
 [0–3s] Slow fragrance spray, warm light. No text. Soft music.
-[3–20s] (VO) I've been asked what I'm wearing every week for two months. Warm floral that opens soft and settles into something that feels like it was made for your skin. 8-hour wear. Refillable.
+[3–20s] (VO) [Use verified fragrance notes, wear information, packaging details, and customer evidence only. Omit any unavailable fact.]
 [20–30s] If you've been looking for your signature scent — worth trying. Link in bio.
 
 **Fashion — 30s:**
