@@ -142,6 +142,13 @@
       "writes": "no_automation"
     },
     {
+      "id": "media_alt_publication",
+      "status": "scope_required",
+      "authority": "Shopify Files",
+      "execution": "disabled_until_explicit_scope_authorization",
+      "writes": "none"
+    },
+    {
       "id": "theme",
       "status": "connected_staging_first",
       "authority": "GitHub_main",
