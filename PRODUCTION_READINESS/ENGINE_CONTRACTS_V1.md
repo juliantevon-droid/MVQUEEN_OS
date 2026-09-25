@@ -15,7 +15,7 @@ The canonical product production record is defined by `PRODUCT_SCHEMA_V1.json`. 
 | Merchandising | collections, tags, related products, bundles | inventory mutation |
 | Commercial | angles, offers, objections, proof mapping | fabricated proof |
 | Creative | asset briefs and channel manifests | fabricated product claims |
-| Content Intelligence | product-page blocks, verified metafields, FAQs, collection drafts, blog drafts | product truth, protected fields, auto-publication |
+| Content Intelligence | product-page blocks, verified metafields, product FAQs, publish-eligible blog/collection/page content | product truth, protected fields, legal/policy auto-publication |
 | Pricing | recommendations and approved publish price | silent publication of recommendations |
 | Shopify | transport/export of approved record | rewriting upstream truth |
 | QA/Overseer | validation and release gate | bypassing failed checks |
