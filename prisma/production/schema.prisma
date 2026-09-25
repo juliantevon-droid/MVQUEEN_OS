@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id                  String    @id
+  shop                String
+  state               String
+  isOnline            Boolean   @default(false)
+  scope               String?
+  expires             DateTime?
+  accessToken         String
+  userId              BigInt?
+  firstName           String?
+  lastName            String?
+  email               String?
+  accountOwner        Boolean   @default(false)
+  locale              String?
+  collaborator        Boolean?  @default(false)
+  emailVerified       Boolean?  @default(false)
+  refreshToken        String?
+  refreshTokenExpires DateTime?
+}
+
+model ProductAutomationState {
+  id                      String   @id @default(cuid())
+  shop                    String
+  productGid              String
+  sourceFingerprint       String?
+  lastAutomationUpdatedAt DateTime?
+  automationVersion       String   @default("mvq-catalog-v1")
+  updatedAt               DateTime @updatedAt
+
+  @@unique([shop, productGid])
+}
+
+model ProductJob {
+  id          String   @id @default(cuid())
+  shop        String
+  productGid  String
+  eventKey    String   @unique
+  topic       String
+  status      String   @default("received")
+  attempts    Int      @default(0)
+  error       String?
+  receivedAt  DateTime @default(now())
+  startedAt   DateTime?
+  completedAt DateTime?
+
+  @@index([shop, productGid])
+  @@index([status, receivedAt])
+}
+
+model ProductReleaseAudit {
+  id                 String   @id @default(cuid())
+  shop               String
+  productGid         String
+  contentFingerprint String
+  actor              String
+  decision           String
+  operation          String
+  result             String
+  error              String?
+  createdAt          DateTime @default(now())
+
+  @@index([shop, contentFingerprint, operation, result])
+  @@index([shop, productGid, createdAt])
+  @@index([result, createdAt])
+}
