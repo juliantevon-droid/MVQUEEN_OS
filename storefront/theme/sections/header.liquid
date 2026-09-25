@@ -9,10 +9,10 @@
 {% endif %}
 
 {% if collection %}
-  {% if collection.handle == 'miss-princess-world' %}
+  {% if collection.handle contains 'miss-princess' %}
     {% assign is_princess_experience = true %}
     {% assign is_mvqueen_experience = false %}
-  {% elsif collection.handle == 'mvqueen-world' %}
+  {% elsif collection.handle contains 'mvqueen' %}
     {% assign is_mvqueen_experience = true %}
     {% assign is_princess_experience = false %}
   {% endif %}
@@ -39,9 +39,19 @@
       <span aria-hidden="true">☰</span>
     </button>
 
-    <a class="mvq-logo" href="{{ routes.root_url }}" aria-label="{% if is_princess_experience %}Miss.Princess home{% else %}MVQueen home{% endif %}" style="--mvq-logo-width: {{ settings.brand_logo_width | default: 168 }}px">
+    {% liquid
+      assign brand_home_url = routes.root_url
+      if is_princess_experience
+        assign brand_home_url = '/pages/miss-princess'
+      elsif is_mvqueen_experience
+        assign brand_home_url = '/pages/mvqueen'
+      endif
+    %}
+    <a class="mvq-logo" href="{{ brand_home_url }}" aria-label="{% if is_princess_experience %}Miss.Princess home{% elsif is_mvqueen_experience %}MVQueen home{% else %}MVQueen brand gateway{% endif %}" style="--mvq-logo-width: {{ settings.brand_logo_width | default: 148 }}px">
       {% if is_princess_experience %}
         <span class="mvq-logo-wordmark mvq-logo-wordmark--princess">Miss.Princess</span>
+      {% elsif settings.brand_logo != blank %}
+        {{ settings.brand_logo | image_url: width: 440 | image_tag: class: 'mvq-logo-image', widths: '220,320,440', sizes: '(max-width: 749px) 132px, 148px', loading: 'eager', alt: 'MVQueen — Most Valuable Queen' }}
       {% else %}
         <img class="mvq-logo-image" src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639" width="956" height="431" alt="MVQueen — Most Valuable Queen" loading="eager">
       {% endif %}
@@ -79,7 +89,7 @@
     </div>
   </div>
 
-  <nav id="MVQMobilePanel" class="mvq-mobile-panel mvq-container" data-mvq-panel hidden aria-label="{% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %} mobile navigation">
+  <nav id="MVQMobilePanel" class="mvq-mobile-panel mvq-container" data-mvq-panel hidden inert aria-label="{% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %} mobile navigation">
     {% for link in active_menu.links %}
       {% if link.links != blank %}
         <details class="mvq-mobile-group">
