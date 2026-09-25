@@ -1,8 +1,10 @@
 <section class="mvq-collection">
   <div class="mvq-container">
     {% render 'breadcrumbs' %}
+    {% assign is_princess_collection = false %}
+    {% if collection.handle contains 'miss-princess' %}{% assign is_princess_collection = true %}{% endif %}
     <header class="mvq-collection-head">
-      <p class="mvq-eyebrow">THE MVQueen EDIT</p>
+      <p class="mvq-eyebrow">{% if is_princess_collection %}THE Miss.Princess EDIT{% else %}THE MVQueen EDIT{% endif %}</p>
       <h1 class="mvq-display">{{ collection.title }}</h1>
       {% if collection.description != blank %}<div class="mvq-collection-desc mvq-copy">{{ collection.description }}</div>{% endif %}
     </header>
@@ -29,8 +31,10 @@
               <summary>{{ filter.label }}</summary>
               {% if filter.type == 'price_range' %}
                 <div class="mvq-price-row">
-                  <input type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}" placeholder="Min" min="0" inputmode="decimal">
-                  <input type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}" placeholder="Max" min="0" inputmode="decimal">
+                  <label class="mvq-visually-hidden" for="FilterMin-{{ section.id }}-{{ forloop.index }}">Minimum {{ filter.label }}</label>
+                  <input id="FilterMin-{{ section.id }}-{{ forloop.index }}" type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}" placeholder="Min" min="0" inputmode="decimal">
+                  <label class="mvq-visually-hidden" for="FilterMax-{{ section.id }}-{{ forloop.index }}">Maximum {{ filter.label }}</label>
+                  <input id="FilterMax-{{ section.id }}-{{ forloop.index }}" type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}" placeholder="Max" min="0" inputmode="decimal">
                 </div>
               {% else %}
                 <div class="mvq-filter-options">
