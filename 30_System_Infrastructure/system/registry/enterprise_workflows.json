@@ -20,6 +20,22 @@
       "failure_mode": "queue failed + visible control-plane error"
     },
     {
+      "id": "catalog_health_audit",
+      "status": "connected_read_only",
+      "trigger": "operator opens Catalog Health",
+      "authority": "Shopify",
+      "steps": [
+        "scan_catalog",
+        "brand_integrity",
+        "content_presence",
+        "commercial_cost_presence",
+        "pre_fee_margin_risk",
+        "collection_integrity",
+        "release_blocker_summary"
+      ],
+      "guard": "read-only; media ALT audit remains separate until Shopify Files permission is authorized"
+    },
+    {
       "id": "canonical_content_release",
       "status": "connected_approval_required",
       "trigger": "QA-passed canonical record + matching release artifact",
