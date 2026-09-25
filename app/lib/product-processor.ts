@@ -28,7 +28,6 @@ const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
     id title descriptionHtml productType vendor tags
-    media(first: 100) { nodes { id alt } }
     variants(first: 1) { nodes { id price compareAtPrice } }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
@@ -40,7 +39,6 @@ const PRODUCT_QUERY_WITH_COST = `#graphql
 query MVQueenProductWithCost($id: ID!) {
   product(id: $id) {
     id title descriptionHtml productType vendor tags
-    media(first: 100) { nodes { id alt } }
     variants(first: 1) {
       nodes {
         id
@@ -73,9 +71,6 @@ function sourceFingerprint(product: ProductSnapshot): string {
     productType: product.productType ?? "",
     vendor: product.vendor ?? "",
     tags: [...(product.tags ?? [])].sort(),
-    media: (product.media?.nodes ?? [])
-      .map((m) => ({ id: m.id, alt: m.alt ?? "" }))
-      .sort((a, b) => a.id.localeCompare(b.id)),
     variants: (product.variants?.nodes ?? [])
       .map((v) => ({
         id: v.id,
@@ -259,7 +254,7 @@ export async function processProductJob(jobId: string) {
         namespace: "catalog",
         key: "media_alt_status",
         type: "single_line_text_field",
-        value: (product.media?.nodes ?? []).some((m) => !m.alt) ? "scope_required" : "complete",
+        value: "scope_required",
       },
     ];
 
