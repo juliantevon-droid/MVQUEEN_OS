@@ -21,9 +21,6 @@ query MVQueenCatalogAudit($first: Int!, $after: String) {
         nodes { id price }
         pageInfo { hasNextPage }
       }
-      media(first: 100) {
-        nodes { id alt }
-      }
       collections(first: 50) {
         nodes { handle }
       }
@@ -64,7 +61,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
         unitCost: product.unitCost?.value ?? null,
         variants: product.variants?.nodes ?? [],
         hasMoreVariants: Boolean(product.variants?.pageInfo?.hasNextPage),
-        media: product.media?.nodes ?? [],
+        media: [],
+        mediaAuditAvailable: false,
         collections: product.collections?.nodes ?? [],
       });
     }
@@ -93,6 +91,7 @@ export default function CatalogHealth() {
         <s-paragraph>Blockers: {data.blockerCount}</s-paragraph>
         <s-paragraph>Warnings: {data.warningCount}</s-paragraph>
         <s-paragraph>Generated: {new Date(data.generatedAt).toLocaleString()}</s-paragraph>
+        <s-paragraph>Media ALT audit: separate Shopify Files permission required.</s-paragraph>
         {data.truncated ? (
           <s-paragraph>Audit stopped at the safety page cap; run a bulk audit for a larger catalog.</s-paragraph>
         ) : null}
