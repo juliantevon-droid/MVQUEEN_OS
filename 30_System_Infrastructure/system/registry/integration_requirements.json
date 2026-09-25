@@ -1,0 +1,210 @@
+{
+  "version": "1.0.0",
+  "rule": "A capability may be marked connected only when required authority, permission, configuration, tests, audit path, and rollback/recovery behavior are present.",
+  "integrations": [
+    {
+      "capability": "catalog_product_metadata",
+      "provider": "Shopify Admin API",
+      "state": "authorized_in_app_contract",
+      "requirements": [
+        "read_products",
+        "write_products",
+        "MVQ_WRITE_ENABLED",
+        "MVQ_APPROVED_PRODUCT_GIDS"
+      ],
+      "side_effects": "approved classification, brand-routing, commercial-status, lifecycle-status and analytics metadata only"
+    },
+    {
+      "capability": "canonical_editorial_seo_publish",
+      "provider": "Shopify Admin API",
+      "state": "engineered_not_runtime_verified",
+      "requirements": [
+        "read_products",
+        "write_products",
+        "MVQ_WRITE_ENABLED",
+        "MVQ_EDITORIAL_PUBLISH_ENABLED",
+        "MVQ_APPROVED_PRODUCT_GIDS",
+        "QA-passed canonical release bundle",
+        "matching content fingerprint",
+        "fresh Shopify product state",
+        "authenticated admin",
+        "durable release audit"
+      ],
+      "side_effects": "title, description, product type, SEO and approved automation/release metafields"
+    },
+    {
+      "capability": "approved_price_publish",
+      "provider": "Shopify Admin API",
+      "state": "engineered_not_runtime_verified",
+      "requirements": [
+        "read_products",
+        "write_products",
+        "MVQ_WRITE_ENABLED",
+        "MVQ_PRICE_PUBLISH_ENABLED",
+        "MVQ_APPROVED_PRODUCT_GIDS",
+        "verified commercial.unit_cost",
+        "commercial fee/reserve/CAC/margin configuration",
+        "authenticated admin",
+        "single variant until variant-level cost model exists",
+        "durable price audit"
+      ],
+      "side_effects": "approved single-variant price only; compare-at price is untouched"
+    },
+    {
+      "capability": "media_alt_publication",
+      "provider": "Shopify Files",
+      "state": "permission_required",
+      "requirements": [
+        "explicit Files write authorization",
+        "dedicated media release gate",
+        "audit"
+      ],
+      "side_effects": "file ALT text only"
+    },
+    {
+      "capability": "theme_staging_sync",
+      "provider": "Shopify Themes",
+      "state": "connected",
+      "requirements": [
+        "read_themes",
+        "write_themes",
+        "unpublished target",
+        "GitHub main source"
+      ],
+      "side_effects": "staging/unpublished theme files only"
+    },
+    {
+      "capability": "theme_live_release",
+      "provider": "Shopify Themes",
+      "state": "owner_release_required",
+      "requirements": [
+        "final preview QA",
+        "explicit merchant release decision"
+      ],
+      "side_effects": "publishes selected theme"
+    },
+    {
+      "capability": "paid_advertising",
+      "provider": "external paid-media adapter",
+      "state": "external_connection_required",
+      "requirements": [
+        "provider connection",
+        "account selection",
+        "campaign identity mapping",
+        "spend/conversion/revenue readback",
+        "human approval for spend or campaign-state changes",
+        "change-history audit"
+      ],
+      "side_effects": "none until provider and execution flag are connected"
+    },
+    {
+      "capability": "analytics_export",
+      "provider": "external analytics adapter",
+      "state": "external_connection_required",
+      "requirements": [
+        "provider connection",
+        "consent/configuration review",
+        "MVQueen event mapping",
+        "attribution rules",
+        "campaign/product identity joins"
+      ],
+      "side_effects": "measurement export/readback only by default"
+    },
+    {
+      "capability": "lifecycle_retention",
+      "provider": "external lifecycle provider",
+      "state": "external_connection_required",
+      "requirements": [
+        "provider connection",
+        "customer consent rules",
+        "event mapping",
+        "flow approval",
+        "unsubscribe/suppression enforcement",
+        "performance readback"
+      ],
+      "side_effects": "no outbound messaging until provider and execution gate are connected"
+    },
+    {
+      "capability": "orders_fulfillment",
+      "provider": "Shopify",
+      "state": "scope_and_sop_required",
+      "requirements": [
+        "dedicated order/fulfillment scopes",
+        "fraud/risk SOP",
+        "supplier handoff contract",
+        "tracking/exception workflow",
+        "refund/return authorization",
+        "audit"
+      ],
+      "side_effects": "no automated order/customer/fulfillment writes yet"
+    },
+    {
+      "capability": "customer_care",
+      "provider": "support channel plus Shopify order truth",
+      "state": "human_governed",
+      "requirements": [
+        "minimum-necessary customer data",
+        "approved policies",
+        "escalation rules",
+        "resolution audit"
+      ],
+      "side_effects": "human-controlled support actions"
+    },
+    {
+      "capability": "finance_reconciliation",
+      "provider": "Shopify payouts/payment processor/ad platforms/supplier costs",
+      "state": "data_connections_required",
+      "requirements": [
+        "gross revenue",
+        "discounts",
+        "refunds",
+        "payment fees",
+        "COGS",
+        "fulfillment cost",
+        "ad spend",
+        "tax treatment where applicable",
+        "cash/payout reconciliation"
+      ],
+      "side_effects": "analysis only until accounting workflow is separately authorized"
+    },
+    {
+      "capability": "compliance_release_gate",
+      "provider": "merchant-approved policies and applicable law",
+      "state": "human_legal_values_required",
+      "requirements": [
+        "policy source values",
+        "claims review",
+        "privacy/consent rules",
+        "age-sensitive marketing safeguards",
+        "release checklist"
+      ],
+      "side_effects": "blocks release when required values are missing"
+    },
+    {
+      "capability": "production_database",
+      "provider": "managed durable database",
+      "state": "deployment_required",
+      "requirements": [
+        "durable managed database",
+        "backups",
+        "migration strategy",
+        "connection security",
+        "restore test",
+        "monitoring"
+      ],
+      "side_effects": "replaces development SQLite for production runtime"
+    },
+    {
+      "capability": "backup_restore",
+      "provider": "GitHub history, Shopify theme backups, Google Drive archives",
+      "state": "restore_test_required",
+      "requirements": [
+        "documented restore order",
+        "tested rollback",
+        "incident owner",
+        "post-restore verification"
+      ],
+      "side_effects": "restore only after incident/release approval"
+    }
+  ]
+}
