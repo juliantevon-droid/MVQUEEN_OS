@@ -145,3 +145,7 @@ The current Prisma SQLite database is acceptable for development and validation.
 ## Definition of done
 
 An area reaches enterprise-ready only when it is marked `connected` or `connected_advisory` in the capability registry, passes CI, has a failure path, and is observable from the control plane. Documentation-only areas remain visible as gaps rather than being counted as complete.
+
+## Media ALT publication scope boundary
+
+Shopify image/file ALT mutation requires a Files write scope that is not part of the current app authorization. The automatic catalog worker therefore records `catalog.media_alt_status=scope_required` when ALT text is missing and does not attempt an unauthorized mutation. Enabling automated media ALT publication is a separate permission change and release decision; it must not be hidden inside catalog processing.
