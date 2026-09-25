@@ -379,6 +379,88 @@
           "items": {
             "type": "string"
           }
+        },
+        "relationship_audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "resolver",
+            "brand_world",
+            "related",
+            "cross_sell",
+            "bundle_policy"
+          ],
+          "properties": {
+            "resolver": {
+              "type": "string",
+              "const": "MERCHANDISING_INTELLIGENCE_V1"
+            },
+            "brand_world": {
+              "type": "string",
+              "enum": [
+                "mvqueen",
+                "miss-princess"
+              ]
+            },
+            "related": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "product_id",
+                  "score",
+                  "reasons"
+                ],
+                "properties": {
+                  "product_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "score": {
+                    "type": "number"
+                  },
+                  "reasons": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "cross_sell": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "product_id",
+                  "score",
+                  "reasons"
+                ],
+                "properties": {
+                  "product_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "score": {
+                    "type": "number"
+                  },
+                  "reasons": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "bundle_policy": {
+              "type": "string",
+              "const": "no_approved_bundle_rule_no_bundle"
+            }
+          }
         }
       }
     },
