@@ -72,3 +72,39 @@ The theme/navigation foundation is substantially ahead of the live catalog. Do n
 
 Next release gate:
 `Shopify state → storefront route/render checks → product/metafield truth audit → mobile/CRO/accessibility/performance → catalog ingestion dry-run → release decision`
+
+
+## Theme parity and product-truth verification — 2026-09-25
+
+### Custom source independence
+The canonical GitHub theme contract now performs static dependency closure checks across MVQueen Liquid source. It fails if an MVQueen-owned Liquid file renders a missing snippet, invokes a missing section, or references an undeclared local theme asset. Shopify Theme Check and the strengthened custom-source contract both passed in Theme CI run 226 after this control was added.
+
+This means the MVQueen-owned source tree does not require hidden inherited snippet/section/asset dependencies to satisfy its declared storefront integrations. Remote Shopify-native files may remain on staging/live for rollback safety, but they are not accepted as invisible dependencies of the canonical custom source.
+
+### Staging synchronization
+The governed Theme CI deployment allowlist contains 39 unique MVQueen-controlled files. A live read-only comparison initially found 38/39 path/size parity; the sole mismatch was `sections/main-product.liquid`, whose latest canonical metafield/accordion update landed during a cancelled concurrent Theme CI run.
+
+That single file was then synchronized directly to the **UNPUBLISHED** `MVQueen — Staging Preview` theme from current GitHub source. Shopify returned no user errors. Post-write theme health:
+- role: `UNPUBLISHED`
+- processing: `false`
+- processingFailed: `false`
+
+The live MAIN theme was not modified by this synchronization.
+
+### Current-product truth audit
+Both production products were inspected completely for status, SEO, metafields, media, and variants.
+
+Verified:
+- 2/2 products ACTIVE.
+- 2/2 vendors = `MVQueen`.
+- 2/2 products have SEO title and meta description.
+- 5/5 media images are READY and have non-empty ALT text.
+- Current SKUs, prices, and inventory values remain unchanged.
+- Both products have canonical catalog short description, focus keyword, long-tail keywords, highlights, and SEO keyword data.
+
+Data-quality observation:
+- The pink thulite pendant has richer structured `classification` and `attributes` metafields.
+- The brown aventurine necklace has complete catalog/SEO metafields but a sparser structured attributes layer. Any enrichment should use only verified facts already present in its canonical product record and must not alter protected commerce fields.
+
+### Current release implication
+The safest theme release path remains **GitHub main → validated Staging Preview → visual/purchase-path verification → manual promotion**, never file-by-file patching of MAIN and never automated live-theme publication.
