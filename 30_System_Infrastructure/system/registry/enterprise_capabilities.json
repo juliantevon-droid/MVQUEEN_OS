@@ -189,6 +189,13 @@
       "authority": "GitHub_Shopify_Drive",
       "execution": "manual_governed",
       "writes": "restore_only_after_incident_approval"
+    },
+    {
+      "id": "production_database",
+      "status": "engineered_deployment_required",
+      "authority": "managed_postgresql",
+      "execution": "production_profile_with_runtime_guard",
+      "writes": "runtime_state_sessions_jobs_release_audit"
     }
   ],
   "non_negotiable_gates": {
