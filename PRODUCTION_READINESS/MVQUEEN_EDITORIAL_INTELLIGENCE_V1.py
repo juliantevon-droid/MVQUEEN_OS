@@ -4,6 +4,10 @@ Deterministic, category-aware customer-facing copy generation.
 The engine only uses verified source facts as factual inputs. It does not
 invent ingredients, materials, fit, performance, results, certifications,
 or other product attributes.
+
+Lexical variation is intentionally drawn from the canonical MVQueen voice:
+quiet confidence, warm luxury, feminine precision, considered simplicity,
+and polished restraint. Vocabulary changes framing, never product facts.
 """
 from __future__ import annotations
 
@@ -29,6 +33,151 @@ CATEGORY_ALIASES = {
     "cosmetics": {"cosmetics", "makeup", "lipstick", "lip gloss", "lip liner", "foundation", "concealer", "blush", "bronzer", "highlighter", "eyeshadow", "mascara", "eyeliner", "palette"},
     "jewelry": {"jewelry", "necklace", "earrings", "bracelet", "ring", "anklet", "chain", "pendant", "accessory", "accessories"},
 }
+
+DEFAULT_USE = {
+    "fashion": "everyday styling",
+    "skincare": "her everyday routine",
+    "cosmetics": "her everyday look",
+    "jewelry": "everyday styling",
+    "general": "everyday use",
+}
+
+VOICE_TONES = {
+    "fashion": [
+        "quiet confidence",
+        "polished restraint",
+        "intentional femininity",
+        "refined simplicity",
+        "modern composure",
+        "considered ease",
+    ],
+    "skincare": [
+        "quiet intention",
+        "considered simplicity",
+        "warm restraint",
+        "clear purpose",
+        "unhurried care",
+        "refined simplicity",
+    ],
+    "cosmetics": [
+        "polished expression",
+        "modern confidence",
+        "intentional definition",
+        "refined simplicity",
+        "composed glamour",
+        "personal expression",
+    ],
+    "jewelry": [
+        "quiet confidence",
+        "polished restraint",
+        "intentional detail",
+        "refined simplicity",
+        "modern femininity",
+        "considered elegance",
+    ],
+    "general": [
+        "quiet confidence",
+        "polished simplicity",
+        "intentional detail",
+        "refined restraint",
+        "modern clarity",
+        "considered ease",
+    ],
+}
+
+OPENING_FRAMES = {
+    "fashion": [
+        "For {use}, this {product_type}{detail_clause} brings {tone} to the way she dresses.",
+        "A {product_type}{detail_clause} for {use}, defined by {tone} and room for her own styling.",
+        "Built around {use}, this {product_type}{detail_clause} keeps the direction rooted in {tone}.",
+        "For the woman who dresses with intention, this {product_type}{detail_clause} brings {tone} to {use}.",
+        "This {product_type}{detail_clause} belongs in {use} when the mood calls for {tone}.",
+        "Start with a {product_type}{detail_clause}; for {use}, the point of view is {tone}.",
+    ],
+    "skincare": [
+        "For {use}, this {product_type}{detail_clause} brings {tone} to the routine.",
+        "A more considered {use} starts with a {product_type}{detail_clause} and a sense of {tone}.",
+        "This {product_type}{detail_clause} belongs in {use} when the routine calls for {tone}.",
+        "For the part of {use} that deserves more intention, this {product_type}{detail_clause} keeps the mood rooted in {tone}.",
+        "A {product_type}{detail_clause} gives {use} a point of view shaped by {tone}.",
+        "Keep {use} focused: this {product_type}{detail_clause} brings {tone} without unnecessary noise.",
+    ],
+    "cosmetics": [
+        "For {use}, this {product_type}{detail_clause} brings {tone} to the look.",
+        "Build {use} around a {product_type}{detail_clause} with a point of view rooted in {tone}.",
+        "This {product_type}{detail_clause} belongs in {use} when the direction is {tone}.",
+        "For the woman who treats beauty as self-expression, this {product_type}{detail_clause} brings {tone} to {use}.",
+        "A {product_type}{detail_clause} gives {use} a finishing direction shaped by {tone}.",
+        "Start with a {product_type}{detail_clause}; the rest of {use} can follow with {tone}.",
+    ],
+    "jewelry": [
+        "For {use}, this {product_type}{detail_clause} brings {tone} to the finishing details.",
+        "A {product_type}{detail_clause} for {use}, chosen with {tone} rather than excess.",
+        "This {product_type}{detail_clause} belongs in {use} when the direction is {tone}.",
+        "For the woman who styles with intention, this {product_type}{detail_clause} adds {tone} to {use}.",
+        "A small detail can set the tone; this {product_type}{detail_clause} brings {tone} to {use}.",
+        "Start with a {product_type}{detail_clause}; for {use}, the finishing point is {tone}.",
+    ],
+    "general": [
+        "For {use}, this {product_type}{detail_clause} brings {tone} to the experience.",
+        "A {product_type}{detail_clause} for {use}, shaped by {tone} and a clear point of view.",
+        "This {product_type}{detail_clause} belongs in {use} when the direction is {tone}.",
+        "For the woman who chooses with intention, this {product_type}{detail_clause} brings {tone} to {use}.",
+        "A considered choice for {use}, this {product_type}{detail_clause} is framed by {tone}.",
+        "Start with a {product_type}{detail_clause}; the point of view is {tone}.",
+    ],
+}
+
+CLOSERS = {
+    "fashion": [
+        "The finish is modern and feminine, with enough restraint for her own styling to lead.",
+        "It keeps the look composed, personal, and easy to build around.",
+        "The result is polished without feeling overworked.",
+        "A considered foundation for a wardrobe built with intention.",
+        "It carries the look with quiet confidence rather than excess.",
+        "The piece does its part, then leaves room for her presence.",
+    ],
+    "skincare": [
+        "A considered addition to a routine that values clarity, simplicity, and details she can trust.",
+        "The experience stays focused, warm, and intentionally simple.",
+        "A quiet step in the routine, grounded in the product details that are actually verified.",
+        "It keeps the ritual clear and unhurried rather than overcomplicated.",
+        "The point is thoughtful care with no invented promises.",
+        "A refined routine starts with knowing exactly what belongs in it.",
+    ],
+    "cosmetics": [
+        "The final look stays expressive, polished, and personal.",
+        "It gives the beauty moment definition without making it feel overworked.",
+        "The direction is modern, composed, and open to her own expression.",
+        "A finishing choice that supports the look without speaking over it.",
+        "The result feels intentional rather than overdone.",
+        "It brings the look together while leaving the expression hers.",
+    ],
+    "jewelry": [
+        "It supports confident styling without competing with the woman wearing it.",
+        "The detail feels considered, polished, and easy to make personal.",
+        "It finishes the look with restraint rather than noise.",
+        "A small, intentional detail with enough presence to stand on its own.",
+        "The piece adds definition while keeping the styling distinctly hers.",
+        "It brings a refined finishing note to the edit.",
+    ],
+    "general": [
+        "Simple, polished, and personal.",
+        "A considered choice with a clear point of view.",
+        "The experience stays intentional rather than overworked.",
+        "A refined addition to the MVQueen edit.",
+        "It brings quiet confidence to the everyday.",
+        "The final impression is composed, useful, and distinctly personal.",
+    ],
+}
+
+CTA_OPTIONS = [
+    "Explore the MVQueen edit",
+    "Discover the product details",
+    "Make it part of her edit",
+    "Shop the MVQueen edit",
+    "See the full MVQueen details",
+]
 
 
 def _text(value: Any) -> str:
@@ -84,6 +233,9 @@ def _product_specific_detail(facts: Dict[str, Any], category: str) -> str:
     texture = _safe_value(_fact(facts, "texture"))
     size = _safe_value(_fact(facts, "size", "dimensions"))
     ingredient = _safe_value(_fact(facts, "ingredient", "key_ingredient"))
+    main_stone = _safe_value(_fact(facts, "main_stone"))
+    if category == "jewelry" and main_stone:
+        return f"featuring {main_stone}"
     if category == "skincare" and ingredient:
         return f"with {ingredient} listed among its ingredients"
     if category == "cosmetics" and finish:
@@ -91,11 +243,11 @@ def _product_specific_detail(facts: Dict[str, Any], category: str) -> str:
     if texture:
         return f"with a {texture.lower()} texture"
     if material:
-        return f"in {material.lower()}"
+        return f"in {material}"
     if color:
-        return f"in {color.lower()}"
+        return f"in {color}"
     if size:
-        return f"in the listed {size.lower()} specification"
+        return f"in the listed {size} specification"
     return ""
 
 
@@ -104,80 +256,78 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
     product_type = _safe_value(_text(record.get("category", {}).get("product_type")), "piece")
     category = classify_category(product_type)
     detail = _product_specific_detail(facts, category)
-    use = _safe_value(_fact(facts, "use_context", "usage", "occasion"), "her everyday routine")
+    use = _safe_value(
+        _fact(facts, "use_context", "usage", "occasion"),
+        DEFAULT_USE.get(category, DEFAULT_USE["general"]),
+    )
     color = _safe_value(_fact(facts, "color", "shade"))
     material = _safe_value(_fact(facts, "material", "fabric"))
     finish = _safe_value(_fact(facts, "finish"))
     ingredient = _safe_value(_fact(facts, "ingredient", "key_ingredient"))
+    main_stone = _safe_value(_fact(facts, "main_stone"))
+    main_stone_size = _safe_value(_fact(facts, "main_stone_size"))
 
     if category == "fashion":
         titles = [
             f"{color + ' ' if color else ''}{product_type}",
             f"The {color.lower() + ' ' if color else ''}{product_type.lower()}",
-            f"{product_type} — {color}" if color else f"{product_type} — MVQueen",
+            f"{product_type} in {color}" if color else f"{product_type} — MVQueen",
+            f"MVQueen {product_type}",
         ]
-        openings = [
-            f"A {product_type.lower()} for {use.lower()}, with a polished presence and room for her own style.",
-            f"For {use.lower()}, this {product_type.lower()} brings a clean, confident direction to the way she dresses.",
-            f"The right {product_type.lower()} can change the feeling of a look; this one starts with {detail.removeprefix('in ') or 'a considered silhouette'} and leaves room for her style to lead.",
+    elif category == "jewelry":
+        titles = [
+            f"{main_stone + ' ' if main_stone else ''}{product_type}",
+            f"The {product_type}",
+            f"{product_type} in {color}" if color else f"{product_type} — MVQueen",
+            f"MVQueen {product_type}",
         ]
-        closer = "It is an easy foundation for modern, feminine styling with an intentional finish."
     elif category == "skincare":
         titles = [
             f"{product_type} for Her Routine",
             f"The {product_type}",
             f"{product_type} — MVQueen",
+            f"MVQueen {product_type}",
         ]
-        openings = [
-            f"Make room for a more considered {use.lower()} with this {product_type.lower()}{(' ' + detail) if detail else ''}.",
-            f"A polished routine begins with products that make sense for the moment. This {product_type.lower()} brings {detail or 'a clearly defined step'} into focus.",
-            f"For the part of her routine when she wants to slow down and be intentional, this {product_type.lower()} keeps the experience beautifully simple.",
-        ]
-        closer = "A considered addition to a routine that values clarity, simplicity, and the details she can trust."
     elif category == "cosmetics":
         titles = [
             f"{product_type} for the MVQueen Look",
             f"The {product_type}",
-            f"{product_type} — MVQueen",
+            f"{product_type} in {color}" if color else f"{product_type} — MVQueen",
+            f"MVQueen {product_type}",
         ]
-        openings = [
-            f"Build the look around what she wants to express. This {product_type.lower()}{(' ' + detail) if detail else ''} brings a polished finishing touch to {use.lower()}.",
-            f"For {use.lower()}, this {product_type.lower()} keeps the focus on a confident, modern finish{(' in ' + color.lower()) if color else ''}.",
-            f"A beauty look feels most personal when every detail has a reason. Start with this {product_type.lower()}{(' and its ' + finish.lower() + ' finish') if finish else ''} and make it her own.",
-        ]
-        closer = "The result is a refined beauty moment that feels expressive rather than overworked."
-    elif category == "jewelry":
-        titles = [
-            f"{color + ' ' if color else ''}{product_type}",
-            f"The {product_type}",
-            f"{product_type} — MVQueen",
-        ]
-        openings = [
-            f"A small detail can set the tone. This {product_type.lower()}{(' ' + detail) if detail else ''} brings a polished note to {use.lower()}.",
-            f"For the woman who styles with intention, this {product_type.lower()} adds a modern finishing point without taking over the look.",
-            f"Layer it, let it stand alone, or make it part of the moment—this {product_type.lower()} keeps her style feeling personal and polished.",
-        ]
-        closer = "It is the kind of detail that supports confident styling without competing with the woman wearing it."
     else:
-        titles = [f"{product_type} — MVQueen", f"The {product_type}", f"{product_type} for Her"]
-        openings = [
-            f"A considered {product_type.lower()} for {use.lower()}, with a polished point of view.",
-            f"This {product_type.lower()} keeps the experience simple, modern, and confidence-led.",
-            f"For her everyday moments, this {product_type.lower()} brings an intentional finish to the way she chooses and uses what belongs in her world.",
+        titles = [
+            f"{product_type} — MVQueen",
+            f"The {product_type}",
+            f"{product_type} for Her",
+            f"MVQueen {product_type}",
         ]
-        closer = "Simple, polished, and unmistakably personal."
+
+    tone = _choose(VOICE_TONES[category], record, "tone")
+    frame = _choose(OPENING_FRAMES[category], record, "opening-frame")
+    detail_clause = f" {detail}" if detail else ""
+    opening = frame.format(
+        use=use.lower(),
+        product_type=product_type.lower(),
+        detail_clause=detail_clause,
+        tone=tone,
+    )
+    closer = _choose(CLOSERS[category], record, "closer")
 
     title = _choose(titles, record, "title")
-    opening = _choose(openings, record, "opening")
     details: List[str] = []
     if material:
-        details.append(f"Made with {material}.")
+        details.append(f"Material: {material}.")
     if color:
-        details.append(f"Available in {color}.")
+        details.append(f"Color: {color}.")
     if ingredient:
         details.append(f"Ingredient listed: {ingredient}.")
     if finish:
         details.append(f"Finish: {finish}.")
+    if main_stone:
+        details.append(f"Main stone: {main_stone}.")
+    if main_stone_size:
+        details.append(f"Main stone size: {main_stone_size}.")
     if not details and detail:
         details.append(f"Product detail: {detail}.")
 
@@ -189,13 +339,15 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
 
     benefits = []
     if material:
-        benefits.append(f"The feel and character of {material.lower()} support the intended styling direction.")
+        benefits.append(f"The listed {material.lower()} material gives the product a clear factual foundation for styling or use.")
     if color:
-        benefits.append(f"The {color.lower()} color direction makes styling decisions easy to build around.")
+        benefits.append(f"The {color.lower()} color direction gives the edit a defined visual starting point.")
     if finish:
         benefits.append(f"The listed {finish.lower()} finish helps define the final look.")
     if ingredient:
         benefits.append(f"Includes {ingredient} as a listed ingredient.")
+    if main_stone:
+        benefits.append(f"The listed {main_stone} stone gives the piece a clear focal detail.")
     if not benefits:
         benefits.append("Clear product details support a more confident, informed selection.")
 
@@ -205,7 +357,7 @@ def generate(record: Dict[str, Any]) -> Dict[str, Any]:
         "description": description,
         "benefits": benefits,
         "features": details or [f"Product type: {product_type}."],
-        "cta": "Shop MVQueen",
+        "cta": _choose(CTA_OPTIONS, record, f"cta:{category}"),
         "_editorial_category": category,
     }
 
