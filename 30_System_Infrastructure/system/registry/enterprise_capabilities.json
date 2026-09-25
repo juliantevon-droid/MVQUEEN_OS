@@ -1,0 +1,179 @@
+{
+  "system": "MVQUEEN_OS",
+  "version": "2.0.0",
+  "operating_model": "governed_event_driven_commerce_os",
+  "authorities": {
+    "code_contracts_tests": "GitHub main",
+    "live_commerce": "Shopify",
+    "runtime": "app/",
+    "storefront": "storefront/theme/",
+    "offline_intelligence": "PRODUCTION_READINESS/ and 15_Scripts_And_Code/mvqueen_engine/",
+    "assets_backups": "Google Drive"
+  },
+  "stages": [
+    "INGEST",
+    "SOURCE_TRUTH",
+    "CLASSIFY",
+    "BRAND_ROUTE",
+    "CONTENT",
+    "SEO",
+    "MERCHANDISE",
+    "COMMERCIAL",
+    "PRICE",
+    "PROFITABILITY",
+    "CREATIVE",
+    "QA",
+    "APPROVAL",
+    "PUBLISH",
+    "MEASURE",
+    "LEARN"
+  ],
+  "capabilities": [
+    {
+      "id": "brand_governance",
+      "status": "connected",
+      "authority": "GitHub",
+      "execution": "runtime_and_ci",
+      "writes": "governed"
+    },
+    {
+      "id": "catalog_ingest",
+      "status": "connected",
+      "authority": "Shopify",
+      "execution": "webhook",
+      "writes": "none"
+    },
+    {
+      "id": "classification",
+      "status": "connected",
+      "authority": "app",
+      "execution": "automatic",
+      "writes": "approved_metadata_only"
+    },
+    {
+      "id": "brand_routing",
+      "status": "connected",
+      "authority": "app",
+      "execution": "automatic",
+      "writes": "approved_metadata_only"
+    },
+    {
+      "id": "content_intelligence",
+      "status": "proposal_ready",
+      "authority": "PRODUCTION_READINESS",
+      "execution": "offline_governed",
+      "writes": "none"
+    },
+    {
+      "id": "seo_intelligence",
+      "status": "proposal_ready",
+      "authority": "PRODUCTION_READINESS",
+      "execution": "offline_governed",
+      "writes": "none"
+    },
+    {
+      "id": "merchandising",
+      "status": "partially_connected",
+      "authority": "Shopify_and_app",
+      "execution": "tags_and_smart_collections",
+      "writes": "approved_metadata_only"
+    },
+    {
+      "id": "pricing",
+      "status": "connected_advisory",
+      "authority": "app",
+      "execution": "automatic_recommendation",
+      "writes": "no_price_mutation"
+    },
+    {
+      "id": "profitability",
+      "status": "connected_advisory",
+      "authority": "app",
+      "execution": "automatic_recommendation",
+      "writes": "commercial_metafields_only"
+    },
+    {
+      "id": "creative",
+      "status": "proposal_ready",
+      "authority": "PRODUCTION_READINESS",
+      "execution": "offline_governed",
+      "writes": "none"
+    },
+    {
+      "id": "paid_advertising",
+      "status": "adapter_required",
+      "authority": "external_ad_platforms",
+      "execution": "disabled",
+      "writes": "none"
+    },
+    {
+      "id": "analytics",
+      "status": "event_bus_ready",
+      "authority": "storefront",
+      "execution": "first_party_events",
+      "writes": "no_external_network"
+    },
+    {
+      "id": "retention",
+      "status": "strategy_ready",
+      "authority": "07_Marketing_and_25_Retention_And_Community",
+      "execution": "adapter_required",
+      "writes": "none"
+    },
+    {
+      "id": "customer_support",
+      "status": "sop_ready",
+      "authority": "11_Operations_and_09_Shopify_Systems",
+      "execution": "human_governed",
+      "writes": "none"
+    },
+    {
+      "id": "inventory",
+      "status": "shopify_authority",
+      "authority": "Shopify",
+      "execution": "protected",
+      "writes": "no_automation"
+    },
+    {
+      "id": "orders_fulfillment",
+      "status": "shopify_authority",
+      "authority": "Shopify",
+      "execution": "protected_until_scoped",
+      "writes": "no_automation"
+    },
+    {
+      "id": "theme",
+      "status": "connected_staging_first",
+      "authority": "GitHub_main",
+      "execution": "Shopify_theme_sync",
+      "writes": "unpublished_theme_only"
+    },
+    {
+      "id": "qa",
+      "status": "connected",
+      "authority": "PRODUCTION_READINESS",
+      "execution": "ci",
+      "writes": "none"
+    },
+    {
+      "id": "deployment",
+      "status": "governed",
+      "authority": "GitHub_main",
+      "execution": "ci_and_explicit_release",
+      "writes": "approval_required"
+    }
+  ],
+  "non_negotiable_gates": {
+    "money": "No live price mutation without verified cost inputs, configured fee assumptions, explicit product approval, and a dedicated pricing publish flag.",
+    "advertising": "No ad spend, campaign creation, pausing, enabling, or budget changes without a connected approved provider and explicit action approval.",
+    "product_truth": "No unsupported claims or invented product facts.",
+    "protected_fields": [
+      "sku",
+      "inventory",
+      "variant_identity",
+      "handle",
+      "source_media_relationships"
+    ],
+    "minors": "Paid audience targeting must follow platform and legal requirements; the operating system does not hard-code minor targeting."
+  }
+}
