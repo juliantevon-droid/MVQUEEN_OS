@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "mobileFirst": true,
+  "theme": {
+    "maxTotalCssBytes": 250000,
+    "maxTotalJsBytes": 200000,
+    "maxSingleAssetBytes": 150000
+  },
+  "lighthouse": {
+    "performance": 0.9,
+    "accessibility": 0.95,
+    "bestPractices": 0.9,
+    "seo": 0.95
+  }
+}
