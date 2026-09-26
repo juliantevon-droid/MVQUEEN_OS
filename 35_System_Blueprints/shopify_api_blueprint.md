@@ -159,28 +159,36 @@ Source code, schemas, prompts, taxonomy, validation rules, documentation, and no
 Production secrets belong in the deployment platform's secret/environment system.
 
 ## 13. Current Implementation Status
-Implemented:
+Implemented on `main`:
 - MVQUEEN_OS architecture and doctrine
-- Shopify integration blueprint
-- MVQueen taxonomy foundation
-- Shopify smart collection routing structure
-- product classification metafield definitions
-- catalog short-description and SEO-keyword metafields
-- tested product optimization workflow on a live Shopify product
+- authenticated React Router Shopify app runtime
+- products/create and products/update webhook subscriptions and handlers
+- durable ProductJob idempotency records
+- automatic product enrollment gate for new/updated Shopify products
+- deterministic MVQueen taxonomy and Miss.Princess/MVQueen routing
+- factual short description and product-highlight generation
+- short-tail focus keywords and verified long-tail keyword generation
+- Shopify SEO title/meta publishing behind a dedicated gate
+- product classification, SEO and catalog metafields
+- optional missing-image-ALT repair with dedicated file scopes/gate
+- source fingerprint/version loop prevention
 - protected-field policy
-- Needs Review fallback collection
+- commercial health and advertising eligibility metadata
+- durable bounded existing-catalog backfill queue
+- production environment preflight
+- Needs Review fallback behavior
 
-In progress:
-- production Shopify app runtime
-- webhook registration
-- asynchronous product job queue
-- idempotency store
-- production processing engine
-- automated validation and post-write verification
-- controlled existing-catalog backfill
+Still required for literal 24/7 production operation:
+- deploy the app to a real always-on HTTPS host
+- provision the production PostgreSQL database
+- configure real Shopify app client credentials/application URL
+- reauthorize the Shopify app for the current product/file scopes
+- enable the production automation environment gates
+- complete one safe products/create end-to-end test and one products/update test
+- verify retry/observability behavior in the chosen host
 
 Not yet claimed as complete:
-A documented architecture is not considered a deployed production automation service until the app backend is deployed, authenticated, webhooks are registered, and an end-to-end product event has been successfully tested.
+Code present in GitHub is not the same as a continuously running service. MVQUEEN_OS becomes 24/7 automation only after the hosted app is live, authenticated, receiving Shopify webhooks, and the production preflight passes.
 
 ## 14. Success Criteria
 - a new product can enter Shopify without manual catalog optimization
