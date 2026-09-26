@@ -1,7 +1,8 @@
 {% doc %}
 Renders a selectable trust-badge library. New badge types remain hidden until named in the badges parameter.
 
-@param {string} [badges] - Comma-separated badge keys. Defaults to the existing four-badge set.
+@param {string} [badges] - Comma-separated badge keys. Overrides a preset when provided.
+@param {string} [preset] - Optional preset: product, cart, footer, collection, homepage, mvqueen, or miss_princess.
 @param {string} [layout] - Layout style: grid, row, stack, or minimal.
 @param {boolean} [compact] - Uses tighter spacing for narrow surfaces.
 @param {boolean} [show_payment_icons] - Shows Shopify-enabled payment method icons. Defaults to true.
@@ -13,9 +14,48 @@ Renders a selectable trust-badge library. New badge types remain hidden until na
 
 {% liquid
   assign default_badges = 'secure_checkout,encrypted_connection,clear_policies,customer_care'
-  assign selected_badges = badges | default: default_badges | split: ','
+  assign preset_badges = ''
+  assign preset_layout = ''
+  assign preset_payment_icons = ''
+  assign preset_hide_descriptions = ''
 
-  assign trust_layout = 'grid'
+  case preset
+    when 'product'
+      assign preset_badges = 'secure_checkout,shipping_details,returns_info,payment_options'
+      assign preset_layout = 'grid'
+      assign preset_payment_icons = true
+    when 'cart'
+      assign preset_badges = 'secure_checkout,checkout_totals,customer_care'
+      assign preset_layout = 'stack'
+      assign preset_payment_icons = true
+    when 'footer'
+      assign preset_badges = 'encrypted_connection,privacy_policy,contact_support'
+      assign preset_layout = 'minimal'
+      assign preset_payment_icons = false
+      assign preset_hide_descriptions = true
+    when 'collection'
+      assign preset_badges = 'product_details,shipping_details,customer_care'
+      assign preset_layout = 'minimal'
+      assign preset_payment_icons = false
+      assign preset_hide_descriptions = true
+    when 'homepage'
+      assign preset_badges = 'secure_checkout,clear_policies,customer_care,shipping_details'
+      assign preset_layout = 'row'
+      assign preset_payment_icons = false
+    when 'mvqueen'
+      assign preset_badges = 'secure_checkout,shipping_details,returns_info,customer_care'
+      assign preset_layout = 'grid'
+      assign preset_payment_icons = true
+    when 'miss_princess'
+      assign preset_badges = 'secure_checkout,shipping_details,size_fit,customer_care'
+      assign preset_layout = 'grid'
+      assign preset_payment_icons = true
+  endcase
+
+  assign badge_source = badges | default: preset_badges | default: default_badges
+  assign selected_badges = badge_source | split: ','
+
+  assign trust_layout = preset_layout | default: 'grid'
   case layout
     when 'row'
       assign trust_layout = 'row'
@@ -26,16 +66,30 @@ Renders a selectable trust-badge library. New badge types remain hidden until na
   endcase
 
   assign display_payment_icons = true
+  if preset_payment_icons == false
+    assign display_payment_icons = false
+  endif
+  if preset_payment_icons == true
+    assign display_payment_icons = true
+  endif
   if show_payment_icons == false
     assign display_payment_icons = false
+  endif
+  if show_payment_icons == true
+    assign display_payment_icons = true
   endif
 
   assign trust_classes = 'mvq-trust-cluster mvq-trust-cluster--' | append: trust_layout
   if compact
     assign trust_classes = trust_classes | append: ' mvq-trust-cluster--compact'
   endif
-  if hide_descriptions
+  if preset_hide_descriptions
     assign trust_classes = trust_classes | append: ' mvq-trust-cluster--titles-only'
+  endif
+  if hide_descriptions
+    unless trust_classes contains 'mvq-trust-cluster--titles-only'
+      assign trust_classes = trust_classes | append: ' mvq-trust-cluster--titles-only'
+    endunless
   endif
 %}
 
