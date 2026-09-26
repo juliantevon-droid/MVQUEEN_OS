@@ -12,6 +12,9 @@ PERF_PATH = ROOT / '30_System_Infrastructure' / 'system' / 'registry' / 'perform
 CAPABILITIES_PATH = ROOT / '30_System_Infrastructure' / 'system' / 'registry' / 'enterprise_capabilities.json'
 TRUST_PATH = ROOT / 'storefront' / 'theme' / 'snippets' / 'trust-badges.liquid'
 LOCALES = ROOT / 'storefront' / 'theme' / 'locales'
+WORKER_WORKFLOW = ROOT / '.github' / 'workflows' / 'product-worker.yml'
+WORKER_ROUTE = ROOT / 'app' / 'routes' / 'internal.product-worker.ts'
+ENV_EXAMPLE = ROOT / '.env.example'
 
 failures: list[str] = []
 
@@ -78,6 +81,21 @@ if protected != capability_protected:
 
 if registry['security']['repositoryExpectedVisibility'] != 'private':
     failures.append('Control registry must require private repository visibility')
+
+worker_workflow = WORKER_WORKFLOW.read_text(encoding='utf-8')
+expected_fallback = registry['automation']['fallbackReconciliationMinutes']
+if f'*/{expected_fallback} * * * *' not in worker_workflow:
+    failures.append('Product worker fallback schedule differs from control registry')
+
+worker_route = WORKER_ROUTE.read_text(encoding='utf-8')
+for token in ['timingSafeEqual', 'runAlwaysOnProductWorker', 'recordProductWorkerHeartbeat']:
+    if token not in worker_route:
+        failures.append(f'Product worker route missing security/runtime contract: {token}')
+
+env_example = ENV_EXAMPLE.read_text(encoding='utf-8')
+for token in ['MVQ_PRODUCT_CONTINUOUS_WORKER_REQUIRED=true', 'MVQ_PRODUCT_RECONCILE_ENABLED=true']:
+    if token not in env_example:
+        failures.append(f'Environment template missing automation hardening flag: {token}')
 
 if failures:
     print('MVQUEEN CONTROL REGISTRY: FAIL')
