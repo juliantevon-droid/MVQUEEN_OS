@@ -49,6 +49,13 @@ contribution_before_ads =
 max_break_even_cac =
     max(0, contribution_before_ads)
 
+max_cac_at_target_margin =
+    max(
+      0,
+      contribution_before_ads
+      - selling_price × target_contribution_margin
+    )
+
 contribution_after_target_cac =
     contribution_before_ads
     - target_cac
@@ -60,6 +67,10 @@ contribution_margin_after_target_cac =
 break_even_roas =
     selling_price
     / max_break_even_cac
+
+target_margin_roas_floor =
+    selling_price
+    / max_cac_at_target_margin
 
 target_roas =
     selling_price
@@ -120,6 +131,15 @@ Campaign creation, enabling, pausing, and budget changes require:
 - non-stale evidence
 - policy fingerprint
 - positive max break-even CAC
+- positive max CAC at target margin
+- target-margin ROAS floor
 - health evaluation no older than 24 hours
 
 The external ad adapter must fail closed when any requirement is absent.
+
+
+### Interpretation
+
+`max_break_even_cac` is the absolute acquisition-cost ceiling before the order reaches zero contribution. It is **not** the scaling target.
+
+`max_cac_at_target_margin` is the stricter acquisition-cost ceiling that preserves the configured contribution-margin target. Paid-media scaling should use this target-margin ceiling and its corresponding ROAS floor, not the break-even number.
