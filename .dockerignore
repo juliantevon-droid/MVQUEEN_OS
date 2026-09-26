@@ -1,0 +1,14 @@
+.git
+.github
+.env
+.env.*
+!.env.example
+node_modules
+build
+dist
+coverage
+*.log
+*.sqlite
+*.sqlite3
+.DS_Store
+98_Archive
