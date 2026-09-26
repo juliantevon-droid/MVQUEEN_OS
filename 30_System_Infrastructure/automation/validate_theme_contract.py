@@ -13,6 +13,7 @@ REQUIRED = {
     "layout/theme.liquid", "assets/mvqueen.css", "assets/mvqueen-design-system.css",
     "assets/mvqueen-header.css", "assets/mvqueen-product.css", "assets/brand-gateway.css",
     "assets/mvqueen.js", "assets/mvqueen-ux.js", "config/settings_schema.json", "locales/en.default.json",
+    "locales/es.json", "locales/fr.json", "locales/pt-BR.json",
     "sections/header.liquid", "sections/hero.liquid", "sections/brand-gateway.liquid",
     "sections/miss-princess-experience.liquid",
     "sections/editorial-curation.liquid", "sections/announcement-bar.liquid",
@@ -108,6 +109,13 @@ def main() -> int:
         "when 'checkout_totals'",
         "when 'shopify_checkout'",
         "when 'order_updates'",
+        "when 'product'",
+        "when 'cart'",
+        "when 'footer'",
+        "when 'collection'",
+        "when 'homepage'",
+        "when 'mvqueen'",
+        "when 'miss_princess'",
         "'product.trust.secure_title' | t",
         "'product.trust.connection_title' | t",
         "'product.trust.policy_title' | t",
@@ -118,7 +126,7 @@ def main() -> int:
 
     locale = json.loads(read("locales/en.default.json"))
     trust_locale = locale.get("product", {}).get("trust", {})
-    for key in [
+    trust_keys = [
         "aria_label", "secure_title", "secure_text", "connection_title", "connection_text",
         "policy_title", "policy_text", "support_title", "support_text", "payments_label",
         "payment_title", "payment_text", "shipping_title", "shipping_text",
@@ -127,9 +135,17 @@ def main() -> int:
         "size_title", "size_text", "care_title", "care_text",
         "contact_title", "contact_text", "totals_title", "totals_text",
         "shopify_title", "shopify_text", "updates_title", "updates_text",
-    ]:
+    ]
+    for key in trust_keys:
         if not trust_locale.get(key):
             failures.append(f"en.default.json missing trust translation: product.trust.{key}")
+
+    for locale_name in ["es.json", "fr.json", "pt-BR.json"]:
+        translated = json.loads(read(f"locales/{locale_name}"))
+        translated_trust = translated.get("product", {}).get("trust", {})
+        for key in trust_keys:
+            if not translated_trust.get(key):
+                failures.append(f"{locale_name} missing trust translation: product.trust.{key}")
 
     contact = read("sections/contact-page.liquid")
     for token in ["{% form 'contact'", 'name="contact[email]"', 'name="contact[body]"', 'required aria-required="true"']:
