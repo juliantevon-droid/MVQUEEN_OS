@@ -1,0 +1,45 @@
+{
+  "general": {
+    "404": {
+      "title": "Página não encontrada"
+    }
+  },
+  "product": {
+    "trust": {
+      "aria_label": "Segurança na compra",
+      "secure_title": "Checkout seguro",
+      "secure_text": "Checkout protegido pela Shopify.",
+      "connection_title": "Conexão criptografada",
+      "connection_text": "Proteção SSL enquanto você navega e compra.",
+      "policy_title": "Políticas claras",
+      "policy_text": "Informações de envio e devolução estão disponíveis antes da compra.",
+      "support_title": "Atendimento ao cliente",
+      "support_text": "Há suporte disponível quando você precisar.",
+      "payments_label": "Formas de pagamento aceitas",
+      "payment_title": "Opções de pagamento",
+      "payment_text": "As formas de pagamento habilitadas aparecem no checkout.",
+      "shipping_title": "Informações de envio",
+      "shipping_text": "As informações de entrega estão disponíveis antes da compra.",
+      "returns_title": "Informações de devolução",
+      "returns_text": "As condições de devolução estão disponíveis antes da compra.",
+      "review_title": "Revise antes de pedir",
+      "review_text": "Confirme seus itens e o total antes de finalizar o pedido.",
+      "privacy_title": "Política de privacidade",
+      "privacy_text": "Nossa política de privacidade explica como as informações pessoais são tratadas.",
+      "details_title": "Detalhes do produto",
+      "details_text": "Materiais, ingredientes, tamanhos ou cuidados são exibidos quando disponíveis.",
+      "size_title": "Guia de tamanho e caimento",
+      "size_text": "As informações de tamanho são exibidas quando disponíveis.",
+      "care_title": "Guia de cuidados",
+      "care_text": "As instruções de cuidados são exibidas quando disponíveis.",
+      "contact_title": "Falar com o suporte",
+      "contact_text": "Opções de contato com o atendimento ao cliente estão disponíveis.",
+      "totals_title": "Totais do checkout",
+      "totals_text": "Impostos e frete são calculados no checkout quando aplicável.",
+      "shopify_title": "Checkout Shopify",
+      "shopify_text": "Seu pedido é concluído pelo checkout da Shopify.",
+      "updates_title": "Atualizações do pedido",
+      "updates_text": "A confirmação e o status do pedido ficam disponíveis após a compra."
+    }
+  }
+}
