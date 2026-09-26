@@ -23,6 +23,7 @@ try {
     MVQ_EDITORIAL_PUBLISH_ENABLED: "true",
     MVQ_AUTO_CONTENT_SURFACES_ENABLED: "true",
     MVQ_PRODUCT_RECONCILE_ENABLED: "true",
+    MVQ_PRODUCT_CONTINUOUS_WORKER_REQUIRED: "true",
     MVQ_PRODUCT_WORKER_TOKEN: "12345678901234567890123456789012",
     MVQ_MEDIA_ALT_SYNC_ENABLED: "true",
     MVQ_COST_SYNC_ENABLED: "true",
@@ -33,6 +34,7 @@ try {
   assert.equal(ready.capabilities.editorialSeo, true);
   assert.equal(ready.capabilities.contentSurfaces, true);
   assert.equal(ready.capabilities.reconciliation, true);
+  assert.equal(ready.capabilities.continuousWorkerRequired, true);
   assert.equal(ready.capabilities.durableWorker, true);
   assert.equal(ready.capabilities.missingAltRepair, true);
 
