@@ -21,6 +21,9 @@ export type ProductSnapshot = {
   commercialMetafields?: {
     nodes?: { key: string; value?: string | null; type?: string | null }[];
   };
+  shippingMetafields?: {
+    nodes?: { key: string; value?: string | null; type?: string | null }[];
+  };
 };
 
 export type Classification = {
