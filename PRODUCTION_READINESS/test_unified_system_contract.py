@@ -66,7 +66,10 @@ class UnifiedSystemContractTests(unittest.TestCase):
     def test_react_app_is_only_declared_live_writer(self):
         text = (ROOT / "app/lib/product-processor.ts").read_text(encoding="utf-8")
         self.assertIn('MVQ_WRITE_ENABLED', text)
+        self.assertIn('MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED', text)
+        self.assertIn('MVQ_EDITORIAL_PUBLISH_ENABLED', text)
         self.assertIn('MVQ_APPROVED_PRODUCT_GIDS', text)
+        self.assertIn('buildAutomatedProductContent', text)
         self.assertIn('admin.graphql(PRODUCT_UPDATE', text)
         self.assertNotIn('generateCatalogPackage', text)
         self.assertNotIn('MVQ_CONTENT_REWRITE_ENABLED', text)
