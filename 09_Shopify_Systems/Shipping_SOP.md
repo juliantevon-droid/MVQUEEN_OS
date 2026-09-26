@@ -12,31 +12,27 @@ Shipping is not logistics. It is the last brand touchpoint before she holds the 
 
 ## Shipping Standards
 
-### Processing Time
-| Order Type | Processing Time |
-|-----------|----------------|
-| Standard orders | 1-3 business days |
-| Pre-orders | As stated on product page |
-| High-volume periods (launches, holidays) | 3-5 business days — communicate proactively |
+### Customer-facing delivery estimates
 
-Processing time = time from order to handoff to carrier.
-Never count weekends or holidays unless explicitly stated.
+Customer-facing shipping times are product-specific and evidence-based.
 
-### Shipping Methods
+1. Use the product metafield `shipping.delivery_estimate`.
+2. If a verified supplier/carrier transit window exists, store that exact supported range.
+3. If no verified window exists, use: **Confirmed at checkout based on destination and fulfillment source.**
+4. Never publish an optimistic generic transit promise simply because a supplier, old document, or sample configuration once used it.
+5. Checkout options and the current Shopify delivery profile remain authoritative for a specific order.
 
-| Method | Carrier | Estimated Transit | Cost |
-|--------|---------|-----------------|------|
-| Standard | USPS First Class / UPS Ground | 5-8 business days | Calculated at checkout |
-| Expedited | USPS Priority / UPS 2-Day | 2-3 business days | Calculated at checkout |
-| Express | UPS Overnight | 1 business day | Calculated at checkout |
-| Free Shipping | USPS First Class | 5-8 business days | Orders over $[threshold] |
+### Internal processing targets
 
-### International Shipping
-- Available to: [list countries]
-- Carrier: [carrier]
-- Estimated transit: 10-21 business days
-- Customs duties: Customer responsibility — stated clearly at checkout
-- Tracking: Provided but may have gaps in international updates
+Internal handling targets may be used operationally, but they are not customer promises unless the active fulfillment source supports them and they have been approved for customer-facing use.
+
+### Shipping methods
+
+Carrier/service names, rates, and availability come from the active Shopify delivery profile. Current profiles may include general, supplier-specific, or location-specific methods. Do not hard-code carriers or transit days into customer copy unless verified against the current profile or fulfillment source.
+
+### International shipping
+
+Do not promise international delivery by default. Availability is controlled by current Shopify shipping zones and must be confirmed at checkout.
 
 ---
 
