@@ -16,7 +16,9 @@ export type PaidMediaCommercialEvidence = {
   stale: boolean;
   evaluatedAt: string;
   maxBreakEvenCac: number | null;
+  maxCacAtTargetMargin: number | null;
   breakEvenRoas: number | null;
+  targetMarginRoasFloor: number | null;
   policyFingerprint: string;
 };
 
@@ -91,6 +93,13 @@ export function assertApprovedPaidMediaChange(change: PaidMediaChange): void {
       evidence.maxBreakEvenCac <= 0
     ) {
       throw new Error(`Commercial evidence has no positive break-even CAC for ${evidence.productGid}.`);
+    }
+    if (
+      evidence.maxCacAtTargetMargin === null ||
+      !Number.isFinite(evidence.maxCacAtTargetMargin) ||
+      evidence.maxCacAtTargetMargin <= 0
+    ) {
+      throw new Error(`Commercial evidence has no positive target-margin CAC ceiling for ${evidence.productGid}.`);
     }
   }
 
