@@ -1,1 +1,167 @@
-<div class="mvq-pdp-trust" aria-label="Shopping reassurance"><span>Secure checkout</span><span>SSL protected</span><span>Clear returns</span><span>MVQueen support</span></div>
+{% doc %}
+Renders a reusable trust badge cluster with enabled payment method icons.
+
+@param {boolean} [compact] - Uses tighter spacing for cart and narrow surfaces.
+
+@example
+{% render 'trust-badges' %}
+{% enddoc %}
+
+{% liquid
+  assign trust_classes = 'mvq-trust-cluster'
+  if compact
+    assign trust_classes = trust_classes | append: ' mvq-trust-cluster--compact'
+  endif
+%}
+
+<div class="{{ trust_classes }}" aria-label="{{ 'product.trust.aria_label' | t }}">
+  <div class="mvq-trust-cluster__grid">
+    <div class="mvq-trust-cluster__item">
+      <span class="mvq-trust-cluster__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7 3v5c0 4.7-2.9 8.2-7 10-4.1-1.8-7-5.3-7-10V6l7-3Z"/><path d="m9.4 12 1.7 1.7 3.8-4"/></svg>
+      </span>
+      <span>
+        <strong>{{ 'product.trust.secure_title' | t }}</strong>
+        <small>{{ 'product.trust.secure_text' | t }}</small>
+      </span>
+    </div>
+
+    <div class="mvq-trust-cluster__item">
+      <span class="mvq-trust-cluster__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      </span>
+      <span>
+        <strong>{{ 'product.trust.connection_title' | t }}</strong>
+        <small>{{ 'product.trust.connection_text' | t }}</small>
+      </span>
+    </div>
+
+    <div class="mvq-trust-cluster__item">
+      <span class="mvq-trust-cluster__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M3 7h11v9H3z"/><path d="M14 10h3l4 4v2h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+      </span>
+      <span>
+        <strong>{{ 'product.trust.policy_title' | t }}</strong>
+        <small>{{ 'product.trust.policy_text' | t }}</small>
+      </span>
+    </div>
+
+    <div class="mvq-trust-cluster__item">
+      <span class="mvq-trust-cluster__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h16v11H8l-4 3V5Z"/><path d="M8 9h8M8 12h5"/></svg>
+      </span>
+      <span>
+        <strong>{{ 'product.trust.support_title' | t }}</strong>
+        <small>{{ 'product.trust.support_text' | t }}</small>
+      </span>
+    </div>
+  </div>
+
+  {% if shop.enabled_payment_types != blank %}
+    <div class="mvq-trust-cluster__payments">
+      <span class="mvq-trust-cluster__payment-label">{{ 'product.trust.payments_label' | t }}</span>
+      <ul class="mvq-trust-cluster__payment-list" role="list">
+        {% for type in shop.enabled_payment_types %}
+          <li>{{ type | payment_type_svg_tag: class: 'mvq-trust-cluster__payment-icon' }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+.mvq-trust-cluster {
+  margin: 1rem 0 1.6rem;
+  padding: 14px;
+  border: 1px solid var(--mvq-line);
+  border-radius: var(--mvq-radius);
+  background: rgba(255, 255, 255, .76);
+}
+.mvq-trust-cluster__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.mvq-trust-cluster__item {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  min-width: 0;
+}
+.mvq-trust-cluster__icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--mvq-ivory);
+  color: var(--mvq-rose-strong);
+}
+.mvq-trust-cluster__icon svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mvq-trust-cluster__item strong {
+  display: block;
+  font-size: .68rem;
+  line-height: 1.25;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.mvq-trust-cluster__item small {
+  display: block;
+  margin-top: 2px;
+  font-size: .72rem;
+  line-height: 1.4;
+  color: var(--mvq-mink);
+}
+.mvq-trust-cluster__payments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--mvq-line);
+}
+.mvq-trust-cluster__payment-label {
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--mvq-mink);
+}
+.mvq-trust-cluster__payment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mvq-trust-cluster__payment-list li {
+  display: flex;
+}
+.mvq-trust-cluster__payment-icon {
+  width: auto;
+  height: 24px;
+}
+.mvq-trust-cluster--compact {
+  margin: 14px 0 0;
+  padding: 12px;
+}
+.mvq-trust-cluster--compact .mvq-trust-cluster__item small {
+  font-size: .68rem;
+}
+@media (max-width: 380px) {
+  .mvq-trust-cluster__grid {
+    grid-template-columns: 1fr;
+  }
+}
+{% endstylesheet %}
