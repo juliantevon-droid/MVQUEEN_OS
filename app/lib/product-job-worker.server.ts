@@ -22,6 +22,25 @@ function retryReady(job: { attempts: number; startedAt: Date | null }, now: numb
   return started + retryDelayMs(job.attempts) <= now;
 }
 
+
+export async function recordProductWorkerHeartbeat(
+  state: "continuous" | "fallback" | "stopping" | "stopped" | "error",
+  details?: Record<string, unknown>,
+) {
+  return prisma.runtimeHeartbeat.upsert({
+    where: { name: "product-worker" },
+    update: {
+      state,
+      detailsJson: details ? JSON.stringify(details) : null,
+    },
+    create: {
+      name: "product-worker",
+      state,
+      detailsJson: details ? JSON.stringify(details) : null,
+    },
+  });
+}
+
 export async function recoverStaleProductJobs() {
   const staleMinutes = envInt("MVQ_PRODUCT_STALE_MINUTES", 10, 2, 120);
   const cutoff = new Date(Date.now() - staleMinutes * 60_000);
