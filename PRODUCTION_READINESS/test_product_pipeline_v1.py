@@ -87,13 +87,13 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertTrue(result["content_suite"]["metafields"]["catalog.short_tail_keywords"]["value"])
         self.assertEqual(
             result["shipping"]["delivery_estimate"],
-            "Confirmed at checkout based on destination and fulfillment source.",
+            "7–15 business days",
         )
         self.assertEqual(
             result["content_suite"]["metafields"]["shipping.delivery_estimate"]["value"],
             result["shipping"]["delivery_estimate"],
         )
-        self.assertTrue(any("shipping uses checkout fallback" in warning.lower() for warning in result["qa"]["warnings"]))
+        self.assertTrue(any("shipping uses the governed 7–15 business-day store default" in warning.lower() for warning in result["qa"]["warnings"]))
         self.assertTrue(any("satin" in phrase.lower() for phrase in result["seo"]["long_tail_keywords"]))
         self.assertTrue(result["images"]["items"][0]["alt"])
         self.assertTrue(any(term in result["copy"]["short_description"].lower() for term in ("satin", "polished", "style")))
