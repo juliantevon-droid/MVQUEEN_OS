@@ -108,7 +108,9 @@ model ProductCommercialHealthState {
   state                               String
   advertisingEligibility              String
   maxBreakEvenCac                     Float?
+  maxCacAtTargetMargin                Float?
   breakEvenRoas                       Float?
+  targetMarginRoasFloor               Float?
   targetRoas                          Float?
   contributionAfterTargetCac          Float?
   contributionMarginAfterTargetCac    Float?
@@ -129,7 +131,9 @@ model ProductCommercialHealthSnapshot {
   state                               String
   advertisingEligibility              String
   maxBreakEvenCac                     Float?
+  maxCacAtTargetMargin                Float?
   breakEvenRoas                       Float?
+  targetMarginRoasFloor               Float?
   targetRoas                          Float?
   contributionAfterTargetCac          Float?
   contributionMarginAfterTargetCac    Float?
