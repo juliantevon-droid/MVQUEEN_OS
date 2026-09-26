@@ -22,7 +22,7 @@ export type CanonicalProductRecord = {
   };
   shipping: {
     delivery_estimate: string;
-    estimate_source: "verified_product_fact" | "checkout_fallback";
+    estimate_source: "verified_product_fact" | "store_default" | "checkout_fallback";
     specific_window_verified: boolean;
   };
   copy: {
