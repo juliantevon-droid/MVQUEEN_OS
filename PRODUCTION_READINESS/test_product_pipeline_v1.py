@@ -137,6 +137,8 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertEqual(commercial["funnel_stage"], "consideration")
         self.assertIn("PRODUCT → COMPLEMENT → BUNDLE → THRESHOLD", commercial["aov_strategy"]["path"])
         self.assertIn("verified_specifications", commercial["landing_page_requirements"])
+        self.assertEqual(commercial["profitability_authority"], "shopify_app_commercial_health")
+        self.assertEqual(commercial["advertising_guardrail"], "blocked_without_fresh_runtime_commercial_evidence")
 
     def test_canonical_creative_engine_is_enforced(self):
         result = run(self.base())
