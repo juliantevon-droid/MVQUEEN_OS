@@ -1,0 +1,163 @@
+{
+  "system": "MVQUEEN_OS",
+  "version": "3.0.0",
+  "authority": "GitHub main",
+  "storefrontDeploymentPolicy": "staging-first-no-live-auto-publish",
+  "brands": {
+    "mvqueen": {
+      "displayName": "MVQueen",
+      "tone": "luxury-bold-mature-neutral"
+    },
+    "miss_princess": {
+      "displayName": "Miss.Princess",
+      "tone": "soft-bright-playful-colorful"
+    }
+  },
+  "trustBadges": {
+    "available": [
+      "secure_checkout",
+      "encrypted_connection",
+      "clear_policies",
+      "customer_care",
+      "payment_options",
+      "shipping_details",
+      "returns_info",
+      "order_review",
+      "privacy_policy",
+      "product_details",
+      "size_fit",
+      "care_guidance",
+      "contact_support",
+      "checkout_totals",
+      "shopify_checkout",
+      "order_updates"
+    ],
+    "presets": {
+      "product": {
+        "badges": [
+          "secure_checkout",
+          "shipping_details",
+          "returns_info",
+          "payment_options"
+        ],
+        "layout": "grid",
+        "showPaymentIcons": true,
+        "hideDescriptions": false
+      },
+      "cart": {
+        "badges": [
+          "secure_checkout",
+          "checkout_totals",
+          "customer_care"
+        ],
+        "layout": "stack",
+        "showPaymentIcons": true,
+        "hideDescriptions": false
+      },
+      "footer": {
+        "badges": [
+          "encrypted_connection",
+          "privacy_policy",
+          "contact_support"
+        ],
+        "layout": "minimal",
+        "showPaymentIcons": false,
+        "hideDescriptions": true
+      },
+      "collection": {
+        "badges": [
+          "product_details",
+          "shipping_details",
+          "customer_care"
+        ],
+        "layout": "minimal",
+        "showPaymentIcons": false,
+        "hideDescriptions": true
+      },
+      "homepage": {
+        "badges": [
+          "secure_checkout",
+          "clear_policies",
+          "customer_care",
+          "shipping_details"
+        ],
+        "layout": "row",
+        "showPaymentIcons": false,
+        "hideDescriptions": false
+      },
+      "mvqueen": {
+        "badges": [
+          "secure_checkout",
+          "shipping_details",
+          "returns_info",
+          "customer_care"
+        ],
+        "layout": "grid",
+        "showPaymentIcons": true,
+        "hideDescriptions": false
+      },
+      "miss_princess": {
+        "badges": [
+          "secure_checkout",
+          "shipping_details",
+          "size_fit",
+          "customer_care"
+        ],
+        "layout": "grid",
+        "showPaymentIcons": true,
+        "hideDescriptions": false
+      }
+    }
+  },
+  "localization": {
+    "sourceLocale": "en",
+    "preparedLocales": [
+      "en",
+      "es",
+      "fr",
+      "pt-BR"
+    ],
+    "customerFacingTextPolicy": "translation-keys-first"
+  },
+  "security": {
+    "repositoryExpectedVisibility": "private",
+    "codeqlRequired": true,
+    "dependencyUpdatesRequired": true,
+    "secretPatternScanRequired": true,
+    "protectedBranch": "main"
+  },
+  "performance": {
+    "mobileFirst": true,
+    "lighthouseTarget": 90,
+    "maxThemeCssBytes": 250000,
+    "maxThemeJsBytes": 200000,
+    "maxSingleAssetBytes": 150000
+  },
+  "observability": {
+    "structuredJsonLogs": true,
+    "redactSecrets": true,
+    "includeCorrelationIds": true,
+    "workerHeartbeatRequired": true,
+    "deadLetterVisibilityRequired": true
+  },
+  "automation": {
+    "productIngest": "event-driven-plus-reconciliation",
+    "retries": "exponential-backoff",
+    "staleLeaseRecovery": true,
+    "deadLetterQueue": true,
+    "protectedFields": [
+      "sku",
+      "inventory",
+      "variant_identity",
+      "handle",
+      "source_media_relationships"
+    ]
+  },
+  "recovery": {
+    "sourceControl": "GitHub main",
+    "commerceAuthority": "Shopify",
+    "databaseRestoreTestRequired": true,
+    "themeRollbackTestRequired": true,
+    "catalogSnapshotRestoreRequiresApproval": true
+  }
+}
