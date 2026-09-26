@@ -48,6 +48,8 @@ assert.equal((record.content_suite.collection as any).auto_publish, true);
 assert.ok((record.content_suite.collection as any).target_handles.includes("dresses"));
 assert.equal((record.content_suite.site_faq as any).scope, "product");
 assert.equal(record.pricing.approved_publish_price, null);
+assert.equal(record.shipping.delivery_estimate, "Confirmed at checkout based on destination and fulfillment source.");
+assert.equal((record.content_suite.metafields as any)["shipping.delivery_estimate"].value, record.shipping.delivery_estimate);
 
 const sparseProduct: ProductSnapshot = {
   ...richProduct,
