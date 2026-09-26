@@ -52,6 +52,8 @@ def build_commercial(record: Dict[str, Any]) -> Dict[str, Any]:
         "trust_inputs": ["verified_product_facts", "shipping_and_returns_policy"],
         "objections_responses": objections,
         "funnel_stage": "consideration",
+        "profitability_authority": "shopify_app_commercial_health",
+        "advertising_guardrail": "blocked_without_fresh_runtime_commercial_evidence",
         "aov_strategy": {
             "path": "PRODUCT → COMPLEMENT → BUNDLE → THRESHOLD",
             "related_products": list(record.get("merchandising", {}).get("related_products", [])),
@@ -70,4 +72,8 @@ def validate_commercial(commercial: Dict[str, Any]) -> List[str]:
         errors.append("Offer eligibility is required")
     if commercial.get("price_guardrail") == "blocked_until_price_approved":
         errors.append("Commercial release is blocked until price approval")
+    if commercial.get("profitability_authority") != "shopify_app_commercial_health":
+        errors.append("Runtime commercial health must remain the profitability authority")
+    if commercial.get("advertising_guardrail") != "blocked_without_fresh_runtime_commercial_evidence":
+        errors.append("Paid media must remain blocked without fresh runtime commercial evidence")
     return errors
