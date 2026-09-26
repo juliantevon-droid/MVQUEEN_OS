@@ -35,6 +35,19 @@ export type Classification = {
   confidence: "high" | "medium" | "review";
 };
 
+const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
+  [
+    /\b(?:active(?:wear)?\s*set|workout\s*set|sports?\s*bra\b[\s\S]*\bshorts?\b|shorts?\b[\s\S]*\bsports?\s*bra\b)/i,
+    {
+      department: "Fashion",
+      family: "Activewear",
+      subcollection: "Activewear Sets",
+      route: "activewear-sets",
+      productType: "Activewear Set",
+    },
+  ],
+];
+
 const ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
   [/\b(pendant)\b/i, {department:"Jewelry",family:"Necklaces",subcollection:"Pendant Necklaces",route:"pendants",productType:"Pendant Necklace"}],
   [/\b(necklace|chain)\b/i, {department:"Jewelry",family:"Necklaces",subcollection:"Necklaces",route:"necklaces",productType:"Necklace"}],
@@ -66,6 +79,11 @@ const ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
 
 export function classifyProduct(title: string, description = "", productType = ""): Classification {
   const text = `${title} ${productType} ${description.replace(/<[^>]+>/g, " ")}`;
+  const compoundMatch = COMPOUND_ROUTES.find(([pattern]) => pattern.test(text));
+  if (compoundMatch) {
+    return { ...compoundMatch[1], confidence: "high" };
+  }
+
   const matches = ROUTES.filter(([pattern]) => pattern.test(text));
 
   if (!matches.length) {
