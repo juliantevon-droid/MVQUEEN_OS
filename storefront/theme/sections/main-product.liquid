@@ -38,6 +38,11 @@
           assign pendant_length = product.metafields.attributes.size_length.value | default: product.metafields.custom.pendant_length.value
           assign total_weight = product.metafields.attributes.total_weight.value | default: product.metafields.custom.total_weight.value
 
+          assign shipping_estimate = product.metafields.shipping.delivery_estimate.value
+          if shipping_estimate == blank
+            assign shipping_estimate = 'Confirmed at checkout based on destination and fulfillment source.'
+          endif
+
           assign canonical_ingredients = product.metafields.attributes.ingredients
           assign canonical_ingredient = product.metafields.attributes.ingredient
           assign canonical_key_ingredient = product.metafields.attributes.key_ingredient
@@ -97,6 +102,12 @@
           <button class="mvq-button mvq-button--gold" type="submit" name="add" {% unless product.available %}disabled{% endunless %}>{% if product.available %}Add to bag{% else %}Sold out{% endif %}</button>
         {% endform %}
 
+        <div class="mvq-shipping-estimate" aria-label="Estimated delivery time">
+          <span class="mvq-shipping-estimate__label">Estimated delivery</span>
+          <strong>{{ shipping_estimate }}</strong>
+          <a href="/pages/shipping-policy">Shipping details</a>
+        </div>
+
         {% render 'trust-badges' %}
 
         <div class="mvq-product-accordions">
@@ -144,6 +155,7 @@
 
           <details>
             <summary>Shipping & returns</summary>
+            <p class="mvq-product-shipping-estimate"><strong>Estimated delivery:</strong> {{ shipping_estimate }}</p>
             {% if product.metafields.custom.shipping_note != blank %}
               <div class="mvq-product-shipping-note">{{ product.metafields.custom.shipping_note | metafield_tag }}</div>
             {% endif %}
