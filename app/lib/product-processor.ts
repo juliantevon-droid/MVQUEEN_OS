@@ -200,7 +200,9 @@ export async function processProductJob(jobId: string) {
       state: decision.commercialHealth.state,
       advertisingEligibility: decision.commercialHealth.advertisingEligibility,
       maxBreakEvenCac: decision.commercialHealth.maxBreakEvenCac,
+      maxCacAtTargetMargin: decision.commercialHealth.maxCacAtTargetMargin,
       breakEvenRoas: decision.commercialHealth.breakEvenRoas,
+      targetMarginRoasFloor: decision.commercialHealth.targetMarginRoasFloor,
       targetRoas: decision.commercialHealth.targetRoas,
       contributionAfterTargetCac: decision.commercialHealth.contributionAfterTargetCac,
       contributionMarginAfterTargetCac:
@@ -317,8 +319,14 @@ export async function processProductJob(jobId: string) {
       ...(commercialHealth.maxBreakEvenCac !== null
         ? [{ namespace: "commercial", key: "max_break_even_cac", type: "number_decimal", value: String(commercialHealth.maxBreakEvenCac) }]
         : []),
+      ...(commercialHealth.maxCacAtTargetMargin !== null
+        ? [{ namespace: "commercial", key: "max_cac_at_target_margin", type: "number_decimal", value: String(commercialHealth.maxCacAtTargetMargin) }]
+        : []),
       ...(commercialHealth.breakEvenRoas !== null
         ? [{ namespace: "commercial", key: "break_even_roas", type: "number_decimal", value: String(commercialHealth.breakEvenRoas) }]
+        : []),
+      ...(commercialHealth.targetMarginRoasFloor !== null
+        ? [{ namespace: "commercial", key: "target_margin_roas_floor", type: "number_decimal", value: String(commercialHealth.targetMarginRoasFloor) }]
         : []),
       ...(commercialHealth.targetRoas !== null
         ? [{ namespace: "commercial", key: "target_roas", type: "number_decimal", value: String(commercialHealth.targetRoas) }]
