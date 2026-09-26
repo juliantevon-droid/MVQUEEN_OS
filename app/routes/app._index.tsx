@@ -43,6 +43,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     receivedJobs,
     processingJobs,
     failedJobs,
+    deadLetterJobs,
     commercialEvaluated,
     commercialHealthy,
     commercialStale,
@@ -50,8 +51,9 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     advertisingEligible,
   ] = await Promise.all([
     prisma.productJob.count({ where: { status: "received" } }),
-    prisma.productJob.count({ where: { status: "processing" } }),
+    prisma.productJob.count({ where: { status: { in: ["leased", "processing"] } } }),
     prisma.productJob.count({ where: { status: "failed" } }),
+    prisma.productJob.count({ where: { status: "dead_letter" } }),
     prisma.productCommercialHealthState.count({ where: { shop: session.shop } }),
     prisma.productCommercialHealthState.count({
       where: { shop: session.shop, state: "healthy", stale: false },
@@ -79,6 +81,10 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       automaticProductEnrollment:
         process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true" ? "enabled" : "manual-allowlist",
       editorialPublish: process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      contentSurfaces: process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED === "true" ? "enabled" : "disabled",
+      reconciliation: process.env.MVQ_PRODUCT_RECONCILE_ENABLED === "true" ? "enabled" : "disabled",
+      durableWorker:
+        (process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim().length ?? 0) >= 32 ? "configured" : "not-configured",
       mediaAltSync: process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true" ? "enabled" : "disabled",
       pricePublish: process.env.MVQ_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       pricing: commercial.missing.length ? "needs-configuration" : "advisory-ready",
@@ -88,7 +94,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       paidMedia: integrations.paidMedia.state,
       analytics: integrations.analytics.state,
       lifecycle: integrations.lifecycle.state,
-      queue: { receivedJobs, processingJobs, failedJobs },
+      queue: { receivedJobs, processingJobs, failedJobs, deadLetterJobs },
       commercialHealth: {
         evaluated: commercialEvaluated,
         healthy: commercialHealthy,
@@ -121,6 +127,9 @@ export default function Dashboard() {
         <s-paragraph>Product write mode: {runtime.productWrites}</s-paragraph>
         <s-paragraph>Automatic product enrollment: {runtime.automaticProductEnrollment}</s-paragraph>
         <s-paragraph>Automatic editorial/SEO publishing: {runtime.editorialPublish}</s-paragraph>
+        <s-paragraph>FAQ/blog/collection content surfaces: {runtime.contentSurfaces}</s-paragraph>
+        <s-paragraph>Missed-webhook reconciliation: {runtime.reconciliation}</s-paragraph>
+        <s-paragraph>Durable worker secret: {runtime.durableWorker}</s-paragraph>
         <s-paragraph>Automatic missing-ALT repair: {runtime.mediaAltSync}</s-paragraph>
         <s-paragraph>Approved price publishing: {runtime.pricePublish}</s-paragraph>
         <s-paragraph>Pricing/profitability: {runtime.pricing}</s-paragraph>
@@ -157,7 +166,8 @@ export default function Dashboard() {
       <s-section heading="Product queue">
         <s-paragraph>Received: {runtime.queue.receivedJobs}</s-paragraph>
         <s-paragraph>Processing: {runtime.queue.processingJobs}</s-paragraph>
-        <s-paragraph>Failed: {runtime.queue.failedJobs}</s-paragraph>
+        <s-paragraph>Failed/retrying: {runtime.queue.failedJobs}</s-paragraph>
+        <s-paragraph>Dead-letter: {runtime.queue.deadLetterJobs}</s-paragraph>
       </s-section>
     </s-page>
   );
