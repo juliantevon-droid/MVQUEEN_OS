@@ -39,6 +39,16 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       ? "ready"
       : "reauthorization-required";
 
+  const workerHeartbeat = await prisma.runtimeHeartbeat.findUnique({
+    where: { name: "product-worker" },
+    select: { state: true, updatedAt: true },
+  });
+
+  const workerHeartbeatFresh = Boolean(
+    workerHeartbeat?.state === "continuous" &&
+    Date.now() - workerHeartbeat.updatedAt.getTime() <= 120_000,
+  );
+
   const [
     receivedJobs,
     processingJobs,
@@ -85,6 +95,11 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       reconciliation: process.env.MVQ_PRODUCT_RECONCILE_ENABLED === "true" ? "enabled" : "disabled",
       durableWorker:
         (process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim().length ?? 0) >= 32 ? "configured" : "not-configured",
+      workerHeartbeat: {
+        state: workerHeartbeat?.state ?? "missing",
+        fresh: workerHeartbeatFresh,
+        lastSeenAt: workerHeartbeat?.updatedAt?.toISOString() ?? null,
+      },
       mediaAltSync: process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true" ? "enabled" : "disabled",
       pricePublish: process.env.MVQ_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       pricing: commercial.missing.length ? "needs-configuration" : "advisory-ready",
@@ -130,6 +145,12 @@ export default function Dashboard() {
         <s-paragraph>FAQ/blog/collection content surfaces: {runtime.contentSurfaces}</s-paragraph>
         <s-paragraph>Missed-webhook reconciliation: {runtime.reconciliation}</s-paragraph>
         <s-paragraph>Durable worker secret: {runtime.durableWorker}</s-paragraph>
+        <s-paragraph>
+          Continuous worker heartbeat: {runtime.workerHeartbeat.fresh ? "healthy" : "not healthy"} · {runtime.workerHeartbeat.state}
+        </s-paragraph>
+        <s-paragraph>
+          Worker last seen: {runtime.workerHeartbeat.lastSeenAt ?? "not recorded"}
+        </s-paragraph>
         <s-paragraph>Automatic missing-ALT repair: {runtime.mediaAltSync}</s-paragraph>
         <s-paragraph>Approved price publishing: {runtime.pricePublish}</s-paragraph>
         <s-paragraph>Pricing/profitability: {runtime.pricing}</s-paragraph>
