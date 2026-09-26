@@ -43,7 +43,7 @@ export function productionPreflight() {
     errors.push("DATABASE_URL must use PostgreSQL in production");
   }
 
-  const requiredScopes = ["read_products", "write_products"];
+  const requiredScopes = ["read_products", "write_products", "read_content", "write_content", "read_inventory"];
   if (truthy("MVQ_MEDIA_ALT_SYNC_ENABLED")) {
     requiredScopes.push("read_files", "write_files");
   }
@@ -60,12 +60,22 @@ export function productionPreflight() {
   if (!truthy("MVQ_EDITORIAL_PUBLISH_ENABLED")) {
     errors.push("MVQ_EDITORIAL_PUBLISH_ENABLED must be true for automatic content/SEO publishing");
   }
+  if (!truthy("MVQ_AUTO_CONTENT_SURFACES_ENABLED")) {
+    errors.push("MVQ_AUTO_CONTENT_SURFACES_ENABLED must be true for FAQ/blog/collection automation");
+  }
+  if (!truthy("MVQ_PRODUCT_RECONCILE_ENABLED")) {
+    errors.push("MVQ_PRODUCT_RECONCILE_ENABLED must be true for missed-webhook recovery");
+  }
+  const workerToken = process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim() ?? "";
+  if (workerToken.length < 32) {
+    errors.push("MVQ_PRODUCT_WORKER_TOKEN must be at least 32 characters for unattended product processing");
+  }
 
   if (!truthy("MVQ_MEDIA_ALT_SYNC_ENABLED")) {
-    warnings.push("Automatic missing-ALT repair is disabled");
+    errors.push("MVQ_MEDIA_ALT_SYNC_ENABLED must be true for full always-on product automation");
   }
   if (!truthy("MVQ_COST_SYNC_ENABLED")) {
-    warnings.push("Verified Shopify unit-cost sync is disabled");
+    errors.push("MVQ_COST_SYNC_ENABLED must be true for full always-on commercial intelligence");
   }
 
   return {
@@ -78,6 +88,9 @@ export function productionPreflight() {
       liveWrites: truthy("MVQ_WRITE_ENABLED"),
       automaticEnrollment: truthy("MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED"),
       editorialSeo: truthy("MVQ_EDITORIAL_PUBLISH_ENABLED"),
+      contentSurfaces: truthy("MVQ_AUTO_CONTENT_SURFACES_ENABLED"),
+      reconciliation: truthy("MVQ_PRODUCT_RECONCILE_ENABLED"),
+      durableWorker: (process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim().length ?? 0) >= 32,
       missingAltRepair: truthy("MVQ_MEDIA_ALT_SYNC_ENABLED"),
       costSync: truthy("MVQ_COST_SYNC_ENABLED"),
     },
