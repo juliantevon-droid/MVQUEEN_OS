@@ -30,7 +30,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "content_intelligence","seo_intelligence","merchandising","pricing",
             "profitability","creative","paid_advertising","analytics","retention",
             "customer_support","inventory","orders_fulfillment","theme","qa","deployment",
-            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health","commercial_cost_sync","commercial_settings"
+            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health","commercial_cost_sync","commercial_settings","commercial_health","advertising_eligibility","catalog_release_gate"
         }
         self.assertTrue(required.issubset(ids))
 
@@ -44,7 +44,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertEqual(pricing["status"], "connected_approval_required")
         self.assertIn("MVQ_PRICE_PUBLISH_ENABLED=true", gates["money"])
         self.assertIn("authenticated human submission", gates["money"])
-        self.assertEqual(ads["execution"], "disabled_until_provider_and_human_approval")
+        self.assertEqual(ads["execution"], "disabled_until_provider_human_approval_and_fresh_commercial_evidence")
 
     def test_connected_capabilities_have_execution_contracts(self):
         by_id = {item["id"]: item for item in self.data["capabilities"]}
@@ -61,7 +61,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "product_intake","canonical_content_release","pricing_profitability",
             "merchandising","storefront_release","paid_media","analytics_learning",
             "retention_lifecycle","order_fulfillment","customer_care","finance",
-            "compliance","backup_recovery","catalog_health_audit","commercial_configuration"
+            "compliance","backup_recovery","catalog_health_audit","commercial_configuration","commercial_health_evaluation","catalog_release_gate"
         }
         self.assertTrue(required.issubset(ids))
         paid = next(item for item in self.workflows["workflows"] if item["id"] == "paid_media")
@@ -83,6 +83,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("MVQ_PRICE_PUBLISH_ENABLED", by_capability["approved_price_publish"]["requirements"])
         self.assertEqual(by_capability["commercial_cost_sync"]["state"], "app_reauthorization_required")
         self.assertIn("read_inventory declared in Shopify app", by_capability["commercial_cost_sync"]["requirements"])
+        self.assertEqual(by_capability["commercial_health"]["state"], "engineered_runtime_migration_required")
+        self.assertIn("advertising_eligibility=eligible for every promoted product", by_capability["paid_advertising"]["requirements"])
 
     def test_runtime_files_exist(self):
         required = [
@@ -99,13 +101,19 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "app/routes/app.catalog-health.tsx",
             "app/lib/enterprise/catalog-audit.ts",
             "app/lib/enterprise/commercial-settings.server.ts",
+            "app/lib/enterprise/commercial-health.ts",
+            "app/lib/enterprise/release-gate.ts",
+            "app/lib/enterprise/paid-media-adapter.ts",
             "app/routes/app.commercial-settings.tsx",
+            "app/routes/app.commercial-health.tsx",
             "storefront/theme/assets/mvqueen-analytics.js",
             "app/lib/enterprise/database-guard.server.ts",
             "prisma/production/schema.prisma",
             "prisma/production/migrations/20260925123000_init/migration.sql",
             "prisma/migrations/20260925170500_add_commercial_settings/migration.sql",
             "prisma/production/migrations/20260925170500_add_commercial_settings/migration.sql",
+            "prisma/migrations/20260926024500_add_commercial_health_state/migration.sql",
+            "prisma/production/migrations/20260926024500_add_commercial_health_state/migration.sql",
         ]
         for rel in required:
             self.assertTrue((ROOT / rel).is_file(), rel)
