@@ -239,6 +239,22 @@
         "ProductCommercialHealthSnapshot migration applied"
       ],
       "side_effects": "internal current health state and append-only health history; approved Shopify metadata only through product worker"
+    },
+    {
+      "capability": "catalog_backfill",
+      "provider": "MVQUEEN_OS + Shopify Admin API",
+      "state": "manual_connected_scheduler_optional",
+      "requirements": [
+        "managed runtime database for production durability",
+        "read_products",
+        "cursor-based scan",
+        "bounded batch processing",
+        "idempotent per-run product job keys",
+        "MVQ_BACKFILL_WORKER_TOKEN with at least 32 characters for unattended execution",
+        "external scheduler only if unattended execution is desired",
+        "MVQ_WRITE_ENABLED=true and MVQ_BACKFILL_WRITE_ENABLED=true for catalog-wide writes"
+      ],
+      "side_effects": "dry-run evaluates and persists internal health state; governed-write uses the existing protected-field-safe product writer only when both write gates pass"
     }
   ]
 }
