@@ -4,6 +4,8 @@ import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
 import { buildAutomatedProductContent } from "./product-content-automation";
+import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automated-content-surfaces";
+import { publishAutomaticContentSurfaces } from "./enterprise/content-publisher";
 import { resolveShippingDeliveryEstimate } from "./shipping-policy";
 import {
   commercialPolicyFingerprint,
@@ -20,6 +22,8 @@ const AUTO_PRODUCT_ENROLLMENT_ENABLED =
   process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true";
 const EDITORIAL_PUBLISH_ENABLED =
   process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true";
+const AUTO_CONTENT_SURFACES_ENABLED =
+  process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED === "true";
 const MEDIA_ALT_SYNC_ENABLED =
   process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true";
 const COST_SYNC_ENABLED = process.env.MVQ_COST_SYNC_ENABLED === "true";
@@ -383,6 +387,18 @@ export async function processProductJob(
                   },
                 ]
               : []),
+            ...(AUTO_CONTENT_SURFACES_ENABLED
+              ? [
+                  {
+                    namespace: "content",
+                    key: "faq",
+                    type: "json",
+                    value: JSON.stringify(
+                      buildAutomatedProductFaq(product, c, automatedContent),
+                    ),
+                  },
+                ]
+              : []),
           ]
         : []),
       ...(verifiedUnitCost
@@ -541,6 +557,19 @@ export async function processProductJob(
           mediaErrors.map((e: { message: string }) => e.message).join("; "),
         );
       }
+    }
+
+    if (AUTO_CONTENT_SURFACES_ENABLED && automatedContent) {
+      const surfaceRecord = buildAutomaticSurfaceRecord(product, c, automatedContent);
+      await publishAutomaticContentSurfaces(
+        admin as unknown as {
+          graphql: (
+            query: string,
+            options?: { variables?: Record<string, unknown> },
+          ) => Promise<Response>;
+        },
+        surfaceRecord,
+      );
     }
 
     await prisma.productJob.update({
