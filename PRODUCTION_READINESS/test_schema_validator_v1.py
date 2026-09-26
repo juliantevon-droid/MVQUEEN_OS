@@ -28,6 +28,8 @@ class SchemaValidatorV1Tests(unittest.TestCase):
                 "aov_strategy": {"path": "PRODUCT → COMPLEMENT → BUNDLE → THRESHOLD", "related_products": [], "bundles": []},
                 "landing_page_requirements": ["value_proposition", "verified_specifications", "pricing", "primary_cta"],
                 "supported_differentiators": [],
+                "profitability_authority": "shopify_app_commercial_health",
+                "advertising_guardrail": "blocked_without_fresh_runtime_commercial_evidence",
             },
             "creative": {"assets": [{
                 "channel": "Meta",
