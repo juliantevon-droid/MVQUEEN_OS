@@ -78,6 +78,9 @@ query MVQueenProductWithCost($id: ID!) {
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
     }
+    shippingMetafields: metafields(first: 10, namespace: "shipping") {
+      nodes { key value type }
+    }
   }
 }`;
 
