@@ -15,7 +15,31 @@
       "policy_text": "Shipping and returns details are available before purchase.",
       "support_title": "Customer care",
       "support_text": "Help is available when you need it.",
-      "payments_label": "Accepted payment methods"
+      "payments_label": "Accepted payment methods",
+      "payment_title": "Payment options",
+      "payment_text": "Enabled payment methods are shown at checkout.",
+      "shipping_title": "Shipping details",
+      "shipping_text": "Delivery information is available before purchase.",
+      "returns_title": "Returns information",
+      "returns_text": "Return terms are available before purchase.",
+      "review_title": "Review before ordering",
+      "review_text": "Confirm your items and order total before placing your order.",
+      "privacy_title": "Privacy policy",
+      "privacy_text": "How personal information is handled is explained in our privacy policy.",
+      "details_title": "Product details",
+      "details_text": "Materials, ingredients, sizing, or care details are shown where available.",
+      "size_title": "Size & fit guidance",
+      "size_text": "Sizing information is shown where available.",
+      "care_title": "Care guidance",
+      "care_text": "Care instructions are shown where available.",
+      "contact_title": "Contact support",
+      "contact_text": "Customer care contact options are available.",
+      "totals_title": "Checkout totals",
+      "totals_text": "Taxes and shipping are calculated at checkout when applicable.",
+      "shopify_title": "Shopify checkout",
+      "shopify_text": "Your order is completed through Shopify checkout.",
+      "updates_title": "Order updates",
+      "updates_text": "Order confirmation and status information are available after purchase."
     }
   }
 }
