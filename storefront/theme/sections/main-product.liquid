@@ -97,6 +97,8 @@
           <button class="mvq-button mvq-button--gold" type="submit" name="add" {% unless product.available %}disabled{% endunless %}>{% if product.available %}Add to bag{% else %}Sold out{% endif %}</button>
         {% endform %}
 
+        {% render 'trust-badges' %}
+
         <div class="mvq-product-accordions">
           {% if product.description != blank %}
             <details>
@@ -181,8 +183,6 @@
           </nav>
         {% endif %}
 
-        {% render 'trust-badges' %}
-        <p class="mvq-trust-note">Secure checkout · Clear product details · Customer care when you need it</p>
       </div>
     </div>
   </div>
