@@ -121,7 +121,7 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
     "structured_data": (
         "snippets/product-schema.liquid",
         (
-            '"@type":"Product"',
+            '"@type": "Product"',
             "assign product_brand = 'MVQueen'",
         ),
     ),
@@ -182,7 +182,7 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
         (
             "shop.enabled_payment_types",
             "payment_type_svg_tag",
-            "Purchase reassurance",
+            "'product.trust.aria_label'",
         ),
     ),
     "translations": (
