@@ -13,6 +13,11 @@ class SchemaValidatorV1Tests(unittest.TestCase):
             "category": {"product_type": "dress"},
             "pricing": {"source_price": 20, "approved_publish_price": 49.99},
             "images": {"items": [{"src": "https://example.test/image.jpg", "alt": "Black satin dress"}]},
+            "shipping": {
+                "delivery_estimate": "Calculated at checkout",
+                "estimate_source": "checkout_fallback",
+                "specific_window_verified": False,
+            },
             "intelligence": {"customer_need": "evening styling", "positioning": "polished confidence"},
             "copy": {"title": "Midnight Satin Dress", "short_description": "A polished evening silhouette.", "description": "Designed for confident styling."},
             "seo": {"seo_title": "MVQueen | Midnight Satin Dress", "meta_description": "A polished satin dress for confident evening styling.", "primary_keyword": "satin dress", "alt_texts": ["Black satin evening dress"]},
