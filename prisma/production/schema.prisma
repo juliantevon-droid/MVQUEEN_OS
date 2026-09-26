@@ -168,3 +168,14 @@ model CatalogBackfillRun {
   @@index([shop, status, createdAt])
   @@index([status, createdAt])
 }
+
+
+model RuntimeHeartbeat {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  state       String
+  detailsJson String?
+  updatedAt   DateTime @updatedAt
+
+  @@index([state, updatedAt])
+}
