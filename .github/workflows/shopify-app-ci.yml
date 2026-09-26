@@ -68,6 +68,13 @@ jobs:
       - name: Install dependencies
         run: npm install --ignore-scripts --no-audit --no-fund
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate MVQUEEN control registry
+        run: python 30_System_Infrastructure/automation/validate_control_registry.py
+
       - name: Validate development Prisma schema
         run: npm run prisma:validate:dev
 
