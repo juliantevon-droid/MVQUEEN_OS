@@ -42,10 +42,10 @@ A: We always specify color-safe status on each product page. When in doubt, do a
 ## Shipping FAQs
 
 **Q: How long will my order take to arrive?**
-A: Orders are processed within 1-3 business days. Standard shipping takes 5-8 business days after processing. Expedited options are available at checkout.
+A: Check the estimated delivery time on the product page. When a verified supplier or carrier window is available, MVQueen displays that product-specific estimate. If a verified window is not available yet, final timing is confirmed at checkout based on destination and fulfillment source.
 
 **Q: Do you ship internationally?**
-A: Yes — we ship to [countries]. International orders typically take 10-21 business days. Customs duties and import taxes are the responsibility of the customer and vary by country.
+A: Shipping availability is determined by the active Shopify delivery zones and the options shown at checkout. Do not promise international delivery or a fixed international transit window unless the current store configuration confirms it.
 
 **Q: How do I track my order?**
 A: You'll receive a tracking number by email as soon as your order ships. You can track it directly through the carrier's website or via your Shopify order confirmation.
