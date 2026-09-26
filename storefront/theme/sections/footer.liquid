@@ -13,8 +13,9 @@
   assign footer_tagline = settings.brand_tagline | default: 'Accessible luxury for the modern woman.'
   assign support_email = settings.support_email | default: 'miss.mvqueen@gmail.com'
   assign footer_menu = linklists['main-menu']
+  assign legal_footer_menu = linklists['footer']
   assign footer_name = 'MVQueen'
-  assign footer_home = '/pages/mvqueen'
+  assign footer_home = routes.root_url
   if is_princess_experience
     assign footer_menu = linklists['miss-princess-menu']
     assign footer_name = 'Miss.Princess'
@@ -44,9 +45,19 @@
     </div>
     <div>
       <strong>Customer Care</strong>
+      <a href="/pages/contact">Contact</a>
+      <a href="/pages/faq">FAQ</a>
       <a href="mailto:{{ support_email | strip | escape }}">{{ support_email }}</a>
       <a href="{{ routes.search_url }}">Search</a>
       <a href="{{ routes.cart_url }}">Bag</a>
+    </div>
+    <div>
+      <strong>Policies & Legal</strong>
+      {% for link in legal_footer_menu.links %}
+        {% unless link.title == 'Search' %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endunless %}
+      {% endfor %}
     </div>
   </div>
 </footer>
