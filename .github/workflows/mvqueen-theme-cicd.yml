@@ -46,6 +46,8 @@ jobs:
           node-version: 24
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli
+      - name: Validate MVQUEEN control registry
+        run: python 30_System_Infrastructure/automation/validate_control_registry.py
       - name: Run MVQUEEN contract validator
         run: python 30_System_Infrastructure/automation/validate_theme_contract.py
       - name: Run storefront release audit
