@@ -50,7 +50,9 @@ model ProductJob {
   receivedAt      DateTime @default(now())
   startedAt       DateTime?
   completedAt     DateTime?
+  backfillRunId   String?
   @@index([shop, productGid])
+  @@index([backfillRunId, status, receivedAt])
   @@index([status, receivedAt])
 }
 
@@ -141,4 +143,27 @@ model ProductCommercialHealthSnapshot {
 
   @@index([shop, productGid, createdAt])
   @@index([shop, state, createdAt])
+}
+
+
+model CatalogBackfillRun {
+  id              String   @id @default(cuid())
+  shop            String
+  reason          String
+  requestedBy     String
+  writeMode       String   @default("dry_run")
+  status          String   @default("scanning")
+  scanCursor      String?
+  scanComplete    Boolean  @default(false)
+  totalProducts   Int      @default(0)
+  enqueuedJobs    Int      @default(0)
+  processedJobs   Int      @default(0)
+  failedJobs      Int      @default(0)
+  startedAt       DateTime?
+  completedAt     DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([shop, status, createdAt])
+  @@index([status, createdAt])
 }
