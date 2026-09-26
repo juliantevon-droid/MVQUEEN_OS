@@ -250,7 +250,7 @@
       "id": "security_automation",
       "status": "connected",
       "authority": "GitHub_main",
-      "execution": "codeql_dependabot_secret_pattern_ci",
+      "execution": "codeql_dependency_audit_secret_pattern_ci",
       "writes": "none"
     },
     {
