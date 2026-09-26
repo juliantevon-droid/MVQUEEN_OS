@@ -1,3 +1,7 @@
+import type { CommercialConfigResolution } from "./commercial-config";
+import { buildCommercialHealth, type CommercialHealth } from "./commercial-health";
+import { buildReleaseGate, type ReleaseGateDecision } from "./release-gate";
+
 export type CatalogAuditSeverity = "blocker" | "warning";
 
 export type CatalogAuditIssue = {
@@ -8,7 +12,7 @@ export type CatalogAuditIssue = {
   message: string;
 };
 
-type AuditProduct = {
+export type AuditProduct = {
   id: string;
   title: string;
   status: string;
@@ -16,11 +20,20 @@ type AuditProduct = {
   seoTitle?: string | null;
   shortDescription?: string | null;
   unitCost?: string | null;
+  inboundShipping?: string | null;
   variants: Array<{ id: string; price?: string | null }>;
   hasMoreVariants: boolean;
   media: Array<{ id: string; alt?: string | null }>;
   mediaAuditAvailable?: boolean;
   collections: Array<{ handle: string }>;
+};
+
+export type CatalogProductEvaluation = {
+  productGid: string;
+  title: string;
+  issues: CatalogAuditIssue[];
+  commercialHealth: CommercialHealth;
+  releaseGate: ReleaseGateDecision;
 };
 
 function money(value?: string | null): number | null {
@@ -58,6 +71,10 @@ export function auditCatalogProduct(product: AuditProduct): CatalogAuditIssue[] 
       "brand_world_invalid",
       "Product must have exactly one canonical mvq:brand:* world tag.",
     );
+  }
+
+  if (!product.seoTitle?.trim()) {
+    add("warning", "seo_title_missing", "SEO title is missing.");
   }
 
   if (!product.shortDescription?.trim()) {
@@ -100,19 +117,8 @@ export function auditCatalogProduct(product: AuditProduct): CatalogAuditIssue[] 
     const price = money(product.variants[0]?.price);
     if (price === null) {
       add("blocker", "selling_price_missing", "Selling price is missing or invalid.");
-    } else if (unitCost !== null) {
-      if (price <= unitCost) {
-        add("blocker", "price_at_or_below_cost", "Selling price is at or below verified unit cost before fees.");
-      } else {
-        const grossMarginRate = (price - unitCost) / price;
-        if (grossMarginRate < 0.20) {
-          add(
-            "warning",
-            "thin_pre_fee_margin",
-            "Pre-fee gross margin is below 20%; contribution pricing review is required.",
-          );
-        }
-      }
+    } else if (unitCost !== null && price <= unitCost) {
+      add("blocker", "price_at_or_below_cost", "Selling price is at or below verified unit cost before fees.");
     }
   }
 
@@ -130,8 +136,42 @@ export function auditCatalogProduct(product: AuditProduct): CatalogAuditIssue[] 
   return issues;
 }
 
-export function summarizeCatalogAudit(products: AuditProduct[]) {
-  const issues = products.flatMap(auditCatalogProduct);
+export function evaluateCatalogProduct(
+  product: AuditProduct,
+  commercial: CommercialConfigResolution,
+): CatalogProductEvaluation {
+  const issues = auditCatalogProduct(product);
+  const price =
+    product.variants.length === 1 && !product.hasMoreVariants
+      ? money(product.variants[0]?.price)
+      : null;
+  const commercialHealth = buildCommercialHealth(
+    {
+      sellingPrice: price,
+      unitCost: money(product.unitCost),
+      inboundShipping: money(product.inboundShipping),
+    },
+    commercial,
+  );
+  const releaseGate = buildReleaseGate({ issues, commercialHealth });
+
+  return {
+    productGid: product.id,
+    title: product.title,
+    issues,
+    commercialHealth,
+    releaseGate,
+  };
+}
+
+export function summarizeCatalogAudit(
+  products: AuditProduct[],
+  commercial: CommercialConfigResolution,
+) {
+  const evaluations = products.map((product) =>
+    evaluateCatalogProduct(product, commercial),
+  );
+  const issues = evaluations.flatMap((item) => item.issues);
   const blockers = issues.filter((item) => item.severity === "blocker");
   const warnings = issues.filter((item) => item.severity === "warning");
 
@@ -139,11 +179,25 @@ export function summarizeCatalogAudit(products: AuditProduct[]) {
     productCount: products.length,
     blockerCount: blockers.length,
     warningCount: warnings.length,
-    healthyProductCount: products.filter(
-      (product) => !issues.some((issue) => issue.productGid === product.id),
+    healthyProductCount: evaluations.filter(
+      (item) => item.releaseGate.state === "ready",
+    ).length,
+    publishReadyCount: evaluations.filter(
+      (item) => item.releaseGate.publishEligible,
+    ).length,
+    advertisingEligibleCount: evaluations.filter(
+      (item) => item.releaseGate.advertisingEligible,
+    ).length,
+    commercialBlockedCount: evaluations.filter(
+      (item) =>
+        item.commercialHealth.state === "blocked" ||
+        item.commercialHealth.state === "thin" ||
+        item.commercialHealth.state === "needs_configuration" ||
+        item.commercialHealth.state === "needs_cost" ||
+        item.commercialHealth.state === "needs_price" ||
+        item.commercialHealth.state === "invalid_inputs",
     ).length,
     issues,
+    evaluations,
   };
 }
-
-export type { AuditProduct };
