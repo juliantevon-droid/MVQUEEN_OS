@@ -4,6 +4,7 @@ import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
 import { buildAutomatedProductContent } from "./product-content-automation";
+import { resolveShippingDeliveryEstimate } from "./shipping-policy";
 import {
   commercialPolicyFingerprint,
   resolveShopCommercialConfig,
@@ -47,6 +48,9 @@ query MVQueenProduct($id: ID!) {
     }
     variants(first: 1) { nodes { id price compareAtPrice } }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
+      nodes { key value type }
+    }
+    shippingMetafields: metafields(first: 10, namespace: "shipping") {
       nodes { key value type }
     }
   }
@@ -118,6 +122,9 @@ function sourceFingerprint(
     commercialMetafields: (product.commercialMetafields?.nodes ?? [])
       .map((m) => ({ key: m.key, value: m.value ?? "", type: m.type ?? "" }))
       .sort((a, b) => a.key.localeCompare(b.key)),
+    shippingDeliveryEstimate: resolveShippingDeliveryEstimate(
+      product.shippingMetafields?.nodes?.find((m) => m.key === "delivery_estimate")?.value,
+    ),
   });
 
   return createHash("sha256").update(source).digest("hex");
@@ -291,6 +298,9 @@ export async function processProductJob(
     const costVariant = product.variants?.nodes?.[0];
     const verifiedUnitCost = costVariant?.unitCost?.trim() || "";
     const costCurrency = costVariant?.costCurrency?.trim() || "";
+    const shippingDeliveryEstimate = resolveShippingDeliveryEstimate(
+      product.shippingMetafields?.nodes?.find((m) => m.key === "delivery_estimate")?.value,
+    );
     const mediaNodes = product.media?.nodes ?? [];
     const missingAltMedia = mediaNodes.filter((item) => !item.alt?.trim());
     const mediaAltStatus =
@@ -304,6 +314,12 @@ export async function processProductJob(
               ? "write_files_scope_required"
               : "automatic";
     const metafields = [
+      {
+        namespace: "shipping",
+        key: "delivery_estimate",
+        type: "single_line_text_field",
+        value: shippingDeliveryEstimate,
+      },
       { namespace: "classification", key: "department", type: "single_line_text_field", value: c.department },
       { namespace: "classification", key: "family", type: "single_line_text_field", value: c.family },
       { namespace: "classification", key: "subcollection", type: "single_line_text_field", value: c.subcollection },
