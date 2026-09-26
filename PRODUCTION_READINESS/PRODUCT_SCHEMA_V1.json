@@ -554,7 +554,9 @@
         "funnel_stage",
         "aov_strategy",
         "landing_page_requirements",
-        "supported_differentiators"
+        "supported_differentiators",
+        "profitability_authority",
+        "advertising_guardrail"
       ],
       "properties": {
         "angle": {
@@ -627,6 +629,12 @@
           "items": {
             "type": "string"
           }
+        },
+        "profitability_authority": {
+          "type": "string"
+        },
+        "advertising_guardrail": {
+          "type": "string"
         }
       }
     },
