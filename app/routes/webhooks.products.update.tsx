@@ -1,12 +1,15 @@
 import type { ActionFunctionArgs } from "react-router";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { processProductJob } from "../lib/product-processor";
+import {
+  enqueueProductWebhook,
+  productGidFromWebhook,
+} from "../lib/product-job-intake.server";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { shop, topic, webhookId, payload } = await authenticate.webhook(request);
-  const productGid = payload.admin_graphql_api_id ?? `gid://shopify/Product/${payload.id}`;
-  const eventKey = webhookId || `products/update:${productGid}:${payload.updated_at ?? ""}`;
+  const productGid = productGidFromWebhook(payload);
+
   if (payload.updated_at) {
     const state = await prisma.productAutomationState.findUnique({
       where: { shop_productGid: { shop, productGid } },
@@ -16,11 +19,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
       return new Response(null, { status: 200 });
     }
   }
-  const job = await prisma.productJob.upsert({
-    where: { eventKey },
-    update: {},
-    create: { shop, productGid, eventKey, topic, status:"received" },
-  });
-  await processProductJob(job.id);
+
+  await enqueueProductWebhook({ shop, topic, webhookId, payload });
   return new Response(null, { status: 200 });
 };
