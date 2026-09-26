@@ -41,6 +41,25 @@ Required for full hands-off automation:
 
 Per-surface content controls remain independently kill-switchable.
 
+## Continuous worker process
+
+The preferred production topology runs a second process from the same container image:
+
+`npm run worker:product`
+
+The process drains the durable ProductJob queue continuously, sleeps briefly when idle, performs periodic reconciliation, and exits cleanly on SIGTERM/SIGINT. A production platform can run this as a worker/background-service process beside the web process.
+
+Recommended defaults:
+
+- `MVQ_PRODUCT_WORKER_BATCH_SIZE=10`
+- `MVQ_PRODUCT_WORKER_POLL_MS=2000`
+- `MVQ_PRODUCT_RECONCILE_INTERVAL_MS=300000`
+- `MVQ_PRODUCT_RECONCILE_LOOKBACK_MINUTES=20`
+- `MVQ_PRODUCT_RECONCILE_PAGE_SIZE=100`
+- `MVQ_PRODUCT_RECONCILE_MAX_PAGES=20`
+
+Large imports are reconciled with pagination instead of a single 100-product page.
+
 ## GitHub Actions fallback secrets
 
 Configure these repository secrets only after the public app host exists:
