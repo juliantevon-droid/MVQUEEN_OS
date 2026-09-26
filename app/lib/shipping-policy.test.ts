@@ -22,8 +22,8 @@ assert.equal(
 );
 assert.equal(
   DEFAULT_SHIPPING_DELIVERY_ESTIMATE,
-  "Confirmed at checkout based on destination and fulfillment source.",
+  "7–15 business days",
 );
-assert.ok(!/\b\d+\s*[-–—]\s*\d+\s*(business\s*)?days\b/i.test(DEFAULT_SHIPPING_DELIVERY_ESTIMATE));
+assert.match(DEFAULT_SHIPPING_DELIVERY_ESTIMATE, /^7–15 business days$/);
 
 console.log("shipping policy tests passed");
