@@ -1,6 +1,6 @@
 client_id = ""
 name = "MVQueen OS"
-application_url = "https://example.com"
+application_url = "https://mvqueen-web-production.up.railway.app"
 embedded = true
 
 [build]
@@ -9,6 +9,11 @@ include_config_on_deploy = true
 
 [access_scopes]
 scopes = "read_products,write_products,read_inventory,read_orders,read_content,write_content,read_files,write_files,write_metaobjects"
+
+[auth]
+redirect_urls = [
+  "https://mvqueen-web-production.up.railway.app/auth/callback",
+]
 
 [webhooks]
 api_version = "2026-07"
@@ -41,7 +46,7 @@ uri = "/webhooks/compliance/customers-redact"
 compliance_topics = ["shop/redact"]
 uri = "/webhooks/compliance/shop-redact"
 
-# Production deployment guard:
-# Set the real client_id and HTTPS application_url during app configuration.
-# These placeholders intentionally remain in source control until the real
-# Shopify app credentials and production host are connected.
+# Production connection guard:
+# The real production host and auth callback are committed because they are
+# public configuration. Keep client_id blank until this repository is linked
+# to the dedicated MVQueen OS Shopify app. Never commit the client secret.
