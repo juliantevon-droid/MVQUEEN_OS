@@ -1,5 +1,6 @@
 import type { BrandRouting, Classification } from "../mvqueen-intelligence";
 import type { PricingDecision } from "./pricing-engine";
+import type { CommercialHealth, AdvertisingEligibility } from "./commercial-health";
 import { getEnterpriseIntegrationStatus, type IntegrationState } from "./integration-status";
 
 export type MarketingPlan = {
@@ -15,6 +16,7 @@ export type MarketingPlan = {
   };
   creativeAngles: string[];
   measurementEvents: string[];
+  paidPlanningEligibility: AdvertisingEligibility;
   paidExecution: IntegrationState;
   paidExecutionReason: string;
 };
@@ -23,8 +25,10 @@ export function buildMarketingPlan(
   classification: Classification,
   brandRoute: BrandRouting,
   pricing: PricingDecision,
+  commercialHealth: CommercialHealth,
 ): MarketingPlan {
   const paidMedia = getEnterpriseIntegrationStatus().paidMedia;
+
   if (!brandRoute.brand) {
     return {
       state: "needs_brand_review",
@@ -34,13 +38,17 @@ export function buildMarketingPlan(
       funnel: { discovery: "", consideration: "", conversion: "", retention: "" },
       creativeAngles: [],
       measurementEvents: ["view_item", "add_to_cart", "begin_checkout", "purchase"],
+      paidPlanningEligibility: "not_ready",
       paidExecution: paidMedia.state,
-      paidExecutionReason: "No ad-platform execution adapter is connected.",
+      paidExecutionReason: "Brand routing must be resolved before paid-media planning.",
     };
   }
 
   const isPrincess = brandRoute.brand === "miss-princess";
-  const commercialReady = pricing.state === "ready_for_approval";
+  const commercialReady =
+    pricing.state === "ready_for_approval" &&
+    commercialHealth.state === "healthy" &&
+    commercialHealth.advertisingEligibility === "eligible";
 
   return {
     state: commercialReady ? "ready_for_briefing" : "needs_commercial_inputs",
@@ -56,15 +64,18 @@ export function buildMarketingPlan(
       consideration: `${classification.productType} education, verified details, styling context and proof.`,
       conversion: commercialReady
         ? "Use approved price/value architecture, product proof, shipping and returns."
-        : "Hold paid conversion creative until commercial inputs are complete.",
+        : "Hold paid conversion creative until current contribution economics satisfy CAC and margin guardrails.",
       retention: "Post-purchase education, complementary products, replenishment where relevant and brand-world storytelling.",
     },
     creativeAngles: isPrincess
       ? ["color story", "playful styling", "soft glamour", "social discovery"]
       : ["modern polish", "quiet statement", "refined confidence", "editorial styling"],
     measurementEvents: ["view_item", "add_to_cart", "begin_checkout", "purchase"],
+    paidPlanningEligibility: commercialHealth.advertisingEligibility,
     paidExecution: paidMedia.state,
     paidExecutionReason:
-      "Campaign planning is connected; external ad-account execution remains disabled until an approved adapter/account is connected.",
+      commercialHealth.advertisingEligibility !== "eligible"
+        ? `Paid-media planning is blocked by commercial health: ${commercialHealth.state}.`
+        : "Product economics are ad-eligible; external campaign execution still requires an approved provider/account and explicit action approval.",
   };
 }
