@@ -45,10 +45,26 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     select: { state: true, updatedAt: true },
   });
 
-  const workerHeartbeatFresh = Boolean(
+  const workerHeartbeatAgeMs = workerHeartbeat
+    ? Date.now() - workerHeartbeat.updatedAt.getTime()
+    : null;
+  const workerContinuousFresh = Boolean(
     workerHeartbeat?.state === "continuous" &&
-    Date.now() - workerHeartbeat.updatedAt.getTime() <= 120_000,
+    workerHeartbeatAgeMs !== null &&
+    workerHeartbeatAgeMs <= 120_000,
   );
+  const workerFallbackFresh = Boolean(
+    workerHeartbeat?.state === "fallback" &&
+    workerHeartbeatAgeMs !== null &&
+    workerHeartbeatAgeMs <= 420_000,
+  );
+  const workerHealth = workerContinuousFresh
+    ? "continuous-healthy"
+    : workerFallbackFresh
+      ? "fallback-healthy"
+      : workerHeartbeat?.state === "error"
+        ? "error"
+        : "degraded";
 
   const [
     receivedJobs,
@@ -106,7 +122,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
         (process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim().length ?? 0) >= 32 ? "configured" : "not-configured",
       workerHeartbeat: {
         state: workerHeartbeat?.state ?? "missing",
-        fresh: workerHeartbeatFresh,
+        health: workerHealth,
+        fresh: workerContinuousFresh || workerFallbackFresh,
         lastSeenAt: workerHeartbeat?.updatedAt?.toISOString() ?? null,
       },
       mediaAltSync: process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true" ? "enabled" : "disabled",
@@ -164,7 +181,7 @@ export default function Dashboard() {
         <s-paragraph>Missed-webhook reconciliation: {runtime.reconciliation}</s-paragraph>
         <s-paragraph>Durable worker secret: {runtime.durableWorker}</s-paragraph>
         <s-paragraph>
-          Continuous worker heartbeat: {runtime.workerHeartbeat.fresh ? "healthy" : "not healthy"} · {runtime.workerHeartbeat.state}
+          Product worker health: {runtime.workerHeartbeat.health} · heartbeat state: {runtime.workerHeartbeat.state}
         </s-paragraph>
         <s-paragraph>
           Worker last seen: {runtime.workerHeartbeat.lastSeenAt ?? "not recorded"}
