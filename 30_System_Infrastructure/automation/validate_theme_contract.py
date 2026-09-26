@@ -12,7 +12,7 @@ THEME = ROOT / "storefront" / "theme"
 REQUIRED = {
     "layout/theme.liquid", "assets/mvqueen.css", "assets/mvqueen-design-system.css",
     "assets/mvqueen-header.css", "assets/mvqueen-product.css", "assets/brand-gateway.css",
-    "assets/mvqueen.js", "assets/mvqueen-ux.js", "config/settings_schema.json",
+    "assets/mvqueen.js", "assets/mvqueen-ux.js", "config/settings_schema.json", "locales/en.default.json",
     "sections/header.liquid", "sections/hero.liquid", "sections/brand-gateway.liquid",
     "sections/miss-princess-experience.liquid",
     "sections/editorial-curation.liquid", "sections/announcement-bar.liquid",
@@ -21,6 +21,7 @@ REQUIRED = {
     "sections/main-page.liquid", "sections/contact-page.liquid", "sections/editorial-hub.liquid",
     "sections/lookbook.liquid",
     "snippets/breadcrumbs.liquid", "snippets/product-schema.liquid", "snippets/seo-meta.liquid",
+    "snippets/trust-badges.liquid",
     "templates/index.json", "templates/product.json", "templates/collection.json",
     "templates/search.json", "templates/cart.json",
     "templates/page.mvqueen.json", "templates/page.miss-princess.json",
@@ -85,9 +86,28 @@ def main() -> int:
         "<summary>Shipping & returns</summary>",
         'href="/pages/shipping-policy"',
         'href="/pages/refund-policy"',
+        "{% render 'trust-badges' %}",
     ]:
         if token not in product:
             failures.append(f"main-product.liquid missing required custom PDP integration: {token}")
+
+    trust = read("snippets/trust-badges.liquid")
+    for token in [
+        "shop.enabled_payment_types",
+        "payment_type_svg_tag",
+        "'product.trust.secure_title' | t",
+        "'product.trust.connection_title' | t",
+        "'product.trust.policy_title' | t",
+        "'product.trust.support_title' | t",
+    ]:
+        if token not in trust:
+            failures.append(f"trust-badges.liquid missing required trust integration: {token}")
+
+    locale = json.loads(read("locales/en.default.json"))
+    trust_locale = locale.get("product", {}).get("trust", {})
+    for key in ["aria_label", "secure_title", "secure_text", "connection_title", "connection_text", "policy_title", "policy_text", "support_title", "support_text", "payments_label"]:
+        if not trust_locale.get(key):
+            failures.append(f"en.default.json missing trust translation: product.trust.{key}")
 
     contact = read("sections/contact-page.liquid")
     for token in ["{% form 'contact'", 'name="contact[email]"', 'name="contact[body]"', 'required aria-required="true"']:
