@@ -42,7 +42,7 @@ A: We always specify color-safe status on each product page. When in doubt, do a
 ## Shipping FAQs
 
 **Q: How long will my order take to arrive?**
-A: Check the estimated delivery time on the product page. When a verified supplier or carrier window is available, MVQueen displays that product-specific estimate. If a verified window is not available yet, final timing is confirmed at checkout based on destination and fulfillment source.
+A: Most orders are estimated at **7–15 business days**. Some products may show **5–7 business days** or **6–10 business days** when their fulfillment source supports a faster window. Check the individual product page for the current estimate.
 
 **Q: Do you ship internationally?**
 A: Shipping availability is determined by the active Shopify delivery zones and the options shown at checkout. Do not promise international delivery or a fixed international transit window unless the current store configuration confirms it.
