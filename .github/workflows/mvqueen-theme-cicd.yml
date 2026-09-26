@@ -66,6 +66,7 @@ jobs:
           name: mvqueen-theme-validation-${{ github.run_id }}
           path: .mvqueen-ci
           retention-days: 14
+          include-hidden-files: true
 
   deployment-gate:
     name: Deployment configuration gate
@@ -146,5 +147,6 @@ jobs:
           name: mvqueen-theme-deployment-${{ github.run_id }}
           path: .mvqueen-ci
           retention-days: 30
+          include-hidden-files: true
 
 # Canonical deployment identity remains pinned to MVQueen — Staging Preview; settings_data and backup/rollback themes are never automated deployment targets.
