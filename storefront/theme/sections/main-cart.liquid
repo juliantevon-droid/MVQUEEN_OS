@@ -36,6 +36,7 @@
             <p class="mvq-cart-note">Taxes and shipping are calculated at checkout.</p>
             <button class="mvq-button mvq-button--quiet" type="submit" name="update">Update bag</button>
             <button class="mvq-button mvq-button--gold" type="submit" name="checkout">Secure checkout</button>
+            {% render 'trust-badges', compact: true %}
           </aside>
         </div>
       {% endform %}
