@@ -862,6 +862,7 @@
           "type": "string",
           "enum": [
             "verified_product_fact",
+            "store_default",
             "checkout_fallback"
           ]
         },
