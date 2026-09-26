@@ -3,7 +3,10 @@ import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
-import { resolveShopCommercialConfig } from "./enterprise/commercial-settings.server";
+import {
+  commercialPolicyFingerprint,
+  resolveShopCommercialConfig,
+} from "./enterprise/commercial-settings.server";
 
 const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v6";
 
@@ -65,8 +68,12 @@ mutation MVQueenProductUpdate($product: ProductUpdateInput!) {
 }`;
 
 
-function sourceFingerprint(product: ProductSnapshot): string {
+function sourceFingerprint(
+  product: ProductSnapshot,
+  policyFingerprint: string,
+): string {
   const source = JSON.stringify({
+    policyFingerprint,
     title: product.title ?? "",
     descriptionHtml: product.descriptionHtml ?? "",
     productType: product.productType ?? "",
@@ -143,7 +150,9 @@ export async function processProductJob(jobId: string) {
       : null;
     if (!product) throw new Error("Shopify product not found");
 
-    const fingerprint = sourceFingerprint(product);
+    const commercialConfig = await resolveShopCommercialConfig(job.shop);
+    const policyFingerprint = commercialPolicyFingerprint(commercialConfig);
+    const fingerprint = sourceFingerprint(product, policyFingerprint);
     const state = await prisma.productAutomationState.findUnique({
       where: { shop_productGid: { shop: job.shop, productGid: product.id } },
       select: { sourceFingerprint: true, automationVersion: true },
@@ -157,7 +166,6 @@ export async function processProductJob(jobId: string) {
       return;
     }
 
-    const commercialConfig = await resolveShopCommercialConfig(job.shop);
     const decision = buildEnterpriseProductDecision(product, commercialConfig);
     const c = decision.classification;
     const brandRoute = decision.brandRoute;
@@ -184,6 +192,62 @@ export async function processProductJob(jobId: string) {
     const commercialHealth = decision.commercialHealth;
     const marketing = decision.marketing;
     const lifecycle = decision.lifecycle;
+    const healthData = {
+      shop: job.shop,
+      productGid: product.id,
+      sourceFingerprint: fingerprint,
+      policyFingerprint,
+      state: decision.commercialHealth.state,
+      advertisingEligibility: decision.commercialHealth.advertisingEligibility,
+      maxBreakEvenCac: decision.commercialHealth.maxBreakEvenCac,
+      breakEvenRoas: decision.commercialHealth.breakEvenRoas,
+      targetRoas: decision.commercialHealth.targetRoas,
+      contributionAfterTargetCac: decision.commercialHealth.contributionAfterTargetCac,
+      contributionMarginAfterTargetCac:
+        decision.commercialHealth.contributionMarginAfterTargetCac,
+    };
+
+    const previousHealth = await prisma.productCommercialHealthState.findUnique({
+      where: {
+        shop_productGid: {
+          shop: job.shop,
+          productGid: product.id,
+        },
+      },
+    });
+
+    const healthChanged =
+      !previousHealth ||
+      previousHealth.sourceFingerprint !== fingerprint ||
+      previousHealth.policyFingerprint !== policyFingerprint ||
+      previousHealth.state !== decision.commercialHealth.state ||
+      previousHealth.advertisingEligibility !==
+        decision.commercialHealth.advertisingEligibility;
+
+    await prisma.productCommercialHealthState.upsert({
+      where: {
+        shop_productGid: {
+          shop: job.shop,
+          productGid: product.id,
+        },
+      },
+      update: {
+        ...healthData,
+        stale: false,
+        evaluatedAt: new Date(),
+      },
+      create: {
+        ...healthData,
+        stale: false,
+      },
+    });
+
+    if (healthChanged) {
+      await prisma.productCommercialHealthSnapshot.create({
+        data: healthData,
+      });
+    }
+
     const costVariant = product.variants?.nodes?.[0];
     const verifiedUnitCost = costVariant?.unitCost?.trim() || "";
     const costCurrency = costVariant?.costCurrency?.trim() || "";
