@@ -2,6 +2,7 @@ import {
   processProductJobBatch,
   reconcileRecentShopifyProducts,
   recoverStaleProductJobs,
+  recordProductWorkerHeartbeat,
 } from "../app/lib/product-job-worker.server";
 
 function envInt(name: string, fallback: number, min: number, max: number): number {
@@ -17,9 +18,16 @@ const reconcileEveryMs = envInt(
   60000,
   3600000,
 );
+const heartbeatEveryMs = envInt(
+  "MVQ_PRODUCT_WORKER_HEARTBEAT_MS",
+  30000,
+  5000,
+  120000,
+);
 
 let stopping = false;
 let lastReconcile = 0;
+let lastHeartbeat = 0;
 
 for (const signal of ["SIGTERM", "SIGINT"] as const) {
   process.on(signal, () => {
@@ -29,9 +37,16 @@ for (const signal of ["SIGTERM", "SIGINT"] as const) {
 
 async function main() {
   await recoverStaleProductJobs();
+  await recordProductWorkerHeartbeat("continuous", { pid: process.pid });
+  lastHeartbeat = Date.now();
 
   while (!stopping) {
     const now = Date.now();
+
+    if (now - lastHeartbeat >= heartbeatEveryMs) {
+      await recordProductWorkerHeartbeat("continuous", { pid: process.pid });
+      lastHeartbeat = now;
+    }
 
     if (now - lastReconcile >= reconcileEveryMs) {
       await reconcileRecentShopifyProducts();
@@ -47,10 +62,19 @@ async function main() {
 }
 
 main()
-  .then(() => {
+  .then(async () => {
+    await recordProductWorkerHeartbeat("stopped", { pid: process.pid });
     process.stdout.write("MVQueen product worker stopped cleanly.\n");
   })
-  .catch((error) => {
+  .catch(async (error) => {
+    try {
+      await recordProductWorkerHeartbeat("error", {
+        pid: process.pid,
+        message: error instanceof Error ? error.message : String(error),
+      });
+    } catch {
+      // Preserve the original worker failure as the process result.
+    }
     console.error("MVQueen product worker terminated", error);
     process.exitCode = 1;
   });
