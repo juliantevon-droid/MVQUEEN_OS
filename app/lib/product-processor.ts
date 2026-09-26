@@ -3,16 +3,22 @@ import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
+import { buildAutomatedProductContent } from "./product-content-automation";
 import {
   commercialPolicyFingerprint,
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v6";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v7";
 
-// The React app is a transport/classification worker, not a copy generator.
-// Live writes remain fail-closed and require explicit product approval.
+// The React app is the single live Shopify writer. Automatic enrollment may
+// authorize newly created/updated products for safe editorial/catalog fields,
+// while protected commerce fields remain outside this worker.
 const WRITE_ENABLED = process.env.MVQ_WRITE_ENABLED === "true";
+const AUTO_PRODUCT_ENROLLMENT_ENABLED =
+  process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true";
+const EDITORIAL_PUBLISH_ENABLED =
+  process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true";
 const COST_SYNC_ENABLED = process.env.MVQ_COST_SYNC_ENABLED === "true";
 const APPROVED_PRODUCT_GIDS = new Set(
   (process.env.MVQ_APPROVED_PRODUCT_GIDS ?? "")
@@ -31,7 +37,7 @@ query MVQueenAccessScopes {
 const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
-    id title descriptionHtml productType vendor tags
+    id title handle descriptionHtml productType vendor tags
     variants(first: 1) { nodes { id price compareAtPrice } }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
@@ -42,7 +48,7 @@ query MVQueenProduct($id: ID!) {
 const PRODUCT_QUERY_WITH_COST = `#graphql
 query MVQueenProductWithCost($id: ID!) {
   product(id: $id) {
-    id title descriptionHtml productType vendor tags
+    id title handle descriptionHtml productType vendor tags
     variants(first: 1) {
       nodes {
         id
@@ -78,7 +84,9 @@ function sourceFingerprint(
     descriptionHtml: product.descriptionHtml ?? "",
     productType: product.productType ?? "",
     vendor: product.vendor ?? "",
-    tags: [...(product.tags ?? [])].sort(),
+    tags: [...(product.tags ?? [])]
+      .filter((tag) => !tag.toLowerCase().startsWith("mvq:"))
+      .sort(),
     variants: (product.variants?.nodes ?? [])
       .map((v) => ({
         id: v.id,
@@ -169,6 +177,10 @@ export async function processProductJob(jobId: string) {
     const decision = buildEnterpriseProductDecision(product, commercialConfig);
     const c = decision.classification;
     const brandRoute = decision.brandRoute;
+    const automatedContent =
+      c.confidence === "review"
+        ? null
+        : buildAutomatedProductContent(product, c);
     const systemPrefixes = [
       "mvq:department:",
       "mvq:family:",
@@ -278,6 +290,44 @@ export async function processProductJob(jobId: string) {
         type: "single_line_text_field",
         value: c.confidence === "review" || !brandRoute.brand ? "needs_review" : "classified",
       },
+      ...(EDITORIAL_PUBLISH_ENABLED && automatedContent
+        ? [
+            {
+              namespace: "catalog",
+              key: "short_description",
+              type: "single_line_text_field",
+              value: automatedContent.shortDescription,
+            },
+            {
+              namespace: "catalog",
+              key: "focus_keyword",
+              type: "single_line_text_field",
+              value: automatedContent.focusKeyword,
+            },
+            {
+              namespace: "catalog",
+              key: "long_tail_keywords",
+              type: "list.single_line_text_field",
+              value: JSON.stringify(automatedContent.longTailKeywords),
+            },
+            {
+              namespace: "catalog",
+              key: "seo_keywords",
+              type: "list.single_line_text_field",
+              value: JSON.stringify(automatedContent.seoKeywords),
+            },
+            ...(automatedContent.highlights.length
+              ? [
+                  {
+                    namespace: "catalog",
+                    key: "highlights",
+                    type: "list.single_line_text_field",
+                    value: JSON.stringify(automatedContent.highlights),
+                  },
+                ]
+              : []),
+          ]
+        : []),
       ...(verifiedUnitCost
         ? [
             { namespace: "commercial", key: "unit_cost", type: "number_decimal", value: verifiedUnitCost },
@@ -353,10 +403,13 @@ export async function processProductJob(jobId: string) {
       },
     ];
 
-    if (!WRITE_ENABLED || !APPROVED_PRODUCT_GIDS.has(product.id)) {
+    const productAuthorized =
+      AUTO_PRODUCT_ENROLLMENT_ENABLED || APPROVED_PRODUCT_GIDS.has(product.id);
+
+    if (!WRITE_ENABLED || !productAuthorized) {
       const reason = !WRITE_ENABLED
         ? "DRY_RUN — Shopify writes disabled"
-        : "DRY_RUN — product GID not explicitly approved";
+        : "DRY_RUN — automatic enrollment disabled and product GID not explicitly approved";
       await prisma.productJob.update({
         where: { id: jobId },
         data: { status: "completed", completedAt: new Date(), error: reason },
@@ -370,6 +423,15 @@ export async function processProductJob(jobId: string) {
       tags: mergedTags,
       metafields,
     };
+
+    if (EDITORIAL_PUBLISH_ENABLED && automatedContent) {
+      productInput.title = automatedContent.title;
+      if (product.handle?.trim()) productInput.handle = product.handle;
+      productInput.seo = {
+        title: automatedContent.seoTitle,
+        description: automatedContent.metaDescription,
+      };
+    }
 
     const update = await admin.graphql(PRODUCT_UPDATE, {
       variables: { product: productInput },
