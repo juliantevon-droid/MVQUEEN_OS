@@ -81,9 +81,11 @@ export default function CommercialHealthPage() {
           data.states.map((item) => (
             <s-paragraph key={item.id}>
               {item.stale ? "STALE" : item.state.toUpperCase()} · {item.productGid} · ads {item.advertisingEligibility}
-              {" · "}max CAC {money(item.maxBreakEvenCac)}
+              {" · "}break-even CAC {money(item.maxBreakEvenCac)}
+              {" · "}max CAC at target margin {money(item.maxCacAtTargetMargin)}
               {" · "}break-even ROAS {ratio(item.breakEvenRoas)}
-              {" · "}target ROAS {ratio(item.targetRoas)}
+              {" · "}target-margin ROAS floor {ratio(item.targetMarginRoasFloor)}
+              {" · "}configured target-CAC ROAS {ratio(item.targetRoas)}
             </s-paragraph>
           ))
         ) : (
