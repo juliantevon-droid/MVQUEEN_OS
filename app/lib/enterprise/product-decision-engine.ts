@@ -28,6 +28,20 @@ function slug(value: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+export function collectionRoutingTags(classification: {
+  department: string;
+  family: string;
+  route: string;
+}): string[] {
+  const slugs = [
+    slug(classification.department),
+    slug(classification.family),
+    slug(classification.route),
+  ].filter((value) => value && value !== "unclassified" && value !== "needs-review");
+
+  return Array.from(new Set(slugs)).map((value) => `mvq:collection:${value}`);
+}
+
 export function buildEnterpriseProductDecision(
   product: ProductSnapshot,
   commercial?: CommercialConfigResolution,
@@ -74,7 +88,7 @@ export function buildEnterpriseProductDecision(
     "mvq:catalog",
     `mvq:department:${slug(classification.department)}`,
     `mvq:family:${slug(classification.family)}`,
-    `mvq:collection:${slug(classification.route)}`,
+    ...collectionRoutingTags(classification),
     ...brandRoutingTags(brandRoute),
     ...(classification.confidence === "review" ? ["mvq:needs-review"] : []),
     ...(pricing.state === "ready_for_approval" ? ["mvq:pricing:ready-for-approval"] : [`mvq:pricing:${pricing.state}`]),
