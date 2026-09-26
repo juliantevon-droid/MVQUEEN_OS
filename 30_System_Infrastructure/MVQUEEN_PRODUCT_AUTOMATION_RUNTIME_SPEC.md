@@ -1,7 +1,7 @@
 # MVQueen Product Automation Runtime Specification
 ## MVQUEEN_OS / 30_System_Infrastructure
 
-Status: IMPLEMENTED IN MAIN — deployment and end-to-end production activation pending
+Status: ALWAYS-ON ARCHITECTURE IMPLEMENTED IN MAIN — production host/env activation and end-to-end live verification pending
 
 ## Objective
 Automatically process every eligible Shopify product after creation or meaningful update.
@@ -66,6 +66,15 @@ Implemented in the React/Shopify runtime:
 - protected commerce-field boundary
 - durable catalog backfill queue and bounded worker path
 - production environment preflight
+- durable product worker with concurrency-safe claims
+- exponential retry and dead-letter handling
+- stale-processing recovery
+- missed-webhook reconciliation against recently updated Shopify products
+- automatic product FAQ publishing
+- automatic matching collection-content updates
+- qualifying source-rich blog publishing
+- queue-aware health endpoint
+- five-minute GitHub Actions fallback scheduler
 
 Not yet activated as an always-on production service:
 - real HTTPS application host
@@ -87,3 +96,6 @@ Do not call this system 24/7 production-ready until:
 - failure/retry behavior is tested
 - logs are observable
 - secrets are external to GitHub
+- deployment scheduler invokes POST /internal/product-worker continuously
+- MVQ_PRODUCT_WORKER_URL and MVQ_PRODUCT_WORKER_TOKEN are configured as deployment/GitHub secrets
+- full automation gates pass `npm run preflight:production`
