@@ -85,6 +85,15 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertIn("content_suite", result)
         self.assertTrue(result["content_suite"]["qa"]["passed"])
         self.assertTrue(result["content_suite"]["metafields"]["catalog.short_tail_keywords"]["value"])
+        self.assertEqual(
+            result["shipping"]["delivery_estimate"],
+            "Confirmed at checkout based on destination and fulfillment source.",
+        )
+        self.assertEqual(
+            result["content_suite"]["metafields"]["shipping.delivery_estimate"]["value"],
+            result["shipping"]["delivery_estimate"],
+        )
+        self.assertTrue(any("shipping uses checkout fallback" in warning.lower() for warning in result["qa"]["warnings"]))
         self.assertTrue(any("satin" in phrase.lower() for phrase in result["seo"]["long_tail_keywords"]))
         self.assertTrue(result["images"]["items"][0]["alt"])
         self.assertTrue(any(term in result["copy"]["short_description"].lower() for term in ("satin", "polished", "style")))
@@ -147,6 +156,24 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertTrue({"Meta", "TikTok", "UGC", "Email", "SMS"}.issubset(channels))
         self.assertTrue(all(asset["hook"] and asset["cta"] for asset in assets))
         self.assertTrue(all(asset["testing_variable"] for asset in assets))
+
+    def test_verified_shipping_window_flows_to_product_metafield(self):
+        product = self.base()
+        product["source_truth"]["facts"].append({
+            "name": "shipping_time",
+            "value": "5–8 business days",
+            "source": "verified fulfillment record",
+            "verified": True,
+        })
+        result = run(product)
+        self.assertEqual(result["status"], "PRODUCTION_READY")
+        self.assertEqual(result["shipping"]["delivery_estimate"], "5–8 business days")
+        self.assertTrue(result["shipping"]["specific_window_verified"])
+        self.assertEqual(result["shipping"]["estimate_source"], "verified_product_fact")
+        self.assertEqual(
+            result["content_suite"]["metafields"]["shipping.delivery_estimate"]["value"],
+            "5–8 business days",
+        )
 
     def test_unapproved_price_blocks_publication(self):
         product = self.base()
