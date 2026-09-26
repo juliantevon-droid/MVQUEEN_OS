@@ -4,6 +4,7 @@ import {
   recordProductWorkerHeartbeat,
   runAlwaysOnProductWorker,
 } from "../lib/product-job-worker.server";
+import { createCorrelationId, errorFields, logMvqueenEvent } from "../lib/enterprise/observability.server";
 
 function authorized(request: Request): boolean {
   const expected =
@@ -24,19 +25,25 @@ function authorized(request: Request): boolean {
 }
 
 export const action = async ({ request }: ActionFunctionArgs) => {
+  const correlationId = createCorrelationId("product-worker-endpoint");
   if (!authorized(request)) {
+    logMvqueenEvent("product.worker.unauthorized", { correlationId }, "warn");
     return Response.json({ ok: false, error: "unauthorized" }, { status: 401 });
   }
 
   try {
     const result = await runAlwaysOnProductWorker();
-    await recordProductWorkerHeartbeat("fallback", result);
-    return Response.json({ ok: true, ...result });
+    await recordProductWorkerHeartbeat("fallback", { correlationId, ...result });
+    logMvqueenEvent("product.worker.fallback.completed", { correlationId, ...result });
+    return Response.json({ ok: true, correlationId, ...result });
   } catch (error) {
-    console.error("MVQueen product worker failed", error);
+    const details = { correlationId, ...errorFields(error) };
+    await recordProductWorkerHeartbeat("error", details);
+    logMvqueenEvent("product.worker.failed", details, "error");
     return Response.json(
       {
         ok: false,
+        correlationId,
         error: error instanceof Error ? error.message : String(error),
       },
       { status: 500 },
