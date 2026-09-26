@@ -25,11 +25,13 @@ export type CommercialHealth = {
   returnReserve: number | null;
   contributionBeforeAds: number | null;
   maxBreakEvenCac: number | null;
+  maxCacAtTargetMargin: number | null;
   targetCac: number | null;
   contributionAfterTargetCac: number | null;
   contributionMarginAfterTargetCac: number | null;
   targetContributionMarginRate: number | null;
   breakEvenRoas: number | null;
+  targetMarginRoasFloor: number | null;
   targetRoas: number | null;
   missing: string[];
   reasons: string[];
@@ -61,11 +63,13 @@ export function buildCommercialHealth(
     returnReserve: null,
     contributionBeforeAds: null,
     maxBreakEvenCac: null,
+    maxCacAtTargetMargin: null,
     targetCac: config.targetCac,
     contributionAfterTargetCac: null,
     contributionMarginAfterTargetCac: null,
     targetContributionMarginRate: config.targetContributionMarginRate,
     breakEvenRoas: null,
+    targetMarginRoasFloor: null,
     targetRoas: null,
     missing,
     reasons: [] as string[],
@@ -132,11 +136,20 @@ export function buildCommercialHealth(
     paymentCost -
     returnReserve;
   const maxBreakEvenCac = Math.max(0, contributionBeforeAds);
+  const targetContributionDollars = input.sellingPrice * targetMargin;
+  const maxCacAtTargetMargin = Math.max(
+    0,
+    contributionBeforeAds - targetContributionDollars,
+  );
   const contributionAfterTargetCac = contributionBeforeAds - targetCac;
   const contributionMarginAfterTargetCac =
     contributionAfterTargetCac / input.sellingPrice;
   const breakEvenRoas =
     maxBreakEvenCac > 0 ? input.sellingPrice / maxBreakEvenCac : null;
+  const targetMarginRoasFloor =
+    maxCacAtTargetMargin > 0
+      ? input.sellingPrice / maxCacAtTargetMargin
+      : null;
   const targetRoas =
     targetCac > 0 ? input.sellingPrice / targetCac : null;
 
@@ -165,9 +178,12 @@ export function buildCommercialHealth(
     returnReserve: round(returnReserve),
     contributionBeforeAds: round(contributionBeforeAds),
     maxBreakEvenCac: round(maxBreakEvenCac),
+    maxCacAtTargetMargin: round(maxCacAtTargetMargin),
     contributionAfterTargetCac: round(contributionAfterTargetCac),
     contributionMarginAfterTargetCac: round(contributionMarginAfterTargetCac),
     breakEvenRoas: breakEvenRoas === null ? null : round(breakEvenRoas),
+    targetMarginRoasFloor:
+      targetMarginRoasFloor === null ? null : round(targetMarginRoasFloor),
     targetRoas: targetRoas === null ? null : round(targetRoas),
     reasons,
   };
