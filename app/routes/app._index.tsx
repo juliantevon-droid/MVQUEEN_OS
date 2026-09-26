@@ -75,7 +75,9 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     shop: body.data?.shop ?? null,
     runtime: {
       databaseProfile: databaseProfile(),
-      productWrites: process.env.MVQ_WRITE_ENABLED === "true" ? "enabled-with-product-approval" : "dry-run",
+      productWrites: process.env.MVQ_WRITE_ENABLED === "true" ? "enabled" : "dry-run",
+      automaticProductEnrollment:
+        process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true" ? "enabled" : "manual-allowlist",
       editorialPublish: process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       pricePublish: process.env.MVQ_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       pricing: commercial.missing.length ? "needs-configuration" : "advisory-ready",
@@ -116,7 +118,8 @@ export default function Dashboard() {
 
       <s-section heading="Runtime gates">
         <s-paragraph>Product write mode: {runtime.productWrites}</s-paragraph>
-        <s-paragraph>Approved editorial publishing: {runtime.editorialPublish}</s-paragraph>
+        <s-paragraph>Automatic product enrollment: {runtime.automaticProductEnrollment}</s-paragraph>
+        <s-paragraph>Automatic editorial/SEO publishing: {runtime.editorialPublish}</s-paragraph>
         <s-paragraph>Approved price publishing: {runtime.pricePublish}</s-paragraph>
         <s-paragraph>Pricing/profitability: {runtime.pricing}</s-paragraph>
         <s-paragraph>
