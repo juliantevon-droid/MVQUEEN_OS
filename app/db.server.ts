@@ -1,8 +1,11 @@
 import { assertDatabaseConfiguration } from "./lib/enterprise/database-guard.server";
-import { PrismaClient } from "@prisma/client";
+import prismaPackage from "@prisma/client";
+
+const { PrismaClient } = prismaPackage;
+type PrismaClientInstance = InstanceType<typeof PrismaClient>;
 
 declare global {
-  var prismaGlobal: PrismaClient | undefined;
+  var prismaGlobal: PrismaClientInstance | undefined;
 }
 
 assertDatabaseConfiguration();
