@@ -110,7 +110,7 @@ export function buildAutomaticSurfaceRecord(
       approved_publish_price: null,
     },
     shipping: {
-      delivery_estimate: "Calculated at checkout",
+      delivery_estimate: "Confirmed at checkout based on destination and fulfillment source.",
       estimate_source: "checkout_fallback",
       specific_window_verified: false,
     },
@@ -137,6 +137,11 @@ export function buildAutomaticSurfaceRecord(
           type: "json",
           value: faq,
           source: "shopify_source_product",
+        },
+        "shipping.delivery_estimate": {
+          type: "single_line_text_field",
+          value: "Confirmed at checkout based on destination and fulfillment source.",
+          source: "checkout_fallback",
         },
       },
       product_page: {
