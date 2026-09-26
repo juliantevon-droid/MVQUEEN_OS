@@ -110,6 +110,19 @@
 
         {% render 'trust-badges' %}
 
+        <div class="mvq-mobile-purchase-bar" aria-label="Mobile purchase action">
+          <span class="mvq-mobile-purchase-bar__label">{{ product.title }}</span>
+          <button
+            class="mvq-button mvq-button--gold mvq-mobile-purchase-bar__button"
+            type="submit"
+            name="add"
+            form="{{ product_form_id }}"
+            {% unless product.available %}disabled{% endunless %}
+          >
+            {% if product.available %}Add to bag{% else %}Sold out{% endif %}
+          </button>
+        </div>
+
         <div class="mvq-product-accordions">
           {% if product.description != blank %}
             <details>
