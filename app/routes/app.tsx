@@ -13,7 +13,7 @@ export default function App() {
   const { apiKey } = useLoaderData<typeof loader>();
   return (
     <AppProvider embedded apiKey={apiKey}>
-      <s-app-nav><s-link href="/app">MVQueen OS</s-link><s-link href="/app/proposals">Approved Releases</s-link><s-link href="/app/pricing">Pricing</s-link><s-link href="/app/commercial-settings">Commercial Settings</s-link><s-link href="/app/catalog-health">Catalog Health</s-link></s-app-nav>
+      <s-app-nav><s-link href="/app">MVQueen OS</s-link><s-link href="/app/proposals">Approved Releases</s-link><s-link href="/app/pricing">Pricing</s-link><s-link href="/app/commercial-settings">Commercial Settings</s-link><s-link href="/app/commercial-health">Commercial Health</s-link><s-link href="/app/catalog-health">Catalog Health</s-link></s-app-nav>
       <Outlet />
     </AppProvider>
   );
