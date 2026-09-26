@@ -48,6 +48,8 @@ jobs:
         run: npm install -g @shopify/cli
       - name: Run MVQUEEN contract validator
         run: python 30_System_Infrastructure/automation/validate_theme_contract.py
+      - name: Run storefront release audit
+        run: python 30_System_Infrastructure/automation/storefront_release_audit.py
       - name: Run Shopify Theme Check
         run: shopify theme check --path storefront/theme --fail-level error --output text
       - name: Save validation logs
@@ -56,6 +58,8 @@ jobs:
           mkdir -p .mvqueen-ci
           shopify version > .mvqueen-ci/shopify-version.txt 2>&1 || true
           git rev-parse HEAD > .mvqueen-ci/commit.txt
+          cp build/storefront_release_audit/report.json .mvqueen-ci/storefront-release-audit.json 2>/dev/null || true
+          cp build/storefront_release_audit/report.md .mvqueen-ci/storefront-release-audit.md 2>/dev/null || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
