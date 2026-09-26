@@ -7,7 +7,7 @@ export const loader = async (_args: LoaderFunctionArgs) => {
   let database = false;
 
   try {
-    await prisma.$queryRawUnsafe("SELECT 1");
+    await prisma.$queryRaw`SELECT 1`;
     database = true;
   } catch {
     database = false;
