@@ -46,6 +46,8 @@ jobs:
       SHOPIFY_APP_URL: https://example.invalid
       SCOPES: read_products,write_products,read_inventory,read_content,write_content,write_metaobjects
       MVQ_WRITE_ENABLED: 'false'
+      MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED: 'false'
+      MVQ_EDITORIAL_PUBLISH_ENABLED: 'false'
       MVQ_APPROVED_PRODUCT_GIDS: ''
     steps:
       - name: Checkout
@@ -73,6 +75,9 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      - name: Test catalog automation
+        run: npm run test:catalog-automation
 
       - name: Enterprise behavior tests
         run: npm run test:enterprise
