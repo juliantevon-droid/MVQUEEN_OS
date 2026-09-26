@@ -1,6 +1,7 @@
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import { processProductJob } from "./product-processor";
+import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
 
 const RECONCILE_QUERY = "#graphql\nquery MVQueenRecentProducts($first: Int!, $after: String, $query: String!) { products(first: $first, after: $after, query: $query, sortKey: UPDATED_AT) { nodes { id updatedAt } pageInfo { hasNextPage endCursor } } }";
 
@@ -130,7 +131,11 @@ export async function reconcileRecentShopifyProducts() {
         if (!after) break;
       }
     } catch (error) {
-      console.error("MVQueen product reconciliation failed for", shop, error);
+      logMvqueenEvent(
+        "product.reconciliation.failed",
+        { shop, ...errorFields(error) },
+        "error",
+      );
     }
   }
 
@@ -151,6 +156,7 @@ async function markExhaustedJobs(maxAttempts: number) {
 }
 
 export async function processProductJobBatch() {
+  const correlationId = createCorrelationId("product-worker");
   const batchSize = envInt("MVQ_PRODUCT_WORKER_BATCH_SIZE", 10, 1, 50);
   const maxAttempts = envInt("MVQ_PRODUCT_MAX_ATTEMPTS", 5, 1, 12);
   const now = Date.now();
@@ -220,7 +226,7 @@ export async function processProductJobBatch() {
     prisma.productJob.count({ where: { status: "dead_letter" } }),
   ]);
 
-  return {
+  const result = {
     attempted: selected.length,
     completed,
     failed: failedCount,
@@ -231,6 +237,9 @@ export async function processProductJobBatch() {
       deadLetter: deadLetterCount,
     },
   };
+
+  logMvqueenEvent("product.worker.batch", { correlationId, ...result }, deadLetterCount > 0 ? "warn" : "info");
+  return result;
 }
 
 export async function runAlwaysOnProductWorker() {
