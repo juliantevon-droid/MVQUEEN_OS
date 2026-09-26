@@ -24,6 +24,7 @@ const healthy = buildCommercialHealth(
 assert.equal(healthy.state, "healthy");
 assert.equal(healthy.advertisingEligibility, "eligible");
 assert.equal(healthy.maxBreakEvenCac, 66.7);
+assert.equal(healthy.maxCacAtTargetMargin, 46.7);
 assert.equal(healthy.contributionAfterTargetCac, 51.7);
 assert.equal(healthy.contributionMarginAfterTargetCac, 0.517);
 
@@ -95,7 +96,9 @@ const approvedChange = {
       stale: false,
       evaluatedAt: new Date().toISOString(),
       maxBreakEvenCac: 66.7,
+      maxCacAtTargetMargin: 46.7,
       breakEvenRoas: healthy.breakEvenRoas,
+      targetMarginRoasFloor: healthy.targetMarginRoasFloor,
       policyFingerprint: "fixture-policy",
     },
   ],
