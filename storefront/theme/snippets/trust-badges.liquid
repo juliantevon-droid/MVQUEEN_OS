@@ -1,63 +1,181 @@
 {% doc %}
-Renders a reusable trust badge cluster with enabled payment method icons.
+Renders a selectable trust-badge library. New badge types remain hidden until named in the badges parameter.
 
-@param {boolean} [compact] - Uses tighter spacing for cart and narrow surfaces.
+@param {string} [badges] - Comma-separated badge keys. Defaults to the existing four-badge set.
+@param {string} [layout] - Layout style: grid, row, stack, or minimal.
+@param {boolean} [compact] - Uses tighter spacing for narrow surfaces.
+@param {boolean} [show_payment_icons] - Shows Shopify-enabled payment method icons. Defaults to true.
+@param {boolean} [hide_descriptions] - Shows badge titles without supporting text.
 
 @example
-{% render 'trust-badges' %}
+{% render 'trust-badges', badges: 'secure_checkout,shipping_details,returns_info,size_fit', layout: 'grid', show_payment_icons: true %}
 {% enddoc %}
 
 {% liquid
-  assign trust_classes = 'mvq-trust-cluster'
+  assign default_badges = 'secure_checkout,encrypted_connection,clear_policies,customer_care'
+  assign selected_badges = badges | default: default_badges | split: ','
+
+  assign trust_layout = 'grid'
+  case layout
+    when 'row'
+      assign trust_layout = 'row'
+    when 'stack'
+      assign trust_layout = 'stack'
+    when 'minimal'
+      assign trust_layout = 'minimal'
+  endcase
+
+  assign display_payment_icons = true
+  if show_payment_icons == false
+    assign display_payment_icons = false
+  endif
+
+  assign trust_classes = 'mvq-trust-cluster mvq-trust-cluster--' | append: trust_layout
   if compact
     assign trust_classes = trust_classes | append: ' mvq-trust-cluster--compact'
+  endif
+  if hide_descriptions
+    assign trust_classes = trust_classes | append: ' mvq-trust-cluster--titles-only'
   endif
 %}
 
 <div class="{{ trust_classes }}" aria-label="{{ 'product.trust.aria_label' | t }}">
   <div class="mvq-trust-cluster__grid">
-    <div class="mvq-trust-cluster__item">
-      <span class="mvq-trust-cluster__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7 3v5c0 4.7-2.9 8.2-7 10-4.1-1.8-7-5.3-7-10V6l7-3Z"/><path d="m9.4 12 1.7 1.7 3.8-4"/></svg>
-      </span>
-      <span>
-        <strong>{{ 'product.trust.secure_title' | t }}</strong>
-        <small>{{ 'product.trust.secure_text' | t }}</small>
-      </span>
-    </div>
+    {% for badge_entry in selected_badges %}
+      {% assign badge = badge_entry | strip %}
+      {% case badge %}
+        {% when 'secure_checkout' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="secure_checkout">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7 3v5c0 4.7-2.9 8.2-7 10-4.1-1.8-7-5.3-7-10V6l7-3Z"/><path d="m9.4 12 1.7 1.7 3.8-4"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.secure_title' | t }}</strong><small>{{ 'product.trust.secure_text' | t }}</small></span>
+          </div>
 
-    <div class="mvq-trust-cluster__item">
-      <span class="mvq-trust-cluster__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-      </span>
-      <span>
-        <strong>{{ 'product.trust.connection_title' | t }}</strong>
-        <small>{{ 'product.trust.connection_text' | t }}</small>
-      </span>
-    </div>
+        {% when 'encrypted_connection' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="encrypted_connection">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.connection_title' | t }}</strong><small>{{ 'product.trust.connection_text' | t }}</small></span>
+          </div>
 
-    <div class="mvq-trust-cluster__item">
-      <span class="mvq-trust-cluster__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false"><path d="M3 7h11v9H3z"/><path d="M14 10h3l4 4v2h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-      </span>
-      <span>
-        <strong>{{ 'product.trust.policy_title' | t }}</strong>
-        <small>{{ 'product.trust.policy_text' | t }}</small>
-      </span>
-    </div>
+        {% when 'clear_policies' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="clear_policies">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.policy_title' | t }}</strong><small>{{ 'product.trust.policy_text' | t }}</small></span>
+          </div>
 
-    <div class="mvq-trust-cluster__item">
-      <span class="mvq-trust-cluster__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h16v11H8l-4 3V5Z"/><path d="M8 9h8M8 12h5"/></svg>
-      </span>
-      <span>
-        <strong>{{ 'product.trust.support_title' | t }}</strong>
-        <small>{{ 'product.trust.support_text' | t }}</small>
-      </span>
-    </div>
+        {% when 'customer_care' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="customer_care">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h16v11H8l-4 3V5Z"/><path d="M8 9h8M8 12h5"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.support_title' | t }}</strong><small>{{ 'product.trust.support_text' | t }}</small></span>
+          </div>
+
+        {% when 'payment_options' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="payment_options">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 15h4"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.payment_title' | t }}</strong><small>{{ 'product.trust.payment_text' | t }}</small></span>
+          </div>
+
+        {% when 'shipping_details' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="shipping_details">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M3 7h11v9H3z"/><path d="M14 10h3l4 4v2h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.shipping_title' | t }}</strong><small>{{ 'product.trust.shipping_text' | t }}</small></span>
+          </div>
+
+        {% when 'returns_info' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="returns_info">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M9 7H5v4"/><path d="M5 11a7 7 0 1 0 2-5"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.returns_title' | t }}</strong><small>{{ 'product.trust.returns_text' | t }}</small></span>
+          </div>
+
+        {% when 'order_review' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="order_review">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M6 4h12v16H6z"/><path d="M9 9h6M9 13h6"/><path d="m9 17 1.4 1.4L15 14"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.review_title' | t }}</strong><small>{{ 'product.trust.review_text' | t }}</small></span>
+          </div>
+
+        {% when 'privacy_policy' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="privacy_policy">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3 5 6v5c0 4.4 2.6 7.6 7 10 4.4-2.4 7-5.6 7-10V6l-7-3Z"/><path d="M9.5 12.5 11 14l3.5-4"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.privacy_title' | t }}</strong><small>{{ 'product.trust.privacy_text' | t }}</small></span>
+          </div>
+
+        {% when 'product_details' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="product_details">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.details_title' | t }}</strong><small>{{ 'product.trust.details_text' | t }}</small></span>
+          </div>
+
+        {% when 'size_fit' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="size_fit">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 7h16v10H4z"/><path d="M8 7v4M12 7v2M16 7v4"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.size_title' | t }}</strong><small>{{ 'product.trust.size_text' | t }}</small></span>
+          </div>
+
+        {% when 'care_guidance' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="care_guidance">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21c4-3 7-6.1 7-10a4 4 0 0 0-7-2.7A4 4 0 0 0 5 11c0 3.9 3 7 7 10Z"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.care_title' | t }}</strong><small>{{ 'product.trust.care_text' | t }}</small></span>
+          </div>
+
+        {% when 'contact_support' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="contact_support">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v5h3v-6H4M20 12v5h-3v-6h3"/><path d="M17 19c-1 1-2.4 2-5 2"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.contact_title' | t }}</strong><small>{{ 'product.trust.contact_text' | t }}</small></span>
+          </div>
+
+        {% when 'checkout_totals' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="checkout_totals">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.totals_title' | t }}</strong><small>{{ 'product.trust.totals_text' | t }}</small></span>
+          </div>
+
+        {% when 'shopify_checkout' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="shopify_checkout">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.shopify_title' | t }}</strong><small>{{ 'product.trust.shopify_text' | t }}</small></span>
+          </div>
+
+        {% when 'order_updates' %}
+          <div class="mvq-trust-cluster__item" data-trust-badge="order_updates">
+            <span class="mvq-trust-cluster__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 6h16v12H4z"/><path d="m4 8 8 6 8-6"/></svg>
+            </span>
+            <span><strong>{{ 'product.trust.updates_title' | t }}</strong><small>{{ 'product.trust.updates_text' | t }}</small></span>
+          </div>
+      {% endcase %}
+    {% endfor %}
   </div>
 
-  {% if shop.enabled_payment_types != blank %}
+  {% if display_payment_icons and shop.enabled_payment_types != blank %}
     <div class="mvq-trust-cluster__payments">
       <span class="mvq-trust-cluster__payment-label">{{ 'product.trust.payments_label' | t }}</span>
       <ul class="mvq-trust-cluster__payment-list" role="list">
@@ -152,6 +270,36 @@ Renders a reusable trust badge cluster with enabled payment method icons.
   width: auto;
   height: 24px;
 }
+.mvq-trust-cluster--row .mvq-trust-cluster__grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mvq-trust-cluster--row .mvq-trust-cluster__item {
+  flex: 1 1 180px;
+}
+.mvq-trust-cluster--stack .mvq-trust-cluster__grid {
+  grid-template-columns: 1fr;
+}
+.mvq-trust-cluster--minimal {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.mvq-trust-cluster--minimal .mvq-trust-cluster__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.mvq-trust-cluster--minimal .mvq-trust-cluster__item {
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  flex: 0 1 auto;
+}
+.mvq-trust-cluster--minimal .mvq-trust-cluster__icon {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+}
 .mvq-trust-cluster--compact {
   margin: 14px 0 0;
   padding: 12px;
@@ -159,9 +307,16 @@ Renders a reusable trust badge cluster with enabled payment method icons.
 .mvq-trust-cluster--compact .mvq-trust-cluster__item small {
   font-size: .68rem;
 }
-@media (max-width: 380px) {
+.mvq-trust-cluster--titles-only .mvq-trust-cluster__item small {
+  display: none;
+}
+@media (max-width: 480px) {
   .mvq-trust-cluster__grid {
     grid-template-columns: 1fr;
+  }
+  .mvq-trust-cluster--row .mvq-trust-cluster__grid,
+  .mvq-trust-cluster--minimal .mvq-trust-cluster__grid {
+    display: grid;
   }
 }
 {% endstylesheet %}
