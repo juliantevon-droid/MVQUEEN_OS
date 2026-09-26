@@ -79,6 +79,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       automaticProductEnrollment:
         process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true" ? "enabled" : "manual-allowlist",
       editorialPublish: process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      mediaAltSync: process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true" ? "enabled" : "disabled",
       pricePublish: process.env.MVQ_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       pricing: commercial.missing.length ? "needs-configuration" : "advisory-ready",
       pricingMissing: commercial.missing,
@@ -120,6 +121,7 @@ export default function Dashboard() {
         <s-paragraph>Product write mode: {runtime.productWrites}</s-paragraph>
         <s-paragraph>Automatic product enrollment: {runtime.automaticProductEnrollment}</s-paragraph>
         <s-paragraph>Automatic editorial/SEO publishing: {runtime.editorialPublish}</s-paragraph>
+        <s-paragraph>Automatic missing-ALT repair: {runtime.mediaAltSync}</s-paragraph>
         <s-paragraph>Approved price publishing: {runtime.pricePublish}</s-paragraph>
         <s-paragraph>Pricing/profitability: {runtime.pricing}</s-paragraph>
         <s-paragraph>
