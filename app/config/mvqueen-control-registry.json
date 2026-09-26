@@ -122,9 +122,10 @@
   "security": {
     "repositoryExpectedVisibility": "private",
     "codeqlRequired": true,
-    "dependencyUpdatesRequired": true,
     "secretPatternScanRequired": true,
-    "protectedBranch": "main"
+    "protectedBranch": "main",
+    "dependencyAuditRequired": true,
+    "automaticDependencyBranches": false
   },
   "performance": {
     "mobileFirst": true,
