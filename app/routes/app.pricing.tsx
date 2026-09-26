@@ -5,6 +5,7 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { buildPricingDecision } from "../lib/enterprise/pricing-engine";
 import { resolveShopCommercialConfig } from "../lib/enterprise/commercial-settings.server";
+import { buildCommercialHealth } from "../lib/enterprise/commercial-health";
 
 const PRICING_TARGET_QUERY = `#graphql
 query MVQueenPricingTarget($id: ID!) {
@@ -156,6 +157,15 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     shopCommercial,
   );
 
+  const approvedHealth = buildCommercialHealth(
+    {
+      sellingPrice: approvedPrice,
+      unitCost: numberValue(commercial.get("unit_cost")),
+      inboundShipping: numberValue(commercial.get("inbound_shipping")),
+    },
+    shopCommercial,
+  );
+
   const fingerprint = pricingFingerprint({
     productGid,
     variantId: variants[0].id,
@@ -165,6 +175,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     inboundShipping: commercial.get("inbound_shipping") ?? null,
     state: decision.state,
     minimumPrice: decision.minimumPrice,
+    approvedCommercialState: approvedHealth.state,
+    approvedMaxBreakEvenCac: approvedHealth.maxBreakEvenCac,
+    approvedBreakEvenRoas: approvedHealth.breakEvenRoas,
   });
 
   if (decision.state !== "ready_for_approval" || decision.minimumPrice === null) {
@@ -179,7 +192,22 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     await audit(fingerprint, "BLOCKED", `Approved price ${approvedPrice} is below floor ${decision.minimumPrice}`);
     return {
       ok: false,
-      message: `Blocked: approved price $${approvedPrice.toFixed(2)} is below the calculated contribution floor of $${decision.minimumPrice.toFixed(2)}.`,
+      message: `Blocked: approved price ${approvedPrice.toFixed(2)} is below the calculated contribution floor of ${decision.minimumPrice.toFixed(2)}.`,
+    };
+  }
+
+  if (
+    approvedHealth.state !== "healthy" ||
+    approvedHealth.advertisingEligibility !== "eligible"
+  ) {
+    await audit(
+      fingerprint,
+      "BLOCKED",
+      `Approved price failed commercial health: ${approvedHealth.state}`,
+    );
+    return {
+      ok: false,
+      message: `Blocked: proposed price failed commercial health (${approvedHealth.state}).`,
     };
   }
 
@@ -221,7 +249,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     const published = updateBody.data?.productVariantsBulkUpdate?.productVariants?.[0];
     return {
       ok: true,
-      message: `Approved price published for ${product.title}: $${published?.price ?? approvedPrice.toFixed(2)}. Compare-at price, SKU, inventory, options and media were not changed.`,
+      message: `Approved price published for ${product.title}: ${published?.price ?? approvedPrice.toFixed(2)}. Max break-even CAC: ${approvedHealth.maxBreakEvenCac?.toFixed(2) ?? "—"}; break-even ROAS: ${approvedHealth.breakEvenRoas?.toFixed(2) ?? "—"}x. Compare-at price, SKU, inventory, options and media were not changed.`,
     };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
