@@ -56,3 +56,40 @@
   padding:clamp(14px,3vw,34px);
   background:transparent;
 }
+
+.mvq-shipping-estimate{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:8px 14px;
+  margin:0 0 1rem;
+  padding:14px 16px;
+  border:1px solid var(--mvq-line);
+  background:var(--mvq-cream);
+}
+.mvq-shipping-estimate__label{
+  color:var(--mvq-mink);
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.mvq-shipping-estimate strong{
+  font-size:.88rem;
+  font-weight:600;
+}
+.mvq-shipping-estimate a{
+  font-size:.72rem;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.mvq-product-shipping-estimate{
+  margin:.25rem 0 .7rem;
+  color:var(--mvq-charcoal) !important;
+}
+@media(max-width:560px){
+  .mvq-shipping-estimate{
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+}
