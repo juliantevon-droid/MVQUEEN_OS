@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import prisma from "../../db.server";
 import {
   getCommercialConfig,
@@ -47,6 +48,22 @@ export async function resolveShopCommercialConfig(
   return getCommercialConfig(overridesFromRow(row));
 }
 
+export function commercialPolicyFingerprint(
+  resolution: CommercialConfigResolution,
+): string {
+  const payload = JSON.stringify({
+    paymentRate: resolution.config.paymentRate,
+    paymentFixed: resolution.config.paymentFixed,
+    returnReserveRate: resolution.config.returnReserveRate,
+    targetContributionMarginRate: resolution.config.targetContributionMarginRate,
+    targetCac: resolution.config.targetCac,
+    inboundShippingDefault: resolution.config.inboundShippingDefault,
+    currency: resolution.config.currency,
+    missing: [...resolution.missing].sort(),
+  });
+  return createHash("sha256").update(payload, "utf8").digest("hex");
+}
+
 export async function saveShopCommercialSettings(args: {
   shop: string;
   actor: string;
@@ -75,6 +92,16 @@ export async function saveShopCommercialSettings(args: {
         actor,
         snapshotJson,
       },
+    });
+
+    await tx.productCommercialHealthState.updateMany({
+      where: { shop },
+      data: { stale: true },
+    });
+
+    await tx.productAutomationState.updateMany({
+      where: { shop },
+      data: { sourceFingerprint: null },
     });
 
     return settings;
