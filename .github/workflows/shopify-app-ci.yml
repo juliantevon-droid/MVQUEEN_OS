@@ -80,6 +80,9 @@ jobs:
       - name: Test catalog automation
         run: npm run test:catalog-automation
 
+      - name: Test production preflight
+        run: npm run test:production-preflight
+
       - name: Enterprise behavior tests
         run: npm run test:enterprise
 
