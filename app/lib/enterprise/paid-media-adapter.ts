@@ -9,6 +9,17 @@ export type PaidMediaMetricSnapshot = {
   measuredAt: string;
 };
 
+export type PaidMediaCommercialEvidence = {
+  productGid: string;
+  advertisingEligibility: "eligible" | "blocked" | "not_ready";
+  commercialState: string;
+  stale: boolean;
+  evaluatedAt: string;
+  maxBreakEvenCac: number | null;
+  breakEvenRoas: number | null;
+  policyFingerprint: string;
+};
+
 export type PaidMediaChange = {
   provider: string;
   accountId: string;
@@ -17,6 +28,7 @@ export type PaidMediaChange = {
   payload: Record<string, unknown>;
   approvedBy: string;
   approvedAt: string;
+  commercialEvidence: PaidMediaCommercialEvidence[];
 };
 
 export interface PaidMediaAdapter {
@@ -47,8 +59,45 @@ export function assertApprovedPaidMediaChange(change: PaidMediaChange): void {
     throw new Error("Paid-media change requires a valid approvedAt timestamp");
   }
   if (!change.accountId?.trim()) throw new Error("Paid-media change requires accountId");
+
+  if (!Array.isArray(change.commercialEvidence) || change.commercialEvidence.length === 0) {
+    throw new Error("Paid-media change requires product-level commercial evidence.");
+  }
+
+  const now = Date.now();
+  for (const evidence of change.commercialEvidence) {
+    if (!evidence.productGid?.startsWith("gid://shopify/Product/")) {
+      throw new Error("Commercial evidence must reference a Shopify product GID.");
+    }
+    if (evidence.stale) {
+      throw new Error(`Commercial evidence is stale for ${evidence.productGid}.`);
+    }
+    if (evidence.advertisingEligibility !== "eligible") {
+      throw new Error(`Advertising is not commercially eligible for ${evidence.productGid}.`);
+    }
+    if (!evidence.policyFingerprint?.trim()) {
+      throw new Error(`Commercial evidence is missing policy fingerprint for ${evidence.productGid}.`);
+    }
+    const evaluatedAt = Date.parse(evidence.evaluatedAt);
+    if (Number.isNaN(evaluatedAt)) {
+      throw new Error(`Commercial evidence has invalid evaluatedAt for ${evidence.productGid}.`);
+    }
+    if (now - evaluatedAt > 24 * 60 * 60 * 1000) {
+      throw new Error(`Commercial evidence is older than 24 hours for ${evidence.productGid}.`);
+    }
+    if (
+      evidence.maxBreakEvenCac === null ||
+      !Number.isFinite(evidence.maxBreakEvenCac) ||
+      evidence.maxBreakEvenCac <= 0
+    ) {
+      throw new Error(`Commercial evidence has no positive break-even CAC for ${evidence.productGid}.`);
+    }
+  }
+
   if (change.action === "set_budget") {
     const budget = Number(change.payload.budget);
-    if (!Number.isFinite(budget) || budget <= 0) throw new Error("Budget change requires a positive budget");
+    if (!Number.isFinite(budget) || budget <= 0) {
+      throw new Error("Budget change requires a positive budget.");
+    }
   }
 }
