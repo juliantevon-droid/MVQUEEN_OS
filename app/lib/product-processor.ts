@@ -5,7 +5,7 @@ import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
 import { resolveShopCommercialConfig } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v5";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v6";
 
 // The React app is a transport/classification worker, not a copy generator.
 // Live writes remain fail-closed and require explicit product approval.
@@ -168,6 +168,8 @@ export async function processProductJob(jobId: string) {
       "mvq:brand:",
       "mvq:tone:",
       "mvq:pricing:",
+      "mvq:commercial:",
+      "mvq:ads:",
       "mvq:marketing:",
       "mvq:lifecycle:",
     ];
@@ -179,6 +181,7 @@ export async function processProductJob(jobId: string) {
     );
     const mergedTags = Array.from(new Set([...retainedTags, ...decision.tags]));
     const pricing = decision.pricing;
+    const commercialHealth = decision.commercialHealth;
     const marketing = decision.marketing;
     const lifecycle = decision.lifecycle;
     const costVariant = product.variants?.nodes?.[0];
@@ -245,7 +248,25 @@ export async function processProductJob(jobId: string) {
       ...(pricing.estimatedContributionDollars !== null
         ? [{ namespace: "commercial", key: "estimated_contribution", type: "number_decimal", value: String(pricing.estimatedContributionDollars) }]
         : []),
+      { namespace: "commercial", key: "health_state", type: "single_line_text_field", value: commercialHealth.state },
+      { namespace: "commercial", key: "advertising_eligibility", type: "single_line_text_field", value: commercialHealth.advertisingEligibility },
+      ...(commercialHealth.maxBreakEvenCac !== null
+        ? [{ namespace: "commercial", key: "max_break_even_cac", type: "number_decimal", value: String(commercialHealth.maxBreakEvenCac) }]
+        : []),
+      ...(commercialHealth.breakEvenRoas !== null
+        ? [{ namespace: "commercial", key: "break_even_roas", type: "number_decimal", value: String(commercialHealth.breakEvenRoas) }]
+        : []),
+      ...(commercialHealth.targetRoas !== null
+        ? [{ namespace: "commercial", key: "target_roas", type: "number_decimal", value: String(commercialHealth.targetRoas) }]
+        : []),
+      ...(commercialHealth.contributionAfterTargetCac !== null
+        ? [{ namespace: "commercial", key: "contribution_after_target_cac", type: "number_decimal", value: String(commercialHealth.contributionAfterTargetCac) }]
+        : []),
+      ...(commercialHealth.contributionMarginAfterTargetCac !== null
+        ? [{ namespace: "commercial", key: "contribution_margin_after_target_cac", type: "number_decimal", value: String(commercialHealth.contributionMarginAfterTargetCac) }]
+        : []),
       { namespace: "marketing", key: "campaign_state", type: "single_line_text_field", value: marketing.state },
+      { namespace: "marketing", key: "paid_planning_eligibility", type: "single_line_text_field", value: marketing.paidPlanningEligibility },
       { namespace: "marketing", key: "brand_world", type: "single_line_text_field", value: marketing.brandWorld },
       { namespace: "marketing", key: "positioning", type: "multi_line_text_field", value: marketing.positioning },
       { namespace: "marketing", key: "paid_execution", type: "single_line_text_field", value: marketing.paidExecution },
