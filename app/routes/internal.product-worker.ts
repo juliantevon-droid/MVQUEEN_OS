@@ -1,6 +1,9 @@
 import { timingSafeEqual } from "node:crypto";
 import type { ActionFunctionArgs } from "react-router";
-import { runAlwaysOnProductWorker } from "../lib/product-job-worker.server";
+import {
+  recordProductWorkerHeartbeat,
+  runAlwaysOnProductWorker,
+} from "../lib/product-job-worker.server";
 
 function authorized(request: Request): boolean {
   const expected =
@@ -27,6 +30,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
   try {
     const result = await runAlwaysOnProductWorker();
+    await recordProductWorkerHeartbeat("fallback", result);
     return Response.json({ ok: true, ...result });
   } catch (error) {
     console.error("MVQueen product worker failed", error);
