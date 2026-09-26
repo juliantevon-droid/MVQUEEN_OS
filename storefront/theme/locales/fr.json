@@ -1,0 +1,45 @@
+{
+  "general": {
+    "404": {
+      "title": "Page introuvable"
+    }
+  },
+  "product": {
+    "trust": {
+      "aria_label": "Réassurance d’achat",
+      "secure_title": "Paiement sécurisé",
+      "secure_text": "Paiement protégé avec Shopify.",
+      "connection_title": "Connexion chiffrée",
+      "connection_text": "Protection SSL pendant votre navigation et vos achats.",
+      "policy_title": "Politiques claires",
+      "policy_text": "Les informations d’expédition et de retour sont disponibles avant l’achat.",
+      "support_title": "Service client",
+      "support_text": "Une assistance est disponible lorsque vous en avez besoin.",
+      "payments_label": "Moyens de paiement acceptés",
+      "payment_title": "Options de paiement",
+      "payment_text": "Les moyens de paiement activés sont affichés au moment du paiement.",
+      "shipping_title": "Informations d’expédition",
+      "shipping_text": "Les informations de livraison sont disponibles avant l’achat.",
+      "returns_title": "Informations de retour",
+      "returns_text": "Les conditions de retour sont disponibles avant l’achat.",
+      "review_title": "Vérifier avant de commander",
+      "review_text": "Vérifiez vos articles et le total avant de passer commande.",
+      "privacy_title": "Politique de confidentialité",
+      "privacy_text": "Notre politique de confidentialité explique comment les informations personnelles sont traitées.",
+      "details_title": "Détails du produit",
+      "details_text": "Les matières, ingrédients, tailles ou conseils d’entretien sont affichés lorsqu’ils sont disponibles.",
+      "size_title": "Guide des tailles et de la coupe",
+      "size_text": "Les informations de taille sont affichées lorsqu’elles sont disponibles.",
+      "care_title": "Conseils d’entretien",
+      "care_text": "Les instructions d’entretien sont affichées lorsqu’elles sont disponibles.",
+      "contact_title": "Contacter le support",
+      "contact_text": "Des options de contact avec le service client sont disponibles.",
+      "totals_title": "Total du paiement",
+      "totals_text": "Les taxes et frais d’expédition sont calculés au paiement lorsqu’ils s’appliquent.",
+      "shopify_title": "Paiement Shopify",
+      "shopify_text": "Votre commande est finalisée via le paiement Shopify.",
+      "updates_title": "Suivi de commande",
+      "updates_text": "La confirmation et le statut de la commande sont disponibles après l’achat."
+    }
+  }
+}
