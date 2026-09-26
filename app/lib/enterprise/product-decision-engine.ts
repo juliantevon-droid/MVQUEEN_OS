@@ -7,7 +7,8 @@ import {
 import { buildMarketingPlan } from "./marketing-engine";
 import { buildPricingDecision } from "./pricing-engine";
 import { buildLifecyclePlan } from "./lifecycle-engine";
-import type { CommercialConfigResolution } from "./commercial-config";
+import { getCommercialConfig, type CommercialConfigResolution } from "./commercial-config";
+import { buildCommercialHealth } from "./commercial-health";
 
 function numberFrom(value?: string | null): number | null {
   if (!value?.trim()) return null;
@@ -40,15 +41,33 @@ export function buildEnterpriseProductDecision(
   const firstVariant = product.variants?.nodes?.[0];
   const currentPrice = numberFrom(firstVariant?.price);
   const authoritativeUnitCost = numberFrom(firstVariant?.unitCost);
+  const resolvedCommercial = commercial ?? getCommercialConfig();
+  const unitCost =
+    authoritativeUnitCost ?? numberFrom(metafieldValue(product, "unit_cost"));
+  const inboundShipping = numberFrom(metafieldValue(product, "inbound_shipping"));
+
   const pricing = buildPricingDecision(
     {
       currentPrice,
-      unitCost: authoritativeUnitCost ?? numberFrom(metafieldValue(product, "unit_cost")),
-      inboundShipping: numberFrom(metafieldValue(product, "inbound_shipping")),
+      unitCost,
+      inboundShipping,
     },
-    commercial,
+    resolvedCommercial,
   );
-  const marketing = buildMarketingPlan(classification, brandRoute, pricing);
+  const commercialHealth = buildCommercialHealth(
+    {
+      sellingPrice: currentPrice,
+      unitCost,
+      inboundShipping,
+    },
+    resolvedCommercial,
+  );
+  const marketing = buildMarketingPlan(
+    classification,
+    brandRoute,
+    pricing,
+    commercialHealth,
+  );
   const lifecycle = buildLifecyclePlan(classification, brandRoute);
 
   const tags = [
@@ -59,6 +78,8 @@ export function buildEnterpriseProductDecision(
     ...brandRoutingTags(brandRoute),
     ...(classification.confidence === "review" ? ["mvq:needs-review"] : []),
     ...(pricing.state === "ready_for_approval" ? ["mvq:pricing:ready-for-approval"] : [`mvq:pricing:${pricing.state}`]),
+    `mvq:commercial:${commercialHealth.state}`,
+    `mvq:ads:${commercialHealth.advertisingEligibility}`,
     `mvq:marketing:${marketing.state}`,
     `mvq:lifecycle:${lifecycle.state}`,
   ];
@@ -67,6 +88,7 @@ export function buildEnterpriseProductDecision(
     classification,
     brandRoute,
     pricing,
+    commercialHealth,
     marketing,
     lifecycle,
     commercialSource: {
