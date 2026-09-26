@@ -30,7 +30,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "content_intelligence","seo_intelligence","merchandising","pricing",
             "profitability","creative","paid_advertising","analytics","retention",
             "customer_support","inventory","orders_fulfillment","theme","qa","deployment",
-            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health","commercial_cost_sync","commercial_settings","commercial_health","advertising_eligibility","catalog_release_gate"
+            "finance","compliance","backup_recovery","media_alt_publication","production_database","catalog_health","commercial_cost_sync","commercial_settings","commercial_health","advertising_eligibility","catalog_release_gate","catalog_backfill"
         }
         self.assertTrue(required.issubset(ids))
 
@@ -61,7 +61,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "product_intake","canonical_content_release","pricing_profitability",
             "merchandising","storefront_release","paid_media","analytics_learning",
             "retention_lifecycle","order_fulfillment","customer_care","finance",
-            "compliance","backup_recovery","catalog_health_audit","commercial_configuration","commercial_health_evaluation","catalog_release_gate"
+            "compliance","backup_recovery","catalog_health_audit","commercial_configuration","commercial_health_evaluation","catalog_release_gate","catalog_backfill_reprocessing"
         }
         self.assertTrue(required.issubset(ids))
         paid = next(item for item in self.workflows["workflows"] if item["id"] == "paid_media")
@@ -87,6 +87,20 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("advertising_eligibility=eligible for every promoted product", by_capability["paid_advertising"]["requirements"])
         self.assertIn("positive max_cac_at_target_margin", by_capability["paid_advertising"]["requirements"])
         self.assertIn("target_margin_roas_floor", by_capability["paid_advertising"]["requirements"])
+        self.assertEqual(by_capability["catalog_backfill"]["state"], "manual_connected_scheduler_optional")
+        self.assertIn("MVQ_WRITE_ENABLED=true and MVQ_BACKFILL_WRITE_ENABLED=true for catalog-wide writes", by_capability["catalog_backfill"]["requirements"])
+
+    def test_catalog_backfill_is_fail_closed(self):
+        gates = self.data["non_negotiable_gates"]
+        self.assertIn("MVQ_BACKFILL_WRITE_ENABLED=true", gates["bulk_catalog"])
+        worker = (ROOT / "app/routes/internal.catalog-worker.ts").read_text(encoding="utf-8")
+        service = (ROOT / "app/lib/enterprise/catalog-backfill.server.ts").read_text(encoding="utf-8")
+        processor = (ROOT / "app/lib/product-processor.ts").read_text(encoding="utf-8")
+        self.assertIn("MVQ_BACKFILL_WORKER_TOKEN", worker)
+        self.assertIn("timingSafeEqual", worker)
+        self.assertIn("MVQ_BACKFILL_WRITE_ENABLED", service)
+        self.assertIn('writeMode === "governed_write"', service)
+        self.assertIn("allowWrites", processor)
 
     def test_runtime_files_exist(self):
         required = [
@@ -108,6 +122,9 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "app/lib/enterprise/paid-media-adapter.ts",
             "app/routes/app.commercial-settings.tsx",
             "app/routes/app.commercial-health.tsx",
+            "app/lib/enterprise/catalog-backfill.server.ts",
+            "app/routes/app.catalog-backfill.tsx",
+            "app/routes/internal.catalog-worker.ts",
             "storefront/theme/assets/mvqueen-analytics.js",
             "app/lib/enterprise/database-guard.server.ts",
             "prisma/production/schema.prisma",
@@ -118,6 +135,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "prisma/production/migrations/20260926024500_add_commercial_health_state/migration.sql",
             "prisma/migrations/20260926031500_add_target_margin_ad_guardrails/migration.sql",
             "prisma/production/migrations/20260926031500_add_target_margin_ad_guardrails/migration.sql",
+            "prisma/migrations/20260926033000_add_catalog_backfill_queue/migration.sql",
+            "prisma/production/migrations/20260926033000_add_catalog_backfill_queue/migration.sql",
         ]
         for rel in required:
             self.assertTrue((ROOT / rel).is_file(), rel)
