@@ -51,7 +51,7 @@ MISS_PRINCESS_SIGNALS = (
     "soft", "playful", "romantic", "bright", "color", "feminine",
     "expressive", "polished", "princess", "glamour",
 )
-DEFAULT_SHIPPING_ESTIMATE = "Confirmed at checkout based on destination and fulfillment source."
+DEFAULT_SHIPPING_ESTIMATE = "7–15 business days"
 
 
 def _text(value: Any) -> str:
@@ -84,7 +84,7 @@ def normalize(raw: Dict[str, Any]) -> Dict[str, Any]:
         shipping["delivery_estimate"] = verified_shipping or DEFAULT_SHIPPING_ESTIMATE
     shipping.setdefault(
         "estimate_source",
-        "verified_product_fact" if verified_shipping else "checkout_fallback",
+        "verified_product_fact" if verified_shipping else "store_default",
     )
     shipping.setdefault("specific_window_verified", bool(verified_shipping))
 
@@ -288,7 +288,7 @@ def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
     if not _text(shipping.get("delivery_estimate")):
         errors.append("Missing shipping.delivery_estimate")
     if shipping.get("specific_window_verified") is not True:
-        warnings.append("Shipping uses checkout fallback until a verified supplier/carrier delivery window is available")
+        warnings.append("Shipping uses the governed 7–15 business-day store default until a verified supplier/carrier delivery window is available")
     for field in ("title", "short_description", "description"):
         if not _text(record.get("copy", {}).get(field)):
             errors.append(f"Missing copy.{field}")
