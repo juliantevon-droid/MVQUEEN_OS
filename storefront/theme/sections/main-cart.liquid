@@ -33,7 +33,15 @@
           </div>
           <aside class="mvq-cart-summary">
             <div class="mvq-cart-summary-line"><span>Subtotal</span><strong>{{ cart.total_price | money }}</strong></div>
-            <p class="mvq-cart-note">Taxes and shipping are calculated at checkout.</p>
+            <div class="mvq-cart-delivery">
+              <span class="mvq-cart-delivery__label">Estimated delivery</span>
+              <strong>7–15 business days</strong>
+              <p>Taxes and shipping charges are calculated at checkout.</p>
+              <div class="mvq-cart-policy-links">
+                <a href="/pages/shipping-policy">Shipping details</a>
+                <a href="/pages/refund-policy">Refund & returns</a>
+              </div>
+            </div>
             <button class="mvq-button mvq-button--quiet" type="submit" name="update">Update bag</button>
             <button class="mvq-button mvq-button--gold" type="submit" name="checkout">Secure checkout</button>
             {% render 'trust-badges', compact: true %}
