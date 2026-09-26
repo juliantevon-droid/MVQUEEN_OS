@@ -42,7 +42,7 @@ Legacy systems are preserved until their replacement is verified. Do not delete 
 - GraphQL-first for new production automation.
 - Existing REST client remains available for maintenance and rollback paths.
 - Live Shopify theme is protected from development writes.
-- Theme development happens on `MVQueen Production — Horizon Build`.
+- Theme development happens on `MVQueen — Staging Preview` (`154876772550`), which remains unpublished. The live `MVQueen — Custom Production Build` (`154869825734`) is not a development-write target.
 - Product handles, SKUs, inventory, variants, and existing images are protected unless an explicit migration requires a change.
 - Product copy follows `06_Tone_And_Voice/Product_Description_Voice.md`.
 - Collection architecture follows `04_Products/Collection_Structure.md`.
@@ -58,7 +58,7 @@ Legacy systems are preserved until their replacement is verified. Do not delete 
 - [ ] Whole-repository source audit complete
 
 ### Gate 02 — Storefront
-- [x] Unpublished Horizon build selected
+- [x] Unpublished `MVQueen — Staging Preview` selected
 - [x] Enterprise visual layer added
 - [x] Product template upgraded
 - [ ] Header/navigation final integration
@@ -144,3 +144,13 @@ At every implementation step, ask:
 - Can this scale from hundreds to thousands of products?
 
 If the answer is yes, upgrade the architecture before calling the step complete.
+
+
+## Verified staging synchronization — 2026-09-26
+
+- GitHub `main` remains the source of truth for controlled theme code.
+- The full controlled theme deployment set was synchronized from `storefront/theme` to Shopify theme `MVQueen — Staging Preview` (`154876772550`).
+- Shopify accepted all synchronized batches with zero theme-file user errors.
+- Staging remains `UNPUBLISHED`, is not processing, and reports no processing failure.
+- The live theme remains `MVQueen — Custom Production Build` (`154869825734`) with role `MAIN`; it was not modified by this synchronization.
+- The approved MVQueen editorial homepage direction remains on staging until explicit launch approval.
