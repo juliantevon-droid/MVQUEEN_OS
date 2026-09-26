@@ -1,7 +1,7 @@
 # MVQueen Product Automation Runtime Specification
 ## MVQUEEN_OS / 30_System_Infrastructure
 
-Status: BUILD SPECIFICATION — not yet deployed
+Status: IMPLEMENTED IN MAIN — deployment and end-to-end production activation pending
 
 ## Objective
 Automatically process every eligible Shopify product after creation or meaningful update.
@@ -53,8 +53,30 @@ Every write must be traceable to a processing version/fingerprint. A webhook cau
 ## Backfill
 Existing catalog processing is a separate queue-driven operation. It must support pause, resume, checkpointing, dry-run, retry, and per-product audit records.
 
+## Current implementation
+Implemented in the React/Shopify runtime:
+- authenticated products/create and products/update webhook routes
+- webhook/event-key idempotency through ProductJob
+- automatic safe product enrollment behind MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED
+- deterministic taxonomy and brand routing
+- factual short-description, highlights, focus-keyword and long-tail SEO enrichment
+- Shopify SEO title/meta writes behind MVQ_EDITORIAL_PUBLISH_ENABLED
+- missing image ALT repair behind MVQ_MEDIA_ALT_SYNC_ENABLED and write_files
+- source fingerprint/version loop prevention
+- protected commerce-field boundary
+- durable catalog backfill queue and bounded worker path
+- production environment preflight
+
+Not yet activated as an always-on production service:
+- real HTTPS application host
+- production PostgreSQL database
+- real Shopify app client configuration
+- required app reauthorization for current scopes
+- production automation environment switches
+- verified end-to-end webhook test on a safe Shopify product
+
 ## Deployment gate
-Do not call this system production-ready until:
+Do not call this system 24/7 production-ready until:
 - app authentication works
 - webhook registration succeeds
 - HMAC/authenticity verification is tested
