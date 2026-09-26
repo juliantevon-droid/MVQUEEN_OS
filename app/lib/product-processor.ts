@@ -521,19 +521,23 @@ export async function processProductJob(
     const updatedAt = updateBody.data?.productUpdate?.product?.updatedAt;
     if (!updatedAt) throw new Error("Shopify product update did not return updatedAt");
 
+    // Record Shopify's own update timestamp immediately so the resulting
+    // products/update webhook is suppressed, but keep the automation version
+    // pending until every downstream surface succeeds. Failed ALT/blog/
+    // collection work therefore remains retryable.
     await prisma.productAutomationState.upsert({
       where: { shop_productGid: { shop: job.shop, productGid: product.id } },
       update: {
         sourceFingerprint: fingerprint,
         lastAutomationUpdatedAt: new Date(updatedAt),
-        automationVersion: AUTOMATION_VERSION,
+        automationVersion: AUTOMATION_VERSION + ":pending",
       },
       create: {
         shop: job.shop,
         productGid: product.id,
         sourceFingerprint: fingerprint,
         lastAutomationUpdatedAt: new Date(updatedAt),
-        automationVersion: AUTOMATION_VERSION,
+        automationVersion: AUTOMATION_VERSION + ":pending",
       },
     });
 
@@ -571,6 +575,14 @@ export async function processProductJob(
         surfaceRecord,
       );
     }
+
+    await prisma.productAutomationState.update({
+      where: { shop_productGid: { shop: job.shop, productGid: product.id } },
+      data: {
+        sourceFingerprint: fingerprint,
+        automationVersion: AUTOMATION_VERSION,
+      },
+    });
 
     await prisma.productJob.update({
       where: { id: jobId },
