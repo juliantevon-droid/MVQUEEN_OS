@@ -81,16 +81,27 @@ export async function reconcileRecentShopifyProducts() {
       let after: string | null = null;
 
       for (let page = 0; page < maxPages; page += 1) {
-        const response = await admin.graphql(RECONCILE_QUERY, {
+        const response: Response = await admin.graphql(RECONCILE_QUERY, {
           variables: {
             first,
             after,
             query: "updated_at:>'" + since + "'",
           },
         });
-        const body = await response.json();
+        const body = (await response.json()) as {
+          data?: {
+            products?: {
+              nodes?: Array<{ id?: string | null; updatedAt?: string | null }>;
+              pageInfo?: {
+                hasNextPage?: boolean;
+                endCursor?: string | null;
+              };
+            } | null;
+          };
+        };
         const connection = body.data?.products;
-        const nodes = connection?.nodes ?? [];
+        const nodes: Array<{ id?: string | null; updatedAt?: string | null }> =
+          connection?.nodes ?? [];
         scanned += nodes.length;
 
         for (const product of nodes) {
