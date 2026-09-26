@@ -54,7 +54,7 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             'aria-controls="MVQMobilePanel"',
             'aria-expanded="false"',
             "Miss.Princess",
-            "/pages/mvqueen",
+            "routes.root_url",
             "/pages/miss-princess",
         ),
     ),
