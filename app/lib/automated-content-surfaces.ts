@@ -110,8 +110,8 @@ export function buildAutomaticSurfaceRecord(
       approved_publish_price: null,
     },
     shipping: {
-      delivery_estimate: "Confirmed at checkout based on destination and fulfillment source.",
-      estimate_source: "checkout_fallback",
+      delivery_estimate: "7–15 business days",
+      estimate_source: "store_default",
       specific_window_verified: false,
     },
     copy: {
@@ -140,8 +140,8 @@ export function buildAutomaticSurfaceRecord(
         },
         "shipping.delivery_estimate": {
           type: "single_line_text_field",
-          value: "Confirmed at checkout based on destination and fulfillment source.",
-          source: "checkout_fallback",
+          value: "7–15 business days",
+          source: "store_default",
         },
       },
       product_page: {
