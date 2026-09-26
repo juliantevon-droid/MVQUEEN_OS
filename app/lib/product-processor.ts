@@ -41,6 +41,34 @@ query MVQueenAccessScopes {
   }
 }`;
 
+
+const ACCESS_SCOPE_CACHE = new Map<
+  string,
+  { expiresAt: number; handles: Set<string> }
+>();
+
+async function accessScopesForShop(
+  shop: string,
+  admin: { graphql: (query: string, options?: { variables?: Record<string, unknown> }) => Promise<Response> },
+): Promise<Set<string>> {
+  const ttlMs = Math.max(
+    60_000,
+    Math.min(3_600_000, Number(process.env.MVQ_SCOPE_CACHE_TTL_MS ?? "300000") || 300000),
+  );
+  const cached = ACCESS_SCOPE_CACHE.get(shop);
+  if (cached && cached.expiresAt > Date.now()) return cached.handles;
+
+  const response = await admin.graphql(ACCESS_SCOPES_QUERY);
+  const body = await response.json();
+  const handles = new Set<string>(
+    (body.data?.appInstallation?.accessScopes ?? [])
+      .map((scope: { handle?: string | null }) => scope.handle)
+      .filter((value: string | null | undefined): value is string => Boolean(value)),
+  );
+  ACCESS_SCOPE_CACHE.set(shop, { handles, expiresAt: Date.now() + ttlMs });
+  return handles;
+}
+
 const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
@@ -156,13 +184,7 @@ export async function processProductJob(
     let hasReadInventory = false;
     let hasWriteFiles = false;
     if (COST_SYNC_ENABLED || MEDIA_ALT_SYNC_ENABLED) {
-      const scopeResponse = await admin.graphql(ACCESS_SCOPES_QUERY);
-      const scopeBody = await scopeResponse.json();
-      const handles = new Set(
-        (scopeBody.data?.appInstallation?.accessScopes ?? [])
-          .map((scope: { handle?: string | null }) => scope.handle)
-          .filter(Boolean),
-      );
+      const handles = await accessScopesForShop(job.shop, admin);
       hasReadInventory = handles.has("read_inventory");
       hasWriteFiles = handles.has("write_files");
     }
