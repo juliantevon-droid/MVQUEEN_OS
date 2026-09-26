@@ -27,7 +27,7 @@ export async function recoverStaleProductJobs() {
   const cutoff = new Date(Date.now() - staleMinutes * 60_000);
   return prisma.productJob.updateMany({
     where: {
-      status: "processing",
+      status: { in: ["processing", "leased"] },
       startedAt: { lt: cutoff },
     },
     data: {
@@ -135,6 +135,18 @@ export async function processProductJobBatch() {
   let completed = 0;
   let failedCount = 0;
   for (const job of selected) {
+    const claim = await prisma.productJob.updateMany({
+      where: {
+        id: job.id,
+        status: { in: ["received", "failed"] },
+      },
+      data: {
+        status: "leased",
+        startedAt: new Date(),
+      },
+    });
+    if (claim.count !== 1) continue;
+
     try {
       await processProductJob(job.id);
       completed += 1;
