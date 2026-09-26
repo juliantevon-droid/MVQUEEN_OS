@@ -7,6 +7,8 @@ on:
       - 'storefront/theme/**'
       - '30_System_Infrastructure/automation/storefront_performance_audit.py'
       - '30_System_Infrastructure/system/registry/performance_budget.json'
+      - 'app/config/mvqueen-control-registry.json'
+      - '30_System_Infrastructure/system/registry/enterprise_capabilities.json'
       - '.github/workflows/storefront-performance.yml'
   pull_request:
     branches: [main]
@@ -26,6 +28,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validate MVQUEEN control registry
+        run: python 30_System_Infrastructure/automation/validate_control_registry.py
       - name: Enforce theme asset budgets
         run: python 30_System_Infrastructure/automation/storefront_performance_audit.py
 
