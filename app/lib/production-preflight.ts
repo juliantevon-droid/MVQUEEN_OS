@@ -66,6 +66,9 @@ export function productionPreflight() {
   if (!truthy("MVQ_PRODUCT_RECONCILE_ENABLED")) {
     errors.push("MVQ_PRODUCT_RECONCILE_ENABLED must be true for missed-webhook recovery");
   }
+  if (!truthy("MVQ_PRODUCT_CONTINUOUS_WORKER_REQUIRED")) {
+    errors.push("MVQ_PRODUCT_CONTINUOUS_WORKER_REQUIRED must be true for 24/7 production automation");
+  }
   const workerToken = process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim() ?? "";
   if (workerToken.length < 32) {
     errors.push("MVQ_PRODUCT_WORKER_TOKEN must be at least 32 characters for unattended product processing");
@@ -90,6 +93,7 @@ export function productionPreflight() {
       editorialSeo: truthy("MVQ_EDITORIAL_PUBLISH_ENABLED"),
       contentSurfaces: truthy("MVQ_AUTO_CONTENT_SURFACES_ENABLED"),
       reconciliation: truthy("MVQ_PRODUCT_RECONCILE_ENABLED"),
+      continuousWorkerRequired: truthy("MVQ_PRODUCT_CONTINUOUS_WORKER_REQUIRED"),
       durableWorker: (process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim().length ?? 0) >= 32,
       missingAltRepair: truthy("MVQ_MEDIA_ALT_SYNC_ENABLED"),
       costSync: truthy("MVQ_COST_SYNC_ENABLED"),
