@@ -16,7 +16,7 @@ const BLOG_CREATE = "#graphql\nmutation MVQCreateBlog($blog: BlogCreateInput!) {
 const ARTICLE_QUERY = "#graphql\nquery MVQArticleByHandle($query: String!) { articles(first: 1, query: $query) { nodes { id title handle } } }";
 const ARTICLE_CREATE = "#graphql\nmutation MVQCreateArticle($article: ArticleCreateInput!) { articleCreate(article: $article) { article { id title handle } userErrors { field message } } }";
 const ARTICLE_UPDATE = "#graphql\nmutation MVQUpdateArticle($id: ID!, $article: ArticleUpdateInput!) { articleUpdate(id: $id, article: $article) { article { id title handle } userErrors { field message } } }";
-const COLLECTION_QUERY = "#graphql\nquery MVQCollectionByHandle($query: String!) { collections(first: 1, query: $query) { nodes { id title handle } } }";
+const COLLECTION_QUERY = "#graphql\nquery MVQCollectionByHandle($query: String!) { collections(first: 1, query: $query) { nodes { id title handle descriptionHtml seo { title description } } } }";
 const COLLECTION_UPDATE = "#graphql\nmutation MVQUpdateCollection($input: CollectionInput!) { collectionUpdate(input: $input) { collection { id title handle } userErrors { field message } } }";
 const PAGE_QUERY = "#graphql\nquery MVQPageByHandle($query: String!) { pages(first: 1, query: $query) { nodes { id title handle isPublished } } }";
 const PAGE_CREATE = "#graphql\nmutation MVQCreatePage($page: PageCreateInput!) { pageCreate(page: $page) { page { id title handle isPublished } userErrors { field message } } }";
@@ -191,14 +191,31 @@ async function publishCollection(admin: AdminGraphql, record: CanonicalProductRe
     return { surface: "collection", status: "SKIPPED", message: "No existing collection matched approved target handles; auto-creation is disabled" };
   }
 
+  const desiredDescriptionHtml = "<p>" + esc(collection.description) + "</p>";
+  const desiredSeoTitle = String(collection.seo_title || "").trim();
+  const desiredMetaDescription = String(collection.meta_description || "").trim();
+
+  if (
+    String(target.descriptionHtml || "").trim() === desiredDescriptionHtml &&
+    String(target.seo?.title || "").trim() === desiredSeoTitle &&
+    String(target.seo?.description || "").trim() === desiredMetaDescription
+  ) {
+    return {
+      surface: "collection",
+      status: "SKIPPED",
+      resourceId: target.id,
+      message: "Existing collection " + matchedHandle + " already matches approved content",
+    };
+  }
+
   const updated = await body(await admin.graphql(COLLECTION_UPDATE, {
     variables: {
       input: {
         id: target.id,
-        descriptionHtml: "<p>" + esc(collection.description) + "</p>",
+        descriptionHtml: desiredDescriptionHtml,
         seo: {
-          title: String(collection.seo_title || "").trim(),
-          description: String(collection.meta_description || "").trim(),
+          title: desiredSeoTitle,
+          description: desiredMetaDescription,
         },
       },
     },
