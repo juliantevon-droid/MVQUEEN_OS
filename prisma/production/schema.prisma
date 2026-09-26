@@ -98,3 +98,44 @@ model CommercialSettingsAudit {
 
   @@index([shop, createdAt])
 }
+
+
+model ProductCommercialHealthState {
+  id                                  String   @id @default(cuid())
+  shop                                String
+  productGid                          String
+  sourceFingerprint                   String
+  policyFingerprint                   String
+  state                               String
+  advertisingEligibility              String
+  maxBreakEvenCac                     Float?
+  breakEvenRoas                       Float?
+  targetRoas                          Float?
+  contributionAfterTargetCac          Float?
+  contributionMarginAfterTargetCac    Float?
+  stale                               Boolean  @default(false)
+  evaluatedAt                         DateTime @default(now())
+  updatedAt                           DateTime @updatedAt
+
+  @@unique([shop, productGid])
+  @@index([shop, state, stale])
+}
+
+model ProductCommercialHealthSnapshot {
+  id                                  String   @id @default(cuid())
+  shop                                String
+  productGid                          String
+  sourceFingerprint                   String
+  policyFingerprint                   String
+  state                               String
+  advertisingEligibility              String
+  maxBreakEvenCac                     Float?
+  breakEvenRoas                       Float?
+  targetRoas                          Float?
+  contributionAfterTargetCac          Float?
+  contributionMarginAfterTargetCac    Float?
+  createdAt                           DateTime @default(now())
+
+  @@index([shop, productGid, createdAt])
+  @@index([shop, state, createdAt])
+}
