@@ -34,7 +34,7 @@ jobs:
         run: python PRODUCTION_READINESS/deep_repo_audit.py
 
       - name: Upload deep audit
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mvqueen-deep-repo-audit-${{ github.sha }}
           path: build/deep_repo_audit/

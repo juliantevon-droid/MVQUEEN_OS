@@ -60,7 +60,7 @@ jobs:
           git rev-parse HEAD > .mvqueen-ci/commit.txt
           cp build/storefront_release_audit/report.json .mvqueen-ci/storefront-release-audit.json 2>/dev/null || true
           cp build/storefront_release_audit/report.md .mvqueen-ci/storefront-release-audit.md 2>/dev/null || true
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: mvqueen-theme-validation-${{ github.run_id }}
@@ -141,7 +141,7 @@ jobs:
           mkdir -p .mvqueen-ci
           printf 'store=%s\ntheme=%s\ncommit=%s\nrun=%s\n' "$SHOPIFY_STORE" "$SHOPIFY_THEME_ID" "$GITHUB_SHA" "$GITHUB_RUN_ID" > .mvqueen-ci/deployment.txt
           cp theme-list-after-push.json .mvqueen-ci/theme-list-after-push.json 2>/dev/null || true
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: mvqueen-theme-deployment-${{ github.run_id }}
