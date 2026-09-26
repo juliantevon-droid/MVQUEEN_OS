@@ -238,6 +238,13 @@
       "authority": "Catalog Health + commercial health",
       "execution": "readiness_decision",
       "writes": "none"
+    },
+    {
+      "id": "catalog_backfill",
+      "status": "connected_manual_worker_ready",
+      "authority": "MVQUEEN_OS durable queue + Shopify product truth",
+      "execution": "cursor_scan_bounded_batches",
+      "writes": "dry_run_default; catalog_writes_require_global_and_backfill_write_gates"
     }
   ],
   "non_negotiable_gates": {
@@ -251,7 +258,8 @@
       "handle",
       "source_media_relationships"
     ],
-    "minors": "Paid audience targeting must follow platform and legal requirements; the operating system does not hard-code minor targeting."
+    "minors": "Paid audience targeting must follow platform and legal requirements; the operating system does not hard-code minor targeting.",
+    "bulk_catalog": "Catalog-wide reprocessing is dry-run by default. Shopify product writes require MVQ_WRITE_ENABLED=true, MVQ_BACKFILL_WRITE_ENABLED=true, and the existing per-product safe-field authorization path."
   },
   "workflow_registry": "30_System_Infrastructure/system/registry/enterprise_workflows.json"
 }
