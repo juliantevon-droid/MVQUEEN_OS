@@ -1,0 +1,32 @@
+name: MVQUEEN Recovery Readiness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'prisma/**'
+      - 'PRODUCTION_READINESS/BACKUP_STRATEGY.md'
+      - 'SECURITY.md'
+      - '.gitignore'
+      - '.github/workflows/mvqueen-theme-cicd.yml'
+      - '30_System_Infrastructure/automation/recovery_readiness.py'
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '53 9 * * 6'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recovery-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify rollback and recovery prerequisites
+        run: python 30_System_Infrastructure/automation/recovery_readiness.py
