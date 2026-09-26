@@ -15,6 +15,21 @@ ROOT = Path(__file__).resolve().parents[2]
 THEME = ROOT / "storefront" / "theme"
 OUT = ROOT / "build" / "storefront_release_audit"
 
+DEPLOYMENT_WORKFLOW = ROOT / ".github" / "workflows" / "mvqueen-theme-cicd.yml"
+DEPLOYMENT_REQUIRED = (
+    "layout/theme.liquid",
+    "assets/mvqueen-analytics.js",
+    "assets/mvqueen-product.css",
+    "sections/main-product.liquid",
+    "sections/main-cart.liquid",
+    "sections/main-search.liquid",
+    "sections/contact-page.liquid",
+    "snippets/trust-badges.liquid",
+    "snippets/product-schema.liquid",
+    "snippets/seo-meta.liquid",
+    "locales/en.default.json",
+)
+
 CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
     "global_shell": (
         "layout/theme.liquid",
@@ -235,6 +250,20 @@ def main() -> int:
             failures.append({"check": name, "file": rel, "reason": f"missing performance token: {token}"})
         else:
             passed.append(name)
+
+    if not DEPLOYMENT_WORKFLOW.is_file():
+        failures.append({"check": "deployment_allowlist", "file": str(DEPLOYMENT_WORKFLOW.relative_to(ROOT)), "reason": "missing deployment workflow"})
+    else:
+        deployment_source = DEPLOYMENT_WORKFLOW.read_text(encoding="utf-8", errors="ignore")
+        missing_deploy = [rel for rel in DEPLOYMENT_REQUIRED if rel not in deployment_source]
+        if missing_deploy:
+            failures.append({
+                "check": "deployment_allowlist",
+                "file": str(DEPLOYMENT_WORKFLOW.relative_to(ROOT)),
+                "reason": "critical governed files missing from staging deployment allowlist: " + ", ".join(missing_deploy),
+            })
+        else:
+            passed.append("deployment_allowlist")
 
     external_gates = [
         "purchase completion analytics must be verified through Shopify Customer Events / approved pixel instrumentation",
