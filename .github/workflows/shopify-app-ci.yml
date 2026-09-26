@@ -74,5 +74,8 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Enterprise behavior tests
+        run: npm run test:enterprise
+
       - name: Production build
         run: npm run build
