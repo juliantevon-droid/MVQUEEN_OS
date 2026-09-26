@@ -97,7 +97,9 @@
         "advertising_eligibility=eligible for every promoted product",
         "positive max_break_even_cac",
         "commercial policy fingerprint",
-        "change-history audit"
+        "change-history audit",
+        "positive max_cac_at_target_margin",
+        "target_margin_roas_floor"
       ],
       "side_effects": "none until provider, execution flag, human approval, and fresh commercial eligibility evidence are present"
     },
