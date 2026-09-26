@@ -1,0 +1,59 @@
+name: MVQUEEN Storefront Performance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'storefront/theme/**'
+      - '30_System_Infrastructure/automation/storefront_performance_audit.py'
+      - '30_System_Infrastructure/system/registry/performance_budget.json'
+      - '.github/workflows/storefront-performance.yml'
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '29 8 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-budget:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce theme asset budgets
+        run: python 30_System_Infrastructure/automation/storefront_performance_audit.py
+
+  lighthouse:
+    if: ${{ vars.MVQUEEN_STOREFRONT_URL != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TARGET_URL: ${{ vars.MVQUEEN_STOREFRONT_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+      - name: Run Lighthouse
+        run: npx -y lighthouse@12 "$TARGET_URL" --quiet --chrome-flags="--headless --no-sandbox" --output=json --output-path=lighthouse.json
+      - name: Enforce Lighthouse budgets
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const report = JSON.parse(fs.readFileSync('lighthouse.json', 'utf8'));
+          const budget = JSON.parse(fs.readFileSync('30_System_Infrastructure/system/registry/performance_budget.json', 'utf8')).lighthouse;
+          const checks = {performance:'performance',accessibility:'accessibility',bestPractices:'best-practices',seo:'seo'};
+          let failed = false;
+          for (const [budgetKey, categoryKey] of Object.entries(checks)) {
+            const score = report.categories[categoryKey].score;
+            console.log(`${budgetKey}: ${score}`);
+            if (score < budget[budgetKey]) failed = true;
+          }
+          if (failed) process.exit(1);
+          NODE
