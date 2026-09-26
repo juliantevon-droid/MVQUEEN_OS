@@ -76,6 +76,24 @@
       "guard": "no missing assumption is invented; incomplete configuration keeps pricing blocked"
     },
     {
+      "id": "commercial_health_evaluation",
+      "status": "connected_policy_aware",
+      "trigger": "product processing, live catalog audit, proposed price validation, or commercial-policy change",
+      "authority": "MVQUEEN_OS commercial engine",
+      "steps": [
+        "resolve_current_shop_policy",
+        "verify_cost_and_price",
+        "calculate_payment_and_return_reserve",
+        "calculate_contribution_before_ads",
+        "calculate_max_break_even_cac",
+        "calculate_contribution_after_target_cac",
+        "calculate_break_even_and_target_roas",
+        "classify_healthy_thin_or_blocked",
+        "persist_current_state_and_history"
+      ],
+      "guard": "policy changes mark persisted product health stale; stale evidence is never advertising-eligible"
+    },
+    {
       "id": "pricing_profitability",
       "status": "connected_approval_required",
       "trigger": "verified unit cost + commercial configuration",
@@ -110,6 +128,23 @@
       "guard": "No cross-brand recommendations; no invented compatibility; no bundle creation without an approved bundle rule; no live relationship mutation from the offline resolver."
     },
     {
+      "id": "catalog_release_gate",
+      "status": "connected_decision_gate",
+      "trigger": "catalog health evaluation",
+      "authority": "Catalog Health + Commercial Health",
+      "steps": [
+        "brand_integrity",
+        "seo_integrity",
+        "content_presence",
+        "verified_cost",
+        "current_price",
+        "commercial_health",
+        "release_decision",
+        "advertising_eligibility"
+      ],
+      "guard": "blockers prevent release eligibility; warnings require review; paid media additionally requires fresh advertising-eligible economics"
+    },
+    {
       "id": "storefront_release",
       "status": "connected_staging_first",
       "trigger": "GitHub main theme change",
@@ -137,7 +172,7 @@
         "performance_readback",
         "profitability_feedback"
       ],
-      "guard": "no provider or human approval -> no spend/action"
+      "guard": "no provider or human approval -> no spend/action; no fresh non-stale advertising-eligible product evidence -> no paid-media execution"
     },
     {
       "id": "analytics_learning",
