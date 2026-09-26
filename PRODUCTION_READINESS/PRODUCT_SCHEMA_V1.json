@@ -12,6 +12,7 @@
     "category",
     "pricing",
     "images",
+    "shipping",
     "intelligence",
     "copy",
     "seo",
@@ -841,6 +842,31 @@
               ]
             }
           }
+        }
+      }
+    },
+    "shipping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "delivery_estimate",
+        "estimate_source",
+        "specific_window_verified"
+      ],
+      "properties": {
+        "delivery_estimate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estimate_source": {
+          "type": "string",
+          "enum": [
+            "verified_product_fact",
+            "checkout_fallback"
+          ]
+        },
+        "specific_window_verified": {
+          "type": "boolean"
         }
       }
     }
