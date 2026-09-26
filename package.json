@@ -20,7 +20,8 @@
     "db:migrate:production": "prisma migrate deploy --schema prisma/production/schema.prisma",
     "setup:production": "npm run prisma:generate:production && npm run db:migrate:production",
     "build:production": "npm run prisma:generate:production && react-router build",
-    "test:enterprise": "tsx app/lib/enterprise/enterprise.test.ts"
+    "test:enterprise": "tsx app/lib/enterprise/enterprise.test.ts",
+    "test:catalog-automation": "tsx app/lib/product-content-automation.test.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.16.3",
