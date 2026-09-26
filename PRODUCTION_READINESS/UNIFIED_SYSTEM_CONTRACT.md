@@ -38,9 +38,9 @@ Legacy sister-brand strings remain detection-only signals and must not appear as
 ## Shipping estimate contract — 2026-09-26
 
 - Every production-ready product must carry a non-empty `shipping.delivery_estimate`.
-- A supplier/carrier day range may be customer-facing only when it is backed by verified source evidence.
-- When no verified window exists, the canonical fallback is: `Confirmed at checkout based on destination and fulfillment source.`
+- The governed store default is `7–15 business days` for products without a faster verified supplier/carrier window.
+- Verified product-specific estimates such as `5–7 business days` or `6–10 business days` override the store default when supported by fulfillment evidence.
 - The storefront displays the estimate near Add to Bag and inside Shipping & returns.
 - `shipping.delivery_estimate` is a product metafield and is not stored in product descriptions.
-- Future imports must preserve or generate the governed fallback; they must never invent optimistic shipping times.
+- Future imports must preserve or generate the governed store default; they must never invent an unsupported faster shipping time.
 
