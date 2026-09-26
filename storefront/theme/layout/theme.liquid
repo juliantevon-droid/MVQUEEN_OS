@@ -40,6 +40,8 @@
         "product_handle": {% if product %}{{ product.handle | json }}{% else %}null{% endif %},
         "product_title": {% if product %}{{ product.title | json }}{% else %}null{% endif %},
         "collection_handle": {% if collection %}{{ collection.handle | json }}{% else %}null{% endif %},
+        "search_performed": {% if request.page_type == 'search' %}{{ search.performed | json }}{% else %}false{% endif %},
+        "search_terms": {% if request.page_type == 'search' %}{{ search.terms | json }}{% else %}null{% endif %},
         "cart_item_count": {{ cart.item_count | json }}
       }
     </script>
