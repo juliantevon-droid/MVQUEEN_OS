@@ -123,7 +123,11 @@ function sourceFingerprint(
   return createHash("sha256").update(source).digest("hex");
 }
 
-export async function processProductJob(jobId: string) {
+export async function processProductJob(
+  jobId: string,
+  options: { allowWrites?: boolean } = {},
+) {
+  const invocationWritesAllowed = options.allowWrites !== false;
   const job = await prisma.productJob.findUnique({ where: { id: jobId } });
   if (!job) throw new Error("Product job not found");
 
@@ -440,10 +444,12 @@ export async function processProductJob(jobId: string) {
     const productAuthorized =
       AUTO_PRODUCT_ENROLLMENT_ENABLED || APPROVED_PRODUCT_GIDS.has(product.id);
 
-    if (!WRITE_ENABLED || !productAuthorized) {
+    if (!WRITE_ENABLED || !invocationWritesAllowed || !productAuthorized) {
       const reason = !WRITE_ENABLED
         ? "DRY_RUN — Shopify writes disabled"
-        : "DRY_RUN — automatic enrollment disabled and product GID not explicitly approved";
+        : !invocationWritesAllowed
+          ? "DRY_RUN — this invocation is explicitly read/evaluate only"
+          : "DRY_RUN — automatic enrollment disabled and product GID not explicitly approved";
       await prisma.productJob.update({
         where: { id: jobId },
         data: { status: "completed", completedAt: new Date(), error: reason },
