@@ -73,7 +73,7 @@
 
     const href = link.getAttribute("href") || "";
 
-    if (href === "/pages/mvqueen") {
+    if (href === "/" || href === "/pages/mvqueen") {
       emit("mvq:brand_select", { selected_brand: "MVQueen" });
     } else if (href === "/pages/miss-princess") {
       emit("mvq:brand_select", { selected_brand: "Miss.Princess" });
