@@ -1,0 +1,65 @@
+name: MVQUEEN Product Worker
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mvqueen-product-worker
+  cancel-in-progress: false
+
+jobs:
+  run-product-worker:
+    name: Run durable Shopify product worker
+    if: ${{ vars.MVQ_PRODUCT_WORKER_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify worker configuration
+        env:
+          WORKER_URL: ${{ vars.MVQ_PRODUCT_WORKER_URL }}
+          WORKER_TOKEN: ${{ secrets.MVQ_PRODUCT_WORKER_TOKEN }}
+        run: |
+          if [ -z "$WORKER_URL" ]; then
+            echo "MVQ_PRODUCT_WORKER_URL is required when MVQ_PRODUCT_WORKER_ENABLED=true."
+            exit 1
+          fi
+          if [ -z "$WORKER_TOKEN" ]; then
+            echo "MVQ_PRODUCT_WORKER_TOKEN is required when MVQ_PRODUCT_WORKER_ENABLED=true."
+            exit 1
+          fi
+          case "$WORKER_URL" in
+            https://*) ;;
+            *)
+              echo "MVQ_PRODUCT_WORKER_URL must use HTTPS."
+              exit 1
+              ;;
+          esac
+
+      - name: Process reconciliation and queued product jobs
+        env:
+          WORKER_URL: ${{ vars.MVQ_PRODUCT_WORKER_URL }}
+          WORKER_TOKEN: ${{ secrets.MVQ_PRODUCT_WORKER_TOKEN }}
+        run: |
+          response_file="$(mktemp)"
+          http_code="$(
+            curl               --silent               --show-error               --max-time 90               --output "$response_file"               --write-out '%{http_code}'               --request POST               --header "Authorization: Bearer $WORKER_TOKEN"               --header 'Accept: application/json'               "$WORKER_URL"
+          )"
+
+          cat "$response_file"
+
+          if [ "$http_code" -lt 200 ] || [ "$http_code" -ge 300 ]; then
+            echo
+            echo "MVQUEEN product worker returned HTTP $http_code."
+            exit 1
+          fi
+
+          if ! grep -q '"ok"[[:space:]]*:[[:space:]]*true' "$response_file"; then
+            echo
+            echo "MVQUEEN product worker did not report ok=true."
+            exit 1
+          fi
