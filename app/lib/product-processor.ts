@@ -19,6 +19,8 @@ const AUTO_PRODUCT_ENROLLMENT_ENABLED =
   process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true";
 const EDITORIAL_PUBLISH_ENABLED =
   process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true";
+const MEDIA_ALT_SYNC_ENABLED =
+  process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true";
 const COST_SYNC_ENABLED = process.env.MVQ_COST_SYNC_ENABLED === "true";
 const APPROVED_PRODUCT_GIDS = new Set(
   (process.env.MVQ_APPROVED_PRODUCT_GIDS ?? "")
@@ -38,6 +40,11 @@ const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
+    media(first: 50) {
+      nodes {
+        ... on MediaImage { id alt }
+      }
+    }
     variants(first: 1) { nodes { id price compareAtPrice } }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
@@ -49,6 +56,11 @@ const PRODUCT_QUERY_WITH_COST = `#graphql
 query MVQueenProductWithCost($id: ID!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
+    media(first: 50) {
+      nodes {
+        ... on MediaImage { id alt }
+      }
+    }
     variants(first: 1) {
       nodes {
         id
@@ -70,6 +82,13 @@ mutation MVQueenProductUpdate($product: ProductUpdateInput!) {
   productUpdate(product: $product) {
     product { id title productType updatedAt }
     userErrors { field message }
+  }
+}`;
+
+const FILE_UPDATE = `#graphql
+mutation MVQueenFileAltUpdate($files: [FileUpdateInput!]!) {
+  fileUpdate(files: $files) {
+    userErrors { field message code }
   }
 }`;
 
@@ -117,14 +136,17 @@ export async function processProductJob(jobId: string) {
     const { admin } = await unauthenticated.admin(job.shop);
 
     let hasReadInventory = false;
-    if (COST_SYNC_ENABLED) {
+    let hasWriteFiles = false;
+    if (COST_SYNC_ENABLED || MEDIA_ALT_SYNC_ENABLED) {
       const scopeResponse = await admin.graphql(ACCESS_SCOPES_QUERY);
       const scopeBody = await scopeResponse.json();
-      hasReadInventory = Boolean(
-        scopeBody.data?.appInstallation?.accessScopes?.some(
-          (scope: { handle?: string | null }) => scope.handle === "read_inventory",
-        ),
+      const handles = new Set(
+        (scopeBody.data?.appInstallation?.accessScopes ?? [])
+          .map((scope: { handle?: string | null }) => scope.handle)
+          .filter(Boolean),
       );
+      hasReadInventory = handles.has("read_inventory");
+      hasWriteFiles = handles.has("write_files");
     }
 
     const response = await admin.graphql(
@@ -265,6 +287,18 @@ export async function processProductJob(jobId: string) {
     const costVariant = product.variants?.nodes?.[0];
     const verifiedUnitCost = costVariant?.unitCost?.trim() || "";
     const costCurrency = costVariant?.costCurrency?.trim() || "";
+    const mediaNodes = product.media?.nodes ?? [];
+    const missingAltMedia = mediaNodes.filter((item) => !item.alt?.trim());
+    const mediaAltStatus =
+      !mediaNodes.length
+        ? "no_media"
+        : !missingAltMedia.length
+          ? "complete"
+          : !MEDIA_ALT_SYNC_ENABLED
+            ? "missing_alt"
+            : !hasWriteFiles
+              ? "write_files_scope_required"
+              : "automatic";
     const metafields = [
       { namespace: "classification", key: "department", type: "single_line_text_field", value: c.department },
       { namespace: "classification", key: "family", type: "single_line_text_field", value: c.family },
@@ -399,7 +433,7 @@ export async function processProductJob(jobId: string) {
         namespace: "catalog",
         key: "media_alt_status",
         type: "single_line_text_field",
-        value: "scope_required",
+        value: mediaAltStatus,
       },
     ];
 
@@ -461,6 +495,28 @@ export async function processProductJob(jobId: string) {
         automationVersion: AUTOMATION_VERSION,
       },
     });
+
+    if (
+      MEDIA_ALT_SYNC_ENABLED &&
+      hasWriteFiles &&
+      automatedContent &&
+      missingAltMedia.length
+    ) {
+      const files = missingAltMedia.map((item, index) => ({
+        id: item.id,
+        alt: `${automatedContent.title} — product view ${index + 1}`,
+      }));
+      const mediaUpdate = await admin.graphql(FILE_UPDATE, {
+        variables: { files },
+      });
+      const mediaBody = await mediaUpdate.json();
+      const mediaErrors = mediaBody.data?.fileUpdate?.userErrors ?? [];
+      if (mediaErrors.length) {
+        throw new Error(
+          mediaErrors.map((e: { message: string }) => e.message).join("; "),
+        );
+      }
+    }
 
     await prisma.productJob.update({
       where: { id: jobId },
