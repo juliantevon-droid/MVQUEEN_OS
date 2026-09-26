@@ -12,6 +12,8 @@ on:
       - 'react-router.config.*'
       - 'shopify.app.toml'
       - 'shopify.web.toml'
+      - '.dockerignore'
+      - 'Dockerfile'
       - '.github/workflows/shopify-app-ci.yml'
   pull_request:
     branches: [main]
@@ -24,6 +26,8 @@ on:
       - 'react-router.config.*'
       - 'shopify.app.toml'
       - 'shopify.web.toml'
+      - '.dockerignore'
+      - 'Dockerfile'
       - '.github/workflows/shopify-app-ci.yml'
   workflow_dispatch:
 
@@ -88,3 +92,6 @@ jobs:
 
       - name: Production build
         run: npm run build
+
+      - name: Validate production container
+        run: docker build --tag mvqueen-os:ci .
