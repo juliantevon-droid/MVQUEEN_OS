@@ -93,9 +93,13 @@
         "campaign identity mapping",
         "spend/conversion/revenue readback",
         "human approval for spend or campaign-state changes",
+        "fresh non-stale product commercial evidence",
+        "advertising_eligibility=eligible for every promoted product",
+        "positive max_break_even_cac",
+        "commercial policy fingerprint",
         "change-history audit"
       ],
-      "side_effects": "none until provider and execution flag are connected"
+      "side_effects": "none until provider, execution flag, human approval, and fresh commercial eligibility evidence are present"
     },
     {
       "capability": "analytics_export",
@@ -219,6 +223,20 @@
         "product write approval if persisting commercial cost snapshot"
       ],
       "side_effects": "reads authoritative Shopify unit cost; persists verified commercial cost snapshot only on approved product writes"
+    },
+    {
+      "capability": "commercial_health",
+      "provider": "MVQUEEN_OS",
+      "state": "engineered_runtime_migration_required",
+      "requirements": [
+        "commercial settings configured",
+        "verified product cost",
+        "selling price",
+        "current policy fingerprint",
+        "ProductCommercialHealthState migration applied",
+        "ProductCommercialHealthSnapshot migration applied"
+      ],
+      "side_effects": "internal current health state and append-only health history; approved Shopify metadata only through product worker"
     }
   ]
 }
