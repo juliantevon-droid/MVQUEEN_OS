@@ -177,7 +177,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     minimumPrice: decision.minimumPrice,
     approvedCommercialState: approvedHealth.state,
     approvedMaxBreakEvenCac: approvedHealth.maxBreakEvenCac,
+    approvedMaxCacAtTargetMargin: approvedHealth.maxCacAtTargetMargin,
     approvedBreakEvenRoas: approvedHealth.breakEvenRoas,
+    approvedTargetMarginRoasFloor: approvedHealth.targetMarginRoasFloor,
   });
 
   if (decision.state !== "ready_for_approval" || decision.minimumPrice === null) {
