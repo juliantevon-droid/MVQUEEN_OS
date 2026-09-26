@@ -103,7 +103,7 @@
       "id": "paid_advertising",
       "status": "adapter_interface_ready_external_connection_required",
       "authority": "external_ad_platforms",
-      "execution": "disabled_until_provider_and_human_approval",
+      "execution": "disabled_until_provider_human_approval_and_fresh_commercial_evidence",
       "writes": "none"
     },
     {
@@ -217,11 +217,32 @@
       "authority": "MVQUEEN_OS shop settings",
       "execution": "authenticated_admin_control",
       "writes": "commercial assumptions only"
+    },
+    {
+      "id": "commercial_health",
+      "status": "connected_policy_aware",
+      "authority": "MVQUEEN_OS commercial engine",
+      "execution": "automatic_on_product_processing_and_live_catalog_audit",
+      "writes": "internal health state/history plus approved product metadata only"
+    },
+    {
+      "id": "advertising_eligibility",
+      "status": "connected_gate_external_execution_required",
+      "authority": "MVQUEEN_OS commercial health",
+      "execution": "automatic_decision",
+      "writes": "none"
+    },
+    {
+      "id": "catalog_release_gate",
+      "status": "connected_decision_gate",
+      "authority": "Catalog Health + commercial health",
+      "execution": "readiness_decision",
+      "writes": "none"
     }
   ],
   "non_negotiable_gates": {
     "money": "No live price mutation without verified cost inputs, configured fee assumptions, contribution-floor validation, MVQ_PRICE_PUBLISH_ENABLED=true, explicit product approval, and an authenticated human submission.",
-    "advertising": "No ad spend, campaign creation, pausing, enabling, or budget changes without a connected approved provider and explicit action approval.",
+    "advertising": "No ad spend, campaign creation, enabling, pausing, or budget changes without a connected approved provider, explicit action approval, and fresh non-stale product commercial evidence showing advertising eligibility.",
     "product_truth": "No unsupported claims or invented product facts.",
     "protected_fields": [
       "sku",
