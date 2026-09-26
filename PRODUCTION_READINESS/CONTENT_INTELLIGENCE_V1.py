@@ -305,7 +305,7 @@ def _metafields(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[st
         "shipping.delivery_estimate": {
             "type": "single_line_text_field",
             "value": _text(record.get("shipping", {}).get("delivery_estimate")),
-            "source": _text(record.get("shipping", {}).get("estimate_source")) or "checkout_fallback",
+            "source": _text(record.get("shipping", {}).get("estimate_source")) or "store_default",
         },
     }
 
