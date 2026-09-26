@@ -228,6 +228,13 @@ def _faq(record: Dict[str, Any], facts: Dict[str, Any]) -> List[Dict[str, str]]:
             "answer": f"The verified product information states: {care}.",
         })
 
+    shipping_estimate = _text(record.get("shipping", {}).get("delivery_estimate"))
+    if shipping_estimate:
+        faq.append({
+            "question": "When should I expect delivery?",
+            "answer": f"Current delivery estimate: {shipping_estimate} Final timing can vary by destination, carrier, and fulfillment source.",
+        })
+
     faq.append({
         "question": "Where should I check final product specifications?",
         "answer": "Review the product details shown on the product page before purchasing. MVQueen does not add unsupported specifications or performance claims.",
@@ -295,6 +302,11 @@ def _metafields(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[st
             "value": faq,
             "source": "canonical_content",
         },
+        "shipping.delivery_estimate": {
+            "type": "single_line_text_field",
+            "value": _text(record.get("shipping", {}).get("delivery_estimate")),
+            "source": _text(record.get("shipping", {}).get("estimate_source")) or "checkout_fallback",
+        },
     }
 
     for fact_key, (namespace, metafield_key) in METAFIELD_FACT_KEYS.items():
@@ -325,6 +337,7 @@ def _product_page(record: Dict[str, Any], facts: Dict[str, Any], faq: List[Dict[
         "seo_title": _text(seo.get("seo_title")),
         "meta_description": _text(seo.get("meta_description")),
         "image_alt_text": list(seo.get("alt_texts", [])),
+        "shipping_estimate": _text(record.get("shipping", {}).get("delivery_estimate")),
     }
 
 
