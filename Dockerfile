@@ -19,7 +19,10 @@ ENV PORT=3000
 
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=build /app/build ./build
+COPY --from=build /app/app ./app
+COPY --from=build /app/scripts ./scripts
 COPY --from=build /app/prisma ./prisma
+COPY --from=build /app/tsconfig.json ./tsconfig.json
 COPY --from=build /app/package.json ./package.json
 
 EXPOSE 3000
