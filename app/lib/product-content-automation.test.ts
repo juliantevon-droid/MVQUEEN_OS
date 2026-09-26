@@ -51,4 +51,31 @@ assert.equal(classifyProduct(
   "",
 ).confidence, "review");
 
+
+const activewear: ProductSnapshot = {
+  id: "gid://shopify/Product/3",
+  title: "Ruched Sports Bra and High-Waisted Shorts Active Set",
+  descriptionHtml: [
+    "<ul>",
+    "<li>Features: Ruched</li>",
+    "<li>Number of pieces: Two-piece</li>",
+    "<li>Stretch: Moderate stretch</li>",
+    "<li>Material composition: 94% polyester, 6% elastane</li>",
+    "</ul>",
+  ].join(""),
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/3", price: "39.24" }] },
+};
+
+const activewearClassification = classifyProduct(
+  activewear.title,
+  activewear.descriptionHtml ?? "",
+  "",
+);
+assert.equal(activewearClassification.department, "Fashion");
+assert.equal(activewearClassification.family, "Activewear");
+assert.equal(activewearClassification.subcollection, "Activewear Sets");
+assert.equal(activewearClassification.productType, "Activewear Set");
+assert.equal(activewearClassification.confidence, "high");
+
 console.log("product content automation tests passed");
