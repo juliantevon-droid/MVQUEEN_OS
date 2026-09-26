@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Deep, non-destructive MVQUEEN_OS repository audit.
 
+# Audit revision: 2026-09-26 current-system rescan
+
 Scans every tracked file at every remote branch head, deduplicates identical Git
 blobs, and scans all reachable historical blobs for hygiene/security signals.
 Secret-like matches are reported by location/pattern only; values are never
