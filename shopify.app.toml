@@ -47,6 +47,5 @@ compliance_topics = ["shop/redact"]
 uri = "/webhooks/compliance/shop-redact"
 
 # Production connection guard:
-# The real production host and auth callback are committed because they are
-# public configuration. Keep client_id blank until this repository is linked
-# to the dedicated MVQueen OS Shopify app. Never commit the client secret.
+# The production host, auth callback, and Shopify client ID are linked.
+# Never commit the Shopify client secret; keep it only in deployment secrets.
