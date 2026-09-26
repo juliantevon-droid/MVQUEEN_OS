@@ -1,6 +1,7 @@
 export type ProductSnapshot = {
   id: string;
   title: string;
+  handle?: string | null;
   descriptionHtml?: string | null;
   productType?: string | null;
   vendor?: string | null;
