@@ -20,6 +20,11 @@ export type CanonicalProductRecord = {
     recommended_price?: string | number | null;
     compare_at_price?: string | number | null;
   };
+  shipping: {
+    delivery_estimate: string;
+    estimate_source: "verified_product_fact" | "checkout_fallback";
+    specific_window_verified: boolean;
+  };
   copy: {
     title: string;
     short_description: string;
@@ -145,6 +150,7 @@ export function validateApprovedReleaseBundle(bundle: ApprovedReleaseBundle): st
   const expected = canonicalEnvelopeFingerprint(canonicalRecordJson);
   if (approval.content_fingerprint !== expected) errors.push("Approval fingerprint does not match canonical_record_json");
 
+  if (!record.shipping?.delivery_estimate?.trim()) errors.push("Missing shipping.delivery_estimate");
   if (!record.copy?.title?.trim()) errors.push("Missing approved copy.title");
   if (!record.copy?.description?.trim()) errors.push("Missing approved copy.description");
   if (!record.copy?.short_description?.trim()) errors.push("Missing approved copy.short_description");
@@ -176,6 +182,7 @@ const APPROVED_CONTENT_METAFIELDS = new Set([
   "content.faq",
   "content.care_instructions",
   "content.how_to_use",
+  "shipping.delivery_estimate",
   "attributes.material",
   "attributes.fabric",
   "attributes.color",
