@@ -83,3 +83,19 @@ Commercially ready records should identify missing decision-support content rath
 ## 7-figure operating principle
 
 The system is designed to support scalable commerce, not to guarantee revenue. Commercial performance must be proven through traffic quality, conversion, AOV, margin, retention, and repeatable acquisition before scaling catalog volume or advertising spend.
+
+
+## Profitability authority
+
+The Python commercial-intelligence layer is **not** the authority for live margin, CAC, ROAS, contribution profit, price floors, or advertising eligibility.
+
+Those decisions belong to the authenticated Shopify app runtime:
+
+- `app/lib/enterprise/commercial-health.ts`
+- `app/lib/enterprise/pricing-engine.ts`
+- audited shop Commercial Settings
+- verified Shopify cost and current selling price
+
+Python may generate positioning, offer eligibility, landing-page requirements, creative inputs, and offline proposals. It must not independently declare a product profitable or advertising-eligible.
+
+Paid-media execution therefore remains blocked unless the external action carries fresh, non-stale runtime commercial evidence for every promoted product.
