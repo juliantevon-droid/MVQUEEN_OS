@@ -51,6 +51,7 @@ MISS_PRINCESS_SIGNALS = (
     "soft", "playful", "romantic", "bright", "color", "feminine",
     "expressive", "polished", "princess", "glamour",
 )
+DEFAULT_SHIPPING_ESTIMATE = "Confirmed at checkout based on destination and fulfillment source."
 
 
 def _text(value: Any) -> str:
@@ -71,6 +72,22 @@ def normalize(raw: Dict[str, Any]) -> Dict[str, Any]:
     out.setdefault("source_truth", {}).setdefault("facts", [])
     out.setdefault("protected_fields", {}).setdefault("fields", sorted(PROTECTED_FIELDS))
     out.setdefault("images", {}).setdefault("items", [])
+
+    shipping = out.setdefault("shipping", {})
+    verified_facts = _fact_map(out)
+    verified_shipping = ""
+    for fact_name in ("shipping_time", "delivery_estimate", "estimated_delivery"):
+        verified_shipping = _text(verified_facts.get(fact_name))
+        if verified_shipping:
+            break
+    if not _text(shipping.get("delivery_estimate")):
+        shipping["delivery_estimate"] = verified_shipping or DEFAULT_SHIPPING_ESTIMATE
+    shipping.setdefault(
+        "estimate_source",
+        "verified_product_fact" if verified_shipping else "checkout_fallback",
+    )
+    shipping.setdefault("specific_window_verified", bool(verified_shipping))
+
     out["status"] = "NORMALIZED"
     return out
 
@@ -258,7 +275,7 @@ def build_creative_stage(record: Dict[str, Any]) -> None:
 def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
     errors: List[str] = []
     warnings: List[str] = []
-    for key in ("identity", "source_truth", "category", "pricing", "images", "intelligence", "copy", "seo", "merchandising", "commercial", "creative"):
+    for key in ("identity", "source_truth", "category", "pricing", "images", "shipping", "intelligence", "copy", "seo", "merchandising", "commercial", "creative"):
         if key not in record:
             errors.append(f"Missing required section: {key}")
     if not _text(record.get("identity", {}).get("product_id")):
@@ -267,6 +284,11 @@ def validate(record: Dict[str, Any]) -> Tuple[List[str], List[str]]:
         errors.append("Missing identity.source_name")
     if not _text(record.get("pricing", {}).get("approved_publish_price")):
         errors.append("No approved_publish_price; recommendation cannot publish automatically")
+    shipping = record.get("shipping", {})
+    if not _text(shipping.get("delivery_estimate")):
+        errors.append("Missing shipping.delivery_estimate")
+    if shipping.get("specific_window_verified") is not True:
+        warnings.append("Shipping uses checkout fallback until a verified supplier/carrier delivery window is available")
     for field in ("title", "short_description", "description"):
         if not _text(record.get("copy", {}).get(field)):
             errors.append(f"Missing copy.{field}")
