@@ -34,6 +34,11 @@
       case "cart":
         emit("mvq:view_cart");
         break;
+      case "search":
+        if (base.search_performed) {
+          emit("mvq:search", { search_terms: base.search_terms || null });
+        }
+        break;
       default:
         break;
     }
@@ -50,7 +55,12 @@
       emit("mvq:add_to_cart", { form_id: form.id || null });
     }
 
-    if (action.includes("/checkout")) {
+    const submitter = event.submitter;
+    const checkoutSubmit =
+      action.includes("/checkout") ||
+      (submitter instanceof HTMLElement && submitter.getAttribute("name") === "checkout");
+
+    if (checkoutSubmit) {
       emit("mvq:begin_checkout", { cart_item_count: base.cart_item_count ?? null });
     }
   });
