@@ -39,10 +39,36 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       ? "ready"
       : "reauthorization-required";
 
-  const [receivedJobs, processingJobs, failedJobs] = await Promise.all([
+  const [
+    receivedJobs,
+    processingJobs,
+    failedJobs,
+    commercialEvaluated,
+    commercialHealthy,
+    commercialStale,
+    commercialBlocked,
+    advertisingEligible,
+  ] = await Promise.all([
     prisma.productJob.count({ where: { status: "received" } }),
     prisma.productJob.count({ where: { status: "processing" } }),
     prisma.productJob.count({ where: { status: "failed" } }),
+    prisma.productCommercialHealthState.count({ where: { shop: session.shop } }),
+    prisma.productCommercialHealthState.count({
+      where: { shop: session.shop, state: "healthy", stale: false },
+    }),
+    prisma.productCommercialHealthState.count({
+      where: { shop: session.shop, stale: true },
+    }),
+    prisma.productCommercialHealthState.count({
+      where: {
+        shop: session.shop,
+        stale: false,
+        state: { in: ["blocked", "thin", "needs_configuration", "needs_cost", "needs_price", "invalid_inputs"] },
+      },
+    }),
+    prisma.productCommercialHealthState.count({
+      where: { shop: session.shop, advertisingEligibility: "eligible", stale: false },
+    }),
   ]);
 
   return {
@@ -60,6 +86,13 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       analytics: integrations.analytics.state,
       lifecycle: integrations.lifecycle.state,
       queue: { receivedJobs, processingJobs, failedJobs },
+      commercialHealth: {
+        evaluated: commercialEvaluated,
+        healthy: commercialHealthy,
+        stale: commercialStale,
+        blockedOrReview: commercialBlocked,
+        advertisingEligible,
+      },
     },
   };
 };
@@ -97,6 +130,14 @@ export default function Dashboard() {
         <s-paragraph>
           Cost sync remains fail-closed until Shopify grants read_inventory and MVQ_COST_SYNC_ENABLED=true.
         </s-paragraph>
+      </s-section>
+
+      <s-section heading="Commercial health">
+        <s-paragraph>Evaluated products: {runtime.commercialHealth.evaluated}</s-paragraph>
+        <s-paragraph>Healthy: {runtime.commercialHealth.healthy}</s-paragraph>
+        <s-paragraph>Advertising eligible: {runtime.commercialHealth.advertisingEligible}</s-paragraph>
+        <s-paragraph>Blocked/review: {runtime.commercialHealth.blockedOrReview}</s-paragraph>
+        <s-paragraph>Stale after policy change: {runtime.commercialHealth.stale}</s-paragraph>
       </s-section>
 
       <s-section heading="External integrations">
