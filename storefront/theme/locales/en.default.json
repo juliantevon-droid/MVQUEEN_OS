@@ -3,5 +3,19 @@
     "404": {
       "title": "Page not found"
     }
+  },
+  "product": {
+    "trust": {
+      "aria_label": "Purchase reassurance",
+      "secure_title": "Secure checkout",
+      "secure_text": "Protected Shopify checkout.",
+      "connection_title": "Encrypted connection",
+      "connection_text": "SSL protection while you browse and buy.",
+      "policy_title": "Clear policies",
+      "policy_text": "Shipping and returns details are available before purchase.",
+      "support_title": "Customer care",
+      "support_text": "Help is available when you need it.",
+      "payments_label": "Accepted payment methods"
+    }
   }
 }
