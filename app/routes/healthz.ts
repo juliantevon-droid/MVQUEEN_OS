@@ -31,8 +31,35 @@ export const loader = async (_args: LoaderFunctionArgs) => {
     queue = { receivedJobs, processingJobs, failedJobs, deadLetterJobs };
   }
 
+  const continuousWorkerRequired =
+    process.env.MVQ_PRODUCT_CONTINUOUS_WORKER_REQUIRED === "true";
+  let workerHeartbeat: {
+    state: string;
+    updatedAt: Date;
+  } | null = null;
+
+  if (database) {
+    workerHeartbeat = await prisma.runtimeHeartbeat.findUnique({
+      where: { name: "product-worker" },
+      select: { state: true, updatedAt: true },
+    });
+  }
+
+  const heartbeatMaxAgeMs = 120_000;
+  const workerHeartbeatFresh =
+    !continuousWorkerRequired ||
+    Boolean(
+      workerHeartbeat?.state === "continuous" &&
+      Date.now() - workerHeartbeat.updatedAt.getTime() <= heartbeatMaxAgeMs,
+    );
+
   const queueHealthy = queue.deadLetterJobs === 0;
-  const ok = preflight.ready && database && queueHealthy;
+  const ok =
+    preflight.ready &&
+    database &&
+    queueHealthy &&
+    workerHeartbeatFresh;
+
   return Response.json(
     {
       ok,
@@ -40,6 +67,12 @@ export const loader = async (_args: LoaderFunctionArgs) => {
       database,
       queue,
       queueHealthy,
+      worker: {
+        required: continuousWorkerRequired,
+        fresh: workerHeartbeatFresh,
+        state: workerHeartbeat?.state ?? "missing",
+        lastSeenAt: workerHeartbeat?.updatedAt?.toISOString() ?? null,
+      },
     },
     {
       status: ok ? 200 : 503,
