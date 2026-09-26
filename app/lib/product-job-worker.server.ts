@@ -2,7 +2,7 @@ import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import { processProductJob } from "./product-processor";
 
-const RECONCILE_QUERY = "#graphql\nquery MVQueenRecentProducts($first: Int!, $query: String!) { products(first: $first, query: $query, sortKey: UPDATED_AT) { nodes { id updatedAt } } }";
+const RECONCILE_QUERY = "#graphql\nquery MVQueenRecentProducts($first: Int!, $after: String, $query: String!) { products(first: $first, after: $after, query: $query, sortKey: UPDATED_AT) { nodes { id updatedAt } pageInfo { hasNextPage endCursor } } }";
 
 function envInt(name: string, fallback: number, min: number, max: number): number {
   const parsed = Number(process.env[name] ?? "");
@@ -40,11 +40,12 @@ export async function recoverStaleProductJobs() {
 
 export async function reconcileRecentShopifyProducts() {
   if (process.env.MVQ_PRODUCT_RECONCILE_ENABLED !== "true") {
-    return { shops: 0, discovered: 0 };
+    return { shops: 0, discovered: 0, scanned: 0 };
   }
 
   const lookbackMinutes = envInt("MVQ_PRODUCT_RECONCILE_LOOKBACK_MINUTES", 20, 5, 1440);
   const first = envInt("MVQ_PRODUCT_RECONCILE_PAGE_SIZE", 100, 10, 250);
+  const maxPages = envInt("MVQ_PRODUCT_RECONCILE_MAX_PAGES", 20, 1, 100);
   const since = new Date(Date.now() - lookbackMinutes * 60_000).toISOString();
   const sessions = await prisma.session.findMany({
     where: { isOnline: false },
@@ -53,40 +54,57 @@ export async function reconcileRecentShopifyProducts() {
   });
 
   let discovered = 0;
+  let scanned = 0;
+
   for (const { shop } of sessions) {
     try {
       const { admin } = await unauthenticated.admin(shop);
-      const response = await admin.graphql(RECONCILE_QUERY, {
-        variables: {
-          first,
-          query: "updated_at:>='" + since + "'",
-        },
-      });
-      const body = await response.json();
-      const nodes = body.data?.products?.nodes ?? [];
+      let after: string | null = null;
 
-      for (const product of nodes) {
-        if (!product?.id || !product?.updatedAt) continue;
-        const eventKey = "reconcile:" + product.id + ":" + product.updatedAt;
-        const result = await prisma.productJob.upsert({
-          where: { eventKey },
-          update: {},
-          create: {
-            shop,
-            productGid: product.id,
-            eventKey,
-            topic: "PRODUCT_RECONCILE",
-            status: "received",
+      for (let page = 0; page < maxPages; page += 1) {
+        const response = await admin.graphql(RECONCILE_QUERY, {
+          variables: {
+            first,
+            after,
+            query: "updated_at:>'" + since + "'",
           },
         });
-        if (result.receivedAt.getTime() >= Date.now() - 60_000) discovered += 1;
+        const body = await response.json();
+        const connection = body.data?.products;
+        const nodes = connection?.nodes ?? [];
+        scanned += nodes.length;
+
+        for (const product of nodes) {
+          if (!product?.id || !product?.updatedAt) continue;
+          const eventKey = "reconcile:" + product.id + ":" + product.updatedAt;
+          const existing = await prisma.productJob.findUnique({
+            where: { eventKey },
+            select: { id: true },
+          });
+          if (existing) continue;
+
+          await prisma.productJob.create({
+            data: {
+              shop,
+              productGid: product.id,
+              eventKey,
+              topic: "PRODUCT_RECONCILE",
+              status: "received",
+            },
+          });
+          discovered += 1;
+        }
+
+        if (!connection?.pageInfo?.hasNextPage) break;
+        after = connection.pageInfo.endCursor ?? null;
+        if (!after) break;
       }
     } catch (error) {
       console.error("MVQueen product reconciliation failed for", shop, error);
     }
   }
 
-  return { shops: sessions.length, discovered };
+  return { shops: sessions.length, discovered, scanned };
 }
 
 async function markExhaustedJobs(maxAttempts: number) {
