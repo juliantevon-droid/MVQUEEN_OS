@@ -17,17 +17,23 @@ try {
     SHOPIFY_APP_URL: "https://mvqueen.example.shop",
     DATABASE_URL: "postgresql://user:pass@db.example.shop:5432/mvqueen",
     MVQ_DATABASE_PROFILE: "production",
-    SCOPES: "read_products,write_products,read_files,write_files",
+    SCOPES: "read_products,write_products,read_inventory,read_content,write_content,read_files,write_files",
     MVQ_WRITE_ENABLED: "true",
     MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED: "true",
     MVQ_EDITORIAL_PUBLISH_ENABLED: "true",
+    MVQ_AUTO_CONTENT_SURFACES_ENABLED: "true",
+    MVQ_PRODUCT_RECONCILE_ENABLED: "true",
+    MVQ_PRODUCT_WORKER_TOKEN: "12345678901234567890123456789012",
     MVQ_MEDIA_ALT_SYNC_ENABLED: "true",
-    MVQ_COST_SYNC_ENABLED: "false",
+    MVQ_COST_SYNC_ENABLED: "true",
   });
   const ready = productionPreflight();
   assert.equal(ready.ready, true);
   assert.equal(ready.capabilities.automaticEnrollment, true);
   assert.equal(ready.capabilities.editorialSeo, true);
+  assert.equal(ready.capabilities.contentSurfaces, true);
+  assert.equal(ready.capabilities.reconciliation, true);
+  assert.equal(ready.capabilities.durableWorker, true);
   assert.equal(ready.capabilities.missingAltRepair, true);
 
   process.env.SHOPIFY_APP_URL = "https://example.com";
