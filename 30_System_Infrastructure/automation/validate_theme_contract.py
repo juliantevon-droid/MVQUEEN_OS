@@ -95,6 +95,19 @@ def main() -> int:
     for token in [
         "shop.enabled_payment_types",
         "payment_type_svg_tag",
+        "default_badges = 'secure_checkout,encrypted_connection,clear_policies,customer_care'",
+        "when 'payment_options'",
+        "when 'shipping_details'",
+        "when 'returns_info'",
+        "when 'order_review'",
+        "when 'privacy_policy'",
+        "when 'product_details'",
+        "when 'size_fit'",
+        "when 'care_guidance'",
+        "when 'contact_support'",
+        "when 'checkout_totals'",
+        "when 'shopify_checkout'",
+        "when 'order_updates'",
         "'product.trust.secure_title' | t",
         "'product.trust.connection_title' | t",
         "'product.trust.policy_title' | t",
@@ -105,7 +118,16 @@ def main() -> int:
 
     locale = json.loads(read("locales/en.default.json"))
     trust_locale = locale.get("product", {}).get("trust", {})
-    for key in ["aria_label", "secure_title", "secure_text", "connection_title", "connection_text", "policy_title", "policy_text", "support_title", "support_text", "payments_label"]:
+    for key in [
+        "aria_label", "secure_title", "secure_text", "connection_title", "connection_text",
+        "policy_title", "policy_text", "support_title", "support_text", "payments_label",
+        "payment_title", "payment_text", "shipping_title", "shipping_text",
+        "returns_title", "returns_text", "review_title", "review_text",
+        "privacy_title", "privacy_text", "details_title", "details_text",
+        "size_title", "size_text", "care_title", "care_text",
+        "contact_title", "contact_text", "totals_title", "totals_text",
+        "shopify_title", "shopify_text", "updates_title", "updates_text",
+    ]:
         if not trust_locale.get(key):
             failures.append(f"en.default.json missing trust translation: product.trust.{key}")
 
