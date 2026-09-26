@@ -5,6 +5,7 @@ import prisma from "../db.server";
 import { resolveShopCommercialConfig } from "../lib/enterprise/commercial-settings.server";
 import { getEnterpriseIntegrationStatus } from "../lib/enterprise/integration-status";
 import { databaseProfile } from "../lib/enterprise/database-guard.server";
+import controlRegistry from "../config/mvqueen-control-registry.json";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { admin, session } = await authenticate.admin(request);
@@ -85,6 +86,14 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
   return {
     shop: body.data?.shop ?? null,
+    governance: {
+      registryVersion: controlRegistry.version,
+      trustPresets: Object.keys(controlRegistry.trustBadges.presets),
+      preparedLocales: controlRegistry.localization.preparedLocales,
+      expectedRepositoryVisibility: controlRegistry.security.repositoryExpectedVisibility,
+      lighthouseTarget: controlRegistry.performance.lighthouseTarget,
+      deploymentPolicy: controlRegistry.storefrontDeploymentPolicy,
+    },
     runtime: {
       databaseProfile: databaseProfile(),
       productWrites: process.env.MVQ_WRITE_ENABLED === "true" ? "enabled" : "dry-run",
@@ -138,6 +147,15 @@ export default function Dashboard() {
         <s-paragraph>Database profile: {runtime.databaseProfile}</s-paragraph>
       </s-section>
 
+      <s-section heading="Governance registry">
+        <s-paragraph>Control registry: v{data.governance.registryVersion}</s-paragraph>
+        <s-paragraph>Trust presets: {data.governance.trustPresets.join(", ")}</s-paragraph>
+        <s-paragraph>Prepared locales: {data.governance.preparedLocales.join(", ")}</s-paragraph>
+        <s-paragraph>Repository security expectation: {data.governance.expectedRepositoryVisibility}</s-paragraph>
+        <s-paragraph>Mobile Lighthouse target: {data.governance.lighthouseTarget}+</s-paragraph>
+        <s-paragraph>Theme deployment policy: {data.governance.deploymentPolicy}</s-paragraph>
+      </s-section>
+
       <s-section heading="Runtime gates">
         <s-paragraph>Product write mode: {runtime.productWrites}</s-paragraph>
         <s-paragraph>Automatic product enrollment: {runtime.automaticProductEnrollment}</s-paragraph>
@@ -185,6 +203,7 @@ export default function Dashboard() {
       </s-section>
 
       <s-section heading="Product queue">
+        <s-paragraph>Queue health: {runtime.queue.deadLetterJobs > 0 ? "attention required" : runtime.queue.failedJobs > 0 ? "retrying" : "healthy"}</s-paragraph>
         <s-paragraph>Received: {runtime.queue.receivedJobs}</s-paragraph>
         <s-paragraph>Processing: {runtime.queue.processingJobs}</s-paragraph>
         <s-paragraph>Failed/retrying: {runtime.queue.failedJobs}</s-paragraph>
