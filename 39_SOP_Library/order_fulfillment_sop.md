@@ -20,8 +20,9 @@ To ensure every MVQueen order is fulfilled with the precision and emotional warm
 ---
 
 ## 3. Shipping Protocols
-*   **Standard:** 3-5 business days.
-*   **Express:** 1-2 business days.
+*   **Customer estimate:** Use the product's `shipping.delivery_estimate`; do not invent a fixed window.
+*   **Carrier/service:** Use the active Shopify delivery profile selected for the order.
+*   **Fallback:** When no verified supplier/carrier window exists, customer-facing timing is confirmed at checkout.
 *   **Tracking:** Ensure tracking numbers are automatically sent to the customer via Shopify.
 
 ---
