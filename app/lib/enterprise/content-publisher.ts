@@ -305,3 +305,39 @@ export async function publishApprovedContentSurfaces(
   }
   return results;
 }
+
+
+export async function publishAutomaticContentSurfaces(
+  admin: AdminGraphql,
+  record: CanonicalProductRecord,
+): Promise<PublishResult[]> {
+  if (process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED !== "true") {
+    return [{
+      surface: "automatic_content_surfaces",
+      status: "SKIPPED",
+      message: "Automatic content surfaces require MVQ_AUTO_CONTENT_SURFACES_ENABLED=true",
+    }];
+  }
+
+  const suite: any = record.content_suite;
+  if (
+    record.status !== "PRODUCTION_READY" ||
+    record.qa?.passed !== true ||
+    !suite ||
+    suite.qa?.passed !== true ||
+    (suite.qa?.errors?.length ?? 0) > 0
+  ) {
+    throw new Error("Automatic content surfaces require a QA-passed production-ready record");
+  }
+
+  const results: PublishResult[] = [{
+    surface: "product_faq",
+    status: "PUBLISHED",
+    resourceId: record.identity.product_id,
+    message: "Product FAQ is carried by the automatic product metafield write",
+  }];
+
+  results.push(await publishBlog(admin, record));
+  results.push(await publishCollection(admin, record));
+  return results;
+}
