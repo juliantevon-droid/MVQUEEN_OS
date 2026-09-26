@@ -1,4 +1,9 @@
-FROM node:22.16-bookworm-slim AS dependencies
+FROM node:22.16-bookworm-slim AS base
+RUN apt-get update -y \
+  && apt-get install -y --no-install-recommends openssl \
+  && rm -rf /var/lib/apt/lists/*
+
+FROM base AS dependencies
 WORKDIR /app
 COPY package.json ./
 RUN npm install --ignore-scripts --no-audit --no-fund
@@ -12,12 +17,14 @@ ENV MVQ_DATABASE_PROFILE=production
 RUN npm run prisma:generate:production
 RUN npm run build
 
-FROM node:22.16-bookworm-slim AS runtime
+FROM base AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 
-COPY --from=dependencies /app/node_modules ./node_modules
+# Copy node_modules from the build stage so the generated Prisma client created
+# by prisma:generate:production is present in the runtime image.
+COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/build ./build
 COPY --from=build /app/app ./app
 COPY --from=build /app/scripts ./scripts
