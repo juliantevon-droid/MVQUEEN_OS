@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'app/**'
+      - 'scripts/**'
       - 'prisma/**'
       - 'package.json'
       - 'tsconfig.json'
@@ -19,6 +20,7 @@ on:
     branches: [main]
     paths:
       - 'app/**'
+      - 'scripts/**'
       - 'prisma/**'
       - 'package.json'
       - 'tsconfig.json'
