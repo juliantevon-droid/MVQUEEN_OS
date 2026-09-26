@@ -36,6 +36,24 @@
       "guard": "read-only; media ALT audit remains separate until Shopify Files permission is authorized"
     },
     {
+      "id": "catalog_backfill_reprocessing",
+      "status": "connected_manual_worker_ready",
+      "trigger": "engine/policy change or operator-requested catalog re-evaluation",
+      "authority": "MVQUEEN_OS durable queue + Shopify product truth",
+      "steps": [
+        "create_run_with_reason_and_write_mode",
+        "cursor_scan_shopify_catalog_in_pages_of_100",
+        "idempotently_enqueue_product_jobs",
+        "process_bounded_batches",
+        "evaluate_current_product_and_commercial_policy",
+        "persist_health_state_and_history",
+        "apply_safe_shopify_fields_only_when_all_write_gates_pass",
+        "record_failed_jobs_without_stopping_remaining_batch",
+        "complete_with_success_or_errors"
+      ],
+      "guard": "dry-run is default; governed-write additionally requires MVQ_WRITE_ENABLED=true and MVQ_BACKFILL_WRITE_ENABLED=true; unattended execution requires a protected worker token"
+    },
+    {
       "id": "canonical_content_release",
       "status": "connected_approval_required",
       "trigger": "QA-passed canonical record + matching release artifact",
