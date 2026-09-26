@@ -152,7 +152,9 @@
       "variant_identity",
       "handle",
       "source_media_relationships"
-    ]
+    ],
+    "fallbackReconciliationMinutes": 5,
+    "continuousWorkerTarget": "deployment-scheduler-every-minute"
   },
   "recovery": {
     "sourceControl": "GitHub main",
@@ -160,5 +162,36 @@
     "databaseRestoreTestRequired": true,
     "themeRollbackTestRequired": true,
     "catalogSnapshotRestoreRequiresApproval": true
+  },
+  "technologyContract": {
+    "storefront": [
+      "liquid",
+      "html",
+      "css",
+      "javascript"
+    ],
+    "application": [
+      "typescript",
+      "tsx",
+      "react"
+    ],
+    "automation": [
+      "python"
+    ],
+    "shopifyApi": [
+      "graphql"
+    ],
+    "data": [
+      "prisma",
+      "sql",
+      "json"
+    ],
+    "workflows": [
+      "yaml"
+    ],
+    "documentation": [
+      "markdown"
+    ],
+    "rule": "no-new-runtime-language-without-explicit-approval"
   }
 }
