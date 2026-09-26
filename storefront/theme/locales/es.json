@@ -1,0 +1,45 @@
+{
+  "general": {
+    "404": {
+      "title": "Página no encontrada"
+    }
+  },
+  "product": {
+    "trust": {
+      "aria_label": "Confianza de compra",
+      "secure_title": "Pago seguro",
+      "secure_text": "Pago protegido con Shopify.",
+      "connection_title": "Conexión cifrada",
+      "connection_text": "Protección SSL mientras navegas y compras.",
+      "policy_title": "Políticas claras",
+      "policy_text": "La información de envíos y devoluciones está disponible antes de comprar.",
+      "support_title": "Atención al cliente",
+      "support_text": "Hay ayuda disponible cuando la necesites.",
+      "payments_label": "Métodos de pago aceptados",
+      "payment_title": "Opciones de pago",
+      "payment_text": "Los métodos de pago habilitados se muestran al finalizar la compra.",
+      "shipping_title": "Información de envío",
+      "shipping_text": "La información de entrega está disponible antes de comprar.",
+      "returns_title": "Información de devoluciones",
+      "returns_text": "Las condiciones de devolución están disponibles antes de comprar.",
+      "review_title": "Revisa antes de pedir",
+      "review_text": "Confirma tus artículos y el total antes de realizar el pedido.",
+      "privacy_title": "Política de privacidad",
+      "privacy_text": "Nuestra política de privacidad explica cómo se gestiona la información personal.",
+      "details_title": "Detalles del producto",
+      "details_text": "Se muestran materiales, ingredientes, tallas o cuidados cuando están disponibles.",
+      "size_title": "Guía de talla y ajuste",
+      "size_text": "La información de tallas se muestra cuando está disponible.",
+      "care_title": "Guía de cuidado",
+      "care_text": "Las instrucciones de cuidado se muestran cuando están disponibles.",
+      "contact_title": "Contactar soporte",
+      "contact_text": "Hay opciones de contacto con atención al cliente.",
+      "totals_title": "Totales del pago",
+      "totals_text": "Los impuestos y el envío se calculan al finalizar la compra cuando corresponda.",
+      "shopify_title": "Pago con Shopify",
+      "shopify_text": "Tu pedido se completa mediante el pago de Shopify.",
+      "updates_title": "Actualizaciones del pedido",
+      "updates_text": "La confirmación y el estado del pedido están disponibles después de la compra."
+    }
+  }
+}
