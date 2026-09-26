@@ -88,5 +88,32 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("read_inventory_scope_required", worker)
 
 
+    def test_product_webhooks_are_fast_enqueue_only(self):
+        for rel in [
+            "app/routes/webhooks.products.create.tsx",
+            "app/routes/webhooks.products.update.tsx",
+        ]:
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertIn("enqueueProductWebhook", text)
+            self.assertNotIn("processProductJob", text)
+
+        intake = (ROOT / "app/lib/product-job-intake.server.ts").read_text(encoding="utf-8")
+        self.assertIn("productJob.upsert", intake)
+        self.assertIn('status: "received"', intake)
+
+    def test_always_on_product_worker_has_recovery_controls(self):
+        worker = (ROOT / "app/lib/product-job-worker.server.ts").read_text(encoding="utf-8")
+        route = (ROOT / "app/routes/internal.product-worker.ts").read_text(encoding="utf-8")
+        schedule = (ROOT / ".github/workflows/product-worker.yml").read_text(encoding="utf-8")
+        health = (ROOT / "app/routes/healthz.ts").read_text(encoding="utf-8")
+
+        self.assertIn("recoverStaleProductJobs", worker)
+        self.assertIn("dead_letter", worker)
+        self.assertIn("reconcileRecentShopifyProducts", worker)
+        self.assertIn("timingSafeEqual", route)
+        self.assertIn("*/5 * * * *", schedule)
+        self.assertIn("deadLetterJobs", health)
+
+
 if __name__ == "__main__":
     unittest.main()
