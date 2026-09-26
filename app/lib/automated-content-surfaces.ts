@@ -107,7 +107,7 @@ export function buildAutomaticSurfaceRecord(
     },
     pricing: {
       source_price: firstPrice,
-      approved_publish_price: firstPrice,
+      approved_publish_price: null,
     },
     shipping: {
       delivery_estimate: "Calculated at checkout",
