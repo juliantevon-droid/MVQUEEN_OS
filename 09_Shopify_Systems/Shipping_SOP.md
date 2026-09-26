@@ -17,10 +17,10 @@ Shipping is not logistics. It is the last brand touchpoint before she holds the 
 Customer-facing shipping times are product-specific and evidence-based.
 
 1. Use the product metafield `shipping.delivery_estimate`.
-2. If a verified supplier/carrier transit window exists, store that exact supported range.
-3. If no verified window exists, use: **Confirmed at checkout based on destination and fulfillment source.**
-4. Never publish an optimistic generic transit promise simply because a supplier, old document, or sample configuration once used it.
-5. Checkout options and the current Shopify delivery profile remain authoritative for a specific order.
+2. The standard MVQueen product estimate is **7–15 business days**.
+3. If a verified supplier/carrier transit window supports **5–7 business days** or **6–10 business days**, store that exact faster range on the applicable product.
+4. Never assign a faster range without product-specific fulfillment evidence.
+5. Checkout options and the current Shopify delivery profile remain authoritative for rates, availability, and the specific order.
 
 ### Internal processing targets
 
