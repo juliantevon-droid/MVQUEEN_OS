@@ -1,6 +1,6 @@
 {
   "system": "MVQUEEN_OS",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "operating_model": "governed_event_driven_commerce_os",
   "authorities": {
     "code_contracts_tests": "GitHub main",
@@ -245,6 +245,41 @@
       "authority": "MVQUEEN_OS durable queue + Shopify product truth",
       "execution": "cursor_scan_bounded_batches",
       "writes": "dry_run_default; catalog_writes_require_global_and_backfill_write_gates"
+    },
+    {
+      "id": "security_automation",
+      "status": "connected",
+      "authority": "GitHub_main",
+      "execution": "codeql_dependabot_secret_pattern_ci",
+      "writes": "none"
+    },
+    {
+      "id": "performance_governance",
+      "status": "connected",
+      "authority": "GitHub_main",
+      "execution": "static_budget_plus_optional_lighthouse",
+      "writes": "none"
+    },
+    {
+      "id": "runtime_observability",
+      "status": "connected",
+      "authority": "app",
+      "execution": "structured_redacted_json_events",
+      "writes": "runtime_logs_only"
+    },
+    {
+      "id": "localization",
+      "status": "prepared_four_locales",
+      "authority": "storefront_theme",
+      "execution": "translation_key_driven",
+      "writes": "theme_source_only"
+    },
+    {
+      "id": "control_registry",
+      "status": "connected",
+      "authority": "GitHub_main",
+      "execution": "control_plane_read_model",
+      "writes": "none"
     }
   ],
   "non_negotiable_gates": {
@@ -261,5 +296,7 @@
     "minors": "Paid audience targeting must follow platform and legal requirements; the operating system does not hard-code minor targeting.",
     "bulk_catalog": "Catalog-wide reprocessing is dry-run by default. Shopify product writes require MVQ_WRITE_ENABLED=true, MVQ_BACKFILL_WRITE_ENABLED=true, and the existing per-product safe-field authorization path."
   },
-  "workflow_registry": "30_System_Infrastructure/system/registry/enterprise_workflows.json"
+  "workflow_registry": "30_System_Infrastructure/system/registry/enterprise_workflows.json",
+  "control_registry": "app/config/mvqueen-control-registry.json",
+  "performance_budget": "30_System_Infrastructure/system/registry/performance_budget.json"
 }
