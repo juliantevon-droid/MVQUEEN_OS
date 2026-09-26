@@ -1,5 +1,5 @@
 export const DEFAULT_SHIPPING_DELIVERY_ESTIMATE =
-  "Confirmed at checkout based on destination and fulfillment source.";
+  "7–15 business days";
 
 export function resolveShippingDeliveryEstimate(
   existingValue?: string | null,
