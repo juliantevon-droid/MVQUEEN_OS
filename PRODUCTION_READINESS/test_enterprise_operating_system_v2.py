@@ -85,6 +85,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("read_inventory declared in Shopify app", by_capability["commercial_cost_sync"]["requirements"])
         self.assertEqual(by_capability["commercial_health"]["state"], "engineered_runtime_migration_required")
         self.assertIn("advertising_eligibility=eligible for every promoted product", by_capability["paid_advertising"]["requirements"])
+        self.assertIn("positive max_cac_at_target_margin", by_capability["paid_advertising"]["requirements"])
+        self.assertIn("target_margin_roas_floor", by_capability["paid_advertising"]["requirements"])
 
     def test_runtime_files_exist(self):
         required = [
@@ -114,6 +116,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "prisma/production/migrations/20260925170500_add_commercial_settings/migration.sql",
             "prisma/migrations/20260926024500_add_commercial_health_state/migration.sql",
             "prisma/production/migrations/20260926024500_add_commercial_health_state/migration.sql",
+            "prisma/migrations/20260926031500_add_target_margin_ad_guardrails/migration.sql",
+            "prisma/production/migrations/20260926031500_add_target_margin_ad_guardrails/migration.sql",
         ]
         for rel in required:
             self.assertTrue((ROOT / rel).is_file(), rel)
