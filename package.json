@@ -21,7 +21,7 @@
     "setup:production": "npm run prisma:generate:production && npm run db:migrate:production",
     "build:production": "npm run prisma:generate:production && react-router build",
     "test:enterprise": "tsx app/lib/enterprise/enterprise.test.ts",
-    "test:catalog-automation": "tsx app/lib/product-content-automation.test.ts && tsx app/lib/shipping-policy.test.ts",
+    "test:catalog-automation": "tsx app/lib/product-content-automation.test.ts && tsx app/lib/shipping-policy.test.ts && tsx app/lib/enterprise/product-decision-engine.test.ts",
     "preflight:production": "tsx app/lib/production-preflight.ts",
     "test:production-preflight": "tsx app/lib/production-preflight.test.ts"
   },
