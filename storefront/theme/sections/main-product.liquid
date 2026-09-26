@@ -40,7 +40,7 @@
 
           assign shipping_estimate = product.metafields.shipping.delivery_estimate.value
           if shipping_estimate == blank
-            assign shipping_estimate = 'Confirmed at checkout based on destination and fulfillment source.'
+            assign shipping_estimate = '7–15 business days'
           endif
 
           assign canonical_ingredients = product.metafields.attributes.ingredients
