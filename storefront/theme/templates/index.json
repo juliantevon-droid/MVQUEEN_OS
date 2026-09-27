@@ -1,70 +1,102 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
+    "gateway": {
+      "type": "brand-gateway",
       "settings": {
-        "heading": "Luxury that feels like you.",
-        "subheading": "Bold femininity, modern elegance, and everyday luxury — thoughtfully curated for the woman you are becoming.",
-        "button_label": "Explore the collection",
-        "button_link": "/collections/mvqueen-world"
+        "mvqueen_eyebrow": "MODERN LUXURY",
+        "mvqueen_copy": "Neutral, bold, refined pieces for modern everyday luxury.",
+        "mvqueen_cta": "Explore MVQueen",
+        "princess_eyebrow": "PLAYFUL GLAMOUR",
+        "princess_copy": "Soft, bright, expressive pieces with a lighter, playful point of view.",
+        "princess_cta": "Explore Miss.Princess"
       }
     },
     "curation": {
       "type": "editorial-curation",
-      "settings": {},
+      "settings": {
+        "eyebrow": "THE HOUSE EDIT",
+        "heading": "One storefront. Two distinct moods.",
+        "copy": "Start with the energy that feels like you today, then move freely between MVQueen and Miss.Princess without leaving the shared shopping experience.",
+        "link_label": "About the house",
+        "link_url": "/pages/about"
+      },
       "blocks": {
         "note-1": {
           "type": "note",
           "settings": {
-            "title": "The statement piece",
-            "text": "One intentional detail can change the entire look."
+            "title": "Refined",
+            "text": "MVQueen brings neutral, bold, mature styling into a polished everyday edit."
           }
         },
         "note-2": {
           "type": "note",
           "settings": {
-            "title": "The everyday edit",
-            "text": "Refined pieces chosen to move easily through real life."
+            "title": "Playful",
+            "text": "Miss.Princess leans brighter, softer, colorful, feminine, and expressive."
           }
         },
         "note-3": {
           "type": "note",
           "settings": {
-            "title": "The finishing touch",
-            "text": "Beauty and accessories selected to complete your point of view."
+            "title": "Connected",
+            "text": "Both worlds share one bag, one checkout, and one customer-care experience."
           }
         }
       }
     },
-    "featured": {
+    "mvqueen_edit": {
       "type": "featured-products",
       "settings": {
-        "heading": "Made to be noticed.",
+        "anchor_id": "MVQueenWorld",
+        "brand_style": "mvqueen",
+        "eyebrow": "THE MVQueen WORLD",
+        "heading": "Refined by instinct.",
+        "copy": "Neutral, bold and mature pieces curated for confidence, polish, and modern everyday luxury.",
         "collection": "mvqueen-world",
-        "limit": 2
+        "limit": 4,
+        "cta_label": "Shop MVQueen",
+        "cta_link": "/collections/mvqueen-world"
+      }
+    },
+    "princess_edit": {
+      "type": "featured-products",
+      "settings": {
+        "anchor_id": "MissPrincessWorld",
+        "brand_style": "princess",
+        "eyebrow": "THE Miss.Princess WORLD",
+        "heading": "Playful by nature.",
+        "copy": "Soft, bright and expressive pieces curated for color, sparkle, femininity, and a lighter mood.",
+        "collection": "miss-princess-world",
+        "limit": 4,
+        "cta_label": "Enter Miss.Princess",
+        "cta_link": "/pages/miss-princess"
       }
     },
     "story": {
-      "type": "brand-story",
-      "settings": {}
+      "type": "house-story",
+      "settings": {
+        "eyebrow": "ABOUT US",
+        "heading": "Made for every version of you.",
+        "copy": "MVQueen and Miss.Princess share one storefront, one bag, and one standard of thoughtful curation — with two distinct moods so you can shop the version of yourself you want to express today.",
+        "link_label": "Read our story",
+        "link_url": "/pages/about"
+      }
     },
     "trust": {
       "type": "trust-strip",
       "settings": {}
     },
-    "social": {
-      "type": "social-proof",
-      "settings": {
-        "enabled": false
-      }
-    },
     "pillars": {
       "type": "brand-pillars",
       "settings": {}
     },
-    "badges": {
-      "type": "trust-badges",
-      "settings": {}
+    "social": {
+      "type": "social-media",
+      "settings": {
+        "eyebrow": "FOLLOW THE HOUSE",
+        "heading": "Style moves beyond the storefront.",
+        "copy": "Follow MVQueen and Miss.Princess for new edits, styling ideas, beauty moments, product stories, and launch updates."
+      }
     },
     "newsletter": {
       "type": "newsletter",
@@ -72,14 +104,14 @@
     }
   },
   "order": [
-    "hero",
+    "gateway",
     "curation",
-    "featured",
+    "mvqueen_edit",
+    "princess_edit",
     "story",
     "trust",
-    "social",
     "pillars",
-    "badges",
+    "social",
     "newsletter"
   ]
 }
