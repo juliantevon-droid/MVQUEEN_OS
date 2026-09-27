@@ -233,6 +233,12 @@ function buildDescriptionHtml(
   return (intro + details + measurements).trim();
 }
 
+function brandedSeoTitle(title: string, brandLabel: string): string {
+  const suffix = " | " + cleanText(brandLabel);
+  if (suffix.length >= 60) return clip(brandLabel, 60);
+  return clip(title, 60 - suffix.length) + suffix;
+}
+
 function keywordTitle(title: string, productType: string): string {
   const lower = cleanText(title).toLowerCase();
   const type = cleanText(productType).toLowerCase();
@@ -308,7 +314,7 @@ export function buildAutomatedProductContent(
     product.descriptionHtml,
   );
 
-  const seoTitle = clip(title + " | " + brandLabel, 60);
+  const seoTitle = brandedSeoTitle(title, brandLabel);
   const descriptionPlain = stripVendor(cleanText(product.descriptionHtml), product.vendor);
   const metaDescription = clip(
     descriptionPlain
