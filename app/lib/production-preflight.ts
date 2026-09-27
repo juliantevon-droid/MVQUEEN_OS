@@ -69,6 +69,15 @@ export function productionPreflight() {
     errors.push("Customer-facing editorial publication requires MVQ_EDITORIAL_PUBLISH_ENABLED=true");
   }
   if (
+    truthy("MVQ_DESCRIPTION_REWRITE_EXISTING_ENABLED") &&
+    (!truthy("MVQ_DESCRIPTION_PUBLISH_ENABLED") ||
+      !truthy("MVQ_EDITORIAL_PUBLISH_ENABLED"))
+  ) {
+    errors.push(
+      "MVQ_DESCRIPTION_REWRITE_EXISTING_ENABLED requires both MVQ_DESCRIPTION_PUBLISH_ENABLED=true and MVQ_EDITORIAL_PUBLISH_ENABLED=true",
+    );
+  }
+  if (
     truthy("MVQ_COMPARE_AT_PRICE_PUBLISH_ENABLED") &&
     !truthy("MVQ_PRICE_PUBLISH_ENABLED")
   ) {
@@ -107,6 +116,7 @@ export function productionPreflight() {
       editorialSeo: truthy("MVQ_EDITORIAL_PUBLISH_ENABLED"),
       titlePublish: truthy("MVQ_TITLE_PUBLISH_ENABLED"),
       descriptionPublish: truthy("MVQ_DESCRIPTION_PUBLISH_ENABLED"),
+      descriptionRewriteExisting: truthy("MVQ_DESCRIPTION_REWRITE_EXISTING_ENABLED"),
       seoPublish: truthy("MVQ_SEO_PUBLISH_ENABLED"),
       pricePublish: truthy("MVQ_PRICE_PUBLISH_ENABLED"),
       compareAtPricePublish: truthy("MVQ_COMPARE_AT_PRICE_PUBLISH_ENABLED"),
