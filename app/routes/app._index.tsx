@@ -148,6 +148,9 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       automaticProductEnrollment:
         process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true" ? "enabled" : "manual-allowlist",
       editorialPublish: process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      titlePublish: process.env.MVQ_TITLE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      descriptionPublish: process.env.MVQ_DESCRIPTION_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      seoPublish: process.env.MVQ_SEO_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       contentSurfaces: process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED === "true" ? "enabled" : "disabled",
       reconciliation: process.env.MVQ_PRODUCT_RECONCILE_ENABLED === "true" ? "enabled" : "disabled",
       durableWorker:
@@ -164,6 +167,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       },
       mediaAltSync: process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true" ? "enabled" : "disabled",
       pricePublish: process.env.MVQ_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      compareAtPricePublish:
+        process.env.MVQ_COMPARE_AT_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       pricing: commercial.missing.length ? "needs-configuration" : "advisory-ready",
       pricingMissing: commercial.missing,
       costSync,
@@ -212,7 +217,10 @@ export default function Dashboard() {
       <s-section heading="Runtime gates">
         <s-paragraph>Product write mode: {runtime.productWrites}</s-paragraph>
         <s-paragraph>Automatic product enrollment: {runtime.automaticProductEnrollment}</s-paragraph>
-        <s-paragraph>Automatic editorial/SEO publishing: {runtime.editorialPublish}</s-paragraph>
+        <s-paragraph>Editorial enrichment: {runtime.editorialPublish}</s-paragraph>
+        <s-paragraph>Storefront title publishing: {runtime.titlePublish}</s-paragraph>
+        <s-paragraph>Storefront description publishing: {runtime.descriptionPublish}</s-paragraph>
+        <s-paragraph>Storefront SEO publishing: {runtime.seoPublish}</s-paragraph>
         <s-paragraph>FAQ/blog/collection content surfaces: {runtime.contentSurfaces}</s-paragraph>
         <s-paragraph>Missed-webhook reconciliation: {runtime.reconciliation}</s-paragraph>
         <s-paragraph>
@@ -227,6 +235,7 @@ export default function Dashboard() {
         </s-paragraph>
         <s-paragraph>Automatic missing-ALT repair: {runtime.mediaAltSync}</s-paragraph>
         <s-paragraph>Approved price publishing: {runtime.pricePublish}</s-paragraph>
+        <s-paragraph>Compare-at price publishing: {runtime.compareAtPricePublish}</s-paragraph>
         <s-paragraph>Pricing/profitability: {runtime.pricing}</s-paragraph>
         <s-paragraph>
           Pricing configuration gaps: {runtime.pricingMissing.length ? runtime.pricingMissing.join(", ") : "none"}
