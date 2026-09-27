@@ -164,4 +164,14 @@ assert.equal(
   false,
 );
 
+assert.equal(
+  shouldPublishAutomatedDescription({
+    topic: "products/update",
+    currentDescriptionHtml:
+      "<p>Existing supplier-style product description with useful source facts.</p>",
+    allowExistingRewrite: true,
+  }),
+  true,
+);
+
 console.log("product content automation tests passed");
