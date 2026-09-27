@@ -162,6 +162,37 @@ export async function processProductJobBatch() {
   const now = Date.now();
 
   await recoverStaleProductJobs();
+
+  // Standby mode must not consume Shopify events. Webhooks may continue to
+  // enqueue durable jobs while live writes are disabled; preserving those jobs
+  // lets production activation resume from the real event queue instead of
+  // silently completing them as dry-runs.
+  if (process.env.MVQ_WRITE_ENABLED !== "true") {
+    const [receivedCount, processingCount, failedQueue, deadLetterCount] =
+      await Promise.all([
+        prisma.productJob.count({ where: { status: "received" } }),
+        prisma.productJob.count({ where: { status: { in: ["leased", "processing"] } } }),
+        prisma.productJob.count({ where: { status: "failed" } }),
+        prisma.productJob.count({ where: { status: "dead_letter" } }),
+      ]);
+
+    const result = {
+      attempted: 0,
+      completed: 0,
+      failed: 0,
+      paused: true,
+      queue: {
+        received: receivedCount,
+        processing: processingCount,
+        failed: failedQueue,
+        deadLetter: deadLetterCount,
+      },
+    };
+
+    logMvqueenEvent("product.worker.paused", { correlationId, ...result }, "info");
+    return result;
+  }
+
   await markExhaustedJobs(maxAttempts);
 
   const [received, failed] = await Promise.all([
