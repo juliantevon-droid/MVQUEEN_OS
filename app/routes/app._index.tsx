@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs } from "react-router";
 import { useLoaderData } from "react-router";
-import { authenticate } from "../shopify.server";
+import { authenticate, registerWebhooks } from "../shopify.server";
 import prisma from "../db.server";
 import { resolveShopCommercialConfig } from "../lib/enterprise/commercial-settings.server";
 import { getEnterpriseIntegrationStatus } from "../lib/enterprise/integration-status";
@@ -9,6 +9,38 @@ import controlRegistry from "../config/mvqueen-control-registry.json";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { admin, session } = await authenticate.admin(request);
+
+  const webhookHeartbeatName = `webhook-registration:${session.shop}`;
+  const webhookHeartbeat = await prisma.runtimeHeartbeat.findUnique({
+    where: { name: webhookHeartbeatName },
+    select: { state: true, updatedAt: true },
+  });
+  const webhookRegistrationStale =
+    !webhookHeartbeat ||
+    webhookHeartbeat.state !== "ready" ||
+    Date.now() - webhookHeartbeat.updatedAt.getTime() > 86_400_000;
+
+  if (webhookRegistrationStale) {
+    try {
+      await registerWebhooks({ session });
+      await prisma.runtimeHeartbeat.upsert({
+        where: { name: webhookHeartbeatName },
+        create: { name: webhookHeartbeatName, state: "ready" },
+        update: { state: "ready" },
+      });
+      console.info("[mvq-webhooks] product subscriptions ready for", session.shop);
+    } catch (error) {
+      await prisma.runtimeHeartbeat.upsert({
+        where: { name: webhookHeartbeatName },
+        create: { name: webhookHeartbeatName, state: "error" },
+        update: { state: "error" },
+      });
+      console.error(
+        "[mvq-webhooks] product subscription registration failed:",
+        error instanceof Error ? error.message : "unknown error",
+      );
+    }
+  }
   const response = (await admin.graphql(`#graphql
     query MVQueenRuntimeHealth {
       shop { name myshopifyDomain currencyCode }
@@ -120,6 +152,10 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       reconciliation: process.env.MVQ_PRODUCT_RECONCILE_ENABLED === "true" ? "enabled" : "disabled",
       durableWorker:
         (process.env.MVQ_PRODUCT_WORKER_TOKEN?.trim().length ?? 0) >= 32 ? "configured" : "not-configured",
+      webhookRegistration: {
+        state: webhookHeartbeat?.state ?? (webhookRegistrationStale ? "syncing" : "missing"),
+        lastCheckedAt: webhookHeartbeat?.updatedAt?.toISOString() ?? null,
+      },
       workerHeartbeat: {
         state: workerHeartbeat?.state ?? "missing",
         health: workerHealth,
@@ -179,6 +215,9 @@ export default function Dashboard() {
         <s-paragraph>Automatic editorial/SEO publishing: {runtime.editorialPublish}</s-paragraph>
         <s-paragraph>FAQ/blog/collection content surfaces: {runtime.contentSurfaces}</s-paragraph>
         <s-paragraph>Missed-webhook reconciliation: {runtime.reconciliation}</s-paragraph>
+        <s-paragraph>
+          Product webhook registration: {runtime.webhookRegistration.state}
+        </s-paragraph>
         <s-paragraph>Durable worker secret: {runtime.durableWorker}</s-paragraph>
         <s-paragraph>
           Product worker health: {runtime.workerHeartbeat.health} · heartbeat state: {runtime.workerHeartbeat.state}
