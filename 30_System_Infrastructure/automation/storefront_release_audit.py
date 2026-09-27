@@ -31,6 +31,16 @@ DEPLOYMENT_REQUIRED = (
 )
 
 CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
+    "homepage_canonical": (
+        "templates/index.json",
+        (
+            "\"type\": \"hero\"",
+            "Luxury that feels like you.",
+            "/collections/mvqueen-world",
+            "\"type\": \"editorial-curation\"",
+            "\"type\": \"featured-products\"",
+        ),
+    ),
     "global_shell": (
         "layout/theme.liquid",
         (
@@ -230,6 +240,16 @@ def read(rel: str) -> str:
 def main() -> int:
     failures: list[dict[str, str]] = []
     passed: list[str] = []
+
+    index_source = read("templates/index.json") if (THEME / "templates/index.json").is_file() else ""
+    if '"type": "brand-gateway"' in index_source:
+        failures.append({
+            "check": "homepage_no_gateway_regression",
+            "file": "templates/index.json",
+            "reason": "root homepage must remain the approved MVQueen editorial experience, not the brand gateway",
+        })
+    else:
+        passed.append("homepage_no_gateway_regression")
 
     for name, (rel, tokens) in CHECKS.items():
         path = THEME / rel
