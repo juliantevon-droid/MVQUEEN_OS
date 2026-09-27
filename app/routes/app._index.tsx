@@ -169,6 +169,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       pricePublish: process.env.MVQ_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       compareAtPricePublish:
         process.env.MVQ_COMPARE_AT_PRICE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      vendorNormalization:
+        process.env.MVQ_VENDOR_NORMALIZATION_ENABLED === "true" ? "enabled" : "disabled",
       pricing: commercial.missing.length ? "needs-configuration" : "advisory-ready",
       pricingMissing: commercial.missing,
       costSync,
@@ -236,6 +238,7 @@ export default function Dashboard() {
         <s-paragraph>Automatic missing-ALT repair: {runtime.mediaAltSync}</s-paragraph>
         <s-paragraph>Approved price publishing: {runtime.pricePublish}</s-paragraph>
         <s-paragraph>Compare-at price publishing: {runtime.compareAtPricePublish}</s-paragraph>
+        <s-paragraph>Storefront vendor normalization: {runtime.vendorNormalization}</s-paragraph>
         <s-paragraph>Pricing/profitability: {runtime.pricing}</s-paragraph>
         <s-paragraph>
           Pricing configuration gaps: {runtime.pricingMissing.length ? runtime.pricingMissing.join(", ") : "none"}
