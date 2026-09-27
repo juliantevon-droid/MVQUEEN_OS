@@ -15,6 +15,7 @@ const classification: Classification = {
 const content: AutomatedProductContent = {
   title: "Black Satin Dress",
   shortDescription: "A black satin dress with source-listed details.",
+  descriptionHtml: "<p>A black satin dress with source-listed details.</p><h3>Product Details</h3><ul><li>Material: Satin</li><li>Color: Black</li><li>Length: Midi</li></ul>",
   highlights: ["Material: Satin", "Color: Black", "Length: Midi"],
   focusKeyword: "dress",
   secondaryKeywords: ["dresses", "black satin dress"],
