@@ -16,6 +16,24 @@ function numberFrom(value?: string | null): number | null {
   return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
 }
 
+function uniformNumber(values: Array<string | null | undefined>): number | null {
+  if (!values.length) return null;
+  const parsed = values.map(numberFrom);
+  if (parsed.some((value) => value === null)) return null;
+  const first = parsed[0] as number;
+  return parsed.every((value) => Math.abs((value as number) - first) < 0.000001)
+    ? first
+    : null;
+}
+
+function uniformText(values: Array<string | null | undefined>): string | null {
+  if (!values.length) return null;
+  const normalized = values.map((value) => String(value ?? "").trim()).filter(Boolean);
+  if (normalized.length !== values.length) return null;
+  const first = normalized[0];
+  return normalized.every((value) => value === first) ? first : null;
+}
+
 function metafieldValue(product: ProductSnapshot, key: string): string | null {
   return product.commercialMetafields?.nodes?.find((item) => item.key === key)?.value ?? null;
 }
@@ -53,9 +71,15 @@ export function buildEnterpriseProductDecision(
     product.productType ?? "",
   );
   const brandRoute = classifyBrandWorld(product);
-  const firstVariant = product.variants?.nodes?.[0];
-  const currentPrice = numberFrom(firstVariant?.price);
-  const authoritativeUnitCost = numberFrom(firstVariant?.unitCost);
+  const variants = product.variants?.nodes ?? [];
+  const currentPrice = uniformNumber(variants.map((variant) => variant.price));
+  const authoritativeUnitCost = uniformNumber(
+    variants.map((variant) => variant.unitCost),
+  );
+  const authoritativeCostCurrency =
+    authoritativeUnitCost !== null
+      ? uniformText(variants.map((variant) => variant.costCurrency))
+      : null;
   const resolvedCommercial = commercial ?? getCommercialConfig();
   const unitCost =
     authoritativeUnitCost ?? numberFrom(metafieldValue(product, "unit_cost"));
@@ -108,8 +132,12 @@ export function buildEnterpriseProductDecision(
     marketing,
     lifecycle,
     commercialSource: {
-      unitCostSource: authoritativeUnitCost !== null ? "shopify_inventory_item" : "commercial_metafield",
-      unitCostCurrency: firstVariant?.costCurrency ?? metafieldValue(product, "cost_currency"),
+      unitCostSource:
+        authoritativeUnitCost !== null
+          ? "shopify_inventory_item"
+          : "commercial_metafield",
+      unitCostCurrency:
+        authoritativeCostCurrency ?? metafieldValue(product, "cost_currency"),
     },
     tags,
     measurementKey: `product:${product.id}`,
