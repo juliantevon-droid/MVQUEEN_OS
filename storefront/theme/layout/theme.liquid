@@ -24,7 +24,7 @@
   <body class="mvq-page mvq-page--{{ request.page_type }}">
     {% assign mvq_analytics_brand = 'MVQueen' %}
     {% if request.page_type == 'index' %}
-      {% assign mvq_analytics_brand = 'Brand Gateway' %}
+      {% assign mvq_analytics_brand = 'MVQueen House' %}
     {% endif %}
     {% if product and product.tags contains 'mvq:brand:miss-princess' %}
       {% assign mvq_analytics_brand = 'Miss.Princess' %}
@@ -47,9 +47,9 @@
     </script>
     <a class="mvq-skip-link" href="#MainContent">Skip to content</a>
     {% section 'announcement-bar' %}
-    {% unless request.page_type == 'index' %}{% section 'header' %}{% endunless %}
+    {% section 'header' %}
     <main id="MainContent" role="main" tabindex="-1">{{ content_for_layout }}</main>
-    {% unless request.page_type == 'index' %}{% section 'footer' %}{% endunless %}
+    {% section 'footer' %}
     <script src="{{ 'mvqueen.js' | asset_url }}" defer></script>
     <script src="{{ 'mvqueen-ux.js' | asset_url }}" defer></script>
     <script src="{{ 'mvqueen-analytics.js' | asset_url }}" defer></script>
