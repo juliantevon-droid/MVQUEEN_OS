@@ -99,9 +99,22 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#39;");
 }
 
+function preservedTables(html?: string | null): string[] {
+  const source = String(html ?? "");
+  return [...source.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)]
+    .map((match) =>
+      match[0]
+        .replace(/\sstyle=(["'])[^"']*\1/gi, "")
+        .replace(/\sclass=(["'])[^"']*\1/gi, "")
+        .trim(),
+    )
+    .filter(Boolean);
+}
+
 function buildDescriptionHtml(
   shortDescription: string,
   highlights: string[],
+  sourceDescriptionHtml?: string | null,
 ): string {
   const intro = shortDescription
     ? `<p>${escapeHtml(shortDescription)}</p>`
@@ -113,7 +126,12 @@ function buildDescriptionHtml(
         .join("")}</ul>`
     : "";
 
-  return (intro + details).trim();
+  const tables = preservedTables(sourceDescriptionHtml);
+  const measurements = tables.length
+    ? `<h3>Size &amp; Measurements</h3>${tables.join("")}`
+    : "";
+
+  return (intro + details + measurements).trim();
 }
 
 function keywordTitle(title: string, productType: string): string {
@@ -178,7 +196,11 @@ export function buildAutomatedProductContent(
     .filter((value) => value.split(" ").length >= 4)
     .slice(0, 5);
 
-  const descriptionHtml = buildDescriptionHtml(shortDescription, highlights);
+  const descriptionHtml = buildDescriptionHtml(
+    shortDescription,
+    highlights,
+    product.descriptionHtml,
+  );
 
   const seoTitle = clip(title + " | MVQueen", 60);
   const descriptionPlain = stripVendor(cleanText(product.descriptionHtml), product.vendor);
