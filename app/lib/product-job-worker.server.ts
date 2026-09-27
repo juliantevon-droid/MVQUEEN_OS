@@ -5,6 +5,18 @@ import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/
 
 const RECONCILE_QUERY = "#graphql\nquery MVQueenRecentProducts($first: Int!, $after: String, $query: String!) { products(first: $first, after: $after, query: $query, sortKey: UPDATED_AT) { nodes { id updatedAt } pageInfo { hasNextPage endCursor } } }";
 
+const PRODUCT_WEBHOOK_AUDIT_QUERY = `#graphql
+query MVQueenProductWebhookAudit {
+  webhookSubscriptions(first: 50) {
+    nodes {
+      id
+      topic
+      uri
+    }
+  }
+}`;
+
+
 function envInt(name: string, fallback: number, min: number, max: number): number {
   const parsed = Number(process.env[name] ?? "");
   if (!Number.isFinite(parsed)) return fallback;
@@ -40,6 +52,79 @@ export async function recordProductWorkerHeartbeat(
       detailsJson: details ? JSON.stringify(details) : null,
     },
   });
+}
+
+export async function auditProductWebhookSubscriptions() {
+  const sessions = await prisma.session.findMany({
+    where: { isOnline: false },
+    select: { shop: true },
+    distinct: ["shop"],
+  });
+
+  const results: Array<{
+    shop: string;
+    productsCreate: boolean;
+    productsUpdate: boolean;
+    subscriptions: number;
+  }> = [];
+
+  for (const { shop } of sessions) {
+    try {
+      const { admin } = await unauthenticated.admin(shop);
+      const response: Response = await admin.graphql(PRODUCT_WEBHOOK_AUDIT_QUERY);
+      const body = (await response.json()) as {
+        data?: {
+          webhookSubscriptions?: {
+            nodes?: Array<{
+              id?: string | null;
+              topic?: string | null;
+              uri?: string | null;
+            }>;
+          } | null;
+        };
+      };
+
+      const nodes = body.data?.webhookSubscriptions?.nodes ?? [];
+      const productsCreate = nodes.some(
+        (node) =>
+          node.topic === "PRODUCTS_CREATE" &&
+          node.uri?.includes("/webhooks/products/create"),
+      );
+      const productsUpdate = nodes.some(
+        (node) =>
+          node.topic === "PRODUCTS_UPDATE" &&
+          node.uri?.includes("/webhooks/products/update"),
+      );
+
+      const result = {
+        shop,
+        productsCreate,
+        productsUpdate,
+        subscriptions: nodes.length,
+      };
+      results.push(result);
+
+      logMvqueenEvent(
+        "product.webhooks.audit",
+        result,
+        productsCreate && productsUpdate ? "info" : "error",
+      );
+    } catch (error) {
+      logMvqueenEvent(
+        "product.webhooks.audit_failed",
+        { shop, ...errorFields(error) },
+        "error",
+      );
+      results.push({
+        shop,
+        productsCreate: false,
+        productsUpdate: false,
+        subscriptions: 0,
+      });
+    }
+  }
+
+  return results;
 }
 
 export async function recoverStaleProductJobs() {
