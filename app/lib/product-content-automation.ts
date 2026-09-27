@@ -17,6 +17,25 @@ const SPACE_RE = /\s+/g;
 const HTML_RE = /<[^>]+>/g;
 const TRAILING_CODE_RE = /\s*\(([A-Z0-9_-]{2,24})\)\s*$/i;
 
+export function needsMediaAltRepair(value?: string | null): boolean {
+  const alt = String(value ?? "").trim();
+  if (!alt) return true;
+
+  const lower = alt.toLowerCase();
+  if (
+    lower.includes("max-origin") ||
+    /\.(?:jpe?g|png|webp|gif|avif)(?:\?|$)/i.test(alt) ||
+    /^(?:img|image|photo|pic)[-_ ]?\d+\b/i.test(alt)
+  ) {
+    return true;
+  }
+
+  const compact = alt.replace(/[^a-z0-9]/gi, "");
+  if (compact.length >= 20 && /^[a-f0-9]+$/i.test(compact)) return true;
+
+  return false;
+}
+
 function cleanText(value?: string | null): string {
   return String(value ?? "")
     .replace(/&nbsp;/gi, " ")
