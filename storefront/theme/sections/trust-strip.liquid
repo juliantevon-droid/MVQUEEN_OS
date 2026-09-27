@@ -1,5 +1,9 @@
 {% liquid
   assign is_princess_experience = false
+  assign is_house_home = false
+  if request.page_type == 'index'
+    assign is_house_home = true
+  endif
   if request.path contains '/pages/miss-princess'
     assign is_princess_experience = true
   endif
@@ -11,9 +15,9 @@
   endif
 %}
 <section class="mvq-container mvq-trust{% if is_princess_experience %} mvq-trust--princess{% endif %}">
-  <div>{% if is_princess_experience %}CURATED FOR PLAY{% else %}CURATED FOR YOU{% endif %}<small>{% if is_princess_experience %}Color, sparkle & feminine detail{% else %}Fashion, beauty & jewelry{% endif %}</small></div>
-  <div>{% if is_princess_experience %}SOFT GLAMOUR{% else %}EASY EVERYDAY LUXURY{% endif %}<small>{% if is_princess_experience %}Playful polish without the pressure{% else %}Polished pieces without the excess{% endif %}</small></div>
+  <div>{% if is_house_home %}TWO DISTINCT WORLDS{% elsif is_princess_experience %}CURATED FOR PLAY{% else %}CURATED FOR YOU{% endif %}<small>{% if is_house_home %}MVQueen + Miss.Princess{% elsif is_princess_experience %}Color, sparkle & feminine detail{% else %}Fashion, beauty & jewelry{% endif %}</small></div>
+  <div>{% if is_house_home %}ONE CURATED HOUSE{% elsif is_princess_experience %}SOFT GLAMOUR{% else %}EASY EVERYDAY LUXURY{% endif %}<small>{% if is_house_home %}Different moods, one standard{% elsif is_princess_experience %}Playful polish without the pressure{% else %}Polished pieces without the excess{% endif %}</small></div>
   <div>SECURE CHECKOUT<small>Shop with confidence</small></div>
-  <div>ONE SHARED STORE<small>One bag, one checkout, two brand worlds</small></div>
+  <div>ONE SHARED BAG<small>Move between both worlds without starting over</small></div>
 </section>
 {% schema %}{"name":"Trust strip","settings":[]} {% endschema %}
