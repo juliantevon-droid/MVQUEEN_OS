@@ -87,6 +87,7 @@ const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
+    options { name values }
     media(first: 50) {
       nodes {
         ... on MediaImage { id alt }
@@ -106,6 +107,7 @@ const PRODUCT_QUERY_WITH_COST = `#graphql
 query MVQueenProductWithCost($id: ID!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
+    options { name values }
     media(first: 50) {
       nodes {
         ... on MediaImage { id alt }
@@ -195,6 +197,12 @@ function sourceFingerprint(
     tags: [...(product.tags ?? [])]
       .filter((tag) => !tag.toLowerCase().startsWith("mvq:"))
       .sort(),
+    options: (product.options ?? [])
+      .map((option) => ({
+        name: option.name,
+        values: [...(option.values ?? [])].sort(),
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name)),
     variants: (product.variants?.nodes ?? [])
       .map((v) => ({
         id: v.id,
@@ -323,10 +331,12 @@ export async function processProductJob(
         : preliminaryDecision;
     const c = decision.classification;
     const brandRoute = decision.brandRoute;
+    const brandLabel =
+      brandRoute.brand === "miss-princess" ? "Miss.Princess" : "MVQueen";
     const automatedContent =
       c.confidence === "review"
         ? null
-        : buildAutomatedProductContent(product, c);
+        : buildAutomatedProductContent(product, c, brandLabel);
     const systemPrefixes = [
       "mvq:department:",
       "mvq:family:",
