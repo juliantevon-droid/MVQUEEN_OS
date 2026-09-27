@@ -4,7 +4,11 @@ import {
   needsMediaAltRepair,
   shouldPublishAutomatedDescription,
 } from "./product-content-automation";
-import { classifyProduct, type ProductSnapshot } from "./mvqueen-intelligence";
+import {
+  classifyBrandWorld,
+  classifyProduct,
+  type ProductSnapshot,
+} from "./mvqueen-intelligence";
 
 const product: ProductSnapshot = {
   id: "gid://shopify/Product/1",
@@ -86,6 +90,10 @@ const activewear: ProductSnapshot = {
     "<table><tr><th style=\"background-color: lightgray;\">Size</th><th>Bust</th></tr><tr><td>S</td><td>30.7</td></tr></table>",
   ].join(""),
   tags: [],
+  options: [
+    { name: "Color", values: ["Pink", "Black", "Yellow"] },
+    { name: "Size", values: ["S", "M", "L", "XL"] },
+  ],
   variants: { nodes: [{ id: "gid://shopify/ProductVariant/3", price: "39.24" }] },
 };
 
@@ -99,10 +107,17 @@ assert.equal(activewearClassification.family, "Activewear");
 assert.equal(activewearClassification.subcollection, "Activewear Sets");
 assert.equal(activewearClassification.productType, "Activewear Set");
 assert.equal(activewearClassification.confidence, "high");
+const activewearBrand = classifyBrandWorld(activewear);
+assert.equal(activewearBrand.brand, "miss-princess");
+assert.equal(activewearBrand.tone, "soft-playful");
+assert.equal(activewearBrand.reason, "color:pink");
 const activewearContent = buildAutomatedProductContent(
   activewear,
   activewearClassification,
+  "Miss.Princess",
 );
+assert.ok(activewearContent.seoTitle.endsWith("| Miss.Princess"));
+assert.ok(activewearContent.metaDescription.includes("at Miss.Princess."));
 assert.ok(activewearContent.shortDescription.startsWith("An activewear set with"));
 assert.ok(activewearContent.shortDescription.includes("two-piece design"));
 assert.ok(activewearContent.shortDescription.includes("ruched detailing"));
