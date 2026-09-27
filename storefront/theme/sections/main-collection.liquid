@@ -3,10 +3,17 @@
     {% render 'breadcrumbs' %}
     {% assign is_princess_collection = false %}
     {% if collection.handle contains 'miss-princess' %}{% assign is_princess_collection = true %}{% endif %}
-    <header class="mvq-collection-head">
+    <header class="mvq-collection-head{% if is_princess_collection %} mvq-collection-head--princess{% endif %}">
       <p class="mvq-eyebrow">{% if is_princess_collection %}THE Miss.Princess EDIT{% else %}THE MVQueen EDIT{% endif %}</p>
       <h1 class="mvq-display">{{ collection.title }}</h1>
       {% if collection.description != blank %}<div class="mvq-collection-desc mvq-copy">{{ collection.description }}</div>{% endif %}
+      <div class="mvq-collection-world-link">
+        {% if is_princess_collection %}
+          <a href="/pages/miss-princess">Enter the full Miss.Princess world →</a>
+        {% else %}
+          <a href="{{ routes.root_url }}#MVQueenWorld">Return to the MVQueen home edit →</a>
+        {% endif %}
+      </div>
     </header>
 
     <div class="mvq-collection-toolbar">
