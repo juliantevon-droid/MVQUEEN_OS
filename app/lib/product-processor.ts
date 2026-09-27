@@ -16,7 +16,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v11";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v12";
 
 // The React app is the single live Shopify writer. Automatic enrollment may
 // authorize newly created/updated products for safe editorial/catalog fields,
@@ -97,7 +97,7 @@ query MVQueenProduct($id: ID!) {
         ... on MediaImage { id alt }
       }
     }
-    variants(first: 2) { nodes { id price compareAtPrice } }
+    variants(first: 100) { nodes { id price compareAtPrice } }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
     }
@@ -117,7 +117,7 @@ query MVQueenProductWithCost($id: ID!) {
         ... on MediaImage { id alt }
       }
     }
-    variants(first: 2) {
+    variants(first: 100) {
       nodes {
         id
         price
@@ -167,6 +167,30 @@ function moneyNumber(value?: string | null): number | null {
   if (!value?.trim()) return null;
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
+}
+
+function uniformMoney(
+  values: Array<string | null | undefined>,
+): number | null {
+  if (!values.length) return null;
+  const parsed = values.map(moneyNumber);
+  if (parsed.some((value) => value === null)) return null;
+  const first = parsed[0] as number;
+  return parsed.every(
+    (value) => Math.abs((value as number) - first) < 0.000001,
+  )
+    ? first
+    : null;
+}
+
+function uniformText(
+  values: Array<string | null | undefined>,
+): string | null {
+  if (!values.length) return null;
+  const normalized = values.map((value) => String(value ?? "").trim());
+  if (normalized.some((value) => !value)) return null;
+  const first = normalized[0];
+  return normalized.every((value) => value === first) ? first : null;
 }
 
 function commercialNumber(product: ProductSnapshot, key: string): number | null {
@@ -305,15 +329,32 @@ export async function processProductJob(
       commercialConfig,
     );
     const variants = product.variants?.nodes ?? [];
-    const pricingVariant = variants.length === 1 ? variants[0] : null;
     const preliminaryPricing = preliminaryDecision.pricing;
     const recommendedPrice = preliminaryPricing.recommendedPrice;
-    const currentPrice = moneyNumber(pricingVariant?.price);
-    const existingCompareAtPrice = moneyNumber(pricingVariant?.compareAtPrice);
+    const uniformCurrentPrice = uniformMoney(
+      variants.map((variant) => variant.price),
+    );
+    const uniformUnitCost = uniformMoney(
+      variants.map((variant) => variant.unitCost),
+    );
+    const uniformCostCurrency = uniformText(
+      variants.map((variant) => variant.costCurrency),
+    );
+    const uniformExistingCompareAtPrice = uniformMoney(
+      variants.map((variant) => variant.compareAtPrice),
+    );
     const explicitCompareAtPrice = commercialNumber(product, "compare_at_price");
+    const homogeneousVariantPricing = Boolean(
+      variants.length &&
+      uniformCurrentPrice !== null &&
+      (
+        variants.length === 1 ||
+        (uniformUnitCost !== null && uniformCostCurrency !== null)
+      ),
+    );
     const pricePublishable = Boolean(
       PRICE_PUBLISH_ENABLED &&
-      pricingVariant &&
+      homogeneousVariantPricing &&
       preliminaryPricing.state === "ready_for_approval" &&
       recommendedPrice !== null,
     );
@@ -322,8 +363,13 @@ export async function processProductJob(
       pricePublishable &&
       recommendedPrice !== null
     )
-      ? [explicitCompareAtPrice, existingCompareAtPrice, currentPrice].find(
-          (value): value is number => value !== null && value > recommendedPrice,
+      ? [
+          explicitCompareAtPrice,
+          uniformExistingCompareAtPrice,
+          uniformCurrentPrice,
+        ].find(
+          (value): value is number =>
+            value !== null && value > recommendedPrice,
         ) ?? null
       : null;
 
@@ -424,9 +470,21 @@ export async function processProductJob(
       });
     }
 
-    const costVariant = variants[0];
-    const verifiedUnitCost = costVariant?.unitCost?.trim() || "";
-    const costCurrency = costVariant?.costCurrency?.trim() || "";
+    const uniformVerifiedUnitCost = uniformMoney(
+      variants.map((variant) => variant.unitCost),
+    );
+    const uniformVerifiedCostCurrency = uniformText(
+      variants.map((variant) => variant.costCurrency),
+    );
+    const verifiedUnitCost =
+      uniformVerifiedUnitCost !== null ? String(uniformVerifiedUnitCost) : "";
+    const costCurrency = uniformVerifiedCostCurrency ?? "";
+    const hasAnyVariantCost = variants.some(
+      (variant) => moneyNumber(variant.unitCost) !== null,
+    );
+    const allVariantsHaveCost =
+      variants.length > 0 &&
+      variants.every((variant) => moneyNumber(variant.unitCost) !== null);
     const shippingDeliveryEstimate = resolveShippingDeliveryEstimate(
       product.shippingMetafields?.nodes?.find((m) => m.key === "delivery_estimate")?.value,
     );
@@ -551,9 +609,13 @@ export async function processProductJob(
         value: !COST_SYNC_ENABLED
           ? "disabled"
           : hasReadInventory
-            ? verifiedUnitCost
+            ? verifiedUnitCost && costCurrency
               ? "verified"
-              : "no_cost_value"
+              : hasAnyVariantCost && allVariantsHaveCost
+                ? "variant_cost_or_currency_mismatch"
+                : hasAnyVariantCost
+                  ? "partial_variant_costs"
+                  : "no_cost_value"
             : "read_inventory_scope_required",
       },
       { namespace: "commercial", key: "pricing_state", type: "single_line_text_field", value: pricing.state },
@@ -712,19 +774,22 @@ export async function processProductJob(
       },
     });
 
-    if (pricePublishable && pricingVariant && recommendedPrice !== null) {
-      const variantInput: Record<string, unknown> = {
-        id: pricingVariant.id,
-        price: recommendedPrice.toFixed(2),
-      };
-      if (COMPARE_AT_PRICE_PUBLISH_ENABLED && compareAtPrice !== null) {
-        variantInput.compareAtPrice = compareAtPrice.toFixed(2);
-      }
+    if (pricePublishable && variants.length && recommendedPrice !== null) {
+      const variantInputs: Record<string, unknown>[] = variants.map((variant) => {
+        const input: Record<string, unknown> = {
+          id: variant.id,
+          price: recommendedPrice.toFixed(2),
+        };
+        if (COMPARE_AT_PRICE_PUBLISH_ENABLED && compareAtPrice !== null) {
+          input.compareAtPrice = compareAtPrice.toFixed(2);
+        }
+        return input;
+      });
 
       const pricingUpdate = await admin.graphql(PRODUCT_VARIANTS_BULK_UPDATE, {
         variables: {
           productId: product.id,
-          variants: [variantInput],
+          variants: variantInputs,
         },
       });
       const pricingBody = await pricingUpdate.json();
