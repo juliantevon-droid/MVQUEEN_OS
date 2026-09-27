@@ -150,6 +150,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       editorialPublish: process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       titlePublish: process.env.MVQ_TITLE_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       descriptionPublish: process.env.MVQ_DESCRIPTION_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
+      descriptionRewriteExisting:
+        process.env.MVQ_DESCRIPTION_REWRITE_EXISTING_ENABLED === "true" ? "enabled" : "disabled",
       seoPublish: process.env.MVQ_SEO_PUBLISH_ENABLED === "true" ? "enabled" : "disabled",
       contentSurfaces: process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED === "true" ? "enabled" : "disabled",
       reconciliation: process.env.MVQ_PRODUCT_RECONCILE_ENABLED === "true" ? "enabled" : "disabled",
@@ -222,6 +224,9 @@ export default function Dashboard() {
         <s-paragraph>Editorial enrichment: {runtime.editorialPublish}</s-paragraph>
         <s-paragraph>Storefront title publishing: {runtime.titlePublish}</s-paragraph>
         <s-paragraph>Storefront description publishing: {runtime.descriptionPublish}</s-paragraph>
+        <s-paragraph>
+          Existing description rewrites: {runtime.descriptionRewriteExisting}
+        </s-paragraph>
         <s-paragraph>Storefront SEO publishing: {runtime.seoPublish}</s-paragraph>
         <s-paragraph>FAQ/blog/collection content surfaces: {runtime.contentSurfaces}</s-paragraph>
         <s-paragraph>Missed-webhook reconciliation: {runtime.reconciliation}</s-paragraph>
