@@ -3,6 +3,8 @@ import { buildCommercialHealth } from "./commercial-health";
 import { buildReleaseGate } from "./release-gate";
 import { assertApprovedPaidMediaChange } from "./paid-media-adapter";
 import type { CommercialConfigResolution } from "./commercial-config";
+import { buildEnterpriseProductDecision } from "./product-decision-engine";
+import type { ProductSnapshot } from "../mvqueen-intelligence";
 
 const policy: CommercialConfigResolution = {
   config: {
@@ -48,6 +50,40 @@ const missingCost = buildCommercialHealth(
 );
 assert.equal(missingCost.state, "needs_cost");
 assert.equal(missingCost.advertisingEligibility, "not_ready");
+
+const repricedProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/reprice-fixture",
+  title: "Brown Aventurine Bead Necklace",
+  productType: "Necklace",
+  vendor: "MVQueen",
+  tags: [],
+  variants: {
+    nodes: [
+      {
+        id: "gid://shopify/ProductVariant/reprice-fixture",
+        price: "13.09",
+        unitCost: "11.90",
+        costCurrency: "USD",
+      },
+    ],
+  },
+  commercialMetafields: { nodes: [] },
+  shippingMetafields: { nodes: [] },
+};
+
+const currentPriceDecision = buildEnterpriseProductDecision(
+  repricedProduct,
+  policy,
+);
+const effectivePriceDecision = buildEnterpriseProductDecision(
+  repricedProduct,
+  policy,
+  100,
+);
+assert.equal(currentPriceDecision.commercialHealth.sellingPrice, 13.09);
+assert.equal(effectivePriceDecision.commercialHealth.sellingPrice, 100);
+assert.equal(currentPriceDecision.commercialHealth.state, "blocked");
+assert.equal(effectivePriceDecision.commercialHealth.state, "healthy");
 
 const reviewGate = buildReleaseGate({
   issues: [
