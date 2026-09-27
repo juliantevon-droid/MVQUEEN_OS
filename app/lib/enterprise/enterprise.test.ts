@@ -85,6 +85,72 @@ assert.equal(effectivePriceDecision.commercialHealth.sellingPrice, 100);
 assert.equal(currentPriceDecision.commercialHealth.state, "blocked");
 assert.equal(effectivePriceDecision.commercialHealth.state, "healthy");
 
+const homogeneousMultiVariantProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/homogeneous-multi-variant",
+  title: "Ruched Sports Bra and High-Waisted Shorts Active Set",
+  productType: "Activewear Set",
+  vendor: "MVQueen",
+  tags: [],
+  options: [
+    { name: "Color", values: ["Pink", "Black", "Yellow"] },
+    { name: "Size", values: ["S", "M"] },
+  ],
+  variants: {
+    nodes: [
+      {
+        id: "gid://shopify/ProductVariant/homogeneous-1",
+        price: "39.24",
+        unitCost: "19.62",
+        costCurrency: "USD",
+      },
+      {
+        id: "gid://shopify/ProductVariant/homogeneous-2",
+        price: "39.24",
+        unitCost: "19.62",
+        costCurrency: "USD",
+      },
+    ],
+  },
+  commercialMetafields: { nodes: [] },
+  shippingMetafields: { nodes: [] },
+};
+const homogeneousDecision = buildEnterpriseProductDecision(
+  homogeneousMultiVariantProduct,
+  policy,
+);
+assert.equal(homogeneousDecision.brandRoute.brand, "miss-princess");
+assert.equal(homogeneousDecision.commercialSource.unitCostSource, "shopify_inventory_item");
+assert.equal(homogeneousDecision.commercialSource.unitCostCurrency, "USD");
+assert.equal(homogeneousDecision.pricing.state, "ready_for_approval");
+
+const mismatchedMultiVariantProduct: ProductSnapshot = {
+  ...homogeneousMultiVariantProduct,
+  id: "gid://shopify/Product/mismatched-multi-variant",
+  variants: {
+    nodes: [
+      {
+        id: "gid://shopify/ProductVariant/mismatch-1",
+        price: "39.24",
+        unitCost: "19.62",
+        costCurrency: "USD",
+      },
+      {
+        id: "gid://shopify/ProductVariant/mismatch-2",
+        price: "39.24",
+        unitCost: "21.00",
+        costCurrency: "USD",
+      },
+    ],
+  },
+};
+const mismatchedDecision = buildEnterpriseProductDecision(
+  mismatchedMultiVariantProduct,
+  policy,
+);
+assert.equal(mismatchedDecision.commercialSource.unitCostSource, "commercial_metafield");
+assert.equal(mismatchedDecision.pricing.state, "needs_cost");
+assert.equal(mismatchedDecision.commercialHealth.state, "needs_cost");
+
 const reviewGate = buildReleaseGate({
   issues: [
     {
