@@ -135,3 +135,30 @@
   .mvq-mobile-purchase-bar__label{display:none}
   .mvq-mobile-purchase-bar .mvq-mobile-purchase-bar__button{width:100%}
 }
+
+
+/* Brand-aware product identity */
+.mvq-product-brandline{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px;
+  margin-bottom:10px;
+  color:var(--mvq-mink);
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.mvq-product-brandline a{
+  color:var(--mvq-gold-strong);
+  text-decoration:none;
+}
+.mvq-product-page--princess .mvq-product-brandline a{color:#A91F50}
+.mvq-product-page--princess .mvq-product-price{color:#A91F50}
+.mvq-product-page--princess .mvq-button--gold{
+  border-color:#7A2647;
+  background:#7A2647;
+  color:#FFF8FB;
+}
+.mvq-product-page--princess .mvq-button--gold:hover{border-color:#A91F50;background:#A91F50}
