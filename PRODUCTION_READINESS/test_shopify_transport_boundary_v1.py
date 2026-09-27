@@ -110,6 +110,8 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("recoverStaleProductJobs", worker)
         self.assertIn("dead_letter", worker)
         self.assertIn("reconcileRecentShopifyProducts", worker)
+        self.assertIn("auditProductWebhookSubscriptions", worker)
+        self.assertIn("product.webhooks.audit", worker)
         self.assertIn('process.env.MVQ_WRITE_ENABLED !== "true"', worker)
         self.assertIn('"product.worker.paused"', worker)
         self.assertIn("attempted: 0", worker)
