@@ -1,0 +1,35 @@
+FROM node:22.16-bookworm-slim AS base
+RUN apt-get update -y \
+  && apt-get install -y --no-install-recommends openssl \
+  && rm -rf /var/lib/apt/lists/*
+
+FROM base AS dependencies
+WORKDIR /app
+COPY package.json ./
+RUN npm install --ignore-scripts --no-audit --no-fund
+
+FROM dependencies AS build
+WORKDIR /app
+COPY app ./app
+COPY scripts ./scripts
+COPY prisma ./prisma
+COPY tsconfig.json ./tsconfig.json
+COPY package.json ./package.json
+
+ARG DATABASE_URL=postgresql://mvqueen:build-only@127.0.0.1:5432/mvqueen_build
+ENV DATABASE_URL=$DATABASE_URL
+ENV MVQ_DATABASE_PROFILE=production
+RUN npm run prisma:generate:production
+
+FROM base AS runtime
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/app ./app
+COPY --from=build /app/scripts ./scripts
+COPY --from=build /app/prisma ./prisma
+COPY --from=build /app/tsconfig.json ./tsconfig.json
+COPY --from=build /app/package.json ./package.json
+
+CMD ["sh", "-c", "npm run db:migrate:production && npm run worker:product"]
