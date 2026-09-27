@@ -31,14 +31,47 @@ DEPLOYMENT_REQUIRED = (
 )
 
 CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
+    "homepage_global_shell": (
+        "layout/theme.liquid",
+        (
+            "{% section 'header' %}",
+            "{% section 'footer' %}",
+            "MVQueen House",
+        ),
+    ),
+    "homepage_social": (
+        "sections/social-media.liquid",
+        (
+            "Instagram",
+            "TikTok",
+            "Facebook",
+            "Snapchat",
+            "YouTube",
+            "Read the journal",
+            "View the lookbook",
+        ),
+    ),
+    "homepage_house_story": (
+        "sections/house-story.liquid",
+        (
+            "ONE HOUSE · TWO WORLDS",
+            "MVQueen",
+            "Miss.Princess",
+            "/pages/about",
+        ),
+    ),
     "homepage_canonical": (
         "templates/index.json",
         (
-            "\"type\": \"hero\"",
-            "Luxury that feels like you.",
-            "/collections/mvqueen-world",
+            "\"type\": \"brand-gateway\"",
             "\"type\": \"editorial-curation\"",
             "\"type\": \"featured-products\"",
+            "\"type\": \"house-story\"",
+            "\"type\": \"social-media\"",
+            "MVQueenWorld",
+            "MissPrincessWorld",
+            "/collections/mvqueen-world",
+            "/pages/miss-princess",
         ),
     ),
     "global_shell": (
@@ -242,14 +275,14 @@ def main() -> int:
     passed: list[str] = []
 
     index_source = read("templates/index.json") if (THEME / "templates/index.json").is_file() else ""
-    if '"type": "brand-gateway"' in index_source:
-        failures.append({
-            "check": "homepage_no_gateway_regression",
-            "file": "templates/index.json",
-            "reason": "root homepage must remain the approved MVQueen editorial experience, not the brand gateway",
-        })
+    if '"type": "brand-gateway"' in index_source and "MVQueenWorld" in index_source and "MissPrincessWorld" in index_source:
+        passed.append("homepage_dual_brand_contract")
     else:
-        passed.append("homepage_no_gateway_regression")
+        failures.append({
+            "check": "homepage_dual_brand_contract",
+            "file": "templates/index.json",
+            "reason": "root homepage must present both MVQueen and Miss.Princess with working in-page brand destinations",
+        })
 
     for name, (rel, tokens) in CHECKS.items():
         path = THEME / rel
