@@ -636,3 +636,17 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
   .mvq-social-hub__placeholder{grid-column:auto}
   .mvq-social-hub__actions{display:grid}
 }
+
+
+/* Brand-aware collection finishing */
+.mvq-collection-world-link{margin-top:18px}
+.mvq-collection-world-link a{
+  color:var(--mvq-gold-strong);
+  font-size:.74rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.mvq-collection-head--princess .mvq-eyebrow,
+.mvq-collection-head--princess .mvq-collection-world-link a{color:#A91F50}
