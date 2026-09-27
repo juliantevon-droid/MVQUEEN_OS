@@ -412,4 +412,19 @@ Production Readiness, Theme CI/CD, Lint & Index and Overseer have passed after t
 ### Remaining activation step
 
 Publish `MVQueen — Staging Preview` to replace the older live custom revision. Shopify requires this to be done manually in Admin because the connected API safety layer refuses theme publishing.
+## Release candidate update — 2026-09-27
+
+This section supersedes earlier staging-name and current-catalog counts in this historical status file.
+
+- **Live MAIN:** `MVQueen — Custom Production Build` (`154869825734`).
+- **Release candidate:** `MVQueen — Release Candidate` (`154876772550`), still `UNPUBLISHED`, processing complete, no processing failure.
+- **Rollback:** `MVQueen — Previous Production Build` (`154611515590`).
+- **Backup:** `MVQueen — Backup 2026-09-25` (`154876674246`).
+- **Current active Shopify catalog:** 3 products.
+- All 3 active products have `shipping.delivery_estimate = 7–15 business days` and an active United States delivery method.
+- `/pages/mvqueen` and `/pages/miss-princess` are both published.
+- Footer Privacy Policy uses Shopify's native policy route; Terms, Refund & Returns, Shipping Policy, Privacy Choices, Contact Information, and Legal Notice destinations are published.
+- GitHub `main` validation remains green at the latest verified head.
+- **Remaining full-commerce certification gate:** verify the active payment provider in Shopify Admin and complete a test checkout/order.
+- Theme publishing remains manual because the connected Shopify mutation safety layer blocks `themePublish`.
 
