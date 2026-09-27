@@ -27,14 +27,6 @@ topics = ["app/scopes_update"]
 uri = "/webhooks/app/scopes_update"
 
 [[webhooks.subscriptions]]
-topics = ["products/create"]
-uri = "/webhooks/products/create"
-
-[[webhooks.subscriptions]]
-topics = ["products/update"]
-uri = "/webhooks/products/update"
-
-[[webhooks.subscriptions]]
 compliance_topics = ["customers/data_request"]
 uri = "/webhooks/compliance/customers-data-request"
 
@@ -49,3 +41,8 @@ uri = "/webhooks/compliance/shop-redact"
 # Production connection guard:
 # The production host, auth callback, and Shopify client ID are linked.
 # Never commit the Shopify client secret; keep it only in deployment secrets.
+
+
+# Product create/update webhooks are intentionally registered as shop-specific
+# subscriptions by the authenticated MVQueen OS runtime to avoid requiring
+# a separate CLI config release for this single-merchant deployment.
