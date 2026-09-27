@@ -117,6 +117,7 @@ const activewearContent = buildAutomatedProductContent(
   "Miss.Princess",
 );
 assert.ok(activewearContent.seoTitle.endsWith("| Miss.Princess"));
+assert.ok(activewearContent.seoTitle.length <= 60);
 assert.ok(activewearContent.metaDescription.includes("at Miss.Princess."));
 assert.ok(activewearContent.shortDescription.startsWith("An activewear set with"));
 assert.ok(activewearContent.shortDescription.includes("two-piece design"));
