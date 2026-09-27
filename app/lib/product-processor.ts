@@ -6,6 +6,7 @@ import { buildEnterpriseProductDecision } from "./enterprise/product-decision-en
 import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
+  shouldPublishAutomatedDescription,
 } from "./product-content-automation";
 import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automated-content-surfaces";
 import { publishAutomaticContentSurfaces } from "./enterprise/content-publisher";
@@ -623,7 +624,13 @@ export async function processProductJob(
         if (product.handle?.trim()) productInput.handle = product.handle;
       }
 
-      if (DESCRIPTION_PUBLISH_ENABLED) {
+      if (
+        DESCRIPTION_PUBLISH_ENABLED &&
+        shouldPublishAutomatedDescription({
+          topic: job.topic,
+          currentDescriptionHtml: product.descriptionHtml,
+        })
+      ) {
         productInput.descriptionHtml = automatedContent.descriptionHtml;
       }
 
