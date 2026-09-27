@@ -1,4 +1,5 @@
 import {
+  auditProductWebhookSubscriptions,
   processProductJobBatch,
   reconcileRecentShopifyProducts,
   recoverStaleProductJobs,
@@ -37,6 +38,7 @@ for (const signal of ["SIGTERM", "SIGINT"] as const) {
 
 async function main() {
   await recoverStaleProductJobs();
+  await auditProductWebhookSubscriptions();
   await recordProductWorkerHeartbeat("continuous", { pid: process.pid });
   lastHeartbeat = Date.now();
 
