@@ -6,6 +6,7 @@ export type ProductSnapshot = {
   productType?: string | null;
   vendor?: string | null;
   tags?: string[];
+  options?: { name: string; values: string[] }[];
   media?: {
     nodes?: { id: string; alt?: string | null }[];
   };
@@ -148,10 +149,26 @@ const MVQUEEN_STYLE_HINTS = [
   "minimal", "structured", "classic", "polished", "statement",
 ];
 
-function normalizedColorSignals(tags: string[] = [], title = ""): string[] {
+function normalizedColorSignals(
+  tags: string[] = [],
+  title = "",
+  options: ProductSnapshot["options"] = [],
+): string[] {
   const fromTags = tags
     .filter((tag) => tag.toLowerCase().startsWith("mvq:color:"))
     .map((tag) => tag.toLowerCase().replace("mvq:color:", "").trim())
+    .filter(Boolean);
+
+  const fromOptions = (options ?? [])
+    .filter((option) => option.name.trim().toLowerCase() === "color")
+    .flatMap((option) => option.values ?? [])
+    .map((value) =>
+      value
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, ""),
+    )
     .filter(Boolean);
 
   const titleTokens = title
@@ -160,11 +177,17 @@ function normalizedColorSignals(tags: string[] = [], title = ""): string[] {
     .split(/\s+/)
     .filter(Boolean);
 
-  return Array.from(new Set([...fromTags, ...titleTokens]));
+  return Array.from(new Set([...fromOptions, ...fromTags, ...titleTokens]));
 }
 
-export function classifyBrandWorld(product: Pick<ProductSnapshot, "title" | "tags" | "descriptionHtml">): BrandRouting {
-  const signals = normalizedColorSignals(product.tags ?? [], product.title ?? "");
+export function classifyBrandWorld(
+  product: Pick<ProductSnapshot, "title" | "tags" | "descriptionHtml" | "options">,
+): BrandRouting {
+  const signals = normalizedColorSignals(
+    product.tags ?? [],
+    product.title ?? "",
+    product.options ?? [],
+  );
   const text = [
     product.title ?? "",
     product.descriptionHtml?.replace(/<[^>]+>/g, " ") ?? "",
