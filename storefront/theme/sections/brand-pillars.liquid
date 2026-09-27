@@ -1,1 +1,23 @@
-<section class="mvq-section" style="background:var(--ivory)"><div class="mvq-container"><div class="mvq-eyebrow">WHY MVQueen</div><h2>Designed around confidence.</h2><div class="mvq-grid"><div><h3>Bold femininity.</h3><p>Pieces chosen to let your presence speak first.</p></div><div><h3>Modern elegance.</h3><p>Clean, considered style for the life you actually live.</p></div><div><h3>Everyday luxury.</h3><p>A polished point of view without unnecessary excess.</p></div></div></div></section>{% schema %}{"name":"Brand pillars","settings":[]} {% endschema %}
+<section class="mvq-section mvq-brand-pillars" style="background:var(--ivory)">
+  <div class="mvq-container">
+    {% if request.page_type == 'index' %}
+      <div class="mvq-eyebrow">WHY SHOP THE HOUSE</div>
+      <h2>Curated to feel personal.</h2>
+      <div class="mvq-grid">
+        <div><h3>Two moods.</h3><p>Move between refined MVQueen energy and playful Miss.Princess expression.</p></div>
+        <div><h3>One bag.</h3><p>Shop both brand worlds through one shared storefront and checkout journey.</p></div>
+        <div><h3>Clear details.</h3><p>Product information, delivery expectations, and customer care stay close to the purchase.</p></div>
+        <div><h3>Built to evolve.</h3><p>Fashion, jewelry, beauty, hair, accessories, and new categories can grow without losing the brand structure.</p></div>
+      </div>
+    {% else %}
+      <div class="mvq-eyebrow">WHY MVQueen</div>
+      <h2>Designed around confidence.</h2>
+      <div class="mvq-grid">
+        <div><h3>Bold femininity.</h3><p>Pieces chosen to let your presence speak first.</p></div>
+        <div><h3>Modern elegance.</h3><p>Clean, considered style for the life you actually live.</p></div>
+        <div><h3>Everyday luxury.</h3><p>A polished point of view without unnecessary excess.</p></div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% schema %}{"name":"Brand pillars","settings":[]} {% endschema %}
