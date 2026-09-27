@@ -16,7 +16,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v10";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v11";
 
 // The React app is the single live Shopify writer. Automatic enrollment may
 // authorize newly created/updated products for safe editorial/catalog fields,
@@ -32,6 +32,8 @@ const SEO_PUBLISH_ENABLED =
   process.env.MVQ_SEO_PUBLISH_ENABLED === "true";
 const DESCRIPTION_PUBLISH_ENABLED =
   process.env.MVQ_DESCRIPTION_PUBLISH_ENABLED === "true";
+const DESCRIPTION_REWRITE_EXISTING_ENABLED =
+  process.env.MVQ_DESCRIPTION_REWRITE_EXISTING_ENABLED === "true";
 const PRICE_PUBLISH_ENABLED =
   process.env.MVQ_PRICE_PUBLISH_ENABLED === "true";
 const COMPARE_AT_PRICE_PUBLISH_ENABLED =
@@ -186,6 +188,7 @@ function sourceFingerprint(
       titlePublish: TITLE_PUBLISH_ENABLED,
       seoPublish: SEO_PUBLISH_ENABLED,
       descriptionPublish: DESCRIPTION_PUBLISH_ENABLED,
+      descriptionRewriteExisting: DESCRIPTION_REWRITE_EXISTING_ENABLED,
       pricePublish: PRICE_PUBLISH_ENABLED,
       compareAtPricePublish: COMPARE_AT_PRICE_PUBLISH_ENABLED,
       vendorNormalization: VENDOR_NORMALIZATION_ENABLED,
@@ -662,6 +665,7 @@ export async function processProductJob(
         shouldPublishAutomatedDescription({
           topic: job.topic,
           currentDescriptionHtml: product.descriptionHtml,
+          allowExistingRewrite: DESCRIPTION_REWRITE_EXISTING_ENABLED,
         })
       ) {
         productInput.descriptionHtml = automatedContent.descriptionHtml;
