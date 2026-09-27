@@ -12,7 +12,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v9";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v10";
 
 // The React app is the single live Shopify writer. Automatic enrollment may
 // authorize newly created/updated products for safe editorial/catalog fields,
@@ -282,7 +282,41 @@ export async function processProductJob(
       return;
     }
 
-    const decision = buildEnterpriseProductDecision(product, commercialConfig);
+    const preliminaryDecision = buildEnterpriseProductDecision(
+      product,
+      commercialConfig,
+    );
+    const variants = product.variants?.nodes ?? [];
+    const pricingVariant = variants.length === 1 ? variants[0] : null;
+    const preliminaryPricing = preliminaryDecision.pricing;
+    const recommendedPrice = preliminaryPricing.recommendedPrice;
+    const currentPrice = moneyNumber(pricingVariant?.price);
+    const existingCompareAtPrice = moneyNumber(pricingVariant?.compareAtPrice);
+    const explicitCompareAtPrice = commercialNumber(product, "compare_at_price");
+    const pricePublishable = Boolean(
+      PRICE_PUBLISH_ENABLED &&
+      pricingVariant &&
+      preliminaryPricing.state === "ready_for_approval" &&
+      recommendedPrice !== null,
+    );
+    const compareAtPrice = (
+      COMPARE_AT_PRICE_PUBLISH_ENABLED &&
+      pricePublishable &&
+      recommendedPrice !== null
+    )
+      ? [explicitCompareAtPrice, existingCompareAtPrice, currentPrice].find(
+          (value): value is number => value !== null && value > recommendedPrice,
+        ) ?? null
+      : null;
+
+    const decision =
+      pricePublishable && recommendedPrice !== null
+        ? buildEnterpriseProductDecision(
+            product,
+            commercialConfig,
+            recommendedPrice,
+          )
+        : preliminaryDecision;
     const c = decision.classification;
     const brandRoute = decision.brandRoute;
     const automatedContent =
@@ -369,28 +403,6 @@ export async function processProductJob(
         data: healthData,
       });
     }
-
-    const variants = product.variants?.nodes ?? [];
-    const pricingVariant = variants.length === 1 ? variants[0] : null;
-    const recommendedPrice = pricing.recommendedPrice;
-    const currentPrice = moneyNumber(pricingVariant?.price);
-    const existingCompareAtPrice = moneyNumber(pricingVariant?.compareAtPrice);
-    const explicitCompareAtPrice = commercialNumber(product, "compare_at_price");
-    const pricePublishable = Boolean(
-      PRICE_PUBLISH_ENABLED &&
-      pricingVariant &&
-      pricing.state === "ready_for_approval" &&
-      recommendedPrice !== null,
-    );
-    const compareAtPrice = (
-      COMPARE_AT_PRICE_PUBLISH_ENABLED &&
-      pricePublishable &&
-      recommendedPrice !== null
-    )
-      ? [explicitCompareAtPrice, existingCompareAtPrice, currentPrice].find(
-          (value): value is number => value !== null && value > recommendedPrice,
-        ) ?? null
-      : null;
 
     const costVariant = variants[0];
     const verifiedUnitCost = costVariant?.unitCost?.trim() || "";
