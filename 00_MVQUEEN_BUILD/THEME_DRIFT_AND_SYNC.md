@@ -4,7 +4,7 @@
 
 - Shopify store: `tsucu0-1i.myshopify.com`
 - Live theme: `MVQueen — Custom Production Build` (`MAIN`) — protected from automated writes
-- Development target: `MVQueen — Staging Preview` (`UNPUBLISHED`)
+- Development target: `MVQueen — Release Candidate` (`UNPUBLISHED`)
 - Live theme ID: `154869825734`
 - Target theme ID: `154876772550`
 - Rollback theme: `MVQueen — Previous Production Build` (`UNPUBLISHED`), ID `154611515590`
@@ -33,7 +33,7 @@ The development target may temporarily contain Shopify-native files that are not
 9. Theme work must preserve mobile usability, accessibility, reduced-motion behavior, performance, and graceful failure states.
 10. Customer-facing product content uses MVQueen identity and excludes supplier/legacy brand contamination.
 
-## Verified current state — 2026-09-25
+## Verified current state — 2026-09-27
 
 The unpublished target is the protected development environment for the custom MVQueen storefront.
 
