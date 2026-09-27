@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
-import { buildAutomatedProductContent } from "./product-content-automation";
+import {
+  buildAutomatedProductContent,
+  needsMediaAltRepair,
+} from "./product-content-automation";
 import { classifyProduct, type ProductSnapshot } from "./mvqueen-intelligence";
 
 const product: ProductSnapshot = {
@@ -96,5 +99,17 @@ assert.ok(activewearContent.descriptionHtml.includes("<table>"));
 assert.ok(activewearContent.descriptionHtml.includes("Size &amp; Measurements"));
 assert.ok(activewearContent.descriptionHtml.includes("Features: Ruched"));
 assert.ok(!activewearContent.descriptionHtml.includes("style="));
+
+assert.equal(needsMediaAltRepair(""), true);
+assert.equal(
+  needsMediaAltRepair("831d8f1bc6d34234ad68675383084a38-Max-Origin"),
+  true,
+);
+assert.equal(needsMediaAltRepair("product-image.jpg"), true);
+assert.equal(needsMediaAltRepair("IMG_1234"), true);
+assert.equal(
+  needsMediaAltRepair("Brown aventurine bead necklace, alternate product view"),
+  false,
+);
 
 console.log("product content automation tests passed");
