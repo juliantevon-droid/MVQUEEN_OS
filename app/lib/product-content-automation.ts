@@ -245,6 +245,7 @@ function keywordTitle(title: string, productType: string): string {
 export function buildAutomatedProductContent(
   product: ProductSnapshot,
   classification: Classification,
+  brandLabel = "MVQueen",
 ): AutomatedProductContent {
   const sourceTitle = cleanText(product.title);
   const title = stripVendor(sourceTitle, product.vendor)
@@ -267,7 +268,7 @@ export function buildAutomatedProductContent(
   const shortDescription = clip(
     descriptionSentence ||
       generatedIntro ||
-      title + " — " + classification.productType + " from the MVQueen edit.",
+      title + " — " + classification.productType + " from the " + brandLabel + " edit.",
     180,
   );
 
@@ -301,12 +302,12 @@ export function buildAutomatedProductContent(
     product.descriptionHtml,
   );
 
-  const seoTitle = clip(title + " | MVQueen", 60);
+  const seoTitle = clip(title + " | " + brandLabel, 60);
   const descriptionPlain = stripVendor(cleanText(product.descriptionHtml), product.vendor);
   const metaDescription = clip(
     descriptionPlain
-      ? "Shop " + title + " at MVQueen. " + descriptionPlain
-      : "Shop " + title + " at MVQueen. Explore verified product details, imagery, shipping and returns.",
+      ? "Shop " + title + " at " + brandLabel + ". " + descriptionPlain
+      : "Shop " + title + " at " + brandLabel + ". Explore verified product details, imagery, shipping and returns.",
     155,
   );
 
