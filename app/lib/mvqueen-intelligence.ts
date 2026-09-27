@@ -92,6 +92,24 @@ export function classifyProduct(title: string, description = "", productType = "
 
   const uniqueRoutes = Array.from(new Set(matches.map(([, route]) => route.route)));
   if (uniqueRoutes.length > 1) {
+    const normalizedProductType = productType.trim().toLowerCase();
+    const exactProductTypeMatch = matches.find(
+      ([, route]) => route.productType.toLowerCase() === normalizedProductType,
+    );
+    if (exactProductTypeMatch) {
+      return { ...exactProductTypeMatch[1], confidence: "high" };
+    }
+
+    const sameFamily = matches.every(
+      ([, route]) =>
+        route.department === matches[0][1].department &&
+        route.family === matches[0][1].family,
+    );
+    if (sameFamily) {
+      // ROUTES are ordered from more specific to more general within a family.
+      return { ...matches[0][1], confidence: "high" };
+    }
+
     return {department:"Unclassified", family:"Unclassified", subcollection:"Needs Review", route:"needs-review", productType:"Needs Review", confidence:"review"};
   }
 
