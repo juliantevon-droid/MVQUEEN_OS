@@ -1,1 +1,9 @@
-{"sections":{"main":{"type":"main-product","settings":{}},"recommendations":{"type":"product-recommendations","settings":{}}},"order":["main","recommendations"]}
+{
+  "sections": {
+    "main": {"type":"main-product","settings":{}},
+    "trust": {"type":"trust-strip","settings":{}},
+    "recommendations": {"type":"product-recommendations","settings":{}},
+    "newsletter": {"type":"newsletter","settings":{}}
+  },
+  "order": ["main","trust","recommendations","newsletter"]
+}
