@@ -1,6 +1,8 @@
 {% assign is_jewelry_product = false %}
+{% assign is_princess_product = false %}
 {% if product.tags contains 'mvq:category:jewelry' %}{% assign is_jewelry_product = true %}{% endif %}
-<section class="mvq-product-page{% if is_jewelry_product %} mvq-product-page--jewelry{% endif %}">
+{% if product.tags contains 'mvq:brand:miss-princess' %}{% assign is_princess_product = true %}{% endif %}
+<section class="mvq-product-page{% if is_jewelry_product %} mvq-product-page--jewelry{% endif %}{% if is_princess_product %} mvq-product-page--princess{% endif %}">
   <div class="mvq-container">
     {% render 'breadcrumbs' %}
     <div class="mvq-product-layout">
@@ -54,7 +56,12 @@
           assign product_form_id = 'ProductForm-' | append: section.id
         %}
 
-        {% if product.type != blank %}<p class="mvq-eyebrow">{{ product.type }}</p>{% endif %}
+        <div class="mvq-product-brandline">
+          <a href="{% if is_princess_product %}/pages/miss-princess{% else %}/collections/mvqueen-world{% endif %}">
+            {% if is_princess_product %}Miss.Princess{% else %}MVQueen{% endif %}
+          </a>
+          {% if product.type != blank %}<span aria-hidden="true">·</span><span>{{ product.type }}</span>{% endif %}
+        </div>
         <h1 class="mvq-display">{{ product.title }}</h1>
         <div class="mvq-product-price">{{ product.selected_or_first_available_variant.price | money }}</div>
 
