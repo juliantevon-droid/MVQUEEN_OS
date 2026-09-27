@@ -12,7 +12,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v8";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v9";
 
 // The React app is the single live Shopify writer. Automatic enrollment may
 // authorize newly created/updated products for safe editorial/catalog fields,
@@ -26,6 +26,12 @@ const TITLE_PUBLISH_ENABLED =
   process.env.MVQ_TITLE_PUBLISH_ENABLED === "true";
 const SEO_PUBLISH_ENABLED =
   process.env.MVQ_SEO_PUBLISH_ENABLED === "true";
+const DESCRIPTION_PUBLISH_ENABLED =
+  process.env.MVQ_DESCRIPTION_PUBLISH_ENABLED === "true";
+const PRICE_PUBLISH_ENABLED =
+  process.env.MVQ_PRICE_PUBLISH_ENABLED === "true";
+const COMPARE_AT_PRICE_PUBLISH_ENABLED =
+  process.env.MVQ_COMPARE_AT_PRICE_PUBLISH_ENABLED === "true";
 const AUTO_CONTENT_SURFACES_ENABLED =
   process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED === "true";
 const MEDIA_ALT_SYNC_ENABLED =
@@ -82,7 +88,7 @@ query MVQueenProduct($id: ID!) {
         ... on MediaImage { id alt }
       }
     }
-    variants(first: 1) { nodes { id price compareAtPrice } }
+    variants(first: 2) { nodes { id price compareAtPrice } }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
     }
@@ -101,7 +107,7 @@ query MVQueenProductWithCost($id: ID!) {
         ... on MediaImage { id alt }
       }
     }
-    variants(first: 1) {
+    variants(first: 2) {
       nodes {
         id
         price
@@ -135,6 +141,31 @@ mutation MVQueenFileAltUpdate($files: [FileUpdateInput!]!) {
   }
 }`;
 
+const PRODUCT_VARIANTS_BULK_UPDATE = `#graphql
+mutation MVQueenVariantPricingUpdate(
+  $productId: ID!
+  $variants: [ProductVariantsBulkInput!]!
+) {
+  productVariantsBulkUpdate(productId: $productId, variants: $variants) {
+    product { id }
+    productVariants { id price compareAtPrice }
+    userErrors { field message }
+  }
+}`;
+
+function moneyNumber(value?: string | null): number | null {
+  if (!value?.trim()) return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
+}
+
+function commercialNumber(product: ProductSnapshot, key: string): number | null {
+  return moneyNumber(
+    product.commercialMetafields?.nodes?.find((item) => item.key === key)?.value,
+  );
+}
+
+
 
 function sourceFingerprint(
   product: ProductSnapshot,
@@ -146,6 +177,9 @@ function sourceFingerprint(
       editorialPublish: EDITORIAL_PUBLISH_ENABLED,
       titlePublish: TITLE_PUBLISH_ENABLED,
       seoPublish: SEO_PUBLISH_ENABLED,
+      descriptionPublish: DESCRIPTION_PUBLISH_ENABLED,
+      pricePublish: PRICE_PUBLISH_ENABLED,
+      compareAtPricePublish: COMPARE_AT_PRICE_PUBLISH_ENABLED,
       automaticContentSurfaces: AUTO_CONTENT_SURFACES_ENABLED,
       mediaAltSync: MEDIA_ALT_SYNC_ENABLED,
       costSync: COST_SYNC_ENABLED,
@@ -336,7 +370,29 @@ export async function processProductJob(
       });
     }
 
-    const costVariant = product.variants?.nodes?.[0];
+    const variants = product.variants?.nodes ?? [];
+    const pricingVariant = variants.length === 1 ? variants[0] : null;
+    const recommendedPrice = pricing.recommendedPrice;
+    const currentPrice = moneyNumber(pricingVariant?.price);
+    const existingCompareAtPrice = moneyNumber(pricingVariant?.compareAtPrice);
+    const explicitCompareAtPrice = commercialNumber(product, "compare_at_price");
+    const pricePublishable = Boolean(
+      PRICE_PUBLISH_ENABLED &&
+      pricingVariant &&
+      pricing.state === "ready_for_approval" &&
+      recommendedPrice !== null,
+    );
+    const compareAtPrice = (
+      COMPARE_AT_PRICE_PUBLISH_ENABLED &&
+      pricePublishable &&
+      recommendedPrice !== null
+    )
+      ? [explicitCompareAtPrice, existingCompareAtPrice, currentPrice].find(
+          (value): value is number => value !== null && value > recommendedPrice,
+        ) ?? null
+      : null;
+
+    const costVariant = variants[0];
     const verifiedUnitCost = costVariant?.unitCost?.trim() || "";
     const costCurrency = costVariant?.costCurrency?.trim() || "";
     const shippingDeliveryEstimate = resolveShippingDeliveryEstimate(
@@ -460,7 +516,16 @@ export async function processProductJob(
         namespace: "commercial",
         key: "pricing_publishable",
         type: "boolean",
-        value: "false",
+        value: pricePublishable ? "true" : "false",
+      },
+      {
+        namespace: "commercial",
+        key: "compare_at_publishable",
+        type: "boolean",
+        value:
+          COMPARE_AT_PRICE_PUBLISH_ENABLED && compareAtPrice !== null
+            ? "true"
+            : "false",
       },
       ...(pricing.minimumPrice !== null
         ? [{ namespace: "commercial", key: "minimum_viable_price", type: "number_decimal", value: String(pricing.minimumPrice) }]
@@ -541,6 +606,10 @@ export async function processProductJob(
         if (product.handle?.trim()) productInput.handle = product.handle;
       }
 
+      if (DESCRIPTION_PUBLISH_ENABLED) {
+        productInput.descriptionHtml = automatedContent.descriptionHtml;
+      }
+
       if (SEO_PUBLISH_ENABLED) {
         productInput.seo = {
           title: automatedContent.seoTitle,
@@ -581,6 +650,31 @@ export async function processProductJob(
         automationVersion: AUTOMATION_VERSION + ":pending",
       },
     });
+
+    if (pricePublishable && pricingVariant && recommendedPrice !== null) {
+      const variantInput: Record<string, unknown> = {
+        id: pricingVariant.id,
+        price: recommendedPrice.toFixed(2),
+      };
+      if (COMPARE_AT_PRICE_PUBLISH_ENABLED && compareAtPrice !== null) {
+        variantInput.compareAtPrice = compareAtPrice.toFixed(2);
+      }
+
+      const pricingUpdate = await admin.graphql(PRODUCT_VARIANTS_BULK_UPDATE, {
+        variables: {
+          productId: product.id,
+          variants: [variantInput],
+        },
+      });
+      const pricingBody = await pricingUpdate.json();
+      const pricingErrors =
+        pricingBody.data?.productVariantsBulkUpdate?.userErrors ?? [];
+      if (pricingErrors.length) {
+        throw new Error(
+          pricingErrors.map((e: { message: string }) => e.message).join("; "),
+        );
+      }
+    }
 
     if (
       MEDIA_ALT_SYNC_ENABLED &&
