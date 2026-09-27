@@ -36,6 +36,8 @@ const PRICE_PUBLISH_ENABLED =
   process.env.MVQ_PRICE_PUBLISH_ENABLED === "true";
 const COMPARE_AT_PRICE_PUBLISH_ENABLED =
   process.env.MVQ_COMPARE_AT_PRICE_PUBLISH_ENABLED === "true";
+const VENDOR_NORMALIZATION_ENABLED =
+  process.env.MVQ_VENDOR_NORMALIZATION_ENABLED === "true";
 const AUTO_CONTENT_SURFACES_ENABLED =
   process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED === "true";
 const MEDIA_ALT_SYNC_ENABLED =
@@ -186,6 +188,7 @@ function sourceFingerprint(
       descriptionPublish: DESCRIPTION_PUBLISH_ENABLED,
       pricePublish: PRICE_PUBLISH_ENABLED,
       compareAtPricePublish: COMPARE_AT_PRICE_PUBLISH_ENABLED,
+      vendorNormalization: VENDOR_NORMALIZATION_ENABLED,
       automaticContentSurfaces: AUTO_CONTENT_SURFACES_ENABLED,
       mediaAltSync: MEDIA_ALT_SYNC_ENABLED,
       costSync: COST_SYNC_ENABLED,
@@ -439,6 +442,18 @@ export async function processProductJob(
               ? "write_files_scope_required"
               : "automatic";
     const metafields = [
+      ...(VENDOR_NORMALIZATION_ENABLED &&
+      product.vendor?.trim() &&
+      product.vendor.trim().toLowerCase() !== "mvqueen"
+        ? [
+            {
+              namespace: "catalog",
+              key: "source_vendor",
+              type: "single_line_text_field",
+              value: product.vendor.trim(),
+            },
+          ]
+        : []),
       {
         namespace: "shipping",
         key: "delivery_estimate",
@@ -625,6 +640,14 @@ export async function processProductJob(
       tags: mergedTags,
       metafields,
     };
+
+    if (
+      VENDOR_NORMALIZATION_ENABLED &&
+      product.vendor?.trim() &&
+      product.vendor.trim().toLowerCase() !== "mvqueen"
+    ) {
+      productInput.vendor = "MVQueen";
+    }
 
     if (EDITORIAL_PUBLISH_ENABLED && automatedContent) {
       if (TITLE_PUBLISH_ENABLED) {
