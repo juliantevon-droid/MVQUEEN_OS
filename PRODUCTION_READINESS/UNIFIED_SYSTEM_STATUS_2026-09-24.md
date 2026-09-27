@@ -428,3 +428,73 @@ This section supersedes earlier staging-name and current-catalog counts in this 
 - **Remaining full-commerce certification gate:** verify the active payment provider in Shopify Admin and complete a test checkout/order.
 - Theme publishing remains manual because the connected Shopify mutation safety layer blocks `themePublish`.
 
+## Always-on product automation verification — 2026-09-27
+
+Production automation has now been verified against a real newly imported Shopify product, not a synthetic fixture.
+
+### Runtime
+
+- Railway Postgres: online.
+- Railway `mvqueen-product-worker`: online, one continuous replica, no cron, no crash loop.
+- Railway `mvqueen-web`: online from the repository Node Dockerfile.
+- Web healthcheck is `/healthz`, not only `/livez`.
+- The strict health deployment succeeded after enabling production gates; this proves production preflight, PostgreSQL access, queue/dead-letter health and continuous-worker heartbeat are healthy.
+- Global automatic product enrollment, governed editorial publishing, SEO, ALT repair, vendor normalization, cost sync, pricing, compare-at validation, content surfaces and reconciliation are enabled in production.
+- Existing-description rewrite remains disabled so later update events cannot casually overwrite already-curated copy.
+- Pricing remains fail-closed when cost/commercial inputs are incomplete.
+- Compare-at pricing remains fail-closed unless a verified higher reference price exists.
+
+### Real Shopify automation proof
+
+Current Shopify production catalog now contains **3 ACTIVE products**.
+
+The newly imported product `gid://shopify/Product/9087726584006`, **Ruched Sports Bra and High-Waisted Shorts Active Set**, was processed by MVQUEEN_OS and now has:
+
+- customer-facing vendor normalized to `MVQueen`
+- source vendor preserved internally as `Trendsi`
+- automatic routing to **Miss.Princess**
+- Fashion → Activewear → Activewear Sets classification
+- membership in Fashion, Activewear and Miss.Princess World collections
+- governed short description
+- scannable product highlights
+- focus keyword and long-tail SEO phrases
+- Shopify SEO title/meta description branded for Miss.Princess
+- automatic FAQ content
+- shipping estimate
+- all 10 product image ALT texts repaired
+- verified Shopify unit cost
+- commercial-health and advertising-eligibility metrics
+- analytics measurement key
+
+A real Shopify update probe added a temporary MVQUEEN system department tag. Within the running automation loop the probe tag was removed and canonical classification was restored, proving the production update → queue/worker → Shopify write loop.
+
+The same processing pass:
+- changed all **12 variants** from **$39.24** to the governed recommended price **$54.99**
+- preserved every SKU and inventory quantity
+- did **not** create a compare-at price because no verified higher reference price existed
+- changed `commercial.pricing_publishable` from false to true
+- changed commercial health from thin to healthy
+- changed advertising eligibility from blocked to eligible
+- changed marketing state to ready for briefing
+
+This is the production behavior expected for future imported products, subject to the same fail-closed data requirements.
+
+### Storefront / theme state
+
+- Storefront password protection: **OFF**.
+- Public product URLs are available.
+- Current live MAIN: `MVQueen — Custom Production Build` (`154869825734`).
+- Live MAIN is an older custom revision and currently matches only **12/56** controlled GitHub theme files.
+- Validated next-production theme: `MVQueen — Release Candidate` (`154876772550`).
+- Release Candidate is **56/56 exact** against GitHub `main`.
+- Release Candidate includes the latest custom product-page short description, bullet highlights, Product Details accordion, Measurements accordion, optional Ingredients / How to Use / Care / Size Guide / FAQ accordions, Shipping & Returns accordion, and current SEO/empty-collection safeguards.
+- Release Candidate is unpublished, processing complete, `processingFailed=false`.
+- Shopify API safety policy explicitly blocks `themePublish`; final promotion must be done manually in Shopify Admin.
+- A live backup and older rollback themes remain available.
+
+### Remaining launch action
+
+**Publish `MVQueen — Release Candidate` in Shopify Admin.**
+
+That is the only theme action blocked from automated execution. After publication, the release candidate becomes the customer-facing 56/56 custom build.
+
