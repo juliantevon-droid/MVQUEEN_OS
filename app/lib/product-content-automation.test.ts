@@ -45,6 +45,18 @@ assert.ok(content.seoTitle.length <= 60);
 assert.ok(content.metaDescription.length <= 155);
 assert.ok(!JSON.stringify(content).toLowerCase().includes("supplier"));
 
+const pendantWithParentRoute = classifyProduct(
+  "Pink Thulite Pendant in 925 Sterling Silver",
+  "<p>Wear this pendant alone or layer it with your favorite necklaces.</p>",
+  "Pendant Necklace",
+);
+assert.equal(pendantWithParentRoute.department, "Jewelry");
+assert.equal(pendantWithParentRoute.family, "Necklaces");
+assert.equal(pendantWithParentRoute.subcollection, "Pendant Necklaces");
+assert.equal(pendantWithParentRoute.route, "pendants");
+assert.equal(pendantWithParentRoute.productType, "Pendant Necklace");
+assert.equal(pendantWithParentRoute.confidence, "high");
+
 const unclassified: ProductSnapshot = {
   id: "gid://shopify/Product/2",
   title: "Mystery Item",
