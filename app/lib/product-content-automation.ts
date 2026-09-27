@@ -20,6 +20,7 @@ const TRAILING_CODE_RE = /\s*\(([A-Z0-9_-]{2,24})\)\s*$/i;
 export function shouldPublishAutomatedDescription(args: {
   topic?: string | null;
   currentDescriptionHtml?: string | null;
+  allowExistingRewrite?: boolean;
 }): boolean {
   const topic = String(args.topic ?? "").trim().toLowerCase().replace(/_/g, "/");
   const current = String(args.currentDescriptionHtml ?? "")
@@ -28,9 +29,14 @@ export function shouldPublishAutomatedDescription(args: {
     .trim();
 
   // New Shopify products/imports may receive the governed MVQueen description.
-  // Later update webhooks must not replace established curated copy. Blank
-  // descriptions remain repairable if a create webhook was missed.
-  return topic === "products/create" || current.length === 0;
+  // Later update webhooks stay protected unless a separate, explicit
+  // existing-description rewrite gate is enabled. Blank descriptions remain
+  // repairable if a create webhook was missed.
+  return (
+    topic === "products/create" ||
+    current.length === 0 ||
+    args.allowExistingRewrite === true
+  );
 }
 
 export function needsMediaAltRepair(value?: string | null): boolean {
