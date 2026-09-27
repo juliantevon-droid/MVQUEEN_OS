@@ -3,7 +3,10 @@ import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
-import { buildAutomatedProductContent } from "./product-content-automation";
+import {
+  buildAutomatedProductContent,
+  needsMediaAltRepair,
+} from "./product-content-automation";
 import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automated-content-surfaces";
 import { publishAutomaticContentSurfaces } from "./enterprise/content-publisher";
 import { resolveShippingDeliveryEstimate } from "./shipping-policy";
@@ -411,14 +414,16 @@ export async function processProductJob(
       product.shippingMetafields?.nodes?.find((m) => m.key === "delivery_estimate")?.value,
     );
     const mediaNodes = product.media?.nodes ?? [];
-    const missingAltMedia = mediaNodes.filter((item) => !item.alt?.trim());
+    const repairableAltMedia = mediaNodes
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => needsMediaAltRepair(item.alt));
     const mediaAltStatus =
       !mediaNodes.length
         ? "no_media"
-        : !missingAltMedia.length
+        : !repairableAltMedia.length
           ? "complete"
           : !MEDIA_ALT_SYNC_ENABLED
-            ? "missing_alt"
+            ? "needs_repair"
             : !hasWriteFiles
               ? "write_files_scope_required"
               : "automatic";
@@ -692,9 +697,9 @@ export async function processProductJob(
       MEDIA_ALT_SYNC_ENABLED &&
       hasWriteFiles &&
       automatedContent &&
-      missingAltMedia.length
+      repairableAltMedia.length
     ) {
-      const files = missingAltMedia.map((item, index) => ({
+      const files = repairableAltMedia.map(({ item, index }) => ({
         id: item.id,
         alt: `${automatedContent.title} — product view ${index + 1}`,
       }));
