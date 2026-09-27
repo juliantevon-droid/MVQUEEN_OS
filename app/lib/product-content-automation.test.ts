@@ -66,6 +66,7 @@ const activewear: ProductSnapshot = {
     "<li>Stretch: Moderate stretch</li>",
     "<li>Material composition: 94% polyester, 6% elastane</li>",
     "</ul>",
+    "<table><tr><th style=\"background-color: lightgray;\">Size</th><th>Bust</th></tr><tr><td>S</td><td>30.7</td></tr></table>",
   ].join(""),
   tags: [],
   variants: { nodes: [{ id: "gid://shopify/ProductVariant/3", price: "39.24" }] },
@@ -81,5 +82,12 @@ assert.equal(activewearClassification.family, "Activewear");
 assert.equal(activewearClassification.subcollection, "Activewear Sets");
 assert.equal(activewearClassification.productType, "Activewear Set");
 assert.equal(activewearClassification.confidence, "high");
+const activewearContent = buildAutomatedProductContent(
+  activewear,
+  activewearClassification,
+);
+assert.ok(activewearContent.descriptionHtml.includes("<table>"));
+assert.ok(activewearContent.descriptionHtml.includes("Size &amp; Measurements"));
+assert.ok(!activewearContent.descriptionHtml.includes("style="));
 
 console.log("product content automation tests passed");
