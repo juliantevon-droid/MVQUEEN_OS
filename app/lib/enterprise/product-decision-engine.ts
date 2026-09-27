@@ -45,6 +45,7 @@ export function collectionRoutingTags(classification: {
 export function buildEnterpriseProductDecision(
   product: ProductSnapshot,
   commercial?: CommercialConfigResolution,
+  effectiveSellingPrice?: number | null,
 ) {
   const classification = classifyProduct(
     product.title ?? "",
@@ -70,7 +71,8 @@ export function buildEnterpriseProductDecision(
   );
   const commercialHealth = buildCommercialHealth(
     {
-      sellingPrice: currentPrice,
+      sellingPrice:
+        effectiveSellingPrice === undefined ? currentPrice : effectiveSellingPrice,
       unitCost,
       inboundShipping,
     },
