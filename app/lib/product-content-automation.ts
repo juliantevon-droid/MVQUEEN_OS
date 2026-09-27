@@ -17,6 +17,22 @@ const SPACE_RE = /\s+/g;
 const HTML_RE = /<[^>]+>/g;
 const TRAILING_CODE_RE = /\s*\(([A-Z0-9_-]{2,24})\)\s*$/i;
 
+export function shouldPublishAutomatedDescription(args: {
+  topic?: string | null;
+  currentDescriptionHtml?: string | null;
+}): boolean {
+  const topic = String(args.topic ?? "").trim().toLowerCase().replace(/_/g, "/");
+  const current = String(args.currentDescriptionHtml ?? "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  // New Shopify products/imports may receive the governed MVQueen description.
+  // Later update webhooks must not replace established curated copy. Blank
+  // descriptions remain repairable if a create webhook was missed.
+  return topic === "products/create" || current.length === 0;
+}
+
 export function needsMediaAltRepair(value?: string | null): boolean {
   const alt = String(value ?? "").trim();
   if (!alt) return true;
