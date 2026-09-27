@@ -3,6 +3,7 @@ import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
 export type AutomatedProductContent = {
   title: string;
   shortDescription: string;
+  descriptionHtml: string;
   highlights: string[];
   focusKeyword: string;
   secondaryKeywords: string[];
@@ -89,6 +90,32 @@ function sentenceFromDescription(html?: string | null): string {
   return clip(sentence, 180);
 }
 
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function buildDescriptionHtml(
+  shortDescription: string,
+  highlights: string[],
+): string {
+  const intro = shortDescription
+    ? `<p>${escapeHtml(shortDescription)}</p>`
+    : "";
+
+  const details = highlights.length
+    ? `<h3>Product Details</h3><ul>${highlights
+        .map((item) => `<li>${escapeHtml(item)}</li>`)
+        .join("")}</ul>`
+    : "";
+
+  return (intro + details).trim();
+}
+
 function keywordTitle(title: string, productType: string): string {
   const lower = cleanText(title).toLowerCase();
   const type = cleanText(productType).toLowerCase();
@@ -151,6 +178,8 @@ export function buildAutomatedProductContent(
     .filter((value) => value.split(" ").length >= 4)
     .slice(0, 5);
 
+  const descriptionHtml = buildDescriptionHtml(shortDescription, highlights);
+
   const seoTitle = clip(title + " | MVQueen", 60);
   const descriptionPlain = stripVendor(cleanText(product.descriptionHtml), product.vendor);
   const metaDescription = clip(
@@ -169,6 +198,7 @@ export function buildAutomatedProductContent(
   return {
     title,
     shortDescription,
+    descriptionHtml,
     highlights,
     focusKeyword,
     secondaryKeywords,
