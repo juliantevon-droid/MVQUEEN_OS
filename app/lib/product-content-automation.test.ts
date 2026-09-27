@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
+  shouldPublishAutomatedDescription,
 } from "./product-content-automation";
 import { classifyProduct, type ProductSnapshot } from "./mvqueen-intelligence";
 
@@ -121,6 +122,29 @@ assert.equal(needsMediaAltRepair("product-image.jpg"), true);
 assert.equal(needsMediaAltRepair("IMG_1234"), true);
 assert.equal(
   needsMediaAltRepair("Brown aventurine bead necklace, alternate product view"),
+  false,
+);
+
+assert.equal(
+  shouldPublishAutomatedDescription({
+    topic: "PRODUCTS_CREATE",
+    currentDescriptionHtml: "<p>Supplier copy already exists.</p>",
+  }),
+  true,
+);
+assert.equal(
+  shouldPublishAutomatedDescription({
+    topic: "products/update",
+    currentDescriptionHtml: "",
+  }),
+  true,
+);
+assert.equal(
+  shouldPublishAutomatedDescription({
+    topic: "products/update",
+    currentDescriptionHtml:
+      "<p><strong>A Quiet Statement</strong></p><p>Curated MVQueen copy.</p>",
+  }),
   false,
 );
 
