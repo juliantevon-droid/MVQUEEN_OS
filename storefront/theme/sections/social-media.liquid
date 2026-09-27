@@ -1,0 +1,51 @@
+{% liquid
+  assign has_social_links = false
+  if section.settings.instagram_url != blank or section.settings.tiktok_url != blank or section.settings.facebook_url != blank or section.settings.snapchat_url != blank or section.settings.youtube_url != blank
+    assign has_social_links = true
+  endif
+%}
+<section class="mvq-section mvq-social-hub" aria-labelledby="SocialHub-{{ section.id }}">
+  <div class="mvq-container">
+    <div class="mvq-social-hub__intro">
+      <p class="mvq-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 id="SocialHub-{{ section.id }}">{{ section.settings.heading }}</h2>
+      <p class="mvq-copy">{{ section.settings.copy }}</p>
+    </div>
+
+    <div class="mvq-social-hub__grid" aria-label="MVQueen social channels">
+      {% if section.settings.instagram_url != blank %}<a href="{{ section.settings.instagram_url }}" rel="noopener" target="_blank"><span>Instagram</span><strong>Style, launches & details</strong></a>{% endif %}
+      {% if section.settings.tiktok_url != blank %}<a href="{{ section.settings.tiktok_url }}" rel="noopener" target="_blank"><span>TikTok</span><strong>Looks, beauty & behind the edit</strong></a>{% endif %}
+      {% if section.settings.facebook_url != blank %}<a href="{{ section.settings.facebook_url }}" rel="noopener" target="_blank"><span>Facebook</span><strong>Community & store updates</strong></a>{% endif %}
+      {% if section.settings.snapchat_url != blank %}<a href="{{ section.settings.snapchat_url }}" rel="noopener" target="_blank"><span>Snapchat</span><strong>Quick drops & playful moments</strong></a>{% endif %}
+      {% if section.settings.youtube_url != blank %}<a href="{{ section.settings.youtube_url }}" rel="noopener" target="_blank"><span>YouTube</span><strong>Stories, styling & tutorials</strong></a>{% endif %}
+      {% unless has_social_links %}
+        <div class="mvq-social-hub__placeholder">
+          <span>Instagram · TikTok · Facebook · Snapchat · YouTube</span>
+          <strong>Social channels are ready to connect as your profiles go live.</strong>
+        </div>
+      {% endunless %}
+    </div>
+
+    <div class="mvq-social-hub__actions">
+      <a class="mvq-button mvq-button--quiet" href="/pages/journal">Read the journal</a>
+      <a class="mvq-button mvq-button--quiet" href="/pages/lookbook">View the lookbook</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social media hub",
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"FOLLOW THE HOUSE"},
+    {"type":"text","id":"heading","label":"Heading","default":"Style moves beyond the storefront."},
+    {"type":"textarea","id":"copy","label":"Copy","default":"Follow MVQueen and Miss.Princess for new edits, styling ideas, beauty moments, product stories, and launch updates."},
+    {"type":"url","id":"instagram_url","label":"Instagram URL"},
+    {"type":"url","id":"tiktok_url","label":"TikTok URL"},
+    {"type":"url","id":"facebook_url","label":"Facebook URL"},
+    {"type":"url","id":"snapchat_url","label":"Snapchat URL"},
+    {"type":"url","id":"youtube_url","label":"YouTube URL"}
+  ],
+  "presets": [{"name":"Social media hub"}]
+}
+{% endschema %}
