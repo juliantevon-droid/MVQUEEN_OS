@@ -12,7 +12,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v7";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v8";
 
 // The React app is the single live Shopify writer. Automatic enrollment may
 // authorize newly created/updated products for safe editorial/catalog fields,
@@ -22,6 +22,10 @@ const AUTO_PRODUCT_ENROLLMENT_ENABLED =
   process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true";
 const EDITORIAL_PUBLISH_ENABLED =
   process.env.MVQ_EDITORIAL_PUBLISH_ENABLED === "true";
+const TITLE_PUBLISH_ENABLED =
+  process.env.MVQ_TITLE_PUBLISH_ENABLED === "true";
+const SEO_PUBLISH_ENABLED =
+  process.env.MVQ_SEO_PUBLISH_ENABLED === "true";
 const AUTO_CONTENT_SURFACES_ENABLED =
   process.env.MVQ_AUTO_CONTENT_SURFACES_ENABLED === "true";
 const MEDIA_ALT_SYNC_ENABLED =
@@ -140,6 +144,8 @@ function sourceFingerprint(
     policyFingerprint,
     capabilities: {
       editorialPublish: EDITORIAL_PUBLISH_ENABLED,
+      titlePublish: TITLE_PUBLISH_ENABLED,
+      seoPublish: SEO_PUBLISH_ENABLED,
       automaticContentSurfaces: AUTO_CONTENT_SURFACES_ENABLED,
       mediaAltSync: MEDIA_ALT_SYNC_ENABLED,
       costSync: COST_SYNC_ENABLED,
@@ -528,12 +534,19 @@ export async function processProductJob(
     };
 
     if (EDITORIAL_PUBLISH_ENABLED && automatedContent) {
-      productInput.title = automatedContent.title;
-      if (product.handle?.trim()) productInput.handle = product.handle;
-      productInput.seo = {
-        title: automatedContent.seoTitle,
-        description: automatedContent.metaDescription,
-      };
+      if (TITLE_PUBLISH_ENABLED) {
+        productInput.title = automatedContent.title;
+        // Preserve the current handle when an automated title publication is
+        // explicitly enabled so a content change cannot change the product URL.
+        if (product.handle?.trim()) productInput.handle = product.handle;
+      }
+
+      if (SEO_PUBLISH_ENABLED) {
+        productInput.seo = {
+          title: automatedContent.seoTitle,
+          description: automatedContent.metaDescription,
+        };
+      }
     }
 
     const update = await admin.graphql(PRODUCT_UPDATE, {
