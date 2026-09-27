@@ -138,6 +138,12 @@ function sourceFingerprint(
 ): string {
   const source = JSON.stringify({
     policyFingerprint,
+    capabilities: {
+      editorialPublish: EDITORIAL_PUBLISH_ENABLED,
+      automaticContentSurfaces: AUTO_CONTENT_SURFACES_ENABLED,
+      mediaAltSync: MEDIA_ALT_SYNC_ENABLED,
+      costSync: COST_SYNC_ENABLED,
+    },
     title: product.title ?? "",
     descriptionHtml: product.descriptionHtml ?? "",
     productType: product.productType ?? "",
