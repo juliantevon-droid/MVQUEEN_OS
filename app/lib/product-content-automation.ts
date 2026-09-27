@@ -71,7 +71,11 @@ function extractHighlights(html?: string | null): string[] {
   const source = String(html ?? "");
   return unique(
     [...source.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
-      .map((match) => cleanText(match[1]).replace(/^[-•]\s*/, ""))
+      .map((match) =>
+        cleanText(match[1])
+          .replace(/^[-•]\s*/, "")
+          .replace(/\s*:\s*/g, ": "),
+      )
       .filter(Boolean),
   ).slice(0, 6);
 }
@@ -82,12 +86,66 @@ function valueAfterLabel(value: string): string {
   return colon > 0 ? cleaned.slice(colon + 1).trim() : cleaned;
 }
 
+const DESCRIPTION_BOILERPLATE_RE =
+  /^(?:product\s+measurements?|measurements?|size\s*(?:&|and)?\s*measurements?|size\s+(?:conversion|chart|guide))/i;
+
 function sentenceFromDescription(html?: string | null): string {
-  const paragraphs = extractParagraphs(html);
-  const usable = paragraphs.find((paragraph) => paragraph.length >= 28) ?? paragraphs[0] ?? "";
+  const paragraphs = extractParagraphs(html).filter(
+    (paragraph) => !DESCRIPTION_BOILERPLATE_RE.test(paragraph),
+  );
+  const usable =
+    paragraphs.find((paragraph) => paragraph.length >= 28) ??
+    paragraphs[0] ??
+    "";
   if (!usable) return "";
-  const sentence = usable.match(/^(.{20,220}?[.!?])(?:\s|$)/)?.[1] ?? usable;
+  const sentence =
+    usable.match(/^(.{20,220}?[.!?])(?:\s|$)/)?.[1] ?? usable;
   return clip(sentence, 180);
+}
+
+function highlightValue(
+  highlights: string[],
+  label: RegExp,
+): string {
+  const item = highlights.find((value) => label.test(value));
+  return item ? valueAfterLabel(item) : "";
+}
+
+function naturalList(values: string[]): string {
+  const cleaned = values.map(cleanText).filter(Boolean);
+  if (cleaned.length <= 1) return cleaned[0] ?? "";
+  if (cleaned.length === 2) return cleaned.join(" and ");
+  return cleaned.slice(0, -1).join(", ") + ", and " + cleaned.at(-1);
+}
+
+function articleFor(value: string): string {
+  return /^[aeiou]/i.test(value.trim()) ? "an" : "a";
+}
+
+function groundedIntro(
+  productType: string,
+  highlights: string[],
+): string {
+  const type = cleanText(productType).toLowerCase();
+  if (!type) return "";
+
+  const pieces = highlightValue(highlights, /^number of pieces\s*:/i);
+  const feature = highlightValue(highlights, /^features?\s*:/i);
+  const stretch = highlightValue(highlights, /^stretch\s*:/i);
+  const material = highlightValue(highlights, /^material composition\s*:/i);
+
+  const details = [
+    pieces ? pieces.toLowerCase() + " design" : "",
+    feature ? feature.toLowerCase() + " detailing" : "",
+    stretch ? stretch.toLowerCase() : "",
+    material ? material + " composition" : "",
+  ].filter(Boolean);
+
+  if (!details.length) return "";
+  return clip(
+    `${articleFor(type)[0].toUpperCase() + articleFor(type).slice(1)} ${type} with ${naturalList(details)}.`,
+    180,
+  );
 }
 
 function escapeHtml(value: string): string {
@@ -159,18 +217,24 @@ export function buildAutomatedProductContent(
     .replace(SPACE_RE, " ")
     .trim() || sourceTitle;
 
+  const highlights = extractHighlights(product.descriptionHtml)
+    .map((item) => stripVendor(item, product.vendor))
+    .filter(Boolean);
+
   const descriptionSentence = stripVendor(
     sentenceFromDescription(product.descriptionHtml),
     product.vendor,
   );
+  const generatedIntro = groundedIntro(
+    classification.productType,
+    highlights,
+  );
   const shortDescription = clip(
-    descriptionSentence || title + " — " + classification.productType + " from the MVQueen edit.",
+    descriptionSentence ||
+      generatedIntro ||
+      title + " — " + classification.productType + " from the MVQueen edit.",
     180,
   );
-
-  const highlights = extractHighlights(product.descriptionHtml)
-    .map((item) => stripVendor(item, product.vendor))
-    .filter(Boolean);
 
   const focusKeyword = cleanText(classification.productType).toLowerCase();
   const titleKeyword = keywordTitle(title, classification.productType);
