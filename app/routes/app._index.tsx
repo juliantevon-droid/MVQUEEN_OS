@@ -66,6 +66,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
   const costSyncRequested = process.env.MVQ_COST_SYNC_ENABLED === "true";
   const hasReadInventory = scopes.has("read_inventory");
+  const hasReadOrders = scopes.has("read_orders");
   const costSync = !costSyncRequested
     ? "disabled"
     : hasReadInventory
@@ -177,6 +178,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       pricingMissing: commercial.missing,
       costSync,
       hasReadInventory,
+      finance: hasReadOrders ? "read-only-ready" : "reauthorization-required",
+      hasReadOrders,
       paidMedia: integrations.paidMedia.state,
       analytics: integrations.analytics.state,
       lifecycle: integrations.lifecycle.state,
@@ -255,6 +258,14 @@ export default function Dashboard() {
         <s-paragraph>read_inventory granted: {runtime.hasReadInventory ? "yes" : "no"}</s-paragraph>
         <s-paragraph>
           Cost sync remains fail-closed until Shopify grants read_inventory and MVQ_COST_SYNC_ENABLED=true.
+        </s-paragraph>
+      </s-section>
+
+      <s-section heading="Finance access">
+        <s-paragraph>Finance runtime: {runtime.finance}</s-paragraph>
+        <s-paragraph>read_orders granted: {runtime.hasReadOrders ? "yes" : "no"}</s-paragraph>
+        <s-paragraph>
+          Finance remains read-only and does not query customer names, email, phone, shipping addresses, or billing addresses.
         </s-paragraph>
       </s-section>
 
