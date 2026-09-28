@@ -94,6 +94,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  document.querySelectorAll('[data-mvq-variant-select]').forEach((select) => {
+    const productInfo = select.closest('.mvq-product-info');
+    if (!productInfo) return;
+
+    const currentPrice = productInfo.querySelector('[data-mvq-current-price]');
+    const comparePrice = productInfo.querySelector('[data-mvq-compare-price]');
+    const addButtons = productInfo.querySelectorAll('[data-mvq-add-button]');
+
+    const syncVariant = () => {
+      const option = select.options[select.selectedIndex];
+      if (!option) return;
+
+      if (currentPrice) currentPrice.textContent = option.dataset.price || '';
+      if (comparePrice) {
+        const compareAt = option.dataset.compareAt || '';
+        comparePrice.textContent = compareAt;
+        comparePrice.hidden = !compareAt;
+      }
+
+      const available = option.dataset.available === 'true';
+      addButtons.forEach((button) => {
+        button.disabled = !available;
+        button.textContent = available ? 'Add to bag' : 'Sold out';
+      });
+
+      const variantId = option.value;
+      if (variantId && window.history?.replaceState) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('variant', variantId);
+        window.history.replaceState({}, '', url);
+      }
+    };
+
+    select.addEventListener('change', syncVariant);
+  });
+
   document.querySelectorAll('[data-mvq-recommendations]').forEach((shell) => {
     if (!shell.dataset.url || shell.children.length > 0) return;
     fetch(shell.dataset.url, { credentials: 'same-origin' })
