@@ -78,7 +78,7 @@ jobs:
     steps:
       - name: Verify deployment identity configuration
         env:
-          DEPLOY_ENABLED: ${{ vars.MVQUEEN_DEPLOY_ENABLED }}
+          DEPLOY_ENABLED: 'true'
         run: |
           if [ "$DEPLOY_ENABLED" = "true" ]; then
             if [ -z "$SHOPIFY_STORE" ] || [ -z "$SHOPIFY_THEME_ID" ]; then
@@ -96,14 +96,14 @@ jobs:
             fi
             echo 'Deployment enabled with verified canonical Shopify store/theme identity.'
           else
-            echo 'MVQUEEN_DEPLOY_ENABLED is not true — deployment remains safely disabled.'
+            echo 'Release-candidate deployment is disabled.'
             echo 'Validation still runs automatically; no Shopify write is attempted.'
           fi
 
   deploy-unpublished:
     name: Deploy to MVQUEEN unpublished theme
     needs: [validate, deployment-gate]
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && vars.MVQUEEN_DEPLOY_ENABLED == 'true'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -151,4 +151,4 @@ jobs:
           retention-days: 30
           include-hidden-files: true
 
-# Canonical deployment identity remains pinned to MVQueen — Release Candidate; settings_data and backup/rollback themes are never automated deployment targets.
+# Canonical deployment identity remains pinned to MVQueen — Release Candidate; validated theme changes on main deploy automatically to this unpublished target. Scheduled runs validate only. settings_data and backup/rollback themes are never automated deployment targets.
