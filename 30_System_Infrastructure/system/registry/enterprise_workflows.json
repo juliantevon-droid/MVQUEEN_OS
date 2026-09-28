@@ -253,20 +253,21 @@
     },
     {
       "id": "finance",
-      "status": "framework_ready_data_connection_required",
+      "status": "connected_read_only_partial_economics",
       "trigger": "daily/weekly close",
-      "authority": "Shopify payouts + payment processor + ad spend + supplier costs",
+      "authority": "Shopify order totals + verified commercial cost snapshots + audited Commercial Settings",
       "steps": [
-        "revenue",
-        "refunds",
-        "cogs",
-        "fulfillment",
-        "payment_fees",
-        "ad_spend",
-        "contribution_profit",
-        "cash_reconciliation"
+        "confirm_runtime_read_orders_scope",
+        "read_30_day_orders_without_customer_identity_fields",
+        "use_current_shopify_totals_tax_discounts_and_refunds",
+        "join_current_line_quantities_to_verified_product_cost_snapshots",
+        "estimate_payment_fees_from_commercial_settings",
+        "estimate_fulfillment_from_product_or_shop_default",
+        "calculate_commerce_contribution_before_ads",
+        "report_target_cac_benchmark",
+        "withhold_fully_loaded_profit_until_actual_ad_spend_is_connected"
       ],
-      "guard": "no profitability claim without complete source inputs"
+      "guard": "read-only; no names, emails, phones, addresses, order mutations, refunds, fulfillment changes, or profit claims when required cost/ad-spend inputs are missing"
     },
     {
       "id": "compliance",
