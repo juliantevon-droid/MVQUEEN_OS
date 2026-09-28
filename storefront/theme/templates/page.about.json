@@ -1,1 +1,16 @@
-{"sections":{"main":{"type":"main-page","settings":{}},"trust":{"type":"trust-badges","settings":{}}},"order":["main","trust"]}
+{
+  "sections": {
+    "main": {"type":"main-page","settings":{}},
+    "trust": {"type":"trust-badges","settings":{}},
+    "social": {
+      "type":"social-media",
+      "settings":{
+        "eyebrow":"FOLLOW THE HOUSE",
+        "heading":"Stay close to both worlds.",
+        "copy":"Follow MVQueen and Miss.Princess for product stories, styling ideas, beauty moments, launches, and new edits."
+      }
+    },
+    "newsletter": {"type":"newsletter","settings":{}}
+  },
+  "order":["main","trust","social","newsletter"]
+}
