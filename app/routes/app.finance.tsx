@@ -210,7 +210,8 @@ export default function FinancePage() {
     <s-page heading="Finance">
       <s-section heading="30-day commerce economics">
         <s-paragraph>State: {summary.state}</s-paragraph>
-        <s-paragraph>Orders: {summary.orderCount}</s-paragraph>
+        <s-paragraph>Order records: {summary.orderCount}</s-paragraph>
+        <s-paragraph>Commerce orders used for CAC benchmark: {summary.commerceOrderCount}</s-paragraph>
         <s-paragraph>Cancelled orders: {summary.cancelledOrderCount}</s-paragraph>
         <s-paragraph>Gross/current collected: {money(summary.grossCollected, summary.currency)}</s-paragraph>
         <s-paragraph>Tax: {money(summary.taxAmount, summary.currency)}</s-paragraph>
