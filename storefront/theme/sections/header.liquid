@@ -1,11 +1,5 @@
 {% assign is_mvqueen_experience = false %}
 {% assign is_princess_experience = false %}
-{% assign is_house_home = false %}
-
-{% if request.page_type == 'index' %}
-  {% assign is_house_home = true %}
-{% endif %}
-
 {% if request.path contains '/pages/mvqueen' %}
   {% assign is_mvqueen_experience = true %}
 {% endif %}
