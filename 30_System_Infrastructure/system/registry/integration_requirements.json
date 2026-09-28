@@ -159,19 +159,19 @@
     {
       "capability": "finance_reconciliation",
       "provider": "Shopify payouts/payment processor/ad platforms/supplier costs",
-      "state": "data_connections_required",
+      "state": "read_only_order_economics_connected_full_reconciliation_pending",
       "requirements": [
-        "gross revenue",
-        "discounts",
-        "refunds",
-        "payment fees",
-        "COGS",
-        "fulfillment cost",
-        "ad spend",
-        "tax treatment where applicable",
-        "cash/payout reconciliation"
+        "read_orders declared in Shopify app",
+        "runtime confirmation that read_orders is granted",
+        "read_products",
+        "verified commercial.unit_cost snapshots",
+        "Commercial Settings payment fee and fulfillment assumptions",
+        "actual payment-processor fees for exact net payment cost",
+        "actual ad spend for fully loaded contribution",
+        "payout/cash reconciliation for accounting close",
+        "tax treatment reviewed for accounting use"
       ],
-      "side_effects": "analysis only until accounting workflow is separately authorized"
+      "side_effects": "read-only analysis; no order, refund, fulfillment, payout, or customer mutations"
     },
     {
       "capability": "compliance_release_gate",
