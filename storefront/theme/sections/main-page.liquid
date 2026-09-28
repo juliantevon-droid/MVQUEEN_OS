@@ -1,1 +1,22 @@
-<section class="mvq-page-content"><div class="mvq-container"><header class="mvq-page-head"><p class="mvq-eyebrow">MVQueen</p><h1>{{ page.title }}</h1></header><div class="mvq-copy mvq-richtext">{{ page.content }}</div></div></section>{% schema %}{"name":"MVQueen Page","settings":[],"presets":[{"name":"MVQueen Page"}]}{% endschema %}
+{% liquid
+  assign page_eyebrow = 'MVQueen'
+  if page.handle == 'about'
+    assign page_eyebrow = 'MVQueen HOUSE'
+  elsif page.handle == 'faq' or page.handle == 'contact-information'
+    assign page_eyebrow = 'CLIENT CARE'
+  elsif page.handle == 'shipping-policy' or page.handle == 'refund-policy' or page.handle == 'terms-of-service' or page.handle == 'legal-notice'
+    assign page_eyebrow = 'POLICIES & LEGAL'
+  endif
+%}
+<section class="mvq-page-content">
+  <div class="mvq-container">
+    <header class="mvq-page-head">
+      <p class="mvq-eyebrow">{{ page_eyebrow }}</p>
+      <h1>{{ page.title }}</h1>
+    </header>
+    <div class="mvq-copy mvq-richtext">{{ page.content }}</div>
+  </div>
+</section>
+{% schema %}
+{"name":"MVQueen Page","settings":[],"presets":[{"name":"MVQueen Page"}]}
+{% endschema %}
