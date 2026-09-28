@@ -17,12 +17,21 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {}
+    },
+    "social": {
+      "type": "social-media",
+      "settings": {
+        "eyebrow": "FOLLOW Miss.Princess",
+        "heading": "Keep the playful side close.",
+        "copy": "Follow the house for Miss.Princess drops, bright styling ideas, beauty moments, product stories, and launch updates."
+      }
     }
   },
   "order": [
     "main",
     "trust",
     "badges",
+    "social",
     "newsletter"
   ]
 }
