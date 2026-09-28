@@ -498,3 +498,19 @@ This is the production behavior expected for future imported products, subject t
 
 That is the only theme action blocked from automated execution. After publication, the release candidate becomes the customer-facing 56/56 custom build.
 
+## Production reconciliation update — 2026-09-28
+
+- Railway `mvqueen-product-worker` is deployed from current GitHub `main` commit `7e650fa8855ad0c6863f4765055bc1b69a0f1b5b`.
+- Worker startup verifies both Shopify product webhooks and the durable queue is healthy with no failed/dead-letter jobs.
+- Brown Aventurine Bead Necklace is priced at **$40.99** from the governed commercial policy and verified Shopify unit cost.
+- Its commercial state is **healthy**, advertising eligibility is **eligible**, and contribution-after-target-CAC is positive; the prior same-pass stale-health mismatch is resolved in current code.
+- Compare-at pricing remains fail-closed because there is no verified higher reference price.
+- Current storefront MAIN is `MVQueen — Custom Production Build` (`154869825734`).
+- `MVQueen — Release Candidate` (`154876772550`) remains **UNPUBLISHED**, processing complete, `processingFailed=false`.
+- Shopify shop identity is `MVQueen`, public contact is `miss.mvqueen@gmail.com`, currency is USD, and Shopify reports `setupRequired=false`.
+- Installed Shopify apps do **not** currently include Google & YouTube, Facebook & Instagram, TikTok, or Pinterest sales-channel apps.
+- The custom homepage social-media hub supports Instagram, TikTok, Facebook, Snapchat, and YouTube, but real profile URLs are intentionally blank until authenticated profiles are provided.
+- Direct Shopify Payments-account verification remains unavailable to the connected app because it lacks `read_shopify_payments` / `read_shopify_payments_accounts`; no digital wallets are currently reported through `shop.paymentSettings.supportedDigitalWallets`.
+- Final owner-side commerce certification still requires confirming the active payment provider and completing a real/test checkout.
+- Theme promotion remains a manual owner/admin action because automated `themePublish` is intentionally blocked by the Shopify mutation safety layer.
+
