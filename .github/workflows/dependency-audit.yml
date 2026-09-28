@@ -27,6 +27,9 @@ jobs:
         run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
       - name: Install resolved dependency tree
         run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify patched deepmerge-ts resolution
+        run: npm ls deepmerge-ts
+
       - name: Audit production dependencies
         run: npm audit --omit=dev --audit-level=high
       - name: Report outdated dependencies without creating branches
