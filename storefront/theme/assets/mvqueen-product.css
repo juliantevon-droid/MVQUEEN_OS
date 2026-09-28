@@ -162,3 +162,26 @@
   color:#FFF8FB;
 }
 .mvq-product-page--princess .mvq-button--gold:hover{border-color:#A91F50;background:#A91F50}
+
+
+/* Accelerated purchase polish */
+.mvq-product-price{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:10px;
+}
+.mvq-product-price s{
+  color:var(--mvq-mink);
+  font-size:.82em;
+}
+.mvq-dynamic-checkout{
+  margin-top:10px;
+}
+.mvq-dynamic-checkout .shopify-payment-button{
+  width:100%;
+}
+.mvq-dynamic-checkout .shopify-payment-button__button{
+  min-height:48px;
+  border-radius:var(--mvq-radius);
+}
