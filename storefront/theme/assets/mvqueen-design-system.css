@@ -650,3 +650,62 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
 }
 .mvq-collection-head--princess .mvq-eyebrow,
 .mvq-collection-head--princess .mvq-collection-world-link a{color:#A91F50}
+
+
+/* Checkout handoff polish */
+.mvq-cart-brand{
+  margin:0 0 5px;
+  color:var(--mvq-gold-strong);
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.mvq-cart-summary-kicker{
+  margin-bottom:7px;
+  color:var(--mvq-gold-strong);
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.mvq-cart-summary-copy{
+  margin:0 0 16px;
+  color:var(--mvq-mink);
+  font-size:.83rem;
+  line-height:1.55;
+}
+.mvq-cart-express{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--mvq-line);
+}
+.mvq-cart-express__label{
+  display:block;
+  margin-bottom:9px;
+  color:var(--mvq-mink);
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.mvq-cart-checkout-note{
+  margin:12px 0 0;
+  color:var(--mvq-mink);
+  font-size:.74rem;
+  line-height:1.5;
+  text-align:center;
+}
+.mvq-cart-continue{
+  display:grid;
+  gap:6px;
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--mvq-line);
+}
+.mvq-cart-continue a{
+  color:var(--mvq-mink);
+  font-size:.72rem;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
