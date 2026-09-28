@@ -58,6 +58,17 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             "MVQueen",
             "Miss.Princess",
             "/pages/about",
+            "/pages/mvqueen",
+            "/pages/miss-princess",
+        ),
+    ),
+    "brand_world_routes": (
+        "sections/brand-gateway.liquid",
+        (
+            "/pages/mvqueen",
+            "/pages/miss-princess",
+            "Enter the full MVQueen experience",
+            "Enter the full Miss.Princess experience",
         ),
     ),
     "homepage_canonical": (
@@ -98,6 +109,7 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             'aria-expanded="false"',
             "Miss.Princess",
             "routes.root_url",
+            "/pages/mvqueen",
             "/pages/miss-princess",
         ),
     ),
