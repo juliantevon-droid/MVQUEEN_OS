@@ -54,6 +54,8 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("no_live_relationship_write", by_id["merchandising"]["writes"])
         self.assertEqual(by_id["pricing"]["status"], "connected_approval_required")
         self.assertEqual(by_id["paid_advertising"]["status"], "adapter_interface_ready_external_connection_required")
+        self.assertEqual(by_id["finance"]["status"], "connected_read_only_runtime_scope_checked")
+        self.assertEqual(by_id["finance"]["writes"], "none")
 
     def test_operational_workflows_cover_enterprise_domains(self):
         ids = {item["id"] for item in self.workflows["workflows"]}
@@ -89,6 +91,12 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("target_margin_roas_floor", by_capability["paid_advertising"]["requirements"])
         self.assertEqual(by_capability["catalog_backfill"]["state"], "manual_connected_scheduler_optional")
         self.assertIn("MVQ_WRITE_ENABLED=true and MVQ_BACKFILL_WRITE_ENABLED=true for catalog-wide writes", by_capability["catalog_backfill"]["requirements"])
+        self.assertEqual(
+            by_capability["finance_reconciliation"]["state"],
+            "read_only_order_economics_connected_full_reconciliation_pending",
+        )
+        self.assertIn("runtime confirmation that read_orders is granted", by_capability["finance_reconciliation"]["requirements"])
+        self.assertIn("actual ad spend for fully loaded contribution", by_capability["finance_reconciliation"]["requirements"])
 
     def test_catalog_backfill_is_fail_closed(self):
         gates = self.data["non_negotiable_gates"]
@@ -101,6 +109,21 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("MVQ_BACKFILL_WRITE_ENABLED", service)
         self.assertIn('writeMode === "governed_write"', service)
         self.assertIn("allowWrites", processor)
+
+    def test_finance_is_read_only_and_privacy_minimal(self):
+        app_toml = (ROOT / "shopify.app.toml").read_text(encoding="utf-8")
+        finance = (ROOT / "app/routes/app.finance.tsx").read_text(encoding="utf-8")
+        self.assertIn("read_orders", app_toml)
+        self.assertNotIn("write_orders", app_toml)
+        self.assertIn('scopes.has("read_orders")', finance)
+        self.assertIn("currentTotalPriceSet", finance)
+        self.assertIn("commercialUnitCost", finance)
+        self.assertNotIn("customer {", finance)
+        self.assertNotIn("shippingAddress", finance)
+        self.assertNotIn("billingAddress", finance)
+        self.assertNotIn("customerEmail", finance)
+        self.assertNotIn("customerPhone", finance)
+        self.assertNotIn("mutation MVQueenFinance", finance)
 
     def test_runtime_files_exist(self):
         required = [
@@ -125,6 +148,10 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             "app/lib/enterprise/catalog-backfill.server.ts",
             "app/routes/app.catalog-backfill.tsx",
             "app/routes/internal.catalog-worker.ts",
+            "app/lib/enterprise/finance-engine.ts",
+            "app/lib/enterprise/finance-engine.test.ts",
+            "app/routes/app.finance.tsx",
+            "PRODUCTION_READINESS/FINANCE_ORDER_ECONOMICS_V1.md",
             "storefront/theme/assets/mvqueen-analytics.js",
             "app/lib/enterprise/database-guard.server.ts",
             "prisma/production/schema.prisma",
