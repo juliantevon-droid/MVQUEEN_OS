@@ -15,7 +15,7 @@
     <h1 id="BrandGatewayTitle">Choose your experience.</h1>
   </div>
 
-  <a class="mvq-gateway-panel mvq-gateway-panel--mvqueen" href="#MVQueenWorld" aria-label="Explore the MVQueen world on this page">
+  <a class="mvq-gateway-panel mvq-gateway-panel--mvqueen" href="/pages/mvqueen" aria-label="Enter the full MVQueen experience">
     {% if mvqueen_gateway_image != blank %}
       {{ mvqueen_gateway_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', alt: 'MVQueen' }}
     {% endif %}
@@ -31,7 +31,7 @@
     </span>
   </a>
 
-  <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="#MissPrincessWorld" aria-label="Explore the Miss.Princess world on this page">
+  <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="/pages/miss-princess" aria-label="Enter the full Miss.Princess experience">
     {% if princess_gateway_image != blank %}
       {{ princess_gateway_image | image_url: width: 1800 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '480, 750, 1100, 1500, 1800', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', alt: 'Miss.Princess' }}
     {% endif %}
