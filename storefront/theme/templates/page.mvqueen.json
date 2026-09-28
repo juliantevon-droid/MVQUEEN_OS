@@ -2,79 +2,53 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "heading": "Luxury that feels like you.",
+        "subheading": "Bold femininity, modern elegance, and everyday luxury — thoughtfully curated for the woman you are becoming.",
+        "button_label": "Shop MVQueen",
+        "button_link": "/collections/mvqueen-world"
+      }
     },
     "curation": {
       "type": "editorial-curation",
-      "settings": {},
+      "settings": {
+        "eyebrow": "THE MVQueen POINT OF VIEW",
+        "heading": "A refined edit with room to become your own.",
+        "copy": "Discover neutral, bold and polished pieces selected for versatility, presence, and modern everyday luxury.",
+        "link_label": "Shop the MVQueen world",
+        "link_url": "/collections/mvqueen-world"
+      },
       "blocks": {
-        "note-1": {
-          "type": "note",
-          "settings": {
-            "title": "The statement piece",
-            "text": "One intentional detail can change the entire look."
-          }
-        },
-        "note-2": {
-          "type": "note",
-          "settings": {
-            "title": "The everyday edit",
-            "text": "Refined pieces chosen to move easily through real life."
-          }
-        },
-        "note-3": {
-          "type": "note",
-          "settings": {
-            "title": "The finishing touch",
-            "text": "Beauty and accessories selected to complete your point of view."
-          }
-        }
+        "note-1": {"type":"note","settings":{"title":"The statement piece","text":"One intentional detail can change the entire look."}},
+        "note-2": {"type":"note","settings":{"title":"The everyday edit","text":"Refined pieces chosen to move easily through real life."}},
+        "note-3": {"type":"note","settings":{"title":"The finishing touch","text":"Beauty and accessories selected to complete your point of view."}}
       }
     },
     "featured": {
       "type": "featured-products",
       "settings": {
+        "brand_style": "mvqueen",
+        "eyebrow": "THE MVQueen EDIT",
         "heading": "Made to be noticed.",
+        "copy": "A focused selection from the MVQueen world.",
         "collection": "mvqueen-world",
-        "limit": 2
+        "limit": 4,
+        "cta_label": "Shop all MVQueen",
+        "cta_link": "/collections/mvqueen-world"
       }
     },
-    "story": {
-      "type": "brand-story",
-      "settings": {}
-    },
-    "trust": {
-      "type": "trust-strip",
-      "settings": {}
-    },
+    "story": {"type":"brand-story","settings":{}},
+    "trust": {"type":"trust-strip","settings":{}},
+    "pillars": {"type":"brand-pillars","settings":{}},
     "social": {
-      "type": "social-proof",
+      "type": "social-media",
       "settings": {
-        "enabled": false
+        "eyebrow": "FOLLOW MVQueen",
+        "heading": "The edit continues beyond the storefront.",
+        "copy": "Follow the house for new MVQueen drops, styling ideas, beauty moments, product stories, and launch updates."
       }
     },
-    "pillars": {
-      "type": "brand-pillars",
-      "settings": {}
-    },
-    "badges": {
-      "type": "trust-badges",
-      "settings": {}
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {}
-    }
+    "newsletter": {"type":"newsletter","settings":{}}
   },
-  "order": [
-    "hero",
-    "curation",
-    "featured",
-    "story",
-    "trust",
-    "social",
-    "pillars",
-    "badges",
-    "newsletter"
-  ]
+  "order": ["hero","curation","featured","story","trust","pillars","social","newsletter"]
 }
