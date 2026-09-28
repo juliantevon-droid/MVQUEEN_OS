@@ -23,8 +23,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.16.0'
-          cache: npm
-      - name: Install exact dependency tree
+      - name: Resolve dependency lock for audit
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Install resolved dependency tree
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Audit production dependencies
         run: npm audit --omit=dev --audit-level=high
