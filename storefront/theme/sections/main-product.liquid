@@ -54,6 +54,11 @@
           assign canonical_internal_links = product.metafields.seo.internal_links.value
 
           assign product_form_id = 'ProductForm-' | append: section.id
+          assign selected_variant = product.selected_or_first_available_variant
+          assign selected_on_sale = false
+          if selected_variant.compare_at_price > selected_variant.price
+            assign selected_on_sale = true
+          endif
         %}
 
         <div class="mvq-product-brandline">
@@ -63,7 +68,10 @@
           {% if product.type != blank %}<span aria-hidden="true">·</span><span>{{ product.type }}</span>{% endif %}
         </div>
         <h1 class="mvq-display">{{ product.title }}</h1>
-        <div class="mvq-product-price">{{ product.selected_or_first_available_variant.price | money }}</div>
+        <div class="mvq-product-price" data-mvq-product-price aria-live="polite">
+          <span data-mvq-current-price>{{ selected_variant.price | money }}</span>
+          <s data-mvq-compare-price{% unless selected_on_sale %} hidden{% endunless %}>{% if selected_on_sale %}{{ selected_variant.compare_at_price | money }}{% endif %}</s>
+        </div>
 
         {% if short_description != blank %}
           <div class="mvq-product-intro">{{ short_description }}</div>
@@ -93,9 +101,16 @@
           {% unless product.has_only_default_variant %}
             <div class="mvq-product-option">
               <label for="ProductVariant-{{ section.id }}">Choose an option</label>
-              <select id="ProductVariant-{{ section.id }}" name="id">
+              <select id="ProductVariant-{{ section.id }}" name="id" data-mvq-variant-select>
                 {% for variant in product.variants %}
-                  <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %} {% unless variant.available %}disabled{% endunless %}>{{ variant.title }} — {{ variant.price | money }}{% unless variant.available %} — Sold out{% endunless %}</option>
+                  <option
+                    value="{{ variant.id }}"
+                    data-price="{{ variant.price | money | escape }}"
+                    data-compare-at="{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money | escape }}{% endif %}"
+                    data-available="{{ variant.available }}"
+                    {% if variant == selected_variant %}selected{% endif %}
+                    {% unless variant.available %}disabled{% endunless %}
+                  >{{ variant.title }} — {{ variant.price | money }}{% unless variant.available %} — Sold out{% endunless %}</option>
                 {% endfor %}
               </select>
             </div>
@@ -106,7 +121,12 @@
             <label for="Quantity-{{ section.id }}">Quantity</label>
             <input id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1" inputmode="numeric">
           </div>
-          <button class="mvq-button mvq-button--gold" type="submit" name="add" {% unless product.available %}disabled{% endunless %}>{% if product.available %}Add to bag{% else %}Sold out{% endif %}</button>
+          <button class="mvq-button mvq-button--gold" type="submit" name="add" data-mvq-add-button {% unless selected_variant.available %}disabled{% endunless %}>{% if selected_variant.available %}Add to bag{% else %}Sold out{% endif %}</button>
+          {% if section.settings.enable_dynamic_checkout %}
+            <div class="mvq-dynamic-checkout">
+              {{ form | payment_button }}
+            </div>
+          {% endif %}
         {% endform %}
 
         <div class="mvq-shipping-estimate" aria-label="Estimated delivery time">
@@ -124,9 +144,10 @@
             type="submit"
             name="add"
             form="{{ product_form_id }}"
-            {% unless product.available %}disabled{% endunless %}
+            data-mvq-add-button
+            {% unless selected_variant.available %}disabled{% endunless %}
           >
-            {% if product.available %}Add to bag{% else %}Sold out{% endif %}
+            {% if selected_variant.available %}Add to bag{% else %}Sold out{% endif %}
           </button>
         </div>
 
@@ -221,5 +242,16 @@
 </section>
 
 {% schema %}
-{"name":"MVQueen Product","settings":[],"presets":[{"name":"MVQueen Product"}]}
+{
+  "name": "MVQueen Product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_dynamic_checkout",
+      "label": "Show accelerated checkout button",
+      "default": true
+    }
+  ],
+  "presets": [{"name":"MVQueen Product"}]
+}
 {% endschema %}
