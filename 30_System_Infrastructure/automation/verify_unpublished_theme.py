@@ -29,7 +29,16 @@ def main() -> int:
         print("THEME DEPLOYMENT VERIFY: FAIL — SHOPIFY_THEME_ID is not set")
         return 1
 
-    themes = data.get("themes") or data.get("data", {}).get("themes", {}).get("nodes", [])
+    if isinstance(data, list):
+        themes = data
+    elif isinstance(data, dict):
+        themes = data.get("themes") or data.get("data", {}).get("themes", {}).get("nodes", [])
+    else:
+        print(
+            "THEME DEPLOYMENT VERIFY: FAIL — unsupported Shopify CLI JSON shape "
+            f"({type(data).__name__})"
+        )
+        return 1
     found = None
     for theme in themes:
         theme_id = str(theme.get("id", "")).split("/")[-1]
