@@ -31,6 +31,7 @@ export type FinanceSummary = {
   state: FinanceSummaryState;
   currency: string;
   orderCount: number;
+  commerceOrderCount: number;
   cancelledOrderCount: number;
   grossCollected: number;
   taxAmount: number;
@@ -72,6 +73,7 @@ export function buildFinanceSummary(
       state: "no_orders",
       currency,
       orderCount: 0,
+      commerceOrderCount: 0,
       cancelledOrderCount: 0,
       grossCollected: 0,
       taxAmount: 0,
@@ -110,6 +112,9 @@ export function buildFinanceSummary(
   );
   const netRevenueExTax = grossCollected - taxAmount;
   const cancelledOrderCount = orders.filter((order) => order.cancelledAt).length;
+  const commerceOrderCount = orders.filter(
+    (order) => !order.cancelledAt && order.currentTotalPrice > 0,
+  ).length;
   const incompleteLineItemOrderCount = orders.filter(
     (order) => !order.lineItemsComplete,
   ).length;
@@ -193,7 +198,7 @@ export function buildFinanceSummary(
     nonNegative(commercial.config.targetCac)
       ? round(
           commerceContributionBeforeAds -
-          commercial.config.targetCac * orders.length,
+          commercial.config.targetCac * commerceOrderCount,
         )
       : null;
 
@@ -235,6 +240,7 @@ export function buildFinanceSummary(
     state,
     currency,
     orderCount: orders.length,
+    commerceOrderCount,
     cancelledOrderCount,
     grossCollected: round(grossCollected),
     taxAmount: round(taxAmount),
