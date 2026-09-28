@@ -19,7 +19,10 @@
                   {% if item.image %}{{ item.image | image_url: width: 420 | image_tag: loading: 'lazy', widths: '180,300,420', sizes: '(max-width: 749px) 34vw, 180px', alt: item.image.alt | default: item.product.title | escape }}{% endif %}
                 </a>
                 <div class="mvq-cart-details">
-                  {% if item.product.type != blank %}<p class="mvq-card-type">{{ item.product.type }}</p>{% endif %}
+                  <p class="mvq-cart-brand">
+                    {% if item.product.tags contains 'mvq:brand:miss-princess' %}Miss.Princess{% else %}MVQueen{% endif %}
+                    {% if item.product.type != blank %}<span aria-hidden="true">·</span> {{ item.product.type }}{% endif %}
+                  </p>
                   <h2><a href="{{ item.url }}">{{ item.product.title }}</a></h2>
                   {% unless item.product.has_only_default_variant %}<p class="mvq-cart-variant">{{ item.variant.title }}</p>{% endunless %}
                   <p class="mvq-cart-price">{{ item.final_line_price | money }}</p>
@@ -32,6 +35,8 @@
             {% endfor %}
           </div>
           <aside class="mvq-cart-summary">
+            <div class="mvq-cart-summary-kicker">ONE BAG · TWO WORLDS</div>
+            <p class="mvq-cart-summary-copy">Your MVQueen and Miss.Princess pieces stay together through one secure checkout.</p>
             <div class="mvq-cart-summary-line"><span>Subtotal</span><strong>{{ cart.total_price | money }}</strong></div>
             <div class="mvq-cart-delivery">
               <span class="mvq-cart-delivery__label">Estimated delivery</span>
@@ -44,7 +49,18 @@
             </div>
             <button class="mvq-button mvq-button--quiet" type="submit" name="update">Update bag</button>
             <button class="mvq-button mvq-button--gold" type="submit" name="checkout">Secure checkout</button>
-            {% render 'trust-badges', compact: true %}
+            {% if additional_checkout_buttons %}
+              <div class="mvq-cart-express" aria-label="Accelerated checkout options">
+                <span class="mvq-cart-express__label">Or checkout faster</span>
+                <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+              </div>
+            {% endif %}
+            <p class="mvq-cart-checkout-note">You’ll complete payment securely in Shopify checkout.</p>
+            {% render 'trust-badges', preset: 'cart', compact: true %}
+            <div class="mvq-cart-continue">
+              <a href="/collections/mvqueen-world">Continue with MVQueen</a>
+              <a href="/collections/miss-princess-world">Continue with Miss.Princess</a>
+            </div>
           </aside>
         </div>
       {% endform %}
