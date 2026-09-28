@@ -62,7 +62,7 @@
         %}
 
         <div class="mvq-product-brandline">
-          <a href="{% if is_princess_product %}/pages/miss-princess{% else %}/collections/mvqueen-world{% endif %}">
+          <a href="{% if is_princess_product %}/pages/miss-princess{% else %}/pages/mvqueen{% endif %}">
             {% if is_princess_product %}Miss.Princess{% else %}MVQueen{% endif %}
           </a>
           {% if product.type != blank %}<span aria-hidden="true">·</span><span>{{ product.type }}</span>{% endif %}
