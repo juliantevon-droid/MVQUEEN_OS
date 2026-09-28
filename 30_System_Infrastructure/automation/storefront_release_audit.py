@@ -116,6 +116,9 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             "{% render 'trust-badges' %}",
             "mvq-mobile-purchase-bar",
             'form="{{ product_form_id }}"',
+            "data-mvq-variant-select",
+            "data-mvq-current-price",
+            "form | payment_button",
         ),
     ),
     "cart_checkout": (
@@ -130,7 +133,11 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             "7–15 business days",
             "/pages/shipping-policy",
             "/pages/refund-policy",
-            "{% render 'trust-badges', compact: true %}",
+            "additional_checkout_buttons",
+            "content_for_additional_checkout_buttons",
+            "Continue with MVQueen",
+            "Continue with Miss.Princess",
+            "{% render 'trust-badges', preset: 'cart', compact: true %}",
         ),
     ),
     "collection_discovery": (
@@ -208,6 +215,16 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             "event.key==='Escape'",
             "event.key!=='Tab'",
             "returnFocus",
+        ),
+    ),
+    "variant_purchase_sync": (
+        "assets/mvqueen.js",
+        (
+            "data-mvq-variant-select",
+            "data-mvq-current-price",
+            "data-mvq-compare-price",
+            "data-mvq-add-button",
+            "history.replaceState",
         ),
     ),
     "menu_accessibility": (
