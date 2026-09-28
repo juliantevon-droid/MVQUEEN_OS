@@ -171,9 +171,9 @@
     },
     {
       "id": "finance",
-      "status": "framework_ready_data_connection_required",
-      "authority": "Shopify_payouts_payment_processor_ad_spend_supplier_costs",
-      "execution": "reconciliation_required",
+      "status": "connected_read_only_runtime_scope_checked",
+      "authority": "Shopify order truth + verified commercial cost snapshots",
+      "execution": "authenticated_30_day_order_economics",
       "writes": "none"
     },
     {
