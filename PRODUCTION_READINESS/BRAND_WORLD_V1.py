@@ -80,6 +80,15 @@ def classify_brand_world(record: Dict[str, Any]) -> Dict[str, str]:
         # Shared base colors require additional verified style/shade context.
         pass
 
+    material_text = _normalize(" ".join(
+        facts.get(name, "") for name in ("material", "metal", "finish")
+    ))
+    for palette_material in ("gold", "silver", "bronze", "champagne", "black", "charcoal"):
+        if palette_material in material_text:
+            mvqueen_score += 2
+            mvqueen_reason = mvqueen_reason or f"verified_material:{palette_material}"
+            break
+
     style_text = " ".join(
         _normalize(facts.get(name, ""))
         for name in ("style", "vibe", "mood", "aesthetic", "occasion", "finish")
