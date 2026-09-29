@@ -514,3 +514,65 @@ That is the only theme action blocked from automated execution. After publicatio
 - Final owner-side commerce certification still requires confirming the active payment provider and completing a real/test checkout.
 - Theme promotion remains a manual owner/admin action because automated `themePublish` is intentionally blocked by the Shopify mutation safety layer.
 
+
+
+## Current unified production status — 2026-09-29
+
+This section supersedes all earlier runtime, theme-role, catalog-count, Drive-automation and launch-state statements in this historical status document.
+
+### Canonical topology
+
+- **GitHub `main`** is the sole authority for code, contracts, tests, theme source and automation logic.
+- **Railway** is the production runtime for `mvqueen-web`, the continuously running `mvqueen-product-worker`, and persistent Postgres.
+- **Shopify** is the sole live-commerce authority for products, variants, inventory, collections, menus, pages, publications, policies, orders and theme role.
+- **Google Drive** is knowledge/assets/archive/backup storage and an optional manually reviewed intake source. It is not executable source and never automatically overwrites GitHub.
+- Python remains proposal/validation intelligence; the authenticated React app remains the live Shopify writer.
+
+### Runtime
+
+- Railway web, worker and Postgres are online.
+- Web and worker are sourced from `juliantevon-droid/MVQUEEN_OS` `main`.
+- Current deployed runtime commit is `04e239e7de8248ae45fcd6923ea987674071a478`; later GitHub changes through this status update affect workflow/governance/theme configuration, not app runtime.
+- Railway automatic deploy-on-push is not enabled because the Railway GitHub App is not installed on the repository. Manual deployment remains required after future app-runtime changes until that account-level integration is installed.
+- Shopify product webhook delivery to Railway has been verified with HTTP 200 responses and successful worker processing with no failed/dead-letter job in the verification pass.
+- The Railway worker continuously owns queue draining, retries, stale-lease recovery, dead-letter handling and reconciliation.
+- GitHub's five-minute runtime workflow is now a real read-only `/healthz` monitor rather than a secret-missing worker no-op.
+
+### Drive
+
+- The active Drive `MVQUEEN_OS` root remains organized by operating domain with dated legacy/archive areas retained for recovery/history.
+- Historical duplicate indexes, blueprints, copies and local/rclone-era material remain reference/archive only and have no production authority.
+- The GitHub Drive intake workflow is now **manual and fail-closed**. It has no schedule, never commits/pushes, and fails when Drive source authentication is not configured instead of reporting a misleading green no-op.
+- Approved Drive material must be intentionally reviewed and promoted through normal GitHub changes.
+
+### Theme release architecture
+
+- Shopify MAIN is **MVQueen — Release Candidate** (`154876772550`).
+- The former automatic deployment target is no longer used for staging because it is live.
+- **MVQueen — Staging Preview** (`155002798278`) is the current verified UNPUBLISHED automated deployment target.
+- GitHub Theme CI/CD is pinned to Staging Preview and passed validation, deployment gate, deployment and post-deploy unpublished-role verification.
+- Automated theme deployment can never target Shopify MAIN under the current guard.
+
+### Current Shopify commerce scope
+
+- Store identity: MVQueen.
+- SSL: enabled.
+- Shopify setupRequired: false.
+- Current production catalog: **1 ACTIVE product, 0 DRAFT, 0 ARCHIVED**.
+- Current active product routes to Miss.Princess.
+- Miss.Princess World contains 1 product; MVQueen World currently contains 0 products.
+- Only Pink / XL on the current active product has online sellable quantity (2); zero-stock variants remain DENY and are not oversold.
+- Core policies are present and footer policy links target canonical Shopify policy resources.
+- MVQueen and Miss.Princess pages are published; the old Miss.Queen page and incomplete Size Guide remain unpublished.
+- The active product is published to Online Store.
+
+### Launch position
+
+Engineering/runtime/storefront architecture is launch-capable. Remaining commerce/business completion is intentionally separate from architecture:
+
+1. Complete one real/test checkout so payment/order creation is proven end-to-end.
+2. Add the real MVQueen and broader Miss.Princess launch assortment; catalog depth is currently the largest commercial limitation.
+3. Install the Railway GitHub App and enable deploy-on-push if fully automatic GitHub → Railway deployment is desired.
+4. Branded domain remains intentionally deferred by merchant decision.
+
+Do not reopen retired branch, Drive-mirror, local-rclone, direct-Python-Shopify-writer or live-theme-auto-deploy architectures.
