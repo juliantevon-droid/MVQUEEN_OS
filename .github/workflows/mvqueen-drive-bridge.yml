@@ -1,8 +1,6 @@
-name: MVQUEEN Drive Intake Validation
+name: MVQUEEN Drive Intake Validation (Manual)
 
 on:
-  schedule:
-    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -31,7 +29,8 @@ jobs:
         run: |
           if [ -z "$RCLONE_CONFIG_B64" ] || [ -z "$DRIVE_SOURCE" ]; then
             echo 'configured=false' >> "$GITHUB_OUTPUT"
-            echo 'Drive intake is not configured; safe no-op.'
+            echo 'Drive intake is not configured. Configure RCLONE_CONFIG_B64 and MVQUEEN_DRIVE_SOURCE before running this manual intake.'
+            exit 1
           else
             echo 'configured=true' >> "$GITHUB_OUTPUT"
             echo 'Drive intake configuration detected.'
@@ -88,5 +87,5 @@ jobs:
 
       - name: Confirm source-of-truth boundary
         run: |
-          echo 'GitHub main remains canonical.'
+          echo 'GitHub main remains canonical; Drive intake is manual/review-only and never overwrites source.'
           echo 'This workflow never commits or pushes Drive content.'
