@@ -37,7 +37,7 @@ class InternalLinkingIntelligenceV1Tests(unittest.TestCase):
             self.raw("M1", "Necklace", "Black"),
             self.raw("M2", "Earrings", "Black"),
             self.raw("M3", "Necklace", "Black", material="Sterling silver"),
-            self.raw("P1", "Bracelet", "Pink"),
+            self.raw("P1", "Bracelet", "Sky Blue", material="Acrylic"),
         ]
 
     def test_links_use_real_same_brand_product_handles_and_explicit_collection_handles(self):
@@ -129,8 +129,8 @@ class InternalLinkingIntelligenceV1Tests(unittest.TestCase):
         self.assertIn("/collections/jewelry", pink_targets)
         self.assertIn("/collections/necklaces", pink_targets)
         self.assertIn("/collections/pendant-necklaces", pink_targets)
-        self.assertIn("/collections/miss-princess-world", pink_targets)
-        self.assertNotIn("/collections/mvqueen-world", pink_targets)
+        self.assertIn("/collections/mvqueen-world", pink_targets)
+        self.assertNotIn("/collections/miss-princess-world", pink_targets)
 
         for record in resolved:
             self.assertEqual(validate_record(record), [])
