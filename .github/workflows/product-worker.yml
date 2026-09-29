@@ -1,6 +1,10 @@
 name: MVQUEEN Runtime Health Monitor
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/product-worker.yml'
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
