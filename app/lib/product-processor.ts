@@ -16,7 +16,45 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v12";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v13";
+
+const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
+  "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
+  pendants: "gid://shopify/TaxonomyCategory/aa-6-8",
+  necklaces: "gid://shopify/TaxonomyCategory/aa-6-8",
+  earrings: "gid://shopify/TaxonomyCategory/aa-6-6",
+  bracelets: "gid://shopify/TaxonomyCategory/aa-6-3",
+  rings: "gid://shopify/TaxonomyCategory/aa-6-9",
+  sunglasses: "gid://shopify/TaxonomyCategory/aa-2-27",
+  "handbags-purses": "gid://shopify/TaxonomyCategory/aa-5-4",
+  dresses: "gid://shopify/TaxonomyCategory/aa-1-4",
+  "jumpsuits-rompers": "gid://shopify/TaxonomyCategory/aa-1-9",
+  bodysuits: "gid://shopify/TaxonomyCategory/aa-1-13-2",
+  "t-shirts": "gid://shopify/TaxonomyCategory/aa-1-13-8",
+  blouses: "gid://shopify/TaxonomyCategory/aa-1-13-1",
+  "jeans-denim": "gid://shopify/TaxonomyCategory/aa-1-12-4",
+  pants: "gid://shopify/TaxonomyCategory/aa-1-12",
+  shorts: "gid://shopify/TaxonomyCategory/aa-1-14",
+  skirts: "gid://shopify/TaxonomyCategory/aa-1-15",
+  makeup: "gid://shopify/TaxonomyCategory/hb-3-2-6",
+  skincare: "gid://shopify/TaxonomyCategory/hb-3-2-9",
+  shampoo: "gid://shopify/TaxonomyCategory/hb-3-10-13-3",
+  conditioner: "gid://shopify/TaxonomyCategory/hb-3-10-13-1",
+  "hair-treatments": "gid://shopify/TaxonomyCategory/hb-3-10-14",
+  "hair-tools": "gid://shopify/TaxonomyCategory/hb-3-10-12",
+  "beauty-tools": "gid://shopify/TaxonomyCategory/hb-3-2-5",
+  "bath-body": "gid://shopify/TaxonomyCategory/hb-3-2-1",
+  fragrance: "gid://shopify/TaxonomyCategory/hb-3-2-8",
+};
+
+function taxonomyCategoryForRoute(route: string, title: string): string | null {
+  if (route === "wigs-extensions") {
+    return /\bwig(?:s)?\b/i.test(title)
+      ? "gid://shopify/TaxonomyCategory/aa-2-14-12"
+      : "gid://shopify/TaxonomyCategory/aa-2-14-3";
+  }
+  return TAXONOMY_CATEGORY_BY_ROUTE[route] ?? null;
+}
 
 // The React app is the single live Shopify writer. Automatic enrollment may
 // authorize newly created/updated products for safe editorial/catalog fields,
@@ -91,6 +129,7 @@ const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
+    category { id }
     options { name values }
     media(first: 50) {
       nodes {
@@ -111,6 +150,7 @@ const PRODUCT_QUERY_WITH_COST = `#graphql
 query MVQueenProductWithCost($id: ID!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
+    category { id }
     options { name values }
     media(first: 50) {
       nodes {
@@ -705,6 +745,11 @@ export async function processProductJob(
       tags: mergedTags,
       metafields,
     };
+
+    const mappedTaxonomyCategory = taxonomyCategoryForRoute(c.route, product.title ?? "");
+    if (!rawProduct.category?.id && mappedTaxonomyCategory) {
+      productInput.category = mappedTaxonomyCategory;
+    }
 
     if (
       VENDOR_NORMALIZATION_ENABLED &&
