@@ -132,8 +132,7 @@ const MVQUEEN_AUTHORITY_COLORS = new Set([
   "burgundy", "wine", "oxblood", "espresso", "chocolate", "deep-brown",
   "navy", "midnight-blue", "royal-blue", "emerald", "forest-green",
   "deep-green", "plum", "aubergine", "royal-purple",
-  "fuchsia", "magenta", "hot-pink", "bold-pink",
-  "sun-yellow", "sunflower-yellow", "golden-yellow", "mustard",
+  "mustard",
   "silver", "bronze", "champagne",
 ]);
 
@@ -146,14 +145,16 @@ const MISS_PRINCESS_VIVID_COLORS = new Set([
   "sky-blue", "baby-blue", "powder-blue", "electric-blue",
   "aqua", "turquoise", "mint", "seafoam",
   "lavender", "lilac", "periwinkle",
-  "baby-pink", "blush", "soft-pink", "light-pink", "bubblegum-pink",
+  "pink", "baby-pink", "blush", "soft-pink", "light-pink", "bubblegum-pink",
+  "fuchsia", "magenta", "hot-pink", "bold-pink",
+  "yellow", "sun-yellow", "sunflower-yellow", "golden-yellow",
   "coral", "peach", "lime", "lemon", "pastel-yellow", "light-yellow",
-  "tangerine", "bright-orange", "rainbow", "multicolor", "pastel",
+  "blue", "orange", "tangerine", "bright-orange", "rainbow", "multicolor", "pastel",
 ]);
 
-// Pink, yellow, blue, and orange can belong to either world. Generic names do
-// not decide the brand alone; shade/modifier or the rest of the palette does.
-const SHARED_BASE_COLORS = new Set(["pink", "yellow", "blue", "orange"]);
+// Bright/colorful base colors route to Miss.Princess by default. Deep,
+// neutral, metallic, and explicitly refined shades remain MVQueen signals.
+const SHARED_BASE_COLORS = new Set<string>();
 
 const MVQUEEN_STYLE_HINTS = [
   "bold", "rich", "deep", "saturated", "authority", "authoritative",
