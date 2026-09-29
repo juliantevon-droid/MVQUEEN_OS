@@ -86,11 +86,14 @@ Every creative output, product decision, and communication must pass these rules
 - **Red Flag:** Logo pixelated, distorted, or on clashing backgrounds
 
 ### Color Palette
-- Use only colors from 02_Brand_Identity/color_system.md
-- Never mix brand colors with trendy colors outside the approved palette
-- MVQueen Gold (#C7AD86) is the primary accent—use it intentionally
-- Never desaturate brand colors
-- **Red Flag:** Bright pink, neon, or colors outside the palette
+- Storefront UI, packaging, and owned brand graphics use the governed interface palette in 02_Brand_Identity/color_system.md.
+- Product-assortment color routing is broader than the storefront UI palette and follows the dual-brand product doctrine below.
+- **MVQueen product world:** deep, rich, saturated, authoritative color energy. Strong signals include black, charcoal, gold, rich/deep metallics, burgundy/wine, jewel tones, bold or hot pink, sun/sunflower/golden yellow, and polished luxe neutrals.
+- **Miss.Princess product world:** bright, vivid, high-light, energetic spring/summer color energy. Strong signals include sky blue, electric blue, baby/powder blue, aqua, turquoise, mint, lilac, lavender, periwinkle, blush/baby pink, coral, peach, lemon, lime, and other airy playful brights.
+- Generic shared colors such as pink, yellow, blue, and orange do **not** decide a product route by themselves. Shade modifiers, companion colors, verified style context, and the full palette must be evaluated.
+- Mixed-color products are scored by the whole palette. Deep/authoritative signals route MVQueen; vivid/high-light/youthful signals route Miss.Princess; balanced or unsupported signals go to Needs Review.
+- Do not route a product based on whichever color appears first.
+- **Red Flag:** treating every bright product as Miss.Princess or every pink/yellow product as one brand without context.
 
 ### Typography
 - Cormorant Garamond for all headlines
