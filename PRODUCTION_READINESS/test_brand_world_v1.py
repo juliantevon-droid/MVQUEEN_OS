@@ -14,18 +14,42 @@ class BrandWorldV1Tests(unittest.TestCase):
             }
         }
 
-    def test_soft_bright_color_routes_to_miss_princess(self):
-        result = classify_brand_world(self.record(color="Pink"))
-        self.assertEqual(result["brand_world"], "miss-princess")
-        self.assertEqual(result["brand_name"], "Miss.Princess")
-
-    def test_neutral_color_routes_to_mvqueen(self):
-        result = classify_brand_world(self.record(color="Brown"))
+    def test_authoritative_deep_color_routes_to_mvqueen(self):
+        result = classify_brand_world(self.record(color="Black"))
         self.assertEqual(result["brand_world"], "mvqueen")
         self.assertEqual(result["brand_name"], "MVQueen")
+        self.assertEqual(result["brand_tone"], "bold-authoritative")
 
-    def test_style_can_route_when_color_is_ambiguous(self):
-        result = classify_brand_world(self.record(color="Purple", style="soft romantic floral"))
+    def test_bold_bright_mvqueen_shades_route_to_mvqueen(self):
+        for color in ("Hot Pink", "Sun Yellow", "Gold", "Charcoal"):
+            with self.subTest(color=color):
+                result = classify_brand_world(self.record(color=color))
+                self.assertEqual(result["brand_world"], "mvqueen")
+                self.assertEqual(result["brand_tone"], "bold-authoritative")
+
+    def test_vivid_spring_summer_colors_route_to_miss_princess(self):
+        for color in ("Sky Blue", "Electric Blue", "Lilac", "Mint", "Lemon"):
+            with self.subTest(color=color):
+                result = classify_brand_world(self.record(color=color))
+                self.assertEqual(result["brand_world"], "miss-princess")
+                self.assertEqual(result["brand_name"], "Miss.Princess")
+                self.assertEqual(result["brand_tone"], "vivid-youthful")
+
+    def test_shared_base_color_without_context_fails_closed(self):
+        result = classify_brand_world(self.record(color="Pink"))
+        self.assertEqual(result["brand_world"], "needs-review")
+        self.assertEqual(result["brand_routing_confidence"], "review")
+
+    def test_style_can_route_shared_color(self):
+        result = classify_brand_world(
+            self.record(color="Pink", style="deep rich polished statement")
+        )
+        self.assertEqual(result["brand_world"], "mvqueen")
+
+    def test_princess_style_can_route_ambiguous_color(self):
+        result = classify_brand_world(
+            self.record(color="Purple", style="bright vivid summer playful")
+        )
         self.assertEqual(result["brand_world"], "miss-princess")
 
     def test_ambiguous_product_fails_closed(self):
