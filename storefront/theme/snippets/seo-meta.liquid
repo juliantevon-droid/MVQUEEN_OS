@@ -1,6 +1,10 @@
 {%- liquid
   assign meta_title = page_title | default: shop.name
   assign meta_description = page_description | default: shop.description | default: 'Discover the MVQueen edit of fashion, beauty, jewelry, and everyday luxury.'
+  if request.page_type == 'index'
+    assign meta_title = 'MVQueen | Fashion, Beauty, Jewelry and Everyday Luxury'
+    assign meta_description = 'Discover MVQueen—fashion, beauty, jewelry, and everyday luxury for the woman who chooses with intention. Curated to restore softness, confidence, and ease.'
+  endif
   assign meta_image = page_image | default: settings.share_image
   assign noindex_page = false
   if request.page_type == 'search' or request.page_type == 'cart'
