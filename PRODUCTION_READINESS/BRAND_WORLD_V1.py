@@ -14,8 +14,7 @@ MVQUEEN_AUTHORITY_COLORS = {
     "burgundy", "wine", "oxblood", "espresso", "chocolate", "deep brown",
     "navy", "midnight blue", "royal blue", "emerald", "forest green",
     "deep green", "plum", "aubergine", "royal purple",
-    "fuchsia", "magenta", "hot pink", "bold pink",
-    "sun yellow", "sunflower yellow", "golden yellow", "mustard",
+    "mustard",
     "silver", "bronze", "champagne",
 }
 MVQUEEN_LUXE_NEUTRALS = {
@@ -26,11 +25,13 @@ MISS_PRINCESS_VIVID_COLORS = {
     "sky blue", "baby blue", "powder blue", "electric blue",
     "aqua", "turquoise", "mint", "seafoam",
     "lavender", "lilac", "periwinkle",
-    "baby pink", "blush", "soft pink", "light pink", "bubblegum pink",
+    "pink", "baby pink", "blush", "soft pink", "light pink", "bubblegum pink",
+    "fuchsia", "magenta", "hot pink", "bold pink",
+    "yellow", "sun yellow", "sunflower yellow", "golden yellow",
     "coral", "peach", "lime", "lemon", "pastel yellow", "light yellow",
-    "tangerine", "bright orange", "rainbow", "multicolor", "pastel",
+    "blue", "orange", "tangerine", "bright orange", "rainbow", "multicolor", "pastel",
 }
-SHARED_BASE_COLORS = {"pink", "yellow", "blue", "orange"}
+SHARED_BASE_COLORS = set()
 
 MVQUEEN_STYLE_HINTS = {
     "bold", "rich", "deep", "saturated", "authority", "authoritative",
