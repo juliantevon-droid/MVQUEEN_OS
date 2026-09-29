@@ -1,7 +1,9 @@
 {% assign is_jewelry_product = false %}
 {% assign is_princess_product = false %}
+{% assign is_fashion_product = false %}
 {% if product.tags contains 'mvq:category:jewelry' %}{% assign is_jewelry_product = true %}{% endif %}
 {% if product.tags contains 'mvq:brand:miss-princess' %}{% assign is_princess_product = true %}{% endif %}
+{% if product.tags contains 'mvq:department:fashion' %}{% assign is_fashion_product = true %}{% endif %}
 <section class="mvq-product-page{% if is_jewelry_product %} mvq-product-page--jewelry{% endif %}{% if is_princess_product %} mvq-product-page--princess{% endif %}">
   <div class="mvq-container">
     {% render 'breadcrumbs' %}
@@ -132,7 +134,7 @@
         <div class="mvq-shipping-estimate" aria-label="Estimated delivery time">
           <span class="mvq-shipping-estimate__label">Estimated delivery</span>
           <strong>{{ shipping_estimate }}</strong>
-          <a href="/pages/shipping-policy">Shipping details</a>
+          <a href="/policies/shipping-policy">Shipping details</a>
         </div>
 
         {% render 'trust-badges' %}
@@ -192,6 +194,11 @@
           {% endif %}
           {% if product.metafields.custom.size_guide != blank %}
             <details><summary>Size guide</summary>{{ product.metafields.custom.size_guide | metafield_tag }}</details>
+          {% elsif is_fashion_product %}
+            <details>
+              <summary>Size &amp; fit</summary>
+              <p>Use the product-specific measurements first when they are available. For measuring guidance and international size references, see our <a href="/pages/size-guide">Size Guide</a>.</p>
+            </details>
           {% endif %}
 
           <details>
@@ -203,7 +210,7 @@
             <p class="mvq-product-policy-links">
               <a href="/pages/shipping-policy">Shipping policy</a>
               <span aria-hidden="true">·</span>
-              <a href="/pages/refund-policy">Refund & returns</a>
+              <a href="/policies/refund-policy">Refund & returns</a>
             </p>
           </details>
 
