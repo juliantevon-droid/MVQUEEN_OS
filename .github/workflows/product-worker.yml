@@ -1,4 +1,4 @@
-name: MVQUEEN Always-On Product Worker
+name: MVQUEEN Runtime Health Monitor
 
 on:
   schedule:
@@ -9,42 +9,41 @@ permissions:
   contents: read
 
 concurrency:
-  group: mvqueen-product-worker
-  cancel-in-progress: false
+  group: mvqueen-runtime-health
+  cancel-in-progress: true
 
 jobs:
-  run-product-worker:
+  health-monitor:
+    name: Verify Railway app and durable worker health
     runs-on: ubuntu-latest
     timeout-minutes: 4
     env:
-      MVQ_PRODUCT_WORKER_URL: ${{ secrets.MVQ_PRODUCT_WORKER_URL }}
-      MVQ_PRODUCT_WORKER_TOKEN: ${{ secrets.MVQ_PRODUCT_WORKER_TOKEN }}
+      MVQ_HEALTH_URL: https://mvqueen-web-production.up.railway.app/healthz
     steps:
-      - name: Drain product queue and reconcile missed events
+      - name: Check production health endpoint
         shell: bash
         run: |
           set -euo pipefail
-
-          if [ -z "${MVQ_PRODUCT_WORKER_URL:-}" ] || [ -z "${MVQ_PRODUCT_WORKER_TOKEN:-}" ]; then
-            echo "Always-on worker secrets are not configured; skipping without exposing secret values."
-            exit 0
-          fi
-
-          case "$MVQ_PRODUCT_WORKER_URL" in
+          case "$MVQ_HEALTH_URL" in
             https://*) ;;
             *)
-              echo "MVQ_PRODUCT_WORKER_URL must be HTTPS."
+              echo "MVQ_HEALTH_URL must be HTTPS."
               exit 1
               ;;
           esac
 
-          curl \
-            --fail-with-body \
-            --silent \
-            --show-error \
-            --max-time 180 \
-            --retry 2 \
-            --retry-all-errors \
-            --request POST \
-            --header "Authorization: Bearer ${MVQ_PRODUCT_WORKER_TOKEN}" \
-            "$MVQ_PRODUCT_WORKER_URL"
+          body="$(mktemp)"
+          code="$(
+            curl               --silent               --show-error               --location               --max-time 30               --retry 2               --retry-all-errors               --output "$body"               --write-out '%{http_code}'               "$MVQ_HEALTH_URL"
+          )"
+
+          cat "$body"
+          echo
+
+          if [ "$code" -lt 200 ] || [ "$code" -ge 300 ]; then
+            echo "Production health endpoint returned HTTP $code."
+            exit 1
+          fi
+
+          echo "Railway app health endpoint is responding successfully."
+          echo "The continuously running Railway product worker owns queue draining and reconciliation."
