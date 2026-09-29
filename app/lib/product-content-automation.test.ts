@@ -108,17 +108,17 @@ assert.equal(activewearClassification.subcollection, "Activewear Sets");
 assert.equal(activewearClassification.productType, "Activewear Set");
 assert.equal(activewearClassification.confidence, "high");
 const activewearBrand = classifyBrandWorld(activewear);
-assert.equal(activewearBrand.brand, "miss-princess");
-assert.equal(activewearBrand.tone, "soft-playful");
-assert.equal(activewearBrand.reason, "color:pink");
+assert.equal(activewearBrand.brand, "mvqueen");
+assert.equal(activewearBrand.tone, "bold-authoritative");
+assert.equal(activewearBrand.reason, "color:black");
 const activewearContent = buildAutomatedProductContent(
   activewear,
   activewearClassification,
-  "Miss.Princess",
+  "MVQueen",
 );
-assert.ok(activewearContent.seoTitle.endsWith("| Miss.Princess"));
+assert.ok(activewearContent.seoTitle.endsWith("| MVQueen"));
 assert.ok(activewearContent.seoTitle.length <= 60);
-assert.ok(activewearContent.metaDescription.includes("at Miss.Princess."));
+assert.ok(activewearContent.metaDescription.includes("at MVQueen."));
 assert.ok(activewearContent.shortDescription.startsWith("An activewear set with"));
 assert.ok(activewearContent.shortDescription.includes("two-piece design"));
 assert.ok(activewearContent.shortDescription.includes("ruched detailing"));
@@ -128,6 +128,40 @@ assert.ok(activewearContent.descriptionHtml.includes("<table>"));
 assert.ok(activewearContent.descriptionHtml.includes("Size &amp; Measurements"));
 assert.ok(activewearContent.descriptionHtml.includes("Features: Ruched"));
 assert.ok(!activewearContent.descriptionHtml.includes("style="));
+
+
+const princessPaletteProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/princess-palette",
+  title: "Summer Mini Dress",
+  tags: [],
+  options: [{ name: "Color", values: ["Sky Blue", "Electric Blue", "Lilac"] }],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/princess", price: "48.00" }] },
+};
+const princessPaletteRoute = classifyBrandWorld(princessPaletteProduct);
+assert.equal(princessPaletteRoute.brand, "miss-princess");
+assert.equal(princessPaletteRoute.tone, "vivid-youthful");
+assert.equal(princessPaletteRoute.reason, "color:sky-blue");
+
+const mvqueenPaletteProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/mvqueen-palette",
+  title: "Statement Set",
+  tags: [],
+  options: [{ name: "Color", values: ["Gold", "Hot Pink", "Sun Yellow", "Charcoal"] }],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/mvqueen", price: "58.00" }] },
+};
+const mvqueenPaletteRoute = classifyBrandWorld(mvqueenPaletteProduct);
+assert.equal(mvqueenPaletteRoute.brand, "mvqueen");
+assert.equal(mvqueenPaletteRoute.tone, "bold-authoritative");
+assert.equal(mvqueenPaletteRoute.reason, "color:gold");
+
+const sharedPinkOnly: ProductSnapshot = {
+  id: "gid://shopify/Product/shared-pink",
+  title: "Pink Top",
+  tags: [],
+  options: [{ name: "Color", values: ["Pink"] }],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/shared-pink", price: "30.00" }] },
+};
+assert.equal(classifyBrandWorld(sharedPinkOnly).brand, null);
 
 assert.equal(needsMediaAltRepair(""), true);
 assert.equal(
