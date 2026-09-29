@@ -59,15 +59,16 @@ Technology should support luxury rather than weaken the emotional atmosphere.
 
 # MVQueen Production Automation Architecture
 
-The operating model is now explicitly designed around a **phone → Drive → GitHub → validation → Shopify unpublished theme → verification** pipeline.
+The operating model is **GitHub main → validation → Railway/Shopify**, with Google Drive as a phone-friendly knowledge, asset, archive, backup, and manually reviewed intake layer. Drive is never an alternate executable source.
 
 ## System of record
 
 - **MVQUEEN_OS GitHub repository:** engineering/source-of-truth layer.
-- **Google Drive:** controlled phone-friendly intake/workspace for approved assets and documents.
-- **Shopify:** commerce/runtime layer.
-- **Unpublished MVQueen custom theme:** deployment target until final release approval.
-- **GitHub Actions:** continuous validation, deployment, scheduled health checks, and evidence logging.
+- **Google Drive:** controlled phone-friendly knowledge/assets/archive workspace; manual review is required before engineering-source adoption.
+- **Shopify:** live commerce authority.
+- **Railway:** production app, durable worker, and Postgres runtime.
+- **MVQueen — Staging Preview:** unpublished automated theme deployment target.
+- **GitHub Actions:** continuous validation, staging deployment, scheduled runtime health monitoring, and evidence logging.
 
 ## Front-end automation
 
@@ -101,17 +102,13 @@ The deployment workflow:
 
 There is deliberately **no automated publish step**. Publishing remains a final release decision after storefront QA.
 
-## Phone → Drive bridge
+## Drive intake boundary
 
-The Drive bridge polls the configured Drive workspace on a staggered schedule and can also be launched manually from GitHub on a phone.
+Drive intake is manual and review-only. The GitHub workflow validates a configured Drive source only when explicitly dispatched; if Drive credentials/source are missing it fails closed instead of reporting a misleading scheduled success.
 
-Only approved text/data extensions are admitted to the GitHub inbox. The bridge excludes secrets, tokens, credentials, keys, executables, archives, and oversized files. JSON is parsed before commit.
+Only approved text/data extensions may enter a temporary review workspace. Secrets, tokens, credentials, keys, executables, archives, and oversized files are excluded and JSON is parsed before review.
 
-Drive changes are committed by `mvqueen-automation[bot]` into:
-
-`12_Content_Assets/drive_inbox/`
-
-This creates a durable chain of custody from phone-friendly storage into the engineering repository.
+The workflow never commits, pushes, or overwrites GitHub source. Approved material must be intentionally promoted into the canonical repository through normal GitHub changes.
 
 ## Failure behavior
 
