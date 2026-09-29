@@ -112,6 +112,8 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             'aria-expanded="false"',
             "Miss.Princess",
             "routes.root_url",
+            "mvqueen-full-menu",
+            "miss-princess-full-menu",
             "/pages/mvqueen",
             "/pages/miss-princess",
         ),
