@@ -235,8 +235,15 @@ function buildDescriptionHtml(
 
 function brandedSeoTitle(title: string, brandLabel: string): string {
   const suffix = " | " + cleanText(brandLabel);
-  if (suffix.length >= 60) return clip(brandLabel, 60);
-  return clip(title, 60 - suffix.length) + suffix;
+  if (suffix.length >= 60) return cleanText(brandLabel).slice(0, 60).trim();
+  const available = 60 - suffix.length;
+  const cleanTitle = cleanText(title);
+  const base =
+    cleanTitle.length <= available
+      ? cleanTitle
+      : cleanTitle.slice(0, available).replace(/\s+\S*$/, "").trim() ||
+        cleanTitle.slice(0, available).trim();
+  return base + suffix;
 }
 
 function keywordTitle(title: string, productType: string): string {
