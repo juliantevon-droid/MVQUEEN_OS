@@ -34,6 +34,7 @@ jobs:
         run: python 30_System_Infrastructure/automation/storefront_performance_audit.py
 
   lighthouse:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
