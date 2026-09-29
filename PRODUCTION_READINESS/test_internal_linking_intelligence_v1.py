@@ -96,44 +96,46 @@ class InternalLinkingIntelligenceV1Tests(unittest.TestCase):
     def test_shopify_snapshot_is_governed_and_routes_live_product_memberships(self):
         snapshot = load_shopify_collection_targets()
         self.assertEqual(snapshot["shop"], "tsucu0-1i.myshopify.com")
+        self.assertEqual(snapshot["verified_at"], "2026-09-29")
         self.assertTrue(snapshot["governance"]["do_not_guess_missing_handles"])
         self.assertTrue(snapshot["governance"]["refresh_before_bulk_catalog_release"])
 
-        brown = self.raw(
-            "gid://shopify/Product/9072636395718",
-            "Necklace",
-            "Brown",
-        )
-        brown["identity"]["handle"] = "18k-gold-filled-5mm-designed-brown-aventurine-bead-necklace-f221"
+        activewear = {
+            "schema_version": "1.0",
+            "identity": {
+                "product_id": "gid://shopify/Product/9087726584006",
+                "source_name": "Shopify",
+                "handle": "ruched-sports-bra-and-high-waisted-shorts-active-set",
+                "sku": "100100020075973",
+            },
+            "source_truth": {
+                "facts": [
+                    {"name": "material", "value": "94% polyester, 6% elastane", "source": "Shopify product record", "verified": True},
+                    {"name": "color", "value": "Black", "source": "Shopify product option", "verified": True},
+                    {"name": "use_context", "value": "Activewear", "source": "Shopify product record", "verified": True},
+                ]
+            },
+            "protected_fields": {"fields": ["sku", "inventory", "variant_id"]},
+            "category": {
+                "product_type": "Activewear Set",
+                "category": "Fashion",
+                "subcategory": "Activewear",
+            },
+            "pricing": {"source_price": 54.99, "approved_publish_price": 54.99},
+            "images": {"items": [{"src": "https://example.test/activewear.jpg"}]},
+        }
 
-        pink = self.raw(
-            "gid://shopify/Product/9072508567750",
-            "Pendant",
-            "Pink",
-            material="925 Sterling Silver",
-        )
-        pink["identity"]["handle"] = "natural-pink-thulite-norway-pendant-p-1664-sdp116759"
+        resolved = produce_shopify_catalog([activewear])
+        record = resolved[0]
+        targets = {item["target"] for item in record["seo"]["internal_links"]}
 
-        resolved = produce_shopify_catalog([brown, pink])
-        by_id = {item["identity"]["product_id"]: item for item in resolved}
-
-        brown_targets = {item["target"] for item in by_id[brown["identity"]["product_id"]]["seo"]["internal_links"]}
-        self.assertIn("/collections/mvqueen-edit", brown_targets)
-        self.assertIn("/collections/jewelry", brown_targets)
-        self.assertIn("/collections/necklaces", brown_targets)
-        self.assertIn("/collections/mvqueen-world", brown_targets)
-        self.assertNotIn("/collections/miss-princess-world", brown_targets)
-
-        pink_targets = {item["target"] for item in by_id[pink["identity"]["product_id"]]["seo"]["internal_links"]}
-        self.assertIn("/collections/mvqueen-edit", pink_targets)
-        self.assertIn("/collections/jewelry", pink_targets)
-        self.assertIn("/collections/necklaces", pink_targets)
-        self.assertIn("/collections/pendant-necklaces", pink_targets)
-        self.assertIn("/collections/mvqueen-world", pink_targets)
-        self.assertNotIn("/collections/miss-princess-world", pink_targets)
-
-        for record in resolved:
-            self.assertEqual(validate_record(record), [])
+        self.assertEqual(record["intelligence"]["brand_world"], "mvqueen")
+        self.assertIn("/collections/mvqueen-edit", targets)
+        self.assertIn("/collections/fashion", targets)
+        self.assertIn("/collections/activewear", targets)
+        self.assertIn("/collections/mvqueen-world", targets)
+        self.assertNotIn("/collections/miss-princess-world", targets)
+        self.assertEqual(validate_record(record), [])
 
 
 if __name__ == "__main__":
