@@ -115,8 +115,8 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertEqual(len(result["seo"]["alt_texts"]), 3)
         self.assertTrue(result["seo"]["long_tail_keywords"])
         self.assertTrue(result["content_suite"]["qa"]["passed"])
-        self.assertTrue(result["content_suite"]["collection"]["name"].startswith("MVQueen "))
-        self.assertIn("MVQueen", str(result["content_suite"]["blog"]))
+        self.assertTrue(result["content_suite"]["collection"]["name"].startswith("Miss.Princess "))
+        self.assertIn("Miss.Princess", str(result["content_suite"]["blog"]))
         self.assertTrue(any("pink thulite" in phrase.lower() for phrase in result["seo"]["long_tail_keywords"]))
         self.assertEqual(len(result["creative"]["assets"]), 5)
         self.assertEqual(result["commercial"]["funnel_stage"], "consideration")
@@ -131,13 +131,13 @@ class ProductPipelineV1Tests(unittest.TestCase):
         self.assertIn("mvq:brand:mvqueen", result["merchandising"]["tags"])
         self.assertTrue(result["seo"]["seo_title"].endswith("| MVQueen"))
 
-    def test_pink_sterling_silver_product_routes_to_mvqueen_world(self):
+    def test_pink_sterling_silver_product_routes_to_miss_princess_world(self):
         result = run(self.shopify_specimen())
-        self.assertEqual(result["intelligence"]["brand_world"], "mvqueen")
-        self.assertEqual(result["intelligence"]["brand_name"], "MVQueen")
-        self.assertIn("MVQueen World", result["merchandising"]["collections"])
-        self.assertIn("mvq:brand:mvqueen", result["merchandising"]["tags"])
-        self.assertTrue(result["seo"]["seo_title"].endswith("| MVQueen"))
+        self.assertEqual(result["intelligence"]["brand_world"], "miss-princess")
+        self.assertEqual(result["intelligence"]["brand_name"], "Miss.Princess")
+        self.assertIn("Miss.Princess World", result["merchandising"]["collections"])
+        self.assertIn("mvq:brand:miss-princess", result["merchandising"]["tags"])
+        self.assertTrue(result["seo"]["seo_title"].endswith("| Miss.Princess"))
 
     def test_vivid_sky_blue_product_routes_to_miss_princess_world(self):
         product = self.shopify_specimen()
