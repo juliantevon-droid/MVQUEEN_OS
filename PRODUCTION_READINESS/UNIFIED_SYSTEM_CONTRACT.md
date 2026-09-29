@@ -44,3 +44,12 @@ Legacy sister-brand strings remain detection-only signals and must not appear as
 - `shipping.delivery_estimate` is a product metafield and is not stored in product descriptions.
 - Future imports must preserve or generate the governed store default; they must never invent an unsupported faster shipping time.
 
+
+## Operational integration boundary — 2026-09-29
+
+- Railway `mvqueen-web`, `mvqueen-product-worker`, and Postgres are the production runtime. The background worker continuously owns queue draining, retries, dead-letter handling, and reconciliation.
+- GitHub Actions monitors production `/healthz` every five minutes. It does not duplicate worker ownership and must not report a secret-missing no-op as runtime success.
+- Railway services are sourced from GitHub `main`; deploy-on-push remains an account-level integration and is not assumed unless Railway reports it enabled.
+- Google Drive is a knowledge/assets/archive/backup layer. Drive intake is explicit, manual, review-only, and fail-closed when source authentication is not configured. It never automatically commits or overwrites `main`.
+- Automated theme deployment targets only the verified unpublished `MVQueen — Staging Preview` theme. The Shopify `MAIN` theme is never an automated write target.
+- Shopify remains the sole authority for current production products, variants, inventory, collections, menus, pages, publications, policies, orders, and live-theme role.
