@@ -34,12 +34,13 @@ jobs:
         run: python 30_System_Infrastructure/automation/storefront_performance_audit.py
 
   lighthouse:
-    if: ${{ vars.MVQUEEN_STOREFRONT_URL != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
       TARGET_URL: ${{ vars.MVQUEEN_STOREFRONT_URL }}
     steps:
+      - name: Resolve storefront URL
+        run: echo "TARGET_URL=${TARGET_URL:-https://tsucu0-1i.myshopify.com}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v7
         with:
