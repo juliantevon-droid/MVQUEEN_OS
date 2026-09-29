@@ -40,11 +40,11 @@ class BrandWorldV1Tests(unittest.TestCase):
         self.assertEqual(result["brand_world"], "miss-princess")
         self.assertEqual(result["brand_routing_confidence"], "high")
 
-    def test_style_can_route_shared_color(self):
+    def test_colorful_base_color_remains_miss_princess_with_style_context(self):
         result = classify_brand_world(
             self.record(color="Pink", style="deep rich polished statement")
         )
-        self.assertEqual(result["brand_world"], "mvqueen")
+        self.assertEqual(result["brand_world"], "miss-princess")
 
     def test_princess_style_can_route_ambiguous_color(self):
         result = classify_brand_world(
