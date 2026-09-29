@@ -38,7 +38,7 @@ class MerchandisingIntelligenceV1Tests(unittest.TestCase):
             self.raw("M1", "Necklace", "Black"),
             self.raw("M2", "Earrings", "Black"),
             self.raw("M3", "Necklace", "Black", material="Sterling silver"),
-            self.raw("P1", "Bracelet", "Pink"),
+            self.raw("P1", "Bracelet", "Sky Blue", material="Acrylic"),
         ]
 
     def ready_catalog(self):
