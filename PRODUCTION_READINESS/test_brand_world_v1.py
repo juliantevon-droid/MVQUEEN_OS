@@ -20,8 +20,8 @@ class BrandWorldV1Tests(unittest.TestCase):
         self.assertEqual(result["brand_name"], "MVQueen")
         self.assertEqual(result["brand_tone"], "bold-authoritative")
 
-    def test_bold_bright_mvqueen_shades_route_to_mvqueen(self):
-        for color in ("Hot Pink", "Sun Yellow", "Gold", "Charcoal"):
+    def test_mvqueen_authority_shades_route_to_mvqueen(self):
+        for color in ("Gold", "Charcoal", "Burgundy", "Mustard"):
             with self.subTest(color=color):
                 result = classify_brand_world(self.record(color=color))
                 self.assertEqual(result["brand_world"], "mvqueen")
@@ -35,10 +35,10 @@ class BrandWorldV1Tests(unittest.TestCase):
                 self.assertEqual(result["brand_name"], "Miss.Princess")
                 self.assertEqual(result["brand_tone"], "vivid-youthful")
 
-    def test_shared_base_color_without_context_fails_closed(self):
+    def test_colorful_base_color_routes_to_miss_princess(self):
         result = classify_brand_world(self.record(color="Pink"))
-        self.assertEqual(result["brand_world"], "needs-review")
-        self.assertEqual(result["brand_routing_confidence"], "review")
+        self.assertEqual(result["brand_world"], "miss-princess")
+        self.assertEqual(result["brand_routing_confidence"], "high")
 
     def test_style_can_route_shared_color(self):
         result = classify_brand_world(
