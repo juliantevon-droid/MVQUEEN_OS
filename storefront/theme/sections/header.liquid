@@ -28,8 +28,10 @@
 {% endif %}
 
 {% assign active_menu = section.settings.menu %}
-{% if is_princess_experience and linklists['miss-princess-menu'].links != blank %}
-  {% assign active_menu = linklists['miss-princess-menu'] %}
+{% if is_princess_experience and linklists['miss-princess-full-menu'].links != blank %}
+  {% assign active_menu = linklists['miss-princess-full-menu'] %}
+{% elsif is_mvqueen_experience and linklists['mvqueen-full-menu'].links != blank %}
+  {% assign active_menu = linklists['mvqueen-full-menu'] %}
 {% endif %}
 
 <header class="mvq-header{% if is_princess_experience %} mvq-header--princess{% elsif is_mvqueen_experience %} mvq-header--mvqueen{% endif %}">
