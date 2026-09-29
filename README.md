@@ -29,7 +29,8 @@ Production has two authorization modes:
 - `ProductJob` is the durable idempotent queue record.
 - `/internal/product-worker` retries failed jobs with exponential backoff, recovers stale leases, and dead-letters exhausted jobs.
 - Reconciliation queries recently updated Shopify products and enqueues anything missed by webhook delivery.
-- `.github/workflows/product-worker.yml` is a five-minute fallback scheduler once `MVQ_PRODUCT_WORKER_URL` and `MVQ_PRODUCT_WORKER_TOKEN` repository secrets point to the deployed HTTPS worker endpoint.
+- The Railway `mvqueen-product-worker` service is the continuously running queue/reconciliation owner.
+- `.github/workflows/product-worker.yml` is a five-minute production health monitor that checks the public `/healthz` endpoint; it does not duplicate queue ownership.
 - `/healthz` reports database readiness plus received, processing, failed, and dead-letter queue counts.
 
 Python tooling produces validated artifacts and release evidence but has no default live Shopify transport.
@@ -37,3 +38,9 @@ Python tooling produces validated artifacts and release evidence but has no defa
 ## Safety
 
 Never commit credentials. Protected product identity, SKU, inventory, variant, pricing and image-relationship fields are outside editorial automation.
+
+## Current cross-system boundary
+
+- Railway services are sourced from GitHub `main`, but Railway deploy-on-push remains account-level/manual until the Railway GitHub App is installed on the repository.
+- Google Drive remains assets/knowledge/archive storage. Its GitHub intake workflow is manual and fail-closed; it never commits or overwrites canonical source automatically.
+- Theme changes deploy to the verified unpublished `MVQueen — Staging Preview` theme. The current Shopify MAIN theme is never an automated deployment target.
