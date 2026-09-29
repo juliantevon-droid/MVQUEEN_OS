@@ -85,8 +85,8 @@ def main() -> int:
         "<details>",
         "<summary>Product details</summary>",
         "<summary>Shipping & returns</summary>",
-        'href="/pages/shipping-policy"',
-        'href="/pages/refund-policy"',
+        'href="/policies/shipping-policy"',
+        'href="/policies/refund-policy"',
         "{% render 'trust-badges' %}",
     ]:
         if token not in product:
