@@ -116,7 +116,7 @@ export function buildEnterpriseProductDecision(
     `mvq:family:${slug(classification.family)}`,
     ...collectionRoutingTags(classification),
     ...brandRoutingTags(brandRoute),
-    ...(classification.confidence === "review" ? ["mvq:needs-review"] : []),
+    ...(classification.confidence === "review" || !brandRoute.brand ? ["mvq:needs-review"] : []),
     ...(pricing.state === "ready_for_approval" ? ["mvq:pricing:ready-for-approval"] : [`mvq:pricing:${pricing.state}`]),
     `mvq:commercial:${commercialHealth.state}`,
     `mvq:ads:${commercialHealth.advertisingEligibility}`,
