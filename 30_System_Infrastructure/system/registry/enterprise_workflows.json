@@ -20,6 +20,32 @@
       "failure_mode": "queue failed + visible control-plane error"
     },
     {
+      "id": "drive_intake",
+      "status": "manual_review_connected",
+      "trigger": "explicit operator workflow_dispatch after Drive source configuration",
+      "authority": "Google Drive source material -> GitHub review boundary",
+      "steps": [
+        "copy_to_temporary_workspace",
+        "exclude_credentials_binaries_and_archives",
+        "validate_allowed_extensions_and_json",
+        "upload_review_artifact",
+        "manual_promotion_to_github_if_approved"
+      ],
+      "guard": "fail closed when Drive source/authentication is not configured; workflow never commits, pushes, or overwrites GitHub main"
+    },
+    {
+      "id": "runtime_health_monitor",
+      "status": "connected_read_only",
+      "trigger": "GitHub Actions every five minutes",
+      "authority": "Railway production /healthz",
+      "steps": [
+        "https_request",
+        "require_2xx_response",
+        "surface_failure_in_github_actions"
+      ],
+      "guard": "read-only monitoring only; Railway mvqueen-product-worker retains exclusive queue/reconciliation ownership"
+    },
+    {
       "id": "catalog_health_audit",
       "status": "connected_read_only",
       "trigger": "operator opens Catalog Health",
@@ -164,17 +190,18 @@
     },
     {
       "id": "storefront_release",
-      "status": "connected_staging_first",
+      "status": "connected_staging_first_live_main_protected",
       "trigger": "GitHub main theme change",
       "authority": "GitHub main",
       "steps": [
-        "theme_source",
-        "staging_sync",
+        "theme_source_from_github_main",
+        "deploy_to_mvqueen_staging_preview",
+        "verify_target_remains_unpublished",
         "processing_check",
         "preview_qa",
         "explicit_live_release"
       ],
-      "guard": "no automatic MAIN theme writes"
+      "guard": "automated theme writes target only the verified unpublished MVQueen — Staging Preview theme; Shopify MAIN is never an automated deployment target"
     },
     {
       "id": "paid_media",
