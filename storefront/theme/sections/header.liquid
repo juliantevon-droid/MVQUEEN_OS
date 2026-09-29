@@ -88,26 +88,59 @@
     </div>
   </div>
 
-  <nav id="MVQMobilePanel" class="mvq-mobile-panel mvq-container" data-mvq-panel hidden inert aria-label="{% if is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %} mobile navigation">
-    {% for link in active_menu.links %}
-      {% if link.links != blank %}
-        <details class="mvq-mobile-group">
-          <summary>{{ link.title }}</summary>
-          <div class="mvq-mobile-submenu">
-            {% for child_link in link.links %}
-              <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-              {% if child_link.links != blank %}
-                {% for grandchild_link in child_link.links %}
-                  <a class="mvq-mobile-grandchild" href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+  <nav id="MVQMobilePanel" class="mvq-mobile-panel" data-mvq-panel hidden inert aria-label="{% if is_princess_experience %}Miss.Princess{% elsif is_mvqueen_experience %}MVQueen{% else %}MVQueen house{% endif %} mobile mega menu">
+    <div class="mvq-mobile-mega-inner">
+      <div class="mvq-mobile-mega-head">
+        <span class="mvq-mobile-mega-eyebrow">{% if is_princess_experience %}MISS.PRINCESS MENU{% elsif is_mvqueen_experience %}MVQUEEN MENU{% else %}SHOP THE HOUSE{% endif %}</span>
+        <strong>{% if is_princess_experience %}Soft · Bright · Playful{% elsif is_mvqueen_experience %}Neutral · Bold · Refined{% else %}One house · Two distinct worlds{% endif %}</strong>
+      </div>
+
+      <div class="mvq-mobile-brand-hubs" aria-label="Brand worlds">
+        <a class="mvq-mobile-brand-hub{% if is_mvqueen_experience %} is-active{% endif %}" href="/pages/mvqueen">
+          <span>MVQueen</span>
+          <small>Neutral · Bold · Refined</small>
+        </a>
+        <a class="mvq-mobile-brand-hub mvq-mobile-brand-hub--princess{% if is_princess_experience %} is-active{% endif %}" href="/pages/miss-princess">
+          <span>Miss.Princess</span>
+          <small>Soft · Bright · Playful</small>
+        </a>
+      </div>
+
+      <div class="mvq-mobile-mega-nav">
+        {% for link in active_menu.links %}
+          {% if link.links != blank %}
+            <details class="mvq-mobile-group">
+              <summary>{{ link.title }}</summary>
+              <div class="mvq-mobile-submenu">
+                <a class="mvq-mobile-view-all" href="{{ link.url }}">View all {{ link.title }}</a>
+                {% for child_link in link.links %}
+                  {% if child_link.links != blank %}
+                    <div class="mvq-mobile-mega-cluster">
+                      <a class="mvq-mobile-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
+                      <div class="mvq-mobile-mega-children">
+                        {% for grandchild_link in child_link.links %}
+                          <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% else %}
+                    <a class="mvq-mobile-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
+                  {% endif %}
                 {% endfor %}
-              {% endif %}
-            {% endfor %}
-          </div>
-        </details>
-      {% else %}
-        <a href="{{ link.url }}">{{ link.title }}</a>
-      {% endif %}
-    {% endfor %}
+              </div>
+            </details>
+          {% else %}
+            <a class="mvq-mobile-direct-link" href="{{ link.url }}">{{ link.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="mvq-mobile-mega-utility" aria-label="Store shortcuts">
+        <a href="{{ routes.search_url }}">Search</a>
+        <a href="{{ routes.cart_url }}">Bag ({{ cart.item_count }})</a>
+        <a href="/pages/contact">Contact</a>
+      </div>
+    </div>
   </nav>
 </header>
 
