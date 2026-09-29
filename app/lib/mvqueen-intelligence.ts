@@ -123,31 +123,59 @@ export type BrandWorld = "mvqueen" | "miss-princess";
 export type BrandRouting = {
   brand: BrandWorld | null;
   confidence: "high" | "medium" | "review";
-  tone: "neutral-mature" | "soft-playful" | "review";
+  tone: "bold-authoritative" | "vivid-youthful" | "review";
   reason: string;
 };
 
-const MISS_PRINCESS_COLORS = new Set([
-  "pink", "blush", "rose", "baby-pink", "hot-pink", "coral", "peach",
-  "lavender", "lilac", "mint", "aqua", "turquoise", "sky-blue",
-  "yellow", "lemon", "orange", "lime", "rainbow", "multicolor", "pastel",
+const MVQUEEN_AUTHORITY_COLORS = new Set([
+  "black", "charcoal", "gold", "rich-gold", "deep-gold", "metallic-gold",
+  "burgundy", "wine", "oxblood", "espresso", "chocolate", "deep-brown",
+  "navy", "midnight-blue", "royal-blue", "emerald", "forest-green",
+  "deep-green", "plum", "aubergine", "royal-purple",
+  "fuchsia", "magenta", "hot-pink", "bold-pink",
+  "sun-yellow", "sunflower-yellow", "golden-yellow", "mustard",
+  "silver", "bronze", "champagne",
 ]);
 
-const MVQUEEN_COLORS = new Set([
-  "black", "white", "ivory", "cream", "beige", "nude", "tan", "camel",
-  "brown", "taupe", "khaki", "gray", "grey", "charcoal", "navy",
-  "burgundy", "wine", "olive", "gold", "silver", "bronze", "champagne",
+const MVQUEEN_LUXE_NEUTRALS = new Set([
+  "white", "ivory", "cream", "beige", "nude", "tan", "camel",
+  "brown", "taupe", "khaki", "gray", "grey", "olive",
 ]);
 
-const PRINCESS_STYLE_HINTS = [
-  "playful", "soft", "sweet", "romantic", "cute", "pastel", "bright",
-  "colorful", "youthful", "fun", "floral", "sparkle",
-];
+const MISS_PRINCESS_VIVID_COLORS = new Set([
+  "sky-blue", "baby-blue", "powder-blue", "electric-blue",
+  "aqua", "turquoise", "mint", "seafoam",
+  "lavender", "lilac", "periwinkle",
+  "baby-pink", "blush", "soft-pink", "light-pink", "bubblegum-pink",
+  "coral", "peach", "lime", "lemon", "pastel-yellow", "light-yellow",
+  "tangerine", "bright-orange", "rainbow", "multicolor", "pastel",
+]);
+
+// Pink, yellow, blue, and orange can belong to either world. Generic names do
+// not decide the brand alone; shade/modifier or the rest of the palette does.
+const SHARED_BASE_COLORS = new Set(["pink", "yellow", "blue", "orange"]);
 
 const MVQUEEN_STYLE_HINTS = [
-  "luxury", "elegant", "refined", "bold", "mature", "sleek", "tailored",
-  "minimal", "structured", "classic", "polished", "statement",
+  "bold", "rich", "deep", "saturated", "authority", "authoritative",
+  "luxury", "luxe", "elegant", "refined", "dramatic", "sleek", "tailored",
+  "minimal", "structured", "classic", "polished", "statement", "jewel-tone",
+  "jewel toned", "metallic",
 ];
+
+const PRINCESS_STYLE_HINTS = [
+  "bright", "vivid", "high-light", "high light", "light-intensity",
+  "spring", "summer", "energetic", "energy", "youthful", "playful",
+  "fresh", "airy", "soft", "sweet", "cute", "pastel", "colorful",
+  "romantic", "fun", "floral", "sparkle",
+];
+
+function normalizeColor(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
 function normalizedColorSignals(
   tags: string[] = [],
@@ -156,28 +184,76 @@ function normalizedColorSignals(
 ): string[] {
   const fromTags = tags
     .filter((tag) => tag.toLowerCase().startsWith("mvq:color:"))
-    .map((tag) => tag.toLowerCase().replace("mvq:color:", "").trim())
+    .map((tag) => normalizeColor(tag.replace(/^mvq:color:/i, "")))
     .filter(Boolean);
 
   const fromOptions = (options ?? [])
     .filter((option) => option.name.trim().toLowerCase() === "color")
     .flatMap((option) => option.values ?? [])
-    .map((value) =>
-      value
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, ""),
-    )
+    .map(normalizeColor)
     .filter(Boolean);
+
+  const phraseSignals = [
+    "bold pink", "hot pink", "baby pink", "soft pink", "light pink",
+    "sun yellow", "sunflower yellow", "golden yellow", "pastel yellow", "light yellow",
+    "sky blue", "baby blue", "powder blue", "electric blue", "midnight blue", "royal blue",
+    "rich gold", "deep gold", "metallic gold", "deep brown", "forest green",
+    "deep green", "royal purple", "bright orange",
+  ]
+    .filter((phrase) => title.toLowerCase().includes(phrase))
+    .map(normalizeColor);
 
   const titleTokens = title
     .toLowerCase()
     .replace(/[^a-z0-9 -]+/g, " ")
     .split(/\s+/)
+    .map(normalizeColor)
     .filter(Boolean);
 
-  return Array.from(new Set([...fromOptions, ...fromTags, ...titleTokens]));
+  return Array.from(new Set([...fromOptions, ...fromTags, ...phraseSignals, ...titleTokens]));
+}
+
+function paletteScores(signals: string[], text: string) {
+  let mvqueen = 0;
+  let princess = 0;
+  const mvqueenReasons: string[] = [];
+  const princessReasons: string[] = [];
+
+  for (const signal of signals) {
+    if (MVQUEEN_AUTHORITY_COLORS.has(signal)) {
+      mvqueen += 3;
+      mvqueenReasons.push(`color:${signal}`);
+      continue;
+    }
+    if (MVQUEEN_LUXE_NEUTRALS.has(signal)) {
+      mvqueen += 2;
+      mvqueenReasons.push(`color:${signal}`);
+      continue;
+    }
+    if (MISS_PRINCESS_VIVID_COLORS.has(signal)) {
+      princess += 3;
+      princessReasons.push(`color:${signal}`);
+      continue;
+    }
+    if (SHARED_BASE_COLORS.has(signal)) {
+      // Shared base colors need a shade, companion color, or style context.
+      continue;
+    }
+  }
+
+  const mvqueenStyle = MVQUEEN_STYLE_HINTS.find((hint) => text.includes(hint));
+  const princessStyle = PRINCESS_STYLE_HINTS.find((hint) => text.includes(hint));
+
+  if (mvqueenStyle) {
+    mvqueen += 1;
+    mvqueenReasons.push(`style:${mvqueenStyle}`);
+  }
+  if (princessStyle) {
+    princess += 1;
+    princessReasons.push(`style:${princessStyle}`);
+  }
+
+  return { mvqueen, princess, mvqueenReasons, princessReasons };
 }
 
 export function classifyBrandWorld(
@@ -192,46 +268,28 @@ export function classifyBrandWorld(
     product.title ?? "",
     product.descriptionHtml?.replace(/<[^>]+>/g, " ") ?? "",
     ...(product.tags ?? []),
+    ...(product.options ?? []).flatMap((option) => option.values ?? []),
   ].join(" ").toLowerCase();
 
-  const princessColors = signals.filter((signal) => MISS_PRINCESS_COLORS.has(signal));
-  if (princessColors.length) {
-    return {
-      brand: "miss-princess",
-      confidence: "high",
-      tone: "soft-playful",
-      reason: `color:${princessColors[0]}`,
-    };
-  }
+  const scores = paletteScores(signals, text);
 
-  const mvqueenColors = signals.filter((signal) => MVQUEEN_COLORS.has(signal));
-  if (mvqueenColors.length) {
+  if (scores.mvqueen > scores.princess) {
+    const confidence = scores.mvqueen - scores.princess >= 2 ? "high" : "medium";
     return {
       brand: "mvqueen",
-      confidence: "high",
-      tone: "neutral-mature",
-      reason: `color:${mvqueenColors[0]}`,
+      confidence,
+      tone: "bold-authoritative",
+      reason: scores.mvqueenReasons[0] ?? "palette:deep-saturated-authority",
     };
   }
 
-  const princessStyle = PRINCESS_STYLE_HINTS.find((hint) => text.includes(hint));
-  const mvqueenStyle = MVQUEEN_STYLE_HINTS.find((hint) => text.includes(hint));
-
-  if (princessStyle && !mvqueenStyle) {
+  if (scores.princess > scores.mvqueen) {
+    const confidence = scores.princess - scores.mvqueen >= 2 ? "high" : "medium";
     return {
       brand: "miss-princess",
-      confidence: "medium",
-      tone: "soft-playful",
-      reason: `style:${princessStyle}`,
-    };
-  }
-
-  if (mvqueenStyle && !princessStyle) {
-    return {
-      brand: "mvqueen",
-      confidence: "medium",
-      tone: "neutral-mature",
-      reason: `style:${mvqueenStyle}`,
+      confidence,
+      tone: "vivid-youthful",
+      reason: scores.princessReasons[0] ?? "palette:vivid-high-light-youthful",
     };
   }
 
@@ -239,7 +297,9 @@ export function classifyBrandWorld(
     brand: null,
     confidence: "review",
     tone: "review",
-    reason: "ambiguous-color-or-style",
+    reason: scores.mvqueen || scores.princess
+      ? "balanced-palette-signals"
+      : "ambiguous-color-or-style",
   };
 }
 
