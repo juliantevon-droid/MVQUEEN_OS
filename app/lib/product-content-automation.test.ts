@@ -130,6 +130,33 @@ assert.ok(activewearContent.descriptionHtml.includes("Size &amp; Measurements"))
 assert.ok(activewearContent.descriptionHtml.includes("Features: Ruched"));
 assert.ok(!activewearContent.descriptionHtml.includes("style="));
 
+const previouslyMvqueenBrandedActivewear: ProductSnapshot = {
+  ...activewear,
+  id: "gid://shopify/Product/brand-copy-alignment",
+  vendor: "MVQueen",
+  descriptionHtml: [
+    "<p>Designed for the MVQueen edit, this two-piece active set pairs a ruched sports bra with high-waisted shorts for a streamlined look.</p>",
+    "<ul>",
+    "<li>Features: Ruched</li>",
+    "<li>Number of pieces: Two-piece</li>",
+    "<li>Stretch: Moderate stretch</li>",
+    "<li>Material composition: 94% polyester, 6% elastane</li>",
+    "</ul>",
+  ].join(""),
+};
+const alignedPrincessContent = buildAutomatedProductContent(
+  previouslyMvqueenBrandedActivewear,
+  activewearClassification,
+  "Miss.Princess",
+);
+assert.ok(alignedPrincessContent.shortDescription.includes("Miss.Princess"));
+assert.ok(!alignedPrincessContent.shortDescription.includes("MVQueen"));
+assert.ok(alignedPrincessContent.descriptionHtml.includes("Miss.Princess"));
+assert.ok(!alignedPrincessContent.descriptionHtml.includes("MVQueen"));
+assert.ok(alignedPrincessContent.metaDescription.includes("Miss.Princess"));
+assert.ok(!alignedPrincessContent.metaDescription.includes("MVQueen"));
+assert.ok(alignedPrincessContent.seoTitle.endsWith("| Miss.Princess"));
+
 
 const princessPaletteProduct: ProductSnapshot = {
   id: "gid://shopify/Product/princess-palette",
