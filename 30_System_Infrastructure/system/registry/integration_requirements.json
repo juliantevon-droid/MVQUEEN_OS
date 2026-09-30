@@ -53,13 +53,14 @@
     {
       "capability": "media_alt_publication",
       "provider": "Shopify Files",
-      "state": "permission_required",
+      "state": "connected_runtime_verified",
       "requirements": [
-        "explicit Files write authorization",
-        "dedicated media release gate",
-        "audit"
+        "MVQueen OS has read_files and write_files",
+        "MVQ_MEDIA_ALT_SYNC_ENABLED=true for automatic repair",
+        "only missing or low-quality ALT text is eligible",
+        "file ALT writes are audited through the product worker"
       ],
-      "side_effects": "file ALT text only"
+      "side_effects": "file ALT text only; no source-media relationship changes"
     },
     {
       "capability": "theme_staging_sync",
@@ -188,18 +189,18 @@
     },
     {
       "capability": "production_database",
-      "provider": "managed durable database",
-      "state": "engineered_profile_deployment_required",
+      "provider": "Railway managed PostgreSQL",
+      "state": "connected_production_single_node_restore_drill_required",
       "requirements": [
-        "managed PostgreSQL instance",
+        "Railway PostgreSQL service deployed",
         "MVQ_DATABASE_PROFILE=production",
-        "PostgreSQL DATABASE_URL",
-        "npm run setup:production",
-        "backup policy",
-        "restore test",
-        "monitoring"
+        "PostgreSQL DATABASE_URL connected to web and worker",
+        "persistent volume mounted",
+        "production migrations applied by deployment path",
+        "database restore drill still required",
+        "monitoring remains active"
       ],
-      "side_effects": "replaces development SQLite for production runtime"
+      "side_effects": "durable runtime state, sessions, jobs, commercial state and release audit"
     },
     {
       "capability": "backup_restore",
@@ -216,15 +217,14 @@
     {
       "capability": "commercial_cost_sync",
       "provider": "Shopify inventory",
-      "state": "app_reauthorization_required",
+      "state": "connected_runtime_verified",
       "requirements": [
-        "read_inventory declared in Shopify app",
-        "merchant/app reauthorization with read_inventory",
-        "MVQ_COST_SYNC_ENABLED=true",
-        "product inventoryItem.unitCost populated",
-        "product write approval if persisting commercial cost snapshot"
+        "MVQueen OS has read_inventory",
+        "MVQ_COST_SYNC_ENABLED=true for worker synchronization",
+        "Shopify inventoryItem.unitCost populated",
+        "verified cost snapshot remains the only permitted cost persistence"
       ],
-      "side_effects": "reads authoritative Shopify unit cost; persists verified commercial cost snapshot only on approved product writes"
+      "side_effects": "reads authoritative Shopify unit cost; persists verified commercial cost snapshot only through governed product processing"
     },
     {
       "capability": "commercial_health",
