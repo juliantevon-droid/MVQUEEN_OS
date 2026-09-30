@@ -143,10 +143,10 @@
     },
     {
       "id": "media_alt_publication",
-      "status": "scope_required",
-      "authority": "Shopify Files",
-      "execution": "disabled_until_explicit_scope_authorization",
-      "writes": "none"
+      "status": "connected_runtime_verified",
+      "authority": "Shopify Files via MVQueen OS",
+      "execution": "permission_and_env_gated_missing_alt_repair",
+      "writes": "image_alt_text_only"
     },
     {
       "id": "theme",
@@ -192,9 +192,9 @@
     },
     {
       "id": "production_database",
-      "status": "engineered_deployment_required",
-      "authority": "managed_postgresql",
-      "execution": "production_profile_with_runtime_guard",
+      "status": "connected_production_single_node_restore_drill_required",
+      "authority": "Railway managed PostgreSQL",
+      "execution": "production_postgresql_with_persistent_volume",
       "writes": "runtime_state_sessions_jobs_release_audit"
     },
     {
@@ -206,9 +206,9 @@
     },
     {
       "id": "commercial_cost_sync",
-      "status": "engineered_reauthorization_required",
+      "status": "connected_runtime_verified",
       "authority": "Shopify inventoryItem.unitCost",
-      "execution": "permission_and_env_gated",
+      "execution": "permission_and_env_gated_worker_read",
       "writes": "verified commercial cost snapshot only"
     },
     {
@@ -248,16 +248,16 @@
     },
     {
       "id": "security_automation",
-      "status": "connected",
+      "status": "connected_repository_visibility_mismatch",
       "authority": "GitHub_main",
       "execution": "codeql_dependency_audit_secret_pattern_ci",
       "writes": "none"
     },
     {
       "id": "performance_governance",
-      "status": "connected",
-      "authority": "GitHub_main",
-      "execution": "static_budget_plus_optional_lighthouse",
+      "status": "connected_live_budget_failing",
+      "authority": "GitHub_main_and_live_storefront",
+      "execution": "static_budget_plus_live_lighthouse",
       "writes": "none"
     },
     {
@@ -269,10 +269,10 @@
     },
     {
       "id": "localization",
-      "status": "prepared_four_locales",
-      "authority": "storefront_theme",
-      "execution": "translation_key_driven",
-      "writes": "theme_source_only"
+      "status": "prepared_four_locales_live_english_only",
+      "authority": "storefront_theme_and_Shopify_locales",
+      "execution": "translation_key_driven; only en currently published",
+      "writes": "theme_source_and_explicit_locale_publication_only"
     },
     {
       "id": "control_registry",
