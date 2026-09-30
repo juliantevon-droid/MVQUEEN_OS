@@ -97,7 +97,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertIn("MVQ_PRICE_PUBLISH_ENABLED", by_capability["approved_price_publish"]["requirements"])
         self.assertEqual(by_capability["commercial_cost_sync"]["state"], "connected_runtime_verified")
         self.assertIn("MVQueen OS has read_inventory", by_capability["commercial_cost_sync"]["requirements"])
-        self.assertEqual(by_capability["commercial_health"]["state"], "engineered_runtime_migration_required")
+        self.assertEqual(by_capability["commercial_health"]["state"], "connected_runtime_verified")
         self.assertIn("advertising_eligibility=eligible for every promoted product", by_capability["paid_advertising"]["requirements"])
         self.assertIn("positive max_cac_at_target_margin", by_capability["paid_advertising"]["requirements"])
         self.assertIn("target_margin_roas_floor", by_capability["paid_advertising"]["requirements"])
