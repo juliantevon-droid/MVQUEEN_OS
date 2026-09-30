@@ -582,3 +582,30 @@ Do not reopen retired branch, Drive-mirror, local-rclone, direct-Python-Shopify-
 
 - Merchant completed Railway GitHub App authorization for `juliantevon-droid/MVQUEEN_OS`.
 - This documentation-only commit is the production auto-deploy verification probe. Railway is considered fully GitHub-connected only if both existing services deploy this exact `main` commit automatically without a manual redeploy command.
+
+## Enterprise integration audit update — 2026-09-30
+
+This section supersedes older integration/runtime/catalog assumptions in this file. The detailed authority is `PRODUCTION_READINESS/ENTERPRISE_INTEGRATION_AUDIT_2026-09-30.md`.
+
+Verified current state:
+- Core GitHub, Railway web/worker, Railway PostgreSQL, Shopify MVQueen OS app, product automation, cost sync, media ALT, commercial health, theme staging, CI/security, Drive archive and read-only finance integrations are live.
+- GitHub → Railway web/worker deployment parity is verified; explicit service watch patterns are configured.
+- Shopify MVQueen OS has read/write products, files, content and metaobjects plus read inventory and orders; fulfillment/customer/payment write scopes remain intentionally absent.
+- Current Shopify production catalog at audit time is 1 ACTIVE product with 12 variants and 10 READY media assets with ALT text.
+- Google & YouTube is a connected Shopify sales channel and the current product is present.
+- United States is the only active Shopify Market; English is the only published locale. Spanish, French and Brazilian Portuguese are prepared in theme source but not live.
+- Theme automation targets the unpublished `MVQueen — Release Candidate` (ID 154876772550) and refuses MAIN theme deployment.
+- The Release Candidate is healthy and contains the latest performance and PDP/internal-link changes.
+- Live storefront performance remains below the enterprise budget: latest verified Lighthouse Performance 0.64, Accessibility 1.00, Best Practices 0.79, SEO 1.00.
+- Repository visibility remains PUBLIC while MVQueen security policy expects PRIVATE.
+- External analytics export, paid-media execution, and lifecycle/retention providers are not configured in Railway.
+- Recovery prerequisites pass, but PostgreSQL restore and Shopify theme rollback drills remain outstanding.
+- PostgreSQL is persistent but single-node; HA/failover is not currently verified.
+- Full finance reconciliation remains pending actual payment-processor fees, payouts, ad spend, and accounting/tax close inputs.
+- Payment activation certification and branded domain remain merchant-deferred.
+
+Current conclusion:
+- **Core platform:** production-grade and operational.
+- **Every enterprise integration complete:** no.
+- **Safe to continue operating and expanding:** yes.
+- **Remaining work:** security visibility, performance/live release QA, recovery drills, external providers, localization publication, resilience, and full finance reconciliation.
