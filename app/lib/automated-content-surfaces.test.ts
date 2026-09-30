@@ -52,6 +52,25 @@ assert.equal(record.pricing.approved_publish_price, null);
 assert.equal(record.shipping.delivery_estimate, "7–15 business days");
 assert.equal((record.content_suite.metafields as any)["shipping.delivery_estimate"].value, record.shipping.delivery_estimate);
 
+
+const princessFaq = buildAutomatedProductFaq(richProduct, classification, content, "Miss.Princess");
+assert.ok(princessFaq[0].answer.includes("Miss.Princess edit"));
+assert.ok(!princessFaq[0].answer.includes("MVQueen catalog"));
+
+const princessRecord = buildAutomaticSurfaceRecord(
+  richProduct,
+  classification,
+  content,
+  "Miss.Princess",
+);
+assert.ok((princessRecord.content_suite.collection as any).name.startsWith("Miss.Princess "));
+assert.ok((princessRecord.content_suite.blog as any).dek.includes("Miss.Princess"));
+assert.ok(
+  ((princessRecord.content_suite.blog as any).sections as any[])
+    .flatMap((section: any) => section.paragraphs ?? [])
+    .some((paragraph: string) => paragraph.includes("Miss.Princess")),
+);
+
 const sparseProduct: ProductSnapshot = {
   ...richProduct,
   id: "gid://shopify/Product/2",
