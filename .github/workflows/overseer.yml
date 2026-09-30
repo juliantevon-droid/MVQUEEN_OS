@@ -114,6 +114,16 @@ jobs:
             --input build/enterprise_crawler/report.json \
             --output build/agents/assignments.json
 
+      - name: Execute production specialist agents
+        run: |
+          python 30_System_Infrastructure/overseer/agent_executor.py \
+            --input build/agents/assignments.json \
+            --registry 30_System_Infrastructure/overseer/agent_registry.json \
+            --output build/agents/execution.json
+
+      - name: Validate agent execution layer
+        run: python -m unittest PRODUCTION_READINESS/test_agent_execution_layer.py -v
+
       - name: Validate agent learning contract
         run: |
           python - <<'PY'
@@ -125,6 +135,9 @@ jobs:
           assert ledger['policy']['required_verification_before_reuse'] is True
           assert ledger['policy']['required_approval_for_operating_rule'] is True
           assignments=json.loads(Path('build/agents/assignments.json').read_text())
+          execution=json.loads(Path('build/agents/execution.json').read_text())
+          assert execution['registered_agent_count'] == 14
+          assert execution['production_mutation_performed'] is False
           required={'owner','reviewers','state','required_flow','production_blocking'}
           for item in assignments['assignments']:
               assert required <= item.keys(), item
@@ -148,6 +161,8 @@ jobs:
             'memory/system_intelligence.json'
             'memory/agent_outcome_ledger.json'
             'agents/PRODUCTION_SPECIALIST_AGENT_SYSTEM.md'
+            '30_System_Infrastructure/overseer/agent_registry.json'
+            '30_System_Infrastructure/overseer/agent_executor.py'
           )
           missing=0
           for f in "${required[@]}"; do
@@ -185,6 +200,7 @@ jobs:
             echo '- Enterprise reliability/conversion crawler: executed'
             echo '- Deep all-branch/history repository audit: executed (evidence only)'
             echo '- Specialist-agent routing: PASS'
+            echo '- Specialist-agent execution: PASS'
             echo '- Governed outcome-learning contract: PASS'
             echo
             echo '## Existing stabilization audit'
@@ -192,6 +208,9 @@ jobs:
             echo
             echo '## Enterprise crawler'
             cat 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
+            echo
+            echo '## Specialist agent execution'
+            cat build/agents/execution.md
             echo
             echo '## Deep repository audit'
             cat 30_System_Infrastructure/overseer/reports/MVQUEEN_DEEP_REPO_AUDIT.md
@@ -237,6 +256,8 @@ jobs:
             build/deep_repo_audit/deep_repo_audit.json
             build/deep_repo_audit/deep_repo_audit.md
             build/agents/assignments.json
+            build/agents/execution.json
+            build/agents/execution.md
 
       - name: Fail workflow when enterprise crawler reports critical findings
         if: steps.enterprise_crawler.outcome == 'failure'

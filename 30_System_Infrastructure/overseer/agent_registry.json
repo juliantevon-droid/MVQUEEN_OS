@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "system": "MVQUEEN_OS",
+  "execution_policy": {
+    "default_mode": "analysis_and_recommendation",
+    "production_mutation_allowed": false,
+    "self_approval_allowed": false,
+    "learning_can_expand_authority": false,
+    "protected_actions_require_explicit_approval": true
+  },
+  "agents": [
+    {"id":"catalog","name":"Catalog Agent","owns":["catalog","product_normalization","taxonomy","catalog_completeness"],"can_mutate_production":false},
+    {"id":"editorial","name":"Editorial Agent","owns":["editorial","brand_drift","titles","descriptions","brand_vocabulary"],"can_mutate_production":false},
+    {"id":"seo","name":"SEO Agent","owns":["seo","metadata","internal_linking","structured_search"],"can_mutate_production":false},
+    {"id":"merchandising","name":"Merchandising Agent","owns":["merchandising","collections","navigation","recommendations"],"can_mutate_production":false},
+    {"id":"conversion","name":"Conversion Agent","owns":["conversion","pdp","collection","home_funnel"],"can_mutate_production":false},
+    {"id":"mobile_ux","name":"Mobile UX Agent","owns":["mobile_ux","responsive_interaction","purchase_path"],"can_mutate_production":false},
+    {"id":"theme","name":"Theme Agent","owns":["theme","liquid","storefront_components"],"can_mutate_production":false},
+    {"id":"shopify","name":"Shopify Agent","owns":["shopify","config_drift","admin_api","runtime_integration"],"can_mutate_production":false},
+    {"id":"data","name":"Data Agent","owns":["data","duplication","metafields","schemas","data_quality"],"can_mutate_production":false},
+    {"id":"performance","name":"Performance Agent","owns":["performance","payload","rendering_efficiency"],"can_mutate_production":false},
+    {"id":"accessibility","name":"Accessibility Agent","owns":["accessibility","semantic_html","keyboard","screen_reader"],"can_mutate_production":false},
+    {"id":"security","name":"Security Agent","owns":["security","credentials","permissions","unsafe_writes"],"can_mutate_production":false},
+    {"id":"qa","name":"QA Agent","owns":["qa","syntax","unfinished_work","regression","integration","contract_testing"],"can_mutate_production":false},
+    {"id":"release","name":"Release Agent","owns":["release","publishing_boundary","production_gate","rollback_readiness"],"can_mutate_production":false}
+  ]
+}
