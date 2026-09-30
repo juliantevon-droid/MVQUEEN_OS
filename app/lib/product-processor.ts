@@ -2,6 +2,10 @@ import { createHash } from "node:crypto";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
+import {
+  buildCatalogAttributeEnrichment,
+  buildCatalogAttributeMetafields,
+} from "./catalog-attribute-enrichment";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
 import {
   buildAutomatedProductContent,
@@ -16,7 +20,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v16-brand-copy-alignment";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v17-catalog-google-enrichment";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -429,6 +433,12 @@ export async function processProductJob(
       c.confidence === "review"
         ? null
         : buildAutomatedProductContent(product, c, brandLabel);
+    const attributeEnrichment = buildCatalogAttributeEnrichment(product, c);
+    const attributeMetafields = buildCatalogAttributeMetafields(
+      attributeEnrichment,
+      c,
+      brandRoute.brand,
+    );
     const systemPrefixes = [
       "mvq:department:",
       "mvq:family:",
@@ -585,6 +595,7 @@ export async function processProductJob(
         type: "single_line_text_field",
         value: c.confidence === "review" || !brandRoute.brand ? "needs_review" : "classified",
       },
+      ...attributeMetafields,
       ...(EDITORIAL_PUBLISH_ENABLED && automatedContent
         ? [
             {
