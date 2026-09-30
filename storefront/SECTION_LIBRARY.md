@@ -13,11 +13,13 @@ These optional Online Store sections are installed in **MVQueen — Release Cand
 | MVQUEEN Collapsible tabs | Native expandable rows for details, FAQs, or linked page content. Optionally keep just one row open. |
 | MVQUEEN Testimonials | Merchant-entered customer quotes, optional attribution, portrait, and rating. Empty quotes stay hidden on the storefront. |
 | MVQUEEN Image overlay | Image banner with text, a link, adjustable shading, and separate mobile imagery. |
-| MVQUEEN Parallax | Image banner with adjustable scroll movement; motion is disabled for reduced-motion preferences and off on mobile by default. |
+| MVQUEEN Parallax | Up to eight reorderable image blocks, each with desktop/mobile images, text, and a link. Panels stack vertically with adjustable spacing and shared heights and motion controls. Existing main-panel content remains first. Motion is disabled for reduced-motion preferences and off on mobile by default. |
 | MVQUEEN Product slider | Selected products or products from a collection, with swipe and arrow controls. |
 | MVQUEEN Collections | Grid of selected collections with images, titles, and optional descriptions. |
 
 All sections include spacing and white, MVQUEEN ivory, or Miss.Princess blush palette controls. Product and collection cards use the store's real catalog. Add your own photography and approved customer quotes; no customer endorsements are supplied.
+
+For multiple parallax images, open **MVQUEEN Parallax → Add block → Image**. Choose the desktop image and optional mobile image in each block, then drag blocks to reorder them. A missing mobile image uses the desktop image; a mobile image alone also works on both screen sizes. Keep the optional main panel for an opening banner, or clear its content to use only the blocks. Blank blocks appear only in the editor. Mobile images work whether or not mobile motion is enabled.
 
 ## Editor and accessibility behavior
 
@@ -40,3 +42,9 @@ node storefront/tests/section-kit.browser.cjs
 ```
 
 Use `PLAYWRIGHT_MODULE` to specify an installed Playwright module when it is outside the normal Node module search path.
+
+The parallax rendering regression test uses LiquidJS for template logic and local fixtures for Shopify image filters, then checks the rendered HTML in Chromium. It requires development-only `liquidjs` and `playwright` packages; use `LIQUID_MODULE` and `PLAYWRIGHT_MODULE` for custom module paths:
+
+```sh
+node storefront/tests/parallax-render.browser.cjs
+```

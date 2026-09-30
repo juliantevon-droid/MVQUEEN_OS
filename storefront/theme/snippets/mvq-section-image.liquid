@@ -1,12 +1,13 @@
 {% doc %}
   Renders responsive section imagery with optional mobile art direction.
-  @param {image} image - Main image
-  @param {image} [mobile_image] - Optional mobile image
+  @param {image} [image] - Desktop image, falling back to the mobile image
+  @param {image} [mobile_image] - Optional mobile image, falling back to the desktop image
   @param {boolean} [eager] - Prioritize an above the fold image
   @example
   {% render 'mvq-section-image', image: section.settings.image, mobile_image: section.settings.mobile_image %}
 {% enddoc %}
-{% if image != blank %}
+{% assign fallback_image = image | default: mobile_image %}
+{% if fallback_image != blank %}
   {% liquid
     assign image_loading = 'lazy'
     assign image_priority = 'auto'
@@ -19,6 +20,6 @@
     {% if mobile_image != blank %}
       <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 480 }} 480w, {{ mobile_image | image_url: width: 750 }} 750w, {{ mobile_image | image_url: width: 1100 }} 1100w" sizes="100vw" width="{{ mobile_image.width }}" height="{{ mobile_image.height }}">
     {% endif %}
-    {{ image | image_url: width: 2000 | image_tag: widths: '480,750,1100,1600,2000', sizes: '100vw', loading: image_loading, fetchpriority: image_priority, class: 'mvq-kit__image' }}
+    {{ fallback_image | image_url: width: 2000 | image_tag: widths: '480,750,1100,1600,2000', sizes: '100vw', loading: image_loading, fetchpriority: image_priority, class: 'mvq-kit__image' }}
   </picture>
 {% endif %}

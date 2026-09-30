@@ -1,0 +1,19 @@
+{% doc %}
+  Renders one parallax image panel using section or block content.
+  @param {object} panel_settings - Image and content settings for the panel
+  @param {object} section_settings - Shared motion and alignment settings
+  @param {string} [block_attributes] - Theme editor block attributes
+  @param {boolean} [eager] - Prioritize the first panel above the fold
+  @example
+  {% render 'mvq-parallax-panel', panel_settings: block.settings, section_settings: section.settings, block_attributes: block.shopify_attributes %}
+{% enddoc %}
+<mvq-parallax class="mvq-kit__slide" data-strength="{{ section_settings.strength }}" data-mobile="{{ section_settings.mobile_parallax }}" {{ block_attributes }}>
+  <div class="mvq-kit__backdrop mvq-kit__parallax-media">{% render 'mvq-section-image', image: panel_settings.image, mobile_image: panel_settings.mobile_image, eager: eager %}</div>
+  <span class="mvq-kit__shade" aria-hidden="true"></span>
+  <div class="mvq-kit__caption mvq-kit__caption--{{ section_settings.alignment }}">
+    {% if panel_settings.heading != blank %}<h2>{{ panel_settings.heading | escape }}</h2>{% endif %}
+    <div class="mvq-kit__richtext">{{ panel_settings.content }}</div>
+    {% if panel_settings.button_label != blank and panel_settings.button_link != blank %}<a class="mvq-kit__button" href="{{ panel_settings.button_link }}">{{ panel_settings.button_label | escape }}</a>{% endif %}
+    {% if request.design_mode and panel_settings.image == blank and panel_settings.mobile_image == blank and panel_settings.heading == blank %}<p>{{ 'section_kit.empty.banner' | t }}</p>{% endif %}
+  </div>
+</mvq-parallax>

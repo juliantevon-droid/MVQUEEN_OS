@@ -82,6 +82,8 @@
   .mvq-kit__quote figcaption { display: flex; gap: 12px; align-items: center; font-size: .9rem; }
   .mvq-kit__quote img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
   .mvq-kit__stars { letter-spacing: .1em; color: var(--kit-accent); }
+  .mvq-kit__parallax-stack { display: grid; gap: var(--kit-panel-gap, 24px); }
+  .mvq-kit__parallax-stack > * { min-width: 0; }
   .mvq-kit__parallax-media { inset: -64px 0; height: calc(100% + 128px); transform: translate3d(0, var(--kit-parallax-y, 0px), 0); }
   @media (max-width: 749px) {
     .mvq-kit { --kit-gap: 16px; padding-block: calc(var(--kit-space, 64px) * .7); }
