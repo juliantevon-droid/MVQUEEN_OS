@@ -17,13 +17,13 @@
 
   <a class="mvq-gateway-panel mvq-gateway-panel--mvqueen" href="/pages/mvqueen">
     {% if mvqueen_gateway_image != blank %}
-      {{ mvqueen_gateway_image | image_url: width: 1200 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '360, 540, 750, 1000, 1200', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', alt: 'MVQueen' }}
+      {{ mvqueen_gateway_image | image_url: width: 900 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '360, 540, 750, 900', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', decoding: 'async', alt: 'MVQueen' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
       <span class="mvq-gateway-eyebrow">{{ section.settings.mvqueen_eyebrow }}</span>
       <span class="mvq-gateway-brandmark">
-        <img src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&width=360" width="360" height="162" alt="" aria-hidden="true" loading="eager">
+        <img src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&width=300" width="300" height="135" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" decoding="async">
         <span class="mvq-visually-hidden">MVQueen</span>
       </span>
       <span class="mvq-gateway-copy">{{ section.settings.mvqueen_copy }}</span>
@@ -33,7 +33,7 @@
 
   <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="/pages/miss-princess">
     {% if princess_gateway_image != blank %}
-      {{ princess_gateway_image | image_url: width: 1200 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '360, 540, 750, 1000, 1200', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'lazy', fetchpriority: 'low', alt: 'Miss.Princess' }}
+      {{ princess_gateway_image | image_url: width: 900 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '360, 540, 750, 900', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'lazy', fetchpriority: 'low', decoding: 'async', alt: 'Miss.Princess' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
