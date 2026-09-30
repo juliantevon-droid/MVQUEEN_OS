@@ -639,7 +639,7 @@ export async function processProductJob(
                     key: "faq",
                     type: "json",
                     value: JSON.stringify(
-                      buildAutomatedProductFaq(product, c, automatedContent),
+                      buildAutomatedProductFaq(product, c, automatedContent, brandLabel),
                     ),
                   },
                 ]
@@ -881,7 +881,7 @@ export async function processProductJob(
     }
 
     if (AUTO_CONTENT_SURFACES_ENABLED && automatedContent) {
-      const surfaceRecord = buildAutomaticSurfaceRecord(product, c, automatedContent);
+      const surfaceRecord = buildAutomaticSurfaceRecord(product, c, automatedContent, brandLabel);
       await publishAutomaticContentSurfaces(
         admin as unknown as {
           graphql: (
