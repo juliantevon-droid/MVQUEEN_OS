@@ -56,6 +56,15 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
         self.assertEqual(by_id["paid_advertising"]["status"], "adapter_interface_ready_external_connection_required")
         self.assertEqual(by_id["finance"]["status"], "connected_read_only_runtime_scope_checked")
         self.assertEqual(by_id["finance"]["writes"], "none")
+        self.assertEqual(by_id["media_alt_publication"]["status"], "connected_runtime_verified")
+        self.assertEqual(by_id["commercial_cost_sync"]["status"], "connected_runtime_verified")
+        self.assertEqual(
+            by_id["production_database"]["status"],
+            "connected_production_single_node_restore_drill_required",
+        )
+        self.assertEqual(by_id["localization"]["status"], "prepared_four_locales_live_english_only")
+        self.assertEqual(by_id["performance_governance"]["status"], "connected_live_budget_failing")
+        self.assertEqual(by_id["security_automation"]["status"], "connected_repository_visibility_mismatch")
 
     def test_operational_workflows_cover_enterprise_domains(self):
         ids = {item["id"] for item in self.workflows["workflows"]}
@@ -78,13 +87,16 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
 
     def test_integration_requirements_make_blockers_explicit(self):
         by_capability = {item["capability"]: item for item in self.integrations["integrations"]}
-        self.assertEqual(by_capability["media_alt_publication"]["state"], "permission_required")
+        self.assertEqual(by_capability["media_alt_publication"]["state"], "connected_runtime_verified")
         self.assertEqual(by_capability["paid_advertising"]["state"], "external_connection_required")
-        self.assertEqual(by_capability["production_database"]["state"], "engineered_profile_deployment_required")
+        self.assertEqual(
+            by_capability["production_database"]["state"],
+            "connected_production_single_node_restore_drill_required",
+        )
         self.assertEqual(by_capability["approved_price_publish"]["state"], "engineered_not_runtime_verified")
         self.assertIn("MVQ_PRICE_PUBLISH_ENABLED", by_capability["approved_price_publish"]["requirements"])
-        self.assertEqual(by_capability["commercial_cost_sync"]["state"], "app_reauthorization_required")
-        self.assertIn("read_inventory declared in Shopify app", by_capability["commercial_cost_sync"]["requirements"])
+        self.assertEqual(by_capability["commercial_cost_sync"]["state"], "connected_runtime_verified")
+        self.assertIn("MVQueen OS has read_inventory", by_capability["commercial_cost_sync"]["requirements"])
         self.assertEqual(by_capability["commercial_health"]["state"], "engineered_runtime_migration_required")
         self.assertIn("advertising_eligibility=eligible for every promoted product", by_capability["paid_advertising"]["requirements"])
         self.assertIn("positive max_cac_at_target_margin", by_capability["paid_advertising"]["requirements"])
