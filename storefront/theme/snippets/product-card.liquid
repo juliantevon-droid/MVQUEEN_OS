@@ -13,13 +13,13 @@
   endif
 %}
 <article class="mvq-card{% if is_jewelry %} mvq-card--jewelry{% endif %}">
-  <a class="mvq-card-link" href="{{ product.url }}" aria-label="View {{ product_label }}">
+  <a class="mvq-card-link" href="{{ product.url }}">
     <div class="mvq-card-media">
       {% if card_image %}
-        {{ card_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', sizes: '(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw', alt: card_image.alt | default: product.title | escape }}
+        {{ card_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: '(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw', alt: card_image.alt | default: product.title | escape }}
         {% if second_image %}
           <span class="mvq-card-media-alt" aria-hidden="true">
-            {{ second_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', sizes: '(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw', alt: '' }}
+            {{ second_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: '(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw', alt: '' }}
           </span>
         {% endif %}
       {% else %}

@@ -65,10 +65,12 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
     "brand_world_routes": (
         "sections/brand-gateway.liquid",
         (
+            "mvq-gateway-panel--mvqueen",
+            "mvq-gateway-panel--princess",
             "/pages/mvqueen",
             "/pages/miss-princess",
-            "Enter the full MVQueen experience",
-            "Enter the full Miss.Princess experience",
+            "section.settings.mvqueen_cta",
+            "section.settings.princess_cta",
         ),
     ),
     "homepage_canonical": (
