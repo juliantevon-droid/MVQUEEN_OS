@@ -16,7 +16,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v15-brand-world-policy";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v16-brand-copy-alignment";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
