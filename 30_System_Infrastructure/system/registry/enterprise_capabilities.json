@@ -164,10 +164,10 @@
     },
     {
       "id": "deployment",
-      "status": "governed",
+      "status": "connected_runtime_and_staging_verified",
       "authority": "GitHub_main",
-      "execution": "ci_and_explicit_release",
-      "writes": "approval_required"
+      "execution": "GitHub_checks_to_Railway_web_worker_and_unpublished_Shopify_theme",
+      "writes": "Railway_runtime_and_unpublished_theme_only; live_theme_requires_explicit_release"
     },
     {
       "id": "finance",
