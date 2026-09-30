@@ -1,0 +1,15 @@
+{% doc %}
+  Renders progressively enhanced carousel controls.
+  @param {string} track_id - ID of the controlled track
+  @param {boolean} [autoplay] - Whether to include a play and pause control
+  @example
+  {% render 'mvq-carousel-controls', track_id: track_id, autoplay: section.settings.autoplay %}
+{% enddoc %}
+<div class="mvq-kit__controls" data-controls hidden>
+  <button class="mvq-kit__control" type="button" data-previous aria-controls="{{ track_id }}" aria-label="{{ 'section_kit.controls.previous' | t | escape }}"><span aria-hidden="true">←</span></button>
+  <span class="mvq-kit__status" data-status data-format="{{ 'section_kit.controls.position' | t: current: '[current]', total: '[total]' | escape }}" aria-live="off"></span>
+  <button class="mvq-kit__control" type="button" data-next aria-controls="{{ track_id }}" aria-label="{{ 'section_kit.controls.next' | t | escape }}"><span aria-hidden="true">→</span></button>
+  {% if autoplay %}
+    <button class="mvq-kit__control" type="button" data-play data-play-label="{{ 'section_kit.controls.play' | t | escape }}" data-pause-label="{{ 'section_kit.controls.pause' | t | escape }}" aria-controls="{{ track_id }}" aria-pressed="false">{{ 'section_kit.controls.play' | t }}</button>
+  {% endif %}
+</div>

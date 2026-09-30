@@ -41,5 +41,38 @@
       "updates_title": "Order updates",
       "updates_text": "Order confirmation and status information are available after purchase."
     }
+  },
+  "section_kit": {
+    "controls": {
+      "previous": "Previous",
+      "next": "Next",
+      "position": "{{ current }} / {{ total }}",
+      "play": "Play slideshow",
+      "pause": "Pause slideshow",
+      "carousel": "carousel",
+      "slide": "slide",
+      "compare": "Adjust the before and after comparison",
+      "read_article": "Read {{ title }}",
+      "read_more": "Read more",
+      "from": "From",
+      "product_details": "Product details",
+      "rating": "{{ rating }} out of 5 stars",
+      "sold_out": "Sold out",
+      "sale": "Sale",
+      "view_image": "View image link"
+    },
+    "empty": {
+      "slide": "Add an image, heading, or text to this slide.",
+      "comparison": "Select both a before image and an after image.",
+      "blog": "Select a blog with published articles.",
+      "tab": "Select a collection, product description, or add content to this tab.",
+      "image": "Select an image.",
+      "product": "Select a product, or use this section on a product page.",
+      "accordion": "Add content or select a page for this accordion.",
+      "quote": "Add a real customer quote to display this testimonial.",
+      "banner": "Select an image and add your message.",
+      "products": "Select products or a collection with available products.",
+      "collections": "Select the collections to feature."
+    }
   }
 }

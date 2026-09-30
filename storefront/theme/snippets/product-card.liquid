@@ -1,8 +1,14 @@
+{% doc %}
+  Renders a product card with responsive imagery and the selected variant price.
+  @param {product} product - Product to display
+  @example
+  {% render 'product-card', product: product %}
+{% enddoc %}
 {% liquid
   assign card_image = product.featured_image
+  assign card_image_alt = card_image.alt | default: product.title
   assign second_image = product.images[1]
   assign first_variant = product.selected_or_first_available_variant
-  assign product_label = product.title | escape
   assign has_sale = false
   assign is_jewelry = false
   if product.tags contains 'mvq:category:jewelry'
@@ -16,7 +22,7 @@
   <a class="mvq-card-link" href="{{ product.url }}">
     <div class="mvq-card-media">
       {% if card_image %}
-        {{ card_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: '(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw', alt: card_image.alt | default: product.title | escape }}
+        {{ card_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: '(max-width: 800px) 66vw, 33vw', alt: card_image_alt }}
         {% if second_image %}
           <span class="mvq-card-media-alt" aria-hidden="true">
             {{ second_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: '(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw', alt: '' }}
@@ -25,8 +31,8 @@
       {% else %}
         <div class="mvq-card-media-placeholder" aria-hidden="true"></div>
       {% endif %}
-      {% unless product.available %}<span class="mvq-badge">Sold out</span>{% endunless %}
-      {% if has_sale %}<span class="mvq-badge">Sale</span>{% endif %}
+      {% unless product.available %}<span class="mvq-badge">{{ 'section_kit.controls.sold_out' | t }}</span>{% endunless %}
+      {% if has_sale %}<span class="mvq-badge">{{ 'section_kit.controls.sale' | t }}</span>{% endif %}
     </div>
     <div class="mvq-card-info">
       {% if product.type != blank %}<p class="mvq-card-type">{{ product.type }}</p>{% endif %}

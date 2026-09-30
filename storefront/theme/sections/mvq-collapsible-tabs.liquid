@@ -1,0 +1,129 @@
+{% render 'mvq-section-kit' %}
+{% if section.blocks.size > 0 %}
+<div class="mvq-kit mvq-kit--{{ section.settings.palette }}" style="--kit-space: {{ section.settings.spacing }}px; --kit-columns: {{ section.settings.columns | default: 3 }}; --kit-ratio: {{ section.settings.ratio | default: 1 }};">
+  <div class="mvq-kit__wrap">
+    {% render 'mvq-section-heading', heading: section.settings.heading, intro: section.settings.intro %}
+    <div class="mvq-kit__accordions">
+      {% for block in section.blocks %}
+        {% if block.settings.content != blank or block.settings.page.content != blank or request.design_mode %}
+          <details class="mvq-kit__details" {% if section.settings.exclusive %}name="MVQAccordion-{{ section.id }}"{% endif %} {% if forloop.first and section.settings.open_first %}open{% endif %} {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.title | escape }}</summary>
+            <div class="mvq-kit__richtext">{{ block.settings.content }}{{ block.settings.page.content }}{% if request.design_mode and block.settings.content == blank and block.settings.page == blank %}<p>{{ 'section_kit.empty.accordion' | t }}</p>{% endif %}</div>
+          </details>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% schema %}
+{
+  "name": "MVQUEEN Collapsible tabs",
+  "tag": "section",
+  "class": "mvq-editor-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ],
+    "templates": [
+      "password"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Good to know"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first row",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "exclusive",
+      "label": "Keep only one row open",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "palette",
+      "label": "Palette",
+      "options": [
+        {
+          "value": "neutral",
+          "label": "White"
+        },
+        {
+          "value": "mvqueen",
+          "label": "MVQUEEN ivory"
+        },
+        {
+          "value": "princess",
+          "label": "Miss.Princess blush"
+        }
+      ],
+      "default": "neutral"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Section spacing",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "MVQUEEN Collapsible tabs",
+      "blocks": [
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Collapsible row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Details"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page content"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

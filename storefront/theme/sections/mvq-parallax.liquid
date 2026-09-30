@@ -1,0 +1,165 @@
+{% render 'mvq-section-kit' %}
+{% liquid
+  assign eager = true
+  if section.index > 1
+    assign eager = false
+  endif
+%}
+<div class="mvq-kit mvq-kit--{{ section.settings.palette }}" style="--kit-space: {{ section.settings.spacing }}px; --kit-height: {{ section.settings.height }}px; --kit-mobile-height: {{ section.settings.mobile_height }}px; --kit-overlay: {{ section.settings.overlay | divided_by: 100.0 }};">
+  <div class="mvq-kit__wrap">
+    <mvq-parallax class="mvq-kit__slide" data-strength="{{ section.settings.strength }}" data-mobile="{{ section.settings.mobile_parallax }}">
+      <div class="mvq-kit__backdrop mvq-kit__parallax-media">{% render 'mvq-section-image', image: section.settings.image, mobile_image: section.settings.mobile_image, eager: eager %}</div>
+      <span class="mvq-kit__shade" aria-hidden="true"></span>
+      <div class="mvq-kit__caption mvq-kit__caption--{{ section.settings.alignment }}">
+        {% if section.settings.heading != blank %}<h2>{{ section.settings.heading | escape }}</h2>{% endif %}
+        <div class="mvq-kit__richtext">{{ section.settings.content }}</div>
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}<a class="mvq-kit__button" href="{{ section.settings.button_link }}">{{ section.settings.button_label | escape }}</a>{% endif %}
+        {% if request.design_mode and section.settings.image == blank and section.settings.heading == blank %}<p>{{ 'section_kit.empty.banner' | t }}</p>{% endif %}
+      </div>
+    </mvq-parallax>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "MVQUEEN Parallax",
+  "tag": "section",
+  "class": "mvq-editor-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ],
+    "templates": [
+      "password"
+    ]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Desktop height",
+      "min": 320,
+      "max": 760,
+      "step": 40,
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile height",
+      "min": 320,
+      "max": 600,
+      "step": 40,
+      "default": 440
+    },
+    {
+      "type": "range",
+      "id": "overlay",
+      "label": "Dark overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "strength",
+      "label": "Parallax movement",
+      "min": 0,
+      "max": 48,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_parallax",
+      "label": "Enable motion on mobile",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "palette",
+      "label": "Palette",
+      "options": [
+        {
+          "value": "neutral",
+          "label": "White"
+        },
+        {
+          "value": "mvqueen",
+          "label": "MVQUEEN ivory"
+        },
+        {
+          "value": "princess",
+          "label": "Miss.Princess blush"
+        }
+      ],
+      "default": "neutral"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Section spacing",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "MVQUEEN Parallax"
+    }
+  ]
+}
+{% endschema %}

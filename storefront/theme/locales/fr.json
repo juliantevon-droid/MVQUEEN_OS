@@ -41,5 +41,38 @@
       "updates_title": "Suivi de commande",
       "updates_text": "La confirmation et le statut de la commande sont disponibles après l’achat."
     }
+  },
+  "section_kit": {
+    "controls": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "position": "{{ current }} / {{ total }}",
+      "play": "Lancer le diaporama",
+      "pause": "Mettre le diaporama en pause",
+      "carousel": "carrousel",
+      "slide": "diapositive",
+      "compare": "Ajuster la comparaison avant et après",
+      "read_article": "Lire {{ title }}",
+      "read_more": "Lire la suite",
+      "from": "À partir de",
+      "product_details": "Détails du produit",
+      "rating": "{{ rating }} sur 5 étoiles",
+      "sold_out": "Épuisé",
+      "sale": "Promotion",
+      "view_image": "Ouvrir le lien de l’image"
+    },
+    "empty": {
+      "slide": "Ajoutez une image, un titre ou du texte à cette diapositive.",
+      "comparison": "Sélectionnez une image avant et une image après.",
+      "blog": "Sélectionnez un blog contenant des articles publiés.",
+      "tab": "Sélectionnez une collection, une description de produit ou ajoutez du contenu à cet onglet.",
+      "image": "Sélectionnez une image.",
+      "product": "Sélectionnez un produit ou utilisez cette section sur une page produit.",
+      "accordion": "Ajoutez du contenu ou sélectionnez une page pour cet accordéon.",
+      "quote": "Ajoutez un véritable avis client pour afficher ce témoignage.",
+      "banner": "Sélectionnez une image et ajoutez votre message.",
+      "products": "Sélectionnez des produits ou une collection contenant des produits disponibles.",
+      "collections": "Sélectionnez les collections à mettre en avant."
+    }
   }
 }

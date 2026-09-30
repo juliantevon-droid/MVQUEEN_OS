@@ -1,0 +1,13 @@
+{% doc %}
+  Renders the editable heading and introduction for a section.
+  @param {string} [heading] - Heading text
+  @param {string} [intro] - Rich text introduction
+  @example
+  {% render 'mvq-section-heading', heading: section.settings.heading, intro: section.settings.intro %}
+{% enddoc %}
+{% if heading != blank or intro != blank %}
+  <header class="mvq-kit__head">
+    {% if heading != blank %}<h2>{{ heading | escape }}</h2>{% endif %}
+    {% if intro != blank %}<div class="mvq-kit__richtext">{{ intro }}</div>{% endif %}
+  </header>
+{% endif %}

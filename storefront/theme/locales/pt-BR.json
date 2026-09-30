@@ -41,5 +41,38 @@
       "updates_title": "Atualizações do pedido",
       "updates_text": "A confirmação e o status do pedido ficam disponíveis após a compra."
     }
+  },
+  "section_kit": {
+    "controls": {
+      "previous": "Anterior",
+      "next": "Próximo",
+      "position": "{{ current }} / {{ total }}",
+      "play": "Reproduzir apresentação",
+      "pause": "Pausar apresentação",
+      "carousel": "carrossel",
+      "slide": "slide",
+      "compare": "Ajustar a comparação de antes e depois",
+      "read_article": "Ler {{ title }}",
+      "read_more": "Leia mais",
+      "from": "A partir de",
+      "product_details": "Detalhes do produto",
+      "rating": "{{ rating }} de 5 estrelas",
+      "sold_out": "Esgotado",
+      "sale": "Oferta",
+      "view_image": "Abrir link da imagem"
+    },
+    "empty": {
+      "slide": "Adicione uma imagem, um título ou texto a este slide.",
+      "comparison": "Selecione uma imagem de antes e uma de depois.",
+      "blog": "Selecione um blog com artigos publicados.",
+      "tab": "Selecione uma coleção, a descrição de um produto ou adicione conteúdo a esta aba.",
+      "image": "Selecione uma imagem.",
+      "product": "Selecione um produto ou use esta seção em uma página de produto.",
+      "accordion": "Adicione conteúdo ou selecione uma página para este acordeão.",
+      "quote": "Adicione um depoimento real de cliente para exibi-lo.",
+      "banner": "Selecione uma imagem e adicione sua mensagem.",
+      "products": "Selecione produtos ou uma coleção com produtos disponíveis.",
+      "collections": "Selecione as coleções que deseja destacar."
+    }
   }
 }

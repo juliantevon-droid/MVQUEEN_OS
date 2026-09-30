@@ -41,5 +41,38 @@
       "updates_title": "Actualizaciones del pedido",
       "updates_text": "La confirmación y el estado del pedido están disponibles después de la compra."
     }
+  },
+  "section_kit": {
+    "controls": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "position": "{{ current }} / {{ total }}",
+      "play": "Reproducir presentación",
+      "pause": "Pausar presentación",
+      "carousel": "carrusel",
+      "slide": "diapositiva",
+      "compare": "Ajustar la comparación del antes y el después",
+      "read_article": "Leer {{ title }}",
+      "read_more": "Leer más",
+      "from": "Desde",
+      "product_details": "Detalles del producto",
+      "rating": "{{ rating }} de 5 estrellas",
+      "sold_out": "Agotado",
+      "sale": "Oferta",
+      "view_image": "Abrir enlace de la imagen"
+    },
+    "empty": {
+      "slide": "Añade una imagen, un título o texto a esta diapositiva.",
+      "comparison": "Selecciona una imagen del antes y otra del después.",
+      "blog": "Selecciona un blog con artículos publicados.",
+      "tab": "Selecciona una colección, la descripción de un producto o añade contenido a esta pestaña.",
+      "image": "Selecciona una imagen.",
+      "product": "Selecciona un producto o usa esta sección en una página de producto.",
+      "accordion": "Añade contenido o selecciona una página para este acordeón.",
+      "quote": "Añade una opinión real de un cliente para mostrar este testimonio.",
+      "banner": "Selecciona una imagen y añade tu mensaje.",
+      "products": "Selecciona productos o una colección con productos disponibles.",
+      "collections": "Selecciona las colecciones que quieres destacar."
+    }
   }
 }

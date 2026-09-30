@@ -1,0 +1,154 @@
+{% render 'mvq-section-kit' %}
+{% assign showcase_product = section.settings.product | default: product %}
+{% if showcase_product != blank %}
+<div class="mvq-kit mvq-kit--{{ section.settings.palette }}" style="--kit-space: {{ section.settings.spacing }}px; --kit-columns: {{ section.settings.columns | default: 3 }}; --kit-ratio: {{ section.settings.ratio | default: 1 }};">
+  <div class="mvq-kit__wrap">
+    {% render 'mvq-section-heading', heading: section.settings.heading, intro: section.settings.intro %}
+    <div class="mvq-kit__split">
+      {% if showcase_product.featured_image != blank %}<a class="mvq-kit__media" href="{{ showcase_product.url }}" aria-label="{{ showcase_product.title | escape }}">{{ showcase_product.featured_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400,600,900,1200', sizes: '(min-width: 750px) 50vw, 100vw' }}</a>{% endif %}
+      <div>
+        <h3 class="mvq-kit__showcase-title"><a href="{{ showcase_product.url }}">{{ showcase_product.title | escape }}</a></h3>
+        <div class="mvq-kit__showcase-price">{% if showcase_product.price_varies %}{{ 'section_kit.controls.from' | t }} {% endif %}{{ showcase_product.price | money }}</div>
+        <div class="mvq-kit__richtext">{{ section.settings.content }}</div>
+        <a class="mvq-kit__button" href="{{ showcase_product.url }}">{{ section.settings.button_label | escape }}</a>
+        <div class="mvq-kit__accordions">
+          {% if section.settings.show_description and showcase_product.description != blank %}<details class="mvq-kit__details"><summary>{{ 'section_kit.controls.product_details' | t }}</summary><div class="mvq-kit__richtext">{{ showcase_product.description }}</div></details>{% endif %}
+          {% for block in section.blocks %}
+            {% if block.settings.content != blank or block.settings.page.content != blank %}<details class="mvq-kit__details" {{ block.shopify_attributes }}><summary>{{ block.settings.title | escape }}</summary><div class="mvq-kit__richtext">{{ block.settings.content }}{{ block.settings.page.content }}</div></details>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% elsif request.design_mode %}<div class="mvq-kit__wrap"><p class="mvq-kit__empty">{{ 'section_kit.empty.product' | t }}</p></div>{% endif %}
+{% schema %}
+{
+  "name": "MVQUEEN Showcase",
+  "tag": "section",
+  "class": "mvq-editor-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ],
+    "templates": [
+      "password"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "In the spotlight"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Product introduction"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show product description accordion",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Image proportions",
+      "options": [
+        {
+          "value": "1",
+          "label": "Square"
+        },
+        {
+          "value": "0.75",
+          "label": "Portrait"
+        },
+        {
+          "value": "1.3333",
+          "label": "Landscape"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "select",
+      "id": "palette",
+      "label": "Palette",
+      "options": [
+        {
+          "value": "neutral",
+          "label": "White"
+        },
+        {
+          "value": "mvqueen",
+          "label": "MVQUEEN ivory"
+        },
+        {
+          "value": "princess",
+          "label": "Miss.Princess blush"
+        }
+      ],
+      "default": "neutral"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Section spacing",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "MVQUEEN Showcase"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "detail",
+      "name": "Collapsible detail",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Details"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page content"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

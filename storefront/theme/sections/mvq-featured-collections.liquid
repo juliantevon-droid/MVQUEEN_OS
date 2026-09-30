@@ -1,0 +1,122 @@
+{% render 'mvq-section-kit' %}
+{% if section.settings.collections.size > 0 %}
+<div class="mvq-kit mvq-kit--{{ section.settings.palette }}" style="--kit-space: {{ section.settings.spacing }}px; --kit-columns: {{ section.settings.columns | default: 3 }}; --kit-ratio: {{ section.settings.ratio | default: 1 }};">
+  <div class="mvq-kit__wrap">
+    {% render 'mvq-section-heading', heading: section.settings.heading, intro: section.settings.intro %}
+    <div class="mvq-kit__grid">
+      {% for featured_collection in section.settings.collections %}
+        <article class="mvq-kit__card">
+          {% assign collection_image = featured_collection.featured_image %}
+          {% if collection_image != blank %}<a class="mvq-kit__media" href="{{ featured_collection.url }}" tabindex="-1" aria-hidden="true">{{ collection_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,600,900', sizes: '(min-width: 990px) 33vw, 50vw', alt: '' }}</a>{% endif %}
+          <h3><a href="{{ featured_collection.url }}">{{ featured_collection.title | escape }}</a></h3>
+          {% if section.settings.show_description %}<p>{{ featured_collection.description | strip_html | truncatewords: 24 | escape }}</p>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% elsif request.design_mode %}<div class="mvq-kit__wrap"><p class="mvq-kit__empty">{{ 'section_kit.empty.collections' | t }}</p></div>{% endif %}
+{% schema %}
+{
+  "name": "MVQUEEN Collections",
+  "tag": "section",
+  "class": "mvq-editor-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ],
+    "templates": [
+      "password"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured collections"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Collections",
+      "limit": 12
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Image proportions",
+      "options": [
+        {
+          "value": "1",
+          "label": "Square"
+        },
+        {
+          "value": "0.75",
+          "label": "Portrait"
+        },
+        {
+          "value": "1.3333",
+          "label": "Landscape"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show short descriptions",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "palette",
+      "label": "Palette",
+      "options": [
+        {
+          "value": "neutral",
+          "label": "White"
+        },
+        {
+          "value": "mvqueen",
+          "label": "MVQUEEN ivory"
+        },
+        {
+          "value": "princess",
+          "label": "Miss.Princess blush"
+        }
+      ],
+      "default": "neutral"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Section spacing",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "MVQUEEN Collections"
+    }
+  ]
+}
+{% endschema %}

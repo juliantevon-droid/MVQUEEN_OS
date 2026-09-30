@@ -1,0 +1,283 @@
+{% doc %}
+  Shared styles and progressive enhancement for the optional MVQUEEN sections.
+  @example
+  {% render 'mvq-section-kit' %}
+{% enddoc %}
+
+{% stylesheet %}
+  .mvq-kit { --kit-bg: #fff; --kit-ink: var(--mvq-charcoal, #171310); --kit-accent: var(--mvq-gold-strong, #8a6428); --kit-gap: 24px; background: var(--kit-bg); color: var(--kit-ink); padding-block: var(--kit-space, 64px); }
+  .mvq-kit--mvqueen { --kit-bg: var(--mvq-cream, #fff9f2); }
+  .mvq-kit--princess { --kit-bg: var(--mvq-blush, #f3dfe7); --kit-accent: var(--mvq-rose-strong, #b52255); }
+  .mvq-kit *, .mvq-kit *::before, .mvq-kit *::after { box-sizing: border-box; }
+  .mvq-kit [hidden] { display: none !important; }
+  .mvq-kit__wrap { width: min(1280px, calc(100% - 40px)); margin-inline: auto; }
+  .mvq-kit__head { max-width: 760px; margin-bottom: 28px; }
+  .mvq-kit__head h2 { margin: 0 0 12px; font: 500 clamp(2rem, 4vw, 3.5rem)/1.12 var(--mvq-display, Georgia, serif); }
+  .mvq-kit__head p, .mvq-kit__richtext p { margin: 0 0 1em; }
+  .mvq-kit__richtext { overflow-wrap: anywhere; }
+  .mvq-kit__richtext > :last-child { margin-bottom: 0; }
+  .mvq-kit__richtext a { text-decoration: underline; text-underline-offset: 3px; }
+  .mvq-kit__grid { display: grid; grid-template-columns: repeat(var(--kit-columns, 3), minmax(0, 1fr)); gap: var(--kit-gap); }
+  .mvq-kit__grid > *, .mvq-kit__split > * { min-width: 0; }
+  .mvq-kit__split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+  .mvq-kit__button, .mvq-kit__control { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; border: 1px solid currentColor; border-radius: 2px; padding: 10px 18px; background: transparent; color: inherit; cursor: pointer; font: inherit; text-decoration: none; }
+  .mvq-kit__button { background: var(--kit-ink); color: var(--kit-bg); border-color: var(--kit-ink); }
+  .mvq-kit__button:hover { opacity: .86; }
+  .mvq-kit__control:disabled { opacity: .4; cursor: default; }
+  .mvq-kit :focus-visible { outline: 3px solid var(--kit-accent); outline-offset: 4px; }
+  .mvq-kit__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .mvq-kit__empty { border: 1px dashed currentColor; padding: 24px; }
+  .mvq-kit__image { width: 100%; height: auto; display: block; }
+  .mvq-kit__media { display: block; overflow: hidden; background: #eee8e1; aspect-ratio: var(--kit-ratio, 1); }
+  .mvq-kit__media img { width: 100%; height: 100%; object-fit: cover; }
+  .mvq-kit__card { display: flex; flex-direction: column; height: 100%; }
+  .mvq-kit__card h3 { margin: 16px 0 8px; font-size: 1.2rem; line-height: 1.3; }
+  .mvq-kit__card p { margin: 0 0 16px; }
+  .mvq-kit__meta { font-size: .85rem; margin-top: 14px; }
+  .mvq-kit__card > a:last-child { align-self: flex-start; margin-top: auto; }
+  .mvq-kit .mvq-card { color: var(--kit-ink); }
+  mvq-carousel, mvq-compare, mvq-tabs, mvq-parallax { display: block; }
+  .mvq-kit__track { --kit-visible: var(--kit-columns, 4); display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - (var(--kit-visible, 4) - 1) * var(--kit-gap)) / var(--kit-visible, 4)); gap: var(--kit-gap); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 0; margin: 0; padding: 4px 0 16px; list-style: none; scrollbar-width: thin; }
+  .mvq-kit__track > * { scroll-snap-align: start; min-width: 0; }
+  .mvq-kit__controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+  .mvq-kit__status { margin-inline: 4px; font-size: .9rem; }
+  .mvq-kit__slides { --kit-visible: 1; --kit-gap: 0px; padding: 0; }
+  .mvq-kit__slide { position: relative; isolation: isolate; min-height: var(--kit-height, 540px); display: grid; align-items: center; padding: clamp(24px, 5vw, 64px); color: #fff; background: #29221f; overflow: hidden; }
+  .mvq-kit__backdrop, .mvq-kit__backdrop picture { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; }
+  .mvq-kit__backdrop img { width: 100%; height: 100%; object-fit: cover; }
+  .mvq-kit__shade { position: absolute; inset: 0; z-index: -1; background: #000; opacity: var(--kit-overlay, .6); pointer-events: none; }
+  .mvq-kit__caption { width: min(100%, 650px); position: relative; }
+  .mvq-kit__caption--center { justify-self: center; text-align: center; }
+  .mvq-kit__caption--right { justify-self: end; text-align: right; }
+  .mvq-kit__caption h2, .mvq-kit__caption h3 { font: 500 clamp(2rem, 5vw, 4.5rem)/1.04 var(--mvq-display, Georgia, serif); margin: 0 0 18px; color: inherit; }
+  .mvq-kit__caption .mvq-kit__button { color: #171310; background: #fff; border-color: #fff; margin-top: 22px; }
+  .mvq-kit__caption .mvq-kit__richtext { max-width: 54ch; }
+  .mvq-kit__compare-stage { position: relative; aspect-ratio: var(--kit-ratio, 1.3333); overflow: hidden; touch-action: pan-y; background: #eee8e1; }
+  .mvq-kit__compare-stage > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .mvq-kit__compare-before { clip-path: inset(0 calc(100% - var(--kit-position, 50%)) 0 0); }
+  .mvq-kit__compare-line { position: absolute; top: 0; bottom: 0; left: var(--kit-position, 50%); width: 3px; transform: translateX(-50%); background: #fff; box-shadow: 0 0 0 1px #0005; pointer-events: none; }
+  .mvq-kit__compare-line::after { content: '↔'; display: grid; place-items: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; color: #171310; background: #fff; box-shadow: 0 1px 6px #0004; }
+  .mvq-kit__compare-label { position: absolute; bottom: 16px; padding: 5px 12px; background: #fff; color: #171310; font-size: .85rem; }
+  .mvq-kit__compare-label--before { left: 16px; }
+  .mvq-kit__compare-label--after { right: 16px; }
+  .mvq-kit__range { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+  .mvq-kit__range input { flex: 1 1 200px; min-height: 44px; accent-color: var(--kit-accent); }
+  .mvq-kit__tab-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .mvq-kit__tab[aria-selected='true'] { color: var(--kit-bg); background: var(--kit-ink); }
+  .mvq-kit__tab-panel { margin-bottom: 24px; }
+  .mvq-kit__tab-panel:focus-visible { outline-offset: 6px; }
+  mvq-tabs[data-ready] .mvq-kit__tab-heading { display: none; }
+  .mvq-kit__content { align-self: center; }
+  .mvq-kit__content h3 { font-size: 1.6rem; margin: 0 0 16px; }
+  .mvq-kit__content--wide { grid-column: 1 / -1; }
+  .mvq-kit__showcase-title { font: 500 clamp(2rem, 3vw, 3rem)/1.14 var(--mvq-display, Georgia, serif); margin: 0 0 16px; }
+  .mvq-kit__showcase-price { font-size: 1.2rem; margin-bottom: 24px; }
+  .mvq-kit__accordions { margin-top: 24px; }
+  .mvq-kit__details { border-block-start: 1px solid currentColor; }
+  .mvq-kit__details:last-child { border-block-end: 1px solid currentColor; }
+  .mvq-kit__details summary { cursor: pointer; min-height: 54px; padding-block: 16px; font-weight: 600; }
+  .mvq-kit__details .mvq-kit__richtext { padding: 0 0 24px; }
+  .mvq-kit__quote { margin: 0; padding: 28px; border: 1px solid #17131022; height: 100%; }
+  .mvq-kit__quote blockquote { margin: 12px 0 22px; padding: 0; font-size: 1.1rem; }
+  .mvq-kit__quote figcaption { display: flex; gap: 12px; align-items: center; font-size: .9rem; }
+  .mvq-kit__quote img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .mvq-kit__stars { letter-spacing: .1em; color: var(--kit-accent); }
+  .mvq-kit__parallax-media { inset: -64px 0; height: calc(100% + 128px); transform: translate3d(0, var(--kit-parallax-y, 0px), 0); }
+  @media (max-width: 749px) {
+    .mvq-kit { --kit-gap: 16px; padding-block: calc(var(--kit-space, 64px) * .7); }
+    .mvq-kit__wrap { width: calc(100% - 32px); }
+    .mvq-kit__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mvq-kit__grid--editorial, .mvq-kit__split, .mvq-kit__grid--custom { grid-template-columns: minmax(0, 1fr); }
+    .mvq-kit__track { --kit-visible: 1.5; }
+    .mvq-kit__slides { --kit-visible: 1; }
+    .mvq-kit__slide { min-height: var(--kit-mobile-height, 440px); padding: 24px; }
+    .mvq-kit__caption h2, .mvq-kit__caption h3 { font-size: clamp(2rem, 9vw, 3rem); }
+    .mvq-kit__tab { flex-grow: 1; }
+    .mvq-kit__quote { padding: 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mvq-kit *, .mvq-kit *::before, .mvq-kit *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .mvq-kit__parallax-media { transform: none; }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  class MVQCarousel extends HTMLElement {
+    connectedCallback() {
+      if (this.controller) return;
+      this.controller = new AbortController();
+      this.track = this.querySelector('[data-track]');
+      this.slides = [...this.querySelectorAll('[data-slide]')];
+      if (!this.track || !this.slides.length) return;
+      this.motion = matchMedia('(prefers-reduced-motion: reduce)');
+      this.autoplay = this.dataset.autoplay === 'true' && !window.Shopify?.designMode;
+      this.visible = false;
+      this.hovered = false;
+      this.paused = !this.autoplay;
+      const options = { signal: this.controller.signal };
+      this.previous = this.querySelector('[data-previous]');
+      this.next = this.querySelector('[data-next]');
+      this.play = this.querySelector('[data-play]');
+      this.status = this.querySelector('[data-status]');
+      this.querySelector('[data-controls]')?.toggleAttribute('hidden', this.slides.length < 2);
+      this.play?.toggleAttribute('hidden', !this.autoplay || this.motion.matches);
+      this.previous?.addEventListener('click', () => { this.pause(); this.move(-1); }, options);
+      this.next?.addEventListener('click', () => { this.pause(); this.move(1); }, options);
+      this.play?.addEventListener('click', () => { this.paused = !this.paused; this.schedule(); }, options);
+      this.track.addEventListener('scroll', () => { cancelAnimationFrame(this.scrollFrame); this.scrollFrame = requestAnimationFrame(() => this.update()); }, { ...options, passive: true });
+      this.track.addEventListener('pointerdown', () => this.pause(), options);
+      this.addEventListener('mouseenter', () => { this.hovered = true; this.schedule(); }, options);
+      this.addEventListener('mouseleave', () => { this.hovered = false; this.schedule(); }, options);
+      this.addEventListener('focusin', (event) => { if (event.target !== this.play) this.pause(); }, options);
+      this.track.addEventListener('keydown', (event) => {
+        if (event.target !== this.track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+        event.preventDefault();
+        this.pause();
+        const direction = getComputedStyle(this.track).direction === 'rtl' ? -1 : 1;
+        this.move((event.key === 'ArrowRight' ? 1 : -1) * direction);
+      }, options);
+      document.addEventListener('visibilitychange', () => this.schedule(), options);
+      this.motion.addEventListener('change', () => { this.play?.toggleAttribute('hidden', !this.autoplay || this.motion.matches); this.schedule(); }, options);
+      this.addEventListener('shopify:block:select', (event) => {
+        const slide = event.target.closest('[data-slide]');
+        if (slide) { this.pause(); this.go(this.slides.indexOf(slide), true); }
+      }, options);
+      this.observer = new IntersectionObserver(([entry]) => { this.visible = entry.isIntersecting; this.schedule(); }, { threshold: .25 });
+      this.observer.observe(this);
+      this.resize = new ResizeObserver(() => this.update());
+      this.resize.observe(this.track);
+      this.update();
+    }
+    index() {
+      const edge = getComputedStyle(this.track).direction === 'rtl' ? 'right' : 'left';
+      const origin = this.track.getBoundingClientRect()[edge];
+      return this.slides.reduce((best, slide, i) => Math.abs(slide.getBoundingClientRect()[edge] - origin) < Math.abs(this.slides[best].getBoundingClientRect()[edge] - origin) ? i : best, 0);
+    }
+    go(index, instant = false) {
+      const slide = this.slides[Math.max(0, Math.min(index, this.slides.length - 1))];
+      if (!slide) return;
+      const edge = getComputedStyle(this.track).direction === 'rtl' ? 'right' : 'left';
+      this.track.scrollTo({ left: this.track.scrollLeft + slide.getBoundingClientRect()[edge] - this.track.getBoundingClientRect()[edge], behavior: instant || this.motion.matches ? 'instant' : 'smooth' });
+    }
+    move(delta) {
+      let target = this.index() + delta;
+      if (this.dataset.loop === 'true') target = (target + this.slides.length) % this.slides.length;
+      this.go(target);
+    }
+    update() {
+      const loop = this.dataset.loop === 'true';
+      const position = Math.abs(this.track.scrollLeft);
+      const end = Math.max(0, this.track.scrollWidth - this.track.clientWidth);
+      if (this.previous) this.previous.disabled = !loop && position <= 2;
+      if (this.next) this.next.disabled = !loop && position >= end - 2;
+      if (this.status) this.status.textContent = (this.status.dataset.format || '[current] / [total]').replace('[current]', this.index() + 1).replace('[total]', this.slides.length);
+    }
+    pause() { this.paused = true; this.schedule(); }
+    schedule() {
+      clearTimeout(this.timer);
+      if (this.play) {
+        this.play.textContent = this.paused ? this.play.dataset.playLabel : this.play.dataset.pauseLabel;
+        this.play.setAttribute('aria-pressed', String(!this.paused));
+      }
+      this.status?.setAttribute('aria-live', this.autoplay && !this.paused ? 'off' : 'polite');
+      if (!this.autoplay || this.paused || !this.visible || this.hovered || this.motion.matches || document.hidden || this.slides.length < 2) return;
+      this.timer = setTimeout(() => { this.move(1); this.schedule(); }, Math.max(5, Number(this.dataset.interval) || 7) * 1000);
+    }
+    disconnectedCallback() {
+      this.controller?.abort(); this.controller = null;
+      this.observer?.disconnect(); this.resize?.disconnect();
+      clearTimeout(this.timer); cancelAnimationFrame(this.scrollFrame);
+    }
+  }
+  class MVQCompare extends HTMLElement {
+    connectedCallback() {
+      if (this.controller) return;
+      this.controller = new AbortController();
+      const options = { signal: this.controller.signal };
+      this.input = this.querySelector('input[type="range"]');
+      this.stage = this.querySelector('[data-compare-stage]');
+      if (!this.input || !this.stage) return;
+      this.querySelector('[data-compare-controls]')?.removeAttribute('hidden');
+      const update = () => { this.style.setProperty('--kit-position', `${this.input.value}%`); this.input.setAttribute('aria-valuetext', `${this.input.value}%`); };
+      this.input.addEventListener('input', update, options);
+      const position = (event) => { const rect = this.stage.getBoundingClientRect(); this.input.value = Math.round(Math.max(0, Math.min(100, (event.clientX - rect.left) / rect.width * 100))); update(); };
+      this.stage.addEventListener('pointerdown', (event) => { if (!event.isPrimary || event.button !== 0) return; this.pointer = event.pointerId; this.stage.setPointerCapture(event.pointerId); position(event); }, options);
+      this.stage.addEventListener('pointermove', (event) => { if (this.pointer === event.pointerId) position(event); }, options);
+      for (const name of ['pointerup', 'pointercancel', 'lostpointercapture']) this.stage.addEventListener(name, () => { this.pointer = null; }, options);
+      update();
+    }
+    disconnectedCallback() { this.controller?.abort(); this.controller = null; this.pointer = null; }
+  }
+  class MVQTabs extends HTMLElement {
+    connectedCallback() {
+      if (this.controller) return;
+      this.controller = new AbortController();
+      const options = { signal: this.controller.signal };
+      this.tabs = [...this.querySelectorAll('[data-tab]')];
+      this.panels = [...this.querySelectorAll('[data-panel]')];
+      if (!this.tabs.length) return;
+      const list = this.querySelector('[data-tab-list]');
+      list?.removeAttribute('hidden'); list?.setAttribute('role', 'tablist');
+      this.setAttribute('data-ready', '');
+      this.tabs.forEach((tab, i) => {
+        tab.setAttribute('role', 'tab');
+        tab.addEventListener('click', () => this.activate(i), options);
+        tab.addEventListener('keydown', (event) => {
+          const rtl = getComputedStyle(list).direction === 'rtl';
+          let target = i;
+          if (event.key === 'ArrowRight') target = (i + (rtl ? -1 : 1) + this.tabs.length) % this.tabs.length;
+          else if (event.key === 'ArrowLeft') target = (i + (rtl ? 1 : -1) + this.tabs.length) % this.tabs.length;
+          else if (event.key === 'Home') target = 0;
+          else if (event.key === 'End') target = this.tabs.length - 1;
+          else return;
+          event.preventDefault(); this.activate(target); this.tabs[target].focus();
+        }, options);
+      });
+      this.panels.forEach(panel => { panel.setAttribute('role', 'tabpanel'); panel.tabIndex = 0; });
+      this.addEventListener('shopify:block:select', (event) => {
+        const panel = event.target.closest('[data-panel]');
+        const i = this.panels.indexOf(panel);
+        if (i >= 0) this.activate(i);
+      }, options);
+      this.activate(0);
+    }
+    activate(index) {
+      this.tabs.forEach((tab, i) => { tab.setAttribute('aria-selected', String(i === index)); tab.tabIndex = i === index ? 0 : -1; });
+      this.panels.forEach((panel, i) => { panel.hidden = i !== index; });
+    }
+    disconnectedCallback() { this.controller?.abort(); this.controller = null; }
+  }
+  class MVQParallax extends HTMLElement {
+    connectedCallback() {
+      if (this.controller) return;
+      this.controller = new AbortController();
+      const options = { signal: this.controller.signal };
+      this.motion = matchMedia('(prefers-reduced-motion: reduce)');
+      this.small = matchMedia('(max-width: 749px)');
+      this.visible = false;
+      const draw = () => {
+        this.frame = null;
+        if (!this.visible || this.motion.matches || (this.small.matches && this.dataset.mobile !== 'true')) { this.style.setProperty('--kit-parallax-y', '0px'); return; }
+        const rect = this.getBoundingClientRect();
+        const progress = Math.max(-1, Math.min(1, (innerHeight / 2 - rect.top - rect.height / 2) / ((innerHeight + rect.height) / 2)));
+        this.style.setProperty('--kit-parallax-y', `${progress * Math.min(48, Number(this.dataset.strength) || 0)}px`);
+      };
+      const queue = () => { if (!this.frame) this.frame = requestAnimationFrame(draw); };
+      this.observer = new IntersectionObserver(([entry]) => { this.visible = entry.isIntersecting; queue(); });
+      this.observer.observe(this);
+      window.addEventListener('scroll', () => { if (this.visible) queue(); }, { ...options, passive: true });
+      window.addEventListener('resize', queue, options);
+      this.motion.addEventListener('change', queue, options);
+      this.small.addEventListener('change', queue, options);
+      queue();
+    }
+    disconnectedCallback() { this.controller?.abort(); this.controller = null; this.observer?.disconnect(); cancelAnimationFrame(this.frame); this.frame = null; }
+  }
+  for (const [name, element] of [['mvq-carousel', MVQCarousel], ['mvq-compare', MVQCompare], ['mvq-tabs', MVQTabs], ['mvq-parallax', MVQParallax]]) {
+    if (!customElements.get(name)) customElements.define(name, element);
+  }
+  document.addEventListener('shopify:block:select', (event) => {
+    const details = event.target.closest('.mvq-kit__details');
+    if (details) details.open = true;
+  });
+{% endjavascript %}

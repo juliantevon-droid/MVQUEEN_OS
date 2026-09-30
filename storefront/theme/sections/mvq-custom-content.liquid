@@ -1,0 +1,191 @@
+{% render 'mvq-section-kit' %}
+<div class="mvq-kit mvq-kit--{{ section.settings.palette }}" style="--kit-space: {{ section.settings.spacing }}px; --kit-columns: {{ section.settings.columns | default: 3 }}; --kit-ratio: {{ section.settings.ratio | default: 1 }};">
+  <div class="mvq-kit__wrap">
+    {% render 'mvq-section-heading', heading: section.settings.heading, intro: section.settings.intro %}
+    <div class="mvq-kit__grid mvq-kit__grid--custom">
+      {% for block in section.blocks %}
+        <div class="mvq-kit__content{% if block.settings.wide %} mvq-kit__content--wide{% endif %}" {{ block.shopify_attributes }}>
+          {% case block.type %}
+            {% when 'text' %}
+              {% if block.settings.heading != blank %}<h3>{{ block.settings.heading | escape }}</h3>{% endif %}
+              <div class="mvq-kit__richtext">{{ block.settings.content }}</div>
+              {% if block.settings.button_label != blank and block.settings.button_link != blank %}<a class="mvq-kit__button" href="{{ block.settings.button_link }}">{{ block.settings.button_label | escape }}</a>{% endif %}
+            {% when 'image' %}
+              {% if block.settings.image != blank %}
+                {% assign image_link_label = 'section_kit.controls.view_image' | t %}
+                {% if block.settings.link != blank %}<a href="{{ block.settings.link }}" aria-label="{{ block.settings.link_label | default: block.settings.image.alt | default: image_link_label | escape }}">{% endif %}
+                {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '360,600,900,1400', sizes: '(min-width: 750px) 50vw, 100vw', class: 'mvq-kit__image' }}
+                {% if block.settings.link != blank %}</a>{% endif %}
+              {% elsif request.design_mode %}<p class="mvq-kit__empty">{{ 'section_kit.empty.image' | t }}</p>{% endif %}
+              {% if block.settings.caption != blank %}<p>{{ block.settings.caption | escape }}</p>{% endif %}
+            {% when 'liquid' %}{{ block.settings.custom_liquid }}
+          {% endcase %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "MVQUEEN Custom content",
+  "tag": "section",
+  "class": "mvq-editor-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ],
+    "templates": [
+      "password"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Make it your own"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "palette",
+      "label": "Palette",
+      "options": [
+        {
+          "value": "neutral",
+          "label": "White"
+        },
+        {
+          "value": "mvqueen",
+          "label": "MVQUEEN ivory"
+        },
+        {
+          "value": "princess",
+          "label": "Miss.Princess blush"
+        }
+      ],
+      "default": "neutral"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Section spacing",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "MVQUEEN Custom content",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text and button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "wide",
+          "label": "Full width",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image link"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Image link accessibility label"
+        },
+        {
+          "type": "checkbox",
+          "id": "wide",
+          "label": "Full width",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "liquid",
+      "name": "Custom Liquid",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "Liquid code"
+        },
+        {
+          "type": "checkbox",
+          "id": "wide",
+          "label": "Full width",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}
