@@ -32,6 +32,7 @@ export function buildAutomatedProductFaq(
   product: ProductSnapshot,
   classification: Classification,
   content: AutomatedProductContent,
+  brandLabel = "MVQueen",
 ) {
   const faq = [
     {
@@ -40,7 +41,9 @@ export function buildAutomatedProductFaq(
         content.title +
         " is listed as a " +
         classification.productType.toLowerCase() +
-        " in the MVQueen catalog. Review the product details and images on this page for the currently available specifications.",
+        " in the " +
+        brandLabel +
+        " edit. Review the product details and images on this page for the currently available specifications.",
     },
     {
       question: "Where can I check product details before ordering?",
@@ -71,13 +74,14 @@ export function buildAutomaticSurfaceRecord(
   product: ProductSnapshot,
   classification: Classification,
   content: AutomatedProductContent,
+  brandLabel = "MVQueen",
 ): CanonicalProductRecord {
-  const faq = buildAutomatedProductFaq(product, classification, content);
+  const faq = buildAutomatedProductFaq(product, classification, content, brandLabel);
   const descriptionPlain = cleanText(product.descriptionHtml);
   const blogPublishEligible =
     descriptionPlain.length >= 240 && content.highlights.length >= 3;
 
-  const collectionName = "MVQueen " + classification.family + " Edit";
+  const collectionName = brandLabel + " " + classification.family + " Edit";
   const collectionTargetHandles = Array.from(new Set([
     slug(classification.route),
     slug(classification.subcollection),
@@ -120,7 +124,7 @@ export function buildAutomaticSurfaceRecord(
       description: product.descriptionHtml ?? "",
       benefits: [],
       features: content.highlights,
-      cta: "Explore the MVQueen edit.",
+      cta: "Explore the " + brandLabel + " edit.",
     },
     seo: {
       seo_title: content.seoTitle,
@@ -152,12 +156,12 @@ export function buildAutomaticSurfaceRecord(
         slug: slug(collectionName),
         target_handles: collectionTargetHandles,
         description:
-          "Explore the MVQueen " +
+          "Explore the " + brandLabel + " " +
           classification.family.toLowerCase() +
           " edit with clear product details, intentional styling, and a refined everyday point of view.",
-        seo_title: (collectionName + " | MVQueen").slice(0, 60),
+        seo_title: (collectionName + " | " + brandLabel).slice(0, 60),
         meta_description:
-          ("Explore MVQueen " +
+          ("Explore " + brandLabel + " " +
             classification.family.toLowerCase() +
             " with clear product details, intentional styling, and a considered feminine point of view.").slice(0, 160),
         primary_keyword: classification.family.toLowerCase(),
@@ -168,7 +172,7 @@ export function buildAutomaticSurfaceRecord(
         title: blogTitle,
         slug: blogSlug,
         dek:
-          "A practical MVQueen guide to " +
+          "A practical " + brandLabel + " guide to " +
           content.focusKeyword +
           ", grounded in the product information currently available on the product page.",
         sections: [
@@ -178,7 +182,7 @@ export function buildAutomaticSurfaceRecord(
               listedDetails
                 ? "The source product information currently lists: " + listedDetails + "."
                 : "Review the currently listed product details and imagery before choosing.",
-              "MVQueen keeps product facts separate from editorial framing so the source information remains the reference.",
+              brandLabel + " keeps product facts separate from editorial framing so the source information remains the reference.",
             ],
           },
           {
