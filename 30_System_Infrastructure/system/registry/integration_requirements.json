@@ -229,16 +229,17 @@
     {
       "capability": "commercial_health",
       "provider": "MVQUEEN_OS",
-      "state": "engineered_runtime_migration_required",
+      "state": "connected_runtime_verified",
       "requirements": [
         "commercial settings configured",
         "verified product cost",
         "selling price",
         "current policy fingerprint",
-        "ProductCommercialHealthState migration applied",
-        "ProductCommercialHealthSnapshot migration applied"
+        "ProductCommercialHealthState production table operational",
+        "ProductCommercialHealthSnapshot production table operational",
+        "worker evaluation remains current and non-stale"
       ],
-      "side_effects": "internal current health state and append-only health history; approved Shopify metadata only through product worker"
+      "side_effects": "internal current health state and append-only health history; approved Shopify commercial metadata through governed product processing"
     },
     {
       "capability": "catalog_backfill",
