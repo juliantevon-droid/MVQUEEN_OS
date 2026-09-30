@@ -233,6 +233,15 @@ function buildDescriptionHtml(
   return (intro + details + measurements).trim();
 }
 
+function alignBrandLabel(value: string, brandLabel: string): string {
+  const target = cleanText(brandLabel) || "MVQueen";
+  return cleanText(value)
+    .replace(/\bmiss\.?\s*princess\b/gi, target)
+    .replace(/\bmvqueen\b/gi, target)
+    .replace(SPACE_RE, " ")
+    .trim();
+}
+
 function brandedSeoTitle(title: string, brandLabel: string): string {
   const suffix = " | " + cleanText(brandLabel);
   if (suffix.length >= 60) return cleanText(brandLabel).slice(0, 60).trim();
@@ -276,9 +285,12 @@ export function buildAutomatedProductContent(
     .map((item) => stripVendor(item, product.vendor))
     .filter(Boolean);
 
-  const descriptionSentence = stripVendor(
-    sentenceFromDescription(product.descriptionHtml),
-    product.vendor,
+  const descriptionSentence = alignBrandLabel(
+    stripVendor(
+      sentenceFromDescription(product.descriptionHtml),
+      product.vendor,
+    ),
+    brandLabel,
   );
   const generatedIntro = groundedIntro(
     classification.productType,
@@ -322,7 +334,10 @@ export function buildAutomatedProductContent(
   );
 
   const seoTitle = brandedSeoTitle(title, brandLabel);
-  const descriptionPlain = stripVendor(cleanText(product.descriptionHtml), product.vendor);
+  const descriptionPlain = alignBrandLabel(
+    stripVendor(cleanText(product.descriptionHtml), product.vendor),
+    brandLabel,
+  );
   const metaDescription = clip(
     descriptionPlain
       ? "Shop " + title + " at " + brandLabel + ". " + descriptionPlain
