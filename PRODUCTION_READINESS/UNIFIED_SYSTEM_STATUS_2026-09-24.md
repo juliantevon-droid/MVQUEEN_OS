@@ -576,3 +576,9 @@ Engineering/runtime/storefront architecture is launch-capable. Remaining commerc
 4. Branded domain remains intentionally deferred by merchant decision.
 
 Do not reopen retired branch, Drive-mirror, local-rclone, direct-Python-Shopify-writer or live-theme-auto-deploy architectures.
+
+
+### Railway GitHub App verification — 2026-09-30
+
+- Merchant completed Railway GitHub App authorization for `juliantevon-droid/MVQUEEN_OS`.
+- This documentation-only commit is the production auto-deploy verification probe. Railway is considered fully GitHub-connected only if both existing services deploy this exact `main` commit automatically without a manual redeploy command.
