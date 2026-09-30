@@ -118,8 +118,8 @@ const homogeneousDecision = buildEnterpriseProductDecision(
   homogeneousMultiVariantProduct,
   policy,
 );
-assert.equal(homogeneousDecision.brandRoute.brand, "mvqueen");
-assert.equal(homogeneousDecision.brandRoute.tone, "bold-authoritative");
+assert.equal(homogeneousDecision.brandRoute.brand, "miss-princess");
+assert.equal(homogeneousDecision.brandRoute.tone, "vivid-youthful");
 assert.equal(homogeneousDecision.commercialSource.unitCostSource, "shopify_inventory_item");
 assert.equal(homogeneousDecision.commercialSource.unitCostCurrency, "USD");
 assert.equal(homogeneousDecision.pricing.state, "ready_for_approval");
