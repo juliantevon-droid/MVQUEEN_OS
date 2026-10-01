@@ -201,6 +201,9 @@ function necklaceDesign(
   enrichment: CatalogAttributeEnrichment,
   classification: Classification,
 ): string | null {
+  const titleTypeText = normalize(
+    [product.title ?? "", product.productType ?? ""].join(" "),
+  );
   const text = normalize(
     [
       product.title ?? "",
@@ -210,14 +213,26 @@ function necklaceDesign(
       product.seo?.description ?? "",
     ].join(" "),
   );
+
+  // Prefer the actual article/design over incidental construction language.
+  // For example, "adjustable chain" describes a pendant's chain length and
+  // should not reclassify a cross pendant as a generic chain necklace.
+  if (
+    classification.route === "pendants" ||
+    /\bcross necklace\b/.test(text) ||
+    /\bpendant\b/.test(text) ||
+    Boolean(enrichment.sourceAttributes.pendant_length) ||
+    Boolean(enrichment.sourceAttributes.pendant_width)
+  ) {
+    return "Pendant";
+  }
+
   const values = [
     "Beaded",
-    "Chain",
     "Choker",
     "Cord",
     "Cuff",
     "Lariat",
-    "Pendant",
     "Riviera",
     "Statement",
     "Strand",
@@ -226,8 +241,11 @@ function necklaceDesign(
   for (const value of values) {
     if (text.includes(normalize(value))) return value;
   }
-  if (classification.route === "pendants") return "Pendant";
-  if (/\bcross necklace\b/.test(text)) return "Pendant";
+
+  // "Chain" is only a design signal when it appears in the title/type. Source
+  // measurements such as chain_length and phrases like "adjustable chain" are
+  // structural details, not sufficient design evidence.
+  if (/\bchain\b/.test(titleTypeText)) return "Chain";
   return null;
 }
 
