@@ -20,7 +20,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v18-truthful-compare-at";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v19-brand-material-routing";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
