@@ -197,6 +197,19 @@ assert.equal(divineRadianceRoute.brand, "mvqueen");
 assert.equal(divineRadianceRoute.tone, "bold-authoritative");
 assert.equal(divineRadianceRoute.reason, "material:gold-plated");
 
+const playfulGoldPlatedJewelry: ProductSnapshot = {
+  id: "gid://shopify/Product/playful-gold-plated",
+  title: "Pink Crystal Cross Necklace",
+  descriptionHtml: "<p>Gold-plated necklace with playful pink crystal details.</p>",
+  tags: [],
+  variants: {
+    nodes: [{ id: "gid://shopify/ProductVariant/playful-gold-plated", price: "32.00" }],
+  },
+};
+const playfulGoldPlatedRoute = classifyBrandWorld(playfulGoldPlatedJewelry);
+assert.equal(playfulGoldPlatedRoute.brand, "miss-princess");
+assert.equal(playfulGoldPlatedRoute.reason, "color:pink");
+
 const sharedPinkOnly: ProductSnapshot = {
   id: "gid://shopify/Product/shared-pink",
   title: "Pink Top",
