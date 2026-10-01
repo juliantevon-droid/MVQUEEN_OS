@@ -16,12 +16,13 @@ import {
 import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automated-content-surfaces";
 import { publishAutomaticContentSurfaces } from "./enterprise/content-publisher";
 import { resolveShippingDeliveryEstimate } from "./shipping-policy";
+import { buildShopifyCategoryMetafields } from "./shopify-category-publisher.server";
 import {
   commercialPolicyFingerprint,
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v20-full-catalog-attributes";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v21-native-category-metafields";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -88,6 +89,8 @@ const AUTO_CONTENT_SURFACES_ENABLED =
 const MEDIA_ALT_SYNC_ENABLED =
   process.env.MVQ_MEDIA_ALT_SYNC_ENABLED === "true";
 const COST_SYNC_ENABLED = process.env.MVQ_COST_SYNC_ENABLED === "true";
+const CATEGORY_METAFIELDS_ENABLED =
+  process.env.MVQ_CATEGORY_METAFIELDS_ENABLED === "true";
 const APPROVED_PRODUCT_GIDS = new Set(
   (process.env.MVQ_APPROVED_PRODUCT_GIDS ?? "")
     .split(",")
@@ -290,6 +293,7 @@ function sourceFingerprint(
       automaticContentSurfaces: AUTO_CONTENT_SURFACES_ENABLED,
       mediaAltSync: MEDIA_ALT_SYNC_ENABLED,
       costSync: COST_SYNC_ENABLED,
+      categoryMetafields: CATEGORY_METAFIELDS_ENABLED,
     },
     title: product.title ?? "",
     descriptionHtml: product.descriptionHtml ?? "",
@@ -353,10 +357,16 @@ export async function processProductJob(
 
     let hasReadInventory = false;
     let hasWriteFiles = false;
-    if (COST_SYNC_ENABLED || MEDIA_ALT_SYNC_ENABLED) {
+    let hasWriteMetaobjects = false;
+    if (
+      COST_SYNC_ENABLED ||
+      MEDIA_ALT_SYNC_ENABLED ||
+      CATEGORY_METAFIELDS_ENABLED
+    ) {
       const handles = await accessScopesForShop(job.shop, admin);
       hasReadInventory = handles.has("read_inventory");
       hasWriteFiles = handles.has("write_files");
+      hasWriteMetaobjects = handles.has("write_metaobjects");
     }
 
     const response = await admin.graphql(
@@ -808,14 +818,31 @@ export async function processProductJob(
       return;
     }
 
+    const mappedTaxonomyCategory = taxonomyCategoryForRoute(c.route, product.title ?? "");
+    const nativeCategoryMetafields =
+      CATEGORY_METAFIELDS_ENABLED &&
+      hasWriteMetaobjects &&
+      rawProduct.category?.id
+        ? await buildShopifyCategoryMetafields({
+            admin: admin as unknown as {
+              graphql: (
+                query: string,
+                options?: { variables?: Record<string, unknown> },
+              ) => Promise<Response>;
+            },
+            categoryId: rawProduct.category.id,
+            product,
+            enrichment: attributeEnrichment,
+            classification: c,
+          })
+        : [];
+
     const productInput: Record<string, unknown> = {
       id: product.id,
       productType: product.productType?.trim() ? product.productType : c.productType,
       tags: mergedTags,
-      metafields,
+      metafields: [...metafields, ...nativeCategoryMetafields],
     };
-
-    const mappedTaxonomyCategory = taxonomyCategoryForRoute(c.route, product.title ?? "");
     if (!rawProduct.category?.id && mappedTaxonomyCategory) {
       productInput.category = mappedTaxonomyCategory;
     }
