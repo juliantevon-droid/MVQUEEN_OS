@@ -24,7 +24,7 @@
     </div>
     <div class="mvq-grid">
       {% for product in section.settings.collection.products limit: section.settings.limit %}
-        {% render 'product-card', product: product %}
+        {% render 'product-card', product: product, image_sizes: '(max-width: 800px) 50vw, 25vw' %}
       {% endfor %}
     </div>
   </div>
