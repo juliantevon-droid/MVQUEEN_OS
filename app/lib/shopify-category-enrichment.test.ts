@@ -8,7 +8,7 @@ const product: ProductSnapshot = {
   title: "Divine Radiance Cross Necklace",
   descriptionHtml: "<p>14K gold-plated cross with sparkling crystal details.</p>",
   productType: "Necklaces",
-  seo: { title: "Divine Cross Necklace | 14K Gold Plated Crystal Pendant", description: null },
+  seo: { title: "Divine Cross Necklace | 14K Gold Plated Crystal Pendant", description: "Adjustable chain with spiritual symbolism and sparkling details." },
   attributeMetafields: {
     nodes: [{
       key: "source_attributes",
