@@ -93,7 +93,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             by_capability["production_database"]["state"],
             "connected_production_single_node_restore_drill_required",
         )
-        self.assertEqual(by_capability["approved_price_publish"]["state"], "engineered_not_runtime_verified")
+        self.assertEqual(by_capability["approved_price_publish"]["state"], "connected_runtime_verified_approval_gated")
         self.assertIn("MVQ_PRICE_PUBLISH_ENABLED", by_capability["approved_price_publish"]["requirements"])
         self.assertEqual(by_capability["commercial_cost_sync"]["state"], "connected_runtime_verified")
         self.assertIn("MVQueen OS has read_inventory", by_capability["commercial_cost_sync"]["requirements"])
