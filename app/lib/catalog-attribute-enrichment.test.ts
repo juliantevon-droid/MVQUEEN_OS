@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {
   buildCatalogAttributeEnrichment,
   buildCatalogAttributeMetafields,
+  buildVariantGoogleMetafields,
 } from "./catalog-attribute-enrichment";
 import {
   classifyProduct,
@@ -105,5 +106,37 @@ assert.equal(singleEnrichment.fit, "Fitted");
 assert.ok(singleEnrichment.occasions.includes("Evening"));
 assert.equal(singleByKey.get("mm-google-shopping.color")?.value, "Black");
 assert.equal(singleByKey.get("mm-google-shopping.size")?.value, "M");
+
+const variantProduct: ProductSnapshot = {
+  ...singleVariant,
+  variants: {
+    nodes: [
+      {
+        id: "gid://shopify/ProductVariant/one",
+        selectedOptions: [
+          { name: "Color", value: "Black" },
+          { name: "Size", value: "M" },
+        ],
+      },
+    ],
+  },
+};
+const variantFields = buildVariantGoogleMetafields(
+  variantProduct,
+  singleEnrichment,
+  singleClassification,
+  "mvqueen",
+);
+const variantByKey = new Map(
+  variantFields[0].metafields.map((item) => [`${item.namespace}.${item.key}`, item]),
+);
+assert.equal(variantByKey.get("mm-google-shopping.condition")?.value, "new");
+assert.equal(variantByKey.get("mm-google-shopping.color")?.value, "Black");
+assert.equal(variantByKey.get("mm-google-shopping.size")?.value, "M");
+assert.equal(variantByKey.get("mm-google-shopping.gender")?.value, "female");
+assert.equal(variantByKey.get("mm-google-shopping.age_group")?.value, "adult");
+assert.equal(variantByKey.get("mm-google-shopping.size_type")?.value, "regular");
+assert.equal(variantByKey.get("mm-google-shopping.custom_label_0")?.value, "mvqueen");
+assert.equal(variantByKey.get("mm-google-shopping.custom_label_1")?.value, "Fashion");
 
 console.log("catalog attribute enrichment tests passed");
