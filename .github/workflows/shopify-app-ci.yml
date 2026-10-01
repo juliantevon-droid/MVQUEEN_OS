@@ -68,7 +68,10 @@ jobs:
           node-version: '22.16.0'
 
       - name: Install dependencies
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          ROLLUP_VERSION="$(node -p "require('./node_modules/rollup/package.json').version")"
+          npm install --no-save --ignore-scripts --no-audit --no-fund "@rollup/rollup-linux-x64-gnu@${ROLLUP_VERSION}"
 
       - uses: actions/setup-python@v7
         with:
