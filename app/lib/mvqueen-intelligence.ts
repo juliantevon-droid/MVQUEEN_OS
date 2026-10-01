@@ -291,18 +291,42 @@ function paletteScores(signals: string[], text: string) {
 }
 
 export function classifyBrandWorld(
-  product: Pick<ProductSnapshot, "title" | "tags" | "descriptionHtml" | "options">,
+  product: Pick<
+    ProductSnapshot,
+    "title" | "tags" | "descriptionHtml" | "options" | "variants"
+  >,
 ): BrandRouting {
+  const variantColors = (product.variants?.nodes ?? [])
+    .map(
+      (variant) =>
+        variant.googleMetafields?.nodes?.find((item) => item.key === "color")?.value ??
+        "",
+    )
+    .filter(Boolean);
   const signals = normalizedColorSignals(
     product.tags ?? [],
     product.title ?? "",
-    product.options ?? [],
+    [
+      ...(product.options ?? []),
+      ...(variantColors.length
+        ? [{ name: "Color", values: variantColors }]
+        : []),
+    ],
   );
+  const variantMaterials = (product.variants?.nodes ?? [])
+    .map(
+      (variant) =>
+        variant.googleMetafields?.nodes?.find((item) => item.key === "material")?.value ??
+        "",
+    )
+    .filter(Boolean);
   const text = [
     product.title ?? "",
     product.descriptionHtml?.replace(/<[^>]+>/g, " ") ?? "",
     ...(product.tags ?? []),
     ...(product.options ?? []).flatMap((option) => option.values ?? []),
+    ...variantColors,
+    ...variantMaterials,
   ].join(" ").toLowerCase();
 
   const scores = paletteScores(signals, text);
