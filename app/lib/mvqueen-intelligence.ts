@@ -170,6 +170,20 @@ const PRINCESS_STYLE_HINTS = [
   "romantic", "fun", "floral", "sparkle",
 ];
 
+// Refined metallic jewelry materials are an MVQueen tie-breaker when a
+// product has no stronger vivid/playful palette signal. This keeps neutral
+// luxury jewelry out of manual review without stealing colorful pieces from
+// Miss.Princess.
+const MVQUEEN_JEWELRY_MATERIAL_HINTS: Array<[RegExp, string]> = [
+  [/\bgold[- ]plated\b/i, "gold-plated"],
+  [/\bgold[- ]filled\b/i, "gold-filled"],
+  [/\b(?:9|10|14|18|22|24)k\s+gold\b/i, "gold"],
+  [/\bsterling\s+silver\b/i, "sterling-silver"],
+  [/\bstainless\s+steel\b/i, "stainless-steel"],
+  [/\brhodium[- ]plated\b/i, "rhodium-plated"],
+  [/\bplatinum\b/i, "platinum"],
+];
+
 function normalizeColor(value: string): string {
   return value
     .toLowerCase()
@@ -252,6 +266,14 @@ function paletteScores(signals: string[], text: string) {
   if (princessStyle) {
     princess += 1;
     princessReasons.push(`style:${princessStyle}`);
+  }
+
+  const jewelryMaterial = MVQUEEN_JEWELRY_MATERIAL_HINTS.find(([pattern]) =>
+    pattern.test(text),
+  );
+  if (jewelryMaterial) {
+    mvqueen += 2;
+    mvqueenReasons.push(`material:${jewelryMaterial[1]}`);
   }
 
   return { mvqueen, princess, mvqueenReasons, princessReasons };
