@@ -6,7 +6,9 @@ RUN apt-get update -y \
 FROM base AS dependencies
 WORKDIR /app
 COPY package.json ./
-RUN npm install --ignore-scripts --no-audit --no-fund
+RUN npm install --ignore-scripts --no-audit --no-fund \
+  && ROLLUP_VERSION="$(node -p "require('./node_modules/rollup/package.json').version")" \
+  && npm install --no-save --ignore-scripts --no-audit --no-fund "@rollup/rollup-linux-x64-gnu@${ROLLUP_VERSION}"
 
 FROM dependencies AS build
 WORKDIR /app
