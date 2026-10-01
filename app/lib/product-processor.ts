@@ -20,7 +20,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v17-catalog-google-enrichment";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v18-truthful-compare-at";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -836,9 +836,17 @@ export async function processProductJob(
           id: variant.id,
           price: recommendedPrice.toFixed(2),
         };
-        if (COMPARE_AT_PRICE_PUBLISH_ENABLED && compareAtPrice !== null) {
-          input.compareAtPrice = compareAtPrice.toFixed(2);
+
+        if (COMPARE_AT_PRICE_PUBLISH_ENABLED) {
+          if (compareAtPrice !== null) {
+            input.compareAtPrice = compareAtPrice.toFixed(2);
+          } else if (moneyNumber(variant.compareAtPrice) !== null) {
+            // A compare-at price must represent a real higher reference price.
+            // Clear equal/lower/stale values instead of manufacturing a discount.
+            input.compareAtPrice = null;
+          }
         }
+
         return input;
       });
 
