@@ -63,7 +63,20 @@ jobs:
           }
           console.log(`Lighthouse requested URL: ${report.requestedUrl}`);
           console.log(`Lighthouse final URL: ${report.finalUrl}`);
-          for (const id of ['errors-in-console','target-size','meta-description','redirects','third-party-cookies']) {
+          for (const id of [
+            'errors-in-console',
+            'target-size',
+            'meta-description',
+            'redirects',
+            'third-party-cookies',
+            'largest-contentful-paint-element',
+            'render-blocking-resources',
+            'uses-responsive-images',
+            'image-delivery-insight',
+            'lcp-discovery-insight',
+            'unused-javascript',
+            'mainthread-work-breakdown'
+          ]) {
             const audit = report.audits[id];
             if (!audit) continue;
             console.log(`Diagnostic ${id}: ${JSON.stringify({
