@@ -75,6 +75,9 @@ jobs:
       - name: Run AI factual-truth contract tests
         run: python -m unittest PRODUCTION_READINESS/test_ai_truth_contract.py -v
 
+      - name: Run crawler context regression tests
+        run: python -m unittest PRODUCTION_READINESS/test_vault_crawler_context.py -v
+
       - name: Run MVQUEEN runtime boot smoke test
         run: |
           python 30_System_Infrastructure/system/loader/module_loader.py
@@ -194,6 +197,7 @@ jobs:
             echo '- Brand-bank contract tests: PASS'
             echo '- Module-loader tests: PASS'
             echo '- AI factual-truth contract tests: PASS'
+            echo '- Crawler context regression tests: PASS'
             echo '- Runtime boot smoke test: PASS'
             echo '- Protected brand sources: PASS'
             echo '- Overseer operating model: PASS'

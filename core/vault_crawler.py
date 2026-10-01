@@ -46,6 +46,13 @@ BRAND_REFERENCE_ALLOWLIST = {
     "PRODUCTION_READINESS/test_catalog_recovery_controls.py",
     "PRODUCTION_READINESS/test_catalog_recovery_audit.py",
 }
+# These files intentionally contain write-operation signatures as audit rules or
+# negative test fixtures. They do not perform those production writes.
+WRITE_REFERENCE_ALLOWLIST = {
+    "PRODUCTION_READINESS/deep_repo_audit.py",
+    "PRODUCTION_READINESS/test_catalog_recovery_controls.py",
+}
+
 PROTECTED_TERMS = ("Variant SKU","Variant Inventory Qty","Variant Price","Variant Compare At Price","Handle")
 API_RE = re.compile(r"\b20\d{2}-(?:01|04|07|10)\b")
 STORE_RE = re.compile(r"\b[a-z0-9][a-z0-9-]*\.myshopify\.com\b", re.I)
@@ -54,6 +61,14 @@ SECRET_RE = re.compile(r"(?i)\b(api[_-]?key|access[_-]?token|client[_-]?secret|p
 PLACEHOLDER_RE = re.compile(r"(?i)^(?:replace.*|change.*|example|placeholder|dummy|test|secret|token|<[^>]+>|\$\{[^}]+\})$")
 WRITE_RE = re.compile(r"\b(requests\.(?:post|put|patch|delete)|productUpdate|productCreate|metafieldsSet|inventoryAdjustQuantities|inventorySetQuantities)\b")
 CONVERSION_TERMS = ("add to cart","shipping","returns","size guide","reviews","related products","you may also like","email","newsletter")
+
+def is_api_version_context(text: str, match: re.Match[str]) -> bool:
+    """Distinguish Shopify API versions from ordinary YYYY-MM dates/timestamps."""
+    start = max(0, match.start() - 96)
+    end = min(len(text), match.end() + 96)
+    window = text[start:end].lower()
+    markers = ("shopify", "api_version", "api version", "/admin/api/", "webhook")
+    return any(marker in window for marker in markers)
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -101,7 +116,9 @@ def main():
             try: json.loads(text)
             except json.JSONDecodeError as e: add(findings,"BLOCKER","syntax",rel,f"Invalid JSON line {e.lineno}: {e.msg}")
 
-        for m in API_RE.finditer(text): api_versions[m.group(0)].add(rel)
+        for m in API_RE.finditer(text):
+            if is_api_version_context(text, m):
+                api_versions[m.group(0)].add(rel)
         for m in STORE_RE.finditer(text): stores[m.group(0).lower()].add(rel)
         for m in TODO_RE.finditer(text): add(findings,"LOW","unfinished_work",rel,f"{m.group(1)} marker remains")
         if rel not in BRAND_REFERENCE_ALLOWLIST:
@@ -112,7 +129,12 @@ def main():
             value=m.group(2).strip()
             if value and not PLACEHOLDER_RE.match(value):
                 add(findings,"CRITICAL","security",rel,f"Possible committed credential assignment for {m.group(1)}")
-        if WRITE_RE.search(text) and "dry_run" not in text.lower() and "MVQ_WRITE_ENABLED" not in text:
+        if (
+            rel not in WRITE_REFERENCE_ALLOWLIST
+            and WRITE_RE.search(text)
+            and "dry_run" not in text.lower()
+            and "MVQ_WRITE_ENABLED" not in text
+        ):
             add(findings,"HIGH","publishing_boundary",rel,"Write-capable signal without an obvious local dry-run/write-enable guard","review")
         for term in CONVERSION_TERMS:
             if term in text.lower(): conversion_hits[term]+=1
