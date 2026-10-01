@@ -539,3 +539,127 @@ export function buildCatalogAttributeMetafields(
 
   return fields;
 }
+
+
+function variantSelectedOption(
+  variant: NonNullable<NonNullable<ProductSnapshot["variants"]>["nodes"]>[number],
+  name: string,
+): string | null {
+  const wanted = name.toLowerCase();
+  return (
+    variant.selectedOptions?.find(
+      (option) => option.name.trim().toLowerCase() === wanted,
+    )?.value?.trim() || null
+  );
+}
+
+function variantExistingGoogleValue(
+  variant: NonNullable<NonNullable<ProductSnapshot["variants"]>["nodes"]>[number],
+  key: string,
+): string | null {
+  return (
+    variant.googleMetafields?.nodes?.find((item) => item.key === key)?.value?.trim() ||
+    null
+  );
+}
+
+export function buildVariantGoogleMetafields(
+  product: ProductSnapshot,
+  enrichment: CatalogAttributeEnrichment,
+  classification: Classification,
+  brandWorld: string | null,
+): Array<{ id: string; metafields: CatalogMetafieldInput[] }> {
+  const googleEligible =
+    classification.department === "Fashion" || classification.department === "Jewelry";
+
+  return (product.variants?.nodes ?? []).map((variant) => {
+    const color =
+      variantSelectedOption(variant, "Color") ??
+      variantSelectedOption(variant, "Colour") ??
+      variantExistingGoogleValue(variant, "color") ??
+      (enrichment.colors.length === 1 ? enrichment.colors[0] : null);
+    const material =
+      variantSelectedOption(variant, "Material") ??
+      variantExistingGoogleValue(variant, "material") ??
+      enrichment.material;
+    const size =
+      variantSelectedOption(variant, "Size") ??
+      variantExistingGoogleValue(variant, "size") ??
+      (enrichment.sizes.length === 1 ? enrichment.sizes[0] : null);
+
+    const metafields: CatalogMetafieldInput[] = [
+      {
+        namespace: "mm-google-shopping",
+        key: "condition",
+        type: "single_line_text_field",
+        value: "new",
+      },
+      {
+        namespace: "mm-google-shopping",
+        key: "custom_label_0",
+        type: "single_line_text_field",
+        value: brandWorld ?? "needs_review",
+      },
+      {
+        namespace: "mm-google-shopping",
+        key: "custom_label_1",
+        type: "single_line_text_field",
+        value: classification.department,
+      },
+      {
+        namespace: "mm-google-shopping",
+        key: "custom_label_2",
+        type: "single_line_text_field",
+        value: classification.family,
+      },
+      {
+        namespace: "mm-google-shopping",
+        key: "custom_label_3",
+        type: "single_line_text_field",
+        value: classification.subcollection,
+      },
+      ...field("mm-google-shopping", "color", "single_line_text_field", color),
+      ...field("mm-google-shopping", "material", "single_line_text_field", material),
+      ...field("mm-google-shopping", "size", "single_line_text_field", size),
+      ...field("mm-google-shopping", "pattern", "single_line_text_field", enrichment.pattern),
+      ...(enrichment.season
+        ? [
+            {
+              namespace: "mm-google-shopping",
+              key: "custom_label_4",
+              type: "single_line_text_field",
+              value: enrichment.season,
+            },
+          ]
+        : []),
+    ];
+
+    if (googleEligible) {
+      metafields.push(
+        {
+          namespace: "mm-google-shopping",
+          key: "gender",
+          type: "single_line_text_field",
+          value: "female",
+        },
+        {
+          namespace: "mm-google-shopping",
+          key: "age_group",
+          type: "single_line_text_field",
+          value: "adult",
+        },
+      );
+    }
+
+    if (googleEligible && enrichment.sizeType) {
+      metafields.push({
+        namespace: "mm-google-shopping",
+        key: "size_type",
+        type: "single_line_text_field",
+        value: enrichment.sizeType,
+      });
+    }
+
+    return { id: variant.id, metafields };
+  });
+}
