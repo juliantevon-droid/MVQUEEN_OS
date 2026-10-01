@@ -6,6 +6,8 @@ export type ProductSnapshot = {
   productType?: string | null;
   vendor?: string | null;
   tags?: string[];
+  seo?: { title?: string | null; description?: string | null } | null;
+  category?: { id?: string | null; fullName?: string | null } | null;
   options?: { name: string; values: string[] }[];
   media?: {
     nodes?: { id: string; alt?: string | null }[];
@@ -15,6 +17,12 @@ export type ProductSnapshot = {
       id: string;
       price?: string | null;
       compareAtPrice?: string | null;
+      sku?: string | null;
+      barcode?: string | null;
+      selectedOptions?: { name: string; value: string }[];
+      googleMetafields?: {
+        nodes?: { key: string; value?: string | null; type?: string | null }[];
+      };
       unitCost?: string | null;
       costCurrency?: string | null;
     }[];
@@ -23,6 +31,9 @@ export type ProductSnapshot = {
     nodes?: { key: string; value?: string | null; type?: string | null }[];
   };
   shippingMetafields?: {
+    nodes?: { key: string; value?: string | null; type?: string | null }[];
+  };
+  attributeMetafields?: {
     nodes?: { key: string; value?: string | null; type?: string | null }[];
   };
 };
