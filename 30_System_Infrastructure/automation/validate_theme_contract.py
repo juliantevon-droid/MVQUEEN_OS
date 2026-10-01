@@ -64,6 +64,23 @@ def main() -> int:
         if token not in layout:
             failures.append(f"theme.liquid missing required integration: {token}")
 
+    for token in [
+        "mvq_design_system_url",
+        "mvq_header_css_url",
+        'rel="preload"',
+        "this.rel='stylesheet'",
+    ]:
+        if token not in layout:
+            failures.append(f"theme.liquid missing non-blocking CSS integration: {token}")
+
+    product_card = read("snippets/product-card.liquid")
+    for token in [
+        "card_image_sizes = image_sizes | default: '(max-width: 800px) 50vw, 33vw'",
+        "sizes: card_image_sizes",
+    ]:
+        if token not in product_card:
+            failures.append(f"product-card.liquid missing responsive-image performance integration: {token}")
+
     header = read("sections/header.liquid")
     for token in ["data-mvq-menu", "data-mvq-panel", 'aria-controls="MVQMobilePanel"', 'id="MVQMobilePanel"', 'aria-expanded="false"']:
         if token not in header:
