@@ -201,7 +201,18 @@ function necklaceDesign(
   enrichment: CatalogAttributeEnrichment,
   classification: Classification,
 ): string | null {
-  const text = normalize(\n    [\n      product.title ?? "",\n      product.productType ?? "",\n      product.descriptionHtml?.replace(/<[^>]+>/g, " ") ?? "",\n      product.seo?.title ?? "",\n      product.seo?.description ?? "",\n    ].join(" "),\n  );\n  const values = [\n    "Beaded",\n    "Chain",
+  const text = normalize(
+    [
+      product.title ?? "",
+      product.productType ?? "",
+      product.descriptionHtml?.replace(/<[^>]+>/g, " ") ?? "",
+      product.seo?.title ?? "",
+      product.seo?.description ?? "",
+    ].join(" "),
+  );
+  const values = [
+    "Beaded",
+    "Chain",
     "Choker",
     "Cord",
     "Cuff",
