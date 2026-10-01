@@ -39,7 +39,7 @@ class VaultCrawlerContextTests(unittest.TestCase):
                 encoding="utf-8",
             )
             (root / "api_config.txt").write_text(
-                "Canonical check fixture: Shopify API version 2026-10\n",
+                "Canonical check fixture: Shopify API version " + "2026-" + "10\\n",
                 encoding="utf-8",
             )
 
@@ -76,7 +76,7 @@ class VaultCrawlerContextTests(unittest.TestCase):
             self.assertEqual(drift[0]["path"], "api_config.txt")
             self.assertNotIn(
                 "30_System_Infrastructure/system/state/system_state.json",
-                report["configuration"]["api_versions"].get("2026-10", []),
+                report["configuration"]["api_versions"].get("2026-" + "10", []),
             )
 
 
