@@ -108,16 +108,16 @@
     },
     {
       "id": "analytics",
-      "status": "event_bus_ready",
+      "status": "first_party_connected_external_export_required",
       "authority": "storefront",
-      "execution": "first_party_events",
-      "writes": "no_external_network"
+      "execution": "first_party_events; external_export_disabled_without_provider",
+      "writes": "no_external_network_without_provider_and_export_gate"
     },
     {
       "id": "retention",
-      "status": "strategy_ready",
+      "status": "adapter_ready_external_connection_required",
       "authority": "07_Marketing_and_25_Retention_And_Community",
-      "execution": "adapter_required",
+      "execution": "strategy_generation_only_until_provider_connection",
       "writes": "none"
     },
     {
@@ -144,9 +144,9 @@
     {
       "id": "media_alt_publication",
       "status": "connected_runtime_verified",
-      "authority": "Shopify Files via MVQueen OS",
-      "execution": "permission_and_env_gated_missing_alt_repair",
-      "writes": "image_alt_text_only"
+      "authority": "Shopify Files",
+      "execution": "permission_and_env_gated_worker_repair",
+      "writes": "file_alt_text_only"
     },
     {
       "id": "theme",
@@ -164,10 +164,10 @@
     },
     {
       "id": "deployment",
-      "status": "connected_runtime_and_staging_verified",
+      "status": "governed_partial_runtime_parity",
       "authority": "GitHub_main",
-      "execution": "GitHub_checks_to_Railway_web_worker_and_unpublished_Shopify_theme",
-      "writes": "Railway_runtime_and_unpublished_theme_only; live_theme_requires_explicit_release"
+      "execution": "theme_ci_plus_worker_auto_deploy; web_runtime_source_connected_but_current_commit_lag_detected",
+      "writes": "approval_required"
     },
     {
       "id": "finance",
@@ -185,16 +185,16 @@
     },
     {
       "id": "backup_recovery",
-      "status": "multi_layer_ready_restore_test_required",
-      "authority": "GitHub_Shopify_Drive",
+      "status": "multi_layer_ready_restore_drills_required",
+      "authority": "GitHub_Shopify_Drive_Railway",
       "execution": "manual_governed",
-      "writes": "restore_only_after_incident_approval"
+      "writes": "restore_only_after_incident_or_drill_approval"
     },
     {
       "id": "production_database",
       "status": "connected_production_single_node_restore_drill_required",
       "authority": "Railway managed PostgreSQL",
-      "execution": "production_postgresql_with_persistent_volume",
+      "execution": "production_web_and_worker_runtime_with_persistent_volume",
       "writes": "runtime_state_sessions_jobs_release_audit"
     },
     {
@@ -208,7 +208,7 @@
       "id": "commercial_cost_sync",
       "status": "connected_runtime_verified",
       "authority": "Shopify inventoryItem.unitCost",
-      "execution": "permission_and_env_gated_worker_read",
+      "execution": "permission_and_env_gated_worker_sync",
       "writes": "verified commercial cost snapshot only"
     },
     {
