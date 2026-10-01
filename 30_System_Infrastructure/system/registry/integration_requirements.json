@@ -5,7 +5,7 @@
     {
       "capability": "catalog_product_metadata",
       "provider": "Shopify Admin API",
-      "state": "authorized_in_app_contract",
+      "state": "connected_runtime_verified",
       "requirements": [
         "read_products",
         "write_products",
@@ -17,7 +17,7 @@
     {
       "capability": "canonical_editorial_seo_publish",
       "provider": "Shopify Admin API",
-      "state": "engineered_not_runtime_verified",
+      "state": "connected_runtime_verified_approval_gated",
       "requirements": [
         "read_products",
         "write_products",
@@ -30,25 +30,25 @@
         "authenticated admin",
         "durable release audit"
       ],
-      "side_effects": "title, description, product type, SEO and approved automation/release metafields"
+      "side_effects": "approved title, description, product type, SEO and whitelisted product/content/release metafields; protected handle/SKU/inventory/variant identity/media relationships remain unchanged"
     },
     {
       "capability": "approved_price_publish",
       "provider": "Shopify Admin API",
-      "state": "engineered_not_runtime_verified",
+      "state": "connected_runtime_verified_approval_gated",
       "requirements": [
         "read_products",
         "write_products",
         "MVQ_WRITE_ENABLED",
         "MVQ_PRICE_PUBLISH_ENABLED",
-        "MVQ_APPROVED_PRODUCT_GIDS",
-        "verified commercial.unit_cost",
+        "MVQ_APPROVED_PRODUCT_GIDS or automatic enrollment policy",
+        "verified variant-level commercial.unit_cost",
         "commercial fee/reserve/CAC/margin configuration",
-        "authenticated admin",
-        "single variant until variant-level cost model exists",
+        "current commercial health",
+        "publishable pricing decision",
         "durable price audit"
       ],
-      "side_effects": "approved single-variant price only; compare-at price is untouched"
+      "side_effects": "approved variant prices only; compare-at price remains fail-closed unless verified higher reference price exists"
     },
     {
       "capability": "media_alt_publication",
@@ -65,7 +65,7 @@
     {
       "capability": "theme_staging_sync",
       "provider": "Shopify Themes",
-      "state": "connected",
+      "state": "connected_runtime_verified",
       "requirements": [
         "read_themes",
         "write_themes",
