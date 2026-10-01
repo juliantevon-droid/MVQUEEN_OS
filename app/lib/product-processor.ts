@@ -5,6 +5,7 @@ import type { ProductSnapshot } from "./mvqueen-intelligence";
 import {
   buildCatalogAttributeEnrichment,
   buildCatalogAttributeMetafields,
+  buildVariantGoogleMetafields,
 } from "./catalog-attribute-enrichment";
 import { buildEnterpriseProductDecision } from "./enterprise/product-decision-engine";
 import {
@@ -20,7 +21,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v19-brand-material-routing";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v20-full-catalog-attributes";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -133,28 +134,8 @@ const PRODUCT_QUERY = `#graphql
 query MVQueenProduct($id: ID!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
-    category { id }
-    options { name values }
-    media(first: 50) {
-      nodes {
-        ... on MediaImage { id alt }
-      }
-    }
-    variants(first: 100) { nodes { id price compareAtPrice } }
-    commercialMetafields: metafields(first: 20, namespace: "commercial") {
-      nodes { key value type }
-    }
-    shippingMetafields: metafields(first: 10, namespace: "shipping") {
-      nodes { key value type }
-    }
-  }
-}`;
-
-const PRODUCT_QUERY_WITH_COST = `#graphql
-query MVQueenProductWithCost($id: ID!) {
-  product(id: $id) {
-    id title handle descriptionHtml productType vendor tags
-    category { id }
+    seo { title description }
+    category { id fullName }
     options { name values }
     media(first: 50) {
       nodes {
@@ -166,6 +147,49 @@ query MVQueenProductWithCost($id: ID!) {
         id
         price
         compareAtPrice
+        sku
+        barcode
+        selectedOptions { name value }
+        googleMetafields: metafields(first: 30, namespace: "mm-google-shopping") {
+          nodes { key value type }
+        }
+      }
+    }
+    commercialMetafields: metafields(first: 20, namespace: "commercial") {
+      nodes { key value type }
+    }
+    shippingMetafields: metafields(first: 10, namespace: "shipping") {
+      nodes { key value type }
+    }
+    attributeMetafields: metafields(first: 40, namespace: "attributes") {
+      nodes { key value type }
+    }
+  }
+}`;
+
+const PRODUCT_QUERY_WITH_COST = `#graphql
+query MVQueenProductWithCost($id: ID!) {
+  product(id: $id) {
+    id title handle descriptionHtml productType vendor tags
+    seo { title description }
+    category { id fullName }
+    options { name values }
+    media(first: 50) {
+      nodes {
+        ... on MediaImage { id alt }
+      }
+    }
+    variants(first: 100) {
+      nodes {
+        id
+        price
+        compareAtPrice
+        sku
+        barcode
+        selectedOptions { name value }
+        googleMetafields: metafields(first: 30, namespace: "mm-google-shopping") {
+          nodes { key value type }
+        }
         inventoryItem {
           unitCost { amount currencyCode }
         }
@@ -175,6 +199,9 @@ query MVQueenProductWithCost($id: ID!) {
       nodes { key value type }
     }
     shippingMetafields: metafields(first: 10, namespace: "shipping") {
+      nodes { key value type }
+    }
+    attributeMetafields: metafields(first: 40, namespace: "attributes") {
       nodes { key value type }
     }
   }
@@ -266,6 +293,8 @@ function sourceFingerprint(
     },
     title: product.title ?? "",
     descriptionHtml: product.descriptionHtml ?? "",
+    seo: product.seo ?? null,
+    category: product.category?.id ?? null,
     productType: product.productType ?? "",
     vendor: product.vendor ?? "",
     tags: [...(product.tags ?? [])]
@@ -282,11 +311,20 @@ function sourceFingerprint(
         id: v.id,
         price: v.price ?? "",
         compareAtPrice: v.compareAtPrice ?? "",
+        sku: v.sku ?? "",
+        barcode: v.barcode ?? "",
+        selectedOptions: v.selectedOptions ?? [],
+        googleMetafields: (v.googleMetafields?.nodes ?? [])
+          .map((m) => ({ key: m.key, value: m.value ?? "", type: m.type ?? "" }))
+          .sort((a, b) => a.key.localeCompare(b.key)),
         unitCost: v.unitCost ?? "",
         costCurrency: v.costCurrency ?? "",
       }))
       .sort((a, b) => a.id.localeCompare(b.id)),
     commercialMetafields: (product.commercialMetafields?.nodes ?? [])
+      .map((m) => ({ key: m.key, value: m.value ?? "", type: m.type ?? "" }))
+      .sort((a, b) => a.key.localeCompare(b.key)),
+    attributeMetafields: (product.attributeMetafields?.nodes ?? [])
       .map((m) => ({ key: m.key, value: m.value ?? "", type: m.type ?? "" }))
       .sort((a, b) => a.key.localeCompare(b.key)),
     shippingDeliveryEstimate: resolveShippingDeliveryEstimate(
@@ -336,6 +374,16 @@ export async function processProductJob(
                 id: string;
                 price?: string | null;
                 compareAtPrice?: string | null;
+                sku?: string | null;
+                barcode?: string | null;
+                selectedOptions?: Array<{ name: string; value: string }>;
+                googleMetafields?: {
+                  nodes?: Array<{
+                    key: string;
+                    value?: string | null;
+                    type?: string | null;
+                  }>;
+                };
                 inventoryItem?: {
                   unitCost?: { amount?: string | null; currencyCode?: string | null } | null;
                 } | null;
@@ -343,6 +391,10 @@ export async function processProductJob(
                 id: variant.id,
                 price: variant.price ?? null,
                 compareAtPrice: variant.compareAtPrice ?? null,
+                sku: variant.sku ?? null,
+                barcode: variant.barcode ?? null,
+                selectedOptions: variant.selectedOptions ?? [],
+                googleMetafields: variant.googleMetafields ?? { nodes: [] },
                 unitCost: variant.inventoryItem?.unitCost?.amount ?? null,
                 costCurrency: variant.inventoryItem?.unitCost?.currencyCode ?? null,
               }),
@@ -435,6 +487,12 @@ export async function processProductJob(
         : buildAutomatedProductContent(product, c, brandLabel);
     const attributeEnrichment = buildCatalogAttributeEnrichment(product, c);
     const attributeMetafields = buildCatalogAttributeMetafields(
+      attributeEnrichment,
+      c,
+      brandRoute.brand,
+    );
+    const variantGoogleMetafields = buildVariantGoogleMetafields(
+      product,
       attributeEnrichment,
       c,
       brandRoute.brand,
@@ -830,39 +888,53 @@ export async function processProductJob(
       },
     });
 
-    if (pricePublishable && variants.length && recommendedPrice !== null) {
+    if (variants.length) {
       const variantInputs: Record<string, unknown>[] = variants.map((variant) => {
-        const input: Record<string, unknown> = {
-          id: variant.id,
-          price: recommendedPrice.toFixed(2),
-        };
+        const input: Record<string, unknown> = { id: variant.id };
+        const google = variantGoogleMetafields.find((item) => item.id === variant.id);
+        if (google?.metafields.length) {
+          input.metafields = google.metafields;
+        }
 
-        if (COMPARE_AT_PRICE_PUBLISH_ENABLED) {
-          if (compareAtPrice !== null) {
-            input.compareAtPrice = compareAtPrice.toFixed(2);
-          } else if (moneyNumber(variant.compareAtPrice) !== null) {
-            // A compare-at price must represent a real higher reference price.
-            // Clear equal/lower/stale values instead of manufacturing a discount.
-            input.compareAtPrice = null;
+        if (pricePublishable && recommendedPrice !== null) {
+          input.price = recommendedPrice.toFixed(2);
+
+          if (COMPARE_AT_PRICE_PUBLISH_ENABLED) {
+            if (compareAtPrice !== null) {
+              input.compareAtPrice = compareAtPrice.toFixed(2);
+            } else if (moneyNumber(variant.compareAtPrice) !== null) {
+              // A compare-at price must represent a real higher reference price.
+              // Clear equal/lower/stale values instead of manufacturing a discount.
+              input.compareAtPrice = null;
+            }
           }
         }
 
         return input;
       });
 
-      const pricingUpdate = await admin.graphql(PRODUCT_VARIANTS_BULK_UPDATE, {
-        variables: {
-          productId: product.id,
-          variants: variantInputs,
-        },
-      });
-      const pricingBody = await pricingUpdate.json();
-      const pricingErrors =
-        pricingBody.data?.productVariantsBulkUpdate?.userErrors ?? [];
-      if (pricingErrors.length) {
-        throw new Error(
-          pricingErrors.map((e: { message: string }) => e.message).join("; "),
-        );
+      if (
+        variantInputs.some(
+          (input) =>
+            Object.prototype.hasOwnProperty.call(input, "metafields") ||
+            Object.prototype.hasOwnProperty.call(input, "price") ||
+            Object.prototype.hasOwnProperty.call(input, "compareAtPrice"),
+        )
+      ) {
+        const variantUpdate = await admin.graphql(PRODUCT_VARIANTS_BULK_UPDATE, {
+          variables: {
+            productId: product.id,
+            variants: variantInputs,
+          },
+        });
+        const variantBody = await variantUpdate.json();
+        const variantErrors =
+          variantBody.data?.productVariantsBulkUpdate?.userErrors ?? [];
+        if (variantErrors.length) {
+          throw new Error(
+            variantErrors.map((e: { message: string }) => e.message).join("; "),
+          );
+        }
       }
     }
 
