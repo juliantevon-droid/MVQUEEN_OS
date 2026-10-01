@@ -279,6 +279,17 @@ function extractFeatures(product: ProductSnapshot, lines: string[]): string[] {
   const pieces = labeledValue(lines, ["Number of pieces", "Pieces"]);
   if (pieces) features.push(pieces);
 
+  const sourceAttributes = {
+    ...extractSourceAttributes(lines),
+    ...existingSourceAttributes(product),
+  };
+  if (/\badjustable\b/i.test(sourceAttributes.chain_length ?? "")) {
+    features.push("Adjustable chain");
+  }
+  if (/\bcrystal\b/i.test(text)) features.push("Crystal detail");
+  if (/\bcross\b/i.test(text)) features.push("Cross design");
+  if (/\bpendant\b/i.test(text)) features.push("Pendant design");
+
   for (const [pattern, label] of FEATURE_TERMS) {
     if (pattern.test(text)) features.push(label);
   }
