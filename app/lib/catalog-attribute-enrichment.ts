@@ -49,25 +49,61 @@ function sourceLines(product: ProductSnapshot): string[] {
     .filter(Boolean);
 }
 
+function existingSourceAttributes(product: ProductSnapshot): Record<string, string> {
+  const raw = product.attributeMetafields?.nodes?.find(
+    (item) => item.key === "source_attributes",
+  )?.value;
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
+    return Object.fromEntries(
+      Object.entries(parsed)
+        .filter(([, value]) => value !== null && value !== undefined)
+        .map(([key, value]) => [normalizedAttributeKey(key), cleanText(String(value))]),
+    );
+  } catch {
+    return {};
+  }
+}
+
+function variantGoogleValues(product: ProductSnapshot, key: string): string[] {
+  return unique(
+    (product.variants?.nodes ?? [])
+      .map((variant) =>
+        variant.googleMetafields?.nodes?.find((item) => item.key === key)?.value ?? "",
+      )
+      .filter(Boolean),
+  );
+}
+
 function sourceText(product: ProductSnapshot): string {
+  const sourceAttributes = existingSourceAttributes(product);
   return cleanText(
     [
       product.title ?? "",
       product.productType ?? "",
+      product.seo?.title ?? "",
+      product.seo?.description ?? "",
       ...sourceLines(product),
       ...(product.tags ?? []),
+      ...Object.values(sourceAttributes),
+      ...variantGoogleValues(product, "color"),
+      ...variantGoogleValues(product, "material"),
     ].join(" "),
   );
 }
 
 function optionValues(product: ProductSnapshot, names: string[]): string[] {
   const wanted = new Set(names.map((name) => name.toLowerCase()));
-  const values = (product.options ?? [])
+  const productValues = (product.options ?? [])
     .filter((option) => wanted.has(option.name.trim().toLowerCase()))
-    .flatMap((option) => option.values ?? [])
-    .map(cleanText)
-    .filter(Boolean);
-  return unique(values);
+    .flatMap((option) => option.values ?? []);
+  const variantValues = (product.variants?.nodes ?? []).flatMap((variant) =>
+    (variant.selectedOptions ?? [])
+      .filter((option) => wanted.has(option.name.trim().toLowerCase()))
+      .map((option) => option.value),
+  );
+  return unique([...productValues, ...variantValues].map(cleanText).filter(Boolean));
 }
 
 function unique(values: string[]): string[] {
@@ -275,10 +311,30 @@ export function buildCatalogAttributeEnrichment(
 ): CatalogAttributeEnrichment {
   const lines = sourceLines(product);
   const text = sourceText(product);
-  const colors = optionValues(product, ["Color", "Colour"]);
-  const sizes = optionValues(product, ["Size"]);
-  const material = extractMaterial(lines);
-  const explicitFabric = labeledValue(lines, ["Fabric", "Fabric content"]);
+  const sourceAttributes = {
+    ...extractSourceAttributes(lines),
+    ...existingSourceAttributes(product),
+  };
+  const colors = unique([
+    ...optionValues(product, ["Color", "Colour"]),
+    ...variantGoogleValues(product, "color"),
+  ]);
+  const sizes = unique([
+    ...optionValues(product, ["Size"]),
+    ...variantGoogleValues(product, "size"),
+  ]);
+  const material =
+    extractMaterial(lines) ??
+    sourceAttributes.material_composition ??
+    sourceAttributes.material ??
+    sourceAttributes.metal ??
+    variantGoogleValues(product, "material")[0] ??
+    null;
+  const explicitFabric =
+    labeledValue(lines, ["Fabric", "Fabric content"]) ??
+    sourceAttributes.fabric ??
+    sourceAttributes.fabric_content ??
+    null;
   const fabric =
     explicitFabric ??
     (classification.department === "Fashion" ? material : null);
@@ -313,7 +369,7 @@ export function buildCatalogAttributeEnrichment(
     pattern,
     season: extractSeason(text),
     careInstructions: extractCare(lines),
-    sourceAttributes: extractSourceAttributes(lines),
+    sourceAttributes,
     customProduct: /\b(?:personalized|custom[- ]made|made[- ]to[- ]order|made to order)\b/i.test(text),
   };
 }
