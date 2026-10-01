@@ -121,6 +121,51 @@ function extractHighlights(html?: string | null): string[] {
   ).slice(0, 6);
 }
 
+function humanizeAttributeKey(value: string): string {
+  return value
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/^./, (char) => char.toUpperCase());
+}
+
+function structuredSourceHighlights(product: ProductSnapshot): string[] {
+  const highlights: string[] = [];
+  const sourceRaw = product.attributeMetafields?.nodes?.find(
+    (item) => item.key === "source_attributes",
+  )?.value;
+
+  if (sourceRaw) {
+    try {
+      const parsed = JSON.parse(sourceRaw) as Record<string, unknown>;
+      for (const [key, rawValue] of Object.entries(parsed)) {
+        if (rawValue === null || rawValue === undefined) continue;
+        const value = cleanText(String(rawValue));
+        if (!value) continue;
+        highlights.push(`${humanizeAttributeKey(key)}: ${value}`);
+      }
+    } catch {
+      // Preserve the product job if a legacy source_attributes value is invalid.
+    }
+  }
+
+  const variantValues = (key: string) =>
+    unique(
+      (product.variants?.nodes ?? [])
+        .map((variant) =>
+          variant.googleMetafields?.nodes?.find((item) => item.key === key)?.value ?? "",
+        )
+        .filter(Boolean),
+    );
+
+  const materials = variantValues("material");
+  const colors = variantValues("color");
+  if (materials.length) highlights.unshift(`Material: ${materials.join(" / ")}`);
+  if (colors.length) highlights.unshift(`Color: ${colors.join(" / ")}`);
+
+  return unique(highlights).slice(0, 6);
+}
+
 function valueAfterLabel(value: string): string {
   const cleaned = cleanText(value);
   const colon = cleaned.indexOf(":");
@@ -281,9 +326,12 @@ export function buildAutomatedProductContent(
     .replace(SPACE_RE, " ")
     .trim() || sourceTitle;
 
-  const highlights = extractHighlights(product.descriptionHtml)
-    .map((item) => stripVendor(item, product.vendor))
-    .filter(Boolean);
+  const highlights = unique([
+    ...extractHighlights(product.descriptionHtml)
+      .map((item) => stripVendor(item, product.vendor))
+      .filter(Boolean),
+    ...structuredSourceHighlights(product),
+  ]).slice(0, 6);
 
   const descriptionSentence = alignBrandLabel(
     stripVendor(
