@@ -131,7 +131,7 @@ async function accessScopesForShop(
 }
 
 const PRODUCT_QUERY = `#graphql
-query MVQueenProduct($id: ID!) {
+query MVQueenProduct($id: ID!, $attributeNamespace: String!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
@@ -161,14 +161,14 @@ query MVQueenProduct($id: ID!) {
     shippingMetafields: metafields(first: 10, namespace: "shipping") {
       nodes { key value type }
     }
-    attributeMetafields: metafields(first: 40, namespace: "attributes") {
+    attributeMetafields: metafields(first: 40, namespace: $attributeNamespace) {
       nodes { key value type }
     }
   }
 }`;
 
 const PRODUCT_QUERY_WITH_COST = `#graphql
-query MVQueenProductWithCost($id: ID!) {
+query MVQueenProductWithCost($id: ID!, $attributeNamespace: String!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
@@ -201,7 +201,7 @@ query MVQueenProductWithCost($id: ID!) {
     shippingMetafields: metafields(first: 10, namespace: "shipping") {
       nodes { key value type }
     }
-    attributeMetafields: metafields(first: 40, namespace: "attributes") {
+    attributeMetafields: metafields(first: 40, namespace: $attributeNamespace) {
       nodes { key value type }
     }
   }
@@ -361,7 +361,7 @@ export async function processProductJob(
 
     const response = await admin.graphql(
       COST_SYNC_ENABLED && hasReadInventory ? PRODUCT_QUERY_WITH_COST : PRODUCT_QUERY,
-      { variables: { id: job.productGid } },
+      { variables: { id: job.productGid, attributeNamespace: "attributes" } },
     );
     const body = await response.json();
     const rawProduct = body.data?.product ?? null;
