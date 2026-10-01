@@ -182,6 +182,21 @@ assert.equal(mvqueenPaletteRoute.brand, "mvqueen");
 assert.equal(mvqueenPaletteRoute.tone, "bold-authoritative");
 assert.equal(mvqueenPaletteRoute.reason, "color:gold");
 
+const divineRadianceCross: ProductSnapshot = {
+  id: "gid://shopify/Product/divine-radiance-cross",
+  title: "Divine Radiance Cross Necklace",
+  descriptionHtml:
+    "<p>14K gold-plated cross with sparkling crystal details channels confidence and warmth.</p>",
+  tags: [],
+  variants: {
+    nodes: [{ id: "gid://shopify/ProductVariant/divine-radiance-cross", price: "37.99" }],
+  },
+};
+const divineRadianceRoute = classifyBrandWorld(divineRadianceCross);
+assert.equal(divineRadianceRoute.brand, "mvqueen");
+assert.equal(divineRadianceRoute.tone, "bold-authoritative");
+assert.equal(divineRadianceRoute.reason, "material:gold-plated");
+
 const sharedPinkOnly: ProductSnapshot = {
   id: "gid://shopify/Product/shared-pink",
   title: "Pink Top",
