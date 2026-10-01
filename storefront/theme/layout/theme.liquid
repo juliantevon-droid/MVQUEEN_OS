@@ -15,12 +15,20 @@
     <link href="{{ mvq_font_stylesheet }}" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="{{ mvq_font_stylesheet }}" rel="stylesheet"></noscript>
     {{ 'mvqueen.css' | asset_url | stylesheet_tag }}
-    {{ 'mvqueen-design-system.css' | asset_url | stylesheet_tag }}
-    {{ 'mvqueen-header.css' | asset_url | stylesheet_tag }}
+    {% assign mvq_design_system_url = 'mvqueen-design-system.css' | asset_url %}
+    {% assign mvq_header_css_url = 'mvqueen-header.css' | asset_url %}
+    <link rel="preload" href="{{ mvq_design_system_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ mvq_header_css_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      {{ 'mvqueen-design-system.css' | asset_url | stylesheet_tag }}
+      {{ 'mvqueen-header.css' | asset_url | stylesheet_tag }}
+    </noscript>
     {% if request.page_type == 'product' %}
       {{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}
     {% endif %}
-    {{ 'brand-gateway.css' | asset_url | stylesheet_tag }}
+    {% if request.page_type == 'index' or page.handle == 'miss-princess' %}
+      {{ 'brand-gateway.css' | asset_url | stylesheet_tag }}
+    {% endif %}
     {% render 'seo-meta' %}
     {{ content_for_header }}
     {% if request.page_type == 'product' %}{% render 'product-schema' %}{% endif %}
