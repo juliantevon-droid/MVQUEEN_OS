@@ -142,6 +142,8 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("variantInputs", processor)
         self.assertIn("variant_cost_or_currency_mismatch", processor)
         self.assertIn("pricePublishable", processor)
+        self.assertIn("input.compareAtPrice = null", processor)
+        self.assertIn("Clear equal/lower/stale values", processor)
         self.assertIn("preliminaryDecision", processor)
         self.assertIn("recommendedPrice", processor)
         self.assertIn("buildEnterpriseProductDecision(", processor)
