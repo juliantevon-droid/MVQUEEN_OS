@@ -8,6 +8,7 @@
   assign card_image = product.featured_image
   assign card_image_alt = card_image.alt | default: product.title
   assign second_image = product.images[1]
+  assign card_image_sizes = image_sizes | default: '(max-width: 800px) 50vw, 33vw'
   assign first_variant = product.selected_or_first_available_variant
   assign has_sale = false
   assign is_jewelry = false
@@ -22,10 +23,10 @@
   <a class="mvq-card-link" href="{{ product.url }}">
     <div class="mvq-card-media">
       {% if card_image %}
-        {{ card_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: '(max-width: 800px) 66vw, 33vw', alt: card_image_alt }}
+        {{ card_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: card_image_sizes, alt: card_image_alt }}
         {% if second_image %}
           <span class="mvq-card-media-alt" aria-hidden="true">
-            {{ second_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: '(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw', alt: '' }}
+            {{ second_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240,360,540,720', sizes: card_image_sizes, alt: '' }}
           </span>
         {% endif %}
       {% else %}
