@@ -111,7 +111,10 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("dead_letter", worker)
         self.assertIn("reconcileRecentShopifyProducts", worker)
         self.assertIn("auditProductWebhookSubscriptions", worker)
+        self.assertIn("ensureProductWebhookSubscriptions", worker)
+        self.assertIn("registerWebhooks", worker)
         self.assertIn("product.webhooks.audit", worker)
+        self.assertIn("product.webhooks.ensure", worker)
         self.assertIn('process.env.MVQ_WRITE_ENABLED !== "true"', worker)
         processor = (ROOT / "app/lib/product-processor.ts").read_text(encoding="utf-8")
         self.assertIn("automaticContentSurfaces: AUTO_CONTENT_SURFACES_ENABLED", processor)
@@ -154,6 +157,8 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("timingSafeEqual", route)
         self.assertIn("*/5 * * * *", schedule)
         self.assertIn("deadLetterJobs", health)
+        self.assertIn("product-webhooks", health)
+        self.assertIn("webhookHealthy", health)
 
 
 if __name__ == "__main__":
