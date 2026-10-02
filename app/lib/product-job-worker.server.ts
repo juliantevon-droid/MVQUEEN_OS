@@ -1,5 +1,5 @@
 import prisma from "../db.server";
-import { unauthenticated } from "../shopify.server";
+import { registerWebhooks, unauthenticated } from "../shopify.server";
 import { processProductJob } from "./product-processor";
 import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
 
@@ -48,6 +48,24 @@ export async function recordProductWorkerHeartbeat(
     },
     create: {
       name: "product-worker",
+      state,
+      detailsJson: details ? JSON.stringify(details) : null,
+    },
+  });
+}
+
+export async function recordProductWebhookHeartbeat(
+  state: "healthy" | "degraded" | "error",
+  details?: Record<string, unknown>,
+) {
+  return prisma.runtimeHeartbeat.upsert({
+    where: { name: "product-webhooks" },
+    update: {
+      state,
+      detailsJson: details ? JSON.stringify(details) : null,
+    },
+    create: {
+      name: "product-webhooks",
       state,
       detailsJson: details ? JSON.stringify(details) : null,
     },
@@ -125,6 +143,68 @@ export async function auditProductWebhookSubscriptions() {
   }
 
   return results;
+}
+
+export async function ensureProductWebhookSubscriptions() {
+  const initial = await auditProductWebhookSubscriptions();
+  const missing = initial.filter(
+    (result) => !result.productsCreate || !result.productsUpdate,
+  );
+
+  for (const result of missing) {
+    try {
+      const { session } = await unauthenticated.admin(result.shop);
+      const registration = await registerWebhooks({ session });
+      logMvqueenEvent(
+        "product.webhooks.repair_requested",
+        {
+          shop: result.shop,
+          registration:
+            registration === undefined ? "completed" : registration,
+        },
+        "info",
+      );
+    } catch (error) {
+      logMvqueenEvent(
+        "product.webhooks.repair_failed",
+        { shop: result.shop, ...errorFields(error) },
+        "error",
+      );
+    }
+  }
+
+  const final = missing.length
+    ? await auditProductWebhookSubscriptions()
+    : initial;
+  const healthy =
+    final.length > 0 &&
+    final.every((result) => result.productsCreate && result.productsUpdate);
+
+  await recordProductWebhookHeartbeat(
+    healthy ? "healthy" : "degraded",
+    {
+      shops: final.length,
+      missing: final
+        .filter((result) => !result.productsCreate || !result.productsUpdate)
+        .map((result) => ({
+          shop: result.shop,
+          productsCreate: result.productsCreate,
+          productsUpdate: result.productsUpdate,
+        })),
+    },
+  );
+
+  logMvqueenEvent(
+    "product.webhooks.ensure",
+    {
+      healthy,
+      shops: final.length,
+      repairedShops: missing.map((result) => result.shop),
+    },
+    healthy ? "info" : "error",
+  );
+
+  return { healthy, audits: final };
 }
 
 export async function recoverStaleProductJobs() {
