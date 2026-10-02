@@ -609,3 +609,64 @@ Current conclusion:
 - **Every enterprise integration complete:** no.
 - **Safe to continue operating and expanding:** yes.
 - **Remaining work:** security visibility, performance/live release QA, recovery drills, external providers, localization publication, resilience, and full finance reconciliation.
+
+## Always-on Shopify product automation verification — 2026-10-02
+
+The current production catalog uses Shopify as its sole product source of truth. New/imported Shopify products and meaningful product updates are now handled by the live MVQUEEN_OS event runtime.
+
+### Live runtime evidence
+
+- GitHub `main`: protected and current production source.
+- Verified runtime commit: `9dab8a85f8e4e1e0eff463a4f4c7398d87a65699`.
+- GitHub checks on that commit:
+  - Lint / Index: PASS
+  - Overseer: PASS
+  - Source Security Gate: PASS
+  - Shopify App CI: PASS, including typecheck, catalog automation tests, production preflight tests, production build, web-container validation and worker-container validation.
+- Railway production:
+  - `mvqueen-web`: SUCCESS
+  - `mvqueen-product-worker`: SUCCESS
+  - `mvqueen-agent-worker`: SUCCESS
+  - PostgreSQL: SUCCESS
+- MVQueen app-scoped Shopify webhook audit:
+  - PRODUCTS_CREATE: true
+  - PRODUCTS_UPDATE: true
+  - subscriptions: 2
+  - webhook health: healthy
+- Continuous worker queue after deployment:
+  - received: 0
+  - processing: 0
+  - failed: 0
+  - dead-letter: 0
+- Strict `/healthz` behavior verified during deployment: 503 before full worker/webhook readiness, then 200 after the runtime became healthy.
+- Missed-event reconciliation, retry/backoff, stale-lease recovery and dead-letter controls are active in the continuous worker.
+- Self-generated Shopify update loops are suppressed through product automation state, source fingerprints and Shopify update timestamps.
+
+### Automatic product treatment
+
+For eligible current Shopify products, the production runtime can automatically derive and write governed fields from Shopify source facts, including:
+
+- MVQueen vs Miss.Princess brand routing
+- department / family / subcollection classification
+- Shopify taxonomy/category metadata where matched
+- storefront vendor normalization while retaining source vendor internally
+- concise short description
+- factual product highlights/bullets
+- focus keyword, secondary search phrases and long-tail SEO phrases
+- Shopify SEO title and meta description
+- product FAQ metafield
+- image ALT repair
+- Google Shopping product attributes
+- shipping-delivery metadata
+- commercial cost/pricing/health calculations from verified inputs
+- collection-routing/system tags
+- marketing/lifecycle planning state
+
+The current Shopify products already contain these MVQUEEN_OS fields and tags, proving the production pipeline has processed live catalog data.
+
+### Safety boundary
+
+The always-on worker does not use the old historical catalog and does not fabricate product facts. Protected commerce identity/state remains governed. New products can receive full initial enrichment on create; ordinary later update events preserve established nonblank description copy unless the separate rewrite-existing gate is explicitly enabled.
+
+**Always-on product automation: LIVE / VERIFIED / SELF-HEALING.**
+
