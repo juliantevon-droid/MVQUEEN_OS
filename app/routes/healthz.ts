@@ -37,12 +37,22 @@ export const loader = async (_args: LoaderFunctionArgs) => {
     state: string;
     updatedAt: Date;
   } | null = null;
+  let webhookHeartbeat: {
+    state: string;
+    updatedAt: Date;
+  } | null = null;
 
   if (database) {
-    workerHeartbeat = await prisma.runtimeHeartbeat.findUnique({
-      where: { name: "product-worker" },
-      select: { state: true, updatedAt: true },
-    });
+    [workerHeartbeat, webhookHeartbeat] = await Promise.all([
+      prisma.runtimeHeartbeat.findUnique({
+        where: { name: "product-worker" },
+        select: { state: true, updatedAt: true },
+      }),
+      prisma.runtimeHeartbeat.findUnique({
+        where: { name: "product-webhooks" },
+        select: { state: true, updatedAt: true },
+      }),
+    ]);
   }
 
   const heartbeatMaxAgeMs = 120_000;
@@ -53,12 +63,35 @@ export const loader = async (_args: LoaderFunctionArgs) => {
       Date.now() - workerHeartbeat.updatedAt.getTime() <= heartbeatMaxAgeMs,
     );
 
+  const webhookRequired =
+    process.env.MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED === "true";
+  const webhookAuditIntervalMs = Math.max(
+    60_000,
+    Math.min(
+      86_400_000,
+      Number(process.env.MVQ_PRODUCT_WEBHOOK_AUDIT_INTERVAL_MS ?? "300000") ||
+        300000,
+    ),
+  );
+  const webhookHeartbeatMaxAgeMs = Math.max(
+    300_000,
+    webhookAuditIntervalMs * 3,
+  );
+  const webhookHealthy =
+    !webhookRequired ||
+    Boolean(
+      webhookHeartbeat?.state === "healthy" &&
+      Date.now() - webhookHeartbeat.updatedAt.getTime() <=
+        webhookHeartbeatMaxAgeMs,
+    );
+
   const queueHealthy = queue.deadLetterJobs === 0;
   const ok =
     preflight.ready &&
     database &&
     queueHealthy &&
-    workerHeartbeatFresh;
+    workerHeartbeatFresh &&
+    webhookHealthy;
 
   return Response.json(
     {
@@ -72,6 +105,12 @@ export const loader = async (_args: LoaderFunctionArgs) => {
         fresh: workerHeartbeatFresh,
         state: workerHeartbeat?.state ?? "missing",
         lastSeenAt: workerHeartbeat?.updatedAt?.toISOString() ?? null,
+      },
+      webhooks: {
+        required: webhookRequired,
+        healthy: webhookHealthy,
+        state: webhookHeartbeat?.state ?? "missing",
+        lastCheckedAt: webhookHeartbeat?.updatedAt?.toISOString() ?? null,
       },
     },
     {
