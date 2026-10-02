@@ -1,0 +1,80 @@
+name: MVQUEEN Recovery Drill
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 10 1 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'prisma/production/**'
+      - '30_System_Infrastructure/automation/recovery_readiness.py'
+      - '.github/workflows/recovery-drill.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  disposable-database-restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: mvqueen
+          POSTGRES_PASSWORD: recovery-drill
+          POSTGRES_DB: mvqueen_recovery
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U mvqueen -d mvqueen_recovery"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    env:
+      DATABASE_URL: postgresql://mvqueen:recovery-drill@localhost:5432/mvqueen_recovery
+      MVQ_DATABASE_PROFILE: production
+      SHOPIFY_API_KEY: recovery-placeholder
+      SHOPIFY_API_SECRET: recovery-placeholder
+      SHOPIFY_APP_URL: https://example.invalid
+      SCOPES: read_products
+      MVQ_WRITE_ENABLED: 'false'
+      MVQ_PRICE_PUBLISH_ENABLED: 'false'
+      MVQ_AD_EXECUTION_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify recovery prerequisites
+        run: python 30_System_Infrastructure/automation/recovery_readiness.py
+      - name: Validate production Prisma schema
+        run: npm run prisma:validate:production
+      - name: Generate production Prisma client
+        run: npm run prisma:generate:production
+      - name: Rebuild disposable production database from migrations
+        run: npm run db:migrate:production
+      - name: Verify migration state
+        run: npx prisma migrate status --schema prisma/production/schema.prisma
+      - name: Prove database is reachable after reconstruction
+        run: |
+          PGPASSWORD=recovery-drill psql -h localhost -U mvqueen -d mvqueen_recovery -c 'SELECT 1 AS recovery_ok;'
+      - name: Record recovery evidence
+        if: always()
+        run: |
+          mkdir -p .mvqueen-recovery
+          printf 'commit=%s\nrun=%s\nprofile=production\nwrites=false\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > .mvqueen-recovery/evidence.txt
+          npx prisma migrate status --schema prisma/production/schema.prisma > .mvqueen-recovery/migration-status.txt 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mvqueen-recovery-drill-${{ github.run_id }}
+          path: .mvqueen-recovery
+          retention-days: 30
