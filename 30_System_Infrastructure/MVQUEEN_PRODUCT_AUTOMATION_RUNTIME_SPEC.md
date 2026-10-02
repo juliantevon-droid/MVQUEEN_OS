@@ -1,7 +1,7 @@
 # MVQueen Product Automation Runtime Specification
 ## MVQUEEN_OS / 30_System_Infrastructure
 
-Status: ALWAYS-ON ARCHITECTURE IMPLEMENTED IN MAIN — production host/env activation and end-to-end live verification pending
+Status: LIVE AND VERIFIED — always-on Shopify product automation is active in production
 
 ## Objective
 Automatically process every eligible Shopify product after creation or meaningful update.
@@ -76,26 +76,44 @@ Implemented in the React/Shopify runtime:
 - queue-aware health endpoint
 - five-minute GitHub Actions fallback scheduler
 
-Not yet activated as an always-on production service:
-- real HTTPS application host
-- production PostgreSQL database
-- real Shopify app client configuration
-- required app reauthorization for current scopes
-- production automation environment switches
-- verified end-to-end webhook test on a safe Shopify product
+## Verified production activation — 2026-10-02
 
-## Deployment gate
-Do not call this system 24/7 production-ready until:
-- app authentication works
-- webhook registration succeeds
-- HMAC/authenticity verification is tested
-- queue persistence works
-- one safe test product completes end-to-end
-- protected fields are verified unchanged
-- duplicate webhook delivery is safely deduplicated
-- failure/retry behavior is tested
-- logs are observable
-- secrets are external to GitHub
-- deployment scheduler invokes POST /internal/product-worker continuously
-- MVQ_PRODUCT_WORKER_URL and MVQ_PRODUCT_WORKER_TOKEN are configured as deployment/GitHub secrets
-- full automation gates pass `npm run preflight:production`
+- Railway production project: `MVQUEEN_OS`.
+- `mvqueen-web`, `mvqueen-product-worker`, `mvqueen-agent-worker`, and PostgreSQL are deployed successfully.
+- Production source is GitHub `main`; verified runtime commit: `9dab8a85f8e4e1e0eff463a4f4c7398d87a65699`.
+- MVQueen OS authenticated Shopify webhook audit reports:
+  - `PRODUCTS_CREATE=true`
+  - `PRODUCTS_UPDATE=true`
+  - 2 product webhook subscriptions
+  - webhook health `true`
+- The continuous Railway product worker is running and polling the durable queue.
+- Post-deploy queue state verified at `received=0 / processing=0 / failed=0 / deadLetter=0`.
+- The strict public `/healthz` gate returned 503 while the worker was starting, then 200 after the worker/webhook heartbeat became healthy. This confirms the health endpoint fails closed rather than reporting readiness before the complete runtime is available.
+- Reconciliation remains enabled as the missed-webhook recovery path.
+- Source-fingerprint/version state plus Shopify update timestamps suppress automation-generated update loops.
+- GitHub's scheduled runtime workflow is a read-only health monitor; Railway remains the continuous queue/reconciliation owner.
+- Current Shopify products contain production evidence of the automation path: MVQueen/Miss.Princess brand routing, taxonomy, collection tags, short descriptions, highlights, focus and long-tail SEO fields, image ALT status, Google Shopping attributes, commercial-health state, lifecycle/marketing planning state, and governed pricing metadata.
+
+
+## Production operating contract
+
+The always-on product runtime is production-active.
+
+A Shopify product create or meaningful update now follows this governed path:
+
+`Shopify product event → authenticated webhook → idempotent ProductJob → continuous Railway worker → authoritative Shopify re-read → classification/brand routing → factual editorial/SEO/metafields/ALT/commercial processing → protected-field-safe Shopify write → automation-state fingerprint → self-generated webhook suppression`
+
+The runtime remains fail-closed:
+
+- no publication-status changes from this worker
+- no SKU or inventory mutation
+- no variant-option mutation
+- no handle mutation
+- no invented materials, ingredients, dimensions, certifications, efficacy or product claims
+- no manufactured compare-at discount
+- low-confidence classification routes to review rather than fabrication
+- established nonblank product descriptions are not rewritten on ordinary update events unless the separate existing-description rewrite gate is explicitly enabled
+- product-content surfaces only publish when their individual eligibility and kill-switch requirements are satisfied
+- legal/policy pages remain protected from product-content automation
+
+Production readiness is continuously observable through Railway health, worker/webhook heartbeats, queue state, and the scheduled GitHub `/healthz` monitor.
