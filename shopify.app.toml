@@ -43,6 +43,7 @@ uri = "/webhooks/compliance/shop-redact"
 # Never commit the Shopify client secret; keep it only in deployment secrets.
 
 
-# Product create/update webhooks are intentionally registered as shop-specific
-# subscriptions by the authenticated MVQueen OS runtime to avoid requiring
-# a separate CLI config release for this single-merchant deployment.
+# Product create/update webhooks are intentionally shop-specific for this
+# single-merchant deployment. The authenticated MVQueen OS runtime registers
+# them after auth, while the continuously running Railway product worker audits
+# and self-repairs missing subscriptions on startup and at a recurring interval.
