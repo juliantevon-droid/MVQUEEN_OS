@@ -64,8 +64,10 @@ jobs:
       - name: Verify migration state
         run: npx prisma migrate status --schema prisma/production/schema.prisma
       - name: Prove database is reachable after reconstruction
+        env:
+          PGPASSWORD: recovery-drill
         run: |
-          PGPASSWORD=recovery-drill psql -h localhost -U mvqueen -d mvqueen_recovery -c 'SELECT 1 AS recovery_ok;'
+          psql -h localhost -U mvqueen -d mvqueen_recovery -c 'SELECT 1 AS recovery_ok;'
       - name: Record recovery evidence
         if: always()
         run: |
