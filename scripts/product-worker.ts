@@ -1,5 +1,5 @@
 import {
-  auditProductWebhookSubscriptions,
+  ensureProductWebhookSubscriptions,
   processProductJobBatch,
   reconcileRecentShopifyProducts,
   recoverStaleProductJobs,
@@ -25,10 +25,17 @@ const heartbeatEveryMs = envInt(
   5000,
   120000,
 );
+const webhookAuditEveryMs = envInt(
+  "MVQ_PRODUCT_WEBHOOK_AUDIT_INTERVAL_MS",
+  300000,
+  60000,
+  86400000,
+);
 
 let stopping = false;
 let lastReconcile = 0;
 let lastHeartbeat = 0;
+let lastWebhookAudit = 0;
 
 for (const signal of ["SIGTERM", "SIGINT"] as const) {
   process.on(signal, () => {
@@ -38,9 +45,10 @@ for (const signal of ["SIGTERM", "SIGINT"] as const) {
 
 async function main() {
   await recoverStaleProductJobs();
-  await auditProductWebhookSubscriptions();
+  await ensureProductWebhookSubscriptions();
   await recordProductWorkerHeartbeat("continuous", { pid: process.pid });
   lastHeartbeat = Date.now();
+  lastWebhookAudit = Date.now();
 
   while (!stopping) {
     const now = Date.now();
@@ -48,6 +56,11 @@ async function main() {
     if (now - lastHeartbeat >= heartbeatEveryMs) {
       await recordProductWorkerHeartbeat("continuous", { pid: process.pid });
       lastHeartbeat = now;
+    }
+
+    if (now - lastWebhookAudit >= webhookAuditEveryMs) {
+      await ensureProductWebhookSubscriptions();
+      lastWebhookAudit = now;
     }
 
     if (now - lastReconcile >= reconcileEveryMs) {
