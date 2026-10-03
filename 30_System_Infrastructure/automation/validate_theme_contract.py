@@ -79,11 +79,17 @@ def main() -> int:
     for token in [
         "card_image_sizes = image_sizes | default: '(max-width: 480px) calc(50vw - 20px), (max-width: 800px) calc(50vw - 24px), 33vw'",
         "sizes: card_image_sizes",
+        "widths: '180,240,320,360,400,480'",
+        'data-src="{{ second_image | image_url: width: 480 }}"',
         "data-mvq-secondary-image",
         "data-src=",
     ]:
         if token not in product_card:
             failures.append(f"product-card.liquid missing responsive-image performance integration: {token}")
+
+    featured = read("sections/featured-products.liquid")
+    if "(max-width: 480px) calc(50vw - 26px), (max-width: 800px) calc(50vw - 32px), 25vw" not in featured:
+        failures.append("featured-products.liquid missing optimized product-card sizing contract")
 
     header = read("sections/header.liquid")
     for token in ["data-mvq-menu", "data-mvq-panel", 'aria-controls="MVQMobilePanel"', 'id="MVQMobilePanel"', 'aria-expanded="false"']:
@@ -176,6 +182,9 @@ def main() -> int:
     gateway = read("sections/brand-gateway.liquid")
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
         failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
+    for token in ["&amp;width=400 400w", "fetchpriority: 'high'", "widths: '320, 360, 412, 480, 540, 640, 720'"]:
+        if token not in gateway:
+            failures.append(f"Brand gateway missing responsive/LCP image integration: {token}")
 
     for rel in ["templates/page.mvqueen.json", "templates/page.miss-princess.json"]:
         if not (THEME / rel).is_file():
