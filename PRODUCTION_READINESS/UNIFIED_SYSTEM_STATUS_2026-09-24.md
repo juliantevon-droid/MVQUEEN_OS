@@ -440,7 +440,7 @@ Production automation has now been verified against a real newly imported Shopif
 - Web healthcheck is `/healthz`, not only `/livez`.
 - The strict health deployment succeeded after enabling production gates; this proves production preflight, PostgreSQL access, queue/dead-letter health and continuous-worker heartbeat are healthy.
 - Global automatic product enrollment, governed editorial publishing, SEO, ALT repair, vendor normalization, cost sync, pricing, compare-at validation, content surfaces and reconciliation are enabled in production.
-- Existing-description rewrite remains disabled so later update events cannot casually overwrite already-curated copy.
+- Existing-description rewrite is enabled in production. Nonblank descriptions are eligible for governed refresh on later product update events, while the source-fingerprint/idempotency controls suppress self-triggered rewrite loops and protected commerce fields remain outside the automatic writer.
 - Pricing remains fail-closed when cost/commercial inputs are incomplete.
 - Compare-at pricing remains fail-closed unless a verified higher reference price exists.
 
