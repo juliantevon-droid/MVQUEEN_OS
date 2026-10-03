@@ -719,3 +719,4 @@ button, a, summary, select, input { -webkit-tap-highlight-color: transparent; }
   }
 }
 
+.mvq-newsletter-section:not(.mvp-newsletter-section){background:var(--mvq-pearl)}

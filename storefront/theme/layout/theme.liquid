@@ -20,11 +20,7 @@
         fetchpriority="high"
       >
     {% endif %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    {% assign mvq_font_stylesheet = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap' %}
-    <link href="{{ mvq_font_stylesheet }}" rel="stylesheet" media="print" fetchpriority="low" onload="this.media='all'">
-    <noscript><link href="{{ mvq_font_stylesheet }}" rel="stylesheet"></noscript>
+    {% render 'mvq-fonts' %}
     {{ 'mvqueen.css' | asset_url | stylesheet_tag }}
     {% assign mvq_design_system_url = 'mvqueen-design-system.css' | asset_url %}
     {% assign mvq_header_css_url = 'mvqueen-header.css' | asset_url %}

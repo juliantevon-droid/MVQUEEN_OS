@@ -14,7 +14,7 @@
     assign is_princess_experience = true
   endif
 %}
-<section class="mvq-section{% if is_princess_experience %} mvp-newsletter-section{% endif %}">
+<section class="mvq-section mvq-newsletter-section{% if is_princess_experience %} mvp-newsletter-section{% endif %}">
   <div class="mvq-container mvq-newsletter{% if is_princess_experience %} mvq-newsletter--princess{% endif %}">
     <div class="mvq-eyebrow">{% if is_house_home %}STAY CLOSE TO BOTH WORLDS{% elsif is_princess_experience %}STAY IN THE Miss.Princess WORLD{% else %}STAY IN THE MVQueen WORLD{% endif %}</div>
     <h2>{% if is_house_home %}New drops, two moods, one inbox.{% elsif is_princess_experience %}Keep a little sparkle close.{% else %}Come a little closer.{% endif %}</h2>

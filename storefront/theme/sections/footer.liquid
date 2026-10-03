@@ -30,9 +30,9 @@
         {% if is_princess_experience %}
           <span class="mvq-logo-wordmark mvq-logo-wordmark--princess">Miss.Princess</span>
         {% elsif settings.brand_logo != blank %}
-          {{ settings.brand_logo | image_url: width: 220 | image_tag: class: 'mvq-logo-image', widths: '148,180,220', sizes: '148px', loading: 'lazy', decoding: 'async', alt: 'MVQueen — Most Valuable Queen' }}
+          {{ settings.brand_logo | image_url: width: 420 | image_tag: class: 'mvq-logo-image', widths: '210, 315, 420', sizes: '210px', loading: 'lazy', decoding: 'async', alt: 'MVQueen — Most Valuable Queen' }}
         {% else %}
-          <img class="mvq-logo-image" src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=220" srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=148 148w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=180 180w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=220 220w" sizes="148px" width="220" height="99" alt="MVQueen — Most Valuable Queen" loading="lazy" decoding="async">
+          <img class="mvq-logo-image" src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=220" srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=210 210w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=315 315w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=420 420w" sizes="210px" width="420" height="189" alt="MVQueen — Most Valuable Queen" loading="lazy" decoding="async">
         {% endif %}
       </a>
       <p>{{ footer_tagline }}</p>
