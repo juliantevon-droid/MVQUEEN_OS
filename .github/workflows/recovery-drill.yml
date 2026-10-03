@@ -82,4 +82,6 @@ jobs:
         with:
           name: mvqueen-recovery-drill-${{ github.run_id }}
           path: .mvqueen-recovery
+          include-hidden-files: true
+          if-no-files-found: error
           retention-days: 30

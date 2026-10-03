@@ -54,7 +54,8 @@ WRITE_REFERENCE_ALLOWLIST = {
 }
 
 PROTECTED_TERMS = ("Variant SKU","Variant Inventory Qty","Variant Price","Variant Compare At Price","Handle")
-API_RE = re.compile(r"\b20\d{2}-(?:01|04|07|10)\b")
+# Full ISO dates share an API-version prefix, even in Shopify-related notes.
+API_RE = re.compile(r"\b20\d{2}-(?:01|04|07|10)\b(?!-\d{2})")
 STORE_RE = re.compile(r"\b[a-z0-9][a-z0-9-]*\.myshopify\.com\b", re.I)
 TODO_RE = re.compile(r"\b(TODO|FIXME|HACK|XXX)\b")
 SECRET_RE = re.compile(r"(?i)\b(api[_-]?key|access[_-]?token|client[_-]?secret|password|private[_-]?key)\b\s*[:=]\s*['\"]([^'\"\n]{8,})")

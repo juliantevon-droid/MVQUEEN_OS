@@ -12,6 +12,61 @@ CRAWLER = ROOT / "core" / "vault_crawler.py"
 
 
 class VaultCrawlerContextTests(unittest.TestCase):
+    def test_shopify_dates_are_ignored_without_suppressing_real_api_drift(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            future_api = "2026-" + "10"
+            (root / "status.md").write_text(
+                "## Always-on Shopify product automation verification — "
+                + future_api + "-02\n",
+                encoding="utf-8",
+            )
+            (root / "health.json").write_text(
+                json.dumps({
+                    "webhook_checked_at": future_api + "-02T03:15:36Z",
+                    "shopify_quarter_checks": [
+                        "2026-" + quarter + "-02" for quarter in ("01", "04", "07", "10")
+                    ],
+                }),
+                encoding="utf-8",
+            )
+            report_path = root / "report.json"
+            command = [
+                sys.executable, str(CRAWLER), "--root", str(root),
+                "--output", str(report_path), "--fail-on", "high",
+            ]
+
+            result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual(report["configuration"]["api_versions"], {})
+            self.assertEqual(report["findings"], [])
+
+            # A dated note can still contain a genuine API version mismatch.
+            (root / "status.md").write_text(
+                "Shopify verified " + future_api + "-02; API version " + future_api + "\n",
+                encoding="utf-8",
+            )
+            (root / "api_config.toml").write_text(
+                'api_version = "' + future_api + '"\n', encoding="utf-8",
+            )
+            (root / "admin_api.txt").write_text(
+                "/admin/api/" + future_api + "/graphql.json\n", encoding="utf-8",
+            )
+            report_path.unlink()
+            report_path.with_suffix(".md").unlink()
+
+            result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+            self.assertEqual(
+                report["configuration"]["api_versions"],
+                {future_api: ["admin_api.txt", "api_config.toml", "status.md"]},
+            )
+            self.assertEqual(len(report["findings"]), 1)
+            self.assertEqual(report["findings"][0]["severity"], "HIGH")
+            self.assertEqual(report["findings"][0]["category"], "config_drift")
+
     def test_dates_and_reference_signatures_do_not_become_false_highs(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
