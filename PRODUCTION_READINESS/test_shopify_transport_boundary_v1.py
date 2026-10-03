@@ -159,6 +159,9 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("deadLetterJobs", health)
         self.assertIn("product-webhooks", health)
         self.assertIn("webhookHealthy", health)
+        self.assertIn("capabilities: preflight.capabilities", health)
+        self.assertNotIn("SHOPIFY_API_SECRET:", health)
+        self.assertNotIn("MVQ_PRODUCT_WORKER_TOKEN:", health)
 
 
 if __name__ == "__main__":
