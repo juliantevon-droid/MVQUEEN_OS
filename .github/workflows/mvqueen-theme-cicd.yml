@@ -151,4 +151,80 @@ jobs:
           retention-days: 30
           include-hidden-files: true
 
+
+  release-candidate-lighthouse:
+    name: Release Candidate Lighthouse gate
+    needs: deploy-unpublished
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Run Lighthouse against unpublished Release Candidate
+        env:
+          TARGET_URL: https://tsucu0-1i.myshopify.com/?preview_theme_id=154876772550
+        run: |
+          npx -y lighthouse@12 "$TARGET_URL" \
+            --quiet \
+            --chrome-flags="--headless --no-sandbox" \
+            --output=json \
+            --output-path=release-candidate-lighthouse.json
+      - name: Enforce Release Candidate Lighthouse budgets
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const report = JSON.parse(fs.readFileSync('release-candidate-lighthouse.json', 'utf8'));
+          const budget = JSON.parse(fs.readFileSync('30_System_Infrastructure/system/registry/performance_budget.json', 'utf8')).lighthouse;
+          const checks = {
+            performance: 'performance',
+            accessibility: 'accessibility',
+            bestPractices: 'best-practices',
+            seo: 'seo',
+          };
+          let failed = false;
+          for (const [budgetKey, categoryKey] of Object.entries(checks)) {
+            const score = report.categories[categoryKey].score;
+            console.log(budgetKey + ': ' + score);
+            if (score < budget[budgetKey]) failed = true;
+          }
+          console.log('Release Candidate requested URL: ' + report.requestedUrl);
+          console.log('Release Candidate final URL: ' + report.finalUrl);
+          for (const id of [
+            'errors-in-console',
+            'third-party-cookies',
+            'largest-contentful-paint-element',
+            'render-blocking-resources',
+            'uses-responsive-images',
+            'image-delivery-insight',
+            'lcp-discovery-insight',
+            'unused-javascript',
+            'mainthread-work-breakdown'
+          ]) {
+            const audit = report.audits[id];
+            if (!audit) continue;
+            console.log('Diagnostic ' + id + ': ' + JSON.stringify({
+              score: audit.score,
+              title: audit.title,
+              displayValue: audit.displayValue,
+              details: audit.details?.items?.slice?.(0, 10) ?? audit.details ?? null,
+            }));
+          }
+          if (failed) process.exit(1);
+          NODE
+      - name: Save Release Candidate Lighthouse artifact
+        if: always()
+        run: |
+          mkdir -p .mvqueen-ci
+          cp release-candidate-lighthouse.json .mvqueen-ci/release-candidate-lighthouse.json 2>/dev/null || true
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: mvqueen-release-candidate-lighthouse-\${{ github.run_id }}
+          path: .mvqueen-ci
+          retention-days: 14
+          include-hidden-files: true
+
 # Canonical deployment identity remains pinned to MVQueen — Release Candidate; validated theme changes on main deploy automatically to this unpublished target. Scheduled runs validate only. settings_data and backup/rollback themes are never automated deployment targets.
