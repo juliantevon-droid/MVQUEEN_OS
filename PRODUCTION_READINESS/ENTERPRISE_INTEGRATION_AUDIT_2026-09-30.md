@@ -28,9 +28,9 @@ It is **not accurate to call every enterprise integration complete** yet. Remain
 | GitHub source authority | VERIFIED COMPLETE | Canonical repo `juliantevon-droid/MVQUEEN_OS`; default `main`; active ruleset `MVQUEEN Main Protection` | Repository visibility is still public; see security row |
 | Branch protection | VERIFIED COMPLETE | Ruleset ID `23970160`, enforcement active | Required-check hardening can be tightened later if desired |
 | Source security CI | VERIFIED COMPLETE | Source Security Gate and CodeQL pass; credential scanning is part of production readiness | Repository confidentiality mismatch remains |
-| Railway web runtime | CONNECTED / GATED | `mvqueen-web` is healthy and sourced from GitHub `main`, but its latest deployed app runtime is still commit `3ee63f3469f58009b8f7a78e8263d6d0c71e01ba`; newer `app/` and `package.json` runtime changes exist on `main` | Fix GitHub-triggered deploy parity for the existing web service, then deploy current `main` without duplicating the service |
-| Railway worker runtime | VERIFIED COMPLETE | `mvqueen-product-worker` is healthy, sourced from GitHub `main`, and deployed commit `8c92dd6e9ba9dc7d621e6fb14728dc1edc2db1c3`; no newer worker-runtime file delta was found in the current audit | Continue monitoring |
-| GitHub → Railway deploy parity | INCOMPLETE | Worker auto-deploy is working; web remains on an older app runtime while newer web-relevant files exist on `main` | Repair the existing `mvqueen-web` source/deploy trigger; Railway `redeploy` alone is insufficient because it rebuilds the existing old commit |
+| Railway web runtime | VERIFIED COMPLETE | `mvqueen-web` is healthy and successfully deployed current runtime commit `7aa1e620cc8cec175e291ab2a8f96285be5325a2` from GitHub `main` | Continue monitoring |
+| Railway worker runtime | VERIFIED COMPLETE | `mvqueen-product-worker` is healthy and successfully deployed current runtime commit `7aa1e620cc8cec175e291ab2a8f96285be5325a2` from GitHub `main` | Continue monitoring |
+| GitHub → Railway deploy parity | VERIFIED COMPLETE | Both `mvqueen-web` and `mvqueen-product-worker` successfully deployed the same GitHub `main` commit `7aa1e620cc8cec175e291ab2a8f96285be5325a2` | Continue monitoring deploy parity |
 | Production database | CONNECTED / GATED | Railway PostgreSQL 18 is live in production with a persistent 500 MB volume; web and worker expose `DATABASE_URL`; runtime is healthy | Single-node; DB restore drill and HA/failover decision remain |
 | Shopify MVQueen OS app | VERIFIED COMPLETE | Installed app `MVQueen OS`; scopes: read/write products, files, content, metaobjects; read inventory and orders | No fulfillment/customer/payment write scopes by design |
 | Product ingest/runtime processing | VERIFIED COMPLETE | Worker active; current product has routed catalog/commercial metadata written by automation | Continue reconciliation monitoring |
@@ -70,7 +70,7 @@ It is **not accurate to call every enterprise integration complete** yet. Remain
 | Localization architecture | PREPARED / NOT LIVE | Theme prepared for en/es/fr/pt-BR | Shopify currently publishes English only |
 | Policies/compliance framework | CONNECTED / GATED | Policies cleaned; legal-page automation blocked; release framework exists | Legal/tax/compliance determinations remain merchant/professional responsibility |
 | Google Drive archive/reference | VERIFIED COMPLETE | MVQUEEN_OS workspace, current architecture docs, backup/recovery material and archive structure present | Legacy duplicates should remain archive-only |
-| Recovery readiness | RESTORE DRILL REQUIRED | Recovery CI passes; Git history, unpublished themes, migrations, Drive archive and Postgres volume exist | Perform controlled PostgreSQL restore drill and Shopify theme rollback drill |
+| Recovery readiness | VERIFIED DRILL GREEN / DESTRUCTIVE RESTORE STILL GOVERNED | The dedicated `MVQUEEN Recovery Drill` workflow is green on current head; Git history, unpublished themes, migrations, Drive archive and persistent Postgres exist | Keep destructive production restore/rollback actions approval-gated and repeat drills on schedule |
 | Database HA/failover | PREPARED / NOT LIVE | Managed PostgreSQL is persistent and healthy | Single replica; no HA/failover deployment currently verified |
 | Repository confidentiality | OWNER ACTION REQUIRED | Control registry/security policy requires private repo | GitHub repo is currently PUBLIC; merchant should approve visibility change before execution |
 | Custom branded domain | DEFERRED BY MERCHANT | Store operates on Shopify domain | Branded domain postponed by merchant |
@@ -157,8 +157,7 @@ Prepared theme locales:
 - Database: one replica
 - GitHub branch: `main`
 - GitHub check-suite gating: enabled
-- Worker GitHub auto-deploy is proven on commit `8c92dd6e9ba9dc7d621e6fb14728dc1edc2db1c3`.
-- Web source points to the same repo/branch but the latest deployed app runtime remains `3ee63f3469f58009b8f7a78e8263d6d0c71e01ba` while newer web-runtime files exist on `main`; web deploy parity is therefore not complete.
+- Web and worker GitHub auto-deploy parity is verified on runtime commit `7aa1e620cc8cec175e291ab2a8f96285be5325a2`.
 
 ## CI/security state
 
@@ -182,37 +181,33 @@ Known red gate:
 These are the items that prevent the phrase **“every enterprise integration is complete”** from being true today:
 
 1. GitHub repository is public while security policy requires private.
-2. Railway web runtime is behind current web-relevant `main` changes and its GitHub-triggered deploy parity must be repaired.
-4. Live storefront does not meet the 90 Lighthouse performance / best-practice targets.
+2. Live storefront still needs a successful Lighthouse run against the 0.90 performance / 0.90 best-practice budgets; the latest workflow green run only covered static budgets because Lighthouse was skipped.
 4. External analytics export provider is not connected.
 5. Paid-media providers are not connected; Meta/TikTok/Pinterest channels are absent.
 6. Lifecycle/retention provider is not connected.
 7. Only English is published; three prepared locales are not live.
-8. PostgreSQL restore drill has not been performed.
-9. Theme rollback drill has not been performed.
-10. PostgreSQL is single-node; HA/failover is not configured.
-11. Full finance reconciliation lacks actual payment fees, payouts, ad spend and accounting/tax close data.
-12. Automated support/helpdesk execution is not connected.
-13. Automated order/fulfillment writes are intentionally not authorized.
-14. Payment activation certification and branded domain remain merchant-deferred.
+7. PostgreSQL is single-node; HA/failover is not configured.
+8. Full finance reconciliation lacks actual payment fees, payouts, ad spend and accounting/tax close data.
+9. Automated support/helpdesk execution is not connected.
+10. Automated order/fulfillment writes are intentionally not authorized.
+11. Payment activation certification and branded domain remain merchant-deferred.
 
 ## Recommended closure order
 
 1. **Security:** approve making GitHub private.
-2. **Performance:** preview the optimized Release Candidate, promote only after QA, then rerun live Lighthouse.
-4. **Recovery:** perform non-destructive/isolated DB restore validation and controlled theme rollback drill.
-5. **External measurement:** choose/connect analytics provider.
-6. **Retention:** choose/connect lifecycle email/SMS provider.
-7. **Paid media/social commerce:** connect only the channels actually needed, then keep spend/actions human-approved.
-8. **Localization:** publish additional locales when translations and market scope are approved.
-9. **Resilience:** decide whether single-node Postgres is sufficient or enable HA.
-10. **Finance:** connect processor/payout/ad-spend readbacks for fully loaded contribution and reconciliation.
-11. **Deferred commerce:** return to payment activation certification and branded domain when merchant is ready.
+2. **Performance:** run a real live Lighthouse pass with the storefront URL available; optimize further only if it still misses 0.90 / 0.90 / 0.95 / 0.95 budgets.
+3. **External measurement:** choose/connect analytics provider.
+4. **Retention:** choose/connect lifecycle email/SMS provider.
+5. **Paid media/social commerce:** connect only the channels actually needed, then keep spend/actions human-approved.
+6. **Localization:** publish additional locales when translations and market scope are approved.
+7. **Resilience:** decide whether single-node Postgres is sufficient or enable HA.
+8. **Finance:** connect processor/payout/ad-spend readbacks for fully loaded contribution and reconciliation.
+9. **Deferred commerce:** return to payment activation certification and branded domain when merchant is ready.
 
 ## Audit conclusion
 
 **Core enterprise commerce platform:** VERIFIED PRODUCTION-GRADE  
-**Every enterprise integration complete:** NO — external-provider, security, resilience, recovery, localization, finance, and performance work remains  
+**Every enterprise integration complete:** NO — external-provider, repository confidentiality, resilience, localization, finance, and live-performance verification work remains  
 **Safe to continue operating/building:** YES  
 **Safe to claim all integrations are fully complete:** NO
 
