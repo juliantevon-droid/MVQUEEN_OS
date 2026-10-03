@@ -31,5 +31,23 @@
       "Shopify Web Pixels / WPM / Trekkie runtime",
       "Google & YouTube channel tag runtime"
     ]
+  },
+  "liveReleaseGate": {
+    "performance": 0.55,
+    "accessibility": 0.95,
+    "bestPractices": 0.75,
+    "seo": 0.95,
+    "requiredAuditScores": {
+      "errors-in-console": 1,
+      "render-blocking-resources": 1,
+      "uses-responsive-images": 1,
+      "image-size-responsive": 1,
+      "lcp-discovery-insight": 1
+    },
+    "documentedPlatformOverhead": [
+      "Shopify Shop Pay third-party cookie",
+      "Shopify Web Pixels / WPM / Trekkie runtime",
+      "Google & YouTube channel tag runtime"
+    ]
   }
 }
