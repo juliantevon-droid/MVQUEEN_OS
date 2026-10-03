@@ -7,6 +7,8 @@ on:
   push:
     branches: [main]
     paths:
+      - 'package.json'
+      - 'package-lock.json'
       - 'prisma/production/**'
       - '30_System_Infrastructure/automation/recovery_readiness.py'
       - '.github/workflows/recovery-drill.yml'
@@ -47,11 +49,13 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: '22.16.0'
+          cache: npm
+          cache-dependency-path: package-lock.json
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Verify recovery prerequisites
         run: python 30_System_Infrastructure/automation/recovery_readiness.py
       - name: Validate production Prisma schema
