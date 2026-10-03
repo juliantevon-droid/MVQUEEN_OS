@@ -315,6 +315,39 @@ function keywordTitle(title: string, productType: string): string {
   return selected.join(" ");
 }
 
+function keywordTokenSet(value: string): Set<string> {
+  return new Set(
+    cleanText(value)
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .split(SPACE_RE)
+      .filter(Boolean),
+  );
+}
+
+function composeKeywordParts(parts: string[]): string {
+  const candidates = unique(parts)
+    .map((value) => value.toLowerCase())
+    .filter(Boolean);
+  const tokenSets = candidates.map(keywordTokenSet);
+
+  return candidates
+    .filter((_value, index) => {
+      const current = tokenSets[index];
+      if (!current.size) return false;
+      return !tokenSets.some((other, otherIndex) => {
+        if (index === otherIndex || !other.size) return false;
+        const contained = [...current].every((token) => other.has(token));
+        if (!contained) return false;
+        return current.size < other.size ||
+          (current.size === other.size && index < otherIndex);
+      });
+    })
+    .join(" ")
+    .replace(SPACE_RE, " ")
+    .trim();
+}
+
 export function buildAutomatedProductContent(
   product: ProductSnapshot,
   classification: Classification,
@@ -366,13 +399,20 @@ export function buildAutomatedProductContent(
 
   const longTailKeywords = unique([
     title.toLowerCase(),
-    detailValues[0] ? (detailValues[0] + " " + focusKeyword).toLowerCase() : "",
-    detailValues[1] ? (detailValues[1] + " " + focusKeyword).toLowerCase() : "",
-    detailValues[0] && detailValues[1]
-      ? (detailValues[0] + " " + detailValues[1] + " " + focusKeyword).toLowerCase()
-      : "",
+    composeKeywordParts([titleKeyword, detailValues[0] ?? ""]),
+    composeKeywordParts([titleKeyword, detailValues[1] ?? ""]),
+    composeKeywordParts([detailValues[0] ?? "", focusKeyword]),
+    composeKeywordParts([detailValues[1] ?? "", focusKeyword]),
+    composeKeywordParts([
+      detailValues[0] ?? "",
+      detailValues[1] ?? "",
+      focusKeyword,
+    ]),
   ])
-    .filter((value) => value.split(" ").length >= 4)
+    .filter((value) => {
+      const words = value.split(/\s+/).filter(Boolean).length;
+      return words >= 4 && words <= 12;
+    })
     .slice(0, 5);
 
   const descriptionHtml = buildDescriptionHtml(

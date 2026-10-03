@@ -129,6 +129,11 @@ assert.ok(activewearContent.descriptionHtml.includes("<table>"));
 assert.ok(activewearContent.descriptionHtml.includes("Size &amp; Measurements"));
 assert.ok(activewearContent.descriptionHtml.includes("Features: Ruched"));
 assert.ok(!activewearContent.descriptionHtml.includes("style="));
+assert.ok(
+  activewearContent.longTailKeywords.every(
+    (value) => !value.includes("activewear set activewear set"),
+  ),
+);
 
 const previouslyMvqueenBrandedActivewear: ProductSnapshot = {
   ...activewear,
@@ -196,6 +201,38 @@ const divineRadianceRoute = classifyBrandWorld(divineRadianceCross);
 assert.equal(divineRadianceRoute.brand, "mvqueen");
 assert.equal(divineRadianceRoute.tone, "bold-authoritative");
 assert.equal(divineRadianceRoute.reason, "material:gold-plated");
+
+const divineSeoProduct: ProductSnapshot = {
+  ...divineRadianceCross,
+  attributeMetafields: {
+    nodes: [
+      {
+        key: "source_attributes",
+        value: JSON.stringify({ color: "Gold", material: "Gold-plated" }),
+      },
+    ],
+  },
+};
+const divineSeoClassification = classifyProduct(
+  divineSeoProduct.title,
+  divineSeoProduct.descriptionHtml ?? "",
+  "Necklace",
+);
+const divineSeoContent = buildAutomatedProductContent(
+  divineSeoProduct,
+  divineSeoClassification,
+  "MVQueen",
+);
+assert.ok(
+  divineSeoContent.longTailKeywords.every(
+    (value) => !value.includes("gold gold-plated"),
+  ),
+);
+assert.ok(
+  divineSeoContent.longTailKeywords.every(
+    (value) => !value.includes("necklace necklace"),
+  ),
+);
 
 const playfulGoldPlatedJewelry: ProductSnapshot = {
   id: "gid://shopify/Product/playful-gold-plated",
