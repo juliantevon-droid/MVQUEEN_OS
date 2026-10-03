@@ -269,10 +269,10 @@
     },
     {
       "id": "localization",
-      "status": "prepared_four_locales_live_english_only",
+      "status": "engineering_complete_publication_gated",
       "authority": "storefront_theme_and_Shopify_locales",
-      "execution": "translation_key_driven; only en currently published",
-      "writes": "theme_source_and_explicit_locale_publication_only"
+      "execution": "62_of_62_translation_keys_complete_for_en_es_fr_pt-BR; English currently published",
+      "writes": "theme_source_complete; additional Shopify locale publication requires explicit merchant approval"
     },
     {
       "id": "control_registry",
