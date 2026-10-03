@@ -79,6 +79,8 @@ def main() -> int:
     for token in [
         "card_image_sizes = image_sizes | default: '(max-width: 480px) calc(50vw - 20px), (max-width: 800px) calc(50vw - 24px), 33vw'",
         "sizes: card_image_sizes",
+        "data-mvq-secondary-image",
+        "data-src=",
     ]:
         if token not in product_card:
             failures.append(f"product-card.liquid missing responsive-image performance integration: {token}")
@@ -254,6 +256,9 @@ def main() -> int:
         failures.append("Collection filter behavior must remain in mvqueen-ux.js")
     if "filterOpenButtons" in js or "filterDrawer" in js:
         failures.append("Duplicate collection filter controller detected in mvqueen.js")
+    for token in ["data-mvq-secondary-image", "pointerenter", "(hover: hover) and (pointer: fine)"]:
+        if token not in js:
+            failures.append(f"mvqueen.js missing interaction-only secondary image loading: {token}")
 
     for brand in FORBIDDEN_BRANDS:
         if brand in all_text:

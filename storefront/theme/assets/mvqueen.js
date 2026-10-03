@@ -94,6 +94,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  const hoverMedia = window.matchMedia('(hover: hover) and (pointer: fine)');
+  if (hoverMedia.matches) {
+    document.querySelectorAll('[data-mvq-secondary-image]').forEach((shell) => {
+      const card = shell.closest('.mvq-card');
+      const src = shell.dataset.src;
+      if (!card || !src) return;
+
+      const loadSecondaryImage = () => {
+        if (shell.dataset.loaded === 'true') return;
+        const image = new Image();
+        image.alt = '';
+        image.decoding = 'async';
+        image.loading = 'lazy';
+        image.src = src;
+        shell.appendChild(image);
+        shell.dataset.loaded = 'true';
+      };
+
+      card.addEventListener('pointerenter', loadSecondaryImage, { once: true, passive: true });
+      card.addEventListener('focusin', loadSecondaryImage, { once: true });
+    });
+  }
+
   document.querySelectorAll('[data-mvq-variant-select]').forEach((select) => {
     const productInfo = select.closest('.mvq-product-info');
     if (!productInfo) return;
