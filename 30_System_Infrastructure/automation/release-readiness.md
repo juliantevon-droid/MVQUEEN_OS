@@ -1,25 +1,49 @@
 # MVQueen Release Readiness
 
-## Safety state
-- Shopify store: tsucu0-1i.myshopify.com
-- Target theme: 154876772550
-- Target role: UNPUBLISHED
-- Live MAIN theme: 154869825734 (MVQueen — Custom Production Build).\n- Repository automation may update only the unpublished next-production theme; publishing remains a merchant action.
+## Current safety state — 2026-10-03
 
-## Required gates
-1. Repository contract validator passes.
-2. Shopify Theme Check passes with no errors.
-3. Deployment token exists only as a GitHub Actions secret.
-4. Deployment target exists and is not MAIN before push.
-5. Theme push uses `storefront/theme` as its source path.
-6. Post-push theme-role verification passes.
-7. Deployment evidence is retained as a workflow artifact.
-8. Product/catalog writes remain separate from theme deployment.
-9. No review/rating schema is emitted without verified review data.
-10. Supplier/legacy brand strings remain blocked from storefront output.
+- Shopify store: `tsucu0-1i.myshopify.com`
+- Live MAIN theme: **MVQueen — Release Candidate** (`154876772550`)
+- Automated staging target: **MVQueen — Staging Preview** (`155002798278`)
+- Automated target role must remain: **UNPUBLISHED**
+- GitHub `main` is the theme source of truth.
+- Repository automation may write only to the unpublished Staging Preview theme.
+- Shopify MAIN is never an automated deployment target.
+- Theme publication remains an explicit merchant/admin action.
 
-## Current catalog gate
-The current Shopify store has 0 products. Product import/creation is intentionally not part of this release until catalog facts and QA are ready.
+## Required theme gates
+
+1. MVQUEEN control registry validation passes.
+2. Storefront release audit passes.
+3. Shopify Theme Check passes with no errors.
+4. Theme Access credential remains only in GitHub Actions secrets.
+5. Automated deployment identity is exactly:
+   - store: `tsucu0-1i.myshopify.com`
+   - theme: `155002798278`
+6. Pre-deploy verification proves the target is not MAIN.
+7. Theme push uses the governed allowlist from `storefront/theme` with `--nodelete`.
+8. Post-deploy verification proves Staging Preview remains unpublished.
+9. Staging-preview Lighthouse/non-regression gate runs after deployment.
+10. Deployment evidence is retained as workflow artifacts.
+11. Product/catalog writes remain separate from theme deployment.
+12. No review/rating schema is emitted without verified review data.
+13. Supplier/legacy brand strings remain blocked from storefront output.
+
+## Current catalog/runtime gate
+
+Shopify is the sole live-product source of truth.
+
+At the latest verified production check:
+- 2 ACTIVE products are present.
+- Both have public Online Store URLs.
+- The always-on Shopify product runtime is live and healthy.
+- Production `/healthz` reports database ready, continuous worker fresh, product webhooks healthy, and queue/dead-letter counts healthy.
+- New/imported products are eligible for automatic governed enrichment through Shopify webhooks and the durable Railway worker.
+
+Historical CSV recovery catalogs are archive/reference only and are not a release input.
 
 ## Operating rule
-Validation may run automatically. Shopify deployment remains controlled by the explicit MVQUEEN_DEPLOY_ENABLED variable and the unpublished-theme checks.
+
+A push to `main` may validate and update **Staging Preview** automatically. It must never publish a theme and must never write to Shopify MAIN.
+
+Live promotion is always a separate merchant release decision.
