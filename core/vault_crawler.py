@@ -45,6 +45,9 @@ BRAND_REFERENCE_ALLOWLIST = {
     "PRODUCTION_READINESS/test_catalog_recovery_transform.py",
     "PRODUCTION_READINESS/test_catalog_recovery_controls.py",
     "PRODUCTION_READINESS/test_catalog_recovery_audit.py",
+    "PRODUCTION_READINESS/UNIFIED_SYSTEM_STATUS_2026-09-24.md",
+    "PRODUCTION_READINESS/LIVE_SHOPIFY_VERIFICATION_2026-09-25.md",
+    "PRODUCTION_READINESS/test_catalog_release_planner.py",
 }
 # These files intentionally contain write-operation signatures as audit rules or
 # negative test fixtures. They do not perform those production writes.
