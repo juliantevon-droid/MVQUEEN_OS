@@ -164,3 +164,52 @@ If the answer is yes, upgrade the architecture before calling the step complete.
 - Payment-provider activation and a real/test checkout remain the final manual commerce-certification gate.
 - Theme publishing remains an explicit merchant action; connected automation must not publish MAIN.
 
+## Current control-tower state — 2026-10-03
+
+This section supersedes the older point-in-time theme/catalog checklist above.
+
+### Runtime
+
+- GitHub `main` is protected and is the canonical code source.
+- Railway `mvqueen-web`, `mvqueen-product-worker`, `mvqueen-agent-worker` and PostgreSQL are online.
+- Web and product worker are sourced from `juliantevon-droid/MVQUEEN_OS` branch `main`.
+- Production health reports `production-automation-ready`.
+- Continuous product-worker heartbeat is fresh.
+- Product webhook heartbeat is healthy.
+- Queue received / processing / failed / dead-letter counts are all healthy.
+- Reconciliation, retry/backoff and stale-lease recovery are active.
+
+### Always-on product automation
+
+Authenticated Shopify `products/create` and `products/update` events automatically enter the durable queue. Eligible products can receive governed:
+
+- MVQueen vs Miss.Princess routing
+- Shopify category / department / family / subcollection classification
+- vendor normalization with source-vendor provenance
+- short description and governed long description
+- product highlights/bullets
+- focus, secondary and long-tail SEO phrases
+- Shopify SEO title and meta description
+- FAQ/content metafields
+- image ALT repair
+- Google Shopping / catalog attributes
+- shipping metadata
+- commercial cost/pricing/health analysis
+- collection/system routing tags
+- marketing/lifecycle planning state
+- analytics measurement identity
+
+Protected commerce identity remains guarded; unverified facts are not invented.
+
+### Theme topology
+
+- Live MAIN: **MVQueen — Release Candidate** (`154876772550`)
+- Automated staging: **MVQueen — Staging Preview** (`155002798278`, UNPUBLISHED)
+- Automation may never deploy to MAIN.
+- Publishing remains manual/explicit.
+- The custom storefront is MVQueen-owned Liquid/CSS/JS, not Dawn/Helio/Horizon-based.
+
+### Current launch/operation gates
+
+Core platform and always-on product automation are operational. Remaining business/external certification work is tracked separately from architecture, including payment/test-checkout confirmation, external marketing/lifecycle providers where desired, resilience/restore drills, and continuing live performance optimization.
+
