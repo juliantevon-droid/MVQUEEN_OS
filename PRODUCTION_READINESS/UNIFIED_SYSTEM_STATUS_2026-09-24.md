@@ -670,3 +670,57 @@ The always-on worker does not use the old historical catalog and does not fabric
 
 **Always-on product automation: LIVE / VERIFIED / SELF-HEALING.**
 
+## Current verified production checkpoint — 2026-10-03
+
+This section supersedes older point-in-time counts/theme-role statements elsewhere in this historical status document.
+
+### Commerce and catalog
+
+- Shopify is the production catalog authority.
+- Current catalog: **2 ACTIVE products**.
+- Both products are public on the Online Store.
+- Storefront password protection: **OFF**.
+- Primary Shopify domain SSL: **ON**.
+- Test checkout evidence: order **#1001**, source `web`, `test=true`, financial status `PAID`, gateway `shopify_payments`, total **$62.99 USD**.
+
+### 24/7 product automation
+
+- Railway web, product-worker, agent-worker and PostgreSQL services are online.
+- Product worker: continuous, 2-second idle polling, 30-second heartbeat, 5-minute reconciliation and webhook audit.
+- GitHub monitors `/healthz` every five minutes.
+- Latest verified health: `production-automation-ready`, database healthy, queue healthy, zero dead letters, worker heartbeat fresh, product-webhook heartbeat healthy.
+- Real 2026-10-03 PRODUCTS_UPDATE probes were processed on **both current products**.
+- Activewear and necklace refresh jobs wrote governed editorial/catalog fields while preserving handle, SKU, barcode and inventory identity.
+- Temporary refresh tags were automatically removed.
+- Both products now report `commercial.cost_sync_state=verified` and `catalog.media_alt_status=complete`.
+- Price writes and compare-at writes remained disabled during the refresh because no new governed price write was required; existing prices/inventory stayed unchanged.
+
+### Theme and storefront release topology
+
+- Shopify MAIN: **MVQueen — Release Candidate** (`154876772550`).
+- Automated target: **MVQueen — Staging Preview** (`155002798278`, UNPUBLISHED).
+- GitHub Theme CI is pinned to Staging Preview and refuses MAIN deployment.
+- Latest corrected Theme CI: validation ✅, Theme Check ✅, deployment identity ✅, unpublished deployment ✅, post-deploy role verification ✅, Staging Preview Lighthouse gate ✅.
+- Staging Preview scores: Performance **0.59**, Accessibility **0.96**, Best Practices **0.79**, SEO **1.00**; all required theme-owned release audits score **1**.
+- Latest live Lighthouse runs remain below the enterprise performance/category budget. Theme-owned render-blocking/responsive-image/LCP-discovery/console controls pass. Best Practices 0.79 is specifically tied to Shop Pay third-party cookie/Chrome inspector findings; large remaining JS/TBT cost comes primarily from Google Tag and Shopify Web Pixels.
+- Enterprise live targets remain unchanged; no budget was weakened.
+
+### Security / resilience
+
+- GitHub `main`: **protected**.
+- Source Security Gate: passing.
+- CodeQL: passing on latest app-code checkpoint.
+- Recovery Drill reconstructs a disposable PostgreSQL database from production migrations and verifies migration state/reachability.
+- Repository remains **public**. Changing visibility requires GitHub repository-admin authority unavailable to the connected app.
+- Production-data snapshot restore/managed Railway backup certification remains an account/platform resilience item; the connected Railway API does not expose backup/restore operations.
+
+### Current position
+
+**Core architecture:** operational  
+**24/7 Shopify product automation:** live / verified / self-healing  
+**Current product enrichment:** verified on both products  
+**Checkout test path:** verified  
+**Theme staging pipeline:** green and safely isolated from MAIN  
+**Live storefront:** public and operational  
+**Remaining non-code decisions:** repository visibility, real-money payment acceptance confirmation, optional external paid-media/lifecycle provider execution, and whether to promote the latest Staging Preview performance refinements to MAIN after visual review.
+
