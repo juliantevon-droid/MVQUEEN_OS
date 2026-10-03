@@ -27,9 +27,9 @@ concurrency:
 env:
   # Canonical non-secret deployment identity, verified against the connected Shopify store.
   SHOPIFY_STORE: tsucu0-1i.myshopify.com
-  SHOPIFY_THEME_ID: '154876772550'
+  SHOPIFY_THEME_ID: '155002798278'
   EXPECTED_SHOPIFY_STORE: tsucu0-1i.myshopify.com
-  EXPECTED_SHOPIFY_THEME_ID: '154876772550'
+  EXPECTED_SHOPIFY_THEME_ID: '155002798278'
 
 jobs:
   validate:
@@ -90,7 +90,7 @@ jobs:
               exit 1
             fi
             if [ "$SHOPIFY_THEME_ID" != "$EXPECTED_SHOPIFY_THEME_ID" ]; then
-              echo "Configured Shopify theme ID does not match the verified MVQueen Release Candidate theme: $EXPECTED_SHOPIFY_THEME_ID"
+              echo "Configured Shopify theme ID does not match the verified MVQueen Staging Preview theme: $EXPECTED_SHOPIFY_THEME_ID"
               exit 1
             fi
             echo 'Deployment enabled with verified canonical Shopify store/theme identity.'
@@ -153,7 +153,7 @@ jobs:
 
 
   release-candidate-lighthouse:
-    name: Release Candidate Lighthouse gate
+    name: Staging Preview Lighthouse gate
     needs: deploy-unpublished
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
@@ -163,16 +163,16 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Run Lighthouse against unpublished Release Candidate
+      - name: Run Lighthouse against unpublished Staging Preview
         env:
-          TARGET_URL: https://tsucu0-1i.myshopify.com/?preview_theme_id=154876772550&pb=0
+          TARGET_URL: https://tsucu0-1i.myshopify.com/?preview_theme_id=155002798278&pb=0
         run: |
           npx -y lighthouse@12 "$TARGET_URL" \
             --quiet \
             --chrome-flags="--headless --no-sandbox" \
             --output=json \
             --output-path=release-candidate-lighthouse.json
-      - name: Enforce Release Candidate Lighthouse budgets
+      - name: Enforce Staging Preview Lighthouse budgets
         run: |
           node - <<'NODE'
           const fs = require('fs');
@@ -197,8 +197,8 @@ jobs:
             if (typeof score !== 'number' || score < minimum) failed = true;
           }
           console.log('Preview-overhead exceptions: ' + (budget.documentedPreviewOverhead ?? []).join(' | '));
-          console.log('Release Candidate requested URL: ' + report.requestedUrl);
-          console.log('Release Candidate final URL: ' + report.finalUrl);
+          console.log('Staging Preview requested URL: ' + report.requestedUrl);
+          console.log('Staging Preview final URL: ' + report.finalUrl);
           for (const id of [
             'errors-in-console',
             'third-party-cookies',
@@ -237,13 +237,13 @@ jobs:
               displayValue: audit.displayValue ?? '',
             }))
             .sort((a, b) => a.score - b.score);
-          console.log('Actionable Release Candidate Lighthouse audits:');
+          console.log('Actionable Staging Preview Lighthouse audits:');
           for (const audit of actionable) {
             console.log('- [' + audit.score + '] ' + audit.id + ': ' + audit.title + ' ' + audit.displayValue);
           }
           if (failed) process.exit(1);
           NODE
-      - name: Save Release Candidate Lighthouse artifact
+      - name: Save Staging Preview Lighthouse artifact
         if: always()
         run: |
           mkdir -p .mvqueen-ci
@@ -256,4 +256,4 @@ jobs:
           retention-days: 14
           include-hidden-files: true
 
-# Canonical deployment identity remains pinned to MVQueen — Release Candidate; validated theme changes on main deploy automatically to this unpublished target. Scheduled runs validate only. settings_data and backup/rollback themes are never automated deployment targets.
+# Canonical deployment identity is pinned to MVQueen — Staging Preview; validated theme changes on main deploy automatically to this unpublished target. Shopify MAIN is never an automated deployment target. Scheduled runs validate only. settings_data and backup/rollback themes are never automated deployment targets.
