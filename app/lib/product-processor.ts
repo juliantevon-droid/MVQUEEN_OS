@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
+import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
 import type { ProductSnapshot } from "./mvqueen-intelligence";
 import {
   buildCatalogAttributeEnrichment,
@@ -344,8 +345,18 @@ export async function processProductJob(
   options: { allowWrites?: boolean } = {},
 ) {
   const invocationWritesAllowed = options.allowWrites !== false;
+  const correlationId = createCorrelationId("product-job");
   const job = await prisma.productJob.findUnique({ where: { id: jobId } });
   if (!job) throw new Error("Product job not found");
+
+  logMvqueenEvent("product.job.started", {
+    correlationId,
+    jobId,
+    shop: job.shop,
+    productGid: job.productGid,
+    topic: job.topic,
+    invocationWritesAllowed,
+  });
 
   await prisma.productJob.update({
     where: { id: jobId },
@@ -413,6 +424,18 @@ export async function processProductJob(
         }
       : null;
     if (!product) throw new Error("Shopify product not found");
+
+    logMvqueenEvent("product.job.snapshot", {
+      correlationId,
+      jobId,
+      shop: job.shop,
+      productGid: product.id,
+      productTitle: product.title,
+      topic: job.topic,
+      variantCount: product.variants?.nodes?.length ?? 0,
+      mediaCount: product.media?.nodes?.length ?? 0,
+      protectedFields: ["handle", "sku", "barcode", "inventory"],
+    });
 
     const commercialConfig = await resolveShopCommercialConfig(job.shop);
     const policyFingerprint = commercialPolicyFingerprint(commercialConfig);
@@ -815,6 +838,17 @@ export async function processProductJob(
         where: { id: jobId },
         data: { status: "completed", completedAt: new Date(), error: reason },
       });
+      logMvqueenEvent("product.job.completed", {
+        correlationId,
+        jobId,
+        shop: job.shop,
+        productGid: product.id,
+        productTitle: product.title,
+        topic: job.topic,
+        result: "dry_run",
+        reason,
+        protectedFieldsPreserved: ["handle", "sku", "barcode", "inventory"],
+      });
       return;
     }
 
@@ -881,6 +915,24 @@ export async function processProductJob(
         };
       }
     }
+
+    const productFields = Object.keys(productInput).filter((key) => key !== "id");
+    logMvqueenEvent("product.job.write_planned", {
+      correlationId,
+      jobId,
+      shop: job.shop,
+      productGid: product.id,
+      productTitle: product.title,
+      topic: job.topic,
+      productFields,
+      variantPriceWriteEnabled: pricePublishable && recommendedPrice !== null,
+      compareAtPriceWriteEnabled: COMPARE_AT_PRICE_PUBLISH_ENABLED && compareAtPrice !== null,
+      mediaAltWriteCount:
+        MEDIA_ALT_SYNC_ENABLED && hasWriteFiles && automatedContent
+          ? repairableAltMedia.length
+          : 0,
+      protectedFieldsPreserved: ["handle", "sku", "barcode", "inventory"],
+    });
 
     const update = await admin.graphql(PRODUCT_UPDATE, {
       variables: { product: productInput },
@@ -1012,11 +1064,34 @@ export async function processProductJob(
       where: { id: jobId },
       data: { status: "completed", completedAt: new Date() },
     });
+    logMvqueenEvent("product.job.completed", {
+      correlationId,
+      jobId,
+      shop: job.shop,
+      productGid: product.id,
+      productTitle: product.title,
+      topic: job.topic,
+      result: "success",
+      productFields,
+      protectedFieldsPreserved: ["handle", "sku", "barcode", "inventory"],
+    });
   } catch (error) {
     await prisma.productJob.update({
       where: { id: jobId },
       data: { status: "failed", error: error instanceof Error ? error.message : String(error) },
     });
+    logMvqueenEvent(
+      "product.job.failed",
+      {
+        correlationId,
+        jobId,
+        shop: job.shop,
+        productGid: job.productGid,
+        topic: job.topic,
+        ...errorFields(error),
+      },
+      "error",
+    );
     throw error;
   }
 }
