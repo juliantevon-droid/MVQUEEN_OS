@@ -97,6 +97,7 @@ export const loader = async (_args: LoaderFunctionArgs) => {
     {
       ok,
       mode: preflight.mode,
+      capabilities: preflight.capabilities,
       database,
       queue,
       queueHealthy,
