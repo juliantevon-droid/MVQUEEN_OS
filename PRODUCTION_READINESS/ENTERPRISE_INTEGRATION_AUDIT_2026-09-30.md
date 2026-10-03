@@ -50,7 +50,7 @@ It is **not accurate to call every enterprise integration complete** yet. Remain
 | Catalog backfill | CONNECTED / GATED | Durable bounded backfill worker exists; dry-run default; governed writes require dual write gates | External scheduler optional |
 | Storefront live theme | VERIFIED COMPLETE | Shopify has healthy MAIN theme; current MAIN is `MVQueen — Staging Preview` | Naming is confusing; release-candidate process is now protected |
 | Theme staging CI | VERIFIED COMPLETE | Automated deploy target is unpublished theme ID `154876772550` (`MVQueen — Release Candidate`); CI refuses MAIN deployment | Merchant-controlled promotion remains required |
-| Storefront performance | OPTIMIZATION REQUIRED | Latest live Lighthouse: Performance 0.56, Accessibility 1.00, Best Practices 0.79, SEO 1.00; LCP about 8.0 s; static checks still pass | Reduce LCP/main-thread/render-blocking/image cost and retest; Shopify Shop Pay third-party cookie contributes a platform-level best-practice penalty |
+| Storefront performance | STAGED OPTIMIZATION VERIFIED / LIVE PROMOTION PENDING | Current live Lighthouse: Performance 0.64, Accessibility 1.00, Best Practices 0.79, SEO 1.00. Unpublished Release Candidate preview gate passes its preview-specific non-regression controls at Performance 0.66, Accessibility 1.00, Best Practices 0.79, SEO 1.00; required theme-owned audits for console errors, render-blocking resources, responsive image sizing/resolution and LCP discovery all pass. Live production targets remain 0.90 / 0.95 / 0.90 / 0.95 and were not lowered. | Merchant visual QA + promotion of Release Candidate, then rerun live Lighthouse. Shopify preview redirect/bar, Shop Pay cookie, Web Pixels/WPM/Trekkie and Google channel runtime are documented platform overhead. |
 | First-party analytics event bus | VERIFIED COMPLETE | Storefront emits MVQueen view/search/add-to-cart/begin-checkout/brand-select events | No external analytics provider/export configured |
 | External analytics export | EXTERNAL CONNECTION REQUIRED | Adapter contract exists | No `MVQ_ANALYTICS_PROVIDER` / export flag in Railway |
 | Paid media execution | EXTERNAL CONNECTION REQUIRED | Fail-closed paid-media adapter plus commercial evidence gates exist | No `MVQ_AD_PROVIDER`; no Meta/TikTok/Pinterest ad execution connection |
@@ -195,7 +195,7 @@ These are the items that prevent the phrase **“every enterprise integration is
 ## Recommended closure order
 
 1. **Security:** approve making GitHub private.
-2. **Performance:** run a real live Lighthouse pass with the storefront URL available; optimize further only if it still misses 0.90 / 0.90 / 0.95 / 0.95 budgets.
+2. **Performance:** visually QA and promote the optimized Release Candidate when approved, then rerun the strict live Lighthouse budget; do not treat Shopify preview-wrapper overhead as live production performance.
 3. **External measurement:** choose/connect analytics provider.
 4. **Retention:** choose/connect lifecycle email/SMS provider.
 5. **Paid media/social commerce:** connect only the channels actually needed, then keep spend/actions human-approved.
@@ -212,3 +212,13 @@ These are the items that prevent the phrase **“every enterprise integration is
 **Safe to claim all integrations are fully complete:** NO
 
 This report supersedes older integration-status language where live evidence has since proven database deployment, Shopify cost access, media ALT capability, and Railway web/worker deployment parity.
+
+
+### Performance evidence — 2026-10-03
+
+- Live storefront workflow: Performance 0.64 / Accessibility 1.00 / Best Practices 0.79 / SEO 1.00.
+- Release Candidate Theme CI preview gate: PASS.
+- Release Candidate preview: Performance 0.66 / Accessibility 1.00 / Best Practices 0.79 / SEO 1.00.
+- Required preview audits passing: errors-in-console, render-blocking-resources, uses-responsive-images, image-size-responsive, lcp-discovery-insight.
+- Live production Lighthouse targets remain Performance 0.90 / Accessibility 0.95 / Best Practices 0.90 / SEO 0.95.
+- Shopify preview-only and provider overhead is documented separately from theme-owned regressions.
