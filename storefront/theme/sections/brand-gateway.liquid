@@ -24,15 +24,15 @@
 
   <a class="mvq-gateway-panel mvq-gateway-panel--mvqueen" href="/pages/mvqueen">
     {% if mvqueen_gateway_image != blank %}
-      {{ mvqueen_gateway_image | image_url: width: 900 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '360, 480, 540, 640, 720, 750, 900', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', decoding: 'async', alt: 'MVQueen' }}
+      {{ mvqueen_gateway_image | image_url: width: 720 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '320, 360, 412, 480, 540, 640, 720', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', decoding: 'async', alt: 'MVQueen' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
       <span class="mvq-gateway-eyebrow">{{ section.settings.mvqueen_eyebrow }}</span>
       <span class="mvq-gateway-brandmark">
         <img
-          src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400"
-          srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=240 240w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360 360w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=480 480w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=640 640w"
+          src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360"
+          srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=240 240w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360 360w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=480 480w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=480 480w"
           sizes="(max-width: 749px) 88vw, 300px"
           width="300"
           height="135"
@@ -51,7 +51,7 @@
 
   <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="/pages/miss-princess">
     {% if princess_gateway_image != blank %}
-      {{ princess_gateway_image | image_url: width: 900 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '360, 480, 540, 640, 720, 750, 900', sizes: '(max-width: 749px) 100vw, 50vw', loading: princess_loading, fetchpriority: princess_fetchpriority, decoding: 'async', alt: 'Miss.Princess' }}
+      {{ princess_gateway_image | image_url: width: 720 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '320, 360, 412, 480, 540, 640, 720', sizes: '(max-width: 749px) 100vw, 50vw', loading: princess_loading, fetchpriority: princess_fetchpriority, decoding: 'async', alt: 'Miss.Princess' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
