@@ -165,7 +165,7 @@ jobs:
           node-version: 24
       - name: Run Lighthouse against unpublished Release Candidate
         env:
-          TARGET_URL: https://tsucu0-1i.myshopify.com/?preview_theme_id=154876772550
+          TARGET_URL: https://tsucu0-1i.myshopify.com/?preview_theme_id=154876772550&pb=0
         run: |
           npx -y lighthouse@12 "$TARGET_URL" \
             --quiet \
@@ -177,7 +177,8 @@ jobs:
           node - <<'NODE'
           const fs = require('fs');
           const report = JSON.parse(fs.readFileSync('release-candidate-lighthouse.json', 'utf8'));
-          const budget = JSON.parse(fs.readFileSync('30_System_Infrastructure/system/registry/performance_budget.json', 'utf8')).lighthouse;
+          const budgetConfig = JSON.parse(fs.readFileSync('30_System_Infrastructure/system/registry/performance_budget.json', 'utf8'));
+          const budget = budgetConfig.releaseCandidatePreview;
           const checks = {
             performance: 'performance',
             accessibility: 'accessibility',
@@ -190,6 +191,12 @@ jobs:
             console.log(budgetKey + ': ' + score);
             if (score < budget[budgetKey]) failed = true;
           }
+          for (const [auditId, minimum] of Object.entries(budget.requiredAuditScores ?? {})) {
+            const score = report.audits[auditId]?.score;
+            console.log('requiredAudit ' + auditId + ': ' + score + ' (minimum ' + minimum + ')');
+            if (typeof score !== 'number' || score < minimum) failed = true;
+          }
+          console.log('Preview-overhead exceptions: ' + (budget.documentedPreviewOverhead ?? []).join(' | '));
           console.log('Release Candidate requested URL: ' + report.requestedUrl);
           console.log('Release Candidate final URL: ' + report.finalUrl);
           for (const id of [
