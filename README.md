@@ -41,6 +41,6 @@ Never commit credentials. Protected product identity, SKU, inventory, variant, p
 
 ## Current cross-system boundary
 
-- Railway services are sourced from GitHub `main`, but Railway deploy-on-push remains account-level/manual until the Railway GitHub App is installed on the repository.
+- Railway `mvqueen-web` and `mvqueen-product-worker` are verified sourced from GitHub `main`; current production deployments match the repository head and Railway reports the GitHub source integration active.
 - Google Drive remains assets/knowledge/archive storage. Its GitHub intake workflow is manual and fail-closed; it never commits or overwrites canonical source automatically.
 - Theme changes deploy to the verified unpublished `MVQueen — Staging Preview` theme. The current Shopify MAIN theme is never an automated deployment target.
