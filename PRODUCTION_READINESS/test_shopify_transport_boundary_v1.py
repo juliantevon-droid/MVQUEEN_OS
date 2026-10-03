@@ -97,6 +97,10 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
             self.assertIn("enqueueProductWebhook", text)
             self.assertNotIn("processProductJob", text)
 
+        update_route = (ROOT / "app/routes/webhooks.products.update.tsx").read_text(encoding="utf-8")
+        self.assertNotIn("productAutomationState", update_route)
+        self.assertNotIn("prisma.", update_route)
+
         intake = (ROOT / "app/lib/product-job-intake.server.ts").read_text(encoding="utf-8")
         self.assertIn("productJob.upsert", intake)
         self.assertIn('status: "received"', intake)
