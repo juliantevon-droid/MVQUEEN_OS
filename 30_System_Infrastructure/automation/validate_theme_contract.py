@@ -75,7 +75,7 @@ def main() -> int:
 
     product_card = read("snippets/product-card.liquid")
     for token in [
-        "card_image_sizes = image_sizes | default: '(max-width: 800px) 50vw, 33vw'",
+        "card_image_sizes = image_sizes | default: '(max-width: 480px) calc(50vw - 20px), (max-width: 800px) calc(50vw - 24px), 33vw'",
         "sizes: card_image_sizes",
     ]:
         if token not in product_card:
