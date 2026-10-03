@@ -49,7 +49,7 @@ Legacy sister-brand strings remain detection-only signals and must not appear as
 
 - Railway `mvqueen-web`, `mvqueen-product-worker`, and Postgres are the production runtime. The background worker continuously owns queue draining, retries, dead-letter handling, and reconciliation.
 - GitHub Actions monitors production `/healthz` every five minutes. It does not duplicate worker ownership and must not report a secret-missing no-op as runtime success.
-- Railway services are sourced from GitHub `main`. Railway is authoritative for source/deployment-trigger state; as of 2026-10-03 the web and product-worker services report the GitHub `main` source integration active and their latest production deployments match the repository commit.
+- Railway services are sourced from GitHub `main`. Railway is authoritative for source/deployment-trigger state; as of 2026-10-03 the web and product-worker services report the GitHub `main` source integration active. Their verified app-code deployment matched the current app-code revision; later documentation/theme-only commits do not imply a runtime rebuild is required.
 - Google Drive is a knowledge/assets/archive/backup layer. Drive intake is explicit, manual, review-only, and fail-closed when source authentication is not configured. It never automatically commits or overwrites `main`.
 - Automated theme deployment targets only the verified unpublished `MVQueen — Staging Preview` theme. The Shopify `MAIN` theme is never an automated write target.
 - Shopify remains the sole authority for current production products, variants, inventory, collections, menus, pages, publications, policies, orders, and live-theme role.
