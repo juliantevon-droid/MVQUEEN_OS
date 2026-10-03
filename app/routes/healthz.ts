@@ -97,6 +97,7 @@ export const loader = async (_args: LoaderFunctionArgs) => {
     {
       ok,
       mode: preflight.mode,
+      // Capabilities are non-secret booleans only; credentials are never returned.
       capabilities: preflight.capabilities,
       database,
       queue,
