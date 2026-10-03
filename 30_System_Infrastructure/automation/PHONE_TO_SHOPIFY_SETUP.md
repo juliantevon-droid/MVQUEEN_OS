@@ -1,55 +1,56 @@
-# MVQueen Phone → Drive → GitHub → Shopify Setup
+# MVQueen Phone / GitHub / Shopify Operating Setup
 
-## What is already automated
+## Current operating model — 2026-10-03
 
-`Phone → Google Drive → GitHub Actions → validation → Shopify unpublished theme`
+Production automation no longer depends on a scheduled Drive-to-GitHub code bridge.
 
-The workflows are already committed to MVQUEEN_OS. The Shopify deployment gate is intentionally disabled until the store credential is added.
+- **GitHub `main`** is the code/theme authority.
+- **Railway** runs the production Shopify app, continuous product worker and PostgreSQL.
+- **Shopify** is the live commerce authority.
+- **Google Drive** is assets/knowledge/archive/backup storage and never automatically overwrites `main`.
+- Theme code changes on `main` validate and deploy only to the unpublished **MVQueen — Staging Preview** theme.
 
-## One-time Shopify credential bridge
+## Theme Access credential
 
-Shopify's current CI/CD guidance uses a Theme Access password as `SHOPIFY_CLI_THEME_TOKEN`. The password should be stored as a GitHub Actions secret, not committed to the repository.
+The Shopify Theme Access password must remain in GitHub Actions secrets as:
 
-1. In Shopify admin for `tsucu0-1i.myshopify.com`, install/open the **Theme Access** app.
-2. Create a theme password for the developer/automation account.
-3. In GitHub, open `juliantevon-droid/MVQUEEN_OS`.
-4. Go to **Settings → Secrets and variables → Actions → Secrets**.
-5. Create secret:
-   - Name: `SHOPIFY_CLI_THEME_TOKEN`
-   - Value: the Theme Access password.
-6. In the same **Secrets and variables → Actions** area, open **Variables** and create:
-   - `MVQUEEN_DEPLOY_ENABLED` = `true`
-   - `MVQUEEN_SHOPIFY_STORE` = `tsucu0-1i.myshopify.com`
-   - `MVQUEEN_SHOPIFY_THEME_ID` = `154876772550`
-7. Do not add the password to any file, commit, workflow YAML, Google Drive document, or chat message.
+- `SHOPIFY_CLI_THEME_TOKEN`
 
-## Result
+Never commit or paste that credential into repository files, Drive documents or screenshots.
 
-After the bridge is enabled, a push to `main` that changes the controlled storefront source will:
+## Canonical deployment identity
 
-1. run the MVQueen contract validator
-2. run Shopify Theme Check
-3. verify the target theme exists
-4. refuse deployment if the target is the live `MAIN` theme
-5. push the controlled files with `--nodelete`
-6. leave the theme unpublished
-7. store deployment evidence as a GitHub Actions artifact
+The workflow is pinned in repository code to:
+
+- Store: `tsucu0-1i.myshopify.com`
+- Automated target: `MVQueen — Staging Preview`
+- Theme ID: `155002798278`
+- Required role: `UNPUBLISHED`
+
+Do not point automation at the current MAIN theme (`MVQueen — Release Candidate`, `154876772550`).
+
+## What a storefront push to main does
+
+For controlled theme changes, GitHub Actions:
+
+1. validates the MVQUEEN control registry
+2. validates the theme contract
+3. runs the storefront release audit
+4. runs Shopify Theme Check
+5. verifies the configured target is not MAIN
+6. pushes only the controlled allowlist with `--nodelete`
+7. verifies the target is still unpublished
+8. runs the staging-preview Lighthouse gate
+9. stores deployment evidence
 
 There is no automatic `theme publish` operation.
 
-## Phone operation
+## Phone-friendly workflow
 
-From a phone, the normal workflow becomes:
+From a phone, make or approve the repository change through the connected GitHub workflow, then monitor GitHub Actions. Approved Drive material can be reviewed and promoted into GitHub deliberately, but Drive itself is not an executable source and has no scheduled auto-commit authority.
 
-**Upload/edit approved work in Drive → wait for the scheduled Drive bridge → GitHub validates → Shopify unpublished theme updates automatically.**
+## Product automation is separate
 
-For an immediate run, use GitHub Actions → `MVQueen Phone → Drive → GitHub Bridge` → **Run workflow**.
+Product automation does not require theme deployment. Shopify `products/create` and `products/update` webhooks feed the durable PostgreSQL queue, and the continuous Railway product worker processes eligible Shopify products 24/7.
 
-## Safety gates
-
-- Drive bridge rejects secrets/credentials/keys/executables/archives and oversized files.
-- Catalog worker defaults to dry-run.
-- Product records without verified facts are held.
-- Supplier/legacy brand strings are blocked.
-- Protected fields such as handles, SKUs, inventory, variants, images, and vendor are not changed by the catalog worker.
-- Live-theme publishing is not part of the automation.
+Protected product identity/state remains governed. The worker must not fabricate product facts or silently overwrite protected SKU/inventory/variant identity.
