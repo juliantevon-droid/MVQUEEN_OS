@@ -62,7 +62,7 @@ class EnterpriseOperatingSystemV2Tests(unittest.TestCase):
             by_id["production_database"]["status"],
             "connected_production_single_node_restore_drill_required",
         )
-        self.assertEqual(by_id["localization"]["status"], "prepared_four_locales_live_english_only")
+        self.assertEqual(by_id["localization"]["status"], "engineering_complete_publication_gated")
         self.assertEqual(by_id["performance_governance"]["status"], "connected_live_budget_failing")
         self.assertEqual(by_id["security_automation"]["status"], "connected_repository_visibility_mismatch")
 
