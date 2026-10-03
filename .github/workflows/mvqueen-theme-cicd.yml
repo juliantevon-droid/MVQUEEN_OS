@@ -212,6 +212,28 @@ jobs:
               details: audit.details?.items?.slice?.(0, 10) ?? audit.details ?? null,
             }));
           }
+          const categoryAuditIds = new Set(
+            Object.values(report.categories)
+              .flatMap((category) => (category.auditRefs ?? []).map((ref) => ref.id))
+          );
+          const actionable = Object.entries(report.audits)
+            .filter(([id, audit]) =>
+              categoryAuditIds.has(id) &&
+              typeof audit.score === 'number' &&
+              audit.score < 1 &&
+              !['notApplicable', 'manual'].includes(audit.scoreDisplayMode)
+            )
+            .map(([id, audit]) => ({
+              id,
+              score: audit.score,
+              title: audit.title,
+              displayValue: audit.displayValue ?? '',
+            }))
+            .sort((a, b) => a.score - b.score);
+          console.log('Actionable Release Candidate Lighthouse audits:');
+          for (const audit of actionable) {
+            console.log('- [' + audit.score + '] ' + audit.id + ': ' + audit.title + ' ' + audit.displayValue);
+          }
           if (failed) process.exit(1);
           NODE
       - name: Save Release Candidate Lighthouse artifact
@@ -222,7 +244,7 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: mvqueen-release-candidate-lighthouse-\${{ github.run_id }}
+          name: mvqueen-release-candidate-lighthouse-${{ github.run_id }}
           path: .mvqueen-ci
           retention-days: 14
           include-hidden-files: true

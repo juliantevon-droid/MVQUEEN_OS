@@ -59,6 +59,8 @@ def main() -> int:
         "{{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}",
         "{{ content_for_header }}", "{{ content_for_layout }}",
         "'mvqueen.js' | asset_url", "'mvqueen-ux.js' | asset_url",
+        "mvq_gateway_preload", 'imagesrcset="',
+        "{% if request.page_type == 'collection' %}",
         "{% render 'seo-meta' %}",
     ]:
         if token not in layout:
