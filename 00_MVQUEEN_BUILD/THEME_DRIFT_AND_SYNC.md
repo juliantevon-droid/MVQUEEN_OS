@@ -1,64 +1,46 @@
 # MVQueen Theme Drift & Sync Policy
 
-## Current production development target
+## Current production topology — 2026-10-03
 
 - Shopify store: `tsucu0-1i.myshopify.com`
-- Live theme: `MVQueen — Custom Production Build` (`MAIN`) — protected from automated writes
-- Development target: `MVQueen — Release Candidate` (`UNPUBLISHED`)
-- Live theme ID: `154869825734`
-- Target theme ID: `154876772550`
-- Rollback theme: `MVQueen — Previous Production Build` (`UNPUBLISHED`), ID `154611515590`
-- Protected backup theme: `MVQueen — Backup 2026-09-25` (`UNPUBLISHED`), ID `154876674246` — not a deployment target
+- Live MAIN: **MVQueen — Release Candidate** (`154876772550`)
+- Automated development/staging target: **MVQueen — Staging Preview** (`155002798278`, UNPUBLISHED)
+- Older custom builds/backups remain rollback references only.
+- GitHub `storefront/theme/` is the source of truth for MVQUEEN-owned storefront code.
 
 ## Source-of-truth model
 
-GitHub `storefront/theme/` is the MVQUEEN-owned storefront source of truth for the customer experience.
+MVQueen is a **fully custom Shopify storefront experience**. Dawn, Helio and Horizon are not the customer-experience foundation.
 
-MVQueen is being built as a **fully custom storefront experience**. Horizon is not the customer-experience foundation and must not be treated as the design, interaction, or architectural source for MVQueen.
-
-Shopify remains the commerce infrastructure underneath the experience: products, variants, inventory, cart, checkout, customer accounts, payments, orders, and platform services remain Shopify-managed. MVQueen owns the presentation and interaction layer.
-
-The development target may temporarily contain Shopify-native files that are not part of the MVQUEEN-owned source tree. Their presence must not be interpreted as a requirement to preserve Horizon as the storefront architecture.
+Shopify remains the secure commerce infrastructure underneath the experience: products, variants, inventory, cart, checkout, customer accounts, payments, orders and platform services are Shopify-managed. MVQueen owns the presentation and interaction layer through its custom Liquid, CSS, JavaScript, snippets, sections and JSON templates.
 
 ## Deployment safety rules
 
 1. Never publish from automation.
 2. Never deploy to a `MAIN` theme.
-3. Do not use Horizon as the customer-experience foundation.
-4. Deploy only governed MVQUEEN-owned files through an explicit allowlist.
-5. Never overwrite `config/settings_data.json` from automation; preserve Shopify/theme-editor state.
-6. Validate the source tree before any Shopify write.
-7. Keep Shopify credentials out of the repository.
-8. Preserve product handles, SKUs, inventory, variants, and product media unless a separately governed catalog operation explicitly changes them.
-9. Theme work must preserve mobile usability, accessibility, reduced-motion behavior, performance, and graceful failure states.
-10. Customer-facing product content uses MVQueen identity and excludes supplier/legacy brand contamination.
+3. Automated theme writes target only `MVQueen — Staging Preview` (`155002798278`).
+4. Deploy only governed MVQUEEN-owned files through the explicit workflow allowlist.
+5. Never overwrite `config/settings_data.json` from automation.
+6. Validate source before every Shopify theme write.
+7. Keep Shopify credentials out of Git history.
+8. Preserve product handles, SKUs, inventory, variants and source-media relationships outside separately governed catalog operations.
+9. Preserve mobile usability, accessibility, reduced-motion behavior, performance and graceful failure states.
+10. Customer-facing content uses MVQueen / Miss.Princess routing and blocks supplier/legacy identity leakage.
 
-## Verified current state — 2026-09-27
+## Promotion model
 
-The unpublished target is the protected development environment for the custom MVQueen storefront.
+```text
+GitHub main
+  → contract / Theme Check / release audit
+  → MVQueen — Staging Preview (UNPUBLISHED)
+  → staging preview QA + Lighthouse
+  → explicit merchant approval
+  → manual Shopify theme promotion
+  → former MAIN retained as rollback
+```
 
-The deployed MVQueen source includes the core layout, MVQueen assets, navigation/home/product/collection/search/cart sections, SEO/schema snippets, and JSON templates used by the current deployment allowlist.
+Automation must fail closed if the configured target becomes MAIN.
 
-The next architecture step is to progressively replace generic/native storefront behavior with MVQUEEN-owned presentation and interaction patterns rather than expanding a theme overlay around Horizon.
+## Drift rule
 
-## Why this matters
-
-MVQueen's intended experience is:
-
-**private boutique × editorial fashion journal × personal curator × modern digital atelier**
-
-The storefront should feel considered rather than mass-market, curated rather than crowded, and personal rather than corporate. Technical sophistication should remain underneath the experience rather than becoming the experience.
-
-## Next synchronization gate
-
-Before expanding the deployment surface:
-
-- audit the complete `storefront/theme/` source tree;
-- identify any remaining generic or inherited storefront behavior;
-- define the custom design-system contract;
-- verify every allowlisted file exists locally;
-- verify the target remains `UNPUBLISHED`;
-- run the contract validator and Shopify Theme Check;
-- deploy only governed MVQUEEN-owned files;
-- re-read the target theme metadata after deployment;
-- then continue into catalog, redirect, content, SEO, and purchase-path automation.
+After any manual theme promotion, update the deployment target immediately to a verified unpublished theme before the next automated theme write. A formerly safe theme ID is not permanently safe; **theme role is authoritative**.
