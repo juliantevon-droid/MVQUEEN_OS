@@ -222,3 +222,20 @@ This report supersedes older integration-status language where live evidence has
 - Required preview audits passing: errors-in-console, render-blocking-resources, uses-responsive-images, image-size-responsive, lcp-discovery-insight.
 - Live production Lighthouse targets remain Performance 0.90 / Accessibility 0.95 / Best Practices 0.90 / SEO 0.95.
 - Shopify preview-only and provider overhead is documented separately from theme-owned regressions.
+
+## Superseding operational update — 2026-10-03
+
+This section supersedes theme/runtime rows above where current production state changed after September 30.
+
+- **Shopify MAIN:** `MVQueen — Release Candidate` (`154876772550`).
+- **Automated staging target:** `MVQueen — Staging Preview` (`155002798278`, UNPUBLISHED).
+- Theme CI validates, deploys to Staging Preview, re-verifies it remains unpublished, and runs a preview Lighthouse gate. It must never deploy to MAIN.
+- Latest corrected staging Theme CI is green; required theme-owned audits for console errors, render blocking, responsive image sizing/resolution and LCP discovery all score 1.
+- **Railway:** web/product-worker are GitHub-`main` sourced; current production runtime is online and `/healthz` reports `production-automation-ready`.
+- **Always-on products:** real PRODUCTS_UPDATE probes on both current Shopify products were received, queued, processed and written successfully. Temporary system tags were automatically removed; handles/SKUs/barcodes/inventory were preserved.
+- Current product cost-sync state is refreshed to `verified`; media ALT state is `complete`.
+- **Checkout:** Shopify order #1001 is a web test order marked PAID through `shopify_payments`, proving the test checkout/order path.
+- **Storefront:** password protection is off; SSL is enabled; both active products have public Online Store URLs.
+- **Live Lighthouse:** theme-owned responsive-image, render-blocking, console-error and LCP-discovery controls pass. Remaining Best Practices loss is caused by Shop Pay cookie/Chrome inspector issues. Performance remains variable and below the 0.90 enterprise target because Google Tag / Shopify Web Pixels dominate main-thread and unused-JS time; the enterprise target has not been lowered.
+- **Repository security:** `main` is protected and Source Security/CodeQL gates pass. Repository visibility remains PUBLIC and can only be changed with GitHub repository-administration authority.
+
