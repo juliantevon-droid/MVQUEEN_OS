@@ -724,3 +724,61 @@ This section supersedes older point-in-time counts/theme-role statements elsewhe
 **Live storefront:** public and operational  
 **Remaining non-code decisions:** repository visibility, real-money payment acceptance confirmation, optional external paid-media/lifecycle provider execution, and whether to promote the latest Staging Preview performance refinements to MAIN after visual review.
 
+## Current production verification — 2026-10-04
+
+This section supersedes older point-in-time launch and automation statements above.
+
+### Canonical production state
+
+- GitHub `main` is protected and is the canonical code source.
+- Latest verified head at the start of this verification cycle: `96ebae29698bdc916d7b33f07e5e6650bdf3ccac`; later performance-only commits remain subject to the same gates.
+- Latest verified full green control set includes Theme CI/CD, Storefront Performance, Production Readiness, Source Security, Overseer, and Lint/Index.
+- Shopify is the sole production catalog authority.
+- Current Shopify catalog count: **1 ACTIVE product**.
+- Current product: `Ruched Sports Bra and High-Waisted Shorts Active Set`.
+- Storefront password protection: **OFF**.
+- Primary Shopify domain SSL: **enabled**.
+- Current public product has a valid Online Store URL.
+- Shopify test order `#1001` is marked **PAID** through the web checkout path.
+- Shopify MAIN theme: **MVQueen — Release Candidate**.
+- Automated theme deployment target: **MVQueen — Staging Preview**; automated workflows never publish directly to MAIN.
+
+### Always-on product automation
+
+Production automatic catalog mode is active:
+
+1. Shopify authenticates and sends `PRODUCTS_CREATE` / `PRODUCTS_UPDATE`.
+2. Webhook handlers enqueue idempotent `ProductJob` records.
+3. Railway `mvqueen-product-worker` runs continuously with approximately 2-second idle polling.
+4. The worker re-reads authoritative Shopify product data, classifies/routs the product, generates factual editorial/SEO/catalog enrichment, writes only governed fields, records an automation fingerprint, and suppresses self-generated loops.
+5. Reconciliation periodically scans recently updated Shopify products so missed webhook deliveries are recovered.
+6. Retry, stale-lease recovery, dead-letter handling and health monitoring remain active.
+
+Latest production evidence:
+- Railway web, product worker, agent worker and PostgreSQL are online with no current service issues.
+- Product webhook audit: `PRODUCTS_CREATE=true`, `PRODUCTS_UPDATE=true`, subscriptions `2`, health `true`.
+- Queue evidence: `received=0 / processing=0 / failed=0 / deadLetter=0`.
+- Real product update jobs wrote `productType`, tags, metafields, title, preserved handle, description and SEO.
+- Price writes: **disabled** in verified jobs.
+- Compare-at price writes: **disabled** in verified jobs.
+- Protected handles, SKUs, barcodes and inventory were preserved.
+- Current product contains automation-generated taxonomy, brand routing, short description, highlights, focus keyword, long-tail phrases, combined SEO keywords, ALT coverage, Google Shopping attributes, commercial health and lifecycle/marketing state.
+
+### Authorization model
+
+- `MVQ_WRITE_ENABLED=true` is the global live-write gate.
+- `MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED=true` authorizes authenticated new/updated Shopify products for the safe automatic writer.
+- When automatic enrollment is disabled, `MVQ_APPROVED_PRODUCT_GIDS` remains the manual fallback allowlist.
+- Editorial, title, SEO, description, media ALT, category/metafield and content-surface capabilities remain individually kill-switchable.
+- Price and compare-at publication remain separate explicit capabilities and are **not** enabled by automatic enrollment.
+
+### Remaining storefront performance target
+
+Functional and release gates are green, but the merchant performance target remains stricter than the current raw Lighthouse score.
+
+Latest verified measurements before the current optimization pass:
+- Staging Preview: Performance 77, Accessibility 100, Best Practices 79, SEO 100.
+- Live Release Candidate: Performance 69, Accessibility 100, Best Practices 79, SEO 100.
+- Major non-theme penalties include Shopify preview redirects, Shop Pay third-party cookie behavior, Shopify Web Pixels/WPM and Google tag runtime.
+- Theme-owned performance work continues on LCP/image/font prioritization without disabling checkout, Shop Pay, analytics or required integrations.
+
