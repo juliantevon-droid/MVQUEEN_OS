@@ -182,8 +182,8 @@ def main() -> int:
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
         failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
     for token in [
-        "settings.brand_logo | image_url: width: 400, quality: 58",
-        "widths: '240,320,360,400'",
+        "settings.brand_logo | image_url: width: 560, quality: 45",
+        "widths: '320,400,480,560'",
         "fetchpriority: 'high'",
         "widths: '320, 360, 412, 480, 540, 640, 720'",
     ]:
