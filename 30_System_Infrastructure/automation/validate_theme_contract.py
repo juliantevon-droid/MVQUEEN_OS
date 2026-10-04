@@ -182,7 +182,12 @@ def main() -> int:
     gateway = read("sections/brand-gateway.liquid")
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
         failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
-    for token in ["&amp;width=400 400w", "fetchpriority: 'high'", "widths: '320, 360, 412, 480, 540, 640, 720'"]:
+    for token in [
+        "settings.brand_logo | image_url: width: 480, quality: 82",
+        "widths: '240,320,360,400,480'",
+        "fetchpriority: 'high'",
+        "widths: '320, 360, 412, 480, 540, 640, 720'",
+    ]:
         if token not in gateway:
             failures.append(f"Brand gateway missing responsive/LCP image integration: {token}")
 
