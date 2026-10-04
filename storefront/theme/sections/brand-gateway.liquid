@@ -52,7 +52,7 @@
 
   <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="/pages/miss-princess">
     {% if princess_gateway_image != blank %}
-      {{ princess_gateway_image | image_url: width: 800, quality: 72 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '320, 360, 412, 480, 640, 720, 800', sizes: '(max-width: 749px) 100vw, 50vw', loading: princess_loading, fetchpriority: princess_fetchpriority, decoding: 'async', alt: 'Miss.Princess' }}
+      {{ princess_gateway_image | image_url: width: 640, quality: 68 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '320, 360, 412, 480, 560, 640', sizes: '(max-width: 749px) 100vw, 50vw', loading: princess_loading, fetchpriority: princess_fetchpriority, decoding: 'async', alt: 'Miss.Princess' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
