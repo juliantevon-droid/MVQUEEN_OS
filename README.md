@@ -44,3 +44,20 @@ Never commit credentials. Protected product identity, SKU, inventory, variant, p
 - Railway `mvqueen-web` and `mvqueen-product-worker` are verified sourced from GitHub `main`; Railway reports the GitHub source integration active. The latest app-code deployment matched the verified app-code commit; documentation/theme-only commits do not require those runtime services to rebuild.
 - Google Drive remains assets/knowledge/archive storage. Its GitHub intake workflow is manual and fail-closed; it never commits or overwrites canonical source automatically.
 - Theme changes deploy to the verified unpublished `MVQueen — Staging Preview` theme. The current Shopify MAIN theme is never an automated deployment target.
+
+## v1.0 release closeout
+
+As of 2026-10-04:
+
+- Shopify MAIN is **MVQueen — Release Candidate**.
+- Storefront password protection is off.
+- GitHub `main` is protected.
+- Production web/product-worker/PostgreSQL are healthy on Railway.
+- Shopify `products/create` and `products/update` automation is live 24/7 through the continuous Railway product worker.
+- Production Readiness, Source Security, Lint/Index, Overseer, Recovery Readiness and Theme CI/CD are passing.
+- Live and staging Lighthouse release gates use three-run median sampling while retaining the MVQUEEN enterprise targets.
+- Current Shopify products are the only production catalog source of truth; historical recovery products remain archive-only.
+- `CHANGELOG.md` and `PRODUCTION_READINESS/RELEASE_NOTES_V1.0.0_2026-10-04.md` contain the v1.0 evidence package.
+
+Final owner-side closeout is limited to cancelling test order `#1001` with inventory restock and publishing the signed GitHub `v1.0.0` tag/release. The connected safety/tooling boundaries intentionally do not perform those two operations.
+
