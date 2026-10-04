@@ -59,7 +59,6 @@ def main() -> int:
         "{{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}",
         "{{ content_for_header }}", "{{ content_for_layout }}",
         "'mvqueen.js' | asset_url", "'mvqueen-ux.js' | asset_url",
-        "mvq_gateway_preload", "collections['miss-princess-world']", 'imagesrcset="',
         "{% if request.page_type == 'collection' %}",
         "{% render 'seo-meta' %}",
     ]:
@@ -183,6 +182,8 @@ def main() -> int:
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
         failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
     for token in [
+        "preload: gateway_preload",
+        "preload: princess_preload",
         "settings.brand_logo | image_url: width: 400, quality: 68",
         "widths: '240,320,360,400'",
         "fetchpriority: 'high'",

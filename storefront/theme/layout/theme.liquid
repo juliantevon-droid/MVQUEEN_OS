@@ -9,24 +9,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-favicon-crown-180.png?v=1790334795">
     <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-favicon-crown-192.png?v=1790334799">
     <meta name="msapplication-TileColor" content="#FFFCF8">
-    {% if request.page_type == 'index' %}
-      {% assign mvq_gateway_preload = blank %}
-      {% if collections['mvqueen-world'] != blank and collections['mvqueen-world'].products.first.featured_image != blank %}
-        {% assign mvq_gateway_preload = collections['mvqueen-world'].products.first.featured_image %}
-      {% elsif collections['miss-princess-world'] != blank and collections['miss-princess-world'].products.first.featured_image != blank %}
-        {% assign mvq_gateway_preload = collections['miss-princess-world'].products.first.featured_image %}
-      {% endif %}
-      {% if mvq_gateway_preload != blank %}
-        <link
-          rel="preload"
-          as="image"
-          href="{{ mvq_gateway_preload | image_url: width: 720 }}"
-          imagesrcset="{{ mvq_gateway_preload | image_url: width: 320 }} 320w, {{ mvq_gateway_preload | image_url: width: 360 }} 360w, {{ mvq_gateway_preload | image_url: width: 412 }} 412w, {{ mvq_gateway_preload | image_url: width: 480 }} 480w, {{ mvq_gateway_preload | image_url: width: 540 }} 540w, {{ mvq_gateway_preload | image_url: width: 640 }} 640w, {{ mvq_gateway_preload | image_url: width: 720 }} 720w"
-          imagesizes="(max-width: 749px) 100vw, 50vw"
-          fetchpriority="high"
-        >
-      {% endif %}
-    {% endif %}
     {% render 'mvq-fonts' %}
     {{ 'mvqueen.css' | asset_url | stylesheet_tag }}
     {% assign mvq_design_system_url = 'mvqueen-design-system.css' | asset_url %}

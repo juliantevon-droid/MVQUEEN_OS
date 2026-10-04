@@ -123,3 +123,10 @@ jobs:
           }
           if (failed) process.exit(1);
           NODE
+      - name: Save live Lighthouse report
+        uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: mvqueen-live-lighthouse-${{ github.run_id }}
+          path: lighthouse.json
+          retention-days: 14
