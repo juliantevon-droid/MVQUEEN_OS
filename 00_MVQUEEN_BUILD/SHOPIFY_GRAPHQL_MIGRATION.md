@@ -11,8 +11,10 @@ The application is the **only live Shopify network writer** in the repository.
 - API runtime: `app/shopify.server.ts`
 - Product automation: `app/lib/product-processor.ts`
 - API version: Shopify configuration, currently `2026-07`
-- Live writes require `MVQ_WRITE_ENABLED=true`
-- Each product must also be explicitly listed in `MVQ_APPROVED_PRODUCT_GIDS`
+- Live writes require `MVQ_WRITE_ENABLED=true`.
+- In production automatic-catalog mode, `MVQ_AUTO_PRODUCT_ENROLLMENT_ENABLED=true` authorizes authenticated Shopify `products/create` and `products/update` events for the protected-field-safe writer.
+- When automatic enrollment is disabled, `MVQ_APPROVED_PRODUCT_GIDS` remains the manual per-product fallback allowlist.
+- Pricing and compare-at price publication remain separately gated and are not implied by automatic enrollment.
 
 ## Python role
 
