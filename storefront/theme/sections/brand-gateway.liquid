@@ -31,15 +31,15 @@
       <span class="mvq-gateway-eyebrow">{{ section.settings.mvqueen_eyebrow }}</span>
       <span class="mvq-gateway-brandmark">
         {% if settings.brand_logo != blank %}
-          {{ settings.brand_logo | image_url: width: 400, quality: 68 | image_tag: class: 'mvq-gateway-brandmark-image', widths: '240,320,360,400', sizes: '(max-width: 443px) 88vw, (max-width: 749px) 360px, 400px', loading: 'lazy', fetchpriority: 'low', decoding: 'async', alt: '' }}
+          {{ settings.brand_logo | image_url: width: 560, quality: 60 | image_tag: class: 'mvq-gateway-brandmark-image', widths: '240,320,400,480,560', sizes: '(max-width: 443px) 88vw, (max-width: 749px) 360px, 400px', loading: 'lazy', fetchpriority: 'low', decoding: 'async', alt: '' }}
         {% else %}
           <img
             class="mvq-gateway-brandmark-image"
-            src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360&amp;quality=68"
-            srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=240&amp;quality=68 240w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=320&amp;quality=68 320w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360&amp;quality=68 360w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400&amp;quality=68 400w"
+            src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=560&amp;quality=60"
+            srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=240&amp;quality=60 240w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=320&amp;quality=60 320w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400&amp;quality=60 400w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=480&amp;quality=60 480w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=560&amp;quality=60 560w"
             sizes="(max-width: 443px) 88vw, (max-width: 749px) 360px, 400px"
-            width="400"
-            height="180"
+            width="560"
+            height="252"
             alt=""
             aria-hidden="true"
             loading="lazy"
