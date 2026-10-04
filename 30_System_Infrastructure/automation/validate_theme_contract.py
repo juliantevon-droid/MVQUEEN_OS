@@ -182,8 +182,6 @@ def main() -> int:
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
         failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
     for token in [
-        "preload: gateway_preload",
-        "preload: princess_preload",
         "settings.brand_logo | image_url: width: 400, quality: 68",
         "widths: '240,320,360,400'",
         "fetchpriority: 'high'",
@@ -191,6 +189,17 @@ def main() -> int:
     ]:
         if token not in gateway:
             failures.append(f"Brand gateway missing responsive/LCP image integration: {token}")
+
+    layout = read("layout/theme.liquid")
+    for token in [
+        "assign mvq_gateway_preload = blank",
+        'rel="preload"',
+        'as="image"',
+        "imagesrcset=",
+        'fetchpriority="high"',
+    ]:
+        if token not in layout:
+            failures.append(f"theme.liquid missing head-level gateway LCP preload integration: {token}")
 
     for rel in ["templates/page.mvqueen.json", "templates/page.miss-princess.json"]:
         if not (THEME / rel).is_file():
