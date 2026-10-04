@@ -23,7 +23,7 @@
   <a class="mvq-card-link" href="{{ product.url }}">
     <div class="mvq-card-media">
       {% if card_image %}
-        {{ card_image | image_url: width: 480 | image_tag: loading: 'lazy', widths: '180,240,320,360,400,480', sizes: card_image_sizes, alt: card_image_alt }}
+        {{ card_image | image_url: width: 360 | image_tag: loading: 'lazy', widths: '180,240,320,360', sizes: card_image_sizes, alt: card_image_alt }}
         {% if second_image %}
           <span
             class="mvq-card-media-alt"

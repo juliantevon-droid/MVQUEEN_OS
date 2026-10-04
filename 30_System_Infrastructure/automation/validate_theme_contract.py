@@ -78,7 +78,7 @@ def main() -> int:
     for token in [
         "card_image_sizes = image_sizes | default: '(max-width: 480px) calc(50vw - 20px), (max-width: 800px) calc(50vw - 24px), 33vw'",
         "sizes: card_image_sizes",
-        "widths: '180,240,320,360,400,480'",
+        "widths: '180,240,320,360'",
         'data-src="{{ second_image | image_url: width: 480 }}"',
         "data-mvq-secondary-image",
         "data-src=",
@@ -186,6 +186,7 @@ def main() -> int:
         "widths: '320,400,480,560'",
         "fetchpriority: 'high'",
         "widths: '320, 360, 412, 480, 540, 640, 720'",
+        "image_url: width: 640, quality: 68",
     ]:
         if token not in gateway:
             failures.append(f"Brand gateway missing responsive/LCP image integration: {token}")
