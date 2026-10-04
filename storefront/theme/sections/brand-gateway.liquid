@@ -30,18 +30,23 @@
     <span class="mvq-gateway-content">
       <span class="mvq-gateway-eyebrow">{{ section.settings.mvqueen_eyebrow }}</span>
       <span class="mvq-gateway-brandmark">
-        <img
-          src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400"
-          srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=240 240w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360 360w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400 400w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=480 480w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=560 560w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=640 640w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=720 720w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=940 940w"
-          sizes="(max-width: 443px) 88vw, (max-width: 749px) 390px, 470px"
-          width="940"
-          height="423"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          fetchpriority="low"
-          decoding="async"
-        >
+        {% if settings.brand_logo != blank %}
+          {{ settings.brand_logo | image_url: width: 480, quality: 82 | image_tag: class: 'mvq-gateway-brandmark-image', widths: '240,320,360,400,480', sizes: '(max-width: 443px) 88vw, (max-width: 749px) 390px, 470px', loading: 'lazy', decoding: 'async', alt: '' }}
+        {% else %}
+          <img
+            class="mvq-gateway-brandmark-image"
+            src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400&amp;quality=82"
+            srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=240&amp;quality=82 240w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=320&amp;quality=82 320w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360&amp;quality=82 360w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400&amp;quality=82 400w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=480&amp;quality=82 480w"
+            sizes="(max-width: 443px) 88vw, (max-width: 749px) 390px, 470px"
+            width="480"
+            height="216"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+          >
+        {% endif %}
         <span class="mvq-visually-hidden">MVQueen</span>
       </span>
       <span class="mvq-gateway-copy">{{ section.settings.mvqueen_copy }}</span>
