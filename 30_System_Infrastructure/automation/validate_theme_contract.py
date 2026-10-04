@@ -189,11 +189,11 @@ def main() -> int:
         if token not in gateway_css:
             failures.append(f"Brand gateway CSS missing mobile/LCP optimization: {token}")
     for token in [
-        "settings.brand_logo | image_url: width: 560, quality: 45",
-        "widths: '320,400,480,560'",
+        "settings.brand_logo | image_url: width: 400, quality: 40",
+        "widths: '240,320,360,400'",
         "fetchpriority: 'high'",
         "widths: '320, 360, 412, 480, 540, 640, 720'",
-        "image_url: width: 640, quality: 68",
+        "image_url: width: 480, quality: 60",
     ]:
         if token not in gateway:
             failures.append(f"Brand gateway missing responsive/LCP image integration: {token}")
