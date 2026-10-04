@@ -10,24 +10,35 @@
     <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-favicon-crown-192.png?v=1790334799">
     <meta name="msapplication-TileColor" content="#FFFCF8">
     {% if request.page_type == 'index' %}
-      {% assign mvq_gateway_preload = blank %}
-      {% assign mvq_gateway_preload_width = 720 %}
-      {% assign mvq_gateway_preload_widths = '320,360,412,480,540,640,720' | split: ',' %}
+      {% assign mvq_gateway_desktop_preload = blank %}
+      {% assign mvq_gateway_mobile_preload = blank %}
       {% if collections['mvqueen-world'] != blank and collections['mvqueen-world'].products.first.featured_image != blank %}
-        {% assign mvq_gateway_preload = collections['mvqueen-world'].products.first.featured_image %}
-      {% elsif collections['miss-princess-world'] != blank and collections['miss-princess-world'].products.first.featured_image != blank %}
-        {% assign mvq_gateway_preload = collections['miss-princess-world'].products.first.featured_image %}
-        {% assign mvq_gateway_preload_width = 480 %}
-        {% assign mvq_gateway_preload_widths = '320,360,412,480' | split: ',' %}
+        {% assign mvq_gateway_desktop_preload = collections['mvqueen-world'].products.first.featured_image %}
       {% endif %}
-      {% if mvq_gateway_preload != blank %}
-        {% capture mvq_gateway_preload_srcset %}{% for image_width in mvq_gateway_preload_widths %}{{ mvq_gateway_preload | image_url: width: image_width }} {{ image_width }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}
+      {% if collections['miss-princess-world'] != blank and collections['miss-princess-world'].products.first.featured_image != blank %}
+        {% assign mvq_gateway_mobile_preload = collections['miss-princess-world'].products.first.featured_image %}
+      {% endif %}
+
+      {% if mvq_gateway_mobile_preload != blank %}
         <link
           rel="preload"
           as="image"
-          href="{{ mvq_gateway_preload | image_url: width: mvq_gateway_preload_width }}"
-          imagesrcset="{{ mvq_gateway_preload_srcset | strip }}"
-          imagesizes="(max-width: 749px) 100vw, 50vw"
+          href="{{ mvq_gateway_mobile_preload | image_url: width: 480 }}"
+          imagesrcset="{{ mvq_gateway_mobile_preload | image_url: width: 320 }} 320w, {{ mvq_gateway_mobile_preload | image_url: width: 360 }} 360w, {{ mvq_gateway_mobile_preload | image_url: width: 412 }} 412w, {{ mvq_gateway_mobile_preload | image_url: width: 480 }} 480w"
+          imagesizes="100vw"
+          media="(max-width: 749px)"
+          fetchpriority="high"
+        >
+      {% endif %}
+
+      {% if mvq_gateway_desktop_preload != blank %}
+        <link
+          rel="preload"
+          as="image"
+          href="{{ mvq_gateway_desktop_preload | image_url: width: 720 }}"
+          imagesrcset="{{ mvq_gateway_desktop_preload | image_url: width: 480 }} 480w, {{ mvq_gateway_desktop_preload | image_url: width: 540 }} 540w, {{ mvq_gateway_desktop_preload | image_url: width: 640 }} 640w, {{ mvq_gateway_desktop_preload | image_url: width: 720 }} 720w"
+          imagesizes="50vw"
+          media="(min-width: 750px)"
           fetchpriority="high"
         >
       {% endif %}

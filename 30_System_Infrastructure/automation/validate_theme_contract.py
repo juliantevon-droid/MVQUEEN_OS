@@ -185,6 +185,7 @@ def main() -> int:
         "settings.brand_logo | image_url: width: 560, quality: 60",
         "widths: '240,320,400,480,560'",
         "fetchpriority: 'high'",
+        "widths: '240,320,360,400'",
         "widths: '320, 360, 412, 480, 540, 640, 720'",
     ]:
         if token not in gateway:
@@ -192,7 +193,7 @@ def main() -> int:
 
     layout = read("layout/theme.liquid")
     for token in [
-        "assign mvq_gateway_preload = blank",
+        "assign mvq_gateway_mobile_preload = blank",
         'rel="preload"',
         'as="image"',
         "imagesrcset=",

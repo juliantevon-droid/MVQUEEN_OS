@@ -395,7 +395,10 @@
 }
 @media(max-width:749px){
   .mvq-gateway-media--mvqueen,
-  .mvq-gateway-media--princess{object-position:center}
+  .mvq-gateway-media--princess{
+    object-position:center;
+    filter:none;
+  }
 }
 
 .mvp-newsletter-section{
