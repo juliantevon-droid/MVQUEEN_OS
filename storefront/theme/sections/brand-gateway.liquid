@@ -10,7 +10,7 @@
   endif
 
   assign princess_loading = 'eager'
-  assign princess_fetchpriority = 'high'
+  assign princess_fetchpriority = 'low'
 %}
 <section class="mvq-gateway" aria-labelledby="BrandGatewayTitle">
   <div class="mvq-gateway-house">
@@ -27,12 +27,12 @@
       <span class="mvq-gateway-eyebrow">{{ section.settings.mvqueen_eyebrow }}</span>
       <span class="mvq-gateway-brandmark">
         {% if settings.brand_logo != blank %}
-          {{ settings.brand_logo | image_url: width: 560, quality: 45 | image_tag: class: 'mvq-gateway-brandmark-image', widths: '320,400,480,560', sizes: '(max-width: 443px) 88vw, (max-width: 749px) 360px, 400px', loading: 'lazy', fetchpriority: 'low', decoding: 'async', alt: '' }}
+          {{ settings.brand_logo | image_url: width: 400, quality: 40 | image_tag: class: 'mvq-gateway-brandmark-image', widths: '240,320,360,400', sizes: '(max-width: 443px) 88vw, (max-width: 749px) 360px, 400px', loading: 'lazy', fetchpriority: 'low', decoding: 'async', alt: '' }}
         {% else %}
           <img
             class="mvq-gateway-brandmark-image"
-            src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=560&amp;quality=45"
-            srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=320&amp;quality=50 320w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400&amp;quality=48 400w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=480&amp;quality=46 480w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=560&amp;quality=45 560w"
+            src="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400&amp;quality=40"
+            srcset="https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=240&amp;quality=44 240w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=320&amp;quality=42 320w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=360&amp;quality=41 360w, https://cdn.shopify.com/s/files/1/0764/2618/2854/files/mvqueen-logo-refined.png?v=1790334639&amp;width=400&amp;quality=40 400w"
             sizes="(max-width: 443px) 88vw, (max-width: 749px) 360px, 400px"
             width="560"
             height="252"
@@ -52,7 +52,7 @@
 
   <a class="mvq-gateway-panel mvq-gateway-panel--princess" href="/pages/miss-princess">
     {% if princess_gateway_image != blank %}
-      {{ princess_gateway_image | image_url: width: 640, quality: 68 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '320, 360, 412, 480, 560, 640', sizes: '(max-width: 749px) 100vw, 50vw', loading: princess_loading, fetchpriority: princess_fetchpriority, decoding: 'async', alt: 'Miss.Princess' }}
+      {{ princess_gateway_image | image_url: width: 480, quality: 60 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--princess', widths: '320, 360, 412, 480', sizes: '(max-width: 749px) 100vw, 50vw', loading: princess_loading, fetchpriority: princess_fetchpriority, decoding: 'async', alt: 'Miss.Princess' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">

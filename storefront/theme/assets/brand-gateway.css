@@ -131,6 +131,12 @@
     min-height:48svh;
     padding:34px 24px;
   }
+  .mvq-gateway-panel--mvqueen{
+    min-height:66svh;
+  }
+  .mvq-gateway-media{
+    transition:none;
+  }
   .mvq-gateway-title{
     font-size:clamp(3rem,15vw,5.2rem);
   }

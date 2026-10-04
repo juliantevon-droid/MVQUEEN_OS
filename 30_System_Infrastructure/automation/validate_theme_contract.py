@@ -179,8 +179,15 @@ def main() -> int:
             failures.append(f"contact-page.liquid missing required customer-care integration: {token}")
 
     gateway = read("sections/brand-gateway.liquid")
+    gateway_css = read("assets/brand-gateway.css")
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
         failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
+    for token in ["princess_fetchpriority = 'low'", "image_url: width: 480, quality: 60", "widths: '320, 360, 412, 480'"]:
+        if token not in gateway:
+            failures.append(f"Brand gateway missing mobile/LCP optimization: {token}")
+    for token in [".mvq-gateway-panel--mvqueen", "min-height:66svh", ".mvq-gateway-media{\n    transition:none"]:
+        if token not in gateway_css:
+            failures.append(f"Brand gateway CSS missing mobile/LCP optimization: {token}")
     for token in [
         "settings.brand_logo | image_url: width: 560, quality: 45",
         "widths: '320,400,480,560'",
