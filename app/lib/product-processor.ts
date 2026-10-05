@@ -99,7 +99,7 @@ const APPROVED_PRODUCT_GIDS = new Set(
     .filter(Boolean),
 );
 
-function usableProductType(value?: string | null): boolean {
+export function usableProductType(value?: string | null): boolean {
   const normalized = String(value ?? "").trim().toLowerCase();
   if (!normalized) return false;
   return !new Set([
