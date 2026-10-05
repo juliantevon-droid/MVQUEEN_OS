@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
+  productClaimReviewReasons,
   shouldPublishAutomatedDescription,
 } from "./product-content-automation";
 import {
@@ -350,5 +351,74 @@ assert.equal(bodyMoisturizerClassification.route, "bath-body");
 assert.equal(usableProductType("0"), false);
 assert.equal(usableProductType("unknown"), false);
 assert.equal(usableProductType("Necklace"), true);
+
+
+const ankletWithBadOldType = classifyProduct(
+  "Double Heart Anklet Bracelet Love Barefoot Chain Bling Crystal Ankle Bracelet",
+  "<p>Jewelry chain with crystal details.</p>",
+  "Activewear Set",
+);
+assert.equal(ankletWithBadOldType.department, "Jewelry");
+assert.equal(ankletWithBadOldType.family, "Anklets");
+assert.equal(ankletWithBadOldType.productType, "Anklet");
+assert.equal(ankletWithBadOldType.confidence, "high");
+
+const pressOnNails = classifyProduct(
+  "Long Press On Nails With Diamonds Reusable Acrylic Handmade Nails",
+  "",
+  "5",
+);
+assert.equal(pressOnNails.department, "Beauty");
+assert.equal(pressOnNails.family, "Nails");
+assert.equal(pressOnNails.productType, "Press-On Nails");
+
+const bodyOil = classifyProduct("Vitamin E Body Oil", "", "0");
+assert.equal(bodyOil.family, "Bath & Body");
+
+const beautyBox = classifyProduct("Mystery Beauty Boxes", "", "0");
+assert.equal(beautyBox.family, "Beauty Sets");
+
+const hairMask = classifyProduct("Smooth And Sleek Hair Mask", "", "0");
+assert.equal(hairMask.route, "hair-treatments");
+
+const hairRemoval = classifyProduct(
+  "Waxing Kit With Wax Warmer And Hair Removal Beads",
+  "",
+  "4",
+);
+assert.equal(hairRemoval.family, "Hair Removal");
+
+assert.deepEqual(
+  productClaimReviewReasons({
+    title: "Herbal Hair Care Solution Anti-hair Loss And Strong",
+    descriptionHtml: "<p>Hair care product.</p>",
+  }),
+  ["hair_loss_or_regrowth"],
+);
+assert.ok(
+  productClaimReviewReasons({
+    title: "Light Scar Cream Scar Fine Grain Desalination",
+    descriptionHtml: "",
+  }).includes("scar_claim"),
+);
+assert.ok(
+  productClaimReviewReasons({
+    title: "Electric Cupping Massager Fat Burning Slimming Device",
+    descriptionHtml: "",
+  }).includes("fat_or_cellulite_claim"),
+);
+assert.ok(
+  productClaimReviewReasons({
+    title: "Big Breast Butt Enhancer Skin Firming Cream",
+    descriptionHtml: "",
+  }).includes("body_enhancement"),
+);
+assert.deepEqual(
+  productClaimReviewReasons({
+    title: "Watermelon Body Cream",
+    descriptionHtml: "<p>Ingredients: water, watermelon extract, glycerin.</p>",
+  }),
+  [],
+);
 
 console.log("product content automation tests passed");
