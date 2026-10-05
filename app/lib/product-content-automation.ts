@@ -38,6 +38,34 @@ const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["wrinkle_treatment_claim", /\b(?:wrinkles?\b[\s\S]{0,25}\b(?:remove|flat|reduce|tighten)|tightening\s+cream[\s\S]{0,25}\bwrinkles?)\b/i],
 ];
 
+const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
+  /\b(?:cures?|treats?|prevents?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b/gi,
+  /\b(?:anti[- ]?hair\s+loss|hair\s+loss|hair\s+regrowth|regrowth)\b/gi,
+  /\b(?:scar(?:s)?(?:\s+(?:removal|repair|treatment|fade|cream|gel))?|desalination)\b/gi,
+  /\b(?:anti[- ]?cellulite|cellulite(?:\s+(?:reduction|removal))?|fat\s+burning|weight\s+loss|slimming)\b/gi,
+  /\b(?:breast|bust|butt|hip)\s+(?:enhanc(?:e|er|ement|ing)?|enlarg(?:e|ement|ing)?|lift(?:ing)?|growth|firm(?:ing|ness)?)\b/gi,
+  /\b(?:breast|bust)\s+(?:beauty|care)\b/gi,
+  /\b(?:breast|bust|busty|butt|chest)\b/gi,
+  /\b(?:wrinkles?|tightening|firming|lifting)\b/gi,
+  /\belasticity\b/gi,
+];
+
+export function removeHighRiskClaimLanguage(value: string): string {
+  let output = String(value ?? "");
+  for (const pattern of HIGH_RISK_CLAIM_SANITIZERS) {
+    output = output.replace(pattern, " ");
+  }
+  return output
+    .replace(/\b(?:and|or|with|for)\s+(?=(?:and|or|with|for)\b)/gi, " ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/([,.;:!?]){2,}/g, "$1")
+    .replace(SPACE_RE, " ")
+    .trim()
+    .replace(/^(?:and|or|with|for)\s+/i, "")
+    .replace(/\s+(?:and|or|with|for)$/i, "")
+    .trim();
+}
+
 export function productClaimReviewReasons(
   product: Pick<ProductSnapshot, "title" | "descriptionHtml">,
 ): string[] {
@@ -126,8 +154,17 @@ function stripKnownCustomerBrands(value: string): string {
   return output.replace(SPACE_RE, " ").trim();
 }
 
-function cleanCustomerText(value: string, vendor?: string | null, vocabulary = BRAND_VOCABULARY): string {
-  return removeForbiddenLanguage(stripKnownCustomerBrands(stripVendor(value, vendor)), vocabulary)
+function cleanCustomerText(
+  value: string,
+  vendor?: string | null,
+  vocabulary = BRAND_VOCABULARY,
+  sanitizeClaims = false,
+): string {
+  const cleaned = removeForbiddenLanguage(
+    stripKnownCustomerBrands(stripVendor(value, vendor)),
+    vocabulary,
+  );
+  return (sanitizeClaims ? removeHighRiskClaimLanguage(cleaned) : cleaned)
     .replace(SPACE_RE, " ")
     .trim();
 }
@@ -346,8 +383,14 @@ function factualProductName(
   classification: Classification,
   highlights: string[],
   vocabulary: BrandVocabulary,
+  sanitizeClaims = false,
 ): string {
-  let name = cleanCustomerText(cleanText(product.title), product.vendor, vocabulary)
+  let name = cleanCustomerText(
+    cleanText(product.title),
+    product.vendor,
+    vocabulary,
+    sanitizeClaims,
+  )
     .replace(TRAILING_CODE_RE, "")
     .replace(/^beauty\s+(?=\S)/i, "")
     .replace(/\b(?:european\s+and\s+american|european|american|special[- ]interest|light\s+luxury|design\s+sense|exquisite|fashion|ornament|hot\s+sale|new\s+arrival|high[- ]quality|top\s+quality|women'?s?\s+cosmetics)\b/gi, " ")
@@ -385,12 +428,19 @@ function brandedProductCopy(
   highlights: string[],
   brandLabel: string,
   vocabulary: BrandVocabulary,
+  sanitizeClaims = false,
 ): { title: string; shortDescription: string } {
   const princess = /miss\.?\s*princess/i.test(brandLabel);
   const profile = vocabulary.profiles[princess ? "miss-princess" : "mvqueen"];
   const seed = productSeed(product);
   const adjective = profile.adjectives[seed % profile.adjectives.length];
-  const base = factualProductName(product, classification, highlights, vocabulary);
+  const base = factualProductName(
+    product,
+    classification,
+    highlights,
+    vocabulary,
+    sanitizeClaims,
+  );
   const prefix = titleCase(adjective);
   // Put the essential product noun at the end of a long title rather than
   // cutting it off with an arbitrary character slice.
@@ -537,10 +587,13 @@ export function buildAutomatedProductContent(
   brandLabel = "MVQueen",
   vocabulary = BRAND_VOCABULARY,
 ): AutomatedProductContent {
+  const sanitizeClaims = productClaimReviewReasons(product).length > 0;
   const highlights = uniqueHighlights([
     ...extractHighlights(product.descriptionHtml),
     ...structuredSourceHighlights(product),
-  ].map((item) => cleanCustomerText(item, product.vendor, vocabulary))
+  ].map((item) =>
+      cleanCustomerText(item, product.vendor, vocabulary, sanitizeClaims),
+    )
     .filter((item) => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item)), classification.productType);
 
   // Karat "purity" cannot describe stainless steel. Keep that supplier field
@@ -556,7 +609,14 @@ export function buildAutomatedProductContent(
     classification.productType,
     highlights,
   );
-  const { title, shortDescription } = brandedProductCopy(product, classification, highlights, brandLabel, vocabulary);
+  const { title, shortDescription } = brandedProductCopy(
+    product,
+    classification,
+    highlights,
+    brandLabel,
+    vocabulary,
+    sanitizeClaims,
+  );
 
   const focusKeyword = cleanText(classification.productType).toLowerCase();
   const titleKeyword = keywordTitle(title, classification.productType);
@@ -592,7 +652,7 @@ export function buildAutomatedProductContent(
   const descriptionHtml = buildDescriptionHtml(
     shortDescription,
     highlights,
-    product.descriptionHtml,
+    sanitizeClaims ? undefined : product.descriptionHtml,
     generatedIntro,
   );
 
