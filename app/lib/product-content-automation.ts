@@ -48,6 +48,7 @@ const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
   /\b(?:breast|bust|busty|butt|chest)\b/gi,
   /\b(?:wrinkles?|tightening|firming|lifting)\b/gi,
   /\belasticity\b/gi,
+  /\b(?:sexy|flat|strong)\b/gi,
 ];
 
 export function removeHighRiskClaimLanguage(value: string): string {
@@ -57,12 +58,15 @@ export function removeHighRiskClaimLanguage(value: string): string {
   }
   return output
     .replace(/\b(?:and|or|with|for)\s+(?=(?:and|or|with|for)\b)/gi, " ")
+    .replace(/\b(?:and|or|with|for)\s+(?=[,.;:!?])/gi, " ")
     .replace(/\s+([,.;:!?])/g, "$1")
     .replace(/([,.;:!?]){2,}/g, "$1")
     .replace(SPACE_RE, " ")
     .trim()
     .replace(/^(?:and|or|with|for)\s+/i, "")
     .replace(/\s+(?:and|or|with|for)$/i, "")
+    .replace(/\b(?:and|or|with|for)\s+(?:and|or|with|for)\b/gi, " ")
+    .replace(SPACE_RE, " ")
     .trim();
 }
 
