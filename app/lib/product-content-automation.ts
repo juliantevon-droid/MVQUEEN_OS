@@ -109,15 +109,7 @@ function cleanText(value?: string | null): string {
 function stripVendor(value: string, vendor?: string | null): string {
   const rawVendor = String(vendor ?? "").trim();
   if (!rawVendor || /^mvqueen$/i.test(rawVendor)) return value.trim();
-  const escaped = rawVendor.replace(/[.*+?^$(){}|[\]\\]/g, "\\function stripVendor(value: string, vendor?: string | null): string {
-  const rawVendor = String(vendor ?? "").trim();
-  if (!rawVendor || /^mvqueen$/i.test(rawVendor)) return value.trim();
   const escaped = rawVendor.replace(/[.*+?^$(){}|[\]\\]/g, "\\$&");
-  return value
-    .replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ")
-    .replace(SPACE_RE, " ")
-    .trim();
-}");
   return value
     .replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ")
     .replace(SPACE_RE, " ")
@@ -127,15 +119,7 @@ function stripVendor(value: string, vendor?: string | null): string {
 function stripKnownCustomerBrands(value: string): string {
   let output = value;
   for (const brand of CUSTOMER_FACING_BRAND_DENYLIST) {
-    const escaped = brand.replace(/[.*+?^$(){}|[\]\\]/g, "\\function stripVendor(value: string, vendor?: string | null): string {
-  const rawVendor = String(vendor ?? "").trim();
-  if (!rawVendor || /^mvqueen$/i.test(rawVendor)) return value.trim();
-  const escaped = rawVendor.replace(/[.*+?^$(){}|[\]\\]/g, "\\$&");
-  return value
-    .replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ")
-    .replace(SPACE_RE, " ")
-    .trim();
-}");
+    const escaped = brand.replace(/[.*+?^$(){}|[\]\\]/g, "\\$&");
     output = output.replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ");
   }
   return output.replace(SPACE_RE, " ").trim();
