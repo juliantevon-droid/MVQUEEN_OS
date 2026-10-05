@@ -23,7 +23,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v22-natural-seo-phrases";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v23-import-quality";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -98,6 +98,22 @@ const APPROVED_PRODUCT_GIDS = new Set(
     .map((value) => value.trim())
     .filter(Boolean),
 );
+
+function usableProductType(value?: string | null): boolean {
+  const normalized = String(value ?? "").trim().toLowerCase();
+  if (!normalized) return false;
+  return !new Set([
+    "0",
+    "n/a",
+    "na",
+    "none",
+    "null",
+    "undefined",
+    "unknown",
+    "other",
+    "product",
+  ]).has(normalized);
+}
 
 const ACCESS_SCOPES_QUERY = `#graphql
 query MVQueenAccessScopes {
@@ -873,7 +889,7 @@ export async function processProductJob(
 
     const productInput: Record<string, unknown> = {
       id: product.id,
-      productType: product.productType?.trim() ? product.productType : c.productType,
+      productType: usableProductType(product.productType) ? product.productType : c.productType,
       tags: mergedTags,
       metafields: [...metafields, ...nativeCategoryMetafields],
     };
