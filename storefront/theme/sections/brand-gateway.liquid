@@ -16,11 +16,6 @@
   if mvqueen_gateway_image == blank
     assign mvqueen_logo_fetchpriority = 'high'
   endif
-
-  assign mvqueen_gateway_preload = true
-  if section.index > 1
-    assign mvqueen_gateway_preload = false
-  endif
 %}
 <section class="mvq-gateway" aria-labelledby="BrandGatewayTitle">
   <div class="mvq-gateway-house">
@@ -30,7 +25,7 @@
 
   <a class="mvq-gateway-panel mvq-gateway-panel--mvqueen" href="/pages/mvqueen">
     {% if mvqueen_gateway_image != blank %}
-      {{ mvqueen_gateway_image | image_url: width: 720, quality: 72 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '320, 360, 412, 480, 540, 640, 720', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', preload: mvqueen_gateway_preload, decoding: 'async', alt: 'MVQueen' }}
+      {{ mvqueen_gateway_image | image_url: width: 720, quality: 72 | image_tag: class: 'mvq-gateway-media mvq-gateway-media--mvqueen', widths: '320, 360, 412, 480, 540, 640, 720', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high', decoding: 'async', alt: 'MVQueen' }}
     {% endif %}
     <span class="mvq-gateway-overlay" aria-hidden="true"></span>
     <span class="mvq-gateway-content">
