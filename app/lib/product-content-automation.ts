@@ -236,7 +236,13 @@ const DESCRIPTION_BOILERPLATE_RE =
   /^(?:product\s+(?:information|details|measurements?)|measurements?|size\s*(?:&|and)?\s*measurements?|size\s+(?:conversion|chart|guide)|packing\s+list|package\s+(?:list|includes?)|specifications?|notes?\s*:|\d+[.)]\s*)/i;
 
 const KEYWORD_NOISE_RE =
-  /^(?:general|standard\s+specifications?|standard|default|ordinary|as\s+shown|see\s+picture|product\s+information|specifications?|applicable\s+people)$/i;
+  /^(?:general|standard\s+specifications?|standard|default|ordinary|as\s+shown|see\s+picture|product\s+information|specifications?|applicable\s+people|brand|other|other effects?|other functions?)$/i;
+
+const SOURCE_ATTRIBUTE_DUMP_RE =
+  /^(?:brand|shelf\s+life|efficacy|cosmetic\s+efficacy|special\s+purpose\s+cosmetics?|net\s+content|applicable\s+people|specifications?|color\s+classification|category|packing\s+list|package\s+(?:list|includes?))\s*:/i;
+
+const SEO_DETAIL_LABEL_RE =
+  /^(?:material(?:\s+composition)?|metal|stone|color|shade|size|stone\s+size|net\s+content|capacity|length|weight|finish|texture|number\s+of\s+pieces|features?|stretch)\s*:/i;
 
 function usefulKeywordDetail(value: string): boolean {
   const cleaned = cleanText(value);
@@ -246,10 +252,23 @@ function usefulKeywordDetail(value: string): boolean {
   return true;
 }
 
+function usefulSeoDetailValues(highlights: string[]): string[] {
+  return highlights
+    .filter((item) => SEO_DETAIL_LABEL_RE.test(item))
+    .map(valueAfterLabel)
+    .filter(usefulKeywordDetail);
+}
+
+function usefulProseParagraph(paragraph: string): boolean {
+  const cleaned = cleanText(paragraph);
+  if (!cleaned || DESCRIPTION_BOILERPLATE_RE.test(cleaned)) return false;
+  if (SOURCE_ATTRIBUTE_DUMP_RE.test(cleaned)) return false;
+  if ((cleaned.match(/:/g) ?? []).length >= 2) return false;
+  return true;
+}
+
 function sentenceFromDescription(html?: string | null): string {
-  const paragraphs = extractParagraphs(html).filter(
-    (paragraph) => !DESCRIPTION_BOILERPLATE_RE.test(paragraph),
-  );
+  const paragraphs = extractParagraphs(html).filter(usefulProseParagraph);
   const usable =
     paragraphs.find((paragraph) => paragraph.length >= 28) ??
     paragraphs[0] ??
@@ -460,9 +479,7 @@ export function buildAutomatedProductContent(
 
   const focusKeyword = cleanText(classification.productType).toLowerCase();
   const titleKeyword = keywordTitle(title, classification.productType);
-  const detailValues = highlights
-    .map(valueAfterLabel)
-    .filter(usefulKeywordDetail);
+  const detailValues = usefulSeoDetailValues(highlights);
 
   const secondaryKeywords = unique([
     cleanText(classification.subcollection).toLowerCase(),
