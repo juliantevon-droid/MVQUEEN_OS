@@ -551,6 +551,32 @@ const manyFacts = buildAutomatedProductContent({ ...activewear, descriptionHtml:
 assert.ok(manyFacts.descriptionHtml.includes("Care: Machine wash cold"));
 assert.ok(manyFacts.descriptionHtml.includes("Origin: Imported"));
 
+const legacyStructuredFacts: ProductSnapshot = {
+  ...activewear,
+  descriptionHtml: "<ul><li>Two-piece activewear set</li><li>Ruched detailing</li><li>Moderate stretch</li><li>94% polyester, 6% elastane</li><li>Machine wash cold; tumble dry low</li><li>Imported</li></ul>",
+  attributeMetafields: { nodes: [{ key: "source_attributes", value: JSON.stringify({ features: "Ruched", number_of_pieces: "Two-piece", stretch: "Moderate stretch", material_composition: "94% polyester, 6% elastane" }) }] },
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/3", googleMetafields: { nodes: [{ key: "material", value: "94% polyester, 6% elastane" }] } }] },
+};
+const deduplicatedCopy = buildAutomatedProductContent(legacyStructuredFacts, activewearClassification, "Miss.Princess");
+assert.equal(deduplicatedCopy.highlights.filter((detail) => /94% polyester/.test(detail)).length, 1);
+assert.equal(deduplicatedCopy.highlights.filter((detail) => /ruched/i.test(detail)).length, 1);
+assert.equal(deduplicatedCopy.highlights.filter((detail) => /two-piece/i.test(detail)).length, 1);
+assert.equal(deduplicatedCopy.highlights.filter((detail) => /moderate stretch/i.test(detail)).length, 1);
+assert.ok(deduplicatedCopy.descriptionHtml.includes("Machine wash cold; tumble dry low"));
+assert.ok(deduplicatedCopy.descriptionHtml.includes("Imported"));
+const deduplicatedRepeat = buildAutomatedProductContent({ ...legacyStructuredFacts, title: deduplicatedCopy.title, descriptionHtml: deduplicatedCopy.descriptionHtml }, activewearClassification, "Miss.Princess");
+assert.equal(deduplicatedRepeat.descriptionHtml, deduplicatedCopy.descriptionHtml);
+const distinctNumericDetails = buildAutomatedProductContent({ ...supplierNecklace, descriptionHtml: "<ul><li>Length: 45</li><li>Weight: 45</li></ul>" }, necklaceClassification);
+assert.ok(distinctNumericDetails.highlights.includes("Length: 45"));
+assert.ok(distinctNumericDetails.highlights.includes("Weight: 45"));
+const platedSteelSource = { ...supplierNecklace, attributeMetafields: { nodes: [{ key: "source_attributes", value: JSON.stringify({ material: "Stainless steel", treatment_process: "Electroplating", purity: "18K" }) }] } };
+const platedSteelBefore = structuredClone(platedSteelSource);
+const platedSteelCopy = buildAutomatedProductContent(platedSteelSource, necklaceClassification);
+assert.ok(platedSteelCopy.descriptionHtml.includes("Stainless steel"));
+assert.ok(platedSteelCopy.descriptionHtml.includes("Electroplating"));
+assert.ok(!/purity|solid gold/i.test(platedSteelCopy.descriptionHtml));
+assert.deepEqual(platedSteelSource, platedSteelBefore);
+
 const cleanUnspecified = buildAutomatedProductContent({ ...supplierNecklace, title: "Star Pendant", descriptionHtml: "", variants: { nodes: [] } }, necklaceClassification);
 assert.ok(!/silk|velvet|satin|gold|silver|stainless|cruelty|vegan|artisan/i.test(cleanUnspecified.descriptionHtml));
 const noisyCopy = buildAutomatedProductContent({ ...supplierNecklace, title: "Amazing Stunning OUHOE Zircon Star Pendant" }, necklaceClassification);

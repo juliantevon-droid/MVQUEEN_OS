@@ -233,6 +233,34 @@ function valueAfterLabel(value: string): string {
   return colon > 0 ? cleaned.slice(colon + 1).trim() : cleaned;
 }
 
+function uniqueHighlights(values: string[], productType: string): string[] {
+  const type = cleanText(productType).toLowerCase();
+  const comparison = (value: string) => {
+    let text = cleanText(value).toLowerCase().replace(/\s+(?:design|detailing)$/, "");
+    if (type && text.endsWith(" " + type)) text = text.slice(0, -type.length).trimEnd();
+    return text;
+  };
+  const label = (value: string) => value.includes(":") ? value.split(":", 1)[0].toLowerCase().trim() : "";
+  const canonicalLabel = (value: string) => /^(?:material(?: composition)?|metal|pendant material)$/.test(value) ? "material" : value;
+  const score = (value: string) => /^material composition\s*:/i.test(value) ? 3 : label(value) ? 2 : 1;
+  const out: string[] = [];
+  // Older descriptions contain natural bullets alongside the same structured
+  // attributes. Keep one fact, preferring its more precise label. Distinct
+  // labeled quantities (for example length and weight) stay separate.
+  for (const value of unique(values)) {
+    const identity = comparison(valueAfterLabel(value));
+    const index = out.findIndex((existing) => {
+      if (comparison(valueAfterLabel(existing)) !== identity) return false;
+      const first = label(existing);
+      const second = label(value);
+      return !first || !second || canonicalLabel(first) === canonicalLabel(second);
+    });
+    if (index < 0) out.push(value);
+    else if (score(value) > score(out[index])) out[index] = value;
+  }
+  return out;
+}
+
 const DESCRIPTION_BOILERPLATE_RE =
   /^(?:product\s+(?:information|details|measurements?)|measurements?|size\s*(?:&|and)?\s*measurements?|size\s+(?:conversion|chart|guide)|packing\s+list|package\s+(?:list|includes?)|specifications?|notes?\s*:|\d+[.)]\s*)/i;
 
@@ -509,11 +537,20 @@ export function buildAutomatedProductContent(
   brandLabel = "MVQueen",
   vocabulary = BRAND_VOCABULARY,
 ): AutomatedProductContent {
-  const highlights = unique([
+  const highlights = uniqueHighlights([
     ...extractHighlights(product.descriptionHtml),
     ...structuredSourceHighlights(product),
   ].map((item) => cleanCustomerText(item, product.vendor, vocabulary))
-    .filter((item) => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item)));
+    .filter((item) => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item)), classification.productType);
+
+  // Karat "purity" cannot describe stainless steel. Keep that supplier field
+  // in the source metadata and variant options, without presenting it as a
+  // solid-gold composition claim in the customer-facing details.
+  if (classification.department === "Jewelry" && /stainless steel/i.test(highlightValue(highlights, /^(?:material|metal|pendant material)\s*:/i))) {
+    for (let index = highlights.length - 1; index >= 0; index--) {
+      if (/^purity\s*:/i.test(highlights[index])) highlights.splice(index, 1);
+    }
+  }
 
   const generatedIntro = groundedIntro(
     classification.productType,
