@@ -189,8 +189,6 @@ def main() -> int:
         if token not in gateway_css:
             failures.append(f"Brand gateway CSS missing mobile/LCP optimization: {token}")
     for token in [
-        "settings.brand_logo | image_url: width: 400, quality: 40",
-        "widths: '240,320,360,400'",
         "fetchpriority: 'high'",
         "widths: '320, 360, 412, 480, 540, 640, 720'",
         "image_url: width: 480, quality: 60",
@@ -198,16 +196,51 @@ def main() -> int:
         if token not in gateway:
             failures.append(f"Brand gateway missing responsive/LCP image integration: {token}")
 
+    logo_sizes = "(max-width: 443px) 88vw, (max-width: 749px) 390px, min(470px, 38vw)"
+    if f"assign mvqueen_logo_sizes = '{logo_sizes}'" not in gateway:
+        failures.append("Brand gateway logo sizes must match its CSS display widths")
+    if not re.search(
+        r"assign mvqueen_logo_fetchpriority = 'low'\s+"
+        r"if mvqueen_gateway_image == blank\s+"
+        r"assign mvqueen_logo_fetchpriority = 'high'\s+endif",
+        gateway,
+    ):
+        failures.append("Brand gateway must prioritize the logo when the MVQueen image is absent")
+
+    configured_logo = re.search(r"{{\s*settings\.brand_logo\b.*?}}", gateway, re.S)
+    fallback_logo = re.search(
+        r'<img\b(?=[^>]*\bclass="mvq-gateway-brandmark-image")[^>]*>', gateway, re.S
+    )
+    logo_contracts = [
+        ("configured", configured_logo, [
+            "image_url: width: 956, quality: 40",
+            "widths: '240,320,360,400,480,560,640,800,956'",
+            "sizes: mvqueen_logo_sizes",
+            "loading: 'eager'",
+            "fetchpriority: mvqueen_logo_fetchpriority",
+        ]),
+        ("fallback", fallback_logo, [
+            "&amp;width=956&amp;quality=40",
+            'sizes="{{ mvqueen_logo_sizes }}"',
+            'width="956"',
+            'height="431"',
+            'loading="eager"',
+            'fetchpriority="{{ mvqueen_logo_fetchpriority }}"',
+        ] + [f"&amp;width={width}&amp;quality=40 {width}w"
+             for width in (240, 320, 360, 400, 480, 560, 640, 800, 956)]),
+    ]
+    for label, match, tokens in logo_contracts:
+        if match is None:
+            failures.append(f"Brand gateway missing {label} logo image")
+            continue
+        for token in tokens:
+            if token not in match.group():
+                failures.append(f"Brand gateway {label} logo missing responsive/LCP integration: {token}")
+
     layout = read("layout/theme.liquid")
-    for token in [
-        "assign mvq_gateway_mobile_preload = blank",
-        'rel="preload"',
-        'as="image"',
-        "imagesrcset=",
-        'fetchpriority="high"',
-    ]:
-        if token not in layout:
-            failures.append(f"theme.liquid missing head-level gateway LCP preload integration: {token}")
+    for token in ("mvq_gateway_mobile_preload", "mvq_gateway_desktop_preload"):
+        if token in layout:
+            failures.append("Stale gateway head preload must not compete with the section's selected LCP image")
 
     for rel in ["templates/page.mvqueen.json", "templates/page.miss-princess.json"]:
         if not (THEME / rel).is_file():
