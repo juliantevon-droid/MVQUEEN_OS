@@ -17,6 +17,31 @@ const SPACE_RE = /\s+/g;
 const HTML_RE = /<[^>]+>/g;
 const TRAILING_CODE_RE = /\s*\(([A-Z0-9_-]{2,24})\)\s*$/i;
 
+const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
+  ["medical_or_guaranteed", /\b(?:cures?|treats?|prevents?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b/i],
+  ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+regrowth|regrowth)\b/i],
+  ["scar_claim", /\bscar\b[\s\S]{0,30}\b(?:remov|repair|treat|cream|gel|desalination|fade)/i],
+  ["body_enhancement", /\b(?:breast|bust|butt|hip)\b[\s\S]{0,35}\b(?:enhanc|enlarg|lift|growth|firm)/i],
+  ["fat_or_cellulite_claim", /\b(?:fat\s+burning|weight\s+loss|anti[- ]?cellulite|cellulite\s+(?:reduction|removal)|slimming\s+(?:cream|oil|gel|massager|device))\b/i],
+  ["wrinkle_treatment_claim", /\b(?:wrinkles?\b[\s\S]{0,25}\b(?:remove|flat|reduce|tighten)|tightening\s+cream[\s\S]{0,25}\bwrinkles?)\b/i],
+];
+
+export function productClaimReviewReasons(
+  product: Pick<ProductSnapshot, "title" | "descriptionHtml">,
+): string[] {
+  const text = [
+    String(product.title ?? ""),
+    String(product.descriptionHtml ?? "").replace(HTML_RE, " "),
+  ]
+    .join(" ")
+    .replace(SPACE_RE, " ")
+    .trim();
+
+  return CLAIM_REVIEW_RULES
+    .filter(([, pattern]) => pattern.test(text))
+    .map(([reason]) => reason);
+}
+
 export function shouldPublishAutomatedDescription(args: {
   topic?: string | null;
   currentDescriptionHtml?: string | null;
