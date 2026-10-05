@@ -9,6 +9,7 @@ import {
   classifyProduct,
   type ProductSnapshot,
 } from "./mvqueen-intelligence";
+import { usableProductType } from "./product-processor";
 
 const product: ProductSnapshot = {
   id: "gid://shopify/Product/1",
@@ -300,5 +301,54 @@ assert.equal(
   }),
   true,
 );
+
+
+const lipBalmClassification = classifyProduct(
+  "4-color Brightening Lip Balm Moisturizing Lip Gloss Women Cosmetics",
+  "",
+  "0",
+);
+assert.equal(lipBalmClassification.department, "Beauty");
+assert.equal(lipBalmClassification.family, "Makeup");
+assert.equal(lipBalmClassification.route, "makeup");
+assert.equal(lipBalmClassification.confidence, "high");
+
+const faceCreamClassification = classifyProduct(
+  "Face Firming Cream",
+  "<p>Facial skin care cream.</p>",
+  "0",
+);
+assert.equal(faceCreamClassification.family, "Skincare");
+assert.equal(faceCreamClassification.route, "skincare");
+assert.equal(faceCreamClassification.confidence, "high");
+
+const centellaClassification = classifyProduct(
+  "Beauty Madagascar Centella Asiatica Facial Skin Care",
+  "",
+  "0",
+);
+assert.equal(centellaClassification.family, "Skincare");
+assert.equal(centellaClassification.route, "skincare");
+
+const hairOilClassification = classifyProduct(
+  "Rosemary Coconut Hair Oil Nourishing Moisturizing Fragrance Care Hair Care",
+  "",
+  "0",
+);
+assert.equal(hairOilClassification.family, "Hair Care");
+assert.equal(hairOilClassification.route, "hair-treatments");
+assert.equal(hairOilClassification.confidence, "high");
+
+const bodyMoisturizerClassification = classifyProduct(
+  "Body Moisturizer Hydrating Skin Care",
+  "",
+  "0",
+);
+assert.equal(bodyMoisturizerClassification.family, "Bath & Body");
+assert.equal(bodyMoisturizerClassification.route, "bath-body");
+
+assert.equal(usableProductType("0"), false);
+assert.equal(usableProductType("unknown"), false);
+assert.equal(usableProductType("Necklace"), true);
 
 console.log("product content automation tests passed");
