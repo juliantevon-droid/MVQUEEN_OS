@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
-import type { ProductSnapshot } from "./mvqueen-intelligence";
+import { usableProductType, type ProductSnapshot } from "./mvqueen-intelligence";
 import {
   buildCatalogAttributeEnrichment,
   buildCatalogAttributeMetafields,
@@ -99,21 +99,6 @@ const APPROVED_PRODUCT_GIDS = new Set(
     .filter(Boolean),
 );
 
-export function usableProductType(value?: string | null): boolean {
-  const normalized = String(value ?? "").trim().toLowerCase();
-  if (!normalized) return false;
-  return !new Set([
-    "0",
-    "n/a",
-    "na",
-    "none",
-    "null",
-    "undefined",
-    "unknown",
-    "other",
-    "product",
-  ]).has(normalized);
-}
 
 const ACCESS_SCOPES_QUERY = `#graphql
 query MVQueenAccessScopes {
