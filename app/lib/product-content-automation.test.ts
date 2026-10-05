@@ -8,8 +8,8 @@ import {
   classifyBrandWorld,
   classifyProduct,
   type ProductSnapshot,
+  usableProductType,
 } from "./mvqueen-intelligence";
-import { usableProductType } from "./product-processor";
 
 const product: ProductSnapshot = {
   id: "gid://shopify/Product/1",
