@@ -36,6 +36,7 @@ const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["body_enhancement", /\b(?:(?:breast|bust|butt|hip)\b[\s\S]{0,35}\b(?:enhanc(?:e|er|ement|ing)?|enlarg(?:e|ement|ing)?|lift(?:ing)?|growth|firm(?:ing|ness)?)|breast\s+(?:beauty|care)|bust\s+care)\b/i],
   ["fat_or_cellulite_claim", /\b(?:fat\s+burning|weight\s+loss|anti[- ]?cellulite|cellulite\s+(?:reduction|removal)|slimming\s+(?:cream|oil|gel|massager|device))\b/i],
   ["wrinkle_treatment_claim", /\b(?:wrinkles?\b[\s\S]{0,25}\b(?:remove|flat|reduce|tighten)|tightening\s+cream[\s\S]{0,25}\bwrinkles?)\b/i],
+  ["skin_lightening_claim", /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/i],
 ];
 
 const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
@@ -445,36 +446,64 @@ function brandedProductCopy(
     vocabulary,
     sanitizeClaims,
   );
-  const prefix = titleCase(adjective);
-  // Put the essential product noun at the end of a long title rather than
-  // cutting it off with an arbitrary character slice.
+
+  // Product titles are factual/search-first. Brand vocabulary belongs in
+  // editorial copy, not as a random adjective prefix on every title.
   const sourceNoun = base.match(/\b(?:body (?:moisturizer|scrub|cream|lotion|wash|oil|butter)|hair (?:oil|mask|serum|dryer|brush)|lip (?:balm|gloss|oil|liner)|waxing kit|face cream|facial cream|skin care|necklace|bracelet|earrings?|anklet|ring|dress|bodysuit|jumpsuit|romper|blouse|shorts|pants|skirt|shampoo|conditioner|foundation|concealer|mascara|lipstick|perfume|fragrance)\b/i)?.[0];
   const endNoun = classification.family === "Necklaces" ? "Necklace" : sourceNoun ?? "";
-  let title = prefix + " " + base;
+  let title = base;
   if (title.length > 80) {
     const escaped = endNoun.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const head = endNoun ? title.replace(new RegExp(`\\b${escaped}\\b`, "gi"), " ").replace(SPACE_RE, " ").trim() : title;
+    const head = endNoun
+      ? title.replace(new RegExp(`\\b${escaped}\\b`, "gi"), " ").replace(SPACE_RE, " ").trim()
+      : title;
     const ending = endNoun ? " " + endNoun : "";
     title = clipTitle(head, 80 - ending.length) + ending;
   }
-  const style = prefix;
-  const hooks = princess
+
+  const type = cleanText(classification.productType).toLowerCase() || "piece";
+  const detailValues = usefulSeoDetailValues(highlights).slice(0, 2);
+  const detailPhrase = naturalList(detailValues);
+  const style = adjective.toLowerCase();
+
+  const factualTemplates = princess
     ? [
-        `${style} energy. Your edit, your way.`,
-        `${articleFor(adjective) === "an" ? "An" : "A"} ${adjective} moment, on your terms.`,
-        `${style} in spirit. Yours to style.`,
+        `${titleCase(type)} with ${detailPhrase}, styled with a ${style}, expressive ${brandLabel} point of view.`,
+        `Built around ${detailPhrase}, this ${type} keeps the ${brandLabel} presentation ${style}, fresh, and clear.`,
+        `${detailPhrase} define this ${type}, finished with ${style} ${brandLabel} styling and straightforward details.`,
+        `A ${style} ${brandLabel} take on a ${type}, grounded in ${detailPhrase}.`,
       ]
     : [
-        `${articleFor(adjective) === "an" ? "An" : "A"} ${adjective} point of view.`,
-        `${style} in spirit. Clear in detail.`,
-        `${style} style, chosen with intention.`,
+        `${titleCase(type)} with ${detailPhrase}, presented through a ${style} ${brandLabel} point of view.`,
+        `Built around ${detailPhrase}, this ${type} keeps the ${brandLabel} presentation ${style}, polished, and clear.`,
+        `${detailPhrase} define this ${type}, with ${style} ${brandLabel} styling and straightforward details.`,
+        `A ${style} ${brandLabel} take on a ${type}, grounded in ${detailPhrase}.`,
       ];
-  const hook = hooks[(seed >>> 8) % hooks.length];
-  const factualTitle = title.slice(prefix.length + 1);
-  const identity = `The ${factualTitle} belongs to the ${brandLabel} edit.`;
-  const shortDescription = hook.length + identity.length + 1 <= 180
-    ? `${hook} ${identity}`
-    : `${style} in spirit. The ${title} is part of the ${brandLabel} edit.`;
+
+  const fallbackTemplates = princess
+    ? [
+        `A ${style} ${brandLabel} ${type} with clear product details and an expressive point of view.`,
+        `This ${type} brings a ${style}, fresh ${brandLabel} perspective while keeping the product details clear.`,
+        `${title} is presented with ${style} ${brandLabel} styling and straightforward product information.`,
+      ]
+    : [
+        `A ${style} ${brandLabel} ${type} with clear product details and a polished point of view.`,
+        `This ${type} brings a ${style}, considered ${brandLabel} perspective while keeping the product details clear.`,
+        `${title} is presented with ${style} ${brandLabel} styling and straightforward product information.`,
+      ];
+
+  const pool = detailPhrase ? factualTemplates : fallbackTemplates;
+  let shortDescription = cleanText(pool[(seed >>> 8) % pool.length]);
+  if (shortDescription.length > 180) {
+    shortDescription = clipTitle(
+      detailPhrase
+        ? `${titleCase(type)} with ${detailPhrase}, presented with ${style} ${brandLabel} styling.`
+        : `${title} with ${style} ${brandLabel} styling.`,
+      179,
+    ).replace(/[,:;\-]+$/, "").trim();
+    if (!/[.!?]$/.test(shortDescription)) shortDescription += ".";
+  }
+
   return { title, shortDescription };
 }
 
