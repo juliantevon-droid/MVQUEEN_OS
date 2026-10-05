@@ -623,13 +623,16 @@ export function buildAutomatedProductContent(
   vocabulary = BRAND_VOCABULARY,
 ): AutomatedProductContent {
   const sanitizeClaims = productClaimReviewReasons(product).length > 0;
-  const highlights = uniqueHighlights([
+  const sourceHighlights = uniqueHighlights([
     ...extractHighlights(product.descriptionHtml),
     ...structuredSourceHighlights(product),
   ].map((item) =>
       cleanCustomerText(item, product.vendor, vocabulary, sanitizeClaims),
     )
     .filter((item) => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item)), classification.productType);
+  const highlights = sourceHighlights.length
+    ? sourceHighlights
+    : [`Product type: ${classification.productType}`];
 
   // Karat "purity" cannot describe stainless steel. Keep that supplier field
   // in the source metadata and variant options, without presenting it as a
