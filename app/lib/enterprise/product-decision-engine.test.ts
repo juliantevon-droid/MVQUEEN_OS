@@ -46,9 +46,11 @@ const unresolvedBrandProduct = {
 
 const unresolvedDecision = buildEnterpriseProductDecision(unresolvedBrandProduct);
 assert.equal(unresolvedDecision.classification.productType, "Activewear Set");
-assert.equal(unresolvedDecision.brandRoute.brand, null);
-assert.ok(unresolvedDecision.tags.includes("mvq:brand:needs-review"));
-assert.ok(unresolvedDecision.tags.includes("mvq:needs-review"));
+assert.equal(unresolvedDecision.brandRoute.brand, "mvqueen");
+assert.equal(unresolvedDecision.brandRoute.confidence, "medium");
+assert.equal(unresolvedDecision.brandRoute.reason, "default-primary-brand");
+assert.ok(unresolvedDecision.tags.includes("mvq:brand:mvqueen"));
+assert.ok(!unresolvedDecision.tags.includes("mvq:needs-review"));
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:fashion"));
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:activewear"));
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:activewear-sets"));
