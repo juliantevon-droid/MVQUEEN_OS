@@ -1,6 +1,10 @@
 {% doc %}
   Loads the existing MVQueen brand fonts from Shopify's theme asset CDN.
 {% enddoc %}
+{% if request.page_type == 'index' and request.locale.iso_code == 'en' %}
+  {{ 'mvq-jost-normal-latin.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+  {{ 'mvq-cormorant-garamond-normal-latin.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+{% endif %}
 {% style %}
   @font-face {
     font-family: 'Cormorant Garamond';
