@@ -1,3 +1,4 @@
+import { logMvqueenEvent } from "../app/lib/enterprise/observability.server";
 import {
   ensureProductWebhookSubscriptions,
   processProductJobBatch,
@@ -64,7 +65,16 @@ async function main() {
     }
 
     if (now - lastReconcile >= reconcileEveryMs) {
-      await reconcileRecentShopifyProducts();
+      const reconciliation = await reconcileRecentShopifyProducts();
+      logMvqueenEvent("product.reconciliation.batch", {
+        ...reconciliation,
+        lookbackMinutes: envInt(
+          "MVQ_PRODUCT_RECONCILE_LOOKBACK_MINUTES",
+          20,
+          5,
+          1440,
+        ),
+      });
       lastReconcile = now;
     }
 
