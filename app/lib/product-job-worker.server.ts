@@ -1,6 +1,6 @@
 import prisma from "../db.server";
 import { registerWebhooks, unauthenticated } from "../shopify.server";
-import { processProductJob } from "./product-processor";
+import { AUTOMATION_VERSION, processProductJob } from "./product-processor";
 import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
 
 const RECONCILE_QUERY = "#graphql\nquery MVQueenRecentProducts($first: Int!, $after: String, $query: String!) { products(first: $first, after: $after, query: $query, sortKey: UPDATED_AT) { nodes { id updatedAt } pageInfo { hasNextPage endCursor } } }";
@@ -272,7 +272,7 @@ export async function reconcileRecentShopifyProducts() {
 
         for (const product of nodes) {
           if (!product?.id || !product?.updatedAt) continue;
-          const eventKey = "reconcile:" + product.id + ":" + product.updatedAt;
+          const eventKey = "reconcile:" + AUTOMATION_VERSION + ":" + product.id + ":" + product.updatedAt;
           const existing = await prisma.productJob.findUnique({
             where: { eventKey },
             select: { id: true },
