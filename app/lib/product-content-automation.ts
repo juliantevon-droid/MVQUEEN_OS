@@ -17,6 +17,17 @@ const SPACE_RE = /\s+/g;
 const HTML_RE = /<[^>]+>/g;
 const TRAILING_CODE_RE = /\s*\(([A-Z0-9_-]{2,24})\)\s*$/i;
 
+const CUSTOMER_FACING_BRAND_DENYLIST = [
+  "OUHOE", "HOEGOA", "FANZHEN", "EELHOPE", "COLOR FIT", "WEST & MONTH",
+  "EPROLO", "DROPSURE", "JAYSUING", "ROXELIS", "DESIRE GEM", "MIA JEWELRY",
+  "SEPHORA", "VICTORIA'S SECRET", "VICTORIAS SECRET", "FENTY BEAUTY", "DIOR",
+  "QIBEST", "QIBEST2", "HANDAIYAN", "O.TWO.O", "PUDAIER", "IMAGIC", "HOYGI",
+  "ZEPHOCO", "NICEFACE", "OCEAURA", "CMAADU", "MENOW", "UCANBE", "CAKAILA",
+  "FOCALLURE", "FOCALLUREL", "MISSROSE", "MISS ROSE", "ZEESEA", "BREYLEE",
+  "KOEC", "BEAUTY GLAZED", "POPFEEL", "LANBENA", "DEROL", "HENGFEI", "LULAA",
+  "MABREM", "WUWUVISTA", "COFULTIC",
+];
+
 const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["medical_or_guaranteed", /\b(?:cures?|treats?|prevents?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b/i],
   ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+regrowth|regrowth)\b/i],
@@ -98,9 +109,40 @@ function cleanText(value?: string | null): string {
 function stripVendor(value: string, vendor?: string | null): string {
   const rawVendor = String(vendor ?? "").trim();
   if (!rawVendor || /^mvqueen$/i.test(rawVendor)) return value.trim();
+  const escaped = rawVendor.replace(/[.*+?^$(){}|[\]\\]/g, "\\function stripVendor(value: string, vendor?: string | null): string {
+  const rawVendor = String(vendor ?? "").trim();
+  if (!rawVendor || /^mvqueen$/i.test(rawVendor)) return value.trim();
   const escaped = rawVendor.replace(/[.*+?^$(){}|[\]\\]/g, "\\$&");
   return value
     .replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ")
+    .replace(SPACE_RE, " ")
+    .trim();
+}");
+  return value
+    .replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ")
+    .replace(SPACE_RE, " ")
+    .trim();
+}
+
+function stripKnownCustomerBrands(value: string): string {
+  let output = value;
+  for (const brand of CUSTOMER_FACING_BRAND_DENYLIST) {
+    const escaped = brand.replace(/[.*+?^$(){}|[\]\\]/g, "\\function stripVendor(value: string, vendor?: string | null): string {
+  const rawVendor = String(vendor ?? "").trim();
+  if (!rawVendor || /^mvqueen$/i.test(rawVendor)) return value.trim();
+  const escaped = rawVendor.replace(/[.*+?^$(){}|[\]\\]/g, "\\$&");
+  return value
+    .replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ")
+    .replace(SPACE_RE, " ")
+    .trim();
+}");
+    output = output.replace(new RegExp("\\b" + escaped + "\\b", "gi"), " ");
+  }
+  return output.replace(SPACE_RE, " ").trim();
+}
+
+function cleanCustomerText(value: string, vendor?: string | null): string {
+  return stripKnownCustomerBrands(stripVendor(value, vendor))
     .replace(SPACE_RE, " ")
     .trim();
 }
@@ -123,6 +165,15 @@ function clip(value: string, max: number): string {
   if (text.length <= max) return text;
   const cut = text.slice(0, Math.max(1, max - 1)).replace(/\s+\S*$/, "").trim();
   return (cut || text.slice(0, max - 1).trim()) + "…";
+}
+
+function clipTitle(value: string, max = 80): string {
+  const text = cleanText(value);
+  if (text.length <= max) return text;
+  return (
+    text.slice(0, max + 1).replace(/\s+\S*$/, "").trim() ||
+    text.slice(0, max).trim()
+  );
 }
 
 function extractParagraphs(html?: string | null): string[] {
@@ -198,7 +249,18 @@ function valueAfterLabel(value: string): string {
 }
 
 const DESCRIPTION_BOILERPLATE_RE =
-  /^(?:product\s+measurements?|measurements?|size\s*(?:&|and)?\s*measurements?|size\s+(?:conversion|chart|guide))/i;
+  /^(?:product\s+(?:information|details|measurements?)|measurements?|size\s*(?:&|and)?\s*measurements?|size\s+(?:conversion|chart|guide)|packing\s+list|package\s+(?:list|includes?)|specifications?|notes?\s*:|\d+[.)]\s*)/i;
+
+const KEYWORD_NOISE_RE =
+  /^(?:general|standard\s+specifications?|standard|default|ordinary|as\s+shown|see\s+picture|product\s+information|specifications?|applicable\s+people)$/i;
+
+function usefulKeywordDetail(value: string): boolean {
+  const cleaned = cleanText(value);
+  if (!cleaned || cleaned.length < 2 || cleaned.length > 70) return false;
+  if (KEYWORD_NOISE_RE.test(cleaned)) return false;
+  if ((cleaned.match(/,/g) ?? []).length > 3) return false;
+  return true;
+}
 
 function sentenceFromDescription(html?: string | null): string {
   const paragraphs = extractParagraphs(html).filter(
@@ -379,20 +441,23 @@ export function buildAutomatedProductContent(
   brandLabel = "MVQueen",
 ): AutomatedProductContent {
   const sourceTitle = cleanText(product.title);
-  const title = stripVendor(sourceTitle, product.vendor)
-    .replace(TRAILING_CODE_RE, "")
-    .replace(SPACE_RE, " ")
-    .trim() || sourceTitle;
+  const cleanedSourceTitle = cleanCustomerText(sourceTitle, product.vendor);
+  const title = clipTitle(
+    cleanedSourceTitle
+      .replace(TRAILING_CODE_RE, "")
+      .replace(SPACE_RE, " ")
+      .trim() || cleanedSourceTitle || sourceTitle,
+  );
 
   const highlights = unique([
     ...extractHighlights(product.descriptionHtml)
-      .map((item) => stripVendor(item, product.vendor))
+      .map((item) => cleanCustomerText(item, product.vendor))
       .filter(Boolean),
     ...structuredSourceHighlights(product),
   ]).slice(0, 6);
 
   const descriptionSentence = alignBrandLabel(
-    stripVendor(
+    cleanCustomerText(
       sentenceFromDescription(product.descriptionHtml),
       product.vendor,
     ),
@@ -411,7 +476,9 @@ export function buildAutomatedProductContent(
 
   const focusKeyword = cleanText(classification.productType).toLowerCase();
   const titleKeyword = keywordTitle(title, classification.productType);
-  const detailValues = highlights.map(valueAfterLabel).filter(Boolean);
+  const detailValues = highlights
+    .map(valueAfterLabel)
+    .filter(usefulKeywordDetail);
 
   const secondaryKeywords = unique([
     cleanText(classification.subcollection).toLowerCase(),
@@ -447,14 +514,8 @@ export function buildAutomatedProductContent(
   );
 
   const seoTitle = brandedSeoTitle(title, brandLabel);
-  const descriptionPlain = alignBrandLabel(
-    stripVendor(cleanText(product.descriptionHtml), product.vendor),
-    brandLabel,
-  );
   const metaDescription = clip(
-    descriptionPlain
-      ? "Shop " + title + " at " + brandLabel + ". " + descriptionPlain
-      : "Shop " + title + " at " + brandLabel + ". Explore verified product details, imagery, shipping and returns.",
+    "Shop " + title + " at " + brandLabel + ". " + shortDescription,
     155,
   );
 
