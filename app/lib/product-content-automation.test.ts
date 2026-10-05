@@ -7,6 +7,7 @@ import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
   productClaimReviewReasons,
+  removeHighRiskClaimLanguage,
   shouldPublishAutomatedDescription,
 } from "./product-content-automation";
 import {
@@ -428,6 +429,73 @@ assert.deepEqual(
   }),
   [],
 );
+
+assert.equal(
+  removeHighRiskClaimLanguage(
+    "Electric Vacuum Cupping Massager Anti-Cellulite Fat Burning Slimming Device",
+  ).toLowerCase().includes("fat burning"),
+  false,
+);
+
+const claimReviewProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/claim-review",
+  title: "Electric Vacuum Cupping Massager Anti-Cellulite Fat Burning Slimming Device",
+  vendor: "MVQueen",
+  productType: "Beauty Tool",
+  descriptionHtml:
+    "<p>Vacuum cupping massager for body care.</p><ul><li>Function: Fat burning</li><li>Color: Black</li></ul>",
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/claim-review", price: "39.00" }] },
+};
+const claimReviewClassification = classifyProduct(
+  claimReviewProduct.title,
+  claimReviewProduct.descriptionHtml ?? "",
+  claimReviewProduct.productType ?? "",
+);
+const claimReviewContent = buildAutomatedProductContent(
+  claimReviewProduct,
+  claimReviewClassification,
+  "MVQueen",
+);
+const claimReviewSerialized = JSON.stringify(claimReviewContent).toLowerCase();
+assert.ok(!claimReviewSerialized.includes("anti-cellulite"));
+assert.ok(!claimReviewSerialized.includes("fat burning"));
+assert.ok(!claimReviewSerialized.includes("slimming"));
+assert.ok(claimReviewContent.title.toLowerCase().includes("cupping"));
+assert.ok(claimReviewContent.seoTitle.endsWith("| MVQueen"));
+
+const defaultBrandProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/default-brand",
+  title: "Hydrating Body Serum",
+  descriptionHtml: "<p>Body serum.</p>",
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/default-brand", price: "24.00" }] },
+};
+const defaultBrandRoute = classifyBrandWorld(defaultBrandProduct);
+assert.equal(defaultBrandRoute.brand, "mvqueen");
+assert.equal(defaultBrandRoute.confidence, "medium");
+assert.equal(defaultBrandRoute.reason, "default-primary-brand");
+
+const tonerPriority = classifyProduct("Pre Makeup Mousse Toner", "", "Needs Review");
+assert.equal(tonerPriority.family, "Skincare");
+assert.equal(tonerPriority.confidence, "high");
+
+const skinCareOilPriority = classifyProduct(
+  "Deep Moisturizing Fragrance Brightening Skin Care Oil",
+  "",
+  "Needs Review",
+);
+assert.equal(skinCareOilPriority.family, "Skincare");
+assert.equal(skinCareOilPriority.confidence, "high");
+
+const yogaPantsPriority = classifyProduct(
+  "Elastic High Waist Slightly Flared Yoga Pants",
+  "",
+  "Needs Review",
+);
+assert.equal(yogaPantsPriority.family, "Bottoms");
+assert.equal(yogaPantsPriority.productType, "Pants");
+assert.equal(yogaPantsPriority.confidence, "high");
 
 const supplierBrandedWaxKit: ProductSnapshot = {
   id: "gid://shopify/Product/supplier-brand-title",
