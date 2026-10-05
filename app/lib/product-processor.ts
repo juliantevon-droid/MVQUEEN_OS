@@ -12,6 +12,7 @@ import { buildEnterpriseProductDecision } from "./enterprise/product-decision-en
 import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
+  productClaimReviewReasons,
   shouldPublishAutomatedDescription,
 } from "./product-content-automation";
 import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automated-content-surfaces";
@@ -23,7 +24,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v23-import-quality";
+const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v24-title-first-claim-safety";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -515,8 +516,10 @@ export async function processProductJob(
     const brandRoute = decision.brandRoute;
     const brandLabel =
       brandRoute.brand === "miss-princess" ? "Miss.Princess" : "MVQueen";
+    const claimReviewReasons = productClaimReviewReasons(product);
+    const requiresClaimReview = claimReviewReasons.length > 0;
     const automatedContent =
-      c.confidence === "review"
+      c.confidence === "review" || requiresClaimReview
         ? null
         : buildAutomatedProductContent(product, c, brandLabel);
     const attributeEnrichment = buildCatalogAttributeEnrichment(product, c);
@@ -549,7 +552,13 @@ export async function processProductJob(
         tag !== "mvq:needs-review" &&
         !systemPrefixes.some((prefix) => tag.startsWith(prefix)),
     );
-    const mergedTags = Array.from(new Set([...retainedTags, ...decision.tags]));
+    const mergedTags = Array.from(
+      new Set([
+        ...retainedTags,
+        ...decision.tags,
+        ...(requiresClaimReview ? ["mvq:needs-review", "mvq:claim-review"] : []),
+      ]),
+    );
     const pricing = decision.pricing;
     const commercialHealth = decision.commercialHealth;
     const marketing = decision.marketing;
@@ -634,16 +643,21 @@ export async function processProductJob(
     const repairableAltMedia = mediaNodes
       .map((item, index) => ({ item, index }))
       .filter(({ item }) => needsMediaAltRepair(item.alt));
+    const safeMediaAltBase =
+      automatedContent?.title ??
+      (c.confidence !== "review" ? `${brandLabel} ${c.productType}` : "");
     const mediaAltStatus =
       !mediaNodes.length
         ? "no_media"
         : !repairableAltMedia.length
           ? "complete"
-          : !MEDIA_ALT_SYNC_ENABLED
-            ? "needs_repair"
-            : !hasWriteFiles
-              ? "write_files_scope_required"
-              : "automatic";
+          : !safeMediaAltBase
+            ? "needs_review"
+            : !MEDIA_ALT_SYNC_ENABLED
+              ? "needs_repair"
+              : !hasWriteFiles
+                ? "write_files_scope_required"
+                : "automatic";
     const metafields = [
       ...(VENDOR_NORMALIZATION_ENABLED &&
       product.vendor?.trim() &&
@@ -685,8 +699,25 @@ export async function processProductJob(
         namespace: "catalog",
         key: "review_status",
         type: "single_line_text_field",
-        value: c.confidence === "review" || !brandRoute.brand ? "needs_review" : "classified",
+        value:
+          c.confidence === "review" || !brandRoute.brand || requiresClaimReview
+            ? "needs_review"
+            : "classified",
       },
+      {
+        namespace: "catalog",
+        key: "claim_review_status",
+        type: "single_line_text_field",
+        value: requiresClaimReview ? "needs_review" : "clear",
+      },
+      ...(claimReviewReasons.length
+        ? [{
+            namespace: "catalog",
+            key: "claim_review_reasons",
+            type: "list.single_line_text_field",
+            value: JSON.stringify(claimReviewReasons),
+          }]
+        : []),
       ...attributeMetafields,
       ...(EDITORIAL_PUBLISH_ENABLED && automatedContent
         ? [
@@ -929,7 +960,7 @@ export async function processProductJob(
       variantPriceWriteEnabled: pricePublishable && recommendedPrice !== null,
       compareAtPriceWriteEnabled: COMPARE_AT_PRICE_PUBLISH_ENABLED && compareAtPrice !== null,
       mediaAltWriteCount:
-        MEDIA_ALT_SYNC_ENABLED && hasWriteFiles && automatedContent
+        MEDIA_ALT_SYNC_ENABLED && hasWriteFiles && safeMediaAltBase
           ? repairableAltMedia.length
           : 0,
       protectedFieldsPreserved: ["handle", "sku", "barcode", "inventory"],
@@ -1021,12 +1052,12 @@ export async function processProductJob(
     if (
       MEDIA_ALT_SYNC_ENABLED &&
       hasWriteFiles &&
-      automatedContent &&
+      safeMediaAltBase &&
       repairableAltMedia.length
     ) {
       const files = repairableAltMedia.map(({ item, index }) => ({
         id: item.id,
-        alt: `${automatedContent.title} — product view ${index + 1}`,
+        alt: `${safeMediaAltBase} — product view ${index + 1}`,
       }));
       const mediaUpdate = await admin.graphql(FILE_UPDATE, {
         variables: { files },
