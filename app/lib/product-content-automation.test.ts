@@ -8,6 +8,7 @@ import {
 import {
   classifyBrandWorld,
   classifyProduct,
+  productTypeForWrite,
   type ProductSnapshot,
   usableProductType,
 } from "./mvqueen-intelligence";
@@ -362,6 +363,7 @@ assert.equal(ankletWithBadOldType.department, "Jewelry");
 assert.equal(ankletWithBadOldType.family, "Anklets");
 assert.equal(ankletWithBadOldType.productType, "Anklet");
 assert.equal(ankletWithBadOldType.confidence, "high");
+assert.equal(productTypeForWrite("Activewear Set", ankletWithBadOldType), "Anklet");
 
 const pressOnNails = classifyProduct(
   "Long Press On Nails With Diamonds Reusable Acrylic Handmade Nails",
@@ -419,6 +421,41 @@ assert.deepEqual(
     descriptionHtml: "<p>Ingredients: water, watermelon extract, glycerin.</p>",
   }),
   [],
+);
+
+const supplierBrandedWaxKit: ProductSnapshot = {
+  id: "gid://shopify/Product/supplier-brand-title",
+  title: "WUWUVISTA Waxing Kit With Wax Warmer And Hair Removal Beads",
+  vendor: "MVQueen",
+  productType: "Hair Removal",
+  descriptionHtml: [
+    "<p>Product information: Applicable people: Ladies Specifications: Standard specifications</p>",
+    "<ul>",
+    "<li>Specifications: Standard specifications</li>",
+    "<li>Net content: 500g</li>",
+    "</ul>",
+  ].join(""),
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/supplier-brand-title", price: "32.00" }] },
+};
+const supplierWaxClassification = classifyProduct(
+  supplierBrandedWaxKit.title,
+  supplierBrandedWaxKit.descriptionHtml ?? "",
+  supplierBrandedWaxKit.productType ?? "",
+);
+const supplierWaxContent = buildAutomatedProductContent(
+  supplierBrandedWaxKit,
+  supplierWaxClassification,
+  "MVQueen",
+);
+assert.ok(!supplierWaxContent.title.includes("WUWUVISTA"));
+assert.ok(supplierWaxContent.title.length <= 80);
+assert.ok(!supplierWaxContent.shortDescription.toLowerCase().startsWith("product information"));
+assert.ok(!supplierWaxContent.metaDescription.toLowerCase().includes("standard specifications"));
+assert.ok(
+  supplierWaxContent.longTailKeywords.every(
+    (value) => !value.includes("standard specifications") && !value.includes(" general "),
+  ),
 );
 
 console.log("product content automation tests passed");
