@@ -24,7 +24,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v26-content-quality";
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v27-source-copy-filtering";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
