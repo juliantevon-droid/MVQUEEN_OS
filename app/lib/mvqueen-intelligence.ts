@@ -230,6 +230,19 @@ export function classifyProduct(title: string, description = "", productType = "
 }
 
 
+export function productTypeForWrite(
+  existingProductType: string | null | undefined,
+  classification: Classification,
+): string {
+  if (classification.confidence !== "review") {
+    return classification.productType;
+  }
+  return usableProductType(existingProductType)
+    ? String(existingProductType).trim()
+    : classification.productType;
+}
+
+
 export type BrandWorld = "mvqueen" | "miss-princess";
 
 export type BrandRouting = {
