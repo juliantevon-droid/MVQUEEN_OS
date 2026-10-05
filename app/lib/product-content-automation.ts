@@ -26,7 +26,7 @@ const CUSTOMER_FACING_BRAND_DENYLIST = [
   "ZEPHOCO", "NICEFACE", "OCEAURA", "CMAADU", "MENOW", "UCANBE", "CAKAILA",
   "FOCALLURE", "FOCALLUREL", "MISSROSE", "MISS ROSE", "ZEESEA", "BREYLEE",
   "KOEC", "BEAUTY GLAZED", "POPFEEL", "LANBENA", "DEROL", "HENGFEI", "LULAA",
-  "MABREM", "WUWUVISTA", "COFULTIC",
+  "MABREM", "WUWUVISTA", "COFULTIC", "GGDDSHA", "MEILIN OULIYUAN",
 ];
 
 const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
@@ -34,24 +34,26 @@ const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+loss|hair\s+regrowth|regrowth)\b/i],
   ["scar_claim", /\bscar\b[\s\S]{0,30}\b(?:remov|repair|treat|cream|gel|desalination|fade)/i],
   ["body_enhancement", /\b(?:(?:breast|bust|butt|hip)\b[\s\S]{0,35}\b(?:enhanc(?:e|er|ement|ing)?|enlarg(?:e|ement|ing)?|lift(?:ing)?|growth|firm(?:ing|ness)?)|breast\s+(?:beauty|care)|bust\s+care)\b/i],
-  ["fat_or_cellulite_claim", /\b(?:fat\s+burning|weight\s+loss|anti[- ]?cellulite|cellulite\s+(?:reduction|removal)|slimming\s+(?:cream|oil|gel|massager|device))\b/i],
+  ["fat_or_cellulite_claim", /\b(?:fat\s+burning|weight\s+loss|anti[- ]?cellulite|cellulite\s+(?:reduction|removal)|slimming(?:\s+(?:cream|oil|gel|massager|device))?|body\s+shaping)\b/i],
   ["wrinkle_treatment_claim", /\b(?:wrinkles?\b[\s\S]{0,25}\b(?:remove|flat|reduce|tighten)|tightening\s+cream[\s\S]{0,25}\bwrinkles?)\b/i],
   ["skin_lightening_claim", /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/i],
   ["firming_tightening_claim", /(?:\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b[\s\S]{0,35}\b(?:firming|tightening|lifting)\b|\b(?:firming|tightening|lifting)\b[\s\S]{0,35}\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b)/i],
   ["wellness_health_claim", /\b(?:improv(?:e|ing)\s+insomnia|help\s+sleep|promot(?:e|es|ing)\s+blood\s+circulation|reliev(?:e|es|ing)\s+anxiety)\b/i],
+  ["acne_treatment_claim", /\b(?:anti[- ]?acne|acne\s+(?:treatment|cure|remedy))\b/i],
 ];
 
 const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
   /\b(?:cures?|treats?|prevents?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b/gi,
   /\b(?:anti[- ]?hair\s+loss|hair\s+loss|hair\s+regrowth|regrowth)\b/gi,
   /\b(?:scar(?:s)?(?:\s+(?:removal|repair|treatment|fade|cream|gel))?|desalination)\b/gi,
-  /\b(?:anti[- ]?cellulite|cellulite(?:\s+(?:reduction|removal))?|fat\s+burning|weight\s+loss|slimming)\b/gi,
+  /\b(?:anti[- ]?cellulite|cellulite(?:\s+(?:reduction|removal))?|fat\s+burning|weight\s+loss|slimming|body\s+shaping)\b/gi,
   /\b(?:breast|bust|butt|hip)\s+(?:enhanc(?:e|er|ement|ing)?|enlarg(?:e|ement|ing)?|lift(?:ing)?|growth|firm(?:ing|ness)?)\b/gi,
   /\b(?:breast|bust)\s+(?:beauty|care)\b/gi,
   /\b(?:breast|bust|busty|butt|chest)\b/gi,
   /\b(?:wrinkles?|tightening|firming|lifting)\b/gi,
   /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/gi,
   /\b(?:improv(?:e|ing)\s+insomnia|help\s+sleep|promot(?:e|es|ing)\s+blood\s+circulation|reliev(?:e|es|ing)\s+anxiety)\b/gi,
+  /\b(?:anti[- ]?acne|acne\s+(?:treatment|cure|remedy))\b/gi,
   /\belasticity\b/gi,
   /\b(?:sexy|flat|strong)\b/gi,
 ];
@@ -445,7 +447,7 @@ function factualProductName(
   )
     .replace(TRAILING_CODE_RE, "")
     .replace(/^beauty\s+(?=\S)/i, "")
-    .replace(/\b(?:european\s+and\s+american|european|american|special[- ]interest|light\s+luxury|design\s+sense|exquisite|fashion|ornament|hot\s+sale|new\s+arrival|high[- ]quality|top\s+quality|women'?s?\s+cosmetics)\b/gi, " ")
+    .replace(/\b(?:european\s+and\s+american|european|american|special[- ]interest|light\s+luxury|design\s+sense|exquisite|fashion|ornament|hot\s+sale|new\s+arrival|high[- ]quality|top\s+quality|women'?s?\s+cosmetics|new|pma)\b/gi, " ")
     .replace(/\bcolor(?=\s+zircon)\b/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -471,6 +473,13 @@ function factualProductName(
     }
     if (classification.family === "Necklaces" && !/\bnecklace\b/i.test(name)) name += " Necklace";
   }
+  name = name
+    .replace(/\bwithdiamonds\b/gi, "with diamonds")
+    .replace(/^care\s+hair\s+oil\b/i, "hair care oil")
+    .replace(/\bcream\s+hand\b/i, "hand cream")
+    .replace(/\b(?:and|or|for|with|of|to|in|the|a|an)\s*$/i, "")
+    .replace(SPACE_RE, " ")
+    .trim();
   return titleCase(name || classification.productType);
 }
 
@@ -506,6 +515,18 @@ function brandedProductCopy(
       : title;
     const ending = endNoun ? " " + endNoun : "";
     title = clipTitle(head, 80 - ending.length) + ending;
+  }
+  title = title
+    .replace(/\b(?:and|or|for|with|of|to|in|the|a|an)\s*$/i, "")
+    .replace(SPACE_RE, " ")
+    .trim();
+  if (classification.productType === "Press-On Nails" && /press\s+on\s+nails?/i.test(title)) {
+    const long = /\blong\b/i.test(title) ? "Long " : "";
+    const crystal = /\bcrystal\b/i.test(title) ? "Crystal " : "";
+    title = `${long}${crystal}Press-On Nails`.trim();
+  }
+  if (classification.productType === "Bath & Body" && /^cream\s+\d+(?:\.\d+)?\s*g$/i.test(title)) {
+    title = "Body " + title;
   }
 
   const type = cleanText(classification.productType).toLowerCase() || "piece";
