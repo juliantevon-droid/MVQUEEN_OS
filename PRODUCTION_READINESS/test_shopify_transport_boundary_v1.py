@@ -117,6 +117,8 @@ class UnifiedTransportBoundaryTests(unittest.TestCase):
         self.assertIn("auditProductWebhookSubscriptions", worker)
         self.assertIn("ensureProductWebhookSubscriptions", worker)
         self.assertIn("registerWebhooks", worker)
+        self.assertIn("AUTOMATION_VERSION", worker)
+        self.assertIn('"reconcile:" + AUTOMATION_VERSION', worker)
         self.assertIn("product.webhooks.audit", worker)
         self.assertIn("product.webhooks.ensure", worker)
         self.assertIn('process.env.MVQ_WRITE_ENABLED !== "true"', worker)
