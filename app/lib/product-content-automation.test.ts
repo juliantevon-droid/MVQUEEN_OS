@@ -1,4 +1,8 @@
 import assert from "node:assert/strict";
+import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { tmpdir } from "node:os";
+import { BRAND_VOCABULARY, BRAND_VOCABULARY_SOURCES, loadBrandVocabulary } from "./brand-vocabulary.server";
 import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
@@ -38,7 +42,8 @@ const classification = classifyProduct(
 );
 const content = buildAutomatedProductContent(product, classification);
 
-assert.equal(content.title, "Natural Pink Thulite Pendant");
+assert.match(content.title, /Natural Pink Thulite Pendant Necklace$/);
+assert.ok(BRAND_VOCABULARY.profiles.mvqueen.adjectives.includes(content.title.split(" ")[0].toLowerCase()));
 assert.equal(content.focusKeyword, "pendant necklace");
 assert.ok(content.shortDescription.toLowerCase().includes("pink thulite"));
 assert.ok(content.descriptionHtml.includes("<p>"));
@@ -123,10 +128,11 @@ assert.ok(activewearContent.seoTitle.endsWith("| Miss.Princess"));
 assert.ok(activewearContent.seoTitle.length <= 60);
 assert.ok(!activewearContent.seoTitle.includes("…"));
 assert.ok(activewearContent.metaDescription.includes("at Miss.Princess."));
-assert.ok(activewearContent.shortDescription.startsWith("An activewear set with"));
-assert.ok(activewearContent.shortDescription.includes("two-piece design"));
-assert.ok(activewearContent.shortDescription.includes("ruched detailing"));
-assert.ok(activewearContent.shortDescription.includes("moderate stretch"));
+assert.ok(activewearContent.shortDescription.includes("Miss.Princess"));
+assert.ok(activewearContent.descriptionHtml.includes("two-piece design"));
+assert.ok(activewearContent.descriptionHtml.includes("ruched detailing"));
+assert.ok(activewearContent.descriptionHtml.includes("moderate stretch"));
+assert.ok(BRAND_VOCABULARY.profiles["miss-princess"].adjectives.includes(activewearContent.title.split(" ")[0].toLowerCase()));
 assert.ok(!activewearContent.shortDescription.toLowerCase().startsWith("product measurements"));
 assert.ok(activewearContent.descriptionHtml.includes("<table>"));
 assert.ok(activewearContent.descriptionHtml.includes("Size &amp; Measurements"));
@@ -495,5 +501,90 @@ assert.ok(
       !value.includes("other effects"),
   ),
 );
+
+const supplierNecklace: ProductSnapshot = {
+  id: "gid://shopify/Product/9100059869382",
+  handle: "european-and-american-fashion-special-interest-color-zircon-star-pendant-stainless-steel-necklace",
+  title: "European And American Fashion Special-interest Color Zircon Star Pendant Stainless Steel Necklace",
+  vendor: "MVQueen",
+  productType: "Pendant Necklace",
+  descriptionHtml: "<p>Product information: Treatment process: Electroplating</p><ul><li>Material: Stainless steel</li><li>Treatment process: Electroplating</li></ul>",
+  tags: ["mvq:brand:mvqueen"],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/48246503669958", price: "34.29", sku: "CJLX244727201AZ" }] },
+};
+const necklaceClassification = classifyProduct(supplierNecklace.title, supplierNecklace.descriptionHtml ?? "", supplierNecklace.productType ?? "");
+const necklaceBefore = structuredClone(supplierNecklace);
+const necklaceCopy = buildAutomatedProductContent(supplierNecklace, necklaceClassification);
+assert.match(necklaceCopy.title, /Stainless Steel Zircon Star Pendant Necklace$/);
+assert.ok(!/european|american|special-interest|fashion/i.test(necklaceCopy.title));
+assert.ok(necklaceCopy.title.length <= 80);
+assert.ok(necklaceCopy.shortDescription.length <= 180);
+assert.ok(!necklaceCopy.shortDescription.includes("…"));
+assert.ok(!necklaceCopy.shortDescription.includes("Product information"));
+assert.match(necklaceCopy.shortDescription, /[.!?]$/);
+assert.ok(necklaceCopy.descriptionHtml.includes("Stainless steel"));
+assert.ok(necklaceCopy.descriptionHtml.includes("Electroplating"));
+assert.ok(!/solid gold|handmade|waterproof|hypoallergenic|50\s*cm/i.test(JSON.stringify(necklaceCopy)));
+assert.deepEqual(supplierNecklace, necklaceBefore);
+const repeatedNecklace = buildAutomatedProductContent({ ...supplierNecklace, title: necklaceCopy.title, descriptionHtml: necklaceCopy.descriptionHtml }, necklaceClassification);
+assert.equal(repeatedNecklace.title, necklaceCopy.title);
+assert.equal(repeatedNecklace.shortDescription, necklaceCopy.shortDescription);
+
+const extraLongNecklace = buildAutomatedProductContent({ ...supplierNecklace, title: "Natural Pink Crystal Pearl Beaded Delicate Star Pendant Stainless Steel Layered Necklace ".repeat(3) }, necklaceClassification);
+assert.ok(extraLongNecklace.title.length <= 80);
+assert.match(extraLongNecklace.title, /Necklace$/);
+assert.ok(extraLongNecklace.shortDescription.length <= 180);
+assert.ok(!extraLongNecklace.shortDescription.includes("…"));
+const repeatedLongNecklace = buildAutomatedProductContent({ ...supplierNecklace, title: extraLongNecklace.title, descriptionHtml: extraLongNecklace.descriptionHtml }, necklaceClassification);
+assert.equal(repeatedLongNecklace.title, extraLongNecklace.title);
+assert.equal(repeatedLongNecklace.shortDescription, extraLongNecklace.shortDescription);
+
+const paragraphFacts = buildAutomatedProductContent({ ...activewear, descriptionHtml: "<p>Fabric: 94% polyester, 6% elastane<br>Care: Machine wash cold; tumble dry low</p>" }, activewearClassification, "Miss.Princess");
+assert.ok(paragraphFacts.descriptionHtml.includes("94% polyester, 6% elastane"));
+assert.ok(paragraphFacts.descriptionHtml.includes("Machine wash cold; tumble dry low"));
+const repeatedActivewear = buildAutomatedProductContent({ ...activewear, title: activewearContent.title, descriptionHtml: activewearContent.descriptionHtml }, activewearClassification, "Miss.Princess");
+assert.equal(repeatedActivewear.title, activewearContent.title);
+assert.equal(repeatedActivewear.shortDescription, activewearContent.shortDescription);
+assert.equal(repeatedActivewear.descriptionHtml, activewearContent.descriptionHtml);
+
+const manyFacts = buildAutomatedProductContent({ ...activewear, descriptionHtml: "<ul>" + ["Features: Ruched", "Number of pieces: Two-piece", "Stretch: Moderate stretch", "Material composition: 94% polyester, 6% elastane", "Color: Pink", "Fit: Fitted", "Care: Machine wash cold", "Origin: Imported"].map((fact) => `<li>${fact}</li>`).join("") + "</ul>" }, activewearClassification, "Miss.Princess");
+assert.ok(manyFacts.descriptionHtml.includes("Care: Machine wash cold"));
+assert.ok(manyFacts.descriptionHtml.includes("Origin: Imported"));
+
+const cleanUnspecified = buildAutomatedProductContent({ ...supplierNecklace, title: "Star Pendant", descriptionHtml: "", variants: { nodes: [] } }, necklaceClassification);
+assert.ok(!/silk|velvet|satin|gold|silver|stainless|cruelty|vegan|artisan/i.test(cleanUnspecified.descriptionHtml));
+const noisyCopy = buildAutomatedProductContent({ ...supplierNecklace, title: "Amazing Stunning OUHOE Zircon Star Pendant" }, necklaceClassification);
+assert.ok(!/amazing|stunning|ouhoe/i.test(JSON.stringify(noisyCopy)));
+
+// Prove the writer consumes the files, including an edited persona adjective,
+// and that source edits invalidate the automation fingerprint.
+const vocabularyRoot = mkdtempSync(join(tmpdir(), "mvqueen-vocabulary-test-"));
+try {
+  for (const source of BRAND_VOCABULARY_SOURCES) {
+    const destination = join(vocabularyRoot, source);
+    mkdirSync(dirname(destination), { recursive: true });
+    copyFileSync(source, destination);
+  }
+  const personaFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[3]);
+  const original = readFileSync(personaFile, "utf8");
+  const changed = original.replace('"elevated", "polished", "luxurious", "refined", "timeless", "intentional"', '"considered", "polished", "luxurious", "refined", "timeless", "intentional"');
+  assert.notEqual(changed, original);
+  writeFileSync(personaFile, changed);
+  const revisedVocabulary = loadBrandVocabulary(vocabularyRoot);
+  assert.notEqual(revisedVocabulary.version, BRAND_VOCABULARY.version);
+  assert.ok(revisedVocabulary.profiles.mvqueen.adjectives.includes("considered"));
+  const names = Array.from({ length: 100 }, (_, index) => buildAutomatedProductContent({ ...supplierNecklace, id: "gid://shopify/Product/test-vocabulary-" + index }, necklaceClassification, "MVQueen", revisedVocabulary).title);
+  assert.ok(names.some((name) => name.startsWith("Considered ")));
+  const forbiddenFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[2]);
+  const forbiddenSource = readFileSync(forbiddenFile, "utf8");
+  writeFileSync(forbiddenFile, forbiddenSource.replace("## Tier 2", "| Considered | Editorial review |\n\n## Tier 2"));
+  const restrictedVocabulary = loadBrandVocabulary(vocabularyRoot);
+  assert.ok(!restrictedVocabulary.profiles.mvqueen.adjectives.includes("considered"));
+  assert.notEqual(restrictedVocabulary.version, revisedVocabulary.version);
+  rmSync(personaFile);
+  assert.throws(() => loadBrandVocabulary(vocabularyRoot), /ENOENT/);
+} finally {
+  rmSync(vocabularyRoot, { recursive: true, force: true });
+}
 
 console.log("product content automation tests passed");

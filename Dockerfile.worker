@@ -15,6 +15,8 @@ COPY scripts ./scripts
 COPY prisma ./prisma
 COPY tsconfig.json ./tsconfig.json
 COPY package.json ./package.json
+COPY 06_Tone_And_Voice ./06_Tone_And_Voice
+COPY 15_Scripts_And_Code/mvqueen_engine/brand_banks.py ./15_Scripts_And_Code/mvqueen_engine/brand_banks.py
 
 ARG DATABASE_URL=postgresql://mvqueen:build-only@127.0.0.1:5432/mvqueen_build
 ENV DATABASE_URL=$DATABASE_URL
@@ -31,5 +33,7 @@ COPY --from=build /app/scripts ./scripts
 COPY --from=build /app/prisma ./prisma
 COPY --from=build /app/tsconfig.json ./tsconfig.json
 COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/06_Tone_And_Voice ./06_Tone_And_Voice
+COPY --from=build /app/15_Scripts_And_Code/mvqueen_engine/brand_banks.py ./15_Scripts_And_Code/mvqueen_engine/brand_banks.py
 
 CMD ["sh", "-c", "npm run db:migrate:production && npm run worker:product"]

@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'app/**'
+      - '06_Tone_And_Voice/**'
+      - '15_Scripts_And_Code/mvqueen_engine/brand_banks.py'
       - 'scripts/**'
       - 'prisma/**'
       - 'package.json'
@@ -21,6 +23,8 @@ on:
     branches: [main]
     paths:
       - 'app/**'
+      - '06_Tone_And_Voice/**'
+      - '15_Scripts_And_Code/mvqueen_engine/brand_banks.py'
       - 'scripts/**'
       - 'prisma/**'
       - 'package.json'

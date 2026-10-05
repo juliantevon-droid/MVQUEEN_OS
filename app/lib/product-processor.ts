@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { BRAND_VOCABULARY } from "./brand-vocabulary.server";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
@@ -24,7 +25,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v27-source-copy-filtering";
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v28-file-vocabulary-" + BRAND_VOCABULARY.version;
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -519,7 +520,7 @@ export async function processProductJob(
     const claimReviewReasons = productClaimReviewReasons(product);
     const requiresClaimReview = claimReviewReasons.length > 0;
     const automatedContent =
-      c.confidence === "review" || requiresClaimReview
+      c.confidence === "review" || !brandRoute.brand || requiresClaimReview
         ? null
         : buildAutomatedProductContent(product, c, brandLabel);
     const attributeEnrichment = buildCatalogAttributeEnrichment(product, c);

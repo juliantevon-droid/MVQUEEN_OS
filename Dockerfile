@@ -33,6 +33,8 @@ COPY --from=build /app/scripts ./scripts
 COPY --from=build /app/prisma ./prisma
 COPY --from=build /app/tsconfig.json ./tsconfig.json
 COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/06_Tone_And_Voice ./06_Tone_And_Voice
+COPY --from=build /app/15_Scripts_And_Code/mvqueen_engine/brand_banks.py ./15_Scripts_And_Code/mvqueen_engine/brand_banks.py
 
 EXPOSE 3000
 

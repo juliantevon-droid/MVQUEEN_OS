@@ -1,4 +1,5 @@
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
+import { BRAND_VOCABULARY, removeForbiddenLanguage, type BrandVocabulary } from "./brand-vocabulary.server";
 
 export type AutomatedProductContent = {
   title: string;
@@ -125,8 +126,8 @@ function stripKnownCustomerBrands(value: string): string {
   return output.replace(SPACE_RE, " ").trim();
 }
 
-function cleanCustomerText(value: string, vendor?: string | null): string {
-  return stripKnownCustomerBrands(stripVendor(value, vendor))
+function cleanCustomerText(value: string, vendor?: string | null, vocabulary = BRAND_VOCABULARY): string {
+  return removeForbiddenLanguage(stripKnownCustomerBrands(stripVendor(value, vendor)), vocabulary)
     .replace(SPACE_RE, " ")
     .trim();
 }
@@ -160,25 +161,25 @@ function clipTitle(value: string, max = 80): string {
   );
 }
 
-function extractParagraphs(html?: string | null): string[] {
-  const source = String(html ?? "");
-  const matches = [...source.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
-    .map((match) => cleanText(match[1]))
-    .filter(Boolean);
-  return unique(matches);
-}
-
 function extractHighlights(html?: string | null): string[] {
   const source = String(html ?? "");
+  const labeledLines = source
+    .replace(/<table\b[^>]*>[\s\S]*?<\/table>/gi, "")
+    .replace(/<(?:br\s*\/?|\/p|\/li)>/gi, "\n")
+    .split(/\n+/)
+    .map(cleanText)
+    .filter((line) => /^[A-Za-z][A-Za-z0-9 &/'()\-]{1,48}\s*:\s*\S/.test(line));
   return unique(
-    [...source.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
-      .map((match) =>
-        cleanText(match[1])
+    [
+      ...[...source.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((match) => match[1]),
+      ...labeledLines,
+    ].map((line) =>
+        cleanText(line)
           .replace(/^[-•]\s*/, "")
           .replace(/\s*:\s*/g, ": "),
       )
       .filter(Boolean),
-  ).slice(0, 6);
+  );
 }
 
 function humanizeAttributeKey(value: string): string {
@@ -223,7 +224,7 @@ function structuredSourceHighlights(product: ProductSnapshot): string[] {
   if (materials.length) highlights.unshift(`Material: ${materials.join(" / ")}`);
   if (colors.length) highlights.unshift(`Color: ${colors.join(" / ")}`);
 
-  return unique(highlights).slice(0, 6);
+  return unique(highlights);
 }
 
 function valueAfterLabel(value: string): string {
@@ -237,9 +238,6 @@ const DESCRIPTION_BOILERPLATE_RE =
 
 const KEYWORD_NOISE_RE =
   /^(?:general|standard\s+specifications?|standard|default|ordinary|as\s+shown|see\s+picture|product\s+information|specifications?|applicable\s+people|brand|other|other effects?|other functions?)$/i;
-
-const SOURCE_ATTRIBUTE_DUMP_RE =
-  /^(?:brand|shelf\s+life|efficacy|cosmetic\s+efficacy|special\s+purpose\s+cosmetics?|net\s+content|applicable\s+people|specifications?|color\s+classification|category|packing\s+list|package\s+(?:list|includes?))\s*:/i;
 
 const SEO_DETAIL_LABEL_RE =
   /^(?:material(?:\s+composition)?|metal|stone|color|shade|size|stone\s+size|net\s+content|capacity|length|weight|finish|texture|number\s+of\s+pieces|features?|stretch)\s*:/i;
@@ -257,26 +255,6 @@ function usefulSeoDetailValues(highlights: string[]): string[] {
     .filter((item) => SEO_DETAIL_LABEL_RE.test(item))
     .map(valueAfterLabel)
     .filter(usefulKeywordDetail);
-}
-
-function usefulProseParagraph(paragraph: string): boolean {
-  const cleaned = cleanText(paragraph);
-  if (!cleaned || DESCRIPTION_BOILERPLATE_RE.test(cleaned)) return false;
-  if (SOURCE_ATTRIBUTE_DUMP_RE.test(cleaned)) return false;
-  if ((cleaned.match(/:/g) ?? []).length >= 2) return false;
-  return true;
-}
-
-function sentenceFromDescription(html?: string | null): string {
-  const paragraphs = extractParagraphs(html).filter(usefulProseParagraph);
-  const usable =
-    paragraphs.find((paragraph) => paragraph.length >= 28) ??
-    paragraphs[0] ??
-    "";
-  if (!usable) return "";
-  const sentence =
-    usable.match(/^(.{20,220}?[.!?])(?:\s|$)/)?.[1] ?? usable;
-  return clip(sentence, 180);
 }
 
 function highlightValue(
@@ -318,10 +296,104 @@ function groundedIntro(
   ].filter(Boolean);
 
   if (!details.length) return "";
-  return clip(
-    `${articleFor(type)[0].toUpperCase() + articleFor(type).slice(1)} ${type} with ${naturalList(details)}.`,
-    180,
-  );
+  return `${articleFor(type)[0].toUpperCase() + articleFor(type).slice(1)} ${type} with ${naturalList(details)}.`;
+}
+
+function productSeed(product: ProductSnapshot): number {
+  const key = product.id || product.handle || product.title;
+  let seed = 2166136261;
+  for (const char of key) seed = Math.imul(seed ^ char.charCodeAt(0), 16777619);
+  return seed >>> 0;
+}
+
+function titleCase(value: string): string {
+  return value.split(" ").map((word) => {
+    if (/^(?:\d.*|SPF|BB|CC|UV|USB)$/i.test(word)) return word;
+    return word.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()).join("-");
+  }).join(" ");
+}
+
+function factualProductName(
+  product: ProductSnapshot,
+  classification: Classification,
+  highlights: string[],
+  vocabulary: BrandVocabulary,
+): string {
+  let name = cleanCustomerText(cleanText(product.title), product.vendor, vocabulary)
+    .replace(TRAILING_CODE_RE, "")
+    .replace(/^beauty\s+(?=\S)/i, "")
+    .replace(/\b(?:european\s+and\s+american|european|american|special[- ]interest|light\s+luxury|design\s+sense|exquisite|fashion|ornament|hot\s+sale|new\s+arrival|high[- ]quality|top\s+quality|women'?s?\s+cosmetics)\b/gi, " ")
+    .replace(/\bcolor(?=\s+zircon)\b/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  // Remove a prior editorial prefix, so processing our own output is stable.
+  const modifiers = new Set(Object.values(vocabulary.profiles).flatMap((profile) => profile.adjectives));
+  while (modifiers.has(name.split(" ")[0]?.toLowerCase())) name = name.split(" ").slice(1).join(" ");
+
+  const seen = new Set<string>();
+  name = name.split(" ").filter((word) => {
+    const key = word.toLowerCase();
+    if (/^(?:and|with|for|of|in|the|a|an)$/.test(key)) return true;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).join(" ").trim();
+
+  if (classification.department === "Jewelry") {
+    const material = highlightValue(highlights, /^(?:material|metal|pendant material)\s*:/i);
+    if (material && material.length <= 30) {
+      const escaped = material.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      name = material + " " + name.replace(new RegExp(`\\b${escaped}\\b`, "gi"), " ").replace(SPACE_RE, " ").trim();
+    }
+    if (classification.family === "Necklaces" && !/\bnecklace\b/i.test(name)) name += " Necklace";
+  }
+  return titleCase(name || classification.productType);
+}
+
+function brandedProductCopy(
+  product: ProductSnapshot,
+  classification: Classification,
+  highlights: string[],
+  brandLabel: string,
+  vocabulary: BrandVocabulary,
+): { title: string; shortDescription: string } {
+  const princess = /miss\.?\s*princess/i.test(brandLabel);
+  const profile = vocabulary.profiles[princess ? "miss-princess" : "mvqueen"];
+  const seed = productSeed(product);
+  const adjective = profile.adjectives[seed % profile.adjectives.length];
+  const base = factualProductName(product, classification, highlights, vocabulary);
+  const prefix = titleCase(adjective);
+  // Put the essential product noun at the end of a long title rather than
+  // cutting it off with an arbitrary character slice.
+  const sourceNoun = base.match(/\b(?:body (?:moisturizer|scrub|cream|lotion|wash|oil|butter)|hair (?:oil|mask|serum|dryer|brush)|lip (?:balm|gloss|oil|liner)|waxing kit|face cream|facial cream|skin care|necklace|bracelet|earrings?|anklet|ring|dress|bodysuit|jumpsuit|romper|blouse|shorts|pants|skirt|shampoo|conditioner|foundation|concealer|mascara|lipstick|perfume|fragrance)\b/i)?.[0];
+  const endNoun = classification.family === "Necklaces" ? "Necklace" : sourceNoun ?? "";
+  let title = prefix + " " + base;
+  if (title.length > 80) {
+    const escaped = endNoun.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const head = endNoun ? title.replace(new RegExp(`\\b${escaped}\\b`, "gi"), " ").replace(SPACE_RE, " ").trim() : title;
+    const ending = endNoun ? " " + endNoun : "";
+    title = clipTitle(head, 80 - ending.length) + ending;
+  }
+  const style = prefix;
+  const hooks = princess
+    ? [
+        `${style} energy. Your edit, your way.`,
+        `${articleFor(adjective) === "an" ? "An" : "A"} ${adjective} moment, on your terms.`,
+        `${style} in spirit. Yours to style.`,
+      ]
+    : [
+        `${articleFor(adjective) === "an" ? "An" : "A"} ${adjective} point of view.`,
+        `${style} in spirit. Clear in detail.`,
+        `${style} style, chosen with intention.`,
+      ];
+  const hook = hooks[(seed >>> 8) % hooks.length];
+  const factualTitle = title.slice(prefix.length + 1);
+  const identity = `The ${factualTitle} belongs to the ${brandLabel} edit.`;
+  const shortDescription = hook.length + identity.length + 1 <= 180
+    ? `${hook} ${identity}`
+    : `${style} in spirit. The ${title} is part of the ${brandLabel} edit.`;
+  return { title, shortDescription };
 }
 
 function escapeHtml(value: string): string {
@@ -349,6 +421,7 @@ function buildDescriptionHtml(
   shortDescription: string,
   highlights: string[],
   sourceDescriptionHtml?: string | null,
+  factualIntro = "",
 ): string {
   const intro = shortDescription
     ? `<p>${escapeHtml(shortDescription)}</p>`
@@ -365,16 +438,8 @@ function buildDescriptionHtml(
     ? `<h3>Size &amp; Measurements</h3>${tables.join("")}`
     : "";
 
-  return (intro + details + measurements).trim();
-}
-
-function alignBrandLabel(value: string, brandLabel: string): string {
-  const target = cleanText(brandLabel) || "MVQueen";
-  return cleanText(value)
-    .replace(/\bmiss\.?\s*princess\b/gi, target)
-    .replace(/\bmvqueen\b/gi, target)
-    .replace(SPACE_RE, " ")
-    .trim();
+  const facts = factualIntro ? `<p>${escapeHtml(factualIntro)}</p>` : "";
+  return (intro + facts + details + measurements).trim();
 }
 
 function brandedSeoTitle(title: string, brandLabel: string): string {
@@ -442,40 +507,19 @@ export function buildAutomatedProductContent(
   product: ProductSnapshot,
   classification: Classification,
   brandLabel = "MVQueen",
+  vocabulary = BRAND_VOCABULARY,
 ): AutomatedProductContent {
-  const sourceTitle = cleanText(product.title);
-  const cleanedSourceTitle = cleanCustomerText(sourceTitle, product.vendor);
-  const title = clipTitle(
-    cleanedSourceTitle
-      .replace(TRAILING_CODE_RE, "")
-      .replace(SPACE_RE, " ")
-      .trim() || cleanedSourceTitle || sourceTitle,
-  );
-
   const highlights = unique([
-    ...extractHighlights(product.descriptionHtml)
-      .map((item) => cleanCustomerText(item, product.vendor))
-      .filter(Boolean),
+    ...extractHighlights(product.descriptionHtml),
     ...structuredSourceHighlights(product),
-  ]).slice(0, 6);
+  ].map((item) => cleanCustomerText(item, product.vendor, vocabulary))
+    .filter((item) => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item)));
 
-  const descriptionSentence = alignBrandLabel(
-    cleanCustomerText(
-      sentenceFromDescription(product.descriptionHtml),
-      product.vendor,
-    ),
-    brandLabel,
-  );
   const generatedIntro = groundedIntro(
     classification.productType,
     highlights,
   );
-  const shortDescription = clip(
-    descriptionSentence ||
-      generatedIntro ||
-      title + " — " + classification.productType + " from the " + brandLabel + " edit.",
-    180,
-  );
+  const { title, shortDescription } = brandedProductCopy(product, classification, highlights, brandLabel, vocabulary);
 
   const focusKeyword = cleanText(classification.productType).toLowerCase();
   const titleKeyword = keywordTitle(title, classification.productType);
@@ -512,6 +556,7 @@ export function buildAutomatedProductContent(
     shortDescription,
     highlights,
     product.descriptionHtml,
+    generatedIntro,
   );
 
   const seoTitle = brandedSeoTitle(title, brandLabel);
