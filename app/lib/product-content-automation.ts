@@ -37,6 +37,7 @@ const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["fat_or_cellulite_claim", /\b(?:fat\s+burning|weight\s+loss|anti[- ]?cellulite|cellulite\s+(?:reduction|removal)|slimming\s+(?:cream|oil|gel|massager|device))\b/i],
   ["wrinkle_treatment_claim", /\b(?:wrinkles?\b[\s\S]{0,25}\b(?:remove|flat|reduce|tighten)|tightening\s+cream[\s\S]{0,25}\bwrinkles?)\b/i],
   ["skin_lightening_claim", /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/i],
+  ["firming_tightening_claim", /(?:\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b[\s\S]{0,35}\b(?:firming|tightening|lifting)\b|\b(?:firming|tightening|lifting)\b[\s\S]{0,35}\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b)/i],
 ];
 
 const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
@@ -48,6 +49,7 @@ const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
   /\b(?:breast|bust)\s+(?:beauty|care)\b/gi,
   /\b(?:breast|bust|busty|butt|chest)\b/gi,
   /\b(?:wrinkles?|tightening|firming|lifting)\b/gi,
+  /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/gi,
   /\belasticity\b/gi,
   /\b(?:sexy|flat|strong)\b/gi,
 ];
