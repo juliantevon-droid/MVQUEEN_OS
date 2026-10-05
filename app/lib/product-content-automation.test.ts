@@ -437,6 +437,23 @@ assert.equal(
   false,
 );
 
+const polishedClaimText = removeHighRiskClaimLanguage(
+  "Big Breast Butt Enhancer Elasticity Chest Hip Enhancement Skin Firming And Lifting Cream Busty Sexy Body Massage Care Creams",
+).toLowerCase();
+for (const forbidden of ["breast", "butt", "enhancer", "enhancement", "firming", "lifting", "busty", "sexy"]) {
+  assert.ok(!polishedClaimText.includes(forbidden));
+}
+assert.ok(
+  !removeHighRiskClaimLanguage("Herbal Hair Care Solution Anti-hair Loss And Strong")
+    .toLowerCase()
+    .includes("strong"),
+);
+assert.ok(
+  !removeHighRiskClaimLanguage("Night Sleep Tightening Cream Flat Wrinkles")
+    .toLowerCase()
+    .includes("flat"),
+);
+
 const claimReviewProduct: ProductSnapshot = {
   id: "gid://shopify/Product/claim-review",
   title: "Electric Vacuum Cupping Massager Anti-Cellulite Fat Burning Slimming Device",
