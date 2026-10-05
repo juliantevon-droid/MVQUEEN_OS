@@ -47,6 +47,16 @@ export type Classification = {
   confidence: "high" | "medium" | "review";
 };
 
+
+export function usableProductType(value?: string | null): boolean {
+  const normalized = String(value ?? "").trim().toLowerCase();
+  if (!normalized) return false;
+  return !new Set([
+    "0", "1", "2", "3", "4", "5",
+    "n/a", "na", "none", "null", "undefined", "unknown", "other", "product",
+  ]).has(normalized);
+}
+
 const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
   [
     /\b(?:active(?:wear)?\s*set|workout\s*set|sports?\s*bra\b[\s\S]*\bshorts?\b|shorts?\b[\s\S]*\bsports?\s*bra\b)/i,
@@ -100,6 +110,22 @@ const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
   ],
 ];
 
+const TITLE_FIRST_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
+  [/\banklet\b/i, {department:"Jewelry",family:"Anklets",subcollection:"Anklets",route:"anklets",productType:"Anklet"}],
+  [/\bpress[- ]?on nails?\b|\bfake nails?\b|\bacrylic handmade nails?\b/i, {department:"Beauty",family:"Nails",subcollection:"Press-On Nails",route:"press-on-nails",productType:"Press-On Nails"}],
+  [/\b(?:bb|cc)\s*cream\b/i, {department:"Beauty",family:"Makeup",subcollection:"Makeup",route:"makeup",productType:"Makeup"}],
+  [/\b(?:hand|foot)\s*cream\b/i, {department:"Beauty",family:"Bath & Body",subcollection:"Hand & Body Care",route:"bath-body",productType:"Bath & Body"}],
+  [/\bbody\s+(?:oil|treatment oil)\b/i, {department:"Beauty",family:"Bath & Body",subcollection:"Bath & Body",route:"bath-body",productType:"Bath & Body"}],
+  [/\bbody\s+butter\b/i, {department:"Beauty",family:"Bath & Body",subcollection:"Bath & Body",route:"bath-body",productType:"Bath & Body"}],
+  [/\b(?:beauty|skincare)\s+(?:box|boxes|set|kit)\b/i, {department:"Beauty",family:"Beauty Sets",subcollection:"Beauty Sets",route:"beauty-sets",productType:"Beauty Set"}],
+  [/\bhair\s+mask\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Hair Treatments",route:"hair-treatments",productType:"Hair Treatment"}],
+  [/\b(?:hair remover|hair removal|lady shaver|waxing kit|wax kit)\b/i, {department:"Beauty",family:"Hair Removal",subcollection:"Hair Removal",route:"hair-removal",productType:"Hair Removal"}],
+  [/\b(?:hair|paddle|cushion)\s+(?:brush|comb)\b|\bwood comb\b/i, {department:"Beauty",family:"Hair Tools",subcollection:"Hair Tools",route:"hair-tools",productType:"Hair Tool"}],
+  [/\b(?:jade|amethyst|facial)\s+(?:roller|massager)\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
+  [/\b(?:sportswear|tracksuit)\s+(?:set|suit)\b|\bhooded sportswear suit\b/i, {department:"Fashion",family:"Activewear",subcollection:"Activewear Sets",route:"activewear-sets",productType:"Activewear Set"}],
+  [/\btop\b[\s\S]*\b(?:pants|skirt|shorts)\b[\s\S]*\b(?:set|suit)\b/i, {department:"Fashion",family:"Sets",subcollection:"Matching Sets",route:"matching-sets",productType:"Matching Set"}],
+];
+
 const ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
   [/\b(pendant)\b/i, {department:"Jewelry",family:"Necklaces",subcollection:"Pendant Necklaces",route:"pendants",productType:"Pendant Necklace"}],
   [/\b(necklace|chain)\b/i, {department:"Jewelry",family:"Necklaces",subcollection:"Necklaces",route:"necklaces",productType:"Necklace"}],
@@ -130,24 +156,40 @@ const ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
 ];
 
 export function classifyProduct(title: string, description = "", productType = ""): Classification {
-  const text = `${title} ${productType} ${description.replace(/<[^>]+>/g, " ")}`;
-  const compoundMatch = COMPOUND_ROUTES.find(([pattern]) => pattern.test(text));
-  if (compoundMatch) {
-    return { ...compoundMatch[1], confidence: "high" };
-  }
+  const review = (): Classification => ({
+    department: "Unclassified",
+    family: "Unclassified",
+    subcollection: "Needs Review",
+    route: "needs-review",
+    productType: "Needs Review",
+    confidence: "review",
+  });
 
-  const matches = ROUTES.filter(([pattern]) => pattern.test(text));
+  const classifyText = (
+    text: string,
+    existingType = "",
+  ): Classification | null => {
+    const clean = String(text ?? "").replace(/<[^>]+>/g, " ").trim();
+    if (!clean) return null;
 
-  if (!matches.length) {
-    return {department:"Unclassified", family:"Unclassified", subcollection:"Needs Review", route:"needs-review", productType:"Needs Review", confidence:"review"};
-  }
+    const titleFirst = TITLE_FIRST_ROUTES.find(([pattern]) => pattern.test(clean));
+    if (titleFirst) return { ...titleFirst[1], confidence: "high" };
 
-  const uniqueRoutes = Array.from(new Set(matches.map(([, route]) => route.route)));
-  if (uniqueRoutes.length > 1) {
-    const normalizedProductType = productType.trim().toLowerCase();
-    const exactProductTypeMatch = matches.find(
-      ([, route]) => route.productType.toLowerCase() === normalizedProductType,
-    );
+    const compound = COMPOUND_ROUTES.find(([pattern]) => pattern.test(clean));
+    if (compound) return { ...compound[1], confidence: "high" };
+
+    const matches = ROUTES.filter(([pattern]) => pattern.test(clean));
+    if (!matches.length) return null;
+
+    const uniqueRoutes = Array.from(new Set(matches.map(([, route]) => route.route)));
+    if (uniqueRoutes.length === 1) return { ...matches[0][1], confidence: "high" };
+
+    const normalizedProductType = usableProductType(existingType)
+      ? existingType.trim().toLowerCase()
+      : "";
+    const exactProductTypeMatch = normalizedProductType
+      ? matches.find(([, route]) => route.productType.toLowerCase() === normalizedProductType)
+      : undefined;
     if (exactProductTypeMatch) {
       return { ...exactProductTypeMatch[1], confidence: "high" };
     }
@@ -157,15 +199,28 @@ export function classifyProduct(title: string, description = "", productType = "
         route.department === matches[0][1].department &&
         route.family === matches[0][1].family,
     );
-    if (sameFamily) {
-      // ROUTES are ordered from more specific to more general within a family.
-      return { ...matches[0][1], confidence: "high" };
-    }
+    if (sameFamily) return { ...matches[0][1], confidence: "high" };
 
-    return {department:"Unclassified", family:"Unclassified", subcollection:"Needs Review", route:"needs-review", productType:"Needs Review", confidence:"review"};
+    return review();
+  };
+
+  // Title is the strongest merchandising signal. A stale or supplier placeholder
+  // product type must never override a clear current title.
+  const fromTitle = classifyText(title, productType);
+  if (fromTitle) return fromTitle;
+
+  // Description is second because it can contain useful factual category terms,
+  // but also supplier boilerplate that should not overpower a clear title.
+  const fromDescription = classifyText(description, productType);
+  if (fromDescription) return fromDescription;
+
+  // Existing productType is only a final fallback and only if it is meaningful.
+  if (usableProductType(productType)) {
+    const fromType = classifyText(productType, productType);
+    if (fromType) return fromType;
   }
 
-  return {...matches[0][1], confidence:"high"};
+  return review();
 }
 
 
