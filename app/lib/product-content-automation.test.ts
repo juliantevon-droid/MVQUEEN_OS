@@ -561,6 +561,21 @@ assert.equal(defaultBrandRoute.brand, "mvqueen");
 assert.equal(defaultBrandRoute.confidence, "medium");
 assert.equal(defaultBrandRoute.reason, "default-primary-brand");
 
+const defaultBrandClassification = classifyProduct(
+  defaultBrandProduct.title,
+  defaultBrandProduct.descriptionHtml ?? "",
+  "",
+);
+const defaultBrandContent = buildAutomatedProductContent(
+  defaultBrandProduct,
+  defaultBrandClassification,
+  "MVQueen",
+);
+assert.deepEqual(
+  defaultBrandContent.highlights,
+  [`Product type: ${defaultBrandClassification.productType}`],
+);
+
 const tonerPriority = classifyProduct("Pre Makeup Mousse Toner", "", "Needs Review");
 assert.equal(tonerPriority.family, "Skincare");
 assert.equal(tonerPriority.confidence, "high");
