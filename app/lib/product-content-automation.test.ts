@@ -404,6 +404,14 @@ assert.deepEqual(
   }),
   ["hair_loss_or_regrowth"],
 );
+
+assert.deepEqual(
+  productClaimReviewReasons({
+    title: "Wood Comb Professional Hair Loss Massage Brush",
+    descriptionHtml: "<p>Wood paddle brush.</p>",
+  }),
+  ["hair_loss_or_regrowth"],
+);
 assert.ok(
   productClaimReviewReasons({
     title: "Light Scar Cream Scar Fine Grain Desalination",
@@ -436,6 +444,27 @@ assert.ok(
     descriptionHtml: "<p>Body cream.</p>",
   }).includes("skin_lightening_claim"),
 );
+
+assert.ok(
+  productClaimReviewReasons({
+    title: "Skin Moisturizing Repair Cream",
+    descriptionHtml: "<p>Body cream.</p>",
+    handle: "skin-moisturizing-whitening-repair-whitening-cream",
+    attributeMetafields: {
+      nodes: [{
+        key: "source_attributes",
+        value: JSON.stringify({ key_words: "bright white cream", cosmetic_efficacy: "firming" }),
+      }],
+    },
+  }).includes("skin_lightening_claim"),
+);
+assert.ok(
+  productClaimReviewReasons({
+    title: "Essential Oil",
+    descriptionHtml: "<p>Body oil.</p>",
+    handle: "breast-care-essential-oil",
+  }).includes("body_enhancement"),
+);
 assert.ok(
   !removeHighRiskClaimLanguage("Skin Moisturizing Whitening Repair Cream")
     .toLowerCase()
@@ -452,6 +481,18 @@ assert.ok(
   !removeHighRiskClaimLanguage("Turmeric Firming Care Face Cream")
     .toLowerCase()
     .includes("firming"),
+);
+
+assert.ok(
+  productClaimReviewReasons({
+    title: "Lavender Essential Oil",
+    descriptionHtml: "<p>Helps sleep and improve insomnia.</p>",
+  }).includes("wellness_health_claim"),
+);
+assert.ok(
+  !removeHighRiskClaimLanguage("Lavender oil helps sleep and improve insomnia")
+    .toLowerCase()
+    .includes("insomnia"),
 );
 
 assert.equal(
@@ -575,6 +616,43 @@ assert.deepEqual(
   defaultBrandContent.highlights,
   [`Product type: ${defaultBrandClassification.productType}`],
 );
+
+const metadataHeavyProduct: ProductSnapshot = {
+  ...defaultBrandProduct,
+  id: "gid://shopify/Product/metadata-heavy",
+  attributeMetafields: {
+    nodes: [{
+      key: "source_attributes",
+      value: JSON.stringify({
+        brand: "Generic",
+        shelf_life: "3 years",
+        key_words: "bright white",
+        cosmetic_efficacy: "firming",
+        material: "Glass",
+        color: "Amber",
+        net_content: "30ml",
+      }),
+    }],
+  },
+};
+const metadataHeavyContent = buildAutomatedProductContent(
+  metadataHeavyProduct,
+  defaultBrandClassification,
+  "MVQueen",
+);
+assert.ok(metadataHeavyContent.highlights.includes("Material: Glass"));
+assert.ok(metadataHeavyContent.highlights.includes("Color: Amber"));
+assert.ok(metadataHeavyContent.highlights.includes("Net content: 30ml"));
+assert.ok(!metadataHeavyContent.highlights.some((value) => /brand|shelf life|key words|cosmetic efficacy/i.test(value)));
+
+const grammarSamples = Array.from({ length: 80 }, (_, index) =>
+  buildAutomatedProductContent(
+    { ...defaultBrandProduct, id: `gid://shopify/Product/grammar-${index}` },
+    defaultBrandClassification,
+    "MVQueen",
+  ).shortDescription,
+);
+assert.ok(grammarSamples.every((value) => !/\bA (?:elevated|elegant|understated|intentional|effortless)\b/.test(value)));
 
 const tonerPriority = classifyProduct("Pre Makeup Mousse Toner", "", "Needs Review");
 assert.equal(tonerPriority.family, "Skincare");
