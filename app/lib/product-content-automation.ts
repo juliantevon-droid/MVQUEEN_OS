@@ -31,13 +31,14 @@ const CUSTOMER_FACING_BRAND_DENYLIST = [
 
 const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["medical_or_guaranteed", /\b(?:cures?|treats?|prevents?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b/i],
-  ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+regrowth|regrowth)\b/i],
+  ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+loss|hair\s+regrowth|regrowth)\b/i],
   ["scar_claim", /\bscar\b[\s\S]{0,30}\b(?:remov|repair|treat|cream|gel|desalination|fade)/i],
   ["body_enhancement", /\b(?:(?:breast|bust|butt|hip)\b[\s\S]{0,35}\b(?:enhanc(?:e|er|ement|ing)?|enlarg(?:e|ement|ing)?|lift(?:ing)?|growth|firm(?:ing|ness)?)|breast\s+(?:beauty|care)|bust\s+care)\b/i],
   ["fat_or_cellulite_claim", /\b(?:fat\s+burning|weight\s+loss|anti[- ]?cellulite|cellulite\s+(?:reduction|removal)|slimming\s+(?:cream|oil|gel|massager|device))\b/i],
   ["wrinkle_treatment_claim", /\b(?:wrinkles?\b[\s\S]{0,25}\b(?:remove|flat|reduce|tighten)|tightening\s+cream[\s\S]{0,25}\bwrinkles?)\b/i],
   ["skin_lightening_claim", /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/i],
   ["firming_tightening_claim", /(?:\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b[\s\S]{0,35}\b(?:firming|tightening|lifting)\b|\b(?:firming|tightening|lifting)\b[\s\S]{0,35}\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b)/i],
+  ["wellness_health_claim", /\b(?:improv(?:e|ing)\s+insomnia|help\s+sleep|promot(?:e|es|ing)\s+blood\s+circulation|reliev(?:e|es|ing)\s+anxiety)\b/i],
 ];
 
 const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
@@ -50,6 +51,7 @@ const HIGH_RISK_CLAIM_SANITIZERS: RegExp[] = [
   /\b(?:breast|bust|busty|butt|chest)\b/gi,
   /\b(?:wrinkles?|tightening|firming|lifting)\b/gi,
   /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/gi,
+  /\b(?:improv(?:e|ing)\s+insomnia|help\s+sleep|promot(?:e|es|ing)\s+blood\s+circulation|reliev(?:e|es|ing)\s+anxiety)\b/gi,
   /\belasticity\b/gi,
   /\b(?:sexy|flat|strong)\b/gi,
 ];
@@ -74,11 +76,21 @@ export function removeHighRiskClaimLanguage(value: string): string {
 }
 
 export function productClaimReviewReasons(
-  product: Pick<ProductSnapshot, "title" | "descriptionHtml">,
+  product: {
+    title?: string | null;
+    descriptionHtml?: string | null;
+    handle?: string | null;
+    attributeMetafields?: ProductSnapshot["attributeMetafields"];
+  },
 ): string[] {
+  const sourceAttributes = product.attributeMetafields?.nodes?.find(
+    (item) => item.key === "source_attributes",
+  )?.value ?? "";
   const text = [
     String(product.title ?? ""),
     String(product.descriptionHtml ?? "").replace(HTML_RE, " "),
+    String(product.handle ?? "").replace(/[-_]+/g, " "),
+    String(sourceAttributes),
   ]
     .join(" ")
     .replace(SPACE_RE, " ")
@@ -234,6 +246,39 @@ function humanizeAttributeKey(value: string): string {
     .replace(/^./, (char) => char.toUpperCase());
 }
 
+const CUSTOMER_HIGHLIGHT_SKIP_KEYS = new Set([
+  "brand",
+  "key_words",
+  "keywords",
+  "product_name",
+  "slogan",
+  "shelf_life",
+  "purpose",
+  "applicable_people",
+  "applicable_object",
+  "special_purpose_cosmetics",
+  "cosmetic_efficacy",
+  "skin_effect_of_essential_oil",
+  "psychological_effect_of_essential_oil",
+  "effect",
+  "function",
+  "product_features",
+  "how_to_use",
+  "category",
+]);
+
+function usefulSourceHighlight(key: string, value: string): boolean {
+  const normalizedKey = key.toLowerCase().trim().replace(/[\s-]+/g, "_");
+  const normalizedValue = cleanText(value).toLowerCase();
+  if (CUSTOMER_HIGHLIGHT_SKIP_KEYS.has(normalizedKey)) return false;
+  if (!normalizedValue) return false;
+  if (/^(?:other|other effects?|general|standard|default|no|yes|n\/a|none|ordinary)$/i.test(normalizedValue)) {
+    return false;
+  }
+  if (normalizedValue.length > 180) return false;
+  return true;
+}
+
 function structuredSourceHighlights(product: ProductSnapshot): string[] {
   const highlights: string[] = [];
   const sourceRaw = product.attributeMetafields?.nodes?.find(
@@ -246,7 +291,7 @@ function structuredSourceHighlights(product: ProductSnapshot): string[] {
       for (const [key, rawValue] of Object.entries(parsed)) {
         if (rawValue === null || rawValue === undefined) continue;
         const value = cleanText(String(rawValue));
-        if (!value) continue;
+        if (!usefulSourceHighlight(key, value)) continue;
         highlights.push(`${humanizeAttributeKey(key)}: ${value}`);
       }
     } catch {
@@ -473,24 +518,24 @@ function brandedProductCopy(
         `${titleCase(type)} with ${detailPhrase}, styled with a ${style}, expressive ${brandLabel} point of view.`,
         `Built around ${detailPhrase}, this ${type} keeps the ${brandLabel} presentation ${style}, fresh, and clear.`,
         `${detailPhrase} define this ${type}, finished with ${style} ${brandLabel} styling and straightforward details.`,
-        `A ${style} ${brandLabel} take on a ${type}, grounded in ${detailPhrase}.`,
+        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} take on ${type}, grounded in ${detailPhrase}.`,
       ]
     : [
         `${titleCase(type)} with ${detailPhrase}, presented through a ${style} ${brandLabel} point of view.`,
         `Built around ${detailPhrase}, this ${type} keeps the ${brandLabel} presentation ${style}, polished, and clear.`,
         `${detailPhrase} define this ${type}, with ${style} ${brandLabel} styling and straightforward details.`,
-        `A ${style} ${brandLabel} take on a ${type}, grounded in ${detailPhrase}.`,
+        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} take on ${type}, grounded in ${detailPhrase}.`,
       ];
 
   const fallbackTemplates = princess
     ? [
-        `A ${style} ${brandLabel} ${type} with clear product details and an expressive point of view.`,
-        `This ${type} brings a ${style}, fresh ${brandLabel} perspective while keeping the product details clear.`,
+        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} ${type} with clear product details and an expressive point of view.`,
+        `This ${type} brings a ${style} ${brandLabel} perspective while keeping the product details clear.`,
         `${title} is presented with ${style} ${brandLabel} styling and straightforward product information.`,
       ]
     : [
-        `A ${style} ${brandLabel} ${type} with clear product details and a polished point of view.`,
-        `This ${type} brings a ${style}, considered ${brandLabel} perspective while keeping the product details clear.`,
+        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} ${type} with clear product details and a polished point of view.`,
+        `This ${type} brings a ${style} ${brandLabel} perspective while keeping the product details clear.`,
         `${title} is presented with ${style} ${brandLabel} styling and straightforward product information.`,
       ];
 
