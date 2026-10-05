@@ -44,7 +44,7 @@ const classification = classifyProduct(
 const content = buildAutomatedProductContent(product, classification);
 
 assert.match(content.title, /Natural Pink Thulite Pendant Necklace$/);
-assert.ok(BRAND_VOCABULARY.profiles.mvqueen.adjectives.includes(content.title.split(" ")[0].toLowerCase()));
+assert.ok(BRAND_VOCABULARY.profiles.mvqueen.adjectives.some((word) => content.shortDescription.toLowerCase().includes(word)));
 assert.equal(content.focusKeyword, "pendant necklace");
 assert.ok(content.shortDescription.toLowerCase().includes("pink thulite"));
 assert.ok(content.descriptionHtml.includes("<p>"));
@@ -133,7 +133,7 @@ assert.ok(activewearContent.shortDescription.includes("Miss.Princess"));
 assert.ok(activewearContent.descriptionHtml.includes("two-piece design"));
 assert.ok(activewearContent.descriptionHtml.includes("ruched detailing"));
 assert.ok(activewearContent.descriptionHtml.includes("moderate stretch"));
-assert.ok(BRAND_VOCABULARY.profiles["miss-princess"].adjectives.includes(activewearContent.title.split(" ")[0].toLowerCase()));
+assert.ok(BRAND_VOCABULARY.profiles["miss-princess"].adjectives.some((word) => activewearContent.shortDescription.toLowerCase().includes(word)));
 assert.ok(!activewearContent.shortDescription.toLowerCase().startsWith("product measurements"));
 assert.ok(activewearContent.descriptionHtml.includes("<table>"));
 assert.ok(activewearContent.descriptionHtml.includes("Size &amp; Measurements"));
@@ -430,6 +430,18 @@ assert.deepEqual(
   [],
 );
 
+assert.ok(
+  productClaimReviewReasons({
+    title: "Skin Moisturizing Whitening Repair Cream",
+    descriptionHtml: "<p>Body cream.</p>",
+  }).includes("skin_lightening_claim"),
+);
+assert.ok(
+  !removeHighRiskClaimLanguage("Skin Moisturizing Whitening Repair Cream")
+    .toLowerCase()
+    .includes("whitening"),
+);
+
 assert.equal(
   removeHighRiskClaimLanguage(
     "Electric Vacuum Cupping Massager Anti-Cellulite Fat Burning Slimming Device",
@@ -480,6 +492,28 @@ assert.ok(!claimReviewSerialized.includes("fat burning"));
 assert.ok(!claimReviewSerialized.includes("slimming"));
 assert.ok(claimReviewContent.title.toLowerCase().includes("cupping"));
 assert.ok(claimReviewContent.seoTitle.endsWith("| MVQueen"));
+
+const lighteningProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/lightening-review",
+  title: "Skin Moisturizing Whitening Repair Cream",
+  vendor: "MVQueen",
+  productType: "Skincare",
+  descriptionHtml: "<p>Body cream.</p><ul><li>Net weight: 100g</li></ul>",
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/lightening-review", price: "18.00" }] },
+};
+const lighteningClassification = classifyProduct(
+  lighteningProduct.title,
+  lighteningProduct.descriptionHtml ?? "",
+  lighteningProduct.productType ?? "",
+);
+const lighteningContent = buildAutomatedProductContent(
+  lighteningProduct,
+  lighteningClassification,
+  "MVQueen",
+);
+assert.ok(!JSON.stringify(lighteningContent).toLowerCase().includes("whitening"));
+assert.ok(lighteningContent.title.toLowerCase().includes("moisturizing"));
 
 const defaultBrandProduct: ProductSnapshot = {
   id: "gid://shopify/Product/default-brand",
@@ -684,8 +718,9 @@ try {
   const revisedVocabulary = loadBrandVocabulary(vocabularyRoot);
   assert.notEqual(revisedVocabulary.version, BRAND_VOCABULARY.version);
   assert.ok(revisedVocabulary.profiles.mvqueen.adjectives.includes("considered"));
-  const names = Array.from({ length: 100 }, (_, index) => buildAutomatedProductContent({ ...supplierNecklace, id: "gid://shopify/Product/test-vocabulary-" + index }, necklaceClassification, "MVQueen", revisedVocabulary).title);
-  assert.ok(names.some((name) => name.startsWith("Considered ")));
+  const generated = Array.from({ length: 100 }, (_, index) => buildAutomatedProductContent({ ...supplierNecklace, id: "gid://shopify/Product/test-vocabulary-" + index }, necklaceClassification, "MVQueen", revisedVocabulary));
+  assert.ok(generated.some((item) => item.shortDescription.toLowerCase().includes("considered")));
+  assert.ok(generated.every((item) => !item.title.startsWith("Considered ")));
   const forbiddenFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[2]);
   const forbiddenSource = readFileSync(forbiddenFile, "utf8");
   writeFileSync(forbiddenFile, forbiddenSource.replace("## Tier 2", "| Considered | Editorial review |\n\n## Tier 2"));
