@@ -458,4 +458,42 @@ assert.ok(
   ),
 );
 
+const attributeDumpProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/attribute-dump",
+  title: "Hair Removal Cream",
+  vendor: "MVQueen",
+  productType: "Hair Removal",
+  descriptionHtml: [
+    "<p>Brand: Shelf life: three years Efficacy: other effects Special purpose cosmetics: Yes Net content: 40g</p>",
+    "<ul>",
+    "<li>Brand: Generic</li>",
+    "<li>Shelf life: three years</li>",
+    "<li>Net content: 40g</li>",
+    "<li>Specifications: Standard specifications</li>",
+    "</ul>",
+  ].join(""),
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/attribute-dump", price: "19.00" }] },
+};
+const attributeDumpClassification = classifyProduct(
+  attributeDumpProduct.title,
+  attributeDumpProduct.descriptionHtml ?? "",
+  attributeDumpProduct.productType ?? "",
+);
+const attributeDumpContent = buildAutomatedProductContent(
+  attributeDumpProduct,
+  attributeDumpClassification,
+  "MVQueen",
+);
+assert.ok(!attributeDumpContent.shortDescription.toLowerCase().startsWith("brand:"));
+assert.ok(!attributeDumpContent.metaDescription.toLowerCase().includes("shelf life"));
+assert.ok(
+  attributeDumpContent.longTailKeywords.every(
+    (value) =>
+      !value.includes("standard specifications") &&
+      !value.includes("brand") &&
+      !value.includes("other effects"),
+  ),
+);
+
 console.log("product content automation tests passed");
