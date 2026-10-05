@@ -111,6 +111,9 @@ const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
 ];
 
 const TITLE_FIRST_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
+  [/\btoner\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
+  [/\bskin\s+care\s+oil\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
+  [/\byoga\s+(?:pants?|leggings?)\b/i, {department:"Fashion",family:"Bottoms",subcollection:"Pants",route:"pants",productType:"Pants"}],
   [/\banklet\b/i, {department:"Jewelry",family:"Anklets",subcollection:"Anklets",route:"anklets",productType:"Anklet"}],
   [/\bpress[- ]?on nails?\b|\bfake nails?\b|\bacrylic handmade nails?\b/i, {department:"Beauty",family:"Nails",subcollection:"Press-On Nails",route:"press-on-nails",productType:"Press-On Nails"}],
   [/\b(?:bb|cc)\s*cream\b/i, {department:"Beauty",family:"Makeup",subcollection:"Makeup",route:"makeup",productType:"Makeup"}],
@@ -465,13 +468,17 @@ export function classifyBrandWorld(
     };
   }
 
+  // MVQueen is the primary store brand. When a product has no decisive
+  // Miss.Princess palette/style signal, route it to MVQueen rather than
+  // freezing otherwise-safe automation. Keep medium confidence and an
+  // explicit reason so the fallback remains auditable.
   return {
-    brand: null,
-    confidence: "review",
-    tone: "review",
+    brand: "mvqueen",
+    confidence: "medium",
+    tone: "bold-authoritative",
     reason: scores.mvqueen || scores.princess
-      ? "balanced-palette-signals"
-      : "ambiguous-color-or-style",
+      ? "balanced-signals-primary-brand-fallback"
+      : "default-primary-brand",
   };
 }
 
