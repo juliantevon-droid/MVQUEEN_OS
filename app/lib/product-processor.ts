@@ -25,7 +25,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v29-file-vocabulary-" + BRAND_VOCABULARY.version;
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v30-safe-claim-copy-" + BRAND_VOCABULARY.version;
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -519,8 +519,11 @@ export async function processProductJob(
       brandRoute.brand === "miss-princess" ? "Miss.Princess" : "MVQueen";
     const claimReviewReasons = productClaimReviewReasons(product);
     const requiresClaimReview = claimReviewReasons.length > 0;
+    // Claim-risk products still receive sanitized customer-facing copy while
+    // the original source claims remain flagged internally for review. Only
+    // genuinely unclassified products block automatic editorial generation.
     const automatedContent =
-      c.confidence === "review" || !brandRoute.brand || requiresClaimReview
+      c.confidence === "review" || !brandRoute.brand
         ? null
         : buildAutomatedProductContent(product, c, brandLabel);
     const attributeEnrichment = buildCatalogAttributeEnrichment(product, c);
@@ -701,9 +704,13 @@ export async function processProductJob(
         key: "review_status",
         type: "single_line_text_field",
         value:
-          c.confidence === "review" || !brandRoute.brand || requiresClaimReview
-            ? "needs_review"
-            : "classified",
+          c.confidence === "review"
+            ? "needs_classification_review"
+            : !brandRoute.brand
+              ? "needs_brand_review"
+              : requiresClaimReview
+                ? "claim_review"
+                : "classified",
       },
       {
         namespace: "catalog",
