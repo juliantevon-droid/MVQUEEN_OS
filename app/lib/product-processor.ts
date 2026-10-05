@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
 import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
-import { usableProductType, type ProductSnapshot } from "./mvqueen-intelligence";
+import { productTypeForWrite, type ProductSnapshot } from "./mvqueen-intelligence";
 import {
   buildCatalogAttributeEnrichment,
   buildCatalogAttributeMetafields,
@@ -24,7 +24,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v25-versioned-reconciliation";
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v26-content-quality";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -905,7 +905,7 @@ export async function processProductJob(
 
     const productInput: Record<string, unknown> = {
       id: product.id,
-      productType: usableProductType(product.productType) ? product.productType : c.productType,
+      productType: productTypeForWrite(product.productType, c),
       tags: mergedTags,
       metafields: [...metafields, ...nativeCategoryMetafields],
     };
