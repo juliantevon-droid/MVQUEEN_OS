@@ -442,6 +442,18 @@ assert.ok(
     .includes("whitening"),
 );
 
+assert.ok(
+  productClaimReviewReasons({
+    title: "Turmeric Firming Care Face Cream",
+    descriptionHtml: "<p>Face cream.</p>",
+  }).includes("firming_tightening_claim"),
+);
+assert.ok(
+  !removeHighRiskClaimLanguage("Turmeric Firming Care Face Cream")
+    .toLowerCase()
+    .includes("firming"),
+);
+
 assert.equal(
   removeHighRiskClaimLanguage(
     "Electric Vacuum Cupping Massager Anti-Cellulite Fat Burning Slimming Device",
@@ -514,6 +526,28 @@ const lighteningContent = buildAutomatedProductContent(
 );
 assert.ok(!JSON.stringify(lighteningContent).toLowerCase().includes("whitening"));
 assert.ok(lighteningContent.title.toLowerCase().includes("moisturizing"));
+
+const firmingProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/firming-review",
+  title: "Turmeric Firming Care Face Cream",
+  vendor: "MVQueen",
+  productType: "Skincare",
+  descriptionHtml: "<p>Face cream.</p><ul><li>Net weight: 50g</li></ul>",
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/firming-review", price: "18.00" }] },
+};
+const firmingClassification = classifyProduct(
+  firmingProduct.title,
+  firmingProduct.descriptionHtml ?? "",
+  firmingProduct.productType ?? "",
+);
+const firmingContent = buildAutomatedProductContent(
+  firmingProduct,
+  firmingClassification,
+  "MVQueen",
+);
+assert.ok(!JSON.stringify(firmingContent).toLowerCase().includes("firming"));
+assert.ok(firmingContent.title.toLowerCase().includes("face cream"));
 
 const defaultBrandProduct: ProductSnapshot = {
   id: "gid://shopify/Product/default-brand",
