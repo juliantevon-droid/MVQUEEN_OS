@@ -24,7 +24,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v24-title-first-claim-safety";
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v25-versioned-reconciliation";
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
