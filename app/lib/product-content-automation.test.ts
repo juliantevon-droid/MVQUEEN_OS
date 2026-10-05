@@ -495,6 +495,29 @@ assert.ok(
     .includes("insomnia"),
 );
 
+assert.ok(
+  productClaimReviewReasons({
+    title: "Anti Acne Moisturizer Cream",
+    descriptionHtml: "<p>Moisturizer.</p>",
+  }).includes("acne_treatment_claim"),
+);
+assert.ok(
+  !removeHighRiskClaimLanguage("Anti Acne Moisturizer Cream")
+    .toLowerCase()
+    .includes("anti acne"),
+);
+assert.ok(
+  productClaimReviewReasons({
+    title: "Body Shaping Care Bath Oil",
+    descriptionHtml: "<p>Bath oil.</p>",
+  }).includes("fat_or_cellulite_claim"),
+);
+assert.ok(
+  !removeHighRiskClaimLanguage("Body Shaping Care Bath Oil")
+    .toLowerCase()
+    .includes("body shaping"),
+);
+
 assert.equal(
   removeHighRiskClaimLanguage(
     "Electric Vacuum Cupping Massager Anti-Cellulite Fat Burning Slimming Device",
@@ -653,6 +676,50 @@ const grammarSamples = Array.from({ length: 80 }, (_, index) =>
   ).shortDescription,
 );
 assert.ok(grammarSamples.every((value) => !/\bA (?:elevated|elegant|understated|intentional|effortless)\b/.test(value)));
+
+const pressOnProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/press-on-cleanup",
+  title: "GGDDSHA New Shiny Crystal Long Press On Nails Withdiamonds Reusable PMA",
+  vendor: "MVQueen",
+  productType: "Press-On Nails",
+  descriptionHtml: "<p>Reusable press-on nails.</p>",
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/press-on-cleanup", price: "12.00" }] },
+};
+const pressOnClass = classifyProduct(
+  pressOnProduct.title,
+  pressOnProduct.descriptionHtml ?? "",
+  pressOnProduct.productType ?? "",
+);
+const pressOnContent = buildAutomatedProductContent(pressOnProduct, pressOnClass, "MVQueen");
+assert.equal(pressOnContent.title, "Long Crystal Press-On Nails");
+assert.ok(!/ggddsha|\bnew\b|\bpma\b|withdiamonds/i.test(pressOnContent.title));
+
+const creamBrandProduct: ProductSnapshot = {
+  id: "gid://shopify/Product/cream-brand-cleanup",
+  title: "Meilin Ouliyuan Cream 40g",
+  vendor: "MVQueen",
+  productType: "Bath & Body",
+  descriptionHtml: "<p>Body cream, 40g.</p>",
+  tags: [],
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/cream-brand-cleanup", price: "12.00" }] },
+};
+const creamBrandClass = classifyProduct(
+  creamBrandProduct.title,
+  creamBrandProduct.descriptionHtml ?? "",
+  creamBrandProduct.productType ?? "",
+);
+const creamBrandContent = buildAutomatedProductContent(creamBrandProduct, creamBrandClass, "MVQueen");
+assert.equal(creamBrandContent.title, "Body Cream 40g");
+
+assert.equal(
+  classifyProduct("Baby Hair Gel Fluffy Fixed And Anti Manic", "", "").productType,
+  "Hair Styling",
+);
+assert.equal(
+  classifyProduct("Silky Hair Essential Oil", "", "").productType,
+  "Hair Treatment",
+);
 
 const tonerPriority = classifyProduct("Pre Makeup Mousse Toner", "", "Needs Review");
 assert.equal(tonerPriority.family, "Skincare");
