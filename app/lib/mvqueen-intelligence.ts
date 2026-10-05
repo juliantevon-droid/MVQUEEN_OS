@@ -58,6 +58,46 @@ const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
       productType: "Activewear Set",
     },
   ],
+  [
+    /\b(?:body\s+(?:lotion|cream|moisturizer|scrub|wash|butter)|bath\s+(?:salt|soak|oil))\b/i,
+    {
+      department: "Beauty",
+      family: "Bath & Body",
+      subcollection: "Bath & Body",
+      route: "bath-body",
+      productType: "Bath & Body",
+    },
+  ],
+  [
+    /\b(?:hair\s+(?:oil|serum|mask|treatment)|scalp\s+(?:oil|serum|treatment))\b/i,
+    {
+      department: "Beauty",
+      family: "Hair Care",
+      subcollection: "Hair Treatments",
+      route: "hair-treatments",
+      productType: "Hair Treatment",
+    },
+  ],
+  [
+    /\b(?:lip\s+(?:balm|gloss|oil|tint|liner)|lipstick)\b/i,
+    {
+      department: "Beauty",
+      family: "Makeup",
+      subcollection: "Makeup",
+      route: "makeup",
+      productType: "Makeup",
+    },
+  ],
+  [
+    /\b(?:face|facial|eye)\s+(?:cream|moisturizer|serum|mask|cleanser)|\bfacial\s+skin\s+care\b/i,
+    {
+      department: "Beauty",
+      family: "Skincare",
+      subcollection: "Skincare",
+      route: "skincare",
+      productType: "Skincare",
+    },
+  ],
 ];
 
 const ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
@@ -77,15 +117,15 @@ const ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
   [/\b(legging|pant|trouser)\b/i, {department:"Fashion",family:"Bottoms",subcollection:"Pants",route:"pants",productType:"Pants"}],
   [/\b(shorts?)\b/i, {department:"Fashion",family:"Bottoms",subcollection:"Shorts",route:"shorts",productType:"Shorts"}],
   [/\b(skirt)\b/i, {department:"Fashion",family:"Bottoms",subcollection:"Skirts",route:"skirts",productType:"Skirt"}],
-  [/\b(makeup|foundation|concealer|mascara|lipstick|eyeshadow|blush|bronzer|highlighter)\b/i, {department:"Beauty",family:"Makeup",subcollection:"Makeup",route:"makeup",productType:"Makeup"}],
-  [/\b(cleanser|toner|serum|moisturizer|sunscreen|spf|exfoliator|skincare|face mask)\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
+  [/\b(makeup|foundation|concealer|mascara|lipstick|lip\s*balm|lip\s*gloss|lip\s*oil|lip\s*tint|lip\s*liner|eyeshadow|blush|bronzer|highlighter)\b/i, {department:"Beauty",family:"Makeup",subcollection:"Makeup",route:"makeup",productType:"Makeup"}],
+  [/\b(cleanser|toner|serum|moisturizer|sunscreen|spf|exfoliator|skincare|skin\s*care|face\s*mask|face\s*cream|facial\s*cream|eye\s*cream)\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
   [/\b(shampoo)\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Shampoo",route:"shampoo",productType:"Shampoo"}],
   [/\b(conditioner)\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Conditioner",route:"conditioner",productType:"Conditioner"}],
   [/\b(hair oil|hair serum|scalp oil|hair treatment)\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Hair Treatments",route:"hair-treatments",productType:"Hair Treatment"}],
   [/\b(wig|wigs|extension|extensions)\b/i, {department:"Beauty",family:"Wigs & Extensions",subcollection:"Wigs & Extensions",route:"wigs-extensions",productType:"Wigs & Extensions"}],
   [/\b(flat iron|curling iron|hair dryer|blow dryer|hot comb|hair tool)\b/i, {department:"Beauty",family:"Hair Tools",subcollection:"Hair Tools",route:"hair-tools",productType:"Hair Tool"}],
   [/\b(beauty tool|makeup brush|makeup sponge|tweezer|facial roller)\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
-  [/\b(body wash|body lotion|body scrub|bath|body care)\b/i, {department:"Beauty",family:"Bath & Body",subcollection:"Bath & Body",route:"bath-body",productType:"Bath & Body"}],
+  [/\b(body\s*wash|body\s*lotion|body\s*cream|body\s*moisturizer|body\s*scrub|body\s*butter|bath|body\s*care)\b/i, {department:"Beauty",family:"Bath & Body",subcollection:"Bath & Body",route:"bath-body",productType:"Bath & Body"}],
   [/\b(fragrance|perfume|parfum|body mist)\b/i, {department:"Beauty",family:"Fragrance",subcollection:"Fragrance",route:"fragrance",productType:"Fragrance"}],
 ];
 
