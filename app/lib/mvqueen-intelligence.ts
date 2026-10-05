@@ -111,6 +111,8 @@ const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
 ];
 
 const TITLE_FIRST_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
+  [/\b(?:baby\s+hair\s+gel|hair\s+styling\s+gel|edge\s+control)\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Hair Styling",route:"hair-styling",productType:"Hair Styling"}],
+  [/\bhair\s+essential\s+oil\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Hair Treatments",route:"hair-treatments",productType:"Hair Treatment"}],
   [/\btoner\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
   [/\bskin\s+care\s+oil\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
   [/\byoga\s+(?:pants?|leggings?)\b/i, {department:"Fashion",family:"Bottoms",subcollection:"Pants",route:"pants",productType:"Pants"}],
