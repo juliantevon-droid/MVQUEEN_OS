@@ -27,9 +27,9 @@ concurrency:
 env:
   # Canonical non-secret deployment identity, verified against the connected Shopify store.
   SHOPIFY_STORE: tsucu0-1i.myshopify.com
-  SHOPIFY_THEME_ID: '155002798278'
+  SHOPIFY_THEME_ID: '155268317382'
   EXPECTED_SHOPIFY_STORE: tsucu0-1i.myshopify.com
-  EXPECTED_SHOPIFY_THEME_ID: '155002798278'
+  EXPECTED_SHOPIFY_THEME_ID: '155268317382'
 
 jobs:
   validate:
@@ -200,4 +200,4 @@ jobs:
           retention-days: 14
           include-hidden-files: true
 
-# Canonical deployment identity is pinned to MVQueen — Staging Preview; validated theme changes on main deploy automatically to this unpublished target. Shopify MAIN is never an automated deployment target. Scheduled runs validate only. settings_data and backup/rollback themes are never automated deployment targets.
+# Canonical deployment identity is pinned to Copy of MVQueen — Staging Preview; validated theme changes on main deploy automatically to this unpublished target. Shopify MAIN is never an automated deployment target. Scheduled runs validate only. settings_data and backup/rollback themes are never automated deployment targets.

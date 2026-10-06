@@ -56,8 +56,8 @@ def main() -> int:
     print(f"Target role: {role or 'UNKNOWN'}")
     print(f"Target ID: {target}")
 
-    if role == "MAIN":
-        print("THEME DEPLOYMENT VERIFY: FAIL — target became the live theme")
+    if role != "UNPUBLISHED":
+        print("THEME DEPLOYMENT VERIFY: FAIL — target is not explicitly UNPUBLISHED")
         return 1
 
     print("THEME DEPLOYMENT VERIFY: PASS — target remains unpublished")
