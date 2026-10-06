@@ -60,6 +60,8 @@
   object-fit:cover;
   transition:transform .7s ease;
 }
+.mvq-gateway-panel picture{position:absolute;inset:0;z-index:-3;display:block}
+.mvq-gateway-panel picture .mvq-gateway-media{position:absolute}
 .mvq-gateway-overlay{
   position:absolute;
   inset:0;
