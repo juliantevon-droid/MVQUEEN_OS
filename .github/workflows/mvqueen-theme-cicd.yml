@@ -154,7 +154,7 @@ jobs:
 
 
   release-candidate-lighthouse:
-    name: Staging Preview Lighthouse gate
+    name: Canonical Storefront Lighthouse gate
     needs: deploy-unpublished
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
@@ -164,9 +164,13 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Run Lighthouse samples against unpublished Staging Preview
+      - name: Run Lighthouse samples against canonical storefront
         env:
-          TARGET_URL: https://tsucu0-1i.myshopify.com/?preview_theme_id=155002798278&pb=0
+          # Shopify strips preview_theme_id from unauthenticated headless requests
+          # and redirects Lighthouse to the live theme. The unpublished theme is
+          # validated by Theme Check and release contracts above; Lighthouse uses
+          # the canonical public URL instead of silently auditing a different page.
+          TARGET_URL: https://tsucu0-1i.myshopify.com/
         run: |
           for run in 1 2 3; do
             echo "Lighthouse staging sample $run/3"
@@ -176,14 +180,14 @@ jobs:
               --output=json \
               --output-path="release-candidate-lighthouse-$run.json"
           done
-      - name: Enforce median Staging Preview Lighthouse budgets
+      - name: Enforce median canonical storefront Lighthouse budgets
         run: |
           node 30_System_Infrastructure/automation/lighthouse_median_gate.mjs \
-            preview \
+            live \
             release-candidate-lighthouse-1.json \
             release-candidate-lighthouse-2.json \
             release-candidate-lighthouse-3.json
-      - name: Save Staging Preview Lighthouse artifact
+      - name: Save canonical storefront Lighthouse artifact
         if: always()
         run: |
           mkdir -p .mvqueen-ci
@@ -191,7 +195,7 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: mvqueen-release-candidate-lighthouse-${{ github.run_id }}
+          name: mvqueen-canonical-storefront-lighthouse-${{ github.run_id }}
           path: .mvqueen-ci
           retention-days: 14
           include-hidden-files: true
