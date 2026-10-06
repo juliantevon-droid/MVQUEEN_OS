@@ -12,10 +12,7 @@
   assign princess_loading = 'eager'
   assign princess_fetchpriority = 'low'
   assign mvqueen_logo_sizes = '(max-width: 443px) 88vw, (max-width: 749px) 390px, min(470px, 38vw)'
-  assign mvqueen_logo_fetchpriority = 'low'
-  if mvqueen_gateway_image == blank
-    assign mvqueen_logo_fetchpriority = 'high'
-  endif
+  assign mvqueen_logo_fetchpriority = 'high'
 %}
 <section class="mvq-gateway" aria-labelledby="BrandGatewayTitle">
   <div class="mvq-gateway-house">
