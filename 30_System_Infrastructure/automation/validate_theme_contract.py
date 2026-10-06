@@ -199,13 +199,11 @@ def main() -> int:
     logo_sizes = "(max-width: 443px) 88vw, (max-width: 749px) 390px, min(470px, 38vw)"
     if f"assign mvqueen_logo_sizes = '{logo_sizes}'" not in gateway:
         failures.append("Brand gateway logo sizes must match its CSS display widths")
-    if not re.search(
-        r"assign mvqueen_logo_fetchpriority = 'low'\s+"
-        r"if mvqueen_gateway_image == blank\s+"
-        r"assign mvqueen_logo_fetchpriority = 'high'\s+endif",
-        gateway,
-    ):
-        failures.append("Brand gateway must prioritize the logo when the MVQueen image is absent")
+    logo_priority_assignments = re.findall(
+        r"assign\s+mvqueen_logo_fetchpriority\s*=\s*'([^']*)'", gateway
+    )
+    if logo_priority_assignments != ["high"]:
+        failures.append("Brand gateway logo must retain high priority as a measured LCP candidate")
 
     configured_logo = re.search(r"{{\s*settings\.brand_logo\b.*?}}", gateway, re.S)
     fallback_logo = re.search(
