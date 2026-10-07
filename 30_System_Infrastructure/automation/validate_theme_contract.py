@@ -182,7 +182,7 @@ def main() -> int:
     gateway_css = read("assets/brand-gateway.css")
     if "Miss.Princess" not in gateway or "MVQueen" not in gateway:
         failures.append("Brand gateway must provide both MVQueen and Miss.Princess destinations")
-    for token in ["princess_fetchpriority = 'low'", "image_url: width: 480, quality: 60", "widths: '320, 360, 412, 480'"]:
+    for token in ["princess_fetchpriority = 'low'", "image_url: width: 480", "widths: '320, 360, 412, 480'"]:
         if token not in gateway:
             failures.append(f"Brand gateway missing mobile/LCP optimization: {token}")
     for token in [".mvq-gateway-panel--mvqueen", "min-height:66svh", ".mvq-gateway-media{\n    transition:none"]:
@@ -191,12 +191,19 @@ def main() -> int:
     for token in [
         "fetchpriority: 'high'",
         "widths: '320, 360, 412, 480, 540, 640, 720'",
-        "image_url: width: 480, quality: 60",
+        "image_url: width: 480",
     ]:
         if token not in gateway:
             failures.append(f"Brand gateway missing responsive/LCP image integration: {token}")
 
-    logo_sizes = "(max-width: 443px) 88vw, (max-width: 749px) 390px, min(470px, 38vw)"
+    for image_section in ("brand-gateway", "header", "footer"):
+        image_source = read(f"sections/{image_section}.liquid")
+        if re.search(r"\|\s*image_url:[^|}]*\bquality\s*:", image_source):
+            failures.append(f"{image_section} images must use automatic quality for PNG compatibility")
+    if ".mvq-gateway-brandmark{width:min(100%,390px)}" not in gateway_css:
+        failures.append("Mobile gateway logo must fit the panel content width")
+
+    logo_sizes = "(max-width: 438px) calc(100vw - 48px), (max-width: 749px) 390px, min(470px, 38vw)"
     if f"assign mvqueen_logo_sizes = '{logo_sizes}'" not in gateway:
         failures.append("Brand gateway logo sizes must match its CSS display widths")
     logo_priority_assignments = re.findall(
@@ -211,20 +218,20 @@ def main() -> int:
     )
     logo_contracts = [
         ("configured", configured_logo, [
-            "image_url: width: 956, quality: 40",
+            "image_url: width: 956",
             "widths: '240,320,360,400,480,560,640,800,956'",
             "sizes: mvqueen_logo_sizes",
             "loading: 'eager'",
             "fetchpriority: mvqueen_logo_fetchpriority",
         ]),
         ("fallback", fallback_logo, [
-            "&amp;width=956&amp;quality=40",
+            "&amp;width=956",
             'sizes="{{ mvqueen_logo_sizes }}"',
             'width="956"',
             'height="431"',
             'loading="eager"',
             'fetchpriority="{{ mvqueen_logo_fetchpriority }}"',
-        ] + [f"&amp;width={width}&amp;quality=40 {width}w"
+        ] + [f"&amp;width={width} {width}w"
              for width in (240, 320, 360, 400, 480, 560, 640, 800, 956)]),
     ]
     for label, match, tokens in logo_contracts:
