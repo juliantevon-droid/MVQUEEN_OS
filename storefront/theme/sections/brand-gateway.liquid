@@ -9,7 +9,7 @@
     assign princess_gateway_image = collections['miss-princess-world'].products.first.featured_image
   endif
 
-  assign princess_loading = 'eager'
+  assign princess_loading = 'lazy'
   assign princess_fetchpriority = 'low'
   assign mvqueen_logo_sizes = '(max-width: 438px) calc(100vw - 48px), (max-width: 749px) 390px, min(470px, 38vw)'
   assign mvqueen_logo_fetchpriority = 'high'
