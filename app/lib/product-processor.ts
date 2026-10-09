@@ -137,13 +137,7 @@ async function accessScopesForShop(
   if (cached && cached.expiresAt > Date.now()) return cached.handles;
 
   const response = await admin.graphql(ACCESS_SCOPES_QUERY);
-  const body: {
-            errors?: unknown[];
-            data?: { products?: {
-              nodes: { id: string; title: string }[];
-              pageInfo: { hasNextPage: boolean; endCursor: string | null };
-            } };
-          } = await response.json();
+  const body = await response.json();
   const handles = new Set<string>(
     (body.data?.appInstallation?.accessScopes ?? [])
       .map((scope: { handle?: string | null }) => scope.handle)
@@ -550,7 +544,13 @@ export async function processProductJob(
           const response: Response = await admin.graphql(PRODUCT_NAME_LOOKUP, {
             variables: { query: `title:${JSON.stringify(identity)}`, after },
           });
-          const body = await response.json();
+          const body: {
+            errors?: unknown[];
+            data?: { products?: {
+              nodes: { id: string; title: string }[];
+              pageInfo: { hasNextPage: boolean; endCursor: string | null };
+            } };
+          } = await response.json();
           if (body.errors?.length) throw new Error("Shopify product-name lookup failed");
           const connection = body.data?.products;
           if (!connection?.nodes || !connection.pageInfo) throw new Error("Incomplete Shopify product-name lookup");
