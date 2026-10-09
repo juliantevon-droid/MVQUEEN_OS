@@ -55,6 +55,8 @@ jobs:
           node-version: 24
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli
+      - name: Check Lighthouse gate JavaScript syntax
+        run: node --check 30_System_Infrastructure/automation/lighthouse_median_gate.mjs
       - name: Validate MVQUEEN control registry
         run: python 30_System_Infrastructure/automation/validate_control_registry.py
       - name: Run MVQUEEN contract validator
