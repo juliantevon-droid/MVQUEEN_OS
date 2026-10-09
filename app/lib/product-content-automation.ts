@@ -558,7 +558,7 @@ const SOURCE_TITLE_LANGUAGE: Readonly<Record<string, string>> = {
   "three-in-one electric hair dryer multi-functional household": "Three-In-One Electric Hair Dryer",
   "batana oil hair care essential": "Batana Hair Care Oil",
   "neck cream 50g fading": "Neck Care Cream 50g",
-  "high pressure spray bottle cleaning silicone brush hollow comb hair care shampoo": "Hair Care Spray Bottle Silicone Brush And Hollow Comb",
+  "high pressure spray bottle cleaning silicone brush hollow comb hair care shampoo": "Spray Bottle Silicone Brush And Hollow Hair Comb",
   "facial eye scraping massage jade roller": "Jade Facial And Eye Massage Roller",
   "electric massage hair comb household": "Electric Massage Hair Comb",
   "neck roller cream lifts dilutes lines deeply nourishes easily absorbed skin care": "Nourishing Neck Roller Cream",

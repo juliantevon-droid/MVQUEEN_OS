@@ -1016,5 +1016,14 @@ const supplierWordCopy = buildAutomatedProductContent(supplierWordSource, classi
 assert.match(supplierWordCopy.title, /Vitamin C Facial Serum$/);
 assert.ok(!supplierWordCopy.title.includes("Amazon"));
 
+const sprayBottleSource: ProductSnapshot = { id: "gid://shopify/Product/9100793938118", title: "High Pressure Spray Bottle Cleaning Silicone Brush Hollow Comb Hair Care Shampoo", productType: "Shampoo" };
+const sprayBottleRoute = classifyProduct(sprayBottleSource.title, "", "Shampoo");
+assert.equal(sprayBottleRoute.productType, "Hair Tool");
+const sprayBottleCopy = buildAutomatedProductContent(sprayBottleSource, sprayBottleRoute);
+assert.equal(sprayBottleCopy.title, "Timeless Spray Bottle Silicone Brush And Hollow Hair Comb");
+assert.equal(classifyProduct(sprayBottleCopy.title, "", "Shampoo").productType, "Hair Tool");
+assert.equal(buildAutomatedProductContent({ ...sprayBottleSource, title: sprayBottleCopy.title }, sprayBottleRoute).title, sprayBottleCopy.title);
+assert.equal(classifyProduct("Hair Care Spray", "", "Hair Treatment").productType, "Hair Treatment");
+
 console.log("product content automation tests passed");
 
