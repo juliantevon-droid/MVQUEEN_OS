@@ -376,6 +376,28 @@ function usefulSeoDetailValues(highlights: string[]): string[] {
     .filter(usefulKeywordDetail);
 }
 
+function introFacts(highlights: string[]): string[] {
+  const amount = highlightValue(highlights, /^(?:capacity|net\s+content)\s*:/i);
+  // Retain explicit units. Never turn an unlabeled "30" into "30 ml", or
+  // interpret a fractional quantity or range as a separate available size.
+  const quantities = /[\/–—]|\d\s*-\s*\d/.test(amount)
+    ? []
+    : unique([...amount.matchAll(/\b(\d+(?:\.\d+)?)\s*(ml|mg|kg|g|oz|l)\b/gi)]
+        .map((match) => `${match[1]} ${match[2].toLowerCase()}`));
+  const material = highlightValue(highlights, /^(?:material(?:\s+composition)?|metal|stone)\s*:/i);
+  const color = highlightValue(highlights, /^(?:color|shade)\s*:/i)
+    || highlightValue(highlights, /^(?:colors|shades)\s*:/i);
+  const colors = color.split(/\s*\/\s*/).map(cleanText).filter(Boolean);
+  const namedColors = colors.length > 0 && colors.every((value) =>
+    usefulKeywordDetail(value) && !/^(?:colou?r|shade)\s*\d+$/i.test(value),
+  );
+  return [
+    quantities.length ? `comes in ${naturalList(quantities)}` : "",
+    usefulKeywordDetail(material) ? `features ${material}` : "",
+    namedColors ? `comes in ${naturalList(colors)}` : "",
+  ].filter(Boolean);
+}
+
 function highlightValue(
   highlights: string[],
   label: RegExp,
@@ -427,9 +449,128 @@ function productSeed(product: ProductSnapshot): number {
 
 function titleCase(value: string): string {
   return value.split(" ").map((word) => {
-    if (/^(?:\d.*|SPF|BB|CC|UV|USB)$/i.test(word)) return word;
+    if (/^(?:SPF|BB|CC|UV|USB|LED)$/i.test(word)) return word.toUpperCase();
+    if (/^\d/.test(word)) return word;
     return word.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()).join("-");
   }).join(" ");
+}
+
+// Editorial repairs remove marketplace clutter from known source names.
+// Each replacement keeps a source-backed product identity; fragrance mood
+// names come from 04_Products/Product_Naming_System.md. No efficacy is added.
+const SOURCE_TITLE_LANGUAGE: Readonly<Record<string, string>> = {
+  "crystal double heart bracelet love barefoot chain bling ankle anklet": "Crystal Double-Heart Anklet",
+  "long sleeve outdoor sports workout clothes zipper training jumpsuit": "Long-Sleeve Zip-Up Training Jumpsuit",
+  "y2k slim turtleneck t-shirt casual long-sleeved pullover tight top": "Slim Long-Sleeve Turtleneck Top",
+  "hollow beauty back yoga clothes dance sports jumpsuit": "Open-Back Yoga Jumpsuit",
+  "women's fleece-lined hooded sportswear suit": "Fleece-Lined Hooded Sportswear Set",
+  "denim sequined tube top wide leg pants suit": "Sequined Denim Tube Top And Wide-Leg Pants Set",
+  "gold-plated bohemian star moon love pearl leaf 10-piece ring": "Gold-Plated Star And Moon 10-Piece Ring Set",
+  "natural transparent skin rejuvenation moisturizing beauty cream": "Moisturizing Skin Cream",
+  "body hydrate glass skin ultra-rich lotion": "Ultra-Rich Body Lotion",
+  "body skin nourishing and moisturizing treatment oil": "Nourishing Body Oil",
+  "moisturizing oil controlling skin brightening waterproof and concealer": "Moisturizing Waterproof Concealer",
+  "protein soft nourishing hair mask hot dyeing fluffy spray": "Protein Hair Mask Spray",
+  "deep repair hair mask nutritional softening conditioner": "Deep Repair Hair Mask Conditioner",
+  "care bath oil": "Bath Care Oil",
+  "women's painless hair remover tools rechargeable and battery model": "Hair Removal Tool With Rechargeable And Battery Options",
+  "face 24k gold vibration pulse beauty bar facial roller": "24K Gold Vibrating Facial Roller",
+  "milk honey nourish hand wax moisturizing hydrating skin care": "Milk And Honey Hand Wax",
+  "wood comb professional healthy paddle cushion massage brush": "Wood Paddle Cushion Hair Brush",
+  "light fine grain skin care products": "Fine-Grain Skincare",
+  "the black oil 30ml sunless wheat color nutrition body lotion": "Sunless Body Lotion 30ml",
+  "leave-in conditioner elastin to repair frizz": "Elastin Leave-In Conditioner",
+  "big skin and cream body massage care creams": "Body Massage Cream",
+  "universal 40ml moisturizing nourishing body cream": "Nourishing Body Cream 40ml",
+  "exfoliating dead skin cleansing moisturizing face body scrub": "Exfoliating Face And Body Scrub",
+  "baby hair gel fluffy fixed and anti manic": "Baby Hair Styling Gel",
+  "osmanthus peony pomegranate fragrance crystal diamond series perfume": "Petal Dream Perfume",
+  "deep moisturizing anti-chapping fragrance brightening skin care oil": "Moisturizing Fragranced Skincare Oil",
+  "snail secretion moisturizer rejuvenates skin": "Snail Secretion Moisturizer",
+  "waxing kit 23 items hair removal wax with warmer beads etc": "23-Piece Waxing Kit With Warmer And Wax Beads",
+  "rose forest perfume for women lasting": "Still Evening Rose Forest Perfume",
+  "perfume kit women's long-lasting light girly heart": "Soft Midnight Perfume Kit",
+  "herbal hair care solution": "Herbal Haircare Solution",
+  "perfume women's dream bird 100ml long-lasting light floral and fruity": "Soft Spell Floral And Fruity Perfume 100ml",
+  "keratin conditioner soft scalp deep nourishing": "Nourishing Keratin Conditioner",
+  "body spray perfume for women": "Warm Silence Body Spray Perfume",
+  "body lotion liquid control moisturizing": "Moisturizing Body Lotion",
+  "rosemary coconut hair oil nourishing moisturizing fragrance care": "Rosemary And Coconut Hair Oil",
+  "4-color brightening lip balm moisturizing exfoliating skin long-lasting": "Four-Color Moisturizing Lip Balm",
+  "madagascar centella asiatica facial skin care": "Madagascar Centella Asiatica Facial Skincare",
+  "roller scraping crystal plate massager": "Crystal Roller And Scraping Plate Massager",
+  "silicone shampoo brush active meridian dry and wet massage scalp": "Silicone Scalp Massage Shampoo Brush",
+  "double roller massager double head micro-current beauty instrument": "Double-Head Microcurrent Roller Massager",
+  "hairbrush anti klit brushy haarborstel women detangler bristle nylon hair brush": "Detangling Nylon Bristle Hair Brush",
+  "hairdressing adult shampoo massager and hair comb": "Shampoo Massage Hair Comb",
+  "the ultrasonic facial cleanser peeling machine removes blackheads": "Ultrasonic Facial Cleansing Tool",
+  "beauty steamer": "Beauty Steamer",
+  "zinc alloy eye cream facial mask spoon golden massage beauty stick metal": "Zinc Alloy Eye Cream And Facial Mask Spoon",
+  "pre-makeup cream, cream": "Pre-Makeup Cream",
+  "the new three-in-one jade massage stick contains jade": "Three-In-One Jade Massage Stick",
+  "6 pcs organic bath bombs bubble mint lavender rose flavor": "Six-Piece Mint Lavender And Rose Bath Bomb Set",
+  "air pressure scraping pedicure machine foot massager home foot beauty foot machine heating pedicure instrument wheel beauty foot treasure": "Heated Foot Massage And Pedicure Machine",
+  "facial gel hyaluronic acid white gel moisturizing gel": "Hyaluronic Acid Facial Gel",
+  "purc straightening hair repair and straighten damage products brazilian shampoo": "Hair Repair Shampoo",
+  "thai bumebime handmade soap white natural bath and body engineering fruit": "Handmade Fruit Bath And Body Soap",
+  "skin rejuvenation instrument": "Skincare Beauty Instrument",
+  "new warm belt menstrual aunt stomach pain artifact": "Warm Waist Belt",
+  "lipstick shape ladies electric shaver automatic eyebrow trimming artifact": "Lipstick-Shaped Electric Eyebrow Shaver",
+  "honey moisturizing cream foot leg": "Honey Moisturizing Foot And Leg Cream",
+  "perfume spray gift box": "Quiet Confidence Perfume Spray Gift Box",
+  "garden private perfume": "The Garden Perfume",
+  "cordless automatic hair curler iron wireless curling": "Cordless Automatic Hair Curler",
+  "display hair straightener dual-purpose does not hurt hair curls": "Dual-Purpose Hair Straightener With Display",
+  "professional wireless hair straightener curler comb fast heating negative ion": "Wireless Hair Straightener And Curler Comb",
+  "mini hair straightening comb wireless charging portable multifunctional hair care not hurt hair styling comb hair straightener": "Mini Wireless Charging Hair Straightening Comb",
+  "plastic pressure point therapy neck massageador massagem relieve hand roller neck massager for neck shoulder trigger point": "Plastic Handheld Neck And Shoulder Roller Massager",
+  "self cleaning for women one-key airbag massage scalp comb anti-static hair brush": "Self-Cleaning Scalp Massage Hair Brush",
+  "eyebrow trimming knife with comb curved moon small beauty supplies gadgets": "Curved Eyebrow Trimming Knife With Comb",
+  "vitamin c face cream skin care products": "Vitamin C Face Cream",
+  "body concealer waterproof cover tattoo scar birthmark invisible": "Waterproof Body Concealer",
+  "high-gloss natural makeup diamond texture a plate of multi-purpose daily": "High-Gloss Multi-Purpose Makeup Palette",
+  "face lift up wrinkle remover gua sha stone for face massage gua sha scraper": "Facial Gua Sha Stone Scraper",
+  "vitamin c serum facial amazon": "Vitamin C Facial Serum",
+  "diamond studded small waist makeup full of goblet loose powder brush": "Embellished Loose Powder Brush",
+  "set of 13 four seasons green makeup brushes": "13-Piece Green Makeup Brush Set",
+  "multifunctional three-in-one high-power curling iron straightener hair dryer": "Three-In-One Curling Iron Straightener And Hair Dryer",
+  "hair care scalp massage comb massager meridian brush head face": "Scalp Massage Hair Comb",
+  "milk moisturizing set lotion face cream skin care products": "Milk Moisturizing Lotion And Face Cream Set",
+  "fruit bath salt scrub cream exfoliating body care": "Fruit Bath Salt Body Scrub Cream",
+  "skin and hair moisturizing nutritional care liquid": "Moisturizing Skin And Hair Care Liquid",
+  "hair essential oil improve dryness and irritability and nourish": "Nourishing Hair Essential Oil",
+  "anti skincare set": "Skincare Set",
+  "meihei skincare lotion": "Skincare Lotion",
+  "full effect skincare cream": "Skincare Cream",
+  "2 in 1 hair straightener hot comb negative ion curling tong dual-purpose": "Two-In-One Hair Straightener And Hot Comb",
+  "multifunctional hair straightener comb brush men beard straightening": "Hair And Beard Straightening Comb",
+  "hollow comb dry wet dual purpose honeycomb hairdressing": "Wet And Dry Honeycomb Hair Comb",
+  "ems thermal neck and tighten massager electric microcurrent remover": "Thermal Microcurrent Neck Massager",
+  "eyelash with comb aid metal tweezers beauty tools": "Metal Eyelash Tweezers With Comb",
+  "household whole body painless laser hair removal device": "Laser Hair Removal Device",
+  "cross-border foreign trade long-lasting light perfume female body spray": "Petal Dream Body Spray Perfume",
+  "deep moisturizing hair mask soft conditioner care": "Deep Moisturizing Hair Mask Conditioner",
+  "independent high-end large bath pearl loofah packaging foaming durable shower": "Bath Loofah",
+  "matte brightening highlight eyeshadow four colors": "Four-Color Matte Highlight Eyeshadow",
+  "kakashow very thin double claw liquid eyeliner mom eyelashes crouching silkworm": "Fine Liquid Eyeliner",
+  "starry sky eyeliner waterproof and sweatproof long lasting non smudge": "Starry Sky Waterproof Eyeliner",
+  "stereo eyebrow cream waterproof and durable non-decolorizing not smudge": "Waterproof Eyebrow Cream",
+  "three-in-one electric hair dryer multi-functional household": "Three-In-One Electric Hair Dryer",
+  "batana oil hair care essential": "Batana Hair Care Oil",
+  "neck cream 50g fading": "Neck Care Cream 50g",
+  "high pressure spray bottle cleaning silicone brush hollow comb hair care shampoo": "Hair Care Spray Bottle Silicone Brush And Hollow Comb",
+  "facial eye scraping massage jade roller": "Jade Facial And Eye Massage Roller",
+  "electric massage hair comb household": "Electric Massage Hair Comb",
+  "neck roller cream lifts dilutes lines deeply nourishes easily absorbed skin care": "Nourishing Neck Roller Cream",
+  "rose loose powder makeup brush beauty tool": "Rose Loose Powder Makeup Brush",
+  "student dormitory fill-light desktop vanity mirror with charging function": "Desktop Vanity Mirror With Fill Light And Charging Function",
+  "pink peptide serum moisturizing and hydrating facial": "Pink Peptide Facial Serum",
+  "anti-chapping mirror-like hydrating lip serum": "Hydrating Mirror-Like Lip Serum",
+};
+
+function readableSourceTitle(value: string): string {
+  const key = value.replace(SPACE_RE, " ").trim().toLowerCase();
+  return SOURCE_TITLE_LANGUAGE[key] ?? value;
 }
 
 function factualProductName(
@@ -440,13 +581,14 @@ function factualProductName(
   sanitizeClaims = false,
 ): string {
   let name = cleanCustomerText(
-    cleanText(product.title),
+    cleanText(readableSourceTitle(product.title)),
     product.vendor,
     vocabulary,
     sanitizeClaims,
   )
     .replace(TRAILING_CODE_RE, "")
-    .replace(/^beauty\s+(?=\S)/i, "")
+    .replace(/^beauty\s+(?!steamer\b)(?=\S)/i, "")
+    .replace(/\bstudent\s+dormitory\b/gi, " ")
     .replace(/\b(?:european\s+and\s+american|european|american|special[- ]interest|light\s+luxury|design\s+sense|exquisite|fashion|ornament|hot\s+sale|new\s+arrival|high[- ]quality|top\s+quality|women'?s?\s+cosmetics|new|pma)\b/gi, " ")
     .replace(/\bcolor(?=\s+zircon)\b/gi, " ")
     .replace(/\s+/g, " ")
@@ -503,11 +645,13 @@ function brandedProductCopy(
     sanitizeClaims,
   );
 
-  // Product titles are factual/search-first. Brand vocabulary belongs in
-  // editorial copy, not as a random adjective prefix on every title.
-  const sourceNoun = base.match(/\b(?:body (?:moisturizer|scrub|cream|lotion|wash|oil|butter)|hair (?:oil|mask|serum|dryer|brush)|lip (?:balm|gloss|oil|liner)|waxing kit|face cream|facial cream|skin care|necklace|bracelet|earrings?|anklet|ring|dress|bodysuit|jumpsuit|romper|blouse|shorts|pants|skirt|shampoo|conditioner|foundation|concealer|mascara|lipstick|perfume|fragrance)\b/i)?.[0];
+  // Approved fragrance mood names already use the evocative naming register.
+  // Other products pair one approved descriptor with their source identity.
+  const evocativeFragrance = classification.productType === "Fragrance" &&
+    /\b(?:petal dream|still evening|soft midnight|soft spell|warm silence|quiet confidence|the garden)\b/i.test(base);
+  const sourceNoun = base.match(/\b(?:makeup brush(?:es)?|makeup sponges?|vanity mirror|makeup mirror|lip serum|hair straightener|hair styling gel|facial roller|gua sha stone|body (?:moisturizer|scrub|cream|lotion|wash|oil|butter)|hair (?:oil|mask|serum|dryer|brush)|lip (?:balm|gloss|oil|liner)|waxing kit|face cream|facial cream|skin care|press[- ]on nails?|necklace|bracelet|earrings?|anklet|ring|dress|bodysuit|jumpsuit|romper|blouse|shorts|pants|skirt|shampoo|conditioner|foundation|concealer|mascara|lipstick|eyeliner|perfume|fragrance|serum|cream|comb|massager|tweezers?)\b/i)?.[0];
   const endNoun = classification.family === "Necklaces" ? "Necklace" : sourceNoun ?? "";
-  let title = base;
+  let title = evocativeFragrance ? base : `${titleCase(adjective)} ${base}`;
   if (title.length > 80) {
     const escaped = endNoun.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const head = endNoun
@@ -523,54 +667,33 @@ function brandedProductCopy(
   if (classification.productType === "Press-On Nails" && /press\s+on\s+nails?/i.test(title)) {
     const long = /\blong\b/i.test(title) ? "Long " : "";
     const crystal = /\bcrystal\b/i.test(title) ? "Crystal " : "";
-    title = `${long}${crystal}Press-On Nails`.trim();
+    title = `${titleCase(adjective)} ${long}${crystal}Press-On Nails`.trim();
   }
-  if (classification.productType === "Bath & Body" && /^cream\s+\d+(?:\.\d+)?\s*g$/i.test(title)) {
-    title = "Body " + title;
+  if (classification.productType === "Bath & Body" && /^cream\s+\d+(?:\.\d+)?\s*g$/i.test(base)) {
+    title = `${titleCase(adjective)} Body ${base}`;
   }
 
-  const type = cleanText(classification.productType).toLowerCase() || "piece";
-  const detailValues = usefulSeoDetailValues(highlights).slice(0, 2);
-  const detailPhrase = naturalList(detailValues);
   const style = adjective.toLowerCase();
-
-  const factualTemplates = princess
+  const hooks = princess
     ? [
-        `${titleCase(type)} with ${detailPhrase}, styled with a ${style}, expressive ${brandLabel} point of view.`,
-        `Built around ${detailPhrase}, this ${type} keeps the ${brandLabel} presentation ${style}, fresh, and clear.`,
-        `${detailPhrase} define this ${type}, finished with ${style} ${brandLabel} styling and straightforward details.`,
-        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} take on ${type}, grounded in ${detailPhrase}.`,
+        `Keep your ${brandLabel} edit ${style}.`,
+        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} touch for your ${brandLabel} edit.`,
+        `Make it ${style} with ${brandLabel}.`,
+        `Bring a ${style} touch to your ${brandLabel} edit.`,
       ]
     : [
-        `${titleCase(type)} with ${detailPhrase}, presented through a ${style} ${brandLabel} point of view.`,
-        `Built around ${detailPhrase}, this ${type} keeps the ${brandLabel} presentation ${style}, polished, and clear.`,
-        `${detailPhrase} define this ${type}, with ${style} ${brandLabel} styling and straightforward details.`,
-        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} take on ${type}, grounded in ${detailPhrase}.`,
+        `Make room for ${articleFor(style)} ${style} detail from ${brandLabel}.`,
+        `Keep your ${brandLabel} edit ${style}.`,
+        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} addition to your ${brandLabel} edit.`,
+        `Your ${brandLabel} edit, with ${articleFor(style)} ${style} touch.`,
       ];
-
-  const fallbackTemplates = princess
-    ? [
-        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} ${type} with clear product details and an expressive point of view.`,
-        `This ${type} brings a ${style} ${brandLabel} perspective while keeping the product details clear.`,
-        `${title} is presented with ${style} ${brandLabel} styling and straightforward product information.`,
-      ]
-    : [
-        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} ${brandLabel} ${type} with clear product details and a polished point of view.`,
-        `This ${type} brings a ${style} ${brandLabel} perspective while keeping the product details clear.`,
-        `${title} is presented with ${style} ${brandLabel} styling and straightforward product information.`,
-      ];
-
-  const pool = detailPhrase ? factualTemplates : fallbackTemplates;
-  let shortDescription = cleanText(pool[(seed >>> 8) % pool.length]);
-  if (shortDescription.length > 180) {
-    shortDescription = clipTitle(
-      detailPhrase
-        ? `${titleCase(type)} with ${detailPhrase}, presented with ${style} ${brandLabel} styling.`
-        : `${title} with ${style} ${brandLabel} styling.`,
-      179,
-    ).replace(/[,:;\-]+$/, "").trim();
-    if (!/[.!?]$/.test(shortDescription)) shortDescription += ".";
-  }
+  const hook = hooks[(seed >>> 8) % hooks.length];
+  const factualSentence = introFacts(highlights)
+    .map((fact) => `The ${title} ${fact}.`)
+    .find((sentence) => `${hook} ${sentence}`.length <= 180);
+  // Keep full sentences and the actual product name. Longer source facts stay
+  // in Product Details rather than becoming a clipped or coded opening.
+  const shortDescription = cleanText(`${hook} ${factualSentence ?? `Meet the ${title}.`}`);
 
   return { title, shortDescription };
 }

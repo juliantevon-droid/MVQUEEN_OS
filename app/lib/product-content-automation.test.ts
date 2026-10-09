@@ -44,6 +44,7 @@ const classification = classifyProduct(
 const content = buildAutomatedProductContent(product, classification);
 
 assert.match(content.title, /Natural Pink Thulite Pendant Necklace$/);
+assert.ok(BRAND_VOCABULARY.profiles.mvqueen.adjectives.includes(content.title.split(" ")[0].toLowerCase()));
 assert.ok(BRAND_VOCABULARY.profiles.mvqueen.adjectives.some((word) => content.shortDescription.toLowerCase().includes(word)));
 assert.equal(content.focusKeyword, "pendant necklace");
 assert.ok(content.shortDescription.toLowerCase().includes("pink thulite"));
@@ -126,6 +127,7 @@ const activewearContent = buildAutomatedProductContent(
   "Miss.Princess",
 );
 assert.ok(activewearContent.seoTitle.endsWith("| Miss.Princess"));
+assert.ok(BRAND_VOCABULARY.profiles["miss-princess"].adjectives.includes(activewearContent.title.split(" ")[0].toLowerCase()));
 assert.ok(activewearContent.seoTitle.length <= 60);
 assert.ok(!activewearContent.seoTitle.includes("…"));
 assert.ok(activewearContent.metaDescription.includes("at Miss.Princess."));
@@ -692,7 +694,7 @@ const pressOnClass = classifyProduct(
   pressOnProduct.productType ?? "",
 );
 const pressOnContent = buildAutomatedProductContent(pressOnProduct, pressOnClass, "MVQueen");
-assert.equal(pressOnContent.title, "Long Crystal Press-On Nails");
+assert.match(pressOnContent.title, / Long Crystal Press-On Nails$/);
 assert.ok(!/ggddsha|\bnew\b|\bpma\b|withdiamonds/i.test(pressOnContent.title));
 
 const creamBrandProduct: ProductSnapshot = {
@@ -710,7 +712,7 @@ const creamBrandClass = classifyProduct(
   creamBrandProduct.productType ?? "",
 );
 const creamBrandContent = buildAutomatedProductContent(creamBrandProduct, creamBrandClass, "MVQueen");
-assert.equal(creamBrandContent.title, "Body Cream 40g");
+assert.match(creamBrandContent.title, / Body Cream 40g$/);
 
 assert.equal(
   classifyProduct("Baby Hair Gel Fluffy Fixed And Anti Manic", "", "").productType,
@@ -914,7 +916,7 @@ try {
   assert.ok(revisedVocabulary.profiles.mvqueen.adjectives.includes("considered"));
   const generated = Array.from({ length: 100 }, (_, index) => buildAutomatedProductContent({ ...supplierNecklace, id: "gid://shopify/Product/test-vocabulary-" + index }, necklaceClassification, "MVQueen", revisedVocabulary));
   assert.ok(generated.some((item) => item.shortDescription.toLowerCase().includes("considered")));
-  assert.ok(generated.every((item) => !item.title.startsWith("Considered ")));
+  assert.ok(generated.some((item) => item.title.startsWith("Considered ")));
   const forbiddenFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[2]);
   const forbiddenSource = readFileSync(forbiddenFile, "utf8");
   writeFileSync(forbiddenFile, forbiddenSource.replace("## Tier 2", "| Considered | Editorial review |\n\n## Tier 2"));
@@ -927,4 +929,92 @@ try {
   rmSync(vocabularyRoot, { recursive: true, force: true });
 }
 
+// Real October 5 imports: a clear tool noun must resolve the cosmetics overlap.
+for (const [title, existingType] of [
+  ["Student Dormitory Fill-light Desktop Vanity Mirror With Charging Function", "Needs Review"],
+  ["Rose Loose Powder Makeup Brush Beauty Tool", "Needs Review"],
+  ["Portable Foldable Led Makeup Mirror With Built-In Lights", "Makeup"],
+  ["Foundation Brush", "Makeup"],
+  ["Makeup Brushes", ""],
+  ["Makeup Sponges", ""],
+] as const) {
+  const tool = classifyProduct(title, "", existingType);
+  assert.equal(tool.productType, "Beauty Tool", title);
+  assert.equal(tool.route, "beauty-tools", title);
+  assert.equal(tool.confidence, "high", title);
+  assert.equal(productTypeForWrite(existingType, tool), "Beauty Tool", title);
+}
+assert.equal(classifyProduct("Anti-Chapping Mirror-Like Hydrating Lip Serum", "", "Skincare").productType, "Skincare");
+assert.equal(classifyProduct("Mirror Finish Ring", "", "Ring").productType, "Ring");
+assert.equal(classifyProduct("Wood Paddle Hair Brush", "", "").productType, "Hair Tool");
+assert.equal(classifyProduct("Liquid Foundation Makeup", "", "").productType, "Makeup");
+
+const liveLipSerum: ProductSnapshot = {
+  id: "gid://shopify/Product/9100794560710",
+  title: "Anti-Chapping Mirror-Like Hydrating Lip Serum",
+  productType: "Skincare",
+  descriptionHtml: "<ul><li>Capacity: 7.5 ml</li><li>Color: Color01 / Color02 / Color03 / Color04 / Color05 / Color06</li></ul>",
+};
+const liveBatana: ProductSnapshot = {
+  id: "gid://shopify/Product/9100793741510",
+  title: "Batana Oil Hair Care Essential",
+  productType: "Hair Treatment",
+  descriptionHtml: "<ul><li>Net content: Batana essential oil 118ml, Batana essential oil 60ml</li></ul>",
+};
+for (const fixture of [liveLipSerum, liveBatana]) {
+  const before = structuredClone(fixture);
+  const route = classifyProduct(fixture.title, fixture.descriptionHtml ?? "", fixture.productType ?? "");
+  const copy = buildAutomatedProductContent(fixture, route);
+  assert.ok(copy.shortDescription.includes(copy.title));
+  assert.ok(!/define this|built around|point of view|presentation|straightforward details/i.test(copy.shortDescription));
+  assert.ok(copy.shortDescription.length <= 180);
+  assert.ok(!copy.shortDescription.includes("…"));
+  assert.deepEqual(fixture, before);
+  const repeated = buildAutomatedProductContent({ ...fixture, title: copy.title, descriptionHtml: copy.descriptionHtml }, route);
+  assert.equal(repeated.shortDescription, copy.shortDescription);
+}
+const lipSerumCopy = buildAutomatedProductContent(liveLipSerum, classifyProduct(liveLipSerum.title, "", "Skincare"));
+assert.match(lipSerumCopy.shortDescription, /7\.5 ml/);
+assert.ok(!/Color0[1-6]/.test(lipSerumCopy.shortDescription));
+assert.ok(lipSerumCopy.descriptionHtml.includes("Color06"));
+const batanaCopy = buildAutomatedProductContent(liveBatana, classifyProduct(liveBatana.title, "", "Hair Treatment"));
+assert.match(batanaCopy.shortDescription, /118 ml and 60 ml/);
+assert.ok(batanaCopy.descriptionHtml.includes("Batana essential oil 118ml, Batana essential oil 60ml"));
+const unspecifiedCapacity = buildAutomatedProductContent({ ...liveLipSerum, descriptionHtml: "<ul><li>Capacity: 30</li></ul>" }, classifyProduct(liveLipSerum.title, "", "Skincare"));
+assert.ok(!/30\s*(?:ml|g|oz)/i.test(unspecifiedCapacity.descriptionHtml));
+const foldingMirrorCopy = buildAutomatedProductContent({
+  id: "gid://shopify/Product/9100794429638",
+  title: "Portable Foldable Led Makeup Mirror With Built-In Lights",
+  productType: "Makeup",
+  descriptionHtml: "<ul><li>Colors: White - 14.5 x 19.5 cm - Tricolor illumination; Black - 14.5 x 19.5 cm - Tricolor illumination; Pink - 14.5 x 19.5 cm - Tricolor illumination</li><li>Color: White / Black / Pink</li></ul>",
+}, classifyProduct("Portable Foldable Led Makeup Mirror With Built-In Lights", "", "Makeup"));
+assert.match(foldingMirrorCopy.shortDescription, /White, Black, and Pink/);
+assert.ok(foldingMirrorCopy.title.includes("LED Makeup Mirror"));
+
+const longBrushSource: ProductSnapshot = {
+  id: "gid://shopify/Product/brand-title-long-brush",
+  title: "Portable Travel Professional Cosmetic Makeup Brush Loose Powder Foundation Blush Eye Shadow Beauty Tool Makeup",
+  productType: "Beauty Tool",
+};
+const brushRoute = classifyProduct(longBrushSource.title, "", "Beauty Tool");
+const brandedBrush = buildAutomatedProductContent(longBrushSource, brushRoute);
+assert.ok(brandedBrush.title.length <= 80);
+assert.match(brandedBrush.title, /Makeup Brush$/);
+assert.equal(buildAutomatedProductContent({ ...longBrushSource, title: brandedBrush.title, descriptionHtml: brandedBrush.descriptionHtml }, brushRoute).title, brandedBrush.title);
+
+const repeatedPrefix = buildAutomatedProductContent({ ...product, title: "Refined Polished " + content.title }, classification);
+assert.equal(repeatedPrefix.title, content.title);
+
+const fragranceSource: ProductSnapshot = { id: "gid://shopify/Product/9100065996998", title: "Osmanthus Peony Pomegranate Fragrance Crystal Diamond Series Perfume", productType: "Fragrance" };
+const fragranceRoute = classifyProduct(fragranceSource.title, "", "Fragrance");
+const fragranceCopy = buildAutomatedProductContent(fragranceSource, fragranceRoute, "Miss.Princess");
+assert.equal(fragranceCopy.title, "Petal Dream Perfume");
+assert.equal(buildAutomatedProductContent({ ...fragranceSource, title: fragranceCopy.title }, fragranceRoute, "Miss.Princess").title, fragranceCopy.title);
+
+const supplierWordSource: ProductSnapshot = { id: "gid://shopify/Product/title-source-repair", title: "Vitamin C Serum Facial Amazon", productType: "Skincare" };
+const supplierWordCopy = buildAutomatedProductContent(supplierWordSource, classifyProduct(supplierWordSource.title, "", "Skincare"));
+assert.match(supplierWordCopy.title, /Vitamin C Facial Serum$/);
+assert.ok(!supplierWordCopy.title.includes("Amazon"));
+
 console.log("product content automation tests passed");
+

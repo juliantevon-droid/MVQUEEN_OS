@@ -55,4 +55,30 @@ assert.ok(unresolvedDecision.tags.includes("mvq:collection:fashion"));
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:activewear"));
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:activewear-sets"));
 
+for (const { title, colors } of [
+  { title: "Student Dormitory Fill-light Desktop Vanity Mirror With Charging Function", colors: ["Natural White", "Pink"] },
+  { title: "Rose Loose Powder Makeup Brush Beauty Tool", colors: ["Rose Black Purple", "Rose Gradually Varied Pink", "Rose Red", "Rose Pink", "Rose Red Gradient", "Pink"] },
+]) {
+  const decision = buildEnterpriseProductDecision({
+    id: "gid://shopify/Product/review-tool",
+    title,
+    productType: "Needs Review",
+    options: [{ name: "Color", values: colors }],
+    tags: ["mvq:brand:miss-princess", "mvq:needs-review"],
+    variants: { nodes: [{ id: "gid://shopify/ProductVariant/review-tool", price: "18.16" }] },
+  }, {
+    // Test-only assumptions; product cost is deliberately absent.
+    config: { paymentRate: 0.029, paymentFixed: 0.3, returnReserveRate: 0.03, targetContributionMarginRate: 0.3, targetCac: 5, inboundShippingDefault: 0, currency: "USD" },
+    missing: [],
+  });
+  assert.equal(decision.classification.productType, "Beauty Tool", title);
+  assert.equal(decision.brandRoute.brand, "miss-princess", title);
+  assert.ok(!decision.tags.includes("mvq:needs-review"), title);
+  assert.ok(decision.tags.includes("mvq:collection:beauty-tools"), title);
+  // Resolving classification does not supply a cost or advertising clearance.
+  assert.ok(decision.tags.includes("mvq:pricing:needs_cost"), title);
+  assert.ok(decision.tags.includes("mvq:ads:not_ready"), title);
+}
+
 console.log("product decision routing tests passed");
+

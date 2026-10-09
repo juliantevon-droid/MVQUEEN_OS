@@ -111,6 +111,9 @@ const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
 ];
 
 const TITLE_FIRST_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
+  // Specific beauty tools take precedence over generic cosmetics words.
+  [/\b(?:vanity|makeup|cosmetic)\s+mirrors?\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
+  [/\b(?:makeup\s+(?:brush(?:es)?|sponges?)|(?:loose\s+powder|foundation|concealer|blush|eyeshadow)\s+brush(?:es)?)\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
   [/\b(?:baby\s+hair\s+gel|hair\s+styling\s+gel|edge\s+control)\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Hair Styling",route:"hair-styling",productType:"Hair Styling"}],
   [/\bhair\s+essential\s+oil\b/i, {department:"Beauty",family:"Hair Care",subcollection:"Hair Treatments",route:"hair-treatments",productType:"Hair Treatment"}],
   [/\btoner\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
