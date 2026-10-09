@@ -21,6 +21,8 @@ COPY 15_Scripts_And_Code/mvqueen_engine/brand_banks.py ./15_Scripts_And_Code/mvq
 ARG DATABASE_URL=postgresql://mvqueen:build-only@127.0.0.1:5432/mvqueen_build
 ENV DATABASE_URL=$DATABASE_URL
 ENV MVQ_DATABASE_PROFILE=production
+# Check the worker import graph without executing the production loop.
+RUN ./node_modules/.bin/esbuild scripts/product-worker.ts --bundle --platform=node --format=esm --packages=external --outfile=/tmp/mvqueen-product-worker-check.mjs
 RUN npm run prisma:generate:production
 
 FROM base AS runtime
