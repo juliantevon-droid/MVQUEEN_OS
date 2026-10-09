@@ -219,7 +219,7 @@ def main() -> int:
     logo_contracts = [
         ("configured", configured_logo, [
             "image_url: width: 956",
-            "widths: '240,320,360,400,480,560,640,800,956'",
+            "widths: '240,320,360,364,390,400,470,480,560,640,728,780,800,940,956'",
             "sizes: mvqueen_logo_sizes",
             "loading: 'eager'",
             "fetchpriority: mvqueen_logo_fetchpriority",
@@ -232,7 +232,7 @@ def main() -> int:
             'loading="eager"',
             'fetchpriority="{{ mvqueen_logo_fetchpriority }}"',
         ] + [f"&amp;width={width} {width}w"
-             for width in (240, 320, 360, 400, 480, 560, 640, 800, 956)]),
+             for width in (240, 320, 360, 364, 390, 400, 470, 480, 560, 640, 728, 780, 800, 940, 956)]),
     ]
     for label, match, tokens in logo_contracts:
         if match is None:
