@@ -542,7 +542,10 @@ export async function processProductJob(
         let after: string | null = null;
         for (let page = 0; page < 20; page += 1) {
           const response: Response = await admin.graphql(PRODUCT_NAME_LOOKUP, {
-            variables: { query: `title:${JSON.stringify(identity)}`, after },
+            // Quoted free text matches a phrase within a title. Shopify's
+            // title:"..." filter matches the full field and would miss the
+            // same naming identity paired with a different product noun.
+            variables: { query: JSON.stringify(identity), after },
           });
           const body: {
             errors?: unknown[];
