@@ -40,6 +40,77 @@ const checks = {
   seo: 'seo',
 };
 
+// Preview is deliberately blocked from indexing, and Shopify-controlled Shop Pay
+// and Web Pixel requests can fail on its visitor-preview hostname. Only the
+// precisely observed preview-only conditions below are exempted. Raw Lighthouse
+// scores, all other required audits, and the live release gate stay unchanged.
+const isWorkingPreview = (report) => {
+  try {
+    const url = new URL(report.finalUrl);
+    return url.protocol === 'https:' &&
+      /^[a-z0-9]+-76426182854\.shopifypreview\.com$/.test(url.hostname);
+  } catch {
+    return false;
+  }
+};
+
+const isShopifyPreviewAsset = (value, report, pathPredicate) => {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' &&
+      url.hostname === new URL(report.finalUrl).hostname &&
+      pathPredicate(url.pathname);
+  } catch {
+    return false;
+  }
+};
+
+const isPixelAsset = (path) =>
+  /^\/web-pixels@[^/]+\/app\/web-pixel-[^/]+\/pixel\.modern\.js$/.test(path);
+
+const isKnownPreviewConsoleIssue = (item, report) => {
+  const description = item.description ?? '';
+  if (item.source === 'network' &&
+      description === 'Failed to load resource: the server responded with a status of 404 ()') {
+    return isShopifyPreviewAsset(
+      item.sourceLocation?.url, report,
+      (path) => isPixelAsset(path) || path === '/shopify_pay/accelerated_checkout'
+    );
+  }
+  if (item.source !== 'security') return false;
+  if (description.trim() ===
+      'Framing \'https://shop.app/\' violates the following Content Security Policy directive: ' +
+      '"frame-ancestors https://tsucu0-1i.myshopify.com https://tsucu0-1i.account.myshopify.com https://shopify.com". The request has been blocked.') {
+    return true;
+  }
+  const mime = description.match(
+    /^Refused to execute script from '([^']+)' because its MIME type \('text\/html'\) is not executable, and strict MIME type checking is enabled\.$/
+  );
+  return Boolean(mime &&
+    isShopifyPreviewAsset(mime[1], report, isPixelAsset));
+};
+
+const hasOnlyKnownPreviewConsoleIssues = (report) => {
+  if (!isWorkingPreview(report)) return false;
+  const audit = report.audits['errors-in-console'];
+  if (audit?.score === 1) return true;
+  const items = audit?.details?.items;
+  return audit?.score === 0 && Array.isArray(items) &&
+    items.length > 0 && items.every((item) => isKnownPreviewConsoleIssue(item, report));
+};
+
+const hasOnlyPreviewRobotsSeoBlocker = (report) => {
+  if (!isWorkingPreview(report) || report.audits['robots-txt']?.score !== 1) return false;
+  const failures = report.categories.seo.auditRefs
+    .filter((ref) => ref.weight > 0 && typeof report.audits[ref.id]?.score === 'number' &&
+      report.audits[ref.id].score < 1);
+  if (failures.length !== 1 || failures[0].id !== 'is-crawlable') return false;
+  const blocked = report.audits['is-crawlable']?.details?.items;
+  return Array.isArray(blocked) && blocked.some((item) =>
+    isShopifyPreviewAsset(item.source?.url, report, (path) => path === '/robots.txt')
+  );
+};
+
 let failed = false;
 const categoryMedians = {};
 for (const [budgetKey, categoryKey] of Object.entries(checks)) {
@@ -56,7 +127,18 @@ for (const [budgetKey, categoryKey] of Object.entries(checks)) {
       `::warning::${budgetKey} median is below the MVQUEEN enterprise target; target is retained and not downgraded.`
     );
   }
-  if (score < gate[budgetKey]) failed = true;
+  if (score < gate[budgetKey]) {
+    if (mode === 'preview' && budgetKey === 'seo' &&
+        reports.every(hasOnlyPreviewRobotsSeoBlocker)) {
+      console.log(
+        '::warning::Preview SEO is not launch-certifiable: the only failed SEO audit ' +
+        'is the expected Shopify visitor-preview robots.txt indexing block. ' +
+        'The raw SEO score is retained; the live release gate still enforces its SEO floor.'
+      );
+    } else {
+      failed = true;
+    }
+  }
 }
 
 for (const [auditId, minimum] of Object.entries(gate.requiredAuditScores ?? {})) {
@@ -68,7 +150,19 @@ for (const [auditId, minimum] of Object.entries(gate.requiredAuditScores ?? {}))
   console.log(
     `requiredAudit ${auditId}: runs=[${values.join(', ')}] median=${score} (minimum ${minimum})`
   );
-  if (score < minimum) failed = true;
+  if (score < minimum) {
+    if (mode === 'preview' && auditId === 'errors-in-console' &&
+        reports.every(hasOnlyKnownPreviewConsoleIssues)) {
+      console.log(
+        '::warning::Preview console contains only verified Shopify-hosted pixel, ' +
+        'accelerated-checkout, and Shop Pay frame failures on the visitor-preview host. ' +
+        'The raw audit score remains 0; any unexpected console error still fails. ' +
+        'The live release gate has no exception.'
+      );
+    } else {
+      failed = true;
+    }
+  }
 }
 
 const representative = [...reports]
