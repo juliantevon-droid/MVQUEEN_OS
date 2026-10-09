@@ -1,3 +1,5 @@
+import { curatedNameByTitle } from "./curated-product-names";
+
 export type ProductSnapshot = {
   id: string;
   title: string;
@@ -171,6 +173,9 @@ const ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
 ];
 
 export function classifyProduct(title: string, description = "", productType = ""): Classification {
+  // An authored name expresses a mood. Route using its unchanged source
+  // identity so an editorial rename cannot release a review or change category.
+  title = curatedNameByTitle(title)?.sourceTitle ?? title;
   const review = (): Classification => ({
     department: "Unclassified",
     family: "Unclassified",
@@ -419,6 +424,7 @@ export function classifyBrandWorld(
     "title" | "tags" | "descriptionHtml" | "options" | "variants"
   >,
 ): BrandRouting {
+  const identityTitle = curatedNameByTitle(product.title ?? "")?.sourceTitle ?? product.title ?? "";
   const variantColors = (product.variants?.nodes ?? [])
     .map(
       (variant) =>
@@ -428,7 +434,7 @@ export function classifyBrandWorld(
     .filter(Boolean);
   const signals = normalizedColorSignals(
     product.tags ?? [],
-    product.title ?? "",
+    identityTitle,
     [
       ...(product.options ?? []),
       ...(variantColors.length
@@ -444,7 +450,7 @@ export function classifyBrandWorld(
     )
     .filter(Boolean);
   const text = [
-    product.title ?? "",
+    identityTitle,
     product.descriptionHtml?.replace(/<[^>]+>/g, " ") ?? "",
     ...(product.tags ?? []),
     ...(product.options ?? []).flatMap((option) => option.values ?? []),

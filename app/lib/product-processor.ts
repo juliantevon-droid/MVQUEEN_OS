@@ -14,6 +14,7 @@ import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
   productClaimReviewReasons,
+  resolveUniqueAutomatedProductContent,
   shouldPublishAutomatedDescription,
 } from "./product-content-automation";
 import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automated-content-surfaces";
@@ -25,7 +26,16 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v36-brand-vocabulary-titles-beauty-tools-" + BRAND_VOCABULARY.version;
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v37-distinct-curated-names-" + BRAND_VOCABULARY.version;
+
+const PRODUCT_NAME_LOOKUP = `#graphql
+  query ProductNameLookup($query: String!, $after: String) {
+    products(first: 50, query: $query, after: $after) {
+      nodes { id title }
+      pageInfo { hasNextPage endCursor }
+    }
+  }
+`;
 
 const TAXONOMY_CATEGORY_BY_ROUTE: Record<string, string> = {
   "activewear-sets": "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -522,10 +532,30 @@ export async function processProductJob(
     // Claim-risk products still receive sanitized customer-facing copy while
     // the original source claims remain flagged internally for review. Only
     // genuinely unclassified products block automatic editorial generation.
-    const automatedContent =
+    let automatedContent =
       c.confidence === "review" || !brandRoute.brand
         ? null
         : buildAutomatedProductContent(product, c, brandLabel);
+    if (automatedContent && EDITORIAL_PUBLISH_ENABLED && TITLE_PUBLISH_ENABLED) {
+      automatedContent = await resolveUniqueAutomatedProductContent(product, c, brandLabel, async (identity) => {
+        const matches: { id: string; title: string }[] = [];
+        let after: string | null = null;
+        for (let page = 0; page < 20; page += 1) {
+          const response = await admin.graphql(PRODUCT_NAME_LOOKUP, {
+            variables: { query: `title:${JSON.stringify(identity)}`, after },
+          });
+          const body = await response.json();
+          if (body.errors?.length) throw new Error("Shopify product-name lookup failed");
+          const connection = body.data?.products;
+          if (!connection?.nodes || !connection.pageInfo) throw new Error("Incomplete Shopify product-name lookup");
+          matches.push(...connection.nodes);
+          if (!connection.pageInfo.hasNextPage) return matches;
+          after = connection.pageInfo.endCursor;
+          if (!after) throw new Error("Missing Shopify product-name lookup cursor");
+        }
+        throw new Error("Product-name lookup requires a narrower editorial identity");
+      });
+    }
     const attributeEnrichment = buildCatalogAttributeEnrichment(product, c);
     const attributeMetafields = buildCatalogAttributeMetafields(
       attributeEnrichment,

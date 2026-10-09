@@ -1,5 +1,7 @@
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
 import { BRAND_VOCABULARY, removeForbiddenLanguage, type BrandVocabulary } from "./brand-vocabulary.server";
+import { buildProductName, stripNamingDecoration, usesNamingIdentity } from "./product-naming";
+import type { NamingRegister } from "./curated-product-names";
 
 export type AutomatedProductContent = {
   title: string;
@@ -12,6 +14,12 @@ export type AutomatedProductContent = {
   seoTitle: string;
   metaDescription: string;
   seoKeywords: string[];
+};
+
+export type NamedAutomatedProductContent = AutomatedProductContent & {
+  namingIdentity: string;
+  namingRegister: NamingRegister;
+  curatedName: boolean;
 };
 
 const SPACE_RE = /\s+/g;
@@ -581,7 +589,7 @@ function factualProductName(
   sanitizeClaims = false,
 ): string {
   let name = cleanCustomerText(
-    cleanText(readableSourceTitle(product.title)),
+    cleanText(readableSourceTitle(stripNamingDecoration(product.title, vocabulary))),
     product.vendor,
     vocabulary,
     sanitizeClaims,
@@ -622,6 +630,14 @@ function factualProductName(
     .replace(/\b(?:and|or|for|with|of|to|in|the|a|an)\s*$/i, "")
     .replace(SPACE_RE, " ")
     .trim();
+  if (classification.productType === "Press-On Nails" && /press\s+on\s+nails?/i.test(name)) {
+    const long = /\blong\b/i.test(name) ? "Long " : "";
+    const crystal = /\bcrystal\b/i.test(name) ? "Crystal " : "";
+    name = `${long}${crystal}Press-On Nails`;
+  }
+  if (classification.productType === "Bath & Body" && /^cream\s+\d+(?:\.\d+)?\s*g$/i.test(name)) {
+    name = `Body ${name}`;
+  }
   return titleCase(name || classification.productType);
 }
 
@@ -632,7 +648,8 @@ function brandedProductCopy(
   brandLabel: string,
   vocabulary: BrandVocabulary,
   sanitizeClaims = false,
-): { title: string; shortDescription: string } {
+  namingAttempt = 0,
+): { title: string; shortDescription: string; namingIdentity: string; namingRegister: NamingRegister; curatedName: boolean } {
   const princess = /miss\.?\s*princess/i.test(brandLabel);
   const profile = vocabulary.profiles[princess ? "miss-princess" : "mvqueen"];
   const seed = productSeed(product);
@@ -645,32 +662,11 @@ function brandedProductCopy(
     sanitizeClaims,
   );
 
-  // Approved fragrance mood names already use the evocative naming register.
-  // Other products pair one approved descriptor with their source identity.
-  const evocativeFragrance = classification.productType === "Fragrance" &&
-    /\b(?:petal dream|still evening|soft midnight|soft spell|warm silence|quiet confidence|the garden)\b/i.test(base);
-  const sourceNoun = base.match(/\b(?:makeup brush(?:es)?|makeup sponges?|vanity mirror|makeup mirror|lip serum|hair straightener|hair styling gel|facial roller|gua sha stone|body (?:moisturizer|scrub|cream|lotion|wash|oil|butter)|hair (?:oil|mask|serum|dryer|brush)|lip (?:balm|gloss|oil|liner)|waxing kit|face cream|facial cream|skin care|press[- ]on nails?|necklace|bracelet|earrings?|anklet|ring|dress|bodysuit|jumpsuit|romper|blouse|shorts|pants|skirt|shampoo|conditioner|foundation|concealer|mascara|lipstick|eyeliner|perfume|fragrance|serum|cream|comb|massager|tweezers?)\b/i)?.[0];
-  const endNoun = classification.family === "Necklaces" ? "Necklace" : sourceNoun ?? "";
-  let title = evocativeFragrance ? base : `${titleCase(adjective)} ${base}`;
-  if (title.length > 80) {
-    const escaped = endNoun.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const head = endNoun
-      ? title.replace(new RegExp(`\\b${escaped}\\b`, "gi"), " ").replace(SPACE_RE, " ").trim()
-      : title;
-    const ending = endNoun ? " " + endNoun : "";
-    title = clipTitle(head, 80 - ending.length) + ending;
-  }
-  title = title
-    .replace(/\b(?:and|or|for|with|of|to|in|the|a|an)\s*$/i, "")
-    .replace(SPACE_RE, " ")
-    .trim();
-  if (classification.productType === "Press-On Nails" && /press\s+on\s+nails?/i.test(title)) {
-    const long = /\blong\b/i.test(title) ? "Long " : "";
-    const crystal = /\bcrystal\b/i.test(title) ? "Crystal " : "";
-    title = `${titleCase(adjective)} ${long}${crystal}Press-On Nails`.trim();
-  }
-  if (classification.productType === "Bath & Body" && /^cream\s+\d+(?:\.\d+)?\s*g$/i.test(base)) {
-    title = `${titleCase(adjective)} Body ${base}`;
+  const naming = buildProductName(product, classification, base,
+    princess ? "miss-princess" : "mvqueen", vocabulary, namingAttempt);
+  const title = naming.title;
+  if (cleanCustomerText(title, product.vendor, vocabulary, sanitizeClaims) !== title) {
+    throw new Error(`Product name requires a current language review: ${product.id}`);
   }
 
   const style = adjective.toLowerCase();
@@ -687,15 +683,16 @@ function brandedProductCopy(
         `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} addition to your ${brandLabel} edit.`,
         `Your ${brandLabel} edit, with ${articleFor(style)} ${style} touch.`,
       ];
-  const hook = hooks[(seed >>> 8) % hooks.length];
+  const hook = naming.opening ?? hooks[(seed >>> 8) % hooks.length];
+  const namedTitle = /^the\s/i.test(title) ? title : `The ${title}`;
   const factualSentence = introFacts(highlights)
-    .map((fact) => `The ${title} ${fact}.`)
+    .map((fact) => `${namedTitle} ${fact}.`)
     .find((sentence) => `${hook} ${sentence}`.length <= 180);
   // Keep full sentences and the actual product name. Longer source facts stay
   // in Product Details rather than becoming a clipped or coded opening.
-  const shortDescription = cleanText(`${hook} ${factualSentence ?? `Meet the ${title}.`}`);
+  const shortDescription = cleanText(`${hook} ${factualSentence ?? `Meet ${namedTitle}.`}`);
 
-  return { title, shortDescription };
+  return { title, shortDescription, namingIdentity: naming.identity, namingRegister: naming.register, curatedName: naming.curated };
 }
 
 function escapeHtml(value: string): string {
@@ -805,12 +802,36 @@ function composeKeywordParts(parts: string[]): string {
     .trim();
 }
 
+export async function resolveUniqueAutomatedProductContent(
+  product: ProductSnapshot,
+  classification: Classification,
+  brandLabel: string,
+  lookup: (identity: string) => Promise<readonly { id: string; title: string }[]>,
+  vocabulary = BRAND_VOCABULARY,
+): Promise<NamedAutomatedProductContent> {
+  const attempted = new Set<string>();
+  for (let attempt = 0; attempt < 12; attempt += 1) {
+    const content = buildAutomatedProductContent(product, classification, brandLabel, vocabulary, attempt);
+    if (attempted.has(content.title)) continue;
+    attempted.add(content.title);
+    const existing = await lookup(content.namingIdentity);
+    if (!existing.some((other) => other.id !== product.id && usesNamingIdentity(other.title, content.namingIdentity))) {
+      return content;
+    }
+    // An authored product name requires a new editorial decision on collision;
+    // do not turn it into a numbered name or overwrite another product's name.
+    if (content.curatedName) break;
+  }
+  throw new Error(`Distinct product name requires editorial review: ${product.id}`);
+}
+
 export function buildAutomatedProductContent(
   product: ProductSnapshot,
   classification: Classification,
   brandLabel = "MVQueen",
   vocabulary = BRAND_VOCABULARY,
-): AutomatedProductContent {
+  namingAttempt = 0,
+): NamedAutomatedProductContent {
   const sanitizeClaims = productClaimReviewReasons(product).length > 0;
   const sourceHighlights = uniqueHighlights([
     ...extractHighlights(product.descriptionHtml),
@@ -836,13 +857,14 @@ export function buildAutomatedProductContent(
     classification.productType,
     highlights,
   );
-  const { title, shortDescription } = brandedProductCopy(
+  const { title, shortDescription, namingIdentity, namingRegister, curatedName } = brandedProductCopy(
     product,
     classification,
     highlights,
     brandLabel,
     vocabulary,
     sanitizeClaims,
+    namingAttempt,
   );
 
   const focusKeyword = cleanText(classification.productType).toLowerCase();
@@ -897,6 +919,9 @@ export function buildAutomatedProductContent(
 
   return {
     title,
+    namingIdentity,
+    namingRegister,
+    curatedName,
     shortDescription,
     descriptionHtml,
     highlights,

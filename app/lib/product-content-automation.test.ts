@@ -3,11 +3,14 @@ import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSy
 import { dirname, join } from "node:path";
 import { tmpdir } from "node:os";
 import { BRAND_VOCABULARY, BRAND_VOCABULARY_SOURCES, loadBrandVocabulary } from "./brand-vocabulary.server";
+import { CURATED_PRODUCT_NAMES, matchingCuratedName, normalizeProductName } from "./curated-product-names";
+import { stripNamingDecoration } from "./product-naming";
 import {
   buildAutomatedProductContent,
   needsMediaAltRepair,
   productClaimReviewReasons,
   removeHighRiskClaimLanguage,
+  resolveUniqueAutomatedProductContent,
   shouldPublishAutomatedDescription,
 } from "./product-content-automation";
 import {
@@ -43,8 +46,8 @@ const classification = classifyProduct(
 );
 const content = buildAutomatedProductContent(product, classification);
 
-assert.match(content.title, /Natural Pink Thulite Pendant Necklace$/);
-assert.ok(BRAND_VOCABULARY.profiles.mvqueen.adjectives.includes(content.title.split(" ")[0].toLowerCase()));
+assert.match(content.title, /Natural Pink Thulite Pendant Necklace\b/);
+assert.ok(["evocative", "descriptive-poetic", "identity-led"].includes(content.namingRegister));
 assert.ok(BRAND_VOCABULARY.profiles.mvqueen.adjectives.some((word) => content.shortDescription.toLowerCase().includes(word)));
 assert.equal(content.focusKeyword, "pendant necklace");
 assert.ok(content.shortDescription.toLowerCase().includes("pink thulite"));
@@ -127,7 +130,7 @@ const activewearContent = buildAutomatedProductContent(
   "Miss.Princess",
 );
 assert.ok(activewearContent.seoTitle.endsWith("| Miss.Princess"));
-assert.ok(BRAND_VOCABULARY.profiles["miss-princess"].adjectives.includes(activewearContent.title.split(" ")[0].toLowerCase()));
+assert.ok(["evocative", "descriptive-poetic", "identity-led"].includes(activewearContent.namingRegister));
 assert.ok(activewearContent.seoTitle.length <= 60);
 assert.ok(!activewearContent.seoTitle.includes("…"));
 assert.ok(activewearContent.metaDescription.includes("at Miss.Princess."));
@@ -694,7 +697,7 @@ const pressOnClass = classifyProduct(
   pressOnProduct.productType ?? "",
 );
 const pressOnContent = buildAutomatedProductContent(pressOnProduct, pressOnClass, "MVQueen");
-assert.match(pressOnContent.title, / Long Crystal Press-On Nails$/);
+assert.match(pressOnContent.title, /\bLong Crystal Press-On Nails\b/);
 assert.ok(!/ggddsha|\bnew\b|\bpma\b|withdiamonds/i.test(pressOnContent.title));
 
 const creamBrandProduct: ProductSnapshot = {
@@ -830,7 +833,7 @@ const supplierNecklace: ProductSnapshot = {
 const necklaceClassification = classifyProduct(supplierNecklace.title, supplierNecklace.descriptionHtml ?? "", supplierNecklace.productType ?? "");
 const necklaceBefore = structuredClone(supplierNecklace);
 const necklaceCopy = buildAutomatedProductContent(supplierNecklace, necklaceClassification);
-assert.match(necklaceCopy.title, /Stainless Steel Zircon Star Pendant Necklace$/);
+assert.equal(necklaceCopy.title, "True North Zircon Star Pendant Necklace");
 assert.ok(!/european|american|special-interest|fashion/i.test(necklaceCopy.title));
 assert.ok(necklaceCopy.title.length <= 80);
 assert.ok(necklaceCopy.shortDescription.length <= 180);
@@ -847,7 +850,7 @@ assert.equal(repeatedNecklace.shortDescription, necklaceCopy.shortDescription);
 
 const extraLongNecklace = buildAutomatedProductContent({ ...supplierNecklace, title: "Natural Pink Crystal Pearl Beaded Delicate Star Pendant Stainless Steel Layered Necklace ".repeat(3) }, necklaceClassification);
 assert.ok(extraLongNecklace.title.length <= 80);
-assert.match(extraLongNecklace.title, /Necklace$/);
+assert.match(extraLongNecklace.title, /\bNecklace\b/);
 assert.ok(extraLongNecklace.shortDescription.length <= 180);
 assert.ok(!extraLongNecklace.shortDescription.includes("…"));
 const repeatedLongNecklace = buildAutomatedProductContent({ ...supplierNecklace, title: extraLongNecklace.title, descriptionHtml: extraLongNecklace.descriptionHtml }, necklaceClassification);
@@ -911,17 +914,22 @@ try {
   const changed = original.replace('"elevated", "polished", "luxurious", "refined", "timeless", "intentional"', '"considered", "polished", "luxurious", "refined", "timeless", "intentional"');
   assert.notEqual(changed, original);
   writeFileSync(personaFile, changed);
+  const namingFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[4]);
+  const namingPalette = JSON.parse(readFileSync(namingFile, "utf8"));
+  namingPalette.profiles.mvqueen.evocative.general.push("Considered Hour");
+  writeFileSync(namingFile, JSON.stringify(namingPalette));
   const revisedVocabulary = loadBrandVocabulary(vocabularyRoot);
   assert.notEqual(revisedVocabulary.version, BRAND_VOCABULARY.version);
   assert.ok(revisedVocabulary.profiles.mvqueen.adjectives.includes("considered"));
   const generated = Array.from({ length: 100 }, (_, index) => buildAutomatedProductContent({ ...supplierNecklace, id: "gid://shopify/Product/test-vocabulary-" + index }, necklaceClassification, "MVQueen", revisedVocabulary));
   assert.ok(generated.some((item) => item.shortDescription.toLowerCase().includes("considered")));
-  assert.ok(generated.some((item) => item.title.startsWith("Considered ")));
+  assert.ok(generated.some((item) => item.title.includes("Considered Hour")));
   const forbiddenFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[2]);
   const forbiddenSource = readFileSync(forbiddenFile, "utf8");
   writeFileSync(forbiddenFile, forbiddenSource.replace("## Tier 2", "| Considered | Editorial review |\n\n## Tier 2"));
   const restrictedVocabulary = loadBrandVocabulary(vocabularyRoot);
   assert.ok(!restrictedVocabulary.profiles.mvqueen.adjectives.includes("considered"));
+  assert.ok(!restrictedVocabulary.naming.mvqueen.evocative.general.includes("Considered Hour"));
   assert.notEqual(restrictedVocabulary.version, revisedVocabulary.version);
   rmSync(personaFile);
   assert.throws(() => loadBrandVocabulary(vocabularyRoot), /ENOENT/);
@@ -999,7 +1007,7 @@ const longBrushSource: ProductSnapshot = {
 const brushRoute = classifyProduct(longBrushSource.title, "", "Beauty Tool");
 const brandedBrush = buildAutomatedProductContent(longBrushSource, brushRoute);
 assert.ok(brandedBrush.title.length <= 80);
-assert.match(brandedBrush.title, /Makeup Brush$/);
+assert.match(brandedBrush.title, /\bMakeup Brush\b/);
 assert.equal(buildAutomatedProductContent({ ...longBrushSource, title: brandedBrush.title, descriptionHtml: brandedBrush.descriptionHtml }, brushRoute).title, brandedBrush.title);
 
 const repeatedPrefix = buildAutomatedProductContent({ ...product, title: "Refined Polished " + content.title }, classification);
@@ -1013,17 +1021,58 @@ assert.equal(buildAutomatedProductContent({ ...fragranceSource, title: fragrance
 
 const supplierWordSource: ProductSnapshot = { id: "gid://shopify/Product/title-source-repair", title: "Vitamin C Serum Facial Amazon", productType: "Skincare" };
 const supplierWordCopy = buildAutomatedProductContent(supplierWordSource, classifyProduct(supplierWordSource.title, "", "Skincare"));
-assert.match(supplierWordCopy.title, /Vitamin C Facial Serum$/);
+assert.match(supplierWordCopy.title, /Vitamin C Facial Serum\b/);
 assert.ok(!supplierWordCopy.title.includes("Amazon"));
 
 const sprayBottleSource: ProductSnapshot = { id: "gid://shopify/Product/9100793938118", title: "High Pressure Spray Bottle Cleaning Silicone Brush Hollow Comb Hair Care Shampoo", productType: "Shampoo" };
 const sprayBottleRoute = classifyProduct(sprayBottleSource.title, "", "Shampoo");
 assert.equal(sprayBottleRoute.productType, "Hair Tool");
 const sprayBottleCopy = buildAutomatedProductContent(sprayBottleSource, sprayBottleRoute);
-assert.equal(sprayBottleCopy.title, "Timeless Spray Bottle Silicone Brush And Hollow Hair Comb");
+assert.equal(sprayBottleCopy.title, "The Wash-Day Edit Spray Bottle, Silicone Brush & Hair Comb");
 assert.equal(classifyProduct(sprayBottleCopy.title, "", "Shampoo").productType, "Hair Tool");
 assert.equal(buildAutomatedProductContent({ ...sprayBottleSource, title: sprayBottleCopy.title }, sprayBottleRoute).title, sprayBottleCopy.title);
 assert.equal(classifyProduct("Hair Care Spray", "", "Hair Treatment").productType, "Hair Treatment");
+
+// Naming philosophy: different registers, distinct authored names, stable
+// category/review decisions, and no ID-only override after a source change.
+assert.equal(CURATED_PRODUCT_NAMES.length, 181);
+assert.equal(new Set(CURATED_PRODUCT_NAMES.map((entry) => normalizeProductName(entry.title))).size, 181);
+assert.equal(new Set(CURATED_PRODUCT_NAMES.map((entry) => entry.register)).size, 3);
+assert.ok(CURATED_PRODUCT_NAMES.filter((entry) => /^The\s/.test(entry.title)).length < CURATED_PRODUCT_NAMES.length / 4);
+for (const entry of CURATED_PRODUCT_NAMES) {
+  assert.ok(entry.title.length <= 80);
+  assert.ok(entry.opening.length < 90);
+  const route = classifyProduct(entry.sourceTitle);
+  assert.deepEqual(classifyProduct(entry.title), route, entry.title);
+  const fixture = { id: entry.productId, title: entry.sourceTitle };
+  const label = entry.brand === "mvqueen" ? "MVQueen" : "Miss.Princess";
+  const named = buildAutomatedProductContent(fixture, route, label);
+  assert.equal(named.title, entry.title);
+  assert.equal(named.curatedName, true);
+  assert.equal(buildAutomatedProductContent({ ...fixture, title: named.title, descriptionHtml: named.descriptionHtml }, route, label).title, named.title);
+  assert.equal(matchingCuratedName(entry.productId, "A completely different source item"), undefined);
+}
+const futureCream: ProductSnapshot = { id: "gid://shopify/Product/new-curated-cream", title: "Moisturizing Face Cream", productType: "Skincare" };
+const futureCreamRoute = classifyProduct(futureCream.title, "", "Skincare");
+const futureNames = Array.from({ length: 90 }, (_, i) => buildAutomatedProductContent({ ...futureCream, id: futureCream.id + i }, futureCreamRoute));
+assert.equal(new Set(futureNames.map((named) => named.namingRegister)).size, 3);
+assert.ok(new Set(futureNames.map((named) => named.namingIdentity)).size > 20);
+for (const named of futureNames) assert.ok(/Moisturizing Face Cream\b/.test(named.title));
+const primaryFutureName = buildAutomatedProductContent(futureCream, futureCreamRoute);
+const resolvedName = await resolveUniqueAutomatedProductContent(futureCream, futureCreamRoute, "MVQueen", async (identity) =>
+  identity === primaryFutureName.namingIdentity ? [{ id: "gid://shopify/Product/another", title: identity + " Body Scrub" }] : [],
+);
+assert.notEqual(resolvedName.namingIdentity, primaryFutureName.namingIdentity);
+assert.equal(stripNamingDecoration(resolvedName.title, BRAND_VOCABULARY), "Moisturizing Face Cream");
+const resolvedRepeat = await resolveUniqueAutomatedProductContent({ ...futureCream, title: resolvedName.title }, futureCreamRoute, "MVQueen", async (identity) =>
+  identity === primaryFutureName.namingIdentity ? [{ id: "gid://shopify/Product/another", title: identity + " Body Scrub" }]
+    : [{ id: futureCream.id, title: resolvedName.title }],
+);
+assert.equal(resolvedRepeat.title, resolvedName.title);
+assert.equal((await resolveUniqueAutomatedProductContent(futureCream, futureCreamRoute, "MVQueen", async () => [{ id: futureCream.id, title: primaryFutureName.title }])).title, primaryFutureName.title);
+await assert.rejects(resolveUniqueAutomatedProductContent(futureCream, futureCreamRoute, "MVQueen", async (identity) => [{ id: "another", title: identity + " Face Cream" }]), /editorial review/);
+await assert.rejects(resolveUniqueAutomatedProductContent(supplierNecklace, necklaceClassification, "MVQueen", async () => [{ id: "another", title: necklaceCopy.title }]), /editorial review/);
+assert.notEqual(buildAutomatedProductContent({ ...supplierNecklace, title: "A completely different source item" }, necklaceClassification).title, necklaceCopy.title);
 
 console.log("product content automation tests passed");
 
