@@ -3,6 +3,21 @@ export type ShopifyConnection<T> = {
   pageInfo?: { hasNextPage?: boolean; endCursor?: string | null };
 };
 
+export function shopifyProductWasDeleted(body: unknown): boolean {
+  if (!body || typeof body !== "object") throw new Error("Shopify returned an invalid product response.");
+  const result = body as { errors?: unknown[]; data?: { product?: unknown } };
+  if (result.errors?.length) throw new Error("Shopify product query failed; deletion was not confirmed.");
+  if (!result.data || !Object.prototype.hasOwnProperty.call(result.data, "product")) {
+    throw new Error("Shopify returned an incomplete product response; deletion was not confirmed.");
+  }
+  if (result.data.product === null) return true;
+  const product = result.data.product;
+  if (!product || typeof product !== "object" || typeof (product as { id?: unknown }).id !== "string") {
+    throw new Error("Shopify returned an invalid product record.");
+  }
+  return false;
+}
+
 export async function collectShopifyConnection<T>(
   initial: ShopifyConnection<T> | null | undefined,
   loadPage: (after: string) => Promise<ShopifyConnection<T> | null | undefined>,

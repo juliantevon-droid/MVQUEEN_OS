@@ -21,7 +21,7 @@ import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automat
 import { publishAutomaticContentSurfaces } from "./enterprise/content-publisher";
 import { resolveShippingDeliveryEstimate } from "./shipping-policy";
 import { buildShopifyCategoryMetafields } from "./shopify-category-publisher.server";
-import { collectShopifyConnection } from "./shopify-connection";
+import { collectShopifyConnection, shopifyProductWasDeleted } from "./shopify-connection";
 import {
   commercialPolicyFingerprint,
   resolveShopCommercialConfig,
@@ -420,6 +420,22 @@ export async function processProductJob(
       { variables: { id: job.productGid, attributeNamespace: "attributes" } },
     );
     const body = await response.json();
+    if (shopifyProductWasDeleted(body)) {
+      // A durable job can outlive its Shopify product. Remove only its stale
+      // automation state and retain the completed job as the audit record.
+      await prisma.productAutomationState.deleteMany({
+        where: { shop: job.shop, productGid: job.productGid },
+      });
+      await prisma.productJob.update({
+        where: { id: jobId },
+        data: { status: "completed", completedAt: new Date(), error: null },
+      });
+      logMvqueenEvent("product.job.completed", {
+        correlationId, jobId, shop: job.shop, productGid: job.productGid,
+        topic: job.topic, result: "product_deleted",
+      });
+      return;
+    }
     const rawProduct = body.data?.product ?? null;
     if (rawProduct) {
       const connectionPage = async (kind: "media" | "variants", after: string) => {

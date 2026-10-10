@@ -1,5 +1,11 @@
 import assert from "node:assert/strict";
-import { collectShopifyConnection } from "./shopify-connection";
+import { collectShopifyConnection, shopifyProductWasDeleted } from "./shopify-connection";
+assert.equal(shopifyProductWasDeleted({ data: { product: null } }), true);
+assert.equal(shopifyProductWasDeleted({ data: { product: { id: "gid://shopify/Product/1" } } }), false);
+for (const response of [null, {}, { data: {} }, { data: { product: {} } },
+  { errors: [{ message: "Access denied" }], data: { product: null } }]) {
+  assert.throws(() => shopifyProductWasDeleted(response));
+}
 const initial = { nodes: ["one"], pageInfo: { hasNextPage: true, endCursor: "cursor-one" } };
 let calls = 0;
 assert.deepEqual(await collectShopifyConnection(initial, async (after) => {
