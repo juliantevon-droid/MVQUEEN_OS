@@ -1085,3 +1085,46 @@ assert.notEqual(buildAutomatedProductContent({ ...supplierNecklace, title: "A co
 
 console.log("product content automation tests passed");
 
+
+// Previously held catalog identities must route from the original source,
+// even when an authored title is used and the old product type is Needs Review.
+const formerlyHeldRoutes: Array<[string, string]> = [
+  ["Milk & Honey Hand Soap — Welcome Home", "bath-body"],
+  ["Stone Conversation Crystal Roller & Scraping Plate", "beauty-tools"],
+  ["Double Take Microcurrent Roller Massager", "beauty-tools"],
+  ["Warm Mist Beauty Steamer", "beauty-tools"],
+  ["Rose Quartz Rendezvous 4-in-1 Vibrating Face Roller", "beauty-tools"],
+  ["Jade Daydream Three-in-One Massage Stick", "beauty-tools"],
+  ["Happy Little Break Heated Foot Massage Machine", "beauty-tools"],
+  ["Water Veil Hyaluronic Acid Facial Gel", "skincare"],
+  ["Warm Waist Belt — An Hour at Home", "beauty-tools"],
+  ["Switch It Up Dual-Purpose Hair Straightener", "hair-tools"],
+  ["The Carry-On Mini Hair Straightening Comb", "hair-tools"],
+  ["Little Unwind Neck & Shoulder Roller Massager", "beauty-tools"],
+  ["Brow Edit Trimming Knife & Comb", "beauty-tools"],
+  ["Still Form Resin Facial Roller Set", "beauty-tools"],
+  ["The Lash Detail Metal Tweezers & Comb", "beauty-tools"],
+  ["Fine Line Liquid Eyeliner", "makeup"],
+  ["Starry Night Waterproof Eyeliner", "makeup"],
+  ["Brow Signature Waterproof Eyebrow Cream", "makeup"],
+];
+for (const [title, route] of formerlyHeldRoutes) {
+  assert.equal(classifyProduct(title, "", "Needs Review").route, route, title);
+}
+assert.equal(classifyProduct("Care Liquid — The Skin & Hair Chapter",
+  "Product name: nursing liquid. Use after shaving. Volume: 20ml.", "Needs Review").route, "bath-body");
+assert.equal(classifyProduct("Mystery care liquid", "", "Needs Review").confidence, "review");
+assert.equal(classifyProduct("Soapstone Pendant Necklace", "", "").route, "pendants");
+assert.equal(classifyProduct("Roller Print Dress", "", "").route, "dresses");
+const unsafeTool = { id: "gid://shopify/Product/unsafe-tool", title: "Heated Foot Massage Machine",
+  descriptionHtml: "<p>Voltage: 220 V</p><p>Power: 50 W</p><p>Function: Infrared heat therapy strengthens the kidney.</p>",
+};
+assert.ok(productClaimReviewReasons(unsafeTool).includes("wellness_health_claim"));
+const safeToolCopy = buildAutomatedProductContent(unsafeTool, classifyProduct(unsafeTool.title));
+assert.ok(!/therapy|kidney/i.test(safeToolCopy.descriptionHtml));
+assert.ok(/220 V|50 W/.test(safeToolCopy.descriptionHtml));
+
+// Publishing safe copy must not silently approve the original supplier claim.
+assert.deepEqual(productClaimReviewReasons({ title: "Foot Massage Machine", descriptionHtml: "<p>Power: 50 W</p>",
+  claimReviewReasons: { value: '["wellness_health_claim"]' },
+}), ["wellness_health_claim"]);

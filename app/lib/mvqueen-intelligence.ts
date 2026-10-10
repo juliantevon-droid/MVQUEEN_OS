@@ -10,6 +10,7 @@ export type ProductSnapshot = {
   tags?: string[];
   seo?: { title?: string | null; description?: string | null } | null;
   category?: { id?: string | null; fullName?: string | null } | null;
+  claimReviewReasons?: { value?: string | null } | null;
   options?: { name: string; values: string[] }[];
   media?: {
     nodes?: { id: string; alt?: string | null }[];
@@ -114,6 +115,14 @@ const COMPOUND_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
 
 const TITLE_FIRST_ROUTES: Array<[RegExp, Omit<Classification, "confidence">]> = [
   // Specific beauty tools take precedence over generic cosmetics words.
+  [/\b(?:hand|cleansing)\s+soap\b/i, {department:"Beauty",family:"Bath & Body",subcollection:"Hand & Body Care",route:"bath-body",productType:"Bath & Body"}],
+  [/\b(?:gua\s+sha|(?:crystal|stone|resin)\s+roller|(?:double|facial|face|neck|shoulder)\b[\s\S]{0,40}\b(?:roller|massager)|(?:micro[- ]?current|vibrating)\b[\s\S]{0,35}\b(?:roller|beauty\s+instrument)|(?:jade|crystal)\b[\s\S]{0,35}\bmassage\s+stick|(?:foot\s+massage\s+(?:and\s+pedicure\s+)?(?:machine|device)|(?:warm|heated)\s+waist\s+belt))\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
+  [/\b(?:beauty|facial|face)\s+steamer\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
+  [/\b(?:eyebrow|brow)\b[\s\S]{0,25}\b(?:trimm(?:er|ing)|scissors|razor|knife)\b|\b(?:eyelash|lash)\s+(?:tweezers?|combs?)\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
+  [/\bhair\s+(?:straightener|straightening\s+comb)\b/i, {department:"Beauty",family:"Hair Tools",subcollection:"Hair Tools",route:"hair-tools",productType:"Hair Tool"}],
+  [/\b(?:facial|face|hyaluronic\s+acid)\s+(?:white\s+)?gel\b/i, {department:"Beauty",family:"Skincare",subcollection:"Skincare",route:"skincare",productType:"Skincare"}],
+  [/\b(?:eyeliner|(?:eyebrow|brow)\s+(?:cream|pencil|powder|gel|pomade))\b/i, {department:"Beauty",family:"Makeup",subcollection:"Makeup",route:"makeup",productType:"Makeup"}],
+  [/\b(?:after[- ]?shav(?:e|ing)|post[- ]?shav(?:e|ing))\b/i, {department:"Beauty",family:"Bath & Body",subcollection:"Body Care",route:"bath-body",productType:"Bath & Body"}],
   [/\b(?:vanity|makeup|cosmetic)\s+mirrors?\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
   [/\b(?:makeup\s+(?:brush(?:es)?|sponges?)|(?:loose\s+powder|foundation|concealer|blush|eyeshadow)\s+brush(?:es)?)\b/i, {department:"Beauty",family:"Beauty Tools",subcollection:"Beauty Tools",route:"beauty-tools",productType:"Beauty Tool"}],
   [/\b(?=[\s\S]*\b(?:hair\s+care|hair\s+comb|shampoo)\b)(?:high\s+pressure\s+)?spray\s+bottle\b[\s\S]{0,100}\b(?:silicone\s+brush|(?:hollow\s+)?(?:hair\s+)?comb)\b/i, {department:"Beauty",family:"Hair Tools",subcollection:"Hair Tools",route:"hair-tools",productType:"Hair Tool"}],

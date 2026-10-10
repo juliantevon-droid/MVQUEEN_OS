@@ -148,9 +148,10 @@ const mismatchedDecision = buildEnterpriseProductDecision(
   mismatchedMultiVariantProduct,
   policy,
 );
-assert.equal(mismatchedDecision.commercialSource.unitCostSource, "commercial_metafield");
-assert.equal(mismatchedDecision.pricing.state, "needs_cost");
-assert.equal(mismatchedDecision.commercialHealth.state, "needs_cost");
+assert.equal(mismatchedDecision.commercialSource.unitCostSource, "shopify_inventory_item");
+assert.equal(mismatchedDecision.pricing.state, "ready_for_approval");
+assert.equal(mismatchedDecision.commercialHealth.state, "blocked");
+assert.equal(mismatchedDecision.costSyncState, "verified_variant_costs");
 
 const reviewGate = buildReleaseGate({
   issues: [

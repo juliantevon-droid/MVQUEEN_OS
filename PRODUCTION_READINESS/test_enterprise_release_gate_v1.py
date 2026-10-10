@@ -1,6 +1,6 @@
 import unittest
 
-from ENTERPRISE_RELEASE_GATE_V1 import content_fingerprint, evaluate_release, make_approval
+from RELEASE_GATE_V1 import APPROVED, BLOCKED, canonical_fingerprint, evaluate, create_approval
 from PRODUCT_PIPELINE_V1 import run
 
 
@@ -22,29 +22,27 @@ class EnterpriseReleaseGateTests(unittest.TestCase):
 
     def test_same_record_has_same_fingerprint(self):
         record = run(self.base())
-        self.assertEqual(content_fingerprint(record), content_fingerprint(record))
+        self.assertEqual(canonical_fingerprint(record), canonical_fingerprint(record))
 
     def test_ready_record_still_requires_approval(self):
         record = run(self.base())
-        ok, decision = evaluate_release(record)
-        self.assertFalse(ok)
-        self.assertEqual(decision["decision"], "HOLD")
-        self.assertTrue(any("approval" in reason.lower() for reason in decision["reasons"]))
+        status, reason = evaluate(record)
+        self.assertEqual(status, BLOCKED)
+        self.assertIn("approval", reason.lower())
 
     def test_matching_approval_releases(self):
         record = run(self.base())
-        approval = make_approval(record, "authorized-reviewer")
-        ok, decision = evaluate_release(record, approval)
-        self.assertTrue(ok)
-        self.assertEqual(decision["decision"], "APPROVED_FOR_PUBLISH")
+        approval = create_approval(record, "authorized-reviewer")
+        status, reason = evaluate(record, approval)
+        self.assertEqual(status, APPROVED)
 
     def test_stale_approval_is_rejected(self):
         record = run(self.base())
-        approval = make_approval(record, "authorized-reviewer")
+        approval = create_approval(record, "authorized-reviewer")
         record["copy"]["title"] += " Updated"
-        ok, decision = evaluate_release(record, approval)
-        self.assertFalse(ok)
-        self.assertEqual(decision["decision"], "HOLD")
+        status, reason = evaluate(record, approval)
+        self.assertEqual(status, BLOCKED)
+        self.assertIn("fingerprint", reason.lower())
 
 
 if __name__ == "__main__":

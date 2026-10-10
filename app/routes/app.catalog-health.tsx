@@ -6,6 +6,7 @@ import {
   type AuditProduct,
 } from "../lib/enterprise/catalog-audit";
 import { resolveShopCommercialConfig } from "../lib/enterprise/commercial-settings.server";
+import { collectShopifyConnection } from "../lib/shopify-connection";
 
 type CatalogAuditNode = {
   id: string;
@@ -15,11 +16,12 @@ type CatalogAuditNode = {
   seoTitle?: { value?: string | null } | null;
   shortDescription?: { value?: string | null } | null;
   unitCost?: { value?: string | null } | null;
+  costCurrency?: { value?: string | null } | null;
   inboundShipping?: { value?: string | null } | null;
   automationShortDescription?: { value?: string | null } | null;
   variants?: {
-    nodes?: Array<{ id: string; price?: string | null }>;
-    pageInfo?: { hasNextPage?: boolean };
+    nodes?: Array<{ id: string; price?: string | null; inventoryItem?: { unitCost?: { amount: string; currencyCode: string } | null } | null }>;
+    pageInfo?: { hasNextPage?: boolean; endCursor?: string | null };
   } | null;
   collections?: {
     nodes?: Array<{ handle: string }>;
@@ -35,7 +37,7 @@ type CatalogAuditConnection = {
 };
 
 const CATALOG_AUDIT_QUERY = `#graphql
-query MVQueenCatalogAudit($first: Int!, $after: String) {
+query MVQueenCatalogAudit($first: Int!, $after: String, $includeCosts: Boolean!) {
   products(first: $first, after: $after, sortKey: ID) {
     nodes {
       id
@@ -46,10 +48,11 @@ query MVQueenCatalogAudit($first: Int!, $after: String) {
       shortDescription: metafield(namespace: "catalog", key: "short_description") { value }
       automationShortDescription: metafield(namespace: "automation", key: "short_description") { value }
       unitCost: metafield(namespace: "commercial", key: "unit_cost") { value }
+      costCurrency: metafield(namespace: "commercial", key: "cost_currency") { value }
       inboundShipping: metafield(namespace: "commercial", key: "inbound_shipping") { value }
-      variants(first: 2) {
-        nodes { id price }
-        pageInfo { hasNextPage }
+      variants(first: 100) {
+        nodes { id price inventoryItem @include(if: $includeCosts) { unitCost { amount currencyCode } } }
+        pageInfo { hasNextPage endCursor }
       }
       collections(first: 50) {
         nodes { handle }
@@ -63,16 +66,32 @@ query MVQueenCatalogAudit($first: Int!, $after: String) {
 }
 `;
 
+const CATALOG_VARIANT_PAGE = `#graphql
+query CatalogAuditVariantPage($id: ID!, $after: String!, $includeCosts: Boolean!) {
+  product(id: $id) {
+    variants(first: 100, after: $after) {
+      nodes { id price inventoryItem @include(if: $includeCosts) { unitCost { amount currencyCode } } }
+      pageInfo { hasNextPage endCursor }
+    }
+  }
+}`;
+
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { admin, session } = await authenticate.admin(request);
   const products: AuditProduct[] = [];
   const commercial = await resolveShopCommercialConfig(session.shop);
+  const scopesResponse = await admin.graphql(`#graphql
+    query CatalogAuditScopes { appInstallation { accessScopes { handle } } }`);
+  const scopesBody = await scopesResponse.json();
+  const includeCosts = (scopesBody.data?.appInstallation?.accessScopes ?? [])
+    .some((scope: { handle: string }) => scope.handle === "read_inventory");
   let after: string | null = null;
   let pages = 0;
 
-  while (pages < 25) {
+  let hasMoreProducts = true;
+  while (pages < 1000) {
     const response = (await admin.graphql(CATALOG_AUDIT_QUERY, {
-      variables: { first: 100, after },
+      variables: { first: 3, after, includeCosts },
     })) as Response;
     const body = (await response.json()) as {
       data?: { products?: CatalogAuditConnection | null };
@@ -84,6 +103,13 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     }
 
     for (const product of connection.nodes ?? []) {
+      const variants = await collectShopifyConnection(product.variants, async (cursor) => {
+        const pageResponse = await admin.graphql(CATALOG_VARIANT_PAGE, {
+          variables: { id: product.id, after: cursor, includeCosts },
+        });
+        const pageBody = await pageResponse.json();
+        return pageBody.data?.product?.variants;
+      });
       products.push({
         id: product.id,
         title: product.title,
@@ -95,9 +121,14 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
           product.automationShortDescription?.value ??
           null,
         unitCost: product.unitCost?.value ?? null,
+        costCurrency: product.costCurrency?.value ?? null,
         inboundShipping: product.inboundShipping?.value ?? null,
-        variants: product.variants?.nodes ?? [],
-        hasMoreVariants: Boolean(product.variants?.pageInfo?.hasNextPage),
+        variants: variants.map((variant) => ({
+          id: variant.id, price: variant.price,
+          unitCost: variant.inventoryItem?.unitCost?.amount ?? null,
+          costCurrency: variant.inventoryItem?.unitCost?.currencyCode ?? null,
+        })),
+        hasMoreVariants: false,
         media: [],
         mediaAuditAvailable: false,
         collections: product.collections?.nodes ?? [],
@@ -105,14 +136,16 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     }
 
     pages += 1;
-    if (!connection.pageInfo?.hasNextPage) break;
-    after = connection.pageInfo.endCursor ?? null;
+    hasMoreProducts = Boolean(connection.pageInfo?.hasNextPage);
+    if (!hasMoreProducts) break;
+    after = connection.pageInfo?.endCursor ?? null;
+    if (!after) throw new Error("Shopify catalog audit returned an incomplete product cursor.");
   }
 
   const audit = summarizeCatalogAudit(products, commercial);
   return {
     ...audit,
-    truncated: pages >= 25,
+    truncated: hasMoreProducts,
     generatedAt: new Date().toISOString(),
   };
 };

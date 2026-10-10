@@ -21,12 +21,13 @@ import { buildAutomatedProductFaq, buildAutomaticSurfaceRecord } from "./automat
 import { publishAutomaticContentSurfaces } from "./enterprise/content-publisher";
 import { resolveShippingDeliveryEstimate } from "./shipping-policy";
 import { buildShopifyCategoryMetafields } from "./shopify-category-publisher.server";
+import { collectShopifyConnection } from "./shopify-connection";
 import {
   commercialPolicyFingerprint,
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v37-distinct-curated-names-" + BRAND_VOCABULARY.version;
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v38-variant-cost-policy-refresh-" + BRAND_VOCABULARY.version;
 
 const PRODUCT_NAME_LOOKUP = `#graphql
   query ProductNameLookup($query: String!, $after: String) {
@@ -152,12 +153,12 @@ query MVQueenProduct($id: ID!, $attributeNamespace: String!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
+    claimReviewReasons: metafield(namespace: "catalog", key: "claim_review_reasons") { value }
     category { id fullName }
     options { name values }
     media(first: 50) {
-      nodes {
-        ... on MediaImage { id alt }
-      }
+      nodes { id alt }
+      pageInfo { hasNextPage endCursor }
     }
     variants(first: 100) {
       nodes {
@@ -171,6 +172,7 @@ query MVQueenProduct($id: ID!, $attributeNamespace: String!) {
           nodes { key value type }
         }
       }
+      pageInfo { hasNextPage endCursor }
     }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
@@ -189,12 +191,12 @@ query MVQueenProductWithCost($id: ID!, $attributeNamespace: String!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
+    claimReviewReasons: metafield(namespace: "catalog", key: "claim_review_reasons") { value }
     category { id fullName }
     options { name values }
     media(first: 50) {
-      nodes {
-        ... on MediaImage { id alt }
-      }
+      nodes { id alt }
+      pageInfo { hasNextPage endCursor }
     }
     variants(first: 100) {
       nodes {
@@ -211,6 +213,7 @@ query MVQueenProductWithCost($id: ID!, $attributeNamespace: String!) {
           unitCost { amount currencyCode }
         }
       }
+      pageInfo { hasNextPage endCursor }
     }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
       nodes { key value type }
@@ -229,6 +232,25 @@ mutation MVQueenProductUpdate($product: ProductUpdateInput!) {
   productUpdate(product: $product) {
     product { id title productType updatedAt }
     userErrors { field message }
+  }
+}`;
+
+const PRODUCT_CONNECTION_PAGE = `#graphql
+query MVQProductConnectionPage($id: ID!, $mediaAfter: String, $variantAfter: String,
+  $loadMedia: Boolean!, $loadVariants: Boolean!, $includeCosts: Boolean!) {
+  product(id: $id) {
+    media(first: 50, after: $mediaAfter) @include(if: $loadMedia) {
+      nodes { id alt }
+      pageInfo { hasNextPage endCursor }
+    }
+    variants(first: 100, after: $variantAfter) @include(if: $loadVariants) {
+      nodes {
+        id price compareAtPrice sku barcode selectedOptions { name value }
+        googleMetafields: metafields(first: 30, namespace: "mm-google-shopping") { nodes { key value type } }
+        inventoryItem @include(if: $includeCosts) { unitCost { amount currencyCode } }
+      }
+      pageInfo { hasNextPage endCursor }
+    }
   }
 }`;
 
@@ -399,6 +421,22 @@ export async function processProductJob(
     );
     const body = await response.json();
     const rawProduct = body.data?.product ?? null;
+    if (rawProduct) {
+      const connectionPage = async (kind: "media" | "variants", after: string) => {
+        const pageResponse = await admin.graphql(PRODUCT_CONNECTION_PAGE, {
+          variables: { id: rawProduct.id, mediaAfter: kind === "media" ? after : null,
+            variantAfter: kind === "variants" ? after : null,
+            loadMedia: kind === "media", loadVariants: kind === "variants",
+            includeCosts: COST_SYNC_ENABLED && hasReadInventory },
+        });
+        const pageBody = await pageResponse.json();
+        return pageBody.data?.product?.[kind];
+      };
+      rawProduct.media.nodes = await collectShopifyConnection(rawProduct.media,
+        (after) => connectionPage("media", after));
+      rawProduct.variants.nodes = await collectShopifyConnection(rawProduct.variants,
+        (after) => connectionPage("variants", after));
+    }
     const product: ProductSnapshot | null = rawProduct
       ? {
           ...rawProduct,
@@ -664,21 +702,13 @@ export async function processProductJob(
       });
     }
 
-    const uniformVerifiedUnitCost = uniformMoney(
-      variants.map((variant) => variant.unitCost),
-    );
+    const uniformVerifiedUnitCost = decision.uniformVerifiedUnitCost;
     const uniformVerifiedCostCurrency = uniformText(
       variants.map((variant) => variant.costCurrency),
     );
     const verifiedUnitCost =
       uniformVerifiedUnitCost !== null ? String(uniformVerifiedUnitCost) : "";
     const costCurrency = uniformVerifiedCostCurrency ?? "";
-    const hasAnyVariantCost = variants.some(
-      (variant) => moneyNumber(variant.unitCost) !== null,
-    );
-    const allVariantsHaveCost =
-      variants.length > 0 &&
-      variants.every((variant) => moneyNumber(variant.unitCost) !== null);
     const shippingDeliveryEstimate = resolveShippingDeliveryEstimate(
       product.shippingMetafields?.nodes?.find((m) => m.key === "delivery_estimate")?.value,
     );
@@ -830,14 +860,14 @@ export async function processProductJob(
         value: !COST_SYNC_ENABLED
           ? "disabled"
           : hasReadInventory
-            ? verifiedUnitCost && costCurrency
-              ? "verified"
-              : hasAnyVariantCost && allVariantsHaveCost
-                ? "variant_cost_or_currency_mismatch"
-                : hasAnyVariantCost
-                  ? "partial_variant_costs"
-                  : "no_cost_value"
+            ? decision.costSyncState
             : "read_inventory_scope_required",
+      },
+      {
+        namespace: "commercial", key: "variant_decisions", type: "json",
+        value: JSON.stringify({ currency: pricing.currency,
+          representativeVariantId: decision.representativeVariantId,
+          variants: decision.variantDecisions }),
       },
       { namespace: "commercial", key: "pricing_state", type: "single_line_text_field", value: pricing.state },
       { namespace: "commercial", key: "pricing_currency", type: "single_line_text_field", value: pricing.currency },

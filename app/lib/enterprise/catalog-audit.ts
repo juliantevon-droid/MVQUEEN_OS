@@ -1,6 +1,7 @@
 import type { CommercialConfigResolution } from "./commercial-config";
-import { buildCommercialHealth, type CommercialHealth } from "./commercial-health";
+import type { CommercialHealth } from "./commercial-health";
 import { buildReleaseGate, type ReleaseGateDecision } from "./release-gate";
+import { evaluateVariantCommercial } from "./variant-commercial";
 
 export type CatalogAuditSeverity = "blocker" | "warning";
 
@@ -20,8 +21,9 @@ export type AuditProduct = {
   seoTitle?: string | null;
   shortDescription?: string | null;
   unitCost?: string | null;
+  costCurrency?: string | null;
   inboundShipping?: string | null;
-  variants: Array<{ id: string; price?: string | null }>;
+  variants: Array<{ id: string; price?: string | null; unitCost?: string | null; costCurrency?: string | null }>;
   hasMoreVariants: boolean;
   media: Array<{ id: string; alt?: string | null }>;
   mediaAuditAvailable?: boolean;
@@ -50,7 +52,7 @@ function brandOf(tags: string[]): "mvqueen" | "miss-princess" | "invalid" {
   return worlds[0] === "mvq:brand:miss-princess" ? "miss-princess" : "mvqueen";
 }
 
-export function auditCatalogProduct(product: AuditProduct): CatalogAuditIssue[] {
+export function auditCatalogProduct(product: AuditProduct, currency = "USD"): CatalogAuditIssue[] {
   const issues: CatalogAuditIssue[] = [];
   const brand = brandOf(product.tags);
   const collectionHandles = new Set(product.collections.map((item) => item.handle));
@@ -94,31 +96,34 @@ export function auditCatalogProduct(product: AuditProduct): CatalogAuditIssue[] 
   }
 
   if (brand === "mvqueen") {
-    if (product.seoTitle && !product.seoTitle.includes("MVQueen")) {
-      add("blocker", "seo_brand_mismatch", "MVQueen product SEO title does not identify MVQueen.");
+    if (product.seoTitle && !/\bMVQUEEN\b/i.test(product.seoTitle)) {
+      add("blocker", "seo_brand_mismatch", "MVQUEEN product SEO title does not identify MVQUEEN.");
     }
     if (collectionHandles.has("miss-princess-world")) {
       add("blocker", "cross_brand_world_collection", "MVQueen product is present in Miss.Princess World.");
     }
   }
 
-  const unitCost = money(product.unitCost);
-  if (unitCost === null) {
-    add("blocker", "unit_cost_missing", "Verified commercial.unit_cost is missing.");
+  const fallbackCost = money(product.unitCost);
+  const hasVariantCosts = product.variants.some((item) => money(item.unitCost) !== null);
+  const fallbackCurrencyMatches = product.costCurrency?.toUpperCase() === currency.toUpperCase();
+  if (product.hasMoreVariants) {
+    add("blocker", "variant_audit_incomplete", "All variants must be inspected before commercial clearance.");
   }
-
-  if (product.variants.length !== 1 || product.hasMoreVariants) {
-    add(
-      "warning",
-      "variant_pricing_requires_variant_costs",
-      "Multi-variant product requires variant-level costs before governed price publication.",
-    );
-  } else {
-    const price = money(product.variants[0]?.price);
-    if (price === null) {
+  if (!product.variants.length) add("blocker", "selling_price_missing", "No priced variants found.");
+  for (const variant of product.variants) {
+    const unitCost = hasVariantCosts ? money(variant.unitCost) : fallbackCurrencyMatches ? fallbackCost : null;
+    const costCurrency = hasVariantCosts ? variant.costCurrency : product.costCurrency;
+    if (unitCost === null) {
+      add("blocker", "unit_cost_missing", `Variant ${variant.id} needs a verified cost.`);
+    } else if (costCurrency?.toUpperCase() !== currency.toUpperCase()) {
+      add("blocker", "cost_currency_mismatch", `Variant ${variant.id} cost currency does not match ${currency}.`);
+    }
+    const price = money(variant.price);
+    if (price === null || price <= 0) {
       add("blocker", "selling_price_missing", "Selling price is missing or invalid.");
     } else if (unitCost !== null && price <= unitCost) {
-      add("blocker", "price_at_or_below_cost", "Selling price is at or below verified unit cost before fees.");
+      add("blocker", "price_at_or_below_cost", `Variant ${variant.id} is priced at or below verified cost before fees.`);
     }
   }
 
@@ -140,19 +145,16 @@ export function evaluateCatalogProduct(
   product: AuditProduct,
   commercial: CommercialConfigResolution,
 ): CatalogProductEvaluation {
-  const issues = auditCatalogProduct(product);
-  const price =
-    product.variants.length === 1 && !product.hasMoreVariants
-      ? money(product.variants[0]?.price)
-      : null;
-  const commercialHealth = buildCommercialHealth(
-    {
-      sellingPrice: price,
-      unitCost: money(product.unitCost),
-      inboundShipping: money(product.inboundShipping),
-    },
-    commercial,
-  );
+  const issues = auditCatalogProduct(product, commercial.config.currency);
+  const { commercialHealth } = evaluateVariantCommercial({
+    id: product.id, title: product.title,
+    variants: { nodes: product.variants },
+    commercialMetafields: { nodes: [
+      { key: "unit_cost", value: product.unitCost },
+      { key: "cost_currency", value: product.costCurrency },
+      { key: "inbound_shipping", value: product.inboundShipping },
+    ] },
+  }, commercial);
   const releaseGate = buildReleaseGate({ issues, commercialHealth });
 
   return {

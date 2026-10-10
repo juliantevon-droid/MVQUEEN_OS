@@ -246,6 +246,29 @@ export async function reconcileRecentShopifyProducts() {
       const { admin } = await unauthenticated.admin(shop);
       let after: string | null = null;
 
+      // A policy release also applies to older products outside the recent
+      // update window. Reuse the governed worker and one idempotent event per
+      // version; never infer completion from an empty recent-update queue.
+      const outdated = await prisma.productAutomationState.findMany({
+        where: { shop, automationVersion: { not: AUTOMATION_VERSION } },
+        orderBy: { productGid: "asc" },
+        take: first * maxPages,
+        select: { productGid: true },
+      });
+      for (const product of outdated) {
+        const eventKey = `policy-refresh:${AUTOMATION_VERSION}:${product.productGid}`;
+        const existing = await prisma.productJob.findUnique({
+          where: { eventKey }, select: { id: true },
+        });
+        if (existing) continue;
+        await prisma.productJob.upsert({
+          where: { eventKey }, update: {},
+          create: { shop, productGid: product.productGid, eventKey,
+            topic: "PRODUCT_POLICY_REFRESH", status: "received" },
+        });
+        discovered += 1;
+      }
+
       for (let page = 0; page < maxPages; page += 1) {
         const response: Response = await admin.graphql(RECONCILE_QUERY, {
           variables: {

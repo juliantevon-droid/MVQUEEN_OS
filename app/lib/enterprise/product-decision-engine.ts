@@ -5,38 +5,9 @@ import {
   type ProductSnapshot,
 } from "../mvqueen-intelligence";
 import { buildMarketingPlan } from "./marketing-engine";
-import { buildPricingDecision } from "./pricing-engine";
 import { buildLifecyclePlan } from "./lifecycle-engine";
 import { getCommercialConfig, type CommercialConfigResolution } from "./commercial-config";
-import { buildCommercialHealth } from "./commercial-health";
-
-function numberFrom(value?: string | null): number | null {
-  if (!value?.trim()) return null;
-  const parsed = Number(value);
-  return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
-}
-
-function uniformNumber(values: Array<string | null | undefined>): number | null {
-  if (!values.length) return null;
-  const parsed = values.map(numberFrom);
-  if (parsed.some((value) => value === null)) return null;
-  const first = parsed[0] as number;
-  return parsed.every((value) => Math.abs((value as number) - first) < 0.000001)
-    ? first
-    : null;
-}
-
-function uniformText(values: Array<string | null | undefined>): string | null {
-  if (!values.length) return null;
-  const normalized = values.map((value) => String(value ?? "").trim()).filter(Boolean);
-  if (normalized.length !== values.length) return null;
-  const first = normalized[0];
-  return normalized.every((value) => value === first) ? first : null;
-}
-
-function metafieldValue(product: ProductSnapshot, key: string): string | null {
-  return product.commercialMetafields?.nodes?.find((item) => item.key === key)?.value ?? null;
-}
+import { evaluateVariantCommercial } from "./variant-commercial";
 
 function slug(value: string): string {
   return value
@@ -71,37 +42,9 @@ export function buildEnterpriseProductDecision(
     product.productType ?? "",
   );
   const brandRoute = classifyBrandWorld(product);
-  const variants = product.variants?.nodes ?? [];
-  const currentPrice = uniformNumber(variants.map((variant) => variant.price));
-  const authoritativeUnitCost = uniformNumber(
-    variants.map((variant) => variant.unitCost),
-  );
-  const authoritativeCostCurrency =
-    authoritativeUnitCost !== null
-      ? uniformText(variants.map((variant) => variant.costCurrency))
-      : null;
   const resolvedCommercial = commercial ?? getCommercialConfig();
-  const unitCost =
-    authoritativeUnitCost ?? numberFrom(metafieldValue(product, "unit_cost"));
-  const inboundShipping = numberFrom(metafieldValue(product, "inbound_shipping"));
-
-  const pricing = buildPricingDecision(
-    {
-      currentPrice,
-      unitCost,
-      inboundShipping,
-    },
-    resolvedCommercial,
-  );
-  const commercialHealth = buildCommercialHealth(
-    {
-      sellingPrice:
-        effectiveSellingPrice === undefined ? currentPrice : effectiveSellingPrice,
-      unitCost,
-      inboundShipping,
-    },
-    resolvedCommercial,
-  );
+  const variantCommercial = evaluateVariantCommercial(product, resolvedCommercial, effectiveSellingPrice);
+  const { pricing, commercialHealth } = variantCommercial;
   const marketing = buildMarketingPlan(
     classification,
     brandRoute,
@@ -131,14 +74,11 @@ export function buildEnterpriseProductDecision(
     commercialHealth,
     marketing,
     lifecycle,
-    commercialSource: {
-      unitCostSource:
-        authoritativeUnitCost !== null
-          ? "shopify_inventory_item"
-          : "commercial_metafield",
-      unitCostCurrency:
-        authoritativeCostCurrency ?? metafieldValue(product, "cost_currency"),
-    },
+    commercialSource: variantCommercial.commercialSource,
+    variantDecisions: variantCommercial.variantDecisions,
+    representativeVariantId: variantCommercial.representativeVariantId,
+    costSyncState: variantCommercial.costSyncState,
+    uniformVerifiedUnitCost: variantCommercial.uniformVerifiedUnitCost,
     tags,
     measurementKey: `product:${product.id}`,
   };

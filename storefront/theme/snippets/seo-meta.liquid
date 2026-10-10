@@ -1,9 +1,12 @@
 {%- liquid
   assign meta_title = page_title | default: shop.name
+  assign normalized_meta_title = meta_title | downcase
+  assign normalized_shop_name = shop.name | downcase
   assign meta_description = page_description | default: shop.description | default: 'Discover the MVQueen edit of fashion, beauty, jewelry, and everyday luxury.'
   if request.page_type == 'index'
-    assign meta_title = 'MVQueen | Fashion, Beauty, Jewelry and Everyday Luxury'
-    assign meta_description = 'Discover MVQueen—fashion, beauty, jewelry, and everyday luxury for the woman who chooses with intention. Curated to restore softness, confidence, and ease.'
+    assign meta_title = 'MVQUEEN | Fashion, Beauty, Jewelry and Everyday Luxury'
+    assign meta_description = 'Discover MVQUEEN—fashion, beauty, jewelry, and everyday luxury for the woman who chooses with intention. Curated to restore softness, confidence, and ease.'
+    assign normalized_meta_title = meta_title | downcase
   endif
   assign meta_image = page_image | default: settings.share_image
   assign noindex_page = false
@@ -13,7 +16,7 @@
     assign noindex_page = true
   endif
 -%}
-<title>{{ meta_title | escape }}{% unless meta_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title>
+<title>{{ meta_title | escape }}{% unless normalized_meta_title contains normalized_shop_name %} — {{ shop.name | escape }}{% endunless %}</title>
 <meta name="description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
 <link rel="canonical" href="{{ canonical_url }}">
 {% if noindex_page %}

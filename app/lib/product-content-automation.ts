@@ -46,7 +46,7 @@ const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["wrinkle_treatment_claim", /\b(?:wrinkles?\b[\s\S]{0,25}\b(?:remove|flat|reduce|tighten)|tightening\s+cream[\s\S]{0,25}\bwrinkles?)\b/i],
   ["skin_lightening_claim", /\b(?:whiten(?:ing|s|ed)?|skin\s+lighten(?:ing|er)?|bleach(?:ing|es|ed)?|bright\s+white)\b/i],
   ["firming_tightening_claim", /(?:\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b[\s\S]{0,35}\b(?:firming|tightening|lifting)\b|\b(?:firming|tightening|lifting)\b[\s\S]{0,35}\b(?:skin|face|facial|body|cream|serum|lotion|roller|oil)\b)/i],
-  ["wellness_health_claim", /\b(?:improv(?:e|ing)\s+insomnia|help\s+sleep|promot(?:e|es|ing)\s+blood\s+circulation|reliev(?:e|es|ing)\s+anxiety)\b/i],
+  ["wellness_health_claim", /\b(?:(?:improv(?:e|es|ing)|promot(?:e|es|ing))\s+(?:your\s+)?(?:blood\s+circulation|insomnia|sleep(?:ing)?\s+quality)|help\s+sleep|reliev(?:e|es|ing)\s+anxiety|(?:infrared\s+)?heat\s+therapy|physiotherapy|acupuncture|strengthen\s+(?:the\s+)?kidney)\b/i],
   ["acne_treatment_claim", /\b(?:anti[- ]?acne|acne\s+(?:treatment|cure|remedy))\b/i],
 ];
 
@@ -91,6 +91,7 @@ export function productClaimReviewReasons(
     descriptionHtml?: string | null;
     handle?: string | null;
     attributeMetafields?: ProductSnapshot["attributeMetafields"];
+    claimReviewReasons?: ProductSnapshot["claimReviewReasons"];
   },
 ): string[] {
   const sourceAttributes = product.attributeMetafields?.nodes?.find(
@@ -106,9 +107,15 @@ export function productClaimReviewReasons(
     .replace(SPACE_RE, " ")
     .trim();
 
-  return CLAIM_REVIEW_RULES
+  let retainedReasons: string[] = [];
+  try {
+    const saved = JSON.parse(product.claimReviewReasons?.value ?? "[]");
+    if (Array.isArray(saved)) retainedReasons = saved.filter((reason) =>
+      CLAIM_REVIEW_RULES.some(([known]) => known === reason));
+  } catch { /* Current source detection still applies to malformed history. */ }
+  return Array.from(new Set([...retainedReasons, ...CLAIM_REVIEW_RULES
     .filter(([, pattern]) => pattern.test(text))
-    .map(([reason]) => reason);
+    .map(([reason]) => reason)]));
 }
 
 export function shouldPublishAutomatedDescription(args: {
@@ -849,7 +856,11 @@ export function buildAutomatedProductContent(
   const sourceHighlights = uniqueHighlights([
     ...extractHighlights(product.descriptionHtml),
     ...structuredSourceHighlights(product),
-  ].map((item) =>
+  ]
+    // Removing individual words can leave the unsupported promise intact.
+    // Keep factual specifications; omit the complete claim-bearing detail.
+    .filter((item) => !CLAIM_REVIEW_RULES.some(([, pattern]) => pattern.test(item)))
+    .map((item) =>
       cleanCustomerText(item, product.vendor, vocabulary, sanitizeClaims),
     )
     .filter((item) => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item)), classification.productType);

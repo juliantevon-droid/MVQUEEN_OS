@@ -34,7 +34,9 @@ function money(value: number): number {
 }
 
 function recommendationEnding(value: number): number {
-  const whole = Math.ceil(value);
+  // The .99 ending must stay at or above the unrounded minimum, including
+  // exact whole-dollar minimums and minimums already above x.99.
+  const whole = Math.ceil(value + 0.01 - Number.EPSILON);
   return money(Math.max(0, whole - 0.01));
 }
 
