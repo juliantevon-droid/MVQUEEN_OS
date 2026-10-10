@@ -14,7 +14,7 @@ The active, editable runtime policy is [Brand_Content_Policy.json](Brand_Content
 | Product naming | Evocative, descriptive-poetic, identity-led | Separate pools using the same three registers |
 | Copy rhythm | Considered declarations and flowing atmosphere | Lighter rhythm and playful personal choices |
 
-Older spellings such as MvQueen, MVQueen and MISS.QUEEN remain visible in historical sources. The live copy writer normalizes recognized aliases to the two customer-facing names above. Technical IDs, URLs, existing vendor fields and internal routing tags are separate from that writing convention.
+Older spellings such as MvQueen, MVQueen and legacy sister-brand names remain visible in historical sources. The live copy writer normalizes recognized aliases to the two customer-facing names above. Technical IDs, URLs, existing vendor fields and internal routing tags are separate from that writing convention.
 
 The messaging pillars are softness as strength, luxury that belongs to her, beauty as restoration, intentional feminine living, ritual over routine, and becoming. Use a pillar when it adds meaning; avoid repeating slogans on every product.
 
@@ -63,4 +63,4 @@ All loaded files contribute to the automation fingerprint. Editing the active po
 
 Existing handles, SKUs, barcodes, inventory and variant configuration remain protected. Current claim-review and publication controls continue. Historical SKU conventions, old datasets and deployment snippets are not migration instructions.
 
-Run `npm run test:brand-content`, `npm run test:catalog-automation`, `npm run typecheck`, `npm run build` and the source-security scan when changing policy or writer. The catalog accounts for all 1,683 Drive matches: 466 substantive original content versions, 34 distinct placeholder contents and one empty content. Identical readable copies and existing OS documents are linked instead of duplicated unnecessarily.
+Run `npm run test:brand-content`, `npm run test:catalog-automation`, `npm run typecheck`, `npm run build` and the source-security scan when changing policy or writer. The catalog accounts for 1,693 matched Drive files: 468 substantive original content versions, 35 distinct placeholder contents and one empty content. Identical readable copies and existing OS documents are linked instead of duplicated unnecessarily.

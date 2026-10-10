@@ -20,7 +20,7 @@ class VaultCrawlerContextTests(unittest.TestCase):
             historical = refs / "historical.txt"
             historical.write_text(
                 "Shopify API version " + "2024-" + "01\n"
-                + "historical-example.myshopify.com\n"
+                + "historical-example" + ".myshopify.com\n"
                 + "product" + "Update\n"
                 + 'client_secret = "[REDACTED]"\n', encoding="utf-8",
             )

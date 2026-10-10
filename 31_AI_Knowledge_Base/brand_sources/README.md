@@ -1,23 +1,23 @@
 # MVQUEEN recovered brand sources
 
-The Drive search returned 1,683 matches. This catalog accounts for every match, combines identical readable copies, and links substantive content to an existing repository document or a recovered text file. Original Drive IDs and byte hashes are in [manifest.json](manifest.json).
+This catalog accounts for 1,693 matched Drive files from the original import and the October 10 coverage check. It combines identical readable copies, and links substantive content to an existing repository document or a recovered text file. Original Drive IDs and byte hashes are in [manifest.json](manifest.json).
 
 Use [the unified brand guide](../../06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [the active content policy](../../06_Tone_And_Voice/Brand_Content_Policy.json) for new work. These recovered versions are references: examples, old code, proposed systems, visual drafts, and file lists do not become production instructions.
 
-The original download bundle retains source formatting. DOCX/PDF exports here are text extracts; layout, images, comments and revision history are not reproduced. Credential-shaped strings and credential assignments were redacted from newly published extracts. A matching repository file can differ in capitalization, whitespace, and legacy sister-brand spelling; the catalog records that comparison rather than claiming byte identity.
+The Drive originals retain source formatting. DOCX/PDF versions here are text extracts; layout, images, comments and revision history are not reproduced. Credential-shaped strings and credential assignments were redacted from newly published extracts. A matching repository file can differ in capitalization, whitespace, and legacy sister-brand spelling; the catalog records that comparison rather than claiming byte identity.
 
 ## Import accounting
 
 | Item | Count |
 |---|---:|
-| drive matches | 1683 |
-| distinct original contents | 501 |
-| substantive original contents | 466 |
-| distinct readable contents | 456 |
-| existing source versions | 228 |
+| drive matches | 1693 |
+| distinct original contents | 504 |
+| substantive original contents | 468 |
+| distinct readable contents | 458 |
+| existing source versions | 230 |
 | new reference files | 231 |
 | duplicate readable versions | 7 |
-| placeholder contents | 34 |
+| placeholder contents | 35 |
 | empty contents | 1 |
 | credential redactions | 38 |
 
@@ -491,3 +491,16 @@ The original download bundle retains source formatting. DOCX/PDF exports here ar
 | Voice_Consistency_Rules.md | Voice, tone and vocabulary | [Read content](../../06_Tone_And_Voice/Voice_Consistency_Rules.md) | 5 | existing normalized match |
 | voice_rules.md | Voice, tone and vocabulary | [Read content](../../31_AI_Knowledge_Base/voice_rules.md) | 4 | existing normalized match |
 | Voice_Suite.md | Voice, tone and vocabulary | [Read content](../../06_Tone_And_Voice/Voice_Suite.md) | 5 | existing normalized match |
+
+## October 10 coverage check
+
+A fresh three-page search covered 275 documents with brand, voice, tone, language, vocabulary, persona, editorial, writing or naming in the title. Eight direct reads of core brand documents matched the imported sources; all 231 published reference-file hashes verified. The modified-file search found no matching changes after the original import date.
+
+Six additional substantive copies already match these canonical documents:
+
+| Source | Repository content | Drive copies | Treatment |
+|---|---|---:|---|
+| Customer Psychology System overview (README.md) | [Read content](../../03_Customer_Psychology/README.md) | 5 | Existing content, provenance added |
+| Fashion_Inspiration.md | [Read content](../../13_Research_And_Inspiration/Fashion_Inspiration.md) | 1 | Existing content, provenance added |
+
+Two heading-only Customer_Personas.md files and two empty Writing Rules.md files are excluded. Their original IDs and hashes are retained in the manifest. The active policy continues to govern how reference material affects the product writer.

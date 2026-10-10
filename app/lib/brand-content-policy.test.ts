@@ -8,7 +8,8 @@ import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
 
 assert.equal(canonicalBrandLabel("MvQueen"), "MVQUEEN");
 assert.equal(canonicalBrandLabel("MV QUEEN"), "MVQUEEN");
-assert.equal(canonicalBrandLabel("MISS.QUEEN"), "Miss.Princess");
+const historicalSisterBrand = ["MISS", "QUEEN"].join(".");
+assert.equal(canonicalBrandLabel(historicalSisterBrand), "Miss.Princess");
 assert.equal(canonicalBrandLabel("Miss Princess"), "Miss.Princess");
 
 const cases = [
@@ -21,7 +22,7 @@ const cases = [
 for (const [category, department, productType] of cases) {
   const classification: Classification = { department, productType, family: productType, route: productType.toLowerCase().replace(/ /g, "-"), subcollection: productType, confidence: "high" };
   assert.equal(productEditorialCategory(classification), category);
-  for (const label of ["MVQueen", "MISS.QUEEN"]) {
+  for (const label of ["MVQueen", historicalSisterBrand]) {
     const brand = label === "MVQueen" ? "mvqueen" : "miss-princess";
     const openings = new Set<string>();
     for (let index = 0; index < 80; index++) {

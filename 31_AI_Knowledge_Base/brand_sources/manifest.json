@@ -4,14 +4,14 @@
   "normalization": "UTF-8 text extraction; normalize whitespace, case and legacy Miss.Queen/Miss.Princess aliases solely when matching existing reference content. Original byte hashes remain separate from readable-text hashes.",
   "authority": "Reference corpus. Active rules are 06_Tone_And_Voice/Brand_Content_Policy.json. Historical instructions and code in this corpus do not execute or override active rules.",
   "stats": {
-    "drive_matches": 1683,
-    "distinct_original_contents": 501,
-    "substantive_original_contents": 466,
-    "distinct_readable_contents": 456,
-    "existing_source_versions": 228,
+    "drive_matches": 1693,
+    "distinct_original_contents": 504,
+    "substantive_original_contents": 468,
+    "distinct_readable_contents": 458,
+    "existing_source_versions": 230,
     "new_reference_files": 231,
     "duplicate_readable_versions": 7,
-    "placeholder_contents": 34,
+    "placeholder_contents": 35,
     "empty_contents": 1,
     "credential_redactions": 38
   },
@@ -14639,6 +14639,18 @@
           "title": "Luxury Language.md",
           "url": "https://drive.google.com/file/d/1tLM1zDdNENrf_P7TrF1QV9ftxj_fcKU3/view?usp=drivesdk",
           "updated_at": "2026-05-12T22:00:41.538Z"
+        },
+        {
+          "id": "1ZLKRpXIFAyvicxLH39zKE049CVqR3l6X",
+          "title": "Writing Rules.md",
+          "url": "https://drive.google.com/file/d/1ZLKRpXIFAyvicxLH39zKE049CVqR3l6X/view?usp=drivesdk",
+          "updated_at": "2026-07-12T23:19:42.157Z"
+        },
+        {
+          "id": "1HmAEeoXI1tz5ME9TP62v94XG0TYDyu-A",
+          "title": "Writing Rules.md",
+          "url": "https://drive.google.com/file/d/1HmAEeoXI1tz5ME9TP62v94XG0TYDyu-A/view?usp=drivesdk",
+          "updated_at": "2026-05-12T22:00:41.466Z"
         }
       ],
       "disposition": "excluded-empty",
@@ -17323,7 +17335,128 @@
       "path": "06_Tone_And_Voice/Voice_Suite.md",
       "redactions": 0,
       "role": "reference"
+    },
+    {
+      "sha256": "4e16904da069321cc42cb546acc52dcade6e28e14d5b14f7236db41cadd2f9b5",
+      "title": "README.md",
+      "category": "Indexes and operational references",
+      "extraction": "text",
+      "text_sha256": "4e16904da069321cc42cb546acc52dcade6e28e14d5b14f7236db41cadd2f9b5",
+      "normalized_sha256": "4a09fbc1c8b4a646468db44e3542b20fa5afd7d9ad6c95a1cf05f1f40f84249a",
+      "originals": [
+        {
+          "id": "1bcWvL9OZgqoG6nl6cybnKoFYPHrtMQmu",
+          "title": "README.md",
+          "url": "https://drive.google.com/file/d/1bcWvL9OZgqoG6nl6cybnKoFYPHrtMQmu/view?usp=drivesdk",
+          "updated_at": "2026-06-19T17:55:42.000Z"
+        },
+        {
+          "id": "1cRlVUCOhMjsK9LcQ1sv3N_VUjpWgLUNn",
+          "title": "README.md",
+          "url": "https://drive.google.com/file/d/1cRlVUCOhMjsK9LcQ1sv3N_VUjpWgLUNn/view?usp=drivesdk",
+          "updated_at": "2026-06-21T02:17:31.605Z"
+        },
+        {
+          "id": "15ZF7y50b3EBOYSfFaWrpanMw9Fx0Dtc4",
+          "title": "README.md",
+          "url": "https://drive.google.com/file/d/15ZF7y50b3EBOYSfFaWrpanMw9Fx0Dtc4/view?usp=drivesdk",
+          "updated_at": "2026-05-31T15:11:34.859Z"
+        },
+        {
+          "id": "1SIequKoZcG6O7ylY1sfsrja0FhyTRqtH",
+          "title": "README.md",
+          "url": "https://drive.google.com/file/d/1SIequKoZcG6O7ylY1sfsrja0FhyTRqtH/view?usp=drivesdk",
+          "updated_at": "2026-05-31T15:11:34.859Z"
+        },
+        {
+          "id": "1pj4Eq7UifYH5ec4Y3jQXuL3fb_3yvlVa",
+          "title": "README.md",
+          "url": "https://drive.google.com/file/d/1pj4Eq7UifYH5ec4Y3jQXuL3fb_3yvlVa/view?usp=drivesdk",
+          "updated_at": "2026-05-31T15:11:34.859Z"
+        }
+      ],
+      "disposition": "existing-normalized-match",
+      "path": "03_Customer_Psychology/README.md",
+      "redactions": 0,
+      "role": "reference"
+    },
+    {
+      "sha256": "fc1ee8c159ef51d402204016a909990361490eb729129fb7a13a9298efec99e0",
+      "title": "Fashion_Inspiration.md",
+      "category": "Visual identity",
+      "extraction": "text",
+      "text_sha256": "fc1ee8c159ef51d402204016a909990361490eb729129fb7a13a9298efec99e0",
+      "normalized_sha256": "c126d9232bbc61e2b674fccc23087909e969b5192a4fcd4be523249f78935c28",
+      "originals": [
+        {
+          "id": "1z0hiHVkFB1XkXLxBc229FuQBulXzMZbY",
+          "title": "Fashion_Inspiration.md",
+          "url": "https://drive.google.com/file/d/1z0hiHVkFB1XkXLxBc229FuQBulXzMZbY/view?usp=drivesdk",
+          "updated_at": "2026-06-20T04:47:16.000Z"
+        }
+      ],
+      "disposition": "existing-normalized-match",
+      "path": "13_Research_And_Inspiration/Fashion_Inspiration.md",
+      "redactions": 0,
+      "role": "reference"
+    },
+    {
+      "sha256": "4019081df4caf5c9a07db8195eab7caa84a8235f229fb2a0faf96716579f2ae7",
+      "title": "Customer_Personas.md",
+      "category": "Placeholders",
+      "extraction": "text",
+      "text_sha256": "4019081df4caf5c9a07db8195eab7caa84a8235f229fb2a0faf96716579f2ae7",
+      "normalized_sha256": "cfd052653fe519812998c63ff754a01846cb6928ab21299d48b48e1277f36639",
+      "originals": [
+        {
+          "id": "1z1SZepyIlsCWA6tjYDY1pSyHUcv49uqy",
+          "title": "Customer_Personas.md",
+          "url": "https://drive.google.com/file/d/1z1SZepyIlsCWA6tjYDY1pSyHUcv49uqy/view?usp=drivesdk",
+          "updated_at": "2026-06-17T19:25:21.503Z"
+        },
+        {
+          "id": "1ZfKoIkS8qVOGazi3sbxNM9o9BtPGWlG4",
+          "title": "Customer_Personas.md",
+          "url": "https://drive.google.com/file/d/1ZfKoIkS8qVOGazi3sbxNM9o9BtPGWlG4/view?usp=drivesdk",
+          "updated_at": "2026-05-13T05:23:14.593Z"
+        }
+      ],
+      "disposition": "excluded-placeholder",
+      "path": null,
+      "redactions": 0
     }
   ],
-  "matchingBaseCommit": "4ab8b6bbab1219157bb07b61f49e22fbdc1e1407"
+  "matchingBaseCommit": "4ab8b6bbab1219157bb07b61f49e22fbdc1e1407",
+  "lastVerifiedDate": "2026-10-10",
+  "supplementalImports": [
+    {
+      "date": "2026-10-10",
+      "baseCommit": "701953b29d660d99bdca8fddf6939acaae053240",
+      "addedDriveFiles": 10,
+      "addedContentVersions": 3,
+      "addedSubstantiveVersions": 2,
+      "addedPlaceholderVersions": 1,
+      "newRecoveredFiles": 0,
+      "driveFileIds": [
+        "1bcWvL9OZgqoG6nl6cybnKoFYPHrtMQmu",
+        "1z0hiHVkFB1XkXLxBc229FuQBulXzMZbY",
+        "1z1SZepyIlsCWA6tjYDY1pSyHUcv49uqy",
+        "1ZfKoIkS8qVOGazi3sbxNM9o9BtPGWlG4",
+        "1cRlVUCOhMjsK9LcQ1sv3N_VUjpWgLUNn",
+        "15ZF7y50b3EBOYSfFaWrpanMw9Fx0Dtc4",
+        "1SIequKoZcG6O7ylY1sfsrja0FhyTRqtH",
+        "1pj4Eq7UifYH5ec4Y3jQXuL3fb_3yvlVa",
+        "1ZLKRpXIFAyvicxLH39zKE049CVqR3l6X",
+        "1HmAEeoXI1tz5ME9TP62v94XG0TYDyu-A"
+      ],
+      "verification": {
+        "brandTitleSearchPages": 3,
+        "brandTitleDocuments": 275,
+        "freshCoreDocumentsMatched": 8,
+        "publishedReferenceHashesVerified": 231,
+        "changedAfterOriginalImportSearchMatches": 0
+      },
+      "note": "Six additional substantive Drive copies match the existing customer psychology overview and fashion inspiration document. Two heading-only persona documents and two empty writing-rule documents are excluded. The active runtime policy remains the publication authority."
+    }
+  ]
 }

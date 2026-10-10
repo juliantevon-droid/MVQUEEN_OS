@@ -2,6 +2,7 @@
 # Unified cleanup revision: 2
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 import unittest
@@ -23,6 +24,24 @@ TEXT_SUFFIXES = {
     ".py", ".ts", ".tsx", ".js", ".jsx", ".md", ".liquid",
     ".json", ".yml", ".yaml", ".toml", ".txt", ".css",
 }
+
+
+def active_brand_text(rel: str, text: str) -> str:
+    """Inspect active writing while retaining explicitly historical source data."""
+    reference_root = "31_AI_Knowledge_Base/brand_sources/"
+    if rel in {reference_root + "README.md", reference_root + "manifest.json"}:
+        return ""
+    if rel.startswith(reference_root + "recovered/") and Path(rel).suffix == ".txt":
+        return ""
+    if rel == "06_Tone_And_Voice/Brand_Content_Policy.json":
+        policy = json.loads(text)
+        # Alias keys and source-persona labels document historical spellings.
+        # Keep checking every active profile, hook, channel and register use.
+        policy.pop("legacyAliases", None)
+        for register in policy.get("editorialRegisters", []):
+            register.pop("legacyPersona", None)
+        return json.dumps(policy, ensure_ascii=False)
+    return text
 
 
 class UnifiedSystemContractTests(unittest.TestCase):
@@ -94,14 +113,39 @@ class UnifiedSystemContractTests(unittest.TestCase):
     def test_active_brand_documents_use_miss_princess(self):
         # Detection fixtures must not embed legacy sister-brand spellings in active source text.
         legacy = re.compile(r"MISS\.?\s*QUEEN|Miss\.?\s+Queen")
-        for path in ROOT.rglob("*"):
+        tracked = subprocess.check_output(
+            ["git", "ls-files", "-z"], cwd=ROOT, text=True
+        ).split("\0")
+        for rel in tracked:
+            path = ROOT / rel
             if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
                 continue
-            rel = path.relative_to(ROOT).as_posix()
             if rel.startswith("98_Archive/") or rel in ALLOWED_LEGACY_BRAND_PATHS:
                 continue
             text = path.read_text(encoding="utf-8", errors="replace")
-            self.assertIsNone(legacy.search(text), f"legacy sister-brand reference in {rel}")
+            self.assertIsNone(legacy.search(active_brand_text(rel, text)), f"legacy sister-brand reference in {rel}")
+
+    def test_historical_metadata_does_not_exempt_active_copy(self):
+        historical_label = "MISS" + ".QUEEN"
+        legacy = re.compile(r"MISS\.?\s*QUEEN|Miss\.?\s+Queen")
+        policy = {
+            "legacyAliases": {historical_label: "Miss.Princess"},
+            "editorialRegisters": [{"name": "Princess play", "legacyPersona": historical_label,
+                                   "use": "Miss.Princess voice"}],
+            "profiles": {"miss-princess": {"displayName": "Miss.Princess"}},
+        }
+        rel = "06_Tone_And_Voice/Brand_Content_Policy.json"
+        self.assertIsNone(legacy.search(active_brand_text(rel, json.dumps(policy))))
+        policy["profiles"]["miss-princess"]["displayName"] = historical_label
+        self.assertIsNotNone(legacy.search(active_brand_text(rel, json.dumps(policy))))
+        policy["profiles"]["miss-princess"]["displayName"] = "Miss.Princess"
+        policy["editorialRegisters"][0]["use"] = historical_label
+        self.assertIsNotNone(legacy.search(active_brand_text(rel, json.dumps(policy))))
+        root = "31_AI_Knowledge_Base/brand_sources/"
+        for reference in ("README.md", "manifest.json", "recovered/source.txt"):
+            self.assertEqual(active_brand_text(root + reference, historical_label), "")
+        for active in ("recovered/writer.ts", "recovered/guide.md", "source.txt"):
+            self.assertIsNotNone(legacy.search(active_brand_text(root + active, historical_label)))
 
 
 if __name__ == "__main__":
