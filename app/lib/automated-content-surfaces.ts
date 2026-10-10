@@ -1,7 +1,8 @@
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
 import type { AutomatedProductContent } from "./product-content-automation";
+import { brandedSeoTitle, productEditorialCategory } from "./product-content-automation";
 import type { CanonicalProductRecord } from "./enterprise/canonical-proposal";
-import { canonicalBrandLabel } from "./brand-vocabulary.server";
+import { BRAND_VOCABULARY, canonicalBrandLabel, removeForbiddenLanguage, type BrandVocabulary } from "./brand-vocabulary.server";
 
 function cleanText(value?: string | null): string {
   return String(value ?? "")
@@ -29,43 +30,73 @@ function pluralSlug(value: string): string {
   return base + "s";
 }
 
+function seed(value: string): number {
+  let result = 2166136261;
+  for (const char of value) result = Math.imul(result ^ char.charCodeAt(0), 16777619);
+  return result >>> 0;
+}
+
+function boundedText(value: string, limit: number): string {
+  if (value.length <= limit) return value;
+  return value.slice(0, limit).replace(/\s+\S*$/, "").trim();
+}
+
+function surfaceContext(
+  product: ProductSnapshot,
+  classification: Classification,
+  content: AutomatedProductContent,
+  brandLabel: string,
+  vocabulary: BrandVocabulary,
+) {
+  const brand = canonicalBrandLabel(brandLabel, vocabulary);
+  const brandKey = brand === "Miss.Princess" ? "miss-princess" : "mvqueen";
+  if (brand !== vocabulary.contentPolicy.profiles[brandKey].displayName) {
+    throw new Error(`Unknown brand for content surfaces: ${brand}`);
+  }
+  const productType = cleanText(classification.productType).toLowerCase();
+  const values: Record<string, string> = {
+    brand, title: cleanText(content.title), productType,
+    family: cleanText(classification.family).toLowerCase(),
+    focusKeyword: cleanText(content.focusKeyword),
+    article: /^[aeiou]/i.test(productType) ? "an" : "a",
+  };
+  const render = (template: string): string => {
+    const text = cleanText(template.replace(/\{(\w+)\}/g, (_match, key: string) => {
+      if (!(key in values)) throw new Error(`Unknown content template field: ${key}`);
+      return values[key];
+    }));
+    if (!text || removeForbiddenLanguage(text, vocabulary) !== text) {
+      throw new Error(`Content surface requires a language review: ${product.id}`);
+    }
+    return text;
+  };
+  const productIdentity = product.id || product.handle || content.title;
+  const choose = (pool: string[], key: string, identity = productIdentity) =>
+    render(pool[seed(identity + ":" + key) % pool.length]);
+  return {
+    brand, brandKey, render, choose,
+    templates: vocabulary.contentPolicy.profiles[brandKey].surfaces,
+    category: productEditorialCategory(classification),
+  };
+}
+
 export function buildAutomatedProductFaq(
   product: ProductSnapshot,
   classification: Classification,
   content: AutomatedProductContent,
   brandLabel = "MVQUEEN",
+  vocabulary = BRAND_VOCABULARY,
 ) {
-  brandLabel = canonicalBrandLabel(brandLabel);
-  const faq = [
-    {
-      question: "What is " + content.title + "?",
-      answer:
-        content.title +
-        " is listed as a " +
-        classification.productType.toLowerCase() +
-        " in the " +
-        brandLabel +
-        " edit. Review the product details and images on this page for the currently available specifications.",
-    },
-    {
-      question: "Where can I check product details before ordering?",
-      answer:
-        "Use the product details, images, options, and any listed specifications on this page as the current reference before purchasing.",
-    },
-    {
-      question: "Where can I find shipping and return information?",
-      answer:
-        "Use the Shipping Policy and Refund & Returns Policy linked from the product page for the current store terms.",
-    },
-  ];
+  const { templates, render } = surfaceContext(product, classification, content, brandLabel, vocabulary);
+  const entry = (item: { question: string; answer: string }) => ({
+    question: render(item.question), answer: render(item.answer),
+  });
+  const faq = [entry(templates.faq.overview), entry(templates.faq.choosing), entry(templates.faq.policies)];
 
   if (content.highlights.length) {
     faq.splice(1, 0, {
-      question: "What details are listed for this product?",
-      answer:
-        "The source product information currently lists: " +
-        content.highlights.slice(0, 5).join("; ") +
-        ".",
+      question: render(templates.faq.detailsQuestion),
+      answer: render(templates.faq.detailsLead) + " " + content.highlights.slice(0, 5).join("; ").replace(/[.;]+$/, "") + ".",
     });
   }
 
@@ -77,9 +108,12 @@ export function buildAutomaticSurfaceRecord(
   classification: Classification,
   content: AutomatedProductContent,
   brandLabel = "MVQUEEN",
+  vocabulary = BRAND_VOCABULARY,
 ): CanonicalProductRecord {
-  brandLabel = canonicalBrandLabel(brandLabel);
-  const faq = buildAutomatedProductFaq(product, classification, content, brandLabel);
+  const context = surfaceContext(product, classification, content, brandLabel, vocabulary);
+  brandLabel = context.brand;
+  const { templates, choose, render, category } = context;
+  const faq = buildAutomatedProductFaq(product, classification, content, brandLabel, vocabulary);
   const descriptionPlain = cleanText(product.descriptionHtml);
   const blogPublishEligible =
     descriptionPlain.length >= 240 && content.highlights.length >= 3;
@@ -94,9 +128,14 @@ export function buildAutomaticSurfaceRecord(
     slug(classification.department),
   ].filter(Boolean)));
 
-  const blogTitle = "A Closer Look at " + content.title;
-  const blogSlug = slug(blogTitle);
+  const blogTitle = boundedText(choose(templates.blog.title, "blog.title"), 120);
+  // Keep the established identity even when an editor changes the headline.
+  const blogSlug = slug("A Closer Look at " + content.title);
   const listedDetails = content.highlights.slice(0, 5).join("; ");
+  const cta = choose(templates.cta, "cta");
+  // A collection is shared by products. Its copy must not alternate as each
+  // product runs, so select its wording by brand and taxonomy, not product ID.
+  const collectionIdentity = context.brandKey + ":" + classification.family.toLowerCase();
 
   const firstPrice = product.variants?.nodes?.[0]?.price ?? "0";
 
@@ -124,10 +163,10 @@ export function buildAutomaticSurfaceRecord(
     copy: {
       title: content.title,
       short_description: content.shortDescription,
-      description: product.descriptionHtml ?? "",
+      description: content.descriptionHtml,
       benefits: [],
       features: content.highlights,
-      cta: "Explore the " + brandLabel + " edit.",
+      cta,
     },
     seo: {
       seo_title: content.seoTitle,
@@ -138,7 +177,7 @@ export function buildAutomaticSurfaceRecord(
       alt_texts: [],
     },
     content_suite: {
-      content_version: "mvq-auto-surfaces-v1",
+      content_version: "mvq-auto-surfaces-v2-" + vocabulary.version,
       metafields: {
         "content.faq": {
           type: "json",
@@ -158,15 +197,9 @@ export function buildAutomaticSurfaceRecord(
         name: collectionName,
         slug: slug(collectionName),
         target_handles: collectionTargetHandles,
-        description:
-          "Explore the " + brandLabel + " " +
-          classification.family.toLowerCase() +
-          " edit with clear product details, intentional styling, and a refined everyday point of view.",
-        seo_title: (collectionName + " | " + brandLabel).slice(0, 60),
-        meta_description:
-          ("Explore " + brandLabel + " " +
-            classification.family.toLowerCase() +
-            " with clear product details, intentional styling, and a considered feminine point of view.").slice(0, 160),
+        description: choose(templates.collection.description, "collection.description", collectionIdentity),
+        seo_title: brandedSeoTitle(classification.family + " Edit", brandLabel, vocabulary.contentPolicy.limits.seoTitle),
+        meta_description: boundedText(choose(templates.collection.metaDescription, "collection.metaDescription", collectionIdentity), vocabulary.contentPolicy.limits.metaDescription),
         primary_keyword: classification.family.toLowerCase(),
         status: "PUBLISH_ELIGIBLE",
         auto_publish: true,
@@ -174,31 +207,28 @@ export function buildAutomaticSurfaceRecord(
       blog: {
         title: blogTitle,
         slug: blogSlug,
-        dek:
-          "A practical " + brandLabel + " guide to " +
-          content.focusKeyword +
-          ", grounded in the product information currently available on the product page.",
+        brand_label: brandLabel,
+        dek: choose(templates.blog.dek, "blog.dek"),
+        introduction: choose(templates.blog.introduction[category], "blog.introduction"),
         sections: [
           {
-            heading: "Start with the listed details",
+            heading: choose(templates.blog.detailsHeading, "blog.detailsHeading"),
             paragraphs: [
               listedDetails
-                ? "The source product information currently lists: " + listedDetails + "."
-                : "Review the currently listed product details and imagery before choosing.",
-              brandLabel + " keeps product facts separate from editorial framing so the source information remains the reference.",
+                ? render(templates.faq.detailsLead) + " " + listedDetails.replace(/[.;]+$/, "") + "."
+                : render(templates.faq.choosing.answer),
             ],
           },
           {
-            heading: "Consider how it fits your needs",
+            heading: choose(templates.blog.choiceHeading, "blog.choiceHeading"),
             paragraphs: [
-              "Compare the listed details with how you plan to wear, use, or style the product.",
-              "When a specification is not listed, it should not be treated as a verified product fact.",
+              choose(templates.blog.choice[category], "blog.choice"),
             ],
           },
           {
-            heading: "Review the product page",
+            heading: choose(templates.blog.closingHeading, "blog.closingHeading"),
             paragraphs: [
-              "Use the product page for the latest images, options, shipping information, and currently available specifications.",
+              choose(templates.blog.closing, "blog.closing"), cta,
             ],
           },
         ],
@@ -206,7 +236,8 @@ export function buildAutomaticSurfaceRecord(
           ? [{ anchor: content.title, target: "/products/" + product.handle, type: "product" }]
           : [],
         primary_keyword: content.focusKeyword,
-        meta_description: content.metaDescription,
+        seo_title: brandedSeoTitle(blogTitle, brandLabel, vocabulary.contentPolicy.limits.seoTitle),
+        meta_description: boundedText(choose(templates.blog.dek, "blog.dek"), vocabulary.contentPolicy.limits.metaDescription),
         status: blogPublishEligible ? "PUBLISH_ELIGIBLE" : "DRAFT_REVIEW",
         publish_eligible: blogPublishEligible,
         auto_publish: blogPublishEligible,
@@ -220,6 +251,8 @@ export function buildAutomaticSurfaceRecord(
         auto_publish: true,
       },
       governance: {
+        brand: context.brandKey,
+        brand_policy_version: vocabulary.version,
         fact_policy: "shopify_source_product_only",
         protected_fields_mutated: false,
         approved_release_controls_publish: false,

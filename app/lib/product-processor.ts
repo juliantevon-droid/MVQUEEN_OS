@@ -1120,7 +1120,7 @@ export async function processProductJob(
 
     if (AUTO_CONTENT_SURFACES_ENABLED && automatedContent) {
       const surfaceRecord = buildAutomaticSurfaceRecord(product, c, automatedContent, brandLabel);
-      await publishAutomaticContentSurfaces(
+      const surfaceResults = await publishAutomaticContentSurfaces(
         admin as unknown as {
           graphql: (
             query: string,
@@ -1129,6 +1129,13 @@ export async function processProductJob(
         },
         surfaceRecord,
       );
+      logMvqueenEvent("product.content_surfaces.completed", {
+        correlationId,
+        productGid: product.id,
+        brand: brandLabel,
+        brandPolicyVersion: BRAND_VOCABULARY.version,
+        surfaces: surfaceResults,
+      });
     }
 
     await prisma.productAutomationState.update({

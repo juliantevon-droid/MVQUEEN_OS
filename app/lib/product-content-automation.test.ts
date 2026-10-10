@@ -927,6 +927,15 @@ try {
   const forbiddenFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[2]);
   const forbiddenSource = readFileSync(forbiddenFile, "utf8");
   writeFileSync(forbiddenFile, forbiddenSource.replace("## Tier 2", "| Considered | Editorial review |\n\n## Tier 2"));
+  // A newly prohibited word also requires the editable surface copy to be
+  // reconciled. Refuse the inconsistent policy before testing pool filtering.
+  assert.throws(() => loadBrandVocabulary(vocabularyRoot), /Forbidden language in brand surface template/);
+  const policyFile = join(vocabularyRoot, BRAND_VOCABULARY_SOURCES[6]);
+  const surfacePolicy = JSON.parse(readFileSync(policyFile, "utf8"));
+  for (const profile of Object.values(surfacePolicy.profiles) as any[]) {
+    profile.surfaces = JSON.parse(JSON.stringify(profile.surfaces).replace(/\bconsidered\b/gi, "intentional"));
+  }
+  writeFileSync(policyFile, JSON.stringify(surfacePolicy));
   const restrictedVocabulary = loadBrandVocabulary(vocabularyRoot);
   assert.ok(!restrictedVocabulary.profiles.mvqueen.adjectives.includes("considered"));
   assert.ok(!restrictedVocabulary.naming.mvqueen.evocative.general.includes("Considered Hour"));

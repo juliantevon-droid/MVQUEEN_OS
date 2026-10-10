@@ -1,4 +1,5 @@
 import type { CanonicalProductRecord, ReleaseArtifact } from "./canonical-proposal";
+import { canonicalBrandLabel } from "../brand-vocabulary.server";
 
 type AdminGraphql = {
   graphql: (query: string, options?: { variables?: Record<string, unknown> }) => Promise<Response>;
@@ -66,7 +67,8 @@ function renderBlogBody(blog: any): string {
     .map((item: any) => '<p><a href="' + esc(item.target) + '">' + esc(item.anchor || "Explore the product") + "</a></p>")
     .join("");
 
-  return sectionHtml + linkHtml;
+  const introduction = blog?.introduction ? "<p>" + esc(blog.introduction) + "</p>" : "";
+  return introduction + sectionHtml + linkHtml;
 }
 
 function renderFaqBody(entries: any[]): string {
@@ -89,7 +91,7 @@ async function ensureBlog(admin: AdminGraphql, handle: string) {
   const created = await body(await admin.graphql(BLOG_CREATE, {
     variables: {
       blog: {
-        title: process.env.MVQ_BLOG_TITLE || "MVQueen Journal",
+        title: process.env.MVQ_BLOG_TITLE || "MVQUEEN Journal",
         handle,
         commentPolicy: "CLOSED",
       },
@@ -122,6 +124,7 @@ async function publishBlog(admin: AdminGraphql, record: CanonicalProductRecord):
     variables: { query: exactHandleQuery(articleHandle) + " AND blog_id:" + numericBlogId },
   }));
   const current = existing.data?.articles?.nodes?.[0];
+  const brandLabel = canonicalBrandLabel(String(blog.brand_label || "MVQUEEN"));
 
   const articleInput = {
     blogId: targetBlog.id,
@@ -130,9 +133,23 @@ async function publishBlog(admin: AdminGraphql, record: CanonicalProductRecord):
     body: renderBlogBody(blog),
     summary: "<p>" + esc(blog.dek || blog.meta_description || "") + "</p>",
     isPublished: true,
-    author: { name: process.env.MVQ_BLOG_AUTHOR || "MVQueen" },
-    tags: Array.from(new Set(["MVQueen", "Editorial", String(blog.primary_keyword || "").trim()].filter(Boolean))),
+    author: { name: canonicalBrandLabel(process.env.MVQ_BLOG_AUTHOR || brandLabel) },
+    tags: Array.from(new Set([brandLabel, "Editorial", String(blog.primary_keyword || "").trim()].filter(Boolean))),
     metafields: [
+      // Shopify's search listing reads global.title_tag/description_tag.
+      // Keep the prior custom field for integrations that already consume it.
+      {
+        namespace: "global",
+        key: "title_tag",
+        type: "single_line_text_field",
+        value: String(blog.seo_title || articleTitle).trim(),
+      },
+      {
+        namespace: "global",
+        key: "description_tag",
+        type: "single_line_text_field",
+        value: String(blog.meta_description || "").trim(),
+      },
       {
         namespace: "seo",
         key: "meta_description",

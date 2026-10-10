@@ -16,7 +16,8 @@
     "06_Tone_And_Voice/Voice_Consistency_Rules.md",
     "06_Tone_And_Voice/Product_Description_Voice.md",
     "06_Tone_And_Voice/Platform_Voice_Guides.md",
-    "10_AI_Systems/AGENT_BRAIN_SYSTEM.md"
+    "10_AI_Systems/AGENT_BRAIN_SYSTEM.md",
+    "06_Tone_And_Voice/blog_voice.md"
   ],
   "positioning": "Accessible luxury with warmth, feminine confidence and a sense of personal identity. Invite the customer in. Show quality through verified details.",
   "precedence": [
@@ -113,6 +114,125 @@
           "{articleCapital} {adjective} choice for the {brand} edit you make your own.",
           "Your {brand} edit, with {article} {adjective} touch of your own."
         ]
+      },
+      "surfaces": {
+        "cta": [
+          "Find your next considered detail at {brand}.",
+          "Explore the {brand} edit at your own pace."
+        ],
+        "faq": {
+          "overview": {
+            "question": "What is {title}?",
+            "answer": "{title} is {article} {productType} in the {brand} edit. Take a closer look at the photos and listed details before choosing."
+          },
+          "detailsQuestion": "What details should I know?",
+          "detailsLead": "The product details list: ",
+          "choosing": {
+            "question": "How can I make a considered choice?",
+            "answer": "Start with the photos, available options and listed specifications on this page. Check any size chart or directions against your own needs before ordering."
+          },
+          "policies": {
+            "question": "Where can I find shipping and return information?",
+            "answer": "You can find the current terms in the Shipping Policy and Refund & Returns Policy linked from this page. Review them before placing your order."
+          }
+        },
+        "collection": {
+          "description": [
+            "Explore the {brand} {family} edit with a considered point of view. Take time with the product details and choose what feels like your own.",
+            "Your {brand} {family} edit begins with personal intention. Explore the details, compare your options and find a direction that feels like you."
+          ],
+          "metaDescription": [
+            "Explore {family} at {brand}. Consider the details, compare your options and find a choice that feels like your own."
+          ]
+        },
+        "blog": {
+          "title": [
+            "A Closer Look at {title}",
+            "The Details: {title}"
+          ],
+          "dek": [
+            "Explore {title} with {brand}: a closer look at the listed details and a little space for your own point of view."
+          ],
+          "introduction": {
+            "fashion": [
+              "Some mornings, getting dressed starts with a feeling. Give yourself space to choose a look that feels like you.",
+              "Your wardrobe can make room for a new direction without losing what you love. Begin with the details you want to return to."
+            ],
+            "jewelry": [
+              "A finishing touch can be a personal choice. Start with the pieces you enjoy wearing and the details that draw you in.",
+              "Choosing jewelry is a chance to give your own style a little attention. Take a moment to look closely before deciding."
+            ],
+            "skincare": [
+              "A care ritual begins with time you set aside for yourself. Choose each step with attention to the information that matters to you.",
+              "Your skincare choices deserve a thoughtful pause. Start with the routine you know and the details you want to understand."
+            ],
+            "beauty": [
+              "Your beauty edit can begin with the look you feel like exploring today. Let your own preferences guide the choice.",
+              "Some days call for a familiar look; others leave room to try a new direction. Make the choice feel like your own."
+            ],
+            "fragrance": [
+              "Choosing a fragrance is personal. Begin with what draws your attention, then take time to explore the listed details.",
+              "Your fragrance edit can reflect your own point of view. Give yourself room to look closely and choose with intention."
+            ],
+            "haircare": [
+              "The time you set aside for haircare is part of your day. Choose a step with attention to your routine and the details you need.",
+              "A considered haircare edit starts with understanding your choices. Take a moment to read before adding something new."
+            ],
+            "home": [
+              "Your space holds the small moments of your day. Start with a detail you would enjoy making part of it.",
+              "A home edit can begin with one considered choice. Think about the place, purpose and mood you want to make your own."
+            ],
+            "tools": [
+              "The details of a tool matter to the way you plan to use it. Begin with your own needs and take a closer look at what is listed.",
+              "A thoughtful choice starts with understanding the tool in front of you. Make room for the practical details before deciding."
+            ],
+            "general": [
+              "A personal edit is built one considered choice at a time. Start with the details that matter to the way you live.",
+              "Some choices deserve a closer look. Give yourself a moment to consider how a new detail belongs in your day."
+            ]
+          },
+          "detailsHeading": [
+            "The details to know"
+          ],
+          "choiceHeading": [
+            "A place in your own edit"
+          ],
+          "choice": {
+            "fashion": [
+              "Think about the pieces you already reach for. Check the listed measurements, available options and any size chart before choosing how {title} fits into your wardrobe."
+            ],
+            "jewelry": [
+              "Consider what you like to wear together. Compare any listed dimensions, materials and fastening details with the pieces you already enjoy."
+            ],
+            "skincare": [
+              "Start with your own routine and ingredient preferences. Read any listed ingredients and directions before deciding whether to add {title} to your care edit."
+            ],
+            "beauty": [
+              "Think about the look you want to explore. Compare any listed shades, formats and directions, then check the available options on the product page."
+            ],
+            "fragrance": [
+              "Scent is personal. If notes, concentration or volume are listed, use those details to compare your options; the name alone does not tell you how a fragrance will smell."
+            ],
+            "haircare": [
+              "Begin with the steps you already use. Read any listed ingredients, directions and product options before choosing where {title} belongs in your haircare edit."
+            ],
+            "home": [
+              "Think about where you would place it and how you plan to use it. Check any listed dimensions, materials and care or safety instructions before choosing."
+            ],
+            "tools": [
+              "Compare the listed function, dimensions and included items with what you need. Read any provided directions and compatibility details before deciding how to use it."
+            ],
+            "general": [
+              "Consider how you plan to use it and what you already own. Compare the listed dimensions, options and any care instructions before making your choice."
+            ]
+          },
+          "closingHeading": [
+            "Your next considered choice"
+          ],
+          "closing": [
+            "Return to {title} at {brand} for the current photos and available options. Review the linked shipping and returns policies before ordering."
+          ]
+        }
       }
     },
     "miss-princess": {
@@ -186,6 +306,125 @@
           "{articleCapital} {adjective} choice for the {brand} edit you dream up.",
           "Bring {article} {adjective} personal note to your {brand} edit."
         ]
+      },
+      "surfaces": {
+        "cta": [
+          "Find a little inspiration in the {brand} edit.",
+          "Explore a little more of {brand}."
+        ],
+        "faq": {
+          "overview": {
+            "question": "What is {title}?",
+            "answer": "{title} is {article} {productType} in the {brand} edit. Explore the photos and listed details to see how it belongs in your own edit."
+          },
+          "detailsQuestion": "What little details can I explore?",
+          "detailsLead": "Here are the listed details to explore: ",
+          "choosing": {
+            "question": "How do I choose what feels like me?",
+            "answer": "Start with what you like, then explore the photos, available options and listed specifications. Check any size chart or directions before making your choice."
+          },
+          "policies": {
+            "question": "Where can I find shipping and return information?",
+            "answer": "You can find the current terms in the Shipping Policy and Refund & Returns Policy linked from this page. Review them before placing your order."
+          }
+        },
+        "collection": {
+          "description": [
+            "A little inspiration for your {family} edit at {brand}. Explore the details and choose the pieces that feel like your own.",
+            "Make room for a little curiosity in the {brand} {family} edit. Take a closer look and find your next personal choice."
+          ],
+          "metaDescription": [
+            "Explore {family} at {brand}. A little inspiration, useful product details and room to choose what feels like you."
+          ]
+        },
+        "blog": {
+          "title": [
+            "A Little Inspiration: {title}",
+            "Meet Your Next Detail: {title}"
+          ],
+          "dek": [
+            "Explore {title} with {brand}. A little inspiration and the listed details to help you make it your own."
+          ],
+          "introduction": {
+            "fashion": [
+              "A new outfit can begin with one little idea. Start with the mood you want to make your own.",
+              "Your next style idea might be a small detail. Have a little fun exploring the options before you choose."
+            ],
+            "jewelry": [
+              "A little finishing touch can be a lovely place to start. Think about the jewelry you reach for and what you would like to add.",
+              "Your jewelry edit leaves room for a little daydream. Look closely at the details, then choose what feels like you."
+            ],
+            "skincare": [
+              "A little time for yourself belongs in the day. Explore the care details at your own pace before choosing a new step.",
+              "Your care ritual can be a moment to pause. Start with the steps you know and give the product details a little attention."
+            ],
+            "beauty": [
+              "There is room to play with the look you want to make your own. Start with an idea, then explore the listed options.",
+              "A new beauty idea can begin with a little curiosity. Follow your own preferences and take a closer look before choosing."
+            ],
+            "fragrance": [
+              "A little curiosity is a lovely start to a fragrance edit. Explore the listed details and see what draws you in.",
+              "Your fragrance choice is yours to make. Take a moment to daydream, then look closely at the information on the page."
+            ],
+            "haircare": [
+              "A little pause for your haircare choices can be part of the day. Look at the details before adding a new step.",
+              "Your haircare edit has room for thoughtful little choices. Begin with your routine and the information you want to know."
+            ],
+            "home": [
+              "A little detail can be the beginning of a new idea for your space. Think about where you would like to make room for it.",
+              "Let yourself imagine a small change to your space. Then take a closer look at the details before making it yours."
+            ],
+            "tools": [
+              "A little curiosity is useful when choosing a new tool. Start with what you need, then explore the listed details.",
+              "Give the practical details a little attention. Your next tool choice begins with how you plan to use it."
+            ],
+            "general": [
+              "Your personal edit can start with one little idea. Explore the details and choose what belongs in your day.",
+              "There is room for a little curiosity in your everyday choices. Take a closer look at what draws you in."
+            ]
+          },
+          "detailsHeading": [
+            "A closer look at the little details"
+          ],
+          "choiceHeading": [
+            "Make the choice feel like you"
+          ],
+          "choice": {
+            "fashion": [
+              "Think about the pieces you already reach for. Check the listed measurements, available options and any size chart before choosing how {title} fits into your wardrobe."
+            ],
+            "jewelry": [
+              "Consider what you like to wear together. Compare any listed dimensions, materials and fastening details with the pieces you already enjoy."
+            ],
+            "skincare": [
+              "Start with your own routine and ingredient preferences. Read any listed ingredients and directions before deciding whether to add {title} to your care edit."
+            ],
+            "beauty": [
+              "Think about the look you want to explore. Compare any listed shades, formats and directions, then check the available options on the product page."
+            ],
+            "fragrance": [
+              "Scent is personal. If notes, concentration or volume are listed, use those details to compare your options; the name alone does not tell you how a fragrance will smell."
+            ],
+            "haircare": [
+              "Begin with the steps you already use. Read any listed ingredients, directions and product options before choosing where {title} belongs in your haircare edit."
+            ],
+            "home": [
+              "Think about where you would place it and how you plan to use it. Check any listed dimensions, materials and care or safety instructions before choosing."
+            ],
+            "tools": [
+              "Compare the listed function, dimensions and included items with what you need. Read any provided directions and compatibility details before deciding how to use it."
+            ],
+            "general": [
+              "Consider how you plan to use it and what you already own. Compare the listed dimensions, options and any care instructions before making your choice."
+            ]
+          },
+          "closingHeading": [
+            "A little more to explore"
+          ],
+          "closing": [
+            "Take another look at {title} in the {brand} edit. Explore the current photos and available options, then review the linked shipping and returns policies before ordering."
+          ]
+        }
       }
     }
   },
@@ -271,7 +510,10 @@
     "social": "Adapt rhythm to the platform while keeping each brand distinct. Trend exceptions are for deliberate Princess captions, not automated product copy.",
     "ads": "Specific desire with truthful product evidence; no invented urgency, reviews or social proof.",
     "blog": "Useful, deeper storytelling with verified facts and consistent brand language.",
-    "service": "Warm and clear. Preserve operational facts such as dates, quantities and delivery information."
+    "service": "Warm and clear. Preserve operational facts such as dates, quantities and delivery information.",
+    "faq": "Answer the actual question warmly and clearly. Use current product details; link current shipping and returns terms without inventing promises.",
+    "collection": "Use a stable brand and category introduction; express personal choice without implying every product shares an unverified feature.",
+    "cta": "One warm invitation in the routed brand voice; no manufactured urgency."
   },
   "additionalForbidden": [
     "Killing it",

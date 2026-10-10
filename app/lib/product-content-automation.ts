@@ -753,7 +753,7 @@ function buildDescriptionHtml(
   return (intro + facts + details + measurements).trim();
 }
 
-function brandedSeoTitle(title: string, brandLabel: string, limit: number): string {
+export function brandedSeoTitle(title: string, brandLabel: string, limit: number): string {
   const suffix = " | " + cleanText(brandLabel);
   if (suffix.length >= limit) return cleanText(brandLabel).slice(0, limit).trim();
   const available = limit - suffix.length;

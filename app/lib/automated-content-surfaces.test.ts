@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { buildAutomaticSurfaceRecord, buildAutomatedProductFaq } from "./automated-content-surfaces";
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
 import type { AutomatedProductContent } from "./product-content-automation";
+import { BRAND_VOCABULARY, PRODUCT_EDITORIAL_CATEGORIES } from "./brand-vocabulary.server";
 
 const classification: Classification = {
   department: "Fashion",
@@ -41,6 +42,8 @@ assert.ok(faq.length >= 3);
 assert.ok(faq.some((item) => item.answer.includes("Material: Satin")));
 
 const record = buildAutomaticSurfaceRecord(richProduct, classification, content);
+assert.equal(record.copy.description, content.descriptionHtml);
+assert.ok(record.content_suite.content_version.endsWith(BRAND_VOCABULARY.version));
 assert.equal(record.status, "PRODUCTION_READY");
 assert.equal(record.qa.passed, true);
 assert.equal((record.content_suite.blog as any).auto_publish, true);
@@ -83,5 +86,45 @@ const sparseRecord = buildAutomaticSurfaceRecord(sparseProduct, classification, 
 });
 assert.equal((sparseRecord.content_suite.blog as any).auto_publish, false);
 assert.equal((sparseRecord.content_suite.blog as any).status, "DRAFT_REVIEW");
+
+const categoryCases = [
+  ["fashion", "Fashion", "Dress"], ["jewelry", "Jewelry", "Necklace"],
+  ["skincare", "Beauty", "Face Cream"], ["beauty", "Beauty", "Lipstick"],
+  ["fragrance", "Beauty", "Fragrance"], ["haircare", "Hair", "Shampoo"],
+  ["home", "Home", "Candle"], ["tools", "Beauty", "Makeup Brush"],
+  ["general", "Lifestyle Accessories", "Pouch"],
+] as const;
+assert.equal(categoryCases.length, PRODUCT_EDITORIAL_CATEGORIES.length);
+for (const [category, department, productType] of categoryCases) {
+  const c = { ...classification, department, family: productType, productType };
+  for (const brand of ["MVQUEEN", "Miss.Princess"]) {
+    const introductions = new Set<string>();
+    let previousCollection: unknown;
+    for (let index = 0; index < 8; index++) {
+      const product = { ...richProduct, id: `surface-${brand}-${category}-${index}` };
+      const before = structuredClone(product);
+      const generated = buildAutomaticSurfaceRecord(product, c, content, brand);
+      assert.deepEqual(product, before);
+      const blog = generated.content_suite.blog as any;
+      const collection = generated.content_suite.collection as any;
+      const customerCopy = [blog.title, blog.dek, blog.introduction, ...blog.sections.flatMap((s: any) => [s.heading, ...s.paragraphs]), collection.description, generated.copy.cta].join(" ");
+      assert.ok(!/editorial framing|source information|verified product fact|\{\w+\}/i.test(customerCopy));
+      assert.ok(!/\b(?:clinically|vegan|cruelty|heals|guaranteed|handmade|longevity)\b/i.test(customerCopy));
+      assert.ok(blog.dek.includes(brand));
+      assert.ok(blog.sections.some((s: any) => s.paragraphs.some((p: string) => p.includes("Material: Satin"))));
+      assert.ok(blog.seo_title.length <= BRAND_VOCABULARY.contentPolicy.limits.seoTitle);
+      assert.ok(blog.meta_description.length <= BRAND_VOCABULARY.contentPolicy.limits.metaDescription);
+      assert.ok(collection.seo_title.length <= BRAND_VOCABULARY.contentPolicy.limits.seoTitle);
+      assert.equal(collection.seo_title.split(brand).length - 1, 1);
+      assert.ok(collection.meta_description.length <= BRAND_VOCABULARY.contentPolicy.limits.metaDescription);
+      if (previousCollection) assert.deepEqual(collection, previousCollection, "Shared collection copy must be stable across product events");
+      previousCollection = collection;
+      introductions.add(blog.introduction);
+    }
+    assert.ok(introductions.size >= 2, `Vary ${brand}/${category} introductions consistently`);
+  }
+}
+assert.notEqual((record.content_suite.blog as any).introduction, (princessRecord.content_suite.blog as any).introduction);
+assert.throws(() => buildAutomaticSurfaceRecord(richProduct, classification, content, "Unknown House"), /Unknown brand/);
 
 console.log("automated content surface tests passed");

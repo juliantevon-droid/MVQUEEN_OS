@@ -19,6 +19,27 @@ export const PRODUCT_EDITORIAL_CATEGORIES = [
 ] as const;
 export type ProductEditorialCategory = typeof PRODUCT_EDITORIAL_CATEGORIES[number];
 export type BrandKey = "mvqueen" | "miss-princess";
+export type BrandSurfaceTemplates = {
+  cta: string[];
+  faq: {
+    overview: { question: string; answer: string };
+    detailsQuestion: string;
+    detailsLead: string;
+    choosing: { question: string; answer: string };
+    policies: { question: string; answer: string };
+  };
+  collection: { description: string[]; metaDescription: string[] };
+  blog: {
+    title: string[];
+    dek: string[];
+    introduction: Record<ProductEditorialCategory, string[]>;
+    detailsHeading: string[];
+    choiceHeading: string[];
+    choice: Record<ProductEditorialCategory, string[]>;
+    closingHeading: string[];
+    closing: string[];
+  };
+};
 export type BrandContentPolicy = {
   schemaVersion: 1;
   profiles: Record<BrandKey, {
@@ -26,6 +47,7 @@ export type BrandContentPolicy = {
     voice: string[];
     additionalAdjectives: string[];
     hooks: Record<ProductEditorialCategory, string[]>;
+    surfaces: BrandSurfaceTemplates;
   }>;
   additionalForbidden: string[];
   limits: { shortDescription: number; title: number; seoTitle: number; metaDescription: number };
@@ -113,6 +135,44 @@ function contentPolicy(source: string): BrandContentPolicy {
       }
       profile.hooks[category] = hooks;
     }
+    const surfaces = profile.surfaces;
+    if (!surfaces?.faq || !surfaces.collection || !surfaces.blog) {
+      throw new Error(`Missing brand surface templates: ${brand}`);
+    }
+    // Only editorial framing belongs in templates. Facts come from the current
+    // product; store terms stay in the linked policies.
+    const validateTemplate = (value: unknown, field: string): string => {
+      if (typeof value !== "string" || !value.trim() || value.length > 800
+        || /[<>]/.test(value)
+        || /[{}]/.test(value.replace(/\{(?:brand|title|productType|family|focusKeyword|article)\}/g, ""))
+        || /\b(?:clinically?|medical|dermatolog\w*|cures?|heals?|guaranteed?|vegan|cruelty|botanicals?|silk|cotton|stainless|handmade|hand.poured|formulated|engineered|longevity)\b/i.test(value)) {
+        throw new Error(`Invalid brand surface template: ${brand}.${field}`);
+      }
+      return value.trim();
+    };
+    const pool = (value: unknown, field: string) => stringPool(value, `${brand}.${field}`)
+      .map((template) => validateTemplate(template, field));
+    surfaces.cta = pool(surfaces.cta, "cta");
+    for (const key of ["overview", "choosing", "policies"] as const) {
+      const entry = surfaces.faq[key];
+      if (!entry) throw new Error(`Missing brand FAQ template: ${brand}.${key}`);
+      entry.question = validateTemplate(entry.question, `faq.${key}.question`);
+      entry.answer = validateTemplate(entry.answer, `faq.${key}.answer`);
+    }
+    surfaces.faq.detailsQuestion = validateTemplate(surfaces.faq.detailsQuestion, "faq.detailsQuestion");
+    surfaces.faq.detailsLead = validateTemplate(surfaces.faq.detailsLead, "faq.detailsLead");
+    for (const key of ["description", "metaDescription"] as const) {
+      surfaces.collection[key] = pool(surfaces.collection[key], `collection.${key}`);
+    }
+    for (const key of ["title", "dek", "detailsHeading", "choiceHeading", "closingHeading", "closing"] as const) {
+      surfaces.blog[key] = pool(surfaces.blog[key], `blog.${key}`);
+    }
+    for (const category of PRODUCT_EDITORIAL_CATEGORIES) {
+      for (const key of ["introduction", "choice"] as const) {
+        if (!surfaces.blog[key]) throw new Error(`Missing brand blog templates: ${brand}.${key}`);
+        surfaces.blog[key][category] = pool(surfaces.blog[key][category], `blog.${key}.${category}`);
+      }
+    }
   }
   policy.additionalForbidden = stringPool(policy.additionalForbidden, "additionalForbidden");
   for (const [field, ceiling] of Object.entries({ shortDescription: 180, title: 80, seoTitle: 60, metaDescription: 155 })) {
@@ -133,6 +193,16 @@ export function loadBrandVocabulary(root = process.cwd()): BrandVocabulary {
   const adjectiveRow = voice.split("\n").find((line) => /^\|\s*Adjective range\s*\|/.test(line))?.split("|");
   if (!luxury || !adjectiveRow) throw new Error("Canonical product vocabulary sections are missing");
   const prohibited = unique([...forbiddenTerms(forbidden), ...policy.additionalForbidden]);
+  for (const brand of ["mvqueen", "miss-princess"] as const) {
+    const checkLanguage = (value: unknown) => {
+      if (typeof value === "string" && removeForbiddenLanguage(value, { forbidden: prohibited }) !== value) {
+        throw new Error(`Forbidden language in brand surface template: ${brand}`);
+      }
+      if (Array.isArray(value)) value.forEach(checkLanguage);
+      else if (value && typeof value === "object") Object.values(value).forEach(checkLanguage);
+    };
+    checkLanguage(policy.profiles[brand].surfaces);
+  }
   const allowed = (pool: string[]) => unique(pool).filter((word) => EDITORIAL_ADJECTIVES.has(word) && !prohibited.some((term) => term.toLowerCase() === word));
   const mvqueen = allowed([
     ...personaAdjectives(personas, "mvqueen_signature"),

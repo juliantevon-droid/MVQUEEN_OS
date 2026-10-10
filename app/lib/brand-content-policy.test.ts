@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { BRAND_VOCABULARY, BRAND_VOCABULARY_SOURCES, canonicalBrandLabel, loadBrandVocabulary, PRODUCT_EDITORIAL_CATEGORIES } from "./brand-vocabulary.server";
 import { buildAutomatedProductContent, productEditorialCategory } from "./product-content-automation";
+import { buildAutomaticSurfaceRecord } from "./automated-content-surfaces";
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
 
 assert.equal(canonicalBrandLabel("MvQueen"), "MVQUEEN");
@@ -52,6 +53,7 @@ try {
   }
   const file = join(root, "06_Tone_And_Voice/Brand_Content_Policy.json");
   const original = JSON.parse(readFileSync(file, "utf8"));
+  const baseline = structuredClone(original);
   original.profiles.mvqueen.hooks.jewelry = ["Your {brand} jewelry edit begins with {article} {adjective} choice."];
   writeFileSync(file, JSON.stringify(original));
   const updated = loadBrandVocabulary(root);
@@ -59,6 +61,46 @@ try {
   const c: Classification = { department: "Jewelry", family: "Necklaces", subcollection: "Necklaces", route: "necklaces", productType: "Necklace", confidence: "high" };
   assert.ok(buildAutomatedProductContent({ id: "policy-edited-future", title: "Necklace" }, c, "MVQUEEN", updated).shortDescription.includes("begins with"));
   for (const category of PRODUCT_EDITORIAL_CATEGORIES) assert.ok(updated.contentPolicy.profiles["miss-princess"].hooks[category].length);
+  const editable = structuredClone(baseline);
+  const surfaces = editable.profiles.mvqueen.surfaces;
+  surfaces.cta = ["Explore your own direction at {brand}."];
+  surfaces.faq.choosing.answer = "Take your time with {title} and its listed details.";
+  surfaces.collection.description = ["Your {brand} {family} edit, considered in your own way."];
+  surfaces.collection.metaDescription = ["Explore your own {family} direction at {brand}."];
+  surfaces.blog.title = ["Your Guide to {title}"];
+  surfaces.blog.dek = ["Take a considered look at {title} with {brand}."];
+  surfaces.blog.introduction.jewelry = ["Give a personal detail a moment of your attention."];
+  writeFileSync(file, JSON.stringify(editable));
+  const surfaceVocabulary = loadBrandVocabulary(root);
+  const product = { id: "policy-edited-future", title: "Necklace", handle: "keep-this-handle" };
+  const productCopy = buildAutomatedProductContent(product, c, "MVQUEEN", surfaceVocabulary);
+  const before = buildAutomaticSurfaceRecord(product, c, productCopy);
+  const after = buildAutomaticSurfaceRecord(product, c, productCopy, "MVQUEEN", surfaceVocabulary);
+  const blog = after.content_suite.blog as any;
+  const collection = after.content_suite.collection as any;
+  assert.notEqual(surfaceVocabulary.version, BRAND_VOCABULARY.version);
+  assert.equal(after.copy.cta, "Explore your own direction at MVQUEEN.");
+  assert.equal((after.content_suite.product_page as any).faq.find((item: any) => item.question === surfaces.faq.choosing.question)?.answer, `Take your time with ${productCopy.title} and its listed details.`);
+  assert.equal(collection.description, "Your MVQUEEN necklaces edit, considered in your own way.");
+  assert.equal(collection.meta_description, "Explore your own necklaces direction at MVQUEEN.");
+  assert.equal(blog.title, `Your Guide to ${productCopy.title}`);
+  assert.equal(blog.dek, `Take a considered look at ${productCopy.title} with MVQUEEN.`);
+  assert.equal(blog.introduction, "Give a personal detail a moment of your attention.");
+  assert.equal(blog.slug, (before.content_suite.blog as any).slug, "Editing a headline must not create another article URL");
+  assert.equal(after.identity.handle, product.handle);
+  assert.equal((after.content_suite.governance as any).brand_policy_version, surfaceVocabulary.version);
+  for (const change of [
+    (p: any) => { p.profiles.mvqueen.surfaces.cta = ["Explore {unknown}."]; },
+    (p: any) => { p.profiles.mvqueen.surfaces.blog.introduction.jewelry = []; },
+    (p: any) => { p.profiles.mvqueen.surfaces.blog.closing = ["Clinically proven care at {brand}."]; },
+    (p: any) => { p.profiles.mvqueen.surfaces.cta = ["Explore opulent choices at {brand}."]; },
+    (p: any) => { delete p.profiles["miss-princess"].surfaces; },
+  ]) {
+    const invalid = structuredClone(baseline);
+    change(invalid);
+    writeFileSync(file, JSON.stringify(invalid));
+    assert.throws(() => loadBrandVocabulary(root), /brand (?:surface|content)|Forbidden language/);
+  }
   original.profiles.mvqueen.hooks.jewelry = ["Your {brand} clinically proven {adjective} silk choice."];
   writeFileSync(file, JSON.stringify(original));
   assert.throws(() => loadBrandVocabulary(root), /Invalid editorial hook/);
