@@ -8,6 +8,7 @@ import { buildMarketingPlan } from "./marketing-engine";
 import { buildLifecyclePlan } from "./lifecycle-engine";
 import { getCommercialConfig, type CommercialConfigResolution } from "./commercial-config";
 import { evaluateVariantCommercial } from "./variant-commercial";
+import { productClaimReviewReasons } from "../product-content-automation";
 
 function slug(value: string): string {
   return value
@@ -44,7 +45,18 @@ export function buildEnterpriseProductDecision(
   const brandRoute = classifyBrandWorld(product);
   const resolvedCommercial = commercial ?? getCommercialConfig();
   const variantCommercial = evaluateVariantCommercial(product, resolvedCommercial, effectiveSellingPrice);
-  const { pricing, commercialHealth } = variantCommercial;
+  const { pricing } = variantCommercial;
+  const catalogReviewReasons = [
+    ...(classification.confidence === "review" ? ["classification_requires_review"] : []),
+    ...(!brandRoute.brand ? ["brand_requires_review"] : []),
+    ...productClaimReviewReasons(product).map((reason) => `source_claim:${reason}`),
+  ];
+  const restrictAdvertising = (health: typeof variantCommercial.commercialHealth) =>
+    catalogReviewReasons.length && health.advertisingEligibility === "eligible"
+      ? { ...health, advertisingEligibility: "blocked" as const,
+          reasons: [...health.reasons, "Catalog classification or source claims still require review."] }
+      : health;
+  const commercialHealth = restrictAdvertising(variantCommercial.commercialHealth);
   const marketing = buildMarketingPlan(
     classification,
     brandRoute,
@@ -59,7 +71,7 @@ export function buildEnterpriseProductDecision(
     `mvq:family:${slug(classification.family)}`,
     ...collectionRoutingTags(classification),
     ...brandRoutingTags(brandRoute),
-    ...(classification.confidence === "review" || !brandRoute.brand ? ["mvq:needs-review"] : []),
+    ...(catalogReviewReasons.length ? ["mvq:needs-review"] : []),
     ...(pricing.state === "ready_for_approval" ? ["mvq:pricing:ready-for-approval"] : [`mvq:pricing:${pricing.state}`]),
     `mvq:commercial:${commercialHealth.state}`,
     `mvq:ads:${commercialHealth.advertisingEligibility}`,
@@ -75,7 +87,10 @@ export function buildEnterpriseProductDecision(
     marketing,
     lifecycle,
     commercialSource: variantCommercial.commercialSource,
-    variantDecisions: variantCommercial.variantDecisions,
+    variantDecisions: variantCommercial.variantDecisions.map((item) => ({
+      ...item, commercialHealth: restrictAdvertising(item.commercialHealth),
+    })),
+    catalogReviewReasons,
     representativeVariantId: variantCommercial.representativeVariantId,
     costSyncState: variantCommercial.costSyncState,
     uniformVerifiedUnitCost: variantCommercial.uniformVerifiedUnitCost,

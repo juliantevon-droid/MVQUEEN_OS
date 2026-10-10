@@ -75,7 +75,7 @@ export function buildMarketingPlan(
     paidExecution: paidMedia.state,
     paidExecutionReason:
       commercialHealth.advertisingEligibility !== "eligible"
-        ? `Paid-media planning is blocked by commercial health: ${commercialHealth.state}.`
+        ? `Paid-media planning is blocked: ${commercialHealth.reasons.join(" ")}`
         : "Product economics are ad-eligible; external campaign execution still requires an approved provider/account and explicit action approval.",
   };
 }

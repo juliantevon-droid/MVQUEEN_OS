@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { evaluateVariantCommercial } from "./variant-commercial";
 import { buildPricingDecision } from "./pricing-engine";
 import { auditCatalogProduct } from "./catalog-audit";
+import { buildEnterpriseProductDecision } from "./product-decision-engine";
 import type { CommercialConfigResolution } from "./commercial-config";
 import type { ProductSnapshot } from "../mvqueen-intelligence";
 
@@ -25,6 +26,14 @@ assert.equal(evaluated.commercialHealth.unitCost, 90);
 assert.equal(evaluated.variantDecisions.length, 2);
 assert.equal(evaluated.pricing.publishable, false);
 assert.ok(evaluated.variantDecisions.every((item) => item.pricing.publishable === false));
+const claimHeld = buildEnterpriseProductDecision({ ...product,
+  claimReviewReasons: { value: '["medical_or_guaranteed"]' },
+}, policy);
+assert.equal(claimHeld.commercialHealth.state, "healthy");
+assert.equal(claimHeld.commercialHealth.advertisingEligibility, "blocked");
+assert.equal(claimHeld.marketing.paidPlanningEligibility, "blocked");
+assert.ok(claimHeld.tags.includes("mvq:needs-review"));
+assert.ok(claimHeld.variantDecisions.every((item) => item.commercialHealth.advertisingEligibility === "blocked"));
 
 for (const [variant, expectedSync] of [
   [{ id: "incomplete", price: "200", unitCost: null, costCurrency: "USD" }, "partial_variant_costs"],

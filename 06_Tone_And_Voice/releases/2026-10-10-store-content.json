@@ -1,0 +1,560 @@
+{
+  "store": "tsucu0-1i.myshopify.com",
+  "sourceCommit": "5642fc801f7f1a1b99199eef829b4027cfce2b2e",
+  "generatedAt": "2026-10-10T17:26:14.897Z",
+  "collections": [
+    {
+      "id": "gid://shopify/Collection/352630538438",
+      "seo": {
+        "title": "The House Edit | MVQUEEN",
+        "description": "Explore the house edit at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>A place to begin your edit. Explore pieces from MVQUEEN and Miss.Princess, then take a closer look at the details that belong in your day.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/352674054342",
+      "seo": {
+        "title": "MVQUEEN Edit",
+        "description": "Explore MVQUEEN edit at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "title": "MVQUEEN Edit",
+      "descriptionHtml": "A curated selection from MVQUEEN — modern femininity, polished essentials, and distinctive pieces chosen for an effortless sense of confidence."
+    },
+    {
+      "id": "gid://shopify/Collection/352674087110",
+      "seo": {
+        "title": "Jewelry | MVQUEEN",
+        "description": "Explore jewelry at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "Curated women’s jewelry by MVQUEEN, from refined everyday accents to distinctive statement pieces designed to complete a modern look."
+    },
+    {
+      "id": "gid://shopify/Collection/352674119878",
+      "seo": {
+        "title": "Necklaces | MVQUEEN",
+        "description": "Explore necklaces at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>Explore the MVQUEEN necklaces edit with clear product details, intentional styling, and a refined everyday point of view.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/352674152646",
+      "seo": {
+        "title": "Pendant Necklaces | MVQUEEN",
+        "description": "Explore pendant necklaces at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "MVQUEEN pendant necklaces featuring expressive gemstones, refined metals, and distinctive details for an elegant finishing touch."
+    },
+    {
+      "id": "gid://shopify/Collection/352674185414",
+      "seo": {
+        "title": "Tops | MVQUEEN",
+        "description": "Explore tops at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674218182",
+      "seo": {
+        "title": "Blouses | MVQUEEN",
+        "description": "Explore blouses at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674250950",
+      "seo": {
+        "title": "T-Shirts | MVQUEEN",
+        "description": "Explore t-shirts at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674283718",
+      "seo": {
+        "title": "Dresses | MVQUEEN",
+        "description": "Explore dresses at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674316486",
+      "seo": {
+        "title": "Bottoms | MVQUEEN",
+        "description": "Explore bottoms at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674349254",
+      "seo": {
+        "title": "Skirts | MVQUEEN",
+        "description": "Explore skirts at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674382022",
+      "seo": {
+        "title": "Pants | MVQUEEN",
+        "description": "Explore pants at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674414790",
+      "seo": {
+        "title": "Outerwear | MVQUEEN",
+        "description": "Explore outerwear at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674447558",
+      "seo": {
+        "title": "Earrings | MVQUEEN",
+        "description": "Explore earrings at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674480326",
+      "seo": {
+        "title": "Bracelets | MVQUEEN",
+        "description": "Explore bracelets at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674513094",
+      "seo": {
+        "title": "Rings | MVQUEEN",
+        "description": "Explore rings at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674545862",
+      "seo": {
+        "title": "Cosmetics | MVQUEEN",
+        "description": "Explore cosmetics at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352674578630",
+      "seo": {
+        "title": "Skincare | MVQUEEN",
+        "description": "Explore skincare at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "MVQUEEN skincare essentials curated around simple, considered routines and everyday care."
+    },
+    {
+      "id": "gid://shopify/Collection/352675102918",
+      "seo": {
+        "title": "Needs Review | MVQUEEN",
+        "description": "Explore needs review at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>Explore the current edit through our fashion, beauty and jewelry collections. Each product page has the available details to help you choose.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/352675922118",
+      "seo": {
+        "title": "Fashion | MVQUEEN",
+        "description": "Explore fashion at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "The MVQUEEN fashion edit: modern women’s clothing curated around confident femininity, clean silhouettes, and everyday luxury."
+    },
+    {
+      "id": "gid://shopify/Collection/352675954886",
+      "seo": {
+        "title": "Clothing | MVQUEEN",
+        "description": "Explore clothing at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>The core MVQUEEN wardrobe: feminine essentials and statement pieces designed to move with your style.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/352676053190",
+      "seo": {
+        "title": "Bodysuits | MVQUEEN",
+        "description": "Explore bodysuits at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676085958",
+      "seo": {
+        "title": "Jumpsuits & Rompers | MVQUEEN",
+        "description": "Explore jumpsuits & rompers at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676151494",
+      "seo": {
+        "title": "Matching Sets | MVQUEEN",
+        "description": "Explore matching sets at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676184262",
+      "seo": {
+        "title": "Jeans & Denim | MVQUEEN",
+        "description": "Explore jeans & denim at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676217030",
+      "seo": {
+        "title": "Shorts | MVQUEEN",
+        "description": "Explore shorts at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>Easy warm-weather silhouettes with a polished MVQUEEN point of view.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/352676249798",
+      "seo": {
+        "title": "Activewear | MVQUEEN",
+        "description": "Explore activewear at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>Explore the MVQUEEN activewear edit with clear product details, intentional styling, and a refined everyday point of view.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/352676282566",
+      "seo": {
+        "title": "Swimwear | MVQUEEN",
+        "description": "Explore swimwear at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676315334",
+      "seo": {
+        "title": "Lingerie & Intimates | MVQUEEN",
+        "description": "Explore lingerie & intimates at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676348102",
+      "seo": {
+        "title": "Fashion Accessories | MVQUEEN",
+        "description": "Explore fashion accessories at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676380870",
+      "seo": {
+        "title": "Handbags & Purses | MVQUEEN",
+        "description": "Explore handbags & purses at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676413638",
+      "seo": {
+        "title": "Shoes | MVQUEEN",
+        "description": "Explore shoes at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676446406",
+      "seo": {
+        "title": "Sunglasses | MVQUEEN",
+        "description": "Explore sunglasses at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676479174",
+      "seo": {
+        "title": "Belts | MVQUEEN",
+        "description": "Explore belts at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676511942",
+      "seo": {
+        "title": "Hats & Headwear | MVQUEEN",
+        "description": "Explore hats & headwear at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676544710",
+      "seo": {
+        "title": "Beauty | MVQUEEN",
+        "description": "Explore beauty at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "The MVQUEEN beauty edit, curated across makeup and beauty essentials with a focus on effortless polish and expressive style."
+    },
+    {
+      "id": "gid://shopify/Collection/352676577478",
+      "seo": {
+        "title": "Makeup | MVQUEEN",
+        "description": "Explore makeup at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "MVQUEEN makeup essentials curated for polished everyday looks, expressive details, and confident beauty."
+    },
+    {
+      "id": "gid://shopify/Collection/352676610246",
+      "seo": {
+        "title": "Face Makeup | MVQUEEN",
+        "description": "Explore face makeup at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676643014",
+      "seo": {
+        "title": "Eye Makeup | MVQUEEN",
+        "description": "Explore eye makeup at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676675782",
+      "seo": {
+        "title": "Lip Makeup | MVQUEEN",
+        "description": "Explore lip makeup at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676708550",
+      "seo": {
+        "title": "Makeup Brushes & Tools | MVQUEEN",
+        "description": "Explore makeup brushes & tools at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676741318",
+      "seo": {
+        "title": "Nails | MVQUEEN",
+        "description": "Explore nails at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676774086",
+      "seo": {
+        "title": "Fragrance | MVQUEEN",
+        "description": "Explore fragrance at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676806854",
+      "seo": {
+        "title": "Bath & Body | MVQUEEN",
+        "description": "Explore bath & body at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676839622",
+      "seo": {
+        "title": "Body Care | MVQUEEN",
+        "description": "Explore body care at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676872390",
+      "seo": {
+        "title": "Cleansers | MVQUEEN",
+        "description": "Explore cleansers at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676905158",
+      "seo": {
+        "title": "Moisturizers | MVQUEEN",
+        "description": "Explore moisturizers at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676937926",
+      "seo": {
+        "title": "Serums & Treatments | MVQUEEN",
+        "description": "Explore serums & treatments at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352676970694",
+      "seo": {
+        "title": "Masks & Exfoliators | MVQUEEN",
+        "description": "Explore masks & exfoliators at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677003462",
+      "seo": {
+        "title": "Sunscreen | MVQUEEN",
+        "description": "Explore sunscreen at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677036230",
+      "seo": {
+        "title": "Hair Care | MVQUEEN",
+        "description": "Explore hair care at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677068998",
+      "seo": {
+        "title": "Shampoo | MVQUEEN",
+        "description": "Explore shampoo at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677101766",
+      "seo": {
+        "title": "Conditioner | MVQUEEN",
+        "description": "Explore conditioner at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677134534",
+      "seo": {
+        "title": "Hair Treatments | MVQUEEN",
+        "description": "Explore hair treatments at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677167302",
+      "seo": {
+        "title": "Hair Oils & Serums | MVQUEEN",
+        "description": "Explore hair oils & serums at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677200070",
+      "seo": {
+        "title": "Hair Styling | MVQUEEN",
+        "description": "Explore hair styling at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677232838",
+      "seo": {
+        "title": "Hair Tools | MVQUEEN",
+        "description": "Explore hair tools at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677265606",
+      "seo": {
+        "title": "Wigs & Extensions | MVQUEEN",
+        "description": "Explore wigs & extensions at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677298374",
+      "seo": {
+        "title": "Hair Accessories | MVQUEEN",
+        "description": "Explore hair accessories at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677331142",
+      "seo": {
+        "title": "Beauty Tools | MVQUEEN",
+        "description": "Explore beauty tools at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677363910",
+      "seo": {
+        "title": "Personal Care | MVQUEEN",
+        "description": "Explore personal care at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/352677396678",
+      "seo": {
+        "title": "New Arrivals | MVQUEEN",
+        "description": "Explore new arrivals at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>The newest additions to the MVQUEEN edit.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/352677429446",
+      "seo": {
+        "title": "Best Sellers | MVQUEEN",
+        "description": "Explore best sellers at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>Pieces customers return to and discover again across the MVQUEEN edit.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/353158463686",
+      "seo": {
+        "title": "MVQUEEN World",
+        "description": "Explore MVQUEEN world at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "title": "MVQUEEN World",
+      "descriptionHtml": "<p>Neutral, refined, bold and mature pieces curated for the MVQUEEN experience.</p>"
+    },
+    {
+      "id": "gid://shopify/Collection/353158496454",
+      "seo": {
+        "title": "Miss.Princess World",
+        "description": "Explore the Miss.Princess world of color, playful details and a little daydreaming. Find the pieces that belong in your own edit."
+      }
+    },
+    {
+      "id": "gid://shopify/Collection/354052440262",
+      "seo": {
+        "title": "Jewelry | MVQUEEN",
+        "description": "Explore jewelry at MVQUEEN. Take a closer look at the photos, options and listed details to find your next piece."
+      },
+      "descriptionHtml": "<p>Explore the jewelry edit, from a quiet finishing detail to a piece that gives your look its own point of view.</p>"
+    }
+  ],
+  "articles": [
+    {
+      "id": "gid://shopify/Article/579917480134",
+      "article": {
+        "title": "Play Date: Make Room for Movement",
+        "body": "<p>Some days call for a little movement and a little color. The Play Date Ruched Sports Bra &amp; Shorts Set belongs in that part of your Miss.Princess edit: the walk you have been meaning to take, the class in your calendar, or a moment to move at your own pace.</p><h2>Let the details lead</h2><p>The set pairs a sports bra with shorts and ruched detailing. Before choosing, explore the current product photos and options. The product page is the place to compare measurements and see what is available for your own edit.</p><h2>Choose your own way to wear it</h2><p>Keep the pair together for a coordinated look, or make room for a layer from your wardrobe when your plans change. Color can set the mood; the listed sizing details help you make the practical choice.</p><p>Compare the measurements with a piece you already enjoy wearing. If you are deciding between options or need a detail that is not shown, customer care can help you take a closer look.</p><h2>Before it joins your bag</h2><p>Check the current delivery estimate and care information on the product page. Review the shipping and return policies, then choose the option that belongs in your plans.</p><p><a href=\"/products/ruched-sports-bra-and-high-waisted-shorts-active-set\">Explore the Play Date Ruched Sports Bra &amp; Shorts Set</a></p><p><a href=\"/collections/miss-princess-world\">Find more in the Miss.Princess edit</a></p>",
+        "summary": "<p>A little movement, a little color, and a set to make your own. Take a closer look at Play Date in the Miss.Princess edit.</p>",
+        "author": {
+          "name": "Miss.Princess"
+        },
+        "metafields": [
+          {
+            "namespace": "global",
+            "key": "title_tag",
+            "type": "single_line_text_field",
+            "value": "Play Date Activewear Styling | Miss.Princess"
+          },
+          {
+            "namespace": "global",
+            "key": "description_tag",
+            "type": "single_line_text_field",
+            "value": "Explore the Play Date sports bra and shorts set, with ideas for your own edit and details to check before choosing. From Miss.Princess."
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Article/579917611206",
+      "article": {
+        "title": "Choosing a Necklace for Your Everyday Edit",
+        "body": "<p>A necklace can give a familiar outfit a new point of view. Begin with the pieces you already wear, the necklines you return to, and the details that feel like your own. The MVQUEEN jewelry edit is a place to explore that finishing note.</p><h2>Start with the neckline</h2><p>Picture the piece with a favorite shirt, knit or dress. Consider where you would like the necklace to sit and whether you want a single detail or a layered look. Compare the listed length with a necklace you already know well.</p><p>A photograph gives you a sense of the piece. The listed measurements help you understand its scale. Look at both before making your choice.</p><h2>Take a closer look at the finish</h2><p>Read the material and finish listed on the product page. Explore the available photos and options, and check any care guidance provided for the piece. If a detail matters to your choice and is not shown, ask customer care before ordering.</p><h2>Make the detail your own</h2><p>Let your existing wardrobe guide the choice. A piece you can picture with several familiar looks has room to become part of your everyday edit. You decide how much of a statement it makes.</p><p>Collections change over time. Visit the current necklace and jewelry edits for the pieces available now, along with their latest details and delivery estimates.</p><p><a href=\"/collections/necklaces\">Explore the current necklace edit</a></p><p><a href=\"/collections/jewelry\">Take a closer look at the jewelry edit</a></p>",
+        "summary": "<p>Consider the neckline, scale and listed finish, then choose the detail that belongs in your everyday edit. Explore current jewelry at MVQUEEN.</p>",
+        "author": {
+          "name": "MVQUEEN"
+        },
+        "metafields": [
+          {
+            "namespace": "global",
+            "key": "title_tag",
+            "type": "single_line_text_field",
+            "value": "Choosing Your Everyday Necklace | MVQUEEN"
+          },
+          {
+            "namespace": "global",
+            "key": "description_tag",
+            "type": "single_line_text_field",
+            "value": "Choose a necklace for your everyday edit with a closer look at neckline, measurements and listed finishes. Explore current jewelry at MVQUEEN."
+          }
+        ]
+      }
+    }
+  ],
+  "faq": {
+    "id": "gid://shopify/Page/123413037254",
+    "page": {
+      "body": "<h2>Frequently Asked Questions</h2>\n<h3>What is the difference between MVQUEEN and Miss.Princess?</h3>\n<p>MVQUEEN is the refined, neutral, bold side of the house. Miss.Princess is the softer, brighter, more playful sister world. Both are part of the same store and share one bag, checkout, and customer-care experience.</p>\n<h3>Can I shop both brands in one order?</h3>\n<p>Yes. You can add MVQUEEN and Miss.Princess products to the same bag and complete one checkout.</p>\n<h3>How long does shipping take?</h3>\n<p>Most orders are estimated to arrive within 7–15 business days after shipment. Processing time varies by product and supplier. Some products may have shorter delivery estimates such as 5–7 or 6–10 business days. Check the product page and Shipping Policy for the most relevant estimate.</p>\n<h3>Where do products ship from?</h3>\n<p>MVQUEEN curates products from multiple supply and fulfillment sources. Some products may be stored or shipped by third-party fulfillment partners, so items in the same order can arrive in separate packages. MVQUEEN remains your customer-service contact for orders placed through this store.</p>\n<h3>Can I change my order?</h3>\n<p>Contact <a href=\"mailto:miss.mvqueen@gmail.com\">miss.mvqueen@gmail.com</a> as soon as possible. Changes cannot be guaranteed after fulfillment begins.</p>\n<h3>How do returns work?</h3>\n<p>Review our <a href=\"/policies/refund-policy\">Refund &amp; Returns Policy</a> for eligibility, timing, return shipping, and instructions. Contact us before mailing a return so we can provide the correct instructions for your order.</p>\n<h3>Where can I find product details?</h3>\n<p>Product pages may include material, color, measurements, ingredients, care guidance, usage information, shipping estimates, and other product-specific details when available.</p>\n<h3>How can I contact customer care?</h3>\n<p>Use the <a href=\"/pages/contact\">Contact page</a>, email <a href=\"mailto:miss.mvqueen@gmail.com\">miss.mvqueen@gmail.com</a>, or call <a href=\"tel:+18648718732\">+1 864-871-8732</a> for order, product, shipping, return, or general support.</p>",
+      "metafields": [
+        {
+          "namespace": "global",
+          "key": "title_tag",
+          "type": "single_line_text_field",
+          "value": "Frequently Asked Questions | MVQUEEN"
+        },
+        {
+          "namespace": "global",
+          "key": "description_tag",
+          "type": "single_line_text_field",
+          "value": "Find answers about MVQUEEN and Miss.Princess, shopping both worlds, delivery estimates, returns, product details and customer care."
+        }
+      ]
+    }
+  }
+}

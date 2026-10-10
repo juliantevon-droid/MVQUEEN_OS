@@ -74,6 +74,9 @@ export function auditCatalogProduct(product: AuditProduct, currency = "USD"): Ca
       "Product must have exactly one canonical mvq:brand:* world tag.",
     );
   }
+  if (product.tags.includes("mvq:needs-review")) {
+    add("blocker", "catalog_review_required", "Classification or original source claims require review before release or advertising clearance.");
+  }
 
   if (!product.seoTitle?.trim()) {
     add("warning", "seo_title_missing", "SEO title is missing.");
