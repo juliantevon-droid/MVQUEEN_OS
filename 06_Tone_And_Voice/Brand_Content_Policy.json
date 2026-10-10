@@ -123,7 +123,7 @@
         "faq": {
           "overview": {
             "question": "What is {title}?",
-            "answer": "{title} is {article} {productType} in the {brand} edit. Take a closer look at the photos and listed details before choosing."
+            "answer": "{title} is part of the {brand} edit. Take a closer look at the photos and listed details before choosing."
           },
           "detailsQuestion": "What details should I know?",
           "detailsLead": "The product details list: ",
@@ -315,7 +315,7 @@
         "faq": {
           "overview": {
             "question": "What is {title}?",
-            "answer": "{title} is {article} {productType} in the {brand} edit. Explore the photos and listed details to see how it belongs in your own edit."
+            "answer": "{title} is part of the {brand} edit. Explore the photos and listed details to see how it belongs in your own edit."
           },
           "detailsQuestion": "What little details can I explore?",
           "detailsLead": "Here are the listed details to explore: ",
