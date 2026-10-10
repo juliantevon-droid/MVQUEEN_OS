@@ -93,10 +93,35 @@ export function buildAutomatedProductFaq(
   });
   const faq = [entry(templates.faq.overview), entry(templates.faq.choosing), entry(templates.faq.policies)];
 
-  if (content.highlights.length) {
+  const specificFacts = [
+    [templates.faq.factQuestions.material, /^(?:material(?: composition)?|metal|stone|ingredients?|main ingredients|product ingredients)\s*:/i],
+    [templates.faq.factQuestions.quantity, /^(?:net (?:content|weight|wt)|capacity|number of pieces|dimensions|length(?: dimensions)?|product size|item size)\s*:/i],
+    [templates.faq.factQuestions.care, /^(?:care(?: instructions)?|washing instructions|storage method)\s*:|^(?:machine|hand) wash\b|^dry clean\b/i],
+  ] as const;
+  const answered = new Set<string>();
+  for (const [question, pattern] of specificFacts) {
+    const facts = content.highlights.filter(fact => pattern.test(fact));
+    if (!facts.length) continue;
+    facts.forEach(fact => answered.add(fact));
+    faq.splice(faq.length - 1, 0, { question: render(question), answer: facts.slice(0, 3).join("; ").replace(/[.;]+$/, "") + "." });
+  }
+  const options = new Map<string, Set<string>>();
+  for (const variant of product.variants?.nodes ?? []) {
+    for (const option of variant.selectedOptions ?? []) {
+      if (!/^(?:colou?r|size|shade)$/i.test(option.name) || /default title|https?:|\b[A-Z]{2,}[-_]?\d{3,}/i.test(option.value)) continue;
+      if (!options.has(option.name)) options.set(option.name, new Set());
+      options.get(option.name)!.add(option.value);
+    }
+  }
+  if (options.size) {
+    const details = [...options].map(([name, values]) => `${name}: ${[...values].slice(0, 12).join(" / ")}${values.size > 12 ? " (more options are listed on this page)" : ""}`);
+    faq.splice(faq.length - 1, 0, { question: render(templates.faq.factQuestions.options), answer: details.join("; ") + ". Check the option selector for current availability." });
+  }
+  const otherDetails = content.highlights.filter(fact => !answered.has(fact));
+  if (otherDetails.length) {
     faq.splice(1, 0, {
       question: render(templates.faq.detailsQuestion),
-      answer: render(templates.faq.detailsLead) + " " + content.highlights.slice(0, 5).join("; ").replace(/[.;]+$/, "") + ".",
+      answer: render(templates.faq.detailsLead) + " " + otherDetails.slice(0, 5).join("; ").replace(/[.;]+$/, "") + ".",
     });
   }
 

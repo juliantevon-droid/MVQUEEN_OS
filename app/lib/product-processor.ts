@@ -27,7 +27,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v38-variant-cost-policy-refresh-" + BRAND_VOCABULARY.version;
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v39-canonical-product-language-" + BRAND_VOCABULARY.version;
 
 const PRODUCT_NAME_LOOKUP = `#graphql
   query ProductNameLookup($query: String!, $after: String) {
@@ -647,6 +647,7 @@ export async function processProductJob(
       (tag) =>
         tag !== "mvq:catalog" &&
         tag !== "mvq:needs-review" &&
+        tag !== "mvq:claim-review" &&
         !systemPrefixes.some((prefix) => tag.startsWith(prefix)),
     );
     const mergedTags = Array.from(
@@ -803,14 +804,18 @@ export async function processProductJob(
         type: "single_line_text_field",
         value: requiresClaimReview ? "needs_review" : "clear",
       },
-      ...(claimReviewReasons.length
-        ? [{
+      ...[{
             namespace: "catalog",
             key: "claim_review_reasons",
             type: "list.single_line_text_field",
             value: JSON.stringify(claimReviewReasons),
-          }]
-        : []),
+          }],
+      ...(BRAND_VOCABULARY.contentPolicy.claimReviews?.[product.id]
+        ? [{ namespace: "catalog", key: "claim_review_record", type: "json", value: JSON.stringify({
+            ...BRAND_VOCABULARY.contentPolicy.claimReviews[product.id],
+            sourceAttributes: undefined, currentReasons: claimReviewReasons,
+            policyVersion: BRAND_VOCABULARY.version,
+          }) }] : []),
       ...attributeMetafields,
       ...(EDITORIAL_PUBLISH_ENABLED && automatedContent
         ? [

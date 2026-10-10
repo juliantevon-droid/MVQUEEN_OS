@@ -31,6 +31,9 @@ jobs:
       - name: Syntax check
         run: python -m compileall -q core
 
+      - name: Test canonical product governance
+        run: python -m unittest core.test_brand_linter
+
       - name: Build vault index
         run: python core/vault_crawler.py --root . --output build/vault_index.json
 

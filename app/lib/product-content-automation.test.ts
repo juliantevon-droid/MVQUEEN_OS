@@ -1037,7 +1037,7 @@ const sprayBottleSource: ProductSnapshot = { id: "gid://shopify/Product/91007939
 const sprayBottleRoute = classifyProduct(sprayBottleSource.title, "", "Shampoo");
 assert.equal(sprayBottleRoute.productType, "Hair Tool");
 const sprayBottleCopy = buildAutomatedProductContent(sprayBottleSource, sprayBottleRoute);
-assert.equal(sprayBottleCopy.title, "The Wash-Day Edit Spray Bottle, Silicone Brush & Hair Comb");
+assert.equal(sprayBottleCopy.title, "Wash-Day Edit Spray Bottle, Silicone Brush & Hair Comb");
 assert.equal(classifyProduct(sprayBottleCopy.title, "", "Shampoo").productType, "Hair Tool");
 assert.equal(buildAutomatedProductContent({ ...sprayBottleSource, title: sprayBottleCopy.title }, sprayBottleRoute).title, sprayBottleCopy.title);
 assert.equal(classifyProduct("Hair Care Spray", "", "Hair Treatment").productType, "Hair Treatment");
@@ -1097,13 +1097,13 @@ const formerlyHeldRoutes: Array<[string, string]> = [
   ["Jade Daydream Three-in-One Massage Stick", "beauty-tools"],
   ["Happy Little Break Heated Foot Massage Machine", "beauty-tools"],
   ["Water Veil Hyaluronic Acid Facial Gel", "skincare"],
-  ["Warm Waist Belt — An Hour at Home", "beauty-tools"],
+  ["Warm Waist Belt — Hour at Home", "beauty-tools"],
   ["Switch It Up Dual-Purpose Hair Straightener", "hair-tools"],
-  ["The Carry-On Mini Hair Straightening Comb", "hair-tools"],
+  ["Carry-On Mini Hair Straightening Comb", "hair-tools"],
   ["Little Unwind Neck & Shoulder Roller Massager", "beauty-tools"],
   ["Brow Edit Trimming Knife & Comb", "beauty-tools"],
   ["Still Form Resin Facial Roller Set", "beauty-tools"],
-  ["The Lash Detail Metal Tweezers & Comb", "beauty-tools"],
+  ["Lash Detail Metal Tweezers & Comb", "beauty-tools"],
   ["Fine Line Liquid Eyeliner", "makeup"],
   ["Starry Night Waterproof Eyeliner", "makeup"],
   ["Brow Signature Waterproof Eyebrow Cream", "makeup"],
@@ -1111,7 +1111,7 @@ const formerlyHeldRoutes: Array<[string, string]> = [
 for (const [title, route] of formerlyHeldRoutes) {
   assert.equal(classifyProduct(title, "", "Needs Review").route, route, title);
 }
-assert.equal(classifyProduct("Care Liquid — The Skin & Hair Chapter",
+assert.equal(classifyProduct("Care Liquid — Skin & Hair Chapter",
   "Product name: nursing liquid. Use after shaving. Volume: 20ml.", "Needs Review").route, "bath-body");
 assert.equal(classifyProduct("Mystery care liquid", "", "Needs Review").confidence, "review");
 assert.equal(classifyProduct("Soapstone Pendant Necklace", "", "").route, "pendants");

@@ -1,5 +1,5 @@
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
-import { BRAND_VOCABULARY, canonicalBrandLabel, removeForbiddenLanguage, type BrandVocabulary, type ProductEditorialCategory } from "./brand-vocabulary.server";
+import { BRAND_VOCABULARY, assertProductBrandStyle, canonicalBrandLabel, removeForbiddenLanguage, type BrandVocabulary, type ProductEditorialCategory } from "./brand-vocabulary.server";
 import { buildProductName, stripNamingDecoration, usesNamingIdentity } from "./product-naming";
 import type { NamingRegister } from "./curated-product-names";
 
@@ -38,7 +38,7 @@ const CUSTOMER_FACING_BRAND_DENYLIST = [
 ];
 
 const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
-  ["medical_or_guaranteed", /\b(?:cures?|treats?|prevents?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b/i],
+  ["medical_or_guaranteed", /\b(?:cures?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b|\b(?:treats?|prevents?)\s+(?:acne|eczema|psoriasis|wrinkles?|hair\s+loss|infections?|inflammation|pain|disease|conditions?|symptoms?|rashes?)\b/i],
   ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+loss|hair\s+regrowth|regrowth)\b/i],
   ["scar_claim", /\bscar\b[\s\S]{0,30}\b(?:remov|repair|treat|cream|gel|desalination|fade)/i],
   ["body_enhancement", /\b(?:(?:breast|bust|butt|hip)\b[\s\S]{0,35}\b(?:enhanc(?:e|er|ement|ing)?|enlarg(?:e|ement|ing)?|lift(?:ing)?|growth|firm(?:ing|ness)?)|breast\s+(?:beauty|care)|bust\s+care)\b/i],
@@ -87,6 +87,7 @@ export function removeHighRiskClaimLanguage(value: string): string {
 
 export function productClaimReviewReasons(
   product: {
+    id?: string;
     title?: string | null;
     descriptionHtml?: string | null;
     handle?: string | null;
@@ -113,9 +114,21 @@ export function productClaimReviewReasons(
     if (Array.isArray(saved)) retainedReasons = saved.filter((reason) =>
       CLAIM_REVIEW_RULES.some(([known]) => known === reason));
   } catch { /* Current source detection still applies to malformed history. */ }
-  return Array.from(new Set([...retainedReasons, ...CLAIM_REVIEW_RULES
+  const detected = CLAIM_REVIEW_RULES
     .filter(([, pattern]) => pattern.test(text))
-    .map(([reason]) => reason)]));
+    .map(([reason]) => reason);
+  const review = BRAND_VOCABULARY.contentPolicy.claimReviews?.[product.id ?? ""];
+  if (review?.disposition === "false_positive_corrected" && review.allowedTitles.includes(product.title ?? "") && !detected.length) {
+    try {
+      const current = JSON.parse(sourceAttributes || "{}");
+      // A decision is valid only for the source attributes actually reviewed.
+      // Added facts are scanned above; any changed reviewed value reopens it.
+      if (Object.entries(review.sourceAttributes).every(([key, value]) => current[key] === value)) {
+        retainedReasons = retainedReasons.filter(reason => !review.reviewedReasons.includes(reason));
+      }
+    } catch { /* Malformed or changed evidence keeps the hold. */ }
+  }
+  return Array.from(new Set([...retainedReasons, ...detected]));
 }
 
 export function shouldPublishAutomatedDescription(args: {
@@ -236,6 +249,7 @@ function clipTitle(value: string, max = 80): string {
 
 function extractHighlights(html?: string | null): string[] {
   const source = String(html ?? "");
+  const detailsSource = source.replace(/<table\b[^>]*>[\s\S]*?<\/table>/gi, "");
   const labeledLines = source
     .replace(/<table\b[^>]*>[\s\S]*?<\/table>/gi, "")
     .replace(/<(?:br\s*\/?|\/p|\/li)>/gi, "\n")
@@ -244,7 +258,7 @@ function extractHighlights(html?: string | null): string[] {
     .filter((line) => /^[A-Za-z][A-Za-z0-9 &/'()\-]{1,48}\s*:\s*\S/.test(line));
   return unique(
     [
-      ...[...source.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((match) => match[1]),
+      ...[...detailsSource.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((match) => match[1]),
       ...labeledLines,
     ].map((line) =>
         cleanText(line)
@@ -284,6 +298,26 @@ const CUSTOMER_HIGHLIGHT_SKIP_KEYS = new Set([
   "category",
 ]);
 
+const FACTUAL_DETAIL_KEY_RE = /^(?:(?:main_|product_|pendant_|shell_|frame_|lens_|brush_handle_|brush_|heat_conductor_|thermal_conductor_)?material(?:_composition)?|metal|stone(?:_size)?|inlay_material|fabric(?:_name|_composition)?|main_fabric_composition|lining_composition|colou?rs?(?:_classification|_category)?|appearance_color|shades?|sizes?|(?:product_|item_|packing_|color_box_)?size(?:_about|_small_size)?|dimensions|length(?:_dimensions)?|width|height|rod_length|net_(?:content|weight|wt)|product_net_content|net_content_of_cosmetics|capacity|water_tank_capacity|weight|gross_weight|product_gross_weight|number_of_(?:pieces|brushes|segments)|features?|stretch|pattern|shape(?:_pattern)?|fit(?:_type)?|origin|chain_style|treatment_process|process|plating|sleeve_(?:length|type)|pants_length|waist_type|skirt_type|thickness|finish|texture|power(?:_mode|_supply|_supply_mode|_type)?|(?:rated_|input_|charging_)?power|(?:rated_|charging_|battery_)?voltage|rated_input_voltage|rated_output_power|battery(?:_capacity|_type|_watt_hour|_model|_parameters)?|lithium_battery|charging_time|using_time|heating_(?:temperature|mode)|temperature_(?:gear|adjustment)|temperature_control_adjustment|speed_adjustment_gear|fan_speed_mode|motor_type|usb_length|spray_time|frequency|plug_specification|ingredients?|(?:main_|inactive_|product_)?ingredients|care(?:_instructions)?|washing_instructions|storage_method|package_(?:contents|includes)|products_include)$/;
+
+const SUPPLIER_PITCH_RE = /\b(?:ships?|shipping|delivery|customer service|satisfaction|after.sales|best gift|perfect gift|for your (?:wife|mom|friend)|you (?:need|deserve)|our (?:company|factory)|non.toxic|eco.friendly|environmentally friendly|all (?:skin|hair) types|long.lasting|instant(?:ly)?|professional results|pain.free|clinically|guarantee|cures?|treats?|prevents?)\b/i;
+
+function factualHighlight(value: string): string | null {
+  const text = cleanText(value);
+  if (!text || /…|\.\.\.|https?:\/\//.test(text) || SUPPLIER_PITCH_RE.test(text)) return null;
+  // Keep explicit source care instructions; never synthesize instructions.
+  if (/^(?:machine|hand) wash\b|^(?:do not bleach|tumble dry|dry clean|imported)\b/i.test(text) && text.length <= 160) return text;
+  const labeled = text.match(/^([^:]{2,60}):\s*(.+)$/);
+  if (!labeled) return null;
+  const key = labeled[1].toLowerCase().trim().replace(/[\s/()-]+/g, "_").replace(/_+$/g, "");
+  const detail = labeled[2].trim();
+  if (!FACTUAL_DETAIL_KEY_RE.test(key) || !usefulSourceHighlight(key, detail)) return null;
+  if (/\b[A-Z]{2,}[-_]?\d{3,}[A-Z0-9-]*\b/.test(detail)) return null;
+  // Sentence-long ingredient/material pitches are not composition lists.
+  if (/(?:material|ingredients)/.test(key) && /\b(?:this|our|your|will|provides?|helps?|improves?|promotes?)\b/i.test(detail)) return null;
+  return `${humanizeAttributeKey(key)}: ${detail}`;
+}
+
 function usefulSourceHighlight(key: string, value: string): boolean {
   const normalizedKey = key.toLowerCase().trim().replace(/[\s-]+/g, "_");
   const normalizedValue = cleanText(value).toLowerCase();
@@ -293,6 +327,8 @@ function usefulSourceHighlight(key: string, value: string): boolean {
     return false;
   }
   if (normalizedValue.length > 180) return false;
+  if (/^(?:rated_|input_|charging_)?power$/.test(normalizedKey) && !/\d/.test(normalizedValue)) return false;
+  if (/features?/.test(normalizedKey) && /\b(?:nourish|moisturiz\w*|hydrat\w*|repair|rejuvenat\w*|brighten\w*|regenerat\w*)\b/i.test(normalizedValue)) return false;
   return true;
 }
 
@@ -392,14 +428,15 @@ function usefulSeoDetailValues(highlights: string[]): string[] {
 }
 
 function introFacts(highlights: string[]): string[] {
-  const amount = highlightValue(highlights, /^(?:capacity|net\s+content)\s*:/i);
+  const amount = highlightValue(highlights, /^(?:capacity|net\s+(?:content|weight|wt))\s*:/i);
   // Retain explicit units. Never turn an unlabeled "30" into "30 ml", or
   // interpret a fractional quantity or range as a separate available size.
   const quantities = /[\/–—]|\d\s*-\s*\d/.test(amount)
     ? []
     : unique([...amount.matchAll(/\b(\d+(?:\.\d+)?)\s*(ml|mg|kg|g|oz|l)\b/gi)]
         .map((match) => `${match[1]} ${match[2].toLowerCase()}`));
-  const material = highlightValue(highlights, /^(?:material(?:\s+composition)?|metal|stone)\s*:/i);
+  const listedMaterial = highlightValue(highlights, /^(?:material(?:\s+composition)?|metal|stone)\s*:/i);
+  const material = /^(?:glass|PE|PET|PP|PVC|ABS|plastic)$/i.test(listedMaterial) ? "" : listedMaterial;
   const color = highlightValue(highlights, /^(?:color|shade)\s*:/i)
     || highlightValue(highlights, /^(?:colors|shades)\s*:/i);
   const colors = color.split(/\s*\/\s*/).map(cleanText).filter(Boolean);
@@ -700,7 +737,7 @@ function brandedProductCopy(
   if (cleanCustomerText(hook, product.vendor, vocabulary, sanitizeClaims) !== hook) {
     throw new Error(`Product opening requires a current language review: ${product.id}`);
   }
-  const namedTitle = /^the\s/i.test(title) ? title : `The ${title}`;
+  const namedTitle = title;
   const factualSentence = introFacts(highlights)
     .map((fact) => `${namedTitle} ${fact}.`)
     .find((sentence) => `${hook} ${sentence}`.length <= vocabulary.contentPolicy.limits.shortDescription);
@@ -726,12 +763,15 @@ function escapeHtml(value: string): string {
 function preservedTables(html?: string | null): string[] {
   const source = String(html ?? "");
   return [...source.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)]
-    .map((match) =>
-      match[0]
-        .replace(/\sstyle=(["'])[^"']*\1/gi, "")
-        .replace(/\sclass=(["'])[^"']*\1/gi, "")
-        .trim(),
-    )
+    .filter(match => !/<(?:img|ul|li|script|iframe|h[1-6])\b/i.test(match[0]) && !SUPPLIER_PITCH_RE.test(cleanText(match[0])))
+    .map(match => {
+      const rows = [...match[0].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map(row => {
+        const cells = [...row[1].matchAll(/<(td|th)\b[^>]*>([\s\S]*?)<\/\1>/gi)];
+        if (!cells.length || cells.some(cell => cleanText(cell[2]).length > 120)) return "";
+        return "<tr>" + cells.map(cell => `<${cell[1].toLowerCase()}>${escapeHtml(cleanText(cell[2]))}</${cell[1].toLowerCase()}>`).join("") + "</tr>";
+      });
+      return rows.length >= 2 && rows.every(Boolean) ? "<table>" + rows.join("") + "</table>" : "";
+    })
     .filter(Boolean);
 }
 
@@ -765,11 +805,29 @@ export function brandedSeoTitle(title: string, brandLabel: string, limit: number
   if (suffix.length >= limit) return cleanText(brandLabel).slice(0, limit).trim();
   const available = limit - suffix.length;
   const cleanTitle = cleanText(title);
-  const base =
-    cleanTitle.length <= available
-      ? cleanTitle
-      : cleanTitle.slice(0, available).replace(/\s+\S*$/, "").trim() ||
-        cleanTitle.slice(0, available).trim();
+  if (cleanTitle.length <= available) return cleanTitle + suffix;
+  // Noun phrases come from the actual title. Preserve them while shortening
+  // middle modifiers; preserve the trailing identity of noun-first names.
+  const noun = [...cleanTitle.matchAll(/\b(?:hair removal (?:device|tool)|facial cleansing tool|foot massage machine|(?:hair )?straightener(?: & hot comb)?|(?:electric )?hair dryer|(?:makeup |hair |hair coloring )?brush(?: set)?|(?:hair |facial |eye )?(?:comb|roller|massager)|sports bra & shorts set|(?:sportswear|ring|jewelry) set|body spray perfume|press-on nails|(?:face|facial|body|neck|hand|eye|foot) (?:cream|serum|oil|lotion|mask|wash)|(?:hair|lip) (?:oil|serum|mask)|shampoo|conditioner|jumpsuit|turtleneck top|yoga pants|dress|necklace|pendant|anklet|bracelet|earrings|ring|candle|mirror|skincare instrument|tool|perfume|lipstick|eyeliner|eyeshadow)\b/gi)].at(-1);
+  if (!noun) {
+    const words = cleanTitle.split(" ");
+    const tail = words.pop()!;
+    const head = words.join(" ").slice(0, available - tail.length - 1).replace(/\s+\S*$/, "").trim();
+    return (head ? head + " " + tail : tail).slice(0, available) + suffix;
+  }
+  const subject = noun[0];
+  const dashParts = cleanTitle.split(/\s+[—–]\s+/);
+  if (dashParts.length === 2 && dashParts[0].includes(subject)) {
+    const identity = dashParts[1];
+    const words = identity.split(" ");
+    while ((subject + " — " + words.join(" ")).length > available && words.length > 1) words.pop();
+    return (subject + " — " + words.join(" ")).slice(0, available) + suffix;
+  }
+  let head = cleanTitle.slice(0, noun.index).trim().replace(/^The\s+/i, "");
+  const words = head.split(" ").filter(Boolean);
+  while ((words.join(" ") + " " + subject).length > available && words.length > 1) words.pop();
+  const base = (words.length ? words.join(" ") + " " : "") + subject;
+  if (base.length > available) throw new Error("SEO product noun exceeds the available brand title budget");
   return base + suffix;
 }
 
@@ -853,6 +911,7 @@ export function buildAutomatedProductContent(
 ): NamedAutomatedProductContent {
   brandLabel = canonicalBrandLabel(brandLabel, vocabulary);
   const sanitizeClaims = productClaimReviewReasons(product).length > 0;
+  const category = productEditorialCategory(classification);
   const sourceHighlights = uniqueHighlights([
     ...extractHighlights(product.descriptionHtml),
     ...structuredSourceHighlights(product),
@@ -863,7 +922,9 @@ export function buildAutomatedProductContent(
     .map((item) =>
       cleanCustomerText(item, product.vendor, vocabulary, sanitizeClaims),
     )
-    .filter((item) => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item)), classification.productType);
+    .map(factualHighlight)
+    .filter(item => !item || !["skincare", "fragrance", "haircare"].includes(category) || !/^material:\s*(?:PE|PET|PP|PVC|ABS|plastic)\b/i.test(item))
+    .filter((item): item is string => Boolean(item) && !DESCRIPTION_BOILERPLATE_RE.test(item!)), classification.productType);
   const highlights = sourceHighlights.length
     ? sourceHighlights
     : [`Product type: ${classification.productType}`];
@@ -928,12 +989,13 @@ export function buildAutomatedProductContent(
     sanitizeClaims ? undefined : product.descriptionHtml,
     generatedIntro,
   );
+  assertProductBrandStyle(title, shortDescription.split(/(?<=[.!?])\s/)[0], descriptionHtml, vocabulary);
 
   const seoTitle = brandedSeoTitle(title, brandLabel, vocabulary.contentPolicy.limits.seoTitle);
-  const metaDescription = clip(
-    "Shop " + title + " at " + brandLabel + ". " + shortDescription,
-    vocabulary.contentPolicy.limits.metaDescription,
-  );
+  const metaLimit = vocabulary.contentPolicy.limits.metaDescription;
+  const metaLead = "Explore " + title + " at " + brandLabel + ".";
+  const metaFact = introFacts(highlights).map(fact => `It ${fact}.`).find(fact => `${metaLead} ${fact}`.length <= metaLimit);
+  const metaDescription = metaFact ? metaLead + " " + metaFact : metaLead;
 
   const seoKeywords = unique([
     focusKeyword,

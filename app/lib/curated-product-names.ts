@@ -58,14 +58,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100060033222",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The In Motion Zip-Up Training Jumpsuit",
+    "title": "In Motion Zip-Up Training Jumpsuit",
     "opening": "For the part of your day that moves.",
     "sourceTitle": "Elevated Long-Sleeve Zip-Up Training Jumpsuit",
     "sourceAliases": [
       "Elevated Long-Sleeve Zip-Up Training Jumpsuit",
       "Long Sleeve Outdoor Sports Workout Clothes Zipper Training Jumpsuit",
       "long sleeve outdoor sports workout clothes zipper training jumpsuit",
-      "long-sleeve zip-up training jumpsuit"
+      "long-sleeve zip-up training jumpsuit",
+      "The In Motion Zip-Up Training Jumpsuit"
     ]
   },
   {
@@ -85,13 +86,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100061114566",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Daily Detail Rechargeable Hair Removal Device",
+    "title": "Daily Detail Rechargeable Hair Removal Device",
     "opening": "Make a little room for your own routine.",
     "sourceTitle": "Elevated Rechargeable Ladies Hair Removal Device",
     "sourceAliases": [
       "Elevated Rechargeable Ladies Hair Removal Device",
       "Rechargeable Ladies Hair Removal Device",
-      "rechargeable ladies hair removal device"
+      "rechargeable ladies hair removal device",
+      "The Daily Detail Rechargeable Hair Removal Device"
     ]
   },
   {
@@ -126,14 +128,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100061212870",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Off-Duty Fleece Hooded Sportswear Set",
+    "title": "Off-Duty Fleece Hooded Sportswear Set",
     "opening": "The hours between plans deserve a look.",
     "sourceTitle": "Polished Fleece-Lined Hooded Sportswear Set",
     "sourceAliases": [
       "Polished Fleece-Lined Hooded Sportswear Set",
       "Women's Fleece-Lined Hooded Sportswear Suit",
       "women's fleece-lined hooded sportswear suit",
-      "fleece-lined hooded sportswear set"
+      "fleece-lined hooded sportswear set",
+      "The Off-Duty Fleece Hooded Sportswear Set"
     ]
   },
   {
@@ -154,27 +157,29 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100061278406",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Celestial Edit Gold-Plated 10-Piece Ring Set",
+    "title": "Celestial Edit Gold-Plated 10-Piece Ring Set",
     "opening": "Your ring stack, in your own order.",
     "sourceTitle": "Intentional Gold-Plated Star And Moon 10-Piece Ring Set",
     "sourceAliases": [
       "Intentional Gold-Plated Star And Moon 10-Piece Ring Set",
       "Gold-Plated Bohemian Star Moon Love Pearl Leaf 10-Piece Ring",
       "gold-plated bohemian star moon love pearl leaf 10-piece ring",
-      "gold-plated star and moon 10-piece ring set"
+      "gold-plated star and moon 10-piece ring set",
+      "The Celestial Edit Gold-Plated 10-Piece Ring Set"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100061343942",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Arrival Plus Size Dress",
+    "title": "Arrival Plus Size Dress",
     "opening": "Dress for the woman who has already arrived.",
     "sourceTitle": "Understated Women's Solid Color Plus Size Dress",
     "sourceAliases": [
       "Understated Women's Solid Color Plus Size Dress",
       "Women's Solid Color Plus Size Dress",
-      "women's solid color plus size dress"
+      "women's solid color plus size dress",
+      "The Arrival Plus Size Dress"
     ]
   },
   {
@@ -234,13 +239,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100061704390",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Unhurried Flared Yoga Pants",
+    "title": "Unhurried Flared Yoga Pants",
     "opening": "Set your own pace.",
     "sourceTitle": "Refined Elastic High Waist Slightly Flared Yoga Pants",
     "sourceAliases": [
       "Refined Elastic High Waist Slightly Flared Yoga Pants",
       "Elastic High Waist Slightly Flared Yoga Pants",
-      "elastic high waist slightly flared yoga pants"
+      "elastic high waist slightly flared yoga pants",
+      "The Unhurried Flared Yoga Pants"
     ]
   },
   {
@@ -260,14 +266,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100061835462",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Lotion — An Hour Apart",
+    "title": "Body Lotion — Hour Apart",
     "opening": "An invitation to take your time.",
     "sourceTitle": "Deliberate Ultra-Rich Body Lotion",
     "sourceAliases": [
       "Deliberate Ultra-Rich Body Lotion",
       "Body Hydrate Glass Skin Ultra-Rich Lotion",
       "body hydrate glass skin ultra-rich lotion",
-      "ultra-rich body lotion"
+      "ultra-rich body lotion",
+      "Body Lotion — An Hour Apart"
     ]
   },
   {
@@ -326,14 +333,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100062425286",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Oil — A Moment Kept",
+    "title": "Body Oil — Moment Kept",
     "opening": "Keep a little of the day for yourself.",
     "sourceTitle": "Elegant Nourishing Body Oil",
     "sourceAliases": [
       "Elegant Nourishing Body Oil",
       "Body Skin Nourishing And Moisturizing Treatment Oil",
       "body skin nourishing and moisturizing treatment oil",
-      "nourishing body oil"
+      "nourishing body oil",
+      "Body Oil — A Moment Kept"
     ]
   },
   {
@@ -379,13 +387,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100062589126",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Discovery Edit Mystery Beauty Box",
+    "title": "Discovery Edit Mystery Beauty Box",
     "opening": "Leave room to discover something new.",
     "sourceTitle": "Timeless Mystery Beauty Boxes",
     "sourceAliases": [
       "Timeless Mystery Beauty Boxes",
       "Mystery Beauty Boxes",
-      "mystery beauty boxes"
+      "mystery beauty boxes",
+      "The Discovery Edit Mystery Beauty Box"
     ]
   },
   {
@@ -418,14 +427,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100062720198",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Composed Canvas Waterproof Concealer",
+    "title": "Composed Canvas Waterproof Concealer",
     "opening": "Your makeup, with your own point of view.",
     "sourceTitle": "Polished Moisturizing Waterproof Concealer",
     "sourceAliases": [
       "Polished Moisturizing Waterproof Concealer",
       "Moisturizing Oil Controlling Skin Brightening Waterproof And Concealer",
       "moisturizing oil controlling skin brightening waterproof and concealer",
-      "moisturizing waterproof concealer"
+      "moisturizing waterproof concealer",
+      "The Composed Canvas Waterproof Concealer"
     ]
   },
   {
@@ -445,13 +455,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100062851270",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Oil — The Care Hour",
+    "title": "Body Oil — Care Hour",
     "opening": "Set aside an hour, or just a moment.",
     "sourceTitle": "Deliberate Hair Care Body Oil 60ml",
     "sourceAliases": [
       "Deliberate Hair Care Body Oil 60ml",
       "Hair Care Body Oil 60ml",
-      "hair care body oil 60ml"
+      "hair care body oil 60ml",
+      "Body Oil — The Care Hour"
     ]
   },
   {
@@ -498,14 +509,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100063015110",
     "brand": "miss-princess",
     "register": "descriptive-poetic",
-    "title": "Hair Mask Conditioner — A Fresh Chapter",
+    "title": "Hair Mask Conditioner — Fresh Chapter",
     "opening": "Give your hair routine a new chapter.",
     "sourceTitle": "Sweet Deep Repair Hair Mask Conditioner",
     "sourceAliases": [
       "Sweet Deep Repair Hair Mask Conditioner",
       "Deep Repair Hair Mask Nutritional Softening Conditioner",
       "deep repair hair mask nutritional softening conditioner",
-      "deep repair hair mask conditioner"
+      "deep repair hair mask conditioner",
+      "Hair Mask Conditioner — A Fresh Chapter"
     ]
   },
   {
@@ -526,28 +538,30 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100063113414",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Personal Edit Hair Removal Tool",
+    "title": "Personal Edit Hair Removal Tool",
     "opening": "Choose how your routine comes together.",
     "sourceTitle": "Polished Hair Removal Tool With Rechargeable And Battery Options",
     "sourceAliases": [
       "Polished Hair Removal Tool With Rechargeable And Battery Options",
       "Women's Painless Hair Remover Tools Rechargeable And Battery Model",
       "women's painless hair remover tools rechargeable and battery model",
-      "hair removal tool with rechargeable and battery options"
+      "hair removal tool with rechargeable and battery options",
+      "The Personal Edit Hair Removal Tool"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100063146182",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Facial Roller — The Golden Interval",
+    "title": "Facial Roller — Golden Interval",
     "opening": "A moment between the mirror and the day.",
     "sourceTitle": "Deliberate 24K Gold Vibrating Facial Roller",
     "sourceAliases": [
       "Deliberate 24K Gold Vibrating Facial Roller",
       "Face 24K Gold Vibration Pulse Beauty Bar Facial Roller",
       "face 24k gold vibration pulse beauty bar facial roller",
-      "24k gold vibrating facial roller"
+      "24k gold vibrating facial roller",
+      "Facial Roller — The Golden Interval"
     ]
   },
   {
@@ -581,13 +595,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100063277254",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Everyday Choice Multifunctional Lady Shaver",
+    "title": "Everyday Choice Multifunctional Lady Shaver",
     "opening": "Your everyday choices belong to you.",
     "sourceTitle": "Refined Multifunctional Lady Shaver",
     "sourceAliases": [
       "Refined Multifunctional Lady Shaver",
       "Multifunctional Lady Shaver",
-      "multifunctional lady shaver"
+      "multifunctional lady shaver",
+      "The Everyday Choice Multifunctional Lady Shaver"
     ]
   },
   {
@@ -634,13 +649,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100063539398",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Everyday Face BB Cream Foundation",
+    "title": "Everyday Face BB Cream Foundation",
     "opening": "Make your daily makeup your own.",
     "sourceTitle": "Refined BB Cream Foundation",
     "sourceAliases": [
       "Refined BB Cream Foundation",
       "BB Cream Foundation",
-      "bb cream foundation"
+      "bb cream foundation",
+      "The Everyday Face BB Cream Foundation"
     ]
   },
   {
@@ -660,14 +676,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100063867078",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Fine Grain Skincare — A Small Consideration",
+    "title": "Fine Grain Skincare — Small Consideration",
     "opening": "The small considerations have their place.",
     "sourceTitle": "Harmonious Fine-Grain Skincare",
     "sourceAliases": [
       "Harmonious Fine-Grain Skincare",
       "Light Fine Grain Skin Care Products",
       "light fine grain skin care products",
-      "fine-grain skincare"
+      "fine-grain skincare",
+      "Fine Grain Skincare — A Small Consideration"
     ]
   },
   {
@@ -715,13 +732,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100064293062",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Skin Lotion Cream — A Gentle Interval",
+    "title": "Skin Lotion Cream — Gentle Interval",
     "opening": "Leave a little space in the day for care.",
     "sourceTitle": "Restrained Skin Brightening Anti Drying Moisturizing Lotion Cream",
     "sourceAliases": [
       "Restrained Skin Brightening Anti Drying Moisturizing Lotion Cream",
       "Skin Brightening Anti Drying Moisturizing Lotion Cream",
-      "skin brightening anti drying moisturizing lotion cream"
+      "skin brightening anti drying moisturizing lotion cream",
+      "Skin Lotion Cream — A Gentle Interval"
     ]
   },
   {
@@ -754,13 +772,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100064587974",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Cream — The Small Hours",
+    "title": "Body Cream — Small Hours",
     "opening": "Care can have its own quiet hour.",
     "sourceTitle": "Composed Body Cream 40g",
     "sourceAliases": [
       "Composed Body Cream 40g",
       "Body Cream 40g",
-      "body cream 40g"
+      "body cream 40g",
+      "Body Cream — The Small Hours"
     ]
   },
   {
@@ -781,14 +800,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100065013958",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Cream — A Considered Pause",
+    "title": "Body Cream — Considered Pause",
     "opening": "A small pause, chosen with intention.",
     "sourceTitle": "Elegant Nourishing Body Cream 40ml",
     "sourceAliases": [
       "Elegant Nourishing Body Cream 40ml",
       "Universal 40ml Moisturizing Nourishing Body Cream",
       "universal 40ml moisturizing nourishing body cream",
-      "nourishing body cream 40ml"
+      "nourishing body cream 40ml",
+      "Body Cream — A Considered Pause"
     ]
   },
   {
@@ -877,13 +897,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100066554054",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Face Cream — The Daily Return",
+    "title": "Face Cream — Daily Return",
     "opening": "For a routine you make your own.",
     "sourceTitle": "Deliberate Moisturizer Face Cream",
     "sourceAliases": [
       "Deliberate Moisturizer Face Cream",
       "Moisturizer Face Cream",
-      "moisturizer face cream"
+      "moisturizer face cream",
+      "Face Cream — The Daily Return"
     ]
   },
   {
@@ -903,13 +924,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100066783430",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Essential Hair Oil — A Last Word",
+    "title": "Essential Hair Oil — Last Word",
     "opening": "Give the last step a considered place.",
     "sourceTitle": "Timeless Essential Hair Oil",
     "sourceAliases": [
       "Timeless Essential Hair Oil",
       "Essential Hair Oil",
-      "essential hair oil"
+      "essential hair oil",
+      "Essential Hair Oil — A Last Word"
     ]
   },
   {
@@ -955,13 +977,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100067340486",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Eye Cream — The Quiet Detail",
+    "title": "Eye Cream — Quiet Detail",
     "opening": "The little details deserve your attention.",
     "sourceTitle": "Elevated Eye Care Cream",
     "sourceAliases": [
       "Elevated Eye Care Cream",
       "Eye Care Cream",
-      "eye care cream"
+      "eye care cream",
+      "Eye Cream — The Quiet Detail"
     ]
   },
   {
@@ -982,13 +1005,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100067635398",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Ritual Pause Electric Cupping Massager",
+    "title": "Ritual Pause Electric Cupping Massager",
     "opening": "Keep a place for your own pace.",
     "sourceTitle": "Timeless Electric Vacuum Cupping Massager For Body Suction Cup Gua Sha Massage",
     "sourceAliases": [
       "Timeless Electric Vacuum Cupping Massager For Body Suction Cup Gua Sha Massage",
       "Electric Vacuum Cupping Massager For Body Suction Cup Gua Sha Massage",
-      "electric vacuum cupping massager for body suction cup gua sha massage"
+      "electric vacuum cupping massager for body suction cup gua sha massage",
+      "The Ritual Pause Electric Cupping Massager"
     ]
   },
   {
@@ -1008,40 +1032,43 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100067864774",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The First Impression Liquid Foundation",
+    "title": "First Impression Liquid Foundation",
     "opening": "Begin your makeup with your own intention.",
     "sourceTitle": "Polished Concealer Liquid Foundation",
     "sourceAliases": [
       "Polished Concealer Liquid Foundation",
       "Concealer Liquid Foundation",
-      "concealer liquid foundation"
+      "concealer liquid foundation",
+      "The First Impression Liquid Foundation"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100067963078",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The At-Home Edit 23-Piece Waxing Kit",
+    "title": "At-Home Edit 23-Piece Waxing Kit",
     "opening": "Bring the care hour into your own space.",
     "sourceTitle": "Intentional 23-Piece Waxing Kit With Warmer And Wax Beads",
     "sourceAliases": [
       "Intentional 23-Piece Waxing Kit With Warmer And Wax Beads",
       "Waxing Kit 23 Items Hair Removal Wax With Warmer Beads Etc",
       "waxing kit 23 items hair removal wax with warmer beads etc",
-      "23-piece waxing kit with warmer and wax beads"
+      "23-piece waxing kit with warmer and wax beads",
+      "The At-Home Edit 23-Piece Waxing Kit"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100068028614",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Scrub — A Change of Scene",
+    "title": "Body Scrub — Change of Scene",
     "opening": "Make the bathing routine a moment in itself.",
     "sourceTitle": "Precise Body Scrub",
     "sourceAliases": [
       "Precise Body Scrub",
       "Body Scrub",
-      "body scrub"
+      "body scrub",
+      "Body Scrub — A Change of Scene"
     ]
   },
   {
@@ -1074,40 +1101,43 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100068192454",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Ultra-Rich Body Lotion — The Evening Return",
+    "title": "Ultra-Rich Body Lotion — Evening Return",
     "opening": "A body care moment at the end of the day.",
     "sourceTitle": "Precise Ultra-Rich Body Lotion",
     "sourceAliases": [
       "Precise Ultra-Rich Body Lotion",
       "Ultra-Rich Body Lotion",
       "body hydrate glass skin ultra-rich lotion",
-      "ultra-rich body lotion"
+      "ultra-rich body lotion",
+      "Ultra-Rich Body Lotion — The Evening Return"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100068225222",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Care Oil — A Finishing Note",
+    "title": "Hair Care Oil — Finishing Note",
     "opening": "Give your hair edit a final note.",
     "sourceTitle": "Precise Hair Care Oil",
     "sourceAliases": [
       "Precise Hair Care Oil",
       "Hair Care Oil",
-      "hair care oil"
+      "hair care oil",
+      "Hair Care Oil — A Finishing Note"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100068290758",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Skincare Wardrobe Box",
+    "title": "Skincare Wardrobe Box",
     "opening": "Build a skincare edit in your own way.",
     "sourceTitle": "Elegant Skincare Box",
     "sourceAliases": [
       "Elegant Skincare Box",
       "Skincare Box",
-      "skincare box"
+      "skincare box",
+      "The Skincare Wardrobe Box"
     ]
   },
   {
@@ -1237,14 +1267,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100069044422",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Lotion — A Daily Intention",
+    "title": "Body Lotion — Daily Intention",
     "opening": "A little attention to an everyday step.",
     "sourceTitle": "Elegant Moisturizing Body Lotion",
     "sourceAliases": [
       "Elegant Moisturizing Body Lotion",
       "Body Lotion Liquid Control Moisturizing",
       "body lotion liquid control moisturizing",
-      "moisturizing body lotion"
+      "moisturizing body lotion",
+      "Body Lotion — A Daily Intention"
     ]
   },
   {
@@ -1361,14 +1392,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100787351750",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Brush — A Daily Arrangement",
+    "title": "Hair Brush — Daily Arrangement",
     "opening": "Bring a little order to your everyday edit.",
     "sourceTitle": "Timeless Detangling Nylon Bristle Hair Brush",
     "sourceAliases": [
       "Timeless Detangling Nylon Bristle Hair Brush",
       "Hairbrush Anti Klit Brushy Haarborstel Women Detangler Bristle Nylon Hair Brush",
       "hairbrush anti klit brushy haarborstel women detangler bristle nylon hair brush",
-      "detangling nylon bristle hair brush"
+      "detangling nylon bristle hair brush",
+      "Hair Brush — A Daily Arrangement"
     ]
   },
   {
@@ -1389,13 +1421,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100787679430",
     "brand": "miss-princess",
     "register": "identity-led",
-    "title": "The Five-Step Play Electric Facial Cleansing Tool",
+    "title": "Five-Step Play Electric Facial Cleansing Tool",
     "opening": "Give your care lineup a new direction.",
     "sourceTitle": "Lighthearted 5 In 1 Electric Facial Cleansing Instrument",
     "sourceAliases": [
       "Lighthearted 5 In 1 Electric Facial Cleansing Instrument",
       "5 In 1 Electric Facial Cleansing Instrument",
-      "5 in 1 electric facial cleansing instrument"
+      "5 in 1 electric facial cleansing instrument",
+      "The Five-Step Play Electric Facial Cleansing Tool"
     ]
   },
   {
@@ -1429,14 +1462,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100787974342",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "The Care Measure Eye Cream & Facial Mask Spoon",
+    "title": "Care Measure Eye Cream & Facial Mask Spoon",
     "opening": "A considered tool for the care shelf.",
     "sourceTitle": "Precise Zinc Alloy Eye Cream And Facial Mask Spoon",
     "sourceAliases": [
       "Precise Zinc Alloy Eye Cream And Facial Mask Spoon",
       "Zinc Alloy Eye Cream Facial Mask Spoon Golden Massage Beauty Stick Metal",
       "zinc alloy eye cream facial mask spoon golden massage beauty stick metal",
-      "zinc alloy eye cream and facial mask spoon"
+      "zinc alloy eye cream and facial mask spoon",
+      "The Care Measure Eye Cream & Facial Mask Spoon"
     ]
   },
   {
@@ -1484,27 +1518,29 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100788170950",
     "brand": "miss-princess",
     "register": "identity-led",
-    "title": "The Bath Bouquet Six-Piece Bath Bomb Set",
+    "title": "Bath Bouquet Six-Piece Bath Bomb Set",
     "opening": "Pick a little atmosphere for bath time.",
     "sourceTitle": "Lighthearted Six-Piece Mint Lavender And Rose Bath Bomb Set",
     "sourceAliases": [
       "Lighthearted Six-Piece Mint Lavender And Rose Bath Bomb Set",
       "6 Pcs Organic Bath Bombs Bubble Mint Lavender Rose Flavor",
       "6 pcs organic bath bombs bubble mint lavender rose flavor",
-      "six-piece mint lavender and rose bath bomb set"
+      "six-piece mint lavender and rose bath bomb set",
+      "The Bath Bouquet Six-Piece Bath Bomb Set"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100788269254",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Dryer Bonnet — The Home Hour",
+    "title": "Hair Dryer Bonnet — Home Hour",
     "opening": "Give your hair routine a place at home.",
     "sourceTitle": "Effortless Hair Dryer Bonnet Hood",
     "sourceAliases": [
       "Effortless Hair Dryer Bonnet Hood",
       "Hair Dryer Bonnet Hood",
-      "hair dryer bonnet hood"
+      "hair dryer bonnet hood",
+      "Hair Dryer Bonnet — The Home Hour"
     ]
   },
   {
@@ -1525,13 +1561,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100788400326",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Care Choice Hair Removal Device",
+    "title": "Care Choice Hair Removal Device",
     "opening": "Make the routine a choice of your own.",
     "sourceTitle": "Refined Hair Removal Device",
     "sourceAliases": [
       "Refined Hair Removal Device",
       "Hair Removal Device",
-      "hair removal device"
+      "hair removal device",
+      "The Care Choice Hair Removal Device"
     ]
   },
   {
@@ -1552,14 +1589,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100788465862",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Repair Shampoo — The Wash-Day Chapter",
+    "title": "Hair Repair Shampoo — Wash-Day Chapter",
     "opening": "Let wash day have its own chapter.",
     "sourceTitle": "Refined Hair Repair Shampoo",
     "sourceAliases": [
       "Refined Hair Repair Shampoo",
       "Purc Straightening Hair Repair And Straighten Damage Products Brazilian Shampoo",
       "purc straightening hair repair and straighten damage products brazilian shampoo",
-      "hair repair shampoo"
+      "hair repair shampoo",
+      "Hair Repair Shampoo — The Wash-Day Chapter"
     ]
   },
   {
@@ -1580,27 +1618,29 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100790235334",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Dressing Table Skincare Instrument",
+    "title": "Dressing Table Skincare Instrument",
     "opening": "Give your care space a detail of its own.",
     "sourceTitle": "Restrained Skincare Beauty Instrument",
     "sourceAliases": [
       "Restrained Skincare Beauty Instrument",
       "Skin Rejuvenation Instrument",
       "skin rejuvenation instrument",
-      "skincare beauty instrument"
+      "skincare beauty instrument",
+      "The Dressing Table Skincare Instrument"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100790333638",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Pore Refining Serum — A Closer Look",
+    "title": "Pore Refining Serum — Closer Look",
     "opening": "A considered place in your skincare routine.",
     "sourceTitle": "Understated Pore Refining Serum",
     "sourceAliases": [
       "Understated Pore Refining Serum",
       "Pore Refining Serum",
-      "pore refining serum"
+      "pore refining serum",
+      "Pore Refining Serum — A Closer Look"
     ]
   },
   {
@@ -1620,14 +1660,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100790399174",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Warm Waist Belt — An Hour at Home",
+    "title": "Warm Waist Belt — Hour at Home",
     "opening": "A moment set aside in your own space.",
     "sourceTitle": "Polished Warm Waist Belt",
     "sourceAliases": [
       "Polished Warm Waist Belt",
       "New Warm Belt Menstrual Aunt Stomach Pain Artifact",
       "new warm belt menstrual aunt stomach pain artifact",
-      "warm waist belt"
+      "warm waist belt",
+      "Warm Waist Belt — An Hour at Home"
     ]
   },
   {
@@ -1648,14 +1689,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100790497478",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Honey Foot & Leg Cream — The Walk Home",
+    "title": "Honey Foot & Leg Cream — Walk Home",
     "opening": "Give the end of the day a care moment.",
     "sourceTitle": "Deliberate Honey Moisturizing Foot And Leg Cream",
     "sourceAliases": [
       "Deliberate Honey Moisturizing Foot And Leg Cream",
       "Honey Moisturizing Cream Foot Leg",
       "honey moisturizing cream foot leg",
-      "honey moisturizing foot and leg cream"
+      "honey moisturizing foot and leg cream",
+      "Honey Foot & Leg Cream — The Walk Home"
     ]
   },
   {
@@ -1676,7 +1718,7 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100790726854",
     "brand": "mvqueen",
     "register": "evocative",
-    "title": "The Garden Perfume",
+    "title": "Garden Perfume",
     "opening": "Keep a place for the atmosphere you choose.",
     "sourceTitle": "The Garden Perfume",
     "sourceAliases": [
@@ -1690,28 +1732,30 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100790759622",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Lotion — A Moment of Ease",
+    "title": "Body Lotion — Moment of Ease",
     "opening": "A body care step with room to pause.",
     "sourceTitle": "Timeless Moisturizing Body Lotion",
     "sourceAliases": [
       "Timeless Moisturizing Body Lotion",
       "Moisturizing Body Lotion",
       "body lotion liquid control moisturizing",
-      "moisturizing body lotion"
+      "moisturizing body lotion",
+      "Body Lotion — A Moment of Ease"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100790792390",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Curler — The Evening Shape",
+    "title": "Hair Curler — Evening Shape",
     "opening": "Give the evening look your own direction.",
     "sourceTitle": "Curated Cordless Automatic Hair Curler",
     "sourceAliases": [
       "Curated Cordless Automatic Hair Curler",
       "Cordless Automatic Hair Curler Iron Wireless Curling",
       "cordless automatic hair curler iron wireless curling",
-      "cordless automatic hair curler"
+      "cordless automatic hair curler",
+      "Hair Curler — The Evening Shape"
     ]
   },
   {
@@ -1732,28 +1776,30 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100790890694",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Wireless Hair Styling Comb — A New Arrangement",
+    "title": "Wireless Hair Styling Comb — New Arrangement",
     "opening": "Choose a new arrangement for your hair edit.",
     "sourceTitle": "Composed Wireless Hair Straightener And Curler Comb",
     "sourceAliases": [
       "Composed Wireless Hair Straightener And Curler Comb",
       "Professional Wireless Hair Straightener Curler Comb Fast Heating Negative Ion",
       "professional wireless hair straightener curler comb fast heating negative ion",
-      "wireless hair straightener and curler comb"
+      "wireless hair straightener and curler comb",
+      "Wireless Hair Styling Comb — A New Arrangement"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100790956230",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Carry-On Mini Hair Straightening Comb",
+    "title": "Carry-On Mini Hair Straightening Comb",
     "opening": "Keep a place for care in your travel edit.",
     "sourceTitle": "Timeless Mini Wireless Charging Hair Straightening Comb",
     "sourceAliases": [
       "Timeless Mini Wireless Charging Hair Straightening Comb",
       "Mini Hair Straightening Comb Wireless Charging Portable Multifunctional Hair Care Not Hurt Hair Styling Comb Hair Straightener",
       "mini hair straightening comb wireless charging portable multifunctional hair care not hurt hair styling comb hair straightener",
-      "mini wireless charging hair straightening comb"
+      "mini wireless charging hair straightening comb",
+      "The Carry-On Mini Hair Straightening Comb"
     ]
   },
   {
@@ -1774,14 +1820,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100791218374",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Self-Cleaning Hair Brush — The Order of Things",
+    "title": "Self-Cleaning Hair Brush — Order of Things",
     "opening": "Give familiar steps a little intention.",
     "sourceTitle": "Refined Self-Cleaning Scalp Massage Hair Brush",
     "sourceAliases": [
       "Refined Self-Cleaning Scalp Massage Hair Brush",
       "Self Cleaning For Women One-Key Airbag Massage Scalp Comb Anti-Static Hair Brush",
       "self cleaning for women one-key airbag massage scalp comb anti-static hair brush",
-      "self-cleaning scalp massage hair brush"
+      "self-cleaning scalp massage hair brush",
+      "Self-Cleaning Hair Brush — The Order of Things"
     ]
   },
   {
@@ -1816,28 +1863,30 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100791414982",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Body Canvas Waterproof Concealer",
+    "title": "Body Canvas Waterproof Concealer",
     "opening": "Let your makeup have your point of view.",
     "sourceTitle": "Effortless Waterproof Body Concealer",
     "sourceAliases": [
       "Effortless Waterproof Body Concealer",
       "Body Concealer Waterproof Cover Tattoo Scar Birthmark Invisible",
       "body concealer waterproof cover tattoo scar birthmark invisible",
-      "waterproof body concealer"
+      "waterproof body concealer",
+      "The Body Canvas Waterproof Concealer"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100791447750",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Light Study High-Gloss Makeup Palette",
+    "title": "Light Study High-Gloss Makeup Palette",
     "opening": "Choose how the makeup moment comes together.",
     "sourceTitle": "Restrained High-Gloss Multi-Purpose Makeup Palette",
     "sourceAliases": [
       "Restrained High-Gloss Multi-Purpose Makeup Palette",
       "High-Gloss Natural Makeup Diamond Texture A Plate Of Multi-Purpose Daily",
       "high-gloss natural makeup diamond texture a plate of multi-purpose daily",
-      "high-gloss multi-purpose makeup palette"
+      "high-gloss multi-purpose makeup palette",
+      "The Light Study High-Gloss Makeup Palette"
     ]
   },
   {
@@ -1888,41 +1937,44 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100791677126",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Green Edit 13-Piece Makeup Brush Set",
+    "title": "Green Edit 13-Piece Makeup Brush Set",
     "opening": "Give your makeup tools their own edit.",
     "sourceTitle": "Elevated 13-Piece Green Makeup Brush Set",
     "sourceAliases": [
       "Elevated 13-Piece Green Makeup Brush Set",
       "Set Of 13 Four Seasons Green Makeup Brushes",
       "set of 13 four seasons green makeup brushes",
-      "13-piece green makeup brush set"
+      "13-piece green makeup brush set",
+      "The Green Edit 13-Piece Makeup Brush Set"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100791742662",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Styling Trio Curler, Straightener & Hair Dryer",
+    "title": "Styling Trio Curler, Straightener & Hair Dryer",
     "opening": "Three tools with a place in your styling routine.",
     "sourceTitle": "Curated Three-In-One Curling Iron Straightener And Hair Dryer",
     "sourceAliases": [
       "Curated Three-In-One Curling Iron Straightener And Hair Dryer",
       "Multifunctional Three-In-One High-Power Curling Iron Straightener Hair Dryer",
       "multifunctional three-in-one high-power curling iron straightener hair dryer",
-      "three-in-one curling iron straightener and hair dryer"
+      "three-in-one curling iron straightener and hair dryer",
+      "The Styling Trio Curler, Straightener & Hair Dryer"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100791775430",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Home Decision Laser Hair Removal Device",
+    "title": "Home Decision Laser Hair Removal Device",
     "opening": "Choose a care routine for your own space.",
     "sourceTitle": "Harmonious Home Laser Hair Removal Device",
     "sourceAliases": [
       "Harmonious Home Laser Hair Removal Device",
       "Home Laser Hair Removal Device",
-      "home laser hair removal device"
+      "home laser hair removal device",
+      "The Home Decision Laser Hair Removal Device"
     ]
   },
   {
@@ -1943,14 +1995,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100791840966",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Milk Care Edit Lotion & Face Cream Set",
+    "title": "Milk Care Edit Lotion & Face Cream Set",
     "opening": "Bring the care steps together in your own way.",
     "sourceTitle": "Curated Milk Moisturizing Lotion And Face Cream Set",
     "sourceAliases": [
       "Curated Milk Moisturizing Lotion And Face Cream Set",
       "Milk Moisturizing Set Lotion Face Cream Skin Care Products",
       "milk moisturizing set lotion face cream skin care products",
-      "milk moisturizing lotion and face cream set"
+      "milk moisturizing lotion and face cream set",
+      "The Milk Care Edit Lotion & Face Cream Set"
     ]
   },
   {
@@ -1971,149 +2024,160 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100791906502",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Care Liquid — The Skin & Hair Chapter",
+    "title": "Care Liquid — Skin & Hair Chapter",
     "opening": "Make room for a step of its own.",
     "sourceTitle": "Harmonious Moisturizing Skin And Hair Care Liquid",
     "sourceAliases": [
       "Harmonious Moisturizing Skin And Hair Care Liquid",
       "Skin And Hair Moisturizing Nutritional Care Liquid",
       "skin and hair moisturizing nutritional care liquid",
-      "moisturizing skin and hair care liquid"
+      "moisturizing skin and hair care liquid",
+      "Care Liquid — The Skin & Hair Chapter"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100791939270",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Oil — The Closing Note",
+    "title": "Hair Oil — Closing Note",
     "opening": "A final note in your hair care edit.",
     "sourceTitle": "Elegant Nourishing Hair Essential Oil",
     "sourceAliases": [
       "Elegant Nourishing Hair Essential Oil",
       "Hair Essential Oil Improve Dryness And Irritability And Nourish",
       "hair essential oil improve dryness and irritability and nourish",
-      "nourishing hair essential oil"
+      "nourishing hair essential oil",
+      "Hair Oil — The Closing Note"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792070342",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Removal Mousse — A Fresh Start",
+    "title": "Hair Removal Mousse — Fresh Start",
     "opening": "Choose the next part of your care routine.",
     "sourceTitle": "Understated Hair Removal Cream Mousse Foam Skin Care",
     "sourceAliases": [
       "Understated Hair Removal Cream Mousse Foam Skin Care",
       "Hair Removal Cream Mousse Foam Skin Care",
-      "hair removal cream mousse foam skin care"
+      "hair removal cream mousse foam skin care",
+      "Hair Removal Mousse — A Fresh Start"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792135878",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Body Oil — The Space Between",
+    "title": "Body Oil — Space Between",
     "opening": "Keep a little space for care between plans.",
     "sourceTitle": "Elevated Skincare Body Oil",
     "sourceAliases": [
       "Elevated Skincare Body Oil",
       "Skincare Body Oil",
-      "skincare body oil"
+      "skincare body oil",
+      "Body Oil — The Space Between"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792168646",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Becoming Skincare Set",
+    "title": "Becoming Skincare Set",
     "opening": "Let your care edit come together.",
     "sourceTitle": "Polished Skincare Set",
     "sourceAliases": [
       "Polished Skincare Set",
       "Anti Skincare Set",
       "anti skincare set",
-      "skincare set"
+      "skincare set",
+      "The Becoming Skincare Set"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792234182",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Next Chapter Facial Serum",
+    "title": "Next Chapter Facial Serum",
     "opening": "Give the next chapter its own beginning.",
     "sourceTitle": "Understated Anti-Aging Serum",
     "sourceAliases": [
       "Understated Anti-Aging Serum",
       "Anti-Aging Serum",
-      "anti-aging serum"
+      "anti-aging serum",
+      "The Next Chapter Facial Serum"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792266950",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Squalane Skincare Oil — A Daily Reserve",
+    "title": "Squalane Skincare Oil — Daily Reserve",
     "opening": "Reserve a little time for a familiar step.",
     "sourceTitle": "Understated Moisturizing Squalane Wrinkle Reducing Skincare Oil",
     "sourceAliases": [
       "Understated Moisturizing Squalane Wrinkle Reducing Skincare Oil",
       "Moisturizing Squalane Wrinkle Reducing Skincare Oil",
-      "moisturizing squalane wrinkle reducing skincare oil"
+      "moisturizing squalane wrinkle reducing skincare oil",
+      "Squalane Skincare Oil — A Daily Reserve"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792332486",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Skincare Lotion — A Quiet Practice",
+    "title": "Skincare Lotion — Quiet Practice",
     "opening": "Make a familiar step a practice of your own.",
     "sourceTitle": "Curated Skincare Lotion",
     "sourceAliases": [
       "Curated Skincare Lotion",
       "Meihei Skincare Lotion",
       "meihei skincare lotion",
-      "skincare lotion"
+      "skincare lotion",
+      "Skincare Lotion — A Quiet Practice"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792365254",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Skincare Cream — The Care Constant",
+    "title": "Skincare Cream — Care Constant",
     "opening": "A considered place on your care shelf.",
     "sourceTitle": "Effortless Skincare Cream",
     "sourceAliases": [
       "Effortless Skincare Cream",
       "Full Effect Skincare Cream",
       "full effect skincare cream",
-      "skincare cream"
+      "skincare cream",
+      "Skincare Cream — The Care Constant"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792398022",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Skincare Discovery Mystery Box",
+    "title": "Skincare Discovery Mystery Box",
     "opening": "Leave a little space for discovery.",
     "sourceTitle": "Elevated Skincare Mystery Box",
     "sourceAliases": [
       "Elevated Skincare Mystery Box",
       "Skincare Mystery Box",
-      "skincare mystery box"
+      "skincare mystery box",
+      "The Skincare Discovery Mystery Box"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792430790",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Styling Pair Hair Straightener & Hot Comb",
+    "title": "Styling Pair Hair Straightener & Hot Comb",
     "opening": "Bring two styling tools into your own edit.",
     "sourceTitle": "Timeless Two-In-One Hair Straightener And Hot Comb",
     "sourceAliases": [
       "Timeless Two-In-One Hair Straightener And Hot Comb",
       "2 In 1 Hair Straightener Hot Comb Negative Ion Curling Tong Dual-Purpose",
       "2 in 1 hair straightener hot comb negative ion curling tong dual-purpose",
-      "two-in-one hair straightener and hot comb"
+      "two-in-one hair straightener and hot comb",
+      "The Styling Pair Hair Straightener & Hot Comb"
     ]
   },
   {
@@ -2162,41 +2226,44 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100792856774",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "The Lash Detail Metal Tweezers & Comb",
+    "title": "Lash Detail Metal Tweezers & Comb",
     "opening": "Let the little finishing steps have their place.",
     "sourceTitle": "Harmonious Metal Eyelash Tweezers With Comb",
     "sourceAliases": [
       "Harmonious Metal Eyelash Tweezers With Comb",
       "Eyelash With Comb Aid Metal Tweezers Beauty Tools",
       "eyelash with comb aid metal tweezers beauty tools",
-      "metal eyelash tweezers with comb"
+      "metal eyelash tweezers with comb",
+      "The Lash Detail Metal Tweezers & Comb"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792889542",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Eye Care — A Moment Considered",
+    "title": "Eye Care — Moment Considered",
     "opening": "A little attention to the care details.",
     "sourceTitle": "Elevated Eye Care Products",
     "sourceAliases": [
       "Elevated Eye Care Products",
       "Eye Care Products",
-      "eye care products"
+      "eye care products",
+      "Eye Care — A Moment Considered"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100792955078",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Personal Practice Laser Hair Removal Device",
+    "title": "Personal Practice Laser Hair Removal Device",
     "opening": "Build a personal routine in your own space.",
     "sourceTitle": "Elevated Laser Hair Removal Device",
     "sourceAliases": [
       "Elevated Laser Hair Removal Device",
       "Household Whole Body Painless Laser Hair Removal Device",
       "household whole body painless laser hair removal device",
-      "laser hair removal device"
+      "laser hair removal device",
+      "The Personal Practice Laser Hair Removal Device"
     ]
   },
   {
@@ -2217,28 +2284,30 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100793446598",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Hair Mask Conditioner — A Deep Pause",
+    "title": "Hair Mask Conditioner — Deep Pause",
     "opening": "Give hair care an unhurried moment.",
     "sourceTitle": "Effortless Deep Moisturizing Hair Mask Conditioner",
     "sourceAliases": [
       "Effortless Deep Moisturizing Hair Mask Conditioner",
       "Deep Moisturizing Hair Mask Soft Conditioner Care",
       "deep moisturizing hair mask soft conditioner care",
-      "deep moisturizing hair mask conditioner"
+      "deep moisturizing hair mask conditioner",
+      "Hair Mask Conditioner — A Deep Pause"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100793479366",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "The Bath Companion Loofah",
+    "title": "Bath Companion Loofah",
     "opening": "A familiar companion for the bath hour.",
     "sourceTitle": "Composed Bath Loofah",
     "sourceAliases": [
       "Composed Bath Loofah",
       "Independent High-End Large Bath Pearl Loofah Packaging Foaming Durable Shower",
       "independent high-end large bath pearl loofah packaging foaming durable shower",
-      "bath loofah"
+      "bath loofah",
+      "The Bath Companion Loofah"
     ]
   },
   {
@@ -2301,56 +2370,60 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100793708742",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Blowout Edit Three-in-One Electric Hair Dryer",
+    "title": "Blowout Edit Three-in-One Electric Hair Dryer",
     "opening": "Give your hair tools their own place.",
     "sourceTitle": "Elegant Three-In-One Electric Hair Dryer",
     "sourceAliases": [
       "Elegant Three-In-One Electric Hair Dryer",
       "Three-In-One Electric Hair Dryer Multi-Functional Household",
       "three-in-one electric hair dryer multi-functional household",
-      "three-in-one electric hair dryer"
+      "three-in-one electric hair dryer",
+      "The Blowout Edit Three-in-One Electric Hair Dryer"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100793741510",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Batana Hair Oil — The Root Ritual",
+    "title": "Batana Hair Oil — Root Ritual",
     "opening": "Make a little time for your hair care edit.",
     "sourceTitle": "Effortless Batana Hair Care Oil",
     "sourceAliases": [
       "Effortless Batana Hair Care Oil",
       "Batana Oil Hair Care Essential",
       "batana oil hair care essential",
-      "batana hair care oil"
+      "batana hair care oil",
+      "Batana Hair Oil — The Root Ritual"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100793807046",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Neck Cream — A Daily Gesture",
+    "title": "Neck Cream — Daily Gesture",
     "opening": "A care gesture with a place in the everyday.",
     "sourceTitle": "Intentional Neck Care Cream 50g",
     "sourceAliases": [
       "Intentional Neck Care Cream 50g",
       "Neck Cream 50g Fading",
       "neck cream 50g fading",
-      "neck care cream 50g"
+      "neck care cream 50g",
+      "Neck Cream — A Daily Gesture"
     ]
   },
   {
     "productId": "gid://shopify/Product/9100793938118",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Wash-Day Edit Spray Bottle, Silicone Brush & Hair Comb",
+    "title": "Wash-Day Edit Spray Bottle, Silicone Brush & Hair Comb",
     "opening": "Bring the wash-day tools into your own arrangement.",
     "sourceTitle": "Timeless Spray Bottle Silicone Brush And Hollow Hair Comb",
     "sourceAliases": [
       "Timeless Spray Bottle Silicone Brush And Hollow Hair Comb",
       "High Pressure Spray Bottle Cleaning Silicone Brush Hollow Comb Hair Care Shampoo",
       "high pressure spray bottle cleaning silicone brush hollow comb hair care shampoo",
-      "spray bottle silicone brush and hollow hair comb"
+      "spray bottle silicone brush and hollow hair comb",
+      "The Wash-Day Edit Spray Bottle, Silicone Brush & Hair Comb"
     ]
   },
   {
@@ -2398,14 +2471,15 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100794298566",
     "brand": "mvqueen",
     "register": "descriptive-poetic",
-    "title": "Neck Roller Cream — A Finishing Gesture",
+    "title": "Neck Roller Cream — Finishing Gesture",
     "opening": "Give a small care step your attention.",
     "sourceTitle": "Restrained Nourishing Neck Roller Cream",
     "sourceAliases": [
       "Restrained Nourishing Neck Roller Cream",
       "Neck Roller Cream Lifts Dilutes Lines Deeply Nourishes Easily Absorbed Skin Care",
       "neck roller cream lifts dilutes lines deeply nourishes easily absorbed skin care",
-      "nourishing neck roller cream"
+      "nourishing neck roller cream",
+      "Neck Roller Cream — A Finishing Gesture"
     ]
   },
   {
@@ -2426,13 +2500,14 @@ export const CURATED_PRODUCT_NAMES: readonly CuratedProductName[] = [
     "productId": "gid://shopify/Product/9100794429638",
     "brand": "mvqueen",
     "register": "identity-led",
-    "title": "The Anywhere Mirror Foldable LED Makeup Mirror",
+    "title": "Anywhere Mirror Foldable LED Makeup Mirror",
     "opening": "Give your makeup moment a place wherever you are.",
     "sourceTitle": "Curated Portable Foldable LED Makeup Mirror With Built-In Lights",
     "sourceAliases": [
       "Curated Portable Foldable LED Makeup Mirror With Built-In Lights",
       "Portable Foldable Led Makeup Mirror With Built-In Lights",
-      "portable foldable led makeup mirror with built-in lights"
+      "portable foldable led makeup mirror with built-in lights",
+      "The Anywhere Mirror Foldable LED Makeup Mirror"
     ]
   },
   {

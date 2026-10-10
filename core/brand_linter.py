@@ -18,10 +18,20 @@ FORBIDDEN_BRANDS = {
 PRIMARY_KEYWORDS = {
     "women's fashion", "luxury women's clothing", "elegant women's wear",
 }
-MAX_TITLE = 70
-MAX_META_TITLE = 65
-MAX_META_DESCRIPTION = 160
-CANONICAL_BRAND = "MVQueen"
+POLICY = json.loads((Path(__file__).resolve().parents[1] / "06_Tone_And_Voice/Brand_Content_Policy.json").read_text(encoding="utf-8"))
+MAX_TITLE = POLICY["limits"]["title"]
+MAX_META_TITLE = POLICY["limits"]["seoTitle"]
+MAX_META_DESCRIPTION = POLICY["limits"]["metaDescription"]
+CANONICAL_BRAND = POLICY["profiles"]["mvqueen"]["displayName"]
+CANONICAL_BRANDS = {p["displayName"].casefold() for p in POLICY["profiles"].values()}
+FORBIDDEN_LANGUAGE = set(POLICY["additionalForbidden"])
+_forbidden_doc = (Path(__file__).resolve().parents[1] / "06_Tone_And_Voice/Forbidden_Words.md").read_text(encoding="utf-8")
+for line in _forbidden_doc.split("## Tier 1", 1)[1].split("## Tier 2", 1)[0].splitlines():
+    if not line.strip().startswith("|"):
+        continue
+    phrase = re.sub(r"\s*\([^)]*\)\s*$", "", line.split("|")[1].strip())
+    if phrase and phrase != "Word / Phrase" and not re.fullmatch(r"[-:]+", phrase):
+        FORBIDDEN_LANGUAGE.update(re.split(r"\s+/\s+", phrase))
 
 def normalize(value):
     if value is None:
@@ -71,6 +81,7 @@ def parse_markdown(path):
     if current:
         sections[current] = "\n".join(buf).strip()
     return [{
+        "__reference_document__": not any(k in sections for k in ("short_description", "seo_title", "seo_description", "product_description")),
         "title": title,
         "description": raw,
         "short_description": sections.get("short_description", ""),
@@ -92,12 +103,17 @@ def deterministic(record):
     issues, warnings = [], []
     if "__parse_error__" in record:
         return "HOLD", [f"Parse error: {record['__parse_error__']}"], warnings
+    if record.get("__reference_document__"):
+        return "PASS", [], ["Reference document; not a publishable product record"]
 
     fields = text_fields(record)
     combined = "\n".join(fields.values())
     hits = forbidden_hits(combined)
     if hits:
         issues.append("Forbidden/supplier/legacy brand reference: " + ", ".join(hits))
+    language_hits = sorted(word for word in FORBIDDEN_LANGUAGE if re.search(r"(?<!\w)" + re.escape(word) + r"(?!\w)", combined, re.I))
+    if language_hits:
+        issues.append("Forbidden product language: " + ", ".join(language_hits))
 
     title = fields.get("title") or fields.get("product_title")
     if not title:
@@ -118,9 +134,9 @@ def deterministic(record):
         issues.append("Missing product description")
 
     unsupported_claim_re = re.compile(
-        r"(?i)\\b(?:cures?|guaranteed|100%\\s+effective|clinically\\s+proven)\\b"
-        r"|\\b(?:treats?|prevents?)\\s+(?:acne|breakouts?|eczema|psoriasis|wrinkles?|hair\\s+loss|"
-        r"infections?|inflammation|pain|disease|conditions?|symptoms?)\\b"
+        r"(?i)\b(?:cures?|guaranteed|100%\s+effective|clinically\s+proven)\b"
+        r"|\b(?:treats?|prevents?)\s+(?:acne|breakouts?|eczema|psoriasis|wrinkles?|hair\s+loss|"
+        r"infections?|inflammation|pain|disease|conditions?|symptoms?)\b"
     )
     if unsupported_claim_re.search(combined):
         issues.append("Potential unsupported/high-risk product claim; verify against source facts")
@@ -132,7 +148,7 @@ def deterministic(record):
         warnings.append("Title may contain repetitive wording")
 
     brand = fields.get("brand")
-    if brand and brand.casefold() != CANONICAL_BRAND.casefold():
+    if brand and brand.casefold() not in CANONICAL_BRANDS:
         issues.append(f"Non-canonical product brand: {brand}")
 
     keyword_count = sum(combined.lower().count(k) for k in PRIMARY_KEYWORDS)

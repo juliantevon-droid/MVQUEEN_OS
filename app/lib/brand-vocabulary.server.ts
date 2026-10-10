@@ -27,6 +27,7 @@ export type BrandSurfaceTemplates = {
     detailsLead: string;
     choosing: { question: string; answer: string };
     policies: { question: string; answer: string };
+    factQuestions: { material: string; quantity: string; care: string; options: string };
   };
   collection: { description: string[]; metaDescription: string[] };
   blog: {
@@ -50,7 +51,15 @@ export type BrandContentPolicy = {
     surfaces: BrandSurfaceTemplates;
   }>;
   additionalForbidden: string[];
-  limits: { shortDescription: number; title: number; seoTitle: number; metaDescription: number };
+  limits: { shortDescription: number; title: number; seoTitle: number; metaDescription: number; luxuryAdjectives: number; compoundSensoryVerbs: number };
+  productRules: {
+    repeatedWords: string[];
+    repeatedWordLimit: number;
+    repeatedWordWindow: number;
+    headlineForbidden: string[];
+    princessLittle: "deliberate-only";
+  };
+  claimReviews?: Record<string, { disposition: "false_positive_corrected" | "evidence_required"; reviewedReasons: string[]; allowedTitles: string[]; sourceAttributes: Record<string, string>; note: string; reviewDate: string }>;
 };
 
 export type ProductNamingProfile = {
@@ -63,6 +72,9 @@ export type BrandVocabulary = {
   version: string;
   sources: readonly string[];
   forbidden: string[];
+  luxuryAdjectives: string[];
+  compoundSensoryVerbs: string[];
+  confidencePhrases: string[];
   profiles: Record<"mvqueen" | "miss-princess", { adjectives: string[] }>;
   naming: Record<"mvqueen" | "miss-princess", ProductNamingProfile>;
   contentPolicy: BrandContentPolicy;
@@ -161,6 +173,9 @@ function contentPolicy(source: string): BrandContentPolicy {
     }
     surfaces.faq.detailsQuestion = validateTemplate(surfaces.faq.detailsQuestion, "faq.detailsQuestion");
     surfaces.faq.detailsLead = validateTemplate(surfaces.faq.detailsLead, "faq.detailsLead");
+    for (const key of ["material", "quantity", "care", "options"] as const) {
+      surfaces.faq.factQuestions[key] = validateTemplate(surfaces.faq.factQuestions?.[key], `faq.factQuestions.${key}`);
+    }
     for (const key of ["description", "metaDescription"] as const) {
       surfaces.collection[key] = pool(surfaces.collection[key], `collection.${key}`);
     }
@@ -175,6 +190,16 @@ function contentPolicy(source: string): BrandContentPolicy {
     }
   }
   policy.additionalForbidden = stringPool(policy.additionalForbidden, "additionalForbidden");
+  for (const [field, ceiling] of Object.entries({ luxuryAdjectives: 3, compoundSensoryVerbs: 1 })) {
+    const value = policy.limits?.[field as keyof BrandContentPolicy["limits"]];
+    if (!Number.isInteger(value) || value < 0 || value > ceiling) throw new Error(`Invalid brand style limit: ${field}`);
+  }
+  const rules = policy.productRules;
+  if (!rules || rules.repeatedWordLimit !== 2 || rules.repeatedWordWindow !== 300 || rules.princessLittle !== "deliberate-only") {
+    throw new Error("Invalid brand product rules");
+  }
+  rules.repeatedWords = stringPool(rules.repeatedWords, "productRules.repeatedWords");
+  rules.headlineForbidden = stringPool(rules.headlineForbidden, "productRules.headlineForbidden");
   for (const [field, ceiling] of Object.entries({ shortDescription: 180, title: 80, seoTitle: 60, metaDescription: 155 })) {
     const value = policy.limits?.[field as keyof BrandContentPolicy["limits"]];
     if (!Number.isInteger(value) || value < ceiling / 2 || value > ceiling) {
@@ -254,6 +279,9 @@ export function loadBrandVocabulary(root = process.cwd()): BrandVocabulary {
     version: createHash("sha256").update(JSON.stringify(BRAND_VOCABULARY_SOURCES.map((path, index) => [path, texts[index]]))).digest("hex").slice(0, 16),
     sources: BRAND_VOCABULARY_SOURCES,
     forbidden: prohibited,
+    luxuryAdjectives: words(luxury),
+    compoundSensoryVerbs: unique(banks.split("SENSORY VERBS (Compound", 2)[1]?.split("CONFIDENCE PHRASES", 1)[0]?.match(/\b[a-z]+-[a-z]+\b/g) ?? []),
+    confidencePhrases: words(banks.split("CONFIDENCE PHRASES", 2)[1]?.split("BUSINESS TIERS", 1)[0]?.replace(/[━─]/g, "") ?? ""),
     profiles: { mvqueen: { adjectives: mvqueen }, "miss-princess": { adjectives: princess } },
     naming,
     contentPolicy: policy,
@@ -275,4 +303,36 @@ export function removeForbiddenLanguage(value: string, vocabulary: Pick<BrandVoc
     output = output.replace(new RegExp(`(?<!\\w)${escaped}(?!\\w)`, "gi"), " ");
   }
   return output.replace(/\s+/g, " ").replace(/\s+([,.;:!?])/g, "$1").trim();
+}
+
+function occurrences(text: string, phrase: string): number {
+  const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return [...text.matchAll(new RegExp(`(?<!\\w)${escaped}(?!\\w)`, "gi"))].length;
+}
+
+// Enforce the reviewed mechanics on generated customer copy. Vocabulary is
+// editorial permission, never evidence of product composition or performance.
+export function assertProductBrandStyle(title: string, opening: string, descriptionHtml: string, vocabulary = BRAND_VOCABULARY): void {
+  const text = descriptionHtml.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+  const rules = vocabulary.contentPolicy.productRules;
+  const limits = vocabulary.contentPolicy.limits;
+  if (removeForbiddenLanguage(text, vocabulary) !== text || removeForbiddenLanguage(title, vocabulary) !== title) throw new Error("Product copy contains forbidden language");
+  // Tier 3 concerns weak headline leads, not earned names such as In Good
+  // Order. Product names already carry a distinct identity and actual noun.
+  if (rules.headlineForbidden.some(word => {
+    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`^(?:a |an |the )?${escaped}\\b`, "i").test(opening);
+  })) throw new Error("Product headline requires specific language");
+  if (vocabulary.luxuryAdjectives.reduce((count, word) => count + occurrences(text, word), 0) > limits.luxuryAdjectives) throw new Error("Product copy exceeds the luxury adjective limit");
+  if (vocabulary.compoundSensoryVerbs.reduce((count, word) => count + occurrences(text, word), 0) > limits.compoundSensoryVerbs) throw new Error("Product copy exceeds the compound sensory verb limit");
+  const body = descriptionHtml.replace(/^\s*<p>[\s\S]*?<\/p>/i, "").replace(/<[^>]+>/g, " ");
+  if (vocabulary.confidencePhrases.some(phrase => occurrences(body, phrase))) throw new Error("Confidence phrases belong in the opening or CTA");
+  const tokens = text.split(/\s+/).filter(Boolean);
+  // Short copy gets the same two-use allowance. Each complete or partial
+  // 300-word window in longer copy must also satisfy that allowance.
+  for (let index = 0; index < tokens.length; index += rules.repeatedWordWindow) {
+    const window = tokens.slice(index, index + rules.repeatedWordWindow).join(" ");
+    if (rules.repeatedWords.some(word => occurrences(window, word) > rules.repeatedWordLimit)) throw new Error("Product copy repeats a restricted voice word");
+  }
+  if (/!{2,}|🛍|🔥|💯|\bclick here\b/i.test(text)) throw new Error("Product copy contains prohibited formatting");
 }
