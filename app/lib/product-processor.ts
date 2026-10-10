@@ -27,7 +27,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v39-canonical-product-language-" + BRAND_VOCABULARY.version;
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v40-canonical-product-language-review-" + BRAND_VOCABULARY.version;
 
 const PRODUCT_NAME_LOOKUP = `#graphql
   query ProductNameLookup($query: String!, $after: String) {
@@ -918,8 +918,8 @@ export async function processProductJob(
         : []),
       { namespace: "commercial", key: "health_state", type: "single_line_text_field", value: commercialHealth.state },
       { namespace: "commercial", key: "advertising_eligibility", type: "single_line_text_field", value: commercialHealth.advertisingEligibility },
-      ...(decision.catalogReviewReasons.length ? [{ namespace: "commercial", key: "advertising_review_reasons",
-        type: "list.single_line_text_field", value: JSON.stringify(decision.catalogReviewReasons) }] : []),
+      { namespace: "commercial", key: "advertising_review_reasons",
+        type: "list.single_line_text_field", value: JSON.stringify(decision.catalogReviewReasons) },
       ...(commercialHealth.maxBreakEvenCac !== null
         ? [{ namespace: "commercial", key: "max_break_even_cac", type: "number_decimal", value: String(commercialHealth.maxBreakEvenCac) }]
         : []),
