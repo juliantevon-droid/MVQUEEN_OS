@@ -258,8 +258,20 @@ export async function reconcileRecentShopifyProducts() {
       for (const product of outdated) {
         const eventKey = `policy-refresh:${AUTOMATION_VERSION}:${product.productGid}`;
         const existing = await prisma.productJob.findUnique({
-          where: { eventKey }, select: { id: true },
+          where: { eventKey }, select: { id: true, status: true },
         });
+        if (existing?.status === "completed") {
+          // During a rolling release an older replica can complete a new
+          // version's job. The outdated automation state proves the policy
+          // was not applied, so resume the same audit record atomically.
+          const resumed = await prisma.productJob.updateMany({
+            where: { id: existing.id, status: "completed" },
+            data: { status: "received", attempts: 0, startedAt: null,
+              completedAt: null, error: null },
+          });
+          discovered += resumed.count;
+          continue;
+        }
         if (existing) continue;
         await prisma.productJob.upsert({
           where: { eventKey }, update: {},
