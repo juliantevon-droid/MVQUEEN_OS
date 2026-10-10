@@ -1,0 +1,230 @@
+Engine
+# ---------------------------------------------------------
+# MVQUEEN OMNILUXE ENGINE — PUBLIC ENTRY POINT (BLOCK J)
+# ---------------------------------------------------------
+
+From mvqueen_engine.catalog_processor.processor import process_product
+From mvqueen_engine.catalog_processor.csv_exporter import convert_to_csv_row
+
+# ---------------------------------------------------------
+# PUBLIC ENGINE WRAPPER
+# ---------------------------------------------------------
+
+Def run(text: str) -> dict:
+    “””
+    Public entry point for the MVQueen Omniluxe Engine.
+    Returns:
+        {
+            “product”: <full product dictionary>,
+            “csv_row”: <flattened Shopify-ready row>
+        }
+    “””
+
+    Product = process_product(text)
+    Csv_row = convert_to_csv_row(product)
+
+    Return {
+        “product”: product,
+        “csv_row”: csv_row
+    }
+Main
+# ---------------------------------------------------------
+# MVQUEEN OMNILUXE ENGINE — CORE ENGINE
+# ---------------------------------------------------------
+
+From mvqueen_engine.brand_brain.brand_language import (
+    Generate_short_editorial,
+    Generate_medium_editorial,
+    Generate_long_editorial,
+)
+From mvqueen_engine.brand_brain.alt_text import (
+    Generate_alt_text_short,
+    Generate_alt_text_medium,
+    Generate_alt_text_long,
+)
+From mvqueen_engine.brand_brain.seo_keywords import (
+    Generate_primary_seo,
+    Generate_secondary_seo,
+)
+From mvqueen_engine.brand_brain.detection import (
+    Detect_category,
+    Detect_product_type,
+    Detect_trend,
+    Detect_season,
+    Detect_vibe,
+    Detect_material,
+    Detect_silhouette,
+    Detect_details,
+)
+From mvqueen_engine.brand_brain.persona_router import detect_persona
+From mvqueen_engine.brand_brain.tags import generate_tags
+From mvqueen_engine.brand_brain.collections import generate_collections
+From mvqueen_engine.brand_brain.title_engine import generate_title
+From mvqueen_engine.brand_brain.handle_engine import generate_handle
+From mvqueen_engine.brand_brain.variant_engine import generate_variants
+From mvqueen_engine.brand_brain.pricing_engine import generate_price
+From mvqueen_engine.engine import process_product
+From mvqueen_engine.metafields.metafield_engine import generate_all_metafields
+
+
+Def process_product(text: str) -> dict:
+    “””
+    Core deterministic product processor.
+    Takes raw input text and returns a full structured product dict.
+    “””
+
+    Category = detect_category(text)
+    Product_type = detect_product_type(text)
+    Persona = detect_persona(text)
+    Trend = detect_trend(text)
+    Season = detect_season(text)
+    Vibe = detect_vibe(text)
+    Material = detect_material(text)
+    Silhouette = detect_silhouette(text)
+    Detail = detect_details(text)
+
+    Editorial_short = generate_short_editorial(text)
+    Editorial_medium = generate_medium_editorial(text)
+    Editorial_long = generate_long_editorial(text)
+
+    Alt_short = generate_alt_text_short(text)
+    Alt_medium = generate_alt_text_medium(text)
+    Alt_long = generate_alt_text_long(text)
+
+    Seo_primary = generate_primary_seo(text)
+    Seo_secondary = generate_secondary_seo(text)
+
+    Title = generate_title(text)
+    Handle = generate_handle(text)
+    Price = generate_price(text)
+    Variants = generate_variants(text)
+
+    Tags = generate_tags(
+        Text=text,
+        Category=category,
+        Product_type=product_type,
+        Persona=persona,
+        Trend=trend,
+        Season=season,
+        Vibe=vibe,
+        Material=material,
+        Silhouette=silhouette,
+        Detail=detail,
+    )
+
+    Collections = generate_collections(
+        Text=text,
+        Category=category,
+        Product_type=product_type,
+        Persona=persona,
+        Trend=trend,
+        Season=season,
+        Vibe=vibe,
+        Material=material,
+        Silhouette=silhouette,
+        Detail=detail,
+    )
+
+    Metafields = generate_all_metafields(text)
+
+    Product = {
+        “input_text”: text,
+        “title”: title,
+        “handle”: handle,
+        “category”: category,
+        “product_type”: product_type,
+        “persona”: persona,
+        “trend”: trend,
+        “season”: season,
+        “vibe”: vibe,
+        “material”: material,
+        “silhouette”: silhouette,
+        “detail”: detail,
+        “editorial_short”: editorial_short,
+        “editorial_medium”: editorial_medium,
+        “editorial_long”: editorial_long,
+        “alt_text_short”: alt_short,
+        “alt_text_medium”: alt_medium,
+        “alt_text_long”: alt_long,
+        “seo_primary”: seo_primary,
+        “seo_secondary”: seo_secondary,
+        “price”: price,
+        “variants”: variants,
+        “tags”: tags,
+        “collections”: collections,
+        “metafields”: metafields,
+    }
+
+    Return PRODUCT
+Optimization
+# ---------------------------------------------------------
+# MVQUEEN OMNILUXE ENGINE — ANDROID OPTIMIZATION LAYER (BLOCK N)
+# ---------------------------------------------------------
+
+Import hashlib
+Import json
+Import os
+
+CACHE_DIR = “/data/data/mvqueen/cache”
+Os.makedirs(CACHE_DIR, exist_ok=True)
+
+# ---------------------------------------------------------
+# CHUNKING UTILITIES
+# ---------------------------------------------------------
+
+Def chunk_text(text: str, size: int = 200):
+    “””
+    Splits text into safe Android-friendly chunks.
+    “””
+    Return [text[i:i+size] for I in range(0, len(text), size)]
+
+# ---------------------------------------------------------
+# MEMORY-SAFE STREAMING
+# ---------------------------------------------------------
+
+Def stream_process(text: str, processor_fn):
+    “””
+    Streams text chunks through the processor to avoid RAM spikes.
+    “””
+    Chunks = chunk_text(text)
+    Results = []
+    For c in chunks:
+        Results.append(processor_fn©)
+    Return results
+
+# ---------------------------------------------------------
+# ON-DEVICE CACHING
+# ---------------------------------------------------------
+
+Def _cache_key(text: str) -> str:
+    Return hashlib.sha256(text.encode()).hexdigest()
+
+Def cache_get(text: str):
+    Key = _cache_key(text)
+    Path = os.path.join(CACHE_DIR, key + “.json”)
+    If os.path.exists(path):
+        With open(path, “r”) as f:
+            Return json.load(f)
+    Return None
+
+Def cache_set(text: str, data: dict):
+    Key = _cache_key(text)
+    Path = os.path.join(CACHE_DIR, key + “.json”)
+    With open(path, “w”) as f:
+        Json.dump(data, f)
+
+# ---------------------------------------------------------
+# LOW-RAM MODE
+# ---------------------------------------------------------
+
+Def low_ram_process(text: str, processor_fn):
+    “””
+    Uses caching + chunking to avoid memory spikes.
+    “””
+    Cached = cache_get(text)
+    If cached:
+        Return cached
+
+    Result = processor_fn(text)
+    Cache_set(text, result)
+    Return result

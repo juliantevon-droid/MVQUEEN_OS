@@ -1,15 +1,7 @@
-# 06_Tone_And_Voice
-## MVQUEEN_OS
+# Tone and voice
 
-**Brand voice, messaging standards, and creative governance.**
+Start with [the unified brand guide](UNIFIED_BRAND_GUIDE.md). [Brand_Content_Policy.json](Brand_Content_Policy.json) is the active policy consumed by the product writer, shared by the web app and continuous worker.
 
-Contains:
-- Tone_And_Voice.md — Master voice documentation
-- forbidden_words.md — Words never to use
-- voice_consistency_rules.md — Standards across channels
-- CTA_Library.md — Approved calls-to-action
-- Hook_Systems.md — Opening line patterns
-- Brand_Vocabulary_Banks.md — Luxury adjectives, sensory verbs
-- Editorial_Frames_Library.md — 300+ copy templates
+The detailed sources remain available: [Tone_Guide.md](Tone_Guide.md), [Writing_Rules.md](Writing_Rules.md), [Voice_Consistency_Rules.md](Voice_Consistency_Rules.md), [Product_Description_Voice.md](Product_Description_Voice.md), [Forbidden_Words.md](Forbidden_Words.md), [Brand_Vocabulary_Banks.md](Brand_Vocabulary_Banks.md), [Platform_Voice_Guides.md](Platform_Voice_Guides.md) and [Product_Naming_Palette.json](Product_Naming_Palette.json).
 
-**All copy must be voice-reviewed before publication.**
+The [complete recovered source catalog](../31_AI_Knowledge_Base/brand_sources/README.md) retains substantive Drive versions and document extracts with provenance. Historical examples and technical drafts are references; active policy and current owner decisions resolve conflicts.

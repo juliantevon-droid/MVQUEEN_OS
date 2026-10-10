@@ -1,0 +1,298 @@
+# Sheet1
+Module / Folder Name	Total Assets	System Status	Details / Action Items	Last Inspected
+98_Archive	57.0	🔴 CONTAMINATED	Isolate / Purge: Example_Copy.md (In-file Content) | CTA_Library.md (In-file Content) | brand_rules.md (In-file Content) | typography_system.md (In-file Content) | color_system.md (In-file Content) | color_system_OLD.md (In-file Content) | typography_system_OLD.md (In-file Content) | brand_rules_OLD.md (In-file Content) | AI_Prompt_Library_OLD.md (In-file Content)	2026-06-13 00:00:00
+.obsidian	9.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+.git	5.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+meta	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+memory	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+logs	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+agents	10.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+24_Email_And_SMS	1.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+_BACKUPS	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+MVQUEEN_batch	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+99_Command_Center	17.0	🔴 CONTAMINATED	Isolate / Purge: MVQUEEN_CONTEXT.md (In-file Content)	2026-06-13 00:00:00
+00_Doctrine	29.0	🔴 CONTAMINATED	Isolate / Purge: brand_constitution.md (In-file Content) | master_doctrine.md (In-file Content)	2026-06-13 00:00:00
+39_SOP_Library	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+38_Prompt_Chains	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+37_Databases	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+36_Agent_Systems	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+35_System_Blueprints	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+34_Master_Systems	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+33_Content_Pipelines	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+32_Backups	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+31_AI_Knowledge_Base	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+30_AI_Datasets	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+29_Mobile_Development	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+28_Archives	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+27_Templates	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+26_RnD_Lab	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+25_Retention_And_Community	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+23_Team_And_Delegation	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+22_Growth_And_Scaling	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+21_Finance	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+19_Legal_And_Admin	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+18_Development	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+17_Templates	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+16_Automation	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+15_Scripts_And_Code	31.0	🔴 CONTAMINATED	Isolate / Purge: pull_phase1.sh (In-file Content)	2026-06-13 00:00:00
+14_Data_And_Analytics	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+13_Research_And_Inspiration	11.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+11_Operations	15.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+10_AI_Systems	17.0	🔴 CONTAMINATED	Isolate / Purge: AI_Prompt_Library.md (In-file Content) | Image_Generation_Prompts.md (In-file Content)	2026-06-13 00:00:00
+09_Shopify_Systems	17.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+08_Social_Media	18.0	🔴 CONTAMINATED	Isolate / Purge: Social_Media_Prompts.md (In-file Content) | Pinterest_Strategy.md (In-file Content) | TikTok_Strategy.md (In-file Content) | Instagram_Strategy.md (In-file Content) | Caption_Templates.md (In-file Content) | Content_Pillars.md (In-file Content) | Story_Ideas.md (In-file Content)	2026-06-13 00:00:00
+07_Marketing	18.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+06_Tone_And_Voice	29.0	🔴 CONTAMINATED	Isolate / Purge: Example_Copy.md (In-file Content) | Product_Description_Prompts.md (In-file Content) | Brand_Messaging.md (In-file Content) | Product_Description_Voice.md (In-file Content) | Writing_Rules.md (In-file Content) | Voice_Consistency_Rules.md (In-file Content)	2026-06-13 00:00:00
+scripts	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+textgenerator	1.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+copilot	1.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+12_Content_Assets	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-13 00:00:00
+05_SEO_And_Content	27.0	🔴 CONTAMINATED	Isolate / Purge: Keyword_Research.md (In-file Content) | Blog_Strategy.md (In-file Content) | SEO_Strategy.md (In-file Content) | Short_Tail_Keywords.md (In-file Content)	2026-06-13 00:00:00
+04_Products	23.0	🔴 CONTAMINATED	Isolate / Purge: SKU_Systems.md (In-file Content) | Beauty_Products.md (In-file Content) | Product_Framework.md (In-file Content) | Collection_Structure.md (In-file Content) | Pricing_Strategy.md (In-file Content) | Product_Naming_System.md (In-file Content)	2026-06-13 00:00:00
+03_Customer_Psychology	22.0	🔴 CONTAMINATED	Isolate / Purge: trust_building.md (In-file Content) | customer_avatars.md (In-file Content)	2026-06-13 00:00:00
+02_Brand_Identity	15.0	🔴 CONTAMINATED	Isolate / Purge: brand_rules.md (In-file Content) | typography_system.md (In-file Content) | color_system.md (In-file Content) | videography_direction.md (In-file Content) | photography_direction.md (In-file Content) | visual_direction.md (In-file Content) | logo_guidelines.md (In-file Content) | logo_concepts.md (In-file Content) | color_psychology.md (In-file Content) | brand_identity.md (In-file Content)	2026-06-13 00:00:00
+01_Brand_Strategy	18.0	🔴 CONTAMINATED	Isolate / Purge: Elevator_Pitch.md (In-file Content) | Brand_Essence.md (In-file Content) | Brand_Values.md (In-file Content) | Taglines.md (In-file Content) | Slogans.md (In-file Content) | USP.md (In-file Content) | Brand_Bible.md (In-file Content)	2026-06-13 00:00:00
+
+# Storage Audits
+File Name	Folder Location	File Size	File Type	Direct Link
+MVQUEEN_OS.zip	32_Backups	33.02 MB	application/zip	https://drive.google.com/file/d/1f40XEMOHqcBBTTUfUPl6ytLliqSxaHfQ/view?usp=drivesdk
+
+# Weekly Sync Log
+Module / Folder	Updated Asset	Timestamp	Direct Link
+99_Command_Center	MVQUEEN_Cleanup_Log_2026-06-13	2026-06-13 15:13:43	https://docs.google.com/spreadsheets/d/1iEX7ne8bSFlFBp-3y-1eBd718EashKrf3d6Hw4y69pU/edit?usp=drivesdk
+98_Archive	trust_building.md	2026-06-13 15:13:33	https://drive.google.com/file/d/1yH57oGmNV5-d4JAQUIqlfCnMQ2DbIyDm/view?usp=drivesdk
+98_Archive	trust_building.md	2026-06-13 15:13:31	https://drive.google.com/file/d/1Uj8pn6Cz3X668gPQiJoixVu8AHQR3VXz/view?usp=drivesdk
+98_Archive	customer_objections.md	2026-06-13 15:13:30	https://drive.google.com/file/d/1yVf1otFq0LKd_Kc_b-VFpm1vHmUCWEEW/view?usp=drivesdk
+98_Archive	customer_objections.md	2026-06-13 15:13:28	https://drive.google.com/file/d/1oFK5mP-suY4YQqEwjwAd444DQJuRbrqn/view?usp=drivesdk
+98_Archive	Hook_Systems.md	2026-06-13 15:13:27	https://drive.google.com/file/d/1Y9KcGOB0Qgl2SyKHw9XZMxI_6TV-27pN/view?usp=drivesdk
+98_Archive	Hook_Systems.md	2026-06-13 15:13:25	https://drive.google.com/file/d/1rRLQY3wCeaWykawmAMgc7aYVJ39A3aEF/view?usp=drivesdk
+98_Archive	Product_Description_Voice.md	2026-06-13 15:13:24	https://drive.google.com/file/d/1gCsUNvmKoa9c9YI5l8R__t25LOJGHlg7/view?usp=drivesdk
+98_Archive	Product_Description_Voice.md	2026-06-13 15:13:22	https://drive.google.com/file/d/1KELyu-Pj4qmx_Vq_yEhsuHqiL85cP0T1/view?usp=drivesdk
+98_Archive	Example_Copy.md	2026-06-13 15:13:21	https://drive.google.com/file/d/19hRlHI8B7Hfi75ERS7vcr22RZ7AvFgws/view?usp=drivesdk
+98_Archive	Example_Copy.md	2026-06-13 15:13:19	https://drive.google.com/file/d/1oD5kwAUEXVV9ie-km_zx7yGdQxkqGeMu/view?usp=drivesdk
+98_Archive	CTA_Library.md	2026-06-13 15:13:18	https://drive.google.com/file/d/1NvOiPnMvVLC6D5wyMFMrBSXMc5C2gCxK/view?usp=drivesdk
+98_Archive	CTA_Library.md	2026-06-13 15:13:16	https://drive.google.com/file/d/1ashwyBUTreEqoV_1IwshV0cJBP5zn0dN/view?usp=drivesdk
+98_Archive	brand_rules.md	2026-06-13 15:13:15	https://drive.google.com/file/d/16QB7iCJV_H5F7AeaSmxuSzREDMBFa1Ao/view?usp=drivesdk
+98_Archive	brand_rules.md	2026-06-13 15:13:13	https://drive.google.com/file/d/1KssLkR87q6hdJmKcPZcUkpdz9PkiR9Wq/view?usp=drivesdk
+98_Archive	typography_system.md	2026-06-13 15:13:12	https://drive.google.com/file/d/16VA1NCE2RCh-EFx2e_KjNoATfauNIZjE/view?usp=drivesdk
+98_Archive	typography_system.md	2026-06-13 15:13:10	https://drive.google.com/file/d/13IZtzkv02LYMNWjDhQ7VL3ovhNG1bNCL/view?usp=drivesdk
+98_Archive	color_system.md	2026-06-13 15:13:09	https://drive.google.com/file/d/1aKsZ6UUv9bNMfObeWukghsyhLe4vRFxU/view?usp=drivesdk
+98_Archive	color_system.md	2026-06-13 15:13:07	https://drive.google.com/file/d/1zCgQtrwVhQEuNclrvGCztkBAwEmKo-XU/view?usp=drivesdk
+98_Archive	MVQUEEN_Phase2	2026-06-13 15:13:06	https://docs.google.com/document/d/1y0hsUbHHT-1jow0mWipWr5u75my7V-HVvbsCPkfYndM/edit?usp=drivesdk
+98_Archive	.ttxfolder	2026-06-13 15:13:04	https://drive.google.com/file/d/1PjLHeAvYwm1bUU-rurmu-3oO8Lc1Csn7/view?usp=drivesdk
+98_Archive	s	2026-06-13 15:13:02	https://drive.google.com/file/d/1QPYpyzBgD-xTp2WelASlJsaO7mLmxQW0/view?usp=drivesdk
+98_Archive	nested_comparison.txt	2026-06-13 15:13:01	https://drive.google.com/file/d/1e6ezM-V6qsoLYYGfh0mtqh6Rnv7JbPs-/view?usp=drivesdk
+98_Archive	markdown_sizes.txt	2026-06-13 15:12:59	https://drive.google.com/file/d/1rvN9PB5RbmkgK3EZ2INwUqDqMbICBm-b/view?usp=drivesdk
+98_Archive	duplicate_report.txt	2026-06-13 15:12:57	https://drive.google.com/file/d/1o0dmvDce_Yyzae0cmD3h8E9pwGLF_NEE/view?usp=drivesdk
+98_Archive	archive_files.txt	2026-06-13 15:12:56	https://drive.google.com/file/d/10ys14cwPmz-1AnZfH-hiXWDPvfNRHAAu/view?usp=drivesdk
+98_Archive	current_files.txt	2026-06-13 15:12:54	https://drive.google.com/file/d/1Od_AsIrWIDI6kXncOhGZGISLZqTmJ_c-/view?usp=drivesdk
+98_Archive	changed_files.txt	2026-06-13 15:12:52	https://drive.google.com/file/d/1O3QkHMswodN4TTnKAHRT-uwNCNsJPYVr/view?usp=drivesdk
+98_Archive	MVQUEEN_Phase2_Full.html	2026-06-13 15:12:51	https://drive.google.com/file/d/14FJlMCQyTm3aPyuT9AFxIc8IRzbey5Ln/view?usp=drivesdk
+98_Archive	MVQUEEN_Phase2.html	2026-06-13 15:12:49	https://drive.google.com/file/d/16hJB_VaHSRCvrTFfkukZEQ-usizSK-Tp/view?usp=drivesdk
+15_Scripts_And_Code	pull_phase1.sh	2026-06-13 15:12:47	https://drive.google.com/file/d/1Y76nS8Qj9-7xmA2O2aYcX61wIgpHn2th/view?usp=drivesdk
+99_Command_Center	_ecosystem_index.json	2026-06-13 15:12:46	https://drive.google.com/file/d/1_QWc_tGQrfWd1NU8kP6kyYIf2hsycKIa/view?usp=drivesdk
+99_Command_Center	MVQUEEN_CONTEXT.md	2026-06-13 15:12:43	https://drive.google.com/file/d/1E05yg_wM7c6f1StgmK4n6Ttd9dwTqiAg/view?usp=drivesdk
+copilot	README.md	2026-06-13 04:40:16	https://drive.google.com/file/d/1Bx2_E2OH1cLINHBLiV2lTTD385UUR2Lv/view?usp=drivesdk
+textgenerator	README.md	2026-06-13 04:40:14	https://drive.google.com/file/d/158R57yc4Lb6KSYrhXKeaYRoZ_OdvDCLc/view?usp=drivesdk
+99_Command_Center	MVQUEEN_Cleanup_Log_2026-06-13	2026-06-13 00:57:51	https://docs.google.com/spreadsheets/d/1i4Q-IzOkazhGVGzbbG8nsTQRqfIsyUt4HfCCqXcpWHk/edit?usp=drivesdk
+99_Command_Center	MVQUEEN_Cleanup_Log_2026-06-13	2026-06-12 23:47:16	https://docs.google.com/spreadsheets/d/1Yh6xqwgQkMK6JNhxVA-NEIbCXy6pCoCTbW7WnfZ1Irw/edit?usp=drivesdk
+04_Products	Product_Catalog.md	2026-06-12 10:54:48	https://drive.google.com/file/d/1FwXWurCnr0SFgEV61jzzyUP6YkeG1Cke/view?usp=drivesdk
+06_Tone_And_Voice	Example_Copy.md	2026-06-12 10:54:47	https://drive.google.com/file/d/10okBE82OpVh5OB14RSay8TMMXQyUnJC6/view?usp=drivesdk
+01_Brand_Strategy	Elevator_Pitch.md	2026-06-12 10:54:47	https://drive.google.com/file/d/1l9H4BfdzwSLkFKziFW_15YvxcsD1hGvT/view?usp=drivesdk
+99_Command_Center	00_Command_Center.backup.md	2026-06-12 00:36:34	https://drive.google.com/file/d/16EkW0StDXBMZtV0mGQnRM57bAqTEA-QU/view?usp=drivesdk
+02_Brand_Identity	brand_rules.md	2026-06-11 23:26:43	https://drive.google.com/file/d/1o37YgLowq-pU9Tvy9q4ai-BZfoFRmMOB/view?usp=drivesdk
+01_Brand_Strategy	Taglines_And_Slogans.md	2026-06-11 07:31:50	https://drive.google.com/file/d/1_RcguMw1LvzHKnWoEcgFNbDrLUiboKuu/view?usp=drivesdk
+01_Brand_Strategy	Brand_Story.md	2026-06-11 07:31:33	https://drive.google.com/file/d/1iQsnP3IuthFh9yv-IYMRsRwPQFYl_baA/view?usp=drivesdk
+00_Doctrine	Hook_Systems.md	2026-06-11 07:31:13	https://drive.google.com/file/d/19L8YaxTcV9994EBYcGAYwTpC9_00FjAQ/view?usp=drivesdk
+00_Doctrine	CTA_Library.md	2026-06-11 07:30:45	https://drive.google.com/file/d/1AevfYxJcLbIy7S8zfJiCbLaRJX6vvxWM/view?usp=drivesdk
+00_Doctrine	Tone_Guide.md	2026-06-11 07:30:24	https://drive.google.com/file/d/1PhNVWbe5L7F8l4SYlWR1Wf4dHf484Els/view?usp=drivesdk
+scripts	crawl_vault.sh	2026-06-11 00:49:45	https://drive.google.com/file/d/16Af3x70CW1MIDcCKKRLa707LRrzcflHm/view?usp=drivesdk
+scripts	dev_setup.sh	2026-06-11 00:49:45	https://drive.google.com/file/d/1hI_sKdICUCarvbiBl9DqpV79d_izGG-r/view?usp=drivesdk
+scripts	setup_env.sh	2026-06-11 00:49:45	https://drive.google.com/file/d/1E6TbT1-FXPypE4H7Hr_pA8VapLyGof0x/view?usp=drivesdk
+98_Archive	MVQUEEN_Phase2	2026-06-10 00:09:34	https://docs.google.com/document/d/1adkMqMo6n5zvzXVilFHpZqNNhA-AoL6wzMioHxPn6Kc/edit?usp=drivesdk
+.obsidian	workspace-mobile.json	2026-06-09 09:16:38	https://drive.google.com/file/d/1QOH-T2uDUBbg-2x3nIfZXnoHb582YdsQ/view?usp=drivesdk
+.obsidian	text-generator.json	2026-06-09 09:15:43	https://drive.google.com/file/d/1lBvCLIYQ1bxiWmtC2YY8JyWEHx-L-Eju/view?usp=drivesdk
+98_Archive	2026-06-09.md	2026-06-09 09:15:29	https://drive.google.com/file/d/1wcQmlJ5QfvY75mk1IvzA2tQdnHbSGJgi/view?usp=drivesdk
+.obsidian	community-plugins.json	2026-06-09 09:15:24	https://drive.google.com/file/d/1dX9OqF1hvMeT4OJdCntRlml8C4tGdzUs/view?usp=drivesdk
+.obsidian	types.json	2026-06-09 09:15:17	https://drive.google.com/file/d/1H3sFvjGb3g2_N57wQxLjIgo7Ec5xQcUu/view?usp=drivesdk
+.obsidian	appearance.json	2026-06-09 09:15:13	https://drive.google.com/file/d/1fdyKan42vQDt9bgGfyqlwYkc6we_V9DA/view?usp=drivesdk
+.obsidian	app.json	2026-06-09 09:15:13	https://drive.google.com/file/d/1WMM_79HPBaEOJ5BhVJcjvaaKmdhE_sR2/view?usp=drivesdk
+.obsidian	core-plugins.json	2026-06-09 09:15:13	https://drive.google.com/file/d/1IS6reaicrmirBKUdDt3f40A4RWQzonA1/view?usp=drivesdk
+.git	COMMIT_EDITMSG	2026-06-09 07:26:51	https://drive.google.com/file/d/16mx2ZhbqHzQ0OLHFB9N0Tuhlf9f3Oy-g/view?usp=drivesdk
+.git	index	2026-06-09 05:48:04	https://drive.google.com/file/d/1hnZ7VjR9RMq9xrzPSc2If46E7yWyc64_/view?usp=drivesdk
+.git	HEAD	2026-06-09 05:46:07	https://drive.google.com/file/d/1ui8_cyMidsVvy8g9E1CJY0hy8y1qTp_p/view?usp=drivesdk
+.git	config	2026-06-09 05:46:07	https://drive.google.com/file/d/1aVRxBN6OBvZ0ClcdUTvuCxGRneMUDr_U/view?usp=drivesdk
+.git	description	2026-06-09 05:46:07	https://drive.google.com/file/d/1BfvBPyYVX2-HN3jlJ9RzA2DGUcMQAg9Y/view?usp=drivesdk
+98_Archive	trust_building.md	2026-06-09 04:34:57	https://drive.google.com/file/d/14b75CZPE26n-VygCuEkIJvsp73uSxoMP/view?usp=drivesdk
+98_Archive	customer_objections.md	2026-06-09 04:34:08	https://drive.google.com/file/d/1rwrBglVLzda7Jy5aefW5GCO-M6QixbLI/view?usp=drivesdk
+98_Archive	Hook_Systems.md	2026-06-09 04:33:15	https://drive.google.com/file/d/1-6XR7-XwYlMZ-vbTqVbQKxeH9egbo9aF/view?usp=drivesdk
+98_Archive	Product_Description_Voice.md	2026-06-09 04:32:24	https://drive.google.com/file/d/1hzLWJ2rMaQAQBQOUCTQRbj3zR_usTsF5/view?usp=drivesdk
+98_Archive	Example_Copy.md	2026-06-09 04:31:31	https://drive.google.com/file/d/1WFTzMdy2ZHZ0Oq3gtAQhXndp4Qx1sZe1/view?usp=drivesdk
+98_Archive	CTA_Library.md	2026-06-09 04:30:42	https://drive.google.com/file/d/125MEM2zKotHheUXOkSIu3OBteMfw-MSR/view?usp=drivesdk
+98_Archive	brand_rules.md	2026-06-09 04:30:04	https://drive.google.com/file/d/1mLBICERMCpYZt71VpSfR2y8vyVOS8wuh/view?usp=drivesdk
+98_Archive	typography_system.md	2026-06-09 04:29:31	https://drive.google.com/file/d/1vhMrR4q3Kk1iWNIfYSb5x9jKXz860k59/view?usp=drivesdk
+98_Archive	color_system.md	2026-06-09 04:28:58	https://drive.google.com/file/d/1JLhqv1-UfDhUeB6vYZ0rqb-AD3G0xvVK/view?usp=drivesdk
+98_Archive	MVQUEEN_Phase2.html	2026-06-09 04:28:14	https://drive.google.com/file/d/1erL96tx_ynUUf5oBJSZHRy3Uf1k-LMdx/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_cleanup.py	2026-06-08 07:54:30	https://drive.google.com/file/d/1dIYQ-ngnmp2zFVvS-_1dUDihlVJoL3iY/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_batch4.py	2026-06-08 07:54:30	https://drive.google.com/file/d/10tcQ1sw4Z8HFbRrUTjFa9slO5bRQuMgi/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_batch3.py	2026-06-08 07:54:30	https://drive.google.com/file/d/1nQfX69pihBsn0CkuVO73B472oAdnUVE7/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_batch2.py	2026-06-08 07:54:30	https://drive.google.com/file/d/1qtQanxhDqtyQNV-TEgXMCY95gdol6_ne/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_batch1.py	2026-06-08 07:54:30	https://drive.google.com/file/d/1PbOpuQSOfPCltkNiV_oL0kPNv65D9NMU/view?usp=drivesdk
+15_Scripts_And_Code	gemini-code-1779883572935.py	2026-06-08 07:54:30	https://drive.google.com/file/d/1fanpXFWrUtWGek5eWUak8jRoHAs__vb5/view?usp=drivesdk
+15_Scripts_And_Code	gemini-code-1779883572234.py	2026-06-08 07:54:30	https://drive.google.com/file/d/1dtbT-fbcYe61rD7ey3IxOsuvwCAodvBL/view?usp=drivesdk
+98_Archive	color_system_OLD.md	2026-06-07 23:13:07	https://drive.google.com/file/d/1E_4ZnRnj_Uqxd-QTHQE36XQNCSP0nwlc/view?usp=drivesdk
+98_Archive	typography_system_OLD.md	2026-06-07 23:13:00	https://drive.google.com/file/d/18OdF98cJUU7Xy6PEDb5koMJhmlG5WlZr/view?usp=drivesdk
+98_Archive	brand_rules_OLD.md	2026-06-07 23:12:44	https://drive.google.com/file/d/1CapgDn4GtfDdVkfUAAmXJrt8gOioQuII/view?usp=drivesdk
+98_Archive	Social_Media_Prompts_OLD.md	2026-06-07 23:12:32	https://drive.google.com/file/d/1xrOXk1bKJ4usYpuILgMr9lJTlbwkDbgW/view?usp=drivesdk
+98_Archive	Product_Description_Prompts_OLD.md	2026-06-07 23:12:28	https://drive.google.com/file/d/14BULthfGG775tBXWqMatE-1vqDAxrcMs/view?usp=drivesdk
+98_Archive	Image_Generation_Prompts_OLD.md	2026-06-07 23:12:22	https://drive.google.com/file/d/18qFA867fdfx1r-B1DOAtNYX3B4MHuDjl/view?usp=drivesdk
+98_Archive	Ad_Copy_Prompts_OLD.md	2026-06-07 23:12:13	https://drive.google.com/file/d/1MMgajkQuewQ6JQYdsc-hcWnapNWIhf0Z/view?usp=drivesdk
+98_Archive	AI_Prompt_Library_OLD.md	2026-06-07 23:12:07	https://drive.google.com/file/d/1HkZto4kHHSo-4z_ebdLVFlxj87Q71IuI/view?usp=drivesdk
+98_Archive	mvqueen_cleanup_conflict.py	2026-06-07 23:12:01	https://drive.google.com/file/d/1hlOQX1fz0N0ZKt0RFS9s7GJdMGGurInF/view?usp=drivesdk
+98_Archive	mvqueen_batch1_conflict.py	2026-06-07 23:11:57	https://drive.google.com/file/d/1k9i8nEXwUJXhfCfN8vmdLIG9YLxYP8lj/view?usp=drivesdk
+98_Archive	mvqueen_batch2_conflict.py	2026-06-07 23:11:52	https://drive.google.com/file/d/1d82sdVUi8HtNeiBsVXbSINWORFVGWZOC/view?usp=drivesdk
+98_Archive	mvqueen_batch3_conflict.py	2026-06-07 23:11:48	https://drive.google.com/file/d/1Dco-fK7oijui866o2ad2WqnSrpL--ZZ0/view?usp=drivesdk
+07_Marketing	Ad_Copy_Prompts.md	2026-06-07 16:21:06	https://drive.google.com/file/d/1GzA5IFo2Scyg0gKSwr-FCgWKCMvt_vdD/view?usp=drivesdk
+08_Social_Media	Social_Media_Prompts.md	2026-06-07 16:21:01	https://drive.google.com/file/d/1VqKVMjXRGnFnwGG2wFP9tuObKcAbz0RA/view?usp=drivesdk
+06_Tone_And_Voice	Product_Description_Prompts.md	2026-06-07 16:20:46	https://drive.google.com/file/d/18NK-qVyT0ZNuyegg2I81L_MEveoWJP4C/view?usp=drivesdk
+98_Archive	mvqueen_batch4.py	2026-06-07 02:48:06	https://drive.google.com/file/d/15Kma4-HR1mlQzR2XlMNlQuD1XwAIdJYw/view?usp=drivesdk
+MVQUEEN_batch	batch_operations_log.md	2026-06-07 00:42:26	https://drive.google.com/file/d/1FIBhVEE1sD9t5mzBFFL5gQ5Sd1RNQnTt/view?usp=drivesdk
+MVQUEEN_batch	README.md	2026-06-07 00:42:26	https://drive.google.com/file/d/1tstvteD_Pi-0VSLy7cPXL0P8jKgfArfB/view?usp=drivesdk
+98_Archive	mvqueen_cleanup.py	2026-06-06 23:59:14	https://drive.google.com/file/d/140FLEv4-A2JnedfIso5c1fzyKyz7CUuf/view?usp=drivesdk
+98_Archive	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1YjBnkSwUHxV5nqcvLdKmumDVbKOgZvFv/view?usp=drivesdk
+98_Archive	archive_log.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1Q8TmDoaAEIxnDHZK-NlTkyR8eEXohHvV/view?usp=drivesdk
+39_SOP_Library	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1DMhIRvbyYJnIUEYSWoS1CiH2_LNn1mch/view?usp=drivesdk
+39_SOP_Library	sop_index.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1zz7KLkI4SV45qQBSV8fD6cF7LIfmrXmq/view?usp=drivesdk
+38_Prompt_Chains	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/19d6NSLLd7kKcFRMG1qyfrnhLq4P1a_qo/view?usp=drivesdk
+38_Prompt_Chains	prompt_chain_library.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1W9KkkY8yjv1bhuINvQhFI5QYZGWJ9LGP/view?usp=drivesdk
+37_Databases	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1S5mtqCW8dVDsLvhFAKuiE4N_nI_nPg5J/view?usp=drivesdk
+37_Databases	database_index.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1DG-QUdkpiWBgguOKCILkAYcJNEK4SkSy/view?usp=drivesdk
+36_Agent_Systems	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1-JkC8KDNktN1sdZ7GPH3IwjQDiiryNRb/view?usp=drivesdk
+36_Agent_Systems	agent_architecture.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1BqWoajnpgtQLAw8fQ8-fGLv9aM7ux_ia/view?usp=drivesdk
+35_System_Blueprints	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/11iJ-ZI0bQIuUr1URZcmayvCG9QZu1UR8/view?usp=drivesdk
+35_System_Blueprints	blueprint_index.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1Pw6k3oo7hVPZ2BctwT_jK8UndNBAzt1K/view?usp=drivesdk
+34_Master_Systems	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1AU0HeIXXEc_i-4aUoMhe3yLuf3FSbG33/view?usp=drivesdk
+34_Master_Systems	master_system_index.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1NQI69q81pu_DJU-EAPNUZpxeOx2RB10P/view?usp=drivesdk
+33_Content_Pipelines	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1Lz9t3L0wpvzrqHIcR696SSRAZykX97Au/view?usp=drivesdk
+33_Content_Pipelines	content_calendar_framework.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1sAZ588BhIL2JOgjvOML6qF-l2E-GfHq_/view?usp=drivesdk
+33_Content_Pipelines	content_pipeline_system.md	2026-06-06 23:25:02	https://drive.google.com/file/d/11qEvb7RAjBQNTlGwykxlJvWBL97UAHIq/view?usp=drivesdk
+32_Backups	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1R9oqIvCX4whKdGG_NXN5kEfl8p8d0Atl/view?usp=drivesdk
+32_Backups	backup_protocol.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1hqhhyGCxkkHT77BcLR7zbhaUklRODQZh/view?usp=drivesdk
+31_AI_Knowledge_Base	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1fBYE5B_SR-x5z7qbKgB5DhLoqLtZFYLN/view?usp=drivesdk
+31_AI_Knowledge_Base	voice_rules.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1t_qj8CnLn1aMQ-Sn9y3gziSOaPYUe_j4/view?usp=drivesdk
+31_AI_Knowledge_Base	brand_summary.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1NW-eTsHH13iXv_EunU-ELtJxKXCbj0B4/view?usp=drivesdk
+31_AI_Knowledge_Base	knowledge_base_index.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1lUXEua1KJktlCcadElifjErcRPouOpbH/view?usp=drivesdk
+30_AI_Datasets	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/11zJDb-GElFomS6GaAFsOTxOtwmoWX2KC/view?usp=drivesdk
+30_AI_Datasets	voice_calibration_dataset.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1iihIIivQSbqeV1y8jrUNp30eR7kuQS1B/view?usp=drivesdk
+30_AI_Datasets	dataset_index.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1pDm1Cv6P5hApnupM6Mip_-ceZHl1xNAS/view?usp=drivesdk
+29_Mobile_Development	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1AkSRb-sPMJ7SYs6568bb8uwyOa_62w8S/view?usp=drivesdk
+29_Mobile_Development	mobile_stack.md	2026-06-06 23:25:02	https://drive.google.com/file/d/11BlKYJnGYzYb69jHLT2eFsDBmdvDCI3f/view?usp=drivesdk
+28_Archives	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1p0TNxTgoVvyi3Tye3CapusWQF5x7PYvs/view?usp=drivesdk
+28_Archives	archive_index.md	2026-06-06 23:25:02	https://drive.google.com/file/d/17AtwUNUoKjgcjMc82OLLxu8uqC0wwQ3b/view?usp=drivesdk
+27_Templates	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1wuxpgFoVNiuCLfvC7nNW4wV76GLua8T-/view?usp=drivesdk
+27_Templates	advanced_templates.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1OlIlACTSi6vuLpiPC6LmqjH7kckYTonr/view?usp=drivesdk
+26_RnD_Lab	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1R5AmsfV7WjxXDIcq5v6Q4yForrmsb-K7/view?usp=drivesdk
+26_RnD_Lab	rnd_framework.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1rGwpEFcYireXaBIzxeHEHKfmO561y6-X/view?usp=drivesdk
+25_Retention_And_Community	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1SFBbObEnyitHjg1kRFr2p0HRH6xSzcnq/view?usp=drivesdk
+25_Retention_And_Community	community_playbook.md	2026-06-06 23:25:02	https://drive.google.com/file/d/132R2VGvzJNKol5hEl0qu1mXV0R3dXyjt/view?usp=drivesdk
+25_Retention_And_Community	retention_system.md	2026-06-06 23:25:02	https://drive.google.com/file/d/19J1JLh8AbSEIUFXHJjmrz2Iam30iV_F1/view?usp=drivesdk
+23_Team_And_Delegation	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/120z-wYviNhoKLV-AidadK8giUbMDnGRE/view?usp=drivesdk
+23_Team_And_Delegation	delegation_framework.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1uhN2AMzAuKeaN-xPeYeG2X-BMty5fw5w/view?usp=drivesdk
+22_Growth_And_Scaling	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1jH2TCJFpPVP-Ca9yadoWZFFxA95ePgre/view?usp=drivesdk
+22_Growth_And_Scaling	scaling_playbook.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1mUOU112UiGDXkPWvoZxeYag4Iwq_lZd5/view?usp=drivesdk
+22_Growth_And_Scaling	growth_framework.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1QS_uZ-SAKDWZCnuMzi6TMviR2RTjAPFx/view?usp=drivesdk
+21_Finance	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1Tk-L5LXNdUiQDNWI9n3zFV-dLpJLUK7I/view?usp=drivesdk
+21_Finance	pricing_system.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1xlLj35vjoIqrHFjr-_dY1lTKTmDx9bB2/view?usp=drivesdk
+21_Finance	financial_framework.md	2026-06-06 23:25:02	https://drive.google.com/file/d/10MeXtKjRHUM4WAN4LRJiF4bL77zu0zgn/view?usp=drivesdk
+19_Legal_And_Admin	README.md	2026-06-06 23:25:02	https://drive.google.com/file/d/1dj7bavP2xGrin5ceysb8H2dIqRiLI0x9/view?usp=drivesdk
+19_Legal_And_Admin	legal_framework.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1kOWson3cbCGweQzbbTWpmCQIABG6r-lr/view?usp=drivesdk
+18_Development	README.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1_qbHJh535SSJS0juiZ2NSK3hoxW65z8R/view?usp=drivesdk
+18_Development	development_roadmap.md	2026-06-06 23:25:01	https://drive.google.com/file/d/12BDUmndSs99IbA9L_86ufpHZKOc9aKyY/view?usp=drivesdk
+17_Templates	README.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1x-gXkIGBEBon1cycjN_4aedhjvbtZWuW/view?usp=drivesdk
+17_Templates	template_library.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1JyCZRj4T9SU5pn5R2rzqxQj1bW8PSeB2/view?usp=drivesdk
+16_Automation	README.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1FNxMtMvLbrmjQ0XrqQwgSU97mDzUQG_1/view?usp=drivesdk
+16_Automation	workflow_library.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1ppODnD3KNY_hJ9g79BiKOtJFHPbaiYaL/view?usp=drivesdk
+16_Automation	automation_system.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1Eh-CkxMJqsoHxuLzpBvz6zfquiz-Z2rf/view?usp=drivesdk
+15_Scripts_And_Code	README.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1V44wICQzpXBvgRHTM4m82vZxTF_D_EbX/view?usp=drivesdk
+15_Scripts_And_Code	automation_scripts.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1SKATXVdDKVRmnoymQSx1uQPzGl30wkzV/view?usp=drivesdk
+15_Scripts_And_Code	README.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1R2ED0NdsWa7T4DVKlSkuoAElArnPEa5w/view?usp=drivesdk
+15_Scripts_And_Code	script_index.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1DJESXOf_XMJmKHPpHYZ0t7ItTHQ10Ms9/view?usp=drivesdk
+14_Data_And_Analytics	README.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1-IkT-UjG2fetans8JNpxsRNzR8p18CmC/view?usp=drivesdk
+14_Data_And_Analytics	kpi_dashboard.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1zQwUUu5UXsErjwMHOPVzL7NSGX0zp4zP/view?usp=drivesdk
+14_Data_And_Analytics	analytics_framework.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1DWDyFmf48sP6Nh9xfMVeczJYUSo2Dcnd/view?usp=drivesdk
+12_Content_Assets	README.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1zrlszCFyhUHYN4KE2QNF0YJlJh0ClEpa/view?usp=drivesdk
+12_Content_Assets	visual_brief_templates.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1YvYh6EHdWHGKSTSNxzAK_P0cXWOiz62f/view?usp=drivesdk
+12_Content_Assets	reusable_copy_blocks.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1d5JuJK-7vEKvglTpENUyCuOo9csFStW_/view?usp=drivesdk
+12_Content_Assets	content_asset_system.md	2026-06-06 23:25:01	https://drive.google.com/file/d/1tb9KAHBCscqLsh1ZxYcYL0haSZk3fbr_/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_batch3 (conflict 2026-06-07-00-49-26).py	2026-06-06 23:24:47	https://drive.google.com/file/d/1GBFxdTeoub0vX0Mbb_E3dt6f23B0oYE1/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_batch2 (conflict 2026-06-07-00-49-26).py	2026-06-06 23:24:47	https://drive.google.com/file/d/1Vc4NbLYKNxzlTxBkBzdz7d5010-97fE2/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_batch1 (conflict 2026-06-07-00-49-26).py	2026-06-06 23:24:47	https://drive.google.com/file/d/1NCobKSyVmco20kPzojs_MbA-S4c_mCm-/view?usp=drivesdk
+15_Scripts_And_Code	mvqueen_cleanup (conflict 2026-06-07-00-49-26).py	2026-06-06 23:24:47	https://drive.google.com/file/d/14A3eThOxK5MbfavVQ3GDJ1vxV-gfjAUP/view?usp=drivesdk
+24_Email_And_SMS	README.md	2026-06-06 23:20:27	https://drive.google.com/file/d/1wClmeY43mJqLKvgZ1kX3ow1T7vaBd8ze/view?usp=drivesdk
+
+# Brand Voice Log
+Asset Name	Module / Folder	Detected Infractions	Last Scanned
+Product_Description_Voice.md	98_Archive	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+CTA_Library.md	98_Archive	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+typography_system.md	98_Archive	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Product_Description_Voice.md	98_Archive	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+CTA_Library.md	98_Archive	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+typography_system.md	98_Archive	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Ad_Copy_Prompts_OLD.md	98_Archive	Aggressive punctuation (multiple exclamation points)	2026-06-13 00:00:00
+AI_Prompt_Library_OLD.md	98_Archive	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+MVQUEEN_CONTEXT.md	99_Command_Center	Non-luxury terminology (girlboss) | Aggressive punctuation (multiple exclamation points) | Off-brand pricing terminology (cheap) | Non-luxury terminology (hustle)	2026-06-13 00:00:00
+brand_constitution.md	00_Doctrine	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+ecosystem_security_framework.md	00_Doctrine	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+visual_identity_philosophy.md	00_Doctrine	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+voice_rules.md	31_AI_Knowledge_Base	Aggressive punctuation (multiple exclamation points)	2026-06-13 00:00:00
+voice_calibration_dataset.md	30_AI_Datasets	Aggressive punctuation (multiple exclamation points)	2026-06-13 00:00:00
+Ad_Copy_Prompts.md	10_AI_Systems	Aggressive punctuation (multiple exclamation points)	2026-06-13 00:00:00
+AI_Prompt_Library.md	10_AI_Systems	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Shipping_SOP.md	09_Shopify_Systems	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+TikTok_Strategy.md	08_Social_Media	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Ad_Copy_Prompts.md	07_Marketing	Aggressive punctuation (multiple exclamation points)	2026-06-13 00:00:00
+Product_Description_Prompts.md	06_Tone_And_Voice	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+CTA_Library.md	06_Tone_And_Voice	Aggressive punctuation (multiple exclamation points)	2026-06-13 00:00:00
+Forbidden_Words.md	06_Tone_And_Voice	Non-luxury terminology (girlboss) | Aggressive punctuation (multiple exclamation points) | Off-brand pricing terminology (cheap) | Non-luxury terminology (hustle)	2026-06-13 00:00:00
+Ad_Copy_Voice.md	06_Tone_And_Voice	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+SMS_Voice.md	06_Tone_And_Voice	Aggressive punctuation (multiple exclamation points)	2026-06-13 00:00:00
+Tone_Guide.md	06_Tone_And_Voice	Non-luxury terminology (hustle)	2026-06-13 00:00:00
+Keyword_Research.md	05_SEO_And_Content	Off-brand pricing terminology (cheap) | Non-luxury terminology (hustle)	2026-06-13 00:00:00
+Product_Framework.md	04_Products	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Pricing_Strategy.md	04_Products	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Shopping_Habits.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+lifestyle_aspirations.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+luxury_consumer_behavior.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+customer_avatars.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+brand_vocabulary.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+packaging_vision.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+packaging_identity.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+brand_identity.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Elevator_Pitch.md	01_Brand_Strategy	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Slogans.md	01_Brand_Strategy	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+USP.md	01_Brand_Strategy	Off-brand pricing terminology (cheap)	2026-06-13 00:00:00
+Brand_Bible.md	01_Brand_Strategy	Off-brand pricing terminology (cheap) | Non-luxury terminology (hustle)	2026-06-13 00:00:00
+
+# Duplicate Log
+Duplicate Filename	Occurrences	Folder Locations	Last Detected
+trust_building.md	4.0	98_Archive | 98_Archive | 98_Archive | 03_Customer_Psychology	2026-06-13 00:00:00
+customer_objections.md	4.0	98_Archive | 98_Archive | 98_Archive | 03_Customer_Psychology	2026-06-13 00:00:00
+Hook_Systems.md	5.0	98_Archive | 98_Archive | 98_Archive | 00_Doctrine | 06_Tone_And_Voice	2026-06-13 00:00:00
+Product_Description_Voice.md	4.0	98_Archive | 98_Archive | 98_Archive | 06_Tone_And_Voice	2026-06-13 00:00:00
+Example_Copy.md	4.0	98_Archive | 98_Archive | 98_Archive | 06_Tone_And_Voice	2026-06-13 00:00:00
+CTA_Library.md	5.0	98_Archive | 98_Archive | 98_Archive | 00_Doctrine | 06_Tone_And_Voice	2026-06-13 00:00:00
+brand_rules.md	4.0	98_Archive | 98_Archive | 98_Archive | 02_Brand_Identity	2026-06-13 00:00:00
+typography_system.md	4.0	98_Archive | 98_Archive | 98_Archive | 02_Brand_Identity	2026-06-13 00:00:00
+color_system.md	4.0	98_Archive | 98_Archive | 98_Archive | 02_Brand_Identity	2026-06-13 00:00:00
+MVQUEEN_Phase2	2.0	98_Archive | 98_Archive	2026-06-13 00:00:00
+MVQUEEN_Phase2.html	2.0	98_Archive | 98_Archive	2026-06-13 00:00:00
+mvqueen_batch4.py	2.0	98_Archive | 15_Scripts_And_Code	2026-06-13 00:00:00
+mvqueen_cleanup.py	2.0	98_Archive | 15_Scripts_And_Code	2026-06-13 00:00:00
+README.md	45.0	98_Archive | 24_Email_And_SMS | MVQUEEN_batch | 99_Command_Center | 00_Doctrine | 39_SOP_Library | 38_Prompt_Chains | 37_Databases | 36_Agent_Systems | 35_System_Blueprints | 34_Master_Systems | 33_Content_Pipelines | 32_Backups | 31_AI_Knowledge_Base | 30_AI_Datasets | 29_Mobile_Development | 28_Archives | 27_Templates | 26_RnD_Lab | 25_Retention_And_Community | 23_Team_And_Delegation | 22_Growth_And_Scaling | 21_Finance | 19_Legal_And_Admin | 18_Development | 17_Templates | 16_Automation | 15_Scripts_And_Code | 15_Scripts_And_Code | 14_Data_And_Analytics | 13_Research_And_Inspiration | 11_Operations | 10_AI_Systems | 09_Shopify_Systems | 08_Social_Media | 07_Marketing | 06_Tone_And_Voice | textgenerator | copilot | 12_Content_Assets | 05_SEO_And_Content | 04_Products | 03_Customer_Psychology | 02_Brand_Identity | 01_Brand_Strategy	2026-06-13 00:00:00
+MVQUEEN_Cleanup_Log_2026-06-13	3.0	99_Command_Center | 99_Command_Center | 99_Command_Center	2026-06-13 00:00:00
+Tone_Guide.md	2.0	00_Doctrine | 06_Tone_And_Voice	2026-06-13 00:00:00
+pull_phase1.sh	2.0	15_Scripts_And_Code | 15_Scripts_And_Code	2026-06-13 00:00:00
+Ad_Copy_Prompts.md	2.0	10_AI_Systems | 07_Marketing	2026-06-13 00:00:00
+Product_Description_Prompts.md	2.0	10_AI_Systems | 06_Tone_And_Voice	2026-06-13 00:00:00
+Social_Media_Prompts.md	2.0	10_AI_Systems | 08_Social_Media	2026-06-13 00:00:00
+Brand_Story.md	2.0	01_Brand_Strategy | 01_Brand_Strategy	2026-06-13 00:00:00

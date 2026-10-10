@@ -12,6 +12,38 @@ CRAWLER = ROOT / "core" / "vault_crawler.py"
 
 
 class VaultCrawlerContextTests(unittest.TestCase):
+    def test_recovered_references_keep_security_checks_without_configuration_false_alarms(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            refs = root / "31_AI_Knowledge_Base/brand_sources/recovered"
+            refs.mkdir(parents=True)
+            historical = refs / "historical.txt"
+            historical.write_text(
+                "Shopify API version " + "2024-" + "01\n"
+                + "historical-example.myshopify.com\n"
+                + "product" + "Update\n"
+                + 'client_secret = "[REDACTED]"\n', encoding="utf-8",
+            )
+            output = root / "report.json"
+            command = [sys.executable, str(CRAWLER), "--root", str(root), "--output", str(output), "--fail-on", "high"]
+            result = subprocess.run(command, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            report = json.loads(output.read_text())
+            self.assertEqual(report["configuration"]["api_versions"], {})
+            self.assertEqual(report["configuration"]["shopify_domains"], {})
+            self.assertEqual(report["findings"], [])
+            (refs / "active_writer.py").write_text('QUERY = "product' + 'Update"\n', encoding="utf-8")
+            result = subprocess.run(command, capture_output=True, text=True)
+            report = json.loads(output.read_text())
+            self.assertEqual(result.returncode, 1)
+            self.assertTrue(any(f["category"] == "publishing_boundary" for f in report["findings"]))
+            (refs / "active_writer.py").unlink()
+            historical.write_text('client_secret = "' + "sensitive" + '-example-value"\n', encoding="utf-8")
+            result = subprocess.run(command, capture_output=True, text=True)
+            report = json.loads(output.read_text())
+            self.assertEqual(result.returncode, 1)
+            self.assertTrue(any(f["category"] == "security" and f["severity"] == "CRITICAL" for f in report["findings"]))
+
     def test_shopify_dates_are_ignored_without_suppressing_real_api_drift(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)

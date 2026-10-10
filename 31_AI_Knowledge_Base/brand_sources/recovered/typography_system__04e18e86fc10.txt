@@ -1,0 +1,283 @@
+# 👑 MVQUEEN — Typography System
+### The Type Reference
+
+---
+
+## What This File Is
+
+This is not visual philosophy. That lives in the Brand Bible §16.
+This is the working type system — font names, weights, size scales, pairing logic, platform rules, and every typographic decision made for MVQUEEN.
+
+Every designer, developer, Shopify theme, email template, social graphic, and AI visual prompt pulls from this file.
+
+---
+
+## THE SYSTEM AT A GLANCE
+
+| Role | Font | Weight | Use |
+|---|---|---|---|
+| Display / Hero | Cormorant Garamond | Light 300, Regular 400 | Headlines, campaign headers, logo adjacent |
+| Display Italic | Cormorant Garamond | Light Italic 300i | Subheads, pull quotes, editorial moments |
+| Body | Jost | Light 300, Regular 400 | All body copy, descriptions, UI text |
+| Body Accent | Jost | Medium 500 | Emphasis, labels, nav, CTAs |
+| Monospace / Detail | JetBrains Mono | Regular 400 | Hex codes, SKUs, technical specs only |
+
+---
+
+## PART 1 — TYPEFACES
+
+### Primary Display — Cormorant Garamond
+
+**What it is:** A refined serif with Old Style proportions — elegant, feminine, literary. Originally designed by Claude Garamond in the 16th century, Cormorant is the modern interpretation that carries all the emotional weight of classical typography without feeling dated.
+
+**Why MVQUEEN:** It reads like a love letter written on cream paper. It carries softness and authority simultaneously — which is exactly what this brand is. Long ascenders, delicate hairline serifs, beautiful italic letterforms. It creates atmosphere before anyone reads a word.
+
+**Weights used:**
+- `300` Light — Campaign headlines, hero copy, logo treatments
+- `400` Regular — Editorial headers, section titles, feature copy
+- `300i` Light Italic — Pull quotes, secondary headlines, poetry-style copy, tagline placement
+- `400i` Regular Italic — Emphasis within editorial copy, product naming display
+
+**Never use:**
+- Bold (600+) — too heavy, loses elegance
+- All caps in large sizes — loses the letterform detail that makes this font beautiful
+- Very small sizes (below 14px) — the hairline serifs lose legibility
+
+**Google Fonts:** `Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400`
+
+---
+
+### Primary Body — Jost
+
+**What it is:** A geometric sans-serif with humanist proportions. Clean, modern, highly readable, with a warmth that purely geometric fonts like Futura lack.
+
+**Why MVQUEEN:** It disappears into copy the way a good supporting element should — without calling attention to itself. It's modern enough to feel current, neutral enough to let Cormorant lead, warm enough to not feel corporate.
+
+**Weights used:**
+- `200` Extra Light — Overlines, micro-labels, decorative detail text
+- `300` Light — Body copy, product descriptions, email copy
+- `400` Regular — Standard UI text, navigation, form fields
+- `500` Medium — Button labels, CTAs, strong labels, price display
+- `600` SemiBold — Only for functional emphasis (warnings, key product details) — use sparingly
+
+**Never use:**
+- `700` Bold or `800` ExtraBold — too heavy, breaks the refined feel
+- In display sizes — Cormorant owns the large scale
+- Italic — Jost italic is available but rarely needed; use Cormorant italic for emotional emphasis
+
+**Google Fonts:** `Jost:wght@200;300;400;500`
+
+---
+
+### Miss.Princess Font Variation
+
+Miss.Princess uses the same type system with one addition — a softer, more playful display option for campaign and social contexts:
+
+**Miss.Princess Display Alternative:** `Playfair Display` — Italic 400i
+- Used for Miss.Princess campaign headers and social display copy
+- Rounder, more romantic than Cormorant — matches the softer energy
+- Never used in MVQUEEN primary contexts
+
+---
+
+## PART 2 — SIZE SCALE
+
+### Desktop Scale (base: 16px)
+
+| Name | Size | Font | Weight | Use |
+|---|---|---|---|---|
+| Display XL | 72–96px | Cormorant Garamond | 300 | Hero headlines, campaign splash |
+| Display L | 48–64px | Cormorant Garamond | 300–400 | Section heroes, feature headers |
+| Display M | 36–42px | Cormorant Garamond | 400 | Page titles, collection names |
+| Display S | 28–32px | Cormorant Garamond | 400 | Sub-section headers, product names |
+| Subhead | 20–24px | Cormorant Garamond | 400i | Pull quotes, editorial sub-headers |
+| Body L | 18–20px | Jost | 300 | Long-form copy, editorial |
+| Body | 16px | Jost | 300–400 | Standard body copy, product descriptions |
+| Body S | 14px | Jost | 400 | Captions, metadata, secondary info |
+| Label | 11–12px | Jost | 500 | Navigation, tags, category labels |
+| Micro | 10px | Jost | 400–500 | Legal, footnotes, overlines |
+
+### Mobile Scale (base: 15px)
+
+| Name | Size | Notes |
+|---|---|---|
+| Display XL | 42–52px | Scale down hero — never smaller than 36px on mobile |
+| Display L | 32–38px | Maintain visual weight |
+| Display M | 26–30px | Keep elegant proportion |
+| Body | 15px | Slightly tighter than desktop |
+| Label | 11px | Minimum — do not go smaller |
+
+---
+
+## PART 3 — PAIRING LOGIC
+
+### The Fundamental Pair
+
+Every MVQUEEN composition is built on this contrast:
+
+> **Cormorant Garamond (headline) + Jost (body)**
+
+The tension between the serif's romanticism and the sans-serif's clarity is what gives MVQUEEN copy its dual-nature — soft and sharp, elevated and accessible, emotional and functional.
+
+**Standard pairing patterns:**
+
+**Pattern A — Editorial (Most Used)**
+```
+HEADLINE        → Cormorant Garamond 300, 48px+
+Subheadline     → Cormorant Garamond 400i, 24px
+Body copy       → Jost 300, 16px
+Label/CTA       → Jost 500, 12px uppercase
+```
+
+**Pattern B — Product Page**
+```
+Product Name    → Cormorant Garamond 400, 28–32px
+Short tagline   → Cormorant Garamond 300i, 20px
+Description     → Jost 300, 16px
+Price           → Jost 500, 18px
+CTA             → Jost 500, 12px uppercase, letter-spaced
+```
+
+**Pattern C — Campaign / Social**
+```
+Campaign header → Cormorant Garamond 300, large
+Campaign sub    → Jost 200, small, wide letter-spacing
+CTA or slogan   → Cormorant Garamond 300i OR Jost 500, 11px
+```
+
+**Pattern D — Navigation / UI**
+```
+Nav items       → Jost 400, 13px
+Active state    → Jost 500, 13px
+Labels          → Jost 500, 11px uppercase, 0.15em letter-spacing
+Breadcrumbs     → Jost 300, 12px
+```
+
+---
+
+## PART 4 — TYPOGRAPHIC RULES
+
+### Rule 01 — Letter-Spacing by Context
+
+| Context | Spacing | Font |
+|---|---|---|
+| Display headlines | `-0.01em` to `0em` | Cormorant — tight, elegant |
+| Brand name MVQUEEN | `0.18em` | Jost 400 — open, commanding |
+| Navigation / labels | `0.12–0.18em` | Jost 500 uppercase |
+| Body copy | `0.01em` | Jost — natural reading rhythm |
+| Overlines / micro | `0.25–0.3em` | Jost 200 uppercase |
+
+### Rule 02 — Line Height
+
+| Context | Line Height |
+|---|---|
+| Display (48px+) | 1.0–1.1 |
+| Sub-headers (24–36px) | 1.2–1.3 |
+| Body copy | 1.6–1.75 |
+| Captions / labels | 1.4 |
+| Product descriptions | 1.7 |
+
+### Rule 03 — Text Color
+
+All text uses palette colors only — never arbitrary hex values outside the system:
+
+| Text Type | Color | Hex |
+|---|---|---|
+| Primary body | Espresso | `#3B2314` |
+| Secondary / captions | Soft Charcoal | `#4A4240` |
+| Accent / links | Dusty Rose | `#C9968A` |
+| Reversed text (on dark) | Warm Ivory | `#FAF6F0` |
+| Price / key callout | Espresso bold | `#3B2314` Jost 500 |
+| Inactive / placeholder | Warm Taupe | `#C4B5A5` |
+
+### Rule 04 — Uppercase Rules
+
+Use uppercase sparingly and only with:
+- Jost font (never Cormorant in all-caps at display sizes)
+- `letter-spacing: 0.15em` minimum — uppercase without spacing reads aggressive
+- Labels, navigation, overlines, CTAs, micro text
+- Maximum 4–5 words — long uppercase sentences kill readability
+
+### Rule 05 — No System Fonts
+
+MVQUEEN never falls back to system fonts (Arial, Helvetica, Georgia, Times) in customer-facing contexts. Font loading must be prioritized. If web fonts fail to load, the fallback chain is:
+
+`'Cormorant Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, serif`
+`'Jost', 'Century Gothic', 'Trebuchet MS', sans-serif`
+
+### Rule 06 — Minimum Sizes
+
+| Platform | Minimum Body | Minimum Label |
+|---|---|---|
+| Desktop web | 16px | 11px |
+| Mobile web | 15px | 11px |
+| Email | 16px | 12px |
+| Print (packaging) | 8pt | 7pt |
+| Social graphics | 14px | 10px |
+
+---
+
+## PART 5 — PLATFORM-SPECIFIC GUIDANCE
+
+### Shopify / Website
+- Load Cormorant Garamond and Jost via Google Fonts with `display=swap`
+- Preload the 300 and 400 weights for both fonts — they cover 95% of use
+- Use CSS custom properties for all font values — never hardcode inline
+
+### Email
+- Cormorant Garamond may not render in all email clients (Outlook particularly)
+- Fallback for email: `Georgia, 'Times New Roman', serif` for display; `Trebuchet MS, Arial, sans-serif` for body
+- For hero headline images in email — embed text as image to preserve Cormorant rendering
+
+### Social Media Graphics (Canva / Figma)
+- Install both fonts locally before creating templates
+- Social graphic hierarchy: one display line (Cormorant), one body line (Jost) maximum
+- Export at 2x for sharp rendering on all devices
+
+### Print / Packaging
+- Cormorant Garamond at display sizes (30pt+): increase slightly for print brightness
+- Jost body minimum 8pt for packaging labels
+- All print output at 300dpi minimum
+
+### AI Image Prompts
+When describing typography in AI image generation prompts:
+> *"elegant serif typography, Cormorant Garamond style, thin letterforms, refined feminine type, warm ivory background, espresso lettering"*
+
+---
+
+## PART 6 — MISS.PRINCESS TYPOGRAPHY
+
+Miss.Princess uses the base system with these differences:
+
+| Element | MVQUEEN | Miss.Princess |
+|---|---|---|
+| Display font | Cormorant Garamond 300 | Cormorant Garamond 400i OR Playfair Display 400i |
+| Letter-spacing (display) | Tight, elegant | Slightly looser — more airy |
+| Body font | Jost 300 | Jost 300 (same) |
+| Label style | Uppercase, tight spacing | Can use mixed case for a softer feel |
+| Overall energy | Composed, refined | Lighter, more romantic |
+
+---
+
+## QUICK REFERENCE — FONT LOAD CODE
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+```
+
+```css
+:root {
+  --font-display: 'Cormorant Garamond', 'Palatino Linotype', serif;
+  --font-body: 'Jost', 'Century Gothic', sans-serif;
+  --font-size-base: 16px;
+  --line-height-body: 1.7;
+  --letter-spacing-label: 0.15em;
+  --letter-spacing-brand: 0.18em;
+}
+```
+
+---
+
+*This file is the MVQUEEN typography technical reference. Pairs with color_system.md for palette, brand_rules.md for DO/DON'T, and visual_direction.md for composition. The emotional intent behind these choices lives in Brand Bible §16.*

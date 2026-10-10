@@ -48,6 +48,8 @@ BRAND_REFERENCE_ALLOWLIST = {
     "PRODUCTION_READINESS/UNIFIED_SYSTEM_STATUS_2026-09-24.md",
     "PRODUCTION_READINESS/LIVE_SHOPIFY_VERIFICATION_2026-09-25.md",
     "PRODUCTION_READINESS/test_catalog_release_planner.py",
+    "06_Tone_And_Voice/Brand_Content_Policy.json",
+    "06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md",
 }
 # These files intentionally contain write-operation signatures as audit rules or
 # negative test fixtures. They do not perform those production writes.
@@ -62,7 +64,7 @@ API_RE = re.compile(r"\b20\d{2}-(?:01|04|07|10)\b(?!-\d{2})")
 STORE_RE = re.compile(r"\b[a-z0-9][a-z0-9-]*\.myshopify\.com\b", re.I)
 TODO_RE = re.compile(r"\b(TODO|FIXME|HACK|XXX)\b")
 SECRET_RE = re.compile(r"(?i)\b(api[_-]?key|access[_-]?token|client[_-]?secret|password|private[_-]?key)\b\s*[:=]\s*['\"]([^'\"\n]{8,})")
-PLACEHOLDER_RE = re.compile(r"(?i)^(?:replace.*|change.*|example|placeholder|dummy|test|secret|token|<[^>]+>|\$\{[^}]+\})$")
+PLACEHOLDER_RE = re.compile(r"(?i)^(?:replace.*|change.*|example|placeholder|dummy|test|secret|token|<[^>]+>|\$\{[^}]+\}|\[REDACTED(?: [A-Z ]+)?\])$")
 WRITE_RE = re.compile(r"\b(requests\.(?:post|put|patch|delete)|productUpdate|productCreate|metafieldsSet|inventoryAdjustQuantities|inventorySetQuantities)\b")
 CONVERSION_TERMS = ("add to cart","shipping","returns","size guide","reviews","related products","you may also like","email","newsletter")
 
@@ -102,6 +104,13 @@ def main():
         if any(part in EXCLUDED for part in relp.parts):
             continue
         rel = relp.as_posix()
+        # Recovered prose and code extracts are reference data. Keep scanning
+        # their syntax and credentials, without treating historical examples
+        # as the current store configuration or an executable publishing path.
+        reference = rel in {
+            "31_AI_Knowledge_Base/brand_sources/README.md",
+            "31_AI_Knowledge_Base/brand_sources/manifest.json",
+        } or (rel.startswith("31_AI_Knowledge_Base/brand_sources/recovered/") and p.suffix == ".txt")
         digest = sha256(p)
         records.append({"path":rel,"sha256":digest,"size":p.stat().st_size})
         by_hash[digest].append(rel)
@@ -121,11 +130,12 @@ def main():
             except json.JSONDecodeError as e: add(findings,"BLOCKER","syntax",rel,f"Invalid JSON line {e.lineno}: {e.msg}")
 
         for m in API_RE.finditer(text):
-            if is_api_version_context(text, m):
+            if not reference and is_api_version_context(text, m):
                 api_versions[m.group(0)].add(rel)
-        for m in STORE_RE.finditer(text): stores[m.group(0).lower()].add(rel)
+        if not reference:
+            for m in STORE_RE.finditer(text): stores[m.group(0).lower()].add(rel)
         for m in TODO_RE.finditer(text): add(findings,"LOW","unfinished_work",rel,f"{m.group(1)} marker remains")
-        if rel not in BRAND_REFERENCE_ALLOWLIST:
+        if not reference and rel not in BRAND_REFERENCE_ALLOWLIST:
             for brand in LEGACY_BRANDS:
                 if brand.lower() in text.lower():
                     add(findings,"MEDIUM","brand_drift",rel,f"Legacy/supplier brand reference: {brand}","review")
@@ -135,6 +145,7 @@ def main():
                 add(findings,"CRITICAL","security",rel,f"Possible committed credential assignment for {m.group(1)}")
         if (
             rel not in WRITE_REFERENCE_ALLOWLIST
+            and not reference
             and WRITE_RE.search(text)
             and "dry_run" not in text.lower()
             and "MVQ_WRITE_ENABLED" not in text

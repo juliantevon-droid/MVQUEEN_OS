@@ -1,0 +1,791 @@
+# MVQUEEN_OS — Master System Index V2 (Auto-Generated)
+_System Sync Timestamp: 2026-06-13 02:45:51_
+_Content verification layer — automated execution logs included_
+
+---
+
+## 📁 00_Doctrine
+
+### 📄 00_Doctrine/EMPTY_FILES_LOG.md
+- **File Size:** 9426 bytes | **Word Count:** 848
+- **Data Preview:** `MVQUEEN_OS — Empty Files Log _Generated: Sun May 31 10:38:31 EDT 2026_ _These files exist but have no real content yet_  - .trash/2026-05-16.md (0 w...`
+
+### 📄 00_Doctrine/MASTER_INDEX.md
+- **File Size:** 75044 bytes | **Word Count:** 8640
+- **Data Preview:** `MVQUEEN_OS — Master Index _Generated: Sun May 31 10:31:28 EDT 2026_  ---   .obsidian   .obsidian/app.json - **Size:** 94 bytes - **Preview:** {...`
+
+### 📄 00_Doctrine/MASTER_INDEX_V2.md
+- **File Size:** 59696 bytes | **Word Count:** 7604
+- **Data Preview:** `MVQUEEN_OS — Master Index V2 _Generated: Sun May 31 10:38:31 EDT 2026_ _Content files only — system/config files excluded_  ---   .trash   .tra...`
+
+### 📄 00_Doctrine/README.md
+- **File Size:** 2658 bytes | **Word Count:** 348
+- **Data Preview:** `MVQUEEN Doctrine System   Purpose  The Doctrine System serves as the permanent constitutional intelligence layer of the MVQUEEN ecosystem.  It exi...`
+
+### 📄 00_Doctrine/agent_behavior_framework.md
+- **File Size:** 7826 bytes | **Word Count:** 1062
+- **Data Preview:** `MVQUEEN — Agent Behavior Framework  ---   Document Metadata   System Information - Document Name: Agent Behavior Framework - System Layer: AI Beh...`
+
+### 📄 00_Doctrine/ai_governance.md
+- **File Size:** 7208 bytes | **Word Count:** 1040
+- **Data Preview:** `MVQUEEN — AI Governance Framework  ---   Document Metadata   System Information - Document Name: AI Governance Framework - System Layer: AI Opera...`
+
+### 📄 00_Doctrine/brand_constitution.md
+- **File Size:** 11476 bytes | **Word Count:** 1846
+- **Data Preview:** `👑 MVQUEEN — Brand Constitution  The Non-Negotiables  ---   What This Document Is  The Brand Bible explains who MVQUEEN is. The Master Doctrine...`
+
+### 📄 00_Doctrine/commerce_intelligence_framework.md
+- **File Size:** 7781 bytes | **Word Count:** 1039
+- **Data Preview:** `MVQUEEN — Commerce Intelligence Framework  ---   Document Metadata   System Information - Document Name: Commerce Intelligence Framework - System...`
+
+### 📄 00_Doctrine/content_governance_framework.md
+- **File Size:** 8100 bytes | **Word Count:** 1125
+- **Data Preview:** `MVQUEEN — Content Governance Framework  ---   Document Metadata   System Information - Document Name: Content Governance Framework - System Layer...`
+
+### 📄 00_Doctrine/control_center_architecture.md
+- **File Size:** 7646 bytes | **Word Count:** 1027
+- **Data Preview:** `MVQUEEN — Control Center Architecture  ---   Document Metadata   System Information - Document Name: Control Center Architecture - System Layer:...`
+
+### 📄 00_Doctrine/customer_experience_philosophy.md
+- **File Size:** 6500 bytes | **Word Count:** 866
+- **Data Preview:** `MVQUEEN — Customer Experience Philosophy  ---   Document Metadata   System Information - Document Name: Customer Experience Philosophy - System L...`
+
+### 📄 00_Doctrine/ecosystem_architecture.md
+- **File Size:** 7238 bytes | **Word Count:** 979
+- **Data Preview:** `MVQUEEN — Ecosystem Architecture  ---   Document Metadata   System Information - Document Name: Ecosystem Architecture - System Layer: Infrastruc...`
+
+### 📄 00_Doctrine/ecosystem_security_framework.md
+- **File Size:** 6440 bytes | **Word Count:** 889
+- **Data Preview:** `MVQUEEN — Ecosystem Security Framework  ---   Document Metadata   System Information - Document Name: Ecosystem Security Framework - System Layer...`
+
+### 📄 00_Doctrine/emotional_intelligence_framework.md
+- **File Size:** 1790 bytes | **Word Count:** 270
+- **Data Preview:** `🏛️ MVQUEEN — Emotional Intelligence Framework  ---   Purpose  Define how emotional intelligence operates as a structural principle across every MV...`
+
+### 📄 00_Doctrine/enterprise_operating_philsophy.md
+- **File Size:** 7260 bytes | **Word Count:** 936
+- **Data Preview:** `MVQUEEN — Enterprise Operating Philosophy  ---   Document Metadata   System Information - Document Name: Enterprise Operating Philosophy - System...`
+
+### 📄 00_Doctrine/feminine_identity_framework.md
+- **File Size:** 2867 bytes | **Word Count:** 453
+- **Data Preview:** `🌸 MVQUEEN — Feminine Identity Framework  ---   Purpose  Define how MVQUEEN understands, honors, and serves feminine identity — ensuring the brand...`
+
+### 📄 00_Doctrine/luxury_philosophy.md
+- **File Size:** 1832 bytes | **Word Count:** 288
+- **Data Preview:** `🌸 MVQUEEN — Luxury Philosophy  ---   What Luxury Means at MVQUEEN  Luxury is not a price point. It is not exclusion. It is not a logo.  Luxury, at...`
+
+### 📄 00_Doctrine/master_doctrine.md
+- **File Size:** 9599 bytes | **Word Count:** 1561
+- **Data Preview:** `👑 MVQUEEN OS — Master Doctrine  The Law of the Operating System  ---   What This Document Is  This is not a brand description. The Brand Bible...`
+
+### 📄 00_Doctrine/master_workflow_system.md
+- **File Size:** 7678 bytes | **Word Count:** 1055
+- **Data Preview:** `MVQUEEN — Master Workflow System  ---   Document Metadata   System Information - Document Name: Master Workflow System - System Layer: Workflow E...`
+
+### 📄 00_Doctrine/memory_architecture.md
+- **File Size:** 7663 bytes | **Word Count:** 1034
+- **Data Preview:** `MVQUEEN — Memory Architecture  ---   Document Metadata   System Information - Document Name: Memory Architecture - System Layer: AI Memory Govern...`
+
+### 📄 00_Doctrine/orchestration_philosophy.md
+- **File Size:** 5800 bytes | **Word Count:** 787
+- **Data Preview:** `MVQUEEN — Orchestration Philosophy  ---   Document Metadata   System Information - Document Name: Orchestration Philosophy - System Layer: Operat...`
+
+### 📄 00_Doctrine/retrieval_framework.md
+- **File Size:** 7291 bytes | **Word Count:** 1005
+- **Data Preview:** `MVQUEEN — Retrieval Framework  ---   Document Metadata   System Information - Document Name: Retrieval Framework - System Layer: AI Memory Archit...`
+
+### 📄 00_Doctrine/scalability_framework.md
+- **File Size:** 7037 bytes | **Word Count:** 961
+- **Data Preview:** `MVQUEEN — Scalability Framework  ---   Document Metadata   System Information - Document Name: Scalability Framework - System Layer: Growth Archi...`
+
+### 📄 00_Doctrine/semantic_identity_system.md
+- **File Size:** 7304 bytes | **Word Count:** 1001
+- **Data Preview:** `MVQUEEN — Semantic Identity System  ---   Document Metadata   System Information - Document Name: Semantic Identity System - System Layer: Semant...`
+
+### 📄 00_Doctrine/seo_semantic_framework.md
+- **File Size:** 7719 bytes | **Word Count:** 1102
+- **Data Preview:** `MVQUEEN — SEO Semantic Framework  ---   Document Metadata   System Information - Document Name: SEO Semantic Framework - System Layer: Search Int...`
+
+### 📄 00_Doctrine/visual_identity_philosophy.md
+- **File Size:** 6740 bytes | **Word Count:** 928
+- **Data Preview:** `MVQUEEN — Visual Identity Philosophy  ---   Document Metadata   System Information - Document Name: Visual Identity Philosophy - System Layer: Vi...`
+
+## 📁 01_Brand_Strategy
+
+### 📄 01_Brand_Strategy/Brand_Bible.md
+- **File Size:** 289457 bytes | **Word Count:** 39342
+- **Data Preview:** `👑 MVQUEEN BRAND BIBLE  ---   1. Brand Overview MVQUEEN is a modern feminine luxury lifestyle brand created to make women feel elegant, confident, e...`
+
+### 📄 01_Brand_Strategy/Brand_Essence.md
+- **File Size:** 5692 bytes | **Word Count:** 907
+- **Data Preview:** `👑 MVQUEEN — Brand Essence  Five Framings of the Core Truth  ---   What This File Is  Brand essence is the irreducible core — what remains when...`
+
+### 📄 01_Brand_Strategy/Brand_Personality.md
+- **File Size:** 2072 bytes | **Word Count:** 300
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   8. Brand Personality  ---   8. Brand Personality  MVQUEEN’s personality is the emotional atmosphere behind the...`
+
+### 📄 01_Brand_Strategy/Brand_Positioning.md
+- **File Size:** 5244 bytes | **Word Count:** 754
+- **Data Preview:** `📍 MVQUEEN — Brand Positioning  ---   Purpose  The operational positioning document for MVQUEEN — the market position, competitive landscape, posit...`
+
+### 📄 01_Brand_Strategy/Brand_Story.md
+- **File Size:** 5961 bytes | **Word Count:** 973
+- **Data Preview:** `📖 MVQUEEN — Brand Story  ---   Purpose  The MVQUEEN brand story in four formats — each complete, each immediately deployable in its intended conte...`
+
+### 📄 01_Brand_Strategy/Brand_Values.md
+- **File Size:** 11473 bytes | **Word Count:** 1859
+- **Data Preview:** `👑 MVQUEEN — Brand Values  The 11 Principles That Govern Everything  ---   What This File Is  Values are not aspirations. They are decisions — m...`
+
+### 📄 01_Brand_Strategy/Elevator_Pitch.md
+- **File Size:** 4970 bytes | **Word Count:** 793
+- **Data Preview:** `👑 MVQUEEN — Elevator Pitch Suite  ---   Purpose of This File  Three pitches. Three contexts. Three lengths. None of them are the Brand Bible. None...`
+
+### 📄 01_Brand_Strategy/Emotional_Transformation.md
+- **File Size:** 1310 bytes | **Word Count:** 184
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   10. Emotional Transformation   Core Transformation  MVQUEEN is built around emotional transformation through...`
+
+### 📄 01_Brand_Strategy/Mission_And_Vision.md
+- **File Size:** 2181 bytes | **Word Count:** 347
+- **Data Preview:** `🎯 MVQUEEN — Mission & Vision  ---   Mission  To build a luxury feminine ecosystem that restores softness, confidence, and intentional femininity t...`
+
+### 📄 01_Brand_Strategy/README.md
+- **File Size:** 2903 bytes | **Word Count:** 409
+- **Data Preview:** `👑 MVQUEEN — Brand Strategy System   Purpose  The Brand Strategy System is the foundational intelligence architecture of the MVQUEEN ecosystem.  It...`
+
+### 📄 01_Brand_Strategy/Slogans.md
+- **File Size:** 3978 bytes | **Word Count:** 620
+- **Data Preview:** `👑 MVQUEEN — Slogan Suite  ---   What This File Is  Slogans are not taglines. They are not mission statements. A slogan is the sentence a woman rem...`
+
+### 📄 01_Brand_Strategy/Taglines.md
+- **File Size:** 4179 bytes | **Word Count:** 662
+- **Data Preview:** `👑 MVQUEEN — Tagline Suite  ---   Slogans vs. Taglines — The Distinction  These are not the same file with different names.  A **slogan** campaigns...`
+
+### 📄 01_Brand_Strategy/USP.md
+- **File Size:** 6207 bytes | **Word Count:** 1009
+- **Data Preview:** `👑 MVQUEEN — Unique Selling Proposition  ---   What Makes MVQUEEN Different  Most brands sell you a product. Some brands sell you a lifestyle. MVQU...`
+
+### 📄 01_Brand_Strategy/brand_manifesto.md
+- **File Size:** 3568 bytes | **Word Count:** 565
+- **Data Preview:** `👑 THE MVQUEEN DECLARATION  ---   This Is Not a Brand Story.  This Is a Philosophy.  ---  MVQUEEN was not built to sell products.  It was built t...`
+
+### 📄 01_Brand_Strategy/brand_philosophy.md
+- **File Size:** 2122 bytes | **Word Count:** 341
+- **Data Preview:** `📌 MVQUEEN — Brand Philosophy  ---   The Core Conviction  MVQUEEN was built on a single conviction:  **Softness is strength. Femininity is presence...`
+
+### ⚙️ 01_Brand_Strategy/templates.py
+- **System Type:** Executable / Configuration Asset
+- **File Size:** 5781 bytes
+
+## 📁 02_Brand_Identity
+
+### 📄 02_Brand_Identity/README.md
+- **File Size:** 2853 bytes | **Word Count:** 402
+- **Data Preview:** `🎨 MVQUEEN — Brand Identity System   Purpose  The Brand Identity System is the visual, linguistic, and sensory translation of MVQUEEN's emotional i...`
+
+### 📄 02_Brand_Identity/brand_identity.md
+- **File Size:** 5402 bytes | **Word Count:** 745
+- **Data Preview:** `👑 MVQUEEN — BRAND IDENTITY SYSTEM *A visual, emotional, and aesthetic translation of the MVQUEEN Brand Bible*  ---   1. Identity Overview MVQUEEN’s...`
+
+### 📄 02_Brand_Identity/brand_rules.md
+- **File Size:** 3891 bytes | **Word Count:** 634
+- **Data Preview:** `👑 MVQUEEN — Brand Rules  The DO / DON'T Reference  Every brand decision — visual, verbal, experiential — produces either something that builds MV...`
+
+### 📄 02_Brand_Identity/brand_vocabulary.md
+- **File Size:** 12728 bytes | **Word Count:** 1722
+- **Data Preview:** `💬 MVQUEEN BRAND VOCABULARY   *The complete linguistic, emotional, semantic, and identity‑shaping vocabulary system of the MVQUEEN brand*  ---   1....`
+
+### 📄 02_Brand_Identity/color_psychology.md
+- **File Size:** 9503 bytes | **Word Count:** 1319
+- **Data Preview:** `🎨 MVQUEEN COLOR PSYCHOLOGY   *A comprehensive emotional, psychological, cultural, and luxury‑behavior analysis of MVQUEEN’s feminine palette*  ---...`
+
+### 📄 02_Brand_Identity/color_system.md
+- **File Size:** 10063 bytes | **Word Count:** 1577
+- **Data Preview:** `👑 MVQUEEN — Color System  The Technical Reference  ---   What This File Is  This is not the color philosophy. That lives in the Brand Bible §18...`
+
+### 📄 02_Brand_Identity/logo_concepts.md
+- **File Size:** 6953 bytes | **Word Count:** 1021
+- **Data Preview:** `👑 MVQUEEN LOGO CONCEPTS   *The symbolic, emotional, and structural foundation of MVQUEEN’s luxury feminine mark*  ---   1. Purpose of the Logo Conc...`
+
+### 📄 02_Brand_Identity/logo_guidelines.md
+- **File Size:** 9395 bytes | **Word Count:** 1378
+- **Data Preview:** `👑 MVQUEEN LOGO GUIDELINES — UPGRADED EDITION   *The complete emotional, symbolic, technical, behavioral, and global‑protection system for MVQUEEN’s...`
+
+### 📄 02_Brand_Identity/packaging_identity.md
+- **File Size:** 7304 bytes | **Word Count:** 1058
+- **Data Preview:** `🎁 MVQUEEN PACKAGING IDENTITY   *The complete emotional, structural, sensory, and luxury‑grade blueprint for MVQUEEN’s physical brand expression*  --...`
+
+### 📄 02_Brand_Identity/packaging_vision.md
+- **File Size:** 7154 bytes | **Word Count:** 1012
+- **Data Preview:** `🎀 MVQUEEN PACKAGING VISION   *The long‑term creative, emotional, sensory, and luxury‑architecture vision for MVQUEEN’s global packaging ecosystem*...`
+
+### 📄 02_Brand_Identity/photography_direction.md
+- **File Size:** 7650 bytes | **Word Count:** 1081
+- **Data Preview:** `📸 MVQUEEN PHOTOGRAPHY DIRECTION   *The complete emotional, cinematic, atmospheric, and technical blueprint for MVQUEEN’s luxury feminine photography...`
+
+### 📄 02_Brand_Identity/typography_system.md
+- **File Size:** 4350 bytes | **Word Count:** 637
+- **Data Preview:** `👑 MVQUEEN — Typography System  The Type Reference  ---   What This File Is  This is not visual philosophy. That lives in the Brand Bible §16. T...`
+
+### 📄 02_Brand_Identity/videography_direction.md
+- **File Size:** 7741 bytes | **Word Count:** 1105
+- **Data Preview:** `🎥 MVQUEEN VIDEOGRAPHY DIRECTION   *The complete cinematic, emotional, atmospheric, and technical blueprint for MVQUEEN’s luxury feminine motion iden...`
+
+### 📄 02_Brand_Identity/visual_direction.md
+- **File Size:** 5982 bytes | **Word Count:** 857
+- **Data Preview:** `🌸 MVQUEEN VISUAL DIRECTION   *The complete emotional, cinematic, atmospheric, and aesthetic blueprint of MVQUEEN’s luxury feminine universe*  ---...`
+
+### 📄 02_Brand_Identity/visual_identity.md
+- **File Size:** 2281 bytes | **Word Count:** 357
+- **Data Preview:** `👑 MVQUEEN Visual Identity System  ---   Brand Visual Philosophy  MVQUEEN visuals should feel emotionally immersive, feminine, elegant, calming, ref...`
+
+## 📁 03_Customer_Psychology
+
+### 📄 03_Customer_Psychology/Audience_Segments.md
+- **File Size:** 6667 bytes | **Word Count:** 887
+- **Data Preview:** `🎀 MVQUEEN AUDIENCE SEGMENTS   *The complete segmentation system that organizes MVQUEEN’s audience by emotional identity, aesthetic world, behavioral...`
+
+### 📄 03_Customer_Psychology/Buying_Psychology.md
+- **File Size:** 5253 bytes | **Word Count:** 763
+- **Data Preview:** `🛍️ MVQUEEN BUYING PSYCHOLOGY   *The complete emotional, identity‑based, aesthetic, and behavioral psychology behind how MVQUEEN customers make purch...`
+
+### 📄 03_Customer_Psychology/Customer_Personas.md
+- **File Size:** 6546 bytes | **Word Count:** 868
+- **Data Preview:** `👑 MVQUEEN CUSTOMER PERSONAS   *The complete identity‑based, emotional, aesthetic, and behavioral personas that represent MVQUEEN’s core customer arc...`
+
+### 📄 03_Customer_Psychology/Customer_Transformation.md
+- **File Size:** 5778 bytes | **Word Count:** 816
+- **Data Preview:** `🌹 MVQUEEN CUSTOMER TRANSFORMATION   *The complete emotional, identity‑based, aesthetic, and lifestyle transformation journey MVQUEEN customers exper...`
+
+### 📄 03_Customer_Psychology/Identity_Aspirations.md
+- **File Size:** 6123 bytes | **Word Count:** 890
+- **Data Preview:** `🌸 MVQUEEN IDENTITY ASPIRATIONS   *The complete emotional, psychological, aesthetic, and lifestyle identity evolution MVQUEEN customers desire and mo...`
+
+### 📄 03_Customer_Psychology/Luxury_Buyer_Behavior.md
+- **File Size:** 5423 bytes | **Word Count:** 795
+- **Data Preview:** `💎 MVQUEEN LUXURY BUYER BEHAVIOR   *The complete psychological, emotional, aesthetic, and identity‑based behavior patterns of luxury feminine consume...`
+
+### 📄 03_Customer_Psychology/Market_Research.md
+- **File Size:** 7190 bytes | **Word Count:** 995
+- **Data Preview:** `📊 MVQUEEN MARKET RESEARCH   *The complete emotional, psychological, aesthetic, and behavioral research framework for understanding the feminine luxu...`
+
+### 📄 03_Customer_Psychology/README.md
+- **File Size:** 3139 bytes | **Word Count:** 427
+- **Data Preview:** `🧠 MVQUEEN — Customer Psychology System   Purpose  The Customer Psychology System is the behavioral and emotional intelligence architecture governi...`
+
+### 📄 03_Customer_Psychology/Shopping_Habits.md
+- **File Size:** 6398 bytes | **Word Count:** 928
+- **Data Preview:** `🛒 MVQUEEN SHOPPING HABITS   *The complete emotional, behavioral, aesthetic, and identity‑based shopping patterns of MVQUEEN’s feminine luxury consum...`
+
+### 📄 03_Customer_Psychology/Social_Behavior.md
+- **File Size:** 6388 bytes | **Word Count:** 912
+- **Data Preview:** `💞 MVQUEEN SOCIAL BEHAVIOR   *The complete emotional, psychological, aesthetic, and identity‑based social behavior patterns of MVQUEEN’s feminine lux...`
+
+### 📄 03_Customer_Psychology/Trend_Analysis.md
+- **File Size:** 6506 bytes | **Word Count:** 921
+- **Data Preview:** `📈 MVQUEEN TREND ANALYSIS   *The complete system for identifying, interpreting, and leveraging emotional, aesthetic, cultural, and consumer trends wi...`
+
+### 📄 03_Customer_Psychology/behavioral_segmentation.md
+- **File Size:** 5416 bytes | **Word Count:** 765
+- **Data Preview:** `🧩 MVQUEEN BEHAVIORAL SEGMENTATION   *The complete behavioral, emotional, aesthetic, and identity‑based segmentation system for MVQUEEN customers*  -...`
+
+### 📄 03_Customer_Psychology/buyer_psychology.md
+- **File Size:** 5772 bytes | **Word Count:** 809
+- **Data Preview:** `🧠 MVQUEEN BUYER PSYCHOLOGY   *The complete emotional, cognitive, behavioral, and identity‑based psychology behind MVQUEEN purchasing decisions*  ---...`
+
+### 📄 03_Customer_Psychology/buying_triggers.md
+- **File Size:** 5762 bytes | **Word Count:** 825
+- **Data Preview:** `🔥 MVQUEEN BUYING TRIGGERS   *The complete emotional, psychological, aesthetic, and identity‑based triggers that activate desire and drive MVQUEEN cu...`
+
+### 📄 03_Customer_Psychology/customer_avatars.md
+- **File Size:** 7178 bytes | **Word Count:** 1019
+- **Data Preview:** `👩‍💖 MVQUEEN CUSTOMER AVATARS   *The complete psychological, emotional, behavioral, and identity‑based profiles of MVQUEEN’s core customers*  ---...`
+
+### 📄 03_Customer_Psychology/customer_objections.md
+- **File Size:** 10876 bytes | **Word Count:** 1771
+- **Data Preview:** `👑 MVQUEEN — Customer Objections & Rebuttals  The Conversion Reference  ---   What This File Is  Every woman who visits MVQUEEN and doesn't buy...`
+
+### 📄 03_Customer_Psychology/emotional_drivers.md
+- **File Size:** 5499 bytes | **Word Count:** 797
+- **Data Preview:** `💗 MVQUEEN EMOTIONAL DRIVERS   *The complete emotional, psychological, and identity‑based forces that shape MVQUEEN customer desire, loyalty, and pur...`
+
+### 📄 03_Customer_Psychology/identity_drivers.md
+- **File Size:** 5773 bytes | **Word Count:** 839
+- **Data Preview:** `🌸 MVQUEEN IDENTITY DRIVERS   *The complete psychological, emotional, and aspirational forces that shape feminine identity and drive MVQUEEN customer...`
+
+### 📄 03_Customer_Psychology/lifestyle_aspirations.md
+- **File Size:** 5531 bytes | **Word Count:** 798
+- **Data Preview:** `🌷 MVQUEEN LIFESTYLE ASPIRATIONS   *The complete emotional, aesthetic, and identity‑based lifestyle blueprint that MVQUEEN customers dream of, move t...`
+
+### 📄 03_Customer_Psychology/luxury_consumer_behavior.md
+- **File Size:** 6541 bytes | **Word Count:** 946
+- **Data Preview:** `👑 MVQUEEN LUXURY CONSUMER BEHAVIOR   *The complete psychological, emotional, identity‑based, and behavioral blueprint of how feminine luxury consume...`
+
+### 📄 03_Customer_Psychology/social_validation.md
+- **File Size:** 6173 bytes | **Word Count:** 860
+- **Data Preview:** `👥 MVQUEEN SOCIAL VALIDATION   *The complete psychological, emotional, and identity‑based system of how feminine luxury consumers use social proof to...`
+
+### 📄 03_Customer_Psychology/trust_building.md
+- **File Size:** 13473 bytes | **Word Count:** 2153
+- **Data Preview:** `👑 MVQUEEN — Trust Building  The Mechanics of Earned Belief  ---   What This File Is  Trust is not a feeling. It is a result.  It is built throu...`
+
+## 📁 04_Products
+
+### 📄 04_Products/Accessories.md
+- **File Size:** 9318 bytes | **Word Count:** 1300
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Accessible Luxury Positioning  MVQUEEN approaches luxury through emotional experience rather than exclusivity a...`
+
+### 📄 04_Products/Beauty_Products.md
+- **File Size:** 10047 bytes | **Word Count:** 1546
+- **Data Preview:** `👑 MVQUEEN — Beauty Products  The Beauty Category Reference  ---   What This File Is  This is the beauty category strategy document — distinct f...`
+
+### 📄 04_Products/Collection_Structure.md
+- **File Size:** 10252 bytes | **Word Count:** 1544
+- **Data Preview:** `👑 MVQUEEN — Collection Structure  The Architecture of the Catalog  ---   What This File Is  A collection is not a product category. It is a wor...`
+
+### 📄 04_Products/Competitor_Products.md
+- **File Size:** 4475 bytes | **Word Count:** 611
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Accessible Luxury Positioning  MVQUEEN approaches luxury through emotional experience rather than exclusivity a...`
+
+### 📄 04_Products/Cross-Sell Systems.md
+- **File Size:** 2902 bytes | **Word Count:** 443
+- **Data Preview:** `🔗 MVQUEEN — Cross-Sell Systems  ---   Purpose  Define the strategic cross-sell architecture for MVQUEEN — ensuring every product recommendation fe...`
+
+### 📄 04_Products/Fashion_Products.md
+- **File Size:** 3565 bytes | **Word Count:** 553
+- **Data Preview:** `👗 MVQUEEN — Fashion Products  ---   Purpose  Define the fashion product strategy, aesthetic standards, sourcing philosophy, and presentation frame...`
+
+### 📄 04_Products/Hair_Products.md
+- **File Size:** 3300 bytes | **Word Count:** 506
+- **Data Preview:** `💆 MVQUEEN — Hair Products  ---   Purpose  Define the hair product strategy, formulation philosophy, category positioning, and presentation standar...`
+
+### 📄 04_Products/Packaging_Ideas.md
+- **File Size:** 3951 bytes | **Word Count:** 529
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   24. Sensory Branding Architecture   Sensory Philosophy  MVQUEEN is not designed to function as only a visual...`
+
+### 📄 04_Products/Pricing_Strategy.md
+- **File Size:** 10175 bytes | **Word Count:** 1566
+- **Data Preview:** `👑 MVQUEEN — Pricing Strategy  The Price Architecture  ---   What This File Is  Pricing is a positioning decision before it is a financial one....`
+
+### 📄 04_Products/Product Photography Standards.md
+- **File Size:** 3694 bytes | **Word Count:** 480
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Photography Direction  Photography should feel: - emotionally immersive - intimate - feminine - atmospheric - c...`
+
+### 📄 04_Products/Product SEO.md
+- **File Size:** 7626 bytes | **Word Count:** 1088
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   20. Content Pillars   Content Philosophy  MVQUEEN content is not created simply to generate engagement.  It i...`
+
+### 📄 04_Products/Product_Catalog.md
+- **File Size:** 5558 bytes | **Word Count:** 780
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   19. Product Ecosystem   Product Ecosystem Philosophy  MVQUEEN products are not designed to exist as isolated...`
+
+### 📄 04_Products/Product_Framework.md
+- **File Size:** 10504 bytes | **Word Count:** 1646
+- **Data Preview:** `👑 MVQUEEN — Product Framework  How Products Are Built  ---   What This File Is  This is not the product catalog (what exists). This is not the...`
+
+### 📄 04_Products/Product_Naming_System.md
+- **File Size:** 9885 bytes | **Word Count:** 1639
+- **Data Preview:** `👑 MVQUEEN — Product Naming System  Naming Conventions, Formulas & Examples  ---   What This File Is  Product names in MVQUEEN are not labels. T...`
+
+### 📄 04_Products/Product_Templates.md
+- **File Size:** 7081 bytes | **Word Count:** 979
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   19. Product Ecosystem   Product Ecosystem Philosophy  MVQUEEN products are not designed to exist as isolated...`
+
+### 📄 04_Products/README.md
+- **File Size:** 217 bytes | **Word Count:** 35
+- **Data Preview:** `04_Products   Overview This module is part of the MVQUEEN_OS system.   Purpose (To be defined)   Status Placeholder file - structure initializ...`
+
+### 📄 04_Products/SKU_Systems.md
+- **File Size:** 10101 bytes | **Word Count:** 1780
+- **Data Preview:** `👑 MVQUEEN — SKU Systems  The Inventory & Product Code Reference  ---   What This File Is  SKUs (Stock Keeping Units) are the internal language...`
+
+### 📄 04_Products/Suppliers & Research.md
+- **File Size:** 6566 bytes | **Word Count:** 865
+- **Data Preview:** `🧪 MVQUEEN SUPPLIERS & RESEARCH   *The complete sourcing, quality assurance, ethical standards, and product development research system for MVQUEEN’s...`
+
+### 📄 04_Products/Trend_Products.md
+- **File Size:** 3878 bytes | **Word Count:** 509
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   27. Brand Evolution, Future Vision & Legacy Architecture   Legacy Philosophy  MVQUEEN is not designed to beco...`
+
+### 📄 04_Products/Upsell Systems.md
+- **File Size:** 2311 bytes | **Word Count:** 308
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   23. Shopify Experience Architecture   Experience Philosophy  The MVQUEEN ecommerce experience should never fe...`
+
+### 📄 04_Products/inventory_systems.md
+- **File Size:** 7222 bytes | **Word Count:** 1008
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   19. Product Ecosystem   Product Ecosystem Philosophy  MVQUEEN products are not designed to exist as isolated...`
+
+### 📄 04_Products/product_categories.md
+- **File Size:** 5866 bytes | **Word Count:** 804
+- **Data Preview:** `🛍️ MVQUEEN PRODUCT CATEGORIES   *The complete strategic, emotional, aesthetic, and functional categorization system for all MVQUEEN products*  ---...`
+
+### 📄 04_Products/product_faqs.md
+- **File Size:** 5783 bytes | **Word Count:** 850
+- **Data Preview:** `❓ MVQUEEN PRODUCT FAQS   *The complete luxury‑grade, emotionally intelligent, customer‑centered FAQ system for all MVQUEEN products*  ---   1. Purp...`
+
+## 📁 05_SEO_And_Content
+
+### 📄 05_SEO_And_Content/Article_Structures.md
+- **File Size:** 2543 bytes | **Word Count:** 413
+- **Data Preview:** `📐 MVQUEEN — Article Structures  ---   Purpose  A library of proven article structure frameworks for different content types — so every article has...`
+
+### 📄 05_SEO_And_Content/Blog_Strategy.md
+- **File Size:** 10781 bytes | **Word Count:** 1674
+- **Data Preview:** `👑 MVQUEEN — Blog Strategy  The Editorial Content Framework  ---   What This File Is  The MVQUEEN blog is not a content marketing tactic. It is...`
+
+### 📄 05_SEO_And_Content/Blog_Templates.md
+- **File Size:** 489 bytes | **Word Count:** 71
+- **Data Preview:** `📋 MVQUEEN — Blog Templates  ---   Master Blog Article Template  ```markdown --- TITLE: [H1 — keyword first, under 65 characters, brand voice] META...`
+
+### 📄 05_SEO_And_Content/Competitor SEO.md
+- **File Size:** 715 bytes | **Word Count:** 91
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Competitive Differentiation  MVQUEEN differentiates itself through emotional depth and feminine identity positi...`
+
+### 📄 05_SEO_And_Content/Content_Calendar.md
+- **File Size:** 3662 bytes | **Word Count:** 593
+- **Data Preview:** `📅 MVQUEEN — Content Calendar  ---   Purpose  A master planning system for all content across every platform — ensuring consistent output, strategi...`
+
+### 📄 05_SEO_And_Content/EEAT_Optimization.md
+- **File Size:** 2722 bytes | **Word Count:** 405
+- **Data Preview:** `⭐ MVQUEEN — EEAT Optimization  ---   Purpose  Build MVQUEEN's EEAT signals (Experience, Expertise, Authoritativeness, Trustworthiness) across all...`
+
+### 📄 05_SEO_And_Content/Evergreen Content.md
+- **File Size:** 3116 bytes | **Word Count:** 427
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Emotional Legacy  MVQUEEN was never intended to become just another ecommerce brand.  It was created from imagi...`
+
+### 📄 05_SEO_And_Content/FAQ_Library.md
+- **File Size:** 4214 bytes | **Word Count:** 696
+- **Data Preview:** `❓ MVQUEEN — FAQ Library  ---   Purpose  A master library of frequently asked questions — organized by category, written in MVQUEEN voice, ready to...`
+
+### 📄 05_SEO_And_Content/Instagram_SEO.md
+- **File Size:** 3235 bytes | **Word Count:** 500
+- **Data Preview:** `📸 MVQUEEN — Instagram SEO  ---   Purpose  Optimize MVQUEEN's Instagram presence for discovery — ensuring the right women find the brand through se...`
+
+### 📄 05_SEO_And_Content/Internal_Linking.md
+- **File Size:** 2726 bytes | **Word Count:** 423
+- **Data Preview:** `🔗 MVQUEEN — Internal Linking Strategy  ---   Purpose  Build a strategic internal linking architecture across the MVQUEEN website — improving SEO a...`
+
+### 📄 05_SEO_And_Content/Keyword_Research.md
+- **File Size:** 10093 bytes | **Word Count:** 1656
+- **Data Preview:** `👑 MVQUEEN — Keyword Research  The Search Intelligence Reference  ---   What This File Is  This is the operational keyword document — the actual...`
+
+### 📄 05_SEO_And_Content/Long_Tail_Keywords.md
+- **File Size:** 1697 bytes | **Word Count:** 242
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   15. Brand Vocabulary   Vocabulary Philosophy  MVQUEEN’s vocabulary system exists to create emotional consiste...`
+
+### 📄 05_SEO_And_Content/Metadata_Templates.md
+- **File Size:** 2484 bytes | **Word Count:** 359
+- **Data Preview:** `🏷️ MVQUEEN — Metadata Templates  ---   Purpose  A library of proven metadata formulas and ready-to-customize templates for every page type on the...`
+
+### 📄 05_SEO_And_Content/Pinterest_SEO.md
+- **File Size:** 4028 bytes | **Word Count:** 620
+- **Data Preview:** `📌 MVQUEEN — Pinterest SEO  ---   Purpose  Build MVQUEEN's Pinterest presence as a long-term organic traffic engine — driving qualified, high-inten...`
+
+### 📄 05_SEO_And_Content/Programmatic_SEO.md
+- **File Size:** 2915 bytes | **Word Count:** 381
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   27. Brand Evolution, Future Vision & Legacy Architecture   Legacy Philosophy  MVQUEEN is not designed to beco...`
+
+### 📄 05_SEO_And_Content/README.md
+- **File Size:** 224 bytes | **Word Count:** 35
+- **Data Preview:** `05_SEO_And_Content   Overview This module is part of the MVQUEEN_OS system.   Purpose (To be defined)   Status Placeholder file - structure in...`
+
+### 📄 05_SEO_And_Content/SEO_Clusters.md
+- **File Size:** 7626 bytes | **Word Count:** 1088
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   20. Content Pillars   Content Philosophy  MVQUEEN content is not created simply to generate engagement.  It i...`
+
+### 📄 05_SEO_And_Content/SEO_Strategy.md
+- **File Size:** 12097 bytes | **Word Count:** 1877
+- **Data Preview:** `👑 MVQUEEN — SEO Strategy  The Search Architecture  ---   What This File Is  SEO for MVQUEEN is not a technical checklist. It is a visibility st...`
+
+### 📄 05_SEO_And_Content/Search_Intent_Mapping.md
+- **File Size:** 3347 bytes | **Word Count:** 447
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   12. Target Audience   Audience Overview  MVQUEEN is created for emotionally aware, aesthetically driven women...`
+
+### 📄 05_SEO_And_Content/Semantic SEO.md
+- **File Size:** 1697 bytes | **Word Count:** 242
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   15. Brand Vocabulary   Vocabulary Philosophy  MVQUEEN’s vocabulary system exists to create emotional consiste...`
+
+### 📄 05_SEO_And_Content/Short_Tail_Keywords.md
+- **File Size:** 6557 bytes | **Word Count:** 971
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   2. Brand Meaning The name MVQUEEN stands for: “Most Valuable Queen.”  But beyond the name itself, MVQUEEN repre...`
+
+### 📄 05_SEO_And_Content/TikTok_SEO.md
+- **File Size:** 2904 bytes | **Word Count:** 466
+- **Data Preview:** `🎯 MVQUEEN — TikTok SEO  ---   Purpose  Optimize MVQUEEN's TikTok content for discovery — ensuring videos reach the right audience through strategi...`
+
+### 📄 05_SEO_And_Content/Tiktok_seo.html
+- **File Size:** 40242 bytes | **Word Count:** 3443
+- **Data Preview:** `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>MVQUEEN —...`
+
+### 📄 05_SEO_And_Content/Trend_SEO.md
+- **File Size:** 3878 bytes | **Word Count:** 509
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   27. Brand Evolution, Future Vision & Legacy Architecture   Legacy Philosophy  MVQUEEN is not designed to beco...`
+
+### 📄 05_SEO_And_Content/Trend_Tracking.md
+- **File Size:** 3275 bytes | **Word Count:** 436
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Community Over Consumers  MVQUEEN does not view women as transactions or numbers.  The brand aims to create a g...`
+
+### 📄 05_SEO_And_Content/Viral_Topics.md
+- **File Size:** 2557 bytes | **Word Count:** 407
+- **Data Preview:** `🔬 MVQUEEN — Viral Topics Research  ---   Purpose  Identify and track topics, conversations, and cultural moments that MVQUEEN can participate in —...`
+
+### 📄 05_SEO_And_Content/YouTube SEO.md
+- **File Size:** 589 bytes | **Word Count:** 101
+- **Data Preview:** `YouTube SEO Standards  Every video is optimized for search:  | Element | Standard | |---------|----------| | Title | Primary keyword first, brand v...`
+
+## 📁 06_Tone_And_Voice
+
+### 📄 06_Tone_And_Voice/Ad_Copy_Voice.md
+- **File Size:** 4503 bytes | **Word Count:** 774
+- **Data Preview:** `📣 MVQUEEN — Ad Copy Voice Guide  ---   Ads Are a First Impression  Most women who see a MVQUEEN ad have never heard of the brand. In 2-3 seconds,...`
+
+### 📄 06_Tone_And_Voice/Brand_Messaging.md
+- **File Size:** 10331 bytes | **Word Count:** 1668
+- **Data Preview:** `👑 MVQUEEN — Brand Messaging  The Messaging Framework  ---   What This File Is  Brand messaging is not brand voice. Voice is how we sound. Messa...`
+
+### 📄 06_Tone_And_Voice/CTA_Library.md
+- **File Size:** 4698 bytes | **Word Count:** 836
+- **Data Preview:** `👑 MVQUEEN — CTA Library  ---   CTA Philosophy  MVQUEEN CTAs feel like invitations — not commands.  The difference between a CTA that converts and...`
+
+### 📄 06_Tone_And_Voice/Email_Voice.md
+- **File Size:** 5333 bytes | **Word Count:** 902
+- **Data Preview:** `📧 MVQUEEN — Email Voice Guide  ---   How MVQUEEN Sounds in Email  Email is the most intimate channel MVQUEEN has. It lands in her personal space —...`
+
+### 📄 06_Tone_And_Voice/Emotional_Language.md
+- **File Size:** 2333 bytes | **Word Count:** 344
+- **Data Preview:** `💫 MVQUEEN — Emotional Language Guide  ---   Purpose  Define how MVQUEEN uses emotional language with precision and integrity — naming real feeling...`
+
+### 📄 06_Tone_And_Voice/Example_Copy.md
+- **File Size:** 8450 bytes | **Word Count:** 1385
+- **Data Preview:** `👑 MVQUEEN — Example Copy Library  Real Copy Across Every Format  ---   What This File Is  This is the proof of voice. Not a guide to writing it...`
+
+### 📄 06_Tone_And_Voice/Feminine_Language.md
+- **File Size:** 2707 bytes | **Word Count:** 377
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Femininity Without Restriction  MVQUEEN rejects the idea that femininity has only one form.  A woman can be: -...`
+
+### 📄 06_Tone_And_Voice/Forbidden_Words.md
+- **File Size:** 5909 bytes | **Word Count:** 1026
+- **Data Preview:** `🚫 MVQUEEN — Forbidden Words & Phrases  ---   Why This Document Exists  Words carry energy. The wrong word in MVQUEEN copy — no matter how good the...`
+
+### 📄 06_Tone_And_Voice/Headline Frameworks.md
+- **File Size:** 3959 bytes | **Word Count:** 665
+- **Data Preview:** `🗞️ MVQUEEN — Headline Frameworks  ---   What Makes a MVQUEEN Headline  A MVQUEEN headline stops her without tricking her. It creates immediate des...`
+
+### 📄 06_Tone_And_Voice/Hook Systems.md
+- **File Size:** 4863 bytes | **Word Count:** 833
+- **Data Preview:** `🪝 MVQUEEN — Hook Systems  ---   What a Hook Does  A hook is the first thing she encounters — and it decides everything.  If the hook lands: she re...`
+
+### 📄 06_Tone_And_Voice/Hook_Systems.md
+- **File Size:** 6546 bytes | **Word Count:** 1093
+- **Data Preview:** `🪝 MVQUEEN — Hook Systems  ---   What Makes a Hook Work  A hook has one job: stop her mid-scroll and make her feel something in under 3 seconds.  N...`
+
+### 📄 06_Tone_And_Voice/Luxury_Language.md
+- **File Size:** 2460 bytes | **Word Count:** 353
+- **Data Preview:** `💎 MVQUEEN — Luxury Language Guide  ---   The Problem With "Luxury"  The word "luxury" has been used so many times it means nothing. Every brand fr...`
+
+### 📄 06_Tone_And_Voice/Messaging_Pillars.md
+- **File Size:** 3149 bytes | **Word Count:** 462
+- **Data Preview:** `🏛️ MVQUEEN — Messaging Pillars  ---   Purpose  Define the six core messaging pillars that govern all MVQUEEN communication — ensuring every piece...`
+
+### 📄 06_Tone_And_Voice/Persuasion Frameworks.md
+- **File Size:** 3254 bytes | **Word Count:** 442
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   21. Customer Psychology & Experience Architecture   Customer Experience Philosophy  MVQUEEN is not designed t...`
+
+### 📄 06_Tone_And_Voice/Platform_Voice_Guides.md
+- **File Size:** 8900 bytes | **Word Count:** 1385
+- **Data Preview:** `🎙️ MVQUEEN — Platform Voice Guides  ---   How to Use This Document  Each platform has its own native language — its own pace, intimacy level, and...`
+
+### 📄 06_Tone_And_Voice/Product_Description_Prompts.md
+- **File Size:** 6121 bytes | **Word Count:** 931
+- **Data Preview:** `👑 MVQUEEN — Product Description Prompts  The Copy Generation System  Pull a prompt. Fill the brackets. Run. Review against Voice_Consistency_Rule...`
+
+### 📄 06_Tone_And_Voice/Product_Description_Voice.md
+- **File Size:** 6262 bytes | **Word Count:** 1004
+- **Data Preview:** `👑 MVQUEEN — Product Description Voice  Formulas, Frameworks & Real Examples  ---   What This File Is  Product descriptions are the most-read co...`
+
+### 📄 06_Tone_And_Voice/README.md
+- **File Size:** 223 bytes | **Word Count:** 35
+- **Data Preview:** `02_Tone_And_Voice   Overview This module is part of the MVQUEEN_OS system.   Purpose (To be defined)   Status Placeholder file - structure ini...`
+
+### 📄 06_Tone_And_Voice/SEO Voice.md
+- **File Size:** 1208 bytes | **Word Count:** 169
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   14. Tone & Voice   Voice Philosophy  MVQUEEN does not simply communicate information.  It creates emotional a...`
+
+### 📄 06_Tone_And_Voice/SMS_Voice.md
+- **File Size:** 2814 bytes | **Word Count:** 492
+- **Data Preview:** `📱 MVQUEEN — SMS Voice Guide  ---   SMS Is Different  SMS is the most direct channel MVQUEEN has. No algorithm. No competition for attention. It la...`
+
+### 📄 06_Tone_And_Voice/Social_Voice.md
+- **File Size:** 4105 bytes | **Word Count:** 651
+- **Data Preview:** `🗣️ MVQUEEN — Social Voice Guide  ---   Purpose  Define exactly how MVQUEEN speaks on every social platform — with real examples of right and wrong...`
+
+### 📄 06_Tone_And_Voice/Storytelling Frameworks.md
+- **File Size:** 2570 bytes | **Word Count:** 327
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Emotional Storytelling & Community  Storytelling within MVQUEEN should emotionally reinforce: - emotional softn...`
+
+### 📄 06_Tone_And_Voice/Tone_Guide.md
+- **File Size:** 5005 bytes | **Word Count:** 785
+- **Data Preview:** `👑 MVQUEEN — Tone & Voice System  ---   The Voice of MVQUEEN  MVQUEEN speaks like a woman who has arrived.  Not loudly. Not desperately. Not with u...`
+
+### 📄 06_Tone_And_Voice/Voice_Consistency_Rules.md
+- **File Size:** 5596 bytes | **Word Count:** 945
+- **Data Preview:** `👑 MVQUEEN — Voice Consistency Rules  The Quick-Reference Card  ---   What This File Is  This is not the full tone guide. That lives in Tone_Gui...`
+
+### 📄 06_Tone_And_Voice/blog_voice.md
+- **File Size:** 2620 bytes | **Word Count:** 430
+- **Data Preview:** `🎙️ MVQUEEN — Blog Voice  ---   Purpose  Define exactly how MVQUEEN writes blog content — with real examples, structural standards, and a voice che...`
+
+### 📄 06_Tone_And_Voice/copywriting_formulas.md
+- **File Size:** 6756 bytes | **Word Count:** 1080
+- **Data Preview:** `✍️ MVQUEEN — Copywriting Formulas  ---   How to Use This File  These are proven structural formulas adapted specifically for MVQUEEN's voice. Ever...`
+
+### 📄 06_Tone_And_Voice/copywriting_frameworks.md
+- **File Size:** 6570 bytes | **Word Count:** 1015
+- **Data Preview:** `🧩 MVQUEEN — Copywriting Frameworks  ---   Frameworks vs. Formulas  Formulas (in `copywriting_formulas.md`) are sentence-level structures. Framewor...`
+
+## 📁 07_Marketing
+
+### 📄 07_Marketing/Ad_Copy_Prompts.md
+- **File Size:** 7339 bytes | **Word Count:** 1175
+- **Data Preview:** `👑 MVQUEEN — Ad Copy Prompts  Paid Advertising Copy System  The fundamental principle: the ad should feel like content first, conversion vehicle s...`
+
+### 📄 07_Marketing/Affiliate_Program.md
+- **File Size:** 3399 bytes | **Word Count:** 511
+- **Data Preview:** `🤝 MVQUEEN — Affiliate Program  ---   Purpose  Build a performance-based affiliate ecosystem that extends MVQUEEN's reach through aligned creators,...`
+
+### 📄 07_Marketing/Analytics.md
+- **File Size:** 4071 bytes | **Word Count:** 540
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   22. Long-Term Vision   Vision Philosophy  MVQUEEN is not being built to become another ecommerce brand.  It i...`
+
+### 📄 07_Marketing/Campaign_Strategy.md
+- **File Size:** 4195 bytes | **Word Count:** 560
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   10. Emotional Transformation   Core Transformation  MVQUEEN is built around emotional transformation through...`
+
+### 📄 07_Marketing/Conversion_Psychology.md
+- **File Size:** 3254 bytes | **Word Count:** 442
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   21. Customer Psychology & Experience Architecture   Customer Experience Philosophy  MVQUEEN is not designed t...`
+
+### 📄 07_Marketing/Email_Marketing.md
+- **File Size:** 2805 bytes | **Word Count:** 502
+- **Data Preview:** `📧 MVQUEEN — Email Marketing  ---   Purpose  Build and execute an email marketing system that generates revenue, builds loyalty, and deepens the re...`
+
+### 📄 07_Marketing/Funnel_Strategy.md
+- **File Size:** 4185 bytes | **Word Count:** 558
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   21. Customer Psychology & Experience Architecture   Customer Experience Philosophy  MVQUEEN is not designed t...`
+
+### 📄 07_Marketing/Giveaway_Systems.md
+- **File Size:** 4000 bytes | **Word Count:** 646
+- **Data Preview:** `🎁 MVQUEEN — Giveaway Systems  ---   Purpose  Run giveaways that build genuine community, grow a qualified audience, and reinforce brand positionin...`
+
+### 📄 07_Marketing/Influencer_Strategy.md
+- **File Size:** 1488 bytes | **Word Count:** 186
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Partnership & Collaboration Standards  MVQUEEN should only collaborate with creators, technologies, partners, b...`
+
+### 📄 07_Marketing/Offer_Strategy.md
+- **File Size:** 1092 bytes | **Word Count:** 155
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Accessible Luxury Positioning  MVQUEEN approaches luxury through emotional experience rather than exclusivity a...`
+
+### 📄 07_Marketing/Paid_Ads.md
+- **File Size:** 2136 bytes | **Word Count:** 301
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   10. Emotional Transformation   Core Transformation  MVQUEEN is built around emotional transformation through...`
+
+### 📄 07_Marketing/Product_Launch_Campaigns.md
+- **File Size:** 3444 bytes | **Word Count:** 472
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   10. Emotional Transformation   Core Transformation  MVQUEEN is built around emotional transformation through...`
+
+### 📄 07_Marketing/README.md
+- **File Size:** 3088 bytes | **Word Count:** 432
+- **Data Preview:** `📣 MVQUEEN — Marketing System   Purpose  The Marketing System is the revenue and growth intelligence architecture governing how MVQUEEN attracts, c...`
+
+### 📄 07_Marketing/Retargeting.md
+- **File Size:** 4185 bytes | **Word Count:** 558
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   21. Customer Psychology & Experience Architecture   Customer Experience Philosophy  MVQUEEN is not designed t...`
+
+### 📄 07_Marketing/SMS_Marketing.md
+- **File Size:** 3342 bytes | **Word Count:** 457
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   14. Tone & Voice   Voice Philosophy  MVQUEEN does not simply communicate information.  It creates emotional a...`
+
+### 📄 07_Marketing/Seasonal_Campaigns.md
+- **File Size:** 3729 bytes | **Word Count:** 613
+- **Data Preview:** `🗓️ MVQUEEN — Seasonal Campaigns  ---   Purpose  Plan and execute seasonal campaigns that feel culturally relevant and emotionally resonant — witho...`
+
+### 📄 07_Marketing/UGC_Strategy.md
+- **File Size:** 1177 bytes | **Word Count:** 157
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   Community Over Consumers  MVQUEEN does not view women as transactions or numbers.  The brand aims to create a g...`
+
+### 📄 07_Marketing/Viral_Hooks.md
+- **File Size:** 4387 bytes | **Word Count:** 706
+- **Data Preview:** `🔥 MVQUEEN — Viral Hooks  ---   Purpose  A library of proven viral hook formulas, real examples, and testing frameworks for creating content that s...`
+
+## 📁 08_Social_Media
+
+### 📄 08_Social_Media/Caption_Templates.md
+- **File Size:** 11430 bytes | **Word Count:** 1856
+- **Data Preview:** `👑 MVQUEEN — Caption Templates  Ready-to-Use Frameworks for Every Platform  ---   What This File Is  Caption templates are not fill-in-the-blank...`
+
+### 📄 08_Social_Media/Carousel_Ideas.md
+- **File Size:** 4120 bytes | **Word Count:** 639
+- **Data Preview:** `🎠 MVQUEEN — Carousel Ideas  ---   Purpose  A library of carousel concepts, structures, and ready-to-produce ideas across all content pillars — org...`
+
+### 📄 08_Social_Media/Community_Building.md
+- **File Size:** 2544 bytes | **Word Count:** 329
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   26. Community & Emotional Belonging Architecture   Community Philosophy  MVQUEEN is not designed to build onl...`
+
+### 📄 08_Social_Media/Content_Pillars.md
+- **File Size:** 13581 bytes | **Word Count:** 2254
+- **Data Preview:** `👑 MVQUEEN — Content Pillars  The Seven Pillars of the Brand World  ---   What This File Is  Content pillars are not categories. They are the em...`
+
+### 📄 08_Social_Media/Engagement_Strategy.md
+- **File Size:** 3682 bytes | **Word Count:** 604
+- **Data Preview:** `💬 MVQUEEN — Engagement Strategy  ---   Purpose  Build a genuine, loyal community through intentional engagement — turning passive followers into a...`
+
+### 📄 08_Social_Media/Facebook_Strategy.md
+- **File Size:** 8452 bytes | **Word Count:** 1205
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   12. Target Audience   Audience Overview  MVQUEEN is created for emotionally aware, aesthetically driven women...`
+
+### 📄 08_Social_Media/Hashtag_Systems.md
+- **File Size:** 2142 bytes | **Word Count:** 244
+- **Data Preview:** `️⃣ MVQUEEN — Hashtag Systems  ---   Purpose  Build a strategic, organized hashtag system that maximizes content discovery, grows the right audien...`
+
+### 📄 08_Social_Media/Instagram_Strategy.md
+- **File Size:** 11004 bytes | **Word Count:** 1691
+- **Data Preview:** `👑 MVQUEEN — Instagram Strategy  The Visual World on Instagram  ---   What This File Is  Instagram is MVQUEEN's primary visual brand home. It is...`
+
+### 📄 08_Social_Media/Pinterest_Strategy.md
+- **File Size:** 12355 bytes | **Word Count:** 1779
+- **Data Preview:** `👑 MVQUEEN — Pinterest Strategy  The Long-Game Discovery Platform  ---   What This File Is  Pinterest is MVQUEEN's most underestimated platform...`
+
+### 📄 08_Social_Media/Posting_Schedule.md
+- **File Size:** 3873 bytes | **Word Count:** 641
+- **Data Preview:** `📅 MVQUEEN — Posting Schedule  ---   Purpose  Define the optimal posting cadence for every platform — ensuring consistent brand presence without bu...`
+
+### 📄 08_Social_Media/README.md
+- **File Size:** 2943 bytes | **Word Count:** 417
+- **Data Preview:** `📱 MVQUEEN — Social Media System   Purpose  The Social Media System is the community, content, and cultural presence architecture governing how MVQ...`
+
+### 📄 08_Social_Media/Reel_Hooks.md
+- **File Size:** 2162 bytes | **Word Count:** 290
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   10. Emotional Transformation   Core Transformation  MVQUEEN is built around emotional transformation through...`
+
+### 📄 08_Social_Media/Social_Media_Prompts.md
+- **File Size:** 6450 bytes | **Word Count:** 969
+- **Data Preview:** `👑 MVQUEEN — Social Media Prompts  The Content Generation System  Pull a prompt. Fill the brackets. Run. Review against Voice_Consistency_Rules.md...`
+
+### 📄 08_Social_Media/Story_Ideas.md
+- **File Size:** 7424 bytes | **Word Count:** 1051
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   5. Brand Story  MVQUEEN did not begin as a perfectly planned business.  It began as imagination.  Long before t...`
+
+### 📄 08_Social_Media/TikTok_Strategy.md
+- **File Size:** 11314 bytes | **Word Count:** 1782
+- **Data Preview:** `👑 MVQUEEN — TikTok Strategy  The Discovery Engine  ---   What This File Is  TikTok is MVQUEEN's primary customer acquisition platform. While In...`
+
+### 📄 08_Social_Media/Trend_Tracker.md
+- **File Size:** 3878 bytes | **Word Count:** 509
+- **Data Preview:** `<!-- Extracted from Brand Bible -->   27. Brand Evolution, Future Vision & Legacy Architecture   Legacy Philosophy  MVQUEEN is not designed to beco...`
+
+### 📄 08_Social_Media/Viral_Content_Systems.md
+- **File Size:** 3901 bytes | **Word Count:** 628
+- **Data Preview:** `📱 MVQUEEN — Viral Content Systems  ---   Purpose  Build repeatable content systems that consistently produce shareable, saveable, and viral conten...`
+
+### 📄 08_Social_Media/YouTube_Strategy.md
+- **File Size:** 3360 bytes | **Word Count:** 522
+- **Data Preview:** `📺 MVQUEEN — YouTube Strategy  ---   Purpose  Build MVQUEEN's YouTube presence as a long-form brand authority channel — creating content that earns...`

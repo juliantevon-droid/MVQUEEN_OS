@@ -1,5 +1,5 @@
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
-import { BRAND_VOCABULARY, removeForbiddenLanguage, type BrandVocabulary } from "./brand-vocabulary.server";
+import { BRAND_VOCABULARY, canonicalBrandLabel, removeForbiddenLanguage, type BrandVocabulary, type ProductEditorialCategory } from "./brand-vocabulary.server";
 import { buildProductName, stripNamingDecoration, usesNamingIdentity } from "./product-naming";
 import type { NamingRegister } from "./curated-product-names";
 
@@ -455,6 +455,20 @@ function productSeed(product: ProductSnapshot): number {
   return seed >>> 0;
 }
 
+export function productEditorialCategory(classification: Classification): ProductEditorialCategory {
+  const text = [classification.department, classification.family, classification.productType, classification.route]
+    .join(" ").replace(/[-_]/g, " ");
+  if (/\b(?:tools?|mirrors?|brush(?:es)?|combs?|rollers?|gua sha|massagers?|tweezers?|waxing|hair removal)\b/i.test(text)) return "tools";
+  if (/\b(?:fragrance|perfume)\b/i.test(text)) return "fragrance";
+  if (/\b(?:jewelry|necklaces?|pendants?|bracelets?|earrings?|anklets?|rings?)\b/i.test(text)) return "jewelry";
+  if (/\b(?:fashion|apparel|activewear|clothing)\b/i.test(text)) return "fashion";
+  if (/\b(?:hair|haircare|shampoo|conditioner)\b/i.test(text)) return "haircare";
+  if (/\b(?:skincare|skin|bath|body|face cream|facial cream)\b/i.test(text)) return "skincare";
+  if (/\b(?:home|candles?|decor)\b/i.test(text)) return "home";
+  if (/\b(?:beauty|makeup|cosmetics|nails?)\b/i.test(text)) return "beauty";
+  return "general";
+}
+
 function titleCase(value: string): string {
   return value.split(" ").map((word) => {
     if (/^(?:SPF|BB|CC|UV|USB|LED)$/i.test(word)) return word.toUpperCase();
@@ -670,27 +684,25 @@ function brandedProductCopy(
   }
 
   const style = adjective.toLowerCase();
-  const hooks = princess
-    ? [
-        `Keep your ${brandLabel} edit ${style}.`,
-        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} touch for your ${brandLabel} edit.`,
-        `Make it ${style} with ${brandLabel}.`,
-        `Bring a ${style} touch to your ${brandLabel} edit.`,
-      ]
-    : [
-        `Make room for ${articleFor(style)} ${style} detail from ${brandLabel}.`,
-        `Keep your ${brandLabel} edit ${style}.`,
-        `${articleFor(style)[0].toUpperCase() + articleFor(style).slice(1)} ${style} addition to your ${brandLabel} edit.`,
-        `Your ${brandLabel} edit, with ${articleFor(style)} ${style} touch.`,
-      ];
-  const hook = naming.opening ?? hooks[(seed >>> 8) % hooks.length];
+  const category = productEditorialCategory(classification);
+  const hooks = vocabulary.contentPolicy.profiles[princess ? "miss-princess" : "mvqueen"].hooks[category];
+  const replacements: Record<string, string> = { brand: brandLabel, adjective: style,
+    article: articleFor(style), articleCapital: articleFor(style)[0].toUpperCase() + articleFor(style).slice(1) };
+  const hook = naming.opening ?? hooks[(seed >>> 8) % hooks.length]
+    .replace(/\{(brand|adjective|article|articleCapital)\}/g, (_match, field: string) => replacements[field]);
+  if (cleanCustomerText(hook, product.vendor, vocabulary, sanitizeClaims) !== hook) {
+    throw new Error(`Product opening requires a current language review: ${product.id}`);
+  }
   const namedTitle = /^the\s/i.test(title) ? title : `The ${title}`;
   const factualSentence = introFacts(highlights)
     .map((fact) => `${namedTitle} ${fact}.`)
-    .find((sentence) => `${hook} ${sentence}`.length <= 180);
+    .find((sentence) => `${hook} ${sentence}`.length <= vocabulary.contentPolicy.limits.shortDescription);
   // Keep full sentences and the actual product name. Longer source facts stay
   // in Product Details rather than becoming a clipped or coded opening.
   const shortDescription = cleanText(`${hook} ${factualSentence ?? `Meet ${namedTitle}.`}`);
+  if (shortDescription.length > vocabulary.contentPolicy.limits.shortDescription) {
+    throw new Error(`Product opening exceeds the brand content limit: ${product.id}`);
+  }
 
   return { title, shortDescription, namingIdentity: naming.identity, namingRegister: naming.register, curatedName: naming.curated };
 }
@@ -741,10 +753,10 @@ function buildDescriptionHtml(
   return (intro + facts + details + measurements).trim();
 }
 
-function brandedSeoTitle(title: string, brandLabel: string): string {
+function brandedSeoTitle(title: string, brandLabel: string, limit: number): string {
   const suffix = " | " + cleanText(brandLabel);
-  if (suffix.length >= 60) return cleanText(brandLabel).slice(0, 60).trim();
-  const available = 60 - suffix.length;
+  if (suffix.length >= limit) return cleanText(brandLabel).slice(0, limit).trim();
+  const available = limit - suffix.length;
   const cleanTitle = cleanText(title);
   const base =
     cleanTitle.length <= available
@@ -828,10 +840,11 @@ export async function resolveUniqueAutomatedProductContent(
 export function buildAutomatedProductContent(
   product: ProductSnapshot,
   classification: Classification,
-  brandLabel = "MVQueen",
+  brandLabel = "MVQUEEN",
   vocabulary = BRAND_VOCABULARY,
   namingAttempt = 0,
 ): NamedAutomatedProductContent {
+  brandLabel = canonicalBrandLabel(brandLabel, vocabulary);
   const sanitizeClaims = productClaimReviewReasons(product).length > 0;
   const sourceHighlights = uniqueHighlights([
     ...extractHighlights(product.descriptionHtml),
@@ -905,10 +918,10 @@ export function buildAutomatedProductContent(
     generatedIntro,
   );
 
-  const seoTitle = brandedSeoTitle(title, brandLabel);
+  const seoTitle = brandedSeoTitle(title, brandLabel, vocabulary.contentPolicy.limits.seoTitle);
   const metaDescription = clip(
     "Shop " + title + " at " + brandLabel + ". " + shortDescription,
-    155,
+    vocabulary.contentPolicy.limits.metaDescription,
   );
 
   const seoKeywords = unique([

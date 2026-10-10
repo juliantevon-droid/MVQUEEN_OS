@@ -3,12 +3,14 @@
 Shopify product event -> authenticated webhook -> idempotent ProductJob -> classification/transport worker -> guarded Admin GraphQL write.
 
 ## Protected data
-The runtime must not modify SKU, inventory, pricing, variant configuration, fulfillment data, existing handles, product titles, descriptions, SEO copy, or factual product attributes unless a separate approved canonical publishing operation explicitly authorizes those fields.
+The runtime preserves existing handles, SKUs, barcodes, inventory and variant configuration. Product copy, factual enrichment and commercial writes follow their existing publication gates. Loading brand references does not authorize additional fields or enable a gate.
 
 ## Current automation
-The React worker classifies products, adds internal routing tags/classification metafields, and can fill missing image ALT text from the existing product title. It is not a product-copy generator.
+The React worker classifies products, adds internal routing tags/classification metafields, and can repair image ALT text. Its current governed copy writer also builds product names, descriptions and SEO when configured gates permit them. Authored names and openings take precedence; new naming identities are checked against the current Shopify catalog.
 
-Product titles, descriptions, SEO, verified factual metafields, FAQs, collection drafts, and blog drafts are owned by the governed production-readiness pipeline and CONTENT_INTELLIGENCE_V1. Those outputs remain review/approval controlled before Shopify publication.
+The [unified brand policy](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) connects substantive Drive material to that writer. Both runtime images carry the active policy. Loaded policy, vocabulary, naming and authored content contribute to the automation version. Historical sources remain searchable references instead of executable code or replacement product facts.
+
+Descriptions, verified factual metafields, FAQs, collection drafts and blog drafts continue through existing review, claim and publication controls. This integration does not start a bulk backfill or import an old product CSV.
 
 ## Deployment state
 The production Shopify app is linked in `shopify.app.toml` to the Railway application URL and client ID. The client secret remains deployment-only and must never be committed.

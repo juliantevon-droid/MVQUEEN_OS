@@ -1,0 +1,143 @@
+# 📸 MVQUEEN — UGC Strategy
+
+---
+
+## Why UGC Is Critical for MVQUEEN
+
+User-generated content is the most credible content a brand can have.
+She trusts what another woman says about a product infinitely more than what the brand says about itself.
+
+MVQUEEN's UGC strategy is not about collecting testimonials.
+It is about building a living archive of real women, in their real worlds, using MVQUEEN products in ways that feel true to the brand's emotional identity.
+
+The best UGC does three things simultaneously:
+1. Provides social proof that converts hesitant buyers
+2. Creates content MVQUEEN can repurpose across channels
+3. Deepens community — she sees herself reflected in other MVQUEEN women
+
+---
+
+## UGC Collection Strategy
+
+### Organic UGC (She creates it unprompted)
+The highest-value UGC. She loved the product enough to share it without being asked.
+
+**How to encourage it:**
+- Package insert: "Show us her ritual — tag #MVQUEENRitual"
+- Post-purchase email (Day 3): "We'd love to see how she's using it"
+- Story reply prompt: "What does her morning ritual look like?"
+- Community hashtag featured on website and in bio
+
+**What to do when she tags MVQUEEN:**
+- Respond within 24 hours with genuine, personal engagement
+- Save the content immediately
+- Request usage rights via DM if not already covered
+- Feature on MVQUEEN channels within 48 hours of receiving rights
+
+---
+
+### Prompted UGC (She creates it with guidance)
+Encouraged through specific asks — still authentic, just directed.
+
+**Prompt formats:**
+- "Show us your morning ritual featuring [product]"
+- "What does her skin look like after 7 days of [product]?"
+- "The way she uses [product] in 15 seconds"
+- "Her honest review of [product] after one month"
+
+**Where prompts appear:**
+- Post-purchase email Day 3
+- Loyalty program milestone emails ("Share your ritual, earn bonus points")
+- Social story polls and questions
+- Package insert with hashtag and QR code
+
+---
+
+### Creator UGC (Nano + micro creators)
+Gifted products to aligned creators — they create content in their voice, in their world.
+
+See: `07_Marketing/Influencer_Strategy.md` for full creator selection and brief process.
+
+---
+
+## UGC Usage Rights
+
+Before repurposing any customer content, MVQUEEN obtains explicit permission.
+
+**Standard DM request:**
+> "We love this so much — would you be okay with us sharing it on our channels? We'll always credit you. 🤍"
+
+**What "permission" means:**
+- Instagram stories repost: informal verbal permission via DM is sufficient
+- Feed posts, ads, website, email: written permission required (DM screenshot saved)
+- Paid ads: explicit written permission required — specify the exact use
+
+**Never repurpose content without permission.** The reputational risk outweighs any content benefit.
+
+---
+
+## UGC Archive System
+
+All collected UGC is logged in `37_Databases/DB-08 — UGC & Social Proof Database`.
+
+Each entry includes:
+- Creator handle and contact
+- Date of content
+- Platform
+- Product featured
+- Usage rights status
+- Where it has been used
+- Performance if used in ads
+
+---
+
+## UGC Quality Standards
+
+Not all UGC meets MVQUEEN's standard for repurposing. Evaluate against:
+
+**Aesthetic alignment:**
+Is the content warm-lit, feminine, on-aesthetic?
+Dark, cluttered, or low-quality photography is not repurposed — even if the review is glowing.
+
+**Content authenticity:**
+Does it feel genuine? Prompted but authentic is fine. Scripted and performative is not.
+
+**Brand safety:**
+Is the creator's general content brand-safe and aligned with MVQUEEN's values?
+
+**Quality threshold:**
+Would this content make someone want the product — or question it?
+Only repurpose content that creates desire.
+
+---
+
+## UGC in the Marketing Stack
+
+| Channel | How UGC Is Used |
+|---------|----------------|
+| Instagram feed | Reposted with credit — 1–2x per week |
+| Instagram stories | Reposted immediately when tagged |
+| TikTok | Spark ads on high-performing creator content |
+| Product pages | 3–5 UGC photos in the product image gallery |
+| Email | 1 UGC feature per month in broadcast |
+| Paid ads | Top-performing UGC content in Spark ads and Meta UGC ads |
+| Website homepage | Rotating UGC gallery ("She's wearing MVQUEEN") |
+
+---
+
+## UGC Performance Tracking
+
+Track monthly:
+- Volume of UGC tagged (#MVQUEENRitual)
+- UGC collected with usage rights
+- UGC deployed in ads vs organic
+- ROAS of UGC ads vs produced content
+- Conversion rate of product pages with UGC imagery vs without
+
+The most important UGC metric: **does UGC ad creative outperform produced creative?**
+(It almost always does — and when it does, produce less and collect more.)
+
+---
+
+*07_Marketing / UGC_Strategy.md*
+*She trusts her. Not the brand. Build the system that lets her speak for MVQUEEN.*

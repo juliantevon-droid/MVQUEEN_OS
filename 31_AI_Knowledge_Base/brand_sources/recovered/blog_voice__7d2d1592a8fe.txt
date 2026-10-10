@@ -1,0 +1,170 @@
+# 📝 MVQUEEN — Blog Voice Guide
+
+---
+
+## What MVQUEEN Blog Content Is
+
+MVQUEEN blog content is not filler for SEO.
+It is the brand thinking out loud — sharing perspective, ritual intelligence, beauty philosophy, and lifestyle direction with the women who belong in this world.
+
+Blog content builds the world. It deepens the relationship.
+A woman who reads MVQUEEN blog content doesn't just know the products — she understands the brand's point of view. She trusts it.
+
+---
+
+## Blog Voice Identity
+
+**MVQUEEN blog sounds like:**
+A knowledgeable, emotionally intelligent woman sharing what she's learned —
+not a brand writing content to rank on Google.
+
+The SEO happens because the content is genuinely useful and beautifully written.
+Not the other way around.
+
+**Tone:** Warm, authoritative, personal without being overly casual.
+Like a well-read older sister who actually knows what she's talking about.
+
+---
+
+## Blog Post Architecture
+
+### 1. The Title
+- Leads with the emotional hook or the primary keyword
+- 50-65 characters for SEO
+- Sounds like something she would actually search for or click on
+- Never clickbait — the article delivers exactly what the title promises
+
+**Title formulas:**
+- [Emotional desire] — [How to get there]
+- [Number] [Topic] For [Her Identity]
+- The [Woman's ritual/approach] to [Outcome]
+- Why She [Does This] (And What It Changed)
+- What [Topic] Actually Feels Like (And Why It Matters)
+
+**Examples:**
+- "The Soft Glam Morning Routine That Doesn't Require Getting Up Earlier"
+- "5 Body Care Rituals the Woman Who Glows Actually Swears By"
+- "What Skin Barrier Care Actually Feels Like When You Get It Right"
+- "Why She Switched to Oil Cleansing — And Never Looked Back"
+
+---
+
+### 2. The Opening (150-200 words)
+
+**Never start with:**
+- The main keyword
+- A dictionary definition
+- "In today's world..."
+- "As women, we all know..."
+
+**Always start with:**
+Her — in a moment she recognizes.
+
+**Opening formula:**
+```
+[Scene: she's in a specific moment]
+[The feeling — what she's reaching for or noticing]
+[Why this matters — the thing nobody says out loud]
+[Transition into the article — what she'll get from reading this]
+```
+
+**Example opening:**
+```
+She changed one thing in her skincare routine six months ago.
+Just one thing — and now people ask what she's doing differently.
+
+It wasn't a new product line or an expensive treatment.
+It was understanding what her skin actually needs in the morning
+versus at night — and building her ritual around that instead of
+around what she's always been told.
+
+This is what she learned. And why it changed everything.
+```
+
+---
+
+### 3. Body Sections
+
+Each H2 is a chapter. Each chapter answers one question she has.
+
+**Section length:** 150-350 words per section.
+**Paragraphs:** 2-3 sentences. White space is generous.
+**Images:** One image or break every 2-3 sections.
+
+**Transition language between sections:**
+- "Here's where it gets interesting —"
+- "The second piece of this is less obvious."
+- "This is the part most people skip."
+- "She figured this out later than she would have liked."
+
+---
+
+### 4. The Close (100-150 words)
+
+**Never close with:**
+- "In conclusion..."
+- A summary of everything you just said
+- A generic "Start your journey today"
+
+**Always close with:**
+A return to her — the woman who started reading this.
+Where is she now? What does she know that she didn't before?
+What's one thing she can do with this information?
+
+**Closing formula:**
+```
+[Bring it back to the woman from the opening]
+[What she now knows / how she sees this differently]
+[One soft action she can take]
+[Optional: product tie-in — natural, never forced]
+```
+
+---
+
+## Internal Linking Rules
+
+Every blog post links to:
+- 1-2 related blog posts (for depth)
+- 1-2 relevant products (natural mentions, never forced)
+- 1 collection page (where relevant)
+
+Link anchor text is always descriptive and natural — never "click here."
+
+---
+
+## Blog Categories and Content Themes
+
+**Ritual Intelligence**
+How she builds and refines her beauty and lifestyle rituals.
+Practical. Emotionally grounded. Specific.
+
+**Skin Education**
+What her skin is doing, why, and how to work with it.
+Credible. Translatable. Never clinical without warmth.
+
+**Feminine Living**
+Lifestyle content that reflects the MVQUEEN woman's world.
+Home, morning routines, sensory living, intentionality.
+
+**Product Deep Dives**
+One product, explored fully — ingredients, ritual, results, who it's for.
+The blog version of a product description.
+
+**Brand POV**
+MVQUEEN sharing perspective on beauty, femininity, confidence, and culture.
+Editorial. Thought-led. Unapologetically herself.
+
+---
+
+## What MVQUEEN Blog Is Never
+
+- Content written purely for keywords with no emotional substance
+- Listicles with no real depth ("10 tips for glowing skin!")
+- Content that could have been written by anyone
+- Promotional in tone — even posts about products feel editorial
+- Published before it's ready — standards over schedule
+
+---
+
+*06_Tone_And_Voice / blog_voice.md*
+*She reads the blog because MVQUEEN has something to say. Make sure it does.*

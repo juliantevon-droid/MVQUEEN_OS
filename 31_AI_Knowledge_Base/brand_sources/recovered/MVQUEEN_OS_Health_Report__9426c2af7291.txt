@@ -1,0 +1,84 @@
+# Sheet1
+Module / Folder Name	Total Assets	System Status	Details / Action Items	Last Inspected
+.obsidian	9.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-14 00:00:00
+00_Doctrine	26.0	🔴 CONTAMINATED	Isolate / Purge: brand_constitution.md (In-file Content) | master_doctrine.md (In-file Content)	2026-06-14 00:00:00
+01_Brand_Strategy	17.0	🔴 CONTAMINATED	Isolate / Purge: Brand_Essence.md (In-file Content) | Brand_Values.md (In-file Content) | Taglines.md (In-file Content) | Slogans.md (In-file Content) | Elevator_Pitch.md (In-file Content) | USP.md (In-file Content) | Brand_Bible.md (In-file Content)	2026-06-14 00:00:00
+05_SEO_And_Content	27.0	🔴 CONTAMINATED	Isolate / Purge: Keyword_Research.md (In-file Content) | Blog_Strategy.md (In-file Content) | SEO_Strategy.md (In-file Content) | Short_Tail_Keywords.md (In-file Content)	2026-06-14 00:00:00
+03_Customer_Psychology	22.0	🔴 CONTAMINATED	Isolate / Purge: trust_building.md (In-file Content) | customer_avatars.md (In-file Content)	2026-06-14 00:00:00
+08_Social_Media	18.0	🔴 CONTAMINATED	Isolate / Purge: Social_Media_Prompts.md (In-file Content) | Pinterest_Strategy.md (In-file Content) | TikTok_Strategy.md (In-file Content) | Instagram_Strategy.md (In-file Content) | Caption_Templates.md (In-file Content) | Content_Pillars.md (In-file Content) | Story_Ideas.md (In-file Content)	2026-06-14 00:00:00
+scripts	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-14 00:00:00
+04_Products	23.0	🔴 CONTAMINATED	Isolate / Purge: SKU_Systems.md (In-file Content) | Beauty_Products.md (In-file Content) | Product_Framework.md (In-file Content) | Collection_Structure.md (In-file Content) | Pricing_Strategy.md (In-file Content) | Product_Naming_System.md (In-file Content)	2026-06-14 00:00:00
+07_Marketing	18.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-14 00:00:00
+06_Tone_And_Voice	27.0	🔴 CONTAMINATED	Isolate / Purge: Product_Description_Prompts.md (In-file Content) | Brand_Messaging.md (In-file Content) | Product_Description_Voice.md (In-file Content) | Example_Copy.md (In-file Content) | Voice_Consistency_Rules.md (In-file Content)	2026-06-14 00:00:00
+02_Brand_Identity	15.0	🔴 CONTAMINATED	Isolate / Purge: brand_rules.md (In-file Content) | typography_system.md (In-file Content) | color_system.md (In-file Content) | videography_direction.md (In-file Content) | photography_direction.md (In-file Content) | visual_direction.md (In-file Content) | logo_guidelines.md (In-file Content) | logo_concepts.md (In-file Content) | color_psychology.md (In-file Content) | brand_identity.md (In-file Content)	2026-06-14 00:00:00
+98_Archive	0.0	🟡 EMPTY MODULE	Needs structural layout / template stubs.	2026-06-14 00:00:00
+.git	5.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-14 00:00:00
+logs	1.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-14 00:00:00
+99_Command_Center	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-14 00:00:00
+15_Scripts_And_Code	1.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-14 00:00:00
+
+# Storage Audits
+File Name	Folder Location	File Size	File Type	Direct Link
+Workspace optimal. No heavy file bloat detected.	-	-	-	-
+
+# Weekly Sync Log
+Module / Folder	Updated Asset	Timestamp	Direct Link
+98_Archive	README.md	2026-06-14 14:43:22	https://drive.google.com/file/d/1t3eYGhG2oHuQNCXtdzWu7C2DqAkkOlOe/view?usp=drivesdk
+logs	sync_2026-06-14_13-16.log	2026-06-14 13:16:42	https://drive.google.com/file/d/1jSsVSYF9wXYHPyAEtBNcakEzJjaCab9V/view?usp=drivesdk
+scripts	sync_vault.sh	2026-06-13 02:45:39	https://drive.google.com/file/d/19Bf0x00HpppqgmqWFSCyd1B0p6_5fDOk/view?usp=drivesdk
+scripts	vault_crawler.py	2026-06-13 02:41:57	https://drive.google.com/file/d/1R_C0vRb57oL5mVkutVjJXYczvIbKJlbQ/view?usp=drivesdk
+99_Command_Center	MVQUEEN_Cleanup_Log_2026-06-13	2026-06-13 00:57:51	https://docs.google.com/spreadsheets/d/1i4Q-IzOkazhGVGzbbG8nsTQRqfIsyUt4HfCCqXcpWHk/edit?usp=drivesdk
+99_Command_Center	MVQUEEN_Cleanup_Log_2026-06-13	2026-06-12 23:47:16	https://docs.google.com/spreadsheets/d/1Yh6xqwgQkMK6JNhxVA-NEIbCXy6pCoCTbW7WnfZ1Irw/edit?usp=drivesdk
+04_Products	Product_Catalog.md	2026-06-12 10:54:48	https://drive.google.com/file/d/1FwXWurCnr0SFgEV61jzzyUP6YkeG1Cke/view?usp=drivesdk
+02_Brand_Identity	brand_rules.md	2026-06-11 23:26:43	https://drive.google.com/file/d/1o37YgLowq-pU9Tvy9q4ai-BZfoFRmMOB/view?usp=drivesdk
+01_Brand_Strategy	Brand_Story.md	2026-06-11 07:31:33	https://drive.google.com/file/d/1iQsnP3IuthFh9yv-IYMRsRwPQFYl_baA/view?usp=drivesdk
+.obsidian	workspace-mobile.json	2026-06-09 09:16:38	https://drive.google.com/file/d/1QOH-T2uDUBbg-2x3nIfZXnoHb582YdsQ/view?usp=drivesdk
+.obsidian	text-generator.json	2026-06-09 09:15:43	https://drive.google.com/file/d/1lBvCLIYQ1bxiWmtC2YY8JyWEHx-L-Eju/view?usp=drivesdk
+.obsidian	community-plugins.json	2026-06-09 09:15:24	https://drive.google.com/file/d/1dX9OqF1hvMeT4OJdCntRlml8C4tGdzUs/view?usp=drivesdk
+.obsidian	types.json	2026-06-09 09:15:17	https://drive.google.com/file/d/1H3sFvjGb3g2_N57wQxLjIgo7Ec5xQcUu/view?usp=drivesdk
+.obsidian	appearance.json	2026-06-09 09:15:13	https://drive.google.com/file/d/1fdyKan42vQDt9bgGfyqlwYkc6we_V9DA/view?usp=drivesdk
+.obsidian	app.json	2026-06-09 09:15:13	https://drive.google.com/file/d/1WMM_79HPBaEOJ5BhVJcjvaaKmdhE_sR2/view?usp=drivesdk
+.obsidian	core-plugins.json	2026-06-09 09:15:13	https://drive.google.com/file/d/1IS6reaicrmirBKUdDt3f40A4RWQzonA1/view?usp=drivesdk
+.git	COMMIT_EDITMSG	2026-06-09 07:26:51	https://drive.google.com/file/d/16mx2ZhbqHzQ0OLHFB9N0Tuhlf9f3Oy-g/view?usp=drivesdk
+.git	index	2026-06-09 05:48:04	https://drive.google.com/file/d/1hnZ7VjR9RMq9xrzPSc2If46E7yWyc64_/view?usp=drivesdk
+.git	HEAD	2026-06-09 05:46:07	https://drive.google.com/file/d/1ui8_cyMidsVvy8g9E1CJY0hy8y1qTp_p/view?usp=drivesdk
+.git	config	2026-06-09 05:46:07	https://drive.google.com/file/d/1aVRxBN6OBvZ0ClcdUTvuCxGRneMUDr_U/view?usp=drivesdk
+.git	description	2026-06-09 05:46:07	https://drive.google.com/file/d/1BfvBPyYVX2-HN3jlJ9RzA2DGUcMQAg9Y/view?usp=drivesdk
+07_Marketing	Ad_Copy_Prompts.md	2026-06-07 16:21:06	https://drive.google.com/file/d/1GzA5IFo2Scyg0gKSwr-FCgWKCMvt_vdD/view?usp=drivesdk
+08_Social_Media	Social_Media_Prompts.md	2026-06-07 16:21:01	https://drive.google.com/file/d/1VqKVMjXRGnFnwGG2wFP9tuObKcAbz0RA/view?usp=drivesdk
+06_Tone_And_Voice	Product_Description_Prompts.md	2026-06-07 16:20:46	https://drive.google.com/file/d/18NK-qVyT0ZNuyegg2I81L_MEveoWJP4C/view?usp=drivesdk
+
+# Brand Voice Log
+Asset Name	Module / Folder	Detected Infractions	Last Scanned
+brand_constitution.md	00_Doctrine	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+ecosystem_security_framework.md	00_Doctrine	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+visual_identity_philosophy.md	00_Doctrine	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+Slogans.md	01_Brand_Strategy	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+Elevator_Pitch.md	01_Brand_Strategy	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+USP.md	01_Brand_Strategy	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+Brand_Bible.md	01_Brand_Strategy	Off-brand pricing terminology (cheap) | Non-luxury terminology (hustle)	2026-06-14 00:00:00
+Keyword_Research.md	05_SEO_And_Content	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+Shopping_Habits.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+lifestyle_aspirations.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+luxury_consumer_behavior.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+customer_avatars.md	03_Customer_Psychology	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+TikTok_Strategy.md	08_Social_Media	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+Product_Framework.md	04_Products	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+Pricing_Strategy.md	04_Products	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+Ad_Copy_Prompts.md	07_Marketing	Aggressive punctuation (multiple exclamation points)	2026-06-14 00:00:00
+Product_Description_Prompts.md	06_Tone_And_Voice	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+CTA_Library.md	06_Tone_And_Voice	Aggressive punctuation (multiple exclamation points)	2026-06-14 00:00:00
+Forbidden_Words.md	06_Tone_And_Voice	Non-luxury terminology (girlboss) | Aggressive punctuation (multiple exclamation points) | Off-brand pricing terminology (cheap) | Non-luxury terminology (hustle)	2026-06-14 00:00:00
+Ad_Copy_Voice.md	06_Tone_And_Voice	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+SMS_Voice.md	06_Tone_And_Voice	Aggressive punctuation (multiple exclamation points)	2026-06-14 00:00:00
+Tone_Guide.md	06_Tone_And_Voice	Non-luxury terminology (hustle)	2026-06-14 00:00:00
+brand_vocabulary.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+packaging_vision.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+packaging_identity.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+brand_identity.md	02_Brand_Identity	Off-brand pricing terminology (cheap)	2026-06-14 00:00:00
+
+# Duplicate Log
+Duplicate Filename	Occurrences	Folder Locations	Last Detected
+README.md	11.0	00_Doctrine | 01_Brand_Strategy | 05_SEO_And_Content | 03_Customer_Psychology | 08_Social_Media | 04_Products | 07_Marketing | 06_Tone_And_Voice | 02_Brand_Identity | 98_Archive | 15_Scripts_And_Code	2026-06-14 00:00:00
+Brand_Story.md	2.0	01_Brand_Strategy | 01_Brand_Strategy	2026-06-14 00:00:00
+MVQUEEN_Cleanup_Log_2026-06-13	2.0	99_Command_Center | 99_Command_Center	2026-06-14 00:00:00

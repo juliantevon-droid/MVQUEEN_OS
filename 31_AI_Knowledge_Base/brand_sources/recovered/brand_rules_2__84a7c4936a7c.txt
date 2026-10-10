@@ -1,0 +1,261 @@
+# 👑 MVQUEEN — Brand Rules
+### The DO / DON'T Reference
+
+---
+
+## What This File Is
+
+Every brand decision — visual, verbal, experiential — produces either something that builds MVQUEEN or something that quietly erodes it.
+
+This file makes those decisions fast and unambiguous. These are not suggestions. They are the guardrails that keep the brand coherent at scale — across designers, copywriters, AI systems, developers, and collaborators who may have read the Brand Bible once and need a quick reference.
+
+When in doubt, this file answers.
+
+---
+
+## SECTION 1 — VOICE & COPY RULES
+
+### ✅ DO — Voice
+
+**DO lead with feeling before function.**
+The product's emotional impact comes before its technical description. A woman should feel something in the first sentence before she learns anything.
+
+> ✅ "The kind of confidence you don't have to announce. Our [product] works quietly — and so do you."
+> ❌ "Our hydrating serum contains 3 key ingredients for moisture retention."
+
+---
+
+**DO write in short, weighted sentences.**
+Three-word sentences hit harder than paragraphs when placed correctly. MVQUEEN copy earns its length — every sentence does work.
+
+> ✅ "She already knew. This just made it visible."
+> ❌ "This product is designed to help women feel more confident and beautiful in their everyday lives."
+
+---
+
+**DO use specificity over adjectives.**
+Describe what something feels, looks, smells, weighs, sounds like. A list of adjectives (luxurious, beautiful, elevated) is not copy. It is a placeholder.
+
+> ✅ "Matte finish. Weighted lid. The kind of packaging that makes throwing it away feel like a waste."
+> ❌ "Beautiful, luxurious packaging you'll love."
+
+---
+
+**DO write to her directly — "she" in third person, "you" in second person.**
+Pick one perspective and stay in it per piece of copy. Both work. Mixing them within the same piece does not.
+
+> ✅ "She moves through the room differently when she's wearing this." (third)
+> ✅ "You don't need a reason to feel this good." (second)
+> ❌ "She deserves to feel her best, and you can help her do that." (mixed — confusing)
+
+---
+
+**DO end on identity, not product.**
+The last impression in any piece of copy connects to who she is — not what we're selling.
+
+> ✅ "This isn't about the product. It's about the woman who reaches for it every morning."
+> ❌ "Shop now and experience the difference."
+
+---
+
+### ❌ DON'T — Voice
+
+**DON'T use passive permission language.**
+She doesn't need to be told to allow herself anything. She already has permission.
+
+> ❌ "Allow yourself to feel beautiful."
+> ❌ "Give yourself permission to indulge."
+> ✅ "Feel beautiful. This is what that looks like."
+
+---
+
+**DON'T use exhausted empowerment language.**
+"Boss babe," "slay," "you've got this," "empowering" — these words have been drained of meaning. They make the brand sound like every other feminine brand from 2019.
+
+> ❌ "Slay in this boss babe collection."
+> ✅ "For the woman who dresses like she's already decided."
+
+---
+
+**DON'T explain the emotion — show it.**
+Telling the reader that something is "emotional" or "meaningful" without showing them how eliminates the emotion entirely.
+
+> ❌ "This product creates an emotionally meaningful experience."
+> ✅ "The kind of scent that makes you stand in the mirror a little longer."
+
+---
+
+**DON'T stack filler qualifiers.**
+Very, really, quite, just, truly, actually — these words make confident copy sound hesitant. Remove all of them.
+
+> ❌ "This is actually a really beautiful fragrance that you'll truly love."
+> ✅ "This fragrance does exactly what it should. You'll know the moment you open it."
+
+---
+
+**DON'T use urgency or scarcity language.**
+"Last chance," "don't miss out," "selling fast" — this is discount retailer language. It collapses the luxury positioning immediately.
+
+> ❌ "Don't miss out! Last chance to shop the sale!"
+> ✅ "Only a few remaining." or "Available for a limited time."
+
+---
+
+## SECTION 2 — VISUAL RULES
+
+### ✅ DO — Visual
+
+**DO use warm tones in every context.**
+Every color choice — background, type, overlay, filter — leans warm. If it has a cool or grey undertone, it does not belong.
+
+> ✅ Warm Ivory `#FAF6F0`, Soft Blush `#F2D4CC`, Espresso `#3B2314`
+> ❌ Cool white, grey backgrounds, desaturated palettes, pure black
+
+---
+
+**DO let negative space work.**
+Breathing room is not wasted space. It communicates luxury. Crowded compositions communicate budget.
+
+> ✅ One strong image. One line of copy. Enough space to breathe.
+> ❌ Four product images, three CTAs, two badges, and a banner — all competing.
+
+---
+
+**DO treat photography like emotional storytelling.**
+Images should feel like a moment was captured — not staged. Warm light, intimate composition, sensory texture.
+
+> ✅ Soft shadow across a product on cream linen. Warm rim light. Close enough to see texture.
+> ❌ Flat lay on a white marble surface with harsh overhead light.
+
+---
+
+**DO use the full type system.**
+Cormorant Garamond for display. Jost for body. Always. Both fonts must be present in any branded composition that includes type.
+
+> ✅ Cormorant headline + Jost body + Jost label
+> ❌ All sans-serif. All caps everywhere. Script fonts. System fonts.
+
+---
+
+**DO use Champagne Gold sparingly.**
+One gold element per composition. It signals luxury because it is rare in the frame. Use it everywhere and it means nothing.
+
+> ✅ Gold crown icon in the logo. Everything else in the palette.
+> ❌ Gold buttons, gold borders, gold text, gold background section — all in one layout.
+
+---
+
+### ❌ DON'T — Visual
+
+**DON'T use pure white or pure black.**
+Pure white reads clinical. Pure black reads cold. Both disconnect from the brand's warmth.
+
+> ❌ `#FFFFFF` background, `#000000` text
+> ✅ `#FAF6F0` and `#3B2314` — always
+
+---
+
+**DON'T chase visual trends at the expense of identity.**
+Trends are references, not directives. If a visual trend requires the brand to look like something other than MVQUEEN — it does not belong in the brand, regardless of what's performing on social.
+
+> ❌ Adopting a cold dark-mode aesthetic because it's trending in luxury
+> ✅ Interpreting a trend through MVQUEEN's warm, soft, cinematic lens
+
+---
+
+**DON'T overcrowd product imagery.**
+More products in a single image does not mean more desire. It means less. Each product deserves its own moment.
+
+> ❌ 8 products arranged in a collage-style flat lay
+> ✅ One product, beautifully lit, with one supporting prop maximum
+
+---
+
+**DON'T use clip art, stock icon sets, or generic graphic elements.**
+Decorative elements that could belong to any brand do not belong in MVQUEEN. Every graphic element is either part of the established visual system or it is removed.
+
+> ❌ Generic star bursts, "NEW" stickers in Comic Sans energy, default Canva elements
+> ✅ Clean typographic callouts, the crown icon, palette-consistent shape elements only
+
+---
+
+**DON'T put Miss.Princess palette colors in MVQUEEN primary contexts.**
+Soft Lilac `#E8DCF0` and Petal Pink `#F7E0DA` belong to Miss.Princess. MVQUEEN uses Soft Blush and Dusty Rose. These are not the same.
+
+---
+
+## SECTION 3 — EXPERIENCE RULES
+
+### ✅ DO — Experience
+
+**DO treat every touchpoint as part of the product.**
+The email subject line, the packaging tape, the order confirmation message, the social DM response — every interaction is MVQUEEN speaking. All of it is held to the same standard.
+
+---
+
+**DO make the unboxing feel intentional.**
+Packaging is not functional protection — it is the first physical experience of the brand. Tissue paper, closing stickers, the weight of the box, the scent if applicable — all of it is considered.
+
+> ✅ Warm Ivory mailer, Dusty Rose tissue, Espresso brand stamp, handwritten-style card insert
+> ❌ Brown mailer, no tissue, printed packing slip only
+
+---
+
+**DO write customer communications in brand voice.**
+Order confirmations, shipping notifications, return policies, customer service responses — all of it is written in MVQUEEN voice. Not corporate boilerplate.
+
+> ✅ "Your order is on its way. We wrapped it with care."
+> ❌ "Order #45621 has been processed and will ship within 3–5 business days."
+
+---
+
+**DO distinguish Miss.Princess clearly in every dual-brand context.**
+When both brands appear in the same space, Miss.Princess is introduced as "our sister brand" and her visual identity is clearly differentiated — never blurred with MVQUEEN's.
+
+---
+
+### ❌ DON'T — Experience
+
+**DON'T use shame, insecurity, or comparison as purchase triggers.**
+MVQUEEN does not make women feel inadequate to sell them a solution. The brand elevates — it does not exploit.
+
+> ❌ "Tired of dull skin? Finally fix it with..."
+> ✅ "Skin that tells a story. This is the chapter where it glows."
+
+---
+
+**DON'T automate customer relationships without brand voice.**
+No automated email, chatbot response, or AI-generated message goes live without a voice review. Automation at scale is not an excuse for cold, robotic communication.
+
+---
+
+**DON'T treat low-ticket items as less important.**
+A $12 product receives the same copy quality, packaging consideration, and customer experience as a $95 product. Budget determines the materials — never the care.
+
+---
+
+**DON'T use the word "luxury" without earning it.**
+The word luxury in MVQUEEN copy is only used when the sentence around it demonstrates what that luxury is. The word alone is not enough. Show it first.
+
+> ❌ "Experience the luxury of MVQUEEN."
+> ✅ "The weight of the bottle alone tells you something about what's inside."
+
+---
+
+## SECTION 4 — BRAND CONSISTENCY RULES
+
+### The Five-Second Test
+Any person who sees MVQUEEN content for the first time should be able to identify the brand within five seconds — not from the logo, but from the feeling. Warmth. Softness. Elegance. Confidence. If the content requires the logo to identify it as MVQUEEN, it is not yet brand-level content.
+
+### The Mirror Test
+Before any piece of content is published, ask: *Does this look or sound like any other brand?* If yes — it is not MVQUEEN content yet. Rewrite or redesign until it passes.
+
+### The Brand Bible Test
+If a content decision is in question, return to the Brand Bible. If it contradicts anything in the Brand Bible — it does not happen.
+
+### The Forbidden Words Test
+Run every piece of copy through `Forbidden_Words.md` before publishing. If a forbidden word is present — replace it. No exceptions.
+
+---
+
+*This file is the MVQUEEN brand rules quick reference. Pairs with Forbidden_Words.md (vocabulary), Voice_Consistency_Rules.md (tone), Writing_Rules.md (mechanics), and color_system.md (visual). When these files conflict, the Brand Bible is the final authority.*

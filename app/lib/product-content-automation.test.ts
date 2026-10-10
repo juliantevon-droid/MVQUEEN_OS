@@ -58,7 +58,7 @@ assert.ok(!content.descriptionHtml.toLowerCase().includes("supplier"));
 assert.ok(content.highlights.some((item) => item.includes("925 Sterling Silver")));
 assert.ok(content.longTailKeywords.length > 0);
 assert.ok(content.seoKeywords.includes("pendant necklace"));
-assert.ok(content.seoTitle.endsWith("| MVQueen"));
+assert.ok(content.seoTitle.endsWith("| MVQUEEN"));
 assert.ok(content.seoTitle.length <= 60);
 assert.ok(content.metaDescription.length <= 155);
 assert.ok(!JSON.stringify(content).toLowerCase().includes("supplier"));
@@ -572,7 +572,7 @@ assert.ok(!claimReviewSerialized.includes("anti-cellulite"));
 assert.ok(!claimReviewSerialized.includes("fat burning"));
 assert.ok(!claimReviewSerialized.includes("slimming"));
 assert.ok(claimReviewContent.title.toLowerCase().includes("cupping"));
-assert.ok(claimReviewContent.seoTitle.endsWith("| MVQueen"));
+assert.ok(claimReviewContent.seoTitle.endsWith("| MVQUEEN"));
 
 const lighteningProduct: ProductSnapshot = {
   id: "gid://shopify/Product/lightening-review",

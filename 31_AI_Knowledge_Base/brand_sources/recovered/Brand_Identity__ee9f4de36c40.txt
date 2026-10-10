@@ -1,0 +1,456 @@
+# 🎨 MVQUEEN — Color System
+
+---
+
+## Purpose
+
+The definitive technical color system for MVQUEEN — governing every color decision across digital, print, packaging, and content. This document is the source of truth for all visual output.
+
+---
+
+## Primary Palette
+
+These five colors form the foundation of every MVQUEEN visual.
+
+| Color Name | Hex | RGB | CMYK | Use |
+|-----------|-----|-----|------|-----|
+| Ivory Cream | `#F8F4EE` | 248, 244, 238 | 0, 2, 4, 3 | Primary background — all digital surfaces |
+| Champagne | `#E8D5B7` | 232, 213, 183 | 0, 8, 21, 9 | Warm accent, borders, subtle highlights |
+| Blush Rose | `#E8C4B8` | 232, 196, 184 | 0, 15, 21, 9 | Feminine accent, CTA highlights |
+| Warm White | `#FDFAF5` | 253, 250, 245 | 0, 1, 2, 1 | Clean backgrounds, email, product pages |
+| Soft Sage | `#B5C4B1` | 181, 196, 177 | 8, 0, 10, 23 | Natural accent, wellness content |
+
+---
+
+## Secondary Palette
+
+Used as depth, contrast, and seasonal variation — never dominant.
+
+| Color Name | Hex | Use |
+|-----------|-----|-----|
+| Dusty Mauve | `#C4A0A0` | Fashion and editorial depth |
+| Muted Gold | `#C9A96E` | Luxury accent, logo treatments, foil reference |
+| Warm Taupe | `#B8A898` | Neutral depth, supporting elements |
+| Pale Lavender | `#D4C4D8` | Soft seasonal accent |
+| Deep Cream | `#E8E0D0` | Rich backgrounds, packaging |
+
+---
+
+## Text Colors
+
+| Use Case | Color Name | Hex |
+|---------|-----------|-----|
+| Primary body text | Warm Dark | `#2C2420` |
+| Secondary / captions | Warm Grey | `#6B5C54` |
+| Light text on dark | Off-White | `#F8F4EE` |
+| Accent text / highlights | Muted Gold | `#C9A96E` |
+| Link text | Warm Dark | `#2C2420` (underlined) |
+| Disabled / placeholder | Light Taupe | `#C8B8B0` |
+
+---
+
+## Color Psychology Map
+
+| Color | Psychological Signal | MVQUEEN Application |
+|-------|---------------------|-------------------|
+| Ivory/Cream | Purity, warmth, softness | The brand's primary emotional signal — everything lives here |
+| Blush Rose | Femininity, care, gentleness | Self-care content, feminine identity moments |
+| Champagne/Gold | Luxury, celebration, worth | Premium positioning, special moments, packaging accents |
+| Sage Green | Nature, restoration, calm | Wellness content, ingredient stories, restorative products |
+| Mauve | Sophistication, quiet elegance | Fashion editorial, elevated lifestyle content |
+| Warm Taupe | Stability, groundedness | Neutral supporting role — never the hero |
+
+---
+
+## Color Usage Rules
+
+### Backgrounds
+- **Digital primary:** Ivory Cream (`#F8F4EE`) or Warm White (`#FDFAF5`)
+- **Never:** Pure white (`#FFFFFF`) — reads cold and clinical
+- **Never:** Pure black — contradicts brand warmth entirely
+- **Dark option (for contrast):** Warm Dark (`#2C2420`) used sparingly
+
+### Accent Color Hierarchy
+1. Champagne — most used accent (borders, dividers, warm highlights)
+2. Blush Rose — feminine accent (CTAs, highlights, feminine content)
+3. Muted Gold — luxury accent (use sparingly — only when it earns its place)
+4. Sage — wellness/nature content only
+5. Mauve — fashion/editorial only
+
+### Color Proportion Rule
+```
+70% — Primary palette (Ivory, Warm White, Champagne)
+20% — Secondary accent (Blush, Sage, Mauve, Taupe)
+10% — Gold (luxury signal — never overuse)
+```
+
+---
+
+## Platform-Specific Color Application
+
+### Instagram Feed
+- Background tone: Ivory Cream dominant
+- Accent: Blush Rose and Champagne for warmth
+- Text overlays: Warm Dark on light backgrounds, Off-White on dark
+- Consistency: All posts should feel cohesive in a grid view
+
+### Email
+- Header background: Ivory Cream
+- Body background: Warm White
+- Accent dividers: Champagne
+- CTA buttons: Blush Rose or Warm Dark
+- Footer: Deep Cream
+
+### Website
+- Page background: Warm White
+- Section backgrounds: Alternate Ivory Cream and Warm White
+- CTA buttons: Blush Rose (primary), Warm Dark (secondary)
+- Borders and dividers: Champagne
+- Sale/alert badges: Dusty Mauve (never red — too aggressive)
+
+### Packaging
+- Primary box: Ivory Cream (matte)
+- Logo: Muted Gold foil or Warm Dark deboss
+- Tissue: Blush Rose or Ivory
+- Seal sticker: Muted Gold on Ivory
+
+### Pinterest
+- Pin backgrounds: Ivory, Warm White, Champagne dominant
+- Text overlays: Warm Dark — always legible
+- Accent: Blush for pinnable appeal
+
+---
+
+## Color Accessibility Standards
+
+Text on background must meet WCAG AA contrast requirements:
+
+| Text Color | Background | Contrast Ratio | Pass/Fail |
+|-----------|-----------|---------------|----------|
+| `#2C2420` on `#F8F4EE` | Warm Dark on Ivory | 12.8:1 | ✅ AAA |
+| `#2C2420` on `#FDFAF5` | Warm Dark on Warm White | 13.5:1 | ✅ AAA |
+| `#F8F4EE` on `#2C2420` | Off-White on Warm Dark | 12.8:1 | ✅ AAA |
+| `#C9A96E` on `#F8F4EE` | Muted Gold on Ivory | 3.1:1 | ⚠️ Use large text only |
+
+**Rule:** Never use Muted Gold as small body text — contrast is insufficient.
+
+---
+
+## Seasonal Color Shifts
+
+The core palette stays consistent year-round. Seasonal content uses accent shifts:
+
+| Season | Accent Shift |
+|--------|------------|
+| Spring | Introduce Pale Lavender and fresh Sage |
+| Summer | Warmer Champagne, lighter Blush |
+| Autumn | Deeper Warm Taupe, richer Champagne |
+| Winter | Muted Gold amplified, Deep Cream backgrounds |
+
+Core palette never changes — only accent emphasis shifts.
+
+---
+*MVQUEEN Color System — Master Reference Document*
+*Any color used in MVQUEEN output must come from this system.*
+
+---
+---
+---
+
+# ✍️ MVQUEEN — Typography System
+
+---
+
+## Purpose
+
+The definitive typography system for MVQUEEN — governing font selection, hierarchy, sizing, spacing, and usage across all digital and print applications.
+
+Typography is voice made visible. Every font choice communicates something about the brand before a word is read.
+
+---
+
+## Typography Philosophy
+
+MVQUEEN typography must feel:
+- **Feminine** without being delicate or unreadable
+- **Luxurious** without being inaccessible or cold
+- **Modern** without being trend-dependent
+- **Warm** — never sterile or clinical
+
+The typography system creates a reading experience that feels like inhabiting the brand — unhurried, considered, and beautiful.
+
+---
+
+## Font System
+
+### Display / Headline Font
+**Role:** Headlines, campaign statements, hero text, brand declarations
+**Character:** Elegant, feminine, distinctive — creates the brand's visual voice
+**Type style:** Serif with warmth — classic proportions, modern refinement
+
+**Recommended options:**
+| Font | Style | Notes |
+|------|-------|-------|
+| Cormorant Garamond | Serif | Free via Google Fonts — elegant, feminine |
+| Playfair Display | Serif | Free via Google Fonts — high contrast, luxurious |
+| Libre Baskerville | Serif | Free — refined, readable at all sizes |
+
+**Usage:** Headlines H1, H2 on hero sections, campaign statements, packaging brand name
+
+---
+
+### Body / Supporting Font
+**Role:** Body copy, product descriptions, captions, navigation, UI text
+**Character:** Clean, warm, highly readable — supports the headline without competing
+**Type style:** Sans-serif with humanist qualities — never cold or geometric
+
+**Recommended options:**
+| Font | Style | Notes |
+|------|-------|-------|
+| Jost | Sans-serif | Free — clean, warm, excellent readability |
+| DM Sans | Sans-serif | Free — humanist, modern, warm |
+| Nunito | Sans-serif | Free — rounded, approachable, readable |
+
+**Usage:** All body copy, navigation, buttons, captions, email body text
+
+---
+
+### Accent / Script Font (Use Sparingly)
+**Role:** Special moments only — taglines, packaging inserts, brand card messages
+**Character:** Handwritten quality — personal and warm
+**Type style:** Script or handwritten
+
+**Recommended options:**
+| Font | Style | Notes |
+|------|-------|-------|
+| Playfair Display Italic | Italic serif | Elegant substitute for script |
+| Dancing Script | Script | Free — readable handwritten feel |
+
+**Usage:** Brand card messages, packaging accents, special campaign moments ONLY
+**Rule:** Maximum one instance per design. Never in body copy. Never for navigation.
+
+---
+
+## Type Hierarchy
+
+### Digital (Website & Email)
+
+| Level | Font | Size | Weight | Color | Use |
+|-------|------|------|--------|-------|-----|
+| H1 | Display | 36-48px | Regular | Warm Dark | Page headlines, hero text |
+| H2 | Display | 28-36px | Regular | Warm Dark | Section headlines |
+| H3 | Display or Body | 22-28px | Regular/Medium | Warm Dark | Subsection headers |
+| H4 | Body | 18-20px | Medium | Warm Dark | Card titles, product names |
+| Body Large | Body | 16-18px | Regular | Warm Dark | Lead paragraphs |
+| Body | Body | 14-16px | Regular | Warm Dark | Standard body copy |
+| Caption | Body | 12-13px | Regular | Warm Grey | Image captions, metadata |
+| Button | Body | 14-15px | Medium | Variable | CTA buttons |
+| Navigation | Body | 14-15px | Regular | Warm Dark | Site navigation |
+
+### Mobile Adjustments (Reduce all sizes by ~2px)
+
+| Level | Mobile Size |
+|-------|------------|
+| H1 | 28-36px |
+| H2 | 22-28px |
+| Body | 14-16px |
+
+---
+
+## Spacing Standards
+
+**Line height:**
+- Headlines: 1.2-1.3 (tighter for elegance)
+- Body text: 1.6-1.8 (looser for readability)
+- Captions: 1.4
+
+**Letter spacing:**
+- Headlines: -0.02em to 0 (slightly tight for luxury feel)
+- Body: 0 to 0.01em (normal)
+- All caps / labels: 0.08-0.12em (always letter-space all caps)
+- Captions: 0.02-0.04em
+
+**Paragraph spacing:**
+- Between paragraphs: 1.5 × line height
+- After headers: 0.5 × line height
+
+---
+
+## Typography Rules
+
+**Rule 1 — Never more than two fonts in any single design.**
+Display font + Body font. The script accent font is a rare third when absolutely needed.
+
+**Rule 2 — Never use all-caps for body copy.**
+All-caps is acceptable for short labels, navigation items, and button text. Never for full sentences or paragraphs.
+
+**Rule 3 — Minimum body text size is 14px on digital.**
+Below 14px is inaccessible and signals poor design quality.
+
+**Rule 4 — Generous line height in body copy.**
+Tight line height in body copy makes reading feel effortful. 1.6-1.8 is the minimum for comfort.
+
+**Rule 5 — Headlines are never bold in MVQUEEN.**
+Regular weight serif headlines signal refinement. Bold headlines signal loudness — which is off-brand.
+
+**Rule 6 — Left-align body text.**
+Center alignment is acceptable for very short decorative text. Never center-align paragraphs — it reduces readability and feels amateur.
+
+---
+
+## Email Typography Specifics
+
+Email clients have limited font support. Use web-safe fallbacks:
+
+| MVQUEEN Font | Email Fallback |
+|-------------|--------------|
+| Cormorant Garamond | Georgia, serif |
+| Playfair Display | Georgia, serif |
+| Jost | Arial, Helvetica, sans-serif |
+| DM Sans | Arial, Helvetica, sans-serif |
+
+**Email font stack example:**
+`font-family: 'Jost', Arial, Helvetica, sans-serif;`
+
+---
+*MVQUEEN Typography System — Master Reference Document*
+*All type used in MVQUEEN output must align with this system.*
+
+---
+---
+---
+
+# 📏 MVQUEEN — Brand Rules
+
+---
+
+## Purpose
+
+The non-negotiable standards governing how the MVQUEEN brand is expressed — across visuals, language, partnerships, and operations. These rules protect the brand's integrity as it scales.
+
+This is not a suggestion list. These are rules.
+Deviation requires explicit founder approval.
+
+---
+
+## Visual Brand Rules
+
+### Logo
+```
+Rule 1: The MVQUEEN logo is never stretched, distorted, or recolored outside approved palette.
+Rule 2: Minimum clear space around logo = height of the "M" on all sides.
+Rule 3: Logo on light backgrounds: Warm Dark (#2C2420) or Muted Gold (#C9A96E).
+Rule 4: Logo on dark backgrounds: Off-White (#F8F4EE) or Muted Gold (#C9A96E).
+Rule 5: Never place logo on busy photography without sufficient contrast.
+Rule 6: Never use drop shadows, outlines, or effects on the logo.
+```
+
+### Color
+```
+Rule 7: All brand colors come from the MVQUEEN Color System — no improvised colors.
+Rule 8: Pure white (#FFFFFF) and pure black (#000000) are not MVQUEEN colors.
+Rule 9: Muted Gold is used sparingly — it signals luxury only when not overused.
+Rule 10: No neon, bright, or high-saturation colors anywhere in the brand ecosystem.
+```
+
+### Photography
+```
+Rule 11: All photography must align with MVQUEEN Visual Identity Philosophy.
+Rule 12: Harsh flash lighting, stark shadows, and cold color grading are prohibited.
+Rule 13: All photography is post-processed with warm color grading — never cool/blue tones.
+Rule 14: Stock photography is never used for hero/primary content — only for filler if needed.
+Rule 15: AI-generated images must pass brand visual review before publication.
+```
+
+### Typography
+```
+Rule 16: Only fonts from the MVQUEEN Typography System are used in brand materials.
+Rule 17: Maximum two fonts per design (display + body). Script accent is a rare third.
+Rule 18: Headlines are never bold. Regular weight serif only.
+Rule 19: Body text minimum 14px on all digital applications.
+Rule 20: All-caps only for short labels — never for sentences or paragraphs.
+```
+
+---
+
+## Language Brand Rules
+
+### Voice
+```
+Rule 21: Every piece of content passes the Tone Guide before publication.
+Rule 22: No words from the Forbidden Words list appear in any customer-facing content.
+Rule 23: AI-generated content is reviewed by a human before publishing — no exceptions.
+Rule 24: Content never implies a woman needs to change to deserve MVQUEEN.
+Rule 25: Marketing never uses comparison, insecurity, or fear as conversion tactics.
+```
+
+### Formatting
+```
+Rule 26: Multiple exclamation marks (!! or !!!) never appear in brand copy.
+Rule 27: ALL CAPS words in body copy are prohibited.
+Rule 28: Aggressive urgency language ("Buy NOW", "Don't miss out!", "Last chance!!") is prohibited.
+Rule 29: Generic CTAs ("Click here", "Buy now") are replaced with CTA Library options.
+Rule 30: Emojis are used selectively — maximum 1-2 per post, never in formal content.
+```
+
+---
+
+## Partnership Brand Rules
+
+```
+Rule 31: No partnership proceeds without a review against brand alignment criteria.
+Rule 32: All influencer content includes legal FTC disclosure (#ad or #sponsored).
+Rule 33: No partner uses MVQUEEN assets without a signed agreement.
+Rule 34: MVQUEEN never endorses a competitor's product — explicitly or implicitly.
+Rule 35: Partnership content that contradicts MVQUEEN values is grounds for immediate contract termination.
+```
+
+---
+
+## Pricing Brand Rules
+
+```
+Rule 36: MVQUEEN never runs flash sales or countdown-timer discount promotions.
+Rule 37: Discounts over 30% are prohibited — they undermine luxury positioning.
+Rule 38: "Sale" language is replaced with: "At a gentler price" or "Selected at [price]."
+Rule 39: Free shipping threshold is maintained and communicated — not hidden.
+Rule 40: Price increases are introduced gradually with quality signaling — never abrupt.
+```
+
+---
+
+## Digital Brand Rules
+
+```
+Rule 41: The MVQUEEN website is mobile-optimized and tested on mobile before every launch.
+Rule 42: Page load time target is under 3 seconds on mobile — this is a brand standard.
+Rule 43: All product images have alt text before products go live.
+Rule 44: All customer data is handled per privacy policy — no exceptions.
+Rule 45: Broken links are fixed within 48 hours of identification.
+```
+
+---
+
+## AI Brand Rules
+
+```
+Rule 46: No AI output is published without human brand voice review.
+Rule 47: All AI prompts used for customer-facing content are loaded with brand voice context.
+Rule 48: AI systems operate within brand doctrine — they do not override it.
+Rule 49: AI-generated images are reviewed against visual identity standards before use.
+Rule 50: The AI Prompt Library is updated when brand voice evolves.
+```
+
+---
+
+## The Override Clause
+
+If any rule creates a conflict with a specific business situation — bring it to the founder.
+
+Rules exist to protect the brand. The founder exists to make judgment calls when rules create unintended friction.
+
+No team member, collaborator, or AI system has authority to override these rules independently.
+
+---
+*MVQUEEN Brand Rules — Governance Document*
+*Deviation requires explicit founder approval. These rules scale with the brand.*

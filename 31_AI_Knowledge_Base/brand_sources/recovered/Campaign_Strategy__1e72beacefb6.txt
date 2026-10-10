@@ -1,0 +1,178 @@
+# 📣 MVQUEEN — Campaign Strategy
+
+---
+
+## What a Campaign Is in MVQUEEN
+
+A campaign is not a promotional event.
+It is a coordinated emotional moment — a specific window of time where every channel, every piece of content, every touchpoint carries the same feeling and moves toward the same outcome.
+
+MVQUEEN campaigns are built around emotional direction first.
+The products, the offers, the channels — all of those follow from the feeling the campaign is designed to create.
+
+---
+
+## Campaign Architecture
+
+Every MVQUEEN campaign has seven components before a single piece of content is created:
+
+```
+1. EMOTIONAL DIRECTION  — What does she feel during this campaign?
+2. CAMPAIGN ANCHOR      — The one product, collection, or moment this centers on
+3. CORE MESSAGE         — The single sentence that drives everything
+4. TARGET PERSONA       — Which customer avatar this speaks to primarily
+5. CHANNEL PLAN         — Where it runs and what role each channel plays
+6. CREATIVE DIRECTION   — Visual mood, copy register, aesthetic parameters
+7. SUCCESS METRICS      — What does winning look like — specifically
+```
+
+No campaign moves to execution without all seven defined.
+
+---
+
+## Campaign Types
+
+### TYPE 01 — Product Launch Campaign
+**Trigger:** New product or collection going live
+**Duration:** 10–14 days (3-day tease + launch day + 7-day sustain)
+**Emotional direction:** Anticipation → desire → belonging
+**Channels:** Email (anchor), social (awareness), SMS (VIP), paid ads (scale)
+**Full SOP:** `39_SOP_Library/Product_Launch_SOP.md`
+
+---
+
+### TYPE 02 — Seasonal Campaign
+**Trigger:** Quarterly seasonal shift (Q1 Renewal, Q2 Bloom, Q3 Golden, Q4 Velvet)
+**Duration:** 3–4 weeks
+**Emotional direction:** Aligned with the season's emotional register
+**Channels:** All channels, editorial-led
+**Full guide:** `07_Marketing/Seasonal_Campaigns.md`
+
+---
+
+### TYPE 03 — Brand Awareness Campaign
+**Trigger:** Strategic brand-building moments — anniversary, milestone, cultural moment
+**Duration:** 1–2 weeks
+**Emotional direction:** Identity, belonging, recognition
+**Channels:** Social-first, supported by email and content
+**Goal:** New audience acquisition, brand recall — not immediate conversion
+
+---
+
+### TYPE 04 — Retention Campaign
+**Trigger:** Lapsed customer segments, loyalty tier milestones, re-engagement windows
+**Duration:** 5–7 days
+**Emotional direction:** Return, recognition, reunion
+**Channels:** Email-primary, SMS for VIP
+**Full guide:** `25_Retention_And_Community/README.md`
+
+---
+
+### TYPE 05 — Limited Edition Drop
+**Trigger:** Limited product release (4–6 times per year)
+**Duration:** 7 days maximum
+**Emotional direction:** Exclusivity without pressure, desire without urgency
+**Channels:** SMS first (VIPs get early access), then email, then social
+**Critical rule:** Scarcity must be real — never manufactured
+
+---
+
+### TYPE 06 — Gifting Campaign
+**Trigger:** Mother's Day, birthdays, holiday season, Valentine's Day
+**Duration:** 2–3 weeks
+**Emotional direction:** She deserves to be given this — or to give herself this
+**Channels:** All channels with gifting-specific copy
+**Key insight:** MVQUEEN gifting campaigns speak to the giver and the receiver simultaneously
+
+---
+
+## Campaign Brief Template
+
+```
+CAMPAIGN NAME:          ________________________________
+CAMPAIGN TYPE:          ________________________________
+DATES:                  Start: _________ End: __________
+EMOTIONAL DIRECTION:    ________________________________
+CAMPAIGN ANCHOR:        ________________________________
+CORE MESSAGE:           ________________________________
+TARGET PERSONA:         ________________________________
+
+CHANNEL PLAN:
+  Email:                ________________________________
+  Social:               ________________________________
+  SMS:                  ________________________________
+  Paid Ads:             ________________________________
+
+CREATIVE DIRECTION:
+  Visual:               ________________________________
+  Copy register:        ________________________________
+  Key visual asset:     ________________________________
+
+SUCCESS METRICS:
+  Primary KPI:          ________________________________
+  Secondary KPI:        ________________________________
+  Revenue target:       ________________________________
+
+ASSETS NEEDED:
+  [ ] Campaign copy (email, social, ads, SMS)
+  [ ] Visual assets (hero image, product shots, social tiles)
+  [ ] Landing page or collection page updated
+  [ ] Email sequences scheduled
+  [ ] Social calendar mapped
+  [ ] Paid ads built and scheduled
+  [ ] SMS drafted and scheduled
+```
+
+---
+
+## Campaign Calendar — Annual Framework
+
+| Month | Campaign Focus |
+|-------|---------------|
+| January | Q1 Renewal launch — new year ritual |
+| February | Valentine's gifting + self-love campaign |
+| March | Spring transition — Bloom preview |
+| April | Q2 Bloom collection launch |
+| May | Mother's Day gifting campaign |
+| June | Summer glow — body care focus |
+| July | Q3 Golden launch — peak summer |
+| August | Limited edition summer drop |
+| September | Fall transition — Velvet preview |
+| October | Q4 Velvet Season launch |
+| November | Holiday gifting campaign |
+| December | End of year — ritual, reflection, gift sets |
+
+**Rule:** Maximum 2 active campaigns simultaneously. More than 2 creates customer fatigue and dilutes every message.
+
+---
+
+## Campaign Voice by Type
+
+| Campaign Type | Voice Register | Avoid |
+|--------------|---------------|-------|
+| Product Launch | Desire-led, specific, sensory | Generic "new arrival" language |
+| Seasonal | Atmospheric, editorial | Trend-chasing, rushed |
+| Brand Awareness | Identity, philosophy | Promotional, product-heavy |
+| Retention | Warm, personal, reunion energy | Guilt, pressure, desperation |
+| Limited Drop | Calm confidence, quiet exclusivity | Countdown clocks, panic urgency |
+| Gifting | Dual-audience (giver + receiver) | Generic "perfect gift" language |
+
+---
+
+## Campaign Performance Standards
+
+After every campaign, document:
+- Revenue generated
+- Email open + click rates vs benchmark
+- Social reach and engagement
+- Paid ROAS (if applicable)
+- New customers acquired
+- Returning customer engagement
+- What the copy, creative, and timing taught us
+
+No campaign ends without a post-mortem. That intelligence feeds the next one.
+
+---
+
+*07_Marketing / Campaign_Strategy.md*
+*Every campaign is a controlled emotional moment. Build it with intention. Measure it honestly.*

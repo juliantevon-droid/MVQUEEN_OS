@@ -1,0 +1,179 @@
+# 💸 MVQUEEN — Paid Advertising Strategy
+
+---
+
+## Paid Ads Philosophy
+
+Paid advertising in MVQUEEN is not a substitute for brand building.
+It is an accelerant — applied to content and audiences that have already proven they resonate organically.
+
+MVQUEEN never runs ads that feel like ads.
+Every paid placement should feel like content she was glad she saw — not something she scrolls past or mutes.
+
+The test: would she save this if she saw it organically?
+If yes — it's ready to be paid.
+If no — fix the creative first.
+
+---
+
+## Platform Strategy
+
+### Meta (Facebook + Instagram)
+**Primary use:** Conversion campaigns, retargeting, lookalike audiences
+**Strength:** Unmatched audience targeting depth, strongest retargeting ecosystem
+**MVQUEEN format priorities:**
+- Reels ads (15–30 seconds, hook-first, native-feeling)
+- Carousel ads (product story, collection showcase)
+- Static image ads (strong headline, warm aesthetic)
+- Story ads (full-screen, immediate, one CTA)
+
+**Audience architecture:**
+- Cold: Interest targeting (luxury beauty, skincare, feminine lifestyle, self-care)
+- Warm: Website visitors (last 30, 60, 90 days)
+- Hot: Add-to-cart + checkout initiated (last 14 days)
+- Lookalike: 1–3% lookalike of purchasers
+
+---
+
+### TikTok Ads
+**Primary use:** Discovery, brand awareness, new audience acquisition
+**Strength:** Organic-feeling reach, younger feminine demographic, viral potential
+**MVQUEEN format priorities:**
+- In-feed ads (native content format — must look organic)
+- Spark ads (boost existing organic content that's already performing)
+
+**Critical rule for TikTok ads:** If it looks like an ad — it won't work. MVQUEEN TikTok ads are organic content with budget behind them, not produced commercial spots.
+
+---
+
+### Pinterest Ads
+**Primary use:** Discovery, SEO support, product awareness
+**Strength:** High purchase intent, long content lifespan, feminine audience
+**MVQUEEN format priorities:**
+- Promoted pins (product imagery, lifestyle shots)
+- Shopping ads (direct product catalog integration)
+
+---
+
+### Google Ads (Future Phase)
+**Primary use:** Search intent capture — she's looking, we're there
+**Priority keywords:** Brand terms, category terms with high purchase intent
+**Implementation:** When monthly ad budget exceeds $1,500/month
+
+---
+
+## Ad Creative Standards
+
+### Visual Standards
+- Warm lighting always — no cool-toned, filtered, or grey-graded imagery
+- Skin tones shown accurately — never color-corrected toward cool
+- Product shown in context (her world) — not on white studio backgrounds
+- Text overlay: readable at mobile size, never more than 30% of frame
+- First frame: must stop the scroll — no black screen, no logo as opener
+
+### Copy Standards
+- Headline: identity-based or sensory-specific — never generic
+- Body: 1–3 sentences maximum — she's scrolling
+- CTA: soft and specific — never "Shop Now" alone
+- No exclamation marks in ad copy
+- No pressure language — "Limited time," "Act now," "Don't miss out"
+
+---
+
+## Ad Campaign Structure
+
+### Campaign Level — The Objective
+Choose one: Awareness / Traffic / Engagement / Leads / Conversions / Catalog Sales
+
+MVQUEEN standard:
+- Cold audiences → Conversions (optimized for purchase or add to cart)
+- Retargeting → Conversions (optimized for purchase)
+- Brand awareness → Reach or Engagement
+
+### Ad Set Level — The Audience
+One audience per ad set. Never mix audiences.
+
+**Standard ad sets:**
+1. Cold — interest-based (luxury beauty, self-care, feminine lifestyle)
+2. Cold — broad (women 22–45, let Meta optimize)
+3. Warm — website visitors 30 days
+4. Warm — website visitors 60–90 days
+5. Hot — add-to-cart 14 days
+6. Hot — checkout initiated 14 days
+7. Lookalike — 1% of purchasers
+8. Lookalike — 2–3% of purchasers
+
+### Ad Level — The Creative
+3–4 creative variations per ad set. Test:
+- Different hooks (recognition vs curiosity vs desire)
+- Different formats (video vs static vs carousel)
+- Different copy angles (identity vs ritual vs product truth)
+
+Let data decide — never personal preference.
+
+---
+
+## Budget Allocation Framework
+
+| Audience Temperature | Budget % | Goal |
+|---------------------|----------|------|
+| Cold (prospecting) | 50% | New customer acquisition |
+| Warm (retargeting) | 30% | Convert interested visitors |
+| Hot (cart abandon) | 20% | Recover high-intent buyers |
+
+**Starting monthly budget recommendation:** $500–$1,000/month minimum for meaningful data.
+Below $500/month — organic-first strategy is more efficient.
+
+---
+
+## Performance Benchmarks
+
+| Metric | Minimum | Target | Strong |
+|--------|---------|--------|--------|
+| CTR (cold) | 0.8% | 1.5% | 2.5%+ |
+| CTR (retargeting) | 1.5% | 2.5% | 4%+ |
+| CPC | <$1.50 | <$1.00 | <$0.60 |
+| ROAS | 1.5x | 3x | 5x+ |
+| CPM | <$20 | <$15 | <$10 |
+| Frequency (cold) | — | 2–3 | — |
+
+When ROAS drops below 1.5x — pause and reassess creative before increasing budget.
+
+---
+
+## Ad Copy Swipe File
+
+**Cold audience headlines:**
+- "She changed one thing. Her skin hasn't been the same since."
+- "Two drops. Every morning. That's her whole ritual."
+- "The body butter her friends keep asking about."
+- "Not high-maintenance. High-intentioned."
+- "Luxury that was always emotional. Now it's accessible."
+
+**Retargeting headlines:**
+- "She was looking at this for a reason."
+- "Still here when she's ready. →"
+- "Her ritual is waiting."
+- "She almost had it."
+
+**CTAs:**
+- "Make it yours →"
+- "Discover the ritual →"
+- "Find yours →"
+- "Start here →"
+
+---
+
+## What MVQUEEN Ads Never Do
+
+- Lead with price or discount as the primary hook
+- Use before/after imagery with shame-based "before"
+- Run the same creative for more than 3 weeks without refresh
+- Use stock imagery — all creative is MVQUEEN-produced
+- Run ads to a landing page that doesn't match the ad's emotional register
+- Scale budget on ads with ROAS below 2x
+
+---
+
+*07_Marketing / Paid_Ads.md*
+*Paid ads amplify what already works. Build the creative. Earn the click. Then scale.*

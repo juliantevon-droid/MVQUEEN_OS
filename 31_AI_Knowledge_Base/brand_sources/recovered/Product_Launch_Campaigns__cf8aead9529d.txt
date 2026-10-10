@@ -1,0 +1,151 @@
+# 🚀 MVQUEEN — Product Launch Campaigns
+
+---
+
+## The Launch Philosophy
+
+Every product MVQUEEN launches deserves a moment — not just a listing going live.
+
+A product launch without a campaign is a product hoping to be found.
+A product launch with a campaign is a product being introduced to women who are ready to receive it.
+
+MVQUEEN launches are built in three phases: tease, reveal, and sustain.
+Each phase has a specific emotional job. Together they build anticipation, create desire, and generate momentum that outlasts launch day.
+
+---
+
+## Launch Tiers
+
+Not every product gets the same campaign depth. Allocate resources based on product importance.
+
+### TIER 1 — Hero Launch (New collection or hero product)
+Full 14-day campaign. All channels. Maximum resource allocation.
+Example: New collection launch, signature fragrance, hero skincare product.
+
+### TIER 2 — Standard Launch (New SKU or product addition)
+7-day campaign. Email + social + SMS. No paid unless budget supports.
+Example: New shade, size extension, complementary product.
+
+### TIER 3 — Soft Launch (Limited drop or test product)
+3-day campaign. Email to segment + social announcement.
+Example: Limited edition, test product with small initial run.
+
+---
+
+## The Launch Timeline (Tier 1 — Hero Launch)
+
+### PRE-LAUNCH — Days -10 to -4 (Tease Phase)
+
+**Goal:** Build anticipation before revealing the product.
+**Emotional register:** Intrigue. She senses something is coming.
+
+**Day -10:** Atmospheric social content — no product visible. Warm, sensory, brand-world imagery. Caption hints without revealing.
+
+**Day -7:** Email to full list — "Something is coming. She'll be the first to know." Waitlist or preview opt-in. Captures highest-intent buyers.
+
+**Day -5:** TikTok/Reel — behind the scenes of the product without showing it fully. Texture. Process. The feeling being built.
+
+**Day -4:** SMS to VIP list — early access offer. "She gets it 24 hours before the world."
+
+---
+
+### LAUNCH WEEK — Day -3 to Day 0 (Reveal Phase)
+
+**Day -3:** Full product reveal on social. The name, the feeling, the imagery. Captions that create desire before showing price.
+
+**Day -2:** Email — product story deep dive. The full emotional narrative. Who it's for. What it creates. The specific sensory detail that makes it real.
+
+**Day -1:** Social content — creator content if available, product detail shots, ritual placement.
+
+**Day 0 (Launch Day):**
+- **6:00 AM:** Email to full list — "She's here." Launch announcement with full product details and purchase link.
+- **8:00 AM:** Social post — product launch, carousel or reel.
+- **9:00 AM:** SMS to full list (VIPs already have 24hr access).
+- **12:00 PM:** Stories update — "Live now. Link in bio."
+- **6:00 PM:** TikTok — ritual content featuring the product.
+- **Paid ads:** Go live launch morning on warm audiences first.
+
+---
+
+### POST-LAUNCH — Days 1–7 (Sustain Phase)
+
+**Goal:** Maintain momentum, convert hesitant buyers, generate UGC.
+**Emotional register:** Belonging. She's made the right decision.
+
+**Day 1:** Email to non-openers from launch day — different subject line, same content refreshed.
+
+**Day 2:** Social — ritual content. Show the product in use. Real, sensory, specific.
+
+**Day 3:** UGC or creator content if available. First social proof wave.
+
+**Day 5:** Email to non-purchasers — product story from a different angle (social proof focus).
+
+**Day 7:** Retargeting ads go live on site visitors who didn't purchase.
+
+**Day 10 (if limited inventory):** "Nearly gone" communication to remaining non-purchasers. Soft, honest, not panic-inducing.
+
+---
+
+## Launch Email Sequence
+
+### Email 1 — Tease (Day -7)
+**Subject:** "Something is coming. She'll want to know first."
+**Content:** No product reveal. The feeling. The anticipation. Waitlist or preview opt-in link.
+
+### Email 2 — Reveal (Day -2)
+**Subject:** "[Product Name] — finally here."
+**Content:** Full product story. The emotional brief. Sensory details. Who it was made for.
+
+### Email 3 — Launch Day (Day 0, 6 AM)
+**Subject:** "She's live. [Product Name] is available now."
+**Content:** Direct, warm, confident. Product name. What it does. One CTA. No fluff.
+
+### Email 4 — Social Proof (Day 5)
+**Subject:** "What she said about [Product Name] after 5 days."
+**Content:** Early reviews, creator content, first response from customers.
+
+### Email 5 — Final Push (Day 10, if limited)
+**Subject:** "Nearly gone — [Product Name]"
+**Content:** Honest scarcity. For women who've been considering it. Warm urgency — never panic.
+
+---
+
+## Launch Social Content Plan (Tier 1)
+
+| Day | Platform | Content Type | Pillar |
+|-----|----------|-------------|--------|
+| -10 | Instagram | Atmosphere post | The World |
+| -7 | TikTok | Behind scenes | The Ritual |
+| -3 | Instagram | Product reveal | The Product |
+| -1 | TikTok | Ritual placement | The Ritual |
+| 0 | Instagram | Launch post | The Product |
+| 0 | TikTok | Launch video | The Product |
+| +2 | Instagram | In-use ritual | The Ritual |
+| +3 | TikTok | Creator content | The Woman |
+| +5 | Instagram | Customer review feature | The Woman |
+| +7 | Stories | Link + last units | The Product |
+
+---
+
+## Launch Copy Assets Checklist
+
+Before any product goes to launch:
+
+- [ ] Product name confirmed (Product_Naming_System.md)
+- [ ] Short description written and voice-checked
+- [ ] Long description complete (4–6 paragraphs)
+- [ ] 5 bullet points written
+- [ ] SEO title and meta description complete
+- [ ] All email copy written (5 emails)
+- [ ] Social captions written (all launch week posts)
+- [ ] SMS messages written (tease + launch + VIP)
+- [ ] Ad copy written (cold + retargeting)
+- [ ] Photography complete (product + lifestyle + in-use)
+- [ ] Creator brief sent (if applicable)
+- [ ] Shopify product page live in draft
+- [ ] All automations tested
+
+---
+
+*07_Marketing / Product_Launch_Campaigns.md*
+*A product without a launch is a product hoping to be found. MVQUEEN introduces every product like it matters — because it does.*

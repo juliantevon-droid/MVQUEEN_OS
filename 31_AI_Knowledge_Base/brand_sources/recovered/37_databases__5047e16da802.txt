@@ -1,0 +1,311 @@
+# 🗄️ MVQUEEN — Databases
+
+---
+
+## Purpose
+
+The Databases module defines every structured data asset inside MVQUEEN OS — the organized collections of information that power decisions, fuel AI systems, and ensure consistency across the ecosystem.
+
+A database is not a spreadsheet.
+It is a living asset — maintained with intention, structured for retrieval, and connected to the systems that need it.
+
+MVQUEEN runs on intelligence.
+Intelligence requires organized, accessible, reliable data.
+
+---
+
+## Database Philosophy
+
+Data in MVQUEEN exists to serve two things:
+1. Better decisions (human-facing)
+2. Better AI outputs (machine-facing)
+
+Every database is designed with both in mind.
+Data that can't be retrieved or used is just storage.
+Data that is structured, labeled, and maintained is leverage.
+
+---
+
+## Database Index
+
+| ID | Database | Type | Primary Use |
+|----|----------|------|-------------|
+| DB-01 | Product Master Database | Product Intelligence | Shopify, AI, copy |
+| DB-02 | Customer Persona Database | Customer Intelligence | Marketing, AI, targeting |
+| DB-03 | Brand Vocabulary Database | Linguistic Intelligence | AI prompts, copy review |
+| DB-04 | Keyword & SEO Database | Discovery Intelligence | SEO, content planning |
+| DB-05 | Supplier & Vendor Database | Operations Intelligence | Procurement, fulfillment |
+| DB-06 | Content Archive Database | Content Intelligence | Reference, repurposing |
+| DB-07 | Competitor Intelligence Database | Market Intelligence | Strategy, positioning |
+| DB-08 | UGC & Social Proof Database | Community Intelligence | Marketing, product pages |
+| DB-09 | Email Performance Database | Marketing Intelligence | Optimization, benchmarking |
+| DB-10 | Campaign Archive Database | Marketing Intelligence | Reference, repurposing |
+
+---
+
+## DB-01 — Product Master Database
+
+**Purpose:** Single source of truth for every product in the MVQUEEN ecosystem.
+
+**Fields per product:**
+```
+PRODUCT ID: [SKU]
+PRODUCT NAME: [Full name]
+CATEGORY: [Primary / Secondary]
+COLLECTION: [Which collection it belongs to]
+STATUS: [Active / Discontinued / Seasonal / Draft]
+PRICE: [Retail / MSRP / Cost]
+MARGIN: [% margin]
+DESCRIPTION SHORT: [2-sentence]
+DESCRIPTION LONG: [Full copy]
+BULLET POINTS: [5 benefit statements]
+SEO TITLE: [50-60 chars]
+SEO META: [150-160 chars]
+TAGS: [Shopify tags]
+EMOTIONAL PROMISE: [What feeling it delivers]
+PERSONA FIT: [Which avatar(s) it serves]
+PHOTOGRAPHY STATUS: [Shot / Needed / In progress]
+SHOPIFY STATUS: [Live / Draft / Archived]
+LAUNCH DATE: [If applicable]
+NOTES: [Anything relevant]
+```
+
+**Maintained in:** Primary spreadsheet + Shopify product backend
+**Updated:** Every time a product is added, changed, or discontinued
+**AI use:** Feed product fields into prompt chains for consistent copy generation
+
+---
+
+## DB-02 — Customer Persona Database
+
+**Purpose:** Organized reference for every defined customer avatar and behavioral segment — used across marketing, content, AI prompting, and product development.
+
+**Structure per persona:**
+```
+PERSONA NAME: [e.g., The Elevated Everyday Woman]
+AGE RANGE: [e.g., 25-38]
+LIFESTYLE DESCRIPTOR: [Brief snapshot]
+PRIMARY EMOTIONAL NEED: [What she's really looking for]
+SECONDARY NEEDS: [2-3 supporting motivations]
+BUYING TRIGGERS: [What moves her to purchase]
+OBJECTIONS: [What holds her back]
+PLATFORMS: [Where she spends time]
+CONTENT SHE LOVES: [What resonates]
+LANGUAGE SHE USES: [How she talks about herself and beauty]
+BRANDS SHE RESPECTS: [Reference points]
+PRICE SENSITIVITY: [Low / Medium / High]
+BEST ACQUISITION CHANNEL: [How we find her]
+RETENTION APPROACH: [How we keep her]
+PRODUCT ALIGNMENT: [Which MVQUEEN categories speak to her]
+```
+
+**Source documents:**
+- `03_Customer_Psychology/customer_avatars.md`
+- `03_Customer_Psychology/Customer_Personas.md`
+- `03_Customer_Psychology/Audience_Segments.md`
+
+**AI use:** Persona context is injected into prompt chains to personalize copy and campaign direction at the segment level.
+
+---
+
+## DB-03 — Brand Vocabulary Database
+
+**Purpose:** Organized master list of approved words, forbidden words, and preferred language patterns — used as AI guardrails and copy review reference.
+
+**Structure:**
+```
+CATEGORY: [Approved / Forbidden / Preferred Alternatives]
+WORD / PHRASE: [The term]
+CONTEXT: [Where it applies]
+REASON: [Why it's approved or forbidden]
+ALTERNATIVES: [What to use instead, if forbidden]
+```
+
+**Approved vocabulary examples:**
+- soft, warm, luminous, intimate, feminine, elevated, intentional, immersive, restorative, quiet confidence, emotional warmth, breathable luxury
+
+**Forbidden vocabulary examples:**
+- cheap, affordable (use accessible luxury), stunning (overused), amazing (generic), must-have (pressure language), game-changing (corporate cliché), high-quality (says nothing)
+
+**Source document:** `02_Brand_Identity/brand_vocabulary.md`
+
+**AI use:** Included in system prompts as explicit language constraints. Checked against before any output is published.
+
+---
+
+## DB-04 — Keyword & SEO Database
+
+**Purpose:** Organized collection of all researched keywords, their data, and their assigned content homes — so SEO strategy is coherent and not duplicated.
+
+**Fields per keyword:**
+```
+KEYWORD: [Exact term]
+TYPE: [Short-tail / Long-tail / Branded / Category / Blog]
+SEARCH VOLUME: [Estimated monthly]
+DIFFICULTY: [Low / Medium / High]
+INTENT: [Informational / Commercial / Transactional / Navigational]
+PERSONA ALIGNMENT: [Which customer this attracts]
+ASSIGNED TO: [Product page / Blog post / Collection page / Homepage]
+STATUS: [Targeting / Published / Monitoring]
+CURRENT RANKING: [Position, updated periodically]
+NOTES: [Seasonal, trend-dependent, etc.]
+```
+
+**Organized by cluster:**
+- Cluster 1: Soft Glam Beauty
+- Cluster 2: Luxury Feminine Lifestyle
+- Cluster 3: Feminine Identity & Confidence
+- Cluster 4: Self-Care & Ritual
+- Cluster 5: Specific Product Categories
+
+---
+
+## DB-05 — Supplier & Vendor Database
+
+**Purpose:** Organized reference for every supplier, manufacturer, and vendor relationship in the MVQUEEN supply chain.
+
+**Fields per supplier:**
+```
+SUPPLIER NAME: [Company name]
+CATEGORY: [Product type they supply]
+CONTACT: [Primary contact name + info]
+PLATFORM: [Alibaba / Direct / Domestic / Dropship]
+MOQ: [Minimum order quantity]
+LEAD TIME: [Average production + shipping time]
+QUALITY RATING: [Internal rating 1-5]
+PRICE TIER: [Low / Medium / High]
+RELATIONSHIP STATUS: [Prospect / Active / Paused / Dropped]
+PRODUCTS SOURCED: [List what we've ordered from them]
+NOTES: [Quality issues, communication style, reliability]
+LAST ORDER DATE: [Date]
+REORDER TRIGGER: [What signals it's time to reorder]
+```
+
+---
+
+## DB-06 — Content Archive Database
+
+**Purpose:** Indexed library of every piece of content MVQUEEN has produced — so nothing is wasted, everything is findable, and strong content can be repurposed intelligently.
+
+**Fields per content piece:**
+```
+CONTENT ID: [Unique reference]
+TYPE: [Blog / Email / Caption / Ad / Video Script / Product Copy]
+TITLE / DESCRIPTION: [What it is]
+PLATFORM: [Where it was published]
+DATE PUBLISHED: [Date]
+PERFORMANCE: [Key metrics]
+STATUS: [Live / Archived / Evergreen / Seasonal]
+REPURPOSE POTENTIAL: [High / Medium / Low]
+NOTES: [What worked, what to improve]
+FILE LOCATION: [Where the original lives]
+```
+
+---
+
+## DB-07 — Competitor Intelligence Database
+
+**Purpose:** Organized tracking of key competitors — their positioning, strategies, product mix, pricing, and messaging — so MVQUEEN can differentiate with clarity.
+
+**Fields per competitor:**
+```
+BRAND NAME: [Name]
+CATEGORY: [Direct / Indirect / Aspirational reference]
+POSITIONING: [How they position themselves]
+PRICE POINT: [Low / Medium / High / Luxury]
+TARGET CUSTOMER: [Who they serve]
+STRENGTHS: [What they do well]
+WEAKNESSES: [Where they fall short]
+VOICE / TONE: [How they communicate]
+TOP PRODUCTS: [What sells for them]
+SOCIAL PRESENCE: [Platforms + follower count + engagement]
+KEY DIFFERENTIATOR: [What makes them distinct]
+MVQUEEN DIFFERENTIATION: [How we are different]
+NOTES: [Recent campaigns, shifts, opportunities]
+LAST UPDATED: [Date]
+```
+
+---
+
+## DB-08 — UGC & Social Proof Database
+
+**Purpose:** Organized collection of customer reviews, user-generated content, testimonials, and social mentions — available for use across product pages, ads, and social content.
+
+**Fields per piece:**
+```
+SOURCE: [Instagram / TikTok / Email / Review platform]
+CUSTOMER NAME / HANDLE: [If public]
+DATE: [When it was shared]
+CONTENT TYPE: [Review / Photo / Video / Quote]
+PRODUCT REFERENCED: [Which product, if any]
+SENTIMENT: [Positive / Neutral]
+KEY QUOTE: [Extracted highlight]
+USAGE RIGHTS: [Confirmed / Assumed / Need to confirm]
+USED WHERE: [Where we've featured it]
+NOTES: [Context, emotional resonance]
+```
+
+---
+
+## DB-09 — Email Performance Database
+
+**Purpose:** Historical record of email campaign performance — used to benchmark new campaigns and identify what resonates with MVQUEEN's audience.
+
+**Fields per campaign:**
+```
+CAMPAIGN NAME: [Name]
+TYPE: [Broadcast / Flow / Sequence]
+DATE SENT: [Date]
+SEGMENT: [Who received it]
+SUBJECT LINE: [Exact text]
+PREVIEW TEXT: [Exact text]
+SEND COUNT: [Number sent]
+OPEN RATE: [%]
+CLICK RATE: [%]
+REVENUE GENERATED: [$ if trackable]
+CONVERSION RATE: [%]
+NOTES: [What worked, what to improve, learnings]
+```
+
+---
+
+## DB-10 — Campaign Archive Database
+
+**Purpose:** Indexed record of every marketing campaign MVQUEEN has run — for reference, repurposing, and strategic learning.
+
+**Fields per campaign:**
+```
+CAMPAIGN NAME: [Name]
+TYPE: [Product Launch / Seasonal / Brand Awareness / Retention]
+DATE RANGE: [Start → End]
+CHANNELS: [Where it ran]
+CREATIVE DIRECTION: [Brief description]
+BUDGET: [If tracked]
+RESULTS: [Key performance metrics]
+LEARNINGS: [What this campaign taught us]
+ASSETS LOCATION: [Where files live]
+REPURPOSE NOTES: [What could be adapted]
+```
+
+---
+
+## Database Maintenance Standards
+
+Databases are only as valuable as they are current.
+
+**Maintenance rules:**
+- Product database: Updated within 24 hours of any product change
+- Keyword database: Reviewed monthly, ranking checked quarterly
+- Competitor database: Updated at minimum quarterly
+- UGC database: New entries added weekly
+- Email performance: Updated after every campaign send
+- Content archive: Updated at publication
+
+**Database ownership:**
+In the solo phase, the founder maintains all databases.
+As the team grows, each database is assigned to the team member closest to that domain.
+
+---
+
+*MVQUEEN Databases — v1.0*
+*Structured data is a strategic asset. Maintain it like one.*

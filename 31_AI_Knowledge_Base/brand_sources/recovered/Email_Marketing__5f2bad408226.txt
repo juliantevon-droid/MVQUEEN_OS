@@ -1,0 +1,177 @@
+# 📧 MVQUEEN — Email Marketing System
+
+---
+
+## Why Email Is MVQUEEN's Most Important Channel
+
+Social platforms rent her attention.
+Email owns the relationship.
+
+When an algorithm changes, a platform declines, or an account gets restricted — email remains. It is the only digital channel MVQUEEN fully controls, and the one that consistently delivers the highest revenue per contact of any marketing channel.
+
+MVQUEEN treats email with the same intentionality as its product and creative work.
+Every email earns its place in her inbox — or it doesn't get sent.
+
+---
+
+## Email System Architecture
+
+```
+LIST GROWTH
+(She opts in through the welcome offer, a lead magnet, or at checkout)
+    ↓
+WELCOME SEQUENCE
+(5-email sequence that introduces the brand world)
+    ↓
+SEGMENTATION
+(By purchase behavior, engagement level, persona)
+    ↓
+AUTOMATED FLOWS
+(Triggered by her behavior — abandon, purchase, lapse)
+    ↓
+BROADCAST CAMPAIGNS
+(Scheduled sends — launches, seasonal, editorial)
+    ↓
+ANALYTICS + OPTIMIZATION
+(What's working, what to improve, what to scale)
+```
+
+---
+
+## List Growth Strategy
+
+### Primary opt-in: Welcome offer
+10–15% off first order in exchange for email.
+Positioned as: "Her welcome to the collection" — not a coupon.
+Shown via: Exit-intent popup, homepage banner, product page footer.
+
+### Secondary opt-in: Content lead magnet
+A downloadable ritual guide, skincare quiz result, or curated product recommendation.
+For women who want value before they're ready to buy.
+
+### At checkout:
+Email capture is mandatory at checkout — opt-in box pre-checked with clear consent language.
+
+### From social:
+Link in bio → landing page with opt-in → welcome sequence begins.
+"Join the ritual" framing — never "Subscribe to our newsletter."
+
+---
+
+## The Welcome Sequence (5 Emails)
+
+### Email 1 — Welcome (Sent immediately)
+**Subject:** She made the right decision.
+**Purpose:** Warm welcome, introduce the brand world, deliver the welcome offer
+**Content:** Who MVQUEEN is (in feeling language, not brand description), the welcome offer code, one product recommendation to start with
+**CTA:** "Start with this →"
+
+### Email 2 — The Brand Story (Day 2)
+**Subject:** Why MVQUEEN exists — and who it was built for.
+**Purpose:** Emotional connection, brand philosophy, identity alignment
+**Content:** The origin and mission in narrative form — not a brand bio
+**CTA:** "Explore the collection →"
+
+### Email 3 — The Ritual (Day 4)
+**Subject:** Her morning, elevated.
+**Purpose:** Introduce the ritual concept, product education, sensory desire
+**Content:** A morning ritual walkthrough featuring 2–3 hero products
+**CTA:** "Build her ritual →"
+
+### Email 4 — Social Proof (Day 7)
+**Subject:** What she said about it.
+**Purpose:** Overcome hesitation, build trust through authentic voice
+**Content:** 3–4 specific customer stories or review highlights (real, not generic)
+**CTA:** "See the full collection →"
+
+### Email 5 — Last Chance (Day 10)
+**Subject:** Her welcome offer expires soon.
+**Purpose:** Convert remaining non-buyers before offer expires
+**Content:** Soft reminder, her favorite product from the sequence, offer expiry
+**CTA:** "Make it hers before it expires →"
+**Tone:** Warm urgency — never panic, never pressure
+
+---
+
+## Automated Flows
+
+### Abandoned Cart (Triggered: 1 hour after cart abandonment)
+**Email 1 (1 hour):** "She left something behind." Warm, product-specific, no discount.
+**Email 2 (24 hours):** Ritual framing — why this product belongs in her life.
+**Email 3 (72 hours):** Final reminder. Optional: small incentive for first-time abandoners only.
+
+### Post-Purchase Sequence
+**Email 1:** Order confirmation — warm, brand-voice, not transactional template.
+**Email 2 (shipping):** "It's on its way." Set the anticipation for the unboxing.
+**Email 3 (3 days post-delivery):** "How does she like it?" Soft check-in + care instructions.
+**Email 4 (14 days):** Cross-sell recommendation — "Complete the ritual."
+**Email 5 (30 days):** Replenishment signal for consumable products.
+
+### Browse Abandon (Triggered: visited product page, didn't add to cart)
+**Email 1 (4 hours):** Product she viewed — emotional description, no pressure.
+**Email 2 (48 hours):** Related product or ritual framing.
+
+### Win-Back (Triggered: 60 days since last purchase)
+**Email 1:** "Something new just arrived — we thought of her."
+**Email 2 (7 days later):** New arrivals or a product she viewed but never bought.
+**Email 3 (14 days later):** Final — a genuine reason to return, optional small offer.
+
+### VIP / Loyalty Tier Emails
+Triggered by loyalty milestone achievements.
+Early product access, birthday recognition, tier upgrade celebrations.
+Full architecture: `25_Retention_And_Community/README.md`
+
+---
+
+## Broadcast Campaign Calendar
+
+| Campaign | Timing | Type |
+|----------|--------|------|
+| New collection launch | Day of launch | Product |
+| Seasonal editorial | First week of each season | Brand |
+| Limited drop | Day of drop | Product |
+| Valentine's gifting | Feb 1–14 | Gifting |
+| Mother's Day | May 1–12 | Gifting |
+| Holiday gift guide | Nov 15–Dec 20 | Gifting |
+| New Year ritual | Jan 1–7 | Brand/Product |
+| Customer birthday | Her birthday month | Retention |
+
+**Send frequency:** Maximum 3 broadcasts per week. Optimal: 2 per week.
+More than 3 per week without exceptional content = unsubscribes.
+
+---
+
+## Email Performance Benchmarks
+
+| Metric | Minimum | Target | Strong |
+|--------|---------|--------|--------|
+| Open rate | 25% | 35% | 45%+ |
+| Click rate | 2% | 4% | 6%+ |
+| Unsubscribe rate | <0.5% | <0.3% | <0.1% |
+| Revenue per email | $0.10 | $0.25 | $0.50+ |
+| Welcome sequence open (E1) | 50% | 65% | 75%+ |
+| Abandoned cart recovery | 5% | 10% | 15%+ |
+
+When open rate drops below 25% — review subject lines and send frequency before adjusting content.
+
+---
+
+## Segmentation Framework
+
+| Segment | Definition | Communication approach |
+|---------|-----------|----------------------|
+| New subscribers | Opted in, never purchased | Welcome sequence |
+| First-time buyers | 1 purchase | Post-purchase + cross-sell |
+| Repeat buyers | 2+ purchases | Loyalty + VIP content |
+| VIP | Top 20% by spend | Early access, exclusives |
+| Lapsed (30–60 days) | No purchase in 30–60 days | Win-back sequence |
+| Lapsed (60+ days) | No purchase in 60+ days | Final win-back or sunset |
+| High engagers | Opens but doesn't buy | Content-first, soft conversion |
+
+Never send the same email to all segments simultaneously.
+A message that's right for a new subscriber is wrong for a VIP.
+
+---
+
+*07_Marketing / Email_Marketing.md*
+*Her inbox is the most direct line to her. Use it like it matters — because it does.*

@@ -1,0 +1,206 @@
+# 🚫 MVQUEEN — Forbidden Words, Phrases & Patterns
+
+---
+
+## Why This File Exists
+
+Language is the first thing a customer experiences before she ever holds a product.
+The wrong word doesn't just sound off — it breaks the world MVQUEEN is building.
+It makes the brand feel like every other brand. And MVQUEEN is not every other brand.
+
+This file is law.
+It applies to every writer, every AI agent, every caption, every email, every product description, every campaign, every SMS, every customer support message — without exception.
+
+If a word is on this list, find the alternative. They are provided below.
+
+---
+
+## SECTION 1 — Hard Forbidden: Never Use
+
+These words and phrases have been permanently removed from the MVQUEEN vocabulary. They are either emotionally hollow, culturally overused, brand-inconsistent, or they pull the language into a register that cheapens the world we're building.
+
+### Hustle & Grind Culture Language
+| Forbidden | Why | Use Instead |
+|---|---|---|
+| Boss babe | Hollow, overused, reductive | Ambitious woman / She moves with intention |
+| Girl boss | Expired, patronizing | Driven / Self-directed / Quietly powerful |
+| Hustle | Contradicts softness philosophy | Intentional work / Building with purpose |
+| Grind | Harsh, masculine-coded effort | Commitment / Consistent elevation |
+| Slay | Overused to meaninglessness | Radiate / Command / Own the moment |
+| Killing it | Violent undertone, exhausted phrase | Thriving / Moving with grace |
+| Werk | Trend-dependent, dates immediately | — (don't replace, remove) |
+| Girlboss energy | Double violation | — (remove entirely) |
+
+---
+
+### Cheap Urgency & Discount Language
+| Forbidden | Why | Use Instead |
+|---|---|---|
+| Don't miss out | Panic-based manipulation | This is available now / For a limited time |
+| Last chance | Aggressive scarcity | Only a few remaining |
+| Buy now | Transactional, graceless | Shop the collection / Discover more |
+| Add to cart | Mechanical | Make it yours |
+| Limited time only | Screams discount brand | Available for a short time / While it lasts |
+| SALE | Never in all-caps in brand voice | Exclusive offer / Now available at |
+| Cheap | Brand violation at the deepest level | Accessible / Within reach |
+| Affordable | Has cheap-adjacent connotation in luxury context | Attainable / Thoughtfully priced |
+| Deal | Strips the luxury positioning entirely | Investment / Value |
+| Free shipping on orders over | Too transactional as standalone copy | Complimentary shipping / Delivered with care |
+
+---
+
+### Empty Empowerment Phrases
+| Forbidden | Why | Use Instead |
+|---|---|---|
+| Empowerment / Empowering | Diluted beyond meaning — everyone uses it | Confidence / Elevation / Strength through softness |
+| You've got this | Self-help cliché | She already knows / You were built for this |
+| Believe in yourself | Greeting card energy | Trust your worth / She moves from knowing |
+| Be your best self | Exhausted wellness phrase | The version of you that knows her worth |
+| Own your truth | Therapy-speak out of context | Speak from confidence / Live with intention |
+| You deserve it | Technically correct but sounds like a reward ad | This was always meant for you |
+| Level up | Gaming slang, masculine energy | Elevate / Rise / Step into more |
+| Glow up | Trend-dependent | Transformation / Becoming |
+| Self-love | Overused to invisibility in beauty marketing | Self-connection / Emotional restoration / Intentional care |
+
+---
+
+### Cold Corporate Language
+| Forbidden | Why | Use Instead |
+|---|---|---|
+| Utilize | Stiff and corporate | Use / Apply |
+| Leverage | Business jargon | Use / Build on |
+| Synergy | Never acceptable anywhere | Alignment / Connection |
+| Solution | Turns beauty into a problem | Experience / Answer / Ritual |
+| Value proposition | Internal only — never customer-facing | What this does for you / The feeling it delivers |
+| Content creator | Clinical label | Creator / Voice / Visionary |
+| Target audience | Clinical, dehumanizing | Her / The MVQUEEN woman / Our customer |
+| Consumer | Removes humanity | Customer / Community / Her |
+| Product SKU | Internal only | — |
+| Inventory | Internal only | — |
+
+---
+
+### Performative Luxury Language
+| Forbidden | Why | Use Instead |
+|---|---|---|
+| Opulent | Overwrought, signals trying too hard | Refined / Rich in detail |
+| Exquisite | Overused in fake luxury | Beautiful / Considered / Exceptional |
+| Sumptuous | Too theatrical for modern luxury | Lush / Soft / Deeply textured |
+| Luxurious (overused) | Fine occasionally — forbidden as a crutch | Elevated / Considered / Softly refined |
+| Premium quality | Tells instead of shows | Describe *what* makes it premium — the weight, the finish, the feel |
+| World-class | Meaningless without evidence | Exceptional / Crafted with intention |
+| Unparalleled | Empty superlative | Be specific about what makes it singular |
+| Prestigious | Status-performance language | Refined / Elevated / Intentionally made |
+
+---
+
+### Trend-Dependent & Expiring Language
+These are forbidden not because they're offensive but because they expire — and MVQUEEN is built for longevity, not virality.
+
+| Forbidden |
+|---|
+| It's giving |
+| No cap |
+| Lowkey / Highkey |
+| Vibe check |
+| That's the vibe |
+| Main character energy |
+| Era (as in "we're in our [X] era") |
+| Period. (as punctuation for emphasis) |
+| Understood the assignment |
+| Ate and left no crumbs |
+| Rent free |
+
+*Note: These may appear in Miss.Princess content in very limited, deliberate use — but never in MVQUEEN brand voice.*
+
+---
+
+## SECTION 2 — Overuse Restrictions
+
+These words are not forbidden — they are *rationed*. Each one has earned its place in the MVQUEEN vocabulary. But because they appear so frequently in the Brand Bible and other OS files, they must be used with intention, not as defaults.
+
+| Word / Phrase | The Restriction |
+|---|---|
+| **Emotional / Emotionally** | Maximum 2 uses per 300 words. When you feel yourself reaching for it, ask: *what specific emotion?* Name it instead. |
+| **Feminine / Femininity** | Beautiful word — but it can carry every sentence if you let it. Let visuals and context do the work sometimes. |
+| **Elevated / Elevation** | Reserve for moments where the *uplift* is the actual point. Not as a filler adjective. |
+| **Intentional / Intentionally** | Powerful when earned. Meaningless when applied to everything. |
+| **Immersive** | Use to describe *experiences* — not products, not people, not basic interactions. |
+| **Softness / Soft** | This is core brand DNA — but three "soft" in one paragraph flattens it. Vary with: gentle, warm, delicate, unhurried, quiet. |
+| **Radiant / Luminous** | Cosmetics favorites. Earn them. Don't assign them to everything that glows. |
+| **Confidence** | The brand's core promise. Use it where it lands hardest, not everywhere. |
+| **Atmosphere** | Excellent brand word. Use it for spaces, moods, energy — not as a synonym for "vibe." |
+| **Curated** | Acceptable once per piece of copy. After that, it sounds like you're afraid to commit to a specific choice. |
+| **Authentic / Authenticity** | Rarely needed — if the copy is actually authentic, the word is unnecessary. |
+
+---
+
+## SECTION 3 — Patterns to Avoid
+
+Beyond individual words, these sentence and structural patterns weaken MVQUEEN copy:
+
+**1. The Definition Opening**
+> *"Luxury is more than just a price tag..."*
+Do not open copy by defining what something is. Show it instead.
+
+**2. The List as Thought**
+> *"This product is: beautiful, feminine, elevated, intentional."*
+Bullet lists of adjectives are not copy. Write a sentence.
+
+**3. The Obvious Relatability Play**
+> *"We know life gets busy..."*
+MVQUEEN does not bond with customers over stress and exhaustion. We offer escape from it.
+
+**4. Passive Permission Language**
+> *"Allow yourself to feel beautiful."*
+MVQUEEN women do not need permission. Write: *Feel beautiful. You already are.*
+
+**5. The Double Emotional Qualifier**
+> *"Emotionally immersive and deeply emotional..."*
+If both words mean the same thing, one of them is filler. Cut it.
+
+**6. Over-Punctuated Pause Lines**
+> *"Softness. Elegance. Confidence. That's MVQUEEN."*
+Used sparingly, this structure is powerful. Used in every piece of copy, it becomes a tic. Earn the pause.
+
+**7. Vague Transformation Language**
+> *"Transform your routine."*
+Into what? From what? Be specific. Transformation is only believable when it's concrete.
+
+---
+
+## SECTION 4 — Miss.Princess Exception Rules
+
+Miss.Princess operates in a different register — younger, more playful, more trend-aware. Some forbidden MVQUEEN words are permitted in Miss.Princess copy with limits:
+
+| Word | MVQUEEN | Miss.Princess |
+|---|---|---|
+| Slay | Never | Sparingly — max 1x per piece |
+| Main character | Never | Allowed in caption hooks |
+| Era | Never | Allowed once per campaign |
+| Cute | Rarely (too casual) | Freely — it's core to the brand |
+| Girly | Never | Allowed with intention |
+| Trendy | Never | Allowed when referencing specific trends |
+
+Miss.Princess is not exempt from the hard-forbidden list. No cheap urgency. No corporate speak. No fake luxury language.
+
+---
+
+## Quick Reference Card — 10 Words to Always Replace
+
+When you catch yourself writing these, stop and rewrite:
+
+1. **Empowering** → Show what confidence feels like
+2. **Affordable** → Thoughtfully priced / Attainable
+3. **Buy now** → Make it yours / Shop the collection
+4. **Boss babe** → Remove entirely
+5. **Emotional** (as reflex) → Name the specific emotion
+6. **Self-love** → Self-connection / Intentional care
+7. **Luxurious** (as crutch) → Describe what makes it feel that way
+8. **Curated** (more than once) → Be specific about what and why
+9. **Level up** → Elevate / Step into more
+10. **You deserve it** → This was always meant for you
+
+---
+
+*This file governs language across all MVQUEEN OS content — AI prompts, marketing copy, product descriptions, social captions, email flows, customer service scripts, and every other written output. When in doubt: if a word appears on this list, it doesn't appear in the work.*

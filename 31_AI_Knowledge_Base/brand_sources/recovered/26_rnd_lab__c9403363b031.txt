@@ -1,0 +1,175 @@
+# 🔬 MVQUEEN — R&D Lab
+
+---
+
+## Purpose
+
+The R&D Lab is where MVQUEEN experiments before it executes.
+
+This is the space where half-formed ideas, product concepts, emerging trends, risky creative directions, and untested systems live before they earn a place in the main OS.
+
+Nothing in the R&D Lab is final.
+Everything in the R&D Lab is intentional.
+
+The Lab exists because great brands are not just built on what they know —
+they are built on the discipline of asking what they don't know yet.
+
+---
+
+## Lab Philosophy
+
+Test quietly. Learn honestly. Build only what survives.
+
+MVQUEEN does not launch experiments into the market to find out if they work.
+It finds out internally first — through research, prototyping, emotional stress-testing, and honest evaluation against doctrine.
+
+Speed without discernment creates noise.
+The R&D Lab creates signal.
+
+---
+
+## What Lives in the Lab
+
+### 1. Product Concepts (Pre-Development)
+Ideas that aren't products yet. Categories MVQUEEN is considering but hasn't committed to. Formulation directions. Packaging concepts. Supplier shortlists. Trend-backed hypotheses that need validation before budget is spent.
+
+### 2. Creative Direction Experiments
+Visual territories, campaign concepts, editorial directions, and aesthetic pivots being tested before becoming brand standard. If it's too new to be a guideline, it starts here.
+
+### 3. Copy & Voice Experiments
+New language directions, emerging vocabulary, experimental headline formulas, and tone variations being tested for resonance before they enter the Brand Vocabulary or Voice System.
+
+### 4. AI System Prototypes
+Prompt chains, agent behaviors, retrieval systems, and automation workflows being tested before they are documented in the main infrastructure. New models, new tools, new approaches — evaluated against MVQUEEN's emotional and quality standards.
+
+### 5. Marketing Experiments
+New channels, untested formats, emerging platforms, unconventional strategies. What works gets documented in the Marketing system. What doesn't gets archived with honest notes on why.
+
+### 6. Customer Experience Concepts
+New touchpoints, unboxing ideas, loyalty mechanics, community formats, and service innovations being tested before becoming standard.
+
+---
+
+## R&D Lab Workflow
+
+```
+IDEA INTAKE → RESEARCH PHASE → PROTOTYPE PHASE → EVALUATION → DECISION
+```
+
+### Stage 1 — Idea Intake
+Every experiment begins with three questions:
+- What problem does this solve or what opportunity does this capture?
+- Does this align with MVQUEEN's emotional doctrine?
+- What does success look like and how will we measure it?
+
+No idea moves forward without answers to all three.
+
+### Stage 2 — Research Phase
+Before building anything, gather evidence. Look at what already exists. Study competitors, reference brands, customer behavior, market trends, and emotional signals. Determine if the idea has real traction or is simply appealing in theory.
+
+### Stage 3 — Prototype Phase
+Build the minimum version needed to evaluate the idea. A concept document. A sample prompt. A visual mockup. A product brief. A written experiment. Something real enough to react to — not polished enough to launch.
+
+### Stage 4 — Evaluation
+Evaluate every prototype against the MVQUEEN standard:
+- Does this honor the woman it serves?
+- Does this strengthen or dilute the brand?
+- Is this emotionally consistent with the doctrine?
+- Is the quality high enough to exist under the MVQUEEN name?
+
+Honest evaluation is more valuable than optimistic launches.
+
+### Stage 5 — Decision
+Three outcomes:
+- **Advance** — moves into the relevant OS module for full development
+- **Archive** — documented with findings, shelved for later
+- **Kill** — ended with clear notes on why, so the mistake isn't repeated
+
+---
+
+## Active Experiment Categories
+
+### Product R&D
+- Fragrance direction (signature scent development)
+- Skincare formulation research (glow serums, barrier care)
+- Haircare positioning (moisture-focused, texture-defined)
+- Accessory line expansion (soft glam jewelry, silk accessories)
+- Seasonal limited edition concepts
+
+### Creative R&D
+- Editorial campaign direction testing
+- New photography aesthetic concepts
+- Motion and video direction exploration
+- Packaging material and finish research
+
+### AI R&D
+- New prompt architectures
+- Agent behavior refinements
+- Retrieval system improvements
+- Automated content pipeline testing
+
+### Marketing R&D
+- Platform-specific format testing
+- Influencer partnership models
+- Community activation experiments
+- Email sequence architecture testing
+
+### Commerce R&D
+- Upsell mechanic testing
+- Bundle strategy experiments
+- Subscription model research
+- Checkout experience optimization
+
+---
+
+## Lab Standards
+
+The R&D Lab is not a graveyard for bad ideas with optimistic labels.
+It is a disciplined space.
+
+Rules:
+- Every experiment has a defined scope and timeline before it begins
+- Every archived experiment includes honest learnings
+- No experiment runs longer than 30 days without a checkpoint
+- Nothing leaves the Lab without passing the emotional doctrine test
+- The Lab is never used to justify low-quality work in production
+
+---
+
+## Lab Log Format
+
+When documenting an experiment:
+
+```
+EXPERIMENT: [Name]
+DATE OPENED: [Date]
+CATEGORY: [Product / Creative / AI / Marketing / Commerce]
+HYPOTHESIS: What we believe this will achieve
+METHOD: How we are testing it
+TIMELINE: Start → Checkpoint → Decision date
+STATUS: Active / Paused / Advanced / Archived / Killed
+FINDINGS: What we learned (filled in at close)
+DECISION: What we decided and why
+```
+
+---
+
+## Connection to the OS
+
+Successful R&D Lab experiments graduate into:
+
+- `04_Products` — new product lines and categories
+- `02_Brand_Identity` — new creative and visual directions
+- `06_Tone_And_Voice` — new vocabulary and voice additions
+- `36_Agent_Systems` — new AI behaviors and architectures
+- `38_Prompt_Chains` — validated prompt chain systems
+- `07_Marketing` — proven channel and campaign strategies
+- `39_SOP_Library` — new documented processes
+
+The Lab feeds the OS.
+The OS documents what the Lab proves.
+
+---
+
+*MVQUEEN R&D Lab — Active*
+*Experiments are private. Learnings are assets.*

@@ -1,0 +1,332 @@
+# 🧠 MVQUEEN — AI Knowledge Base
+
+---
+
+## Purpose
+
+The AI Knowledge Base is the structured intelligence layer that MVQUEEN's AI systems draw from — a curated, searchable, retrieval-optimized collection of brand knowledge organized specifically for AI consumption.
+
+The difference between a knowledge base and a document folder is retrieval.
+
+A document folder stores information.
+A knowledge base makes information findable, contextual, and usable in the moment an AI system needs it.
+
+This is where MVQUEEN's brand intelligence becomes machine-accessible — not as raw files, but as organized, categorized, semantically-structured knowledge that AI agents can pull from with precision.
+
+---
+
+## Knowledge Base Architecture
+
+```
+TIER 1 — CONSTITUTIONAL KNOWLEDGE (Doctrine, non-negotiable)
+TIER 2 — BRAND KNOWLEDGE (Identity, voice, values, personality)
+TIER 3 — CUSTOMER KNOWLEDGE (Personas, psychology, behavior)
+TIER 4 — PRODUCT KNOWLEDGE (Catalog, copy, categories)
+TIER 5 — OPERATIONAL KNOWLEDGE (SOPs, workflows, processes)
+TIER 6 — MARKET KNOWLEDGE (Trends, competitors, opportunities)
+TIER 7 — PERFORMANCE KNOWLEDGE (What works, what doesn't)
+```
+
+Each tier inherits from the tiers above it.
+Tier 1 is never overridden by any lower tier.
+
+---
+
+## Tier 1 — Constitutional Knowledge
+
+**What it contains:**
+The irreducible core of what MVQUEEN is and how it operates. This is the knowledge that governs all other knowledge. When an AI agent encounters ambiguity or conflict, it resolves it by returning to this tier.
+
+**Knowledge units:**
+- Core identity statement
+- Mission and vision
+- Emotional doctrine (what MVQUEEN feels like)
+- Luxury doctrine (how MVQUEEN defines luxury)
+- Feminine doctrine (how MVQUEEN understands femininity)
+- AI doctrine (how AI must behave inside MVQUEEN)
+- Content doctrine
+- Brand voice doctrine
+- Governance principle (doctrine overrides trends)
+
+**Source:** `00_Doctrine/master_doctrine.md`
+
+**Retrieval trigger:** Any AI output that requires brand alignment check. This tier is always active in the background of every agent.
+
+---
+
+## Tier 2 — Brand Knowledge
+
+**What it contains:**
+Everything an AI needs to know to speak, think, and act as MVQUEEN — voice, vocabulary, visual direction, brand personality, emotional identity.
+
+**Knowledge units:**
+
+*Voice & Tone*
+- How MVQUEEN sounds (voice identity table)
+- Channel-specific voice variations
+- Approved vocabulary
+- Forbidden language
+- Emotional register guidelines
+- The "quiet confidence" principle
+
+*Brand Identity*
+- Visual identity overview (colors, typography direction)
+- Brand personality dimensions
+- The brand as a person description
+- Emotional atmosphere MVQUEEN creates
+- What MVQUEEN is not (to prevent drift)
+
+*Brand Values*
+- Core values with definitions
+- How values appear in practice
+- Value-based decision filter
+
+*Brand Story*
+- Founding philosophy
+- The problem MVQUEEN exists to solve
+- The transformation it delivers
+- The woman it was built for
+
+**Source documents:**
+- `01_Brand_Strategy/Brand_Bible.md`
+- `01_Brand_Strategy/brand_manifesto.md`
+- `02_Brand_Identity/brand_vocabulary.md`
+- `06_Tone_And_Voice/` (all files)
+
+---
+
+## Tier 3 — Customer Knowledge
+
+**What it contains:**
+Deep, structured intelligence about the women MVQUEEN serves — who they are, how they think, what they feel, what moves them, what holds them back.
+
+**Knowledge units:**
+
+*Persona Profiles*
+- Detailed profile for each customer avatar
+- Emotional needs by persona
+- Buying triggers by persona
+- Language patterns by persona
+- Platform behavior by persona
+
+*Psychology Patterns*
+- Luxury buyer psychology (how she relates to premium)
+- Identity-driven purchasing (buying as self-expression)
+- Emotional decision making (feeling before function)
+- Social validation patterns
+- Trust-building requirements
+
+*Customer Journey*
+- How she discovers MVQUEEN
+- What she needs to believe before purchasing
+- What makes her return
+- What makes her advocate
+
+*Objections & Concerns*
+- Common hesitations by product type
+- Price objection patterns
+- Quality doubt patterns
+- Trust barrier patterns
+- Ideal responses to each
+
+**Source documents:**
+- `03_Customer_Psychology/` (all files)
+- `37_Databases/DB-02` (Customer Persona Database)
+- `37_Databases/DB-09` (Customer Objections)
+
+---
+
+## Tier 4 — Product Knowledge
+
+**What it contains:**
+Structured information about what MVQUEEN sells, how products are positioned, what emotional promise each category carries, and how products connect to the customer's identity.
+
+**Knowledge units:**
+
+*Product Categories*
+- 7 core product categories with emotional positioning
+- Category architecture and expansion direction
+- How categories connect to customer personas
+
+*Product Positioning*
+- What MVQUEEN sells (transformation, not just products)
+- Emotional promise by category
+- Identity expression by product type
+
+*Product Copy Principles*
+- Lead with feeling, not features
+- Describe transformation, not specifications
+- Name the sensory experience
+- Connect product to the woman's identity, not just her needs
+
+*Product Naming*
+- Naming philosophy and principles
+- Approved naming conventions
+- Examples of strong MVQUEEN product names
+
+**Source documents:**
+- `04_Products/product_categories.md`
+- `04_Products/Product_Framework.md`
+- `04_Products/Product_Naming_System.md`
+- `37_Databases/DB-01` (Product Master Database)
+- `37_Databases/DB-03` (Product Copy Examples)
+
+---
+
+## Tier 5 — Operational Knowledge
+
+**What it contains:**
+Structured process knowledge — how things get done in MVQUEEN, what the standards are, and how quality is maintained across operations.
+
+**Knowledge units:**
+
+*Workflow Standards*
+- Content production workflow
+- Product launch workflow
+- Campaign execution workflow
+- Customer response workflow
+
+*Quality Standards*
+- What makes copy good vs. adequate in MVQUEEN
+- Visual quality standards
+- Customer experience quality markers
+
+*SOP Quick Reference*
+- Abbreviated versions of key SOPs for AI reference
+- Decision trees for common operational scenarios
+
+*Delegation Principles*
+- What can be delegated and what can't
+- Quality checkpoints that require human review
+- Standards that AI must always honor
+
+**Source documents:**
+- `39_SOP_Library/README.md`
+- `34_Master_Systems/README.md`
+- `35_System_Blueprints/README.md`
+
+---
+
+## Tier 6 — Market Knowledge
+
+**What it contains:**
+External intelligence that helps MVQUEEN stay strategically oriented — competitive landscape, market trends, industry patterns.
+
+**Knowledge units:**
+
+*Competitive Landscape*
+- Key competitors and their positioning
+- Market gaps MVQUEEN occupies
+- Language and positioning to differentiate from
+
+*Market Trends*
+- Relevant beauty, fashion, and lifestyle trends
+- Emerging consumer behavior patterns
+- Cultural shifts affecting the feminine luxury market
+
+*Reference Brands*
+- Aspirational brands MVQUEEN studies
+- What MVQUEEN learns from each
+- What MVQUEEN consciously does differently
+
+**Source documents:**
+- `13_Research_And_Inspiration/Viral_Brands.md`
+- `13_Research_And_Inspiration/Consumer_Trends.md`
+- `37_Databases/DB-07` (Competitor Intelligence)
+
+---
+
+## Tier 7 — Performance Knowledge
+
+**What it contains:**
+Accumulated intelligence from real MVQUEEN performance data — what content, copy, products, and campaigns have worked and why.
+
+**Knowledge units:**
+
+*Content Performance Patterns*
+- Headline formulas that drive opens and clicks
+- Caption structures that generate engagement
+- Content themes that resonate most with each persona
+
+*Copy Performance Patterns*
+- Product description elements that correlate with conversion
+- Email subject line approaches that improve open rates
+- CTA language that drives action without pressure
+
+*Campaign Learnings*
+- Campaign formats that have worked
+- Timing and seasonality patterns
+- Channel-specific performance patterns
+
+*Product Performance Patterns*
+- Which categories drive highest AOV
+- Which products generate the most repeat purchase
+- Which features customers mention most in reviews
+
+**Source documents:**
+- `37_Databases/DB-07` (High-Performing Content Archive)
+- `37_Databases/DB-09` (Email Performance Database)
+- `37_Databases/DB-10` (Campaign Archive)
+
+---
+
+## How AI Agents Access the Knowledge Base
+
+### Context Injection (Primary Method)
+Relevant knowledge units are injected into the system prompt before each task. The agent doesn't have access to everything — it has access to what's relevant to the task at hand.
+
+**Example — Product copy task:**
+Agent receives:
+- Tier 1: Core identity + AI doctrine
+- Tier 2: Voice identity + approved vocabulary
+- Tier 3: Relevant persona profile
+- Tier 4: Product category emotional positioning + copy principles
+
+**Example — Strategy task:**
+Agent receives:
+- Tier 1: Core identity + governance principle
+- Tier 2: Brand values + what MVQUEEN is not
+- Tier 3: Customer psychology patterns
+- Tier 6: Relevant market context
+
+### Retrieval (Future Infrastructure)
+As MVQUEEN scales, a vector database or retrieval-augmented generation (RAG) system will allow agents to dynamically retrieve the most relevant knowledge units for any given task — making the knowledge base even more powerful without requiring manual injection.
+
+---
+
+## Knowledge Base Maintenance
+
+**What gets added:**
+Every new documented system, every new validated example, every new strategic insight that changes how MVQUEEN thinks or acts.
+
+**What gets updated:**
+Any knowledge unit that becomes outdated due to brand evolution, market shifts, or operational change.
+
+**What gets removed:**
+Knowledge that no longer reflects how MVQUEEN operates — particularly early-stage decisions that have been superseded.
+
+**Review cycle:**
+- Monthly: Add new validated examples to Tier 7
+- Quarterly: Review Tiers 5 and 6 for relevance
+- Annually: Full review of all tiers for alignment with current brand direction
+
+---
+
+## Knowledge Base vs. Document Storage
+
+| | Document Folder | Knowledge Base |
+|--|-----------------|----------------|
+| Purpose | Store information | Enable retrieval |
+| Organization | By file type | By use case and tier |
+| AI-ready | No | Yes |
+| Format | Human-readable prose | Structured for injection |
+| Maintenance | Ad hoc | Regular and intentional |
+| Value | Archives | Active leverage |
+
+MVQUEEN builds both.
+The knowledge base makes the documents useful at machine speed.
+
+---
+
+*MVQUEEN AI Knowledge Base — v1.0*
+*Knowledge that is organized is power. Knowledge that is retrievable is leverage.*

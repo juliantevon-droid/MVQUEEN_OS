@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "sourceCorpus": "31_AI_Knowledge_Base/brand_sources/manifest.json",
+  "sourceDocuments": [
+    "00_Doctrine/brand_constitution.md",
+    "01_Brand_Strategy/Brand_Bible.md",
+    "02_Brand_Identity/brand_identity.md",
+    "02_Brand_Identity/brand_rules.md",
+    "02_Brand_Identity/brand_vocabulary.md",
+    "04_Products/Product_Naming_System.md",
+    "06_Tone_And_Voice/Brand_Messaging.md",
+    "06_Tone_And_Voice/Brand_Vocabulary_Banks.md",
+    "06_Tone_And_Voice/Tone_Guide.md",
+    "06_Tone_And_Voice/Writing_Rules.md",
+    "06_Tone_And_Voice/Forbidden_Words.md",
+    "06_Tone_And_Voice/Voice_Consistency_Rules.md",
+    "06_Tone_And_Voice/Product_Description_Voice.md",
+    "06_Tone_And_Voice/Platform_Voice_Guides.md",
+    "10_AI_Systems/AGENT_BRAIN_SYSTEM.md"
+  ],
+  "positioning": "Accessible luxury with warmth, feminine confidence and a sense of personal identity. Invite the customer in. Show quality through verified details.",
+  "precedence": [
+    "Current owner instructions and verified product facts",
+    "Brand_Content_Policy.json and current deployed product safeguards",
+    "Canonical identity, voice, writing and naming documents",
+    "Recovered versions, examples and historical technical references"
+  ],
+  "legacyAliases": {
+    "MvQueen": "MVQUEEN",
+    "MVQueen": "MVQUEEN",
+    "MV QUEEN": "MVQUEEN",
+    "MISS.QUEEN": "Miss.Princess",
+    "miss.queen": "Miss.Princess",
+    "Miss Princess": "Miss.Princess"
+  },
+  "messagingPillars": [
+    "Softness is strength",
+    "Luxury that belongs to her",
+    "Beauty as restoration",
+    "Intentional feminine living",
+    "The ritual over the routine",
+    "Becoming, never finished"
+  ],
+  "profiles": {
+    "mvqueen": {
+      "displayName": "MVQUEEN",
+      "voice": [
+        "warm",
+        "confident",
+        "feminine",
+        "composed",
+        "inviting",
+        "specific"
+      ],
+      "additionalAdjectives": [
+        "considered",
+        "composed",
+        "distinctive",
+        "modern"
+      ],
+      "hooks": {
+        "fashion": [
+          "Build your {brand} wardrobe around {article} {adjective} sense of self.",
+          "Bring {article} {adjective} note to the way you dress with {brand}.",
+          "Your {brand} wardrobe, considered through {article} {adjective} lens.",
+          "Choose {article} {adjective} direction for your {brand} style edit."
+        ],
+        "jewelry": [
+          "Bring {article} {adjective} finishing touch to your {brand} jewelry edit.",
+          "Give your {brand} jewelry edit {article} {adjective} personal note.",
+          "{articleCapital} {adjective} detail for the jewelry you make your own at {brand}.",
+          "Your {brand} jewelry edit, with {article} {adjective} touch of your own."
+        ],
+        "skincare": [
+          "Set aside a moment for {article} {adjective} {brand} skincare ritual.",
+          "Give your {brand} skincare ritual {article} {adjective} place in your day.",
+          "{articleCapital} {adjective} approach to the time you set aside for {brand} skincare.",
+          "Bring {article} {adjective} note to your own {brand} skincare ritual."
+        ],
+        "beauty": [
+          "Start your {brand} beauty edit on {article} {adjective} note.",
+          "{articleCapital} {adjective} choice for the beauty look you make your own at {brand}.",
+          "Give your {brand} beauty edit {article} {adjective} sense of direction.",
+          "Your {brand} beauty edit, with {article} {adjective} personal touch."
+        ],
+        "fragrance": [
+          "{articleCapital} {adjective} choice for the scent you make your own at {brand}.",
+          "Bring {article} {adjective} sense of self to your {brand} fragrance edit.",
+          "Make {article} {adjective} personal choice in your {brand} fragrance edit.",
+          "Your {brand} fragrance edit begins with {article} {adjective} intention."
+        ],
+        "haircare": [
+          "Make your {brand} haircare ritual {article} {adjective} moment of your own.",
+          "{articleCapital} {adjective} approach to the time you set aside for {brand} haircare.",
+          "Bring {article} {adjective} intention to your {brand} haircare edit.",
+          "Give your {brand} haircare edit {article} {adjective} place in your day."
+        ],
+        "home": [
+          "Give your {brand} home edit {article} {adjective} personal touch.",
+          "{articleCapital} {adjective} choice for the space you make your own with {brand}.",
+          "Bring {article} {adjective} note into your {brand} home edit.",
+          "Your {brand} home edit, shaped by {article} {adjective} intention."
+        ],
+        "tools": [
+          "{articleCapital} {adjective} choice for your {brand} getting-ready space.",
+          "Give your {brand} getting-ready edit {article} {adjective} personal note.",
+          "Bring {article} {adjective} intention to your {brand} tool edit.",
+          "Your {brand} tool edit, with {article} {adjective} sense of order."
+        ],
+        "general": [
+          "Make room for {article} {adjective} detail in your {brand} edit.",
+          "Give your {brand} edit {article} {adjective} personal note.",
+          "{articleCapital} {adjective} choice for the {brand} edit you make your own.",
+          "Your {brand} edit, with {article} {adjective} touch of your own."
+        ]
+      }
+    },
+    "miss-princess": {
+      "displayName": "Miss.Princess",
+      "voice": [
+        "warm",
+        "playful",
+        "dreamy",
+        "lighthearted",
+        "approachable",
+        "specific"
+      ],
+      "additionalAdjectives": [
+        "lighthearted",
+        "fresh",
+        "sweet",
+        "chic"
+      ],
+      "hooks": {
+        "fashion": [
+          "Make your {brand} style edit a little more {adjective}.",
+          "{articleCapital} {adjective} choice for the looks you dream up with {brand}.",
+          "Give your next {brand} outfit {article} {adjective} starting point.",
+          "Bring {article} {adjective} note to your own {brand} style edit."
+        ],
+        "jewelry": [
+          "{articleCapital} {adjective} little touch for your {brand} jewelry edit.",
+          "Make your {brand} jewelry edit a little more {adjective}.",
+          "Give your {brand} jewelry edit {article} {adjective} personal note.",
+          "Bring {article} {adjective} detail into your {brand} jewelry edit."
+        ],
+        "skincare": [
+          "{articleCapital} {adjective} moment for your {brand} skincare ritual.",
+          "Make a little space for your {adjective} {brand} skincare edit.",
+          "Bring {article} {adjective} note to your own {brand} skincare ritual.",
+          "Give your {brand} skincare ritual {article} {adjective} place in your day."
+        ],
+        "beauty": [
+          "Make your {brand} beauty edit a little more {adjective}.",
+          "{articleCapital} {adjective} starting point for your next {brand} beauty look.",
+          "Give your {brand} beauty edit {article} {adjective} personal note.",
+          "Bring {article} {adjective} touch to the beauty looks you dream up with {brand}."
+        ],
+        "fragrance": [
+          "{articleCapital} {adjective} choice for your own {brand} fragrance edit.",
+          "Give your {brand} fragrance edit {article} {adjective} little note.",
+          "Bring {article} {adjective} intention to your {brand} fragrance edit.",
+          "Your {brand} fragrance edit starts with {article} {adjective} personal choice."
+        ],
+        "haircare": [
+          "Make a little space for {article} {adjective} {brand} haircare ritual.",
+          "Give your {brand} haircare edit {article} {adjective} personal note.",
+          "Bring {article} {adjective} touch to your own {brand} haircare edit.",
+          "{articleCapital} {adjective} moment for the haircare ritual you build with {brand}."
+        ],
+        "home": [
+          "Make your {brand} home edit a little more {adjective}.",
+          "Give your own space {article} {adjective} note with {brand}.",
+          "{articleCapital} {adjective} little touch for your {brand} home edit.",
+          "Bring {article} {adjective} personal choice into your {brand} home edit."
+        ],
+        "tools": [
+          "{articleCapital} {adjective} little choice for your {brand} getting-ready space.",
+          "Give your {brand} getting-ready edit {article} {adjective} personal note.",
+          "Make your {brand} tool edit a little more {adjective}.",
+          "Bring {article} {adjective} intention to your own {brand} tool edit."
+        ],
+        "general": [
+          "Give your {brand} edit {article} {adjective} little touch.",
+          "Make your own {brand} edit a little more {adjective}.",
+          "{articleCapital} {adjective} choice for the {brand} edit you dream up.",
+          "Bring {article} {adjective} personal note to your {brand} edit."
+        ]
+      }
+    }
+  },
+  "editorialRegisters": [
+    {
+      "name": "Core confidence",
+      "legacyPersona": "MVQueen Core",
+      "use": "Primary MVQUEEN voice"
+    },
+    {
+      "name": "Princess play",
+      "legacyPersona": "MISS.QUEEN",
+      "use": "Miss.Princess voice"
+    },
+    {
+      "name": "Quiet authority",
+      "legacyPersona": "Victoria Soft Power",
+      "use": "Composed prestige; internal inspiration only"
+    },
+    {
+      "name": "Beauty precision",
+      "legacyPersona": "Sephora Precision",
+      "use": "Verified beauty detail; no implied clinical results"
+    },
+    {
+      "name": "Runway modern",
+      "legacyPersona": "Runway Modern",
+      "use": "Fashion editorial"
+    },
+    {
+      "name": "Skincare clarity",
+      "legacyPersona": "Clinical Chic",
+      "use": "Verified skincare facts; no implied medical authority"
+    },
+    {
+      "name": "Sensory warmth",
+      "legacyPersona": "Soft Luxury",
+      "use": "Sensory language when product evidence supports it"
+    },
+    {
+      "name": "Radiance editorial",
+      "legacyPersona": "Glow Maestro",
+      "use": "Beauty editorial; no invented finish or efficacy"
+    },
+    {
+      "name": "Elegant authority",
+      "legacyPersona": "Elegant Authority",
+      "use": "Confident identity language"
+    },
+    {
+      "name": "Street femininity",
+      "legacyPersona": "Street Luxe Femme",
+      "use": "Contemporary feminine fashion voice"
+    }
+  ],
+  "descriptionStructure": [
+    "Category and brand appropriate emotional opening",
+    "Named product and verified facts",
+    "Useful product details and original size tables",
+    "Styling or usage only when supported; an identity close when it adds meaning"
+  ],
+  "namingRules": [
+    "Use evocative, descriptive-poetic and identity-led registers.",
+    "Keep the source-backed product noun and preserve authored names.",
+    "Check naming identities against the live catalog before publication.",
+    "Keep sister-brand naming pools distinct.",
+    "Use The deliberately, without adding it to every title.",
+    "Do not invent ingredients, materials, manufacture, fit, scent notes, wear time or benefits."
+  ],
+  "languageRules": [
+    "Warm and confident, without pressure, shame or empty empowerment slogans.",
+    "Specificity before adjective stacks; every word earns its place.",
+    "Use factual bullets for ingredients, sizing and care when useful.",
+    "Confidence phrases belong in hooks and CTAs, not repeated product-body boilerplate.",
+    "Business tiers and inspiration-brand persona labels are internal.",
+    "Category hooks are editorial framing, never evidence of a physical effect."
+  ],
+  "channels": {
+    "product": "Lead with feeling, then identify the product and preserve useful verified facts.",
+    "seo": "Use the real product category and verified attributes. Avoid keyword stuffing and unsupported ethical, ownership or efficacy claims.",
+    "email": "Personal, warm and intentional; one clear action per execution.",
+    "sms": "Brief and human; one clear action and truthful availability.",
+    "social": "Adapt rhythm to the platform while keeping each brand distinct. Trend exceptions are for deliberate Princess captions, not automated product copy.",
+    "ads": "Specific desire with truthful product evidence; no invented urgency, reviews or social proof.",
+    "blog": "Useful, deeper storytelling with verified facts and consistent brand language.",
+    "service": "Warm and clear. Preserve operational facts such as dates, quantities and delivery information."
+  },
+  "additionalForbidden": [
+    "Killing it",
+    "Werk",
+    "Girlboss energy",
+    "Last chance",
+    "Limited time only",
+    "Level up",
+    "You've got this",
+    "Believe in yourself",
+    "Be your best self",
+    "Own your truth",
+    "World-class",
+    "Unparalleled",
+    "Opulent",
+    "Exquisite",
+    "Sumptuous",
+    "Prestigious",
+    "Vibe check",
+    "That's the vibe",
+    "Understood the assignment",
+    "Ate and left no crumbs",
+    "Rent free"
+  ],
+  "limits": {
+    "shortDescription": 180,
+    "title": 80,
+    "seoTitle": 60,
+    "metaDescription": 155,
+    "luxuryAdjectives": 3,
+    "compoundSensoryVerbs": 1
+  },
+  "protection": [
+    "Existing handles",
+    "SKUs",
+    "Barcodes",
+    "Inventory",
+    "Variant configuration",
+    "Current publication and claim-review gates"
+  ],
+  "referenceOnly": [
+    "Legacy product datasets and CSVs",
+    "Historical code snippets",
+    "Proposed agent architectures",
+    "Unverified clinical or material examples",
+    "Conflicting visual drafts",
+    "Unverified business labels and social proof"
+  ]
+}

@@ -1,6 +1,7 @@
 import type { Classification, ProductSnapshot } from "./mvqueen-intelligence";
 import type { AutomatedProductContent } from "./product-content-automation";
 import type { CanonicalProductRecord } from "./enterprise/canonical-proposal";
+import { canonicalBrandLabel } from "./brand-vocabulary.server";
 
 function cleanText(value?: string | null): string {
   return String(value ?? "")
@@ -32,8 +33,9 @@ export function buildAutomatedProductFaq(
   product: ProductSnapshot,
   classification: Classification,
   content: AutomatedProductContent,
-  brandLabel = "MVQueen",
+  brandLabel = "MVQUEEN",
 ) {
+  brandLabel = canonicalBrandLabel(brandLabel);
   const faq = [
     {
       question: "What is " + content.title + "?",
@@ -74,8 +76,9 @@ export function buildAutomaticSurfaceRecord(
   product: ProductSnapshot,
   classification: Classification,
   content: AutomatedProductContent,
-  brandLabel = "MVQueen",
+  brandLabel = "MVQUEEN",
 ): CanonicalProductRecord {
+  brandLabel = canonicalBrandLabel(brandLabel);
   const faq = buildAutomatedProductFaq(product, classification, content, brandLabel);
   const descriptionPlain = cleanText(product.descriptionHtml);
   const blogPublishEligible =

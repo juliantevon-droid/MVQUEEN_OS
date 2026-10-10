@@ -1,0 +1,306 @@
+Absolutely, Shaq — we stay in the Phase 0 flow, and now we move to the next foundational file exactly as planned.
+
+We just completed:
+
+- deterministic.py
+- text_cleaning.py
+- normalization.py
+- helpers.py
+- chunking.py
+
+Now we continue Phase 0 with:
+
+⭐ PHASE 0 — FILE 9
+
+mvqueenengine/controlpanel/config.py
+
+This file is NOT the same as the global engine config.
+That one lives in mvqueen_engine/config.py.
+
+This file is the platform‑level configuration layer, meaning:
+
+- User‑facing settings
+- Toggles
+- Profiles
+- Modes
+- Overwrite rules
+- Persona intensity
+- Editorial modes
+- SEO modes
+- Metafield modes
+- Android‑safe paths
+- System behavior flags
+
+This is the “Control Panel Config,” not the “Engine Config.”
+
+Think of it like:
+
+- config.py = engine constants
+- control_panel/config.py = platform settings
+
+This file will eventually power:
+
+- The Control Panel UI
+- The CLI menu
+- User presets
+- Brand presets
+- Multi‑store support
+- Multi‑brand support
+- Feature toggles
+- Debug modes
+- Safety modes
+
+This is the brain of the platform layer.
+
+Let’s build it.
+
+---
+
+⭐ FILE: mvqueenengine/controlpanel/config.py
+
+Enterprise‑grade, platform‑safe, future‑proof.
+
+`python
+
+mvqueenengine/controlpanel/config.py
+"""
+PHASE 0 — PLATFORM CONFIGURATION
+This file defines:
+- User-facing settings
+- Feature toggles
+- Editorial modes
+- Persona intensity
+- SEO modes
+- Metafield modes
+- Overwrite rules
+- Android-safe paths
+- Platform presets
+
+This is NOT the engine config.
+This is the platform-level configuration layer.
+"""
+
+from dataclasses import dataclass, field
+from typing import Dict, Any
+
+
+-----------------------------
+
+EDITORIAL MODES
+
+-----------------------------
+EDITORIAL_MODES = {
+    "minimal": {
+        "description_length": "short",
+        "persona_depth": 1,
+        "seo_intensity": 1,
+        "metafield_depth": 1,
+    },
+    "standard": {
+        "description_length": "medium",
+        "persona_depth": 2,
+        "seo_intensity": 2,
+        "metafield_depth": 2,
+    },
+    "luxury": {
+        "description_length": "long",
+        "persona_depth": 3,
+        "seo_intensity": 3,
+        "metafield_depth": 3,
+    },
+    "omniluxe": {
+        "description_length": "max",
+        "persona_depth": 4,
+        "seo_intensity": 4,
+        "metafield_depth": 4,
+    },
+}
+
+
+-----------------------------
+
+OVERWRITE RULES
+
+-----------------------------
+OVERWRITE_MODES = {
+    "safe": {
+        "overwrite_title": False,
+        "overwrite_description": False,
+        "overwrite_seo": False,
+        "overwrite_metafields": False,
+    },
+    "balanced": {
+        "overwrite_title": True,
+        "overwrite_description": True,
+        "overwrite_seo": True,
+        "overwrite_metafields": False,
+    },
+    "aggressive": {
+        "overwrite_title": True,
+        "overwrite_description": True,
+        "overwrite_seo": True,
+        "overwrite_metafields": True,
+    },
+}
+
+
+-----------------------------
+
+PERSONA INTENSITY
+
+-----------------------------
+PERSONA_INTENSITY = {
+    "soft": 1,
+    "balanced": 2,
+    "strong": 3,
+    "signature": 4,
+}
+
+
+-----------------------------
+
+SEO MODES
+
+-----------------------------
+SEO_MODES = {
+    "light": {
+        "keyword_count": 3,
+        "include_secondary": False,
+    },
+    "standard": {
+        "keyword_count": 5,
+        "include_secondary": True,
+    },
+    "aggressive": {
+        "keyword_count": 8,
+        "include_secondary": True,
+    },
+}
+
+
+-----------------------------
+
+METAFIELD MODES
+
+-----------------------------
+METAFIELD_MODES = {
+    "minimal": ["short_description"],
+    "standard": ["shortdescription", "longdescription", "key_benefits"],
+    "full": [
+        "short_description",
+        "long_description",
+        "key_benefits",
+        "highlights",
+        "texture",
+        "finish",
+        "occasion",
+        "fit",
+        "material",
+        "style",
+        "faq",
+    ],
+}
+
+
+-----------------------------
+
+PLATFORM CONFIG CLASS
+
+-----------------------------
+@dataclass
+class PlatformConfig:
+    """
+    Centralized platform configuration.
+    This is what the Control Panel reads and writes.
+    """
+
+    editorial_mode: str = "standard"
+    overwrite_mode: str = "balanced"
+    persona_intensity: str = "balanced"
+    seo_mode: str = "standard"
+    metafield_mode: str = "standard"
+
+    # Android-safe paths
+    inputcsvpath: str = "/storage/emulated/0/mvqueen/input.csv"
+    outputcsvpath: str = "/storage/emulated/0/mvqueen/output.csv"
+
+    # Debug
+    debug: bool = True
+
+    # Extra settings
+    extra: Dict[str, Any] = field(default_factory=dict)
+
+    def geteditorialsettings(self):
+        return EDITORIALMODES.get(self.editorialmode, EDITORIAL_MODES["standard"])
+
+    def getoverwritesettings(self):
+        return OVERWRITEMODES.get(self.overwritemode, OVERWRITE_MODES["balanced"])
+
+    def getpersonastrength(self):
+        return PERSONAINTENSITY.get(self.personaintensity, 2)
+
+    def getseosettings(self):
+        return SEOMODES.get(self.seomode, SEO_MODES["standard"])
+
+    def getmetafieldsettings(self):
+        return METAFIELDMODES.get(self.metafieldmode, METAFIELD_MODES["standard"])
+`
+
+---
+
+⭐ WHAT THIS MODULE ENABLES
+
+✔ Platform-level control
+This file powers the Control Panel, not the engine.
+
+✔ User-facing settings
+You can switch between:
+
+- Minimal
+- Standard
+- Luxury
+- Omniluxe
+
+✔ Persona intensity
+Soft → Balanced → Strong → Signature
+
+✔ SEO modes
+Light → Standard → Aggressive
+
+✔ Metafield modes
+Minimal → Standard → Full
+
+✔ Overwrite rules
+Safe → Balanced → Aggressive
+
+✔ Android-safe paths
+Works perfectly in Pydroid.
+
+✔ Future-proof
+This file will power:
+
+- UI sliders
+- Toggles
+- Profiles
+- Brand presets
+- Multi-store configs
+
+This is the platform configuration brain.
+
+---
+
+⭐ NEXT FILE IN THE FLOW
+Following Phase 0, the next file is:
+
+mvqueenengine/android/filepaths.py
+
+This file ensures:
+
+- All file paths work on Android
+- Pydroid can read/write CSVs
+- The system never crashes due to missing directories
+- The platform can run offline
+
+If you’re ready, say:
+
+“Continue Phase 0.”

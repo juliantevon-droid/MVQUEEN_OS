@@ -1,0 +1,105 @@
+# MVQUEEN — Editorial Frames Library (300+ Copy Templates)
+Source: MVQueen Omniluxe Engine / codes4.docx + codes7.docx
+Location: 06_Tone_And_Voice/Editorial_Frames_Library
+Last Updated: June 2026
+
+These frames are the engine's copy DNA.
+Variables: {adj} = luxury adjective | {mood} = brand mood | {occasion} = use occasion
+The engine fills these at runtime using the vocabulary banks.
+Use manually by selecting an appropriate frame and substituting variables.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY A — TRANSFORMATION FRAMES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"Built around {adj} radiance, this piece channels a {mood} glow that elevates your {occasion} ritual."
+"A modern expression of {adj} clarity, shaped by a {mood} tone for refined {occasion} styling."
+"Designed for the woman who approaches {occasion} with {adj} intention and {mood} confidence."
+"Where {adj} craftsmanship meets {mood} energy — made for your most elevated {occasion}."
+"This is what {occasion} looks like when you choose {adj} quality and {mood} presence."
+"Infused with {adj} precision and {mood} warmth, perfect for every {occasion} moment."
+"The kind of {adj} that transforms a {occasion} into something worth remembering — powered by {mood}."
+"For {occasion} that deserves {adj} attention. For moments that ask for {mood} energy."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY B — SENSORY FRAMES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"Silken and {adj}, this glides through your {occasion} with a {mood} finish that stays."
+"The texture is {adj}. The feeling is {mood}. The result is made for {occasion}."
+"Wraps you in {adj} softness — a {mood} experience designed for {occasion} indulgence."
+"Melts into {adj} sensation, delivering a {mood} finish that carries through {occasion}."
+"Cushioned in {adj} luxury, infused with {mood} — your {occasion} ritual elevated."
+"The scent of {adj} intention. The feel of {mood} confidence. For every {occasion}."
+"Breathes {adj} ease into your {occasion} — light, {mood}, and entirely your own."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY C — AUTHORITY FRAMES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"Formulated with {adj} precision for women who take {occasion} seriously. The energy is {mood}."
+"Created for the woman who already knows — {adj} quality, {mood} results, every {occasion}."
+"This is not an accident. {adj} by design. {mood} by intention. Built for {occasion}."
+"The {adj} standard your {occasion} has been waiting for. Delivered with {mood} certainty."
+"When {occasion} calls for more, reach for {adj} performance and {mood} confidence."
+"Engineered for {adj} results. Voiced with {mood} authority. Made for your {occasion}."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY D — ASPIRATION FRAMES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"She moves through {occasion} with {adj} ease and {mood} grace — this is her signature."
+"Not just for {occasion}. For the version of you that shows up {adj} and leaves {mood}."
+"The {adj} choice for women who see {occasion} as an opportunity to be {mood}."
+"Wear it to {occasion}. Feel the {adj} shift. Carry the {mood} all day."
+"Your {occasion} upgraded — {adj} in every detail, {mood} in every moment."
+"This is what {occasion} feels like when you stop settling and start choosing {adj}."
+"Because {occasion} deserves {adj} — and you deserve {mood}. Every single time."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY E — EMOTIONAL FRAMES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"There is a {mood} that comes with {adj} things. This is one of them. For your {occasion}."
+"The feeling of {adj} is something you remember. Especially during {occasion}. Especially when {mood}."
+"Some products are functional. This one is {adj}. The difference is {mood}. The moment is {occasion}."
+"You will know it when you feel it — {adj} quality that makes {occasion} feel like {mood}."
+"It is the {adj} detail that changes how {occasion} feels. That detail is {mood}."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY F — MINIMALIST FRAMES (Short Form / Card Copy)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"{adj} by design. {mood} by nature."
+"For {occasion}. Made {adj}. Finished {mood}."
+"{mood} energy. {adj} quality. Every {occasion}."
+"The {adj} choice. The {mood} result."
+"Quiet {adj}. Confident {mood}."
+"{occasion} elevated. {adj} delivered."
+"Simply {adj}. Completely {mood}."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY G — SKINCARE/FRAGRANCE SPECIFIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"A {adj} formula that {mood}-glows through your {occasion} skin ritual."
+"Layered with {adj} botanicals, this settles into a {mood} finish by {occasion}."
+"Clinically-inspired and {adj} — designed to deliver {mood} results from the first {occasion}."
+"The {adj} serum your {occasion} skin ritual was missing. The result is unmistakably {mood}."
+"Fragrance note: {adj}. Dry-down: {mood}. Longevity: built for your entire {occasion}."
+"Opens {adj}. Evolves {mood}. Made for the woman who wears {occasion} like an intention."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY H — FASHION SPECIFIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"The silhouette is {adj}. The energy is {mood}. The moment is yours — wear it to {occasion}."
+"Cut {adj}, draped {mood} — this piece was designed for your most {occasion} self."
+"From the {adj} fabric to the {mood} finish, every detail of this was built for {occasion}."
+"A {adj} construction with {mood} movement. Wear it everywhere. Start with {occasion}."
+"Tailored for the woman who arrives at {occasion} {adj} and leaves remembered as {mood}."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+USAGE IN ENGINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The engine selects frames by:
+1. Detecting product category (skincare / fashion / fragrance / jewelry / haircare)
+2. Selecting persona (10 options — see 10_AI_Systems/MVQUEEN_Persona_Config)
+3. Pulling {adj} from LUXURY_ADJECTIVES pool (deterministically, by product title seed)
+4. Pulling {mood} from MOODS pool (deterministically)
+5. Pulling {occasion} from OCCASIONS pool (deterministically)
+6. Assembling 3-5 frames per product description
+
+Source: 15_Scripts_And_Code/MVQueen_Engine/05_codes4 + 08_codes7

@@ -1,0 +1,465 @@
+# 📦 MVQUEEN — Shipping SOP
+
+---
+
+## Purpose
+
+Define the standard operating procedure for all order fulfillment and shipping — ensuring every package that leaves MVQUEEN delivers a luxury experience from the moment it ships to the moment it arrives.
+
+Shipping is not logistics. It is the last brand touchpoint before she holds the product.
+
+---
+
+## Shipping Standards
+
+### Processing Time
+| Order Type | Processing Time |
+|-----------|----------------|
+| Standard orders | 1-3 business days |
+| Pre-orders | As stated on product page |
+| High-volume periods (launches, holidays) | 3-5 business days — communicate proactively |
+
+Processing time = time from order to handoff to carrier.
+Never count weekends or holidays unless explicitly stated.
+
+### Shipping Methods
+
+| Method | Carrier | Estimated Transit | Cost |
+|--------|---------|-----------------|------|
+| Standard | USPS First Class / UPS Ground | 5-8 business days | Calculated at checkout |
+| Expedited | USPS Priority / UPS 2-Day | 2-3 business days | Calculated at checkout |
+| Express | UPS Overnight | 1 business day | Calculated at checkout |
+| Free Shipping | USPS First Class | 5-8 business days | Orders over $[threshold] |
+
+### International Shipping
+- Available to: [list countries]
+- Carrier: [carrier]
+- Estimated transit: 10-21 business days
+- Customs duties: Customer responsibility — stated clearly at checkout
+- Tracking: Provided but may have gaps in international updates
+
+---
+
+## Fulfillment Process (Per Order)
+
+```
+□ 1. Order received — confirm payment cleared
+□ 2. Pull inventory — verify item is in stock and undamaged
+□ 3. Inspect product — quality check before packing
+□ 4. Pack order per packaging standards (see below)
+□ 5. Insert brand card and any promotional inserts
+□ 6. Seal package securely
+□ 7. Apply shipping label — verify address accuracy
+□ 8. Scan/log order as fulfilled in Shopify
+□ 9. Drop off at carrier or schedule pickup
+□ 10. Confirm tracking number uploaded to Shopify order
+□ 11. Shipping confirmation email auto-triggers — verify sent
+```
+
+---
+
+## Packaging Standards
+
+Every MVQUEEN package must reflect the brand:
+
+| Element | Standard |
+|---------|----------|
+| Outer box/mailer | Branded, clean, premium feel |
+| Inner wrap | Tissue paper — brand color |
+| Brand card | Handwritten-style message or printed insert |
+| Sticker/seal | Brand logo seal on tissue |
+| Padding | Appropriate for product fragility |
+| No excess | No cheap filler that undermines luxury feel |
+
+**The unboxing test:** Would she want to photograph this? Would it feel special?
+If no — repackage.
+
+---
+
+## Shipping Issue Protocols
+
+### Lost Package (No tracking update 10+ days)
+```
+1. Verify shipping address was correct
+2. Check carrier tracking for last known location
+3. File carrier claim if eligible
+4. Contact customer with empathy — offer replacement or refund
+5. Do not make her wait more than 14 days for resolution
+```
+
+### Damaged Package
+```
+1. Request photo of damage from customer
+2. Apologize immediately — no investigation theater
+3. Send replacement within 2 business days
+4. File carrier insurance claim if applicable
+5. Log incident for packaging review
+```
+
+### Wrong Item Sent
+```
+1. Apologize immediately
+2. Ship correct item with expedited shipping at no charge
+3. Provide prepaid return label for wrong item
+4. Do not require her to return item before sending correct one
+```
+
+---
+
+## Shipping Notification Email Standard
+
+Triggered automatically when tracking number is uploaded to Shopify.
+
+**Tone:** Warm, anticipatory — never robotic.
+
+Template: `17_Templates/T-02 Email Campaign Template`
+
+Subject line example: *"She's on her way to you."*
+
+---
+*MVQUEEN Shipping SOP — Operational Document*
+
+---
+---
+---
+
+# 🔄 MVQUEEN — Refund & Return SOP
+
+---
+
+## Purpose
+
+Handle every return and refund with warmth, efficiency, and brand integrity — turning a potentially negative experience into proof that MVQUEEN stands behind what it sells.
+
+The goal is never to minimize refunds by making them difficult.
+The goal is to resolve every issue so well that she comes back anyway.
+
+---
+
+## Return Policy
+
+| Item Type | Return Window | Condition Required |
+|-----------|-------------|-------------------|
+| Unopened products | 30 days from delivery | Original packaging, unused |
+| Opened skincare/beauty | Not eligible | Hygiene reasons — stated at purchase |
+| Clothing/fashion | 30 days | Unworn, tags attached |
+| Accessories | 30 days | Unused, original packaging |
+| Sale items | Final sale — no returns | Clearly stated at purchase |
+| Damaged/defective | Any time | Photo required |
+
+---
+
+## Return Process
+
+### Customer Initiates Return
+```
+□ Customer contacts via email or chat
+□ Acknowledge within 4 hours (business hours)
+□ Confirm eligibility against return policy
+□ If eligible: provide return authorization and prepaid label
+□ If not eligible: explain policy warmly, offer alternative resolution
+```
+
+### Return Received
+```
+□ Inspect returned item on arrival
+□ Confirm condition matches what was stated
+□ Process refund within 2 business days of receiving item
+□ Send refund confirmation email
+□ Update inventory in Shopify
+□ Log return reason in database
+```
+
+### Refund Processing
+| Payment Method | Refund Timeline |
+|---------------|----------------|
+| Credit/debit card | 5-10 business days to appear |
+| Shop Pay | 5-7 business days |
+| PayPal | 3-5 business days |
+| Store credit | Immediate |
+
+---
+
+## Refund Without Return (Exceptions)
+
+Issue a refund or replacement WITHOUT requiring return when:
+- Product arrived damaged (photo proof sufficient)
+- Wrong item was sent
+- Item lost in shipping and claim confirmed
+- Order value under $30 (cost of return shipping exceeds value)
+- Customer has strong purchase history (VIP — resolve immediately)
+
+**Rule:** The cost of goodwill is almost always less than the cost of a lost customer.
+
+---
+
+## Refund Response Templates
+
+**Eligible return:**
+*"Of course — we want your experience with MVQUEEN to feel right. I'm sending your return label now. Once we receive the item, your refund will be processed within 2 business days. Thank you for giving us the chance to make this right. 🤍"*
+
+**Ineligible return (opened beauty):**
+*"We completely understand the frustration, and we're sorry the product didn't work as you hoped. Because of the nature of beauty products, we're unable to accept returns once opened — but we'd love to help you find the right product for you. Can you tell me a little more about what you were hoping for?"*
+
+**Damaged product:**
+*"We're so sorry this arrived damaged — that's not the experience we want for you at all. I'm sending a replacement out to you with priority shipping today. You don't need to return the damaged item."*
+
+---
+
+## Return Analytics
+
+Track monthly:
+- Total returns by product
+- Return rate by category
+- Top return reasons
+- Return rate trend (should decrease as product quality improves)
+
+High return rates on specific products trigger: product review, supplier audit, or listing accuracy check.
+
+---
+*MVQUEEN Refund & Return SOP — Operational Document*
+
+---
+---
+---
+
+# 💬 MVQUEEN — Customer Support SOP
+
+---
+
+## Purpose
+
+Deliver customer support so warm, efficient, and brand-aligned that every interaction — even a complaint — leaves the customer feeling better about MVQUEEN than before she reached out.
+
+Customer support is not a cost center. It is a retention tool.
+
+---
+
+## Response Standards
+
+| Channel | Response Target | Maximum |
+|---------|----------------|---------|
+| Email | Under 4 hours (business hours) | 24 hours |
+| Instagram DM | Under 2 hours | 8 hours |
+| TikTok comments | Under 4 hours | 12 hours |
+| Website chat (if active) | Under 5 minutes | 30 minutes |
+
+Business hours: [Define hours and timezone]
+
+---
+
+## The MVQUEEN Support Framework
+
+Every customer interaction follows this arc:
+
+```
+ACKNOWLEDGE → UNDERSTAND → SOLVE → ELEVATE → CLOSE
+```
+
+**Acknowledge:** Validate her experience before solving anything.
+Never open with a policy. Open with a human response.
+
+**Understand:** Ask one clarifying question if needed.
+Never make her explain herself multiple times.
+
+**Solve:** Provide the clearest, most generous resolution available.
+When in doubt — err toward the customer.
+
+**Elevate:** Leave her feeling better than before she reached out.
+A small unexpected gesture goes a long way.
+
+**Close:** Warm, human, open door.
+Never close a ticket in a way that feels like a door slamming.
+
+---
+
+## Issue Categories & Resolution Standards
+
+| Issue | Resolution | Timeline |
+|-------|-----------|---------|
+| Order status question | Provide tracking + ETA | Immediate |
+| Late delivery | Acknowledge + provide carrier info + escalate if 10+ days | Same day |
+| Damaged product | Replacement shipped, no return required | Same day |
+| Wrong item | Correct item shipped expedited, prepaid return label sent | Same day |
+| Lost package | Investigation + replacement or refund | Within 48 hours |
+| Return request | Process per Refund SOP | Within 4 hours |
+| Product question | Answer specifically + recommend if helpful | Within 4 hours |
+| Complaint (general) | Listen, acknowledge, resolve generously | Within 2 hours |
+| Negative review | Respond publicly, invite to DM, resolve privately | Within 1 hour |
+
+---
+
+## Response Templates
+
+### Order Status
+*"Your order is on its way! Here's your tracking number: [number]. Based on current carrier estimates, she should arrive by [date]. Let me know if you need anything else. 🤍"*
+
+### Damaged Item
+*"Oh no — I'm so sorry this happened. That's absolutely not the experience we want for you. I'm sending a replacement out to you today with priority shipping. You don't need to return the damaged item — just enjoy the new one when it arrives."*
+
+### Late Delivery
+*"We completely understand the frustration, and we're sorry for the wait. Your tracking shows [status]. Carrier delays are unfortunately outside our control, but we're watching it closely. If it doesn't update within [X] days, reach out and we'll make it right immediately."*
+
+### Product Question
+*"Great question! [Specific, helpful answer]. If you're also interested in [related product], it pairs beautifully with [product] for [specific reason]. Happy to help with anything else!"*
+
+### Negative Public Comment
+*"Thank you for sharing this — your experience matters to us. We'd love to make this right. Please DM us so we can take care of you personally."*
+
+---
+
+## Escalation Protocol
+
+Escalate to founder immediately when:
+- Customer threatens chargeback or legal action
+- Order value is $150+ with unresolved issue
+- Customer has 3+ orders and is experiencing a problem
+- Issue involves product safety concern
+- Situation is appearing publicly on social media
+
+---
+
+## Support Quality Standards
+
+Monthly review:
+- Average response time vs. target
+- Resolution rate (resolved on first contact vs. multiple)
+- Customer satisfaction (follow up with: "Did we resolve everything for you?")
+- Return rate patterns indicating product issues
+- Recurring questions indicating content/FAQ gap
+
+---
+*MVQUEEN Customer Support SOP — Operational Document*
+
+---
+---
+---
+
+# ⬆️ MVQUEEN — Upsell Systems
+
+---
+
+## Purpose
+
+Increase average order value and customer lifetime value by introducing relevant, well-timed product recommendations that feel like personal suggestions — not sales tactics.
+
+The MVQUEEN upsell philosophy:
+**Recommend like a knowledgeable friend. Never push like a salesperson.**
+
+---
+
+## Upsell vs Cross-Sell
+
+| Type | Definition | Example |
+|------|-----------|---------|
+| Upsell | Upgrade to higher value version | Larger size, bundle, premium version |
+| Cross-sell | Add complementary product | Moisturizer + SPF, dress + accessories |
+| Post-purchase upsell | Offer after payment confirmed | One-click add-on at order confirmation |
+
+---
+
+## Upsell Placement Strategy
+
+### Placement 1 — Product Page
+**Type:** Cross-sell
+**Format:** "Pairs beautifully with..." section
+**Rules:**
+- Maximum 3 product recommendations
+- Must be genuinely complementary — not random
+- Show with price
+- Never interrupt the primary purchase flow
+
+### Placement 2 — Cart Page
+**Type:** Cross-sell + threshold upsell
+**Format:**
+- "You might also love..." — 1-2 complementary products
+- Free shipping threshold bar: *"Add $X more for free shipping"*
+**Rules:**
+- One recommendation maximum in cart
+- Threshold bar only if customer is within $20 of free shipping
+
+### Placement 3 — Checkout Page
+**Type:** Minimal — protect conversion
+**Format:** None recommended — don't risk abandonment
+**Rule:** Do not upsell on the checkout page. Focus only on completing the purchase.
+
+### Placement 4 — Post-Purchase (Order Confirmation Page)
+**Type:** One-click upsell
+**Format:** *"Add [product] to your order before it ships — one tap, no re-entering payment."*
+**Rules:**
+- One product maximum
+- Must be under $30 to reduce decision friction
+- Complementary to what was just purchased
+- Available for 15 minutes after purchase (before order is processed)
+
+### Placement 5 — Post-Purchase Email (Day 14)
+**Type:** Soft cross-sell
+**Format:** *"You've had [product] for two weeks now — here's what she pairs perfectly with..."*
+**Rules:**
+- Never in the immediate post-purchase sequence (too soon)
+- Must feel like a natural next step — not a sales email
+- One product recommendation maximum
+
+---
+
+## Product Pairing Matrix
+
+| Primary Product | Recommended Upsell | Recommended Cross-sell |
+|----------------|-------------------|----------------------|
+| Skincare serum | Full-size version (if trial) | Moisturizer, SPF |
+| Moisturizer | Bundle with cleanser | Serum, eye cream |
+| Hair product | Full routine set | Styling product, hair accessories |
+| Dress | Size up bundle | Accessories, shoes |
+| Accessories | Set / bundle | Complementary accessory |
+| Fragrance | Larger size | Body lotion in same scent |
+
+*(Expand with real product pairings as catalog grows)*
+
+---
+
+## Bundle Architecture
+
+Bundles increase AOV while giving the customer perceived value.
+
+**Bundle types:**
+| Bundle Type | Discount | Notes |
+|------------|---------|-------|
+| Starter Ritual | 10% off | 2-3 entry products |
+| Full Ritual | 15% off | Complete product routine |
+| Gift Set | 10% off + gift packaging | Seasonal, giftable |
+| Build Your Own | 10% off when buying 3+ | Flexible, high conversion |
+
+**Bundle pricing rule:**
+Never discount more than 20% — protects margin and luxury positioning.
+
+---
+
+## Upsell Copy Standards
+
+Upsell language must feel like a recommendation — not a push.
+
+**✅ Use:**
+- *"Pairs beautifully with..."*
+- *"Complete the ritual with..."*
+- *"Women who love [product] also reach for..."*
+- *"Her natural companion..."*
+
+**❌ Never use:**
+- *"You might also want to buy..."*
+- *"Don't forget to add..."*
+- *"Frequently bought together"* (Amazon language)
+- *"Limited time — add now!"*
+
+---
+
+## Upsell Performance Tracking
+
+| Metric | Target | Review |
+|--------|--------|--------|
+| Upsell acceptance rate (post-purchase) | 15%+ | Monthly |
+| Average Order Value | $65+ | Weekly |
+| Bundle attach rate | 20%+ of orders | Monthly |
+| Cross-sell click rate (product page) | 5%+ | Monthly |
+
+---
+*MVQUEEN Upsell Systems — Operational Document*

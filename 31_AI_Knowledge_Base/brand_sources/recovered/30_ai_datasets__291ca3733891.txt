@@ -1,0 +1,301 @@
+# 📊 MVQUEEN — AI Datasets
+
+---
+
+## Purpose
+
+The AI Datasets module contains the curated information sets used to train, prime, and calibrate MVQUEEN's AI systems.
+
+A dataset is not just data.
+It is a teachable record of what MVQUEEN knows, how it speaks, what it values, and how it thinks.
+
+Every AI agent, prompt chain, and retrieval system in MVQUEEN runs better when it has access to well-organized, brand-specific data — not generic information, not borrowed intelligence, but the specific knowledge that makes MVQUEEN distinct.
+
+---
+
+## Dataset Philosophy
+
+Generic AI produces generic outputs.
+MVQUEEN AI produces MVQUEEN outputs.
+
+The difference is not the model.
+The difference is the data the model is working with.
+
+MVQUEEN invests in building proprietary datasets — accumulated through real brand experience, real customer interaction, real creative output — that cannot be replicated by any brand that hasn't done the work.
+
+This is the compound interest of building a proper OS.
+
+---
+
+## Dataset Index
+
+| ID | Dataset | Purpose | Format |
+|----|---------|---------|--------|
+| DS-01 | Brand Voice Corpus | AI voice calibration | Text examples |
+| DS-02 | Customer Language Dataset | Persona voice capture | Verbatim quotes + patterns |
+| DS-03 | Product Copy Examples | Copy style reference | Annotated examples |
+| DS-04 | Approved Vocabulary Set | Language guardrails | Structured lists |
+| DS-05 | Emotional Keyword Map | Sentiment + intent mapping | Categorized terms |
+| DS-06 | Competitor Differentiation Set | Positioning clarity | Structured comparisons |
+| DS-07 | High-Performing Content Archive | Pattern recognition | Annotated content |
+| DS-08 | SEO Knowledge Base | Search intelligence | Keyword + intent data |
+| DS-09 | Customer Objections & Responses | Communication training | Q&A pairs |
+| DS-10 | Brand Decision Examples | Doctrine-aligned reasoning | Case examples |
+
+---
+
+## DS-01 — Brand Voice Corpus
+
+**Purpose:** A curated collection of MVQUEEN-approved copy examples that represent the brand voice across every channel and format. Used to calibrate AI outputs, train new team members, and provide concrete reference points for what MVQUEEN sounds like.
+
+**What it contains:**
+- Product descriptions (short + long)
+- Email subject lines and body copy
+- Social media captions by platform
+- Blog introductions and conclusions
+- Ad headlines and body
+- Customer communication examples
+- Campaign taglines and concepts
+
+**How it's organized:**
+Each entry is labeled by format, platform, emotional register, and quality rating. High-rated examples are used as positive reference. Occasionally, annotated examples of what NOT to do are included — showing the gap between generic and on-brand.
+
+**How AI uses it:** Injected as few-shot examples in prompt engineering. When the Brand Scribe agent needs to write a product description, it has access to 10-15 MVQUEEN product descriptions it can calibrate against — not generic writing examples from the open web.
+
+**Building the corpus:**
+- Start with the Brand Bible for foundational examples
+- Add every approved piece of copy to the relevant section
+- Review and prune annually — only the best examples stay
+
+---
+
+## DS-02 — Customer Language Dataset
+
+**Purpose:** A structured collection of the actual words, phrases, emotional expressions, and language patterns MVQUEEN's customers use — captured from reviews, social comments, DMs, and community interactions.
+
+**Why this matters:** The most persuasive copy a brand can write uses the customer's own words reflected back to them. This dataset makes that possible at scale.
+
+**What it captures:**
+- Exact phrases customers use to describe how they feel after purchasing
+- Language customers use to describe their beauty and lifestyle goals
+- Words they use to describe pain points and frustrations
+- How they talk about luxury, femininity, and self-expression
+- The questions they ask before purchasing
+- Objections phrased in their own words
+
+**Format:**
+```
+SOURCE: [Review platform / Social / DM / Survey]
+DATE: [When captured]
+PRODUCT / CONTEXT: [What they're responding to]
+QUOTE: [Verbatim or close paraphrase]
+EMOTIONAL THEME: [What feeling or need this reveals]
+LANGUAGE PATTERN: [Notable phrasing worth capturing]
+USE IN: [Copy / Email / Social / Persona development]
+```
+
+**Privacy note:** All direct quotes from private communication (DMs) are used internally only and never attributed to individuals without explicit consent.
+
+---
+
+## DS-03 — Product Copy Examples
+
+**Purpose:** An annotated library of product copy examples — organized by category, format, and quality level — used as calibration reference for AI and human writers.
+
+**Structure:**
+Each entry includes:
+- The product type and category
+- The emotional promise being communicated
+- The actual copy (title, short description, long description, bullets)
+- Annotations explaining what the copy does well and why
+- The persona this copy was written for
+
+**Example annotation format:**
+```
+PRODUCT: [Name + Category]
+EMOTIONAL PROMISE: [What feeling it delivers]
+PERSONA: [Who it's written for]
+---
+TITLE: [Text]
+SHORT DESC: [Text]
+LONG DESC: [Text]
+BULLETS: [5 points]
+---
+ANNOTATIONS:
+- [Note on what works in the title]
+- [Note on emotional language used]
+- [Note on persona alignment]
+- [Note on what to replicate in future copy]
+```
+
+---
+
+## DS-04 — Approved Vocabulary Set
+
+**Purpose:** The structured, machine-readable version of the Brand Vocabulary — formatted specifically for injection into AI system prompts as language guardrails.
+
+**Format (simplified for AI injection):**
+```
+APPROVED WORDS:
+soft, warm, luminous, intimate, elegant, elevated, intentional, immersive,
+restorative, feminine, sensory, atmosphere, presence, quiet confidence,
+emotional warmth, breathable luxury, grounded softness, radiant, deliberate
+
+FORBIDDEN WORDS AND PHRASES:
+cheap → use: accessible luxury
+affordable → use: thoughtfully priced
+stunning → use: more specific sensory descriptor
+amazing → use: specific quality descriptor
+must-have → use: made for her / designed for moments like this
+high-quality → use: describe the specific quality attribute
+game-changing → avoid entirely
+act now → avoid entirely
+don't miss out → avoid entirely
+limited time only → use: available through [date] or while available
+
+TONE PARAMETERS:
+Not: aggressive, urgent, corporate, performative, clinical
+Yes: warm, intentional, feminine, aspirational, emotionally aware
+```
+
+---
+
+## DS-05 — Emotional Keyword Map
+
+**Purpose:** A curated map of emotionally charged words and phrases organized by the feeling they evoke — used to ensure content consistently triggers the right emotional responses in MVQUEEN's audience.
+
+**Structure:**
+```
+EMOTION: [e.g., Confidence]
+PRIMARY KEYWORDS: [words that directly evoke this]
+SECONDARY KEYWORDS: [words that support this feeling]
+SENSORY DESCRIPTORS: [words that create physical/sensory association]
+IDENTITY LANGUAGE: [words that tie to who she is or is becoming]
+AVOID: [words that undermine this emotional register]
+```
+
+**Example:**
+```
+EMOTION: Softness / Restoration
+PRIMARY: soft, gentle, soothing, tender, quiet, still
+SECONDARY: breathable, unhurried, intentional, peaceful, grounded
+SENSORY: velvet, silk, warmth, glow, mist, clean
+IDENTITY: the woman who returns to herself, softness as strength
+AVOID: harsh, sharp, aggressive, urgent, demanding
+```
+
+---
+
+## DS-06 — Competitor Differentiation Set
+
+**Purpose:** Structured data on how MVQUEEN differs from key competitors — used to sharpen positioning in AI-generated content and ensure no output accidentally sounds like a competitor.
+
+**Format per competitor:**
+```
+COMPETITOR: [Name]
+THEIR VOICE: [How they sound]
+THEIR POSITIONING: [What they claim]
+THEIR WEAKNESS: [Where they fall short emotionally or experientially]
+MVQUEEN DIFFERENCE: [How we are categorically different]
+LANGUAGE TO AVOID: [Phrases they overuse that we shouldn't echo]
+```
+
+---
+
+## DS-07 — High-Performing Content Archive
+
+**Purpose:** Annotated collection of MVQUEEN's best-performing content pieces — organized by format, platform, and performance metric — used for pattern recognition and AI calibration.
+
+**What gets archived here:**
+- Emails with above-average open and click rates
+- Social posts with significant engagement
+- Product descriptions with high conversion correlation
+- Blog posts with strong organic traffic
+- Ad creative with positive ROAS
+
+**Annotation format:**
+```
+CONTENT: [Title or first line]
+FORMAT: [Type]
+PLATFORM: [Where it ran]
+DATE: [Published]
+PERFORMANCE: [Key metric that made it notable]
+WHAT WORKED: [Analysis — why did this resonate?]
+PATTERN TO REPLICATE: [What element to use again]
+```
+
+---
+
+## DS-08 — SEO Knowledge Base
+
+**Purpose:** Organized intelligence on MVQUEEN's search landscape — keyword data, content gap analysis, ranking history, and competitor SEO patterns — used to inform AI-generated SEO content and strategy.
+
+**Contains:**
+- Prioritized keyword list with intent mapping
+- Content cluster architecture
+- Metadata templates by page type
+- Internal linking patterns
+- Competitor keyword gaps (terms they rank for that we don't yet)
+- Historical ranking data for tracked terms
+
+**Cross-reference:** `37_Databases/DB-04` for the full keyword database.
+
+---
+
+## DS-09 — Customer Objections & Responses
+
+**Purpose:** A structured Q&A dataset of every common customer objection and the ideal MVQUEEN response — used to calibrate the Customer Voice agent and improve all customer-facing communication.
+
+**Format:**
+```
+OBJECTION: [The concern, in the customer's language]
+EMOTIONAL ROOT: [What's really driving this concern]
+IDEAL RESPONSE: [How MVQUEEN addresses it]
+TONE NOTES: [Any specific guidance on delivery]
+USE IN: [Email / Chat / FAQ / Social comment / Product page]
+```
+
+**Example:**
+```
+OBJECTION: "Is the quality worth the price?"
+EMOTIONAL ROOT: Fear of disappointment / desire for assurance
+IDEAL RESPONSE: [Specific, sensory, confident — describes quality without defensive language]
+TONE NOTES: Warm confidence. Not defensive. Lead with what she gets, not a price justification.
+USE IN: Product page / Email / FAQ
+```
+
+---
+
+## DS-10 — Brand Decision Examples
+
+**Purpose:** A record of real decisions MVQUEEN has made — and the doctrine-aligned reasoning behind them — used to calibrate AI strategic reasoning and maintain decision consistency as the team grows.
+
+**Format:**
+```
+DECISION: [What was decided]
+CONTEXT: [What situation prompted this]
+OPTIONS CONSIDERED: [What alternatives existed]
+DOCTRINE PRINCIPLE APPLIED: [Which doctrine guided the choice]
+OUTCOME: [What resulted]
+LESSON: [What this teaches about how MVQUEEN decides]
+```
+
+This dataset is especially valuable as the team grows — it captures institutional reasoning that would otherwise live only in the founder's head.
+
+---
+
+## Dataset Maintenance
+
+**Build continuously:**
+Every time MVQUEEN produces content, runs a campaign, serves a customer, or makes a strategic decision — there is an opportunity to capture that output and add it to the appropriate dataset.
+
+**Review quarterly:**
+Outdated examples should be pruned. High-performing new examples should be elevated. The dataset should always reflect where MVQUEEN is now, not just where it started.
+
+**Treat as proprietary:**
+These datasets represent years of compounding brand intelligence. They are MVQUEEN's intellectual property — not to be shared externally.
+
+---
+
+*MVQUEEN AI Datasets — v1.0*
+*Better data. Better outputs. Better brand.*

@@ -1,0 +1,129 @@
+# MVQUEEN OS — Agents README
+# Created: 2026-06-15
+# Phase: C — Shopify Store Build
+
+═══════════════════════════════════════════════════
+  MVQUEEN OS / agents/
+  The execution layer that connects brand brain to Shopify.
+═══════════════════════════════════════════════════
+
+## What lives here
+
+| File                      | Purpose                                              |
+|---------------------------|------------------------------------------------------|
+| wfgen-ecom-001.yaml       | Agent definition — identity, memory, tools, triggers |
+| agent_runner.py           | Core runner — reads YAML, executes pipeline          |
+| install_agent.sh          | One-time setup script — run from Termux first        |
+| README.md                 | This file                                            |
+
+---
+
+## How to deploy from Termux (first time)
+
+### Step 1 — Sync this folder from Drive to your phone
+
+```bash
+# First confirm your rclone remote name
+rclone listremotes
+
+# Then sync (replace 'gdrive' with your actual remote name)
+rclone copy gdrive:MVQUEEN_OS/agents/ /storage/emulated/0/MVQUEEN_OS/agents/
+```
+
+### Step 2 — Run the installer
+
+```bash
+cd /storage/emulated/0/MVQUEEN_OS/agents/
+chmod +x install_agent.sh
+bash install_agent.sh
+```
+
+This single command:
+- Confirms rclone is working
+- Creates all required directories
+- Initializes memory files if missing
+- Installs Python dependencies (pyyaml, requests)
+- Runs a dry-run to validate everything
+
+### Step 3 — Run the agent manually
+
+```bash
+# Dry-run (safe — no Shopify writes)
+python /storage/emulated/0/MVQUEEN_OS/agents/agent_runner.py \
+  --agent wfgen-ecom-001 \
+  --dry-run
+
+# Live run (only after dry-run passes)
+python /storage/emulated/0/MVQUEEN_OS/agents/agent_runner.py \
+  --agent wfgen-ecom-001
+```
+
+---
+
+## Memory files the agent reads
+
+```
+MVQUEEN_OS/
+├── memory/
+│   ├── agent_memory.json     ← persistent state (auto-created)
+│   ├── preferences.md        ← your operator settings (edit this)
+│   └── style_guide.md        ← brand voice rules (auto-stub)
+├── logs/
+│   ├── automation_log.md     ← every run logged here
+│   └── agent_experience.md   ← lessons + error notes
+└── 01_Brand_Strategy/
+    └── Brand_Bible.md        ← master brand source (must exist)
+```
+
+---
+
+## Checking logs after a run
+
+```bash
+# See the last run entry
+tail -50 /storage/emulated/0/MVQUEEN_OS/logs/automation_log.md
+
+# See all experience notes
+cat /storage/emulated/0/MVQUEEN_OS/logs/agent_experience.md
+```
+
+---
+
+## Adding your Shopify credentials
+
+Edit memory/preferences.md and add:
+
+```
+## Shopify API
+- Shop domain: your-store.myshopify.com
+- API version: 2024-01
+- Access token: shpat_xxxxxxxxxxxx
+```
+
+Do NOT put your access token in the YAML definition file.
+Always keep credentials in memory/preferences.md only.
+
+---
+
+## Phase C next steps (from MVQUEEN_PRODUCTION_PLAN.md)
+
+1. ✅ agents/ folder created in Drive
+2. ✅ wfgen-ecom-001.yaml definition written
+3. ✅ agent_runner.py built
+4. ✅ install_agent.sh built
+5. ⬜ Sync to phone via rclone
+6. ⬜ Run install_agent.sh
+7. ⬜ Add Shopify credentials to preferences.md
+8. ⬜ Connect existing 15+ scripts to runner pipeline
+9. ⬜ First live product upload run
+10. ⬜ Enable scheduled trigger (cron 0 6 * * *)
+
+---
+
+## Agent namespace rule
+
+This runner only processes workflows tagged:
+  brand_ns: ["MVQUEEN", "Miss.Princess"]
+
+Any other namespace causes an immediate abort.
+This is a hard prohibition, not a warning.

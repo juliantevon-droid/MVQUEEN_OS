@@ -1,0 +1,121 @@
+===== 2026-06-09.md =====
+./98_Archive/2026-06-09.md
+./32_Backups/pre_merge_20260611/98_Archive/2026-06-09.md
+
+===== AI_Prompt_Library_OLD.md =====
+./98_Archive/AI_Prompt_Library_OLD.md
+./32_Backups/pre_merge_20260611/98_Archive/AI_Prompt_Library_OLD.md
+
+===== API.py =====
+./15_Scripts_And_Code/MVQUEEN_Engine/API.py
+./15_Scripts_And_Code/engine/API.py
+
+===== Access_token.py =====
+./15_Scripts_And_Code/MVQUEEN_Engine/Access_token.py
+./15_Scripts_And_Code/engine/Access_token.py
+
+===== Accessories.md =====
+./MVQUEEN_OS/04_Products/Accessories.md
+./04_Products/Accessories.md
+
+===== Ad_Copy_Prompts.md =====
+./07_Marketing/Ad_Copy_Prompts.md
+./10_AI_Systems/Ad_Copy_Prompts.md
+
+===== Ad_Copy_Prompts_OLD.md =====
+./98_Archive/Ad_Copy_Prompts_OLD.md
+./32_Backups/pre_merge_20260611/98_Archive/Ad_Copy_Prompts_OLD.md
+
+===== Audience_Segments.md =====
+./03_Customer_Psychology/Audience_Segments.md
+./32_Backups/pre_merge_20260611/03_Customer_Psychology/Audience_Segments.md
+
+===== Beauty_Products.md =====
+./MVQUEEN_OS/04_Products/Beauty_Products.md
+./04_Products/Beauty_Products.md
+
+===== Brand_Messaging.md =====
+./MVQUEEN_OS/06_Tone_And_Voice/Brand_Messaging.md
+./06_Tone_And_Voice/Brand_Messaging.md
+
+===== Buying_Psychology.md =====
+./03_Customer_Psychology/Buying_Psychology.md
+./32_Backups/pre_merge_20260611/03_Customer_Psychology/Buying_Psychology.md
+
+===== CTA_Library.md =====
+./98_Archive/CTA_Library.md
+./06_Tone_And_Voice/CTA_Library.md
+./32_Backups/pre_merge_20260611/98_Archive/CTA_Library.md
+
+===== Collection_Structure.md =====
+./MVQUEEN_OS/04_Products/Collection_Structure.md
+./04_Products/Collection_Structure.md
+
+===== Cross-Sell Systems.md =====
+./MVQUEEN_OS/04_Products/Cross-Sell Systems.md
+./04_Products/Cross-Sell Systems.md
+
+===== Customer_Personas.md =====
+./03_Customer_Psychology/Customer_Personas.md
+./32_Backups/pre_merge_20260611/03_Customer_Psychology/Customer_Personas.md
+
+===== Customer_Transformation.md =====
+./03_Customer_Psychology/Customer_Transformation.md
+./32_Backups/pre_merge_20260611/03_Customer_Psychology/Customer_Transformation.md
+
+===== Elevator_Pitch.md =====
+./01_Brand_Strategy/Elevator_Pitch.md
+./MVQUEEN_OS/01_Brand_Strategy/Elevator_Pitch.md
+
+===== Example_Copy.md =====
+./98_Archive/Example_Copy.md
+./MVQUEEN_OS/06_Tone_And_Voice/Example_Copy.md
+./06_Tone_And_Voice/Example_Copy.md
+./32_Backups/pre_merge_20260611/98_Archive/Example_Copy.md
+
+===== Fashion_Products.md =====
+./MVQUEEN_OS/04_Products/Fashion_Products.md
+./04_Products/Fashion_Products.md
+
+===== Feminine_Language.md =====
+./MVQUEEN_OS/06_Tone_And_Voice/Feminine_Language.md
+./06_Tone_And_Voice/Feminine_Language.md
+
+===== HEAD =====
+./.git/HEAD
+./.git/logs/HEAD
+
+===== Hair_Products.md =====
+./MVQUEEN_OS/04_Products/Hair_Products.md
+./04_Products/Hair_Products.md
+
+===== Hook_Systems.md =====
+./98_Archive/Hook_Systems.md
+./06_Tone_And_Voice/Hook_Systems.md
+./32_Backups/pre_merge_20260611/98_Archive/Hook_Systems.md
+
+===== Identity_Aspirations.md =====
+./03_Customer_Psychology/Identity_Aspirations.md
+./32_Backups/pre_merge_20260611/03_Customer_Psychology/Identity_Aspirations.md
+
+===== Image_Generation_Prompts_OLD.md =====
+./98_Archive/Image_Generation_Prompts_OLD.md
+./32_Backups/pre_merge_20260611/98_Archive/Image_Generation_Prompts_OLD.md
+
+===== Luxury_Buyer_Behavior.md =====
+./03_Customer_Psychology/Luxury_Buyer_Behavior.md
+./32_Backups/pre_merge_20260611/03_Customer_Psychology/Luxury_Buyer_Behavior.md
+
+===== Luxury_Language.md =====
+./MVQUEEN_OS/06_Tone_And_Voice/Luxury_Language.md
+./06_Tone_And_Voice/Luxury_Language.md
+
+===== MVQUEEN_Phase2.html =====
+./98_Archive/MVQUEEN_Phase2.html
+./32_Backups/pre_merge_20260611/98_Archive/MVQUEEN_Phase2.html
+
+===== Market_Research.md =====
+./03_Customer_Psychology/Market_Research.md
+./32_Backups/pre_merge_20260611/03_Customer_Psychology/Market_Research.md
+
+===== Persuasion Frameworks.md =====

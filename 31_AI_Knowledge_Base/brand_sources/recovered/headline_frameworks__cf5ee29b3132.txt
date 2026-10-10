@@ -1,0 +1,202 @@
+# 📰 MVQUEEN — Headline Frameworks
+
+---
+
+## What a MVQUEEN Headline Does
+
+A headline carries two jobs simultaneously:
+1. Make her stop and read
+2. Set the emotional atmosphere for everything that follows
+
+MVQUEEN headlines are never screaming for attention.
+They draw it — the way a beautifully lit room draws you in before you understand why.
+
+**The standard:** Every headline should work as a standalone sentence.
+If it only makes sense with what comes after it, it's not strong enough.
+
+---
+
+## The 10 MVQUEEN Headline Frameworks
+
+---
+
+### Framework 01 — The Doctrine Statement
+A brand truth stated with quiet authority.
+Works for: Brand content, editorial, campaigns, email subjects.
+
+**Structure:** `[Brand belief stated as fact]`
+
+**Examples:**
+- *Softness is not something you outgrow.*
+- *Luxury was always meant to feel like this.*
+- *The right ritual changes everything.*
+- *Beauty should restore you — not require you.*
+- *Femininity is presence, not performance.*
+
+---
+
+### Framework 02 — The Transformation Promise
+Names the specific before → after without being salesy.
+Works for: Product pages, ads, email campaigns, landing pages.
+
+**Structure:** `[Before state] → [After state]` or `From ___ to ___`
+
+**Examples:**
+- *From routine to ritual.*
+- *From surviving the morning to owning it.*
+- *Skin that went from dry and tired to soft and alive.*
+- *The shift from doing beauty to feeling it.*
+
+---
+
+### Framework 03 — The Woman-First Headline
+Centers her identity — not the product.
+Works for: Ads, social, email, product collections.
+
+**Structure:** `For the woman who ___` / `Made for ___`
+
+**Examples:**
+- *For the woman who chooses softness on purpose.*
+- *Made for women who feel everything.*
+- *For her. The one who's been waiting for this.*
+- *For the version of you who takes her time.*
+
+---
+
+### Framework 04 — The Sensory Lead
+Opens with a physical or atmospheric feeling.
+Works for: Product descriptions, editorial, campaigns, social.
+
+**Structure:** `[Sensory experience as opening]`
+
+**Examples:**
+- *Skin that drinks it in.*
+- *The weight of real silk. The warmth of intention.*
+- *Softness you can feel from across the room.*
+- *The scent of an unhurried morning.*
+- *Light that flatters everything it touches.*
+
+---
+
+### Framework 05 — The Quiet Disruption
+Challenges an assumption without aggression.
+Works for: Brand content, social, ads, email.
+
+**Structure:** `[What people assume] — [What we know instead]`
+
+**Examples:**
+- *Luxury doesn't have to feel out of reach.*
+- *Self-care was never supposed to feel like work.*
+- *You were never supposed to earn the right to feel beautiful.*
+- *Femininity was never the problem.*
+
+---
+
+### Framework 06 — The Named Product Headline
+Leads with the product but wrapped in meaning.
+Works for: Product launches, announcements, collection reveals.
+
+**Structure:** `Introducing [Product] — [What it means]`
+
+**Examples:**
+- *Introducing [Product Name] — made for your softest mornings.*
+- *[Product Name]. For women who know what they want.*
+- *Meet [Product Name]. She's been a while coming.*
+- *[Product Name] — the ritual you didn't know was missing.*
+
+---
+
+### Framework 07 — The Question Headline
+Asks the question she's already asking herself.
+Works for: Blog articles, social, email subjects, ads.
+
+**Structure:** `[Question that names her exact feeling or desire]`
+
+**Examples:**
+- *What if your morning routine felt like the best part of your day?*
+- *What does luxury actually feel like when it was made for you?*
+- *Have you ever felt beautiful just sitting still?*
+- *What would change if beauty restored you instead of exhausted you?*
+
+---
+
+### Framework 08 — The Number Headline
+Specific numbers signal authority and value.
+Works for: Blog articles, carousels, email, educational content.
+
+**Structure:** `[Number] + [specific promise]`
+
+**Examples:**
+- *5 rituals that changed how mornings feel.*
+- *The one product my shelf hasn't been without.*
+- *3 signs your beauty routine needs to become a ritual.*
+- *7 things every intentional woman keeps in her space.*
+
+---
+
+### Framework 09 — The Permission Headline
+Gives her permission she didn't realize she needed.
+Works for: Brand content, campaigns, social, email.
+
+**Structure:** `You're allowed to ___`
+
+**Examples:**
+- *You're allowed to want things that feel this good.*
+- *You're allowed to take up space softly.*
+- *You're allowed to choose luxury and not justify it.*
+- *You're allowed to make this about you.*
+
+---
+
+### Framework 10 — The Poetic One-Liner
+A single line with rhythm and meaning.
+Works for: Campaign headlines, brand statements, social captions, packaging.
+
+**Structure:** `[Short, rhythmic, emotionally resonant line]`
+
+**Examples:**
+- *Soft. Intentional. Yours.*
+- *Beauty that belongs to you.*
+- *The world gets louder. She gets softer.*
+- *Made with intention. Worn with presence.*
+- *Not just products. A whole philosophy.*
+
+---
+
+## Headline Length by Format
+
+| Format | Ideal Length | Notes |
+|--------|-------------|-------|
+| Email subject line | 5-8 words | Under 50 characters for mobile |
+| Social caption headline | 5-12 words | First line before "more" cutoff |
+| Blog article H1 | 8-14 words | SEO-aware, brand voice first |
+| Ad headline | 4-8 words | Punch and clarity |
+| Product page headline | 3-8 words | Evocative, brand-aligned |
+| Campaign headline | 3-6 words | Iconic, standalone |
+| SMS opening | Under 10 words | Entire message is the headline |
+
+---
+
+## Headline Quality Test
+
+Before using any headline, ask:
+
+1. **Does it create a feeling in under 5 seconds?**
+2. **Could any other brand write this?** (If yes — it's not MVQUEEN enough)
+3. **Does it honor the woman it's speaking to?**
+4. **Is every word earning its place?**
+5. **Does it make you want to read what comes next?**
+
+Fail any of these — rewrite before publishing.
+
+---
+
+## Headline Swipe File
+
+High-performing MVQUEEN headlines are archived in:
+`13_Research_And_Inspiration/Swipe_Files.md`
+
+Update after every campaign with top performers.
+
+---
+*MVQUEEN Headline Frameworks — Operational Document*

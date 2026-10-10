@@ -1,0 +1,29 @@
+01_Brand_Strategy/USP.md
+01_Brand_Strategy/Taglines.md
+01_Brand_Strategy/Slogans.md
+01_Brand_Strategy/Elevator_Pitch.md
+06_Tone_And_Voice/Brand_Messaging.md
+06_Tone_And_Voice/Luxury_Language.md
+06_Tone_And_Voice/Feminine_Language.md
+06_Tone_And_Voice/Persuasion Frameworks.md
+06_Tone_And_Voice/Storytelling Frameworks.md
+06_Tone_And_Voice/SEO Voice.md
+06_Tone_And_Voice/Example_Copy.md
+02_Brand_Identity/brand_rules.md
+04_Products/Product_Naming_System.md
+04_Products/Product_Framework.md
+04_Products/SKU_Systems.md
+04_Products/Collection_Structure.md
+04_Products/Beauty_Products.md
+04_Products/Hair_Products.md
+04_Products/Fashion_Products.md
+04_Products/Accessories.md
+04_Products/Pricing_Strategy.md
+04_Products/Product_Catalog.md
+04_Products/Cross-Sell Systems.md
+04_Products/Upsell Systems.md
+04_Products/Product SEO.md
+04_Products/inventory_systems.md
+04_Products/Trend_Products.md
+04_Products/Product_Templates.md
+04_Products/product_faqs.md

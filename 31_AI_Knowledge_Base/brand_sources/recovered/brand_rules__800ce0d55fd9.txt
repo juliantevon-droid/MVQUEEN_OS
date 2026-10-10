@@ -1,0 +1,149 @@
+# 👑 MVQUEEN BRAND RULES
+*The non-negotiable laws that govern every MVQUEEN expression*
+
+---
+
+## PURPOSE
+
+Brand rules exist to protect the integrity of MVQUEEN across every touchpoint, every piece of content, every AI output, every campaign, and every team member's work.
+
+These are not guidelines. They are laws.
+
+---
+
+## SECTION 1 — BRAND IDENTITY RULES
+
+### R-01: The Name Is MVQUEEN — Always
+Written as MVQUEEN — all caps, no space, no period.
+✅ MVQUEEN | ❌ MV Queen | ❌ mvqueen | ❌ MV QUEEN
+
+### R-02: The Sister Brand Is Miss.Princess — Always
+Written as Miss.Princess — capital M, capital P, period between.
+✅ Miss.Princess | ❌ Miss Princess | ❌ MISS PRINCESS
+
+### R-03: The Full Meaning Is "Most Valuable Queen"
+Always written out in full. Never abbreviated as MVQ.
+
+### R-04: The Crown Is The Only Brand Icon
+👑 is MVQUEEN's signature symbol. One per communication piece maximum in external content.
+
+### R-05: The Two Brands Are Always Distinct
+- MVQUEEN = mature, confident, elegant, elevated femininity
+- Miss.Princess = youthful, playful, dreamy, soft glam
+Never merged or confused.
+
+---
+
+## SECTION 2 — VISUAL IDENTITY RULES
+
+### R-06: Always Use The Approved Color Palette
+Primary: QUEEN NOIR · CHAMPAGNE IVORY · BLUSH REIGN · CHAMPAGNE GOLD · VELVET ROSE
+Secondary: WARM NUDE · SOFT MAUVE · DEEP PLUM · ROSE SMOKE · BRONZE LIGHT
+❌ No bright whites | ❌ No cool tones | ❌ No neons | ❌ No silver as primary
+
+### R-07: Always Use The Approved Font System
+Display: Cormorant Garamond (or Playfair Display)
+Body: Jost
+Fallback: Georgia (serif), Arial (sans-serif)
+❌ No Roboto | ❌ No Open Sans | ❌ Max 3 fonts per layout
+
+### R-08: Photography Must Always Feel Warm, Soft, and Elevated
+Warm, soft lighting · Approved color palette backgrounds · Aspirational but accessible · Product in emotional context
+
+### R-09: Packaging Is A Brand Experience, Not Just A Container
+Base: CHAMPAGNE IVORY or QUEEN NOIR · Foil: CHAMPAGNE GOLD · Tissue: ROSE SMOKE · Ribbon: BLUSH REIGN or CHAMPAGNE GOLD · Personal brand-voice note inside
+
+---
+
+## SECTION 3 — VOICE AND LANGUAGE RULES
+
+### R-10: Always Write In The MVQUEEN Voice
+Warm · elegant · confident · emotionally intelligent · feminine
+Refer to Writing_Rules.md and Voice_Consistency_Rules.md
+
+### R-11: She Is Always "She" — Never Generic
+Never: "the customer" | "users" | "buyers" | "people" | "consumers"
+
+### R-12: The Brand Speaks To Her, Not About Her
+✅ "You deserve this." | ✅ "Made for women who know their worth."
+❌ "Women will love this product." | ❌ "Our customers enjoy..."
+
+### R-13: Forbidden Words Are Absolute
+Refer to Forbidden_Words.md — no exceptions.
+
+### R-14: "Emotional" Is A Precise Tool, Not A Filler Word
+Used once or twice max. Never as a default descriptor.
+- Instead of "emotional elevation" → "she feels more herself"
+- Instead of "emotional connection" → "she feels seen"
+- Instead of "emotionally empowered" → "she walks differently"
+
+### R-15: The Brand Never Apologizes For Its Prices
+✅ "Luxury that doesn't ask you to choose." | ✅ "Elevated quality. Real-life price."
+❌ "Affordable!" | ❌ "Low price!" | ❌ "Budget luxury"
+
+---
+
+## SECTION 4 — CONTENT RULES
+
+### R-16: Every Piece Of Content Must Serve One Of Three Purposes
+1. Inspire — make her feel something
+2. Educate — teach her something
+3. Convert — move her toward action
+
+### R-17: Content Must Connect To At Least One Brand Pillar
+Confidence · Femininity · Elegance · Softness · Luxury · Self-worth · Transformation
+
+### R-18: No Trend-Chasing That Dilutes Brand Identity
+Participate in trends only when they align with the brand's aesthetic, tone, and long-term identity.
+
+### R-19: AI-Generated Content Must Pass The Brand Filter
+All AI output reviewed against: Voice Consistency Rules · Forbidden Words · Brand visual alignment · Emotional register
+AI is a tool. The brand is the filter. Human review is always final.
+
+---
+
+## SECTION 5 — POSITIONING RULES
+
+### R-20: MVQUEEN Is Accessible Luxury — Not Fast Fashion
+Everything must signal premium quality and intentional design — regardless of price point.
+
+### R-21: The Brand Competes On Feeling — Not Price
+She chooses MVQUEEN for how it makes her feel. Price comparisons and discount messaging undermine the brand.
+
+### R-22: MVQUEEN Is For Women — Fully, Unapologetically
+Every decision filtered through:
+- How does this make her feel?
+- Does this honor her?
+- Does this elevate her?
+
+---
+
+## SECTION 6 — AI AGENT AND OS RULES
+
+### R-23: Every AI Session Must Load Brand Context First
+MVQUEEN_CONTEXT.md is the minimum requirement before any AI produces content.
+
+### R-24: The Brand Bible Is Always The Source Of Truth
+Conflicts between files → Brand Bible wins. Brand Bible vs. rebuilt file → human review before publishing.
+
+### R-25: The OS Is A Living System — Files Are Versioned, Not Deleted
+Outdated files archived in 98_Archive/Deprecated_Systems before replacement. Nothing deleted without human confirmation.
+
+---
+
+## THE 10 BRAND COMMANDMENTS
+
+1. The name is MVQUEEN. Always.
+2. The sister brand is Miss.Princess. Always.
+3. The color palette is warm, feminine, and luxury. Always.
+4. The typography is editorial serif + clean sans-serif. Always.
+5. The voice is warm, confident, and emotionally intelligent. Always.
+6. She is always "she." The brand always speaks to her, not about her.
+7. "Emotional" is used with precision, not as a filler word.
+8. Every piece of content inspires, educates, or converts.
+9. The brand never competes on price — only on feeling.
+10. AI is a tool. The brand is the filter. Human review is always final.
+
+---
+
+*These rules protect what makes MVQUEEN MVQUEEN. When the rules are followed, every output sounds, looks, and feels like the brand. That consistency is the brand.*

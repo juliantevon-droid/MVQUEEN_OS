@@ -1,0 +1,53 @@
+# Sheet1
+Module / Folder Name	Total Assets	System Status	Details / Action Items	Last Inspected
+99_Command_Center	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+15_Scripts_And_Code	13.0	🔴 CONTAMINATED	Isolate / Purge: pull_phase1.sh (In-file Content)	2026-06-15 00:00:00
+98_Archive	53.0	🔴 CONTAMINATED	Isolate / Purge: Example_Copy.md (In-file Content) | CTA_Library.md (In-file Content) | brand_rules.md (In-file Content) | typography_system.md (In-file Content) | color_system.md (In-file Content) | color_system_OLD.md (In-file Content) | typography_system_OLD.md (In-file Content) | brand_rules_OLD.md (In-file Content) | AI_Prompt_Library_OLD.md (In-file Content)	2026-06-15 00:00:00
+.obsidian	9.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+00_Doctrine	29.0	🔴 CONTAMINATED	Isolate / Purge: brand_constitution.md (In-file Content) | master_doctrine.md (In-file Content)	2026-06-15 00:00:00
+20_Scripts_And_Code	0.0	🟡 EMPTY MODULE	Needs structural layout / template stubs.	2026-06-15 00:00:00
+01_Brand_Strategy	18.0	🔴 CONTAMINATED	Isolate / Purge: Brand_Essence.md (In-file Content) | Brand_Values.md (In-file Content) | Taglines.md (In-file Content) | Slogans.md (In-file Content) | Elevator_Pitch.md (In-file Content) | USP.md (In-file Content) | Brand_Bible.md (In-file Content)	2026-06-15 00:00:00
+05_SEO_And_Content	27.0	🔴 CONTAMINATED	Isolate / Purge: Keyword_Research.md (In-file Content) | Blog_Strategy.md (In-file Content) | SEO_Strategy.md (In-file Content) | Short_Tail_Keywords.md (In-file Content)	2026-06-15 00:00:00
+03_Customer_Psychology	24.0	🔴 CONTAMINATED	Isolate / Purge: trust_building.md (In-file Content) | customer_avatars.md (In-file Content)	2026-06-15 00:00:00
+08_Social_Media	18.0	🔴 CONTAMINATED	Isolate / Purge: Social_Media_Prompts.md (In-file Content) | Pinterest_Strategy.md (In-file Content) | TikTok_Strategy.md (In-file Content) | Instagram_Strategy.md (In-file Content) | Caption_Templates.md (In-file Content) | Content_Pillars.md (In-file Content) | Story_Ideas.md (In-file Content)	2026-06-15 00:00:00
+scripts	5.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+04_Products	23.0	🔴 CONTAMINATED	Isolate / Purge: SKU_Systems.md (In-file Content) | Beauty_Products.md (In-file Content) | Product_Framework.md (In-file Content) | Collection_Structure.md (In-file Content) | Pricing_Strategy.md (In-file Content) | Product_Naming_System.md (In-file Content)	2026-06-15 00:00:00
+07_Marketing	18.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+06_Tone_And_Voice	34.0	🔴 CONTAMINATED	Isolate / Purge: Example_Copy.md (In-file Content) | Product_Description_Prompts.md (In-file Content) | Brand_Messaging.md (In-file Content) | Product_Description_Voice.md (In-file Content) | Voice_Consistency_Rules.md (In-file Content)	2026-06-15 00:00:00
+02_Brand_Identity	15.0	🔴 CONTAMINATED	Isolate / Purge: brand_rules.md (In-file Content) | typography_system.md (In-file Content) | color_system.md (In-file Content) | videography_direction.md (In-file Content) | photography_direction.md (In-file Content) | visual_direction.md (In-file Content) | logo_guidelines.md (In-file Content) | logo_concepts.md (In-file Content) | color_psychology.md (In-file Content) | brand_identity.md (In-file Content)	2026-06-15 00:00:00
+.git	5.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+20_Scripts_And_Code	0.0	🟡 EMPTY MODULE	Needs structural layout / template stubs.	2026-06-15 00:00:00
+meta	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+memory	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+logs	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+agents	10.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+24_Email_And_SMS	1.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+_BACKUPS	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+39_SOP_Library	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+38_Prompt_Chains	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+37_Databases	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+36_Agent_Systems	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+35_System_Blueprints	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+34_Master_Systems	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+33_Content_Pipelines	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+32_Backups	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+31_AI_Knowledge_Base	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+30_AI_Datasets	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+29_Mobile_Development	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+28_Archives	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+27_Templates	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+26_RnD_Lab	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+25_Retention_And_Community	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+23_Team_And_Delegation	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+22_Growth_And_Scaling	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+21_Finance	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+19_Legal_And_Admin	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+18_Development	2.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+17_Templates	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+16_Automation	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+14_Data_And_Analytics	3.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+13_Research_And_Inspiration	11.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+11_Operations	15.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+10_AI_Systems	19.0	🔴 CONTAMINATED	Isolate / Purge: AI_Prompt_Library.md (In-file Content) | Image_Generation_Prompts.md (In-file Content)	2026-06-15 00:00:00
+09_Shopify_Systems	18.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00
+12_Content_Assets	4.0	🟢 HEALTHY	None. Pipeline clear.	2026-06-15 00:00:00

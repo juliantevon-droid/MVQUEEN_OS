@@ -1,0 +1,180 @@
+# 📱 MVQUEEN — SMS Marketing System
+
+---
+
+## SMS Position in the Marketing Stack
+
+SMS is MVQUEEN's most direct channel and its most intimate.
+It lands on her lock screen. She reads it within minutes. It cannot be scrolled past.
+
+That proximity is a privilege — not a right.
+
+MVQUEEN uses SMS surgically. Not for every campaign. Not for every announcement.
+For the moments that deserve immediacy: drops, launches, VIP access, time-sensitive offers.
+
+The rule: every SMS must be worth the interruption.
+If it isn't — it doesn't get sent.
+
+---
+
+## SMS List Building
+
+### Primary opt-in triggers:
+- Checkout — optional SMS opt-in with clear consent language
+- Loyalty program enrollment — SMS as a tier perk
+- VIP early access sign-up — SMS is how she gets early access
+- Pop-up with dual opt-in — email + SMS together
+
+### What she's told when she opts in:
+"Get early access to drops, exclusive offers, and her ritual updates. 4–6 messages per month. Reply STOP anytime."
+
+Transparency builds trust. Surprise messages from an unknown brand number destroy it.
+
+---
+
+## SMS Cadence Rules
+
+**Maximum sends:** 4–6 per month for standard subscribers
+**VIP tier:** Up to 8–10 per month (she's opted in for more access)
+**Minimum gap between sends:** 3 days unless it's a two-part drop sequence
+
+Sending more than this without exceptional content = unsubscribes + spam reports.
+
+---
+
+## SMS Message Types
+
+### TYPE 01 — VIP Early Access
+Sent to VIP/loyalty segment before public launch.
+The most valuable SMS MVQUEEN sends — makes her feel chosen.
+
+```
+👑 Queen — [Product Name] drops tomorrow.
+You get it 24 hours early.
+[link]
+```
+
+### TYPE 02 — Launch Announcement
+Sent to full SMS list on launch day.
+
+```
+MVQUEEN: [Product Name] is live. ✨
+She's been waiting for this one.
+[link]
+```
+
+### TYPE 03 — Back in Stock
+For waitlisted products — sent within 1 hour of restock going live.
+
+```
+👑 She's back. [Product Name] is restocked.
+Last time sold out in 48 hours.
+[link]
+```
+
+### TYPE 04 — Limited Drop (Urgency)
+For genuinely scarce releases — the one time "almost gone" language is earned.
+
+```
+MVQUEEN: The [Drop Name] collection is nearly gone.
+[X] units left. Hers if she wants it.
+[link]
+```
+
+### TYPE 05 — Abandoned Cart Recovery
+Sent 2 hours after cart abandonment (supplemental to email).
+
+```
+She left something behind. ✨
+Still yours: [link]
+```
+
+### TYPE 06 — Loyalty / Rewards
+Sent when she hits a milestone or has points to redeem.
+
+```
+👑 [Name] — you've earned [X] points.
+That's [reward]. Ready to use it: [link]
+```
+
+### TYPE 07 — Birthday
+Sent on her birthday or birthday month.
+
+```
+Happy birthday, queen. 👑
+Her gift from MVQUEEN: [offer]
+[link] — valid all month.
+```
+
+### TYPE 08 — Re-engagement
+For subscribers who haven't clicked in 60+ days.
+
+```
+MVQUEEN: Something new arrived.
+We thought of her immediately.
+[link]
+```
+
+---
+
+## SMS Copy Rules
+
+**1. Under 160 characters when possible.**
+She reads it in one glance. If it wraps to a second message — it's too long.
+
+**2. Lead with the value, not the brand name.**
+The brand name in the first word is wasted space she already knows who it's from.
+Exception: cold or re-engagement messages where context is needed.
+
+**3. One link per message.**
+Multiple links create friction and dilute click intent.
+
+**4. Warm but efficient.**
+SMS is not email. No paragraphs. No setup. Immediate value.
+
+**5. Never all-caps.**
+Even for launches. It reads as shouting. MVQUEEN never shouts.
+
+**6. Emoji use: one maximum.**
+👑 or ✨ — sparingly. Never a string of emojis.
+
+---
+
+## What MVQUEEN Never Sends via SMS
+
+| Never | Why |
+|-------|-----|
+| Mass promotional blasts with no targeting | Spray-and-pray destroys list health |
+| More than 6 messages/month to standard list | Fatigue = unsubscribes |
+| Discounts as the primary message hook | Trains her to wait for deals |
+| All-caps urgency ("LAST CHANCE!!!") | Wrong emotional register |
+| Multiple links | Creates friction |
+| Anything that could have been an email | SMS is reserved for immediate, high-value moments |
+
+---
+
+## SMS Performance Benchmarks
+
+| Metric | Minimum | Target |
+|--------|---------|--------|
+| Open rate | 85% | 95%+ |
+| Click rate | 8% | 15%+ |
+| Opt-out rate per send | <2% | <0.5% |
+| Revenue per SMS | $0.20 | $0.50+ |
+
+SMS open rates are naturally high — the performance benchmark is click rate and revenue per send.
+Low click rate = the message didn't create enough desire. Rewrite before next send.
+
+---
+
+## Platform Recommendation
+
+**Klaviyo** — integrates with Shopify, handles SMS + email in one platform, strong segmentation.
+**Postscript** — SMS-specialist platform, excellent for Shopify, strong compliance tools.
+
+Both connect directly to purchase data, enabling the behavioral triggers that make MVQUEEN's SMS strategy work.
+
+---
+
+*07_Marketing / SMS_Marketing.md*
+*Her lock screen is sacred. Every message must earn its place there.*

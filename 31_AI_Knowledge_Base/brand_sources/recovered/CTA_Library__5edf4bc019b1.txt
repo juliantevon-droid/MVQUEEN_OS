@@ -1,0 +1,231 @@
+# 👑 MVQUEEN — CTA Library
+### 50+ Call-to-Action Phrases
+
+---
+
+## What This File Is
+
+A call-to-action is the moment the brand asks something of the customer.
+In most brands, that moment sounds like a command.
+In MVQUEEN, it sounds like an invitation.
+
+Every CTA in this library was written to move without pushing. To invite without demanding. To feel like the natural next step — not a sales tactic.
+
+Use this library across every platform, every format, every product category. Pull directly. Do not improvise generic CTAs — they break the voice.
+
+---
+
+## SECTION 1 — SHOP / PRODUCT CTAs
+
+*For product pages, collection pages, campaigns, and anywhere the primary action is purchasing.*
+
+### Primary Shop CTAs
+
+1. **Make it yours.**
+2. **Shop the collection.**
+3. **Discover yours.**
+4. **Add to your world.**
+5. **Explore the collection.**
+6. **Find your version.**
+7. **Shop now — while it lasts.**
+8. **Claim yours.**
+9. **This one's for you.**
+10. **Start here.**
+
+### Product-Specific Shop CTAs
+
+11. **Wear it. Own it. MVQUEEN.**
+12. **The collection is open.**
+13. **This is what elevated looks like.**
+14. **Step into the collection.**
+15. **Built for women like you.**
+16. **Your next ritual starts here.**
+17. **Curated for her. Crafted for you.**
+18. **The world you've been looking for.**
+19. **One piece at a time.**
+20. **Everything she is. In a collection.**
+
+### Low-Friction / Soft CTAs (for awareness-stage content)
+
+21. **See the full collection.**
+22. **Take a look.**
+23. **Explore what's new.**
+24. **Browse the world.**
+25. **Discover more.**
+
+---
+
+## SECTION 2 — EMAIL CTAs
+
+*Subject line CTAs, email body CTAs, footer CTAs — all written to feel personal and warm.*
+
+### Email Subject Line CTAs
+
+26. **Something beautiful just arrived.**
+27. **This one's for you, [first name].**
+28. **Your world just got more elevated.**
+29. **New. And exactly what you've been waiting for.**
+30. **She doesn't wait. Neither should you.**
+31. **The collection you asked for is here.**
+32. **For the woman who already knows her worth.**
+33. **Open this. You'll want what's inside.**
+34. **A little something we made for you.**
+35. **New arrival. New ritual.**
+
+### Email Body CTAs
+
+36. **Shop the drop →**
+37. **Make it part of your ritual →**
+38. **See everything new →**
+39. **Choose yours →**
+40. **It starts with this →**
+41. **Your next favorite thing →**
+42. **The collection is waiting →**
+43. **Add it to your world →**
+
+### Email Footer / PS CTAs
+
+44. *P.S. — If you've been thinking about it, this is the sign.*
+45. *P.S. — Only a few left. Just so you know.*
+46. *P.S. — She grabbed hers. You should too.*
+
+---
+
+## SECTION 3 — SOCIAL CTAs
+
+*For Instagram, TikTok, Pinterest, Facebook. Always at the end of captions — never embedded mid-text.*
+
+### Instagram Caption CTAs
+
+47. **Link in bio. You know what to do.**
+48. **Shop via the link in bio →**
+49. **Yours is waiting. Link in bio.**
+50. **Tap the link. It's worth it.**
+51. **Shop the look — link in bio.**
+52. **This belongs in your world. Link in bio.**
+53. **She found hers. Yours is in the link.**
+54. **The collection is open. Link in bio.**
+
+### TikTok / Reels CTAs
+
+55. **Link in bio — get it before it's gone.**
+56. **Comment "QUEEN" and I'll send you the link.**
+57. **This is everything. Link in bio.**
+58. **Go find yours. Link in bio.**
+59. **You already know. Link in bio.**
+
+### Pinterest CTAs (for pin descriptions)
+
+60. **Save this for your next ritual.**
+61. **Your next obsession. Shop the collection.**
+62. **Pin it. Then make it yours.**
+63. **The aesthetic you've been building toward.**
+
+---
+
+## SECTION 4 — BEAUTY / SKINCARE CTAs
+
+*Category-specific language for beauty, skincare, and fragrance products.*
+
+64. **Start the ritual.**
+65. **Your skin deserves this.**
+66. **The routine that changes the conversation.**
+67. **For skin that speaks for itself.**
+68. **Make it part of your morning.**
+69. **The glow starts here.**
+70. **What your skin has been waiting for.**
+71. **This is what intentional care looks like.**
+72. **Ritual-worthy. Every single day.**
+73. **Add it to your ritual →**
+
+---
+
+## SECTION 5 — FASHION CTAs
+
+*For clothing, accessories, and styling contexts.*
+
+74. **Dress like you've already decided.**
+75. **The outfit that does the work for you.**
+76. **Wear your elevation.**
+77. **For the woman who dresses with intention.**
+78. **This piece. This moment. Yours.**
+79. **Style starts with this.**
+80. **The collection that makes getting dressed feel different.**
+81. **Shop the look.**
+82. **Make it part of your wardrobe story.**
+
+---
+
+## SECTION 6 — FRAGRANCE CTAs
+
+*Scent is MVQUEEN's most sensory category — CTAs should carry that sensory weight.*
+
+83. **Find your signature.**
+84. **The scent of becoming.**
+85. **Choose the one that feels like you.**
+86. **This is what she smells like.**
+87. **Wear the feeling.**
+88. **Your next signature scent starts here.**
+89. **Some things are worth wearing every day.**
+90. **The fragrance that stays with you.**
+
+---
+
+## SECTION 7 — LOYALTY / COMMUNITY CTAs
+
+*For email sign-ups, loyalty programs, community building.*
+
+91. **Join the world of MVQUEEN.**
+92. **Become part of something elevated.**
+93. **The community for women who already know.**
+94. **Sign up. Stay elevated.**
+95. **Be the first to know.**
+96. **Get access to the world first.**
+97. **You belong here. Sign up.**
+98. **Early access. For women like you.**
+99. **Join us. The world is open.**
+100. **The MVQUEEN world starts here.**
+
+---
+
+## SECTION 8 — MISS.PRINCESS CTAs
+
+*Separate CTA library for Miss.Princess — softer, more playful, trend-aware.*
+
+101. **This is giving everything. Shop now.**
+102. **Your princess era starts here.**
+103. **Cute on purpose. Shop the collection.**
+104. **It's giving soft life. Link in bio.**
+105. **This is so her. Make it yours.**
+106. **Add it to the aesthetic.**
+107. **For the girl who romanticizes everything.**
+108. **Grab yours before it's gone.**
+109. **Pink tax? This one's worth it.**
+110. **The soft life collection. Open now.**
+
+---
+
+## CTA RULES
+
+### Rule 01 — One CTA Per Context
+Never give the customer two CTAs competing in the same space. One action. One direction. One invitation.
+
+> ❌ "Shop now · Explore collection · Sign up for updates · Follow us"
+> ✅ "Shop the collection."
+
+### Rule 02 — Never Use Generic CTAs
+"Click here," "Learn more," "Buy now," "Submit" — these are placeholders, not brand copy. They do not exist in MVQUEEN content.
+
+### Rule 03 — Arrows Are a Tool, Not a Decoration
+The `→` arrow works in email and digital contexts as a directional cue. Use it only when it adds a sense of forward motion — not as decoration on every CTA.
+
+### Rule 04 — Urgency Is Allowed — Panic Is Not
+Soft urgency: *"Only a few remaining."* Hard panic: *"HURRY! DON'T MISS OUT!!!"*
+MVQUEEN uses the first. Never the second.
+
+### Rule 05 — Miss.Princess CTAs Never Appear in MVQUEEN Contexts
+Her CTAs are more casual, more trend-aware. They belong in her world — not in MVQUEEN's.
+
+---
+
+*This file is the MVQUEEN CTA library. Pull directly — do not improvise. Pairs with Example_Copy.md (full copy samples), Forbidden_Words.md (what not to say), and Voice_Consistency_Rules.md (tone reference).*

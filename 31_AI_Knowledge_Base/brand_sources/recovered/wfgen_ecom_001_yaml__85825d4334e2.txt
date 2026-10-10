@@ -1,0 +1,130 @@
+# ============================================================
+# MVQUEEN OS — Agent Definition
+# Schema: MVQUEEN-AGENT-v2
+# Created: 2026-06-15
+# ============================================================
+
+agent:
+  id:          "wfgen-ecom-001"
+  name:        "Workflow Generator"
+  version:     "0.1.0"
+  type:        "orchestration"
+  tier:        "P1"
+  runtime:     "python3.11"
+  brand_ns:    ["MVQUEEN", "Miss.Princess"]
+  os_root:     "/storage/emulated/0/MVQUEEN_OS"
+
+role:
+  primary: |
+    Reads brand intelligence, product schemas, and platform
+    configuration from MVQUEEN_OS and emits validated, executable
+    automation workflows for Shopify product uploads, SEO injection,
+    copy generation, and collection management.
+  scope:
+    in:
+      - MVQUEEN brand namespace product workflows
+      - Miss.Princess brand namespace product workflows
+      - Shopify Admin API automation (products, collections, SEO)
+      - Brand-brain-connected copy generation
+    out:
+      - Any product outside MVQUEEN or Miss.Princess namespaces
+      - Direct database writes without validation
+      - Live Shopify commits without passing dry-run first
+
+memory:
+  read_order:
+    - path: "/memory/agent_memory.json"
+      purpose: "State check — read before anything else"
+    - path: "/memory/preferences.md"
+      purpose: "Operator constraints on workflow generation"
+    - path: "/memory/style_guide.md"
+      purpose: "Brand voice, copy rules, formatting standards"
+    - path: "01_Brand_Strategy/Brand_Bible.md"
+      purpose: "Master brand source — naming, positioning, tone"
+  writes:
+    - path: "/logs/agent_experience.md"
+      when: "Novel pattern detected or error encountered"
+      format: "Append — markdown bullet with timestamp"
+    - path: "/logs/automation_log.md"
+      when: "Every run exit, pass or fail"
+      format: "Append — structured log entry"
+  readwrite:
+    - path: "/memory/agent_memory.json"
+      flush_policy: "Every 5 runs or on any state change"
+
+tools:
+  active:
+    - name: shopify_product_api
+      script: "scripts/shopify_product_upload.py"
+      description: "Create, update, archive products via Shopify Admin REST API"
+    - name: seo_injection
+      script: "scripts/seo_inject.py"
+      description: "Inject meta, alt text, structured data from OS SEO rules"
+    - name: copy_generation
+      script: "scripts/copy_gen.py"
+      description: "Invoke AI prompts from AI_Prompt_Library.md"
+    - name: brand_brain_reader
+      script: "scripts/brand_brain.py"
+      description: "Parse OS memory files, expose brand vars to child agents"
+  inactive:
+    - name: collection_manager
+      script: "scripts/collection_manager.py"
+      reason: "Activate after first product upload run succeeds"
+    - name: rclone_sync
+      script: "scripts/rclone_push.py"
+      reason: "Activate after rclone remote confirmed via listremotes"
+    - name: audit_logger
+      script: "scripts/audit_log.py"
+      reason: "Activate in Phase C stabilization"
+
+triggers:
+  - type: scheduled
+    cron: "0 6 * * *"
+    tz: "America/New_York"
+    enabled: false
+    note: "Enable after first successful dry-run"
+  - type: manual
+    command: "python agent_runner.py --agent wfgen-ecom-001"
+    dry_run: "python agent_runner.py --agent wfgen-ecom-001 --dry-run"
+    enabled: true
+  - type: event
+    subscriptions:
+      - "product.created"
+      - "collection.updated"
+      - "brand_bible.modified"
+    enabled: false
+    note: "Enable in Phase D — content machine"
+
+constraints:
+  max_concurrent:    1
+  timeout_seconds:   180
+  retry_attempts:    3
+  retry_backoff_sec: 30
+  shopify_api_cap:   50
+  prohibitions:
+    - "No live Shopify writes without passing dry-run first"
+    - "No agent_memory.json overwrite without reading current state"
+    - "No workflows for products outside MVQUEEN or Miss.Princess namespaces"
+    - "No more than 50 Shopify API calls per single run"
+  fallback:
+    on_critical_failure: "Write to automation_log.md, preserve agent_memory.json state, exit 1"
+    on_timeout: "Kill process, log timeout entry, do not partial-commit to Shopify"
+    on_api_cap_reached: "Pause run, log progress, schedule resume on next trigger"
+
+success_criteria:
+  - "Valid MVQUEEN-AGENT-v2 schema-conformant YAML emitted"
+  - "All required memory reads succeed without FileNotFoundError"
+  - "Generated workflow passes dry-run validation against Shopify staging"
+  - "automation_log.md updated with structured entry on exit"
+  - "No partial Shopify commits on failure"
+
+metadata:
+  created: "2026-06-15"
+  owner: "MVQUEEN Platform Engineering"
+  sla: "120s max per run"
+  phase: "Phase C — Shopify Store Build"
+  related_agents:
+    - "catalog-sync-agent"
+    - "seo-injection-agent"
+    - "copy-generation-agent"
+  production_plan_ref: "MVQUEEN_PRODUCTION_PLAN.md Phase C"

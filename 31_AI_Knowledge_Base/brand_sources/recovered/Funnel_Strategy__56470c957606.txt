@@ -1,0 +1,172 @@
+# 🔻 MVQUEEN — Funnel Strategy
+
+---
+
+## The MVQUEEN Funnel Philosophy
+
+Most brands build funnels that move people from strangers to buyers.
+MVQUEEN builds a funnel that moves people from strangers to believers — and buyers follow naturally.
+
+The difference is not semantic. It determines everything about how content, copy, and offers are structured at every stage.
+
+A woman who believes in MVQUEEN doesn't need to be convinced to buy.
+She needs to be reminded that what she wants is here.
+
+---
+
+## The MVQUEEN Funnel — 5 Stages
+
+```
+STAGE 1 — DISCOVERY        She finds MVQUEEN
+STAGE 2 — ATTRACTION       She stays and wants more
+STAGE 3 — CONVERSION       She buys for the first time
+STAGE 4 — RETENTION        She comes back
+STAGE 5 — ADVOCACY         She brings others
+```
+
+Each stage has a specific emotional job, a specific set of touchpoints, and a specific success metric.
+
+---
+
+## STAGE 1 — Discovery
+
+**Emotional job:** Stop her scroll. Make her feel something in under 3 seconds.
+**Her state:** She doesn't know MVQUEEN yet. She has no reason to trust.
+**What wins here:** A hook so specific to her identity that it feels personal.
+
+**Primary channels:**
+- TikTok / Reels (organic reach — hook-first content)
+- Pinterest (search-driven discovery)
+- Paid ads (cold audience targeting — interest + behavior)
+- SEO (she searches, she finds)
+- Word of mouth / UGC (she sees someone she trusts wearing or using MVQUEEN)
+
+**What MVQUEEN creates for discovery:**
+- Hook-first social content (see `Reel_Hooks.md`)
+- SEO-optimized blog content targeting emotional search terms
+- Paid ad creative with identity-based hooks — not product features
+- Pinterest pins that live in her aesthetic world
+
+**Discovery metric:** Reach, profile visits, website sessions from new visitors
+
+**What never works at discovery:** Product pushes, promotional language, "MVQUEEN is a brand that..." introductions. She doesn't care about the brand yet. She cares about herself.
+
+---
+
+## STAGE 2 — Attraction
+
+**Emotional job:** Make her want to stay in this world.
+**Her state:** She's seen something she likes. She's exploring. She's not ready to buy.
+**What wins here:** Consistent brand world that rewards her attention with beauty, intelligence, and emotional resonance.
+
+**Primary channels:**
+- Instagram feed (brand world, aesthetic consistency)
+- TikTok (education, ritual content, identity content)
+- Website / collection pages (the brand world she walks into)
+- Email (if she subscribed — welcome sequence begins)
+
+**What MVQUEEN creates for attraction:**
+- Content that makes her feel seen — identity mirrors, relatable moments
+- Educational content that makes her smarter about things she cares about
+- Atmospheric content that makes MVQUEEN's world feel aspirational and attainable
+- A welcome email sequence that introduces the brand world over 5–7 emails
+
+**Attraction metric:** Follow rate, email opt-in rate, time on site, pages per session, welcome email open rate
+
+**The attraction trap to avoid:** Posting only product content at this stage. She hasn't decided to trust the brand yet. Give her a world to belong to first.
+
+---
+
+## STAGE 3 — Conversion
+
+**Emotional job:** Make the first purchase feel like the right decision — not a risk.
+**Her state:** She wants something. She's not 100% sure yet. She needs one more signal.
+**What wins here:** Specificity, social proof, and removing friction.
+
+**Primary channels:**
+- Product pages (the conversion moment — copy, imagery, proof)
+- Email (abandoned cart sequence, browse abandon)
+- Retargeting ads (she's been to the site — remind her)
+- SMS (VIP early access, limited drops)
+
+**Conversion touchpoints:**
+- Product page copy that creates desire then removes hesitation
+- 3-5 authentic reviews visible above the fold
+- Abandoned cart email — sent 1 hour after abandonment (warm, not pushy)
+- Retargeting ad — identity-based reminder, not discount bribe
+
+**First purchase offer:**
+New customer welcome offer: 10–15% off first order via email opt-in.
+Positioned as an invitation — not a discount. "Her welcome to the collection."
+
+**Conversion metric:** Add-to-cart rate, checkout completion rate, email-to-purchase rate, ROAS on retargeting
+
+**The conversion trap to avoid:** Discounting as the primary conversion lever. It trains her to wait for sales and undermines the luxury positioning.
+
+---
+
+## STAGE 4 — Retention
+
+**Emotional job:** Make her feel valued beyond the transaction.
+**Her state:** She bought. She received. She formed an opinion.
+**What wins here:** Delight at delivery, genuine follow-up, reasons to return.
+
+**Primary channels:**
+- Post-purchase email sequence (delivery confirmation → unboxing delight → product check-in → cross-sell)
+- Loyalty program (Queen → Elevated → Royal → Legacy tiers)
+- SMS (restock alerts, VIP access, birthday recognition)
+- Social (she's now a community member — content speaks to her differently)
+
+**Retention touchpoints:**
+- Delivery confirmation email — warm, brand-voice, not transactional
+- 3-day post-delivery check-in — "how does she like it?"
+- 14-day cross-sell email — ritual completion recommendation
+- 30-day replenishment signal for consumable products
+- Loyalty points notification — she's building toward something
+
+**Retention metric:** Repeat purchase rate, time between first and second purchase, email engagement post-purchase, loyalty program enrollment rate
+
+**Full retention architecture:** `25_Retention_And_Community/README.md`
+
+---
+
+## STAGE 5 — Advocacy
+
+**Emotional job:** Turn her love for the brand into social currency she shares.
+**Her state:** She's a loyal customer. She genuinely loves MVQUEEN. She talks about it.
+**What wins here:** Making advocacy easy, recognized, and rewarding.
+
+**Primary channels:**
+- UGC program (incentivized sharing)
+- Referral program (she brings a friend, both benefit)
+- Community spaces (if/when community is built)
+- Legacy loyalty tier (top-tier customers get brand partner treatment)
+
+**Advocacy activations:**
+- UGC prompt in post-purchase email — "Show us her ritual" with brand hashtag
+- Referral program — tracked link, reward on friend's first purchase
+- Legacy tier perks — early access, product testing, brand collaboration
+- Feature her UGC on the brand's social channels — recognition matters
+
+**Advocacy metric:** UGC volume, referral traffic, referral conversion rate, brand mention sentiment
+
+---
+
+## Funnel Leak Audit
+
+Run this quarterly:
+
+| Stage | Metric | Benchmark | Current | Action if Below |
+|-------|--------|-----------|---------|-----------------|
+| Discovery | New visitor sessions | Growing MoM | | More hook content, SEO |
+| Attraction | Email opt-in rate | 3–5% of visitors | | Improve welcome offer |
+| Conversion | Checkout completion | >65% | | Reduce friction, add proof |
+| Retention | Repeat purchase rate | >30% in 90 days | | Strengthen post-purchase sequence |
+| Advocacy | UGC submissions | 5+ per week | | Activate UGC prompts |
+
+The leakiest stage gets the most attention next quarter.
+
+---
+
+*07_Marketing / Funnel_Strategy.md*
+*The funnel is not a pipeline. It is a relationship — built stage by stage, with intention.*

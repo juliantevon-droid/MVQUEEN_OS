@@ -70,7 +70,7 @@ export function buildProductName(
   const identity = pool[((seed >>> 7) + attempt) % pool.length];
   const base = stripNamingDecoration(factualName, vocabulary);
   const noun = base.match(/\b(?:makeup brush(?:es)?|vanity mirror|makeup mirror|lip serum|hair straightener|facial roller|gua sha stone|body (?:moisturizer|scrub|cream|lotion|wash|oil|butter)|hair (?:oil|mask|serum|dryer|brush)|lip (?:balm|gloss|oil|liner)|waxing kit|face cream|facial cream|press[- ]on nails?|necklace|bracelet|earrings?|anklet|ring|dress|bodysuit|jumpsuit|romper|blouse|shorts|pants|skirt|shampoo|conditioner|foundation|concealer|mascara|lipstick|eyeliner|perfume|fragrance|serum|cream|comb|massager|tweezers?)\b/i)?.[0] ?? "";
-  const subject = shorten(base, 80 - identity.length - (register === "descriptive-poetic" ? 3 : 1), noun);
+  const subject = shorten(base, vocabulary.contentPolicy.limits.title - identity.length - (register === "descriptive-poetic" ? 3 : 1), noun);
   const title = register === "descriptive-poetic" ? `${subject} — ${identity}` : `${identity} ${subject}`;
   return { title, identity, register, curated: false };
 }

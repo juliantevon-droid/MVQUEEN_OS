@@ -1,0 +1,153 @@
+# 🎯 MVQUEEN — Retargeting Strategy
+
+---
+
+## What Retargeting Is in MVQUEEN's Context
+
+Retargeting reaches women who have already encountered MVQUEEN — visited the site, viewed a product, added to cart, watched a video — and didn't complete a purchase.
+
+She was interested. Something stopped her.
+Retargeting removes whatever stopped her — with the right message, at the right moment, in the right tone.
+
+MVQUEEN retargeting never feels like being followed around the internet.
+It feels like a gentle, well-timed reminder from a brand that understood what she was looking at.
+
+---
+
+## Retargeting Audience Tiers
+
+### TIER 1 — Cart Abandoners (Hottest)
+**Who:** Added to cart, did not purchase
+**Recency:** Last 14 days
+**Conversion probability:** Highest
+**Message:** Identity + reassurance. She wanted it. Something paused her. Remove the pause.
+**Frequency cap:** 3–4 impressions per day maximum
+
+### TIER 2 — Checkout Initiators
+**Who:** Reached checkout, did not complete
+**Recency:** Last 7 days
+**Conversion probability:** Very high — she was seconds away
+**Message:** The most direct of all retargeting. She almost had it. One sentence.
+**Frequency cap:** 4–5 impressions per day
+
+### TIER 3 — Product Page Viewers
+**Who:** Viewed specific product page, did not add to cart
+**Recency:** Last 30 days
+**Message:** The product she viewed + the feeling it creates. Remind her why she stopped.
+**Frequency cap:** 2–3 impressions per day
+
+### TIER 4 — Collection Browsers
+**Who:** Browsed a collection, did not view specific product
+**Recency:** Last 30 days
+**Message:** Editorial — show the world she was exploring
+**Frequency cap:** 1–2 impressions per day
+
+### TIER 5 — General Site Visitors
+**Who:** Visited site, did not engage with products
+**Recency:** Last 60 days
+**Message:** Brand world — not product push. Re-introduce MVQUEEN's emotional atmosphere.
+**Frequency cap:** 1 impression per day
+
+---
+
+## Retargeting Creative by Tier
+
+### Tier 1 + 2 — Cart and Checkout
+**Headline options:**
+- "She was looking at this for a reason."
+- "Still here when she's ready."
+- "Her [product name] is waiting."
+- "She almost had it."
+
+**Body copy:**
+One sentence. The emotional truth of the product. No discount unless it's a legitimate offer.
+
+**CTA:** "Make it hers →" / "Complete her ritual →" / "She's ready →"
+
+**Visual:** The exact product she abandoned. In context — not on white background.
+
+---
+
+### Tier 3 — Product Viewers
+**Headline options:**
+- "She was looking at [product name]."
+- "The [product] she keeps coming back to."
+- "[Emotional statement about the product]."
+
+**Body copy:** Two sentences — the feeling + the specific detail that makes it real.
+
+**CTA:** "Discover it →" / "Add to her ritual →"
+
+---
+
+### Tier 4 + 5 — Browsers and General Visitors
+**Approach:** Brand world content — atmospheric, editorial, identity-based.
+**Not product-specific** — she didn't get far enough to have a product attachment yet.
+
+**Headline options:**
+- "She's been building her ritual."
+- "The collection built for her."
+- "Her world. Her rules. Her ritual."
+
+**CTA:** "Enter the collection →"
+
+---
+
+## Retargeting Sequence (Meta/Instagram)
+
+**Day 1–3 after abandonment:**
+Tier 1/2 ads — product-specific, warm reminder. No discount.
+
+**Day 4–7:**
+New creative angle — different hook, same product.
+If still no conversion: introduce a complementary product.
+
+**Day 8–14:**
+Social proof angle — customer story or UGC featuring the product she viewed.
+
+**Day 15+:**
+Reduce frequency. Switch to brand world content.
+If 30 days pass with no conversion — move to general prospecting pool.
+
+---
+
+## Retargeting Rules
+
+**1. Never show the same creative for more than 7 days.**
+Ad fatigue is real. Rotate creative weekly for active retargeting audiences.
+
+**2. No discount as the first retargeting message.**
+Discounting trains her to abandon cart and wait for an offer.
+Discount is a last resort — day 10+ of the sequence for first-time buyers only.
+
+**3. Frequency caps are non-negotiable.**
+Seeing a retargeting ad 15 times a day damages brand perception permanently.
+Set frequency caps at the ad set level and monitor weekly.
+
+**4. Exclude recent purchasers.**
+Always exclude anyone who purchased in the last 30 days from retargeting.
+Showing a "she left something behind" ad to someone who already bought is brand embarrassing.
+
+**5. Match the ad to the page it sends her to.**
+If the ad shows the Velvet Body Butter — the click lands on the Velvet Body Butter product page.
+Never send retargeting clicks to the homepage.
+
+---
+
+## Retargeting Performance Benchmarks
+
+| Metric | Minimum | Target |
+|--------|---------|--------|
+| CTR | 1.5% | 3%+ |
+| ROAS | 3x | 6x+ |
+| Cart recovery rate | 8% | 15% |
+| Frequency (weekly) | — | 3–7 |
+| CPC | <$1.00 | <$0.60 |
+
+Retargeting should consistently outperform cold prospecting on ROAS.
+If retargeting ROAS is below 3x — audit the creative and the landing page before adjusting budget.
+
+---
+
+*07_Marketing / Retargeting.md*
+*Retargeting is not following her around. It is being there when she's ready — with exactly the right thing.*

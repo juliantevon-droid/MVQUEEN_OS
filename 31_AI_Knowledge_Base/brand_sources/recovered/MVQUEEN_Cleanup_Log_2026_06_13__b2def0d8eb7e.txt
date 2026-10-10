@@ -1,0 +1,39 @@
+# Cleanup Log
+Action	File / Folder	From	To	Status	Timestamp
+MOVE	MVQUEEN_CONTEXT.md	ROOT	1Ed2REeJheXEZGoczop5_6zjUUv40iEHG	✅ Success	2026-06-13T19:12:44.690Z
+MOVE	_ecosystem_index.json	ROOT	1Ed2REeJheXEZGoczop5_6zjUUv40iEHG	✅ Success	2026-06-13T19:12:46.735Z
+MOVE	pull_phase1.sh	ROOT	1eWJrAbgpT1x34bpAYpzmzaMKkX-yy3pj	✅ Success	2026-06-13T19:12:48.412Z
+MOVE	MVQUEEN_Phase2.html	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:12:49.974Z
+MOVE	MVQUEEN_Phase2_Full.html	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:12:51.714Z
+MOVE	changed_files.txt	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:12:53.275Z
+MOVE	current_files.txt	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:12:55.018Z
+MOVE	archive_files.txt	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:12:56.468Z
+MOVE	duplicate_report.txt	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:12:58.110Z
+MOVE	markdown_sizes.txt	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:00.293Z
+MOVE	nested_comparison.txt	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:01.877Z
+MOVE	s (unknown file)	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:03.536Z
+MOVE	.ttxfolder	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:05.031Z
+MOVE	MVQUEEN_Phase2 (Google Doc)	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:06.660Z
+MOVE	color_system_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:08.232Z
+MOVE	color_system_root_jun9b.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:09.623Z
+MOVE	typography_system_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:11.082Z
+MOVE	typography_system_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:12.636Z
+MOVE	brand_rules_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:14.206Z
+MOVE	brand_rules_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:15.715Z
+MOVE	CTA_Library_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:17.151Z
+MOVE	CTA_Library_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:18.651Z
+MOVE	Example_Copy_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:20.213Z
+MOVE	Example_Copy_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:21.783Z
+MOVE	Product_Description_Voice_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:23.349Z
+MOVE	Product_Description_Voice_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:24.768Z
+MOVE	Hook_Systems_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:26.294Z
+MOVE	Hook_Systems_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:27.792Z
+MOVE	customer_objections_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:29.246Z
+MOVE	customer_objections_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:30.614Z
+MOVE	trust_building_root_jun9.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:32.027Z
+MOVE	trust_building_root_jun11.md	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:33.572Z
+MOVE FOLDER	Brand_Identity (ghost)	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:34.988Z
+MOVE FOLDER	Command_Center (ghost)	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:36.372Z
+MOVE FOLDER	Templates (ghost)	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:37.750Z
+MOVE FOLDER	merge_review (ghost)	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:39.094Z
+MOVE FOLDER	20_Scripts_And_Code (dupe of 15)	ROOT	1A2xOAjm1QyL3l0SQ3u5cPLv0Xpebw0fv	✅ Success	2026-06-13T19:13:40.665Z

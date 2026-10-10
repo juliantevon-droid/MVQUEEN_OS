@@ -1,0 +1,209 @@
+# 👑 MVQUEEN — Product Description Voice
+### Formulas, Frameworks & Real Examples
+
+---
+
+## What This File Is
+
+Product descriptions are the most-read copy on the entire site. They are the moment a woman decides — and the brand voice either closes that moment or loses it.
+
+This file gives you the formula, the framework, and real working examples across every MVQUEEN product category. Pull from it. Adapt from it. Never write a product description from scratch without reading this file first.
+
+The rule that governs every description here: **desire before details. Feeling before function. Identity before ingredients.**
+
+---
+
+## THE MVQUEEN PRODUCT DESCRIPTION FORMULA
+
+Every product description in the MVQUEEN ecosystem follows this three-part structure — regardless of category, price point, or length:
+
+```
+[PART 1 — DESIRE LINE]
+One sentence. Creates the feeling before naming the product.
+The customer should want what this delivers before she knows what it is.
+
+[PART 2 — PRODUCT DESCRIPTION]
+What it is. What it does. Key ingredients or features.
+Written in sensory, specific language — not clinical or generic.
+
+[PART 3 — IDENTITY CLOSE]
+Connects the product to who she is.
+Reminds her why this belongs in her world.
+```
+
+**Length guide:**
+- Short-form (collection pages, ads): 1 sentence per part = 3 sentences total
+- Mid-form (product page secondary description): 2–3 sentences per part
+- Long-form (hero product, launch copy): Full paragraphs per part
+
+---
+
+## PART 1 — BEAUTY / SKINCARE DESCRIPTIONS
+
+### Short-Form Template
+```
+[Desire] The kind of [result] that doesn't announce itself — it just happens.
+[Product] [Product Name] is a [what it is] formulated with [key ingredient/feature].
+[Identity] For the woman who treats her skin like it deserves to be treated.
+```
+
+### Real Examples
+
+**Hydrating Face Serum**
+> The kind of skin that makes you look in the mirror a little longer. Our [Serum Name] is a lightweight hydration serum built around [key ingredient] — absorbs in seconds, works all day. For women who treat their morning routine like the ritual it is.
+
+**Glow Facial Oil**
+> Not the glow you create. The glow you remember you already had. [Oil Name] is a softening facial oil with [ingredient 1] and [ingredient 2] — pressed into skin, leaving it luminous without shine. This is what caring for yourself looks like from the outside.
+
+**Lip Treatment**
+> Soft lips aren't vanity. They're self-respect. [Lip Treatment Name] blends [ingredient] with [ingredient] in a formula that heals while it hydrates. One application in the morning. The rest takes care of itself.
+
+**Eye Cream**
+> The area that always gives it away. [Eye Cream Name] is a cooling, peptide-rich eye treatment that reduces the appearance of fine lines and fatigue — gently, over time, without aggression. For women who sleep less and live more.
+
+**Exfoliating Mask**
+> The reset your skin has been asking for. [Mask Name] draws out impurities with [key ingredient] while [supporting ingredient] restores softness — all in 10 minutes. Because elevated skin should be attainable, not just aspirational.
+
+**Toner**
+> The step everyone skips. The step that changes everything. [Toner Name] balances skin and preps it to absorb everything that follows — [ingredient] for calm, [ingredient] for clarity. Swipe on. Notice the difference in the mirror.
+
+---
+
+## PART 2 — FRAGRANCE DESCRIPTIONS
+
+Fragrance copy is the most sensory in the catalog. It is not described chemically. It is described as a moment, a memory, a feeling.
+
+### Short-Form Template
+```
+[Desire] [Sensory scene — what this scent feels like as an experience]
+[Product] [Fragrance Name] opens with [top note] and [top note], settling into [heart note] and [base note].
+[Identity] [What kind of woman this is for / what it says about her]
+```
+
+### Real Examples
+
+**Floral Oriental Fragrance**
+> The scent you reach for when you want to feel like the most intentional version of yourself. [Fragrance Name] opens with bergamot and soft peony, deepens into jasmine and amber, and closes with warm sandalwood that stays close to skin all day. For the woman whose entrance is always quiet — but remembered.
+
+**Fresh Musk Fragrance**
+> Clean isn't cold when it's done this way. [Fragrance Name] is a sheer, softly powdered musk — white tea and cashmere on the surface, warm skin underneath. It sits close. It stays all day. It smells like the version of you that has everything handled.
+
+**Gourmand / Warm Fragrance**
+> The scent of evenings that feel like yours. [Fragrance Name] opens with a soft amber warmth — vanilla, tonka bean, a thread of caramel — and stays on skin the way a memory does. Intimate. Rich. Unhurried. For women who romanticize their own life.
+
+**Light / Daytime Fragrance**
+> Soft enough for Tuesday morning. Elevated enough for everything after. [Fragrance Name] is a light floral with [note], [note], and a clean dry-down that leaves the softest trace. The fragrance that disappears into you rather than announcing you.
+
+---
+
+## PART 3 — FASHION DESCRIPTIONS
+
+Fashion copy in MVQUEEN is not about garment construction — it's about what wearing this piece does to how a woman moves through the world.
+
+### Short-Form Template
+```
+[Desire] Getting dressed [should feel like / is] [emotional purpose].
+[Product] [Product Name] is a [what it is] — [key design detail], [key detail], [key detail].
+[Identity] For the woman who [who she is / how she moves].
+```
+
+### Real Examples
+
+**Slip Dress**
+> Getting dressed for yourself is different from getting dressed for the world. The [Dress Name] is a minimal slip silhouette in [fabric] — bias-cut, adjustable straps, falls at [length]. The kind of dress that does the work while you do everything else.
+
+**Blazer**
+> The piece that says more than you do. [Blazer Name] is a tailored [fit] blazer in [fabric] — structured shoulders, clean lapel, unlined for weight you barely feel. Wears alone over nothing. Wears over everything else equally well.
+
+**Midi Skirt**
+> Feminine is not the same as fragile. The [Skirt Name] is a [silhouette] midi in [fabric] — [waist detail], [length], [color]. It moves with you. That's the point.
+
+**Set / Co-ord**
+> Some mornings, the whole outfit is the decision. The [Set Name] is a [top] and [bottom] set in [fabric] — designed to wear together, styled to mix apart. Elevated basics that don't apologize for being exactly what they are.
+
+**Bodysuit**
+> The foundation of everything. [Bodysuit Name] is a [neckline] bodysuit in [fabric] — [stretch detail], [snap closure or similar], [fit note]. Tuck it in. Layer it under. Wear it as the whole outfit. All three answers are correct.
+
+**Outerwear**
+> The coat that changed what leaving the house felt like. [Coat Name] is a [length] [style] in [fabric] — [lining detail], [closure], [silhouette note]. The kind of outerwear that makes you reach for it every time.
+
+---
+
+## PART 4 — HAIRCARE DESCRIPTIONS
+
+### Short-Form Template
+```
+[Desire] Hair that [emotional result — not just a physical one].
+[Product] [Product Name] is a [type of product] with [key ingredient] — [what it does].
+[Identity] Because [why her hair deserves this / what this says about her].
+```
+
+### Real Examples
+
+**Hair Mask**
+> The reset that takes 20 minutes and lasts all week. [Mask Name] is a deep conditioning treatment built around [key ingredient] and [supporting ingredient] — restores moisture from the inside, leaves softness you can feel on the outside. Because hair this healthy doesn't need to work that hard.
+
+**Scalp Serum**
+> Everything starts at the root. [Serum Name] is a lightweight scalp treatment with [ingredient] — reduces buildup, improves circulation, creates the conditions for the kind of growth that speaks for itself. Apply before bed. Wake up to the difference over time.
+
+**Leave-In Conditioner**
+> The step between wash and style that changes the whole outcome. [Leave-In Name] is a weightless conditioning spray with [ingredient] — detangles, protects against heat, adds softness without adding buildup. Spray on damp hair. Style as usual. Notice what changed.
+
+---
+
+## PART 5 — LIFESTYLE / HOME DESCRIPTIONS
+
+**Candle**
+> The fastest way to change the feeling of a room. [Candle Name] is hand-poured in [wax type] with [scent notes] — [burn time], [wick type]. Not just a candle. An atmosphere you light on purpose.
+
+**Silk Pillowcase**
+> Eight hours of skin contact with something that actually cares back. [Pillowcase Name] is a [momme weight] mulberry silk pillowcase — reduces friction, maintains moisture, stays cool through the night. What you sleep on is part of how you wake up.
+
+**Jewelry / Accessory**
+> The piece that quietly finishes everything. [Piece Name] is [material] — [design detail], [sizing note]. Wear it with everything. Notice that it makes everything better.
+
+---
+
+## PART 6 — MISS.PRINCESS PRODUCT DESCRIPTION FORMULA
+
+Miss.Princess descriptions carry the same three-part structure but with lighter, more playful, trend-aware energy:
+
+```
+[Desire] Fun-forward, soft, romantic — less cinematic, more dreamy
+[Product] Same specificity, more accessible language
+[Identity] Her customer is building her aesthetic, not arriving at it
+```
+
+**Miss.Princess Example — Lip Gloss**
+> The gloss that makes the whole look. [Gloss Name] is a non-sticky, plumping formula in [shade name] — [finish], [scent if applicable], wears all day without sliding. For the girl who treats every Tuesday like a photo opportunity.
+
+**Miss.Princess Example — Hair Clip Set**
+> The kind of detail that takes a whole look from fine to actually cute. [Clip Name] comes in [quantity], in [finish/material] — lightweight, strong hold, won't crease. Stack them. Pair them. Make the aesthetic.
+
+---
+
+## WRITING GUIDE — COMMON MISTAKES TO AVOID
+
+**Mistake 01 — Generic opening lines:**
+> ❌ "Introducing our new hydrating serum..."
+> ✅ Lead with the feeling, not the announcement
+
+**Mistake 02 — Ingredient lists without context:**
+> ❌ "Contains hyaluronic acid, niacinamide, and vitamin C."
+> ✅ "[Key ingredient] for deep hydration. [Second ingredient] for clarity. Together, they do what a week of rest would."
+
+**Mistake 03 — Describing appearance instead of experience:**
+> ❌ "A beautiful pink packaging with gold foil details."
+> ✅ "The kind of packaging that makes throwing it away feel like a decision."
+
+**Mistake 04 — Closing on the product instead of her:**
+> ❌ "...making this the perfect addition to your skincare routine."
+> ✅ "For women who treat self-care as a standard, not a reward."
+
+**Mistake 05 — Overusing "emotional" and "luxury":**
+> ❌ "An emotionally luxurious skincare experience."
+> ✅ Show the luxury through specific, sensory detail. Never use those two words in the same sentence.
+
+---
+
+*This file contains product description formulas and real working examples across all MVQUEEN categories. It is the copywriter's brief and the AI system's prompt anchor. Pairs with CTA_Library.md, Writing_Rules.md, and Forbidden_Words.md.*

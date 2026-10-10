@@ -1,0 +1,137 @@
+# 🎁 MVQUEEN — Offer Strategy
+
+---
+
+## Offers in a Luxury Context
+
+An offer in MVQUEEN is never a discount in disguise.
+It is a carefully designed value proposition that makes purchasing feel intelligent — not cheap.
+
+The distinction matters enormously.
+
+When a luxury brand discounts carelessly, she stops believing the original price was real.
+When a luxury brand offers value intelligently, she feels rewarded — not marketed to.
+
+MVQUEEN offers are built to deepen the relationship, not to clear inventory.
+
+---
+
+## Offer Types MVQUEEN Uses
+
+### TYPE 01 — Welcome Offer
+**What:** 10–15% off first order
+**Who:** New email subscribers only
+**Positioning:** "Her welcome to the collection" — an invitation, not a coupon
+**Duration:** 10 days from sign-up
+**Delivery:** Email (welcome sequence, email 1) + optionally SMS
+**Rule:** Never shown in ads to cold audiences — earned through opt-in only
+
+---
+
+### TYPE 02 — Bundle Value
+**What:** Kit pricing that saves 15–20% versus buying individually
+**Who:** Everyone — this is permanent catalog pricing
+**Positioning:** "The complete ritual" — she's building something, not just saving
+**Examples:**
+- Morning Ritual Starter Set (serum + face oil + mist) — saves $18
+- Velvet Body Ritual Set (butter + oil + scrub) — saves $16
+- Hair Restore Kit (mask + oil + shampoo) — saves $20
+
+**Rule:** The saving is always real and verifiable. She can check it against individual prices.
+
+---
+
+### TYPE 03 — Loyalty Rewards
+**What:** Points earned on every purchase, redeemable for discounts or free products
+**Who:** All customers enrolled in the loyalty program
+**Positioning:** "She's building toward something" — not a discount, an investment
+**Full architecture:** `25_Retention_And_Community/README.md`
+
+---
+
+### TYPE 04 — Birthday Offer
+**What:** 20% off or a free product during her birthday month
+**Who:** Loyalty program members
+**Positioning:** "MVQUEEN celebrates her" — personal, not promotional
+**Delivery:** Email + SMS (birthday month)
+**Rule:** Only available once per year. Never recycled as a general offer.
+
+---
+
+### TYPE 05 — VIP Early Access
+**What:** Shop new collections 24–48 hours before public launch
+**Who:** Royal and Legacy loyalty tiers (top customers)
+**Positioning:** Not a discount — an experience. She gets access, not just price.
+**Value:** Exclusivity, community belonging, feeling chosen
+
+---
+
+### TYPE 06 — Seasonal Edit Offer
+**What:** 20–25% off transitioning seasonal products at end of season
+**Who:** Full list — positioned as a curated selection, not a clearance sale
+**Positioning:** "The seasonal edit — available while it lasts"
+**Frequency:** 4 times per year maximum
+**Rule:** Only on products with genuine end-of-season logic. Never applied to core permanent products.
+
+---
+
+### TYPE 07 — Free Shipping Threshold
+**What:** Free shipping on orders over $X
+**Threshold:** $50 (review quarterly based on AOV)
+**Impact:** Increases AOV as customers add one more item to qualify
+**Positioning:** Always visible in site header and cart
+
+---
+
+## Offer Rules — What MVQUEEN Never Does
+
+| Never | Why |
+|-------|-----|
+| Sitewide flash sales | Trains customers to wait and watch for discounts |
+| "30% off everything" emails | Signals desperation, destroys perceived value |
+| Countdown timers on manufactured urgency | Dishonest — she knows it resets |
+| Discounting hero products without loyalty context | Undermines the accessible luxury position |
+| Multiple overlapping offers | Creates confusion, cheapens the brand |
+| Offers with guilt or pressure language | Against doctrine |
+| Publicly sharing welcome offer codes | Cheapens the opt-in relationship |
+
+---
+
+## Offer Calendar
+
+| Offer | Timing | Audience |
+|-------|--------|----------|
+| Welcome offer | Always on, triggered by opt-in | New subscribers |
+| Bundle pricing | Permanent catalog | Everyone |
+| Birthday offer | Her birthday month | Loyalty members |
+| VIP early access | Every launch | Royal + Legacy tiers |
+| Q1 Seasonal edit | Late March | Full list |
+| Q2 Seasonal edit | Late June | Full list |
+| Q3 Seasonal edit | Late September | Full list |
+| Q4 Holiday gifting | November | Full list |
+| Q4 Seasonal edit | Late December | Full list |
+
+**Maximum active offers at any time:** 2
+**Minimum time between promotional sends:** 7 days
+
+---
+
+## Offer Copy Standard
+
+Every offer is positioned as an experience or an invitation — never as a bargain.
+
+**Wrong:** "SAVE 20% TODAY ONLY!"
+**Right:** "Her welcome to the collection — 15% off, hers for the next 10 days."
+
+**Wrong:** "Hurry — sale ends tonight!"
+**Right:** "The seasonal edit is available while the collection lasts."
+
+**Wrong:** "Don't miss this deal!"
+**Right:** "The kind of value that makes the decision easier."
+
+The language of the offer reflects the brand. A discount communicated cheaply feels cheap — even if the product is premium.
+
+---
+
+*07_Marketing / Offer_Strategy.md*
+*An offer in MVQUEEN rewards her for belonging — it never begs her to buy.*

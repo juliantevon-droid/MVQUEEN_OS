@@ -1,0 +1,473 @@
+# 📱 MVQUEEN — Social Media Prompts
+
+---
+
+## How to Use This Document
+
+Load the relevant prompt, fill in the variables in [brackets], and run.
+Every prompt is pre-loaded with MVQUEEN brand context.
+All outputs require human review before publishing.
+
+---
+
+## Instagram Caption Prompts
+
+### Prompt SM-01 — Product Feature Caption
+```
+You are writing Instagram captions for MVQUEEN — a luxury feminine brand.
+Voice: Warm, confident, sensory, aspirational. Never aggressive or salesy.
+Lead with feeling, not features. End with invitation, not command.
+
+Product: [PRODUCT NAME]
+Category: [CATEGORY]
+Key feeling: [what she feels when she uses it]
+Target persona: [persona name]
+Content pillar: [pillar]
+CTA direction: [what you want her to do]
+
+Write 3 Instagram caption variations:
+Variation 1: Sensory/atmospheric angle (leads with how it feels)
+Variation 2: Identity angle (leads with who she is)
+Variation 3: Transformation angle (leads with what changes)
+
+Each caption:
+- Opens with a hook that works standalone (first line before "more")
+- 100-150 words total
+- Ends with a soft CTA
+- Suggests 3 hashtag groups to add
+```
+
+---
+
+### Prompt SM-02 — Lifestyle/Aesthetic Caption
+```
+You are writing Instagram captions for MVQUEEN — a luxury feminine brand.
+Voice: Intimate, atmospheric, like one woman speaking to another.
+This is lifestyle content — no product push, just brand world-building.
+
+Scene/moment: [describe the aesthetic or lifestyle moment]
+Feeling to evoke: [calm / aspiration / softness / confidence / ritual]
+Content pillar: [pillar]
+
+Write 2 caption variations:
+- Under 80 words each
+- No hard CTA — end with a question or open statement
+- Must feel human, not branded
+```
+
+---
+
+### Prompt SM-03 — Educational Caption (Carousel)
+```
+You are writing carousel content for MVQUEEN — a luxury feminine brand.
+Voice: Warm expert — knowledgeable but never clinical or condescending.
+
+Topic: [topic]
+Persona: [persona]
+Number of slides: [5-8]
+Goal: [educate / build trust / drive saves]
+
+Write:
+1. Cover slide hook (under 8 words — creates curiosity gap)
+2. Slide 2-[N]: One clear point per slide (10-20 words each)
+3. Final slide: Brand connection + CTA
+
+Rules:
+- Each slide must make sense alone
+- Save the most valuable point for second-to-last slide
+- No jargon without explanation
+- Caption for the post (goes under the carousel): 50-80 words
+```
+
+---
+
+### Prompt SM-04 — Community/UGC Feature Caption
+```
+You are writing an Instagram caption for MVQUEEN to accompany a repost of customer content.
+
+Customer handle: [@handle]
+What they posted: [describe their content]
+Brand connection: [how it connects to MVQUEEN's world]
+
+Write a caption that:
+- Opens by celebrating this specific woman (not generic)
+- Connects her moment to the brand philosophy (1 sentence)
+- Invites others to share their MVQUEEN moments
+- 50-80 words total
+- Warm, genuine, not performative
+```
+
+---
+
+## TikTok Script Prompts
+
+### Prompt TT-01 — Educational Video Script
+```
+You are writing a TikTok script for MVQUEEN — a luxury feminine brand.
+Tone: Real, conversational, knowledgeable — like a knowledgeable friend, not a brand.
+
+Topic: [topic]
+Video length: [15 / 30 / 60 seconds]
+Target persona: [persona]
+Hook type: [truth / question / story / hot take]
+
+Write:
+HOOK (first 2-3 seconds — on screen text):
+[text]
+
+VOICEOVER/SCRIPT:
+[full script — conversational, no bullet points, flows naturally when spoken]
+
+ON-SCREEN TEXT OVERLAYS:
+[key points to appear as text on screen]
+
+CLOSING HOOK (last 2 seconds):
+[what keeps them watching or following]
+
+CTA:
+[soft, natural — no "smash that like button" energy]
+```
+
+---
+
+### Prompt TT-02 — Aesthetic/Brand Video Direction
+```
+You are writing a TikTok video concept and script for MVQUEEN.
+Style: Aesthetic, slow, cinematic — no talking head, just visuals + text.
+
+Concept: [what the video shows]
+Feeling to create: [calm / aspiration / desire / softness]
+Product featured (if any): [product or "none"]
+Duration: [15-30 seconds]
+
+Write:
+VISUAL SEQUENCE:
+[shot-by-shot description — what's on screen each moment]
+
+TEXT OVERLAYS (in order):
+[text that appears on screen — short, impactful lines]
+
+AUDIO DIRECTION:
+[sound suggestion — specific song or audio type]
+
+CAPTION (for the TikTok post):
+[hook + 2-3 lines + CTA]
+```
+
+---
+
+## Pinterest Description Prompts
+
+### Prompt P-01 — Product Pin Description
+```
+Write a Pinterest pin description for MVQUEEN.
+Pinterest is a search engine — weave keywords naturally.
+Voice: Descriptive, atmospheric, aspirational.
+
+Product: [product name]
+Primary keyword: [keyword]
+Secondary keywords: [keyword 2], [keyword 3]
+Emotional angle: [feeling or transformation]
+
+Write:
+- 150-200 word description
+- Primary keyword in first sentence
+- Sensory language throughout
+- Ends with a soft brand statement
+- No hashtags in main description (add 3-5 at end)
+```
+
+---
+
+## Email Subject Line Prompts
+
+### Prompt E-01 — Campaign Subject Line Generator
+```
+Generate email subject lines for MVQUEEN — a luxury feminine brand.
+Voice: Curiosity, identity, or atmosphere-driven. Never aggressive urgency.
+Avoid: ALL CAPS, multiple exclamation marks, discount-first language.
+
+Campaign type: [launch / seasonal / nurture / re-engagement]
+Campaign focus: [what the email is about]
+Target segment: [who is receiving this]
+Tone direction: [intimate / exciting / mysterious / warm]
+
+Generate 6 subject line options:
+- 2 curiosity-driven (makes her want to know more)
+- 2 identity-driven (speaks to who she is)
+- 2 atmosphere-driven (creates a feeling)
+
+For each, also write a matching preview text (under 90 characters).
+Mark your top recommendation with *.
+```
+
+---
+*MVQUEEN Social Media Prompts — Operational Document*
+*All outputs require human review before publishing.*
+
+---
+---
+---
+
+# 📝 MVQUEEN — Product Description Prompts
+
+---
+
+## How to Use
+
+Load the prompt, fill in the product details, run.
+Review output against Tone Guide before using.
+All product copy is human-approved before going live on Shopify.
+
+---
+
+### Prompt PD-01 — Full Product Copy Package
+```
+You are the product copywriter for MVQUEEN — a luxury feminine ecommerce brand.
+
+Brand voice: Sensory, aspirational, warm. Lead with feeling before function.
+Never use: feature lists without emotional translation, clinical language, generic adjectives.
+Always use: specific sensory language, identity framing, transformation promises.
+
+Product details:
+Name: [PRODUCT NAME]
+Category: [CATEGORY — skincare / haircare / fashion / accessories / fragrance]
+Key attributes: [texture / scent / key ingredients / function]
+Target persona: [Soft Dreamer / Becoming Woman / Elevated Minimalist / Feminine Escapist]
+Price: [$]
+Collection: [if applicable]
+
+Generate the complete product copy package:
+
+1. PRODUCT TITLE (3 options — 3-7 words, evocative, brand-aligned)
+
+2. SHORT DESCRIPTION (2 sentences — sensory opening + transformation promise)
+
+3. LONG DESCRIPTION (4-5 paragraphs):
+   - Para 1: Sensory experience — how it feels/smells/looks
+   - Para 2: The transformation — what changes with consistent use
+   - Para 3: Who it's for — identity framing, not demographic
+   - Para 4: The ritual — when and how to use it, written as ritual context
+   - Para 5 (optional): Brand connection or closing invitation
+
+4. BULLET POINTS (5 — benefits written as experiences, not features)
+   Example: "Skin that stays soft past noon" not "Long-lasting hydration"
+
+5. SEO META TITLE (50-60 characters — keyword-led)
+
+6. SEO META DESCRIPTION (150-160 characters — keyword-aware, emotional close)
+
+7. IMAGE ALT TEXT (for 4 images — descriptive, keyword-aware, human-readable)
+
+8. UPSELL LINE (1 sentence for "Pairs beautifully with..." section)
+```
+
+---
+
+### Prompt PD-02 — Product Title Generator
+```
+Generate product titles for MVQUEEN.
+Requirements: 3-7 words, evocative, brand-aligned, memorable.
+Avoid: Generic descriptors, trend-dependent words, anything another brand could claim.
+
+Product: [product name/type]
+Key attribute: [most distinctive quality]
+Brand feeling: [soft / luxurious / transformative / restorative]
+
+Generate 5 title options.
+Mark your strongest recommendation.
+```
+
+---
+
+### Prompt PD-03 — Collection Description
+```
+Write a collection description for MVQUEEN.
+Voice: Aspirational, cohesive, connects individual products to a larger ritual or philosophy.
+
+Collection name: [name]
+Products in collection: [list]
+Collection theme/story: [the connecting thread]
+Target persona: [persona]
+
+Write:
+- Collection headline (1 line — atmospheric)
+- Collection description (100-150 words — builds desire for the whole, not individual items)
+- Collection meta description (SEO, 150-160 characters)
+```
+
+---
+
+### Prompt PD-04 — Product Bundle Copy
+```
+Write copy for a MVQUEEN product bundle.
+Frame as a complete ritual — not just "products together."
+
+Bundle name: [name]
+Products included: [list with brief descriptions]
+Ritual occasion: [morning / evening / weekly / gift]
+Total value: [$]
+Bundle price: [$]
+Target persona: [persona]
+
+Write:
+- Bundle headline (evocative, ritual-focused)
+- Bundle description (80-120 words — sells the experience, not the savings)
+- 3 bullet points (benefits of the ritual, not individual products)
+- Gift occasion line (if giftable): "Perfect for..."
+```
+
+---
+*MVQUEEN Product Description Prompts — Operational Document*
+
+---
+---
+---
+
+# 🎨 MVQUEEN — Image Generation Prompts
+
+---
+
+## Purpose
+
+A library of structured prompts for generating AI images that align with MVQUEEN's visual identity — cinematic, feminine, atmospheric, and brand-consistent.
+
+All AI-generated images are reviewed against brand visual standards before use.
+
+---
+
+## MVQUEEN Visual Identity (Load as context for every image prompt)
+
+```
+BRAND VISUAL IDENTITY CONTEXT:
+
+Color palette: Soft neutral tones — ivory, champagne, warm whites, blush rose, sage, muted gold.
+Never: Harsh neons, stark black-and-white contrast, aggressive color blocking.
+
+Lighting: Soft, diffused, golden hour or window light. Never harsh shadows or studio flash.
+
+Mood: Unhurried, intimate, atmospheric. Like a beautifully shot editorial — not a product catalogue.
+
+Textures: Silk, linen, marble, glass, soft cotton, cashmere, petals, natural wood.
+
+Setting: Minimal but warm. Clean space with intentional objects. Never cluttered or chaotic.
+
+Human presence: When featuring a person — soft expression, relaxed body language, natural.
+Never aggressive pose, forced smile, or fashion-forward theatrics.
+
+Style reference: Editorial beauty, quiet luxury, slow lifestyle photography.
+NOT: Instagram influencer flat lay, harsh studio product shot, stock photo aesthetic.
+```
+
+---
+
+## Product Photography Prompts
+
+### Prompt IMG-01 — Hero Product Shot
+```
+[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+
+Create a luxury product photography image:
+
+Product: [product name and type]
+Background: [marble surface / linen fabric / wooden surface / glass shelf]
+Lighting: Soft window light from the left, warm golden tone
+Props: [optional — dried flowers / glass / soft fabric]
+Mood: Quiet luxury — the product as the hero, nothing competing
+
+Style: Editorial beauty photography, minimal, intentional
+Aspect ratio: [1:1 for Instagram / 4:5 for feed / 9:16 for stories]
+
+Additional direction: [any specific details]
+```
+
+---
+
+### Prompt IMG-02 — Lifestyle/Atmospheric Shot
+```
+[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+
+Create a lifestyle image for MVQUEEN:
+
+Scene: [describe the scene — morning vanity / bathroom shelf / dressing table / bedside]
+Products featured: [products or "suggest placement naturally"]
+Woman (if featured): [yes/no — if yes: soft, natural, relaxed, warm skin, no heavy makeup]
+Time of day feel: [morning light / golden hour / soft evening]
+Mood: [ritual / softness / calm / becoming / luxury]
+
+This image should make a woman want to be in this moment.
+Style: Slow living editorial, feminine, atmospheric
+```
+
+---
+
+### Prompt IMG-03 — Campaign/Editorial Image
+```
+[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+
+Create a campaign editorial image for MVQUEEN:
+
+Campaign theme: [theme]
+Central subject: [product / woman / both]
+Color story: [warm neutrals / blush and ivory / sage and cream]
+Composition: [centered / rule of thirds / close crop / wide atmospheric]
+Emotion: [the feeling the image should create in 3 words]
+
+Inspiration direction: [quiet luxury / old money aesthetic / feminine editorial / Italian countryside]
+Format: [square / portrait / landscape]
+```
+
+---
+
+### Prompt IMG-04 — Social Media Graphic
+```
+[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+
+Create a social media graphic for MVQUEEN:
+
+Purpose: [quote / announcement / educational / product feature]
+Text to include: [exact text — keep short]
+Background: [product image / lifestyle / abstract texture / solid brand color]
+Text placement: [center / bottom / overlay]
+Font style direction: [elegant serif / clean modern / handwritten feeling]
+Brand elements: [logo placement — bottom right]
+
+Platform: [Instagram square / story / Pinterest]
+```
+
+---
+
+### Prompt IMG-05 — Brand Mood/Aesthetic Image
+```
+[MVQUEEN VISUAL IDENTITY CONTEXT — paste above]
+
+Create a mood/aesthetic image that represents MVQUEEN's world — no product required.
+
+Concept: [a morning ritual / a quiet afternoon / a woman becoming herself / a luxurious moment alone]
+Visual elements: [textures, light, colors, objects that represent the brand world]
+Human presence: [yes — soft, natural / no — objects and atmosphere only]
+Feeling: [what should someone feel when they see this image]
+
+This is a brand world image — it sells a feeling, not a product.
+Style: Slow, intentional, cinematic feminine photography
+```
+
+---
+
+## Image Quality Review Checklist
+
+Before using any AI-generated image:
+```
+□ Color palette consistent with brand system?
+□ Lighting feels soft and intentional — not harsh?
+□ Overall mood matches brand atmosphere?
+□ No stock-photo or generic AI aesthetic?
+□ Would this image make a woman want to enter this world?
+□ Appropriate for the platform it's being used on?
+□ No copyright issues with any elements?
+```
+
+If any box is unchecked — regenerate or adjust before using.
+
+---
+*MVQUEEN Image Generation Prompts — Operational Document*

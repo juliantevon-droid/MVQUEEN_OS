@@ -526,7 +526,7 @@ export async function processProductJob(
     const c = decision.classification;
     const brandRoute = decision.brandRoute;
     const brandLabel =
-      brandRoute.brand === "miss-princess" ? "Miss.Princess" : "MVQueen";
+      BRAND_VOCABULARY.contentPolicy.profiles[brandRoute.brand === "miss-princess" ? "miss-princess" : "mvqueen"].displayName;
     const claimReviewReasons = productClaimReviewReasons(product);
     const requiresClaimReview = claimReviewReasons.length > 0;
     // Claim-risk products still receive sanitized customer-facing copy while

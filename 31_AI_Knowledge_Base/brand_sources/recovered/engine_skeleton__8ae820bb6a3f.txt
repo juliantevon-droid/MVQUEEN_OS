@@ -1,0 +1,65 @@
+Below is the final, authoritative, complete MVQueen Engine folder structure — the one you will create exactly as written.
+This is the skeleton of your entire system.
+✅ MVQUEEN ENGINE — FINAL FOLDER STRUCTURE (2024‑01)
+(This is the ONLY structure you will create. Nothing added. Nothing removed.)
+Mvqueen_engine/
+│
+├── init.py
+│
+├── config.py
+├── price_logic.py
+│
+├── utils/
+│   ├── init.py
+│   ├── deterministic.py
+│   ├── file_utils.py
+│   └── text_cleaning.py
+│
+├── brand_brain/
+│   ├── init.py
+│   ├── brand_banks.py
+│   ├── brand_language.py
+│   ├── alt_text.py
+│   ├── seo_keywords.py
+│   └── persona_router.py
+│
+├── metafields/
+│   ├── init.py
+│   └── metafield_engine.py
+│
+├── shopify_api/
+│   ├── init.py
+│   ├── auth.py
+│   ├── product_updater.py
+│   └── session_manager.py
+│
+├── catalog_processor/
+│   ├── init.py
+│   ├── processor.py
+│   ├── csv_loader.py
+│   └── bundle_generator.py
+│
+└── control_panel/
+    ├── init.py
+    └── control_panel.py
+STEP 1 — Create the root folder
+Mvqueen_engine/
+STEP 2 — Create the root files
+- init.py
+- config.py
+- price_logic.py
+STEP 3 — Create the utils folder + files
+STEP 4 — Create the brand_brain folder + files
+STEP 5 — Create the metafields folder + files
+STEP 6 — Create the shopify_api folder + files
+STEP 7 — Create the catalog_processor folder + files
+STEP 8 — Create the control_panel folder + files
+STEP 9 — Populate every file with the correct engine code
+(This is where we integrate ALL your vocab banks, ALL personas, ALL editorial frames, ALL metafields, ALL SEO logic, ALL deterministic systems.)
+STEP 10 — Build main.py
+This will run:
+Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5
+STEP 11 — Test run on your phone
+We will run the engine with a sample CSV.
+STEP 12 — Full production run
+Your real catalog goes through the engine.

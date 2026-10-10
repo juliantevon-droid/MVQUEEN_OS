@@ -1,0 +1,474 @@
+/storage/emulated/0/MVQUEEN_OS
+/storage/emulated/0/MVQUEEN_OS/.git
+/storage/emulated/0/MVQUEEN_OS/.git/hooks
+/storage/emulated/0/MVQUEEN_OS/.git/info
+/storage/emulated/0/MVQUEEN_OS/.git/logs
+/storage/emulated/0/MVQUEEN_OS/.git/objects
+/storage/emulated/0/MVQUEEN_OS/.git/refs
+/storage/emulated/0/MVQUEEN_OS/.obsidian
+/storage/emulated/0/MVQUEEN_OS/00_Doctrine
+/storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Color_Palette
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Logo_System
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Moodboards
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Packaging
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Photography_Direction
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Tone_And_Voice
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Typography
+/storage/emulated/0/MVQUEEN_OS/02_Brand_Identity/Visual_Assets
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Analytics
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Aspirational_Identity
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Buying_Behavior
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Emotional_Triggers
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Feminine_Identity
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Luxury_Psychology
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Research
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Retention_Psychology
+/storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology/Surveys
+/storage/emulated/0/MVQUEEN_OS/04_Products
+/storage/emulated/0/MVQUEEN_OS/04_Products/Beauty
+/storage/emulated/0/MVQUEEN_OS/04_Products/Collections
+/storage/emulated/0/MVQUEEN_OS/04_Products/Drafts
+/storage/emulated/0/MVQUEEN_OS/04_Products/Fashion
+/storage/emulated/0/MVQUEEN_OS/04_Products/Fragrance
+/storage/emulated/0/MVQUEEN_OS/04_Products/Haircare
+/storage/emulated/0/MVQUEEN_OS/04_Products/Jewelry
+/storage/emulated/0/MVQUEEN_OS/04_Products/Packaging
+/storage/emulated/0/MVQUEEN_OS/04_Products/Pricing
+/storage/emulated/0/MVQUEEN_OS/04_Products/Product_Assets
+/storage/emulated/0/MVQUEEN_OS/04_Products/Product_Research
+/storage/emulated/0/MVQUEEN_OS/04_Products/Shoes
+/storage/emulated/0/MVQUEEN_OS/04_Products/Skincare
+/storage/emulated/0/MVQUEEN_OS/04_Products/Suppliers
+/storage/emulated/0/MVQUEEN_OS/04_Products/Uploads
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blog_SEO
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Blogs
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Campaign_Content
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Caption_Library
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Content_Drafts
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Hooks
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Instagram_Content
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Keywords
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Metadata
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/Pinterest_Content
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/SEO_Keywords
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/TikTok_Content
+/storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content/UGC_Strategy
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Brand_Vocabulary
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Caption_Examples
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Empowerment_Voice
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Luxury_Editorial_Voice
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Princess_Playful_Voice
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Soft_Feminine_Voice
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Swipe_Files
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Templates
+/storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice/Trendy_Social_Voice
+/storage/emulated/0/MVQUEEN_OS/07_Marketing
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Ad_Creatives
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Campaigns
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Email_Marketing
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Influencer_Marketing
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Launch_Campaigns
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Organic_Growth
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/PR_And_Branding
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Paid_Ads
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Reports
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/Retargeting
+/storage/emulated/0/MVQUEEN_OS/07_Marketing/SMS_Marketing
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Assets
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Community_Engagement
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Instagram_Strategy
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Pinterest_Strategy
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Posts
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Reels
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Schedules
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/TikTok_Strategy
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/Viral_Trend_Tracking
+/storage/emulated/0/MVQUEEN_OS/08_Social_Media/YouTube_Strategy
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Apps_And_Integrations
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/CSV
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Checkout_Experience
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Collections
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Conversion_Optimization
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Exports
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Homepage
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Launch_Checklist
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Mobile_Optimization
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Navigation
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Policies
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Product_Templates
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/SEO_Optimization
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Themes
+/storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems/Uploads
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Agents
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/AI_Brand_Voice
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/APIs
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Ad_Copy_Generator
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Automation_Workflows
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Caption_Generator
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Email_Generator
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Hook_Generator
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Models
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Pipelines
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Product_Description_Generator
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Prompt_Library
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/Prompts
+/storage/emulated/0/MVQUEEN_OS/10_AI_Systems/SEO_Generator
+/storage/emulated/0/MVQUEEN_OS/11_Operations
+/storage/emulated/0/MVQUEEN_OS/11_Operations/Fulfillment
+/storage/emulated/0/MVQUEEN_OS/11_Operations/Inventory
+/storage/emulated/0/MVQUEEN_OS/11_Operations/KPI_Tracking
+/storage/emulated/0/MVQUEEN_OS/11_Operations/Reports
+/storage/emulated/0/MVQUEEN_OS/11_Operations/SOP_Library
+/storage/emulated/0/MVQUEEN_OS/11_Operations/SOPs
+/storage/emulated/0/MVQUEEN_OS/11_Operations/Strategic_Planning
+/storage/emulated/0/MVQUEEN_OS/11_Operations/Team_Management
+/storage/emulated/0/MVQUEEN_OS/11_Operations/Workflow_Systems
+/storage/emulated/0/MVQUEEN_OS/11_Operations/Workflows
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Ad Creatives
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Ad_Creatives
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Archived_Media
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Brand Assets
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Brand_Assets
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Campaign Assets
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Campaign_Assets
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Canva_Designs
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Canva_Exports
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Content Archive
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Content_Archive
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Edited Content
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Edited_Content
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Graphics
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Logos
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Mockups
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Photos
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product Photos
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Media
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Photos
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Product_Videos
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Raw Content
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Raw_Content
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/UGC_Content
+/storage/emulated/0/MVQUEEN_OS/12_Content_Assets/Videos
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Beauty_Research
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Competitor_Research
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Fashion_Research
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Luxury_Brands
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Moodboards
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/References
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Screenshots
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Trend_Research
+/storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration/Visual_Inspiration
+/storage/emulated/0/MVQUEEN_OS/13_Scripts_And_Code
+/storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics
+/storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Conversion_Data
+/storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Customer_Data
+/storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Growth_Reports
+/storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Marketing_Analytics
+/storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/Revenue_Analytics
+/storage/emulated/0/MVQUEEN_OS/14_Data_And_Analytics/SEO_Analytics
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Automation_Scripts
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/CSV_Systems
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Content_Pipelines
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/OpenAI_API
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Python_Scripts
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/SEO_Tools
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Shopify_API
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Testing_Environment
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Upload_Scripts
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/Web_Scrapers
+/storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code/logs
+/storage/emulated/0/MVQUEEN_OS/16_Automation
+/storage/emulated/0/MVQUEEN_OS/16_Automation/AI_Automations
+/storage/emulated/0/MVQUEEN_OS/16_Automation/API_Systems
+/storage/emulated/0/MVQUEEN_OS/16_Automation/Email_Automations
+/storage/emulated/0/MVQUEEN_OS/16_Automation/Python Scripts
+/storage/emulated/0/MVQUEEN_OS/16_Automation/Shopify_Automations
+/storage/emulated/0/MVQUEEN_OS/16_Automation/Workflow_Automations
+/storage/emulated/0/MVQUEEN_OS/17_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/Blog_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/Campaign_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/Dashboard_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/Product_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/Prompt_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/SEO_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/SOP_Templates
+/storage/emulated/0/MVQUEEN_OS/17_Templates/Workflow_Templates
+/storage/emulated/0/MVQUEEN_OS/18_Development
+/storage/emulated/0/MVQUEEN_OS/18_Development/CSS
+/storage/emulated/0/MVQUEEN_OS/18_Development/Custom Scripts
+/storage/emulated/0/MVQUEEN_OS/18_Development/Custom_Sections
+/storage/emulated/0/MVQUEEN_OS/18_Development/Experimental_Features
+/storage/emulated/0/MVQUEEN_OS/18_Development/JavaScript
+/storage/emulated/0/MVQUEEN_OS/18_Development/Liquid
+/storage/emulated/0/MVQUEEN_OS/18_Development/Shopify_Code
+/storage/emulated/0/MVQUEEN_OS/18_Development/Theme_Backups
+/storage/emulated/0/MVQUEEN_OS/18_Development/Website Code
+/storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin
+/storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Compliance
+/storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Contracts
+/storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Documentation
+/storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/LLC
+/storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Policies
+/storage/emulated/0/MVQUEEN_OS/19_Legal_And_Admin/Trademarks
+/storage/emulated/0/MVQUEEN_OS/21_Finance
+/storage/emulated/0/MVQUEEN_OS/21_Finance/Budgeting
+/storage/emulated/0/MVQUEEN_OS/21_Finance/Expenses
+/storage/emulated/0/MVQUEEN_OS/21_Finance/Financial_Goals
+/storage/emulated/0/MVQUEEN_OS/21_Finance/Profit_Margins
+/storage/emulated/0/MVQUEEN_OS/21_Finance/Revenue
+/storage/emulated/0/MVQUEEN_OS/21_Finance/Taxes
+/storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling
+/storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Hiring
+/storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/International_Expansion
+/storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Long_Term_Vision
+/storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Partnerships
+/storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Retail_Expansion
+/storage/emulated/0/MVQUEEN_OS/22_Growth_And_Scaling/Scaling_Strategy
+/storage/emulated/0/MVQUEEN_OS/23_Team_And_Delegation
+/storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community
+/storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Ambassador_Programs
+/storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Community_Building
+/storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Customer_Experience
+/storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Loyalty_Programs
+/storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/Retention_Strategy
+/storage/emulated/0/MVQUEEN_OS/25_Retention_And_Community/VIP_Systems
+/storage/emulated/0/MVQUEEN_OS/26_RnD_Lab
+/storage/emulated/0/MVQUEEN_OS/27_Templates
+/storage/emulated/0/MVQUEEN_OS/27_Templates/Campaign_Templates
+/storage/emulated/0/MVQUEEN_OS/27_Templates/Caption_Templates
+/storage/emulated/0/MVQUEEN_OS/27_Templates/Email_Templates
+/storage/emulated/0/MVQUEEN_OS/27_Templates/Product_Templates
+/storage/emulated/0/MVQUEEN_OS/27_Templates/SOP_Templates
+/storage/emulated/0/MVQUEEN_OS/28_Archives
+/storage/emulated/0/MVQUEEN_OS/29_Mobile_Development
+/storage/emulated/0/MVQUEEN_OS/30_AI_Datasets
+/storage/emulated/0/MVQUEEN_OS/31_AI_Knowledge_Base
+/storage/emulated/0/MVQUEEN_OS/32_Backups
+/storage/emulated/0/MVQUEEN_OS/33_Content_Pipelines
+/storage/emulated/0/MVQUEEN_OS/34_Master_Systems
+/storage/emulated/0/MVQUEEN_OS/35_System_Blueprints
+/storage/emulated/0/MVQUEEN_OS/36_Agent_Systems
+/storage/emulated/0/MVQUEEN_OS/37_Databases
+/storage/emulated/0/MVQUEEN_OS/38_Prompt_Chains
+/storage/emulated/0/MVQUEEN_OS/39_SOP_Library
+/storage/emulated/0/MVQUEEN_OS/98_Archive
+/storage/emulated/0/MVQUEEN_OS/98_Archive/Brain_Dumps
+/storage/emulated/0/MVQUEEN_OS/98_Archive/Deprecated_Systems
+/storage/emulated/0/MVQUEEN_OS/98_Archive/Experimental_Systems
+/storage/emulated/0/MVQUEEN_OS/98_Archive/Failed_Ideas
+/storage/emulated/0/MVQUEEN_OS/98_Archive/Old_Campaigns
+/storage/emulated/0/MVQUEEN_OS/98_Archive/Old_Notes
+/storage/emulated/0/MVQUEEN_OS/99_Command_Center
+/storage/emulated/0/MVQUEEN_OS/99_Command_Center/Dashboards
+/storage/emulated/0/MVQUEEN_OS/99_Command_Center/Metrics
+/storage/emulated/0/MVQUEEN_OS/99_Command_Center/Widgets
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/00_Doctrine
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/01_Brand_Strategy
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/02_Brand_Identity
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/03_Customer_Psychology
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/04_Products
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/05_SEO_And_Content
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/06_Tone_And_Voice
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/07_Marketing
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/08_Social_Media
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/09_Shopify_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/10_AI_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/11_Operations
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/12_Content_Assets
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/13_Research_And_Inspiration
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/14_Data_And_Analytics
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/15_Scripts_And_Code
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/16_Automation
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/17_Templates
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/18_Development
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/19_Legal_And_Admin
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/21_Finance
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/22_Growth_And_Scaling
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/23_Team_And_Delegation
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/24_Email_And_SMS
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/25_Retention_And_Community
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/26_RnD_Lab
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/27_Templates
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/28_Archives
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/29_Mobile_Development
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/30_AI_Datasets
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/31_AI_Knowledge_Base
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/32_Backups
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/33_Content_Pipelines
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/34_Master_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/35_System_Blueprints
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/36_Agent_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/37_Databases
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/38_Prompt_Chains
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/39_SOP_Library
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/98_Archive
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/99_Command_Center
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/_BACKUPS
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/agents
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/copilot
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/logs
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/memory
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/meta
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/scripts
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)/textgenerator
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/00_Doctrine
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/01_Brand_Strategy
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/02_Brand_Identity
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/03_Customer_Psychology
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/04_Products
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/05_SEO_And_Content
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/06_Tone_And_Voice
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/07_Marketing
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/08_Social_Media
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/09_Shopify_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/10_AI_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/11_Operations
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/12_Content_Assets
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/13_Research_And_Inspiration
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/14_Data_And_Analytics
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/15_Scripts_And_Code
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/16_Automation
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/17_Templates
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/18_Development
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/19_Legal_And_Admin
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/20_Scripts_And_Code
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/21_Finance
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/22_Growth_And_Scaling
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/23_Team_And_Delegation
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/24_Email_And_SMS
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/25_Retention_And_Community
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/26_RnD_Lab
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/27_Templates
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/28_Archives
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/29_Mobile_Development
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/30_AI_Datasets
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/31_AI_Knowledge_Base
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/32_Backups
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/33_Content_Pipelines
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/34_Master_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/35_System_Blueprints
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/36_Agent_Systems
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/37_Databases
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/38_Prompt_Chains
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/39_SOP_Library
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/98_Archive
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/99_Command_Center
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/_BACKUPS
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/agents
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/logs
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/memory
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/meta
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN/scripts
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN_Engine
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN_OS
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN_OS/07_Marketing
+/storage/emulated/0/MVQUEEN_OS/MVQUEEN_batch
+/storage/emulated/0/MVQUEEN_OS/ai
+/storage/emulated/0/MVQUEEN_OS/content
+/storage/emulated/0/MVQUEEN_OS/copilot
+/storage/emulated/0/MVQUEEN_OS/copilot/copilot-conversations
+/storage/emulated/0/MVQUEEN_OS/copilot/copilot-custom-prompts
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/00_Doctrine
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/01_Brand_Strategy
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/02_Brand_Identity
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/03_Customer_Psychology
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/04_Products
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/05_SEO_And_Content
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/06_Tone_And_Voice
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/07_Marketing
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/08_Social_Media
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/09_Shopify_Systems
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/10_AI_Systems
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/11_Operations
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/12_Content_Assets
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/13_Research_And_Inspiration
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/13_Scripts_And_Code
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/14_Data_And_Analytics
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/15_Scripts_And_Code
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/16_Automation
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/17_Templates
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/18_Development
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/19_Legal_And_Admin
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/21_Finance
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/22_Growth_And_Scaling
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/23_Team_And_Delegation
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/24_Email_And_SMS
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/25_Retention_And_Community
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/26_RnD_Lab
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/27_Templates
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/28_Archives
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/29_Mobile_Development
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/30_AI_Datasets
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/31_AI_Knowledge_Base
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/32_Backups
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/33_Content_Pipelines
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/34_Master_Systems
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/35_System_Blueprints
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/36_Agent_Systems
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/37_Databases
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/38_Prompt_Chains
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/39_SOP_Library
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/98_Archive
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/99_Command_Center
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/_BACKUPS
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/agents
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/ai
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/content
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/copilot
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/logos
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/logs
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/memory
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/meta
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/scripts
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/shopify
+/storage/emulated/0/MVQUEEN_OS/deprecated_gdrive:MVQUEEN/textgenerator
+/storage/emulated/0/MVQUEEN_OS/logos
+/storage/emulated/0/MVQUEEN_OS/logs
+/storage/emulated/0/MVQUEEN_OS/scripts
+/storage/emulated/0/MVQUEEN_OS/shopify
+/storage/emulated/0/MVQUEEN_OS/textgenerator
+/storage/emulated/0/MVQUEEN_OS/textgenerator/configs
+total 4
+-rw-rw----. 1 u0_a185 media_rw 1175 May 16 12:29 vault_crawler.py
+    108 /storage/emulated/0/MVQUEEN_OS/MVQUEEN_Engine
+     44 /storage/emulated/0/MVQUEEN_OS
+     40 /storage/emulated/0/MVQUEEN_OS/05_SEO_And_Content
+     34 /storage/emulated/0/MVQUEEN_OS/04_Products
+     26 /storage/emulated/0/MVQUEEN_OS/00_Doctrine
+     24 /storage/emulated/0/MVQUEEN_OS/06_Tone_And_Voice
+     23 /storage/emulated/0/MVQUEEN_OS/MVQUEEN
+     20 /storage/emulated/0/MVQUEEN_OS/03_Customer_Psychology
+     17 /storage/emulated/0/MVQUEEN_OS/09_Shopify_Systems
+     17 /storage/emulated/0/MVQUEEN_OS/07_Marketing
+     15 /storage/emulated/0/MVQUEEN_OS/11_Operations
+     15 /storage/emulated/0/MVQUEEN_OS/10_AI_Systems
+     15 /storage/emulated/0/MVQUEEN_OS/08_Social_Media
+     15 /storage/emulated/0/MVQUEEN_OS/02_Brand_Identity
+     13 /storage/emulated/0/MVQUEEN_OS/13_Research_And_Inspiration
+     12 /storage/emulated/0/MVQUEEN_OS/15_Scripts_And_Code
+     12 /storage/emulated/0/MVQUEEN_OS/01_Brand_Strategy
+     11 /storage/emulated/0/MVQUEEN_OS/99_Command_Center
+      9 /storage/emulated/0/MVQUEEN_OS/.obsidian
+      7 /storage/emulated/0/MVQUEEN_OS/.git
+      2 /storage/emulated/0/MVQUEEN_OS/MVQUEEN_batch
+      1 /storage/emulated/0/MVQUEEN_OS/scripts
+      1 /storage/emulated/0/MVQUEEN_OS/logs
+      1 /storage/emulated/0/MVQUEEN_OS/MVQUEEN (1)
+      1 /storage/emulated/0/MVQUEEN_OS/36_Agent_Systems
+      1 /storage/emulated/0/MVQUEEN_OS/35_System_Blueprints
+      1 /storage/emulated/0/MVQUEEN_OS/32_Backups
+      1 /storage/emulated/0/MVQUEEN_OS/17_Templates
