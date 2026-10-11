@@ -27,7 +27,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v40-canonical-product-language-review-" + BRAND_VOCABULARY.version;
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v41-verified-claim-removal-" + BRAND_VOCABULARY.version;
 
 const PRODUCT_NAME_LOOKUP = `#graphql
   query ProductNameLookup($query: String!, $after: String) {
@@ -154,6 +154,8 @@ query MVQueenProduct($id: ID!, $attributeNamespace: String!) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
     claimReviewReasons: metafield(namespace: "catalog", key: "claim_review_reasons") { value }
+    catalogShortDescription: metafield(namespace: "catalog", key: "short_description") { value }
+    productFaq: metafield(namespace: "content", key: "faq") { value }
     category { id fullName }
     options { name values }
     media(first: 50) {
@@ -192,6 +194,8 @@ query MVQueenProductWithCost($id: ID!, $attributeNamespace: String!) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
     claimReviewReasons: metafield(namespace: "catalog", key: "claim_review_reasons") { value }
+    catalogShortDescription: metafield(namespace: "catalog", key: "short_description") { value }
+    productFaq: metafield(namespace: "content", key: "faq") { value }
     category { id fullName }
     options { name values }
     media(first: 50) {
@@ -334,6 +338,9 @@ function sourceFingerprint(
     title: product.title ?? "",
     descriptionHtml: product.descriptionHtml ?? "",
     seo: product.seo ?? null,
+    catalogShortDescription: product.catalogShortDescription?.value ?? "",
+    productFaq: product.productFaq?.value ?? "",
+    media: (product.media?.nodes ?? []).map(item => ({id:item.id,alt:item.alt ?? ""})).sort((a,b) => a.id.localeCompare(b.id)),
     category: product.category?.id ?? null,
     productType: product.productType ?? "",
     vendor: product.vendor ?? "",

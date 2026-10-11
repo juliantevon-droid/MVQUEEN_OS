@@ -46,3 +46,28 @@ for (const [id, review] of reviewed) {
   assert.ok(productClaimReviewReasons({...product,title:"A different product identity"}).length > 0);
 }
 console.log("canonical product language tests passed: article removal, SEO nouns, style budgets, supplier cleanup and evidence-bound claim review");
+
+const removedClaims = Object.entries(BRAND_VOCABULARY.contentPolicy.claimReviews ?? {}).filter(([, review]) => review.disposition === "unsupported_claims_removed");
+assert.equal(removedClaims.length, 33);
+for (const [id, review] of removedClaims) {
+  const product: ProductSnapshot = {
+    id, title: review.allowedTitles[0], handle: review.resolvedHandle,
+    descriptionHtml: "<p>Review the listed product details.</p>",
+    claimReviewReasons: {value: JSON.stringify(review.reviewedReasons)},
+    attributeMetafields: {nodes: [{key:"source_attributes",value:JSON.stringify(review.resolvedSourceAttributes)}]},
+  };
+  assert.deepEqual(productClaimReviewReasons(product), [], id);
+  assert.ok(productClaimReviewReasons({...product,descriptionHtml:"Clinically&#32;proven to cure eczema."}).includes("medical_or_guaranteed"));
+  assert.ok(productClaimReviewReasons({...product,seo:{description:"Guaranteed results."}}).includes("medical_or_guaranteed"));
+  assert.ok(productClaimReviewReasons({...product,productFaq:{value:JSON.stringify([{answer:"Guaranteed results."}])}}).includes("medical_or_guaranteed"));
+  assert.ok(productClaimReviewReasons({...product,media:{nodes:[{id:"new-image",alt:"Clinically proven treatment"}]}}).includes("medical_or_guaranteed"));
+  assert.ok(productClaimReviewReasons({...product,title:"A different identity"}).length > 0);
+  const facts = review.resolvedSourceAttributes ?? {};
+  const key = Object.keys(facts)[0];
+  if (key) assert.ok(productClaimReviewReasons({...product,attributeMetafields:{nodes:[{key:"source_attributes",value:JSON.stringify({...facts,[key]:"changed fact"})}]}}).length > 0);
+  const removed = Object.entries(review.removedSourceFields ?? {})[0];
+  if (removed) assert.ok(productClaimReviewReasons({...product,attributeMetafields:{nodes:[{key:"source_attributes",value:JSON.stringify({...facts,[removed[0]]:removed[1]})}]}}).length > 0);
+  if (review.previousHandle !== review.resolvedHandle) assert.ok(productClaimReviewReasons({...product,handle:review.previousHandle}).length > 0);
+}
+assert.ok(productClaimReviewReasons({title:"Unreviewed cream",claimReviewReasons:{value:'["medical_or_guaranteed"]'}}).length > 0);
+console.log("reviewed claim-removal tests passed: all 33 scoped closures; changed sources, URLs, SEO, FAQs and image claims reopen holds");

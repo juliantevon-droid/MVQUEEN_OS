@@ -625,13 +625,12 @@
   "claimReviews": {
     "gid://shopify/Product/9100061704390": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "body_enhancement",
         "fat_or_cellulite_claim"
       ],
       "allowedTitles": [
-        "The Unhurried Flared Yoga Pants",
         "Unhurried Flared Yoga Pants"
       ],
       "sourceAttributes": {
@@ -646,11 +645,26 @@
         "fabric_name": "Polyester",
         "main_fabric_composition": "Polyester (polyester fiber)"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "color": "8100 Black, 8100 Gray, 8100 coffee, 8101 Black, 8101 Gray, 8101 coffee, 8105 Black",
+        "pants_length": "trousers",
+        "waist_type": "high waist",
+        "size": "S,M,L,XL,XXL",
+        "style_type": "temperament commute",
+        "popular_elements": "3243112",
+        "style": "Basic",
+        "thickness": "thin",
+        "fabric_name": "Polyester",
+        "main_fabric_composition": "Polyester (polyester fiber)"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "elastic-slimming-high-waist-hip-lift-slightly-flared-yoga-pants",
+      "resolvedHandle": "unhurried-flared-yoga-pants"
     },
     "gid://shopify/Product/9100061900998": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "skin_lightening_claim"
       ],
@@ -666,11 +680,24 @@
         "category": "Body Care Kit",
         "body_lotion_product_size": "11.7*4.5 * 4.5cm"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "key_words": "brightening skin color",
+        "net_weight": "100g",
+        "product_size": "7.1x7.1x4.3cm",
+        "category": "Body Care Kit",
+        "body_lotion_product_size": "11.7*4.5 * 4.5cm"
+      },
+      "removedSourceFields": {
+        "product_information": "Product Name: bright white cream Key words: brightening skin color Net Weight: 100g Product Size: 7.1x7.1x4.3cm Category: Body Care Kit Body lotion product…",
+        "product_name": "bright white cream"
+      },
+      "previousHandle": "skin-moisturizing-whitening-repair-whitening-cream",
+      "resolvedHandle": "comfort-chapter-moisturizing-skin-cream"
     },
     "gid://shopify/Product/9100062326982": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "medical_or_guaranteed",
         "hair_loss_or_regrowth"
@@ -685,11 +712,22 @@
         "applicable_on_any_body_part": "Safe to be sprayed on the scalp, face, chest, etc. to achieve fuller hair in no time. Chemical-free solution & does not contain any harmful substance or side effects.",
         "net_wt": "20ml"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "natural_ingredients": "Made with ginger and various plant extracts that ensure the proper scalp nutrition needed to grow healthy hair. Non-toxic and safe to use on the scalp or hair.",
+        "applicable_on_any_body_part": "Safe to be sprayed on the scalp, face, chest, etc. to achieve fuller hair in no time. Chemical-free solution & does not contain any harmful substance or side effects.",
+        "net_wt": "20ml"
+      },
+      "removedSourceFields": {
+        "hair_growth_accelerator": "Its main component ginger is proven to contain powerful hair growing agents that can increase the thickness and strength of each follicle. Helps prevent hair loss and thinning.",
+        "fast_and_long_term_results": "See significant results with regular use. Doubles the hair growth in just a month and follicles are significantly improved and nourished."
+      },
+      "previousHandle": "regrowth-ginger-spray",
+      "resolvedHandle": "ginger-prelude-spray"
     },
     "gid://shopify/Product/9100063047878": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "fat_or_cellulite_claim"
       ],
@@ -701,26 +739,39 @@
         "ingredients": "glycerin, wormwood extract, mint extract, saffron extract, ginger extract.",
         "size": "4.8 * 3.2 * 15.3cm."
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_information": "Ingredients: glycerin, wormwood extract, mint extract, saffron extract, ginger extract.",
+        "ingredients": "glycerin, wormwood extract, mint extract, saffron extract, ginger extract.",
+        "size": "4.8 * 3.2 * 15.3cm."
+      },
+      "removedSourceFields": {},
+      "previousHandle": "body-shaping-care-bath-oil",
+      "resolvedHandle": "still-water-bath-oil"
     },
     "gid://shopify/Product/9100063146182": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "firming_tightening_claim"
       ],
       "allowedTitles": [
-        "Facial Roller — The Golden Interval",
         "Facial Roller — Golden Interval"
       ],
       "sourceAttributes": {
         "product_type": "Beauty Tool"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_type": "Beauty Tool"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "face-24k-gold-vibration-pulse-beauty-bar-firming-facial-roller-massager-stick-lift-skin-tightening-wrinkles-pen",
+      "resolvedHandle": "facial-roller-golden-interval"
     },
     "gid://shopify/Product/9100063211718": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "skin_lightening_claim"
       ],
@@ -728,14 +779,23 @@
         "Milk & Honey Hand Wax — Sweet Pause"
       ],
       "sourceAttributes": {
+        "product_type": "Skincare",
         "product_name": "honey moisture hand wax Product net: 170/bottle",
         "function": "clean your hands, improve dry, rough skin, moisture, hydrating, tender and smooth skin."
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_type": "Skincare",
+        "product_name": "honey moisture hand wax Product net: 170/bottle",
+        "function": "clean your hands, improve dry, rough skin, moisture, hydrating, tender and smooth skin."
+      },
+      "removedSourceFields": {},
+      "previousHandle": "milk-honey-whitening-nourish-hand-wax-skin-care-moisturizing-hydrating-remove-aged-horn-paraffin-bath-hand-cream",
+      "resolvedHandle": "milk-and-honey-hand-wax-sweet-pause"
     },
     "gid://shopify/Product/9100063310022": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "hair_loss_or_regrowth"
       ],
@@ -750,11 +810,22 @@
         "size": "16*4.5/22*6/25*8",
         "type2": "comb cleaner"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "color": "Large / Small / Medium",
+        "material": "Wood",
+        "length": "22cm",
+        "width": "6cm",
+        "size": "16*4.5/22*6/25*8",
+        "type2": "comb cleaner"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "wood-comb-professional-healthy-paddle-cushion-hair-loss-massage-brush",
+      "resolvedHandle": "wood-paddle-hair-brush-in-good-order"
     },
     "gid://shopify/Product/9100063342790": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "body_enhancement",
         "wellness_health_claim"
@@ -770,11 +841,23 @@
         "product_features": "Rich in plant ingredients,promote blood circulation，",
         "ngredients": "Shea butter Water,mineraloil,butanediol, ethylhexylpatmitate，"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "shelf_life": "3 Years",
+        "net_wt": "1.06 0Z/30g",
+        "how_to_use": "Non-menstrual cycle, After the palm of your hand rub is hot, take",
+        "ngredients": "Shea butter Water,mineraloil,butanediol, ethylhexylpatmitate，"
+      },
+      "removedSourceFields": {
+        "slogan": "Hip Lift Massage Cream",
+        "product_features": "Rich in plant ingredients,promote blood circulation，"
+      },
+      "previousHandle": "shea-butter-massage-cream",
+      "resolvedHandle": "shea-butter-massage-cream"
     },
     "gid://shopify/Product/9100063408326": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "body_enhancement",
         "wellness_health_claim"
@@ -790,31 +873,47 @@
         "effect": "increase breast elasticity, improve breast flattening, relaxation and sagging",
         "color": "Green"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "suitable_for_skin_type": "any skin type",
+        "ingredients": "Lavender",
+        "color": "Green"
+      },
+      "removedSourceFields": {
+        "psychological_effect_of_essential_oil": "improving insomnia",
+        "skin_effect_of_essential_oil": "relieve pressure, relieve pressure, help sleep, relieve tension, relieve anxiety and calm down",
+        "effect": "increase breast elasticity, improve breast flattening, relaxation and sagging"
+      },
+      "previousHandle": "breast-care-essential-oil",
+      "resolvedHandle": "lavender-stillness-essential-oil"
     },
     "gid://shopify/Product/9100063867078": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "scar_claim"
       ],
       "allowedTitles": [
-        "Fine Grain Skincare — A Small Consideration",
         "Fine Grain Skincare — Small Consideration"
       ],
       "sourceAttributes": {
         "material": "light scar gel"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {},
+      "removedSourceFields": {
+        "material": "light scar gel"
+      },
+      "previousHandle": "light-scar-cream-scar-fine-grain-desalination-skin-care-products",
+      "resolvedHandle": "fine-grain-skincare-small-consideration"
     },
     "gid://shopify/Product/9100064587974": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "body_enhancement"
       ],
       "allowedTitles": [
-        "Body Cream — The Small Hours",
         "Body Cream — Small Hours"
       ],
       "sourceAttributes": {
@@ -824,11 +923,21 @@
         "product_gross_weight": "63g",
         "features": "Nourish"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "skin_type": "General",
+        "shelf_life": "3 years",
+        "net_content": "40 (g/ml)",
+        "product_gross_weight": "63g",
+        "features": "Nourish"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "meilin-ouliyuan-breast-beauty-cream-40g",
+      "resolvedHandle": "body-cream-small-hours"
     },
     "gid://shopify/Product/9100064817350": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "body_enhancement",
         "firming_tightening_claim"
@@ -844,7 +953,19 @@
         "size": "3.5×5.5×15cm",
         "color": "White"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "shelf_life": "three years",
+        "net_content": "80g (g/ml)",
+        "ingredients": "Other",
+        "size": "3.5×5.5×15cm",
+        "color": "White"
+      },
+      "removedSourceFields": {
+        "cosmetic_efficacy": "moisturizing, firming"
+      },
+      "previousHandle": "big-breast-butt-enhancer-elasticity-chest-hip-enhancement-skin-firming-and-lifting-cream-busty-sexy-body-massage-care-creams",
+      "resolvedHandle": "evening-exhale-body-massage-cream"
     },
     "gid://shopify/Product/9100065702086": {
       "reviewDate": "2026-10-10",
@@ -866,7 +987,7 @@
     },
     "gid://shopify/Product/9100066226374": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "firming_tightening_claim"
       ],
@@ -882,11 +1003,24 @@
         "product_specification": "100 (g/ml)",
         "shelf_life": "3 years"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "color": "Default",
+        "purpose": "No",
+        "applicable_object": "general",
+        "ingredients": "Glycerol",
+        "product_specification": "100 (g/ml)",
+        "shelf_life": "3 years"
+      },
+      "removedSourceFields": {
+        "cosmetic_efficacy": "Moisturizing, hydrating, moisturizing, firming and softening skin"
+      },
+      "previousHandle": "deep-moisturizing-anti-chapping-fragrance-brightening-skin-care-oil",
+      "resolvedHandle": "deep-moisturizing-anti-chapping-fragrance-brightening-skin-care-oil"
     },
     "gid://shopify/Product/9100066619590": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "firming_tightening_claim"
       ],
@@ -899,11 +1033,20 @@
         "material": "PE",
         "size": "5.5x5.5cm"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_information": "Ingredients: water, turmeric root extract, avocado oil, jojoba seed oil, vitamin C.",
+        "ingredients": "water, turmeric root extract, avocado oil, jojoba seed oil, vitamin C.",
+        "material": "PE",
+        "size": "5.5x5.5cm"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "turmeric-firming-care-face-cream",
+      "resolvedHandle": "turmeric-dawn-face-cream"
     },
     "gid://shopify/Product/9100067012806": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "acne_treatment_claim"
       ],
@@ -916,16 +1059,24 @@
         "specification": "50G",
         "size": "4.8*14.7cm"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_information": "Ingredients: water, nicotinamide, hyaluronic acid, vitamin E, tea tree oil.",
+        "ingredients": "water, nicotinamide, hyaluronic acid, vitamin E, tea tree oil.",
+        "specification": "50G",
+        "size": "4.8*14.7cm"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "anti-acne-moisturizer-cream",
+      "resolvedHandle": "day-by-day-moisturizer-cream"
     },
     "gid://shopify/Product/9100067635398": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "fat_or_cellulite_claim"
       ],
       "allowedTitles": [
-        "The Ritual Pause Electric Cupping Massager",
         "Ritual Pause Electric Cupping Massager"
       ],
       "sourceAttributes": {
@@ -933,11 +1084,19 @@
         "material": "ABS",
         "color": "Green"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "power_supply": "USB",
+        "material": "ABS",
+        "color": "Green"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "electric-vacuum-cupping-massager-for-body-anti-cellulite-suction-cup-gua-sha-massage-body-cups-guasha-fat-burning-slimming-jars",
+      "resolvedHandle": "ritual-pause-electric-cupping-massager"
     },
     "gid://shopify/Product/9100068061382": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "firming_tightening_claim"
       ],
@@ -949,11 +1108,19 @@
         "ingredients": "water, ascorbic acid (vitamin C), collagen, hyaluronic acid, acetyl tripeptide -1.",
         "height": "11.7x width 3.3x length 3.3cm"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_information": "Ingredients: water, ascorbic acid (vitamin C), collagen, hyaluronic acid, acetyl tripeptide -1.",
+        "ingredients": "water, ascorbic acid (vitamin C), collagen, hyaluronic acid, acetyl tripeptide -1.",
+        "height": "11.7x width 3.3x length 3.3cm"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "face-firming-cream",
+      "resolvedHandle": "face-cream-your-daily-constant"
     },
     "gid://shopify/Product/9100068323526": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "wrinkle_treatment_claim",
         "firming_tightening_claim"
@@ -964,11 +1131,17 @@
       "sourceAttributes": {
         "net_content": "100ml/3.38 Fl. oz"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "net_content": "100ml/3.38 Fl. oz"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "cofultic-night-sleep-tightening-cream-flat-wrinkles",
+      "resolvedHandle": "after-hours-night-cream"
     },
     "gid://shopify/Product/9100068487366": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "hair_loss_or_regrowth"
       ],
@@ -982,16 +1155,26 @@
         "ingredients": "Water, peppermint oil, olive oil, rosemary oil",
         "product_size": "14.5 * 3.7cm"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_name": "herbal hair care essence",
+        "capacity": "100ml",
+        "ingredients": "Water, peppermint oil, olive oil, rosemary oil",
+        "product_size": "14.5 * 3.7cm"
+      },
+      "removedSourceFields": {
+        "key_words": "anti-hair loss and fixation"
+      },
+      "previousHandle": "herbal-hair-care-solution-anti-hair-loss-and-strong",
+      "resolvedHandle": "herbal-haircare-solution-inner-circle"
     },
     "gid://shopify/Product/9100787351750": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "hair_loss_or_regrowth"
       ],
       "allowedTitles": [
-        "Hair Brush — A Daily Arrangement",
         "Hair Brush — Daily Arrangement"
       ],
       "sourceAttributes": {
@@ -1004,11 +1187,25 @@
         "color": "black, white, pink, red, purple",
         "size": "Approx. 24.7 * 7.5 * 4.3cm /9.7 * 3.0 * 1.7in (L * W * H)"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "unique_design": "With magnet on the bottom, you can hang it easily on the iron objects.",
+        "item": "Hair Brush Head Massage Comb",
+        "type": "Hairdressing Tool",
+        "material": "Bristle + nylon",
+        "color": "black, white, pink, red, purple",
+        "size": "Approx. 24.7 * 7.5 * 4.3cm /9.7 * 3.0 * 1.7in (L * W * H)"
+      },
+      "removedSourceFields": {
+        "relieve_fatigue": "Made of high-quality material, reduce hair loss, relieve stress. This is a good choice for stressed people.",
+        "improve_scalp": "Reduce hair loss, dandruff. Suitable for all men, women and children. Just a comb can benefit the whole family!"
+      },
+      "previousHandle": "hairbrush-anti-klit-brushy-haarborstel-women-detangler-hair-brush-bristle-nylon-scalp-massage-teaser-hair-brush-comb",
+      "resolvedHandle": "hairbrush-anti-klit-brushy-haarborstel-women-detangler-hair-brush-bristle-nylon-scalp-massage-teaser-hair-brush-comb"
     },
     "gid://shopify/Product/9100787810502": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "medical_or_guaranteed",
         "wellness_health_claim"
@@ -1028,11 +1225,26 @@
         "this_product_combines_two_skin_care_treatments": "1. The deep cleansing treatment uses continuous waves to remove dead cells on the skin surface, leaving your skin refreshed, rejuvenated and super smooth. Sonophoresis treatment uses pulse waves to increase the permeability of the skin and help the effective absorption of the essence. This combined with increased ultrasound circulation helps plump the skin and reduce the appearance of fine lines and wrinkles.",
         "color": "Pink / White set / Grenn set / White 2pcs / White 3pcs / Blackhead suction device1pcs / Humidifier1pcs / White 3pieces set / Pink 3pieces set / Purple / Blackhead suction English 1pcs / Pink A set / White B set / Pink B set / Purple B set / Grenn set1 / Grenn set2 / Pink set1 / Pink set2 / White set1 / White set2 / Purple set1 / pink set / White / Green"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "net_weight": "75g, 135g with packaging",
+        "size": "169*42*13.5mm",
+        "packing_size": "205*75*40mm",
+        "charging_power_supply": "3.5V~4.2V/ (USB)",
+        "lithium_battery": "DC3.7V / 1.5W / 500MAH polymer battery",
+        "power": "1.5W",
+        "material": "ABS+pc 304SUS",
+        "thickness": "13.5mm",
+        "this_product_combines_two_skin_care_treatments": "1. The deep cleansing treatment uses continuous waves to remove dead cells on the skin surface, leaving your skin refreshed, rejuvenated and super smooth. Sonophoresis treatment uses pulse waves to increase the permeability of the skin and help the effective absorption of the essence. This combined with increased ultrasound circulation helps plump the skin and reduce the appearance of fine lines and wrinkles.",
+        "color": "Pink / White set / Grenn set / White 2pcs / White 3pcs / Blackhead suction device1pcs / Humidifier1pcs / White 3pieces set / Pink 3pieces set / Purple / Blackhead suction English 1pcs / Pink A set / White B set / Pink B set / Purple B set / Grenn set1 / Grenn set2 / Pink set1 / Pink set2 / White set1 / White set2 / Purple set1 / pink set / White / Green"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "the-new-ultrasonic-facial-cleanser-peeling-machine-removes-facial-blackheads",
+      "resolvedHandle": "the-new-ultrasonic-facial-cleanser-peeling-machine-removes-facial-blackheads"
     },
     "gid://shopify/Product/9100788072646": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "wellness_health_claim"
       ],
@@ -1047,11 +1259,22 @@
         "battery": "1 x AA Battery(Not Included)",
         "color": "Black / Gold / Pink"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "condition": "100% Brand New",
+        "item_type": "Face Massager",
+        "material": "Zinc Alloy+Jade",
+        "type": "Pink Jade",
+        "battery": "1 x AA Battery(Not Included)",
+        "color": "Black / Gold / Pink"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "4-in-1-vibrating-rose-quartz-face-roller",
+      "resolvedHandle": "4-in-1-vibrating-rose-quartz-face-roller"
     },
     "gid://shopify/Product/9100788367558": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "wellness_health_claim"
       ],
@@ -1065,11 +1288,21 @@
         "frequency": "50 HZ",
         "recommend_using_time": "15-30 mins"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "color": "blue, Rose red and",
+        "power": "50 W",
+        "voltage": "220 V",
+        "frequency": "50 HZ",
+        "recommend_using_time": "15-30 mins"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "air-pressure-scraping-pedicure-machine-foot-massager-home-foot-beauty-foot-machine-heating-pedicure-instrument-wheel-beauty-foot-treasure",
+      "resolvedHandle": "air-pressure-scraping-pedicure-machine-foot-massager-home-foot-beauty-foot-machine-heating-pedicure-instrument-wheel-beauty-foot-treasure"
     },
     "gid://shopify/Product/9100788564166": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "skin_lightening_claim"
       ],
@@ -1088,28 +1321,49 @@
         "type_4": "Whit Whitening Soap Skin",
         "color": "Pink"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "item_type": "Soap",
+        "type_of_soap": "handmade soap",
+        "net_weight": "as shown in the project",
+        "ingredients": "Essential Oil Fruit",
+        "category_3": "face soap",
+        "color": "Pink"
+      },
+      "removedSourceFields": {
+        "model": "whitening smooth skin anti-aging",
+        "glutathione_skin": "whitening soap dye",
+        "type": "Whitening soap",
+        "type_4": "Whit Whitening Soap Skin"
+      },
+      "previousHandle": "thai-bumebime-handmade-soap-white-natural-soap-whitening-bath-and-body-engineering-fruit-essential-oil-soap",
+      "resolvedHandle": "fruit-parade-handmade-bath-and-body-soap"
     },
     "gid://shopify/Product/9100790235334": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "fat_or_cellulite_claim",
         "skin_lightening_claim",
         "firming_tightening_claim"
       ],
       "allowedTitles": [
-        "The Dressing Table Skincare Instrument",
         "Dressing Table Skincare Instrument"
       ],
       "sourceAttributes": {
         "ingredient": "collagen hyaluronic acid vitamin C ion exchange agent hyaluronic acid hydrating factor"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "ingredient": "collagen hyaluronic acid vitamin C ion exchange agent hyaluronic acid hydrating factor"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "skin-rejuvenation-instrument",
+      "resolvedHandle": "skin-rejuvenation-instrument"
     },
     "gid://shopify/Product/9100791120070": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "wellness_health_claim"
       ],
@@ -1124,16 +1378,27 @@
         "who_can_use_that": "Who wants to feel refreshed and relaxed, in the car/dorm/office/home/outdoor, etc. Just need a massage for 10 minutes every day.",
         "color": "pink, blue, green."
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "description": "the main body adopts the combination structure of bracket and roller to form beautiful and durable product features.",
+        "fashionable_and_durable": "Proud swan fashion shape, fold-resistant material, not easy to break.",
+        "more_comfortable_and_safer": "Removable for Washing, clean and hygienic.",
+        "who_can_use_that": "Who wants to feel refreshed and relaxed, in the car/dorm/office/home/outdoor, etc. Just need a massage for 10 minutes every day.",
+        "color": "pink, blue, green."
+      },
+      "removedSourceFields": {
+        "meet_multiple_needs": "Improve your blood circulation to release your fatigue, which improves your sleeping quality and maintains good body energy."
+      },
+      "previousHandle": "plastic-pressure-point-therapy-neck-massageador-massagem-relieve-hand-roller-neck-massager-for-neck-shoulder-trigger-point",
+      "resolvedHandle": "plastic-pressure-point-therapy-neck-massageador-massagem-relieve-hand-roller-neck-massager-for-neck-shoulder-trigger-point"
     },
     "gid://shopify/Product/9100791218374": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "hair_loss_or_regrowth"
       ],
       "allowedTitles": [
-        "Self-Cleaning Hair Brush — The Order of Things",
         "Self-Cleaning Hair Brush — Order of Things"
       ],
       "sourceAttributes": {
@@ -1154,11 +1419,33 @@
         "base": "standing",
         "for_all_hair_types": "Works for straight, curly, thick, thin, damaged hair, wigs, and extensions"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "self_cleaning_function": "Easy maintenance with a quick one-click cleaning feature",
+        "anti_static": "Keeps your hair sleek and frizz-free",
+        "detangling_function": "Effortlessly detangles wet or dry hair without causing pain or breakage",
+        "no_pull_design": "Reduces hair breakage for healthier, shinier hair",
+        "all_hair_types": "Works for straight, curly, thick, thin, damaged hair, wigs, and extensions",
+        "pain_free_brushing": "Ergonomically designed to provide comfort while brushing",
+        "perfect_gift": "A thoughtful gift for Mother's Day, Valentine's Day, birthdays, or just for yourself",
+        "cjjt153827209ir": "White press hair removal",
+        "cjjt153827210jq": "Rose Red press hair removal",
+        "cjjt153827211kp": "Red press hair removal",
+        "color": "black gold [central hollow air cushion comb], elegant white [central hollow air cushion comb], black purple [central hollow air cushion comb], black gold set [wall hanging storage space saving], elegant white set [wall hanging storage space saving], black Purple suit [wall-mounted storage to save space]",
+        "material": "ABS",
+        "design": "comb tooth arc",
+        "base": "standing",
+        "for_all_hair_types": "Works for straight, curly, thick, thin, damaged hair, wigs, and extensions"
+      },
+      "removedSourceFields": {
+        "scalp_massage": "Promotes hair growth and increases circulation"
+      },
+      "previousHandle": "self-cleaning-hair-brush-for-women-one-key-cleaning-hair-loss-airbag-massage-scalp-comb-anti-static-hairbrush",
+      "resolvedHandle": "self-cleaning-hair-brush-order-of-things"
     },
     "gid://shopify/Product/9100791480518": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "wellness_health_claim"
       ],
@@ -1172,16 +1459,26 @@
         "specification": "2-piece set",
         "efficacy": "Improve keratin moisturizing ability, improve blood circulation, remove yellow and white skin, lighten pigment"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "main_material": "resin",
+        "weight": "65g",
+        "color": "White / Black / Pink / Single wheel pink / Black jade handle / Pink jade handle / Green jade handle / Pink roller heart shape",
+        "specification": "2-piece set"
+      },
+      "removedSourceFields": {
+        "efficacy": "Improve keratin moisturizing ability, improve blood circulation, remove yellow and white skin, lighten pigment"
+      },
+      "previousHandle": "face-lift-up-wrinkle-remover-gua-sha-stone-for-face-massage-gua-sha-scraper",
+      "resolvedHandle": "face-lift-up-wrinkle-remover-gua-sha-stone-for-face-massage-gua-sha-scraper"
     },
     "gid://shopify/Product/9100791906502": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "medical_or_guaranteed"
       ],
       "allowedTitles": [
-        "Care Liquid — The Skin & Hair Chapter",
         "Care Liquid — Skin & Hair Chapter"
       ],
       "sourceAttributes": {
@@ -1192,16 +1489,27 @@
         "efficacy": "prevent shaving collision and hair ingrowth after shaving",
         "gross_weight": "30g"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "product_name": "hair inner growth essence",
+        "specification": "20ml",
+        "shelf_life": "3 years",
+        "storage_method": "place in a cool and ventilated place",
+        "gross_weight": "30g"
+      },
+      "removedSourceFields": {
+        "efficacy": "prevent shaving collision and hair ingrowth after shaving"
+      },
+      "previousHandle": "skin-and-hair-moisturizing-nutritional-care-liquid",
+      "resolvedHandle": "skin-and-hair-moisturizing-nutritional-care-liquid"
     },
     "gid://shopify/Product/9100792168646": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "firming_tightening_claim"
       ],
       "allowedTitles": [
-        "The Becoming Skincare Set",
         "Becoming Skincare Set"
       ],
       "sourceAttributes": {
@@ -1211,7 +1519,17 @@
         "carton": "13.3x4.3x4.3cm Product: 13x4x4cm",
         "bee_venom_wrinkle_reducing_cream": "bee venom, shea butter, jojoba oil, vitamin E, coffee extract."
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "ingredients": "bee venom anti-aging essence: bee venom, shea butter, jojoba oil, vitamin E and coffee extract.",
+        "bee_venom_reducing_cream": "bee venom, shea butter, jojoba oil, vitamin E, coffee extract.",
+        "material": "PET",
+        "carton": "13.3x4.3x4.3cm Product: 13x4x4cm",
+        "bee_venom_wrinkle_reducing_cream": "bee venom, shea butter, jojoba oil, vitamin E, coffee extract."
+      },
+      "removedSourceFields": {},
+      "previousHandle": "anti-wrinkle-skincare-set",
+      "resolvedHandle": "anti-wrinkle-skincare-set"
     },
     "gid://shopify/Product/9100792430790": {
       "reviewDate": "2026-10-10",
@@ -1257,7 +1575,7 @@
     },
     "gid://shopify/Product/9100792725702": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "skin_lightening_claim"
       ],
@@ -1277,17 +1595,32 @@
         "product_size": "89*47*120mm",
         "color": "White / Black Silver / Cable / Set / White Pink / Black Silver set / Pink seven color lamp / White set / White tricolor"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "red_light": "can penetrate deep into the bottom of the skin, wake up collagen activity, improve boredom, and reduce wrinkles",
+        "light_blue": "It can promote collagen synthesis, activate the skin, tighten loose skin, reduce pores, and improve oily skin, sensitive skin, and muscle acne.",
+        "light_green": "It can enhance the intermittent function of oxygen cell utilization, promote the blood circulation of the body surface, lymph nodes, and edema, and at the same time has the effect of soothing the skin, balancing, and soothing.",
+        "product_name": "Color light wrinkle beauty neck instrument",
+        "product_model": "ES-1081",
+        "charging_voltage": "5V=1A",
+        "rated_power": "2.5W",
+        "battery_model": "602535",
+        "battery_parameters": "3.7V/500mAh",
+        "product_size": "89*47*120mm",
+        "color": "White / Black Silver / Cable / Set / White Pink / Black Silver set / Pink seven color lamp / White set / White tricolor"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "ems-thermal-neck-lifting-and-tighten-massager-electric-microcurrent-wrinkle-remover",
+      "resolvedHandle": "ems-thermal-neck-lifting-and-tighten-massager-electric-microcurrent-wrinkle-remover"
     },
     "gid://shopify/Product/9100793807046": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "wrinkle_treatment_claim",
         "firming_tightening_claim"
       ],
       "allowedTitles": [
-        "Neck Cream — A Daily Gesture",
         "Neck Cream — Daily Gesture"
       ],
       "sourceAttributes": {
@@ -1297,16 +1630,25 @@
         "net_content": "50g",
         "category": "cream"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "applicable_people": "female, male, Universal, ordinary people",
+        "specifications": "Standard specifications",
+        "applicable_skin_type": "Universal",
+        "net_content": "50g",
+        "category": "cream"
+      },
+      "removedSourceFields": {},
+      "previousHandle": "neck-tightening-cream-50g-fading-wrinkle",
+      "resolvedHandle": "neck-cream-daily-gesture"
     },
     "gid://shopify/Product/9100794298566": {
       "reviewDate": "2026-10-10",
-      "disposition": "evidence_required",
+      "disposition": "unsupported_claims_removed",
       "reviewedReasons": [
         "firming_tightening_claim"
       ],
       "allowedTitles": [
-        "Neck Roller Cream — A Finishing Gesture",
         "Neck Roller Cream — Finishing Gesture"
       ],
       "sourceAttributes": {
@@ -1315,7 +1657,17 @@
         "net_content": "120g",
         "category": "cream"
       },
-      "note": "The original source or legacy identity contains an efficacy/health claim. No product-specific substantiation is available in the reviewed material. Remove those promises from all published copy; retain the source hold until evidence is supplied."
+      "note": "Unsupported supplier promises were removed from current source fields, URLs and image ALT text. Published title, description, SEO and FAQ contain no detected high-risk promises. This closes the internal claim hold for the reviewed factual listing; it does not substantiate the removed promises. Changed reviewed facts, a changed identity or a returning claim reopens review.",
+      "resolvedSourceAttributes": {
+        "applicable_skin_type": "Universal",
+        "net_content": "120g",
+        "category": "cream"
+      },
+      "removedSourceFields": {
+        "firm_lift_tighten": "Our Neck Firming Cream is specially formulated to target and combat sagging skin on the neck and chest, providing a visibly firmer and more lifted appearance; giving the impression of wrinkle filler, even for deep wrinkles."
+      },
+      "previousHandle": "neck-firming-roller-cream-lifts-dilutes-neck-lines-deeply-nourishes-easily-absorbed-massages-and-soothes-neck-skin-care",
+      "resolvedHandle": "neck-roller-cream-finishing-gesture"
     }
   }
 }

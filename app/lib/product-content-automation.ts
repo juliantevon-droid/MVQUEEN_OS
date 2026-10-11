@@ -39,7 +39,7 @@ const CUSTOMER_FACING_BRAND_DENYLIST = [
 
 const CLAIM_REVIEW_RULES: Array<[string, RegExp]> = [
   ["medical_or_guaranteed", /\b(?:cures?|clinically\s+proven|medical[- ]grade|guaranteed?|permanent)\b|\b(?:treats?|prevents?)\s+(?:acne|eczema|psoriasis|wrinkles?|hair\s+loss|infections?|inflammation|pain|disease|conditions?|symptoms?|rashes?)\b/i],
-  ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+loss|hair\s+regrowth|regrowth)\b/i],
+  ["hair_loss_or_regrowth", /\b(?:anti[- ]?hair\s+loss|hair\s+loss|hair\s+(?:re)?growth|regrowth)\b/i],
   ["scar_claim", /\bscar\b[\s\S]{0,30}\b(?:remov|repair|treat|cream|gel|desalination|fade)/i],
   ["body_enhancement", /\b(?:(?:breast|bust|butt|hip)\b[\s\S]{0,35}\b(?:enhanc(?:e|er|ement|ing)?|enlarg(?:e|ement|ing)?|lift(?:ing)?|growth|firm(?:ing|ness)?)|breast\s+(?:beauty|care)|bust\s+care)\b/i],
   ["fat_or_cellulite_claim", /\b(?:fat\s+burning|weight\s+loss|anti[- ]?cellulite|cellulite\s+(?:reduction|removal)|slimming(?:\s+(?:cream|oil|gel|massager|device))?|body\s+shaping)\b/i],
@@ -85,6 +85,19 @@ export function removeHighRiskClaimLanguage(value: string): string {
     .trim();
 }
 
+export function claimReviewReasonsForText(value: string): string[] {
+  const text = String(value ?? "")
+    .replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (match, code: string) => {
+      const point = code[0].toLowerCase() === "x" ? parseInt(code.slice(1), 16) : parseInt(code, 10);
+      return point <= 0x10ffff ? String.fromCodePoint(point) : match;
+    })
+    .replace(/&nbsp;/gi, " ")
+    .replace(/[_-]+/g, " ")
+    .replace(HTML_RE, " ")
+    .replace(SPACE_RE, " ");
+  return CLAIM_REVIEW_RULES.filter(([, pattern]) => pattern.test(text)).map(([reason]) => reason);
+}
+
 export function productClaimReviewReasons(
   product: {
     id?: string;
@@ -93,6 +106,10 @@ export function productClaimReviewReasons(
     handle?: string | null;
     attributeMetafields?: ProductSnapshot["attributeMetafields"];
     claimReviewReasons?: ProductSnapshot["claimReviewReasons"];
+    seo?: ProductSnapshot["seo"];
+    catalogShortDescription?: ProductSnapshot["catalogShortDescription"];
+    productFaq?: ProductSnapshot["productFaq"];
+    media?: ProductSnapshot["media"];
   },
 ): string[] {
   const sourceAttributes = product.attributeMetafields?.nodes?.find(
@@ -103,6 +120,11 @@ export function productClaimReviewReasons(
     String(product.descriptionHtml ?? "").replace(HTML_RE, " "),
     String(product.handle ?? "").replace(/[-_]+/g, " "),
     String(sourceAttributes),
+    String(product.seo?.title ?? ""),
+    String(product.seo?.description ?? ""),
+    String(product.catalogShortDescription?.value ?? ""),
+    String(product.productFaq?.value ?? ""),
+    ...(product.media?.nodes ?? []).map(item => String(item.alt ?? "")),
   ]
     .join(" ")
     .replace(SPACE_RE, " ")
@@ -114,9 +136,7 @@ export function productClaimReviewReasons(
     if (Array.isArray(saved)) retainedReasons = saved.filter((reason) =>
       CLAIM_REVIEW_RULES.some(([known]) => known === reason));
   } catch { /* Current source detection still applies to malformed history. */ }
-  const detected = CLAIM_REVIEW_RULES
-    .filter(([, pattern]) => pattern.test(text))
-    .map(([reason]) => reason);
+  const detected = claimReviewReasonsForText(text);
   const review = BRAND_VOCABULARY.contentPolicy.claimReviews?.[product.id ?? ""];
   if (review?.disposition === "false_positive_corrected" && review.allowedTitles.includes(product.title ?? "") && !detected.length) {
     try {
@@ -127,6 +147,25 @@ export function productClaimReviewReasons(
         retainedReasons = retainedReasons.filter(reason => !review.reviewedReasons.includes(reason));
       }
     } catch { /* Malformed or changed evidence keeps the hold. */ }
+  }
+  if (review?.disposition === "unsupported_claims_removed") {
+    let reviewedFactsMatch = false;
+    try {
+      const current = JSON.parse(sourceAttributes || "{}");
+      reviewedFactsMatch = Boolean(review.resolvedSourceAttributes) &&
+        Object.entries(review.resolvedSourceAttributes ?? {}).every(([key, value]) => current[key] === value) &&
+        Object.keys(review.removedSourceFields ?? {}).every(key => !(key in current));
+    } catch { /* Missing or malformed source facts cannot close a reviewed hold. */ }
+    const removalVerified = review.allowedTitles.includes(product.title ?? "") &&
+      Boolean(review.resolvedHandle) && product.handle === review.resolvedHandle &&
+      reviewedFactsMatch && !detected.length;
+    if (removalVerified) {
+      retainedReasons = retainedReasons.filter(reason => !review.reviewedReasons.includes(reason));
+    } else {
+      // Removed claims are not substantiated claims. A changed identity, source
+      // or a claim returning on any loaded surface reopens this exact review.
+      retainedReasons.push(...review.reviewedReasons);
+    }
   }
   return Array.from(new Set([...retainedReasons, ...detected]));
 }

@@ -59,7 +59,18 @@ export type BrandContentPolicy = {
     headlineForbidden: string[];
     princessLittle: "deliberate-only";
   };
-  claimReviews?: Record<string, { disposition: "false_positive_corrected" | "evidence_required"; reviewedReasons: string[]; allowedTitles: string[]; sourceAttributes: Record<string, string>; note: string; reviewDate: string }>;
+  claimReviews?: Record<string, {
+    disposition: "false_positive_corrected" | "evidence_required" | "unsupported_claims_removed";
+    reviewedReasons: string[];
+    allowedTitles: string[];
+    sourceAttributes: Record<string, string>;
+    resolvedSourceAttributes?: Record<string, string>;
+    removedSourceFields?: Record<string, string>;
+    previousHandle?: string;
+    resolvedHandle?: string;
+    note: string;
+    reviewDate: string;
+  }>;
 };
 
 export type ProductNamingProfile = {
