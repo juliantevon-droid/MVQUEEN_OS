@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { reviewedEditorialState } from "./reviewed-product-content";
 import { BRAND_VOCABULARY } from "./brand-vocabulary.server";
 import prisma from "../db.server";
 import { unauthenticated } from "../shopify.server";
@@ -27,7 +28,7 @@ import {
   resolveShopCommercialConfig,
 } from "./enterprise/commercial-settings.server";
 
-export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v41-verified-claim-removal-" + BRAND_VOCABULARY.version;
+export const AUTOMATION_VERSION = "mvq-enterprise-product-decision-v42-reviewed-editorial-" + BRAND_VOCABULARY.version;
 
 const PRODUCT_NAME_LOOKUP = `#graphql
   query ProductNameLookup($query: String!, $after: String) {
@@ -153,6 +154,7 @@ query MVQueenProduct($id: ID!, $attributeNamespace: String!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
+    editorialApproval: metafield(namespace: "catalog", key: "editorial_approval") { value }
     claimReviewReasons: metafield(namespace: "catalog", key: "claim_review_reasons") { value }
     catalogShortDescription: metafield(namespace: "catalog", key: "short_description") { value }
     productFaq: metafield(namespace: "content", key: "faq") { value }
@@ -193,6 +195,7 @@ query MVQueenProductWithCost($id: ID!, $attributeNamespace: String!) {
   product(id: $id) {
     id title handle descriptionHtml productType vendor tags
     seo { title description }
+    editorialApproval: metafield(namespace: "catalog", key: "editorial_approval") { value }
     claimReviewReasons: metafield(namespace: "catalog", key: "claim_review_reasons") { value }
     catalogShortDescription: metafield(namespace: "catalog", key: "short_description") { value }
     productFaq: metafield(namespace: "content", key: "faq") { value }
@@ -321,6 +324,7 @@ function sourceFingerprint(
 ): string {
   const source = JSON.stringify({
     policyFingerprint,
+    editorialApproval: product.editorialApproval?.value ?? "",
     capabilities: {
       editorialPublish: EDITORIAL_PUBLISH_ENABLED,
       titlePublish: TITLE_PUBLISH_ENABLED,
@@ -590,11 +594,12 @@ export async function processProductJob(
       BRAND_VOCABULARY.contentPolicy.profiles[brandRoute.brand === "miss-princess" ? "miss-princess" : "mvqueen"].displayName;
     const claimReviewReasons = productClaimReviewReasons(product);
     const requiresClaimReview = claimReviewReasons.length > 0;
+    const reviewedEditorial = reviewedEditorialState(product);
     // Claim-risk products still receive sanitized customer-facing copy while
     // the original source claims remain flagged internally for review. Only
     // genuinely unclassified products block automatic editorial generation.
     let automatedContent =
-      c.confidence === "review" || !brandRoute.brand
+      reviewedEditorial.preserve || c.confidence === "review" || !brandRoute.brand
         ? null
         : buildAutomatedProductContent(product, c, brandLabel);
     if (automatedContent && EDITORIAL_PUBLISH_ENABLED && TITLE_PUBLISH_ENABLED) {
@@ -742,7 +747,8 @@ export async function processProductJob(
       .filter(({ item }) => needsMediaAltRepair(item.alt));
     const safeMediaAltBase =
       automatedContent?.title ??
-      (c.confidence !== "review" ? `${brandLabel} ${c.productType}` : "");
+      (reviewedEditorial.preserve ? product.title :
+        c.confidence !== "review" ? `${brandLabel} ${c.productType}` : "");
     const mediaAltStatus =
       !mediaNodes.length
         ? "no_media"
@@ -756,6 +762,10 @@ export async function processProductJob(
                 ? "write_files_scope_required"
                 : "automatic";
     const metafields = [
+      ...(reviewedEditorial.status ? [{
+        namespace: "catalog", key: "editorial_review_status",
+        type: "single_line_text_field", value: reviewedEditorial.status,
+      }] : []),
       ...(VENDOR_NORMALIZATION_ENABLED &&
       product.vendor?.trim() &&
       product.vendor.trim().toLowerCase() !== "mvqueen"
@@ -1241,3 +1251,4 @@ export async function processProductJob(
     throw error;
   }
 }
+

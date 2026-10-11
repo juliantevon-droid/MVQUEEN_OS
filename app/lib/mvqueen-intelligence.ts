@@ -11,6 +11,7 @@ export type ProductSnapshot = {
   seo?: { title?: string | null; description?: string | null } | null;
   category?: { id?: string | null; fullName?: string | null } | null;
   claimReviewReasons?: { value?: string | null } | null;
+  editorialApproval?: { value?: string | null } | null;
   catalogShortDescription?: { value?: string | null } | null;
   productFaq?: { value?: string | null } | null;
   options?: { name: string; values: string[] }[];
@@ -512,3 +513,4 @@ export function brandRoutingTags(route: BrandRouting): string[] {
     `mvq:tone:${route.tone}`,
   ];
 }
+
