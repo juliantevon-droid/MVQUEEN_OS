@@ -4,6 +4,8 @@
   checked. Queries, fragments, other routes and external links are untouched.
   all_tags includes sold-out products and products outside the current filters.
   @param {string} url - Configured menu URL.
+  @param {string[]} mvqueen_tags - All tags in the MVQueen collection.
+  @param {string[]} princess_tags - All tags in the Miss.Princess collection.
 {%- enddoc -%}
 {%- liquid
   assign visible = true
@@ -30,7 +32,11 @@
             unless tag contains '+' or tag contains ' '
               assign tag = tag | replace_first: 'mvq-collection-', 'mvq:collection:'
               assign visible = false
-              if collections[collection_handle].all_tags contains tag
+              assign collection_tags = mvqueen_tags
+              if collection_handle == 'miss-princess-world'
+                assign collection_tags = princess_tags
+              endif
+              if collection_tags contains tag
                 assign visible = true
               endif
             endunless

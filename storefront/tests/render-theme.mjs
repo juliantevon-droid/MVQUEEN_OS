@@ -64,3 +64,8 @@ export async function renderSection(section, data) {
   return parseHTML(`<html><body>${html}</body></html>`).document;
 }
 
+export async function renderSnippet(snippet, data) {
+  const html = await engine.renderFile(snippet, data);
+  return parseHTML(`<html><body>${html}</body></html>`).document;
+}
+

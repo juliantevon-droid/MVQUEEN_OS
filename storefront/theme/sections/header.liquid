@@ -34,6 +34,8 @@
 {% assign active_menu = section.settings.menu %}
 {% assign mvqueen_full_menu = linklists['mvqueen-full-menu'] %}
 {% assign princess_full_menu = linklists['miss-princess-full-menu'] %}
+{% assign mvqueen_menu_tags = collections['mvqueen-world'].all_tags %}
+{% assign princess_menu_tags = collections['miss-princess-world'].all_tags %}
 {% if is_princess_experience and princess_full_menu.links != blank %}
   {% assign active_menu = princess_full_menu %}
 {% elsif is_mvqueen_experience and mvqueen_full_menu.links != blank %}
@@ -72,11 +74,11 @@
         {% assign house_shop_links = mvqueen_full_menu.links | slice: 0, 1 %}
         {% assign house_princess_shop_links = princess_full_menu.links | slice: 0, 1 %}
         {% assign house_utility_links = section.settings.menu.links | slice: 2, 50 %}
-        {% render 'mvq-header-menu', links: house_shop_links %}
-        {% render 'mvq-header-menu', links: house_princess_shop_links %}
-        {% render 'mvq-header-menu', links: house_utility_links %}
+        {% render 'mvq-header-menu', links: house_shop_links, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
+        {% render 'mvq-header-menu', links: house_princess_shop_links, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
+        {% render 'mvq-header-menu', links: house_utility_links, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
       {% else %}
-        {% render 'mvq-header-menu', links: active_menu.links %}
+        {% render 'mvq-header-menu', links: active_menu.links, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
       {% endif %}
     </nav>
 
@@ -106,11 +108,11 @@
 
       <div class="mvq-mobile-mega-nav">
         {% if is_house_home and mvqueen_full_menu.links != blank and princess_full_menu.links != blank %}
-          {% render 'mvq-header-menu', links: house_shop_links, mobile: true %}
-          {% render 'mvq-header-menu', links: house_princess_shop_links, mobile: true %}
-          {% render 'mvq-header-menu', links: house_utility_links, mobile: true %}
+          {% render 'mvq-header-menu', links: house_shop_links, mobile: true, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
+          {% render 'mvq-header-menu', links: house_princess_shop_links, mobile: true, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
+          {% render 'mvq-header-menu', links: house_utility_links, mobile: true, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
         {% else %}
-          {% render 'mvq-header-menu', links: active_menu.links, mobile: true %}
+          {% render 'mvq-header-menu', links: active_menu.links, mobile: true, mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags %}
         {% endif %}
       </div>
 

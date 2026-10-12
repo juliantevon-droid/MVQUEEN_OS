@@ -3,10 +3,12 @@
   collection links remain available even when every category is unsupported.
   @param {link[]} links - Top-level menu links.
   @param {boolean} [mobile] - Use mobile menu markup.
+  @param {string[]} mvqueen_tags - All tags in the MVQueen collection.
+  @param {string[]} princess_tags - All tags in the Miss.Princess collection.
 {%- enddoc -%}
 {%- for link in links -%}
-  {%- capture visible -%}{%- render 'mvq-menu-link-visible', url: link.url -%}{%- endcapture -%}
-  {%- capture children -%}{%- render 'mvq-menu-children', links: link.links, mobile: mobile -%}{%- endcapture -%}
+  {%- capture visible -%}{%- render 'mvq-menu-link-visible', url: link.url, mvqueen_tags: mvqueen_tags, princess_tags: princess_tags -%}{%- endcapture -%}
+  {%- capture children -%}{%- render 'mvq-menu-children', links: link.links, mobile: mobile, mvqueen_tags: mvqueen_tags, princess_tags: princess_tags -%}{%- endcapture -%}
   {%- if children != blank -%}
     <details class="{% if mobile %}mvq-mobile-group{% else %}mvq-nav-item{% endif %}">
       <summary>{{ link.title | escape }}</summary>

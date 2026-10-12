@@ -132,7 +132,7 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
     ),
     "navigation_catalog_visibility": (
         "snippets/mvq-menu-link-visible.liquid",
-        ("mvqueen-world", "miss-princess-world", ".all_tags contains tag"),
+        ("mvqueen-world", "miss-princess-world", "collection_tags contains tag"),
     ),
     "product_purchase": (
         "sections/main-product.liquid",

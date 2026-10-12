@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { renderSection } from './render-theme.mjs';
+import { renderSection, renderSnippet } from './render-theme.mjs';
 
 const category = (brand, tag, title = tag, links = []) => ({
   title, url: `/collections/${brand}/mvq:collection:${tag}`, links
@@ -119,4 +119,22 @@ test('sold-out categories remain available through all_tags even with an empty f
     } }
   });
   menuContainers(document).forEach((container) => assert.deepEqual(hrefs(container), [category(queen, 'dresses').url]));
+});
+
+test('nested menus receive brand tags explicitly without relying on a shared collections scope', async () => {
+  for (const mobile of [false, true]) {
+    const document = await renderSnippet('mvq-header-menu', {
+      mobile,
+      mvqueen_tags: catalogs[queen].all_tags,
+      princess_tags: catalogs[princess].all_tags,
+      links: [rootLink(queen, [category(queen, 'clothing', 'Clothing', [
+        category(queen, 'dresses'), category(queen, 'shoes')
+      ])]), rootLink(princess, [category(princess, 'beauty'), category(princess, 'dresses')])]
+    });
+    const urls = hrefs(document);
+    assert.ok(urls.includes(category(queen, 'dresses').url));
+    assert.ok(urls.includes(category(princess, 'beauty').url));
+    assert.ok(!urls.includes(category(queen, 'shoes').url));
+    assert.ok(!urls.includes(category(princess, 'dresses').url));
+  }
 });
