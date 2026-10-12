@@ -48,7 +48,9 @@ export function evaluateVariantCommercial(
     const categoryPricing = assessCategoryPrice({
       title: product.title ?? "",
       productType: product.productType,
-      variantTitle: "title" in variant ? String(variant.title ?? "") : "",
+      // Shopify snapshot uses option labels rather than a variant title.
+      // Inspect option values so "25PCS" is never priced as a single item.
+      variantTitle: (variant.selectedOptions ?? []).map((option) => option.value).join(" / "),
       currentPrice,
       paidFloor: pricing.minimumPrice,
       organicFloor: organicScenario.minimumPrice,
