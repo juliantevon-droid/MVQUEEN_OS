@@ -565,12 +565,12 @@ export async function processProductJob(
     const categoryPriceSafe = recommendedPrice !== null &&
       preliminaryDecision.variantDecisions.every((item) => {
         const category = item.categoryPricing;
-        return !category.band || (
+        return category.state !== "multipack_review" && (!category.band || (
           category.state !== "paid_cost_conflict" &&
           category.state !== "organic_cost_conflict" &&
           recommendedPrice >= category.band.min &&
           recommendedPrice <= category.band.max
-        );
+        ));
       });
     const pricePublishable = Boolean(
       PRICE_PUBLISH_ENABLED &&

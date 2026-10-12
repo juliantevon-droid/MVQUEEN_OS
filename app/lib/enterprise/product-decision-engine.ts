@@ -48,7 +48,7 @@ export function buildEnterpriseProductDecision(
   const { pricing } = variantCommercial;
   const categoryPricingReviewReasons = Array.from(new Set(
     variantCommercial.variantDecisions
-      .filter((item) => ["above_band", "below_band", "paid_cost_conflict", "organic_cost_conflict"].includes(item.categoryPricing.state))
+      .filter((item) => ["above_band", "below_band", "paid_cost_conflict", "organic_cost_conflict", "multipack_review"].includes(item.categoryPricing.state))
       .map((item) => `category_price:${item.categoryPricing.state}`),
   ));
   const catalogReviewReasons = [

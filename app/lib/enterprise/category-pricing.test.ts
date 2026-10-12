@@ -50,6 +50,19 @@ assert.equal(getCategoryPriceBand({
   title: "Warm Contour Microcurrent Neck Massager",
 }).band, null);
 
+for (const variantTitle of ["Set / 18K", "Set1", "Q2 bottles", "2 bottles", "4PCS"]) {
+  const item = getCategoryPriceBand({
+    title: "True North Star Pendant Necklace",
+    productType: "Pendant Necklace",
+    variantTitle,
+  });
+  assert.equal(item.multipackReview, true, `Expected manual bundle review: ${variantTitle}`);
+  assert.equal(item.band, null);
+}
+assert.equal(getCategoryPriceBand({
+  title: "Starry Night Eyeliner", variantTitle: "1 Black",
+}).multipackReview, false);
+
 const underpriced = assessCategoryPrice({
   title: "Everyday Crop Top", productType: "Tops",
   currentPrice: 5.99, paidFloor: 8, organicFloor: 7,
