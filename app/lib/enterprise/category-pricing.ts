@@ -41,8 +41,10 @@ const bands: Record<string, CategoryPriceBand> = {
 function multipack(text: string): boolean {
   // 1PCS is an ordinary single item. 2PCS, 25pcs and kits deserve their
   // own pricing logic; never force them into a single-item ceiling.
-  return /\b(?:[2-9]|[1-9]\d+)\s*(?:pcs?|pieces?|pairs?|packs?|sets?)\b/i.test(text) ||
-    /\b(?:bundle|kit|multi-?pack|gift set|matching set)\b/i.test(text);
+  // Variant option values are authoritative for quantity: "Set / 18K",
+  // "Set1", "Q2 bottles" and "2PCS" must not inherit a single-item target.
+  return /\b(?:[2-9]|[1-9]\d+)\s*(?:pcs?|pieces?|pairs?|packs?|sets?|bottles?|jars?|tubes?|units?|items?)\b/i.test(text) ||
+    /\b(?:q[2-9]\d*\s*(?:bottles?|jars?|tubes?|units?)|set\d*|bundle|kit|multi-?pack|gift set|matching set)\b/i.test(text);
 }
 
 export function getCategoryPriceBand(args: {
