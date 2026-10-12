@@ -11,11 +11,12 @@
       <div class="mvq-product-media" aria-label="{{ product.title | escape }} product images">
         {% for media in product.media %}
           {% if media.preview_image %}
+            {% assign media_alt = media.alt | default: product.title %}
             <div class="mvq-product-media-item">
               {% if forloop.first %}
-                {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '600,900,1200,1400', sizes: '(max-width: 800px) 100vw, 58vw', alt: media.alt | default: product.title | escape }}
+                {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '600,900,1200,1400', sizes: '(max-width: 800px) 100vw, 58vw', alt: media_alt }}
               {% else %}
-                {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600,900,1200,1400', sizes: '(max-width: 800px) 100vw, 58vw', alt: media.alt | default: product.title | escape }}
+                {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600,900,1200,1400', sizes: '(max-width: 800px) 100vw, 58vw', alt: media_alt }}
               {% endif %}
             </div>
           {% endif %}

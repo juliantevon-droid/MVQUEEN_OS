@@ -16,13 +16,22 @@
       </div>
     </header>
 
+    {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
     <div class="mvq-collection-toolbar">
       <span class="mvq-collection-count">{{ collection.products_count }} pieces</span>
       <button class="mvq-button mvq-button--quiet mvq-filter-toggle" type="button" data-filter-open aria-controls="CollectionFilters" aria-expanded="false">Filter & refine</button>
-      <form method="get" action="{{ collection.url }}">
+      <form method="get" action="{{ request.path }}">
+        {% for filter in collection.filters %}
+          {% for value in filter.active_values %}
+            <input type="hidden" name="{{ value.param_name | escape }}" value="{{ value.value | escape }}">
+          {% endfor %}
+          {% if filter.type == 'price_range' %}
+            {% if filter.min_value.value != nil %}<input type="hidden" name="{{ filter.min_value.param_name | escape }}" value="{{ filter.min_value.value | divided_by: 100.0 }}">{% endif %}
+            {% if filter.max_value.value != nil %}<input type="hidden" name="{{ filter.max_value.param_name | escape }}" value="{{ filter.max_value.value | divided_by: 100.0 }}">{% endif %}
+          {% endif %}
+        {% endfor %}
         <label class="mvq-visually-hidden" for="CollectionSort">Sort products</label>
         <select id="CollectionSort" class="mvq-sort" name="sort_by" onchange="this.form.submit()">
-          {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
           {% for option in collection.sort_options %}<option value="{{ option.value }}" {% if option.value == sort_by %}selected{% endif %}>{{ option.name }}</option>{% endfor %}
         </select>
       </form>
@@ -32,16 +41,17 @@
     <div class="mvq-collection-layout">
       <aside id="CollectionFilters" class="mvq-filters" data-filter-drawer aria-label="Filter products">
         <button type="button" class="mvq-button mvq-button--quiet mvq-filter-toggle" data-filter-close>Close filters</button>
-        <form method="get" action="{{ collection.url }}">
+        <form method="get" action="{{ request.path }}">
+          <input type="hidden" name="sort_by" value="{{ sort_by | escape }}">
           {% for filter in collection.filters %}
             <details class="mvq-filter-group" {% if filter.active_values.size > 0 %}open{% endif %}>
               <summary>{{ filter.label }}</summary>
               {% if filter.type == 'price_range' %}
                 <div class="mvq-price-row">
                   <label class="mvq-visually-hidden" for="FilterMin-{{ section.id }}-{{ forloop.index }}">Minimum {{ filter.label }}</label>
-                  <input id="FilterMin-{{ section.id }}-{{ forloop.index }}" type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}" placeholder="Min" min="0" inputmode="decimal">
+                  <input id="FilterMin-{{ section.id }}-{{ forloop.index }}" type="number" name="{{ filter.min_value.param_name }}" value="{% if filter.min_value.value != nil %}{{ filter.min_value.value | divided_by: 100.0 }}{% endif %}" placeholder="Min" min="0" step="any" inputmode="decimal">
                   <label class="mvq-visually-hidden" for="FilterMax-{{ section.id }}-{{ forloop.index }}">Maximum {{ filter.label }}</label>
-                  <input id="FilterMax-{{ section.id }}-{{ forloop.index }}" type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}" placeholder="Max" min="0" inputmode="decimal">
+                  <input id="FilterMax-{{ section.id }}-{{ forloop.index }}" type="number" name="{{ filter.max_value.param_name }}" value="{% if filter.max_value.value != nil %}{{ filter.max_value.value | divided_by: 100.0 }}{% endif %}" placeholder="Max" min="0" step="any" inputmode="decimal">
                 </div>
               {% else %}
                 <div class="mvq-filter-options">
@@ -55,7 +65,7 @@
               {% endif %}
             </details>
           {% endfor %}
-          <div class="mvq-filter-actions"><button class="mvq-button" type="submit">Apply filters</button><a class="mvq-button mvq-button--quiet" href="{{ collection.url }}">Clear</a></div>
+          <div class="mvq-filter-actions"><button class="mvq-button" type="submit">Apply filters</button><a class="mvq-button mvq-button--quiet" href="{{ request.path }}?sort_by={{ sort_by | url_encode }}">Clear</a></div>
         </form>
       </aside>
 

@@ -2,6 +2,8 @@
 
 MVQUEEN_OS is the canonical operating system for the MVQueen storefront and its Miss.Princess sister-brand experience.
 
+For current deployment and theme roles, use the [October 12 runtime verification](PRODUCTION_READINESS/RUNTIME_VERIFICATION_2026-10-12.md). The v1.0 release closeout below is historical evidence: Shopify MAIN is now theme `155002798278`; the automated unpublished Working Preview target is `155277918406`. Resolve roles from Shopify before deployment or promotion.
+
 Brand language is unified in [the brand guide](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [active content policy](06_Tone_And_Voice/Brand_Content_Policy.json). The [complete Drive source catalog](31_AI_Knowledge_Base/brand_sources/README.md) preserves substantive versions with provenance; the product writer consumes the reconciled policy.
 
 ## One-system architecture

@@ -25,7 +25,9 @@
     "test:catalog-automation": "tsx app/lib/canonical-product-language.test.ts && tsx app/lib/brand-content-policy.test.ts && tsx app/lib/shopify-connection.test.ts && tsx app/lib/catalog-attribute-enrichment.test.ts && tsx app/lib/shopify-category-enrichment.test.ts && tsx app/lib/product-content-automation.test.ts && tsx app/lib/automated-content-surfaces.test.ts && tsx app/lib/shipping-policy.test.ts && tsx app/lib/enterprise/product-decision-engine.test.ts && tsx app/lib/enterprise/content-publisher.test.ts && tsx app/lib/reviewed-product-content.test.ts",
     "preflight:production": "tsx app/lib/production-preflight.ts",
     "test:production-preflight": "tsx app/lib/production-preflight.test.ts",
-    "worker:product": "tsx scripts/product-worker.ts"
+    "worker:product": "tsx scripts/product-worker.ts",
+    "test:storefront": "node --test storefront/tests/*.test.mjs",
+    "test:product-worker": "tsx app/lib/product-job-worker.test.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.16.3",
@@ -48,9 +50,11 @@
     "@types/node": "^25.5.2",
     "@types/react": "^18.3.25",
     "@types/react-dom": "^18.3.7",
+    "linkedom": "^0.18.13",
+    "liquidjs": "^10.30.0",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
-    "tsx": "^4.20.6"
+    "vite": "^7.3.1"
   },
   "overrides": {
     "deepmerge-ts": "8.0.1"

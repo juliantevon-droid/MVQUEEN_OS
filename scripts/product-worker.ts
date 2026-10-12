@@ -1,4 +1,5 @@
 import { logMvqueenEvent } from "../app/lib/enterprise/observability.server";
+import { envInt } from "../app/lib/runtime-config";
 import {
   ensureProductWebhookSubscriptions,
   processProductJobBatch,
@@ -6,12 +7,6 @@ import {
   recoverStaleProductJobs,
   recordProductWorkerHeartbeat,
 } from "../app/lib/product-job-worker.server";
-
-function envInt(name: string, fallback: number, min: number, max: number): number {
-  const parsed = Number(process.env[name] ?? "");
-  if (!Number.isFinite(parsed)) return fallback;
-  return Math.max(min, Math.min(max, Math.floor(parsed)));
-}
 
 const pollMs = envInt("MVQ_PRODUCT_WORKER_POLL_MS", 2000, 1000, 60000);
 const reconcileEveryMs = envInt(

@@ -70,85 +70,13 @@
     <nav class="mvq-navlinks" aria-label="{% if is_house_home %}MVQueen house{% elsif is_princess_experience %}Miss.Princess{% else %}MVQueen{% endif %} navigation">
       {% if is_house_home and mvqueen_full_menu.links != blank and princess_full_menu.links != blank %}
         {% assign house_shop_links = mvqueen_full_menu.links | slice: 0, 1 %}
-        {% for link in house_shop_links %}
-          <details class="mvq-nav-item">
-            <summary>{{ link.title }}</summary>
-            <div class="mvq-nav-dropdown" role="group" aria-label="{{ link.title }}">
-              {% for child_link in link.links %}
-                <div class="mvq-mega-column">
-                  <a class="mvq-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                  {% if child_link.links != blank %}
-                    <div class="mvq-nav-subgroup">
-                      {% for grandchild_link in child_link.links %}
-                        <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
-                </div>
-              {% endfor %}
-            </div>
-          </details>
-        {% endfor %}
         {% assign house_princess_shop_links = princess_full_menu.links | slice: 0, 1 %}
-        {% for link in house_princess_shop_links %}
-          <details class="mvq-nav-item">
-            <summary>{{ link.title }}</summary>
-            <div class="mvq-nav-dropdown" role="group" aria-label="{{ link.title }}">
-              {% for child_link in link.links %}
-                <div class="mvq-mega-column">
-                  <a class="mvq-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                  {% if child_link.links != blank %}
-                    <div class="mvq-nav-subgroup">
-                      {% for grandchild_link in child_link.links %}
-                        <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
-                </div>
-              {% endfor %}
-            </div>
-          </details>
-        {% endfor %}
-        {% for link in section.settings.menu.links offset: 2 %}
-          {% if link.links != blank %}
-            <details class="mvq-nav-item">
-              <summary>{{ link.title }}</summary>
-              <div class="mvq-nav-dropdown" role="group" aria-label="{{ link.title }}">
-                {% for child_link in link.links %}
-                  <div class="mvq-mega-column">
-                    <a class="mvq-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                  </div>
-                {% endfor %}
-              </div>
-            </details>
-          {% else %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          {% endif %}
-        {% endfor %}
+        {% assign house_utility_links = section.settings.menu.links | slice: 2, 50 %}
+        {% render 'mvq-header-menu', links: house_shop_links %}
+        {% render 'mvq-header-menu', links: house_princess_shop_links %}
+        {% render 'mvq-header-menu', links: house_utility_links %}
       {% else %}
-        {% for link in active_menu.links %}
-          {% if link.links != blank %}
-            <details class="mvq-nav-item">
-              <summary>{{ link.title }}</summary>
-              <div class="mvq-nav-dropdown" role="group" aria-label="{{ link.title }}">
-                {% for child_link in link.links %}
-                  <div class="mvq-mega-column">
-                    <a class="mvq-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                    {% if child_link.links != blank %}
-                      <div class="mvq-nav-subgroup">
-                        {% for grandchild_link in child_link.links %}
-                          <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-            </details>
-          {% else %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          {% endif %}
-        {% endfor %}
+        {% render 'mvq-header-menu', links: active_menu.links %}
       {% endif %}
     </nav>
 
@@ -178,90 +106,11 @@
 
       <div class="mvq-mobile-mega-nav">
         {% if is_house_home and mvqueen_full_menu.links != blank and princess_full_menu.links != blank %}
-          {% assign mvq_house_shop = mvqueen_full_menu.links.first %}
-          {% assign princess_house_shop = princess_full_menu.links.first %}
-          {% for link in mvqueen_full_menu.links limit: 1 %}
-            <details class="mvq-mobile-group">
-              <summary>{{ link.title }}</summary>
-              <div class="mvq-mobile-submenu">
-                <a class="mvq-mobile-view-all" href="{{ link.url }}">View all {{ link.title }}</a>
-                {% for child_link in link.links %}
-                  <div class="mvq-mobile-mega-cluster">
-                    <a class="mvq-mobile-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                    {% if child_link.links != blank %}
-                      <div class="mvq-mobile-mega-children">
-                        {% for grandchild_link in child_link.links %}
-                          <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-            </details>
-          {% endfor %}
-          {% for link in princess_full_menu.links limit: 1 %}
-            <details class="mvq-mobile-group">
-              <summary>{{ link.title }}</summary>
-              <div class="mvq-mobile-submenu">
-                <a class="mvq-mobile-view-all" href="{{ link.url }}">View all {{ link.title }}</a>
-                {% for child_link in link.links %}
-                  <div class="mvq-mobile-mega-cluster">
-                    <a class="mvq-mobile-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                    {% if child_link.links != blank %}
-                      <div class="mvq-mobile-mega-children">
-                        {% for grandchild_link in child_link.links %}
-                          <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-            </details>
-          {% endfor %}
-          {% for link in section.settings.menu.links offset: 2 %}
-            {% if link.links != blank %}
-              <details class="mvq-mobile-group">
-                <summary>{{ link.title }}</summary>
-                <div class="mvq-mobile-submenu">
-                  <a class="mvq-mobile-view-all" href="{{ link.url }}">View all {{ link.title }}</a>
-                  {% for child_link in link.links %}
-                    <a class="mvq-mobile-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                  {% endfor %}
-                </div>
-              </details>
-            {% else %}
-              <a class="mvq-mobile-direct-link" href="{{ link.url }}">{{ link.title }}</a>
-            {% endif %}
-          {% endfor %}
+          {% render 'mvq-header-menu', links: house_shop_links, mobile: true %}
+          {% render 'mvq-header-menu', links: house_princess_shop_links, mobile: true %}
+          {% render 'mvq-header-menu', links: house_utility_links, mobile: true %}
         {% else %}
-          {% for link in active_menu.links %}
-            {% if link.links != blank %}
-              <details class="mvq-mobile-group">
-                <summary>{{ link.title }}</summary>
-                <div class="mvq-mobile-submenu">
-                  <a class="mvq-mobile-view-all" href="{{ link.url }}">View all {{ link.title }}</a>
-                  {% for child_link in link.links %}
-                    {% if child_link.links != blank %}
-                      <div class="mvq-mobile-mega-cluster">
-                        <a class="mvq-mobile-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        <div class="mvq-mobile-mega-children">
-                          {% for grandchild_link in child_link.links %}
-                            <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                          {% endfor %}
-                        </div>
-                      </div>
-                    {% else %}
-                      <a class="mvq-mobile-mega-heading" href="{{ child_link.url }}">{{ child_link.title }}</a>
-                    {% endif %}
-                  {% endfor %}
-                </div>
-              </details>
-            {% else %}
-              <a class="mvq-mobile-direct-link" href="{{ link.url }}">{{ link.title }}</a>
-            {% endif %}
-          {% endfor %}
+          {% render 'mvq-header-menu', links: active_menu.links, mobile: true %}
         {% endif %}
       </div>
 

@@ -27,6 +27,9 @@ DEPLOYMENT_REQUIRED = (
     "snippets/trust-badges.liquid",
     "snippets/product-schema.liquid",
     "snippets/seo-meta.liquid",
+    "snippets/mvq-header-menu.liquid",
+    "snippets/mvq-menu-children.liquid",
+    "snippets/mvq-menu-link-visible.liquid",
     "locales/en.default.json",
 )
 
@@ -109,8 +112,7 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             "data-mvq-panel",
             'aria-controls="MVQMobilePanel"',
             "mvq-mobile-brand-hubs",
-            "mvq-mobile-view-all",
-            "mvq-mobile-mega-cluster",
+            "render 'mvq-header-menu'",
             'aria-expanded="false"',
             "Miss.Princess",
             "routes.root_url",
@@ -119,6 +121,18 @@ CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
             "/pages/mvqueen",
             "/pages/miss-princess",
         ),
+    ),
+    "mobile_navigation_menu": (
+        "snippets/mvq-header-menu.liquid",
+        ("mvq-mobile-view-all", "mvq-mobile-group", "render 'mvq-menu-children'"),
+    ),
+    "mobile_navigation_categories": (
+        "snippets/mvq-menu-children.liquid",
+        ("mvq-mobile-mega-cluster", "mvq-mobile-mega-children", "render 'mvq-menu-link-visible'"),
+    ),
+    "navigation_catalog_visibility": (
+        "snippets/mvq-menu-link-visible.liquid",
+        ("mvqueen-world", "miss-princess-world", ".all_tags contains tag"),
     ),
     "product_purchase": (
         "sections/main-product.liquid",

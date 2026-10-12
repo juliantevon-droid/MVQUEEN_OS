@@ -102,6 +102,9 @@ jobs:
       - name: Test catalog automation
         run: npm run test:catalog-automation
 
+      - name: Test durable product worker
+        run: npm run test:product-worker
+
       - name: Test production preflight
         run: npm run test:production-preflight
 
