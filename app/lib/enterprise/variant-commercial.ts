@@ -50,7 +50,8 @@ export function evaluateVariantCommercial(
       productType: product.productType,
       // Shopify snapshot uses option labels rather than a variant title.
       // Inspect option values so "25PCS" is never priced as a single item.
-      variantTitle: (variant.selectedOptions ?? []).map((option) => option.value).join(" / "),
+      variantTitle: ("selectedOptions" in variant ? (variant.selectedOptions ?? []) : [])
+        .map((option) => option.value).join(" / "),
       currentPrice,
       paidFloor: pricing.minimumPrice,
       organicFloor: organicScenario.minimumPrice,
