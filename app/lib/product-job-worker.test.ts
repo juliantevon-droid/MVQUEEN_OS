@@ -52,7 +52,7 @@ try {
   const { processProductJobBatch, reconcileRecentShopifyProducts } = await import("./product-job-worker.server");
   const { enqueueProductWebhook } = await import("./product-job-intake.server");
 
-  const shop = "worker-regression.myshopify.com";
+  const shop = "worker-regression.example.invalid";
   let serial = 0;
   const minutesAgo = (minutes: number) => new Date(Date.now() - minutes * 60_000);
   async function createJob(overrides: Partial<Prisma.ProductJobCreateInput> = {}) {
@@ -177,7 +177,7 @@ try {
   // default window. Repeating reconciliation must keep one job per version.
   await prisma.productJob.deleteMany();
   await prisma.session.create({ data: {
-    id: `offline_${shop}`, shop, state: "regression", isOnline: false, accessToken: "test-only",
+    id: `offline_${shop}`, shop, state: "regression", isOnline: false, accessToken: "placeholder",
   } });
   await prisma.productAutomationState.create({ data: {
     shop, productGid: "gid://shopify/Product/older", automationVersion: "old-policy",
