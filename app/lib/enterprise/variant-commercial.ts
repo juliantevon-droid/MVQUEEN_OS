@@ -2,6 +2,7 @@ import type { ProductSnapshot } from "../mvqueen-intelligence";
 import type { CommercialConfigResolution } from "./commercial-config";
 import { buildCommercialHealth, type CommercialHealthState } from "./commercial-health";
 import { buildPricingDecision } from "./pricing-engine";
+import { assessCategoryPrice } from "./category-pricing";
 
 function numberFrom(value?: string | null): number | null {
   if (!value?.trim()) return null;
@@ -24,6 +25,11 @@ export function evaluateVariantCommercial(
   const field = (key: string) => fields.find((item) => item.key === key)?.value;
   const inboundShipping = numberFrom(field("inbound_shipping"));
   const currency = commercial.config.currency.toUpperCase();
+  // Organic/add-on pricing is an advisory scenario, not a change to paid ads.
+  const organicCommercial: CommercialConfigResolution = {
+    config: { ...commercial.config, targetCac: 0, targetContributionMarginRate: 0.20 },
+    missing: commercial.missing.filter((key) => key !== "target_cac" && key !== "target_contribution_margin_rate"),
+  };
   const currencyMatches = (value?: string | null) => value?.trim().toUpperCase() === currency;
   const hasInventoryCosts = variants.some((variant) => numberFrom(variant.unitCost) !== null);
   // A legacy product cost can apply only when no inventory costs are present.
@@ -37,11 +43,22 @@ export function evaluateVariantCommercial(
       ? (currencyMatches(variant.costCurrency) ? inventoryCost : null)
       : fallbackCost;
     const currentPrice = numberFrom(variant.price);
+    const pricing = buildPricingDecision({ currentPrice, unitCost, inboundShipping }, commercial);
+    const organicScenario = buildPricingDecision({ currentPrice, unitCost, inboundShipping }, organicCommercial);
+    const categoryPricing = assessCategoryPrice({
+      title: product.title ?? "",
+      productType: product.productType,
+      variantTitle: "title" in variant ? String(variant.title ?? "") : "",
+      currentPrice,
+      paidFloor: pricing.minimumPrice,
+      organicFloor: organicScenario.minimumPrice,
+    });
     return {
       variantId: variant.id,
       costSource: inventoryCost !== null ? "shopify_inventory_item" : fallbackCost !== null ? "commercial_metafield" : "unverified",
       costCurrency: variant.costCurrency ?? field("cost_currency") ?? null,
-      pricing: buildPricingDecision({ currentPrice, unitCost, inboundShipping }, commercial),
+      pricing,
+      categoryPricing,
       commercialHealth: buildCommercialHealth({
         sellingPrice: effectiveSellingPrice === undefined ? currentPrice : effectiveSellingPrice,
         unitCost, inboundShipping,
