@@ -559,10 +559,24 @@ export async function processProductJob(
         (uniformUnitCost !== null && uniformCostCurrency !== null)
       ),
     );
+    // Never auto-publish a cost-derived price that exceeds a simple-item
+    // category ceiling. Paid acquisition can make a $16 brush look like a
+    // $33 product; this requires channel/sourcing review, not a price hike.
+    const categoryPriceSafe = recommendedPrice !== null &&
+      preliminaryDecision.variantDecisions.every((item) => {
+        const category = item.categoryPricing;
+        return !category.band || (
+          category.state !== "paid_cost_conflict" &&
+          category.state !== "organic_cost_conflict" &&
+          recommendedPrice >= category.band.min &&
+          recommendedPrice <= category.band.max
+        );
+      });
     const pricePublishable = Boolean(
       PRICE_PUBLISH_ENABLED &&
       homogeneousVariantPricing &&
       preliminaryPricing.state === "ready_for_approval" &&
+      categoryPriceSafe &&
       recommendedPrice !== null,
     );
     const compareAtPrice = (

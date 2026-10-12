@@ -4,6 +4,7 @@ import { useActionData, useLoaderData } from "react-router";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { buildPricingDecision } from "../lib/enterprise/pricing-engine";
+import { assessCategoryPrice } from "../lib/enterprise/category-pricing";
 import { resolveShopCommercialConfig } from "../lib/enterprise/commercial-settings.server";
 import { buildCommercialHealth } from "../lib/enterprise/commercial-health";
 
@@ -12,8 +13,9 @@ query MVQueenPricingTarget($id: ID!) {
   product(id: $id) {
     id
     title
+    productType
     variants(first: 2) {
-      nodes { id price compareAtPrice }
+      nodes { id title price compareAtPrice }
       pageInfo { hasNextPage }
     }
     commercialMetafields: metafields(first: 20, namespace: "commercial") {
@@ -187,6 +189,26 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     return {
       ok: false,
       message: `Blocked: pricing decision is ${decision.state}. Missing/required inputs: ${decision.missing.join(", ") || "review configuration"}.`,
+    };
+  }
+
+  const categoryCheck = assessCategoryPrice({
+    title: product.title,
+    productType: product.productType,
+    variantTitle: variants[0].title,
+    currentPrice: approvedPrice,
+    paidFloor: decision.minimumPrice,
+    organicFloor: null,
+  });
+  if (categoryCheck.band && (
+    approvedPrice < categoryCheck.band.min ||
+    approvedPrice > categoryCheck.band.max ||
+    categoryCheck.state === "paid_cost_conflict"
+  )) {
+    await audit(fingerprint, "BLOCKED", `Category pricing review required: ${categoryCheck.state}`);
+    return {
+      ok: false,
+      message: `Blocked: ${categoryCheck.band.label} normally belongs in the ${categoryCheck.band.min.toFixed(2)}–${categoryCheck.band.max.toFixed(2)} range. Verify costs and channel economics before a special-case approval.`,
     };
   }
 
