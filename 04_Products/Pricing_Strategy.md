@@ -1,4 +1,4 @@
-# 👑 MVQueen — Pricing Strategy
+> **Current operational pricing policy (2026-10-12):** Follow [21_Finance/pricing_system.md](../21_Finance/pricing_system.md) and `app/lib/enterprise/category-pricing.ts` for category price bands, organic versus paid acquisition economics, and review gates. Older pricing tiers, minimum-price assumptions and the prohibition on .99 endings below are historical strategy guidance where inconsistent. Supplier cost and contribution-floor checks always take precedence over suggested price targets.\n\n# 👑 MVQueen — Pricing Strategy
 ### The Price Architecture
 
 ---
