@@ -46,7 +46,13 @@ export function buildEnterpriseProductDecision(
   const resolvedCommercial = commercial ?? getCommercialConfig();
   const variantCommercial = evaluateVariantCommercial(product, resolvedCommercial, effectiveSellingPrice);
   const { pricing } = variantCommercial;
+  const categoryPricingReviewReasons = Array.from(new Set(
+    variantCommercial.variantDecisions
+      .filter((item) => ["above_band", "below_band", "paid_cost_conflict", "organic_cost_conflict"].includes(item.categoryPricing.state))
+      .map((item) => `category_price:${item.categoryPricing.state}`),
+  ));
   const catalogReviewReasons = [
+    ...categoryPricingReviewReasons,
     ...(classification.confidence === "review" ? ["classification_requires_review"] : []),
     ...(!brandRoute.brand ? ["brand_requires_review"] : []),
     ...productClaimReviewReasons(product).map((reason) => `source_claim:${reason}`),
@@ -72,7 +78,11 @@ export function buildEnterpriseProductDecision(
     ...collectionRoutingTags(classification),
     ...brandRoutingTags(brandRoute),
     ...(catalogReviewReasons.length ? ["mvq:needs-review"] : []),
-    ...(pricing.state === "ready_for_approval" ? ["mvq:pricing:ready-for-approval"] : [`mvq:pricing:${pricing.state}`]),
+    ...(categoryPricingReviewReasons.length
+      ? ["mvq:pricing:category-review"]
+      : pricing.state === "ready_for_approval"
+        ? ["mvq:pricing:ready-for-approval"]
+        : [`mvq:pricing:${pricing.state}`]),
     `mvq:commercial:${commercialHealth.state}`,
     `mvq:ads:${commercialHealth.advertisingEligibility}`,
     `mvq:marketing:${marketing.state}`,
@@ -91,6 +101,7 @@ export function buildEnterpriseProductDecision(
       ...item, commercialHealth: restrictAdvertising(item.commercialHealth),
     })),
     catalogReviewReasons,
+    categoryPricingReviewReasons,
     representativeVariantId: variantCommercial.representativeVariantId,
     costSyncState: variantCommercial.costSyncState,
     uniformVerifiedUnitCost: variantCommercial.uniformVerifiedUnitCost,
