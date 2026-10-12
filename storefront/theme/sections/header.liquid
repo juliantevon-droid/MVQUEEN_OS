@@ -36,6 +36,8 @@
 {% assign princess_full_menu = linklists['miss-princess-full-menu'] %}
 {% assign mvqueen_menu_tags = collections['mvqueen-world'].all_tags %}
 {% assign princess_menu_tags = collections['miss-princess-world'].all_tags %}
+{% capture mvq_menu_probe %}{% render 'mvq-menu-link-visible', url: '/collections/mvqueen-world/mvq:collection:dresses', mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags, debug: true %}{% endcapture %}
+<script type="application/json" data-mvq-menu-diagnostic>{"mvqueenTags":{{ mvqueen_menu_tags | json }},"princessTags":{{ princess_menu_tags | json }},"rootContainsDresses":{% if mvqueen_menu_tags contains 'mvq:collection:dresses' %}true{% else %}false{% endif %},"probe":{{ mvq_menu_probe | json }}}</script>
 {% if is_princess_experience and princess_full_menu.links != blank %}
   {% assign active_menu = princess_full_menu %}
 {% elsif is_mvqueen_experience and mvqueen_full_menu.links != blank %}

@@ -6,6 +6,7 @@
   @param {string} url - Configured menu URL.
   @param {string[]} mvqueen_tags - All tags in the MVQueen collection.
   @param {string[]} princess_tags - All tags in the Miss.Princess collection.
+  @param {boolean} [debug] - Temporary unpublished-theme diagnostic.
 {%- enddoc -%}
 {%- liquid
   assign visible = true
@@ -44,6 +45,12 @@
         endif
       endif
     endif
+  endif
+  if debug
+    echo path | json
+    echo collection_handle | json
+    echo tag | json
+    echo collection_tags | json
   endif
   echo visible
 -%}
