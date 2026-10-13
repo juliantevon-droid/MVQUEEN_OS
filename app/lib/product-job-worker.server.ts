@@ -2,6 +2,11 @@ import prisma from "../db.server";
 import { registerWebhooks, unauthenticated } from "../shopify.server";
 import { AUTOMATION_VERSION, processProductJob } from "./product-processor";
 import { createCorrelationId, errorFields, logMvqueenEvent } from "./enterprise/observability.server";
+import { envInt } from "./runtime-config";
+
+// Catalog backfills have their own runner and explicit per-run write policy.
+// Consuming their jobs here would turn dry-run jobs into ordinary live work.
+const PRODUCT_WORKER_SCOPE = { backfillRunId: null };
 
 const RECONCILE_QUERY = "#graphql\nquery MVQueenRecentProducts($first: Int!, $after: String, $query: String!) { products(first: $first, after: $after, query: $query, sortKey: UPDATED_AT) { nodes { id updatedAt } pageInfo { hasNextPage endCursor } } }";
 
@@ -16,12 +21,6 @@ query MVQueenProductWebhookAudit {
   }
 }`;
 
-
-function envInt(name: string, fallback: number, min: number, max: number): number {
-  const parsed = Number(process.env[name] ?? "");
-  if (!Number.isFinite(parsed)) return fallback;
-  return Math.max(min, Math.min(max, Math.floor(parsed)));
-}
 
 function retryDelayMs(attempts: number): number {
   const baseSeconds = envInt("MVQ_PRODUCT_RETRY_BASE_SECONDS", 30, 5, 3600);
@@ -345,7 +344,8 @@ export async function reconcileRecentShopifyProducts() {
 async function markExhaustedJobs(maxAttempts: number) {
   return prisma.productJob.updateMany({
     where: {
-      status: "failed",
+      ...PRODUCT_WORKER_SCOPE,
+      status: { in: ["failed", "received"] },
       attempts: { gte: maxAttempts },
     },
     data: {
@@ -370,10 +370,10 @@ export async function processProductJobBatch() {
   if (process.env.MVQ_WRITE_ENABLED !== "true") {
     const [receivedCount, processingCount, failedQueue, deadLetterCount] =
       await Promise.all([
-        prisma.productJob.count({ where: { status: "received" } }),
-        prisma.productJob.count({ where: { status: { in: ["leased", "processing"] } } }),
-        prisma.productJob.count({ where: { status: "failed" } }),
-        prisma.productJob.count({ where: { status: "dead_letter" } }),
+        prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: "received" } }),
+        prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: { in: ["leased", "processing"] } } }),
+        prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: "failed" } }),
+        prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: "dead_letter" } }),
       ]);
 
     const result = {
@@ -397,19 +397,20 @@ export async function processProductJobBatch() {
 
   const [received, failed] = await Promise.all([
     prisma.productJob.findMany({
-      where: { status: "received" },
+      where: { ...PRODUCT_WORKER_SCOPE, status: "received" },
       orderBy: { receivedAt: "asc" },
       take: batchSize,
-      select: { id: true, attempts: true, startedAt: true },
+      select: { id: true, status: true, attempts: true, startedAt: true },
     }),
     prisma.productJob.findMany({
       where: {
+        ...PRODUCT_WORKER_SCOPE,
         status: "failed",
         attempts: { lt: maxAttempts },
       },
       orderBy: { startedAt: "asc" },
       take: batchSize,
-      select: { id: true, attempts: true, startedAt: true },
+      select: { id: true, status: true, attempts: true, startedAt: true },
     }),
   ]);
 
@@ -419,11 +420,15 @@ export async function processProductJobBatch() {
 
   let completed = 0;
   let failedCount = 0;
+  let attempted = 0;
   for (const job of selected) {
     const claim = await prisma.productJob.updateMany({
       where: {
         id: job.id,
-        status: { in: ["received", "failed"] },
+        ...PRODUCT_WORKER_SCOPE,
+        status: job.status,
+        attempts: job.attempts,
+        startedAt: job.startedAt,
       },
       data: {
         status: "leased",
@@ -431,6 +436,7 @@ export async function processProductJobBatch() {
       },
     });
     if (claim.count !== 1) continue;
+    attempted += 1;
 
     try {
       await processProductJob(job.id);
@@ -451,14 +457,14 @@ export async function processProductJobBatch() {
   }
 
   const [receivedCount, processingCount, failedQueue, deadLetterCount] = await Promise.all([
-    prisma.productJob.count({ where: { status: "received" } }),
-    prisma.productJob.count({ where: { status: "processing" } }),
-    prisma.productJob.count({ where: { status: "failed" } }),
-    prisma.productJob.count({ where: { status: "dead_letter" } }),
+    prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: "received" } }),
+    prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: { in: ["leased", "processing"] } } }),
+    prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: "failed" } }),
+    prisma.productJob.count({ where: { ...PRODUCT_WORKER_SCOPE, status: "dead_letter" } }),
   ]);
 
   const result = {
-    attempted: selected.length,
+    attempted,
     completed,
     failed: failedCount,
     queue: {

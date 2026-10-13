@@ -5,11 +5,17 @@ on:
     branches: [main]
     paths:
       - 'storefront/theme/**'
+      - 'storefront/tests/**'
+      - 'package.json'
+      - 'package-lock.json'
       - '30_System_Infrastructure/automation/**'
       - '.github/workflows/mvqueen-theme-cicd.yml'
   pull_request:
     paths:
       - 'storefront/theme/**'
+      - 'storefront/tests/**'
+      - 'package.json'
+      - 'package-lock.json'
       - '30_System_Infrastructure/automation/**'
       - '.github/workflows/mvqueen-theme-cicd.yml'
   schedule:
@@ -17,7 +23,7 @@ on:
   workflow_dispatch:
     inputs:
       preview_url:
-        description: 'Fresh Shopify visitor preview URL (expires after 2 days); tests unpublished working theme'
+        description: 'Working-theme preview URL: canonical store URL with preview_theme_id, or fresh Shopify visitor link'
         required: false
         type: string
       run_live_release_gate:
@@ -53,6 +59,10 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
+      - name: Install storefront test dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Test rendered shopping flows
+        run: npm run test:storefront
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli
       - name: Check Lighthouse gate JavaScript syntax
@@ -141,6 +151,7 @@ jobs:
           files=(layout/theme.liquid config/settings_schema.json locales/en.default.json locales/es.json locales/fr.json locales/pt-BR.json assets/mvqueen.css assets/mvqueen-design-system.css assets/mvqueen-header.css assets/mvqueen-product.css assets/brand-gateway.css assets/mvqueen-analytics.js assets/mvqueen.js assets/mvqueen-ux.js sections/announcement-bar.liquid sections/header.liquid sections/brand-gateway.liquid sections/hero.liquid sections/editorial-curation.liquid sections/footer.liquid sections/trust-strip.liquid sections/featured-products.liquid sections/brand-pillars.liquid sections/brand-story.liquid sections/house-story.liquid sections/social-media.liquid sections/social-proof.liquid sections/trust-badges.liquid sections/newsletter.liquid sections/brand-gateway.liquid sections/miss-princess-experience.liquid sections/main-product.liquid sections/main-collection.liquid sections/main-search.liquid sections/main-cart.liquid sections/product-recommendations.liquid sections/main-page.liquid sections/contact-page.liquid sections/editorial-hub.liquid sections/lookbook.liquid snippets/product-card.liquid snippets/breadcrumbs.liquid snippets/product-schema.liquid snippets/seo-meta.liquid snippets/trust-badges.liquid templates/index.json templates/product.json templates/collection.json templates/search.json templates/cart.json templates/page.mvqueen.json templates/page.miss-princess.json templates/page.contact.json templates/page.about.json templates/page.faq.json templates/page.journal.json templates/page.lookbook.json)
           files+=(sections/mvq-before-after.liquid sections/mvq-blog-posts.liquid sections/mvq-collapsible-tabs.liquid sections/mvq-custom-content.liquid sections/mvq-featured-collections.liquid sections/mvq-image-overlay.liquid sections/mvq-parallax.liquid sections/mvq-product-showcase.liquid sections/mvq-product-slider.liquid sections/mvq-product-tabs.liquid sections/mvq-slideshow.liquid sections/mvq-testimonials.liquid snippets/mvq-carousel-controls.liquid snippets/mvq-section-heading.liquid snippets/mvq-section-image.liquid snippets/mvq-section-kit.liquid snippets/mvq-parallax-panel.liquid)
           files+=(snippets/mvq-fonts.liquid assets/mvq-cormorant-garamond-italic-cyrillic-ext.woff2 assets/mvq-cormorant-garamond-italic-cyrillic.woff2 assets/mvq-cormorant-garamond-italic-vietnamese.woff2 assets/mvq-cormorant-garamond-italic-latin-ext.woff2 assets/mvq-cormorant-garamond-italic-latin.woff2 assets/mvq-cormorant-garamond-normal-cyrillic-ext.woff2 assets/mvq-cormorant-garamond-normal-cyrillic.woff2 assets/mvq-cormorant-garamond-normal-vietnamese.woff2 assets/mvq-cormorant-garamond-normal-latin-ext.woff2 assets/mvq-cormorant-garamond-normal-latin.woff2 assets/mvq-jost-normal-cyrillic.woff2 assets/mvq-jost-normal-latin-ext.woff2 assets/mvq-jost-normal-latin.woff2 assets/mvq-cormorant-garamond-OFL.txt assets/mvq-jost-OFL.txt)
+          files+=(snippets/mvq-header-menu.liquid snippets/mvq-menu-children.liquid snippets/mvq-menu-link-visible.liquid)
           args=()
           for f in "${files[@]}"; do args+=(--only "$f"); done
           shopify theme push --path storefront/theme --json --strict --nodelete --theme "$SHOPIFY_THEME_ID" --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" "${args[@]}"
@@ -167,9 +178,10 @@ jobs:
 
 
   # Do not use the public storefront to certify unpublished-theme code.
-  # Shopify visitor preview links are temporary and must be supplied for each preview run.
+  # Accept a canonical cookie-based preview or a fresh store-scoped visitor link.
+  # Every Lighthouse sample verifies the actual rendered theme ID and unpublished role.
   unpublished-preview-lighthouse:
-    name: Unpublished theme Lighthouse gate (fresh share link required)
+    name: Unpublished theme Lighthouse gate (verified rendered theme)
     needs: deploy-unpublished
     if: github.event_name == 'workflow_dispatch' && inputs.preview_url != ''
     runs-on: ubuntu-latest
@@ -181,43 +193,13 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Validate exact Shopify visitor preview URL and hide preview bar
+      - name: Install isolated Lighthouse tools
         run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const url = new URL(process.env.PREVIEW_URL);
-          if (url.protocol !== 'https:' ||
-              !/^[a-z0-9]+-76426182854\.shopifypreview\.com$/.test(url.hostname) ||
-              url.pathname !== '/') {
-            throw new Error('Expected an HTTPS visitor preview homepage URL for the MVQUEEN Shopify store, not the public storefront');
-          }
-          url.searchParams.set('pb', '0');
-          fs.appendFileSync(process.env.GITHUB_ENV, `TARGET_URL=${url}\n`);
-          NODE
-      - name: Run Lighthouse samples against the unpublished preview
+          npm install --prefix "$RUNNER_TEMP/mvqueen-lighthouse" --no-save --ignore-scripts --no-audit --no-fund lighthouse@12
+      - name: Audit and verify each actual unpublished preview page
         run: |
-          for sample in 1 2 3; do
-            echo "Unpublished Shopify preview sample $sample/3"
-            npx -y lighthouse@12 "$TARGET_URL" \
-              --quiet \
-              --chrome-flags="--headless --no-sandbox" \
-              --output=json \
-              --output-path="preview-lighthouse-$sample.json"
-          done
-      - name: Verify reports did not silently redirect to the live storefront
-        run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const expected = new URL(process.env.TARGET_URL).hostname;
-          for (let sample = 1; sample <= 3; sample++) {
-            const report = JSON.parse(fs.readFileSync(`preview-lighthouse-${sample}.json`, 'utf8'));
-            const finalHost = new URL(report.finalUrl).hostname;
-            if (finalHost !== expected || report.runtimeError) {
-              throw new Error(`Preview sample ${sample} did not audit the intended preview: ${report.finalUrl}`);
-            }
-          }
-          console.log('PASS: all samples remained on the intended unpublished visitor preview host');
-          NODE
+          node 30_System_Infrastructure/automation/preview_lighthouse.mjs \
+            "$PREVIEW_URL" "$RUNNER_TEMP/mvqueen-lighthouse"
       - name: Enforce preview Lighthouse budgets (unchanged)
         run: |
           node 30_System_Infrastructure/automation/lighthouse_median_gate.mjs \

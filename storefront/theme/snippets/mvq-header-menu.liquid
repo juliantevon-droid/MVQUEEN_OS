@@ -1,0 +1,25 @@
+{%- doc -%}
+  Renders a desktop or mobile menu without empty category groups. Full brand
+  collection links remain available even when every category is unsupported.
+  @param {link[]} links - Top-level menu links.
+  @param {boolean} [mobile] - Use mobile menu markup.
+  @param {string[]} mvqueen_tags - All tags in the MVQueen collection.
+  @param {string[]} princess_tags - All tags in the Miss.Princess collection.
+{%- enddoc -%}
+{%- for link in links -%}
+  {%- capture visible -%}{%- render 'mvq-menu-link-visible', url: link.url, mvqueen_tags: mvqueen_tags, princess_tags: princess_tags -%}{%- endcapture -%}
+  {%- capture children -%}{%- render 'mvq-menu-children', links: link.links, mobile: mobile, mvqueen_tags: mvqueen_tags, princess_tags: princess_tags -%}{%- endcapture -%}
+  {%- if children != blank -%}
+    <details class="{% if mobile %}mvq-mobile-group{% else %}mvq-nav-item{% endif %}">
+      <summary>{{ link.title | escape }}</summary>
+      <div class="{% if mobile %}mvq-mobile-submenu{% else %}mvq-nav-dropdown{% endif %}"{% unless mobile %} role="group" aria-label="{{ link.title | escape }}"{% endunless %}>
+        {%- if mobile and visible == 'true' -%}
+          <a class="mvq-mobile-view-all" href="{{ link.url | escape }}">View all {{ link.title | escape }}</a>
+        {%- endif -%}
+        {{- children -}}
+      </div>
+    </details>
+  {%- elsif visible == 'true' -%}
+    <a{% if mobile %} class="mvq-mobile-direct-link"{% endif %} href="{{ link.url | escape }}">{{ link.title | escape }}</a>
+  {%- endif -%}
+{%- endfor -%}

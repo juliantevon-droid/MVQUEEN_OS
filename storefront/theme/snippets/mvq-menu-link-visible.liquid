@@ -1,0 +1,51 @@
+{%- doc -%}
+  Returns true unless a known brand category has no matching collection tag.
+  Only the legacy mvq:collection:<slug> namespace and its handleized form are
+  checked. Queries, fragments, other routes and external links are untouched.
+  The caller supplies tags from an unfiltered global collection, including
+  sold-out products. Missing tag metadata leaves configured links available.
+  @param {string} url - Configured menu URL.
+  @param {string[]} mvqueen_tags - All tags in the MVQueen collection.
+  @param {string[]} princess_tags - All tags in the Miss.Princess collection.
+{%- enddoc -%}
+{%- liquid
+  assign visible = true
+  assign path = url | split: '?' | first | split: '#' | first | url_decode
+  assign first_character = path | slice: 0, 1
+  assign first_two_characters = path | slice: 0, 2
+  assign parts = path | split: '/collections/'
+  assign locale_root = routes.root_url | default: '/'
+  assign last_character = locale_root | slice: -1, 1
+  if last_character == '/'
+    assign root_length = locale_root.size | minus: 1
+    assign locale_root = locale_root | slice: 0, root_length
+  endif
+  if first_character == '/' and first_two_characters != '//' and parts.size == 2
+    assign prefix = parts | first
+    if prefix == blank or prefix == locale_root
+      assign collection_path = parts | last | split: '/'
+      assign collection_handle = collection_path | first
+      if collection_path.size == 2
+        if collection_handle == 'mvqueen-world' or collection_handle == 'miss-princess-world'
+          assign tag = collection_path | last
+          assign tag_prefix = tag | slice: 0, 15
+          if tag_prefix == 'mvq:collection:' or tag_prefix == 'mvq-collection-'
+            unless tag contains '+' or tag contains ' '
+              assign tag = tag | replace_first: 'mvq-collection-', 'mvq:collection:'
+              assign collection_tags = mvqueen_tags
+              if collection_handle == 'miss-princess-world'
+                assign collection_tags = princess_tags
+              endif
+              if collection_tags != blank
+                unless collection_tags contains tag
+                  assign visible = false
+                endunless
+              endif
+            endunless
+          endif
+        endif
+      endif
+    endif
+  endif
+  echo visible
+-%}

@@ -16,7 +16,10 @@
             {% for item in cart.items %}
               <article class="mvq-cart-row">
                 <a class="mvq-cart-image" href="{{ item.url }}" aria-label="View {{ item.product.title | escape }}">
-                  {% if item.image %}{{ item.image | image_url: width: 420 | image_tag: loading: 'lazy', widths: '180,300,420', sizes: '(max-width: 749px) 34vw, 180px', alt: item.image.alt | default: item.product.title | escape }}{% endif %}
+                  {% if item.image %}
+                    {% assign item_image_alt = item.image.alt | default: item.product.title %}
+                    {{ item.image | image_url: width: 420 | image_tag: loading: 'lazy', widths: '180,300,420', sizes: '(max-width: 749px) 34vw, 180px', alt: item_image_alt }}
+                  {% endif %}
                 </a>
                 <div class="mvq-cart-details">
                   <p class="mvq-cart-brand">

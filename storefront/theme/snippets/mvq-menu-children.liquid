@@ -1,0 +1,41 @@
+{%- doc -%}
+  Renders supported child categories and their grandchildren. A parent with no
+  matching tag remains a plain label only when it has visible descendants.
+  @param {link[]} links - Child menu links.
+  @param {boolean} [mobile] - Use mobile menu classes.
+  @param {string[]} mvqueen_tags - All tags in the MVQueen collection.
+  @param {string[]} princess_tags - All tags in the Miss.Princess collection.
+{%- enddoc -%}
+{%- liquid
+  assign column_class = 'mvq-mega-column'
+  assign heading_class = 'mvq-mega-heading'
+  assign children_class = 'mvq-nav-subgroup'
+  if mobile
+    assign column_class = 'mvq-mobile-mega-cluster'
+    assign heading_class = 'mvq-mobile-mega-heading'
+    assign children_class = 'mvq-mobile-mega-children'
+  endif
+-%}
+{%- for link in links -%}
+  {%- capture visible -%}{%- render 'mvq-menu-link-visible', url: link.url, mvqueen_tags: mvqueen_tags, princess_tags: princess_tags -%}{%- endcapture -%}
+  {%- capture grandchildren -%}
+    {%- for child in link.links -%}
+      {%- capture child_visible -%}{%- render 'mvq-menu-link-visible', url: child.url, mvqueen_tags: mvqueen_tags, princess_tags: princess_tags -%}{%- endcapture -%}
+      {%- if child_visible == 'true' -%}
+        <a href="{{ child.url | escape }}">{{ child.title | escape }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- if visible == 'true' or grandchildren != blank -%}
+    <div class="{{ column_class }}">
+      {%- if visible == 'true' -%}
+        <a class="{{ heading_class }}" href="{{ link.url | escape }}">{{ link.title | escape }}</a>
+      {%- else -%}
+        <span class="{{ heading_class }}">{{ link.title | escape }}</span>
+      {%- endif -%}
+      {%- if grandchildren != blank -%}
+        <div class="{{ children_class }}">{{ grandchildren }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endfor -%}

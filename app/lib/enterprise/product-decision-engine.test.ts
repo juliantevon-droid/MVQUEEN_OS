@@ -50,10 +50,35 @@ assert.equal(unresolvedDecision.brandRoute.brand, "mvqueen");
 assert.equal(unresolvedDecision.brandRoute.confidence, "medium");
 assert.equal(unresolvedDecision.brandRoute.reason, "default-primary-brand");
 assert.ok(unresolvedDecision.tags.includes("mvq:brand:mvqueen"));
-assert.ok(!unresolvedDecision.tags.includes("mvq:needs-review"));
+// Brand routing is resolved, but a set still needs item-specific pricing review.
+assert.deepEqual(unresolvedDecision.catalogReviewReasons, ["category_price:multipack_review"]);
+assert.deepEqual(unresolvedDecision.categoryPricingReviewReasons, ["category_price:multipack_review"]);
+assert.ok(unresolvedDecision.tags.includes("mvq:needs-review"));
+assert.ok(unresolvedDecision.tags.includes("mvq:pricing:category-review"));
+assert.equal(unresolvedDecision.variantDecisions[0].categoryPricing.state, "multipack_review");
+assert.equal(unresolvedDecision.variantDecisions[0].categoryPricing.band, null);
+assert.equal(unresolvedDecision.variantDecisions[0].categoryPricing.suggestedOrganicPrice, null);
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:fashion"));
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:activewear"));
 assert.ok(unresolvedDecision.tags.includes("mvq:collection:activewear-sets"));
+
+const singleItemDecision = buildEnterpriseProductDecision({
+  ...unresolvedBrandProduct,
+  id: "gid://shopify/Product/unresolved-brand-single-item",
+  title: "Everyday T-Shirt",
+  descriptionHtml: "<p>Single T-shirt with moderate stretch.</p>",
+  productType: "T-Shirt",
+  variants: { nodes: [{ id: "gid://shopify/ProductVariant/single-item", price: "24.99" }] },
+});
+assert.equal(singleItemDecision.brandRoute.brand, "mvqueen");
+assert.equal(singleItemDecision.brandRoute.confidence, "medium");
+assert.equal(singleItemDecision.brandRoute.reason, "default-primary-brand");
+assert.ok(singleItemDecision.tags.includes("mvq:brand:mvqueen"));
+assert.deepEqual(singleItemDecision.catalogReviewReasons, []);
+assert.deepEqual(singleItemDecision.categoryPricingReviewReasons, []);
+assert.equal(singleItemDecision.variantDecisions[0].categoryPricing.state, "within_band");
+assert.ok(!singleItemDecision.tags.includes("mvq:needs-review"));
+assert.ok(!singleItemDecision.tags.includes("mvq:pricing:category-review"));
 
 for (const { title, colors } of [
   { title: "Student Dormitory Fill-light Desktop Vanity Mirror With Charging Function", colors: ["Natural White", "Pink"] },
