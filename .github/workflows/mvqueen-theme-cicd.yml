@@ -23,7 +23,7 @@ on:
   workflow_dispatch:
     inputs:
       preview_url:
-        description: 'Fresh Shopify visitor preview URL (expires after 2 days); tests unpublished working theme'
+        description: 'Working-theme preview URL: canonical store URL with preview_theme_id, or fresh Shopify visitor link'
         required: false
         type: string
       run_live_release_gate:
@@ -178,9 +178,10 @@ jobs:
 
 
   # Do not use the public storefront to certify unpublished-theme code.
-  # Shopify visitor preview links are temporary and must be supplied for each preview run.
+  # Accept a canonical cookie-based preview or a fresh store-scoped visitor link.
+  # Every Lighthouse sample verifies the actual rendered theme ID and unpublished role.
   unpublished-preview-lighthouse:
-    name: Unpublished theme Lighthouse gate (fresh share link required)
+    name: Unpublished theme Lighthouse gate (verified rendered theme)
     needs: deploy-unpublished
     if: github.event_name == 'workflow_dispatch' && inputs.preview_url != ''
     runs-on: ubuntu-latest
@@ -192,43 +193,13 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Validate exact Shopify visitor preview URL and hide preview bar
+      - name: Install isolated Lighthouse tools
         run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const url = new URL(process.env.PREVIEW_URL);
-          if (url.protocol !== 'https:' ||
-              !/^[a-z0-9]+-76426182854\.shopifypreview\.com$/.test(url.hostname) ||
-              url.pathname !== '/') {
-            throw new Error('Expected an HTTPS visitor preview homepage URL for the MVQUEEN Shopify store, not the public storefront');
-          }
-          url.searchParams.set('pb', '0');
-          fs.appendFileSync(process.env.GITHUB_ENV, `TARGET_URL=${url}\n`);
-          NODE
-      - name: Run Lighthouse samples against the unpublished preview
+          npm install --prefix "$RUNNER_TEMP/mvqueen-lighthouse" --no-save --ignore-scripts --no-audit --no-fund lighthouse@12
+      - name: Audit and verify each actual unpublished preview page
         run: |
-          for sample in 1 2 3; do
-            echo "Unpublished Shopify preview sample $sample/3"
-            npx -y lighthouse@12 "$TARGET_URL" \
-              --quiet \
-              --chrome-flags="--headless --no-sandbox" \
-              --output=json \
-              --output-path="preview-lighthouse-$sample.json"
-          done
-      - name: Verify reports did not silently redirect to the live storefront
-        run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const expected = new URL(process.env.TARGET_URL).hostname;
-          for (let sample = 1; sample <= 3; sample++) {
-            const report = JSON.parse(fs.readFileSync(`preview-lighthouse-${sample}.json`, 'utf8'));
-            const finalHost = new URL(report.finalUrl).hostname;
-            if (finalHost !== expected || report.runtimeError) {
-              throw new Error(`Preview sample ${sample} did not audit the intended preview: ${report.finalUrl}`);
-            }
-          }
-          console.log('PASS: all samples remained on the intended unpublished visitor preview host');
-          NODE
+          node 30_System_Infrastructure/automation/preview_lighthouse.mjs \
+            "$PREVIEW_URL" "$RUNNER_TEMP/mvqueen-lighthouse"
       - name: Enforce preview Lighthouse budgets (unchanged)
         run: |
           node 30_System_Infrastructure/automation/lighthouse_median_gate.mjs \
