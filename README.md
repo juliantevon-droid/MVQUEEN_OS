@@ -2,7 +2,7 @@
 
 MVQUEEN_OS is the canonical operating system for the MVQueen storefront and its Miss.Princess sister-brand experience.
 
-For current deployment and theme roles, use the [October 12 runtime verification](PRODUCTION_READINESS/RUNTIME_VERIFICATION_2026-10-12.md). The v1.0 release closeout below is historical evidence: Shopify MAIN is now theme `155002798278`; the automated unpublished Working Preview target is `155277918406`. Resolve roles from Shopify before deployment or promotion.
+For the current launch fixes and validation, use the [October 13 launch verification](PRODUCTION_READINESS/LAUNCH_FIX_VERIFICATION_2026-10-13.md) and [runtime verification](PRODUCTION_READINESS/RUNTIME_VERIFICATION_2026-10-12.md). The v1.0 release closeout below is historical evidence: Shopify MAIN is now theme `155002798278`; the automated unpublished Working Preview target is `155277918406`. Resolve roles from Shopify before deployment or promotion.
 
 Brand language is unified in [the brand guide](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [active content policy](06_Tone_And_Voice/Brand_Content_Policy.json). The [complete Drive source catalog](31_AI_Knowledge_Base/brand_sources/README.md) preserves substantive versions with provenance; the product writer consumes the reconciled policy.
 
@@ -47,7 +47,7 @@ Never commit credentials. Protected product identity, SKU, inventory, variant, p
 
 - Railway `mvqueen-web` and `mvqueen-product-worker` are verified sourced from GitHub `main`; Railway reports the GitHub source integration active. The latest app-code deployment matched the verified app-code commit; documentation/theme-only commits do not require those runtime services to rebuild.
 - Google Drive remains assets/knowledge/archive storage. Its GitHub intake workflow is manual and fail-closed; it never commits or overwrites canonical source automatically.
-- Theme changes deploy to the verified unpublished `MVQueen — Staging Preview` theme. The current Shopify MAIN theme is never an automated deployment target.
+- Theme changes deploy to the verified unpublished `MVQueen — Working Preview` theme (`155277918406`). The current Shopify MAIN theme is never an automated deployment target.
 
 ## v1.0 release closeout
 
