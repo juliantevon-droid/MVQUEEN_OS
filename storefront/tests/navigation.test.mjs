@@ -121,6 +121,49 @@ test('sold-out categories remain available through all_tags even with an empty f
   menuContainers(document).forEach((container) => assert.deepEqual(hrefs(container), [category(queen, 'dresses').url]));
 });
 
+test('empty all_tags falls back to tags on each unfiltered global brand collection', async () => {
+  const document = await renderMenu([
+    rootLink(queen, [category(queen, 'dresses'), category(queen, 'shoes')]),
+    rootLink(princess, [category(princess, 'beauty'), category(princess, 'dresses')])
+  ], {
+    collections: {
+      [queen]: { all_tags: [], tags: ['mvq:collection:dresses'] },
+      [princess]: { all_tags: [], tags: ['mvq:collection:beauty'] }
+    }
+  });
+  for (const container of menuContainers(document)) {
+    const urls = hrefs(container);
+    assert.ok(urls.includes(category(queen, 'dresses').url));
+    assert.ok(urls.includes(category(princess, 'beauty').url));
+    assert.ok(!urls.includes(category(queen, 'shoes').url));
+    assert.ok(!urls.includes(category(princess, 'dresses').url));
+  }
+  assert.equal(document.querySelector('[data-mvq-menu-diagnostic]'), null);
+});
+
+test('the global tag fallback is independent of active filters and pagination', async () => {
+  const links = [category(queen, 'dresses'), category(queen, 'beauty'), category(queen, 'shoes')];
+  const document = await renderMenu(links, {
+    request: { path: `/collections/${queen}/mvq:collection:dresses`, page_type: 'collection' },
+    collection: { handle: queen, all_tags: [], tags: ['mvq:collection:dresses'], products: [] },
+    collections: { [queen]: { all_tags: [], tags: catalogs[queen].all_tags } },
+    paginate: { current_page: 2 }
+  });
+  menuContainers(document).forEach((container) => assert.deepEqual(hrefs(container), links.slice(0, 2).map((link) => link.url)));
+});
+
+test('missing tag metadata leaves configured categories accessible', async () => {
+  const links = [rootLink(queen, [category(queen, 'clothing', 'Clothing', [category(queen, 'dresses')])])];
+  for (const collections of [{}, { [queen]: { all_tags: [], tags: [] } }]) {
+    const document = await renderMenu(links, { collections });
+    for (const container of menuContainers(document)) {
+      const urls = hrefs(container);
+      assert.ok(urls.includes(category(queen, 'clothing').url));
+      assert.ok(urls.includes(category(queen, 'dresses').url));
+    }
+  }
+});
+
 test('nested menus receive brand tags explicitly without relying on a shared collections scope', async () => {
   for (const mobile of [false, true]) {
     const document = await renderSnippet('mvq-header-menu', {

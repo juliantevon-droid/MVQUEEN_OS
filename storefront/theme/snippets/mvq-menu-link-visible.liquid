@@ -2,11 +2,11 @@
   Returns true unless a known brand category has no matching collection tag.
   Only the legacy mvq:collection:<slug> namespace and its handleized form are
   checked. Queries, fragments, other routes and external links are untouched.
-  all_tags includes sold-out products and products outside the current filters.
+  The caller supplies tags from an unfiltered global collection, including
+  sold-out products. Missing tag metadata leaves configured links available.
   @param {string} url - Configured menu URL.
   @param {string[]} mvqueen_tags - All tags in the MVQueen collection.
   @param {string[]} princess_tags - All tags in the Miss.Princess collection.
-  @param {boolean} [debug] - Temporary unpublished-theme diagnostic.
 {%- enddoc -%}
 {%- liquid
   assign visible = true
@@ -32,25 +32,20 @@
           if tag_prefix == 'mvq:collection:' or tag_prefix == 'mvq-collection-'
             unless tag contains '+' or tag contains ' '
               assign tag = tag | replace_first: 'mvq-collection-', 'mvq:collection:'
-              assign visible = false
               assign collection_tags = mvqueen_tags
               if collection_handle == 'miss-princess-world'
                 assign collection_tags = princess_tags
               endif
-              if collection_tags contains tag
-                assign visible = true
+              if collection_tags != blank
+                unless collection_tags contains tag
+                  assign visible = false
+                endunless
               endif
             endunless
           endif
         endif
       endif
     endif
-  endif
-  if debug
-    echo path | json
-    echo collection_handle | json
-    echo tag | json
-    echo collection_tags | json
   endif
   echo visible
 -%}

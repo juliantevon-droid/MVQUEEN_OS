@@ -34,10 +34,13 @@
 {% assign active_menu = section.settings.menu %}
 {% assign mvqueen_full_menu = linklists['mvqueen-full-menu'] %}
 {% assign princess_full_menu = linklists['miss-princess-full-menu'] %}
-{% assign mvqueen_menu_tags = collections['mvqueen-world'].all_tags %}
-{% assign princess_menu_tags = collections['miss-princess-world'].all_tags %}
-{% capture mvq_menu_probe %}{% render 'mvq-menu-link-visible', url: '/collections/mvqueen-world/mvq:collection:dresses', mvqueen_tags: mvqueen_menu_tags, princess_tags: princess_menu_tags, debug: true %}{% endcapture %}
-<script type="application/json" data-mvq-menu-diagnostic>{"mvqueenTags":{{ mvqueen_menu_tags | json }},"princessTags":{{ princess_menu_tags | json }},"queenId":{{ collections['mvqueen-world'].id | json }},"queenHandle":{{ collections['mvqueen-world'].handle | json }},"queenCount":{{ collections['mvqueen-world'].all_products_count | json }},"queenSize":{{ collections['mvqueen-world'].products.size | json }},"queenCurrentTags":{{ collections['mvqueen-world'].tags | json }},"queenFirstTags":{{ collections['mvqueen-world'].products.first.tags | json }},"pageTags":{{ collection.all_tags | json }},"pageCurrentTags":{{ collection.tags | json }},"rootContainsDresses":{% if mvqueen_menu_tags contains 'mvq:collection:dresses' %}true{% else %}false{% endif %},"probe":{{ mvq_menu_probe | json }}}</script>
+{% comment %}
+  Read tags from the unfiltered global collection drops. Shopify can return an
+  empty all_tags array while tags is populated; do not fall back to the current
+  page's collection.tags, which changes when a shopper applies filters.
+{% endcomment %}
+{% assign mvqueen_menu_tags = collections['mvqueen-world'].all_tags | default: collections['mvqueen-world'].tags %}
+{% assign princess_menu_tags = collections['miss-princess-world'].all_tags | default: collections['miss-princess-world'].tags %}
 {% if is_princess_experience and princess_full_menu.links != blank %}
   {% assign active_menu = princess_full_menu %}
 {% elsif is_mvqueen_experience and mvqueen_full_menu.links != blank %}
