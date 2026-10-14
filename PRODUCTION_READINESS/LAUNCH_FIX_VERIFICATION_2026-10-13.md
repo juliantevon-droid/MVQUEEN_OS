@@ -1,5 +1,11 @@
 # Launch fix verification — 2026-10-13
 
+> Historical pre-release snapshot. PR #70 has since merged, and the merchant
+> published a duplicate of the verified preview. See the
+> [October 13 release closeout](RELEASE_CLOSEOUT_2026-10-13.md) for the current
+> theme identity, public storefront checks, and production rollout evidence.
+> The earlier observations and release steps below remain as recorded.
+
 Updated October 13; earlier observations below retain their dates.
 
 The shopping-flow and worker fixes are prepared in [PR #70](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/70).
