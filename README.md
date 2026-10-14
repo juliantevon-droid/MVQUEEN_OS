@@ -8,6 +8,8 @@ For the current release state, use the [October 13 release closeout](PRODUCTION_
 
 Brand language is unified in [the brand guide](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [active content policy](06_Tone_And_Voice/Brand_Content_Policy.json). The [complete Drive source catalog](31_AI_Knowledge_Base/brand_sources/README.md) preserves substantive versions with provenance; the product writer consumes the reconciled policy.
 
+For the next launch steps, use the [October 14 completion plan](PRODUCTION_READINESS/LAUNCH_COMPLETION_PLAN_2026-10-14.md) and [organic social launch kit](08_Social_Media/launch_2026_10/README.md). The kit contains profile copy, first-week drafts and a 30-day calendar. Social account ownership and connections still need verification; no campaign is claimed scheduled or published.
+
 ## One-system architecture
 
 - GitHub main — canonical code, contracts, tests, theme source and automation logic.

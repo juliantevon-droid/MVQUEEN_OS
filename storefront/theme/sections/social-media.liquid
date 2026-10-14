@@ -1,6 +1,6 @@
 {% liquid
   assign has_social_links = false
-  if section.settings.instagram_url != blank or section.settings.tiktok_url != blank or section.settings.facebook_url != blank or section.settings.snapchat_url != blank or section.settings.youtube_url != blank
+  if section.settings.instagram_url != blank or section.settings.tiktok_url != blank or section.settings.facebook_url != blank or section.settings.pinterest_url != blank or section.settings.snapchat_url != blank or section.settings.youtube_url != blank
     assign has_social_links = true
   endif
 %}
@@ -16,11 +16,12 @@
       {% if section.settings.instagram_url != blank %}<a href="{{ section.settings.instagram_url }}" rel="noopener" target="_blank"><span>Instagram</span><strong>Style, launches & details</strong></a>{% endif %}
       {% if section.settings.tiktok_url != blank %}<a href="{{ section.settings.tiktok_url }}" rel="noopener" target="_blank"><span>TikTok</span><strong>Looks, beauty & behind the edit</strong></a>{% endif %}
       {% if section.settings.facebook_url != blank %}<a href="{{ section.settings.facebook_url }}" rel="noopener" target="_blank"><span>Facebook</span><strong>Community & store updates</strong></a>{% endif %}
+      {% if section.settings.pinterest_url != blank %}<a href="{{ section.settings.pinterest_url }}" rel="noopener" target="_blank"><span>Pinterest</span><strong>Style inspiration & saved ideas</strong></a>{% endif %}
       {% if section.settings.snapchat_url != blank %}<a href="{{ section.settings.snapchat_url }}" rel="noopener" target="_blank"><span>Snapchat</span><strong>Quick drops & playful moments</strong></a>{% endif %}
       {% if section.settings.youtube_url != blank %}<a href="{{ section.settings.youtube_url }}" rel="noopener" target="_blank"><span>YouTube</span><strong>Stories, styling & tutorials</strong></a>{% endif %}
       {% unless has_social_links %}
         <div class="mvq-social-hub__placeholder">
-          <span>Instagram · TikTok · Facebook · Snapchat · YouTube</span>
+          <span>Instagram · TikTok · Facebook · Pinterest · Snapchat · YouTube</span>
           <strong>Social channels are ready to connect as your profiles go live.</strong>
         </div>
       {% endunless %}
@@ -43,6 +44,7 @@
     {"type":"url","id":"instagram_url","label":"Instagram URL"},
     {"type":"url","id":"tiktok_url","label":"TikTok URL"},
     {"type":"url","id":"facebook_url","label":"Facebook URL"},
+    {"type":"url","id":"pinterest_url","label":"Pinterest URL"},
     {"type":"url","id":"snapchat_url","label":"Snapchat URL"},
     {"type":"url","id":"youtube_url","label":"YouTube URL"}
   ],
