@@ -2,7 +2,9 @@
 
 Prepared October 14, 2026. Account creation, connection and publication are
 separate steps. No new profile has been created, connected, scheduled or posted
-by this kit. Existing profile ownership and availability remain unverified.
+by this kit. The owner has identified existing MVQUEEN TikTok and Facebook
+accounts by name; their exact public URLs and connection access still need
+verification.
 
 ## Keep the existing brand structure
 
@@ -21,11 +23,18 @@ an independent content workload for every network.
 | Platform | MVQUEEN profile | Miss.Princess profile | Connection status |
 | --- | --- | --- | --- |
 | Instagram | Owner confirmation needed | Owner confirmation needed | Unverified |
-| Facebook Page | Owner confirmation needed | Owner confirmation needed | Unverified |
-| TikTok | Owner confirmation needed | Owner confirmation needed | Unverified |
+| Facebook Page | **MVQueen** — existing business Page reported by owner; direct Page URL pending | Owner confirmation needed | Not connected; Page identity/access verification pending |
+| TikTok | **MVQueen shop** — existing account name reported by owner; exact @username/profile URL pending | Owner confirmation needed | Not connected; profile identity/access verification pending |
 | Pinterest | Owner confirmation needed | Owner confirmation needed | Unverified |
 | YouTube | Owner confirmation needed | Owner confirmation needed | Unverified |
 | Metricool | Suggested; sign-in/connection not confirmed | Use native tools under the free plan | No connected brand readback yet |
+
+Reuse the two owner-reported MVQUEEN accounts. The Facebook account is a
+business Page managed through the owner's personal account; connect the Page
+itself. The name “MVQueen shop” does not establish that TikTok Shop commerce is
+enabled. Account names alone do not provide a unique public URL, and no handle
+or Page ID should be guessed from them. Other platform entries remain unknown,
+not confirmed absent.
 
 Shopify's primary domain was read back on October 14 as
 `https://tsucu0-1i.myshopify.com`. Its publication list does not establish the
@@ -38,9 +47,10 @@ the owner later configures a branded domain.
 
 ## Owner information needed
 
-Provide existing public profile URLs, or confirm which platforms have no
-account. Confirm the business country and first delivery markets. These facts
-determine which accounts to reuse and which commerce features may be available.
+Provide the exact TikTok @username/profile URL and the direct MVQueen Facebook
+Page URL. Confirm whether Instagram, Pinterest, YouTube or any Miss.Princess
+profiles already exist. The business country and first delivery markets are
+still needed to determine available commerce features and the launch audience.
 
 Use an owner-controlled email and authentic owner information directly in each
 platform's sign-up flow. Complete any verification there. Do not put passwords,

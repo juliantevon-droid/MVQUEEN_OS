@@ -1,6 +1,6 @@
 # Social profile kit — October 2026
 
-Prepared 2026-10-14. **Drafts only: no accounts, handles, connections, or publications are confirmed by this kit.** Existing profile URLs, business country, target markets, and account ownership still need to be established. Reuse verified existing accounts before creating anything new.
+Prepared 2026-10-14. **Draft copy; no new account, connection or publication has been created by this kit.** The owner reports an existing TikTok account named **MVQueen shop** and a Facebook business Page named **MVQueen**. Reuse those accounts after confirming their exact public URLs and access. Business country, target markets and the remaining profile inventory are still needed; see [the connection record](SETUP_AND_CONNECTIONS.md).
 
 ## Account structure
 
@@ -17,7 +17,7 @@ If using Metricool Free, use its one brand workspace for MVQUEEN first. Publish 
 | MVQUEEN | `@mvqueen` | `@shopmvqueen`, `@mvqueenworld` |
 | Miss.Princess | `@missprincess` | `@shopmissprincess`, `@missprincessworld` |
 
-These are naming candidates, not reserved handles or verified public links. Choose an available, platform-valid handle consistently after checking existing ownership. Keep “Miss.Princess” as the display name even if punctuation is absent from the handle. Do not add location, founder identity, certifications, or a business address until supplied and verified.
+These are candidates for profiles that do not already exist, not reserved handles or verified public links. Preserve the owner's existing TikTok and Facebook identities; these suggestions do not call for renaming them. Choose an available, platform-valid handle for a missing account only after checking existing ownership. Keep “Miss.Princess” as the display name even if punctuation is absent from the handle. Do not add location, founder identity, certifications, or a business address until supplied and verified.
 
 ## Bios ready to paste after account identity is confirmed
 
