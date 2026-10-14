@@ -44,14 +44,17 @@ for merged code, public storefront verification, and production rollout evidence
 
 Shopify is the sole live-product source of truth.
 
-At the earlier October 13, 13:37 UTC public health check:
+At the October 14, 09:51 UTC post-deployment health check:
 - The always-on Shopify product runtime is live and healthy.
 - Production `/healthz` reports database ready, continuous worker fresh, product webhooks healthy, and zero received, processing, failed, and dead-letter jobs.
 - New/imported products are eligible for automatic governed enrichment through Shopify webhooks and the durable Railway worker.
 
-This earlier health snapshot predates the merged worker fixes. The
+The web and product-worker services now both run the verified merged runtime
+fixes, and both retain Wait for CI. The
 [release closeout](../../PRODUCTION_READINESS/RELEASE_CLOSEOUT_2026-10-13.md)
-records the subsequent deployment state and final runtime verification.
+records the successful deployment IDs, source-code parity, and runtime health.
+The independent public storefront performance gate remains failed; healthy
+backend services do not certify that gate or waive its thresholds.
 
 The earlier two-product snapshot is historical. Catalog contents and availability
 must be checked against Shopify at release time; runtime health does not establish

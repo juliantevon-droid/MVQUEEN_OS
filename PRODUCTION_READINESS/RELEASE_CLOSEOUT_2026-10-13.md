@@ -1,10 +1,10 @@
 # Release closeout — 2026-10-13
 
-Status updated October 14 at 09:42 UTC: storefront published, public shopping
-checks passed, and web application deployed successfully. The merchant restored
-the web service's Wait for CI setting; readback confirmed it enabled for both
-web and product worker. The live performance gate remains failed and the
-product-worker rollout remains blocked. This release is not complete.
+Status updated October 14 at 09:51 UTC: storefront published, public shopping
+checks passed, and both web and product-worker fixes deployed successfully.
+Wait for CI is verified enabled for both services. The backend rollout is
+complete; the live storefront performance gate remains failed, so the full
+release is not yet certified.
 
 [PR #70](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/70) merged into
 `main` as `089df163eb6eb4a2bec2d58c74e773d73ac13127`. It contains the shopping,
@@ -118,8 +118,8 @@ reconnect must not be reused as a deployment retry.
 | Service | Verified state |
 | --- | --- |
 | Web | Deployment `1f5156b3-3df0-4b65-8042-9449ada0e5df` SUCCESS at `089df163eb6eb4a2bec2d58c74e773d73ac13127`. Wait for CI restored and verified enabled at 09:42 UTC on October 14. |
-| Product worker | Unchanged successful deployment `6d5ec54d-e6df-469d-8bd3-2ff3628e3d09` at `c7b7c68c98417ef5045ae07ec62185c04e098deb`; merged worker fixes are not deployed. Wait for CI remains enabled. |
-| Agent worker | Deployment `b85db4e3` SUCCESS at documentation-only commit `6bccab34c860a03ec0a29686ffd0a8b2d0caebdc`; application code is unchanged from `089df163`. |
+| Product worker | Deployment `be614253-c270-46a3-9e5f-54c57621e264` SUCCESS at `6bccab34c860a03ec0a29686ffd0a8b2d0caebdc`, containing the merged worker fixes. Wait for CI remains enabled. |
+| Agent worker | Deployment `deb96d99-8adf-43c7-a14d-475d08ec8855` SUCCESS at documentation-only commit `d8119e4776a1c75dfa9c2a5712216f8b524db00a`; application code is unchanged from `089df163`. |
 
 A fresh application CI run against `main` commit `6bccab34` completed with
 **SUCCESS at 09:44 UTC on October 14**:
@@ -131,12 +131,24 @@ storefront performance gate or certify the full release. Documentation-only
 commits can skip application CI and live Lighthouse through workflow path
 filters, so green documentation checks alone are insufficient evidence.
 
-At 09:42 UTC on October 14, the public health endpoint again reported database ready,
+The merchant started **Deploy Latest Commit** for the product worker at
+09:46:32 UTC. It reached **SUCCESS at 09:49:01 UTC**, with one running replica
+and no service issues. The subsequent automatic attempt for documentation-only
+commit `d8119e4` was SKIPPED; it did not replace the successful running worker.
+Git comparison confirms `089df163` → `6bccab34` → `d8119e4` changes documentation
+only, so all runtime services contain the same verified application fixes.
+
+At 09:51 UTC on October 14, the public health endpoint reported database ready,
 continuous worker fresh, healthy product webhooks, and **zero received,
 processing, failed, and dead-letter jobs**. Price and compare-at-price
 publishing flags were **false**. This health snapshot describes the serving
-runtime. Deployment metadata independently verifies the merged web fixes;
-the merged product-worker fixes are still not running in the worker service.
+runtime. Deployment metadata independently verifies the merged web and worker
+fixes. All four Railway services were online, with no service issues, crashed
+replicas, or pending environment work. Both application services retained
+`source.checkSuites=true` after the worker rollout.
+Bounded startup and runtime logs through 09:51:32 UTC showed successful startup,
+healthy webhook reconciliation, continuing worker loops, and no error entries
+or failed batches. No synthetic production jobs were created for verification.
 
 ### Operational recovery
 
@@ -145,12 +157,10 @@ the merged product-worker fixes are still not running in the worker service.
    both web and product worker. Preserve those enabled gates. Do not reuse the
    source-reconnect tool as a deployment retry: its observed side effect
    disables this setting.
-2. With application CI now passed, use Railway's **Deploy Latest Commit** for
-   the product worker while preserving Wait for CI. Open the
-   [product-worker service](https://railway.com/project/164952b3-9c65-4dd4-bcba-415a98439b2e/service/4f77beaa-c7a5-4cfa-a92f-4d8da414f6f0?environmentId=3ba92036-2cbf-4496-b031-580d0554b8ea),
-   open the command palette, and select **Deploy Latest Commit**. Default
-   redeploy reuses the existing old image. Verify the new source commit,
-   terminal SUCCESS, runtime health, and both services' enabled CI settings.
+2. **Completed:** the merchant used **Deploy Latest Commit** for the product
+   worker. Source commit, terminal SUCCESS, runtime health, and both services'
+   enabled CI settings were verified. For future source updates, default
+   redeploy reuses the existing image; use a source build when new code is needed.
 3. The storefront performance gate remains an independent release blocker.
    Completing the backend deployment does not resolve or waive that failure.
    Keep its failed evidence and existing thresholds; do not declare the full
@@ -166,5 +176,5 @@ The browser checks reached checkout without entering payment details or
 submitting an order. Payment capture, completed-order behavior, and customer-event
 analytics remain untested. Runtime health is a dated observation; it does not
 establish successful payment capture or guarantee future performance or queue
-state. The live performance gate remains failed and application rollout remains
-incomplete.
+state. The application rollout is verified complete; the live storefront
+performance gate remains failed.
