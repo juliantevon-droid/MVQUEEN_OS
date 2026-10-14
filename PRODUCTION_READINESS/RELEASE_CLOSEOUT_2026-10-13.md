@@ -1,9 +1,10 @@
 # Release closeout — 2026-10-13
 
-Status updated October 14: storefront published, public shopping checks passed,
-and web application deployed successfully. The live performance gate failed, the product-worker rollout remains
-blocked, and the web service's Wait for CI setting requires restoration after
-an unexpected source-reconnect side effect. This release is not complete.
+Status updated October 14 at 09:42 UTC: storefront published, public shopping
+checks passed, and web application deployed successfully. The merchant restored
+the web service's Wait for CI setting; readback confirmed it enabled for both
+web and product worker. The live performance gate remains failed and the
+product-worker rollout remains blocked. This release is not complete.
 
 [PR #70](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/70) merged into
 `main` as `089df163eb6eb4a2bec2d58c74e773d73ac13127`. It contains the shopping,
@@ -108,17 +109,29 @@ and `main` branch started deployment
 **SUCCESS at 02:28:53 UTC**, with one running replica and no service issues.
 The reconnect also
 unexpectedly reset the web service's `source.checkSuites` from `true` to
-`false`. This was an unintended tool side effect. Owner restoration of
-**Wait for CI** has been requested because the connected mutation tools do not
-expose that setting and no authenticated Railway CLI session is available.
+`false`. This was an unintended tool side effect. The merchant restored
+**Wait for CI** in Railway's service settings. Readback at **09:42 UTC on
+October 14** verified `source.checkSuites=true` for both the web and product-worker
+services. The connected mutation tools do not expose that setting, so source
+reconnect must not be reused as a deployment retry.
 
 | Service | Verified state |
 | --- | --- |
-| Web | Deployment `1f5156b3-3df0-4b65-8042-9449ada0e5df` SUCCESS at `089df163eb6eb4a2bec2d58c74e773d73ac13127`. Wait for CI requires restoration. |
+| Web | Deployment `1f5156b3-3df0-4b65-8042-9449ada0e5df` SUCCESS at `089df163eb6eb4a2bec2d58c74e773d73ac13127`. Wait for CI restored and verified enabled at 09:42 UTC on October 14. |
 | Product worker | Unchanged successful deployment `6d5ec54d-e6df-469d-8bd3-2ff3628e3d09` at `c7b7c68c98417ef5045ae07ec62185c04e098deb`; merged worker fixes are not deployed. Wait for CI remains enabled. |
-| Agent worker | Successful deployment `a8c10dd1-10dc-4934-87a7-1814776331c2` at `089df163eb6eb4a2bec2d58c74e773d73ac13127`. |
+| Agent worker | Deployment `b85db4e3` SUCCESS at documentation-only commit `6bccab34c860a03ec0a29686ffd0a8b2d0caebdc`; application code is unchanged from `089df163`. |
 
-After the web deployment, at 02:29 UTC on October 14, the public health endpoint reported database ready,
+A fresh application CI run against `main` commit `6bccab34` completed with
+**SUCCESS at 09:44 UTC on October 14**:
+[run 38544282061](https://github.com/juliantevon-droid/MVQUEEN_OS/actions/runs/38544282061).
+Catalog, durable-worker, production-preflight and enterprise tests, typecheck,
+production build, and both production container builds passed. This establishes
+readiness for the backend source build. It does not replace the failed public
+storefront performance gate or certify the full release. Documentation-only
+commits can skip application CI and live Lighthouse through workflow path
+filters, so green documentation checks alone are insufficient evidence.
+
+At 09:42 UTC on October 14, the public health endpoint again reported database ready,
 continuous worker fresh, healthy product webhooks, and **zero received,
 processing, failed, and dead-letter jobs**. Price and compare-at-price
 publishing flags were **false**. This health snapshot describes the serving
@@ -127,17 +140,21 @@ the merged product-worker fixes are still not running in the worker service.
 
 ### Operational recovery
 
-1. Restore **Wait for CI** on `mvqueen-web` in Railway service settings, then
-   verify `source.checkSuites=true`. Preserve the product worker's enabled gate.
-   [Open the web service](https://railway.com/project/164952b3-9c65-4dd4-bcba-415a98439b2e/service/14f14474-e839-4b72-b5df-862195ae2990?environmentId=3ba92036-2cbf-4496-b031-580d0554b8ea)
-   and choose Settings → Source. Do not reuse the source-reconnect tool as a
-   deployment retry: its observed side effect disables this setting.
-2. Resolve the failed release gate before requesting further source deployment.
-   Do not disable checks or change a failed result to authorize rollout.
-3. Once the required release gates pass, use Railway's **Deploy Latest Commit**
-   for the product worker. Verify its source commit, terminal SUCCESS, and
-   runtime health. Verify the web deployment's terminal state and restored
-   gating as well before declaring the rollout complete.
+1. **Completed:** the merchant restored **Wait for CI** on `mvqueen-web`.
+   Readback at 09:42 UTC on October 14 verified `source.checkSuites=true` for
+   both web and product worker. Preserve those enabled gates. Do not reuse the
+   source-reconnect tool as a deployment retry: its observed side effect
+   disables this setting.
+2. With application CI now passed, use Railway's **Deploy Latest Commit** for
+   the product worker while preserving Wait for CI. Open the
+   [product-worker service](https://railway.com/project/164952b3-9c65-4dd4-bcba-415a98439b2e/service/4f77beaa-c7a5-4cfa-a92f-4d8da414f6f0?environmentId=3ba92036-2cbf-4496-b031-580d0554b8ea),
+   open the command palette, and select **Deploy Latest Commit**. Default
+   redeploy reuses the existing old image. Verify the new source commit,
+   terminal SUCCESS, runtime health, and both services' enabled CI settings.
+3. The storefront performance gate remains an independent release blocker.
+   Completing the backend deployment does not resolve or waive that failure.
+   Keep its failed evidence and existing thresholds; do not declare the full
+   release complete until that gate is resolved.
 
 The subsequent closeout documentation may have a newer Git commit than the
 application deployment. Documentation-only commits do not change the verified

@@ -4,7 +4,7 @@ MVQUEEN_OS is the canonical operating system for the MVQueen storefront and its 
 
 For the current release state, use the [October 13 release closeout](PRODUCTION_READINESS/RELEASE_CLOSEOUT_2026-10-13.md). [PR #70](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/70) is merged, and the merchant published **Copy of MVQueen — Working Preview** (`155532296390`) as Shopify MAIN. Public shopping and category-navigation checks pass. The original **Working Preview** (`155277918406`) remains unpublished and is still the automated deployment target. The earlier launch verification and v1.0 closeout below are historical snapshots; resolve roles from Shopify before each deployment or promotion.
 
-**October 14 rollout remains incomplete:** the web app successfully deployed the merged fixes and its health checks pass. The public performance gate still fails its required render-blocking audit for Shopify wallet CSS, despite passing all category release floors. The product worker still runs older code. The web source reconnect unexpectedly disabled that service's Wait for CI setting; restoration has been requested. Restore CI gating and finish the worker rollout before closing the release.
+**October 14 rollout remains incomplete:** the web app successfully deployed the merged fixes and its health checks pass. The merchant restored the web service's Wait for CI setting after the source-reconnect side effect; readback at 09:42 UTC confirmed it enabled for both web and product worker. The public performance gate still fails its required render-blocking audit for Shopify wallet CSS, despite passing all category release floors. The product worker still runs older code. Resolve the failed release gate and finish the worker rollout before closing the release.
 
 Brand language is unified in [the brand guide](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [active content policy](06_Tone_And_Voice/Brand_Content_Policy.json). The [complete Drive source catalog](31_AI_Knowledge_Base/brand_sources/README.md) preserves substantive versions with provenance; the product writer consumes the reconciled policy.
 
@@ -47,7 +47,7 @@ Never commit credentials. Protected product identity, SKU, inventory, variant, p
 
 ## Current cross-system boundary
 
-- Railway `mvqueen-web` and `mvqueen-product-worker` follow GitHub `main`. Web now runs merged commit `089df163`; its Wait for CI setting requires restoration. The product worker remains on `c7b7c68`. See the current release closeout for deployment evidence and recovery steps.
+- Railway `mvqueen-web` and `mvqueen-product-worker` follow GitHub `main`, with Wait for CI verified enabled for both at 09:42 UTC on October 14. Web runs merged commit `089df163`; the product worker remains on `c7b7c68`. See the current release closeout for deployment evidence and recovery steps.
 - Google Drive remains assets/knowledge/archive storage. Its GitHub intake workflow is manual and fail-closed; it never commits or overwrites canonical source automatically.
 - Theme changes deploy to the verified unpublished `MVQueen — Working Preview` theme (`155277918406`). The current Shopify MAIN theme is never an automated deployment target.
 
