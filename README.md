@@ -4,11 +4,13 @@ MVQUEEN_OS is the canonical operating system for the MVQueen storefront and its 
 
 For the current release state, use the [October 13 release closeout](PRODUCTION_READINESS/RELEASE_CLOSEOUT_2026-10-13.md). [PR #70](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/70) is merged, and the merchant published **Copy of MVQueen — Working Preview** (`155532296390`) as Shopify MAIN. Public shopping and category-navigation checks pass. The original **Working Preview** (`155277918406`) remains unpublished and is still the automated deployment target. The earlier launch verification and v1.0 closeout below are historical snapshots; resolve roles from Shopify before each deployment or promotion.
 
-**October 14 backend rollout verified:** the web app and product worker now run the merged fixes, with healthy database, worker, webhooks, and empty job queues. Wait for CI is verified enabled for both services after the worker deployment. The public storefront performance gate still fails its required render-blocking audit for Shopify wallet CSS, despite passing all category release floors. That failure remains open; the full release is not yet certified.
+**Backend rollout verified October 14:** the web app and product worker run the merged fixes, with healthy database, worker, webhooks, and empty job queues at the documented checks. Wait for CI was verified enabled for both services after deployment. **Latest public performance check, October 15:** category release floors passed, but the required console-error audit failed on a Shop Pay iframe security-policy error. The render-blocking audit passed in this latest sample set; earlier wallet-CSS failures remain in the evidence. The full release is not yet certified.
 
 Brand language is unified in [the brand guide](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [active content policy](06_Tone_And_Voice/Brand_Content_Policy.json). The [complete Drive source catalog](31_AI_Knowledge_Base/brand_sources/README.md) preserves substantive versions with provenance; the product writer consumes the reconciled policy.
 
 For the next launch steps, use the [October 14 completion plan](PRODUCTION_READINESS/LAUNCH_COMPLETION_PLAN_2026-10-14.md) and [organic social launch kit](08_Social_Media/launch_2026_10/README.md). The kit contains profile copy, first-week drafts and a 30-day calendar. Social account ownership and connections still need verification; no campaign is claimed scheduled or published.
+
+[PR #74](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/74) merged after passing its applicable checks. Its optional Pinterest link support deployed successfully to the unpublished Working Preview on October 15. The owner has identified existing TikTok “MVQueen shop” and Facebook Page “MVQueen”; exact profile URLs and connection access remain pending.
 
 ## One-system architecture
 
