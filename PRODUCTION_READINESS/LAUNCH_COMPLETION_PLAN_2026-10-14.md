@@ -28,7 +28,7 @@ earlier closeout; the health response alone does not re-verify those settings.
 
 | Priority | Work | Completion evidence | Current state |
 | --- | --- | --- | --- |
-| 1 | Verify a complete order journey | Agreed test method; correct shipping/tax/discount totals; successful payment outcome; order visible in Shopify; customer confirmation; fulfillment handoff; cancellation/refund/restock behavior where applicable. Record results without card or customer details. | Latest release checks did not cover payment or order submission. Historical test order `#1001` is mentioned in older documentation; reconcile its current state before creating another test. |
+| 1 | Verify a complete order journey | Agreed test method; correct shipping/tax/discount totals; successful payment outcome; order visible in Shopify; customer confirmation; fulfillment handoff; cancellation/refund/restock behavior where applicable. Record results without card or customer details. | Latest release checks did not cover payment or order submission. Historical test order `#1001` is already cancelled, refunded and closed, as verified October 15; see the evidence below. |
 | 1 | Resolve the live performance gate | A legitimate fix followed by the existing three-sample public workflow passing all required audits. Preserve prior failures and current thresholds. | Latest run [38501216422](https://github.com/juliantevon-droid/MVQUEEN_OS/actions/runs/38501216422) failed the render-blocking audit on Shopify wallet CSS. Performance median 68; accessibility 100; best practices 79; SEO 100. |
 | 2 | Confirm launch markets and customer-facing terms | Owner confirms business country and initial delivery countries; checkout rates, tax setup, delivery estimates, returns and contact details match actual operations. | Not established by the current launch verification. These are checks, not confirmed defects. |
 | 2 | Verify measurement | One known UTM visit appears in available analytics; product/cart/checkout/order events are checked using the agreed order test and applicable consent settings. | UTM links are prepared. Attribution and purchase events are not yet verified. |
@@ -37,6 +37,21 @@ earlier closeout; the health response alone does not re-verify those settings.
 | 3 | Start a measured organic launch | Approved posts published with verified URLs; weekly record of reach, saves, store visits, orders and common questions. | Calendar is a plan, not a scheduled or published campaign. |
 
 ## Order test run sheet
+
+### Historical test order reconciled — October 15, 2026
+
+A read-only Shopify query at approximately 02:14 UTC confirmed that order
+`#1001` is a test order created September 29. It was cancelled on October 4 at
+10:23:02 UTC and now reports `REFUNDED`, `closed=true` and `UNFULFILLED`, with
+Shopify Payments listed as its gateway. No order, refund or cancellation was
+created during this verification.
+
+This closes the old cancellation/refund cleanup item. Inventory restocking and
+notification delivery were not verified by that read. The order predates the
+October 13 theme publication, and a test payment does not prove live payment
+capture. The current-release order journey still needs verification.
+
+### Current-release verification
 
 Use an agreed test window and method appropriate to the live store. Do not switch
 the public payment gateway into test mode while customers may be shopping.

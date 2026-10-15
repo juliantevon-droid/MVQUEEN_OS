@@ -67,5 +67,5 @@ As of 2026-10-04:
 - Current Shopify products are the only production catalog source of truth; historical recovery products remain archive-only.
 - `CHANGELOG.md` and `PRODUCTION_READINESS/RELEASE_NOTES_V1.0.0_2026-10-04.md` contain the v1.0 evidence package.
 
-Final owner-side closeout is limited to cancelling test order `#1001` with inventory restock and publishing the signed GitHub `v1.0.0` tag/release. The connected safety/tooling boundaries intentionally do not perform those two operations.
+That historical snapshot listed test-order cleanup and the signed GitHub `v1.0.0` tag/release as owner-side follow-ups. **October 15 readback:** test order `#1001` was already cancelled on October 4 and is refunded and closed. Inventory restocking, notification delivery and the tag/release were not re-verified in that read. See the [current launch completion plan](PRODUCTION_READINESS/LAUNCH_COMPLETION_PLAN_2026-10-14.md) for the remaining current-release order test.
 
