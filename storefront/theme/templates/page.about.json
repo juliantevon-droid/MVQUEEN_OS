@@ -5,9 +5,12 @@
     "social": {
       "type":"social-media",
       "settings":{
-        "eyebrow":"FOLLOW THE HOUSE",
-        "heading":"Stay close to both worlds.",
-        "copy":"Follow MVQueen and Miss.Princess for product stories, styling ideas, beauty moments, launches, and new edits."
+        "eyebrow":"FOLLOW MVQueen",
+        "heading":"Stay close to the MVQueen edit.",
+        "copy":"Follow MVQueen for product stories, styling ideas, beauty moments, launches, and new edits.",
+        "instagram_url":"https://www.instagram.com/miss.mvqueen/",
+        "tiktok_url":"https://www.tiktok.com/@mvqueenofficial",
+        "facebook_url":"https://www.facebook.com/people/Mvqueen/61585903680200/"
       }
     },
     "newsletter": {"type":"newsletter","settings":{}}

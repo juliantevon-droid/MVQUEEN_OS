@@ -93,9 +93,12 @@
     "social": {
       "type": "social-media",
       "settings": {
-        "eyebrow": "FOLLOW THE HOUSE",
+        "eyebrow": "FOLLOW MVQueen",
         "heading": "Style moves beyond the storefront.",
-        "copy": "Follow MVQueen and Miss.Princess for new edits, styling ideas, beauty moments, product stories, and launch updates."
+        "copy": "Follow MVQueen for new edits, styling ideas, beauty moments, product stories, and launch updates.",
+        "instagram_url": "https://www.instagram.com/miss.mvqueen/",
+        "tiktok_url": "https://www.tiktok.com/@mvqueenofficial",
+        "facebook_url": "https://www.facebook.com/people/Mvqueen/61585903680200/"
       }
     },
     "newsletter": {

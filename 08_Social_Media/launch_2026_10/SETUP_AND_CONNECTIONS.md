@@ -1,10 +1,11 @@
 # Social account setup and connection record
 
-Prepared October 14, 2026. Account creation, connection and publication are
-separate steps. No new profile has been created, connected, scheduled or posted
-by this kit. The owner has identified existing MVQUEEN TikTok and Facebook
-accounts by name; their exact public URLs and connection access still need
-verification.
+Updated October 15, 2026. Account creation, storefront links, management
+connections and publication are separate steps. The owner's screenshots confirm
+the existing MVQUEEN Instagram and TikTok usernames, and the supplied Facebook
+share link resolves to the public Mvqueen profile recorded below. No new social
+account, management connection, scheduled post or publication has been created
+by this kit.
 
 ## Keep the existing brand structure
 
@@ -22,35 +23,48 @@ an independent content workload for every network.
 
 | Platform | MVQUEEN profile | Miss.Princess profile | Connection status |
 | --- | --- | --- | --- |
-| Instagram | Owner confirmation needed | Owner confirmation needed | Unverified |
-| Facebook Page | **MVQueen** — existing business Page reported by owner; direct Page URL pending | Owner confirmation needed | Not connected; Page identity/access verification pending |
-| TikTok | **MVQueen shop** — existing account name reported by owner; exact @username/profile URL pending | Owner confirmation needed | Not connected; profile identity/access verification pending |
+| Instagram | **MVQueen**, [@miss.mvqueen](https://www.instagram.com/miss.mvqueen/) — username confirmed in owner screenshot | Owner confirmation needed | Management access, professional account type and Meta linkage unverified |
+| Facebook | **Mvqueen**, [public profile](https://www.facebook.com/people/Mvqueen/61585903680200/) — owner-supplied share link resolved and public brand identity confirmed October 15 | Owner confirmation needed | Page management access, account type and Meta linkage unverified |
+| TikTok | **MVQueen Shop**, [@mvqueenofficial](https://www.tiktok.com/@mvqueenofficial) — username confirmed in owner screenshot | Owner confirmation needed | Management access, Business account type and website-link eligibility unverified |
 | Pinterest | Owner confirmation needed | Owner confirmation needed | Unverified |
 | YouTube | Owner confirmation needed | Owner confirmation needed | Unverified |
 | Metricool | Suggested; sign-in/connection not confirmed | Use native tools under the free plan | No connected brand readback yet |
 
-Reuse the two owner-reported MVQUEEN accounts. The Facebook account is a
-business Page managed through the owner's personal account; connect the Page
-itself. The name “MVQueen shop” does not establish that TikTok Shop commerce is
-enabled. Account names alone do not provide a unique public URL, and no handle
-or Page ID should be guessed from them. Other platform entries remain unknown,
-not confirmed absent.
+Reuse all three existing MVQUEEN accounts. Instagram `@miss.mvqueen` is branded
+MVQueen in the screenshot; the username does not assign it to Miss.Princess.
+No Miss.Princess account mapping has been confirmed.
+
+The Facebook share link supplied by the owner,
+`https://www.facebook.com/share/1LDEViKBi3/`, resolved successfully to the clean
+public URL above. Its canonical URL and public brand metadata identify Mvqueen.
+The owner describes it as a business Page; its management access and account
+type still need to be checked in the signed-in interface. Use that brand
+identity when connecting Meta tools.
+
+The Instagram and TikTok URLs are formed from the exact screenshot-confirmed
+usernames. A successful signed-out profile load has not been established for
+those two accounts; the TikTok web check was blocked by robots rules. The name
+“MVQueen Shop” does not establish TikTok Shop commerce eligibility. Screenshots
+do not establish professional/Business account status, Meta Page linkage or
+OAuth authorization. Other platform entries remain unknown, not confirmed
+absent.
 
 Shopify's primary domain was read back on October 14 as
 `https://tsucu0-1i.myshopify.com`. Its publication list does not establish the
 ownership or login state of social profiles. No custom primary domain was
-returned. Public HTML checks returned HTTP 200 for the homepage and both brand
-pages, with no Instagram, Facebook, TikTok, Pinterest, YouTube or Snapchat
+returned. October 14 public HTML checks returned HTTP 200 for the homepage and
+both brand pages, with no Instagram, Facebook, TikTok, Pinterest, YouTube or Snapchat
 profile links found in their anchor elements. That does not prove accounts do
 not exist. Use the current store address in the draft links, and update them if
 the owner later configures a branded domain.
 
 ## Owner information needed
 
-Provide the exact TikTok @username/profile URL and the direct MVQueen Facebook
-Page URL. Confirm whether Instagram, Pinterest, YouTube or any Miss.Princess
-profiles already exist. The business country and first delivery markets are
-still needed to determine available commerce features and the launch audience.
+The MVQUEEN Instagram, TikTok and Facebook links have been received. Confirm
+whether Pinterest, YouTube or any Miss.Princess profiles already exist. The
+business country and first delivery markets are still needed to determine
+available commerce features and the launch audience. Complete the relevant
+platform sign-in flows to verify management access and connection state.
 
 Use an owner-controlled email and authentic owner information directly in each
 platform's sign-up flow. Complete any verification there. Do not put passwords,
@@ -62,9 +76,9 @@ this record.
 
 | Platform | Create or reuse | Connect and verify |
 | --- | --- | --- |
-| Instagram | Reuse the owned profile or create a brand profile; use a professional Business account for the store. Apply the brand's bio and existing logo. | Link the corresponding Facebook Page for Meta management. Confirm the intended Page and profile, then connect the same brand in Metricool if used. |
-| Facebook | Create/reuse a Page under the owner's authentic Facebook account. Use the correct brand name, relevant category and current store link. | Confirm Page access and the matching Instagram link in Meta Business Suite. Verify that management actions target the Page, not the owner's personal profile. |
-| TikTok | Create/reuse a brand account and select Business where appropriate. | Authorize the correct profile in Metricool or publish natively. Website links and other features must be checked in the actual account. Use original or commercially cleared audio. |
+| Instagram | Reuse MVQUEEN's `@miss.mvqueen`; check its professional account type. Apply approved bio changes and the existing logo. Confirm existing ownership before creating any Miss.Princess account. | Link the corresponding Facebook Page for Meta management. Confirm the intended Page and profile, then connect the same brand in Metricool if used. |
+| Facebook | Reuse the Mvqueen identity linked above. Check Page status and access under the owner's authentic account. Use the correct brand name, relevant category and current store link. | Confirm Page access and the matching Instagram link in Meta Business Suite. Verify that management actions target the Page, not the owner's personal profile. |
+| TikTok | Reuse MVQUEEN's `@mvqueenofficial` and check whether Business mode is appropriate. Confirm existing ownership before creating any Miss.Princess account. | Authorize the correct profile in Metricool or publish natively. Website links and other features must be checked in the actual account. Use original or commercially cleared audio. |
 | Pinterest | Create/reuse a business account. Add the brand's website and focused boards. | Connect the correct account. Claim the site only through an available ownership-verification method; record success. A profile link alone is not a completed website claim or catalog approval. |
 | YouTube | Create/reuse a brand channel through the owner's Google account. Use a business name/Brand Account where appropriate. | Verify channel identity, handle, profile links and access in YouTube Studio, then authorize that exact channel if connecting Metricool. |
 
@@ -114,16 +128,20 @@ higher plan and is not needed here. The MCP can inspect brands, analytics and
 planner content; it currently does not expose inbox replies, post comments,
 SmartLinks, or advertising campaign management.
 
-## Connect verified profiles to the storefront
+## Connect the profiles to the storefront
 
-After profiles are confirmed, verify each public URL while signed out, then
-populate the corresponding social settings in the unpublished Working Preview
-and check both brands' links. The theme source now includes an optional
-**Pinterest URL** setting and conditional link alongside Instagram, TikTok,
-Facebook, Snapchat and YouTube. No profile URL has been populated. Source
-support is not proof of a live storefront change; verify the preview deployment
-and follow the existing merchant-controlled theme publication process after
-the profile URLs are ready for review.
+The theme source now sets the three MVQUEEN URLs above on the homepage,
+MVQueen page and About page. The copy identifies these as MVQUEEN channels.
+The Miss.Princess page retains separate, unpopulated social settings until its
+own accounts are confirmed. Optional Pinterest, Snapchat and YouTube settings
+remain available for later confirmed profiles.
+
+These settings target the unpublished Working Preview; deployment and rendered
+checks must be confirmed in the change's workflow evidence. Source changes do
+not establish that the public storefront has updated. Verify the preview and follow the existing
+merchant-controlled theme publication process. Check the visitor path on a
+phone, including any platform sign-in requirement. These are outbound profile
+links; they do not grant account management or automatic publishing access.
 
 Social profile links and social scheduling are independent of Shopify sales
 channels. Product tagging, catalogs, Meta commerce and TikTok Shop can require
