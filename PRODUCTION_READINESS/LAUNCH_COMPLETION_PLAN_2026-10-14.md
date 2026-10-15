@@ -85,6 +85,13 @@ remedy; do not remove or rewrite Shopify's `content_for_header`, lower threshold
 or rerun repeatedly to select a favorable sample. No policy exception has been
 approved here.
 
+A separate anonymous browser trace identified the frame as Shopify's native
+**Shop Pay cart sync**, initiated by a Shopify-owned Shop.js module. No custom
+theme iframe or `shop.app` reference was found. The local trace did not reproduce
+the console failure and does not supersede CI. No supported theme fix has been
+identified. A [Shopify support report](SHOPIFY_SUPPORT_DRAFT_2026-10-15.md) is
+prepared with sanitized evidence; it has not been sent.
+
 Keep theme changes on the verified unpublished Working Preview. The existing
 merchant-controlled publication process still applies. Preserve Railway's
 enabled Wait for CI setting; source reconnection must not be used as a retry.
