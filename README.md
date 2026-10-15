@@ -8,9 +8,9 @@ For the current release state, use the [October 13 release closeout](PRODUCTION_
 
 Brand language is unified in [the brand guide](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [active content policy](06_Tone_And_Voice/Brand_Content_Policy.json). The [complete Drive source catalog](31_AI_Knowledge_Base/brand_sources/README.md) preserves substantive versions with provenance; the product writer consumes the reconciled policy.
 
-For the next launch steps, use the [October 14 completion plan](PRODUCTION_READINESS/LAUNCH_COMPLETION_PLAN_2026-10-14.md) and [organic social launch kit](08_Social_Media/launch_2026_10/README.md). The kit contains profile copy, first-week drafts and a 30-day calendar. Social account ownership and connections still need verification; no campaign is claimed scheduled or published.
+For the next launch steps, use the [October 14 completion plan](PRODUCTION_READINESS/LAUNCH_COMPLETION_PLAN_2026-10-14.md) and [organic social launch kit](08_Social_Media/launch_2026_10/README.md). The kit contains profile copy, first-week drafts and a 30-day calendar. Three existing MVQUEEN profiles are identified; management connections still need verification, and no campaign is claimed scheduled or published.
 
-[PR #74](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/74) merged after passing its applicable checks. Its optional Pinterest link support deployed successfully to the unpublished Working Preview on October 15. The owner has identified existing TikTok “MVQueen shop” and Facebook Page “MVQueen”; exact profile URLs and connection access remain pending.
+[PR #74](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/74) merged after passing its applicable checks. Its optional Pinterest link support deployed successfully to the unpublished Working Preview on October 15. Owner screenshots confirm TikTok **@mvqueenofficial** and Instagram **@miss.mvqueen** as MVQUEEN profiles. The owner's Facebook share link resolves to [Mvqueen](https://www.facebook.com/people/Mvqueen/61585903680200/). The homepage, MVQueen and About templates now contain these three links for the next preview deployment; this does not connect account management or publish the theme.
 
 ## One-system architecture
 
