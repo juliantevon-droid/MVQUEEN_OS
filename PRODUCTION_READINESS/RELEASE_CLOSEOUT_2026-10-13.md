@@ -1,10 +1,12 @@
 # Release closeout — 2026-10-13
 
-Status updated October 14 at 09:51 UTC: storefront published, public shopping
+Status updated October 15 at 02:18 UTC: storefront published, public shopping
 checks passed, and both web and product-worker fixes deployed successfully.
 Wait for CI is verified enabled for both services. The backend rollout is
-complete; the live storefront performance gate remains failed, so the full
-release is not yet certified.
+complete; the latest live storefront performance gate failed its console-error
+audit on a Shop Pay iframe security-policy error, so the full release is not yet
+certified. Backend deployment/CI-setting observations below retain their original
+October 14 verification timestamps.
 
 [PR #70](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/70) merged into
 `main` as `089df163eb6eb4a2bec2d58c74e773d73ac13127`. It contains the shopping,
@@ -93,6 +95,37 @@ retries were used to select a favorable result.
 The configured release floors and enterprise targets are unchanged. Earlier
 preview scores establish preview behavior only; they do not substitute for
 this public-storefront gate.
+
+### October 15 automatic follow-up
+
+[PR #74](https://github.com/juliantevon-droid/MVQUEEN_OS/pull/74) merged as
+`7914659ce5cd6d133be6b3b48b18eb7aec1b8c3b` after its applicable checks passed.
+The social launch kit and optional Pinterest URL support are now in `main`.
+[Theme workflow 38670160069](https://github.com/juliantevon-droid/MVQUEEN_OS/actions/runs/38670160069)
+completed successfully: source validation, deployment identity check, theme push,
+and unpublished-role checks before and after deployment all passed. It did not
+publish Shopify MAIN. Its preview Lighthouse job was skipped without a verified
+preview URL; this deployment result is not a preview performance result.
+
+The resulting automatic public performance
+[run 38670160057](https://github.com/juliantevon-droid/MVQUEEN_OS/actions/runs/38670160057)
+failed at approximately 02:18 UTC. Performance scores were **58, 53, 57**, median
+**57**; accessibility median **100**, best practices **75**, and SEO **100**.
+All category release floors passed.
+
+This time `render-blocking-resources` scored **1 in all three samples**. The
+failed required audit was `errors-in-console`, scoring **0, 1, 0**, median **0**
+against required **1**. Its representative diagnostic was a blocked
+`https://shop.app/` iframe: the frame's Content Security Policy allowed ancestors
+`'self' https://shop.app https://admin.shopify.com`. Responsive-image, image-size
+and LCP-discovery audits each scored 1 in all three samples. The representative
+LCP was 7.5 seconds; the enterprise performance target remains unmet.
+
+The new result changes the current observed blocker. It does not prove a fix for
+the earlier wallet-CSS behavior, justify removing checkout features, or waive
+the required console audit. No audit threshold or platform header content was
+changed. The failed evidence remains preserved; no repeated run was selected
+to obtain a favorable result.
 
 ## Production application rollout
 

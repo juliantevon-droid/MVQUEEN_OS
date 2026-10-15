@@ -29,7 +29,7 @@ earlier closeout; the health response alone does not re-verify those settings.
 | Priority | Work | Completion evidence | Current state |
 | --- | --- | --- | --- |
 | 1 | Verify a complete order journey | Agreed test method; correct shipping/tax/discount totals; successful payment outcome; order visible in Shopify; customer confirmation; fulfillment handoff; cancellation/refund/restock behavior where applicable. Record results without card or customer details. | Latest release checks did not cover payment or order submission. Historical test order `#1001` is already cancelled, refunded and closed, as verified October 15; see the evidence below. |
-| 1 | Resolve the live performance gate | A legitimate fix followed by the existing three-sample public workflow passing all required audits. Preserve prior failures and current thresholds. | Latest run [38501216422](https://github.com/juliantevon-droid/MVQUEEN_OS/actions/runs/38501216422) failed the render-blocking audit on Shopify wallet CSS. Performance median 68; accessibility 100; best practices 79; SEO 100. |
+| 1 | Resolve the live performance gate | A legitimate fix followed by the existing three-sample public workflow passing all required audits. Preserve prior failures and current thresholds. | Latest run [38670160057](https://github.com/juliantevon-droid/MVQUEEN_OS/actions/runs/38670160057), October 15, failed the console-error audit on a Shop Pay iframe security-policy error. Performance median 57; accessibility 100; best practices 75; SEO 100. Render-blocking passed in all three samples. |
 | 2 | Confirm launch markets and customer-facing terms | Owner confirms business country and initial delivery countries; checkout rates, tax setup, delivery estimates, returns and contact details match actual operations. | Not established by the current launch verification. These are checks, not confirmed defects. |
 | 2 | Verify measurement | One known UTM visit appears in available analytics; product/cart/checkout/order events are checked using the agreed order test and applicable consent settings. | UTM links are prepared. Attribution and purchase events are not yet verified. |
 | 2 | Create or connect the five core social channels | Owner-confirmed profile URLs, accessible profiles, correct brand identity, working store links and successful connection readback. | Reuse owner-reported TikTok “MVQueen shop” and Facebook Page “MVQueen” once exact URLs/access are confirmed. Remaining profile inventory and owner sign-in are still needed. No new accounts or connections are claimed. |
@@ -70,17 +70,31 @@ this document does not submit one or authorize a charge.
 
 ## Performance follow-up
 
-The remaining resource is Shopify's
+Earlier failed runs identified Shopify's
 `/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css`.
 The audit reported 0 ms estimated savings but still scored 0.5 against a required
-1. An extra preload did not establish a fix. Do not remove or rewrite Shopify's
-`content_for_header`, lower thresholds, or rerun repeatedly to select a favorable
-sample. Investigate a supported platform remedy or separately review the release
-policy with its owner; no exception has been approved here.
+1. An extra preload did not establish a fix.
+
+The October 15 automatic public run changed the observed failure: render-blocking
+scored 1 in all three samples, while console-error scores were 0, 1, 0. The
+representative diagnostic reports a blocked `https://shop.app/` frame whose
+`frame-ancestors` policy permits only itself, `shop.app` and Shopify Admin.
+The gate remains failed. This later CSS pass does not establish a theme fix or
+erase earlier failures. Investigate the current console source and a supported
+remedy; do not remove or rewrite Shopify's `content_for_header`, lower thresholds,
+or rerun repeatedly to select a favorable sample. No policy exception has been
+approved here.
 
 Keep theme changes on the verified unpublished Working Preview. The existing
 merchant-controlled publication process still applies. Preserve Railway's
 enabled Wait for CI setting; source reconnection must not be used as a retry.
+
+PR #74 is merged as `7914659ce5cd6d133be6b3b48b18eb7aec1b8c3b`. Its
+[theme workflow](https://github.com/juliantevon-droid/MVQUEEN_OS/actions/runs/38670160069)
+passed validation and deployed the optional Pinterest setting to the unpublished
+Working Preview, with successful role checks before and after the push. The
+preview Lighthouse job was skipped because no verified preview URL was supplied;
+successful deployment alone is not a fresh preview performance certification.
 
 ## Weekly organic review
 
