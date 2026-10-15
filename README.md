@@ -8,6 +8,8 @@ For the current release state, use the [October 13 release closeout](PRODUCTION_
 
 Brand language is unified in [the brand guide](06_Tone_And_Voice/UNIFIED_BRAND_GUIDE.md) and [active content policy](06_Tone_And_Voice/Brand_Content_Policy.json). The [complete Drive source catalog](31_AI_Knowledge_Base/brand_sources/README.md) preserves substantive versions with provenance; the product writer consumes the reconciled policy.
 
+For the next launch steps, use the [October 14 completion plan](PRODUCTION_READINESS/LAUNCH_COMPLETION_PLAN_2026-10-14.md) and [organic social launch kit](08_Social_Media/launch_2026_10/README.md). The kit contains profile copy, first-week drafts and a 30-day calendar. Social account ownership and connections still need verification; no campaign is claimed scheduled or published.
+
 ## One-system architecture
 
 - GitHub main — canonical code, contracts, tests, theme source and automation logic.
@@ -65,5 +67,5 @@ As of 2026-10-04:
 - Current Shopify products are the only production catalog source of truth; historical recovery products remain archive-only.
 - `CHANGELOG.md` and `PRODUCTION_READINESS/RELEASE_NOTES_V1.0.0_2026-10-04.md` contain the v1.0 evidence package.
 
-Final owner-side closeout is limited to cancelling test order `#1001` with inventory restock and publishing the signed GitHub `v1.0.0` tag/release. The connected safety/tooling boundaries intentionally do not perform those two operations.
+That historical snapshot listed test-order cleanup and the signed GitHub `v1.0.0` tag/release as owner-side follow-ups. **October 15 readback:** test order `#1001` was already cancelled on October 4 and is refunded and closed. Inventory restocking, notification delivery and the tag/release were not re-verified in that read. See the [current launch completion plan](PRODUCTION_READINESS/LAUNCH_COMPLETION_PLAN_2026-10-14.md) for the remaining current-release order test.
 
