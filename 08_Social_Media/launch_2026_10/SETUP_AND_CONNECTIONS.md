@@ -1,11 +1,10 @@
 # Social account setup and connection record
 
 Updated October 15, 2026. Account creation, storefront links, management
-connections and publication are separate steps. Metricool readback confirms
-Instagram `@miss.mvqueen` and TikTok `@mvqueen_official`; the owner confirmed
-the TikTok spelling with the underscore. The supplied Facebook share link
-resolves to the public Mvqueen profile, but Facebook is not returned by the
-current Metricool connection readback. No post has been scheduled or published
+connections and publication are separate steps. Metricool readback now confirms
+Facebook **Mvqueen**, Instagram `@miss.mvqueen` and TikTok `@mvqueen_official`.
+The Facebook Page name was read back separately to verify the connected identity.
+The owner confirmed the TikTok spelling with the underscore. No post has been scheduled or published
 by this kit.
 
 ## Keep the existing brand structure
@@ -25,11 +24,11 @@ an independent content workload for every network.
 | Platform | MVQUEEN profile | Miss.Princess profile | Connection status |
 | --- | --- | --- | --- |
 | Instagram | **MVQueen**, [@miss.mvqueen](https://www.instagram.com/miss.mvqueen/) — screenshot and Metricool identity match | Owner confirmation needed | Metricool connection verified October 15; professional account type and Meta linkage unverified |
-| Facebook | **Mvqueen**, [public profile](https://www.facebook.com/people/Mvqueen/61585903680200/) — owner-supplied share link resolved and public brand identity confirmed October 15 | Owner confirmation needed | Not returned by Metricool readback; Page authorization, account type and Meta linkage still need verification |
+| Facebook | **Mvqueen**, [public profile](https://www.facebook.com/people/Mvqueen/61585903680200/) — owner-supplied share link resolved and public brand identity confirmed October 15 | Owner confirmation needed | Metricool connection and Page name verified October 15; Meta linkage and publishing success not yet verified |
 | TikTok | **MVQUEEN**, [@mvqueen_official](https://www.tiktok.com/@mvqueen_official) — Metricool identity and latest owner confirmation match | Owner confirmation needed | Metricool connection verified October 15; Business account type and website-link eligibility unverified |
 | Pinterest | Owner confirmation needed | Owner confirmation needed | Unverified |
 | YouTube | Owner confirmation needed | Owner confirmation needed | Unverified |
-| Metricool | Connected to this workspace; Instagram and TikTok returned | Use native tools under the free plan | Readback verified October 15; Facebook not returned |
+| Metricool | Connected to this workspace; Facebook, Instagram and TikTok returned | Use native tools under the free plan | All three intended network identities verified October 15 |
 
 Reuse all three existing MVQUEEN accounts. Instagram `@miss.mvqueen` is branded
 MVQueen in the screenshot; the username does not assign it to Miss.Princess.
@@ -38,9 +37,10 @@ No Miss.Princess account mapping has been confirmed.
 The Facebook share link supplied by the owner,
 `https://www.facebook.com/share/1LDEViKBi3/`, resolved successfully to the clean
 public URL above. Its canonical URL and public brand metadata identify Mvqueen.
-The owner describes it as a business Page; its management access and account
-type still need to be checked in the signed-in interface. Use that brand
-identity when connecting Meta tools.
+Metricool now reports a Facebook connection, and its brand-info readback names
+the Page **Mvqueen**. This verifies the intended connected brand name. The
+Facebook-to-Instagram linkage in Meta Business Suite still needs a separate
+check; a successful publication has not yet been tested.
 
 The earlier TikTok screenshot showed `@mvqueenofficial`. Metricool later
 returned `@mvqueen_official`, and the owner confirmed that the account with the
@@ -67,9 +67,9 @@ the owner later configures a branded domain.
 The MVQUEEN Instagram, TikTok and Facebook links have been received. Confirm
 whether Pinterest, YouTube or any Miss.Princess profiles already exist. The
 business country and first delivery markets are still needed to determine
-available commerce features and the launch audience. Complete
-Facebook Page authorization in Metricool and verify its Page identity in a fresh
-readback. Instagram and TikTok authorization are already verified.
+available commerce features and the launch audience. Facebook, Instagram and
+TikTok connections are verified in Metricool. Confirm Meta Page linkage and
+profile website-link availability separately.
 
 Use an owner-controlled email and authentic owner information directly in each
 platform's sign-up flow. Complete any verification there. Do not put passwords,
@@ -117,11 +117,14 @@ service. No ad account, boost, paid subscription or paid campaign is required.
 ## Connect Metricool to this workspace
 
 Status on October 15: this workspace can access Metricool, and its brand readback
-returns Instagram and TikTok. The configured timezone is `America/New_York`;
+returns Facebook, Instagram and TikTok. A separate brand-info readback confirms
+Facebook **Mvqueen**, Instagram **miss.mvqueen** and TikTok **mvqueen_official**.
+The configured timezone is `America/New_York`;
 this is a scheduler setting, not evidence of the business country or audience.
 The queue read for October 15 through November 15 returned no scheduled posts.
-Facebook Page authorization and connection readback remain open. The steps below
-are the setup reference; completed connections do not need to be recreated.
+This completes Metricool connection verification for the three core MVQUEEN
+accounts. The steps below remain the setup reference for additional networks or
+reconnection; completed connections do not need to be recreated.
 
 1. Sign in to an existing Metricool account or create its Free account. Check
    whether the one-brand slot already contains profiles before adding anything.
