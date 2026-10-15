@@ -3,10 +3,11 @@
 Prepared for MVQUEEN and Miss.Princess. This kit contains drafts and a proposed
 workflow. The October 15 account record identifies MVQUEEN's existing Instagram
 [@miss.mvqueen](https://www.instagram.com/miss.mvqueen/), TikTok
-[@mvqueenofficial](https://www.tiktok.com/@mvqueenofficial), and Facebook
-[Mvqueen](https://www.facebook.com/people/Mvqueen/61585903680200/). Management
-connections, content scheduling and Miss.Princess account identities remain
-unverified.
+[@mvqueen_official](https://www.tiktok.com/@mvqueen_official), and Facebook
+[Mvqueen](https://www.facebook.com/people/Mvqueen/61585903680200/). Metricool
+confirms Instagram and TikTok, and the owner confirmed TikTok's underscore.
+Facebook is not returned by Metricool yet. Publication and Miss.Princess
+account identities remain unverified.
 
 1. [Set up and connect accounts](SETUP_AND_CONNECTIONS.md): current status,
    owner sign-in steps, five core platforms and the free publishing arrangement.
