@@ -1,6 +1,6 @@
 # Social profile kit — October 2026
 
-Updated 2026-10-15. **Draft copy; no posts have been scheduled or published by this kit.** Reuse MVQUEEN's Instagram [@miss.mvqueen](https://www.instagram.com/miss.mvqueen/), TikTok [@mvqueen_official](https://www.tiktok.com/@mvqueen_official), and Facebook [Mvqueen](https://www.facebook.com/people/Mvqueen/61585903680200/). Metricool confirms Instagram and TikTok, and the owner confirmed the TikTok handle with the underscore. The Facebook share link resolves to the public brand profile, but Facebook is not returned by Metricool yet. Business country, target markets and the remaining profile inventory still need confirmation; see [the connection record](SETUP_AND_CONNECTIONS.md).
+Updated 2026-10-15. **Draft copy; no posts have been scheduled or published by this kit.** Reuse MVQUEEN's Instagram [@miss.mvqueen](https://www.instagram.com/miss.mvqueen/), TikTok [@mvqueen_official](https://www.tiktok.com/@mvqueen_official), and Facebook [Mvqueen](https://www.facebook.com/people/Mvqueen/61585903680200/). Metricool confirms all three accounts, including Facebook Page name Mvqueen; the owner confirmed the TikTok handle with the underscore. Business country, target markets and the remaining profile inventory still need confirmation; see [the connection record](SETUP_AND_CONNECTIONS.md).
 
 ## Account structure
 

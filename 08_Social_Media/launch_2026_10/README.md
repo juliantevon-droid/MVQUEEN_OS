@@ -5,8 +5,8 @@ workflow. The October 15 account record identifies MVQUEEN's existing Instagram
 [@miss.mvqueen](https://www.instagram.com/miss.mvqueen/), TikTok
 [@mvqueen_official](https://www.tiktok.com/@mvqueen_official), and Facebook
 [Mvqueen](https://www.facebook.com/people/Mvqueen/61585903680200/). Metricool
-confirms Instagram and TikTok, and the owner confirmed TikTok's underscore.
-Facebook is not returned by Metricool yet. Publication and Miss.Princess
+confirms all three connections, including the Facebook Page name Mvqueen.
+The owner confirmed TikTok's underscore. Publication and Miss.Princess
 account identities remain unverified.
 
 1. [Set up and connect accounts](SETUP_AND_CONNECTIONS.md): current status,
