@@ -65,6 +65,8 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.in_title = False
         self.title = ""
+        self.page_title_seen = False
+        self.svg_depth = 0
         self.description = ""
         self.robots = ""
         self.canonical = ""
@@ -74,8 +76,13 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if tag == "title":
+        if tag == "svg":
+            self.svg_depth += 1
+        # Shopify payment icons use SVG <title> elements in the body.
+        # Only the first document title should enter the SEO audit.
+        if tag == "title" and self.svg_depth == 0 and not self.page_title_seen:
             self.in_title = True
+            self.page_title_seen = True
         if tag == "h1":
             self.h1_count += 1
         if tag == "img":
@@ -94,6 +101,8 @@ class Page(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "title":
             self.in_title = False
+        if tag == "svg":
+            self.svg_depth = max(0, self.svg_depth - 1)
 
     def handle_data(self, data):
         if self.in_title:
@@ -194,6 +203,11 @@ def run(max_pages: int, delay: float) -> dict:
     for url in urls:
         try:
             status, kind, body = download(url)
+            if status == 429:
+                # Respect Shopify rate limiting: stop instead of labeling pages
+                # broken or hammering the rest of the catalog.
+                findings.append({"url": url, "status": 429, "issues": ["rate_limited"]})
+                break
             if status != 200 or "html" not in kind.lower():
                 findings.append({"url": url, "status": status, "issues": ["unavailable_or_not_html"]})
             elif b'type="password"' in body[:15000] and b'name="password"' in body[:15000]:
@@ -204,16 +218,18 @@ def run(max_pages: int, delay: float) -> dict:
             findings.append({"url": url, "status": None, "issues": ["fetch_failed"], "reason": str(exc)[:150]})
         time.sleep(delay)
     count = Counter(issue for page in findings for issue in page["issues"])
+    incomplete = "rate_limited" in count
     return {"store": STORE, "checked_at": datetime.now(timezone.utc).isoformat(),
             "pages_checked": len(findings), "max_pages": max_pages,
+            "scan_incomplete": incomplete,
             "findings_by_type": dict(sorted(count.items())), "pages": findings,
             "note": "Read-only sample capped by max-pages; SEO findings are review suggestions, not automatic content changes."}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--max-pages", type=int, default=200)
-    parser.add_argument("--delay", type=float, default=0.4)
+    parser.add_argument("--max-pages", type=int, default=120)
+    parser.add_argument("--delay", type=float, default=2.0)
     parser.add_argument("--output", type=Path, default=Path("seo-audit.json"))
     args = parser.parse_args()
     if not (1 <= args.max_pages <= 250) or not (0.2 <= args.delay <= 5):
@@ -228,6 +244,9 @@ def main() -> int:
     print(f"MVQUEEN SEO crawler audited {report['pages_checked']} public pages")
     print(json.dumps(report["findings_by_type"], sort_keys=True))
     print(f"Saved: {args.output}")
+    if report["scan_incomplete"]:
+        print("MVQUEEN SEO crawler: INCOMPLETE — Shopify returned HTTP 429; review the partial report before retrying.")
+        return 3
     return 0
 
 

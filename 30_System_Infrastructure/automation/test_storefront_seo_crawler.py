@@ -44,5 +44,32 @@ class CrawlerTests(unittest.TestCase):
         self.assertIn("canonical_mismatch_review", page["issues"])
 
 
+    def test_svg_payment_titles_do_not_extend_seo_title(self):
+        url = "https://tsucu0-1i.myshopify.com/products/a"
+        page = crawler.assess(url, b"""
+          <html><head><title>Denim After Dark | MVQUEEN</title>
+          <meta name="description" content="Explore our denim matching set and review its listed sizes, fabric, and available options for everyday outfits.">
+          <link rel="canonical" href="https://tsucu0-1i.myshopify.com/products/a">
+          </head><body><h1>Denim After Dark</h1>
+          <svg><title>American Express</title></svg>
+          <svg><title>Apple Pay</title></svg><img src="x" alt="">
+          </body></html>
+        """)
+        self.assertEqual(page["title"], "Denim After Dark | MVQUEEN")
+        self.assertNotIn("long_title", page["issues"])
+
+    def test_rate_limited_scan_stops_and_is_incomplete(self):
+        from unittest.mock import patch
+        url = "https://tsucu0-1i.myshopify.com/products/a"
+        with patch.object(crawler, "download", side_effect=[
+            (200, "text/plain", b"User-agent: *" + bytes([10]) + b"Allow: /"),
+            (429, "text/html", b""),
+        ]) as fetch, patch.object(crawler, "sitemap_pages", return_value=[url]):
+            result = crawler.run(120, 0.2)
+        self.assertEqual(fetch.call_count, 2)
+        self.assertTrue(result["scan_incomplete"])
+        self.assertEqual(result["pages"][0]["issues"], ["rate_limited"])
+        self.assertEqual(result["pages"][0]["status"], 429)
+
 if __name__ == "__main__":
     unittest.main()

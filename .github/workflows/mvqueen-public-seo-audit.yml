@@ -28,7 +28,7 @@ jobs:
       - name: Audit permitted public sitemap pages (no credentials or writes)
         run: |
           python 30_System_Infrastructure/automation/storefront_seo_crawler.py \
-            --max-pages 200 --delay 0.4 --output seo-audit.json
+            --max-pages 120 --delay 2.0 --output seo-audit.json
       - name: Preserve findings for review
         if: always()
         uses: actions/upload-artifact@v7
