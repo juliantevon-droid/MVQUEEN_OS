@@ -9,6 +9,11 @@ confirms all three connections, including the Facebook Page name Mvqueen.
 The owner confirmed TikTok's underscore. Publication and Miss.Princess
 account identities remain unverified.
 
+The [first three MVQUEEN post concepts](first_batch_2026_10_15/README.md) are now
+saved as **nine unpublished Metricool drafts**, one version per connected network.
+They use verified current catalogue photos and product details. Review links and
+exact captions are preserved with the batch; dates remain calendar placeholders.
+
 1. [Set up and connect accounts](SETUP_AND_CONNECTIONS.md): current status,
    owner sign-in steps, five core platforms and the free publishing arrangement.
 2. [Apply the profile copy](PROFILE_KIT.md): bios, proposed handles and brand
