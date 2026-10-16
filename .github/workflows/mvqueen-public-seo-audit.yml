@@ -1,6 +1,12 @@
 name: MVQUEEN Public Storefront SEO Audit
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '30_System_Infrastructure/automation/storefront_seo_crawler.py'
+      - '30_System_Infrastructure/automation/test_storefront_seo_crawler.py'
+      - '.github/workflows/mvqueen-public-seo-audit.yml'
   workflow_dispatch:
   schedule:
     - cron: '17 9 * * 3'
