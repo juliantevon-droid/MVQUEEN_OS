@@ -4,8 +4,10 @@ Updated October 15, 2026. Account creation, storefront links, management
 connections and publication are separate steps. Metricool readback now confirms
 Facebook **Mvqueen**, Instagram `@miss.mvqueen` and TikTok `@mvqueen_official`.
 The Facebook Page name was read back separately to verify the connected identity.
-The owner confirmed the TikTok spelling with the underscore. No post has been scheduled or published
-by this kit.
+The owner confirmed the TikTok spelling with the underscore. The
+[first batch](first_batch_2026_10_15/README.md) now contains nine verified,
+unpublished Metricool drafts across these three networks. No post has been
+enabled for publication; all draft calendar dates remain placeholders.
 
 ## Keep the existing brand structure
 
@@ -121,7 +123,9 @@ returns Facebook, Instagram and TikTok. A separate brand-info readback confirms
 Facebook **Mvqueen**, Instagram **miss.mvqueen** and TikTok **mvqueen_official**.
 The configured timezone is `America/New_York`;
 this is a scheduler setting, not evidence of the business country or audience.
-The queue read for October 15 through November 15 returned no scheduled posts.
+Before creating the first batch, the queue read for October 15 through November
+15 returned no posts. The subsequent October 16–21 readback verified nine drafts
+with `draft=true` and `autoPublish=false`; see the [batch record](first_batch_2026_10_15/README.md).
 This completes Metricool connection verification for the three core MVQUEEN
 accounts. The steps below remain the setup reference for additional networks or
 reconnection; completed connections do not need to be recreated.

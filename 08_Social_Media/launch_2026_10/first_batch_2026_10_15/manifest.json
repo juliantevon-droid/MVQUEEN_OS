@@ -1,0 +1,376 @@
+{
+  "brand": "MVQUEEN",
+  "status": "UNPUBLISHED DRAFTS",
+  "timezone": "America/New_York",
+  "dateNote": "Dates are draft calendar placeholders, not an approved publishing schedule.",
+  "accounts": {
+    "facebook": "Mvqueen",
+    "instagram": "@miss.mvqueen",
+    "tiktok": "@mvqueen_official"
+  },
+  "posts": [
+    {
+      "id": "mvq-first-01",
+      "title": "Meet MVQUEEN",
+      "date": "2026-10-16T12:00:00",
+      "format": "Two-photo introduction",
+      "assets": [
+        {
+          "path": "images/dress-04.jpg",
+          "url": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988",
+          "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+        },
+        {
+          "path": "images/mirror-01.jpg",
+          "url": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+          "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+        }
+      ],
+      "captions": {
+        "instagram": "Style for the way you show up. Details for the way you get ready.\n\nMeet MVQUEEN. A first look at the Arrival dress and Anywhere Mirror.\n\nFollow for styling ideas and closer looks.\n\n#MVQUEEN #PersonalStyle",
+        "facebook": "Welcome to MVQUEEN. From the Arrival dress to Anywhere Mirror, discover pieces for dressing up and getting ready.\n\nExplore the MVQUEEN world: https://tsucu0-1i.myshopify.com/pages/mvqueen?utm_source=facebook&utm_medium=organic_social&utm_campaign=launch_2026_10&utm_content=first_01_intro",
+        "tiktok": "Meet MVQUEEN. A first look at the Arrival dress and Anywhere Mirror. Follow for styling ideas and closer looks. #MVQUEEN #PersonalStyle"
+      },
+      "productIds": [
+        "gid://shopify/Product/9100061343942",
+        "gid://shopify/Product/9100794429638"
+      ],
+      "drafts": {
+        "instagram": {
+          "network": "instagram",
+          "id": 397295645,
+          "uuid": "-1238410331914154915",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=-1238410331914154915",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-7192043720476076063.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-13012131933995120881.jpeg"
+          ],
+          "mediaAltText": [
+            "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt.",
+            "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-16T12:00:00",
+            "timezone": "America/New_York"
+          }
+        },
+        "facebook": {
+          "network": "facebook",
+          "id": 397296958,
+          "uuid": "8609468006227987613",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=8609468006227987613",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-3798293679676928389.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-11030107109951399094.jpeg"
+          ],
+          "mediaAltText": [
+            "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt.",
+            "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-16T12:00:00",
+            "timezone": "America/New_York"
+          }
+        },
+        "tiktok": {
+          "network": "tiktok",
+          "id": 397296995,
+          "uuid": "658950530451129899",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=658950530451129899",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-11067666155627648971.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-16711876199328086937.jpeg"
+          ],
+          "mediaAltText": [
+            "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt.",
+            "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-16T12:00:00",
+            "timezone": "America/New_York"
+          }
+        }
+      },
+      "platformMedia": {
+        "instagram": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988",
+            "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+            "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          }
+        ],
+        "facebook": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988",
+            "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+            "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          }
+        ],
+        "tiktok": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988&width=1080",
+            "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+            "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mvq-first-02",
+      "title": "Three colours. Your Arrival.",
+      "date": "2026-10-18T12:00:00",
+      "format": "Three-photo fashion carousel",
+      "assets": [
+        {
+          "path": "images/dress-02.jpg",
+          "url": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/ce658d45-9e89-4c3e-b936-117a40033c24.jpg?v=1791161988",
+          "alt": "Model wearing the white Arrival dress with a matching belt and pleated skirt."
+        },
+        {
+          "path": "images/dress-03.jpg",
+          "url": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/aad2e251-6918-43d5-8a8e-52b2dde1299e.jpg?v=1791161988",
+          "alt": "Model wearing the red Arrival dress with a matching belt and pleated skirt."
+        },
+        {
+          "path": "images/dress-04.jpg",
+          "url": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988",
+          "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+        }
+      ],
+      "captions": {
+        "instagram": "White, red or dark blue. One silhouette, three moods.\n\nMeet the Arrival Plus Size Dress. Which colour feels like you?\n\n#MVQUEEN #DressStyle",
+        "facebook": "White, red or dark blue: take a closer look at the Arrival Plus Size Dress.\n\nExplore the colours and current size options: https://tsucu0-1i.myshopify.com/products/womens-solid-color-plus-size-dress?utm_source=facebook&utm_medium=organic_social&utm_campaign=launch_2026_10&utm_content=first_02_arrival",
+        "tiktok": "White, red or dark blue? Meet the Arrival Plus Size Dress. Which colour feels like you? #MVQUEEN #DressStyle"
+      },
+      "productIds": [
+        "gid://shopify/Product/9100061343942"
+      ],
+      "drafts": {
+        "instagram": {
+          "network": "instagram",
+          "id": 397297024,
+          "uuid": "-8122033815735219509",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=-8122033815735219509",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-856930346202265033.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-11624253605668156952.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-5401726058557080682.jpeg"
+          ],
+          "mediaAltText": [
+            "Model wearing the white Arrival dress with a matching belt and pleated skirt.",
+            "Model wearing the red Arrival dress with a matching belt and pleated skirt.",
+            "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-18T12:00:00",
+            "timezone": "America/New_York"
+          }
+        },
+        "facebook": {
+          "network": "facebook",
+          "id": 397297227,
+          "uuid": "1756643130536771979",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=1756643130536771979",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-7867535694248380322.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-4324290036323438096.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-11284413802383833547.jpeg"
+          ],
+          "mediaAltText": [
+            "Model wearing the white Arrival dress with a matching belt and pleated skirt.",
+            "Model wearing the red Arrival dress with a matching belt and pleated skirt.",
+            "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-18T12:00:00",
+            "timezone": "America/New_York"
+          }
+        },
+        "tiktok": {
+          "network": "tiktok",
+          "id": 397297259,
+          "uuid": "-338252118756995964",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=-338252118756995964",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-11062421287225535851.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-17889231554449374368.jpeg",
+            "https://static.metricool.com/planner/202610/7444403-file-7652363611859017356.jpeg"
+          ],
+          "mediaAltText": [
+            "Model wearing the white Arrival dress with a matching belt and pleated skirt.",
+            "Model wearing the red Arrival dress with a matching belt and pleated skirt.",
+            "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-18T12:00:00",
+            "timezone": "America/New_York"
+          }
+        }
+      },
+      "platformMedia": {
+        "instagram": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/ce658d45-9e89-4c3e-b936-117a40033c24.jpg?v=1791161988",
+            "alt": "Model wearing the white Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/aad2e251-6918-43d5-8a8e-52b2dde1299e.jpg?v=1791161988",
+            "alt": "Model wearing the red Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988",
+            "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          }
+        ],
+        "facebook": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/ce658d45-9e89-4c3e-b936-117a40033c24.jpg?v=1791161988",
+            "alt": "Model wearing the white Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/aad2e251-6918-43d5-8a8e-52b2dde1299e.jpg?v=1791161988",
+            "alt": "Model wearing the red Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988",
+            "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          }
+        ],
+        "tiktok": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/ce658d45-9e89-4c3e-b936-117a40033c24.jpg?v=1791161988&width=1080",
+            "alt": "Model wearing the white Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/aad2e251-6918-43d5-8a8e-52b2dde1299e.jpg?v=1791161988&width=1080",
+            "alt": "Model wearing the red Arrival dress with a matching belt and pleated skirt."
+          },
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/1cbfff9b-14ab-420a-bf7f-1cd8cd0f75c2.jpg?v=1791161988&width=1080",
+            "alt": "Model wearing the dark blue Arrival dress with a matching belt and pleated skirt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mvq-first-03",
+      "title": "A place to get ready",
+      "date": "2026-10-20T12:00:00",
+      "format": "Single-photo beauty-tool feature",
+      "assets": [
+        {
+          "path": "images/mirror-01.jpg",
+          "url": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+          "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+        }
+      ],
+      "captions": {
+        "instagram": "A foldable mirror with three light tones.\n\nMeet Anywhere Mirror, a detail for your getting-ready space.\n\nSave this idea for your next setup.\n\n#MVQUEEN #BeautyTools",
+        "facebook": "Meet Anywhere Mirror: a foldable LED makeup mirror with three light tones.\n\nTake a closer look at the current details and colour options: https://tsucu0-1i.myshopify.com/products/portable-foldable-led-makeup-mirror-with-built-in-lights?utm_source=facebook&utm_medium=organic_social&utm_campaign=launch_2026_10&utm_content=first_03_mirror",
+        "tiktok": "A foldable mirror with three light tones. Meet Anywhere Mirror. Save this idea for your getting-ready space. #MVQUEEN #BeautyTools"
+      },
+      "productIds": [
+        "gid://shopify/Product/9100794429638"
+      ],
+      "drafts": {
+        "instagram": {
+          "network": "instagram",
+          "id": 397297281,
+          "uuid": "1032837069329485744",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=1032837069329485744",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-7388199035191146006.jpeg"
+          ],
+          "mediaAltText": [
+            "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-20T12:00:00",
+            "timezone": "America/New_York"
+          }
+        },
+        "facebook": {
+          "network": "facebook",
+          "id": 397297307,
+          "uuid": "-7941925482282529323",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=-7941925482282529323",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-5867527703524029752.jpeg"
+          ],
+          "mediaAltText": [
+            "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-20T12:00:00",
+            "timezone": "America/New_York"
+          }
+        },
+        "tiktok": {
+          "network": "tiktok",
+          "id": 397297336,
+          "uuid": "2030558057445803801",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7444403&openWithPostUuid=2030558057445803801",
+          "draft": true,
+          "autoPublish": false,
+          "media": [
+            "https://static.metricool.com/planner/202610/7444403-file-16146133971133632993.jpeg"
+          ],
+          "mediaAltText": [
+            "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-20T12:00:00",
+            "timezone": "America/New_York"
+          }
+        }
+      },
+      "platformMedia": {
+        "instagram": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+            "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          }
+        ],
+        "facebook": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+            "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          }
+        ],
+        "tiktok": [
+          {
+            "sourceUrl": "https://cdn.shopify.com/s/files/1/0764/2618/2854/files/4dc1a4e2-8e34-4469-8553-3a7009dc3fd6_trans.jpg?v=1791229017",
+            "alt": "Anywhere Mirror standing open in its black folding cover, with three touch controls below the mirror."
+          }
+        ]
+      }
+    }
+  ],
+  "verifiedOn": "2026-10-15",
+  "draftCount": 9
+}
