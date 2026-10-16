@@ -10,9 +10,10 @@ The owner confirmed TikTok's underscore. Publication and Miss.Princess
 account identities remain unverified.
 
 The [first three MVQUEEN post concepts](first_batch_2026_10_15/README.md) are now
-saved as **nine unpublished Metricool drafts**, one version per connected network.
-They use verified current catalogue photos and product details. Review links and
-exact captions are preserved with the batch; dates remain calendar placeholders.
+approved and **scheduled as nine automatic publications**, one version per connected
+network, for October 17, 19 and 21 at noon America/New_York. They use verified
+current catalogue photos and product details. The batch preserves exact captions,
+planner links and readback evidence; live publication is not yet verified.
 
 1. [Set up and connect accounts](SETUP_AND_CONNECTIONS.md): current status,
    owner sign-in steps, five core platforms and the free publishing arrangement.
