@@ -103,8 +103,19 @@ jobs:
         id: enterprise_crawler
         continue-on-error: true
         run: |
+          # Preserve the crawler's diagnostic Markdown even when its fail-closed
+          # critical-finding gate returns a nonzero exit status.
+          set +e
           python core/vault_crawler.py --root . --output build/enterprise_crawler/report.json --fail-on critical
-          cp build/enterprise_crawler/report.md 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
+          crawler_exit=$?
+          set -e
+          if [ -f build/enterprise_crawler/report.md ]; then
+            cp build/enterprise_crawler/report.md 30_System_Infrastructure/overseer/reports/MVQUEEN_ENTERPRISE_CRAWLER.md
+          else
+            echo "::error::Crawler Markdown report missing after execution"
+            exit 1
+          fi
+          exit "$crawler_exit"
 
       - name: Run deep repository and history audit
         run: |
