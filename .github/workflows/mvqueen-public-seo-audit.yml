@@ -1,0 +1,33 @@
+name: MVQUEEN Public Storefront SEO Audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 9 * * 3'
+
+permissions:
+  contents: read
+
+jobs:
+  read-only-seo-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Test crawler and same-store restrictions
+        run: python -m unittest discover -s 30_System_Infrastructure/automation -p 'test_storefront_seo_crawler.py' -v
+      - name: Audit permitted public sitemap pages (no credentials or writes)
+        run: |
+          python 30_System_Infrastructure/automation/storefront_seo_crawler.py \
+            --max-pages 200 --delay 0.4 --output seo-audit.json
+      - name: Preserve findings for review
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: mvqueen-public-seo-audit-${{ github.run_id }}
+          path: seo-audit.json
+          if-no-files-found: warn
+          retention-days: 30
