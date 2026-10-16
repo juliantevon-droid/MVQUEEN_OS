@@ -8,6 +8,12 @@
     assign meta_description = 'Discover MVQUEEN—fashion, beauty, jewelry, and everyday luxury for the woman who chooses with intention. Curated to restore softness, confidence, and ease.'
     assign normalized_meta_title = meta_title | downcase
   endif
+  assign append_shop_name = true
+  if normalized_meta_title contains normalized_shop_name
+    assign append_shop_name = false
+  elsif normalized_meta_title contains 'miss.princess'
+    assign append_shop_name = false
+  endif
   assign meta_image = page_image | default: settings.share_image
   assign noindex_page = false
   if request.page_type == 'search' or request.page_type == 'cart'
@@ -16,7 +22,7 @@
     assign noindex_page = true
   endif
 -%}
-<title>{{ meta_title | escape }}{% unless normalized_meta_title contains normalized_shop_name %} — {{ shop.name | escape }}{% endunless %}</title>
+<title>{{ meta_title | escape }}{% if append_shop_name %} — {{ shop.name | escape }}{% endif %}</title>
 <meta name="description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
 <link rel="canonical" href="{{ canonical_url }}">
 {% if noindex_page %}
