@@ -1,0 +1,28 @@
+import assert from "node:assert/strict";
+import { buildVariantDecisionMetafields, readVariantDecisionMetafields, assertJsonMetafieldSizes, verifyVariantDecisionReadback } from "./variant-decision-storage";
+
+const small = { currency: "USD", representativeVariantId: "variant-1", variants: [{ id: "variant-1" }] };
+const inline = buildVariantDecisionMetafields(small);
+assert.equal(inline.length, 1);
+assert.deepEqual(readVariantDecisionMetafields(inline), small);
+const large = { ...small, variants: Array.from({ length: 99 }, (_, id) => ({ id, rationale: "女王👑é".repeat(200) })) };
+const parts = buildVariantDecisionMetafields(large);
+assert.ok(parts.length > 2);
+assertJsonMetafieldSizes(parts);
+assert.ok(parts.slice(1).every((part) => Buffer.byteLength(part.value, "utf8") <= 60 * 1024));
+assert.deepEqual(readVariantDecisionMetafields(parts), large);
+assert.deepEqual(readVariantDecisionMetafields([...parts, { key: "variant_decisions_part_999", value: "{}" }]), large);
+assert.deepEqual(readVariantDecisionMetafields([...inline, ...parts.slice(1)]), small);
+assert.throws(() => readVariantDecisionMetafields(parts.slice(0, -1)), /Missing/);
+const corrupt = parts.map((part) => ({ ...part }));
+corrupt[1].value = corrupt[1].value.replace('"id":0', '"id":999');
+assert.throws(() => readVariantDecisionMetafields(corrupt), /checksum/);
+assert.throws(() => buildVariantDecisionMetafields({ ...small, variants: [{ value: "x".repeat(140000) }] }), /one variant/);
+assert.throws(() => assertJsonMetafieldSizes([{ namespace: "test", key: "oversized", type: "json", value: "é".repeat(70000) }]), /test.oversized.*140000/);
+assertJsonMetafieldSizes([{ namespace: "test", key: "boundary", type: "json", value: "x".repeat(131072) }]);
+assert.throws(() => assertJsonMetafieldSizes([{ namespace: "test", key: "over", type: "json", value: "x".repeat(131073) }]), /131073/);
+const saved = Object.fromEntries(parts.map((part, i) => [`part${i}`, { key: part.key, value: part.value }]));
+await verifyVariantDecisionReadback({ graphql: async () => Response.json({ data: { product: saved } }) }, "product-1", parts);
+await assert.rejects(verifyVariantDecisionReadback({ graphql: async () => Response.json({ data: { product: { ...saved, part1: null } } }) }, "product-1", parts), /mismatch/);
+await assert.rejects(verifyVariantDecisionReadback({ graphql: async () => Response.json({ errors: [{ message: "throttled" }] }) }, "product-1", parts), /query failed/);
+console.log("variant decision storage passed: UTF-8, boundaries, lossless round trip, legacy compatibility, missing/corrupt parts, readback");

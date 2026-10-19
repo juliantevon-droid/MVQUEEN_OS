@@ -52,6 +52,34 @@ try {
   const { processProductJobBatch, reconcileRecentShopifyProducts } = await import("./product-job-worker.server");
   const { enqueueProductWebhook } = await import("./product-job-intake.server");
 
+  const { SIZE_INCIDENT, recoverProductSizeIncident } = await import("./product-size-incident-recovery.server");
+  for (const id of SIZE_INCIDENT.jobIds) {
+    await prisma.productJob.create({ data: {
+      id, shop: SIZE_INCIDENT.shop, productGid: SIZE_INCIDENT.productGid,
+      eventKey: `size-incident:${id}`, topic: "PRODUCTS_UPDATE", status: "dead_letter",
+      attempts: 5, error: SIZE_INCIDENT.error,
+    } });
+  }
+  const unrelated = await prisma.productJob.create({ data: {
+    shop: SIZE_INCIDENT.shop, productGid: SIZE_INCIDENT.productGid,
+    eventKey: "unrelated-size-error", topic: "PRODUCTS_UPDATE", status: "dead_letter",
+    attempts: 5, error: SIZE_INCIDENT.error,
+  } });
+  process.env.MVQ_WRITE_ENABLED = "false";
+  assert.equal(await recoverProductSizeIncident(), 0);
+  assert.equal(await prisma.productJob.count({ where: { status: "dead_letter" } }), 8);
+  process.env.MVQ_WRITE_ENABLED = "true";
+  assert.equal(await recoverProductSizeIncident(), 7);
+  assert.equal(await prisma.productJob.count({ where: { status: "received", attempts: 0 } }), 7);
+  assert.deepEqual(await prisma.productJob.findUnique({ where: { id: unrelated.id } }), unrelated);
+  const receipt = await prisma.runtimeHeartbeat.findUniqueOrThrow({ where: { name: SIZE_INCIDENT.receipt } });
+  assert.equal(JSON.parse(receipt.detailsJson!).previous.length, 7);
+  assert.ok(JSON.parse(receipt.detailsJson!).previous.every((row: { attempts: number }) => row.attempts === 5));
+  await prisma.productJob.updateMany({ data: { status: "dead_letter", error: SIZE_INCIDENT.error, attempts: 5 } });
+  assert.equal(await recoverProductSizeIncident(), 0);
+  assert.equal(await prisma.productJob.count({ where: { status: "received" } }), 0);
+  await prisma.productJob.deleteMany();
+
   const shop = "worker-regression.example.invalid";
   let serial = 0;
   const minutesAgo = (minutes: number) => new Date(Date.now() - minutes * 60_000);

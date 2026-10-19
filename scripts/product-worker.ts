@@ -1,3 +1,4 @@
+import { recoverProductSizeIncident } from "../app/lib/product-size-incident-recovery.server";
 import { logMvqueenEvent } from "../app/lib/enterprise/observability.server";
 import { envInt } from "../app/lib/runtime-config";
 import {
@@ -40,6 +41,7 @@ for (const signal of ["SIGTERM", "SIGINT"] as const) {
 }
 
 async function main() {
+  await recoverProductSizeIncident();
   await recoverStaleProductJobs();
   await ensureProductWebhookSubscriptions();
   await recordProductWorkerHeartbeat("continuous", { pid: process.pid });

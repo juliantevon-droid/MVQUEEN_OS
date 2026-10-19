@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { buildVariantDecisionMetafields, assertJsonMetafieldSizes, verifyVariantDecisionReadback } from "./variant-decision-storage";
 import { reviewedEditorialState } from "./reviewed-product-content";
 import { BRAND_VOCABULARY } from "./brand-vocabulary.server";
 import prisma from "../db.server";
@@ -775,6 +776,10 @@ export async function processProductJob(
               : !hasWriteFiles
                 ? "write_files_scope_required"
                 : "automatic";
+    const variantDecisionMetafields = buildVariantDecisionMetafields({
+      currency: pricing.currency, representativeVariantId: decision.representativeVariantId,
+      variants: decision.variantDecisions,
+    });
     const metafields = [
       ...(reviewedEditorial.status ? [{
         namespace: "catalog", key: "editorial_review_status",
@@ -915,12 +920,7 @@ export async function processProductJob(
             ? decision.costSyncState
             : "read_inventory_scope_required",
       },
-      {
-        namespace: "commercial", key: "variant_decisions", type: "json",
-        value: JSON.stringify({ currency: pricing.currency,
-          representativeVariantId: decision.representativeVariantId,
-          variants: decision.variantDecisions }),
-      },
+      ...variantDecisionMetafields,
       { namespace: "commercial", key: "pricing_state", type: "single_line_text_field", value: pricing.state },
       { namespace: "commercial", key: "pricing_currency", type: "single_line_text_field", value: pricing.currency },
       {
@@ -1034,6 +1034,7 @@ export async function processProductJob(
           })
         : [];
 
+    assertJsonMetafieldSizes([...metafields, ...nativeCategoryMetafields]);
     const productInput: Record<string, unknown> = {
       id: product.id,
       productType: productTypeForWrite(product.productType, c),
@@ -1102,7 +1103,9 @@ export async function processProductJob(
     });
     const updateBody = await update.json();
     const errors = updateBody.data?.productUpdate?.userErrors ?? [];
-    if (errors.length) throw new Error(errors.map((e: { message: string }) => e.message).join("; "));
+    const graphQLErrors = (updateBody as { errors?: Array<{ message: string }> }).errors;
+    if (graphQLErrors?.length) throw new Error("Shopify product update GraphQL errors: " + graphQLErrors.map((e) => e.message).join("; "));
+    if (errors.length) throw new Error(errors.map((e: { field?: string[]; message: string }) => `${e.field?.join(".") ?? "productUpdate"}: ${e.message}`).join("; "));
 
     // Media ALT updates use Shopify's Files mutation and require an additional
     // Files write scope. The catalog worker deliberately does not attempt that
@@ -1129,6 +1132,15 @@ export async function processProductJob(
         automationVersion: AUTOMATION_VERSION + ":pending",
       },
     });
+
+    await verifyVariantDecisionReadback(admin, product.id, variantDecisionMetafields);
+    if (variantDecisionMetafields.length > 1) {
+      logMvqueenEvent("product.variant_decisions.verified", {
+        jobId, productGid: product.id, parts: variantDecisionMetafields.length - 1,
+        variants: decision.variantDecisions.length,
+        partBytes: variantDecisionMetafields.slice(1).map((item) => Buffer.byteLength(item.value, "utf8")),
+      });
+    }
 
     if (variants.length) {
       const variantInputs: Record<string, unknown>[] = variants.map((variant) => {
