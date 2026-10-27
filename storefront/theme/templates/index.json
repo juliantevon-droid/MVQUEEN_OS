@@ -1,120 +1,83 @@
 {
   "sections": {
-    "gateway": {
-      "type": "brand-gateway",
+    "reference_home": {
+      "type": "mvq-reference-home",
       "settings": {
-        "mvqueen_eyebrow": "MODERN LUXURY",
-        "mvqueen_copy": "Neutral, bold, refined pieces for modern everyday luxury.",
-        "mvqueen_cta": "Explore MVQueen",
-        "princess_eyebrow": "PLAYFUL GLAMOUR",
-        "princess_copy": "Soft, bright, expressive pieces with a lighter, playful point of view.",
-        "princess_cta": "Explore Miss.Princess"
-      }
-    },
-    "curation": {
-      "type": "editorial-curation",
-      "settings": {
-        "eyebrow": "THE HOUSE EDIT",
-        "heading": "One storefront. Two distinct moods.",
-        "copy": "Start with the energy that feels like you today, then move freely between MVQueen and Miss.Princess without leaving the shared shopping experience.",
-        "link_label": "About the house",
-        "link_url": "/pages/about"
+        "heading": "Two moods. One house.",
+        "collection": "beauty",
+        "featured_heading": "Discover the edit",
+        "beauty_product": "anti-chapping-mirror-like-hydrating-lip-serum",
+        "beauty_heading": "Small rituals. Big glow.",
+        "beauty_copy": "From mirrors and beauty tools to skincare and finishing touches, find a little space for your daily ritual.",
+        "beauty_link": "/collections/beauty",
+        "show_welcome_offer": true
       },
       "blocks": {
-        "note-1": {
-          "type": "note",
+        "mvqueen": {
+          "type": "world",
           "settings": {
-            "title": "Refined",
-            "text": "MVQueen brings neutral, bold, mature styling into a polished everyday edit."
+            "title": "MVQueen",
+            "eyebrow": "Modern luxury",
+            "copy": "Neutral, bold and refined pieces for confident everyday luxury.",
+            "cta": "Explore MVQueen",
+            "link": "/pages/mvqueen",
+            "product": "anti-chapping-mirror-like-hydrating-lip-serum"
           }
         },
-        "note-2": {
-          "type": "note",
+        "princess": {
+          "type": "world",
           "settings": {
-            "title": "Playful",
-            "text": "Miss.Princess leans brighter, softer, colorful, feminine, and expressive."
+            "title": "Miss.Princess",
+            "eyebrow": "Playful glamour",
+            "copy": "Soft, bright and expressive pieces with a lighter point of view.",
+            "cta": "Enter Miss.Princess",
+            "link": "/pages/miss-princess",
+            "product": "ruched-sports-bra-and-high-waisted-shorts-active-set"
           }
         },
-        "note-3": {
-          "type": "note",
+        "beauty": {
+          "type": "category",
           "settings": {
-            "title": "Connected",
-            "text": "Both worlds share one bag, one checkout, and one customer-care experience."
+            "title": "Beauty",
+            "collection": "beauty",
+            "product": "student-dormitory-fill-light-desktop-vanity-mirror-with-charging-function"
+          }
+        },
+        "skincare": {
+          "type": "category",
+          "settings": {
+            "title": "Skincare",
+            "collection": "skincare",
+            "product": "anti-chapping-mirror-like-hydrating-lip-serum"
+          }
+        },
+        "hair-tools": {
+          "type": "category",
+          "settings": {
+            "title": "Hair",
+            "collection": "hair-tools"
+          }
+        },
+        "activewear": {
+          "type": "category",
+          "settings": {
+            "title": "Activewear",
+            "collection": "activewear",
+            "product": "ruched-sports-bra-and-high-waisted-shorts-active-set"
           }
         }
-      }
-    },
-    "mvqueen_edit": {
-      "type": "featured-products",
-      "settings": {
-        "anchor_id": "MVQueenWorld",
-        "brand_style": "mvqueen",
-        "eyebrow": "THE MVQueen WORLD",
-        "heading": "Refined by instinct.",
-        "copy": "Neutral, bold and mature pieces curated for confidence, polish, and modern everyday luxury.",
-        "collection": "mvqueen-world",
-        "limit": 4,
-        "cta_label": "Shop MVQueen",
-        "cta_link": "/collections/mvqueen-world"
-      }
-    },
-    "princess_edit": {
-      "type": "featured-products",
-      "settings": {
-        "anchor_id": "MissPrincessWorld",
-        "brand_style": "princess",
-        "eyebrow": "THE Miss.Princess WORLD",
-        "heading": "Playful by nature.",
-        "copy": "Soft, bright and expressive pieces curated for color, sparkle, femininity, and a lighter mood.",
-        "collection": "miss-princess-world",
-        "limit": 4,
-        "cta_label": "Enter Miss.Princess",
-        "cta_link": "/pages/miss-princess"
-      }
-    },
-    "story": {
-      "type": "house-story",
-      "settings": {
-        "eyebrow": "ABOUT US",
-        "heading": "Made for every version of you.",
-        "copy": "MVQueen and Miss.Princess share one storefront, one bag, and one standard of thoughtful curation — with two distinct moods so you can shop the version of yourself you want to express today.",
-        "link_label": "Read our story",
-        "link_url": "/pages/about"
-      }
-    },
-    "trust": {
-      "type": "trust-strip",
-      "settings": {}
-    },
-    "pillars": {
-      "type": "brand-pillars",
-      "settings": {}
-    },
-    "social": {
-      "type": "social-media",
-      "settings": {
-        "eyebrow": "FOLLOW MVQueen",
-        "heading": "Style moves beyond the storefront.",
-        "copy": "Follow MVQueen for new edits, styling ideas, beauty moments, product stories, and launch updates.",
-        "instagram_url": "https://www.instagram.com/miss.mvqueen/",
-        "tiktok_url": "https://www.tiktok.com/@mvqueen_official",
-        "facebook_url": "https://www.facebook.com/people/Mvqueen/61585903680200/"
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {}
+      },
+      "block_order": [
+        "mvqueen",
+        "princess",
+        "beauty",
+        "skincare",
+        "hair-tools",
+        "activewear"
+      ]
     }
   },
   "order": [
-    "gateway",
-    "curation",
-    "mvqueen_edit",
-    "princess_edit",
-    "story",
-    "trust",
-    "pillars",
-    "social",
-    "newsletter"
+    "reference_home"
   ]
 }

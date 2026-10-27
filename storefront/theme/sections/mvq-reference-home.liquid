@@ -1,0 +1,249 @@
+{{ 'mvqueen-reference-home.css' | asset_url | stylesheet_tag }}
+<div class="mvqr" id="MVQReference-{{ section.id }}">
+  <section class="mvqr-wrap mvqr-worlds" aria-labelledby="MVQRTitle-{{ section.id }}">
+    <h1 id="MVQRTitle-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+    <div class="mvqr-world-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'world' %}
+          {% liquid
+            assign world_image = block.settings.image | default: block.settings.product.featured_image
+            assign image_loading = 'lazy'
+            assign image_priority = 'auto'
+            if forloop.first
+              assign image_loading = 'eager'
+              assign image_priority = 'high'
+            endif
+          %}
+          <a class="mvqr-world" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+            {% if world_image != blank %}{{ world_image | image_url: width: 1400 | image_tag: widths: '360,540,720,1000,1400', sizes: '(max-width: 749px) calc(100vw - 32px), (max-width: 1399px) 46vw, 664px', loading: image_loading, fetchpriority: image_priority, class: 'mvqr-world-image', alt: '' }}{% endif %}
+            <span class="mvqr-world-copy"><span class="mvqr-eyebrow">{{ block.settings.eyebrow | escape }}</span><span class="mvqr-world-title">{{ block.settings.title | escape }}</span><span class="mvqr-copy">{{ block.settings.copy | escape }}</span><span class="mvqr-button mvqr-button-white">{{ block.settings.cta | escape }}</span></span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="mvqr-categories mvqr-space" aria-labelledby="MVQRCategories-{{ section.id }}">
+    <div class="mvqr-wrap">
+      <p class="mvqr-eyebrow">{{ 'reference_home.category_eyebrow' | t }}</p>
+      <h2 id="MVQRCategories-{{ section.id }}">{{ 'reference_home.category_heading' | t }}</h2>
+      <a class="mvqr-button mvqr-button-outline" href="{{ routes.all_products_collection_url }}">{{ 'reference_home.view_all' | t }}</a>
+      <div class="mvqr-category-grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'category' and block.settings.collection != blank %}
+            {% assign category_image = block.settings.image | default: block.settings.product.featured_image | default: block.settings.collection.featured_image %}
+            <a class="mvqr-category" href="{{ block.settings.collection.url }}" {{ block.shopify_attributes }}>
+              {% if category_image != blank %}{{ category_image | image_url: width: 640 | image_tag: widths: '180,320,480,640', sizes: '(max-width: 749px) 44vw, 22vw', loading: 'lazy', alt: '' }}{% endif %}
+              <span><span class="mvqr-eyebrow">{{ 'reference_home.shop' | t }}</span><span class="mvqr-category-title">{{ block.settings.title | default: block.settings.collection.title | escape }}</span></span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% assign featured_products = section.settings.collection.products %}
+  {% if featured_products.size > 0 %}
+    <section class="mvqr-space mvqr-wrap" aria-labelledby="MVQRProducts-{{ section.id }}">
+      <p class="mvqr-eyebrow">{{ 'reference_home.featured_eyebrow' | t }}</p>
+      <h2 id="MVQRProducts-{{ section.id }}">{{ section.settings.featured_heading | escape }}</h2>
+      <div class="mvqr-controls"><button type="button" data-mvqr-prev aria-controls="MVQRTrack-{{ section.id }}" aria-label="{{ 'reference_home.previous' | t }}">←</button><button type="button" data-mvqr-next aria-controls="MVQRTrack-{{ section.id }}" aria-label="{{ 'reference_home.next' | t }}">→</button></div>
+      <ul class="mvqr-track" id="MVQRTrack-{{ section.id }}" tabindex="0" aria-label="{{ section.settings.featured_heading | escape }}">
+        {% for product in featured_products limit: 8 %}
+          <li><a href="{{ product.url }}" class="mvqr-product">
+            {% if product.featured_image != blank %}{{ product.featured_image | image_url: width: 800 | image_tag: widths: '320,480,640,800', sizes: '(max-width: 749px) 76vw, 30vw', loading: 'lazy', alt: product.featured_image.alt | default: product.title }}{% endif %}
+            <span class="mvqr-eyebrow">{{ product.type | escape }}</span><h3>{{ product.title | escape }}</h3><span class="mvqr-price">{% if product.price_varies %}{{ 'reference_home.from' | t }} {% endif %}{{ product.price | money }}</span>
+            <span class="mvqr-button">{% if product.available %}{{ 'reference_home.shop_now' | t }}{% else %}{{ 'reference_home.sold_out' | t }}{% endif %}</span>
+          </a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+  {% assign beauty_image = section.settings.beauty_image | default: section.settings.beauty_product.featured_image %}
+  <section class="mvqr-wrap mvqr-beauty" aria-labelledby="MVQRBeauty-{{ section.id }}">
+    {% if beauty_image != blank %}{{ beauty_image | image_url: width: 1000 | image_tag: widths: '360,540,720,1000', sizes: '(max-width: 749px) calc(100vw - 32px), 46vw', loading: 'lazy', alt: '' }}{% endif %}
+    <div class="mvqr-beauty-copy"><p class="mvqr-eyebrow">{{ 'reference_home.beauty_eyebrow' | t }}</p><h2 id="MVQRBeauty-{{ section.id }}">{{ section.settings.beauty_heading | escape }}</h2><p class="mvqr-copy">{{ section.settings.beauty_copy | escape }}</p><a class="mvqr-button" href="{{ section.settings.beauty_link }}">{{ 'reference_home.beauty_cta' | t }}</a></div>
+  </section>
+  <section class="mvqr-space mvqr-signup-band"><div class="mvqr-wrap mvqr-signup" aria-labelledby="MVQRSignup-{{ section.id }}">
+    {% if section.settings.show_welcome_offer %}
+      <p class="mvqr-eyebrow">{{ 'reference_home.welcome_gift' | t }}</p>
+      <h2 id="MVQRSignup-{{ section.id }}">{{ 'reference_home.welcome_heading' | t }}</h2>
+      <p class="mvqr-copy">{{ 'reference_home.welcome_copy' | t }}</p>
+      <p class="mvqr-code"><span>{{ 'reference_home.use_code' | t }}</span><strong>MVQ10</strong></p>
+      <a class="mvqr-button mvqr-button-white" href="{{ routes.root_url }}discount/MVQ10?redirect={{ routes.all_products_collection_url | url_encode }}">{{ 'reference_home.welcome_cta' | t }}</a>
+      <p class="mvqr-fine">{{ 'reference_home.welcome_terms' | t }}</p>
+      <h3 class="mvqr-signup-title">{{ 'reference_home.join' | t }}</h3>
+    {% else %}
+      <p class="mvqr-eyebrow">{{ 'reference_home.join' | t }}</p><h2 id="MVQRSignup-{{ section.id }}">{{ 'reference_home.signup_heading' | t }}</h2>
+    {% endif %}
+    <p class="mvqr-copy">{{ 'reference_home.signup_copy' | t }}</p>
+    {% form 'customer', class: 'mvqr-form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter,mvqueen-house">
+      <label for="MVQRName-{{ section.id }}">{{ 'reference_home.first_name' | t }}</label><input id="MVQRName-{{ section.id }}" name="contact[first_name]" autocomplete="given-name" type="text">
+      <label for="MVQREmail-{{ section.id }}">{{ 'reference_home.email' | t }}</label><input id="MVQREmail-{{ section.id }}" name="contact[email]" autocomplete="email" type="email" required value="{{ form.email | escape }}">
+      <button class="mvqr-button" type="submit">{{ 'reference_home.join' | t }}</button>
+      {% if form.posted_successfully? %}<p role="status">{{ 'reference_home.success' | t }}</p>{% elsif form.errors %}<div role="alert">{{ form.errors | default_errors }}</div>{% endif %}
+      <p class="mvqr-fine">{{ 'reference_home.unsubscribe' | t }} <a href="{{ shop.privacy_policy.url }}">{{ 'reference_home.privacy' | t }}</a></p>
+    {% endform %}
+  </div></section>
+  <section class="mvqr-wrap mvqr-space mvqr-pillars" aria-labelledby="MVQRPillars-{{ section.id }}">
+    <p class="mvqr-eyebrow">{{ 'reference_home.why' | t }}</p>
+    <h2 id="MVQRPillars-{{ section.id }}">{{ 'reference_home.personal' | t }}</h2>
+    <div class="mvqr-pillar-grid">
+      <article><span class="mvqr-number">01</span><h3>{{ 'reference_home.two_moods' | t }}</h3><p>{{ 'reference_home.two_moods_copy' | t }}</p></article>
+      <article><span class="mvqr-number">02</span><h3>{{ 'reference_home.one_bag' | t }}</h3><p>{{ 'reference_home.one_bag_copy' | t }}</p></article>
+    </div>
+  </section>
+</div>
+{% javascript %}
+function initReferenceHome(root) {
+  root.querySelectorAll('.mvqr').forEach(home => {
+    if (home.dataset.ready) return;
+    home.dataset.ready = 'true';
+    const track = home.querySelector('.mvqr-track');
+    if (!track) return;
+    ['prev', 'next'].forEach(direction => {
+      home.querySelector('[data-mvqr-' + direction + ']').addEventListener('click', () => {
+        const card = track.firstElementChild;
+        const gap = parseFloat(getComputedStyle(track).gap) || 24;
+        const distance = card.getBoundingClientRect().width + gap;
+        track.scrollBy({left: direction === 'next' ? distance : -distance, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+      });
+    });
+  });
+}
+initReferenceHome(document);
+document.addEventListener('shopify:section:load', event => initReferenceHome(event.target));
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "MVQueen Reference Home",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_welcome_offer",
+      "label": "Show the MVQ10 first-order offer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Two moods. One house."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Featured collection"
+    },
+    {
+      "type": "text",
+      "id": "featured_heading",
+      "label": "Featured heading",
+      "default": "Discover the edit"
+    },
+    {
+      "type": "image_picker",
+      "id": "beauty_image",
+      "label": "Beauty image"
+    },
+    {
+      "type": "product",
+      "id": "beauty_product",
+      "label": "Beauty image product"
+    },
+    {
+      "type": "text",
+      "id": "beauty_heading",
+      "label": "Beauty heading",
+      "default": "Small rituals. Big glow."
+    },
+    {
+      "type": "textarea",
+      "id": "beauty_copy",
+      "label": "Beauty copy",
+      "default": "Beauty tools, skincare and little finishing touches for your everyday routine."
+    },
+    {
+      "type": "url",
+      "id": "beauty_link",
+      "label": "Beauty link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "world",
+      "name": "Brand world",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "copy",
+          "label": "Copy"
+        },
+        {
+          "type": "text",
+          "id": "cta",
+          "label": "Cta"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Image product"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Destination"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "name": "Category",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Image product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MVQueen Reference Home"
+    }
+  ]
+}
+{% endschema %}

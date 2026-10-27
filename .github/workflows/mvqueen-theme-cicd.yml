@@ -72,7 +72,9 @@ jobs:
       - name: Run MVQUEEN contract validator
         run: python 30_System_Infrastructure/automation/validate_theme_contract.py
       - name: Run storefront release audit
-        run: python 30_System_Infrastructure/automation/storefront_release_audit.py
+        run: |
+          python 30_System_Infrastructure/automation/test_reference_home_contract.py
+          python 30_System_Infrastructure/automation/storefront_release_audit.py
       - name: Run Shopify Theme Check
         run: shopify theme check --path storefront/theme --fail-level error --output text
       - name: Save validation logs
@@ -152,6 +154,7 @@ jobs:
           files+=(sections/mvq-before-after.liquid sections/mvq-blog-posts.liquid sections/mvq-collapsible-tabs.liquid sections/mvq-custom-content.liquid sections/mvq-featured-collections.liquid sections/mvq-image-overlay.liquid sections/mvq-parallax.liquid sections/mvq-product-showcase.liquid sections/mvq-product-slider.liquid sections/mvq-product-tabs.liquid sections/mvq-slideshow.liquid sections/mvq-testimonials.liquid snippets/mvq-carousel-controls.liquid snippets/mvq-section-heading.liquid snippets/mvq-section-image.liquid snippets/mvq-section-kit.liquid snippets/mvq-parallax-panel.liquid)
           files+=(snippets/mvq-fonts.liquid assets/mvq-cormorant-garamond-italic-cyrillic-ext.woff2 assets/mvq-cormorant-garamond-italic-cyrillic.woff2 assets/mvq-cormorant-garamond-italic-vietnamese.woff2 assets/mvq-cormorant-garamond-italic-latin-ext.woff2 assets/mvq-cormorant-garamond-italic-latin.woff2 assets/mvq-cormorant-garamond-normal-cyrillic-ext.woff2 assets/mvq-cormorant-garamond-normal-cyrillic.woff2 assets/mvq-cormorant-garamond-normal-vietnamese.woff2 assets/mvq-cormorant-garamond-normal-latin-ext.woff2 assets/mvq-cormorant-garamond-normal-latin.woff2 assets/mvq-jost-normal-cyrillic.woff2 assets/mvq-jost-normal-latin-ext.woff2 assets/mvq-jost-normal-latin.woff2 assets/mvq-cormorant-garamond-OFL.txt assets/mvq-jost-OFL.txt)
           files+=(snippets/mvq-header-menu.liquid snippets/mvq-menu-children.liquid snippets/mvq-menu-link-visible.liquid)
+          files+=(sections/mvq-reference-home.liquid assets/mvqueen-reference-home.css)
           args=()
           for f in "${files[@]}"; do args+=(--only "$f"); done
           shopify theme push --path storefront/theme --json --strict --nodelete --theme "$SHOPIFY_THEME_ID" --store "$SHOPIFY_STORE" --password "$SHOPIFY_CLI_THEME_TOKEN" "${args[@]}"

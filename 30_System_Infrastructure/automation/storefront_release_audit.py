@@ -31,6 +31,8 @@ DEPLOYMENT_REQUIRED = (
     "snippets/mvq-menu-children.liquid",
     "snippets/mvq-menu-link-visible.liquid",
     "locales/en.default.json",
+    "sections/mvq-reference-home.liquid",
+    "assets/mvqueen-reference-home.css",
 )
 
 CHECKS: dict[str, tuple[str, tuple[str, ...]]] = {
@@ -320,21 +322,58 @@ def read(rel: str) -> str:
     return (THEME / rel).read_text(encoding="utf-8", errors="ignore")
 
 
+def reference_home_issues(index: dict) -> list[str]:
+    """Check the customer destinations configured in the rendered homepage."""
+    issues = []
+    sections = index.get("sections", {})
+    homes = [sections.get(key, {}) for key in index.get("order", [])]
+    homes = [section for section in homes if section.get("type") == "mvq-reference-home" and not section.get("disabled")]
+    if len(homes) != 1:
+        return ["exactly one enabled reference homepage must appear in template order"]
+    home = homes[0]
+    blocks = home.get("blocks", {})
+    active = [blocks.get(key, {}) for key in home.get("block_order", [])]
+    active = [block for block in active if not block.get("disabled")]
+    destinations = {block.get("settings", {}).get("link") for block in active if block.get("type") == "world"}
+    if not {"/pages/mvqueen", "/pages/miss-princess"}.issubset(destinations):
+        issues.append("both brand-world blocks must be ordered and link to their dedicated pages")
+    for block in active:
+        if block.get("type") == "world" and not any(block.get("settings", {}).get(key) for key in ("product", "image")):
+            issues.append("each brand world must have a configured image or image product")
+    categories = [block for block in active if block.get("type") == "category" and block.get("settings", {}).get("collection")]
+    if len(categories) < 4:
+        issues.append("at least four ordered category blocks must link to collections")
+    settings = home.get("settings", {})
+    if not settings.get("collection"):
+        issues.append("the featured product carousel must have a collection")
+    if not settings.get("beauty_link") or not any(settings.get(key) for key in ("beauty_product", "beauty_image")):
+        issues.append("the beauty edit must have an image and destination")
+    return issues
+
+
 def main() -> int:
     failures: list[dict[str, str]] = []
     passed: list[str] = []
 
     index_source = read("templates/index.json") if (THEME / "templates/index.json").is_file() else ""
-    if '"type": "brand-gateway"' in index_source and "MVQueenWorld" in index_source and "MissPrincessWorld" in index_source:
+    index = json.loads(index_source)
+    uses_reference_home = any(section.get("type") == "mvq-reference-home" for section in index.get("sections", {}).values())
+    reference_issues = reference_home_issues(index) if uses_reference_home else []
+    if uses_reference_home and not reference_issues:
+        passed.append("homepage_dual_brand_contract")
+    elif not uses_reference_home and '"type": "brand-gateway"' in index_source and "MVQueenWorld" in index_source and "MissPrincessWorld" in index_source:
         passed.append("homepage_dual_brand_contract")
     else:
         failures.append({
             "check": "homepage_dual_brand_contract",
             "file": "templates/index.json",
-            "reason": "root homepage must present both MVQueen and Miss.Princess with working in-page brand destinations",
+            "reason": "; ".join(reference_issues) or "root homepage must present both MVQueen and Miss.Princess with working brand destinations",
         })
 
     for name, (rel, tokens) in CHECKS.items():
+        if name == "homepage_canonical" and uses_reference_home:
+            rel = "sections/mvq-reference-home.liquid"
+            tokens = ("block.settings.link", "block.settings.collection.url", "section.settings.collection.products", "product.url", "section.settings.beauty_link", "{% form 'customer'", 'name="contact[email]"', "reference_home.two_moods", "reference_home.one_bag", "MVQ10", "image_priority = 'high'", "loading: 'lazy'")
         path = THEME / rel
         if not path.is_file():
             failures.append({"check": name, "file": rel, "reason": "missing file"})
