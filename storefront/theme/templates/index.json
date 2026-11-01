@@ -7,6 +7,7 @@
         "collection": "beauty",
         "featured_heading": "Discover the edit",
         "beauty_product": "anti-chapping-mirror-like-hydrating-lip-serum",
+        "beauty_image": "shopify://shop_images/1e6fbe2b-72bf-4a2f-8f18-072230afb8bd.jpg",
         "beauty_heading": "Small rituals. Big glow.",
         "beauty_copy": "From mirrors and beauty tools to skincare and finishing touches, find a little space for your daily ritual.",
         "beauty_link": "/collections/beauty",
@@ -21,7 +22,8 @@
             "copy": "Neutral, bold and refined pieces for confident everyday luxury.",
             "cta": "Explore MVQueen",
             "link": "/pages/mvqueen",
-            "product": "anti-chapping-mirror-like-hydrating-lip-serum"
+            "product": "anti-chapping-mirror-like-hydrating-lip-serum",
+            "image": "shopify://shop_images/1e6fbe2b-72bf-4a2f-8f18-072230afb8bd.jpg"
           }
         },
         "princess": {
@@ -48,7 +50,8 @@
           "settings": {
             "title": "Skincare",
             "collection": "skincare",
-            "product": "anti-chapping-mirror-like-hydrating-lip-serum"
+            "product": "anti-chapping-mirror-like-hydrating-lip-serum",
+            "image": "shopify://shop_images/1e6fbe2b-72bf-4a2f-8f18-072230afb8bd.jpg"
           }
         },
         "hair-tools": {
