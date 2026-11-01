@@ -23,7 +23,7 @@
       {{ 'mvqueen-product.css' | asset_url | stylesheet_tag }}
     {% endif %}
     {% if request.page_type == 'index' or page.handle == 'miss-princess' %}
-      {{ 'brand-gateway.css' | asset_url | stylesheet_tag }}
+      <style>{{ 'brand-gateway.css' | inline_asset_content }}</style>
     {% endif %}
     {% render 'seo-meta' %}
     {{ content_for_header }}
@@ -66,3 +66,4 @@
     <script src="{{ 'mvqueen-analytics.js' | asset_url }}" defer></script>
   </body>
 </html>
+
